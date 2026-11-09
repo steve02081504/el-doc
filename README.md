@@ -11,4 +11,4 @@
 
 ## 发布
 
-推送到 `main` 后，`.github/workflows/deploy.yml` 会构建并发布到 GitHub Pages。
+推送到 `master` 后，`.github/workflows/deploy.yml` 会构建并发布到 GitHub Pages。

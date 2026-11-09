@@ -3,15 +3,15 @@ site_description: 从第一个程序到 GUI、服务与工具链的 EL 语言教
 site_url: https://steve02081504.github.io/el-doc/
 repo_url: https://github.com/steve02081504/el-doc
 repo_name: steve02081504/el-doc
-edit_uri: edit/main/docs/
+edit_uri: edit/master/docs/
 copyright: Copyright &copy; 2026 steve02081504 · 本文档按 EL 语言规范编写
 
 theme:
   name: material
   language: zh
   font: false
-  logo: assets/logo.svg
-  favicon: assets/logo.svg
+  logo: assets/evil-illusion.svg
+  favicon: assets/evil-illusion.svg
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
