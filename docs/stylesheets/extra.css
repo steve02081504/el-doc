@@ -188,6 +188,10 @@ pre {
   background: transparent;
 }
 
+.el-hero__code .highlight span {
+  color: inherit;
+}
+
 .el-hero__code .md-clipboard {
   color: rgba(255, 255, 255, 0.55);
 }
