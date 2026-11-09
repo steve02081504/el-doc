@@ -206,9 +206,9 @@ console.stdout.writeLine(greeting())
 - 三种 import 都要写出拿哪些名字；命名空间只在编译期存在，没有 `import *`。
 - `package.eol` 的 `entry` 决定入口，`imports` 决定来源映射；`file:` 相对路径以模块文件为基准，目录自动找 `index.el`。
 
-## 下一站：Shell 语法
+## 下一站：文件预处理
 
-> 代码已经能拆成模块了，那 EL 能不能直接当 shell 脚本用，把命令、管道和退出码也写进同一份源码？
+> 模块解决“代码怎么拆”，可同一份源码要按构建条件选择不同片段时，又该在哪一步动手？
 
-- 主推进：[Shell 语法](shell.md)：把 EL 当脚本语言用，直接执行命令、接管道、读退出码。
+- 主推进：[文件预处理](preprocessing.md)：在词法分析之前做条件编译、文本包含与来源信息注入。
 - 想先练手：[命令行工具](../practice/cli-tool.md)：用模块和 `package.eol` 组织一个能跑的小项目。

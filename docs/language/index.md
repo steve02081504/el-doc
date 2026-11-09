@@ -1,9 +1,9 @@
 # 语言总览
 
-> 语言部分有 14 页。但真正决定你能不能写出程序的，只有前 6 页。
+> 语言部分有 15 页。但真正决定你能不能写出程序的，只有前 6 页。
 
 !!! abstract "🎯 这一章能帮你"
-    - 知道 14 页里哪些必须按顺序读、哪些可以跳
+    - 知道 15 页里哪些必须按顺序读、哪些可以跳
     - 用一句话说出每页解决什么问题
     - 在“读不下去”或“想查写法”时快速找到出口
 
@@ -11,7 +11,7 @@
 
 ## 两段路
 
-语言部分刻意分成两段。**地基**是每天都会用到的部分，读完就能写小程序；**进阶**处理对象的生死、模块边界、失败与并发，读不完也能写出能用的程序。
+语言部分刻意分成两段。**地基**是每天都会用到的部分，读完就能写小程序；**进阶**处理对象的生死、模块边界、源码预处理、失败与并发，读不完也能写出能用的程序。
 
 ### 第一段：地基（必读）
 
@@ -83,24 +83,30 @@
 </div>
 <div class="el-card" markdown>
 <span class="el-card__num">11</span>
+### [文件预处理](preprocessing.md)
+`#define`、`#if`、`#include` 与内建来源信息。它跑在词法分析之前，和模块是两套机制。
+<span class="el-card__meta">12 分钟 · 前置：10</span>
+</div>
+<div class="el-card" markdown>
+<span class="el-card__num">12</span>
 ### [Shell 语法](shell.md)
 把 EL 当脚本语言用：直接执行命令、管道、退出码。写自动化时很省事。
 <span class="el-card__meta">12 分钟</span>
 </div>
 <div class="el-card" markdown>
-<span class="el-card__num">12</span>
+<span class="el-card__num">13</span>
 ### [错误处理与异步](errors-async.md)
 `throw`/`try` 是表达式，`spawn`/`.get()` 管并发，`async`/`await` 是宏。这是最容易和别的语言搞混的一页。
 <span class="el-card__meta">18 分钟 · 重点</span>
 </div>
 <div class="el-card" markdown>
-<span class="el-card__num">13</span>
+<span class="el-card__num">14</span>
 ### [性能与底层优化](performance.md)
 先测量再优化。介绍布局控制、内联、边界检查与 release 模式的真实差别。
 <span class="el-card__meta">15 分钟 · 偏底层</span>
 </div>
 <div class="el-card" markdown>
-<span class="el-card__num">14</span>
+<span class="el-card__num">15</span>
 ### [外部接口与 ABI](foreign.md)
 调用 C、导出入口、回调与指针。只有要接原生库时才需要。
 <span class="el-card__meta">18 分钟 · 偏底层</span>

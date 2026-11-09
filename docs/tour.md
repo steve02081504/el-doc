@@ -247,6 +247,6 @@ console.info.value(@{ total: tasks.count, finished })
 
 > 速览里每站都只有几行，真正的规则和边界在哪？
 
-- 主推进：[语言总览](language/index.md)：14 页怎么排、哪些必读、哪些可以跳。
+- 主推进：[语言总览](language/index.md)：15 页怎么排、哪些必读、哪些可以跳。
 - 想直接开写：[命令行工具](practice/cli-tool.md)：用一个完整项目练手。
 - 想先补基础：[值与类型](language/values.md)：把 `let`、`Number`、`Text` 和集合讲清楚。

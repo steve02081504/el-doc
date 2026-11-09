@@ -55,8 +55,8 @@ console.info.value(@{ language: "EL" })
 <div class="el-card" markdown>
 <span class="el-card__num">02</span>
 ### [语言进阶](language/lifetimes.md)
-生命周期、类、模块、错误与异步。深水区可以跳过。
-<span class="el-card__meta">约 4–5 小时 · 8 页</span>
+生命周期、类、模块、预处理、错误与异步。深水区可以跳过。
+<span class="el-card__meta">约 4–5 小时 · 9 页</span>
 </div>
 <div class="el-card" markdown>
 <span class="el-card__num">03</span>

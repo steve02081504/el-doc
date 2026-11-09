@@ -48,9 +48,9 @@
 
 ### 语言进阶：管住对象、模块与失败
 
-生命周期、类、内存布局、模块、shell、错误与异步、性能、外部接口。页面开始变重，阅读时把“可选 · 深入”折叠块当作加餐，跳过不影响主线。
+生命周期、类、内存布局、模块、文件预处理、shell、错误与异步、性能、外部接口。页面开始变重，阅读时把“可选 · 深入”折叠块当作加餐，跳过不影响主线。
 
-- 读：[生命周期与析构](language/lifetimes.md) → [类与对象](language/classes.md) → [模块与包](language/modules.md) → [错误处理与异步](language/errors-async.md) → [Shell 语法](language/shell.md) → [内存布局与 GC 钩子](language/memory-layout.md) → [性能与底层优化](language/performance.md) → [外部接口与 ABI](language/foreign.md)
+- 读：[生命周期与析构](language/lifetimes.md) → [类与对象](language/classes.md) → [模块与包](language/modules.md) → [文件预处理](language/preprocessing.md) → [Shell 语法](language/shell.md) → [错误处理与异步](language/errors-async.md) → [内存布局与 GC 钩子](language/memory-layout.md) → [性能与底层优化](language/performance.md) → [外部接口与 ABI](language/foreign.md)
 - 时间：约 4–5 小时
 - 产出：能拆成多文件、能处理失败、能并发的项目骨架
 
@@ -116,6 +116,7 @@
 
 !!! success "自检：语言进阶"
     - [ ] 把一段长代码拆成两个模块并正确导入
+    - [ ] 用 `#if` 给不同构建选一段代码，并说清 `#include` 与 `import` 的区别
     - [ ] 用 `try`/`catch` 把失败变成值，而不是让程序崩掉
     - [ ] 说清一个对象在块结束时按什么顺序析构
 

@@ -122,6 +122,7 @@ nav:
       - 类与对象: language/classes.md
       - 内存布局与 GC 钩子: language/memory-layout.md
       - 模块与包: language/modules.md
+      - 文件预处理: language/preprocessing.md
       - Shell 语法: language/shell.md
       - 错误处理与异步: language/errors-async.md
       - 性能与底层优化: language/performance.md
