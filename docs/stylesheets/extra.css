@@ -188,8 +188,62 @@ pre {
   background: transparent;
 }
 
-.el-hero__code .highlight span {
-  color: inherit;
+/* The hero is always dark, so give EL tokens a fixed light palette instead of
+   inheriting Material's scheme-dependent colors. */
+.el-hero__code .highlight .k,
+.el-hero__code .highlight .kd {
+  color: #c4b5fd;
+}
+
+.el-hero__code .highlight .kn {
+  color: #f0abfc;
+}
+
+.el-hero__code .highlight .kc {
+  color: #fcd34d;
+}
+
+.el-hero__code .highlight .nf {
+  color: #93c5fd;
+}
+
+.el-hero__code .highlight .nv {
+  color: #f9a8d4;
+}
+
+.el-hero__code .highlight .nc {
+  color: #fcd34d;
+}
+
+.el-hero__code .highlight .nd {
+  color: #67e8f9;
+}
+
+.el-hero__code .highlight .s1,
+.el-hero__code .highlight .s2,
+.el-hero__code .highlight .sb {
+  color: #86efac;
+}
+
+.el-hero__code .highlight .m,
+.el-hero__code .highlight .mi,
+.el-hero__code .highlight .mh,
+.el-hero__code .highlight .mf {
+  color: #fca5a5;
+}
+
+.el-hero__code .highlight .o,
+.el-hero__code .highlight .p {
+  color: #cbd5e1;
+}
+
+.el-hero__code .highlight .c1,
+.el-hero__code .highlight .cm {
+  color: #94a3b8;
+}
+
+.el-hero__code .highlight .n {
+  color: #e9e4ff;
 }
 
 .el-hero__code .md-clipboard {

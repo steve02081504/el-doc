@@ -11,7 +11,7 @@
 fn greet(name: Text = "world") => "hello " + name
 
 console.stdout.writeLine(greet())
-console.info.value(@{ language: "EL", edition: "tutorial" })
+console.info.value(@{ language: "EL" })
 ```
 </div>
 </div>
