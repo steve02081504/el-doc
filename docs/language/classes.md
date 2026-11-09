@@ -173,6 +173,7 @@ console.log.value(Vec2(1, 2) == Vec2(1, 2))    // t
 - `operator +`、`operator -`、`operator *`、`operator /`、`operator ^`、`operator ==`、`operator <` 等都可以重载；`===`/`!==` 的对象身份比较与 `is`/`isnot` 的类型判断不被重载改变。
 - 运算符也可以在类外声明，第一个参数显式接收左操作数；候选按普通重载规则选择。
 - `&`/`|` 的显式值重载会让源码短路变成普通 eager 调用，两侧都求值；分派细节按语言规范第 3 章核对。
+- 完整的声明形式、转换与候选规则见[运算符与表达式](operators.md#operator-overloading)。
 
 ## `@dynamic` 与动态字段
 

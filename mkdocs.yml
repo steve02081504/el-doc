@@ -107,6 +107,7 @@ nav:
       - 安装与第一个程序: getting-started.md
       - 语言速览: tour.md
   - 语言:
+      - 读语言之前: language/before-you-start.md
       - 值与类型: language/values.md
       - 数值与位类型: language/numeric-types.md
       - 运算符与表达式: language/operators.md

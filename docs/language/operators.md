@@ -1,6 +1,6 @@
 # 运算符与表达式
 
-这一页按优先级把 EL 的运算符过一遍，重点讲那些从别的语言带过来的习惯会踩坑的地方。读完你能正确写出短路逻辑、乘方、范围、空值判断和复合赋值。
+这一页按优先级把 EL 的运算符过一遍，重点讲那些从别的语言带过来的习惯会踩坑的地方，以及怎么给自己的类型重载运算符。读完你能正确写出短路逻辑、乘方、范围、空值判断和复合赋值。
 
 ## 优先级速览
 
@@ -180,6 +180,118 @@ console.stdout.writeLine(counter)     // 2
 ```
 
 `++`/`--` 是 `v = v + 1` / `v = v - 1` 的赋值糖，不是新的算术规则。目标必须是可赋值的绑定、可写类成员或可读写下标；`const` 目标报定位错误。
+
+## 运算符重载 {#operator-overloading}
+
+运算符是普通重载的一种：声明成成员时左侧是 `this`；声明成自由函数时左操作数就是第一个参数。候选从类内成员、调用处词法可见的类外声明，以及操作数类型定义模块导出的关联声明中收集，去重后按普通重载规则选择；并列报歧义，不按声明顺序或导入顺序偏袒（OP-3、OP-15）。
+
+```el
+@assign(mode: "copy")
+class Vec2 {
+	let x: Number = 0
+	let y: Number = 0
+
+	constructor(x: Number = 0, y: Number = 0) {
+		init this
+		this.x = x
+		this.y = y
+	}
+
+	operator +(rhs: Vec2): Vec2 {
+		return Vec2(this.x + rhs.x, this.y + rhs.y)
+	}
+
+	operator -(): Vec2 {
+		return Vec2(-this.x, -this.y)
+	}
+
+	operator ==(rhs: Vec2): Bool {
+		return (this.x == rhs.x) & (this.y == rhs.y)
+	}
+}
+
+let sum = Vec2(1, 2) + Vec2(3, 4)
+console.stdout.writeLine(sum.x)             // 4
+console.log.value(-sum == Vec2(-4, -2))     // t
+```
+
+同名的类外声明把左操作数写成普通参数：
+
+```el
+operator +(lhs: Vec2, rhs: Number): Vec2 {
+	return Vec2(lhs.x + rhs, lhs.y)
+}
+```
+
+运算符的优先级和结合性由符号本身固定，重载不能改；能改的是求值方式和结果类型。
+
+### 可以重载哪些
+
+| 形式 | 声明写法 | 说明 |
+| --- | --- | --- |
+| 二元 | `operator +(rhs: T): T`；类外 `operator +(lhs: T, rhs: U)` | 用符号自己的优先级与结合性，二元运算符基本都能重载 |
+| 一元 | `operator -()`、`operator !()` | 前缀 |
+| 自增自减 | `operator++()`、`operator--()`（后置）；`++operator()`、`--operator()`（前置） | 返回值由声明决定，不强制返回自身 |
+| 下标 | `operator[](index: Number): T` 读；`operator[]=(index: Number, value: T)` 写 | 接收者、下标、右侧各求值一次 |
+| 调用 | `operator()(x: Number): T` | 让对象像函数一样被调用 |
+| 赋值 | `operator =(rhs: T)` | 初始化不调用它，之后对已构造对象赋值才调用 |
+| 转换 | `operator Text(): Text`（显式）、`implicit operator Text(): Text`（隐式） | 默认只允许源码明确请求 |
+| 字面量 | `operator number(...)`、`operator""(...)`、`operator@[](...)` | 标准库字面量协议的入口 |
+
+写入下标也可以写成双参数形式 `operator[](index, value)`。`??`、`??=`、`&=`、`|=` 同样可以重载，`&`/`|` 的规则见下一节。`===`/`!==` 的身份比较与 `is`/`isnot` 的类型判断不能被重载；`&&`、`||`、`~` 本来就不是 EL 运算符，也没有对应重载。
+
+### 逻辑运算的位置
+
+`&`/`|` 需要单独记：源码里的 `a & b`、`a | b` 默认是短路逻辑，不会调用你的重载；只有类型声明了显式的 `operator &`/`operator |` 值重载时，才按普通 eager 调用求值，两侧都求值（OP-7）。重载无法截获短路本身，也不存在“接收右侧延迟求值”的重载协议。
+
+### 转换默认是显式的
+
+`operator Text()` 这类转换只在你明确请求时使用，例如 `Text(value)`，或条件上下文需要转换时；要让它在普通参数、赋值和运算中自动参与，声明时加 `implicit`。隐式构造器同理：
+
+```el
+@assign(mode: "copy")
+class Money {
+	let cents: Number = 0
+
+	implicit constructor(cents: Number) {
+		init this
+		this.cents = cents
+	}
+
+	operator Text(): Text {
+		return "$" + Text(this.cents)
+	}
+}
+
+fn describe(value: Money) {
+	console.stdout.writeLine(value)
+}
+
+describe(350)                       // $350：Number 经 implicit 构造器转成 Money
+console.stdout.writeLine(Money(5))  // $5：参数转换请求 operator Text
+```
+
+一条普通转换路径最多有一层用户转换；显式转换与隐式转换同时可用时按适用程度选择，并列就报歧义，不按库名或声明顺序猜（OP-10）。
+
+### 在作用域里临时换掉符号
+
+`let operator * = ...` 把某个二元值运算绑定成当前词法作用域里的普通可调用值，只影响该作用域中的值运算，退出作用域就恢复；它不改变身份比较、短路和赋值的语法含义：
+
+```el
+fn twice(value: Number): Number {
+	let operator * = (left: Number, right: Number) => left * right * 2
+	return value * 3        // 调用上面的绑定，得到 30
+}
+
+console.stdout.writeLine(twice(5))
+```
+
+### 重载的边界
+
+- 运算符重载不授予数学性质：`+` 就是一次普通调用，不意味着交换律、结合律或纯性。
+- 重载按声明签名选择；不要指望“左边是 `Text` 就自动把右边转成文本”（OP-2）。需要时显式写 `Text(value)`。
+- `<=>` 的结果要能继续使用：Number 的 `<=>` 返回 Number，自定义类型返回 `Comparison`，按规范与 `0` 比较或取用三路结果（OP-8）。
+- 显式 `operator =` 的返回值可以是 `this`、代理或 `void`；后续使用仍要满足普通的复制、借用与生命周期规则。
 
 ## 没有位运算运算符
 

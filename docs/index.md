@@ -38,7 +38,7 @@ console.info.value(@{ language: "EL" })
 <div class="el-grid" markdown>
 <div class="el-card" markdown>
 ### 语言核心
-[值](language/values.md)、[数值与位类型](language/numeric-types.md)、[运算符](language/operators.md)、[控制流](language/control-flow.md)、[函数](language/functions.md)、[类](language/classes.md)、[模块](language/modules.md)、[错误与异步](language/errors-async.md)。
+[读语言之前](language/before-you-start.md)、[值](language/values.md)、[数值与位类型](language/numeric-types.md)、[运算符](language/operators.md)、[控制流](language/control-flow.md)、[函数](language/functions.md)、[类](language/classes.md)、[模块](language/modules.md)、[错误与异步](language/errors-async.md)。
 
 从变量和表达式写到能拆模块、处理失败、并发执行。
 </div>
