@@ -53,7 +53,7 @@ class Counter {
 		this.#count = start
 	}
 
-	fn increment(): Number {
+	fn increment() {
 		this.#count += 1
 		this.#count
 	}

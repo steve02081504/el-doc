@@ -84,7 +84,7 @@ let text = try { readTextFile("config.el") } catch { "" }
 @assign(mode: "shared")
 class Counter {
 	let value = 0
-	fn advance(amount: Number): Number {
+	fn advance(amount: Number) {
 		this.value += amount
 		return this.value
 	}

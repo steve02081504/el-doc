@@ -8,9 +8,9 @@
 
 ```el
 // math.el
-export fn double(value: Number): Number { return value * 2 }
+export fn double(value: Number) { return value * 2 }
 
-fn helper(value: Number): Number { return value + 1 }   // 私有，外部看不到
+fn helper(value: Number) { return value + 1 }   // 私有，外部看不到
 
 export let version = 1
 ```
@@ -159,22 +159,22 @@ my-app/
 // b.el
 import { name } from "file:./a.el"
 
-export fn welcome(): Text {
+export fn welcome() {
 	return "i am b"
 }
 
-export fn describe(): Text {
+export fn describe() {
 	return welcome() + ", " + name()
 }
 
 // a.el
 import { welcome } from "file:./b.el"
 
-export fn name(): Text {
+export fn name() {
 	return "a"
 }
 
-export fn greeting(): Text {
+export fn greeting() {
 	return welcome() + " 看到 " + name()
 }
 ```

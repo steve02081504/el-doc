@@ -119,25 +119,26 @@ result: 0
 
 `try` 在表达式位置产生值：正常完成取 try 块的结果，捕获到异常时取 catch 块的结果。`console.warning.value` 按 warning 等级展示错误对象，不把它转成文本。
 
-## 第六站：异步默认发生
+## 第六站：异步与并发
 
-EL 没有 `async` 和 `await` 关键字。普通调用会自动等待异步结果；需要显式并发时用 `spawn`：
+普通调用会自动等待异步结果。需要显式并发时，用标准库的 `async { ... }` 立即启动一个任务，再用 `await(p)` 等它：
 
 ```el
-let work = spawn(fn() {
-	let sum = 0
-	for (let n in @[1, 2, 3]) sum += n
-	sum
-})
+let first = async {
+	return 40 + 2
+}
+let second = async {
+	return 8
+}
 
-console.stdout.writeLine("sum: ", work.get())
+console.stdout.writeLine("sum: ", await(first) + await(second))
 ```
 
 ```text
-sum: 6
+sum: 50
 ```
 
-`spawn` 返回 `Promise`，`.get()` 等待并取得结果。多个任务、取消和并发集合在[错误处理与异步](language/errors-async.md)里展开。
+`async { ... }` 和 `await(p)` 是标准库宏，不是关键字：`async` 建立真实 callback 并立刻 `spawn`，返回 `Promise`；`await` 只生成一次 `.get()`。也可以直接用 `spawn(fn() { ... })` 启动任务、用 `.get()` 等待。多个任务、取消和并发集合在[错误处理与异步](language/errors-async.md)里展开。
 
 ## 把它们拼起来
 

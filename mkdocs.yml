@@ -108,6 +108,7 @@ nav:
       - 语言速览: tour.md
   - 语言:
       - 值与类型: language/values.md
+      - 数值与位类型: language/numeric-types.md
       - 运算符与表达式: language/operators.md
       - 控制流: language/control-flow.md
       - 函数与闭包: language/functions.md

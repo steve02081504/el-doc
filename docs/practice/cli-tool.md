@@ -70,12 +70,12 @@ catch (error) {
 ## 统计
 
 ```el
-fn countLines(text: Text): Number {
+fn countLines(text: Text) {
 	if (text == "") return 0
 	return Number(text.split("\n").count)
 }
 
-fn countWords(text: Text): Number {
+fn countWords(text: Text) {
 	let total = 0
 	for let line in text.replaceAll("\r", "").split("\n") {
 		for let chunk in line.split("\t") {
@@ -119,12 +119,12 @@ import { command_arguments } from "el:operating-system/arguments/index.el"
 import { readTextFile } from "el:filesystem/index.el"
 import { exit } from "el:operating-system/processes/index.el"
 
-fn countLines(text: Text): Number {
+fn countLines(text: Text) {
 	if (text == "") return 0
 	return Number(text.split("\n").count)
 }
 
-fn countWords(text: Text): Number {
+fn countWords(text: Text) {
 	let total = 0
 	for let line in text.replaceAll("\r", "").split("\n") {
 		for let chunk in line.split("\t") {

@@ -130,7 +130,7 @@ let options = HttpOptions(@{
 ```el
 import { readTextFileIfPresent } from "el:filesystem/"
 
-fn loadName(): Text {
+fn loadName() {
 	let source = readTextFileIfPresent("file:./config.json")
 	if (source is void_t) return "anonymous"
 
@@ -158,7 +158,7 @@ fn saveName(name: Text) {
 import { fetchAs, HttpOptions, HttpStatusError, NetworkError } from "el:network/"
 import { formats } from "el:formats/"
 
-fn fetchName(url: Text): Text {
+fn fetchName(url: Text) {
 	let config = fetchAs(formats.JSON, url, HttpOptions(@{ timeout: 5000 }))
 	let value = jsonField(config, "name")
 	match value {

@@ -206,7 +206,7 @@ console.stdout.writeLine("done")
 函数没写 `return` 时，返回值就是最后执行语句的值：
 
 ```el
-fn sumTo(limit: Number): Number {
+fn sumTo(limit: Number) {
 	let total = 0
 	for (let i in 1..|limit) {
 		total += i
@@ -214,7 +214,7 @@ fn sumTo(limit: Number): Number {
 	total
 }
 
-fn describe(value: Number): Text {
+fn describe(value: Number) {
 	if (value < 0) "negative"
 	else if (value == 0) "zero"
 	else "positive"
@@ -239,7 +239,7 @@ console.log.value(doNothing())   // void
 ## 完整例子：FizzBuzz
 
 ```el
-fn fizzbuzz(n: Number): Text {
+fn fizzbuzz(n: Number) {
 	if (n % 15 == 0) "FizzBuzz"
 	else if (n % 5 == 0) "Buzz"
 	else if (n % 3 == 0) "Fizz"

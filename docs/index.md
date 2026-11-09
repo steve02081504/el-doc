@@ -38,7 +38,7 @@ console.info.value(@{ language: "EL" })
 <div class="el-grid" markdown>
 <div class="el-card" markdown>
 ### 语言核心
-[值](language/values.md)、[运算符](language/operators.md)、[控制流](language/control-flow.md)、[函数](language/functions.md)、[类](language/classes.md)、[模块](language/modules.md)、[错误与异步](language/errors-async.md)。
+[值](language/values.md)、[数值与位类型](language/numeric-types.md)、[运算符](language/operators.md)、[控制流](language/control-flow.md)、[函数](language/functions.md)、[类](language/classes.md)、[模块](language/modules.md)、[错误与异步](language/errors-async.md)。
 
 从变量和表达式写到能拆模块、处理失败、并发执行。
 </div>
@@ -64,7 +64,7 @@ console.info.value(@{ language: "EL" })
 
 ## 怎么读
 
-**有别的语言经验。** 先读[语言速览](tour.md)和[从其他语言过来](appendix/coming-from.md)，再按需要跳到具体章节。EL 的写法接近 JavaScript 与 C 的混合体，但语义上有几处关键差异：没有 `async`/`await`、逻辑运算不是 `&&`/`||`、`^` 是乘方而不是异或、类必须声明复制还是共享。
+**有别的语言经验。** 先读[语言速览](tour.md)和[从其他语言过来](appendix/coming-from.md)，再按需要跳到具体章节。EL 的写法接近 JavaScript 与 C 的混合体，但语义上有几处关键差异：`async {}` 与 `await(p)` 是标准库宏而不是关键字、逻辑运算不是 `&&`/`||`、`^` 是乘方而不是异或、类必须声明复制还是共享。
 
 **第一次学编程。** 按左侧导航从上往下读，每章的代码都自己敲一遍。先只关注能运行的部分，标了「实现状态」的能力可以等需要时再回来看。
 

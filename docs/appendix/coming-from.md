@@ -26,7 +26,7 @@ console.stdout.writeLine(square(count), " ", twice(count), " ", values[0], " ", 
 
 没有 `var`，也没有变量提升：绑定从声明处开始生效。`let` 不写类型注解时之后可以换类型，`const` 必须初始化且不能再赋值；`fn` 声明与箭头 lambda 是两种函数写法，后者与匿名 `fn` 等价。数组字面量是 `@[...]`，对象字面量是 `@{...}`，两者都带 `@` 前缀，避免和块、类型参数混淆。
 
-异步写法差异最大：没有 `async`/`await`，普通调用自动等待结果，并发用 `spawn` 启动任务、`get` 取结果。错误不是被拒绝的 Promise，而是普通异常，`throw` 之后由 `try`/`catch` 处理。类必须写 `@assign` 声明复制还是共享，ES 的 class 字段默认值写法在这里对应 `let field = 值`。
+异步写法差异最大：`async { ... }` 与 `await(p)` 是标准库宏而不是关键字，普通调用仍自动等待结果；独立任务用 `async` 或 `spawn` 启动，`await`/`get` 等待。错误不是被拒绝的 Promise，而是普通异常，`throw` 之后由 `try`/`catch` 处理。类必须写 `@assign` 声明复制还是共享，ES 的 class 字段默认值写法在这里对应 `let field = 值`。
 
 ## Python：缩进只是排版
 
@@ -90,7 +90,7 @@ let values = @[3, 1, 2]
 class Counter {
 	let value = 0
 	constructor(initial: Number = 0) { init this; this.value = initial }
-	fn advance(amount: Number): Number {
+	fn advance(amount: Number) {
 		this.value += amount
 		return this.value
 	}

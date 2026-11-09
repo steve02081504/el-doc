@@ -1,12 +1,12 @@
 # 实战：手写 JSON 解析器
 
-这一页不借助解析器生成器，从零写一个 JSON 解析器：先用手写递归下降把游标与字符读清楚，再换成 `el:text/patterns/index.el` 的 Parser 组合子写同一份语法。读完你能判断两种写法各自适合什么场景，也能看懂解析器内部的选择、递归与回溯。
+这一页从最小的 JSON 值开始，用 Parser 组合子和 `grammar` 一步步拼出一个能用的 JSON 解析器：先认字面量，再补数字与字符串，最后加数组和对象，每一步只加一条规则。写完后还有一份折叠的递归下降对照，用来比较两种写法的分工。
 
-JSON 是很好的练习对象：它的规则不多，却已经包含字符串、数字、嵌套数组、嵌套对象、字面量与空白这些真实解析器都会遇到的部分。下面的实现覆盖 JSON 的核心子集，重点是让“解析”从黑盒变成可以逐行跟踪的流程。
+字符串转义和数字校验都逐字符写在这个页面里，不依赖内置的 JSON 词法单元，所以规则和代码可以一行行对上。正文代码块按顺序追加到同一个文件，每块只导入这一节新增的名字；折叠块复用同一文件里已有的绑定。
 
-## 先定义结果类型
+## 先定结果类型
 
-解析器把一段 `Text` 变成 `Json` 值。值类型用 `data` 声明，成员覆盖 JSON 的六种值；对象成员单独用一个类保存键值对。
+解析器的输出是 `Json`。值类型用 `data` 声明，六种 JSON 值各一个成员；对象成员单独用一个类保存键值对。
 
 ```el
 data Json {
@@ -26,235 +26,261 @@ class JsonMember {
 }
 ```
 
-`Json` 是递归声明：`Array` 持有 `Json[]`，`Object` 持有 `JsonMember[]`，成员又可以指回 `Json`。对象成员用数组而不是映射保存：JSON 允许重复键，而解析结果通常还要保留书写顺序，数组能同时保住两者，是否合并重复键由调用者决定。
+`members` 故意用数组而不是映射：JSON 文本允许重复键，解析结果通常还要保留书写顺序，数组能同时保住两者；要不要合并重复键由调用者决定，解析器只原样保留。`JsonMember` 是 `copy` 类型，赋值时复制键与值。
 
-`JsonMember` 标成 `@assign(mode: "copy")`，赋值时复制 `key` 与 `value`，不共享可变状态。数据类只负责承载结果，解析行为都放在下面的解析器里。
+## 第一步：只认字面量
 
-## 手写递归下降
-
-递归下降的骨架很直接：每个非终结符对应一个方法，方法按语法读走一段，游标 `at` 是唯一的状态。`parseValue` 按首字符分派到 `parseObject`、`parseArray`、`parseString` 与 `parseNumber`，后两者处理完又会回到 `parseValue`，这就是递归。解析器本身是一台有状态的机器，类上用 `@assign(mode: "shared")`，赋值时共享同一个游标。
+最小的解析器只要认 `null`、`true`、`false` 三个字面量。`firstOf` 按参数顺序尝试，`constant` 匹配一段固定文本并返回给定的 `Json` 值；这一步先用最少的组合子，第四步再换成带 `skip` 与 `token` 的 `grammar`。
 
 ```el
-import { ParseError, decodeQuoted, QuotedTextFormat } from "el:text/patterns/index.el"
+import { firstOf, constant } from "el:text/patterns/index.el"
 
-fn isDigit(ch: Char): Bool {
-	let code = Number(ch)
-	return code >= 48 & code <= 57
-}
-
-@assign(mode: "shared")
-class JsonParser {
-	let source: Text
-	let at: Number = 0
-
-	constructor(source: Text) { init this; this.source = source }
-
-	fn atEnd(): Bool => this.at >= Number(this.source.count)
-	fn peek(): Char => this.source.character(this.at)
-
-	fn skipWhitespace() {
-		while (!this.atEnd()) {
-			let ch = this.peek()
-			if (ch != Char(" ") & ch != Char("\t") & ch != Char("\r") & ch != Char("\n")) return
-			this.at += 1
-		}
-	}
-
-	fn expect(text: Text) {
-		let end = this.at + Number(text.count)
-		if (end > Number(this.source.count) | this.source.slice(this.at, end) != text) throw ParseError(this.at, @[text])
-		this.at = end
-	}
-
-	fn parse(): Json {
-		let value = this.parseValue()
-		this.skipWhitespace()
-		if (!this.atEnd()) throw ParseError(this.at, @["输入结束"])
-		return value
-	}
-
-	fn parseValue(): Json {
-		this.skipWhitespace()
-		if (this.atEnd()) throw ParseError(this.at, @["一个 JSON 值"])
-		let ch = this.peek()
-		if (ch == Char("{")) return this.parseObject()
-		if (ch == Char("[")) return this.parseArray()
-		if (ch == Char("\"")) return Json.String(this.parseString())
-		if (ch == Char("n")) { this.expect("null"); return Json.Null }
-		if (ch == Char("t")) { this.expect("true"); return Json.Boolean(t) }
-		if (ch == Char("f")) { this.expect("false"); return Json.Boolean(nil) }
-		return Json.Numeric(this.parseNumber())
-	}
-
-	fn parseObject(): Json {
-		this.expect("{")
-		let members: JsonMember[] = @[]
-		this.skipWhitespace()
-		if (!this.atEnd() & this.peek() == Char("}")) { this.at += 1; return Json.Object(members) }
-		while (t) {
-			this.skipWhitespace()
-			if (this.atEnd() | this.peek() != Char("\"")) throw ParseError(this.at, @["带引号的对象键"])
-			let key = this.parseString()
-			this.skipWhitespace()
-			this.expect(":")
-			let value = this.parseValue()
-			members.push(JsonMember(key, value))
-			this.skipWhitespace()
-			if (!this.atEnd() & this.peek() == Char("}")) { this.at += 1; return Json.Object(members) }
-			this.expect(",")
-		}
-		throw ParseError(this.at, @["对象成员"])
-	}
-
-	fn parseArray(): Json {
-		this.expect("[")
-		let items: Json[] = @[]
-		this.skipWhitespace()
-		if (!this.atEnd() & this.peek() == Char("]")) { this.at += 1; return Json.Array(items) }
-		while (t) {
-			items.push(this.parseValue())
-			this.skipWhitespace()
-			if (!this.atEnd() & this.peek() == Char("]")) { this.at += 1; return Json.Array(items) }
-			this.expect(",")
-		}
-		throw ParseError(this.at, @["数组元素"])
-	}
-
-	fn parseString(): Text {
-		let start = this.at
-		this.expect("\"")
-		while (t) {
-			if (this.atEnd()) throw ParseError(this.at, @["字符串的结束引号"])
-			let ch = this.peek()
-			this.at += 1
-			if (ch == Char("\"")) break
-			if (ch == Char("\\")) this.at += 1
-		}
-		let raw = this.source.slice(start, this.at)
-		try { return decodeQuoted(raw, QuotedTextFormat.Json) }
-		catch (error) {
-			if (error is ParseError) throw ParseError(start + error.offset, error.expected)
-			throw error
-		}
-	}
-
-	fn parseNumber(): Number {
-		let start = this.at
-		if (!this.atEnd() & this.peek() == Char("-")) this.at += 1
-		let integral = this.at
-		while (!this.atEnd() & isDigit(this.peek())) this.at += 1
-		if (this.at == integral) throw ParseError(this.at, @["数字"])
-		if (this.at - integral > 1 & this.source.character(integral) == Char("0")) throw ParseError(integral, @["无前导零的整数部分"])
-		if (!this.atEnd() & this.peek() == Char(".")) {
-			this.at += 1
-			let fraction = this.at
-			while (!this.atEnd() & isDigit(this.peek())) this.at += 1
-			if (this.at == fraction) throw ParseError(this.at, @["小数点后的数字"])
-		}
-		if (!this.atEnd() & (this.peek() == Char("e") | this.peek() == Char("E"))) {
-			this.at += 1
-			if (!this.atEnd() & (this.peek() == Char("+") | this.peek() == Char("-"))) this.at += 1
-			let exponent = this.at
-			while (!this.atEnd() & isDigit(this.peek())) this.at += 1
-			if (this.at == exponent) throw ParseError(this.at, @["指数数字"])
-		}
-		return Number(this.source.slice(start, this.at))
-	}
-}
+let literalParser = firstOf(
+	constant("null", Json.Null),
+	constant("true", Json.Boolean(t)),
+	constant("false", Json.Boolean(nil))
+)
 ```
 
-`atEnd`、`peek`、`skipWhitespace` 组成读取层：`peek` 只返回当前位置的 `Char`，不推进游标，需要检查边界时先调用 `atEnd`。`expect` 匹配一段固定文本并推进，失败时抛出带偏移与期望的 `ParseError`。
+`literalParser` 是一个 Parser：调用 `literalParser("true")` 会吃完整个输入并得到 `Json.Boolean(t)`，输入不匹配或末尾还有剩文本时抛 `ParseError`。这里的调用是严格的全输入校验，后面每一版都沿用同一条约定。
 
-`parseNumber` 按符号、整数、小数、指数四段扫描，`Number(...)` 在这里执行的是文本到数值的转换。`parseString` 只负责找字符串边界，转义、控制字符与代理对的解码复用标准库的 `decodeQuoted`；它报出的偏移相对字符串起点，这里加回 `start` 再抛。
+## 第二步：加数字
 
-顶层 `parse` 在读完值之后再跳过尾随空白，并要求输入恰好结束；`JsonParser(source).parse()` 就是完整入口。
-
-## 换成 Parser 组合子
-
-`parser { ... }` 构造一个可复用的 Parser：body 每次执行都重新求值，`let` 绑定的是直接读取的结果，单独的文本字面量语句表示匹配这段文本，静态确认为 `Text` 的裸名字表达式语句也按同样方式匹配，`return` 返回这次解析的值。`integer()` 与 `readText(n)` 是需要当前解析上下文的直接读取 API，分别产出 `Number` 与 `Text`；需要保存解析器对象时，用 `parsers.integer`、`parsers.readText(n)` 这样的构造入口。
+JSON 数字只有一种写法：可选的负号、整数部分、可选的小数、可选的指数。整数部分要么是单个 `0`，要么以 `1` 到 `9` 开头再接任意位数字，这就是前导零规则；小数与指数部分在符号之后都至少要有一位数字，正号只允许出现在指数里。
 
 ```el
-import { parser, parsers, integer, readText } from "el:text/patterns/index.el"
+import { anyOf, sequence, optional, many, range } from "el:text/patterns/index.el"
 
-let framed = parser {
-	let length = integer()
-	":"
-	return readText(length)
-}
-
-let ratio = parser {
-	let numerator = integer()
-	"/"
-	let denominator = integer()
-	return @[numerator, denominator]
-}
-
-let saved = parsers.readText(2)
+let digit = range("0", "9")
+let tailDigits = many(digit).text()
+let needed = many(digit, 1).text()
+let jsonNumber = sequence(
+	optional("-"),
+	anyOf("0", sequence(range("1", "9"), tailDigits)),
+	optional(sequence(".", needed)),
+	optional(sequence(anyOf("e", "E"), optional(anyOf("+", "-")), needed))
+).map(Number)
 ```
 
-`framed("4:你好")` 是严格的全输入校验：解析完还有剩余文本就抛 `ParseError`。`saved` 是构造期就定好宽度的可复用 Parser，`saved.parsePrefix("你好吗")` 只读自己那两个标量，返回带 `matched`、`end` 与 `value()` 的回复；把 `saved` 直接当函数调用（`p(text)`）则仍要求吃完整个输入。
+`many(digit).text()` 把字符序列还原成文本，`.map(Number)` 再做文本到数值的转换。把 `jsonNumber.map(Json.Numeric)` 接进 `firstOf`，数字就进入值规则；`01`、`1.`、`1e`、`+1` 都不会被完整匹配，因为对应形状在 `sequence` 里没有定义。
 
-## 用 grammar 描述递归语法
+## 第三步：加字符串
 
-手写版的递归靠方法互相调用；组合子版里，`value` 的定义内部还要出现 `value`，需要 `grammar` 的 `rule` 先放一个带类型的占位符。`token` 在连续原始输入上识别，内部不再跳过空白；`skip` 只在结构边界与 token 入口生效。
+字符串的难点在转义。JSON 字符串由一对双引号包住，中间是普通字符或转义序列：普通字符不能是双引号、反斜杠，也不能是小于 32 的控制字符；短转义是 `\"`、`\\`、`\/`、`\b`、`\f`、`\n`、`\r`、`\t`；`\uXXXX` 必须后接四个十六进制数字。UTF-16 代理项必须成对出现：`\uD800` 到 `\uDBFF` 的高代理项只能紧跟 `\uDC00` 到 `\uDFFF` 的低代理项，孤立的高、低代理项都不合法。
+
+把这条规则写成 Pattern：普通字符用 `scalarSet` 的四段闭区间表示，短转义是一个固定集合，`\u` 分成三类：普通标量、`D0xx` 到 `D7xx` 的标量，以及必须与低代理项成对的高代理项。
 
 ```el
-import { grammar, firstOf, constant, list, pair, many, chars, quotedText, decimal, QuotedTextFormat, DecimalFormat } from "el:text/patterns/index.el"
+import { scalarSet, chars, exactly } from "el:text/patterns/index.el"
+
+let hex = chars("0123456789abcdefABCDEF")
+let plain = scalarSet(@[32, 33, 35, 91, 93, 55295, 57344, 1114111])
+let short = sequence("\\", chars("\"\\/bfnrt"))
+let scalar = anyOf(
+	sequence("\\u", chars("0123456789ABCabcefEF"), exactly(3, hex)),
+	sequence("\\u", chars("Dd"), range("0", "7"), exactly(2, hex))
+)
+let high = sequence("\\u", chars("Dd"), chars("89ABab"), exactly(2, hex))
+let low = sequence("\\u", chars("Dd"), chars("CDEFcdef"), exactly(2, hex))
+let escape = anyOf(short, scalar, sequence(high, low))
+```
+
+`plain` 的四段区间是 `32–33`、`35–91`、`93–55295`、`57344–1114111`，正好避开控制字符、`34` 的双引号与 `92` 的反斜杠。`scalar` 的第一路覆盖首数字为 `0` 到 `9`、`A` 到 `C`、`E` 到 `F` 的标量，第二路覆盖 `D000` 到 `D7FF`；`D8` 到 `DF` 只出现在 `high` 与 `low` 的配对分支里，因此孤立的代理项会在模式层直接失配。
+
+形状确定后，生成值交给 `decodeJsonText`：它按同一张转义表拼接结果，`\u` 分支算出标量，高代理项再合并紧随的低代理项。模式已经排除了孤立代理项，所以解码器不再重复校验。最后一行用 `sequence` 把开引号、若干普通字符或转义、闭引号接起来，再映射到解码函数。
+
+```el
+fn decodeJsonText(raw: Text) {
+	let result = ""
+	let at = 1
+	let end = Number(raw.count) - 1
+	while (at < end) {
+		let ch = raw.character(at)
+		at += 1
+		if (ch != Char("\\")) { result += Text(ch); continue }
+		let code = raw.character(at)
+		at += 1
+		if (code == Char("b")) { result += Text(Char(8)) }
+		else if (code == Char("f")) { result += Text(Char(12)) }
+		else if (code == Char("n")) { result += "\n" }
+		else if (code == Char("r")) { result += "\r" }
+		else if (code == Char("t")) { result += "\t" }
+		else if (code == Char("u")) {
+			let value = hexValue(raw, at)
+			at += 4
+			if (value >= 55296 & value <= 56319) {
+				value = 65536 + (value - 55296) * 1024 + hexValue(raw, at + 2) - 56320
+				at += 6
+			}
+			result += Text(Char(value))
+		}
+		else { result += Text(code) }
+	}
+	return result
+}
+
+fn hexValue(raw: Text, at: Number) {
+	let value = 0
+	for (let index in 0..4) {
+		let code = Number(raw.character(at + index))
+		if (code <= 57) value = value * 16 + code - 48
+		else if (code <= 70) value = value * 16 + code - 55
+		else value = value * 16 + code - 87
+	}
+	return value
+}
+
+let jsonString = sequence("\"", many(anyOf(plain, escape)), "\"").map(decodeJsonText)
+```
+
+普通字符直接拼接；`\"`、`\\`、`\/` 落在最后的 `else`；`b`、`f`、`n`、`r`、`t` 各映射到控制字符；`\u` 由 `hexValue` 按四个十六进制数字换算，高代理项再与低代理项合成一个标量。现在把 `jsonString.map(Json.String)` 接进 `firstOf`，字符串就完成了。
+
+## 第四步：加数组和对象
+
+数组和对象会把 `value` 递归地套回自己，所以这一步换成 `grammar`：递归规则 `rule value: Json` 必须先声明结果类型，`grammar` 才能为它放一个可前向引用的占位符。`skip` 只处理空白，`token` 在连续输入上识别字符串和数字；`list` 与 `pair` 负责逗号分隔和键值对。
+
+```el
+import { grammar, list, pair } from "el:text/patterns/index.el"
 
 let json = grammar {
 	skip many(chars(" \t\r\n"))
-	token text = quotedText(format: QuotedTextFormat.Json)
-	token number = decimal(format: DecimalFormat.Json)
+	token str = jsonString
+	token num = jsonNumber
 	rule value: Json = firstOf(
-		constant("null", Json.Null),
-		constant("true", Json.Boolean(t)),
-		constant("false", Json.Boolean(nil)),
-		text.map(Json.String),
-		number.map(Json.Numeric),
+		literalParser,
+		num.map(Json.Numeric),
+		str.map(Json.String),
 		list("[", value, "]", separator: ",").map(Json.Array),
-		list("{", pair(text, ":", value).map((entry) => JsonMember(entry.first, entry.second)), "}", separator: ",").map(Json.Object)
+		list("{", pair(str, ":", value).map(entry => JsonMember(entry.first, entry.second)), "}", separator: ",").map(Json.Object)
 	)
 	start value
 }
 ```
 
-`quotedText(format: QuotedTextFormat.Json)` 与 `decimal(format: DecimalFormat.Json)` 是两个按 JSON 规则收紧的词法单元：前者检查控制字符、JSON 转义与 UTF-16 代理对，后者检查符号、前导零、小数与指数。`list` 默认拒绝尾逗号，`pair` 保留左右值，对象键的顺序与重复键都原样保留。
+`list` 默认拒绝尾逗号，`pair` 保留键与值，再装进 `JsonMember` 数组，因此键序和重复键都原样保留。空白只在结构边界与 token 入口跳过，字符串内部的空格属于字符串内容。
 
-## 递归、选择与回溯
+## 递归、选择与错误
 
-**递归**：`rule value` 在构造期先占位、解析时再展开，所以定义体里可以引用定义中的自己，递归规则必须写显式结果类型；手写版的方法互相调用做的是同一件事。
+**递归**：`rule value` 在构造期先占位、解析时再展开，定义体里可以直接引用 `value`；手写版则靠 `parseValue` 调 `parseObject`、`parseArray`，再回到 `parseValue`。
 
-**有序选择**：`firstOf` 从同一个起点按参数顺序尝试，第一个成功的分支立即胜出；没有任何分支成功或提交时，才比较各分支的错误偏移，保留最远的那个并合并期望文本。分支顺序因此同时决定解析结果与错误报告。
+**选择**：`firstOf` 从同一个起点按顺序尝试，第一个成功的分支胜出；所有分支都失败时，保留最远的错误偏移并合并各分支的期望。JSON 的分支首字符互不重叠，所以这里的分支顺序不会改变结果，只会影响失败时的报告。
 
-**提交与回溯**：某一步成功后，提交状态会让后续失败无法退回上层选择；`attempt()` 只取消失败子解析的提交，让 `firstOf` 还能尝试下一个分支，不抹掉父序列此前已有的提交。两者都是 Parser 的方法，写作 `p.commit()` 与 `p.attempt()`，不是顶层函数。
+**回溯**：Parser 记录提交状态，`commit()` 让后续失败不能退回上层选择，`attempt()` 只取消失败子解析的提交，供共享前缀的分支使用；这两个都是 Parser 的方法。JSON 不需要它们，因为每个分支的首字符已经把选择分开了。
 
-**重复必须有进展**：`repeat` 的每次成功都必须消费输入，否则抛错而不是空转；`list` 对元素与分隔符同样要求非空。否则“可选项 + 重复”就会在零宽匹配上死循环。
-
-**失配不是异常**：内部不匹配会变成未匹配的回复，普通 `catch` 捕不到；只有走到 `parse` 或 `p(text)` 这种边界，未匹配才变成带偏移、期望与上下文的 `ParseError`。回溯只恢复局部游标与局部状态，不回滚预算、变量或已经发生的 I/O。
-
-在边界上报错时，`ParseError` 的字段可以直接用于输出或日志：
+**错误**：词法层的 Pattern 失败在 token 起点变成未匹配，结构层的失败可能发生在更后面；`parse` 在边界把最终失败变成 `ParseError`，它带 `offset`、`expected` 与 `contexts`。内部失配不会抛异常，只有 `parse` 或 `p(text)` 这种边界才把未匹配变成异常。
 
 ```el
 import { ParseError } from "el:text/patterns/index.el"
 
 try {
-	json.parse("{\"x\": 1,}")
+	json.parse("true false")
 } catch (error) {
-	if (error is ParseError) {
-		console.stderr.writeLine("offset ", error.offset, ", expected: ", error.expected.join(", "))
-	} else {
-		throw error
-	}
+	if (error is ParseError) console.stderr.writeLine(error.offset, " ", error.expected.join(", "), " ", error.contexts.join("/"))
+	else throw error
 }
 ```
 
-需要把失败当普通值处理时，用 `parsePrefix` 取回复并检查 `matched`，不要用 `catch` 驱动正常解析流程。
+偏移指向第一个没有被消费的字符；`expected` 是合并后的候选期望，`contexts` 是规则栈。需要不抛异常地检查一段前缀时，用 `parsePrefix` 读 `ParseReply`，看 `matched`、`end` 与 `value()`。
 
-## 两种写法怎么选
+## 什么时候手写递归下降
 
-手写版把每个字符判断都放在眼前，适合教学、协议固定，或需要精确控制错误位置与恢复策略的场合；代价是字符串、数字、空白这些细节都要自己维护。组合子版复用标准库现成的词法单元，用 `firstOf`、`list`、`pair` 与 `grammar` 把结构写得更短，递归、回溯与错误合并交给库统一处理；代价是要理解有序选择、提交边界与“重复必须消费输入”，否则语法看着对，行为却可能和预期不同。
+组合子版把词法、选择与错误合并交给库，日常用 `grammar` 就够了。需要逐字符控制游标、边读边做流式处理，或者在固定位置尝试自定义错误恢复时，手写递归下降更直接：每个非终结符一个方法，游标是唯一状态，失败点可以自己决定。
 
-两个版本共用同一套 `Json` 类型，可以用同一组输入对照阅读。
+代价是空白、转义、数字边界和每层递归都要自己维护，分支之间的提交与回溯也由你负责。下面这份对照只手写结构和游标，字符串与数字继续复用上文的 `jsonString` 与 `jsonNumber`，方便把注意力放在递归本身。
+
+??? example "可选：手写递归下降对照"
+
+    ```el
+    @assign(mode: "shared")
+    class JsonReader {
+    	let source: Text
+    	let at = 0
+
+    	constructor(source: Text) { init this; this.source = source }
+
+    	fn end() => this.at >= Number(this.source.count)
+    	fn peek() => this.source.character(this.at)
+    	fn nextIs(text: Text) => !this.end() & Text(this.peek()) == text
+
+    	fn skip() {
+    		while (!this.end() & " \t\r\n".contains(Text(this.peek()))) this.at += 1
+    	}
+
+    	fn expect(text: Text) {
+    		let end = this.at + Number(text.count)
+    		if (end > Number(this.source.count) | this.source.slice(this.at, end) != text) throw ParseError(this.at, @[text])
+    		this.at = end
+    	}
+
+    	fn parse(): Json {
+    		let value = this.parseValue()
+    		this.skip()
+    		if (!this.end()) throw ParseError(this.at, @["输入结束"])
+    		return value
+    	}
+
+    	fn parseString() {
+    		let reply = jsonString.asParser().parsePrefix(this.source, this.at)
+    		if (!reply.matched) throw reply.error
+    		this.at = reply.end
+    		return reply.value()
+    	}
+
+    	fn parseNumber() {
+    		let reply = jsonNumber.asParser().parsePrefix(this.source, this.at)
+    		if (!reply.matched) throw reply.error
+    		this.at = reply.end
+    		return reply.value()
+    	}
+
+    	fn parseValue(): Json {
+    		this.skip()
+    		if (this.end()) throw ParseError(this.at, @["JSON 值"])
+    		if (this.nextIs("{")) return this.parseObject()
+    		if (this.nextIs("[")) return this.parseArray()
+    		if (this.nextIs("\"")) return Json.String(this.parseString())
+    		if (this.nextIs("n")) { this.expect("null"); return Json.Null }
+    		if (this.nextIs("t")) { this.expect("true"); return Json.Boolean(t) }
+    		if (this.nextIs("f")) { this.expect("false"); return Json.Boolean(nil) }
+    		return Json.Numeric(this.parseNumber())
+    	}
+
+    	fn parseArray(): Json {
+    		this.expect("[")
+    		let items: Json[] = @[]
+    		this.skip()
+    		if (this.nextIs("]")) { this.at += 1; return Json.Array(items) }
+    		while (t) {
+    			items.push(this.parseValue())
+    			this.skip()
+    			if (this.nextIs("]")) { this.at += 1; return Json.Array(items) }
+    			this.expect(",")
+    		}
+    		throw ParseError(this.at, @["]"])
+    	}
+
+    	fn parseObject(): Json {
+    		this.expect("{")
+    		let members: JsonMember[] = @[]
+    		this.skip()
+    		if (this.nextIs("}")) { this.at += 1; return Json.Object(members) }
+    		while (t) {
+    			this.skip()
+    			let key = this.parseString()
+    			this.skip()
+    			this.expect(":")
+    			let value = this.parseValue()
+    			members.push(JsonMember(key, value))
+    			this.skip()
+    			if (this.nextIs("}")) { this.at += 1; return Json.Object(members) }
+    			this.expect(",")
+    		}
+    		throw ParseError(this.at, @["}"])
+    	}
+    }
+    ```
+
+递归下降版的 `parseValue` 用游标分派、用 `parsePrefix` 复用词法规则，`parseArray` 与 `parseObject` 在读完元素后回到 `parseValue`；`JsonReader(source).parse()` 负责尾随检查。和 `grammar` 版相比，它没有规则占位符和统一的错误合并，但每一步的读取与失败点都握在手里。
 
 ## 继续阅读
 

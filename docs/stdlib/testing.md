@@ -40,9 +40,9 @@ my-app/
 
 ```el
 // src/math.el
-export fn double(value: Number): Number { return value * 2 }
+export fn double(value: Number) { return value * 2 }
 
-export fn average(values: Number[]): Number {
+export fn average(values: Number[]) {
 	if (!values.count) throw StateError("empty input")
 	let total = 0
 	for (let value in values) total += value
@@ -133,9 +133,9 @@ test("私有访问被拒绝", () => {
 // src/format.el
 import { tests, test, check } from "el:tools/testing/index.el"
 
-fn trim(value: Text): Text { return value.trimEndChars(" ") }
+fn trim(value: Text) { return value.trimEndChars(" ") }
 
-export fn tag(value: Text): Text { return "[" + trim(value) + "]" }
+export fn tag(value: Text) { return "[" + trim(value) + "]" }
 
 tests {
 	test("内部 trim", () => {

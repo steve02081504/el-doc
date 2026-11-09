@@ -35,9 +35,9 @@ export class Counter {
 	constructor() { init this }
 	get value(): Number { return this.#value }
 	get steps(): Number { return this.#steps }
-	fn increase(): void_t { this.#value++; this.#steps++ }
-	fn decrease(): void_t { this.#value--; this.#steps++ }
-	fn reset(): void_t { this.#value = 0 }
+	fn increase() { this.#value++; this.#steps++ }
+	fn decrease() { this.#value--; this.#steps++ }
+	fn reset() { this.#value = 0 }
 	fn summary(): Text => "值 " + Text(this.#value) + "，已操作 " + Text(this.#steps) + " 次"
 }
 ```

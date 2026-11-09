@@ -32,6 +32,8 @@ let precise: Number<epsilon: 0.001> = 0.333
 
 `integer: t` 是独立的整数约束，不能从 `epsilon` 推出来；`epsilon: 1` 不禁止 `1.5`。范围、精度与溢出的完整规则见语言规范第 4 章。
 
+数值类型不止普通 `Number`。需要无界精确整数、固定位宽、固定布局浮点、目标机器浮点或位集合时，标准库分别提供 `Integer`/`UnsignedInteger`、`BitInteger`、`BitFloat`、`NativeFloat` 与 `BitSet<size:N>`；它们的构造、约束与取舍见[数值与位类型](numeric-types.md)。
+
 ## Text 与 Char
 
 单引号和双引号等价，都是 `Text` 字面量；转义与插值写法统一。

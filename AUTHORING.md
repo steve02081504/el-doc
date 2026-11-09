@@ -21,7 +21,7 @@
 
 已确认的语言事实：
 
-- 语言里没有 `async`/`await` 关键字；普通调用自动等待，`spawn` 启动并发任务并返回 Promise，`.get()` 等待结果。
+- `async { ... }` 与 `await(p)` 是标准库宏，不是关键字；`async` 立即启动任务并返回 Promise，`await` 生成一次 `.get()`，普通调用仍自动等待。`spawn` 启动并发任务并返回 Promise，`.get()` 等待结果。
 - 没有 `main`；模块顶层代码就是入口。
 - 没有 `import * as m`、没有副作用导入；全量导入写 `import /.*/ from "..."`，命名空间写 `import /.*/ as m from "..."`，具名写 `import { a, b as c } from "..."`。
 - `&&`、`||`、`**`、三目 `?:` 不是 EL 语法；逻辑运算是 `!`、`&`、`|`，乘方是 `^`。

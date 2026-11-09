@@ -1,13 +1,13 @@
 # 错误处理与异步
 
-错误和异步是同一件事的两面：一个调用可能失败，也可能要等待。EL 把两者都放进普通表达式的类型与执行模型里，没有单独的 `async`/`await` 关键字。这一页讲清 `throw`、`try`、`catch`、`finally` 的写法，标准库的错误类型，以及 `spawn` 与 `get` 的用法。
+错误和异步是同一件事的两面：一个调用可能失败，也可能要等待。EL 把两者都放进普通表达式的类型与执行模型里；普通调用自动等待，显式并发用标准库宏 `async { ... }` 与 `await(p)`，它们不是关键字。这一页讲清 `throw`、`try`、`catch`、`finally` 的写法，标准库的错误类型，以及 `spawn`、`get`、`async` 与 `await` 的用法。
 
 ## throw：把错误交出去
 
 `throw` 把任意值作为错误抛出，惯例是抛一个错误类的实例。抛出后当前表达式的正常求值立即结束，控制权交给最近的 `catch`。
 
 ```el
-fn requirePort(value: Number): Number {
+fn requirePort(value: Number) {
 	if (!(value >= 1 & value <= 65535)) throw RangeError()
 	return value
 }
@@ -52,9 +52,6 @@ try {
 	console.stdout.writeLine("load failed")
 }
 ```
-
-!!! warning "按源码核对类型"
-    `RangeError`、`AssertionError`、`EncodingError`、`MatchError`、`CompileError` 目前是各自独立的类，并不继承 `Error`。所以 `catch (e: Error)` 接不住它们；要接住就写具体类型，或者用不带类型的 `catch` 兜底。
 
 ## 标准库错误类型
 
@@ -110,24 +107,24 @@ try {
 
 ## 异步：普通调用自动等待
 
-EL 没有 `async`/`await` 关键字。普通调用一个异步函数时自动等待结果，调用者随之被推断为异步；是否异步由实际调用决定，不需要也不允许在函数签名上标记。
+普通调用一个可能挂起的函数时会自动等待结果，调用者随之被推断为异步；是否异步由实际调用与函数体共同决定，不需要也不允许在函数签名上标记。
 
 ```el
-fn readBoth(first: Text, second: Text): Text {
+fn readBoth(first: Text, second: Text) {
 	let a = readTextFile(first)
 	let b = readTextFile(second)
 	return a + b
 }
 ```
 
-这个函数里没有任何异步语法，但如果它调用的读取需要等待，整次调用就会等待。
+这个函数里没有任何异步语法，但如果它调用的读取需要等待，整次调用就会等待。`@sync` 可以声明“这个接口不挂起”的要求，但它不会把异步实现变成同步实现。
 
 ## spawn 与 get
 
-要并发，用 `spawn` 显式启动一个独立任务：
+要显式并发，用 `spawn` 启动独立任务；下一节的 `async { ... }` 宏在建立 callback 后调用它：
 
 ```el
-fn readPair(): Text {
+fn readPair() {
 	let first = spawn(() => readTextFile("file:./a.txt"))
 	let second = spawn(() => readTextFile("file:./b.txt"))
 	return first.get() + second.get()
@@ -145,6 +142,48 @@ let pages = all(@[first, second]).get()
 console.stdout.writeLine("loaded ", pages.count, " files")
 ```
 
+## `async` 块与 `await` 宏
+
+`async { ... }` 与 `await(p)` 是标准库提供的 Expr 宏，不是关键字。`async { ... }` 把块内容解析成一个新的零参 callback，再立即 `spawn` 它：表达式执行时活动就已经发布，返回 `Promise`，不等 callback 完成。`await(p)` 只生成一次 `p.get()`：接收者只求值一次，保留真实的成员选择、返回类型与类别、异常、挂起效果和来源生命周期，不额外复制 `Promise`，也不捕获错误。
+
+默认标准库通过显式的惰性导出提供这两个名字；关闭默认 prelude 或写自定义模块时，照常导入：
+
+```el
+import { async, await } from "el:concurrency/"
+```
+
+单个任务：
+
+```el
+let load = async {
+	return readTextFile("file:./data.txt")
+}
+
+let text = await(load)
+console.stdout.writeLine(text.count)
+```
+
+要并发，先把活动都启动，再等待。`await` 写在第几行不改变启动时机：
+
+```el
+let first = async {
+	return readTextFile("file:./a.txt")
+}
+let second = async {
+	return readTextFile("file:./b.txt")
+}
+
+let a = await(first)
+let b = await(second)
+console.stdout.writeLine(a + b)
+```
+
+- `async` 里的普通 `return` 属于那个 callback，不结束外围函数；需要跨出去时用[函数与闭包](functions.md)里的 `return ... from 外围函数`。
+- `async` 建立的是独立 task。独立 task 不继承启动者的返回链，所以 callback 里对启动函数写 `return ... from` 没有有效目标；ELF 会检查这一点，运行时不能依赖它。
+- 宏只生成普通的 `spawn` 与 `.get()` 调用，不改变 Promise、活动所有权、线程亲和、GC 根、取消或关闭语义，也不新增命名的 async 函数。
+- `await(p)` 不捕获错误：`p` 失败时仍从 `await(p)` 或 `get()` 抛出保存的错误，照常由 `try`/`catch` 处理。结果本身还是 `Promise` 时要再等待一次。
+- 普通调用仍然自动等待，因此不需要给每层函数加标记；`async` 只用于显式启动独立活动。
+
 ## 取消
 
 取消是协作式的：在自动等待的挂起点或显式检查点，运行时会抛出 `Cancelled` 错误，程序仍然执行 `finally` 和必要的析构。没有等待或检查点的计算循环可能长时间不响应取消，所以不要把它当成随时可以中断的线程终止。
@@ -154,7 +193,7 @@ console.stdout.writeLine("loaded ", pages.count, " files")
 `parseJSON` 失败时抛 `ParseError`；`try` 表达式可以直接把“解析失败就退回空对象”写成一个值。
 
 ```el
-fn settingsFrom(source: Text): Json {
+fn settingsFrom(source: Text) {
 	return try {
 		parseJSON(source)
 	} catch {
@@ -162,7 +201,7 @@ fn settingsFrom(source: Text): Json {
 	}
 }
 
-fn nameFrom(source: Text): Text {
+fn nameFrom(source: Text) {
 	let config = settingsFrom(source)
 	let value = try { jsonField(config, "name") } catch { return "anonymous" }
 	match value {
@@ -176,6 +215,7 @@ fn nameFrom(source: Text): Text {
 
 ## 继续阅读
 
+- [函数与闭包](functions.md)：定向返回、生命周期标注、参数交接与 `async` 块的函数视角。
 - [模块与包](modules.md)：错误类可以作为模块导出，跨模块共享同一套错误类型。
 - [集合与文本](../stdlib/collections.md)：集合写入失败、解析结果都通过这里讲的异常交付。
 - [测试](../stdlib/testing.md)：`check.throws` 用来断言一段代码抛出了预期类型的错误。
