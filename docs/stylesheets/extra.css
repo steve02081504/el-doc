@@ -32,8 +32,19 @@ pre {
 }
 
 .md-typeset {
-  font-size: 0.78rem;
-  line-height: 1.78;
+  font-size: 0.8rem;
+  line-height: 1.82;
+}
+
+.md-typeset p,
+.md-typeset li {
+  text-wrap: pretty;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  text-wrap: balance;
 }
 
 .md-typeset h1 {
@@ -126,10 +137,11 @@ pre {
 
 .el-hero h1 {
   margin: 0;
-  max-width: 18ch;
-  font-size: clamp(1.9rem, 5vw, 3.1rem);
-  line-height: 1.12;
+  max-width: 14em;
+  font-size: clamp(1.8rem, 4.1vw, 2.45rem);
+  line-height: 1.16;
   color: #fff;
+  text-wrap: balance;
 }
 
 .el-hero__lead {
@@ -292,9 +304,10 @@ pre {
 /* Status banner */
 
 .el-status {
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.9rem;
+  align-items: baseline;
   margin: 1.5rem 0;
   padding: 0.9rem 1.1rem;
   border-left: 3px solid var(--el-cyan);
@@ -306,6 +319,7 @@ pre {
 
 .el-status strong {
   color: var(--el-cyan);
+  white-space: nowrap;
 }
 
 /* Code annotations in prose */
@@ -368,4 +382,379 @@ pre {
   background: var(--md-accent-fg-color);
   color: var(--md-primary-bg-color);
   outline: none;
+}
+
+/* ── Reading experience ─────────────────────────────────────────────── */
+
+/* A thin scroll-progress bar: the page has a visible destination. */
+.el-readbar {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  height: 3px;
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--el-accent), var(--el-cyan));
+}
+
+.md-typeset :is(h1, h2, h3, h4, h5, h6) {
+  scroll-margin-top: 4.2rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--el-cyan);
+  outline-offset: 2px;
+}
+
+/* Hook quotes open a page with a question, not a table of contents. */
+.md-typeset blockquote {
+  position: relative;
+  margin: 1.5rem 0 1.9rem;
+  padding: 0.95rem 1.2rem 0.95rem 1.45rem;
+  border: 0;
+  border-radius: 0 0.6rem 0.6rem 0;
+  background: color-mix(in srgb, var(--md-default-fg-color) 4%, transparent);
+  color: var(--md-default-fg-color);
+  font-size: 0.86rem;
+  line-height: 1.85;
+}
+
+.md-typeset blockquote::before {
+  content: "";
+  position: absolute;
+  inset: 0.25rem auto 0.25rem 0;
+  width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--el-accent), var(--el-cyan));
+}
+
+.md-typeset blockquote > p {
+  margin: 0;
+}
+
+.md-typeset blockquote > p + p {
+  margin-top: 0.5rem;
+}
+
+/* One or two highlighted sentences per page, drawn rather than shouted. */
+.md-typeset mark {
+  padding: 0 0.12em;
+  border-radius: 0.2em;
+  background: linear-gradient(transparent 60%, var(--el-accent-soft) 0);
+  color: inherit;
+  box-decoration-break: clone;
+}
+
+/* Small meta pills: time, prerequisites, level. */
+.el-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  margin: 0.15rem 0.4rem 0.15rem 0;
+  padding: 0.08rem 0.6rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 999px;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.66rem;
+  font-weight: 600;
+  line-height: 1.7;
+  white-space: nowrap;
+}
+
+.el-chip a {
+  color: inherit;
+}
+
+.el-chip--accent {
+  border-color: rgba(124, 92, 255, 0.45);
+  color: var(--el-accent);
+}
+
+/* Admonitions: quieter borders, clearer titles, less visual shouting. */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0.6rem;
+  border-width: 1px;
+  border-left-width: 3px;
+  box-shadow: none;
+  font-size: 0.72rem;
+}
+
+.md-typeset .admonition-title,
+.md-typeset details > summary {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.md-typeset .admonition > :last-child,
+.md-typeset details > :last-child {
+  margin-bottom: 0.5rem;
+}
+
+/* The outcome box earns its place at the top of every page. */
+.md-typeset .admonition.abstract,
+.md-typeset details.abstract {
+  border-color: rgba(124, 92, 255, 0.38);
+  border-left-color: var(--el-accent);
+  background:
+    linear-gradient(120deg, rgba(124, 92, 255, 0.1), transparent 62%),
+    var(--md-default-bg-color);
+}
+
+.md-typeset .abstract > .admonition-title,
+.md-typeset .abstract > summary {
+  background-color: rgba(124, 92, 255, 0.12);
+}
+
+.md-typeset .abstract ul {
+  margin-top: 0.2rem;
+}
+
+/* "Guess first" answers stay hidden until the reader commits to an answer. */
+.md-typeset details.question {
+  border-left-width: 3px;
+}
+
+.md-typeset details.question > summary {
+  cursor: pointer;
+}
+
+.md-typeset details.question > summary:hover {
+  background-color: rgba(100, 221, 23, 0.12);
+}
+
+/* Checkpoints: readers tick their own progress off. */
+.md-typeset .task-list-item {
+  margin: 0.3rem 0;
+}
+
+.md-typeset .task-list-item [type="checkbox"] {
+  top: 0.3em;
+}
+
+.md-typeset .task-list-control .task-list-indicator::before {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.md-typeset .task-list-item [type="checkbox"]:checked ~ .task-list-indicator::before {
+  background-color: var(--el-accent);
+}
+
+/* Tables are for scanning and comparison, so help the eye follow rows. */
+.md-typeset table:not([class]) {
+  border-radius: 0.5rem;
+  font-size: 0.72rem;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-default-fg-color--lightest);
+  font-weight: 700;
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background-color: color-mix(in srgb, var(--md-default-fg-color) 3%, transparent);
+}
+
+/* The stage timeline on the roadmap page. */
+.el-road {
+  margin: 1.6rem 0 2.2rem;
+}
+
+.el-road__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  column-gap: 0.9rem;
+  padding-bottom: 1.6rem;
+}
+
+.el-road__item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 2.15rem;
+  bottom: 0.1rem;
+  left: 0.98rem;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, rgba(124, 92, 255, 0.72), rgba(124, 92, 255, 0.1));
+}
+
+.el-road__num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  border: 1px solid rgba(124, 92, 255, 0.5);
+  border-radius: 50%;
+  background: var(--el-accent-soft);
+  color: var(--el-accent);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.el-road__body {
+  min-width: 0;
+}
+
+.el-road__body > h3:first-child {
+  margin: 0.25rem 0 0.4rem;
+}
+
+.el-road__body > :last-child {
+  margin-bottom: 0;
+}
+
+/* Stage cards on the landing page. */
+.el-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.el-card__num {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.75rem;
+  color: var(--md-default-fg-color--lightest);
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  transition: color 160ms ease;
+}
+
+.el-card:hover .el-card__num {
+  color: rgba(124, 92, 255, 0.45);
+}
+
+.el-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.6rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.64rem;
+}
+
+/* Reading progress and "pick up where you left off". */
+.el-progress {
+  display: grid;
+  gap: 0.55rem;
+  margin: 1.6rem 0 2rem;
+  padding: 1rem 1.2rem 1.1rem;
+  border: 1px solid rgba(124, 92, 255, 0.28);
+  border-radius: 0.8rem;
+  background:
+    radial-gradient(24rem 8rem at 110% -30%, rgba(34, 211, 238, 0.12), transparent 70%),
+    var(--md-default-bg-color);
+}
+
+.el-progress[hidden] {
+  display: none;
+}
+
+.el-progress__head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.6rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.el-progress__count {
+  margin: 0;
+  font-size: 0.96rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.el-progress__count small {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.66rem;
+  font-weight: 600;
+}
+
+.el-progress__label {
+  margin: 0;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.66rem;
+}
+
+.el-progress__track {
+  height: 0.38rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--md-default-fg-color--lightest);
+}
+
+.el-progress__fill {
+  width: 0;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--el-accent), var(--el-cyan));
+  transition: width 420ms ease;
+}
+
+.el-progress__resume {
+  margin: 0;
+  font-size: 0.72rem;
+}
+
+.el-progress__reset {
+  justify-self: start;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--md-default-fg-color--light);
+  font: inherit;
+  font-size: 0.64rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.el-progress__reset:hover {
+  color: var(--el-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .el-progress__fill {
+    transition: none;
+  }
+
+  .el-card,
+  .el-card__num {
+    transition: none;
+  }
+}
+
+/* Section landing pages get a quiet eyebrow label. */
+.el-kicker {
+  margin: 1.4rem 0 0.3rem;
+  color: var(--el-accent);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 44.9375em) {
+  .el-road__item {
+    grid-template-columns: 1.7rem 1fr;
+    column-gap: 0.7rem;
+  }
+
+  .el-road__num {
+    width: 1.7rem;
+    height: 1.7rem;
+    font-size: 0.58rem;
+  }
+
+  .el-road__item:not(:last-child)::before {
+    top: 1.85rem;
+    left: 0.83rem;
+  }
 }

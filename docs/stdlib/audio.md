@@ -1,10 +1,29 @@
 # 声音与音频
 
-这一页讲怎么用标准库直接发出声音：按频率播放一个音、用公式合成自己的波形、读写 WAV 文件，以及三个桌面平台各自的后端与限制。读完你能写出几行的提示音、一段自定义音色，并把它们保存成 `.wav`。
+> 一行代码让程序响一声，三行代码合成自己的音色。前提是你的平台有音频后端——没有的时候，报错不会出现在构造那行，而会藏在播放结束的 `get()` 里。
 
-## 两个播放入口
+!!! abstract "🎯 读完这页，你能"
+    - 用 `playPitch` 发一个音，用 `playFormula` 合成自己的波形
+    - 判断播放任务什么时候结束、怎么取消，以及设备何时释放
+    - 在 GUI 程序里用 `SoundPlayer` 发提示音
+    - 读写 WAV，并说清哪些平台、哪些格式真的能播
 
-声音入口都在 `el:multimedia/audio/` 里：
+    <span class="el-chip">⏱ 约 10 分钟</span> <span class="el-chip">前置：[图形界面](gui.md)</span>
+
+## 先确认平台能出声
+
+声音入口都在 `el:multimedia/audio/` 里。后端按目标平台选择，三个桌面平台各有实现，其它目标没有可用后端：构造 `PcmOutput` 时抛 `CaptureError(CaptureFailure.Unavailable)`，`playPitch` / `playFormula` 的失败会出现在播放任务的 `get()` 里。
+
+| 平台 | 后端 | 关键限制 |
+| --- | --- | --- |
+| Windows | `winmm.dll` 的 waveOut | 需要 64 位、8 位地址单元 ABI；完成状态看缓冲区的 `WHDR_DONE` |
+| macOS | AudioToolbox 的 AudioQueue | 需要 64 位 Darwin ABI；完成状态来自缓冲区的回调标记 |
+| Linux | OSS `/dev/dsp` | 只支持 GNU/Musl 环境；直接开设备，不经 ALSA/PulseAudio，也没有外部播放器回退；设备必须精确接受 PCM16，队列容量超过请求上限就拒绝 |
+| 其它目标 | 不可用后端 | 构造时抛 `CaptureError(CaptureFailure.Unavailable)` |
+
+所有后端都给调用方一个有界队列，都只做 PCM16，不向用户代码暴露设备回调。
+
+## 两个播放入口：playPitch 与 playFormula
 
 ```el
 import { playPitch, playFormula } from "el:multimedia/audio/"
@@ -15,7 +34,7 @@ import { playPitch, playFormula } from "el:multimedia/audio/"
 | `playPitch(frequency, milliseconds = 80, gain = 0.12)` | 频率 Hz、时长 ms、增益 | 播放任务 |
 | `playFormula(sample, milliseconds = 80, gain = 0.12)` | 公式函数、时长 ms、增益 | 播放任务 |
 
-参数有几条硬约束，违反时调用直接报错：频率要满足 `0 < frequency < 12000`；时长必须为正，内部按 24000 Hz 单声道合成，帧数是 `floor(milliseconds * 24)`，短于一帧就报错；增益必须在 `0..1` 之间；公式接收以秒为单位的整曲时间（`Number<epsilon: 0.000000001>`），必须返回有限且落在 `-1..1` 的样本。`playPitch` 内部用三角波，源码里叫 `triangle`，不是正弦波；要别的音色就写公式。两个入口都会在整曲首尾各 120 帧（24000 Hz 下约 5 毫秒）淡入淡出，避免爆音。
+参数有几条硬约束，违反时调用直接报错：频率要满足 `0 < frequency < 12000`；时长必须为正，内部按 24000 Hz 单声道合成，帧数是 `floor(milliseconds * 24)`，短于一帧就报错；增益必须在 `0..1` 之间；公式接收以秒为单位的整曲时间（`Number<epsilon: 0.000000001>`），必须返回有限且落在 `-1..1` 的样本。两个入口都会在整曲首尾各 120 帧（24000 Hz 下约 5 毫秒）淡入淡出，避免爆音。
 
 ### 正弦音
 
@@ -30,7 +49,15 @@ discard(note.get())
 
 `discard(note.get())` 等播放真正结束。不等待时程序可能先退出，声音只播出一部分。
 
-## 任务、取消与设备释放
+!!! example "动手 30 秒"
+    把公式里的 `440` 改成 `220`，时长仍是 `1000`。声音低了一个八度，说明公式里的频率就是合成时真正使用的频率。
+
+## 先猜：`playPitch` 发的是正弦波吗？
+
+??? question "先猜：`playPitch(440)` 发出来的是正弦波吗？"
+    不是。`playPitch` 内部用三角波，源码里叫 `triangle`。想要别的音色，用 `playFormula` 写公式，比如上一节的正弦。
+
+## 播放是任务，取消和错误都会释放设备
 
 `playPitch` 与 `playFormula` 返回的是 `spawn` 启动的普通任务，不是设备句柄。
 
@@ -61,7 +88,7 @@ discard(long.cancel())
 
 GUI 程序用 `el:user-interface/` 导出的 `SoundPlayer`，它由窗口拥有，内部就是一个 `MusicPlayer`。`SoundPlayer(window)` 的 `cue(name, value = 0, maximum = 1)` 按名字发提示音，名字有 `"drag"`、`"exchange"`、`"increase"`、`"decrease"`、`"disappear"`、`"engine"`、`"celebrate"`；`tryCue(...)` 在底层报 `CaptureError` 时返回 `nil`；`loop("engine")` 循环发引擎音，`engine(speed)` 设置 0..1 的速度，`stop()` 停止，`close()` 释放。
 
-## WAV 读写
+## WAV 读写只认整数 PCM16
 
 `wav.el` 导出经典 RIFF/WAVE 整数 PCM16 的读写：
 
@@ -99,7 +126,10 @@ writeTone("file:./tone.wav")
 
 `readWav`/`writeWav` 失败时抛 `CaptureError`（来自 `el:multimedia/capture/`），`failure` 字段给出 `InvalidInput`、`UnsupportedFormat`、`LimitExceeded` 等分类。只支持整数 PCM16；其它编码、重复块、截断和超出 `maxFrames` 都会明确报错。
 
-### 从 WAV 播放
+### 播放 WAV 要自己分块提交
+
+!!! note "实现状态：WAV 没有一行播放接口"
+    当前没有把 WAV 直接交给播放器的一行接口：要播放就先 `readWav`，再按块提交给 `PcmOutput`。这既是平台差异的暴露，也是队列与设备释放规则的一部分。
 
 没有“播放一个 wav 文件”的一行入口：要播放 `readWav` 得到的数据，得自己按块提交给 `PcmOutput`。`PcmOutput(format, queueChunks = 4, maximumFrames = 4096)` 是平台后端的公共包装，`enqueue(audio)` 在返回前复制样本，队列满时返回 `nil`。
 
@@ -144,24 +174,27 @@ playWav("file:./tone.wav")
 
 `finish()` 在 Linux OSS 上发 `SNDCTL_DSP_POST` 提交最后一段不完整的片段，在 Windows 与 macOS 上是空操作；`idle()` 在设备队列真正排空后返回真，Windows 与 macOS 分别用 `WHDR_DONE` 和 AudioQueue 的完成回调判断。
 
-## 平台后端与限制
+!!! warning "常见坑：没有声音时先查这四处"
+    - 程序很快退出，只听到半声：没等 `get()`，播放任务随进程结束被取消。
+    - GUI 卡住：在事件回调里 `get()` 了；保留任务，窗口关闭时 `cancel()`。
+    - 提示音提交返回 `nil`：队列忙，不是设备坏了；决定丢弃还是重试。
+    - 在没有后端的平台上静默失败：错误在播放任务的 `get()` 里，构造或调用那行不会报。
 
-后端在 `output.el` 里按目标平台选择，都给调用方一个有界队列，都只做 PCM16，不向用户代码暴露设备回调。`PcmOutput` 的队列块数限制在 1..16，每块帧数上限 1048576。
+正常路径上还有一层不用天天记、但调试时需要知道的边界：
 
-| 平台 | 后端 | 关键限制 |
-| --- | --- | --- |
-| Windows | `winmm.dll` 的 waveOut | 需要 64 位、8 位地址单元 ABI；完成状态看每个缓冲区的 `WHDR_DONE` |
-| macOS | AudioToolbox 的 AudioQueue | 需要 64 位 Darwin ABI；完成状态来自每个缓冲区的回调标记 |
-| Linux | OSS `/dev/dsp` | 只支持 GNU/Musl 环境；直接开设备，不经 ALSA/PulseAudio，也没有外部播放器回退；设备必须精确接受 PCM16 格式，队列容量超过请求上限就拒绝 |
-| 其它目标 | 不可用后端 | 构造 `PcmOutput` 时抛 `CaptureError(CaptureFailure.Unavailable)` |
+??? note "可选 · 深入：队列容量的边界"
+    `PcmOutput` 的队列块数限制在 1..16，每块帧数上限 1048576；`enqueue` 在队列满时返回 `nil`，是等待还是丢弃由调用方决定。播放 WAV 的循环里用 `sleep(2)` 等队列腾空，就是这一决定的直接结果。
 
-`playPitch`/`playFormula` 自己管理设备，所以在没有后端的平台上同样失败，错误会出现在播放任务的 `get()` 里。
+## 带走这三样
 
-!!! note "实现状态"
-    当前没有把 WAV 直接交给播放器的一行接口：要播放就先 `readWav`，再按块提交给 `PcmOutput`。
+- `playPitch` 是三角波、`playFormula` 是自定义波形；两者都返回任务，`get()` 等到声音真正结束。
+- 短提示音用 `MusicPlayer`，GUI 里用窗口拥有的 `SoundPlayer`；提交不等待，`Bool` 告诉你是接受还是忙。
+- 音频只有 PCM16：WAV 读写走 `readWav`/`writeWav`，播放要按块交给 `PcmOutput`，平台后端决定队列与完成判定。
 
-## 继续阅读
+## 下一站：神经网络
 
-- [Console 与日志](console.md)：把播放状态和错误按等级写出去。
-- [图形界面](gui.md)：`SoundPlayer` 由窗口拥有，和控件、定时器一起使用。
-- [集合与文本](collections.md)：处理样本数组与音频元数据。
+> 声音的合成是一串公式和缓冲区。如果把这串计算换成“层”，把参数换成“权重”，会得到什么？
+
+- 主推进：[神经网络](neural-networks.md)：张量、层、自动微分与一次完整训练。
+- 想先练手：[Console 与日志](console.md)：把播放状态和错误按等级写出去。
+- 后面会用到：[图形界面](gui.md)：`SoundPlayer` 由窗口拥有，和控件、定时器一起使用。

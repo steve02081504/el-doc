@@ -61,6 +61,8 @@ markdown_extensions:
       anchor_linenums: true
       pygments_lang_class: true
   - pymdownx.inlinehilite
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.caret
@@ -100,13 +102,16 @@ extra_css:
 
 extra_javascript:
   - assets/random-page.js
+  - assets/learning.js
 
 nav:
   - 首页: index.md
-  - 开始:
+  - 学习地图: roadmap.md
+  - 起步:
       - 安装与第一个程序: getting-started.md
-      - 语言速览: tour.md
+      - 15 分钟速览: tour.md
   - 语言:
+      - 语言总览: language/index.md
       - 读语言之前: language/before-you-start.md
       - 值与类型: language/values.md
       - 数值与位类型: language/numeric-types.md
@@ -122,6 +127,7 @@ nav:
       - 性能与底层优化: language/performance.md
       - 外部接口与 ABI: language/foreign.md
   - 标准库:
+      - 标准库总览: stdlib/index.md
       - Console 与日志: stdlib/console.md
       - 集合与文本: stdlib/collections.md
       - 文件与网络: stdlib/files-network.md
