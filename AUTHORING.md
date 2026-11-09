@@ -78,7 +78,7 @@ console.error.value(error)
 
 ## 站点约定
 
-- MkDocs Material；`el` 代码块有自定义高亮。
+- MkDocs Material；`el` 代码块有自定义高亮，`eol` 用于项目文件与数据字面量，`repl` 用于 `el repl` 会话记录（`>` 起头的行按 EL 高亮，其余按输出显示）。
 - 可用 `!!! note`、`!!! tip`、`!!! warning`、`!!! danger`、`!!! example` 等 admonition。
 - 可用 `=== "标签"` 做 tab（pymdownx.tabbed），少用。
 - 不加外链图片、不引外部脚本；自包含。

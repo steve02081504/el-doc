@@ -129,7 +129,7 @@ el run --release greet.el Ada
 el repl
 ```
 
-```text
+```repl
 > let x = 1 + 2
 > console.stdout.writeLine("x = ", x)
 x = 3
@@ -211,7 +211,7 @@ elc --compile-native input.el out.elf --target linux-x64
 
 `--compile-native INPUT OUTPUT` 是编译器操作及其两个操作数，`--target` 选择目标；省略 `--target` 时用宿主目标。输出文件名由你决定，扩展名不参与目标选择。加 `--no-cache` 可以关掉这一轮的缓存读写。
 
-当前原生产物路径覆盖 `windows-x64` 与 `linux-x64`。`wasm32-browser` 未接入，会在参数检查时明确拒绝；其他目标名以实际编译诊断为准。跨目标编译只负责生成目标格式的产物，产物能否在目标机器上运行取决于该目标后端和所用标准库设施，先在目标环境里验证最小程序。
+当前原生产物路径覆盖 `windows-x64` 与 `linux-x64`。`wasm32-browser` 未接入，会在参数检查时明确拒绝；GUI 的网页产物要等这条 wasm 目标接进来，目标形态见[图形界面](stdlib/gui.md)。其他目标名以实际编译诊断为准。跨目标编译只负责生成目标格式的产物，产物能否在目标机器上运行取决于该目标后端和所用标准库设施，先在目标环境里验证最小程序。
 
 项目文件里的 `targets` 分区用于给具名目标覆盖构建配置（规范 PROJ-5、PROJ-6）。当前发行读项目文件时会接受这个字段，但 `el build` 不按它切换目标；选目标仍靠 `--target`。
 

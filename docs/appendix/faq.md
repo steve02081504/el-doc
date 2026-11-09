@@ -148,13 +148,15 @@ el build --release src/main.el
 
 ### 支持哪些平台？
 
-目标平台是 Windows、Linux、macOS、FreeBSD、iOS、Android 六个，平台能力必须分开声明，不能互相推断。当前检出的 GUI 后端覆盖 Windows、Linux/X11 与 macOS，移动端和 FreeBSD 还没有对应窗口后端；编译器、运行时与标准库在各自平台上分别验收。
+原生目标平台是 Windows、Linux、macOS、FreeBSD、iOS、Android 六个，平台能力必须分开声明，不能互相推断。当前检出的 GUI 后端覆盖 Windows、Linux/X11 与 macOS，移动端和 FreeBSD 还没有对应窗口后端；编译器、运行时与标准库在各自平台上分别验收。浏览器另走 wasm 目标，不在这六个原生平台之内，是否把浏览器登记为平台还要规范拍板。
 
 详见 [规范与实现边界](implementation-status.md)。
 
-### 为什么没有 Web 目标？
+### 能编译成网页吗？
 
-目标平台清单是上面六个原生系统，不含浏览器；图形界面的设计是 EL 自绘对象图与绘制流水线，不使用可见 DOM 或 CSS 布局。规范里的浏览器条款只说明一旦存在 wasm 目标，界面视觉仍由 Canvas 自绘、语义 DOM 仅作辅助；当前平台枚举与 GUI 后端里没有 wasm，所以没有“编译成网页用 DOM 排版”的目标。
+能，而且界面也一起过去：整份程序编成一个 HTML 文件，wasm 模块内嵌在页面里，`file://` 双击就能运行，不需要服务器。界面不是把 EL 翻译成 DOM 或 CSS，而是仍由 EL 在 Canvas 上自绘，浏览器提供画布、输入事件、字体度量和一层视觉不可见的语义 DOM；页面里还能跑 `el repl`、`eval` 与构建。当前发行还没接入这条链路：`wasm32-browser` 会在参数检查时被明确拒绝，仓库里的页面产物目前只有 wasm 验证夹具和控制台骨架，GUI 的浏览器后端仍在实现。
+
+写界面时不用为此换写法：按[图形界面](../stdlib/gui.md)的对象图与元素 API 写，目标接入后同一份界面就能出网页。
 
 详见 [图形界面](../stdlib/gui.md) 与 [规范与实现边界](implementation-status.md)。
 

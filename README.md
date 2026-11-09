@@ -7,7 +7,7 @@
 - 构建检查：`mkdocs build --strict`
 - 写作约定见 [AUTHORING.md](AUTHORING.md)
 
-网站内容在 `docs/`，导航在 `mkdocs.yml`，EL 代码高亮由 `hooks/el_lexer.py` 注册；页尾「随便翻一页」按钮由 `hooks/random_pages.py` 生成页面清单，前端脚本在 `docs/assets/random-page.js`。
+网站内容在 `docs/`，导航在 `mkdocs.yml`，`el`／`eol`／`repl` 代码块的高亮由 `hooks/el_lexer.py` 注册；页尾「随便翻一页」按钮由 `hooks/random_pages.py` 生成页面清单，前端脚本在 `docs/assets/random-page.js`。
 
 ## 发布
 
