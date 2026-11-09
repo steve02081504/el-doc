@@ -58,7 +58,7 @@ console.info.value(@{ language: "EL" })
 ### 动手
 [命令行工具](practice/cli-tool.md)、[图形程序](practice/gui-app.md)、[从其他语言过来](appendix/coming-from.md)、[常见问题](appendix/faq.md)。
 
-用两个完整项目把前面的知识串起来。
+用两个完整项目把前面的知识串起来，再看[手写解析器](practice/json-parser.md)、[规则式机器人](practice/logic-game.md)、[定理证明](practice/proofs.md)与[矩阵脚本](practice/numerics.md)这四种不同写法。
 </div>
 </div>
 

@@ -136,10 +136,70 @@ outer: for (let i in 0..3) {
 
 输出是 `0-0` 与 `1-0`，第三轮在 `j == 0` 时被 `break outer` 结束。
 
-- 标签只标循环，写法是 `name: for (...)`（`while`、`do while`、范围循环同样可用）。
-- `break name` 结束目标循环，`continue name` 结束目标循环的当前轮。
-- 标签有独立的控制目标命名空间，内层同名标签遮蔽外层；不能把标签指向非循环语句。
+- 标签写作 `name: statement`，可以标在循环上，也可以标在显式块上；标在普通语句上时只提供一个跳转入口。
+- `break name` 结束目标循环或目标块，`continue name` 只对循环成立，结束目标循环的当前轮。
+- 标签有独立的控制目标命名空间，内层同名标签遮蔽外层；同一块内不能重名。
 - 不带标签的 `break`/`continue` 作用于最近的适用循环。
+
+## 受限制的 `goto`
+
+多数情况用 `break` 和 `continue` 就够了，`goto` 留给两类场景：重试一段已经建好的区域，以及从多层嵌套里一次跳到收尾。它是结构化的、受检查的跳转，不是可以指向任意地址的汇编跳转。
+
+标签写作 `name: statement`；空的落点写 `done: ;`。标在显式块上的标签同时提供入口与 `break` 出口，标在循环上的标签还多一个 `continue` 继续边。`goto` 只能选中入口，不能当 `continue` 用。
+
+```el
+let attempts = 0
+retry: {
+	attempts += 1
+	if (attempts < 3) goto retry
+	console.stdout.writeLine("ready after ", attempts)
+}
+```
+
+`goto retry` 跳到块入口：离开当前区域时先执行该区域的 `finally`、局部变量与临时值清理，清理成功后才落到入口。块被重新建立，`attempts` 声明在块外，所以状态保留，第三次进入时才打印 `ready after 3`。
+
+向前跳同样合法，常用来跳出多层嵌套：
+
+```el
+let words = @["alpha", "", "beta"]
+let found = ""
+scan: for (let word in words) {
+	if (word == "") break scan
+	if (word == "beta") goto done
+	found = word
+}
+done: ;
+console.stdout.writeLine(found)
+```
+
+`done: ;` 是块内的空语句，只作为落点；`goto done` 先结束 `for` 的游标和本轮局部状态，再继续执行标签后面的语句，所以不会跳过 `found` 的声明或它的清理义务。
+
+`goto` 的边界比普通跳转语言严格得多：
+
+- 只能在同一函数、同一次 activation 内跳转，不能跨 lambda、任务、ABI 边界或续行。
+- 不能从外部跳进嵌套块、`try`/`catch`/`finally` 或循环体内部，也不能跳过局部声明去使用尚未建立的变量。
+- 跳到整个块或整个循环的入口是合法的，那会重新建立该区域；跳进循环体内部则不合法。
+- 跳往循环标签会关闭旧游标并从入口重建循环，不执行 `continue` 的步进，也不保证旧 `for` 的 step 语义。
+- 离开区域时先完成清理，清理失败会代替这次跳转；异步清理要等待完成。
+- 标签本身不是值，不能保存、传递、比较或取地址。
+
+第三点值得展开：可以跳到 `block` 或 `while` 这一级的入口，因为入口正是区域开始建立的地方；但不能越过入口直接落到循环体中间的某条语句，那里的局部状态还没有建立。这条规则和前面“所有语句都有值”是同一套清理模型的另一面：跳转不能制造一个清理责任说不清的状态。
+
+`goto` 也不替代 `continue`。需要“进入下一轮但保留循环状态”时写 `continue`；需要“把整个循环从初始化重新走一遍”时才写 `goto` 到循环标签。
+
+`break name` 也可以提前结束一个带标签的块，这在参数校验里比多层 `if` 更平：
+
+```el
+let path = "src/main.el"
+check: {
+	if (path == "") break check
+	if (!path.endsWith(".el")) break check
+	console.stdout.writeLine("compiling ", path)
+}
+console.stdout.writeLine("done")
+```
+
+`break check` 只离开 `check` 块，不会影响外层循环；块结束后的语句照常执行。块本身没有“失败原因”载荷，需要区分成功与提前退出时，把状态写在块外的变量里。
 
 ## 所有语句都有值
 

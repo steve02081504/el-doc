@@ -43,6 +43,7 @@ theme:
 
 hooks:
   - hooks/el_lexer.py
+  - hooks/random_pages.py
 
 markdown_extensions:
   - admonition
@@ -97,6 +98,9 @@ extra:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - assets/random-page.js
+
 nav:
   - 首页: index.md
   - 开始:
@@ -120,6 +124,11 @@ nav:
   - 实战:
       - 命令行工具: practice/cli-tool.md
       - 图形程序: practice/gui-app.md
+  - 多范式:
+      - 手写 JSON 解析器: practice/json-parser.md
+      - 规则式下棋机器人: practice/logic-game.md
+      - 定理证明: practice/proofs.md
+      - 矩阵与数值脚本: practice/numerics.md
   - 附录:
       - 从其他语言过来: appendix/coming-from.md
       - 常见问题: appendix/faq.md

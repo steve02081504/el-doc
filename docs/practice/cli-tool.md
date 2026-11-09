@@ -192,6 +192,37 @@ el build --release src/main.el
 
 `-o` 与 `--output` 指同一个选项；`--release` 关闭只在 debug 保留的数组、文本与视图边界检查，默认是 debug。release 不会改变语言行为，越界访问在 release 下属于调用方违约，不保证抛错。
 
+## 调用外部程序：`shell { ... }`
+
+真实工具很少只靠自己。要把 `git`、编译器或别的命令行程序接进来，用库里的 `shell` 块；块里直接写命令，不必先拼字符串再交给进程 API。
+
+```el
+import { shell } from "el:shell/index.el"
+
+let result = shell { git status --short }
+console.stdout.writeLine(Text(result))
+```
+
+`shell { ... }` 直接返回 `ShellResult`，块本身就是输出、退出码与状态的收集边界。`Text(result)` 是受检的文本投影，只取标准输出，不混入 stderr 和消息等级；没有明确文本目标时，结果仍然是 `ShellResult`。
+
+```el
+let branch: Text = shell { git branch --show-current }
+let diff = shell { git diff --quiet }
+if (diff.exitCode != 0) console.stdout.writeLine("working tree has changes")
+```
+
+`ShellResult` 的主要字段：
+
+- `.output` 是 `CapturedOutput`，保留通道、结构值与字节。
+- `.exitCode` 是汇总退出码；非零退出不会自动变成异常，要自己判断。
+- `.status` 区分成功、进程失败、启动失败、EL 异常、流失败与取消。
+- `.stages` 保留每个阶段的原始退出码与 signal。
+- `.completeness` 标明输出是完整、部分写入还是截断。
+
+命令写法和普通程序调用接近：`git` 是程序名，后面的词是参数。若当前作用域里已有同名 EL 绑定，普通名字优先；要显式绕过绑定、强制找外部程序，写 `& git status`。块内可以声明普通变量和函数，也可以把 EL 值接到命令参数上；已绑定的结果不会被重复当输出打印。
+
+需要后台执行时用同一模块的 `start` 语法声明。要单独导入它：`import /^start$/ as jobs from "el:shell/index.el"`，之后写 `let job = jobs.start { git status }`，拿到 `Job`，不阻塞当前流程，后续可以等待或终止这个作业。普通 `.el` 文件要像上面那样导入 `shell` 宏；`.esh` 文件的顶层本身就是 shell 语法域，不需要再包块。
+
 ## 继续阅读
 
 - [工具链](../toolchain.md)：`el` 子命令、项目文件与缓存。

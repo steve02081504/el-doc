@@ -82,6 +82,7 @@ console.error.value(error)
 - 可用 `!!! note`、`!!! tip`、`!!! warning`、`!!! danger`、`!!! example` 等 admonition。
 - 可用 `=== "标签"` 做 tab（pymdownx.tabbed），少用。
 - 不加外链图片、不引外部脚本；自包含。
+- 页尾「随便翻一页」按钮由 `hooks/random_pages.py` 生成页面清单、`docs/assets/random-page.js` 渲染；新增页面只要进导航，就会自动进入随机池。
 - 每页 H1 只出现一次，且与导航名一致或接近。
 - 内部链接用相对路径，确保 `mkdocs build --strict` 通过。
 

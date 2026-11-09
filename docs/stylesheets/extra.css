@@ -336,3 +336,36 @@ pre {
     font-size: 0.66rem;
   }
 }
+
+/* Random page footer button */
+
+.el-random {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  font-size: 0.72rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.el-random__button {
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--md-accent-fg-color);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--md-accent-fg-color);
+  font: inherit;
+  cursor: pointer;
+  transition:
+    background-color 125ms,
+    color 125ms;
+}
+
+.el-random__button:hover,
+.el-random__button:focus-visible {
+  background: var(--md-accent-fg-color);
+  color: var(--md-primary-bg-color);
+  outline: none;
+}
