@@ -113,14 +113,21 @@ nav:
       - 运算符与表达式: language/operators.md
       - 控制流: language/control-flow.md
       - 函数与闭包: language/functions.md
+      - 生命周期与析构: language/lifetimes.md
       - 类与对象: language/classes.md
+      - 内存布局与 GC 钩子: language/memory-layout.md
       - 模块与包: language/modules.md
+      - Shell 语法: language/shell.md
       - 错误处理与异步: language/errors-async.md
+      - 性能与底层优化: language/performance.md
+      - 外部接口与 ABI: language/foreign.md
   - 标准库:
       - Console 与日志: stdlib/console.md
       - 集合与文本: stdlib/collections.md
       - 文件与网络: stdlib/files-network.md
       - 图形界面: stdlib/gui.md
+      - 声音与音频: stdlib/audio.md
+      - 神经网络: stdlib/neural-networks.md
       - 测试: stdlib/testing.md
   - 工具链: toolchain.md
   - 实战:

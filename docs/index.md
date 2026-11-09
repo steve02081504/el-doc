@@ -38,15 +38,15 @@ console.info.value(@{ language: "EL" })
 <div class="el-grid" markdown>
 <div class="el-card" markdown>
 ### 语言核心
-[读语言之前](language/before-you-start.md)、[值](language/values.md)、[数值与位类型](language/numeric-types.md)、[运算符](language/operators.md)、[控制流](language/control-flow.md)、[函数](language/functions.md)、[类](language/classes.md)、[模块](language/modules.md)、[错误与异步](language/errors-async.md)。
+[读语言之前](language/before-you-start.md)、[值](language/values.md)、[数值与位类型](language/numeric-types.md)、[运算符](language/operators.md)、[控制流](language/control-flow.md)、[函数](language/functions.md)、[生命周期与析构](language/lifetimes.md)、[类](language/classes.md)、[内存布局与 GC 钩子](language/memory-layout.md)、[模块](language/modules.md)、[Shell 语法](language/shell.md)、[错误与异步](language/errors-async.md)、[性能与底层优化](language/performance.md)、[外部接口与 ABI](language/foreign.md)。
 
-从变量和表达式写到能拆模块、处理失败、并发执行。
+从变量和表达式写到能拆模块、处理失败、并发执行；再往深处走到对象生命周期、自定义布局、shell 脚本、性能手段与原生 ABI。
 </div>
 <div class="el-card" markdown>
 ### 标准库
-[Console](stdlib/console.md)、[集合与文本](stdlib/collections.md)、[文件与网络](stdlib/files-network.md)、[GUI](stdlib/gui.md)、[测试](stdlib/testing.md)。
+[Console](stdlib/console.md)、[集合与文本](stdlib/collections.md)、[文件与网络](stdlib/files-network.md)、[GUI](stdlib/gui.md)、[声音与音频](stdlib/audio.md)、[神经网络](stdlib/neural-networks.md)、[测试](stdlib/testing.md)。
 
-学会用标准库输出、处理数据、读写外部世界，并给代码补上测试。
+学会用标准库输出、处理数据、读写外部世界，发出声音、训练小模型，并给代码补上测试。
 </div>
 <div class="el-card" markdown>
 ### 工具链

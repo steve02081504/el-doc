@@ -155,5 +155,6 @@ elc --target wasm32-browser app.el app.html
 ## 继续阅读
 
 - [实战：图形程序](../practice/gui-app.md)：用三份源码写一个完整的小应用。
+- [声音与音频](audio.md)：提示音、`SoundPlayer` 与自定义公式播放。
 - [类与对象](../language/classes.md)：`@assign`、构造函数与共享语义。
 - [常见问题](../appendix/faq.md)：GUI 与 HTML 的关系、输出与运行的常见卡点。

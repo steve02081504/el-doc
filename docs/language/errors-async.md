@@ -216,6 +216,7 @@ fn nameFrom(source: Text) {
 ## 继续阅读
 
 - [函数与闭包](functions.md)：定向返回、生命周期标注、参数交接与 `async` 块的函数视角。
+- [生命周期与析构](lifetimes.md)：异常离开作用域时的清理顺序与析构失败聚合。
 - [模块与包](modules.md)：错误类可以作为模块导出，跨模块共享同一套错误类型。
 - [集合与文本](../stdlib/collections.md)：集合写入失败、解析结果都通过这里讲的异常交付。
 - [测试](../stdlib/testing.md)：`check.throws` 用来断言一段代码抛出了预期类型的错误。

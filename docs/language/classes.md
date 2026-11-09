@@ -254,5 +254,7 @@ class Session {
 ## 继续阅读
 
 - [值与类型](values.md)：字段类型、`any` 与复制/共享背后的值规则。
+- [生命周期与析构](lifetimes.md)：构造与析构的时机、`@destruct` 策略与借用来源。
+- [内存布局与 GC 钩子](memory-layout.md)：字段偏移、`@layout` 与 `@builtin:vome:on:collect`。
 - [函数与闭包](functions.md)：方法之外的普通函数、lambda 与默认参数。
 - [错误处理与异步](errors-async.md)：构造与析构中的异常、任务与清理。

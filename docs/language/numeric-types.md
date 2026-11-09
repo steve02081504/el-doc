@@ -153,3 +153,4 @@ let value = xored.toNumber()    // 85
 - [值与类型](values.md)：类型注解、绑定与 `Number` 字面量的基础。
 - [运算符与表达式](operators.md)：`^`、移位与复合赋值的解析规则。
 - [集合与文本](../stdlib/collections.md)：数组、文本与位集合在集合库中的位置。
+- [神经网络](../stdlib/neural-networks.md)：用 `Number`／`BitFloat` 张量搭建并训练小模型。

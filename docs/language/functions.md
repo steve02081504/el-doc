@@ -263,117 +263,17 @@ expired()   // 没有有效目标：capture 已经退出，不能借旧 token �
 
 清理路径同样受约束：`finally` 里新起的普通 `return`、`break`、`continue` 或定向返回不能覆盖正在进行的跨层返回；局部循环的 `break`/`continue`，以及清理中新建的 helper 里只结束该 helper 的局部定向返回，不受影响。
 
-## 生命周期标注：类别与来源，不是生命周期参数
+## 生命周期与借用
 
-EL 没有 Rust 那种显式生命周期参数，函数签名里不写 `'a`，也不需要给每个引用命名生命周期。引用能用多久由实际来源、借用规则和函数效果描述符推断；签名只写结果的类别与来源合同。下面这些标注才是实际可写的生命周期与所有权信息。
+EL 没有 Rust 式显式生命周期参数（`'a`）；对象何时析构、引用能用多久，由 `@assign`/`@destruct`、来源描述符与借用规则推断，而不是靠命名生命周期。
 
-### 参数交接：`borrow`、`ref`、`take`、`rvalue`
+这一页只保留和函数写法直接相关的入口：
 
-先定义一个具体类型，后面的例子基于它：
+- `borrow`/`ref` 参数是借用，不接管所有权；`take` 接管，`rvalue` 限定实参为右值。
+- 返回引用写 `borrow T from source` 或 `ref T from source`；`: forward` 按返回表达式推断类别与来源。
+- `scope let` 与 `@destruct(mode: "scope")` 把对象至少保到名称作用域结束；`ptr<noescape>` 约束原生指针不被长期保存。
 
-```el
-@assign(mode: "shared")
-class Item {
-	let value: Number = 0
-}
-
-@assign(mode: "shared")
-class Box {
-	let item: Item
-
-	constructor(item: Item) {
-		init this
-		this.item = item
-	}
-}
-```
-
-参数前的标注决定实参怎样交给形参：
-
-| 标注 | 管什么 | 调用之后 |
-| --- | --- | --- |
-| `borrow x: T` | 只读借用，不复制也不移动 | 源绑定仍然可用 |
-| `ref x: T` | 可写槽位借用 | 函数里的写入落回原槽位 |
-| `take x: T` | 接管所有权 | 调用者不能再使用源绑定 |
-| `rvalue x: T` | 限定实参是右值 | 只接受临时值或显式消费的位置 |
-
-```el
-fn itemCount(borrow box: Box) => box.item.value
-fn bump(ref value: Number) { value += 1 }
-fn unwrap(take box: Box) => box.item
-fn label(rvalue message: Text) => message
-
-let box = Box(Item(1))
-itemCount(box)              // 只读借用：box 之后仍然可用
-bump(box.item.value)        // 写回 box.item.value
-console.stdout.writeLine(box.item.value)   // 2
-
-let owned = unwrap(box)     // 接管：box 之后不可再用
-console.stdout.writeLine(owned.value)   // 2
-
-console.stdout.writeLine(label("new"))   // 右值实参可以匹配
-
-const fixed = "old"
-// label(fixed)             // 编译错误：const 左值不匹配 rvalue
-```
-
-- `borrow` 只读观察，不会复制出一个新对象，也不会延长对象的寿命。
-- `ref` 是可写槽位借用：函数内读参数读原槽位，给参数赋值写回原槽位；实参必须是可写左值。
-- `take` 表示接管实参的所有权，调用后调用者那边的源不再可用；调用处必须确实拥有该值。
-- `rvalue` 限定实参必须是右值表达式，不会把左值复制一份来凑匹配；接管仍由 `take` 表达，`rvalue` 只限定值类别。
-- 每个参数只能选一种交接方式，不能叠加；`ref` 与 `rvalue` 不支持默认值或变长参数。借用、移动与所有权的完整规则见语言规范第 6 章与第 20 章。
-
-### 返回位：来源写到签名里
-
-返回引用时，签名写结果的类别和来源，而不是只写 `T`。仍然用上面的 `Box`：
-
-```el
-fn get(borrow x: Box): borrow Item from x => x.item
-fn edit(ref x: Box): ref Item from x => x.item
-fn selected(borrow x: Box): forward => get(x)
-```
-
-- `borrow Item from x` 表示结果是 `x.item` 所在存储的只读借用，来源是参数 `x`；结果的生命周期不能超过这个来源。返回局部槽位，或让借用活到来源失效之后，都会被拒绝。
-- `ref Item from x` 表示结果仍借用同一槽位，但保留可写能力。把引用结果交给另一个 `ref` 参数，就能写回原位置：
-
-```el
-fn setValue(ref target: Item, value: Number) {
-	target.value = value
-}
-
-let box = Box(Item(0))
-setValue(edit(box), 42)
-console.stdout.writeLine(box.item.value)   // 42
-```
-
-- `: forward` 不是独立类型，而是“按返回表达式推断结果”的请求：编译器从每个正常返回收集类型、类别（owned、borrow、ref）和来源。`selected` 的推断结果是“来自 `x.item` 的借用”；`forward` 不会偷偷把借用变成复制，也不会把引用变成拥有值。
-- 来源可以写得更精确，例如 `from x.item`；接口也可以只写 `from x` 作为保守上界。互斥分支必须得到可合并的类别，借用和拥有值混在一起时要显式决定，不能靠推断猜。
-- `ref T`、`const ref T`、`rvalue ref T` 本身就是类型，可以出现在返回类型和联合分支中；`const ref` 以只读左值消费，联合结果先判别分支，再按选中的引用分支取值。
-
-`forward` 参数保存操作数的原类别，调用时在实参前写 `forward`，例如 `relay(forward value)`；函数体最后使用这个参数不会自动拿走调用者的对象。需要真正接管时仍写 `take` 或 `rvalue(...)`。
-
-### 词法退出：`scope let` 与 `@destruct(mode: "scope")`
-
-普通绑定按最后使用和析构策略结束；需要“至少活到名称作用域结束”时用 `scope let`：
-
-```el
-import { openFileReader } from "el:filesystem/"
-
-fn readPrefix(path: Text) {
-	scope let reader = openFileReader(path)
-	let bytes = reader.read(4096)
-	bytes.size
-}   // 离开函数时 reader 才析构并关闭文件，即使它已经不再被读取
-```
-
-- `scope let` 在拥有绑定的基础上加词法退出义务：绑定在块出口执行原生析构，未读取也不提前结束。它是绑定上的要求，不是另一套析构机制，也不改变类型自己的构造、复制和关闭协议；类型自身标了 `@destruct(mode: "scope")` 时，即使写普通 `let`，对象也至少活到名称作用域结束。
-- 这套标注不允许从 `scope` 绑定转移所有权：不能对它写 `rvalue(...)`、用 `take` 捕获、存进拥有容器或作为拥有值返回；合法的只读借用和可写借用仍可使用，`forward` 也不能洗掉 scope 来源。
-- 类的析构策略标在类声明上：`@destruct(mode: "scope")` 让该类的对象至少活到名称作用域结束，默认的 `aggressive` 则可以在最后一次使用后析构。析构函数本身不写这个属性；策略取实际具体类自己的声明，不沿继承链继承。
-- `scope` 保证的是“析构不因最后使用提前发生”，不保证业务方法不会主动关闭或解锁资源；关闭动作仍按类型的公开协议执行。
-
-### 原生指针：`ptr<noescape>`
-
-`ptr<noescape>` 是外部函数参数上的原生指针合同：被调方承诺不在调用返回后保存该地址，编译器才允许把借用指针交给它。它不转移所有权，也不延长来源的生命周期；需要被调方保留指针时，必须走显式的 `@owned`、`@retain` 或回调句柄协议，而不是把 `noescape` 当成万能通行证。
+完整规则、析构时机例子和常见陷阱见[生命周期与析构](lifetimes.md)。
 
 ## 自动等待与 `async`/`await` 宏
 
@@ -415,6 +315,7 @@ console.stdout.writeLine(cube(3))   // 27
 
 ## 继续阅读
 
+- [生命周期与析构](lifetimes.md)：对象何时析构、引用何时失效，以及 `scope let`、`take`、`borrow` 的完整规则。
 - [类与对象](classes.md)：把方法、构造与析构写进类型里。
 - [控制流](control-flow.md)：函数体里的分支、循环与隐式返回值。
 - [错误处理与异步](errors-async.md)：异常、任务与并发集合。

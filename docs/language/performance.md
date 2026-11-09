@@ -1,0 +1,222 @@
+# 性能与底层优化
+
+这一页说明 EL 里哪些性能手段有源码入口、哪些由编译器或执行库完成，读完你能用属性表达优化合同，在需要时请求向量或 GPU 执行，并知道这些能力当前的边界。
+
+EL 的默认路径不要求手写优化：优化器与逐元素链融合在普通调用下工作；属性、执行策略和设备会话是在明确知道瓶颈时的额外入口。
+
+## 优化属性
+
+性能相关的属性写在声明或表达式位置上。它们不改变类型或运行期语义，要么给编译器一个受信任的合同，要么给检查器一份预算；把属性当成性能开关通常不会得到想要的结果。
+
+### `@pure`
+
+`@pure` 是**受信任的求值合同**：声明方允许编译器按依赖求值模型处理这次调用，在输入可静态确定时提前求值。它不是编译器对函数体的检查，也不等于“无副作用”或“不抛错”：
+
+```el
+@pure
+fn sumOfSquares(values: Number[]) {
+	let total = 0
+	for (let value in values) {
+		total += value * value
+	}
+	total
+}
+```
+
+显式标注后，调用所需输入全为编译期已知纯值时，这次调用必须完成编译期求值并把结果物化；否则像普通函数一样在运行时执行。函数里实际发生的 I/O 照常执行，正常构建（debug 模式除外）中标准结构化日志在纯上下文里不输出。抛错仍是函数结果的一种，可能抛错的调用不会因为没人用返回值就被删掉。
+
+`@pure` 也能标在 `class` 上，给构造、复制、移动、析构、方法和运算符提供纯性默认值；普通立即绑定可以写 `@pure let`，当前要求普通立即初始化器，它不是 `const` 的另一种写法。标注错误是语义违约，编译器按合同信任它，不会把错误标注降级成提示。
+
+### `@bounded`
+
+`@bounded(time: O(...), memory: O(...), sizes: {...})` 声明最坏情况预算，可覆盖函数、方法、构造器、extern 签名和 lambda。时间按最坏情况总工作量计，空间按本次调用新增的峰值存活存储计；省略的维度按 `O(n)` 检查：
+
+```el
+@bounded(time: O(n), memory: O(1))
+fn maximum(values: Number[]) {
+	let best = values[0]
+	for (let value in values) {
+		if (value > best) best = value
+	}
+	best
+}
+```
+
+成本表达式使用独立的静态语法，只接受 `1`、规模变量、`log(变量)`、括号、加法和乘法；`O` 不是可以查找或执行的普通绑定。默认规模变量 `n` 表示入口可用输入的总结构规模，其他变量必须用 `sizes` 绑定来源，例如 `@bounded(sizes: {v: graph.vertexCount, e: graph.edgeCount}, time: O(v + e))`。
+
+属性不改变生成代码，也不能把声明变成证明：证明不足时只报 warning，标注、分析预算耗尽和未知调用都不能当作证明。
+
+!!! note "实现状态"
+    当前证明片段只覆盖能证到常数时间与常数空间的封闭直接调用图；上面带循环的 `O(n)` 预算在这版实现里会留下待证警告，不代表已经通过证明。循环、递归、一般多项式与类型化规模关系的完整分析仍在实现中。
+
+### `@optimize`
+
+`@optimize(using: rewrite, data: @{ ... })` 在类或函数上注册普通 EL 源码函数作为编译期改写策略。`using` 与 `data` 可以省略其中一个，但至少要有一项；`using` 必须解析到身份唯一的模块函数，可用导入别名或限定导入；只有 `data` 时仅登记可供其他策略读取的元数据。
+
+```el
+import { OptimizationInput, OptimizationContext, UncheckedSyntax } from "el:optimization/index.el"
+
+fn keepLeft(input: OptimizationInput, context: OptimizationContext): UncheckedSyntax {
+	let expression = input.expression()
+	if (Text(expression.kindView()) == "add") return expression.child("a")
+	expression
+}
+
+@optimize(using: keepLeft, data: @{ rule: "keep-left" })
+@assign(mode: "copy")
+class Boxed {
+	let value: Number = 0
+}
+```
+
+处理器必须恰好有两个显式标注的参数，类型是标准库协议 `OptimizationInput` 与 `OptimizationContext`，返回 `UncheckedSyntax`。它读取本次声明相关的表达式入口，用普通 EL 判断是否匹配；返回原输入表示不匹配，返回新语法则当场替换。新语法要重新经过普通类型、所有权、借用、清理与控制流检查，不能绕过任何一项。未知属性参数、重复注册、歧义处理器和错误签名会被定位拒绝。示例只演示接口形状；真实策略的领域等价由定义它的库负责解释与证明。
+
+策略在编译期由共享 typed-IR 执行器执行，不运行目标程序的操作数或回调，也不获得文件、网络、时间等宿主能力；会话句柄不能作为运行期数据逃逸。注册顺序即执行顺序，没有收益投票或失败回退；运行失败、未完整发布、非法语法或结果类型改变都是编译错误。
+
+这套接口是给库作者的：标准库用它实现 Number 的代数分组、Array 链融合、排序与编解码重排。领域等价由注册策略的库负责，编译器不证明改写前后的数值、输出或异常时机相同。普通应用层不需要为了性能写自己的处理器。
+
+## debug 与 release 的边界
+
+默认构建是 debug，保留标准库中防止违反调用前提的运行期检查：数组、文本、视图的索引与范围检查，内部存储状态断言，以及部分字节与租约的非法使用诊断。`el build --release` 选择 release，去掉的正是这些检查；`el run --release` 对运行源码同理。
+
+```sh
+el build --release src/main.el -o build/app
+```
+
+release 不会关掉语言语义：
+
+- 类型、借用、所有权与生命周期检查在编译期完成，两种模式都执行。
+- 解析与编码失败、数值可表示性/位宽/溢出策略、分配和系统 I/O 失败、显式 API 的 schema、快照版本、来源、取消与并发状态合同，在 release 仍然生效。
+- 越过检查所保护的安全前置条件属于未定义行为，release 既不保证抛错，也不保证得到有效结果。
+
+```el
+if (debug_mode()) console.stdout.writeLine("debug build")
+```
+
+`debug_mode()` 是标准库的零参数查询，用来让库代码区分两种模式；模式事实由编译器传递并进入产物与缓存身份，库不自己读环境或命令行。先在 debug 下把索引与边界跑对，再用 release 测真实开销。
+
+## SIMD：没有源码级内建
+
+当前**没有**用户可写的 SIMD 内建或属性：没有 `@simd`，也没有 intrinsics 函数。`execution/native/simd.el` 是标准库内部的 x64/SSE2 发射器，它把受检计算内核编成双元素原生循环，并记录实际发出的向量操作数量；`SimdPlan` 与 `NativeKernelPlan` 属于内部模块，不从 `el:execution/index.el` 导出。
+
+用户能请求向量执行的地方是数组 `map` 的策略参数：
+
+```el
+import { normal, ordered, simd } from "el:execution/index.el"
+import { NativeFloat } from "el:platform/machine/float.el"
+
+let values = @[NativeFloat(1), NativeFloat(2)]
+let transform = (value: NativeFloat): NativeFloat => value + value
+let doubled = values.map(transform, policy: ordered(@[simd, normal]))
+console.stdout.writeLine(doubled[0])
+```
+
+策略是不可变描述：`ordered` 按列表依次准入，第一个可用候选执行；`simd` 要求这次调用确实发出向量算术，完全标量化时拒绝；`normal` 是显式写在列表里的普通顺序候选。省略 `policy` 的 `map` 仍然只走普通顺序入口。`auto` 在允许集合内按估计成本挑候选，估计不是实测性能。
+
+想让 `simd` 候选通过，代码要满足这些条件：
+
+- 接收者是默认动态 `Array`，元素类型与 `transform` 返回类型相同；定长数组、视图和自定义序列不进入加速候选，策略里要显式保留 `normal` 才能继续执行。
+- 元素是受检的原生标量，例如 `NativeFloat` 与原生定宽整数。普通 `Number`、`BitFloat`/`BitInteger` 对象当前没有受检对象桥接，加速候选会明确拒绝。
+- `transform` 是单一表达式、参数带显式标量注解、返回同一名义类型、无捕获、无自定义构造/复制/析构/字段/基类、无默认参数和参数包；表达式深度上限 64，内部后缀上限 8192 标量。
+- 原生计划要求 x64 目标、非空输入至少两个元素、总字节不超过 2147480000；奇数尾部由协调者按普通回调补算一次。
+- 没有合规向量计划时 `simd` 候选被拒绝并带原因；`ordered` 全部不可用时抛 `ExecutionNoViablePlan`，不会静默改用 CPU。
+
+这也解释了什么样的代码更容易被向量化：把工作写成一个短直线逐元素表达式，不要在里面分支、循环、访问内存或调用未知函数；在进入内核前一次性转成原生标量，而不是让 `Number` 与原生浮点混在回调里。连续、同构、无别名顾虑的数据让打包和配对更直接，但规范没有要求向量操作在源码或 IR 中紧邻，也没有要求输入存放连续，还不要求逐标量硬件浮点状态在中间步骤可观察。
+
+## GPU：TensorDevice 与计算内核
+
+GPU 的常规入口是 `TensorDevice`：它打开一个设备会话，把宿主张量上传成设备驻留值，张量运算在设备上完成，回读是显式边界。设备缓冲、shader、队列和退役由会话管理，不需要应用代码自己拼。
+
+### 选择设备与精度
+
+`TensorDevice<element: T>(deviceIndex: -1, portable: nil)` 的第一个参数选物理设备，`portable: t` 要求可移植驱动。后端由目标选择：Windows 默认 D3D11，`portable` 或显式设备索引走 Vulkan；Linux、FreeBSD、Android 用 Vulkan；macOS 用 Metal；没有适配器的目标会明确抛错，不会假装有设备。
+
+```el
+import { Tensor, TensorDevice } from "el:numerical-computing/index.el"
+import { BitFloat } from "el:number/index.el"
+
+let F32 = BitFloat<sign_bits: 1, fraction_bits: 23, exponent_bits: 8, exponent_bias: 127>
+let Host = Tensor<element: F32>
+let device = TensorDevice<element: F32>()
+let left = device.fromHost(Host(@[2], @[F32(1), F32(2)]))
+let right = device.fromHost(Host(@[2], @[F32(10), F32(20)]))
+let total = left + right
+console.stdout.writeLine(total.toHost().flat(0))
+```
+
+`fromHost` 是同步上传；`toHost()` 是显式回读边界，`scalar()` 同样会等待并取回一个标量。设备张量在两次操作之间保持驻留，不要在每个小运算前后来回搬运。下面的片段沿用这里定义的 `F32`、`Host` 与 `device`。
+
+存储精度用工厂参数单独声明，例如 `TensorDevice<element: F32, precision: "binary16">`。当前只接受 `binary16` 与 `bfloat16`，并要求元素本身是 binary32 载体；存储是 16 位、计算仍按 binary32，融合计划里的每条融合指令都会舍入到逻辑精度。
+
+```el
+let half = TensorDevice<element: F32, precision: "binary16">()
+let packed = half.fromHost(Host(@[3], @[F32(1), F32(-2), F32(3)]))
+console.stdout.writeLine(packed.storageBits)    // 16
+console.stdout.writeLine(packed.computeBits)    // 32
+```
+
+### 上传、计算与观测
+
+批量或需要重叠的传输用 `fromHostAsync`：它返回一个单消费者上传对象，`event` 可等待，`wait()` 阻塞，`take()` 等待完成并接管设备缓冲；取出之后关闭上传不再影响这个张量。
+
+```el
+let upload = device.fromHostAsync(Host(@[2], @[F32(1), F32(2)]))
+let resident = upload.take()
+console.stdout.writeLine(resident.toHost().flat(0))
+```
+
+内存用量按 EL 会话显式持有的原生缓冲容量统计，不是整卡显存或进程内存：
+
+```el
+device.resetMemoryPeaks()
+let usage = device.memoryUsage()
+console.stdout.writeLine(usage.allocatedBytes)
+console.stdout.writeLine(usage.peakAllocatedBytes)
+```
+
+`GpuMemoryUsage` 还给出 `bufferCount`、`peakBufferCount`、`totalAllocatedBytes` 与 `totalAllocations`。D3D11 计入 storage 加同大小 staging，Vulkan 计实际注册的分配容量，Metal 计 `MTLBuffer.length`；三者的口径不同，不能跨平台比较，也不能当作物理显存占用。`resetMemoryPeaks()` 只重置两个峰值，不释放缓存、不等待设备。
+
+队列数量用 `queueCount` 查，`selectQueue(index)` 选队列，`recordEvent()` 与 `dependOn(event)` 表达跨队列依赖。设备时钟区间由 `beginTimestamp()` 返回，区间用 `end()` 收尾、用 `milliseconds()` 读取。张量本身的逐元素链可以用融合计划合并，减少中间值：
+
+```el
+let plan = total.fusionPlan(inputCount: 1)
+plan.output(plan.relu(plan.binary("mul", plan.input(0), plan.input(0))))
+let fused = total.fuse(plan)
+```
+
+### 底层计算内核
+
+再往下一层是类型化计算内核。`ComputeKernel` 是标准库内部的有界表达式表示（`el:execution/kernel.el`），`GpuExecution` 负责把内核准备成 shader 与缓冲绑定并分派；`el:execution/index.el` 公开 `buildKernel`、`prepareCompute` 和相关描述类型，`el:execution/graphics-processors/index.el` 公开各平台设备适配器。这一层是库作者接口：需要自定义内核时才从这里开始，普通张量程序用 `TensorDevice`。
+
+设备能力不是默认存在的：没有匹配后端时构造会话就失败；GPU 候选在准入时检查元素格式、元素数量和设备能力，不能正确舍入的运算（例如当前的 GPU 除法）会被明确拒绝，而不是悄悄换成 CPU 或低精度实现。
+
+## 性能友好写法清单
+
+- **先分清模式。** 用 debug 验证边界与索引，用 `el build --release` 测性能；release 关掉的是安全检查，不是语言检查，越过前置条件的代码在 release 下是未定义行为。
+- **让数据同构且连续。** `simd` 与 `gpu` 候选只对默认动态数组和原生标量生效；矩阵优先用默认列优先的密集 Tensor，需要显式线性顺序时写 `columnMajor(A)`，不要靠转置与手工复制制造中间布局。
+- **合并逐元素工作。** 普通 Array 的连续 `map`、`filter`、`take` 等链按融合后的逐元素顺序执行，中间阶段不物化数组；设备上把逐元素链写进 `fusionPlan` 再执行。
+- **保持驻留与批处理。** 上传一次、在设备上多做几步、一次回读；需要重叠时用 `fromHostAsync` 与事件，不要在循环里反复 `fromHost`/`toHost`。
+- **把数值边界留在边界上。** 日常计算用精确 `Number`；需要机器格式或设备准入时再显式转成 `NativeFloat` 或固定 `BitFloat`（布局参数见[数值与位类型](numeric-types.md)），半精度只在带宽/存储确实重要且精度可接受时使用。
+- **属性用于表达合同与预算。** `@pure` 只在确实纯时标注；`@bounded` 用来暴露复杂度问题而不是提速；`@optimize` 属于库作者，不要在应用代码里为了小改写自定义策略。
+- **测你要比较的东西。** `auto` 的成本是未测启发式，`@bounded` 的预算也不是实测耗时；设备内存用量只统计 EL 自己持有的原生缓冲。
+
+## 实现边界
+
+| 能力 | 当前状态 |
+| --- | --- |
+| `@pure` | 语言合同，标准库大量使用；显式标注是信任边界，编译器不验证副作用 |
+| `@bounded` | 只覆盖能证到常数时间的封闭调用图；循环、递归、未知调用与类型化规模关系仍报警告 |
+| `@optimize` | 表达式级策略已用于 Number、Array 链、排序与编解码；跨 let、控制流与多消费者的传播仍是规范目标 |
+| SIMD | 只有 `map(policy:)` 入口；要求 x64 原生计划与实际向量发射，没有源码级 intrinsic |
+| GPU | 张量会话覆盖 D3D11、Vulkan 与 Metal；`map` 的加速矩阵以实现文档记录的 Windows D3D11 路径为准，其他平台按适配器能力报告 |
+| 加速元素 | 仅受检原生标量；普通 `Number`、`BitFloat`/`BitInteger` 对象、f8/f16/f128 不进入当前加速计划 |
+
+!!! note "实现状态"
+    本页按语言规范与当前标准库导出编写。设备与后端能力随发行变化：具体支持矩阵、未完成项和验收状态以实现文档和实际发行诊断为准，不要从这一页推断某个平台已经通过性能验收；设备能力与产物能否在目标环境运行同样要实测。
+
+## 继续阅读
+
+- [数值与位类型](numeric-types.md)：`Number`、`BitFloat`、`NativeFloat` 与布局参数的区别。
+- [运算符与表达式](operators.md)：逐元素运算、矩阵乘与广播的解析规则。
+- [工具链](../toolchain.md)：`el build --release`、构建模式与退出码。
+- [矩阵与数值脚本](../practice/numerics.md)：用 Tensor 和 `columnMajor` 写完整脚本。
