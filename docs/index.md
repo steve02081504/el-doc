@@ -72,7 +72,7 @@ console.info.value(@{ language: "EL", edition: "tutorial" })
 
 ## 这份文档怎么来的
 
-本教程按 EL 仓库里的语言规范、标准库源码和示例编写，尽量只教已经定下来的写法；规范与示例冲突时以规范为准。文字输出走 `console.stdout.write`／`writeLine`，结构化值走 `console.log.value` 等等级对象的 `.value(...)`。
+本教程按 EL 仓库里的语言规范、标准库源码和示例编写，尽量只教已经定下来的写法；规范与示例冲突时以规范为准。
 
 发现错误或想补内容，欢迎在[仓库](https://github.com/steve02081504/el-doc)提 issue 或 PR。
 
