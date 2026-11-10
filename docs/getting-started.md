@@ -110,8 +110,8 @@ el repl
 > console.stdout.writeLine("x = ", x)
 x = 3
 > fn twice(value) => value * 2
-> twice(21)
-42
+> twice(36)
+72
 ```
 
 绑定和状态在同一次会话里保持。交互终端下 `Ctrl+C` 结束当前输入，空输入时退出；`Ctrl+D` 或输入流结束也会退出。非交互输入（管道、重定向）同样能驱动 REPL，读到 EOF 退出。

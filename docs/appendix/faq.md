@@ -40,7 +40,7 @@ console.log.value(@{lines: 12, words: 340})
 ```el
 import { stdoutChannel } from "el:console/index.el"
 
-console.log.value(@{result: 42}, stdoutChannel)
+console.log.value(@{result: 72}, stdoutChannel)
 ```
 
 详见 [Console 与日志](../stdlib/console.md)。

@@ -86,10 +86,10 @@ console.log.value(a === b)   // nil：两个对象身份不同
 `is` 与 `isnot` 做类型判断，右侧只接一个类型原子；联合类型必须加括号：
 
 ```el
-let value: Number | Text = 42
+let value: Number | Text = 72
 
 if (value is Number) {
-	console.stdout.writeLine(value + 1)   // 43
+	console.stdout.writeLine(value + 1)   // 73
 }
 
 console.log.value(value is (Number | Text))           // t

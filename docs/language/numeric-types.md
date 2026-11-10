@@ -24,14 +24,14 @@
 ## 约束是类型的一部分：`Number<...>` 的五个参数
 
 ```el
-let bounded: Number<min: 0, max: 100> = 42
+let bounded: Number<min: 0, max: 100> = 72
 let whole: Number<integer: t> = 7
 let approximate: Number<epsilon: 0.001> = 1 / 3
 
 let wrapped = Number<min: 0, max: 5, integer: t, overflow: "wrap">(4) + 3
 ```
 
-约束写在类型实参里，赋值与每一次运算结果都要满足。`min` 与 `max` 构成闭区间，在构造与赋值时检查：`bounded` 写 42 合法，换成 101 会抛 `RangeError`。
+约束写在类型实参里，赋值与每一次运算结果都要满足。`min` 与 `max` 构成闭区间，在构造与赋值时检查：`bounded` 写 72 合法，换成 101 会抛 `RangeError`。
 
 `epsilon` 是该类型运算结果允许的最大绝对误差；`epsilon: 0` 表示要求精确，`sqrt` 一类可能产生无理数的入口会拒绝零误差目标。
 

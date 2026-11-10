@@ -40,7 +40,7 @@ console.stdout.writeLine(scaled)       // 1
 console.stdout.writeLine(0xFF + 0b1)   // 256
 ```
 
-- 整数、小数、指数与进制字面量都接受：`42`、`3.14`、`1e9`、`0xFF`、`0b1010`、`0o755`。
+- 整数、小数、指数与进制字面量都接受：`72`、`3.14`、`1e9`、`0xFF`、`0b1010`、`0o755`。
 - `_` 可以分隔数字，例如 `1_000_000`，它不改变数值，只要求夹在同进制的两个数字之间。
 - 需要精确保存时，`Number` 用分子与分母的有理数表示，所以 `1 / 3` 不会被舍入成二进制近似值；`(1 / 3) * 3` 得 `1`。
 - 需要近似计算时，精度由 `Number` 的 `epsilon` 参数表达，而不是由底层机器格式决定。`epsilon` 是最大绝对误差的上限。
@@ -49,7 +49,7 @@ console.stdout.writeLine(0xFF + 0b1)   // 256
 `Number` 的约束写在类型实参里，赋值时检查：
 
 ```el
-let bounded: Number<min: 0, max: 100> = 42
+let bounded: Number<min: 0, max: 100> = 72
 let whole: Number<integer: t> = 7
 let precise: Number<epsilon: 0.001> = 0.333
 ```
@@ -156,7 +156,7 @@ flexible = "one"          // 无注解绑定可以换类型版本
 
 ```el
 let label: Text = "draft"
-// label = 42             // 编译错误：42 超出 Text 上界
+// label = 72             // 编译错误：72 超出 Text 上界
 
 let amount: Number = 1
 // amount = "one"         // 编译错误：Text 不在 Number 上界内

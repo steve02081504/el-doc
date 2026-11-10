@@ -144,7 +144,7 @@ tests {
 ```el
 test.each("翻倍", @[
 	@{ name: "zero", input: 0, expected: 0 },
-	@{ name: "positive", input: 21, expected: 42 }
+	@{ name: "positive", input: 36, expected: 72 }
 ], (row) => check.equal(double(row.input), row.expected))
 ```
 
