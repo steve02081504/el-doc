@@ -5,6 +5,7 @@
 <div class="el-hero__actions">
 <a class="md-button md-button--primary" href="getting-started/">写第一个程序</a>
 <a class="md-button" href="roadmap/">先看学习地图</a>
+<a class="md-button" href="stdlib/api/">查标准库 API</a>
 </div>
 <div class="el-hero__code" markdown>
 ```el
@@ -95,7 +96,7 @@ console.stdout.writeLine("余额：", budget - cost, " 元")
 
 === "只想查写法"
 
-    [语言总览](language/index.md)按主题拆分，每页开头就是结论和最小例子；[工具链](toolchain.md)有完整的命令速查；[常见问题](appendix/faq.md)按主题分组。用右上角的搜索比翻目录快。
+    [语言总览](language/index.md)按主题拆分，每页开头就是结论和最小例子；[标准库 API 参考](stdlib/api/index.md)可查函数签名、参数、异常与示例；[工具链](toolchain.md)有完整的命令速查；[常见问题](appendix/faq.md)按主题分组。用右上角的搜索比翻目录快。
 
 <div class="el-status" markdown>
 <strong>文档状态</strong>

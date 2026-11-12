@@ -1,0 +1,492 @@
+{
+	"source_digest": "4d029ef30fcd7758b7b38f9246a0996d2448cefa3029c4c5ba08c7d0c1e95a6a",
+	"files": [
+		{
+			"path": "functions/comparison.el",
+			"sha256": "9829229e8098ed4a8aa044c050e2c818845231feea73947d8eff79f73a78bf1b"
+		},
+		{
+			"path": "functions/composition.el",
+			"sha256": "58412433e5324c3500a2d534630aa2e7a93095d74cae4069694233bc440361b2"
+		},
+		{
+			"path": "random/bits.el",
+			"sha256": "7e5eb155c8ae4cec509f68a4e41aeca55cca435c3e62b755ffbf6652ee07bd8a"
+		}
+	],
+	"entries": [
+		{
+			"kind": "module",
+			"name": "比较函数",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将比较运算符作为二元函数传递；这些函数由默认前导模块重导出。"
+				}
+			],
+			"source": "functions/comparison.el",
+			"line": 1,
+			"id": "functions/comparison"
+		},
+		{
+			"kind": "api",
+			"name": "greater",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回 `left > right` 的结果，用于需要二元可调用值的场合。"
+				},
+				{
+					"tag": "param",
+					"value": "left 左操作数；其类型须支持对应比较运算。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "right 右操作数，按普通运算符重载规则匹配。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "原运算符的返回值；不额外转换成 Bool，也保留条件载体。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "运算符抛出的异常原样传播。",
+					"markdown": ""
+				},
+				{
+					"tag": "complexity",
+					"value": "等于一次对应运算符调用的开销。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "判断 3 是否大于 2",
+					"markdown": "```el\nlet result = greater(3, 2)\n// 预期 result 为 t；此处使用标准库 Number 的比较。\n```",
+					"code": "let result = greater(3, 2)\n// 预期 result 为 t；此处使用标准库 Number 的比较。\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "functions/comparison.el",
+			"line": 4,
+			"signature": "export fn greater(left, right)",
+			"declaration_line": 16,
+			"id": "functions/comparison::greater"
+		},
+		{
+			"kind": "api",
+			"name": "less",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回 `left < right` 的结果，用于需要二元可调用值的场合。"
+				},
+				{
+					"tag": "param",
+					"value": "left 左操作数；其类型须支持对应比较运算。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "right 右操作数，按普通运算符重载规则匹配。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "原运算符的返回值；不额外转换成 Bool，也保留条件载体。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "运算符抛出的异常原样传播。",
+					"markdown": ""
+				},
+				{
+					"tag": "complexity",
+					"value": "等于一次对应运算符调用的开销。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "判断 3 是否小于 2",
+					"markdown": "```el\nlet result = less(3, 2)\n// 预期 result 为 nil；此处使用标准库 Number 的比较。\n```",
+					"code": "let result = less(3, 2)\n// 预期 result 为 nil；此处使用标准库 Number 的比较。\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "functions/comparison.el",
+			"line": 18,
+			"signature": "export fn less(left, right)",
+			"declaration_line": 30,
+			"id": "functions/comparison::less"
+		},
+		{
+			"kind": "api",
+			"name": "greaterEqual",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回 `left >= right` 的结果，用于需要二元可调用值的场合。"
+				},
+				{
+					"tag": "param",
+					"value": "left 左操作数；其类型须支持对应比较运算。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "right 右操作数，按普通运算符重载规则匹配。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "原运算符的返回值；不额外转换成 Bool，也保留条件载体。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "运算符抛出的异常原样传播。",
+					"markdown": ""
+				},
+				{
+					"tag": "complexity",
+					"value": "等于一次对应运算符调用的开销。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "判断 3 是否大于等于 2",
+					"markdown": "```el\nlet result = greaterEqual(3, 2)\n// 预期 result 为 t；此处使用标准库 Number 的比较。\n```",
+					"code": "let result = greaterEqual(3, 2)\n// 预期 result 为 t；此处使用标准库 Number 的比较。\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "functions/comparison.el",
+			"line": 32,
+			"signature": "export fn greaterEqual(left, right)",
+			"declaration_line": 44,
+			"id": "functions/comparison::greaterEqual"
+		},
+		{
+			"kind": "api",
+			"name": "lessEqual",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回 `left <= right` 的结果，用于需要二元可调用值的场合。"
+				},
+				{
+					"tag": "param",
+					"value": "left 左操作数；其类型须支持对应比较运算。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "right 右操作数，按普通运算符重载规则匹配。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "原运算符的返回值；不额外转换成 Bool，也保留条件载体。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "运算符抛出的异常原样传播。",
+					"markdown": ""
+				},
+				{
+					"tag": "complexity",
+					"value": "等于一次对应运算符调用的开销。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "判断 3 是否小于等于 2",
+					"markdown": "```el\nlet result = lessEqual(3, 2)\n// 预期 result 为 nil；此处使用标准库 Number 的比较。\n```",
+					"code": "let result = lessEqual(3, 2)\n// 预期 result 为 nil；此处使用标准库 Number 的比较。\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "functions/comparison.el",
+			"line": 46,
+			"signature": "export fn lessEqual(left, right)",
+			"declaration_line": 58,
+			"id": "functions/comparison::lessEqual"
+		},
+		{
+			"kind": "api",
+			"name": "equal",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回 `left == right` 的结果，用于需要二元可调用值的场合。"
+				},
+				{
+					"tag": "param",
+					"value": "left 左操作数；其类型须支持对应比较运算。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "right 右操作数，按普通运算符重载规则匹配。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "原运算符的返回值；不额外转换成 Bool，也保留条件载体。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "运算符抛出的异常原样传播。",
+					"markdown": ""
+				},
+				{
+					"tag": "complexity",
+					"value": "等于一次对应运算符调用的开销。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "判断 3 是否相等 2",
+					"markdown": "```el\nlet result = equal(3, 2)\n// 预期 result 为 nil；此处使用标准库 Number 的比较。\n```",
+					"code": "let result = equal(3, 2)\n// 预期 result 为 nil；此处使用标准库 Number 的比较。\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "functions/comparison.el",
+			"line": 60,
+			"signature": "export fn equal(left, right)",
+			"declaration_line": 72,
+			"id": "functions/comparison::equal"
+		},
+		{
+			"kind": "api",
+			"name": "notEqual",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回 `left != right` 的结果，用于需要二元可调用值的场合。"
+				},
+				{
+					"tag": "param",
+					"value": "left 左操作数；其类型须支持对应比较运算。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "right 右操作数，按普通运算符重载规则匹配。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "原运算符的返回值；不额外转换成 Bool，也保留条件载体。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "运算符抛出的异常原样传播。",
+					"markdown": ""
+				},
+				{
+					"tag": "complexity",
+					"value": "等于一次对应运算符调用的开销。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "判断 3 是否不相等 2",
+					"markdown": "```el\nlet result = notEqual(3, 2)\n// 预期 result 为 t；此处使用标准库 Number 的比较。\n```",
+					"code": "let result = notEqual(3, 2)\n// 预期 result 为 t；此处使用标准库 Number 的比较。\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "functions/comparison.el",
+			"line": 74,
+			"signature": "export fn notEqual(left, right)",
+			"declaration_line": 86,
+			"id": "functions/comparison::notEqual"
+		},
+		{
+			"kind": "module",
+			"name": "函数组合",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将共同的输入变换与最终合并操作分开表达。`over` 由默认前导模块重导出。"
+				}
+			],
+			"source": "functions/composition.el",
+			"line": 1,
+			"id": "functions/composition"
+		},
+		{
+			"kind": "api",
+			"name": "over",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "创建一个二元函数：先分别变换两个输入，再合并变换结果。\n\n调用顺序是 `transform(left)`、`transform(right)`、`merge`；每个输入只变换一次。创建组合函数时不调用这两个函数。"
+				},
+				{
+					"tag": "param",
+					"value": "merge 接收两个变换结果的二元可调用值。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "transform 接收单个输入的可调用值；左右输入必须都能被它接受。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "捕获 merge 和 transform 的二元函数，返回 merge 的结果。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "变换或合并抛出的异常向调用者传播；前一步失败时不执行后续调用。",
+					"markdown": ""
+				},
+				{
+					"tag": "complexity",
+					"value": "每次调用包含两次变换和一次合并；具体开销取决于传入函数。",
+					"markdown": ""
+				},
+				{
+					"tag": "note",
+					"value": "捕获值的复制或共享服从其类型的普通赋值合同；此函数不额外提供并行执行或遍历融合。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "比较两个数的平方",
+					"markdown": "```el\nlet largerSquare = over(max, value => value * value)\nconsole.stdout.writeLine(largerSquare(-3, 2))\n```\n预期标准输出：\n```text\n9\n```",
+					"code": "let largerSquare = over(max, value => value * value)\nconsole.stdout.writeLine(largerSquare(-3, 2))\n",
+					"expected_stdout": "9\n",
+					"verification": "not-run"
+				}
+			],
+			"source": "functions/composition.el",
+			"line": 4,
+			"signature": "export fn over(merge, transform)",
+			"declaration_line": 23,
+			"id": "functions/composition::over"
+		},
+		{
+			"kind": "module",
+			"name": "随机种子的定宽位表示",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供整数校验与种子转换，将非负种子转换为固定 64 位字表示；无论宿主原生整数宽度如何，逻辑位宽都保持一致。"
+				}
+			],
+			"source": "random/bits.el",
+			"line": 1,
+			"id": "random/bits"
+		},
+		{
+			"kind": "api",
+			"name": "require_integer",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "检查数值是否有限且为整数。需要拒绝小数、无穷值和 NaN 的整数运算可先调用此函数；不符合条件时抛出范围错误。"
+				},
+				{
+					"tag": "param",
+					"value": "value 要检查的数值。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "无返回值；输入为有限整数时正常返回。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "RangeError 当输入不是有限整数时抛出。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "校验整数后转换为定宽字",
+					"markdown": "```el\nimport { Number } from \"file:../number/number.el\"\nimport { require_integer, seed_bits } from \"file:./bits.el\"\nrequire_integer(42)\nlet seed = seed_bits(42)\nconsole.stdout.writeLine(Number(seed))\n```\n预期标准输出：\n```text\n42\n```",
+					"code": "import { Number } from \"file:../number/number.el\"\nimport { require_integer, seed_bits } from \"file:./bits.el\"\nrequire_integer(42)\nlet seed = seed_bits(42)\nconsole.stdout.writeLine(Number(seed))\n",
+					"expected_stdout": "42\n",
+					"verification": "not-run"
+				}
+			],
+			"source": "random/bits.el",
+			"line": 13,
+			"signature": "export fn require_integer(value: Number)",
+			"declaration_line": 30,
+			"id": "random/bits::require_integer"
+		},
+		{
+			"kind": "api",
+			"name": "seed_bits",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "校验数值种子并将其转换为库的无符号 64 位字类型。取值范围为包含零、不包含 2^64，与宿主原生整数宽度无关。"
+				},
+				{
+					"tag": "param",
+					"value": "seed 范围为 0 <= seed < 2^64 的有限整数种子。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "以固定宽度 Word64 表示的种子。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "RangeError 当种子不是有限整数、为负数或大于等于 2^64 时抛出。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "转换种子并取回数值",
+					"markdown": "```el\nimport { Number } from \"file:../number/number.el\"\nimport { seed_bits } from \"file:./bits.el\"\nlet seed = seed_bits(42)\nconsole.stdout.writeLine(Number(seed))\n```\n预期标准输出：\n```text\n42\n```",
+					"code": "import { Number } from \"file:../number/number.el\"\nimport { seed_bits } from \"file:./bits.el\"\nlet seed = seed_bits(42)\nconsole.stdout.writeLine(Number(seed))\n",
+					"expected_stdout": "42\n",
+					"verification": "not-run"
+				}
+			],
+			"source": "random/bits.el",
+			"line": 35,
+			"signature": "export fn seed_bits(seed: Number): Word64",
+			"declaration_line": 51,
+			"id": "random/bits::seed_bits"
+		}
+	],
+	"coverage": {
+		"source_files": 3565,
+		"documented_files": 3,
+		"documented_apis": 9
+	}
+}

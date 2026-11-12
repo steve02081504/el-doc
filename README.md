@@ -21,10 +21,17 @@
 
 ## 站点特性
 
+- `hooks/api_navigation.py` 将生成的 API 模块页自动加入侧边栏，新增模块无需手改导航。
 - `el`／`eol`／`repl` 代码块的高亮由 `hooks/el_lexer.py` 注册。
 - 页尾「随便翻一页」按钮由 `hooks/random_pages.py` 生成页面清单，前端脚本在 `docs/assets/random-page.js`。
 - 阅读进度条与首页的「继续上次」卡片由 `docs/assets/learning.js` 实现，数据只存在浏览器 `localStorage`，不上报。
 - 可折叠的「先猜」、检查点清单与章节卡片样式在 `docs/stylesheets/extra.css`；Markdown 用法见 AUTHORING.md。
+
+## 从 EL 源码生成标准库参考
+
+`python scripts/stdlib_docs.py --el-root /path/to/el` 读取标准库的 `///` 功能性注释，生成 `docs/stdlib/api/` 下的 Markdown 与可供 CLI/GUI 消费的 JSON。生成快照随本仓库提交，站点构建不需要额外检出 EL。
+
+注释格式、使用边界和未来 EL 子命令的职责见 [文档注释与生成](docs/stdlib/documentation-comments.md)。生成后用 `--check` 检查快照，用 `python -m unittest discover -s tests -v` 验证提取器，再运行 `mkdocs build --strict`。
 
 ## 发布
 

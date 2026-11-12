@@ -42,6 +42,7 @@ theme:
     - content.tabs.link
 
 hooks:
+  - hooks/api_navigation.py
   - hooks/el_lexer.py
   - hooks/random_pages.py
 
@@ -136,6 +137,8 @@ nav:
       - 外部接口与 ABI: language/foreign.md
   - 标准库:
       - 标准库总览: stdlib/index.md
+      - API 参考: stdlib/api/index.md
+      - 文档注释与生成: stdlib/documentation-comments.md
       - Console 与日志: stdlib/console.md
       - 集合与文本: stdlib/collections.md
       - 从遍历到函数组合: stdlib/function-composition.md

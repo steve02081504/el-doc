@@ -28,6 +28,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Build site
         run: mkdocs build --strict
+      - name: Test documentation extractor
+        run: python -m unittest discover -s tests -v
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
