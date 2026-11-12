@@ -138,6 +138,7 @@ nav:
       - 标准库总览: stdlib/index.md
       - Console 与日志: stdlib/console.md
       - 集合与文本: stdlib/collections.md
+      - 从遍历到函数组合: stdlib/function-composition.md
       - 文件与网络: stdlib/files-network.md
       - 图形界面: stdlib/gui.md
       - 声音与音频: stdlib/audio.md

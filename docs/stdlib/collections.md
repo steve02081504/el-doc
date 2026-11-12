@@ -61,6 +61,8 @@ for (let value in values) {
 
 数组还提供一组链式操作：`map`、`filter`、`some`、`all`、`indexOf`、`includes`、`join`、`reversed`。
 
+想把同一道统计题从手写循环逐步写成组合表达式，可以接着读[从遍历到函数组合](function-composition.md)：从 filter 开始，再用 batch/keep 和 over 提取重复处理。
+
 ```el
 let doubled = values.map(value => value * 2)
 let big = values.filter(value => value > 20)
