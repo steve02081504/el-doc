@@ -41,7 +41,7 @@ let last = values.pop()  // 取走末尾
 let first = values.shift()  // 取走开头
 ```
 
-`count` 与 `length` 是同义的只读长度，底层类型是机器整数 `Integer`；需要参与普通数值运算时写 `Number(values.count)`。`size` 在具体数组类型上也有同样含义。
+`count` 是只读长度，返回机器整数 `NativeSignedInteger`，可以直接进行机器整数运算；需要按普通 `Number` 语义运算时，显式写 `Number(values.count)`，例如 `total / Number(values.count)`。这里的机器整数与公开的数学类型 `Integer`（受整数约束的 `Number`）不同。
 
 索引读取写 `values[i]`，赋值写 `values[i] = value`。越界在 debug 构建下抛 `RangeError`；release 构建省去这类安全检查，调用方必须先保证下标在范围内。
 

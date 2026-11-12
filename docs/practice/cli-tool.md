@@ -76,7 +76,7 @@ import { command_arguments } from "el:operating-system/arguments/index.el"
 import { exit } from "el:operating-system/processes/index.el"
 
 let argv = command_arguments()
-if (Number(argv.size) != 2) {
+if (Number(argv.count) != 2) {
 	console.stderr.writeLine("usage: words FILE")
 	exit(2)
 }
@@ -167,7 +167,7 @@ fn countWords(text: Text) {
 
 `Text.split(pattern)` 接收文本模式并返回 `Text[]`，`count` 是元素个数。先用 `replaceAll("\r", "")` 去掉 Windows 换行的回车再按 `\n` 拆行，行尾的 `\r` 就不会混进词里。词数按空格、制表符和换行切分，空片段跳过，统计的是空白分隔的片段而非语言学意义上的词。
 
-空文件单独返回 0，免得把一串空片段当成一行。文本与数组的 `count` 都是 `Integer`，参与 `Number` 运算前显式调用 `Number(...)` 最稳。
+空文件单独返回 0，免得把一串空片段当成一行。文本与数组的 `count` 返回机器整数，可以直接进行机器整数运算；本例用 `Number(...)` 将计数转换为普通 `Number`，与其他统计值保持一致。
 
 ??? question "先猜：两行的文件，`lines:` 会打印 2 吗？"
     会打印 3。`split` 在末尾的换行之后还留一个空片段，`count` 数的是片段数；文件末尾没有换行时才是 2。
@@ -275,7 +275,7 @@ fn countWords(text: Text) {
 }
 
 let argv = command_arguments()
-if (Number(argv.size) != 2) {
+if (Number(argv.count) != 2) {
 	console.stderr.writeLine("usage: words FILE")
 	exit(2)
 }
@@ -299,7 +299,7 @@ console.stdout.writeLine("lines: ", countLines(source), "  words: ", countWords(
 
 ## 卡住了？
 
-- **现象：明明传了文件，还是打印 `usage: words FILE`。** 路径里的空格没加引号，被拆成两个参数，`argv.size` 变成 3。检查：打印 `Number(argv.size)` 和 `argv`。
+- **现象：明明传了文件，还是打印 `usage: words FILE`。** 路径里的空格没加引号，被拆成两个参数，`argv.count` 变成 3。检查：打印 `Number(argv.count)` 和 `argv`。
 - **现象：`lines:` 比编辑器里看到的行数多 1。** 文件末尾有换行，`split` 留下一个空片段。检查：把末尾换行删掉再跑一次，数字应当减一。
 - **现象：重定向输出之后，看不到任何错误。** 错误走 stderr，被 `>` 只截走了 stdout。检查：`el run src/main.el missing.txt 2>&1 > out.txt`，或直接看终端。
 - **现象：`el build` 的产物在别的目录运行时报找不到文件。** 相对路径按当前工作目录解析，不是按产物位置。检查：用 `currentDirectory()` 打印工作目录，或改传绝对路径。
