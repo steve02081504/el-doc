@@ -16,15 +16,19 @@
 
 ## 三种写法，同一种东西
 
+采购时，本子和铅笔都要按“单价乘数量”计算总价。把规则放进函数，就能给不同商品重复使用；函数返回的数字还能继续参与合计。
+
 ```el
-fn add(a: Number, b: Number) {
-	return a + b
+fn purchaseCost(price: Number, quantity: Number) {
+	return price * quantity
 }
 
-fn double(value: Number) => value * 2
+fn costWithDelivery(cost: Number) => cost + 5
 
-console.stdout.writeLine(add(1, 2))    // 3
-console.stdout.writeLine(double(4))    // 8
+let notebookCost = purchaseCost(4, 3)
+let pencilCost = purchaseCost(2, 5)
+console.stdout.writeLine("文具总价：", notebookCost + pencilCost, " 元") // 文具总价：22 元
+console.stdout.writeLine("含配送：", costWithDelivery(notebookCost + pencilCost), " 元") // 含配送：27 元
 ```
 
 - 声明用 `fn 名字(参数) 返回注解? 函数体`，返回注解可以省略。
@@ -74,11 +78,11 @@ console.stdout.writeLine(immediate)       // 3
 ## 裸 `=>` 与 `it`：参数可以省略
 
 ```el
-let negate = => -it
-let doubled = @[1, 2, 3].map(=> it * 2)
+let recordExpense = => -it
+let expenses = @[12, 8, 5].map(recordExpense)
 
-console.stdout.writeLine(negate(3))   // -3
-console.log.value(doubled)            // [2, 4, 6]
+console.stdout.writeLine(recordExpense(3)) // -3：账本中把支出记为负数
+console.log.value(expenses)                // 结构化展示三笔支出：-12、-8、-5
 ```
 
 - 裸 `=> 表达式` 接受任意数量实参，`it` 默认指第一实参，没有实参时是 `void`；它优先于外层同名绑定，不捕获外层的 `it`。
@@ -87,7 +91,7 @@ console.log.value(doubled)            // [2, 4, 6]
 `it` 不是关键字：按普通名字解析不到时这条候选链才启用，显式声明了名为 `it` 的绑定就听显式的。
 
 !!! example "动手 30 秒"
-    把 `=> -it` 改成 `=> it * 10`，`negate(3)` 就从 `-3` 变成 `30`。`it` 收的就是那一个实参。
+    给清单增加一笔 `3` 元支出，再运行。应有四笔记录，新增的一笔是 `-3`。解释 `it` 在四次调用中各代表多少。
 
 ## 默认参数：省略或传 `void` 才触发
 

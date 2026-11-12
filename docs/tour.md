@@ -9,45 +9,49 @@
 
     <span class="el-chip">⏱ 约 15 分钟</span> <span class="el-chip">前置：[安装与第一个程序](getting-started.md)</span>
 
-这一页不追求完整，而是用几个连续的小片段把 EL 的主要语法串起来。**看不懂的细节先跳过**——每一站都有对应的详细章节，最后一节列了去哪补。
+这一页适合已经会编程、想快速比较写法的读者。第一次学编程时，先走[零基础路线](beginner/index.md)，不用在一页里同时掌握函数、类和并发。下面各段是独立片段，不需要依次拼进同一个文件。
 
 ## 第一站：值与输出
 
 ```el
-let name = "EL"
-let version = 1 + 1
+let item = "笔记本"
+let quantity = 3
 
-console.stdout.writeLine(name, " ", version)
+console.stdout.writeLine(item, " ", quantity, " 本")
 ```
 
 ```text
-EL 2
+笔记本 3 本
 ```
 
 - `let` 声明可写绑定，不写类型注解时可以换类型。
-- `1 + 1` 是普通的 `Number` 运算。EL 的日常数字是精确有理数，不是固定位宽整数。
+- `quantity` 记录数量。EL 的日常数字是精确有理数，不是固定位宽整数。
 - `writeLine` 接受多个参数，逐个做 `Text` 转换后写出，不自动加空格；上面的空格是显式写出来的。
 - 没有 `main`，模块顶层代码就是入口。
 
-??? question "先猜：输出的 `EL 2` 里，空格是谁加的？"
-    `writeLine` 不负责加空格，第二个参数就是 `" "`。把 `" "` 去掉，输出会变成 `EL2`——这是后面排版两列输出时最常犯的错。
+??? question "先猜：物品与数量之间的空格是谁加的？"
+    `writeLine` 不负责加空格，第二个参数就是 `" "`。去掉它，物品和数量就会连在一起显示。
 
 ## 第二站：函数与集合
 
 ```el
-fn double(value: Number) => value * 2
+fn costForTwo(price: Number) => price * 2
 
-let numbers = @[1, 2, 3]
-let doubled = numbers.map(double)
+let prices = @[4, 2, 3]
+let costs = prices.map(costForTwo)
 
-console.stdout.writeLine(doubled.join(", "))
+for (let cost in costs) {
+	console.stdout.writeLine("买两件：", cost, " 元")
+}
 ```
 
 ```text
-2, 4, 6
+买两件：8 元
+买两件：4 元
+买两件：6 元
 ```
 
-`fn name(...) => expression` 是表达式体函数，不写 `return` 时返回最后一条语句的值。`@[...]` 是数组字面量，`map` 接受一个可调用值，`join` 把数组拼成文本。函数值可以像普通值一样传递，不需要额外的委托语法。
+`fn name(...) => expression` 是表达式体函数，不写 `return` 时返回最后一条语句的值。这里每种商品都买两件，`map` 对每个单价调用同一个总价函数，得到一份小计清单，再用循环输出。
 
 ## 第三站：控制流是表达式
 
@@ -67,18 +71,18 @@ B
 
 `if` 不只是语句，它产生值；函数没写 `return` 时，返回值就是最后执行的 `if` 的结果。这省掉了大量“先声明变量、再在分支里赋值、最后 return”的样板。
 
-循环也不需要把结果先攒起来：
+循环也可以逐项累计开支：
 
 ```el
 let total = 0
-for (let n in @[1, 2, 3, 4]) {
-	total += n
+for (let cost in @[12, 10, 6]) {
+	total += cost
 }
-console.stdout.writeLine("total: ", total)
+console.stdout.writeLine("合计：", total, " 元") // 合计：28 元
 ```
 
 !!! tip "回头看一眼"
-    第二站的 `fn double(value: Number) => value * 2` 其实就是本页“表达式体”的最短例子：函数体是表达式，返回值自然就是它的值。
+    第二站的 `costForTwo` 用表达式直接返回两件商品的总价。调用它时拿到的是数字，所以还可以继续求和。
 
 ## 第四站：类与对象
 
@@ -213,10 +217,10 @@ console.info.value(@{ total: tasks.count, finished })
 [ ] write a program
 ```
 
-第二行来自 `console.info.value`：它按 info 等级展示结构化对象，而不是打成一行文本。具体呈现由终端或 GUI console 决定。
+此外，`console.info.value` 会展示任务总数和完成数的结构化记录，默认走 stderr，不属于上面两行 stdout。具体呈现由终端或 GUI console 决定。
 
 !!! example "动手 5 分钟"
-    在这个程序上加三样东西：给 `Task` 加一个 `priority` 字段、按优先级排序后再打印、加一个 `clear()` 方法清空所有任务。改完能跑，你就已经用过了函数、类、数组、表达式和日志。
+    在这个程序上加三样东西：先新增一条任务，运行后应多一行 `[ ]`。再完成第二条任务，应看到第二行变为 `[x]`。最后尝试添加空标题，确认它抛出错误而不会加入清单。每次只做一项，保留已经正确的结果。
 
 ## 你已经见过了什么
 

@@ -9,11 +9,13 @@
 
 ## 站点结构
 
-站点按“先跑起来，再懂原理，最后做出东西”组织，导航与文件对应：
+站点提供零基础动手路线和按主题查阅的进阶章节，导航与文件对应：
 
 - `docs/index.md`：落地页。三条入口 + 学习地图 + 读法分流。
 - `docs/roadmap.md`：学习地图。五个阶段、时间估算、每站自检清单、卡点排查。
-- `docs/getting-started.md`、`docs/tour.md`：起步的两页。
+- `docs/getting-started.md`：从保存文件、打开终端到运行与排错。
+- `docs/beginner/`：零花钱、预算判断、阅读记录、采购函数与文具采购小助手；完整例子逐步过渡到独立任务。
+- `docs/tour.md`：已有编程经验时使用的速览。
 - `docs/language/index.md`、`docs/stdlib/index.md`：章节入口，讲清本章怎么读、哪些可以跳。
 - 其余页面按 `language/`、`stdlib/`、`practice/`、`appendix/` 分目录，导航在 `mkdocs.yml`。
 

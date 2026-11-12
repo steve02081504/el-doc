@@ -31,14 +31,17 @@ console.stdout.writeLine(scaled)
 日常数字是标准库 `Number`，不是固定位宽的机器整数。字面量写出来之后，原始文本会和类型约束一起交给标准库的数值协议，不会先被截成机器浮点数再解析。
 
 ```el
-let total = 1_000_000
-let ratio = 1 / 3
-let scaled = ratio * 3
+let budget = 20
+let notebookPrice = 4
+let quantity = 3
+let cost = notebookPrice * quantity
+let remaining = budget - cost
 
-console.stdout.writeLine(total)        // 1000000
-console.stdout.writeLine(scaled)       // 1
-console.stdout.writeLine(0xFF + 0b1)   // 256
+console.stdout.writeLine("总价：", cost, " 元")       // 总价：12 元
+console.stdout.writeLine("余额：", remaining, " 元") // 余额：8 元
 ```
+
+变量是有名字的一份数据记录。`let budget = 20` 创建预算记录；`cost` 保存算出的总价，`remaining` 保存余额。`=` 把右边的结果存到左边，`*` 表示乘法。这里统一用“元”作单位，避免把元和分直接相加。需要逐行讲解时，可以先做[零花钱练习](../beginner/budget.md)。
 
 - 整数、小数、指数与进制字面量都接受：`72`、`3.14`、`1e9`、`0xFF`、`0b1010`、`0o755`。
 - `_` 可以分隔数字，例如 `1_000_000`，它不改变数值，只要求夹在同进制的两个数字之间。
@@ -69,13 +72,13 @@ let precise: Number<epsilon: 0.001> = 0.333
 单引号和双引号等价，都是 `Text` 字面量；转义与插值写法统一。
 
 ```el
-let single = 'hello'
-let double = "hello"
-let name = "Ada"
-let message = `Hello, ${name}!`
+let single = '周五还书'
+let double = "周五还书"
+let bookName = "昆虫记"
+let message = `提醒：周五归还《${bookName}》`
 
 console.log.value(single == double)          // t
-console.stdout.writeLine(message)            // Hello, Ada!
+console.stdout.writeLine(message)            // 提醒：周五归还《昆虫记》
 ```
 
 反引号字符串支持 `${表达式}` 插值，可跨行；每次执行时从左到右求值插值表达式。插值只生成本次文本，不是 GUI 的持续绑定。

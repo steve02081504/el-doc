@@ -16,26 +16,29 @@
 
 ## `if` 是表达式，值从被选中的分支来
 
-```el
-let score = 72
-let grade = if (score >= 90) { "A" } else if (score >= 60) { "B" } else { "C" }
+给借阅记录生成状态文字，方便打印提醒。读完时标为“可以还书”，否则标为“继续阅读”。
 
-console.stdout.writeLine(grade)   // B
+```el
+let pagesRead = 72
+let totalPages = 100
+let status = if (pagesRead >= totalPages) { "可以还书" } else { "继续阅读" }
+
+console.stdout.writeLine(status)   // 继续阅读
 ```
 
 - 每个分支是一个块，块的值就是它最后执行语句的值；`if` 的值取被选中分支的值。
 - 没有 `else` 且条件为假时，结果是 `void`：
 
 ```el
-let bonus = if (score > 100) { "extra" }
-console.log.value(bonus)   // void
+let reminder = if (pagesRead >= totalPages) { "请在周五前归还" }
+console.log.value(reminder)   // void：尚未读完，这次没有生成归还提醒
 ```
 
 - 条件不需要外层括号，圆括号只用于表达式分组：
 
 ```el
-if score >= 60 {
-	console.stdout.writeLine("pass")
+if pagesRead >= totalPages {
+	console.stdout.writeLine("请带上这本书")
 }
 ```
 
@@ -43,15 +46,15 @@ if score >= 60 {
 - `if` 的值可以直接作为初始化器、实参或隐式返回值，不要求先赋给变量。
 
 !!! example "动手 30 秒"
-    把 `score` 改成 `95` 再跑，输出从 `B` 变成 `A`。改 `55` 得到 `C`——同一个绑定，值一路从被选中的分支里流出来。
+    把 `pagesRead` 改成 `100` 再跑，第一个输出变成“可以还书”。改成 `99`，应仍为“继续阅读”。先预测，后核对。
 
 ## 循环也返回最后那条语句的值
 
 ```el
-let count = 0
-while (count < 3) {
-	console.stdout.writeLine(count)
-	count += 1
+let saved = 0
+while (saved < 30) {
+	saved += 10
+	console.stdout.writeLine("已攒：", saved, " 元")
 }
 
 let attempts = 0
@@ -59,6 +62,8 @@ do {
 	attempts += 1
 } while (attempts < 2)
 ```
+
+第一段依次显示已攒 10、20、30 元：每轮存入 10 元，到达目标后停止。下面的 `do while` 片段用来对比执行顺序，最终 `attempts` 是 `2`。
 
 - `while` 的条件同样可以省略外层括号；`do while` 的尾部条件要求括号。
 - `do while` 先执行一次循环体再检查条件，所以循环体至少执行一次。
@@ -89,21 +94,21 @@ console.stdout.writeLine(sum)   // 55
 ## 迭代用范围循环
 
 ```el
-let names = @["Ada", "Grace", "Linus"]
+let reminders = @["带水杯", "还图书", "整理书包"]
 
-for (let name in names) {
-	console.stdout.writeLine(name)
+for (let reminder in reminders) {
+	console.stdout.writeLine("明日提醒：", reminder)
 }
 
-for (let i in 0..3) {
-	console.stdout.writeLine(i)    // 0 1 2
+for (let day in 1..4) {
+	console.stdout.writeLine("第 ", day, " 天读 10 页") // 第 1、2、3 天
 }
-for (let i in 0..|3) {
-	console.stdout.writeLine(i)    // 0 1 2 3
+for (let day in 1..|4) {
+	console.stdout.writeLine("第 ", day, " 天读 10 页") // 第 1、2、3、4 天
 }
 
-for in 0..3 {
-	console.stdout.writeLine(it)   // 省略变量：it 指代当前元素
+for in reminders {
+	console.stdout.writeLine("明日提醒：", it) // 省略变量：it 指代当前提醒
 }
 ```
 

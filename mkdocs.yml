@@ -1,5 +1,5 @@
 site_name: EL 语言教程
-site_description: 从第一个程序到 GUI、网页与工具链的 EL 语言教学文档
+site_description: 从零花钱计算到采购小助手，面向零基础读者的 EL 教程与进阶参考
 site_url: https://steve02081504.github.io/el-doc/
 repo_url: https://github.com/steve02081504/el-doc
 repo_name: steve02081504/el-doc
@@ -108,7 +108,14 @@ nav:
   - 首页: index.md
   - 学习地图: roadmap.md
   - 起步:
-      - 安装与第一个程序: getting-started.md
+      - 第一个程序: getting-started.md
+      - 零基础路线:
+          - 从零开始: beginner/index.md
+          - 零花钱还剩多少: beginner/budget.md
+          - 钱够不够买: beginner/decisions.md
+          - 把阅读记录加起来: beginner/lists.md
+          - 重复的计算只写一次: beginner/functions.md
+          - 文具采购小助手: beginner/shopping.md
       - 15 分钟速览: tour.md
   - 语言:
       - 语言总览: language/index.md

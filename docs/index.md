@@ -1,17 +1,16 @@
 <div class="el-hero" markdown>
 <p class="el-hero__eyebrow">EviL LANGUAGE · EL 教学文档</p>
-<h1>一份源码，<br>既开窗口，也开网页。</h1>
-<p class="el-hero__lead">EL 是一门面向整个应用的通用语言：脚本、原生程序、服务、标签式 GUI 与数据库查询共用一套语法、类型和运行时。同一套界面代码既能打开系统窗口，也能编译成单文件网页，双击就在浏览器里跑起来。</p>
+<h1>从一笔零花钱，<br>开始写自己的程序。</h1>
+<p class="el-hero__lead">不需要先懂编程。先让电脑算出买文具还剩多少钱，再一步步做出采购小助手。每一步都有完整例子、预期结果和可以自己检查的小任务。</p>
 <div class="el-hero__actions">
-<a class="md-button md-button--primary" href="getting-started/">3 分钟跑起来</a>
+<a class="md-button md-button--primary" href="getting-started/">写第一个程序</a>
 <a class="md-button" href="roadmap/">先看学习地图</a>
 </div>
 <div class="el-hero__code" markdown>
 ```el
-fn greet(name: Text = "world") => "hello " + name
-
-console.stdout.writeLine(greet())
-console.info.value(@{ language: "EL" })
+let budget = 20
+let cost = 4 * 3
+console.stdout.writeLine("余额：", budget - cost, " 元")
 ```
 </div>
 </div>
@@ -26,25 +25,31 @@ console.info.value(@{ language: "EL" })
 <button class="el-progress__reset" type="button" data-el-progress-reset>清空本机进度</button>
 </div>
 
-## EL 是什么味道
+## 第一次写代码，从这里走
 
-- **一套语言覆盖应用与平台。** 脚本、原生程序、服务、GUI 和远程模块更新使用同一份源码；原生目标覆盖 Windows、Linux、macOS、FreeBSD、iOS、Android，浏览器里则是单文件页面：wasm 模块内嵌在 HTML 中，界面仍由 EL 用 Canvas 自绘。
+上面的程序会显示 `余额：8 元`。看不懂英文也没关系，[第一个程序](getting-started.md)会从保存文件、打开终端开始；[零基础路线](beginner/index.md)再带你逐步读懂、修改和独立写程序。
+
+==先做成一件小事，再学它背后的规则。== 每次只改一处，先预测结果，再运行检查。页面访问记录只代表来过，不代表已经学会。
+
+## EL 能用来做什么
+
+- **从计算脚本到应用。** EL 是仍在开发中的通用语言，目标包括原生程序、服务和图形界面。浏览器与各平台的实际可用范围请看[规范与实现边界](appendix/implementation-status.md)，不要把设计目标当作已经验证的能力。
 - **数值不将就。** 日常的 `Number` 是精确有理数：`1/3` 可以精确保存，数值变大时按需扩展表示，不会仅因超过固定机器位宽就溢出。
 - **资源规则是语言的一部分。** 对象明确选择复制还是共享，构造与析构有固定时机，需要时能直接指定存储位置与借用来源。
-- **Debug 护具穿满，Release 跑得快。** 两种模式共用一条优化流水线；安全检查可以关闭，但语言合同不会因此改变。
+- **构建模式有明确边界。** Debug 与 Release 共用一条优化流水线，部分标准库安全检查随模式选择，语言合同保持一致。
 
 想先看它长什么样，读[15 分钟速览](tour.md)；想直接动手，去[安装与第一个程序](getting-started.md)。
 
-## 学习地图：五站，一条主线
+## 做完第一个作品之后
 
-每一站都有明确的产出和自检清单，读完就走，卡住再回来。完整路线与时间估算见[学习地图](roadmap.md)。
+零基础先走[采购小助手路线](beginner/index.md)。下面是更完整的章节地图，适合做完第一个作品后按需查阅；无需先读完才能动手。
 
 <div class="el-grid" markdown>
 <div class="el-card" markdown>
 <span class="el-card__num">00</span>
 ### [起步](getting-started.md)
-让第一行代码跑起来，用 REPL 改几个值。
-<span class="el-card__meta">约 40 分钟 · 2 页</span>
+让第一行代码跑起来，再沿零基础路线完成采购小助手。
+<span class="el-card__meta">分小节练习 · 可以随时停下</span>
 </div>
 <div class="el-card" markdown>
 <span class="el-card__num">01</span>
@@ -82,7 +87,7 @@ console.info.value(@{ language: "EL" })
 
 === "第一次学编程"
 
-    按[学习地图](roadmap.md)从上往下读，每页的代码都自己敲一遍。看到“实现状态”的标注可以先跳过；看到“可选 · 深入”先跳过，等主线走完再回来。卡住时先查[常见问题](appendix/faq.md)。
+    从[第一个程序](getting-started.md)开始，再走[零基础路线](beginner/index.md)。先运行例子，再改一处，最后收起例子独立做。速览、内存、异步和底层章节留到需要时查。
 
 === "会别的语言，想快速上手"
 
@@ -103,8 +108,9 @@ console.info.value(@{ language: "EL" })
 
 发现错误或想补内容，欢迎在[仓库](https://github.com/steve02081504/el-doc)提 issue 或 PR。
 
-## 开始的三扇门
+## 选择起点
 
-- [3 分钟跑起来](getting-started.md)：不确定从哪开始时选这个。
+- [第一个程序](getting-started.md)：从保存文件和运行命令开始。
+- [零基础路线](beginner/index.md)：用生活里的小任务学写程序。
 - [15 分钟速览](tour.md)：想先看看这门语言长什么样。
 - [学习地图](roadmap.md)：想知道整份教程有多少、要花多久。

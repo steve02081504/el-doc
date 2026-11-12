@@ -158,16 +158,18 @@ flag &= "again"   // 目标现在是真值 → 求右侧 "again" 并写回
 复合赋值覆盖 `+=`、`-=`、`*=`、`/=`、`%=`、`&=`、`|=`、`^=`、`<<=`、`>>=`、`??=`。左侧必须是可赋值目标，目标只定位一次，右侧求值一次。
 
 ```el
-let n = 10
-n += 5
-n *= 2
-console.stdout.writeLine(n)   // 30
+let savings = 10
+savings += 5
+savings -= 3
+console.stdout.writeLine("余额：", savings, " 元") // 余额：12 元
 
-let counter = 0
-console.stdout.writeLine(++counter)   // 1：前缀取运算后的值
-console.stdout.writeLine(counter++)   // 1：后缀取运算前的值
-console.stdout.writeLine(counter)     // 2
+let ticketNumber = 0
+console.stdout.writeLine(++ticketNumber) // 1：先生成下一张排队号码，再显示
+console.stdout.writeLine(ticketNumber++) // 1：先显示当前号码，再生成下一张
+console.stdout.writeLine(ticketNumber)   // 2
 ```
+
+第一段是一份微型账本：原有 10 元，存入 5 元，再花掉 3 元。`savings += 5` 相当于把加法结果存回 `savings`。号码例子则用来比较前缀与后缀的取值时机。
 
 `++`／`--` 是 `v = v + 1`／`v = v - 1` 的赋值糖，不是新的算术规则；目标必须是可赋值绑定、可写类成员或可读写下标，`const` 目标报定位错误。
 

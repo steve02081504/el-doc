@@ -1,287 +1,128 @@
-# 安装与第一个程序
+# 第一个程序：让电脑显示一条提醒
 
-> 第一个 EL 程序只有一行代码。跑通它，你会发现这门语言没有 `main`、没有启动样板——文件的第一行就是程序的开始。
+> 先写一条明天用得上的提醒，保存、运行，再把它改成自己的话。
 
 !!! abstract "🎯 读完这页，你能"
-    - 确认 `el` 可用，跑出第一个 EL 程序，并用 REPL 试写法
-    - 看懂一个 EL 程序为什么不需要 `main`
-    - 把单文件脚本变成可交付的原生产物，或为其他系统生成产物
-    - 组织一个最小项目，知道参数、退出码和入口怎么写
+    - 区分终端命令、EL 代码和程序输出
+    - 保存一个 `.el` 文件，并在它所在的文件夹运行
+    - 修改文字后重新运行，按现象排查常见问题
 
-    <span class="el-chip">⏱ 约 20 分钟</span> <span class="el-chip">前置：已拿到 EL 发行内容</span>
+    <span class="el-chip">可以分步完成，不计时</span> <span class="el-chip">前置：一台电脑和可用的 EL 工具</span>
 
-这一页假设你已经拿到 EL 的发行内容：主入口 `el`，以及同一份发行里的独立编译器 `elc`。两者共用一条编译链，`el` 自己就能运行和编译源码；`elc` 只是编译器的单独命令行入口，日常用 `el` 就够，不需要先找到或安装 `elc`。
+## 先确认工具已经准备好
 
-## 60 秒跑起来
+EL 还在开发中。这份教程不提供安装包，也不把源码仓库当成可直接运行的发行包。如果你还没有 EL 工具，请先请提供工具的人协助准备，并确认最小程序能运行；不用为了学第一课先自行构建编译器。
 
-### 第一步：确认 `el` 在 PATH 里
+已经拿到工具时，使用配套说明支持的系统。下文以 Windows 为例；其他系统也需要先确认对应工具可用。平台设计目标与当前验收范围见[规范与实现边界](appendix/implementation-status.md)。
 
-把发行包解压到一个固定目录，并将该目录加入 `PATH`。Windows 上可以在 PowerShell 里检查：
+**终端**是可以输入命令、查看运行结果的窗口。Windows 可以从开始菜单打开 PowerShell。在里面输入下面这行，再按回车：
 
 ```powershell
 el --help
 ```
 
-Linux 和 macOS 上相同：
+这是**终端命令**，不写进 EL 文件。能看见帮助信息，说明终端找到了 EL；这一步还不能证明编译和运行都可用。
 
-```sh
-el --help
-```
+如果提示找不到 `el`，工具可能没有安装好，或者它的文件夹还没加入 `PATH`。`PATH` 是系统寻找命令的文件夹清单。先按工具附带的说明检查，必要时请协助安装的人处理；这一关卡住不需要修改后面的代码。
 
-能看到子命令列表就说明安装好了。如果提示找不到命令，重新打开终端让 `PATH` 生效，或检查你加入的是不是含 `el` 可执行文件的目录。
+## 第一步：保存一份代码文件
 
-本教程的命令在三个桌面平台上写法一致。当前发行验证以 Windows x64 与 Linux x64 为主；其他目标的支持范围以发布说明为准。
-
-??? note "可选 · 深入：`el` 与 `elc` 的关系"
-    `elc` 不是 `el` 的前置依赖。`el` 在发行里带着编译器源码，`el run` 和 `el build` 自己就能编译；`elc` 是同一编译器的独立可执行入口，适合外部构建脚本或排查编译链。需要直接调编译器时，`el --compile-native ...` 与 `elc --compile-native ...` 接受同一套参数，细节见[工具链](toolchain.md)。
-
-### 第二步：写第一个程序
-
-新建 `hello.el`：
+1. 在文档目录里新建文件夹 `el-practice`。把练习放在这里，之后容易找到。
+2. 打开纯文本编辑器，例如 Windows 记事本。不要使用 Word。
+3. 输入下面这一行代码。
+4. 选择“另存为”，保存到 `el-practice`，文件名填 `hello.el`，文件类型选“所有文件”，编码选 UTF-8。
 
 ```el
-// hello.el
-console.stdout.writeLine("Hello, EL")
+console.stdout.writeLine("明天记得带水杯")
 ```
 
-运行：
+这段是 **EL 代码**，保存在文件里。`console.stdout.writeLine(...)` 的作用是显示一行文字，双引号包住要显示的内容。先保留这句英文，只改引号里面的文字就可以。
 
-```sh
+在 Windows 文件资源管理器里打开“查看 → 显示 → 文件扩展名”，确认它叫 `hello.el`，不是 `hello.el.txt`。不同 Windows 版本的菜单位置可能稍有不同；文件扩展名是名字末尾的 `.el` 或 `.txt`。
+
+## 第二步：在同一个文件夹打开终端
+
+用文件资源管理器打开 `el-practice`。在地址栏输入 `powershell`，按回车，就会在这个文件夹打开终端。也可以在 Windows 11 文件夹空白处右键，选择“在终端中打开”。
+
+先输入下面的命令，确认这里确实有代码文件：
+
+```powershell
+Get-ChildItem hello.el
+```
+
+应看到 `hello.el` 的文件信息。如果提示文件不存在，先检查保存位置和文件名；不用继续运行。
+
+## 第三步：请电脑执行代码
+
+在终端输入：
+
+```powershell
 el run hello.el
 ```
 
-输出：
+`el` 是工具名，`run` 表示运行，`hello.el` 是要运行的代码文件。不要把这行写进 `hello.el`，也不要额外输入示例中没有的 `>` 或 `$`。
+
+预期输出：
 
 ```text
-Hello, EL
+明天记得带水杯
 ```
 
-### 第三步：认一下程序骨架
+这段是**输出**，只用来核对结果，不需要输入。EL 文件最外层的代码就是入口，第一课不用额外写 `main` 函数。
 
-三件事值得注意，它们决定了之后所有 EL 程序的样子：
+如果显示的是错误信息而非提醒，先停在这一步，按后面的表检查。教程中的预期输出是核对目标，不代表已经在你的工具版本上验证成功。
 
-1. **没有 `main` 函数。** 模块顶层的代码就是入口，按书写顺序执行。
-2. **输出走 console。** 文字用 `console.stdout.write`（不换行）或 `writeLine`（追加 LF）；结构化值用等级对象的 `.value(...)`。
-3. **不需要 import `console`。** 预导入（prelude）默认提供 `console`、`Text`、`Array`、`t`/`nil`/`void`、`assert` 等基础名字。
+## 改成你自己的提醒
 
-!!! success "检查点"
-    - [ ] `el --help` 能列出子命令
-    - [ ] `el run hello.el` 输出 `Hello, EL`
-    - [ ] 你能说出上面三件事，而不只是“跑起来了”
+回到编辑器，把引号里的文字改成 `放学后还书`。保存文件，再到终端按向上方向键找回上一条运行命令，按回车。
 
-## 改几行，看看会发生什么
-
-### 写一个函数
-
-```el
-fn greet(name: Text = "world") => "hello, " + name
-
-console.stdout.writeLine(greet())
-console.stdout.writeLine(greet("Ada"))
-```
-
-`fn name(...) => expression` 是表达式体函数；不写 `return` 时返回最后一条语句的值。参数默认值在实参省略或为 `void` 时生效，`nil` 不触发默认值。
-
-### 用循环和集合
-
-```el
-let names = @["Ada", "Grace", "Linus"]
-
-for (let name in names) {
-	console.stdout.writeLine(`hello, ${name}`)
-}
-```
-
-反引号字符串支持 `${...}` 插值，从左到右求值。`@[...]` 是数组字面量；`for (let name in names)` 逐个取元素，循环体里 `name` 是当前元素的绑定。
-
-!!! example "动手 30 秒"
-    把 `names` 换成你自己的三个朋友，再跑一次。看到三行带名字的 `hello, ...`，就说明数组、循环和插值都在正常工作。
-
-## REPL：不用建文件
-
-不想为每次试验新建文件时，用交互式会话：
-
-```sh
-el repl
-```
-
-```repl
-> let x = 1 + 2
-> console.stdout.writeLine("x = ", x)
-x = 3
-> fn twice(value) => value * 2
-> twice(36)
-72
-```
-
-绑定和状态在同一次会话里保持。交互终端下 `Ctrl+C` 结束当前输入，空输入时退出；`Ctrl+D` 或输入流结束也会退出。非交互输入（管道、重定向）同样能驱动 REPL，读到 EOF 退出。
-
-!!! tip "什么时候用 REPL，什么时候写文件"
-    验证一个表达式、一个方法名、一个类型行为时，REPL 最快。超过十几行、需要反复运行的代码，写进 `.el` 文件——文件能保存，REPL 会话不能。
-
-## 运行 EL 代码
-
-`el run ENTRY` 编译入口并立即执行。编译产物是临时文件，程序结束就删除，源码旁边不会留下可执行文件；入口写文件路径，`.el` 与 `.els` 都接受。
-
-```sh
-el run hello.el
-```
-
-项目里也一样，入口要显式写出来：
-
-```sh
-el run src/main.el
-```
-
-`el run` 不会从 `package.eol` 的 `entry` 猜入口；`entry` 是规范给项目级命令的默认入口，当前发行仍要求你给出文件路径，实际行为以 `el --help` 为准。
-
-### 把参数传给程序
-
-`command_arguments()` 返回完整的 `Text[]`，第 0 项是程序自身，真正的参数从索引 1 开始：
-
-```el
-// greet.el
-import { command_arguments } from "el:operating-system/arguments"
-
-let args = command_arguments()
-if (args.count < 2) {
-	console.stdout.writeLine("usage: greet <name>")
-} else {
-	console.stdout.writeLine("hello, ", args[1])
-}
-```
-
-入口之后的参数原样交给程序：
-
-```sh
-el run greet.el Ada
-```
-
-`el` 自己的选项要写在入口之前；入口之后即使长得像选项也归程序：
-
-```sh
-el run --release greet.el Ada
-```
-
-上面这行里 `--release` 在入口之前，是构建模式；写成 `el run greet.el --release` 时，`--release` 会作为参数传给程序。`el run` 的退出码取自被运行的程序，编译失败时不会执行同名的旧产物。
-
-!!! warning "常见坑：程序没有输出"
-    `el run` 能启动但没有打印，先确认输出走的是 `console.stdout.write` / `writeLine`。日志等级的消息默认走 stderr，重定向 stdout 时看不到它们；要进 stdout 的数据用 `console.stdout.write`。
-
-## 从单文件到项目
-
-单文件脚本可以直接运行。稍微大一点的项目用项目文件描述导入映射和测试范围。在项目根目录放 `package.eol`：
-
-```eol
-@{
-	entry: "src/main.el",
-	imports: {
-		"app/": "./src/"
-	},
-	tests: {
-		include: ["tests/**/*.test.el"],
-		sources: ["src/**/*.el"]
-	}
-}
-```
-
-- `entry` 是规范约定的默认入口。当前发行里 `el run` 与 `el build` 不读它，仍要求显式入口文件。
-- `imports` 把说明符前缀映射到目录；`"app/"` 开头的来源会解析到 `./src/` 下。路径相对**项目根**，不是进程的当前目录。
-- `tests` 描述测试发现范围。
-
-推荐的布局：
+你应该看到：
 
 ```text
-my-app/
-  package.eol
-  src/
-    main.el
-  tests/
-    main.test.el
+放学后还书
 ```
 
-模块之间的相对导入相对于**引用它的模块文件**解析，不是相对于启动时的 cwd。把每个目录的入口写成 `index.el`，就可以直接导入目录：`import /.*/ from "file:./physics"` 等价于导入 `physics/index.el`。
+旧文字还在终端历史里是正常的，只看最新一次运行的结果。如果最新结果仍是旧文字，检查是否保存、是否打开了另一个同名文件。
 
-!!! warning "常见坑：找不到文件"
-    来源相对路径相对于**引用它的模块**解析，不是相对于你执行命令的目录。`package.eol` 里的路径相对于项目根。把这两个基准分清，大多数“文件不存在”都会消失。
+## 自己补第二条提醒
 
-## 编译与交付
+在代码下面另起一行，再写一句输出，让一次运行显示两行：
 
-`el build ENTRY` 只编译、不运行：
-
-```sh
-el build hello.el
+```text
+放学后还书
+晚上整理书包
 ```
 
-不给输出路径时，产物写在入口旁边：文件名沿用入口名，扩展名换成宿主可执行后缀。Windows 上是 `hello.exe`，Linux 上是没有后缀的 `hello`。用 `-o`（或 `--output`）指定输出路径：
+??? tip "提示：先试，再展开"
+    每条输出指令各显示一行。第一行保留，第二行也用同样的英文写法，把引号里的文字换掉。
 
-```sh
-el build hello.el -o build/hello
-```
+??? success "参考代码"
+    ```el
+    console.stdout.writeLine("放学后还书")
+    console.stdout.writeLine("晚上整理书包")
+    ```
 
-`-o` 给出的名字原样使用，不会自动补后缀；扩展名也不影响目标平台。成功时 `el build` 把产物路径打印到标准输出。构建失败返回非零；同一路径上已有的旧产物会保留，不会被失败的一轮覆盖。
+## 卡住时，按现象检查
 
-### debug 与 release
+错误文字可能随版本变化。先看第一条错误，不要求背诊断英文。
 
-默认构建 debug，保留索引检查、范围检查与内部状态断言。显式选择 release：
-
-```sh
-el build hello.el --release -o build/hello
-```
-
-两种模式共用一条优化流水线，不是两套语言。release 省去的是标准库中仅用于防止违反调用前提的运行期安全检查；类型、借用、所有权和生命周期检查不会因为 release 关闭，接口明确承诺的失败也不会消失。`--debug` 与 `--release` 互斥，显式写 `--debug` 就是默认的 debug 构建。
-
-### 为其他系统生成可执行文件
-
-`el run` 与 `el build` 按宿主目标编译，`el build` 没有 `--target` 参数。要为其他系统生成产物，直接调用编译器入口；`el` 会把首个参数命中编译器选项的调用转发给编译器，所以下面两种写法接受同一套参数：
-
-```sh
-el --compile-native input.el out.elf --target linux-x64
-elc --compile-native input.el out.elf --target linux-x64
-```
-
-`--compile-native INPUT OUTPUT` 是编译器操作及其两个操作数，`--target` 选择目标；省略 `--target` 时用宿主目标。输出文件名由你决定，扩展名不参与目标选择。加 `--no-cache` 可以关掉这一轮的缓存读写。
-
-当前原生产物路径覆盖 `windows-x64` 与 `linux-x64`。`wasm32-browser` 未接入，会在参数检查时明确拒绝；GUI 的网页产物要等这条 wasm 目标接进来，目标形态见[图形界面](stdlib/gui.md)。其他目标名以实际编译诊断为准。跨目标编译只负责生成目标格式的产物，产物能否在目标机器上运行取决于该目标后端和所用标准库设施，先在目标环境里验证最小程序。
-
-项目文件里的 `targets` 分区用于给具名目标覆盖构建配置（规范 PROJ-5、PROJ-6）。当前发行读项目文件时会接受这个字段，但 `el build` 不按它切换目标；选目标仍靠 `--target`。
-
-## 常用命令速查
-
-| 命令 | 作用 |
+| 你看到的现象 | 先做什么 |
 | --- | --- |
-| `el run ENTRY [ARGS...]` | 编译并运行源码入口，入口之后的参数传给程序 |
-| `el build ENTRY [-o OUT]` | 编译为宿主的原生产物，不运行 |
-| `el --compile-native IN OUT --target T` | 直接调用编译器，为目标平台生成产物 |
-| `el repl` | 交互式读取、编译、执行，状态在会话内保持 |
-| `el test` | 增量运行项目测试 |
-| `el formatter --check` | 检查格式与可简化写法 |
-| `el clean --repo ROOT` | 清理该根目录下可重建的产物和缓存 |
-| `el --help` | 查看当前发行实际支持的子命令与选项 |
+| 提示找不到 `el` 或无法识别命令 | 回到工具准备，确认安装和 `PATH`；重新打开终端 |
+| 提示找不到 `hello.el` | 用 `Get-ChildItem hello.el` 核对当前文件夹，再看是否存成 `.el.txt` |
+| 提示引号、括号附近有错误 | 对照完整代码，使用英文半角 `"`、`(`、`)`，检查大小写 |
+| 改了文字，结果没变 | 保存编辑器里的文件，确认终端运行的是这个文件 |
+| 帮助可用，但运行提示缺少编译服务或标准库 | 工具可能不完整；保留完整错误，交给提供工具的人检查 |
+| 文件与写法都核对过，仍然失败 | 保留代码、完整命令和第一条错误，请人协助判断工具版本与实现状态 |
 
-完整的工具链、缓存、退出码和跨平台说明见[工具链](toolchain.md)。
-
-## 还有三个常见问题
-
-!!! warning "`elc` 找不到"
-    `el` 不依赖 `elc`：`el run` 与 `el build` 使用发行自带的编译器源码。只有直接调用 `elc` 的脚本才需要这个文件。如果 `el` 报缺少编译服务映像，说明发行解压不完整，重新取完整发行，而不是另外去找 `elc`。
-
-!!! warning "import 报错"
-    EL 没有 `import * as m`，也没有只执行副作用的 `import "./x.el"`。每次导入都要写出名字：`import /.*/ from "..."`、`import /.*/ as m from "..."` 或 `import { a, b as c } from "..."`。
-
-!!! warning "GUI 没有窗口"
-    GUI 需要真实图形宿主。无终端、headless 或全部流被重定向的环境不会自动弹窗；GUI console 也只在可用时参与展示。目标不支持时应当报错，而不是假装成功。
+求助时可以这样说明：“我在 `el-practice` 里运行 `el run hello.el`，原本希望显示提醒，实际看到下面的错误。”贴代码和错误文字之前检查有没有个人路径等不想公开的信息。
 
 ## 带走这三样
 
-- 没有 `main`：顶层代码就是入口，输出走 `console.stdout`。
-- `el run` 立即运行，`el build` 只编译；产物路径由 `-o` 决定，默认留在入口旁边。
-- 项目里的路径相对于**引用它的模块**，`package.eol` 里的路径相对于项目根。
+- 代码存进 `.el` 文件，命令输入终端，输出用来核对。
+- 保存文件之后，再运行 `el run 文件名.el`。
+- 先确认运行的是正确文件，再检查写法和工具状态。
 
-## 下一站：语言速览
+## 下一站：[零花钱还剩多少](beginner/budget.md)
 
-> 你已经能跑程序了，但 EL 的表达式、类和错误处理长什么样？
-
-- 主推进：[15 分钟速览](tour.md)：用几个连续的小片段把主要语法串起来。
-- 想先查命令：[工具链](toolchain.md)：构建模式、缓存与退出码。
-- 想系统学：[语言总览](language/index.md)：从变量、数字和文本开始。
+把“显示一条提醒”变成“计算一笔钱”。完整顺序见[零基础路线](beginner/index.md)；已经会编程时，也可以看[语言速览](tour.md)。构建、参数与项目配置留到需要时查[工具链](toolchain.md)。
