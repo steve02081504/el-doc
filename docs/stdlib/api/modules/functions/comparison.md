@@ -4,13 +4,13 @@
 
 ## 比较函数 {#api-a18c0171171f77de8691}
 
-源码：`src/stdlib/functions/comparison.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el)
+源码：`src/stdlib/functions/comparison.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el#L1)
 
 将比较运算符作为二元函数传递；这些函数由默认前导模块重导出。
 
 ## greater {#api-8a55f98772b7baf5100c}
 
-源码：`src/stdlib/functions/comparison.el:4` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el)
+源码：`src/stdlib/functions/comparison.el:16` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el#L16)
 
 ```el
 export fn greater(left, right)
@@ -37,7 +37,7 @@ let result = greater(3, 2)
 
 ## less {#api-08588d9928ec79dd4d7d}
 
-源码：`src/stdlib/functions/comparison.el:18` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el)
+源码：`src/stdlib/functions/comparison.el:30` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el#L30)
 
 ```el
 export fn less(left, right)
@@ -64,7 +64,7 @@ let result = less(3, 2)
 
 ## greaterEqual {#api-52308672941998b72300}
 
-源码：`src/stdlib/functions/comparison.el:32` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el)
+源码：`src/stdlib/functions/comparison.el:44` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el#L44)
 
 ```el
 export fn greaterEqual(left, right)
@@ -91,7 +91,7 @@ let result = greaterEqual(3, 2)
 
 ## lessEqual {#api-9b200632fd4272d3aead}
 
-源码：`src/stdlib/functions/comparison.el:46` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el)
+源码：`src/stdlib/functions/comparison.el:58` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el#L58)
 
 ```el
 export fn lessEqual(left, right)
@@ -118,7 +118,7 @@ let result = lessEqual(3, 2)
 
 ## equal {#api-2cfd60af70cef1c6c2c0}
 
-源码：`src/stdlib/functions/comparison.el:60` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el)
+源码：`src/stdlib/functions/comparison.el:72` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el#L72)
 
 ```el
 export fn equal(left, right)
@@ -145,7 +145,7 @@ let result = equal(3, 2)
 
 ## notEqual {#api-38d267c230a373d3b311}
 
-源码：`src/stdlib/functions/comparison.el:74` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el)
+源码：`src/stdlib/functions/comparison.el:86` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el#L86)
 
 ```el
 export fn notEqual(left, right)

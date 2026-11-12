@@ -62,7 +62,7 @@ console.stdout.writeLine("dir: ", isDirectory(parentPath(config)))
 
 常用的位置操作还有 `directoryNames(reference)` 列目录、`makeDirectories(reference)` 建目录、`removeFile(reference)` 删文件、`copyFile(source, target)` 复制、`replaceFile(source, target)` 原子替换。Web 端的 `https:` 位置能读，但不代表能列目录或写入；缺少所请求能力时返回明确错误。
 
-## 用格式读写：JSON 只解码
+## 用格式读写：把字节转换交给格式对象
 
 `readFileAs(format, reference)` 与 `writeFileAs(format, reference, value)` 把“取字节”和“解码/编码”组合起来。格式对象由 `formats` 提供，例如 `formats.JSON`、`formats.Text`、`formats.YAML`、`formats.CSV`。
 
@@ -74,10 +74,10 @@ let json = readFileAs(formats.JSON, "file:./config.json")
 writeFileAs(formats.Text, "file:./copy.txt", "already text")
 ```
 
-`writeFileAs` 需要所选格式提供编码器。`formats.Text` 的编码就是原样输出文本；`formats.JSON` 目前只提供解码，调用它的 `encode` 会明确报“这个文本格式没有编码器”。
+`writeFileAs` 需要所选格式提供编码器。`formats.Text` 的编码就是原样输出文本；`formats.JSON` 通过 `writeJSON` 编码支持的 JSON 值。自定义 `TextFormat` 如果没有提供编码器，调用它的 `encode` 会明确报“这个文本格式没有编码器”。
 
-!!! note "实现状态：JSON 只能读不能写"
-    写 JSON 文件时不能靠 `writeFileAs(formats.JSON, ...)`，要把内容先拼成文本再用 `writeTextFile` 写入。需要保存任意结构化对象时，用语言规范第 15 章的 EOL/EOD 序列化入口生成文本或字节，再交给显式写入。
+!!! note "JSON 与 EL 序列化的用途"
+    JSON 编码只接受编码器支持的值，并受格式预算限制。需要按 EL 序列化合同保存结构化值时，使用语言规范第 15 章的 EOL/EOD 入口生成文本或字节，再交给显式写入。
 
 ## 先猜：服务器返回 404，`request` 会抛异常吗？
 

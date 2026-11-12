@@ -4,13 +4,13 @@
 
 ## 随机种子的定宽位表示 {#api-9048b7e7469dca7c1a6f}
 
-源码：`src/stdlib/random/bits.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/bits.el)
+源码：`src/stdlib/random/bits.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/bits.el#L1)
 
 提供整数校验与种子转换，将非负种子转换为固定 64 位字表示；无论宿主原生整数宽度如何，逻辑位宽都保持一致。
 
 ## require_integer {#api-21225a9e4f0be10c5008}
 
-源码：`src/stdlib/random/bits.el:13` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/bits.el)
+源码：`src/stdlib/random/bits.el:30` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/bits.el#L30)
 
 ```el
 export fn require_integer(value: Number)
@@ -40,7 +40,7 @@ console.stdout.writeLine(Number(seed))
 
 ## seed_bits {#api-26c100bd4eb558e472c0}
 
-源码：`src/stdlib/random/bits.el:35` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/bits.el)
+源码：`src/stdlib/random/bits.el:51` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/bits.el#L51)
 
 ```el
 export fn seed_bits(seed: Number): Word64

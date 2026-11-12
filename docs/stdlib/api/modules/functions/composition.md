@@ -4,13 +4,13 @@
 
 ## 函数组合 {#api-27a2936715ebc2d02e14}
 
-源码：`src/stdlib/functions/composition.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/composition.el)
+源码：`src/stdlib/functions/composition.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/composition.el#L1)
 
 将共同的输入变换与最终合并操作分开表达。`over` 由默认前导模块重导出。
 
 ## over {#api-e0ba7eca2990075a35ab}
 
-源码：`src/stdlib/functions/composition.el:4` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/composition.el)
+源码：`src/stdlib/functions/composition.el:23` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/composition.el#L23)
 
 ```el
 export fn over(merge, transform)
