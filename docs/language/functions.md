@@ -43,6 +43,16 @@ fn factorial(n: Number): Number {
 console.stdout.writeLine(factorial(5))   // 120
 ```
 
+`fn` 和 `let` 声明都能自指；用 `let` 绑定匿名函数也能写递归：
+
+```el
+let factorialValue = (n: Number): Number => if (n <= 1) { 1 } else { n * factorialValue(n - 1) }
+
+console.stdout.writeLine(factorialValue(5))   // 120
+```
+
+这里创建闭包时捕获自身绑定，调用时绑定已经初始化；这不意味着可以在初始化完成前读取自身的值。
+
 匿名函数也能写：
 
 ```el

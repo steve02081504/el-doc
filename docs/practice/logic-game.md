@@ -1,37 +1,26 @@
-# 实战：规则式下棋机器人
+# 做一个能点着玩的规则式下棋机器人
 
-> 不写下棋算法：没有 minimax，没有评估函数，也不维护开局库。那“该下哪一格”这个答案，到底从哪来？
+!!! abstract "🎯 做完这页，你能"
+    - 用二维矩阵保存棋盘，用关系规则读取坐标和假设落子
+    - 区分默认答案集合与 Ordered 的过程顺序
+    - 接起九按钮窗口，处理终局、搜索失败、重试和重开
 
-!!! abstract "🎯 做完这个项目，你能"
-    - 用 `relation` 与事实子句写出棋盘、落子与胜负
-    - 用 `search` 把“下哪一格”交给搜索，而不是自己写 minimax
-    - 说清 `Ordered` 与默认 `Declarative` 的差别，知道默认语义下不能指望首解
-    - 读游标状态，区分“没有更多答案”与“预算耗尽”
+    <span class="el-chip">⏱ 约 40 分钟</span> <span class="el-chip">前置：[函数与闭包](../language/functions.md)、[GUI 应用](gui-app.md)</span>
 
-    <span class="el-chip">⏱ 约 40 分钟</span> <span class="el-chip">用到的知识：逻辑关系、搜索、答案语义</span>
+> 棋盘已经能写 `board[row,column]`，为什么还要手写九条落子规则？
 
-## 目标与边界
-
-规则式写法适合能拆成“事实 + 关系 + 优先级”的问题：写清“什么算赢”，让搜索去填“下哪里”；需要数值打分或启发式剪枝的场合不适合。
-
-项目是一个规则模块：给它棋盘和轮到的棋子，它回答该下哪一格。刻意不做：不估分、不剪枝、不建“最佳着法”表。井字棋（tic-tac-toe）的搜索空间很小，规则加子句次序就够用；换成大棋盘，它首先只是一个合法性检查器。
-
-验收：`route.entries.targets("A")[0]` 返回 `Text`；第四步钉住的局面上第一个落点是 2；去掉 `Ordered` 后答案集合不变，但第一个不再保证是最高优先级。
-
-规则、搜索和语义标记由逻辑库提供，代码假定这些名字已经导入：
-
-```el
-import { rules, search, Ordered } from "el:logic/index.el"
-```
+这个项目保留真正的二维棋盘：玩家执 X 先手，机器人执 O。你点击空格，规则给机器人选点，窗口更新棋子和状态；结束后能重开，机器人计算失败能重试。它的策略是“能赢就赢，否则堵住立即威胁，否则选行列最靠前的空位”，并不保证不败。
 
 !!! note "实现状态"
-    下面代码按规范里的表面语法书写。本文讲写法和语义，不声明这些示例已在当前版本编译或运行通过。
+    示例对应 EL 仓库 `examples/gui/tic-tac-toe/` 的源码与已登记回归。当前尚未完成编译、EL 测试或真实平台窗口验证；需要具备当前语法和标准库支持的 EL。搜索同步运行在窗口线程，计算期间不保证即时响应重开或关窗。
 
-## 第一步：先看清“规则”是什么形状
+## 第一步：事实是输入，关系描述规律
 
-`rules { ... }` 返回管理对象：关系句柄在 `.relations`，显式调用入口在 `.entries`；`relation` 声明名字与元数，事实子句和带 `if` 的规则子句都追加到同一关系。
+`rules` 返回管理对象：`.relations` 放关系句柄，`.entries` 放显式普通调用入口。先用一个小图观察它们：
 
 ```el
+import { rules } from "el:logic/"
+
 let route = rules {
 	relation edge(source, target)
 	edge("A", "B")
@@ -42,207 +31,471 @@ let route = rules {
 	)
 	entry targets = reach(in source, out target as Text)
 }
-
-let first: Text = route.entries.targets("A")[0]
+let targets = route.entries.targets("A").collect()
 ```
 
-`edge("A", "B")` 是事实子句：关系名后直接给参数，没有 `if`；`reach` 两条子句分别表示“直接有边”和“先走一条边再递归到达”，`|` 枚举分支，`&` 要求同时成立，`&` 比 `|` 更紧，括号分组。
-
-裸名是逻辑变量，每次调用重新新鲜化，同一子句里重复的名字是同一个变量；`middle` 只在子句体里出现，分支局部变量不必声明。`entry` 把关系包成普通调用形状：`in source` 输入，`out target as Text` 输出并指定原生类型；`[0]` 只是取第一个交付的答案，默认语义不承诺它是源码第一条子句的答案。
+`edge` 是事实，`reach` 是直接可达或经过中间点可达。`&` 要求同时成立，`|` 枚举分支，`&` 优先级更高。裸名是逻辑变量；同一子句重复的名字必须同值，每次调用会产生新的变量身份。`as Text` 指定原生输出类型。
 
 !!! success "检查点"
-    - [ ] `route.entries.targets("A")` 交付 B 与 C 两个答案
-    - [ ] 删掉 `edge("B", "C")` 后，从 A 到达 C 的答案消失
+    - [ ] A 的答案集合包含 B 和 C，不依赖哪个先交付
+    - [ ] 删除 `edge("B", "C")` 后，B 不再到达 C；A 仍由直接边到达 C
 
-## 第二步：棋盘、落子与胜负
-
-整盘棋写成一个 `rules` 块：`place` 管落子位置，`wins` 管三连，`opponent` 把两个棋子对上，`choose` 按三层优先级选择落点。
+## 第二步：矩阵保持二维，规则读取快照
 
 ```el
-let game = rules {
-	relation place(mark, move, before, after)
-	place(mark, 0, [" ", b1, b2, b3, b4, b5, b6, b7, b8],
-		[mark, b1, b2, b3, b4, b5, b6, b7, b8])
-	place(mark, 1, [b0, " ", b2, b3, b4, b5, b6, b7, b8],
-		[b0, mark, b2, b3, b4, b5, b6, b7, b8])
-	place(mark, 2, [b0, b1, " ", b3, b4, b5, b6, b7, b8],
-		[b0, b1, mark, b3, b4, b5, b6, b7, b8])
-	place(mark, 3, [b0, b1, b2, " ", b4, b5, b6, b7, b8],
-		[b0, b1, b2, mark, b4, b5, b6, b7, b8])
-	place(mark, 4, [b0, b1, b2, b3, " ", b5, b6, b7, b8],
-		[b0, b1, b2, b3, mark, b5, b6, b7, b8])
-	place(mark, 5, [b0, b1, b2, b3, b4, " ", b6, b7, b8],
-		[b0, b1, b2, b3, b4, mark, b6, b7, b8])
-	place(mark, 6, [b0, b1, b2, b3, b4, b5, " ", b7, b8],
-		[b0, b1, b2, b3, b4, b5, mark, b7, b8])
-	place(mark, 7, [b0, b1, b2, b3, b4, b5, b6, " ", b8],
-		[b0, b1, b2, b3, b4, b5, b6, mark, b8])
-	place(mark, 8, [b0, b1, b2, b3, b4, b5, b6, b7, " "],
-		[b0, b1, b2, b3, b4, b5, b6, b7, mark])
-
-	relation wins(mark, board)
-	wins(m, [m, m, m, c3, c4, c5, c6, c7, c8])
-	wins(m, [c0, c1, c2, m, m, m, c6, c7, c8])
-	wins(m, [c0, c1, c2, c3, c4, c5, m, m, m])
-	wins(m, [m, c1, c2, m, c4, c5, m, c7, c8])
-	wins(m, [c0, m, c2, c3, m, c5, c6, m, c8])
-	wins(m, [c0, c1, m, c3, c4, m, c6, c7, m])
-	wins(m, [m, c1, c2, c3, m, c5, c6, c7, m])
-	wins(m, [c0, c1, m, c3, m, c5, m, c7, c8])
-
-	relation opponent(mine, theirs)
-	opponent("X", "O")
-	opponent("O", "X")
-
-	relation choose(mark, board, move)
-	choose(mark, board, move) if place(mark, move, board, after) & wins(mark, after)
-	choose(mark, board, move) if opponent(mark, other) & (
-		place(other, move, board, threat) & wins(other, threat)
-	)
-	choose(mark, board, move) if place(mark, move, board, _)
-}
+let board = @(
+	1, 1, 0;
+	0, 2, 0;
+	0, 0, 0
+)
 ```
 
-棋盘是 `[...]` 模板写成的有限逻辑项，不是原生数组：`" "` 是空格，`"X"`／`"O"` 是棋子，位置靠列表结构区分，不需要下标。
+0 是空格，1 是 X，2 是 O。外层程序读写 `board[row,column]`；规则构造时把每个格子读一次，导入普通三列事实 `[row,column,mark]`。这只枚举当前九个输入格子，不枚举全部可能棋盘，也不手工列出九种着法。
 
-`place(mark, move, before, after)` 在 `before` 的 `move` 处放下 `mark` 得到 `after`：每位置一条子句共 9 条，子句头的 `" "` 匹配空格，共享的 `b0` 到 `b8` 让没动的格子原样保留。子句头就是模式：位置 0 的 `mark` 同时出现在 `after` 第一格，重复变量要求同值；8 个 `b` 变量前后各出现一次，绑定的格子不变。位置 0 到 8 的顺序在 `Ordered` 下就是枚举空位顺序。
+`rulesFor` 里的 `at(unchanged(),r,c,mark)` 读取原局面。`at(put(r,c,mark),...)` 表示假设在一个空格落子：目标格取新棋子，其余格保留快照值。`dif([r,c],[mr,mc])` 比较整个坐标对；写成两个坐标分别不等的合取，会错误丢掉同一行或同一列的其它格子。
 
-`wins(mark, board)` 说棋盘上有一条由 `mark` 占满的线：8 条线各一条子句，重复变量 `m` 把线上三格绑到同一个值，其余 6 格用 `c` 接收。没有 `if` 体的事实也能含变量：引擎把子句头与目标合一，重复的 `m` 同时检查第一参数与三个格子，所以它匹配任何三连。`mark`、`board` 只是位置说明，子句头用自己的变量名，重复与否才决定约束；三条横线、三条竖线、两条对角线各一条，写错一条就漏判一种赢法。
+胜负只需四类模式：一条横向规则覆盖全部三行，一条纵向规则覆盖全部三列，另加两条对角线。`player(mark)` 排除空格连成线。原生索引仍是普通前向访问，关系 `cell` 才能在未知坐标上枚举；给普通 getter 换个名字不会让它自动可逆。
 
-!!! success "检查点"
-    - [ ] `place` 正好 9 条子句，缺一条就有一个格子永远下不了
-    - [ ] 删掉一条对角线子句，只有那条线上的三连会漏判
-    - [ ] 把位置 0 子句里的 `[" ", ...]` 改成 `[b0, ...]`，空格匹配立刻失效
+!!! example "动手：看清行列"
+    把上面的盘传给完整源码中的 `chooseMove(board, 2)`。预期坐标是 `row=0, column=2`，用于堵住 X；原矩阵该格仍为 0。
 
-## 第三步：优先级就是子句顺序
+## 第三步：优先级是显式数据
 
-`choose(mark, board, move)` 三层：能立刻赢就赢，对手下一手能赢就堵，否则任意空位；子句顺序就是优先级。第一条先落子再查 `wins`，`after` 是分支局部变量。
+`candidate` 给每个合法落点附上 tier：0 表示自己立即获胜，1 表示对手立即获胜而应阻挡，2 表示普通空位。`chooseMove` 在默认 Declarative 下读完整集合，再选 `(tier,row,column)` 最小者。因此重排规则或改变合法执行顺序，不应改变策略。
 
-第二条先由 `opponent(mark, other)` 把 `other` 钉成对手棋子，再检查对手在 `move` 落子后能赢，所以我们下在 `move` 堵住；没有 `opponent`，`other` 可能绑到空格，把“空格自己连成线”当成威胁。
+同一个位置可能出现在不同 tier 中，这是不同候选；同一完整投影的多条证明会按默认集合合同去重。四角形成的双威胁仍可能击败机器人，浅层策略没有做 minimax。
 
-第三条退化为任意空位：`place(mark, move, board, _)` 成功即表示 `move` 未占；`_` 每次独立。
+`Ordered` 则承诺从左到右、按源码子句次序的深度优先过程，保留重复。用它才能把三条有序 choose 子句的首个见证当作过程选择。这里使用显式 tier，不需要依赖首解；不要仅把默认搜索的第一个结果当作最优落点。
 
-??? question "先猜：把第二条子句里的 `opponent(mark, other)` 删掉，程序会怎样？"
-    答案里会混进空格。`other` 成了自由变量，搜索会试着让空格自己在某个位置连成线，“威胁”层因此给出无效落点。
+## 第四步：搜索结束不一定表示搜索完整
 
-这套规则不检查轮到谁、棋盘是否合法、是否终局，这些前提由调用方保证。
+`next().done` 可能来自耗尽、取消、预算或关闭。项目在取得所有候选后检查 `cursor.complete`，未完成就抛 `SearchInterrupted`；即使已经拿到候选，也不会用不完整集合冒充最终选择。cursor 和 plan 分别在 finally 中关闭。
 
-!!! success "检查点"
-    - [ ] 自己有成线机会时，第一个答案是成线的那一格
-    - [ ] 对手有成线威胁时，答案里出现堵点的位置
-
-## 第四步：让搜索去找落点
-
-钉住局面：`X` 占 0、1，`O` 占 4，轮到 `O`；`O` 没有立刻成线的落点，但 `X` 在位置 2 有威胁，答案应当是 2。
-
-```el
-let answers = search(semantics: Ordered) {
-	fresh board, move
-	unify(board, ["X", "X", " ", " ", "O", " ", " ", " ", " "])
-	call $(game.relations.choose)("O", board, move)
-	yield move as Number
-}.ground().collect()
-let move: Number = answers[0]
-console.stdout.writeLine("move: ", move)
-```
-
-```text
-move: 2
-```
-
-`fresh` 声明逻辑变量；`unify(board, [...])` 把棋盘钉成 9 元素逻辑项，不钉住 `board` 就是自由变量、会枚举所有棋盘。`call $(game.relations.choose)(...)` 在搜索里调用关系句柄，`$()` 是外层表达式进入逻辑目标的入口；`yield move as Number` 声明输出类型。
-
-`.ground()` 检查残余约束并解码成原生值，`.collect()` 收成原生数组。答案可能重复：同一落点可能同时被第一层和第三层选中，`Ordered` 原样保留。让 `O` 自己成线时第一层就给答案；谁都没威胁时落到第三层，按位置顺序返回第一个空位。
+`limit` 是工作步数预算，不是墙钟上限；准备与枚举分别应用预算。`Game` 的 outcomeLimit 和 moveLimit 分别控制胜负检查和选点，默认 100000 尚未经过运行测量。预算不足时可以调整实例上的预算再重试，不要无限自动重试同一份失败计算。
 
 !!! success "检查点"
-    - [ ] 钉住的局面上 `move` 是 2，说明第二层在堵 `X` 的威胁
-    - [ ] 谁都没有威胁的棋盘上，答案是位置顺序里的第一个空位
-    - [ ] 去掉 `unify` 后搜索变慢甚至跑不完，因为 `board` 成了自由变量
+    - [ ] `chooseMove(board, 2, 0)` 应报告搜索中断，不能返回“无候选”
+    - [ ] 完整搜索得到空候选才返回 void；平局另由“无赢家且满盘”判断
 
-## 第五步：同一份规则，两种答案语义
+## 第五步：先准备完整结果，再发布到窗口
 
-`search` 默认 `Declarative`：交付满足答案合同的集合，不承诺首解与枚举顺序；同一投影按有限项结构、真实名义身份和未约束变量的重命名去重。执行计划可以重排目标、使用索引或启发式，源码子句次序不是默认屏障。
+`Game.play` 在独立矩阵上准备玩家落子，先判胜再判满盘。准备失败时原棋盘不动；玩家已经成功落子、机器人随后失败时，保留玩家盘并启用“重试机器人”。重试只补机器人一步。发布阶段的异常向窗口循环传播，不能被包装成“未提交”继续对弈。
 
-`Ordered` 是另一份合同：从左到右的目标、源码子句次序的深度优先搜索，保留重复，无限分支可能挡住后续答案；它才是“先赢、再堵、再随便”成立的地方。
-
-规则没变，变的是语义：去掉 `semantics: Ordered` 仍得到一组合法落点，但第一个不再保证是优先级最高的那层；`once`、`cut`、`scope` 这类过程剪枝在默认计划里没有位置。`strategy:` 可以指定策略，例如 `DepthFirstSearch` 要求配合 `Ordered`，冲突的选项会在准备阶段被拒绝。
-
-它读起来像 Prolog：关系名、事实、`|` 与 `&`、逻辑变量、匿名 `_`；但默认语义不以深度优先与源码子句次序为兼容约束，把默认结果当“第一个解”、把 `cut` 当 `take(1)` 最容易错。
-
-预算也是这份合同的一部分：`limit:` 定非负整数步数上限，`-1` 表示没有显式上限；预算按准备与枚举分别计算，每个 iterator 独立，嵌套否定共享当前这一轮的预算。计数粒度包括准入、分支展开、索引、调度、目标、子句候选与答案比较，不承诺墙钟或内存上限。
-
-```el
-let cursor = search(semantics: Ordered, limit: 10000) {
-	fresh board, move
-	unify(board, ["X", "X", " ", " ", "O", " ", " ", " ", " "])
-	call $(game.relations.choose)("O", board, move)
-	yield move as Number
-}.ground().iterator()
-let step = cursor.next()
-if (!step.done) {
-	let first: Number = step.value
-	console.log.value(first)
-}
-let status = cursor.status
-cursor.close()
-```
-
-游标的结束状态有 `active`、`exhausted`、`closed`、`cancelled`、`limited` 与 `failed`；只有正常耗尽才是 `exhausted`，`next()` 返回的 `done` 只表示没有下一项。
-
-预算耗尽得到 `limited`，它和取消、失败、提前 `close()` 一样都不是“无解”，更不是证明了 `False`：只说明这次搜索没有交付更多答案。`complete` 只在集合合同下全量正常完成时为真；`Ordered` 的枚举即使跑完，也不获得原解集“已完成”的声明。普通枚举的 `optimal` 始终为假，最优化要另走携带证据的入口。
-
-!!! success "检查点"
-    - [ ] 带 `Ordered` 时第一个答案由第一层优先给出；去掉它，答案集合不变但顺序不再保证
-    - [ ] 把 `limit` 改成 1，状态是 `limited` 而不是 `exhausted`
-    - [ ] 预算耗尽时界面或日志不该显示“无解”
+视图不拥有另一份业务棋盘：九个按钮只显示 `game.board`，控制器自己检查轮次、占位和坐标，不能只依赖按钮禁用。每次绑定捕获独立坐标；回调弱引用视图，关闭会解绑并关闭游戏。视图单独成文件，便于用同一套输入分派测试九个按钮。
 
 ## 完整源码
 
+将四个文件放在同一目录。导入标准库使用 `el:`，项目文件使用相对 `file:`。
+
 ```text
 tic-tac-toe/
-├── package.eol
-└── src/
-    ├── game.el
-    └── main.el
+├── rules.el
+├── game.el
+├── view.el
+└── main.el
 ```
 
-`src/game.el` 是文件顶部的导入行，加上第二步那个完整的 `rules` 块（从 `let game = rules {` 到最后的 `}`），一字不改；再把 `let game` 改成 `export let game`，`main.el` 才能导入。第一步的 `route` 只是教学用的最小模型，不进最终文件。
+```sh
+el run tic-tac-toe/main.el
+```
+
+### `rules.el`
 
 ```el
-import { search, Ordered } from "el:logic/index.el"
-import { game } from "file:./game.el"
+import { rules, search, SearchInterrupted } from "el:logic/"
+import { Tensor } from "el:numerical-computing/"
 
-let answers = search(semantics: Ordered) {
-	fresh board, move
-	unify(board, ["X", "X", " ", " ", "O", " ", " ", " ", " "])
-	call $(game.relations.choose)("O", board, move)
-	yield move as Number
-}.ground().collect()
-console.stdout.writeLine("move: ", answers[0])
+export fn blankBoard() => @(0, 0, 0; 0, 0, 0; 0, 0, 0)
+
+export fn inside(row: Number, column: Number): Bool {
+	return row >= 0 & row < 3 & row % 1 == 0 &
+		column >= 0 & column < 3 & column % 1 == 0
+}
+
+fn checkBoard(board: Tensor<element: Number>) {
+	if (board.rank != 2 | board.rowCount() != 3 | board.columnCount() != 3)
+		throw "Expected a 3 by 3 board"
+}
+
+// 通用数据适配，不是胜线表或着法表。每格只读一次。
+fn cellRows(board: Tensor<element: Number>): Number[][] {
+	checkBoard(board)
+	let rows: Number[][] = @[]
+	for (let row = 0; row < board.rowCount(); row++) {
+		for (let column = 0; column < board.columnCount(); column++) {
+			let mark = board[row, column]
+			if (mark != 0 & mark != 1 & mark != 2) throw "Unknown board mark"
+			rows.push(@[row, column, mark])
+		}
+	}
+	return rows
+}
+
+export fn rulesFor(board: Tensor<element: Number>) {
+	return rules {
+		relation cell(row, column, mark) from $(cellRows(board))
+		relation player(mark) from @[@[1], @[2]]
+		relation opponent(mine, theirs) from @[@[1, 2], @[2, 1]]
+
+		// unchanged() 与 put(...) 是内部有限逻辑结构项。
+		// at 只是“在当前盘或假设落一子后的盘中读取格子”。
+		relation at(change, row, column, mark)
+		at(unchanged(), r, c, mark) if cell(r, c, mark)
+		at(put(r, c, mark), r, c, mark) if player(mark) & cell(r, c, 0)
+		at(put(mr, mc, placed), r, c, mark) if
+			player(placed) & cell(mr, mc, 0) & cell(r, c, mark) &
+			dif([r, c], [mr, mc])
+
+		relation wins(change, mark) if player(mark) & (
+			at(change, r, 0, mark) & at(change, r, 1, mark) & at(change, r, 2, mark) |
+			at(change, 0, c, mark) & at(change, 1, c, mark) & at(change, 2, c, mark) |
+			at(change, 0, 0, mark) & at(change, 1, 1, mark) & at(change, 2, 2, mark) |
+			at(change, 0, 2, mark) & at(change, 1, 1, mark) & at(change, 2, 0, mark)
+		)
+
+		relation winningMove(mark, row, column) if
+			player(mark) & cell(row, column, 0) &
+			wins(put(row, column, mark), mark)
+
+		// tier 是明确的策略层级，不依赖默认搜索的枚举顺序。
+		relation candidate(mark, row, column, tier)
+		candidate(mark, r, c, 0) if winningMove(mark, r, c)
+		candidate(mark, r, c, 1) if opponent(mark, other) & winningMove(other, r, c)
+		candidate(mark, r, c, 2) if player(mark) & cell(r, c, 0)
+	}
+}
+
+// 只检查满盘；胜负必须先调用 winner。
+export fn isFull(board: Tensor<element: Number>): Bool {
+	checkBoard(board)
+	for (let row = 0; row < 3; row++) {
+		for (let column = 0; column < 3; column++) {
+			if (board[row, column] == 0) return nil
+		}
+	}
+	return t
+}
+
+// 返回 0=无人获胜、1=X、2=O。双赢家是非法盘，不随便挑一方。
+export fn winner(board: Tensor<element: Number>, limit: Number = 100000): Number {
+	let game = rulesFor(board)
+	let plan = search(limit: limit) {
+		call game.relations.wins(unchanged(), mark)
+		yield mark as Number
+	}
+	try {
+		let cursor = plan.ground().iterator()
+		try {
+			let result = 0
+			while (t) {
+				let step = cursor.next()
+				if (step.done) break
+				if (result != 0 & result != step.value) throw "Both players have winning lines"
+				result = step.value
+			}
+			if (!cursor.complete) throw SearchInterrupted(cursor.status)
+			return result
+		} finally { cursor.close() }
+	} finally { plan.close() }
+}
+
+// 调用前提：合法的进行中棋局，mark 为轮到的一方。
+// 返回坐标记录，满盘无候选返回 void；预算/取消/错误不会变成 void。
+export fn chooseMove(board: Tensor<element: Number>, mark: Number,
+	limit: Number = 100000) {
+	if (mark != 1 & mark != 2) throw "Expected X or O"
+	let game = rulesFor(board)
+	let plan = search(limit: limit) {
+		call game.relations.candidate($(mark), row, column, tier)
+		yield [row as Number, column as Number, tier as Number]
+	}
+	try {
+		let cursor = plan.ground().iterator()
+		try {
+			let best: Number[] = @[]
+			while (t) {
+				let step = cursor.next()
+				if (step.done) break
+				let item = step.value
+				let better = best.count == 0
+				if (!better) {
+					better = item[2] < best[2] | (
+						item[2] == best[2] & (item[0] < best[0] |
+							(item[0] == best[0] & item[1] < best[1]))
+					)
+				}
+				if (better) best = item
+			}
+			if (!cursor.complete) throw SearchInterrupted(cursor.status)
+			if (best.count == 0) return void
+			return @{row: best[0], column: best[1]}
+		} finally { cursor.close() }
+	} finally { plan.close() }
+}
+```
+
+### `game.el`
+
+```el
+import { assign } from "el:language/contracts.el"
+import { Tensor } from "el:numerical-computing/"
+import { SearchInterrupted } from "el:logic/"
+import { blankBoard, inside, winner, chooseMove, isFull } from "file:./rules.el"
+
+fn failureText(error): Text {
+	if (error is SearchInterrupted) {
+		if (error.reason == "limited") return "搜索预算耗尽"
+		if (error.reason == "cancelled") return "搜索已取消"
+		return "搜索未完成"
+	}
+	return "计算或资源清理失败"
+}
+
+// 完整准备成功后才交给控制器发布，不把搜索放进提交阶段。
+@assign(mode: "shared") class PreparedTurn {
+	let board: Tensor<element: Number>
+	let phase: Text
+	let message: Text
+	constructor(board: Tensor<element: Number>, phase: Text, message: Text) {
+		init this; this.board = board; this.phase = phase; this.message = message
+	}
+}
+fn prepareTurn(board: Tensor<element: Number>, nextPhase: Text, nextMessage: Text, limit: Number): PreparedTurn {
+	let outcome = winner(board, limit)
+	if (outcome == 1) return PreparedTurn(board, "human-won", "你赢了！")
+	if (outcome == 2) return PreparedTurn(board, "bot-won", "机器人赢了")
+	if (isFull(board)) return PreparedTurn(board, "draw", "平局")
+	return PreparedTurn(board, nextPhase, nextMessage)
+}
+
+export @assign(mode: "shared") class Game {
+	let #board = blankBoard()
+	let #phase: Text = "human"
+	let #revision: Number = 0
+	let #message: Text = "你执 X，请落子"
+	let outcomeLimit: Number
+	let moveLimit: Number
+	constructor(outcomeLimit: Number = 100000, moveLimit: Number = 100000) {
+		if (outcomeLimit < 0 | outcomeLimit % 1 != 0 | moveLimit < 0 | moveLimit % 1 != 0) throw "Expected finite nonnegative search budgets"
+		init this
+		this.outcomeLimit = outcomeLimit
+		this.moveLimit = moveLimit
+	}
+
+	get board(): Tensor<element: Number> { return this.#board }
+	get phase(): Text { return this.#phase }
+	get revision(): Number { return this.#revision }
+
+	fn summary(): Text { return this.#message }
+	fn canRetry(): Bool { return this.#phase == "failed" }
+	fn canPlay(row: Number, column: Number): Bool {
+		if (this.#phase != "human" | !inside(row, column)) return nil
+		return this.#board[row, column] == 0
+	}
+
+	fn #publish(next: PreparedTurn) {
+		let revision = this.#revision + 1
+		this.#phase = "publishing"
+		this.#board = next.board
+		this.#revision = revision
+		this.#message = next.message
+		this.#phase = next.phase
+		// 发布失败向上传播并停止对弈，不被包装为“未提交”后继续。
+	}
+
+	fn play(row: Number, column: Number) {
+		if (!this.canPlay(row, column)) return
+		let prepared: PreparedTurn | void_t = void
+		try {
+			let next = this.#board
+			next[row, column] = 1
+			prepared = prepareTurn(next, "thinking", "机器人正在思考…", this.outcomeLimit)
+		} catch (error) {
+			this.#message = "这一步未提交：" + failureText(error) + "；可重试或重开"
+			return
+		}
+		if (prepared is void_t) throw "Missing prepared turn"
+		// 放在准备阶段的 catch 之外，不能吞掉可能的发布失败。
+		this.#publish(prepared)
+		if (this.#phase == "thinking") this.#bot()
+	}
+
+	fn #bot() {
+		this.#phase = "thinking"
+		this.#message = "机器人正在思考…"
+		let expected = this.#revision
+		let prepared: PreparedTurn | void_t = void
+		try {
+			let snapshot = this.#board
+			let move = chooseMove(snapshot, 2, this.moveLimit)
+			if (this.#phase != "thinking" | this.#revision != expected) return
+			if (move is void_t) throw "Ongoing board has no candidate"
+			if (!inside(move.row, move.column)) throw "Bot returned an invalid coordinate"
+			if (this.#board[move.row, move.column] != 0) throw "Bot chose an occupied cell"
+			let next = this.#board
+			next[move.row, move.column] = 2
+			let ready = prepareTurn(next, "human", "你执 X，请落子", this.outcomeLimit)
+			if (ready.phase == "human-won") throw "Bot turn started from an ended game"
+			prepared = ready
+		} catch (error) {
+			if (this.#phase != "thinking" | this.#revision != expected) return
+			this.#phase = "failed"
+			this.#message = "机器人未落子：" + failureText(error) + "；可重试或重开"
+			return
+		}
+		if (this.#phase != "thinking" | this.#revision != expected) return
+		if (prepared is void_t) throw "Missing prepared turn"
+		this.#publish(prepared)
+	}
+
+	fn retry() { if (this.canRetry()) this.#bot() }
+	fn restart() {
+		if (this.#phase == "closed") return
+		// 空盘和状态先准备成功，再改变当前局面或修订。
+		let prepared = PreparedTurn(blankBoard(), "human", "你执 X，请落子")
+		this.#publish(prepared)
+	}
+	fn close() {
+		if (this.#phase == "closed") return
+		this.#phase = "closed"
+		this.#revision++
+	}
+}
+```
+
+### `view.el`
+
+```el
+import { assign } from "el:language/contracts.el"
+import { Definition, GuiEvent, element, appendChild, on } from "el:user-interface/model.el"
+import { WeakShared } from "el:memory/ownership/weak-shared.el"
+import { Game } from "file:./game.el"
+
+fn cellText(mark: Number): Text {
+	return if (mark == 1) "X" else if (mark == 2) "O" else "·"
+}
+
+export @assign(mode: "shared") class GameView {
+	let game: Game
+	let root = element("column")
+	let status = element("label", "你执 X，请落子", "status")
+	let restart = element("button", "重新开始", "restart")
+	let retry = element("button", "重试机器人", "retry")
+	let cells: Definition[][] = @[]
+	let #closed: Bool = nil
+
+	constructor(game: Game = Game()) {
+		init this
+		this.game = game
+		try {
+			this.root.style.padding = 16
+			this.root.style.gap = 10
+			let boardView = element("column")
+			boardView.style.gap = 8
+			let controls = element("row")
+			controls.style.gap = 8
+			appendChild(this.root, "status", this.status)
+			appendChild(this.root, "board", boardView)
+			appendChild(this.root, "controls", controls)
+			appendChild(controls, "restart", this.restart)
+			appendChild(controls, "retry", this.retry)
+			appendChild(this.root, "strategy", element("label", "先赢，再堵，再选空位；不保证永不输。"))
+			let weak = WeakShared<element: GameView>(this)
+			for (let row = 0; row < 3; row++) {
+				let strip = element("row")
+				strip.style.gap = 8
+				let rowCells: Definition[] = @[]
+				appendChild(boardView, Text(row), strip)
+				for (let column = 0; column < 3; column++) {
+					let cell = element("button", "·", "cell-" + Text(row) + "-" + Text(column))
+					cell.style.width = 90
+					cell.style.height = 90
+					rowCells.push(cell)
+					appendChild(strip, Text(column), cell)
+					bindCell(weak, row, column, cell)
+				}
+				this.cells.push(rowCells)
+			}
+			on(this.restart, "click", (event: GuiEvent) => {
+				let view = weak.lock()
+				if (view is void_t) return
+				view.game.restart(); view.render()
+			})
+			on(this.retry, "click", (event: GuiEvent) => {
+				let view = weak.lock()
+				if (view is void_t) return
+				view.game.retry(); view.render()
+			})
+			this.render()
+		} catch (error) { this.close(); throw error }
+	}
+
+	fn render() {
+		if (this.#closed) return
+		this.status.text = this.game.summary()
+		let board = this.game.board
+		for (let row = 0; row < 3; row++) {
+			for (let column = 0; column < 3; column++) {
+				let cell = this.cells[row][column]
+				cell.text = cellText(board[row, column])
+				cell.enabled = this.game.canPlay(row, column)
+			}
+		}
+		this.retry.enabled = this.game.canRetry()
+	}
+
+	fn close() {
+		if (this.#closed) return
+		this.#closed = t
+		this.game.close()
+		for (let row in this.cells) for (let cell in row) cell.listeners.clear()
+		this.restart.listeners.clear()
+		this.retry.listeners.clear()
+	}
+	destructor() { this.close() }
+}
+
+// 坐标参数属于每次绑定；弱引用避免按钮回调形成拥有环。
+fn bindCell(weak: WeakShared<element: GameView>, row: Number, column: Number, cell: Definition) {
+	on(cell, "click", (event: GuiEvent) => {
+		let view = weak.lock()
+		if (view is void_t) return
+		view.game.play(row, column)
+		view.render()
+	})
+}
+```
+
+### `main.el`
+
+```el
+import { showWindow, runWindow } from "el:user-interface/window.el"
+import { GameView } from "file:./view.el"
+
+let view = GameView()
+try { runWindow(showWindow(view.root, "井字棋 · 规则机器人", 380, 460)) }
+finally { view.close() }
 ```
 
 ## 改成你自己的
 
-1. **让 `X` 也走同一套规则。** 把调用里的 `"O"` 换成 `"X"`，规则本身不用动。验收：同一个局面上 `X` 给出合法落点。
-2. **把棋盘换大。** 换成 4×4 或五子棋：列表加长、`place` 子句同步加、`wins` 的线按新棋盘重写。验收：任意一条线都能被判出胜负。
-3. **包成普通函数，并回答“对手有没有必胜点”。** 用 `entry` 的显式 `in`／`out` 包装一次调用；“对手没有必胜点”要用分层或 ground 的否定表达，不能把搜索失败当证明。验收：`entry` 调用形状像普通函数，否定结论有明确证据来源。
+1. **调整预算并观察失败状态。** 用 `Game(moveLimit: 0)` 创建视图，点击后应保留 X 并启用重试；提高 moveLimit 后重试，只出现一个 O。
+2. **用同一套关系查另一方。** 给合法的进行中棋盘调用 `chooseMove(board, 1)`，确认返回空格且原盘未变。控制器仍保持玩家 X 先手。
+3. **扩展矩形盘的连续 k 子。** 把固定三格模式换成四个方向与长度递减的关系，沿 `(dr,dc)` 递推；不需要按位置增加 place 表。验收包含矩形尺寸、边界、k=1、长连和预算，不能仅因棋盘有限就声称递归已取得耗尽证明。
 
 ## 卡住了？
 
-- **现象：每次搜索都返回同一个落点，优先级看不出来。** 没写 `semantics: Ordered`，默认集合语义不承诺首解。检查：加上 `Ordered` 再跑。
-- **现象：答案里出现空格，或“威胁”位置根本不存在。** 第二条 `choose` 子句缺了 `opponent`。检查：确认 `opponent(mark, other)` 在 `place(other, ...)` 之前。
-- **现象：搜索很慢，内存一直涨。** `board` 没被 `unify` 钉住，自由变量在枚举所有棋盘。检查：`fresh` 之后第一句就 `unify`。
-- **现象：`limited` 被当成“无解”展示。** 结束状态只说明这次没有更多答案。检查：打印 `cursor.status` 区分两者。
+- **堵错行列。** 检查事实列顺序是否为 row、column、mark，用第二步的非对称盘验证；不要按矩阵物理存储顺序猜坐标。
+- **窗口显示搜索预算耗尽。** 记录错误与预算，提高对应实例预算后重试；这不是无解，也不是平局。
+- **点击重复落子。** 检查事件是否只调用 Game.play，以及绑定时是否捕获了独立坐标；控制器不能被视图绕过。
+- **思考时窗口不能立即响应。** 当前版本是同步搜索，计时器也不会自动变成后台执行；窗口后台任务与取消协议属于后续能力。
 
 ## 带走这三样
 
-- 规则式问题拆成事实、关系、优先级三层，答案空间交给搜索。
-- `Ordered` 是“先赢、再堵、再随便”成立的前提；默认语义只承诺答案集合。
-- 结束状态不是无解：`limited`、`cancelled`、`failed` 都不能当否定证据。
+- 二维矩阵负责状态，关系快照负责查询，假设 put 不修改业务棋盘。
+- 默认答案集合的策略优先级用 tier 表达，并在完整读取后选择。
+- 交互程序必须区分准备失败、发布失败、终局和关闭，不能把任何搜索停止都当平局。
 
 ## 下一站：[定理证明](proofs.md)
 
-> 规则能回答“下哪里”，但它不证明任何事。要证明“对任意自然数都成立”，又该写什么？
-
-- 主推进：[定理证明](proofs.md)：用归纳类型与证明前端，让每一步都过内核重检。
-- 想补普通计算：[函数与闭包](../language/functions.md)：`fn`、`match`、递归与块体返回值。
+规则求出见证，不等于任意命题都通过了证明内核。下一页用归纳类型与证明前端说明内核检查的边界。

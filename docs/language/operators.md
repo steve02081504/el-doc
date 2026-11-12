@@ -288,13 +288,17 @@ console.stdout.writeLine(Money(5))  // $5：参数转换请求 operator Text
 `let operator * = ...` 把某个二元值运算绑定成当前作用域里的普通可调用值，只影响该作用域的值运算，退出即恢复；身份比较、短路和赋值的语法含义不变：
 
 ```el
+fn multiply(left: Number, right: Number): Number => left * right
+
 fn twice(value: Number): Number {
-	let operator * = (left: Number, right: Number) => left * right * 2
+	let operator * = (left: Number, right: Number) => multiply(multiply(left, right), 2)
 	return value * 3        // 调用上面的绑定，得到 30
 }
 
 console.stdout.writeLine(twice(5))
 ```
+
+`fn` 和 `let` 声明都能自指，`let operator` 也一样：若把上面的 lambda 写成 `left * right * 2`，其中的 `*` 会再次调用当前绑定，造成无限递归。这里把普通乘法放在外层的 `multiply` 中；它按定义处的词法作用域解析 `*`，不受调用处的局部重载影响。
 
 ### 重载的边界
 
