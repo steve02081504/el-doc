@@ -1,4 +1,32 @@
-# EL 语言参考
+<div class="el-hero" markdown>
+<p class="el-hero__eyebrow">EviL LANGUAGE · EL 语言参考</p>
+<h1>一份源码，<br>既开窗口，也开网页。</h1>
+<p class="el-hero__lead">EL 是一门面向整个应用的通用语言：脚本、原生程序、服务、标签式 GUI 与数据库查询共用一套语法、类型和运行时。同一套界面代码既能打开系统窗口，也能编译成单文件网页，双击就在浏览器里跑起来。</p>
+<div class="el-hero__actions">
+<a class="md-button md-button--primary" href="reference/language/">查语言参考</a>
+<a class="md-button" href="getting-started/">3 分钟跑起来</a>
+<a class="md-button" href="stdlib/api/">查标准库 API</a>
+</div>
+<div class="el-hero__code" markdown>
+```el
+fn greet(name: Text = "world") => "hello " + name
+
+console.stdout.writeLine(greet())
+console.info.value(@{ language: "EL" })
+```
+</div>
+</div>
+
+## EL 是什么味道
+
+- **一套语言覆盖应用与平台。** 脚本、原生程序、服务、GUI 和远程模块更新使用同一份源码；原生目标覆盖 Windows、Linux、macOS、FreeBSD、iOS、Android，浏览器里则是单文件页面：wasm 模块内嵌在 HTML 中，界面仍由 EL 用 Canvas 自绘。
+- **数值不将就。** 日常的 `Number` 是精确有理数：`1/3` 可以精确保存，数值变大时按需扩展表示，不会仅因超过固定机器位宽就溢出。
+- **资源规则是语言的一部分。** 对象明确选择复制还是共享，构造与析构有固定时机，需要时能直接指定存储位置与借用来源。
+- **Debug 护具穿满，Release 跑得快。** 两种模式共用一条优化流水线；安全检查可以关闭，但语言合同不会因此改变。
+
+想先看它长什么样，读[15 分钟速览](tour.md)；想直接动手，去[安装与第一个程序](getting-started.md)。
+
+## 参考目录
 
 查阅 EL 的语法、语言合同和标准库接口。已知名字时使用搜索或符号索引；按领域浏览时从下列分类进入。
 
