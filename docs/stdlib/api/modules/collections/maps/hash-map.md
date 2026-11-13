@@ -22,13 +22,13 @@
 
 源码：`src/stdlib/collections/maps/hash-map.el:34` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L34)
 
+创建以键和值类型参数化的哈希映射类型。
+
 ```el
 export fn Map(key: type, value: type): type
 ```
 
 **返回类型**：[`type`](../../../../../reference/language/types.md)
-
-创建以键和值类型参数化的哈希映射类型。
 
 **参数**：key 键类型，须满足映射的键相等与哈希合同；相等的键须有相同哈希。
 
@@ -48,11 +48,11 @@ console.stdout.writeLine(scores.getOr("ada", 0))
 
 源码：`src/stdlib/collections/maps/hash-map.el:125` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L125)
 
+为至少指定数量的条目预留容量，不改变已有键值。
+
 ```el
 fn reserve(expected: Number)
 ```
-
-为至少指定数量的条目预留容量，不改变已有键值。
 
 **参数**：expected 非负、有限的整数条目数；零不作操作。
 
@@ -74,13 +74,13 @@ console.stdout.writeLine(scores.count)
 
 源码：`src/stdlib/collections/maps/hash-map.el:170` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L170)
 
+写入键值；若键已存在则保留原键并替换原值。
+
 ```el
 @discardable override fn set(lookupKey: key, newValue: value): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-写入键值；若键已存在则保留原键并替换原值。
 
 **参数**：lookupKey 要写入的键。
 
@@ -99,13 +99,13 @@ scores.set("ada", 98)
 
 源码：`src/stdlib/collections/maps/hash-map.el:196` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L196)
 
+仅当键不存在时插入键值，已有值保持不变。
+
 ```el
 @discardable override fn tryAdd(lookupKey: key, newValue: value): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-仅当键不存在时插入键值，已有值保持不变。
 
 **参数**：lookupKey 要插入的键。
 
@@ -132,13 +132,13 @@ console.stdout.writeLine(scores.getOr("ada", 0))
 
 源码：`src/stdlib/collections/maps/hash-map.el:221` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L221)
 
+返回已有值；键缺失时调用 make 一次，将结果插入并返回。
+
 ```el
 override fn getOrInsert(lookupKey: key, make): value
 ```
 
 **返回类型**：[`value`](../../../types.md#api-e66d20f23d46dbcc3bf5)
-
-返回已有值；键缺失时调用 make 一次，将结果插入并返回。
 
 **参数**：lookupKey 要查询或插入的键。
 
@@ -165,13 +165,13 @@ console.stdout.writeLine(counts.getOrInsert("red", () => 9))
 
 源码：`src/stdlib/collections/maps/hash-map.el:248` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L248)
 
+用回调计算并保存新值；键缺失时以 initial 为输入。
+
 ```el
 @discardable override fn update(lookupKey: key, change, initial: value): value
 ```
 
 **返回类型**：[`value`](../../../types.md#api-e66d20f23d46dbcc3bf5)
-
-用回调计算并保存新值；键缺失时以 initial 为输入。
 
 **参数**：lookupKey 要更新的键。
 

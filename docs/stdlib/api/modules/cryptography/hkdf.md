@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/cryptography/hkdf.el:67` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/hkdf.el#L67)
 
+依次执行 HKDF-SHA256 的 Extract 与 Expand。
+
 ```el
 export fn hkdf_sha256(ikm: Number[], salt: Number[] | void_t = void, info: Number[] | void_t = void, length: Number = 32): Number[]
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[]
-
-依次执行 HKDF-SHA256 的 Extract 与 Expand。
 
 **参数**：ikm 输入密钥材料字节。
 

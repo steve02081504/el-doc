@@ -26,11 +26,11 @@
 
 源码：`src/stdlib/tools/testing/check.el:29` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L29)
 
+使用值相等语义比较实际值与期望值，失败时报告两侧快照。
+
 ```el
 fn equal(borrow actual, borrow expected)
 ```
-
-使用值相等语义比较实际值与期望值，失败时报告两侧快照。
 
 **参数**：actual 实际值。
 
@@ -48,11 +48,11 @@ check.equal(2 + 2, 4)
 
 源码：`src/stdlib/tools/testing/check.el:40` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L40)
 
+使用身份相等比较两个值，而不比较其内容。
+
 ```el
 fn same(borrow actual, borrow expected)
 ```
-
-使用身份相等比较两个值，而不比较其内容。
 
 **参数**：actual 实际值。
 
@@ -71,11 +71,11 @@ check.same(value, value)
 
 源码：`src/stdlib/tools/testing/check.el:52` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L52)
 
+按显式绝对与相对容差比较两个数值。
+
 ```el
 fn near(actual: Number, expected: Number, absolute: Number, relative: Number)
 ```
-
-按显式绝对与相对容差比较两个数值。
 
 **参数**：actual 实际数值。
 
@@ -97,11 +97,11 @@ check.near(0.1 + 0.2, 0.3, absolute: 0.000001, relative: 0)
 
 源码：`src/stdlib/tools/testing/check.el:68` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L68)
 
+断言回调抛出指定类型的异常，并返回捕获到的异常值。
+
 ```el
 fn throws(expected: type, body)
 ```
-
-断言回调抛出指定类型的异常，并返回捕获到的异常值。
 
 **参数**：expected 预期异常类型。
 
@@ -121,11 +121,11 @@ check.throws(MissingKeyError, () => scores["missing"])
 
 源码：`src/stdlib/tools/testing/check.el:87` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L87)
 
+按位置逐项比较两个有限序列，并报告长度或首个不同元素。
+
 ```el
 fn items(borrow actual, borrow expected)
 ```
-
-按位置逐项比较两个有限序列，并报告长度或首个不同元素。
 
 **参数**：actual 实际序列。
 
@@ -143,11 +143,11 @@ check.items(@[1, 2], @[1, 2])
 
 源码：`src/stdlib/tools/testing/check.el:104` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L104)
 
+执行一组比较并聚合其中的比较失败，结束后一次报告。
+
 ```el
 fn collect(body)
 ```
-
-执行一组比较并聚合其中的比较失败，结束后一次报告。
 
 **参数**：body 要执行的无参比较回调。
 
@@ -166,11 +166,11 @@ check.collect(() => {
 
 源码：`src/stdlib/tools/testing/check.el:122` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L122)
 
+将编码后的值按当前测试上下文中的键记录为快照。
+
 ```el
 fn snapshot(borrow value, key: Text, encode = defaultSnapshot)
 ```
-
-将编码后的值按当前测试上下文中的键记录为快照。
 
 **参数**：value 要快照的值。
 
@@ -190,11 +190,11 @@ check.snapshot(@{ status: "ready" }, key: "response")
 
 源码：`src/stdlib/tools/testing/check.el:135` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L135)
 
+断言编译结果成功并生成产物。
+
 ```el
 fn compiles(borrow result)
 ```
-
-断言编译结果成功并生成产物。
 
 **参数**：result compileFixture 返回的编译结果。
 
@@ -210,11 +210,11 @@ check.compiles(compileFixture("valid.el"))
 
 源码：`src/stdlib/tools/testing/check.el:152` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L152)
 
+断言编译失败并包含指定阶段、诊断码与源码位置。
+
 ```el
 fn diagnostic(borrow result, phase: Text, code: Text, source: Text = "", line: Number = 0, column: Number = 0, marker: Text = "")
 ```
-
-断言编译失败并包含指定阶段、诊断码与源码位置。
 
 **参数**：result compileFixture 返回的编译结果。
 
@@ -242,13 +242,13 @@ check.diagnostic(result, phase: "check", code: "EL.ACCESS.PRIVATE", marker: "den
 
 源码：`src/stdlib/tools/testing/check.el:173` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L173)
 
+提供比较断言入口；失败时抛出带结构化差异信息的 TestFailure。
+
 ```el
 export lazy let check = Checks()
 ```
 
 **类型**：[`Checks`](../../../types.md#api-a49fc65730d49506a183)
-
-提供比较断言入口；失败时抛出带结构化差异信息的 TestFailure。
 
 ### 示例：比较实际值与期望值
 

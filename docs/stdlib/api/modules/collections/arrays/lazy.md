@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/collections/arrays/lazy.el:29` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/lazy.el#L29)
 
+将数组形状的代码块转为惰性 Sequence；元素表达式在迭代请求时才求值。
+
 ```el
 export syntax lazy
 ```
-
-将数组形状的代码块转为惰性 Sequence；元素表达式在迭代请求时才求值。
 
 ### 示例：延迟构造并只消费前两项
 

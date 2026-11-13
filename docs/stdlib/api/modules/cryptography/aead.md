@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/cryptography/aead.el:56` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/aead.el#L56)
 
+使用 ChaCha20-Poly1305 加密并认证明文及关联数据。
+
 ```el
 export fn chacha20_poly1305_encrypt(key: Number[], nonce: Number[], associated_data: Number[], plaintext: Number[]): Number[]
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[]
-
-使用 ChaCha20-Poly1305 加密并认证明文及关联数据。
 
 **参数**：key 恰好 32 字节的密钥。
 
@@ -47,13 +47,13 @@ let sealed = chacha20_poly1305_encrypt(key, nonce, @[], @[72, 105])
 
 源码：`src/stdlib/cryptography/aead.el:92` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/aead.el#L92)
 
+验证 ChaCha20-Poly1305 标签后解密密文。
+
 ```el
 export fn chacha20_poly1305_decrypt(key: Number[], nonce: Number[], associated_data: Number[], sealed: Number[]): Number[]
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[]
-
-验证 ChaCha20-Poly1305 标签后解密密文。
 
 **参数**：key 加密时使用的 32 字节密钥。
 

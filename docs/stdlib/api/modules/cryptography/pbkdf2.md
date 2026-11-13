@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/cryptography/pbkdf2.el:53` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/pbkdf2.el#L53)
 
+使用 PBKDF2-HMAC-SHA1 从密码和盐派生密钥字节。
+
 ```el
 export fn pbkdf2_sha1(password: Number[], salt: Number[], iterations: Number, count: Number): Number[]
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[]
-
-使用 PBKDF2-HMAC-SHA1 从密码和盐派生密钥字节。
 
 **参数**：password 密码字节。
 
@@ -45,13 +45,13 @@ let derived = pbkdf2_sha1(@[112, 97, 115, 115], @[1, 2, 3, 4], 1000, 32)
 
 源码：`src/stdlib/cryptography/pbkdf2.el:67` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/pbkdf2.el#L67)
 
+使用 PBKDF2-HMAC-SHA256 从密码和盐派生密钥字节。
+
 ```el
 export fn pbkdf2_sha256(password: Number[], salt: Number[], iterations: Number, count: Number): Number[]
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[]
-
-使用 PBKDF2-HMAC-SHA256 从密码和盐派生密钥字节。
 
 **参数**：password 密码字节。
 

@@ -23,11 +23,11 @@
 
 源码：`src/stdlib/user-interface/sound.el:17` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L17)
 
+播放界面提示音并可管理循环音效；通常由窗口作用域持有并在窗口关闭时释放。
+
 ```el
 export @assign(mode: "shared") class SoundPlayer
 ```
-
-播放界面提示音并可管理循环音效；通常由窗口作用域持有并在窗口关闭时释放。
 
 ### 示例：播放一个提示音并关闭播放器
 
@@ -41,13 +41,13 @@ sound.close()
 
 源码：`src/stdlib/user-interface/sound.el:35` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L35)
 
+尝试将命名提示音加入短音效队列，不等待播放完成。
+
 ```el
 fn cue(name: Text, value: Number = 0, maximum: Number = 1): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-尝试将命名提示音加入短音效队列，不等待播放完成。
 
 **参数**：name 支持 drag、exchange、increase、decrease、disappear、engine、celebrate。
 
@@ -69,11 +69,11 @@ let accepted = sound.cue("increase")
 
 源码：`src/stdlib/user-interface/sound.el:62` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L62)
 
+设置循环引擎声的速度，并在需要时启动循环音效。
+
 ```el
 fn engine(speed: Number)
 ```
-
-设置循环引擎声的速度，并在需要时启动循环音效。
 
 **参数**：speed 有限速度值，范围 0 到 1。
 
@@ -89,13 +89,13 @@ sound.engine(0.6)
 
 源码：`src/stdlib/user-interface/sound.el:73` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L73)
 
+尝试播放提示音，并将捕获设备错误转换为未接受状态。
+
 ```el
 fn tryCue(name: Text, value: Number = 0, maximum: Number = 1): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-尝试播放提示音，并将捕获设备错误转换为未接受状态。
 
 ### 示例：容错地请求提示音
 
@@ -107,11 +107,11 @@ let accepted = sound.tryCue("celebrate")
 
 源码：`src/stdlib/user-interface/sound.el:85` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L85)
 
+启动指定的循环音效；当前支持 engine，并通过窗口定时器重复播放。
+
 ```el
 fn loop(name: Text = "engine")
 ```
-
-启动指定的循环音效；当前支持 engine，并通过窗口定时器重复播放。
 
 **参数**：name 循环音效名称，当前仅支持 engine。
 
@@ -126,11 +126,11 @@ sound.stop()
 
 源码：`src/stdlib/user-interface/sound.el:97` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L97)
 
+取消循环定时器并清除播放器中排队的声音。
+
 ```el
 fn stop()
 ```
-
-取消循环定时器并清除播放器中排队的声音。
 
 ### 示例：停止提示音
 
@@ -142,11 +142,11 @@ sound.stop()
 
 源码：`src/stdlib/user-interface/sound.el:108` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L108)
 
+停止循环播放并释放底层音频设备。
+
 ```el
 fn close()
 ```
-
-停止循环播放并释放底层音频设备。
 
 ### 示例：关闭界面提示音播放器
 

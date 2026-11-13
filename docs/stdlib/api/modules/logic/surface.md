@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/logic/surface.el:1362` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/surface.el#L1362)
 
+声明关系与规则的逻辑程序语法；关系体支持事实、规则、入口及逻辑目标。
+
 ```el
 export syntax rules
 ```
-
-声明关系与规则的逻辑程序语法；关系体支持事实、规则、入口及逻辑目标。
 
 ### 示例：声明一个简单事实关系
 
@@ -30,11 +30,11 @@ let people = rules { relation person(name) from @[@["Ada"]] }
 
 源码：`src/stdlib/logic/surface.el:1380` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/surface.el#L1380)
 
+在逻辑程序中声明查询目标，并生成可枚举答案的搜索值。
+
 ```el
 export syntax search
 ```
-
-在逻辑程序中声明查询目标，并生成可枚举答案的搜索值。
 
 ### 示例：查询事实关系
 

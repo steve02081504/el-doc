@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/concurrency/async.el:18` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/async.el#L18)
 
+将代码块作为异步回调交给 spawn 执行，并立即返回 Promise。
+
 ```el
 export syntax async
 ```
-
-将代码块作为异步回调交给 spawn 执行，并立即返回 Promise。
 
 ### 示例：并发启动并等待两个任务
 
@@ -34,11 +34,11 @@ let count = await(second)
 
 源码：`src/stdlib/concurrency/async.el:40` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/async.el#L40)
 
+读取 Promise 的结果；宏只完成 Promise.get() 调用，不自动把普通函数变成异步函数。
+
 ```el
 export syntax await
 ```
-
-读取 Promise 的结果；宏只完成 Promise.get() 调用，不自动把普通函数变成异步函数。
 
 **参数**：promise 要读取结果的 Promise 表达式。
 

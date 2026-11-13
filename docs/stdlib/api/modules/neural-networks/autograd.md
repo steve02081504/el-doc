@@ -22,13 +22,13 @@
 
 源码：`src/stdlib/neural-networks/autograd.el:37` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L37)
 
+创建指定元素和存储类型的自动微分 tape 类型。
+
 ```el
 export fn Autograd(element: type, storage: type = Tensor<element: element>): type
 ```
 
 **返回类型**：[`type`](../../../../reference/language/types.md)
-
-创建指定元素和存储类型的自动微分 tape 类型。
 
 **参数**：element 被跟踪张量的元素类型。
 
@@ -48,11 +48,11 @@ let tape = Tape()
 
 源码：`src/stdlib/neural-networks/autograd.el:333` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L333)
 
+对跟踪张量逐元素平方，并在 tape 上记录乘法节点。
+
 ```el
 fn square()
 ```
-
-对跟踪张量逐元素平方，并在 tape 上记录乘法节点。
 
 **返回值**：与输入形状相同的跟踪张量。
 
@@ -66,11 +66,11 @@ let squared = x.square()
 
 源码：`src/stdlib/neural-networks/autograd.el:342` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L342)
 
+将跟踪张量所有元素相加，返回可继续参与求导的 rank-zero 值。
+
 ```el
 fn sum()
 ```
-
-将跟踪张量所有元素相加，返回可继续参与求导的 rank-zero 值。
 
 **返回值**：记录归约操作的标量跟踪值。
 
@@ -84,11 +84,11 @@ let loss = x.square().sum()
 
 源码：`src/stdlib/neural-networks/autograd.el:350` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L350)
 
+对跟踪张量所有元素求平均并在 tape 上记录归约。
+
 ```el
 fn mean()
 ```
-
-对跟踪张量所有元素求平均并在 tape 上记录归约。
 
 **返回值**：记录均值运算的标量跟踪值。
 
@@ -102,13 +102,13 @@ let loss = (prediction - target).square().mean()
 
 源码：`src/stdlib/neural-networks/autograd.el:523` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L523)
 
+将输入张量注册为需要对其求导的叶变量。
+
 ```el
 fn variable(value: Dense): Tracked
 ```
 
 **返回类型**：[`Tracked`](../../types.md#api-90e17b44158251ad4d5b)
-
-将输入张量注册为需要对其求导的叶变量。
 
 **参数**：value 作为叶节点的张量值。
 
@@ -124,13 +124,13 @@ let x = tape.variable(input)
 
 源码：`src/stdlib/neural-networks/autograd.el:811` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L811)
 
+对 rank-zero 跟踪损失反向传播，返回损失值及各变量梯度。
+
 ```el
 fn valueAndGrad(loss: Tracked, variables: Tracked[]): Result
 ```
 
 **返回类型**：[`Result`](../../types.md#api-666c52dd6d3d5f3f1651)
-
-对 rank-zero 跟踪损失反向传播，返回损失值及各变量梯度。
 
 **参数**：loss tape 上的 rank-zero 损失。
 

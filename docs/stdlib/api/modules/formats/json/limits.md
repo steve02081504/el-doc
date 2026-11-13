@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/formats/json/limits.el:17` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/limits.el#L17)
 
+配置 JSON 文本的最大字节数、解析限制和重复键策略。
+
 ```el
 export class JsonLimits
 ```
-
-配置 JSON 文本的最大字节数、解析限制和重复键策略。
 
 ### 示例：设置输入字节上限
 

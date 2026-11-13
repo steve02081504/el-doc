@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/theme/resolve.el:35` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/theme/resolve.el#L35)
 
+根据主题及可选父级上下文生成完整的解析主题，缺失角色使用生成值或基线值补齐。
+
 ```el
 export fn resolveTheme(theme: Theme, context: ThemeContext = ThemeContext()): ResolvedTheme
 ```
 
 **返回类型**：[`ResolvedTheme`](../../types.md#api-4a6a5cc30b1b1c8bc991)
-
-根据主题及可选父级上下文生成完整的解析主题，缺失角色使用生成值或基线值补齐。
 
 **参数**：theme 要解析的主题。
 

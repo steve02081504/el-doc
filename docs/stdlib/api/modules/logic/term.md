@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/logic/term.el:34` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/term.el#L34)
 
+逻辑搜索使用的项；变量以索引和作用域身份区分，复合项保存构造子及字段。
+
 ```el
 export @assign(mode: "shared") class Term
 ```
-
-逻辑搜索使用的项；变量以索引和作用域身份区分，复合项保存构造子及字段。
 
 ### 示例：构造一个关系参数
 
@@ -30,13 +30,13 @@ let person = compound("person", @[atom("Ada")])
 
 源码：`src/stdlib/logic/term.el:74` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/term.el#L74)
 
+创建一份独立的逻辑变量作用域，使不同作用域中的同索引变量互不相同。
+
 ```el
 export fn variable_scope(): VariableScope
 ```
 
 **返回类型**：[`VariableScope`](../../types.md#api-bef3353d1cb343b10b6c)
-
-创建一份独立的逻辑变量作用域，使不同作用域中的同索引变量互不相同。
 
 **返回值**：新的变量作用域身份。
 
@@ -51,13 +51,13 @@ let x = variable(0, scope)
 
 源码：`src/stdlib/logic/term.el:86` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/term.el#L86)
 
+创建指定索引的逻辑变量，可显式提供作用域以避免变量身份冲突。
+
 ```el
 export fn variable(index: Number, scope: VariableScope | void_t = void): Term
 ```
 
 **返回类型**：[`Term`](term.md#api-7560e808aaee9c6517d2)
-
-创建指定索引的逻辑变量，可显式提供作用域以避免变量身份冲突。
 
 **参数**：index 非负整数变量索引。
 
@@ -77,13 +77,13 @@ let x = variable(0, variable_scope())
 
 源码：`src/stdlib/logic/term.el:98` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/term.el#L98)
 
+创建由文本符号标识的零元逻辑项。
+
 ```el
 export fn atom(symbol: Text): Term
 ```
 
 **返回类型**：[`Term`](term.md#api-7560e808aaee9c6517d2)
-
-创建由文本符号标识的零元逻辑项。
 
 **参数**：symbol 原子名称。
 
@@ -99,13 +99,13 @@ let ada = atom("Ada")
 
 源码：`src/stdlib/logic/term.el:108` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/term.el#L108)
 
+创建带文本符号及有序字段的复合逻辑项。
+
 ```el
 export fn compound(symbol: Text, fields: Term[]): Term
 ```
 
 **返回类型**：[`Term`](term.md#api-7560e808aaee9c6517d2)
-
-创建带文本符号及有序字段的复合逻辑项。
 
 **参数**：symbol 构造子名称。
 

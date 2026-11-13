@@ -18,13 +18,13 @@
 
 源码：`src/stdlib/neural-networks/model.el:76` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L76)
 
+创建全连接层，前向计算输入与转置权重的矩阵积并加上偏置。
+
 ```el
 export fn Linear(input: Number, output: Number): Layer
 ```
 
 **返回类型**：[`Layer`](../../types.md#api-ae837ac9d0c0c17cc8d9)
-
-创建全连接层，前向计算输入与转置权重的矩阵积并加上偏置。
 
 **参数**：input 输入特征数，必须为正数。
 
@@ -46,13 +46,13 @@ console.stdout.writeLine(layer.input, " -> ", layer.output)
 
 源码：`src/stdlib/neural-networks/model.el:87` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L87)
 
+创建逐元素整流线性单元层，将负值变为零。
+
 ```el
 export fn ReLU(): Layer
 ```
 
 **返回类型**：[`Layer`](../../types.md#api-ae837ac9d0c0c17cc8d9)
-
-创建逐元素整流线性单元层，将负值变为零。
 
 **返回值**：用于 Sequential 层列表的 ReLU 层描述。
 
@@ -66,13 +66,13 @@ let layer = ReLU()
 
 源码：`src/stdlib/neural-networks/model.el:147` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L147)
 
+创建按顺序应用层列表的模型类型，可选择元素类型和参数存储类型。
+
 ```el
 export fn Sequential(element: type, storage: type = Tensor<element: element>): type
 ```
 
 **返回类型**：[`type`](../../../../reference/language/types.md)
-
-创建按顺序应用层列表的模型类型，可选择元素类型和参数存储类型。
 
 **参数**：element 模型张量的元素类型。
 
@@ -92,13 +92,13 @@ let model = Network(@[Linear(2, 4), ReLU(), Linear(4, 1)], seed: 1)
 
 源码：`src/stdlib/neural-networks/model.el:418` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L418)
 
+依次执行模型中的各层并返回前向结果；Linear 使用权重转置与偏置，ReLU 对负值置零。
+
 ```el
 fn forward(input: Values): Values
 ```
 
 **返回类型**：[`Values`](../../types.md#api-c0b0b3479fb3a5e71dee)
-
-依次执行模型中的各层并返回前向结果；Linear 使用权重转置与偏置，ReLU 对负值置零。
 
 **参数**：input 形状符合首层输入特征数的张量。
 
@@ -116,11 +116,11 @@ let prediction = model.forward(input)
 
 源码：`src/stdlib/neural-networks/model.el:610` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L610)
 
+对模型闭包返回的标量损失求值并计算模型参数梯度。
+
 ```el
 export fn valueAndGrad(model, function)
 ```
-
-对模型闭包返回的标量损失求值并计算模型参数梯度。
 
 **参数**：model 要求导的模型实例。
 

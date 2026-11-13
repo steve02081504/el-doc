@@ -16,11 +16,11 @@
 
 源码：`src/stdlib/numerical-computing/reductions.el:39` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/reductions.el#L39)
 
+对张量的全部元素求和；空张量返回加法单位元 0。
+
 ```el
 export fn sum(values)
 ```
-
-对张量的全部元素求和；空张量返回加法单位元 0。
 
 **参数**：values 待归约张量。
 
@@ -36,11 +36,11 @@ let total = sum(@(1, 2; 3, 4))
 
 源码：`src/stdlib/numerical-computing/reductions.el:53` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/reductions.el#L53)
 
+沿指定轴求和，并将该轴长度保留为 1。
+
 ```el
 export fn sum(values, axis: Number)
 ```
-
-沿指定轴求和，并将该轴长度保留为 1。
 
 **参数**：values 待归约张量。
 
@@ -62,11 +62,11 @@ let totals = sum(@(1, 2; 3, 4), 0)
 
 源码：`src/stdlib/numerical-computing/reductions.el:66` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/reductions.el#L66)
 
+对张量全部元素求算术平均值。
+
 ```el
 export fn mean(values)
 ```
-
-对张量全部元素求算术平均值。
 
 **参数**：values 非空待归约张量。
 
@@ -84,11 +84,11 @@ let average = mean(@(1, 2; 3, 4))
 
 源码：`src/stdlib/numerical-computing/reductions.el:81` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/reductions.el#L81)
 
+沿指定轴求算术平均值，并将该轴长度保留为 1。
+
 ```el
 export fn mean(values, axis: Number)
 ```
-
-沿指定轴求算术平均值，并将该轴长度保留为 1。
 
 **参数**：values 待归约张量。
 

@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/multimedia/audio/wav.el:33` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L33)
 
+以增量方式写入经典 RIFF/WAVE PCM16 文件；追加失败后写入器不可继续使用。
+
 ```el
 export @assign(mode: "shared") class WavWriter
 ```
-
-以增量方式写入经典 RIFF/WAVE PCM16 文件；追加失败后写入器不可继续使用。
 
 **参数**：path 目标文件路径。
 
@@ -36,11 +36,11 @@ writer.close()
 
 源码：`src/stdlib/multimedia/audio/wav.el:78` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L78)
 
+将一段 PCM 音频写入 WAV 文件。
+
 ```el
 export fn writeWav(path: Text, audio: PcmAudio)
 ```
-
-将一段 PCM 音频写入 WAV 文件。
 
 **参数**：path 目标文件路径。
 
@@ -56,13 +56,13 @@ writeWav("tone.wav", audio)
 
 源码：`src/stdlib/multimedia/audio/wav.el:92` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L92)
 
+将 PCM 音频编码为包含 RIFF/WAVE 头部的字节数组。
+
 ```el
 export fn encodeWav(audio: PcmAudio): Number[]
 ```
 
 **返回类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)[]
-
-将 PCM 音频编码为包含 RIFF/WAVE 头部的字节数组。
 
 **参数**：audio 要编码的 PCM16 音频。
 
@@ -80,13 +80,13 @@ let bytes = encodeWav(audio)
 
 源码：`src/stdlib/multimedia/audio/wav.el:142` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L142)
 
+从内存中的字节数组解析经典 PCM16 WAV。
+
 ```el
 export fn decodeWav(bytes: Number[], maxFrames: Number = 16777216): PcmAudio
 ```
 
 **返回类型**：[`PcmAudio`](../capture/model.md#api-cb1ec5de04201d03778d)
-
-从内存中的字节数组解析经典 PCM16 WAV。
 
 **参数**：bytes WAV 文件字节，元素必须是 0 到 255 的整数。
 
@@ -106,13 +106,13 @@ let audio = decodeWav(bytes)
 
 源码：`src/stdlib/multimedia/audio/wav.el:161` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L161)
 
+从文件读取并解析经典 PCM16 WAV，拒绝超出上限或带额外尾随数据的文件。
+
 ```el
 export fn readWav(path: Text, maxFrames: Number = 16777216): PcmAudio
 ```
 
 **返回类型**：[`PcmAudio`](../capture/model.md#api-cb1ec5de04201d03778d)
-
-从文件读取并解析经典 PCM16 WAV，拒绝超出上限或带额外尾随数据的文件。
 
 **参数**：path WAV 文件路径。
 

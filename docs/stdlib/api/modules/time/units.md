@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/time/units.el:21` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/units.el#L21)
 
+要求数值为有限整数并返回该值。
+
 ```el
 export fn whole(value: Number): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-要求数值为有限整数并返回该值。
 
 **参数**：value 待检查的数值。
 
@@ -40,13 +40,13 @@ whole(12)
 
 源码：`src/stdlib/time/units.el:39` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/units.el#L39)
 
+当 divisor 为正数时，计算向负无穷取整的商。
+
 ```el
 export fn floorDivide(value: Number, divisor: Number): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-当 divisor 为正数时，计算向负无穷取整的商。
 
 **参数**：value 被除数。
 
@@ -68,13 +68,13 @@ floorDivide(-7, 3)
 
 源码：`src/stdlib/time/units.el:58` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/units.el#L58)
 
+使用向下取整商计算余数；当 divisor 为正时，结果为非负余数。
+
 ```el
 export fn positiveRemainder(value: Number, divisor: Number): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-使用向下取整商计算余数；当 divisor 为正时，结果为非负余数。
 
 **参数**：value 被除数。
 
@@ -96,13 +96,13 @@ positiveRemainder(-7, 3)
 
 源码：`src/stdlib/time/units.el:73` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/units.el#L73)
 
+把数值转为文本，并在左侧补零至至少指定宽度。
+
 ```el
 export fn decimalDigits(value: Number, width: Number): Text
 ```
 
 **返回类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
-
-把数值转为文本，并在左侧补零至至少指定宽度。
 
 **参数**：value 待格式化数值。
 
@@ -122,13 +122,13 @@ decimalDigits(7, 3)
 
 源码：`src/stdlib/time/units.el:90` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/units.el#L90)
 
+将纳秒小数部分格式化为可选的小数点后缀，并去掉末尾零。
+
 ```el
 export fn fractionalSecond(nanoseconds: Number): Text
 ```
 
 **返回类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
-
-将纳秒小数部分格式化为可选的小数点后缀，并去掉末尾零。
 
 **参数**：nanoseconds 秒内的纳秒部分。
 
@@ -148,13 +148,13 @@ fractionalSecond(120000000)
 
 源码：`src/stdlib/time/units.el:108` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/units.el#L108)
 
+将纳秒数格式化为秒文本，保留负号并省略无意义的末尾小数零。
+
 ```el
 export fn secondsText(nanoseconds: Number): Text
 ```
 
 **返回类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
-
-将纳秒数格式化为秒文本，保留负号并省略无意义的末尾小数零。
 
 **参数**：nanoseconds 有符号的纳秒数。
 

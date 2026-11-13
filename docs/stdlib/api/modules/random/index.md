@@ -29,12 +29,12 @@
 
 源码：`src/stdlib/random/index.el:41` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L41)
 
+创建独立的可播种伪随机数流；复制实例会复制当前生成状态。
+
 ```el
 @assign(mode: "copy")
 export class Random
 ```
-
-创建独立的可播种伪随机数流；复制实例会复制当前生成状态。
 
 **参数**：seed 初始整数种子；省略时使用自动种子。
 
@@ -55,13 +55,13 @@ let value = random.between(1, 6)
 
 源码：`src/stdlib/random/index.el:77` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L77)
 
+返回构造或最近一次 reseed 使用的原始种子。
+
 ```el
 get seed(): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-返回构造或最近一次 reseed 使用的原始种子。
 
 **返回值**：当前流记录的种子值。
 
@@ -75,11 +75,11 @@ let seed = Random(42).seed
 
 源码：`src/stdlib/random/index.el:86` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L86)
 
+将生成器状态重置为指定种子对应的初始状态。
+
 ```el
 fn reseed(seed: Number)
 ```
-
-将生成器状态重置为指定种子对应的初始状态。
 
 **参数**：seed 新的有限非负整数种子。
 
@@ -94,14 +94,14 @@ random.reseed(42)
 
 源码：`src/stdlib/random/index.el:103` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L103)
 
+从随机流生成一个 8、16 或 32 位无符号字值。
+
 ```el
 @optimize(data: @{ sortingScalar: "finiteInteger" })
 	fn nextWord(width: Number): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-从随机流生成一个 8、16 或 32 位无符号字值。
 
 **参数**：width 允许的输出宽度：8、16 或 32。
 
@@ -119,13 +119,13 @@ let word = Random(42).nextWord(16)
 
 源码：`src/stdlib/random/index.el:137` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L137)
 
+从随机流取得指定数量的随机位，并按高位优先累积为 Number。
+
 ```el
 fn nextBits(bitCount: Number): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-从随机流取得指定数量的随机位，并按高位优先累积为 Number。
 
 **参数**：bitCount 非负整数位数；零返回零。
 
@@ -143,13 +143,13 @@ let bits = Random(42).nextBits(8)
 
 源码：`src/stdlib/random/index.el:167` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L167)
 
+在两个整数端点之间均匀抽取整数，端点均包含且次序可互换。
+
 ```el
 fn between(minimum: Number, maximum: Number): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-在两个整数端点之间均匀抽取整数，端点均包含且次序可互换。
 
 **参数**：minimum 第一个有限整数端点。
 
@@ -169,14 +169,14 @@ let die = Random(42).between(1, 6)
 
 源码：`src/stdlib/random/index.el:192` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L192)
 
+在两个整数端点之间抽取整数，包含较小端点但排除较大端点。
+
 ```el
 @optimize(data: @{ sortingScalar: "finiteInteger", lengthRange: @{ firstArgument: 0, secondArgument: 1 } })
 	fn betweenExclusive(minimum: Number, maximum: Number): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-在两个整数端点之间抽取整数，包含较小端点但排除较大端点。
 
 **参数**：minimum 第一个有限整数端点。
 
@@ -196,13 +196,13 @@ let index = Random(42).betweenExclusive(0, 6)
 
 源码：`src/stdlib/random/index.el:213` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L213)
 
+在二进制网格上抽取 [0, 1) 内的数；inclusive 为真时包含 1。
+
 ```el
 fn unit(bitCount: Number = Number(53), inclusive: Bool = nil): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-在二进制网格上抽取 [0, 1) 内的数；inclusive 为真时包含 1。
 
 **参数**：bitCount 网格精度，必须为正整数，默认 53。
 
@@ -222,13 +222,13 @@ let sample = Random(42).unit()
 
 源码：`src/stdlib/random/index.el:232` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L232)
 
+在两个有限实数端点之间按指定二进制网格精度抽样。
+
 ```el
 fn realBetween(minimum: Number, maximum: Number, bitCount: Number = Number(53), inclusive: Bool = nil): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-在两个有限实数端点之间按指定二进制网格精度抽样。
 
 **参数**：minimum 第一个有限端点。
 
@@ -252,13 +252,13 @@ let sample = Random(42).realBetween(-1, 1)
 
 源码：`src/stdlib/random/index.el:249` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L249)
 
+从随机流抽取一个布尔值。
+
 ```el
 fn boolean(): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-从随机流抽取一个布尔值。
 
 **返回值**：以随机位决定的真或假。
 
@@ -272,11 +272,11 @@ let heads = Random(42).boolean()
 
 源码：`src/stdlib/random/index.el:259` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L259)
 
+从非空、可按整数索引读取的集合中均匀选择一个元素。
+
 ```el
 fn pick(values)
 ```
-
-从非空、可按整数索引读取的集合中均匀选择一个元素。
 
 **参数**：values count 为正数且支持零基索引的集合。
 
@@ -294,14 +294,14 @@ let choice = Random(42).pick(@["red", "blue"])
 
 源码：`src/stdlib/random/index.el:273` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L273)
 
+生成指定长度、每项取值 0 到 255 的随机字节数组。
+
 ```el
 @optimize(data: @{ sortingResult: @{ fresh: t, element: "finiteInteger", minimum: 0, maximum: 255, lengthArgument: 0 } })
 	fn bytes(count: Number): Array<element: Number>
 ```
 
 **返回类型**：[`Array`](../../types.md#api-02f04934b15030edb96d)<element: [`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)>
-
-生成指定长度、每项取值 0 到 255 的随机字节数组。
 
 **参数**：count 非负整数数组长度。
 
@@ -319,11 +319,11 @@ let data = Random(42).bytes(4)
 
 源码：`src/stdlib/random/index.el:290` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L290)
 
+原地随机打乱可读写、支持 count 和整数索引的集合。
+
 ```el
 fn shuffle(values)
 ```
-
-原地随机打乱可读写、支持 count 和整数索引的集合。
 
 **参数**：values 要被修改的集合。
 
@@ -340,13 +340,13 @@ Random(42).shuffle(values)
 
 源码：`src/stdlib/random/index.el:377` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L377)
 
+共享的线程安全随机数流；各调用按同一状态序列消耗随机值。
+
 ```el
 export lazy let rand: SharedRandom = SharedRandom()
 ```
 
 **类型**：[`SharedRandom`](../../types.md#api-ce68e64dbdcc8304c331)
-
-共享的线程安全随机数流；各调用按同一状态序列消耗随机值。
 
 ### 示例：从默认随机流抽取整数
 

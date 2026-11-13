@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/streams/input-file.el:138` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/input-file.el#L138)
 
+打开原生文件作为顺序输入流。
+
 ```el
 export fn openInputFile(path: Text, lock: Bool | void_t = void, protection: FileReadProtection = FileReadProtection(lock is t_t)): NativeInputFile
 ```
 
 **返回类型**：[`NativeInputFile`](../../types.md#api-cac9566a49a1edb75a36)
-
-打开原生文件作为顺序输入流。
 
 **参数**：path 原生文件系统路径。
 
@@ -44,13 +44,13 @@ input.close()
 
 源码：`src/stdlib/streams/input-file.el:153` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/input-file.el#L153)
 
+尝试打开原生输入文件；仅在平台报告文件缺失时返回 void。
+
 ```el
 export fn openOptionalInputFile(path: Text): NativeInputFile | void_t
 ```
 
 **返回类型**：[`NativeInputFile`](../../types.md#api-cac9566a49a1edb75a36) | [`void_t`](../language/values.md#api-d7b419fab395eef3d142)
-
-尝试打开原生输入文件；仅在平台报告文件缺失时返回 void。
 
 **参数**：path 原生文件系统路径。
 

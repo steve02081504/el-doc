@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/numerical-computing/matrix-syntax.el:29` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/matrix-syntax.el#L29)
 
+以类型名和花括号行列表构造指定元素类型的二维张量。
+
 ```el
 export syntax matrix
 ```
-
-以类型名和花括号行列表构造指定元素类型的二维张量。
 
 **参数**：element 矩阵元素类型。
 

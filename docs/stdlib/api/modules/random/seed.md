@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/random/seed.el:23` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/seed.el#L23)
 
+从当前平台的系统熵来源取得随机种子。
+
 ```el
 export fn generateSeed(): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-从当前平台的系统熵来源取得随机种子。
 
 ### 示例：读取系统随机种子
 
@@ -36,13 +36,13 @@ let seed = generateSeed()
 
 源码：`src/stdlib/random/seed.el:35` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/seed.el#L35)
 
+优先取得系统随机种子；熵不可用时使用当前墙上时间纳秒构造种子。
+
 ```el
 export fn automaticSeed(): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-优先取得系统随机种子；熵不可用时使用当前墙上时间纳秒构造种子。
 
 ### 示例：取得自动种子
 

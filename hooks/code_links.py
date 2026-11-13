@@ -73,6 +73,9 @@ class Catalog:
 				if entry.get("initializer") is not None:
 					display += " = " + entry["initializer"]
 				self.signature_types.setdefault(display, []).append(entry)
+				concise = _source_docs.readable_signature(display)
+				if concise != display:
+					self.signature_types.setdefault(concise, []).append(entry)
 		for entry in self.entries.values():
 			name = entry["name"].split("~")[0]
 			if "." not in name:
@@ -123,19 +126,23 @@ class Catalog:
 		matches = self.signature_types.get(code.strip(), [])
 		if source is not None:
 			matches = [entry for entry in matches if entry["source"] == source]
-		if len(matches) != 1:
+		if not matches:
 			return result
 		entry = matches[0]
-		base = code.find(entry["signature"])
+		ambiguous = any(candidate.get("type_references") != entry.get("type_references") for candidate in matches[1:])
+		signature = entry["signature"]
+		if signature not in code:
+			signature = _source_docs.readable_signature(signature)
+		base = code.find(signature)
 		for field, references in entry.get("type_references", {}).items():
 			expression = entry.get(field)
 			if not expression:
 				continue
-			start = entry["signature"].rfind(expression)
+			start = signature.rfind(expression)
 			if start < 0:
 				continue
 			for reference in references:
-				target = reference["target"]
+				target = None if ambiguous else reference["target"]
 				# Explicitly unresolved names suppress default same-name lookup.
 				location = None
 				if target:

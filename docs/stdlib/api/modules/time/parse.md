@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/time/parse.el:86` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/parse.el#L86)
 
+解析时间文本并返回字段、偏移和解析状态。
+
 ```el
 export fn parseTime(source: Text, standard: Bool): ParsedTime
 ```
 
 **返回类型**：[`ParsedTime`](../../types.md#api-0d1958b2407e78d1230d)
-
-解析时间文本并返回字段、偏移和解析状态。
 
 **参数**：source 要解析的时间文本。
 

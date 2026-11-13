@@ -19,11 +19,11 @@
 
 源码：`src/stdlib/multimedia/capture/model.el:72` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L72)
 
+声明整数 PCM16 音频的采样率和声道数，并提供每帧字节数。
+
 ```el
 export @assign(mode: "copy") class AudioFormat
 ```
-
-声明整数 PCM16 音频的采样率和声道数，并提供每帧字节数。
 
 **参数**：sampleRate 每秒采样帧数，范围 1000 到 384000。
 
@@ -41,11 +41,11 @@ let format = AudioFormat(48000, 2)
 
 源码：`src/stdlib/multimedia/capture/model.el:121` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L121)
 
+拥有交错有符号 PCM16 小端样本的共享缓冲区，可按帧和声道读取或写入。
+
 ```el
 export @assign(mode: "shared") class PcmAudio
 ```
-
-拥有交错有符号 PCM16 小端样本的共享缓冲区，可按帧和声道读取或写入。
 
 **参数**：frames 音频帧数，范围 0 到 16777216。
 
@@ -66,13 +66,13 @@ audio.setSample(0, 0, 12000)
 
 源码：`src/stdlib/multimedia/capture/model.el:154` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L154)
 
+读取指定帧和声道的有符号 PCM16 整数样本。
+
 ```el
 fn sample(frame: Number, channel: Number = 0): Number
 ```
 
 **返回类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
-
-读取指定帧和声道的有符号 PCM16 整数样本。
 
 **参数**：frame 零起始帧索引。
 
@@ -90,11 +90,11 @@ let value = audio.sample(0)
 
 源码：`src/stdlib/multimedia/capture/model.el:173` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L173)
 
+设置指定帧和声道的有符号 PCM16 整数样本。
+
 ```el
 fn setSample(frame: Number, channel: Number, value: Number)
 ```
-
-设置指定帧和声道的有符号 PCM16 整数样本。
 
 **参数**：frame 零起始帧索引。
 

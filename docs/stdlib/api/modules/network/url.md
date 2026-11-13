@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/network/url.el:108` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/url.el#L108)
 
+根据基础 URL 解析绝对或相对引用，并规范化相对路径中的点段。
+
 ```el
 export fn resolveUrl(base: NetworkUrl, location: Text): NetworkUrl
 ```
 
 **返回类型**：[`NetworkUrl`](../../types.md#api-ce5b237af29ddf9960d5)
-
-根据基础 URL 解析绝对或相对引用，并规范化相对路径中的点段。
 
 **参数**：base 已解析的基础 URL。
 

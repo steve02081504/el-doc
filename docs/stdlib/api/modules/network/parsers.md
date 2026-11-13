@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/network/parsers.el:56` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/parsers.el#L56)
 
+解析 application/x-www-form-urlencoded 格式的字段序列。
+
 ```el
 export fn parseForm(source: Text): FormField[]
 ```
 
 **返回类型**：[`FormField`](../../types.md#api-f973a41aa0f5893b7825)[]
-
-解析 application/x-www-form-urlencoded 格式的字段序列。
 
 **参数**：source 表单编码文本。
 

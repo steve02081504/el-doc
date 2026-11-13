@@ -21,13 +21,13 @@
 
 源码：`src/stdlib/formats/index.el:44` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L44)
 
+创建文本格式对象，按需解码文本，并可选提供反向编码器。
+
 ```el
 export fn TextFormat(output: type, input: type = output): type
 ```
 
 **返回类型**：[`type`](../../../../reference/language/types.md)
-
-创建文本格式对象，按需解码文本，并可选提供反向编码器。
 
 **参数**：output 解码后的值类型。
 
@@ -47,11 +47,11 @@ let jsonFormat = TextFormat<output: any>((source: Text, limits: JsonLimits) => p
 
 源码：`src/stdlib/formats/index.el:115` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L115)
 
+返回按 UTF-8 读取和写入原样文本的格式对象。
+
 ```el
 get Text()
 ```
-
-返回按 UTF-8 读取和写入原样文本的格式对象。
 
 ### 示例：将文本格式写入文件
 
@@ -65,11 +65,11 @@ writeFileAs(formats.Text, "file:./copy.txt", "already text")
 
 源码：`src/stdlib/formats/index.el:125` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L125)
 
+返回严格 JSON 格式对象；支持 JSON 解码与编码。
+
 ```el
 get JSON()
 ```
-
-返回严格 JSON 格式对象；支持 JSON 解码与编码。
 
 ### 示例：读取 JSON 文件
 
@@ -83,11 +83,11 @@ let config = readFileAs(formats.JSON, "file:./config.json")
 
 源码：`src/stdlib/formats/index.el:137` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L137)
 
+返回 YAML 文本解码格式；当前对象只提供解码器。
+
 ```el
 get YAML()
 ```
-
-返回 YAML 文本解码格式；当前对象只提供解码器。
 
 ### 示例：读取 YAML 配置
 
@@ -101,11 +101,11 @@ let config = readFileAs(formats.YAML, "file:./config.yaml")
 
 源码：`src/stdlib/formats/index.el:148` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L148)
 
+返回 CSV 表格解码格式，解析结果为文本单元格二维数组。
+
 ```el
 get CSV()
 ```
-
-返回 CSV 表格解码格式，解析结果为文本单元格二维数组。
 
 ### 示例：读取 CSV 文件
 
@@ -119,13 +119,13 @@ let rows = readFileAs(formats.CSV, "file:./table.csv")
 
 源码：`src/stdlib/formats/index.el:166` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L166)
 
+标准格式对象集合，提供 Text、JSON、YAML、CSV 等格式值。
+
 ```el
 export const formats = Formats()
 ```
 
 **类型**：[`Formats`](../../types.md#api-6768ac9ca087f5de0440)
-
-标准格式对象集合，提供 Text、JSON、YAML、CSV 等格式值。
 
 ### 示例：选择 JSON 解码器
 

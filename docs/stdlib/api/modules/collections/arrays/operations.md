@@ -14,14 +14,14 @@
 
 源码：`src/stdlib/collections/arrays/operations.el:30` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L30)
 
+按迭代顺序检查元素，存在满足谓词的元素时立即返回真。
+
 ```el
 @optimize(using: optimize_array, data: @{ stage: "some", receiver: "argument" })
 export fn some(values, predicate): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-按迭代顺序检查元素，存在满足谓词的元素时立即返回真。
 
 **参数**：values 被检查的可迭代值。
 
@@ -41,14 +41,14 @@ some(@[1, 3, 4], value => value % 2 == 0)
 
 源码：`src/stdlib/collections/arrays/operations.el:47` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L47)
 
+判断序列中是否有元素满足谓词。
+
 ```el
 @optimize(using: optimize_array, data: @{ stage: "some", receiver: "argument" })
 export fn any(values, predicate): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-判断序列中是否有元素满足谓词。
 
 **参数**：values 被检查的可迭代值。
 
@@ -68,14 +68,14 @@ any(@[-2, 0, 5], value => value > 0)
 
 源码：`src/stdlib/collections/arrays/operations.el:63` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L63)
 
+判断序列中没有元素满足谓词。
+
 ```el
 @optimize(using: optimize_array, data: @{ stage: "none", receiver: "argument" })
 export fn none(values, predicate): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-判断序列中没有元素满足谓词。
 
 **参数**：values 被检查的可迭代值。
 
@@ -95,14 +95,14 @@ none(@[1, 2, 3], value => value < 0)
 
 源码：`src/stdlib/collections/arrays/operations.el:79` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L79)
 
+判断所有元素是否满足谓词；遇到首个不满足项时停止。
+
 ```el
 @optimize(using: optimize_array, data: @{ stage: "all", receiver: "argument" })
 export fn all(values, predicate): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-判断所有元素是否满足谓词；遇到首个不满足项时停止。
 
 **参数**：values 被检查的可迭代值。
 
@@ -122,14 +122,14 @@ all(@[1, 2, 3], value => value > 0)
 
 源码：`src/stdlib/collections/arrays/operations.el:96` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L96)
 
+判断序列中的每个元素是否满足谓词，与 all 使用相同规则。
+
 ```el
 @optimize(using: optimize_array, data: @{ stage: "all", receiver: "argument" })
 export fn every(values, predicate): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-判断序列中的每个元素是否满足谓词，与 all 使用相同规则。
 
 **参数**：values 被检查的可迭代值。
 
@@ -149,11 +149,11 @@ every(@["oak", "elm"], word => word.count == 3)
 
 源码：`src/stdlib/collections/arrays/operations.el:112` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L112)
 
+依次把两个序列的元素复制到新数组。
+
 ```el
 export fn concat(left, right)
 ```
-
-依次把两个序列的元素复制到新数组。
 
 **参数**：left 结果前段的序列。
 
@@ -173,13 +173,13 @@ concat(@[1, 2], @[3])
 
 源码：`src/stdlib/collections/arrays/operations.el:128` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L128)
 
+判断序列是否包含与给定值相等的元素。
+
 ```el
 export fn includes(values, value): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-判断序列是否包含与给定值相等的元素。
 
 **参数**：values 提供元素比较操作的序列。
 
@@ -201,12 +201,12 @@ includes(@["red", "blue"], "blue")
 
 源码：`src/stdlib/collections/arrays/operations.el:144` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L144)
 
+将变换函数应用于每个元素，并按原顺序收集结果。
+
 ```el
 @optimize(using: optimize_array, data: @{ stage: "map", receiver: "argument" })
 export fn map(values, transform)
 ```
-
-将变换函数应用于每个元素，并按原顺序收集结果。
 
 **参数**：values 输入序列。
 
@@ -226,12 +226,12 @@ map(@[1, 2], value => value + 1)
 
 源码：`src/stdlib/collections/arrays/operations.el:166` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L166)
 
+保留满足谓词的元素，并保持其相对顺序。
+
 ```el
 @optimize(using: optimize_array, data: @{ stage: "filter", receiver: "argument" })
 export fn filter(values, predicate)
 ```
-
-保留满足谓词的元素，并保持其相对顺序。
 
 **参数**：values 输入序列。
 
@@ -251,12 +251,12 @@ filter(@[1, 2, 3], value => value % 2 == 1)
 
 源码：`src/stdlib/collections/arrays/operations.el:184` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L184)
 
+跳过指定数量的前置元素并复制剩余元素。
+
 ```el
 @optimize(using: optimize_array, data: @{ stage: "drop", receiver: "argument", prepare: normalize_count })
 export fn drop(values, count)
 ```
-
-跳过指定数量的前置元素并复制剩余元素。
 
 **参数**：values 输入序列。
 
@@ -276,12 +276,12 @@ drop(@[1, 2, 3], 1)
 
 源码：`src/stdlib/collections/arrays/operations.el:207` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L207)
 
+复制序列开头至多指定数量的元素。
+
 ```el
 @optimize(using: optimize_array, data: @{ stage: "take", receiver: "argument", prepare: normalize_count })
 export fn take(values, count)
 ```
-
-复制序列开头至多指定数量的元素。
 
 **参数**：values 输入序列。
 
@@ -301,14 +301,14 @@ take(@[1, 2, 3], 2)
 
 源码：`src/stdlib/collections/arrays/operations.el:227` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L227)
 
+按迭代顺序对每个元素调用回调。
+
 ```el
 @optimize(using: optimize_array, data: @{ stage: "each", receiver: "argument" })
 export fn each(values, callback): void_t
 ```
 
 **返回类型**：[`void_t`](../../language/values.md#api-d7b419fab395eef3d142)
-
-按迭代顺序对每个元素调用回调。
 
 **参数**：values 输入序列。
 
@@ -328,13 +328,13 @@ each(@[1, 2], value => value)
 
 源码：`src/stdlib/collections/arrays/operations.el:243` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L243)
 
+返回首个与目标值相等的元素下标；未找到时返回 -1。
+
 ```el
 export fn index_of(values, wanted): Number
 ```
 
 **返回类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
-
-返回首个与目标值相等的元素下标；未找到时返回 -1。
 
 **参数**：values 输入序列。
 
@@ -354,12 +354,12 @@ index_of(@[4, 7, 9], 7)
 
 源码：`src/stdlib/collections/arrays/operations.el:263` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L263)
 
+返回首个满足谓词的迭代步骤；没有匹配项时返回空步骤。
+
 ```el
 @optimize(using: optimize_array, data: @{ stage: "find", receiver: "argument" })
 export fn find(values, predicate)
 ```
-
-返回首个满足谓词的迭代步骤；没有匹配项时返回空步骤。
 
 **参数**：values 输入序列。
 
@@ -379,11 +379,11 @@ find(@[2, 4, 5], value => value % 2 == 1).value
 
 源码：`src/stdlib/collections/arrays/operations.el:283` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L283)
 
+查找满足谓词的元素；若不存在则创建、追加并返回新元素。
+
 ```el
 export fn find_or_add(values, predicate, create)
 ```
-
-查找满足谓词的元素；若不存在则创建、追加并返回新元素。
 
 **参数**：values 支持 push 的可变序列。
 
@@ -406,12 +406,12 @@ find_or_add(values, value => value == 2, () => 2)
 
 源码：`src/stdlib/collections/arrays/operations.el:302` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L302)
 
+对输入副本排序并返回排序结果，输入保持不变。
+
 ```el
 @optimize(using: optimize_sort, data: @{ receiver: "argument", independent: t, copy: copy_sort_input, pass: insertion_pass, tail: insertion_tail, ascending: ascending, merge: merge_sort, adaptive: adaptive_number_sort, insertion: insertion_sort, bucket: bounded_number_sort })
 export fn sort(values, less = (left, right) => left < right, strategy = stable_memory_sort)
 ```
-
-对输入副本排序并返回排序结果，输入保持不变。
 
 **参数**：values 支持迭代且其副本可排序。
 
@@ -433,12 +433,12 @@ sort(@[3, 1, 2])
 
 源码：`src/stdlib/collections/arrays/operations.el:318` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L318)
 
+原地反转可写序列，并返回该序列。
+
 ```el
 @discardable
 export fn reverse(values)
 ```
-
-原地反转可写序列，并返回该序列。
 
 **参数**：values 支持按下标读写的可变序列。
 
@@ -457,11 +457,11 @@ reverse(values)
 
 源码：`src/stdlib/collections/arrays/operations.el:338` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L338)
 
+按相反顺序复制序列元素到新数组。
+
 ```el
 export fn reversed(values)
 ```
-
-按相反顺序复制序列元素到新数组。
 
 **参数**：values 输入序列。
 

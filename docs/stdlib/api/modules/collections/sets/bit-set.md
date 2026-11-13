@@ -20,13 +20,13 @@
 
 源码：`src/stdlib/collections/sets/bit-set.el:63` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/bit-set.el#L63)
 
+创建 N 位无符号位集合类型；构造值必须是能完整表示在该位宽中的非负整数。
+
 ```el
 export fn BitSet(size: Number): type
 ```
 
 **返回类型**：[`type`](../../../../../reference/language/types.md)
-
-创建 N 位无符号位集合类型；构造值必须是能完整表示在该位宽中的非负整数。
 
 **参数**：size 固定位宽，可为零。
 
@@ -45,13 +45,13 @@ console.stdout.writeLine(flags.toNumber())
 
 源码：`src/stdlib/collections/sets/bit-set.el:89` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/bit-set.el#L89)
 
+将位集合按无符号整数解释为精确数值。
+
 ```el
 fn toNumber(): Number
 ```
 
 **返回类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
-
-将位集合按无符号整数解释为精确数值。
 
 **返回值**：位集合对应的非负整数。
 
@@ -66,13 +66,13 @@ console.stdout.writeLine(flags.toNumber())
 
 源码：`src/stdlib/collections/sets/bit-set.el:126` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/bit-set.el#L126)
 
+将位集合循环左移指定位数；移出的高位绕回低位。
+
 ```el
 fn rotateLeft(count: Number): BitSet<size: size>
 ```
 
 **返回类型**：[`BitSet`](bit-set.md#api-2fd205cada268bede56b)<size: [`size`](../../../types.md#api-09fd2333fe50aa733d41)>
-
-将位集合循环左移指定位数；移出的高位绕回低位。
 
 **参数**：count 非负整数移位数。
 
@@ -89,13 +89,13 @@ console.stdout.writeLine(flags.rotateLeft(1).toNumber())
 
 源码：`src/stdlib/collections/sets/bit-set.el:143` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/bit-set.el#L143)
 
+将位集合循环右移指定位数；移出的低位绕回高位。
+
 ```el
 fn rotateRight(count: Number): BitSet<size: size>
 ```
 
 **返回类型**：[`BitSet`](bit-set.md#api-2fd205cada268bede56b)<size: [`size`](../../../types.md#api-09fd2333fe50aa733d41)>
-
-将位集合循环右移指定位数；移出的低位绕回高位。
 
 **参数**：count 非负整数移位数。
 

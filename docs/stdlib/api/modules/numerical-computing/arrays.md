@@ -16,11 +16,11 @@
 
 源码：`src/stdlib/numerical-computing/arrays.el:30` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L30)
 
+将一维张量重塑为只有一行的二维张量。
+
 ```el
 export fn row(values)
 ```
-
-将一维张量重塑为只有一行的二维张量。
 
 **参数**：values rank-1 输入张量。
 
@@ -40,11 +40,11 @@ let values = row(vector)
 
 源码：`src/stdlib/numerical-computing/arrays.el:40` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L40)
 
+将一维张量重塑为只有一列的二维张量。
+
 ```el
 export fn col(values)
 ```
-
-将一维张量重塑为只有一列的二维张量。
 
 **参数**：values rank-1 输入张量。
 
@@ -62,11 +62,11 @@ let values = col(vector)
 
 源码：`src/stdlib/numerical-computing/arrays.el:52` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L52)
 
+在首尾端点之间生成指定数量的等间距元素。
+
 ```el
 export fn linspace(element: type, first, last, count: Number)
 ```
-
-在首尾端点之间生成指定数量的等间距元素。
 
 **参数**：element 输出元素类型。
 
@@ -88,11 +88,11 @@ let points = linspace<element: Number>(0, 1, 5)
 
 源码：`src/stdlib/numerical-computing/arrays.el:86` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L86)
 
+按张量的列优先逻辑顺序展平为一维张量。
+
 ```el
 export fn columnMajor(source)
 ```
-
-按张量的列优先逻辑顺序展平为一维张量。
 
 **参数**：source 待展开的张量。
 

@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/neural-networks/functional.el:21` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/functional.el#L21)
 
+沿指定轴将输入转换为和为 1 的指数归一化值。
+
 ```el
 export fn softmax(value, axis: Number = 1, policy: TensorMathPolicy = TensorMathPolicy())
 ```
-
-沿指定轴将输入转换为和为 1 的指数归一化值。
 
 **参数**：value 输入张量。
 
@@ -39,11 +39,11 @@ let probabilities = softmax(logits, axis: 1)
 
 源码：`src/stdlib/neural-networks/functional.el:32` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/functional.el#L32)
 
+沿指定轴计算数值稳定的对数 softmax。
+
 ```el
 export fn logSoftmax(value, axis: Number = 1, policy: TensorMathPolicy = TensorMathPolicy())
 ```
-
-沿指定轴计算数值稳定的对数 softmax。
 
 **参数**：value 输入张量。
 
@@ -63,11 +63,11 @@ let logProbabilities = logSoftmax(logits, axis: 1)
 
 源码：`src/stdlib/neural-networks/functional.el:48` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/functional.el#L48)
 
+计算稠密目标权重与 logits 对应的交叉熵，并对非类别轴样本取均值。
+
 ```el
 export fn crossEntropy(logits, targets, axis: Number = 1, policy: TensorMathPolicy = TensorMathPolicy())
 ```
-
-计算稠密目标权重与 logits 对应的交叉熵，并对非类别轴样本取均值。
 
 **参数**：logits 未归一化类别分数。
 
@@ -92,11 +92,11 @@ let loss = crossEntropy(logits, targets)
 
 源码：`src/stdlib/neural-networks/functional.el:64` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/functional.el#L64)
 
+将类别编号数组转换为每行一个类别权重为 1 的稠密二维张量。
+
 ```el
 export fn oneHot(element: type, labels: Number[], classes: Number)
 ```
-
-将类别编号数组转换为每行一个类别权重为 1 的稠密二维张量。
 
 **参数**：element 输出张量的元素类型。
 

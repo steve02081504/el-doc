@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/text/operations.el:16` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/operations.el#L16)
 
+将文本编码为十进制标量长度、冒号和原文组成的定帧。
+
 ```el
 export fn frame(text: Text): Text
 ```
 
 **返回类型**：[`Text`](text.md#api-6116e54b075df026a90a)
-
-将文本编码为十进制标量长度、冒号和原文组成的定帧。
 
 **参数**：text 要编码的文本。
 
@@ -38,13 +38,13 @@ frame("猫:咪")
 
 源码：`src/stdlib/text/operations.el:37` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/operations.el#L37)
 
+在文本中从给定标量下标开始查找子串，返回首次匹配位置；未找到时返回 -1。
+
 ```el
 export fn find_text(text: Text, needle: Text, start: Number): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-在文本中从给定标量下标开始查找子串，返回首次匹配位置；未找到时返回 -1。
 
 **参数**：text 要搜索的文本。
 

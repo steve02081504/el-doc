@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/collections/sequences/enumerate.el:72` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/enumerate.el#L72)
 
+惰性包装迭代源，为每个产出元素配上从零开始的下标。
+
 ```el
 export fn enumerate(source)
 ```
-
-惰性包装迭代源，为每个产出元素配上从零开始的下标。
 
 **参数**：source 可迭代值；每次创建迭代器时从下标零开始。
 

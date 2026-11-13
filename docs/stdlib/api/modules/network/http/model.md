@@ -39,11 +39,11 @@
 
 源码：`src/stdlib/network/http/model.el:34` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L34)
 
+表示一个经校验的 HTTP 请求或响应头名称和值。
+
 ```el
 export class HttpHeader
 ```
-
-表示一个经校验的 HTTP 请求或响应头名称和值。
 
 **参数**：name 符合 HTTP token 语法的头名称。
 
@@ -62,11 +62,11 @@ let header = HttpHeader("Content-Type", "application/json")
 
 源码：`src/stdlib/network/http/model.el:46` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L46)
 
+创建并校验一条 HTTP 头。
+
 ```el
 constructor(name: Text, value: Text)
 ```
-
-创建并校验一条 HTTP 头。
 
 **参数**：name 符合 HTTP token 语法的名称。
 
@@ -84,11 +84,11 @@ let header = HttpHeader("Accept", "application/json")
 
 源码：`src/stdlib/network/http/model.el:71` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L71)
 
+配置 HTTP 请求方法、头、请求体、资源上限与 TLS 行为。
+
 ```el
 export class HttpOptions
 ```
-
-配置 HTTP 请求方法、头、请求体、资源上限与 TLS 行为。
 
 ### 示例：设置请求超时
 
@@ -101,13 +101,13 @@ let options = HttpOptions(@{ timeout: 5000 })
 
 源码：`src/stdlib/network/http/model.el:78` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L78)
 
+请求使用的 HTTP 方法，默认是 GET。
+
 ```el
 let method: Text
 ```
 
 **类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
-
-请求使用的 HTTP 方法，默认是 GET。
 
 ### 示例：指定 POST 方法
 
@@ -119,13 +119,13 @@ let options = HttpOptions(@{ method: "POST" })
 
 源码：`src/stdlib/network/http/model.el:85` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L85)
 
+要发送的请求头数组。
+
 ```el
 let headers: HttpHeader[]
 ```
 
 **类型**：[`HttpHeader`](model.md#api-de461259064c77488732)[]
-
-要发送的请求头数组。
 
 ### 示例：设置请求头
 
@@ -137,13 +137,13 @@ let options = HttpOptions(@{ headers: @[HttpHeader("Accept", "application/json")
 
 源码：`src/stdlib/network/http/model.el:92` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L92)
 
+要发送的请求体字节；GET 与 HEAD 不接受非空请求体。
+
 ```el
 let body: Number[]
 ```
 
 **类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)[]
-
-要发送的请求体字节；GET 与 HEAD 不接受非空请求体。
 
 ### 示例：设置字节请求体
 
@@ -155,13 +155,13 @@ let options = HttpOptions(@{ method: "POST", body: @[65, 66] })
 
 源码：`src/stdlib/network/http/model.el:99` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L99)
 
+请求超时毫秒数，默认 30000，必须为正数。
+
 ```el
 let timeout: Number
 ```
 
 **类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
-
-请求超时毫秒数，默认 30000，必须为正数。
 
 ### 示例：设置五秒超时
 
@@ -173,13 +173,13 @@ let options = HttpOptions(@{ timeout: 5000 })
 
 源码：`src/stdlib/network/http/model.el:107` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L107)
 
+请求或响应消息体字节上限；void 表示不设显式上限。
+
 ```el
 let maximumBodyBytes: Number | void_t
 ```
 
 **类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4) | [`void_t`](../../language/values.md#api-d7b419fab395eef3d142)
-
-请求或响应消息体字节上限；void 表示不设显式上限。
 
 ### 示例：限制响应体大小
 
@@ -191,13 +191,13 @@ let options = HttpOptions(@{ maximumBodyBytes: 1048576 })
 
 源码：`src/stdlib/network/http/model.el:114` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L114)
 
+请求与响应头的最大字节数。
+
 ```el
 let maximumHeaderBytes: Number
 ```
 
 **类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
-
-请求与响应头的最大字节数。
 
 ### 示例：设置头部上限
 
@@ -209,13 +209,13 @@ let options = HttpOptions(@{ maximumHeaderBytes: 16384 })
 
 源码：`src/stdlib/network/http/model.el:121` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L121)
 
+允许跟随的最大重定向次数。
+
 ```el
 let maximumRedirects: Number
 ```
 
 **类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
-
-允许跟随的最大重定向次数。
 
 ### 示例：禁止自动跟随重定向
 
@@ -227,13 +227,13 @@ let options = HttpOptions(@{ maximumRedirects: 0 })
 
 源码：`src/stdlib/network/http/model.el:128` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L128)
 
+请求是否绕过可复用的缓存响应。
+
 ```el
 let forceRefresh: Bool
 ```
 
 **类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-请求是否绕过可复用的缓存响应。
 
 ### 示例：强制刷新响应
 
@@ -245,13 +245,13 @@ let options = HttpOptions(@{ forceRefresh: t })
 
 源码：`src/stdlib/network/http/model.el:135` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L135)
 
+HTTPS 请求使用的 TLS 配置。
+
 ```el
 let tls: TlsOptions
 ```
 
 **类型**：[`TlsOptions`](../../../types.md#api-d66684475437485e3301)
-
-HTTPS 请求使用的 TLS 配置。
 
 ### 示例：使用默认 TLS 配置
 
@@ -263,11 +263,11 @@ let options = HttpOptions(@{ tls: TlsOptions() })
 
 源码：`src/stdlib/network/http/model.el:144` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L144)
 
+用字段对象覆盖默认请求配置，并在创建时校验字段范围和组合。
+
 ```el
 constructor(changes = @{})
 ```
-
-用字段对象覆盖默认请求配置，并在创建时校验字段范围和组合。
 
 **参数**：changes 要覆盖的请求字段。
 
@@ -283,11 +283,11 @@ let options = HttpOptions(@{ timeout: 5000, maximumRedirects: 3 })
 
 源码：`src/stdlib/network/http/model.el:199` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L199)
 
+保存 HTTP 状态码、响应头、响应体和最终 URL，并提供常用解码操作。
+
 ```el
 export class HttpResponse
 ```
-
-保存 HTTP 状态码、响应头、响应体和最终 URL，并提供常用解码操作。
 
 ### 示例：检查请求状态
 
@@ -300,13 +300,13 @@ console.stdout.writeLine(response.status, " ", response.ok)
 
 源码：`src/stdlib/network/http/model.el:206` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L206)
 
+HTTP 状态码。
+
 ```el
 let status: Number
 ```
 
 **类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
-
-HTTP 状态码。
 
 ### 示例：检查状态码
 
@@ -318,13 +318,13 @@ console.stdout.writeLine(response.status)
 
 源码：`src/stdlib/network/http/model.el:213` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L213)
 
+响应头列表。
+
 ```el
 let headers: HttpHeader[]
 ```
 
 **类型**：[`HttpHeader`](model.md#api-de461259064c77488732)[]
-
-响应头列表。
 
 ### 示例：检查响应头数
 
@@ -336,13 +336,13 @@ console.stdout.writeLine(response.headers.count)
 
 源码：`src/stdlib/network/http/model.el:220` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L220)
 
+响应体的原始字节。
+
 ```el
 let body: Number[]
 ```
 
 **类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)[]
-
-响应体的原始字节。
 
 ### 示例：检查响应体字节数
 
@@ -354,13 +354,13 @@ console.stdout.writeLine(response.body.count)
 
 源码：`src/stdlib/network/http/model.el:227` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L227)
 
+请求跟随重定向后的最终 URL。
+
 ```el
 let url: Text
 ```
 
 **类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
-
-请求跟随重定向后的最终 URL。
 
 ### 示例：查看最终 URL
 
@@ -372,13 +372,13 @@ console.stdout.writeLine(response.url)
 
 源码：`src/stdlib/network/http/model.el:236` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L236)
 
+判断状态码是否位于 200 到 299 的成功范围。
+
 ```el
 get ok(): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-判断状态码是否位于 200 到 299 的成功范围。
 
 **返回值**：成功范围内为真。
 
@@ -392,13 +392,13 @@ if (response.ok) console.stdout.writeLine("success")
 
 源码：`src/stdlib/network/http/model.el:245` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L245)
 
+将响应体按 UTF-8 解码为文本；拒绝未解码的非 identity 内容编码。
+
 ```el
 fn text(): Text
 ```
 
 **返回类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
-
-将响应体按 UTF-8 解码为文本；拒绝未解码的非 identity 内容编码。
 
 **返回值**：响应文本。
 
@@ -414,13 +414,13 @@ console.stdout.writeLine(response.text())
 
 源码：`src/stdlib/network/http/model.el:259` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L259)
 
+将响应文本解析为 JSON 值。
+
 ```el
 fn json(limits: JsonLimits = JsonLimits()): any
 ```
 
 **返回类型**：[`any`](../../../../../reference/language/types.md)
-
-将响应文本解析为 JSON 值。
 
 **参数**：limits JSON 解析资源限制。
 
@@ -438,11 +438,11 @@ let configuration = response.json()
 
 源码：`src/stdlib/network/http/model.el:269` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L269)
 
+使用指定格式对象解码响应体。
+
 ```el
 fn as(format)
 ```
-
-使用指定格式对象解码响应体。
 
 **参数**：format 提供 decode 方法的格式对象。
 
@@ -460,13 +460,13 @@ let config = response.as(formats.JSON)
 
 源码：`src/stdlib/network/http/model.el:282` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L282)
 
+按大小写无关的名称查找首个响应头。
+
 ```el
 fn header(name: Text): Text | void_t
 ```
 
 **返回类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a) | [`void_t`](../../language/values.md#api-d7b419fab395eef3d142)
-
-按大小写无关的名称查找首个响应头。
 
 **参数**：name 响应头名称。
 
@@ -482,11 +482,11 @@ let contentType = response.header("Content-Type")
 
 源码：`src/stdlib/network/http/model.el:293` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L293)
 
+表示 HTTP 响应状态不成功；异常保留原始响应供调用方检查。
+
 ```el
 export class HttpStatusError extends Error
 ```
-
-表示 HTTP 响应状态不成功；异常保留原始响应供调用方检查。
 
 ### 示例：捕获并检查错误响应
 
@@ -499,13 +499,13 @@ catch (error: HttpStatusError) { console.stderr.writeLine(error.response.status)
 
 源码：`src/stdlib/network/http/model.el:300` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L300)
 
+引发状态错误的完整 HTTP 响应。
+
 ```el
 let response: HttpResponse
 ```
 
 **类型**：[`HttpResponse`](model.md#api-e49096dfd951764c068f)
-
-引发状态错误的完整 HTTP 响应。
 
 ### 示例：查看错误状态
 
@@ -517,11 +517,11 @@ console.stderr.writeLine(error.response.status)
 
 源码：`src/stdlib/network/http/model.el:308` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L308)
 
+将不成功的 HTTP 响应封装为状态异常。
+
 ```el
 constructor(response: HttpResponse)
 ```
-
-将不成功的 HTTP 响应封装为状态异常。
 
 **参数**：response 要附加到异常的完整响应。
 

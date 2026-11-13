@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/collections/batch/syntax.el:47` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/batch/syntax.el#L47)
 
+batch 块中的局部语法 `keep(...)` 按条件保留当前元素；条件为假时丢弃该元素。
+
 ```el
 syntax keepElement
 ```
-
-batch 块中的局部语法 `keep(...)` 按条件保留当前元素；条件为假时丢弃该元素。
 
 **参数**：condition 当前元素上的布尔条件。
 
@@ -37,11 +37,11 @@ console.stdout.writeLine(selected.join(", "))
 
 源码：`src/stdlib/collections/batch/syntax.el:79` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/batch/syntax.el#L79)
 
+将块内使用的变化数组绑定映射到对应元素，并收集逐元素求值结果。
+
 ```el
 export syntax batch
 ```
-
-将块内使用的变化数组绑定映射到对应元素，并收集逐元素求值结果。
 
 ### 示例：对数组逐元素筛选
 

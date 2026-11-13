@@ -18,12 +18,12 @@
 
 源码：`src/stdlib/user-interface/model.el:21` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L21)
 
+描述节点的流向、间距、尺寸约束、权重、换行与滚动溢出策略；属性变更会发布变化通知。
+
 ```el
 @assign(mode: "shared")
 export class LayoutStyle
 ```
-
-描述节点的流向、间距、尺寸约束、权重、换行与滚动溢出策略；属性变更会发布变化通知。
 
 ### 示例：设置行布局和间距
 
@@ -37,12 +37,12 @@ style.gap = 8
 
 源码：`src/stdlib/user-interface/model.el:78` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L78)
 
+一个可观察的界面定义节点，保存元素种类、文本、标识、样式、主题、监听器和子边。
+
 ```el
 @assign(mode: "shared")
 export class Definition
 ```
-
-一个可观察的界面定义节点，保存元素种类、文本、标识、样式、主题、监听器和子边。
 
 ### 示例：创建并配置标签
 
@@ -56,13 +56,13 @@ title.enabled = t
 
 源码：`src/stdlib/user-interface/model.el:88` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L88)
 
+可选的局部语义 Theme，按当前出现位置参与父子主题解析。
+
 ```el
 let theme: Theme | void_t
 ```
 
 **类型**：[`Theme`](../theme/model.md#api-2f8f76e6db4068dfe678) | [`void_t`](../language/values.md#api-d7b419fab395eef3d142)
-
-可选的局部语义 Theme，按当前出现位置参与父子主题解析。
 
 ### 示例：为根节点设置主色
 
@@ -74,12 +74,12 @@ root.theme = Theme(@{primary: 0x80A7F0})
 
 源码：`src/stdlib/user-interface/model.el:117` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L117)
 
+一次 GUI 输入事件的可变传播状态与载荷；监听器可停止传播或阻止默认处理。
+
 ```el
 @assign(mode: "shared")
 export class GuiEvent
 ```
-
-一次 GUI 输入事件的可变传播状态与载荷；监听器可停止传播或阻止默认处理。
 
 ### 示例：在监听器中阻止默认行为
 
@@ -91,11 +91,11 @@ on(button, "click", event => event.preventDefault())
 
 源码：`src/stdlib/user-interface/model.el:160` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L160)
 
+为定义节点注册指定类型的事件监听器，可选择在捕获阶段运行。
+
 ```el
 export fn on(element: Definition, kind: Text, action, capture: Bool = nil)
 ```
-
-为定义节点注册指定类型的事件监听器，可选择在捕获阶段运行。
 
 **参数**：element 接收事件的界面定义。
 
@@ -115,13 +115,13 @@ on(button, "click", event => status.text = "已点击")
 
 源码：`src/stdlib/user-interface/model.el:175` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L175)
 
+创建 `column`、`row`、`label`、`button` 或 `input` 定义；未知种类会抛出错误。
+
 ```el
 export fn element(kind: Text, text: Text = "", id: Text = ""): Definition
 ```
 
 **返回类型**：[`Definition`](model.md#api-92b8f0fb1d93b4e22dc2)
-
-创建 `column`、`row`、`label`、`button` 或 `input` 定义；未知种类会抛出错误。
 
 **参数**：kind 支持的元素种类。
 
@@ -143,11 +143,11 @@ let save = element("button", "保存", "save")
 
 源码：`src/stdlib/user-interface/model.el:202` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L202)
 
+将目标定义作为带键子边追加到父节点，并发布父节点变化。
+
 ```el
 export fn appendChild(parent: Definition, key: Text, target: Definition)
 ```
-
-将目标定义作为带键子边追加到父节点，并发布父节点变化。
 
 **参数**：parent 接收新子边的定义。
 
@@ -168,13 +168,13 @@ appendChild(root, "heading", element("label", "设置"))
 
 源码：`src/stdlib/user-interface/model.el:219` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L219)
 
+按子边键移除第一个匹配项；未找到时不修改模型。
+
 ```el
 export fn removeChild(parent: Definition, key: Text): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-按子边键移除第一个匹配项；未找到时不修改模型。
 
 **参数**：parent 要修改的父定义。
 
@@ -192,11 +192,11 @@ let removed = removeChild(root, "hint")
 
 源码：`src/stdlib/user-interface/model.el:241` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L241)
 
+将已有子边移动到指定的最终索引；这是重排，不会创建新的边。
+
 ```el
 export fn moveChild(parent: Definition, key: Text, destination: Number)
 ```
-
-将已有子边移动到指定的最终索引；这是重排，不会创建新的边。
 
 **参数**：parent 子边所属父定义。
 

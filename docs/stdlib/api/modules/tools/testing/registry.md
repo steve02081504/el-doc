@@ -18,11 +18,11 @@
 
 源码：`src/stdlib/tools/testing/registry.el:88` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/registry.el#L88)
 
+为具有稳定名称的行逐条注册测试用例。
+
 ```el
 fn each(name: Text, rows, body, options: TestOptions = TestOptions())
 ```
-
-为具有稳定名称的行逐条注册测试用例。
 
 **参数**：name 测试组名称。
 
@@ -47,13 +47,13 @@ test.each("double", @[
 
 源码：`src/stdlib/tools/testing/registry.el:109` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/registry.el#L109)
 
+注册一个测试用例；用例主体在测试执行阶段调用，可选择接收 TestContext。
+
 ```el
 export lazy let test = TestRegistrar()
 ```
 
 **类型**：[`TestRegistrar`](../../../types.md#api-8356b2948558480877af)
-
-注册一个测试用例；用例主体在测试执行阶段调用，可选择接收 TestContext。
 
 ### 示例：注册简单测试
 

@@ -29,13 +29,13 @@
 
 源码：`src/stdlib/collections/sets/hash-set.el:18` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L18)
 
+创建按元素去重的哈希集合类型。
+
 ```el
 export fn Set(element: type): type
 ```
 
 **返回类型**：[`type`](../../../../../reference/language/types.md)
-
-创建按元素去重的哈希集合类型。
 
 **参数**：element 集合元素类型，须满足键相等与哈希合同。
 
@@ -53,13 +53,13 @@ console.stdout.writeLine(tags.has("el"))
 
 源码：`src/stdlib/collections/sets/hash-set.el:36` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L36)
 
+返回集合中不同元素的数量。
+
 ```el
 get count(): Number
 ```
 
 **返回类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
-
-返回集合中不同元素的数量。
 
 **返回值**：不重复元素数。
 
@@ -76,13 +76,13 @@ console.stdout.writeLine(tags.count)
 
 源码：`src/stdlib/collections/sets/hash-set.el:49` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L49)
 
+判断集合中是否已有给定元素。
+
 ```el
 fn has(value: element): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-判断集合中是否已有给定元素。
 
 **参数**：value 要检查的元素。
 
@@ -100,13 +100,13 @@ console.stdout.writeLine(tags.has("el"))
 
 源码：`src/stdlib/collections/sets/hash-set.el:62` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L62)
 
+将元素加入集合；集合已有该元素时不产生重复项。
+
 ```el
 @discardable fn add(value: element): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-将元素加入集合；集合已有该元素时不产生重复项。
 
 **参数**：value 要加入的元素。
 
@@ -125,13 +125,13 @@ console.stdout.writeLine(tags.count)
 
 源码：`src/stdlib/collections/sets/hash-set.el:73` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L73)
 
+从集合中删除给定元素（如果存在）。
+
 ```el
 @discardable fn remove(value: element): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-从集合中删除给定元素（如果存在）。
 
 **参数**：value 要删除的元素。
 
@@ -149,13 +149,13 @@ tags.remove("el")
 
 源码：`src/stdlib/collections/sets/hash-set.el:85` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L85)
 
+返回集合中元素组成的数组快照。
+
 ```el
 fn values(): element[]
 ```
 
 **返回类型**：[`element`](../../../types.md#api-5ff3a25653b6ee6116cf)[]
-
-返回集合中元素组成的数组快照。
 
 **返回值**：含当前集合元素的数组。
 
@@ -171,13 +171,13 @@ console.stdout.writeLine(tags.values().join(", "))
 
 源码：`src/stdlib/collections/sets/hash-set.el:102` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L102)
 
+返回包含当前集合和另一个集合全部元素的新集合。
+
 ```el
 fn union(other): Set<element: element>
 ```
 
 **返回类型**：[`Set`](hash-set.md#api-d0e70967a499a59ddcdc)<element: [`element`](../../../types.md#api-5ff3a25653b6ee6116cf)>
-
-返回包含当前集合和另一个集合全部元素的新集合。
 
 **参数**：other 参与并集的集合。
 
@@ -197,13 +197,13 @@ console.stdout.writeLine(allTags.union(more).count)
 
 源码：`src/stdlib/collections/sets/hash-set.el:114` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L114)
 
+返回仅包含同时存在于两个集合中的元素的新集合。
+
 ```el
 fn intersection(other): Set<element: element>
 ```
 
 **返回类型**：[`Set`](hash-set.md#api-d0e70967a499a59ddcdc)<element: [`element`](../../../types.md#api-5ff3a25653b6ee6116cf)>
-
-返回仅包含同时存在于两个集合中的元素的新集合。
 
 **参数**：other 参与交集的集合。
 
@@ -222,13 +222,13 @@ let common = first.intersection(second)
 
 源码：`src/stdlib/collections/sets/hash-set.el:126` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L126)
 
+返回存在于当前集合但不在另一个集合中的元素。
+
 ```el
 fn difference(other): Set<element: element>
 ```
 
 **返回类型**：[`Set`](hash-set.md#api-d0e70967a499a59ddcdc)<element: [`element`](../../../types.md#api-5ff3a25653b6ee6116cf)>
-
-返回存在于当前集合但不在另一个集合中的元素。
 
 **参数**：other 用于排除元素的集合。
 
@@ -247,13 +247,13 @@ let remaining = all.difference(done)
 
 源码：`src/stdlib/collections/sets/hash-set.el:138` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L138)
 
+返回只出现在其中一个集合中的元素。
+
 ```el
 fn symmetricDifference(other): Set<element: element>
 ```
 
 **返回类型**：[`Set`](hash-set.md#api-d0e70967a499a59ddcdc)<element: [`element`](../../../types.md#api-5ff3a25653b6ee6116cf)>
-
-返回只出现在其中一个集合中的元素。
 
 **参数**：other 参与对称差运算的集合。
 
@@ -272,13 +272,13 @@ let changed = before.symmetricDifference(after)
 
 源码：`src/stdlib/collections/sets/hash-set.el:150` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L150)
 
+判断当前集合是否为另一个集合的子集。
+
 ```el
 fn isSubsetOf(other): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-判断当前集合是否为另一个集合的子集。
 
 **参数**：other 候选超集。
 
@@ -297,13 +297,13 @@ console.stdout.writeLine(required.isSubsetOf(granted))
 
 源码：`src/stdlib/collections/sets/hash-set.el:162` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L162)
 
+判断当前集合是否包含另一个集合的全部元素。
+
 ```el
 fn isSupersetOf(other): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-判断当前集合是否包含另一个集合的全部元素。
 
 **参数**：other 候选子集。
 
@@ -322,13 +322,13 @@ console.stdout.writeLine(granted.isSupersetOf(required))
 
 源码：`src/stdlib/collections/sets/hash-set.el:174` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L174)
 
+判断两个集合是否没有共同元素。
+
 ```el
 fn isDisjointFrom(other): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-判断两个集合是否没有共同元素。
 
 **参数**：other 参与判断的集合。
 

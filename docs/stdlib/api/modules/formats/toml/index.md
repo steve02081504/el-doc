@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/formats/toml/index.el:264` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L264)
 
+解析 TOML 文档并保留 TOML 值种类，包括日期时间、数组和表。
+
 ```el
 export fn parseTOML(source: Text, limits: JsonLimits = JsonLimits()): Toml
 ```
 
 **返回类型**：[`Toml`](../../../types.md#api-1ded7c60633c334bf6e6)
-
-解析 TOML 文档并保留 TOML 值种类，包括日期时间、数组和表。
 
 **参数**：source 完整 TOML 文本。
 

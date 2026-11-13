@@ -121,6 +121,17 @@ spec.loader.exec_module(module)
 			with self.assertRaisesRegex(ValueError, "missing site anchor"):
 				validate_site(root)
 
+	def test_identical_member_signatures_share_only_identical_type_targets(self):
+		one = entry("First.channel", source="ports.el")
+		one.update(signature="get channel(): Channel", return_type="Channel", type_references={"return_type": [
+			{"name": "Channel", "start": 0, "end": 7, "target": {"type": "definition", "path": "types.md", "fragment": "channel"}}]})
+		two = {**one, "id": "ports::Second.channel", "name": "Second.channel"}
+		catalog = Catalog({"entries": [one, two], "environment": []})
+		self.assertEqual(code_targets(one["signature"], catalog, "ports.el")[15][1].fragment, "channel")
+		two = {**two, "type_references": {"return_type": [{"name": "Channel", "start": 0, "end": 7, "target": None}]}}
+		catalog = Catalog({"entries": [one, two], "environment": []})
+		self.assertNotIn(15, code_targets(one["signature"], catalog, "ports.el"))
+
 	def test_explicitly_typed_local_links_only_members(self):
 		code = 'let output: ConsolePort = selected\noutput.writeLine("hello")'
 		targets = self.names(code)

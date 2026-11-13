@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/text/patterns/combinators.el:30` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/combinators.el#L30)
 
+根据成对的 Unicode 标量起止值构造字符集合模式。
+
 ```el
 export fn scalarSet(ranges: Number[], negate: Bool = nil): Pattern<output: Char>
 ```
 
 **返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Char`](../../../types.md#api-3166547d46e101216338)>
-
-根据成对的 Unicode 标量起止值构造字符集合模式。
 
 **参数**：ranges 按起止顺序排列的闭区间端点。
 
@@ -39,13 +39,13 @@ let printable = scalarSet(@[32, 33, 35, 91, 93, 1114111])
 
 源码：`src/stdlib/text/patterns/combinators.el:50` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/combinators.el#L50)
 
+构造匹配给定文本中任一字符的模式。
+
 ```el
 export fn chars(text: Text): Pattern<output: Char>
 ```
 
 **返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Char`](../../../types.md#api-3166547d46e101216338)>
-
-构造匹配给定文本中任一字符的模式。
 
 **参数**：text 候选字符集合。
 
@@ -62,13 +62,13 @@ let hexLetter = chars("abcdefABCDEF")
 
 源码：`src/stdlib/text/patterns/combinators.el:70` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/combinators.el#L70)
 
+构造匹配首尾字符标量值之间任一字符的模式，端点包含在内。
+
 ```el
 export fn range(first: Text, last: Text): Pattern<output: Char>
 ```
 
 **返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Char`](../../../types.md#api-3166547d46e101216338)>
-
-构造匹配首尾字符标量值之间任一字符的模式，端点包含在内。
 
 **参数**：first 区间首字符。
 
@@ -87,13 +87,13 @@ let lower = range("a", "z")
 
 源码：`src/stdlib/text/patterns/combinators.el:88` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/combinators.el#L88)
 
+按顺序匹配多个文本片段或模式，并合并为一个文本结果。
+
 ```el
 export fn sequence(...elements): Pattern<output: Text>
 ```
 
 **返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Text`](../text.md#api-6116e54b075df026a90a)>
-
-按顺序匹配多个文本片段或模式，并合并为一个文本结果。
 
 **参数**：elements 依次匹配的文本或模式。
 
@@ -110,13 +110,13 @@ let escapedQuote = sequence("\\", chars("\""))
 
 源码：`src/stdlib/text/patterns/combinators.el:114` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/combinators.el#L114)
 
+从同一起点按顺序尝试候选模式，匹配第一个成功的候选。
+
 ```el
 export fn anyOf(first, ...rest): Pattern<output: Text>
 ```
 
 **返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Text`](../text.md#api-6116e54b075df026a90a)>
-
-从同一起点按顺序尝试候选模式，匹配第一个成功的候选。
 
 **参数**：first 首个候选文本或模式。
 
@@ -135,11 +135,11 @@ let escape = anyOf(sequence("\\", chars("nrt")), sequence("\\", chars("\\\"")))
 
 源码：`src/stdlib/text/patterns/combinators.el:146` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/combinators.el#L146)
 
+重复匹配一个文本或模式，并可指定最少与最多次数。
+
 ```el
 export fn many(element, min: Number = 0, max: Number = -1, greedy: Bool = t)
 ```
-
-重复匹配一个文本或模式，并可指定最少与最多次数。
 
 **参数**：element 要重复的文本或模式。
 
@@ -162,11 +162,11 @@ let spaces = many(chars(" "))
 
 源码：`src/stdlib/text/patterns/combinators.el:158` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/combinators.el#L158)
 
+构造恰好重复指定次数的模式。
+
 ```el
 export fn exactly(count: Number, element)
 ```
-
-构造恰好重复指定次数的模式。
 
 **参数**：count 匹配次数。
 
@@ -185,11 +185,11 @@ let fourDigits = exactly(4, range("0", "9"))
 
 源码：`src/stdlib/text/patterns/combinators.el:169` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/combinators.el#L169)
 
+将模式设为可选，匹配零次或一次。
+
 ```el
 export fn optional(element)
 ```
-
-将模式设为可选，匹配零次或一次。
 
 **参数**：element 可选的文本或模式。
 

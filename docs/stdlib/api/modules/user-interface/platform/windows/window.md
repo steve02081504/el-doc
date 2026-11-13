@@ -22,11 +22,11 @@
 
 源码：`src/stdlib/user-interface/platform/windows/window.el:171` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L171)
 
+由窗口拥有的定时器句柄；取消会停止后续回调并释放回调捕获。
+
 ```el
 export class WindowTimer
 ```
-
-由窗口拥有的定时器句柄；取消会停止后续回调并释放回调捕获。
 
 ### 示例：取消一个窗口定时器
 
@@ -39,11 +39,11 @@ timer.cancel()
 
 源码：`src/stdlib/user-interface/platform/windows/window.el:190` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L190)
 
+停止定时器并释放其回调；重复调用不会产生额外副作用。
+
 ```el
 fn cancel()
 ```
-
-停止定时器并释放其回调；重复调用不会产生额外副作用。
 
 **注意**：只能从创建定时器的线程调用。
 
@@ -57,11 +57,11 @@ timer.cancel()
 
 源码：`src/stdlib/user-interface/platform/windows/window.el:216` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L216)
 
+表示一个原生窗口及其界面视图、输入状态、绘制主题和窗口级资源。
+
 ```el
 export class Window
 ```
-
-表示一个原生窗口及其界面视图、输入状态、绘制主题和窗口级资源。
 
 ### 示例：创建并运行窗口
 
@@ -74,13 +74,13 @@ runWindow(window)
 
 源码：`src/stdlib/user-interface/platform/windows/window.el:260` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L260)
 
+读取或替换窗口的绘制主题；赋值后立即刷新绘制。
+
 ```el
 get theme(): PaintTheme
 ```
 
 **返回类型**：[`PaintTheme`](../../drawing.md#api-4be1353cf98b66267dcf)
-
-读取或替换窗口的绘制主题；赋值后立即刷新绘制。
 
 ### 示例：设置深色绘制主题
 
@@ -92,11 +92,11 @@ window.theme = darkPaintTheme()
 
 源码：`src/stdlib/user-interface/platform/windows/window.el:603` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L603)
 
+设置窗口级方向键处理器；没有元素焦点时接收方向键按下事件。
+
 ```el
 fn onArrow(action)
 ```
-
-设置窗口级方向键处理器；没有元素焦点时接收方向键按下事件。
 
 **参数**：action 接收 dx、dy 的回调；传入 void 移除处理器。
 
@@ -110,13 +110,13 @@ window.onArrow((dx, dy) => moveSelection(dx, dy))
 
 源码：`src/stdlib/user-interface/platform/windows/window.el:619` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L619)
 
+注册窗口级近似定时器，窗口关闭时自动取消。
+
 ```el
 @discardable fn every(milliseconds: Number, action): WindowTimer
 ```
 
 **返回类型**：[`WindowTimer`](window.md#api-9b651467460e89936d5f)
-
-注册窗口级近似定时器，窗口关闭时自动取消。
 
 **参数**：milliseconds 整数毫秒间隔，范围 10 到 2147483647。
 
@@ -136,13 +136,13 @@ discard(window.every(1000, tick => label.text = "更新"))
 
 源码：`src/stdlib/user-interface/platform/windows/window.el:649` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L649)
 
+按精确 id 获取当前呈现中的元素句柄。
+
 ```el
 fn getById(id: Text): ElementHandle
 ```
 
 **返回类型**：[`ElementHandle`](../../../../types.md#api-39bd689370affc26fc34)
-
-按精确 id 获取当前呈现中的元素句柄。
 
 **参数**：id 非空且在挂载视图中唯一的元素标识。
 
@@ -161,11 +161,11 @@ label.text = "就绪"
 
 源码：`src/stdlib/user-interface/platform/windows/window.el:745` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L745)
 
+运行单个窗口的事件循环，并在退出时关闭窗口。
+
 ```el
 export fn runWindow(window: Window)
 ```
-
-运行单个窗口的事件循环，并在退出时关闭窗口。
 
 **参数**：window 要运行的窗口。
 
@@ -179,11 +179,11 @@ runWindow(window)
 
 源码：`src/stdlib/user-interface/platform/windows/window.el:768` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L768)
 
+在同一事件循环中运行多个窗口；循环退出时关闭列表中的窗口。
+
 ```el
 export fn runWindows(windows: Window[])
 ```
-
-在同一事件循环中运行多个窗口；循环退出时关闭列表中的窗口。
 
 **参数**：windows 要运行的窗口集合。
 

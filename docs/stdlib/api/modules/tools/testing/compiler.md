@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/tools/testing/compiler.el:14` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/compiler.el#L14)
 
+配置编译夹具的入口、目标、构建模式与超时。
+
 ```el
 export class FixtureOptions
 ```
-
-配置编译夹具的入口、目标、构建模式与超时。
 
 ### 示例：设置预期编译入口
 
@@ -31,11 +31,11 @@ let options = FixtureOptions("fixtures/valid.el", mode: "debug")
 
 源码：`src/stdlib/tools/testing/compiler.el:38` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/compiler.el#L38)
 
+在当前测试服务中编译夹具入口，并返回编译结果供 check.compiles 或 check.diagnostic 检查。
+
 ```el
 export fn compileFixture(entry: Text, options: FixtureOptions = FixtureOptions(entry))
 ```
-
-在当前测试服务中编译夹具入口，并返回编译结果供 check.compiles 或 check.diagnostic 检查。
 
 **参数**：entry 夹具入口源码路径。
 

@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/neural-networks/losses/index.el:20` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/losses/index.el#L20)
 
+按 none、sum 或 mean 规则归约损失张量。
+
 ```el
 export fn reduceLoss(loss, reduction: Text = "mean")
 ```
-
-按 none、sum 或 mean 规则归约损失张量。
 
 **参数**：loss 待归约的损失张量。
 
@@ -38,11 +38,11 @@ let total = reduceLoss(loss, "sum")
 
 源码：`src/stdlib/neural-networks/losses/index.el:37` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/losses/index.el#L37)
 
+计算输入与目标的逐元素绝对误差，并按 reduction 归约。
+
 ```el
 export fn maeLoss(input, target, reduction: Text = "mean")
 ```
-
-计算输入与目标的逐元素绝对误差，并按 reduction 归约。
 
 **参数**：input 预测张量。
 
@@ -64,11 +64,11 @@ let loss = maeLoss(prediction, target)
 
 源码：`src/stdlib/neural-networks/losses/index.el:54` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/losses/index.el#L54)
 
+计算阈值 delta 内为二次、超出部分为线性的 Huber 损失。
+
 ```el
 export fn huberLoss(input, target, delta: Number = 1, reduction: Text = "mean")
 ```
-
-计算阈值 delta 内为二次、超出部分为线性的 Huber 损失。
 
 **参数**：input 预测张量。
 

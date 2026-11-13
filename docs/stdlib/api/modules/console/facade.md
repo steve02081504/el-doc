@@ -46,11 +46,11 @@
 
 源码：`src/stdlib/console/facade.el:30` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L30)
 
+控制台输入端口；通过当前目标查询能力并使用解析器读取输入。
+
 ```el
 @assign(mode: "shared") class ConsoleInputPort
 ```
-
-控制台输入端口；通过当前目标查询能力并使用解析器读取输入。
 
 ### 示例：使用示例
 
@@ -62,13 +62,13 @@ let input = console.stdin
 
 源码：`src/stdlib/console/facade.el:37` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L37)
 
+当前输入端是否为终端。
+
 ```el
 get isTTY(): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-当前输入端是否为终端。
 
 ### 示例：使用示例
 
@@ -80,13 +80,13 @@ let terminal = console.stdin.isTTY
 
 源码：`src/stdlib/console/facade.el:44` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L44)
 
+当前输入端是否支持 ANSI。
+
 ```el
 get supportsAnsi(): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-当前输入端是否支持 ANSI。
 
 ### 示例：使用示例
 
@@ -98,11 +98,11 @@ let ansi = console.stdin.supportsAnsi
 
 源码：`src/stdlib/console/facade.el:55` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L55)
 
+使用解析器从当前目标的输入会话读取并返回解析结果。
+
 ```el
 fn readAs(parser)
 ```
-
-使用解析器从当前目标的输入会话读取并返回解析结果。
 
 **参数**：parser 输入解析器。
 
@@ -121,11 +121,11 @@ let value = console.stdin.readAs(decimal(min: unbounded, max: unbounded, epsilon
 
 源码：`src/stdlib/console/facade.el:85` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L85)
 
+控制台逻辑输出端口；每次操作解析当前目标。
+
 ```el
 export @assign(mode: "shared") class ConsolePort
 ```
-
-控制台逻辑输出端口；每次操作解析当前目标。
 
 ### 示例：使用示例
 
@@ -137,13 +137,13 @@ let output = console.stdout
 
 源码：`src/stdlib/console/facade.el:94` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L94)
 
+此端口的逻辑通道。
+
 ```el
 get channel(): ConsoleChannel
 ```
 
 **返回类型**：[`ConsoleChannel`](../../types.md#api-014dddb6e6d5af8b8537)
-
-此端口的逻辑通道。
 
 ### 示例：使用示例
 
@@ -155,13 +155,13 @@ let channel = console.stdout.channel
 
 源码：`src/stdlib/console/facade.el:101` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L101)
 
+当前目标对应输出端是否为终端。
+
 ```el
 get isTTY(): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-当前目标对应输出端是否为终端。
 
 ### 示例：使用示例
 
@@ -173,13 +173,13 @@ let terminal = console.stdout.isTTY
 
 源码：`src/stdlib/console/facade.el:108` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L108)
 
+当前目标对应输出端是否支持 ANSI。
+
 ```el
 get supportsAnsi(): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-当前目标对应输出端是否支持 ANSI。
 
 ### 示例：使用示例
 
@@ -191,13 +191,13 @@ let ansi = console.stdout.supportsAnsi
 
 源码：`src/stdlib/console/facade.el:118` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L118)
 
+将已确定的文本直接写到对应通道，不调用任意值的文本转换。
+
 ```el
 @discardable fn writeText(text: Text): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-将已确定的文本直接写到对应通道，不调用任意值的文本转换。
 
 **参数**：text 要输出的文本。
 
@@ -213,13 +213,13 @@ console.stdout.writeText("already text")
 
 源码：`src/stdlib/console/facade.el:131` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L131)
 
+将参数依次转换为文本写到对应通道，不追加换行或分隔符。
+
 ```el
 @discardable fn write(...values): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-将参数依次转换为文本写到对应通道，不追加换行或分隔符。
 
 **参数**：values 要按顺序输出的值。
 
@@ -235,13 +235,13 @@ console.stdout.write("ready")
 
 源码：`src/stdlib/console/facade.el:144` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L144)
 
+将参数依次转换为文本并写到对应通道，最后追加一个 LF。
+
 ```el
 @discardable fn writeLine(...values): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-将参数依次转换为文本并写到对应通道，最后追加一个 LF。
 
 **参数**：values 要按顺序输出的值；参数之间不自动插入分隔符。
 
@@ -257,13 +257,13 @@ console.stdout.writeLine("count: ", 3)
 
 源码：`src/stdlib/console/facade.el:159` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L159)
 
+将字节缓冲原样写到对应通道，不进行文本编码。
+
 ```el
 @discardable fn writeBytes(bytes: Buffer): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-将字节缓冲原样写到对应通道，不进行文本编码。
 
 **参数**：bytes 要输出的字节缓冲。
 
@@ -280,13 +280,13 @@ console.stdout.writeBytes(bufferFromBytes(@[72, 105]))
 
 源码：`src/stdlib/console/facade.el:172` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L172)
 
+将值作为数据记录发送到对应通道，不转换成文本或结构化展示记录。
+
 ```el
 fn emit(value): void_t
 ```
 
 **返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
-
-将值作为数据记录发送到对应通道，不转换成文本或结构化展示记录。
 
 **参数**：value 要发送的数据值。
 
@@ -302,11 +302,11 @@ console.stdout.emit(@{ status: "ready" })
 
 源码：`src/stdlib/console/facade.el:210` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L210)
 
+在临时控制台目标中执行回调，并返回回调结果与捕获的输出记录。
+
 ```el
 export fn capture(work, latePolicy: ConsoleLatePolicy = ConsoleLatePolicy.Forward, maxRecords: Number | void_t = void)
 ```
-
-在临时控制台目标中执行回调，并返回回调结果与捕获的输出记录。
 
 **参数**：work 要执行的无参回调。
 
@@ -330,11 +330,11 @@ console.stdout.writeLine(captured.output.records.count)
 
 源码：`src/stdlib/console/facade.el:226` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L226)
 
+可调用的等级端口，发送本地化消息或结构化展示记录。
+
 ```el
 export @assign(mode: "shared") class ConsoleLevelPort
 ```
-
-可调用的等级端口，发送本地化消息或结构化展示记录。
 
 ### 示例：使用示例
 
@@ -346,13 +346,13 @@ console.info.value(@{ count: 3 })
 
 源码：`src/stdlib/console/facade.el:244` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L244)
 
+此端口的日志等级。
+
 ```el
 get level(): ConsoleLevel
 ```
 
 **返回类型**：[`ConsoleLevel`](../../types.md#api-bcca0db28d7f511b4f1f)
-
-此端口的日志等级。
 
 ### 示例：使用示例
 
@@ -364,13 +364,13 @@ let level = console.info.level
 
 源码：`src/stdlib/console/facade.el:251` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L251)
 
+此端口的默认通道。
+
 ```el
 get channel(): ConsoleChannel
 ```
 
 **返回类型**：[`ConsoleChannel`](../../types.md#api-014dddb6e6d5af8b8537)
-
-此端口的默认通道。
 
 ### 示例：使用示例
 
@@ -382,13 +382,13 @@ let channel = console.info.channel
 
 源码：`src/stdlib/console/facade.el:259` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L259)
 
+查询此端口的等级是否被当前筛选器和纯上下文规则允许。
+
 ```el
 fn enabled(): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-查询此端口的等级是否被当前筛选器和纯上下文规则允许。
 
 **返回值**：是否启用。
 
@@ -402,11 +402,11 @@ let active = console.info.enabled()
 
 源码：`src/stdlib/console/facade.el:269` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L269)
 
+发送本地化消息 key 或已构造的本地化内容，并附带参数对象。
+
 ```el
 operator()(message: Text | LocalizedMessage | LocalizedContent, parameters = @{}): void_t
 ```
-
-发送本地化消息 key 或已构造的本地化内容，并附带参数对象。
 
 **参数**：message 消息 key、LocalizedMessage 或 LocalizedContent。
 
@@ -426,13 +426,13 @@ console.info("task.done", @{ count: 3 })
 
 源码：`src/stdlib/console/facade.el:284` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L284)
 
+将已有安全快照作为指定等级的结构化展示记录发送。
+
 ```el
 fn value(snapshot: ConsoleValueSnapshot, channel: ConsoleChannel = this.#channel): void_t
 ```
 
 **返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
-
-将已有安全快照作为指定等级的结构化展示记录发送。
 
 **参数**：snapshot 已构造的展示快照。
 
@@ -450,13 +450,13 @@ console.info.value(consoleSnapshot(@{ count: 3 }))
 
 源码：`src/stdlib/console/facade.el:299` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L299)
 
+获取值的安全快照并作为结构化展示记录发送，不调用 getter、转换或迭代器。
+
 ```el
 fn value(borrow value, channel: ConsoleChannel = this.#channel): void_t
 ```
 
 **返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
-
-获取值的安全快照并作为结构化展示记录发送，不调用 getter、转换或迭代器。
 
 **参数**：value 要展示的值。
 
@@ -474,11 +474,11 @@ console.info.value(@{ count: 3, names: @["Ada", "Grace"] })
 
 源码：`src/stdlib/console/facade.el:314` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L314)
 
+控制台入口，提供输入、输出端口、等级端口和捕获操作。
+
 ```el
 export @assign(mode: "shared") class ConsoleFacade
 ```
-
-控制台入口，提供输入、输出端口、等级端口和捕获操作。
 
 ### 示例：使用示例
 
@@ -490,13 +490,13 @@ console.stdout.writeLine("ready")
 
 源码：`src/stdlib/console/facade.el:322` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L322)
 
+输入端口。
+
 ```el
 get stdin(): ConsoleInputPort
 ```
 
 **返回类型**：[`ConsoleInputPort`](facade.md#api-81b920eaf28d6a885747)
-
-输入端口。
 
 ### 示例：使用示例
 
@@ -508,13 +508,13 @@ let input = console.stdin
 
 源码：`src/stdlib/console/facade.el:354` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L354)
 
+标准输出逻辑端口；每次操作使用当前控制台目标。
+
 ```el
 get stdout(): ConsolePort
 ```
 
 **返回类型**：[`ConsolePort`](facade.md#api-1e5cdfe9e38e075d126d)
-
-标准输出逻辑端口；每次操作使用当前控制台目标。
 
 ### 示例：输出一行
 
@@ -529,13 +529,13 @@ ready
 
 源码：`src/stdlib/console/facade.el:362` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L362)
 
+标准错误逻辑端口；每次操作使用当前控制台目标。
+
 ```el
 get stderr(): ConsolePort
 ```
 
 **返回类型**：[`ConsolePort`](facade.md#api-1e5cdfe9e38e075d126d)
-
-标准错误逻辑端口；每次操作使用当前控制台目标。
 
 ### 示例：输出一行错误信息
 
@@ -548,13 +548,13 @@ console.stderr.writeLine("failed")
 
 源码：`src/stdlib/console/facade.el:369` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L369)
 
+日志等级端口，用于本地化消息或结构化展示。
+
 ```el
 get log(): ConsoleLevelPort
 ```
 
 **返回类型**：[`ConsoleLevelPort`](facade.md#api-82d3368b956700e55610)
-
-日志等级端口，用于本地化消息或结构化展示。
 
 ### 示例：发送 log 等级消息
 
@@ -566,13 +566,13 @@ console.log("cache.hit", @{ key: "index" })
 
 源码：`src/stdlib/console/facade.el:376` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L376)
 
+信息等级端口；直接调用时第一个参数是本地化消息 key。
+
 ```el
 get info(): ConsoleLevelPort
 ```
 
 **返回类型**：[`ConsoleLevelPort`](facade.md#api-82d3368b956700e55610)
-
-信息等级端口；直接调用时第一个参数是本地化消息 key。
 
 ### 示例：发送信息消息
 
@@ -584,13 +584,13 @@ console.info("task.done", @{ count: 3 })
 
 源码：`src/stdlib/console/facade.el:383` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L383)
 
+警告等级端口。
+
 ```el
 get warning(): ConsoleLevelPort
 ```
 
 **返回类型**：[`ConsoleLevelPort`](facade.md#api-82d3368b956700e55610)
-
-警告等级端口。
 
 ### 示例：发送警告消息
 
@@ -602,13 +602,13 @@ console.warning("cache.stale", @{})
 
 源码：`src/stdlib/console/facade.el:390` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L390)
 
+错误等级端口。
+
 ```el
 get error(): ConsoleLevelPort
 ```
 
 **返回类型**：[`ConsoleLevelPort`](facade.md#api-82d3368b956700e55610)
-
-错误等级端口。
 
 ### 示例：发送错误消息
 
@@ -620,13 +620,13 @@ console.error("http.failed", @{ status: 500 })
 
 源码：`src/stdlib/console/facade.el:397` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L397)
 
+致命错误等级端口。
+
 ```el
 get fatal(): ConsoleLevelPort
 ```
 
 **返回类型**：[`ConsoleLevelPort`](facade.md#api-82d3368b956700e55610)
-
-致命错误等级端口。
 
 ### 示例：发送 fatal 等级消息
 
@@ -638,13 +638,13 @@ console.fatal("app.unrecoverable", @{})
 
 源码：`src/stdlib/console/facade.el:404` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L404)
 
+调试等级端口。
+
 ```el
 get debug(): ConsoleLevelPort
 ```
 
 **返回类型**：[`ConsoleLevelPort`](facade.md#api-82d3368b956700e55610)
-
-调试等级端口。
 
 ### 示例：发送调试消息
 
@@ -656,13 +656,13 @@ console.debug("cache.miss", @{ key: "index" })
 
 源码：`src/stdlib/console/facade.el:411` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L411)
 
+跟踪等级端口。
+
 ```el
 get trace(): ConsoleLevelPort
 ```
 
 **返回类型**：[`ConsoleLevelPort`](facade.md#api-82d3368b956700e55610)
-
-跟踪等级端口。
 
 ### 示例：发送跟踪消息
 
@@ -674,13 +674,13 @@ console.trace("request.start", @{ path: "/" })
 
 源码：`src/stdlib/console/facade.el:421` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L421)
 
+查询指定等级是否被此 facade 的筛选器和纯上下文规则允许。
+
 ```el
 fn enabled(level: ConsoleLevel): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-查询指定等级是否被此 facade 的筛选器和纯上下文规则允许。
 
 **参数**：level 要查询的等级。
 
@@ -697,11 +697,11 @@ let active = console.enabled(ConsoleLevel.Info)
 
 源码：`src/stdlib/console/facade.el:434` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L434)
 
+在临时控制台目标中执行回调，返回结果和捕获的记录。
+
 ```el
 fn capture(work, latePolicy: ConsoleLatePolicy = ConsoleLatePolicy.Forward, maxRecords: Number | void_t = void)
 ```
-
-在临时控制台目标中执行回调，返回结果和捕获的记录。
 
 **参数**：work 无参回调。
 
@@ -724,13 +724,13 @@ console.stdout.write(captured.output.text())
 
 源码：`src/stdlib/console/facade.el:449` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L449)
 
+默认控制台对象，类型为 ConsoleFacade；标准库入口通过 prelude 提供此绑定。
+
 ```el
 export const console = ConsoleFacade()
 ```
 
 **类型**：[`ConsoleFacade`](facade.md#api-b279f598543f0f517e5b)
-
-默认控制台对象，类型为 ConsoleFacade；标准库入口通过 prelude 提供此绑定。
 
 **注意**：也可从 el:console/ 显式导入；stdout 和 stderr 是 ConsolePort，等级成员是 ConsoleLevelPort。
 

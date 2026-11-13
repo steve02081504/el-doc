@@ -16,11 +16,11 @@
 
 源码：`src/stdlib/multimedia/audio/windows-output.el:54` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L54)
 
+拥有单线程有界 PCM16 设备队列；入队时复制音频块，队列满时立即返回假。
+
 ```el
 export @assign(mode: "shared") class PcmOutput
 ```
-
-拥有单线程有界 PCM16 设备队列；入队时复制音频块，队列满时立即返回假。
 
 **参数**：format 固定的 PCM16 音频格式。
 
@@ -41,13 +41,13 @@ let accepted = output.enqueue(audio)
 
 源码：`src/stdlib/multimedia/audio/windows-output.el:97` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L97)
 
+尝试提交音频块；样本在返回前复制，队列无空槽时不等待并返回假。
+
 ```el
 fn enqueue(audio: PcmAudio): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-尝试提交音频块；样本在返回前复制，队列无空槽时不等待并返回假。
 
 **参数**：audio 帧数与格式符合构造配置的 PCM 音频块。
 
@@ -65,11 +65,11 @@ if (!output.enqueue(chunk)) sleep(2)
 
 源码：`src/stdlib/multimedia/audio/windows-output.el:118` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L118)
 
+兼容其他平台的结束调用；Windows waveOut 队列无需额外提交尾块。
+
 ```el
 fn finish()
 ```
-
-兼容其他平台的结束调用；Windows waveOut 队列无需额外提交尾块。
 
 ### 示例：完成提交后等待播放
 
@@ -82,13 +82,13 @@ while (!output.idle()) sleep(2)
 
 源码：`src/stdlib/multimedia/audio/windows-output.el:126` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L126)
 
+检查设备队列是否已完成所有已提交块。
+
 ```el
 fn idle(): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-检查设备队列是否已完成所有已提交块。
 
 **返回值**：没有待播放块时为真。
 
@@ -102,11 +102,11 @@ while (!output.idle()) sleep(2)
 
 源码：`src/stdlib/multimedia/audio/windows-output.el:137` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L137)
 
+清除设备当前排队的音频块。
+
 ```el
 fn clear()
 ```
-
-清除设备当前排队的音频块。
 
 ### 示例：停止待播音频
 
@@ -118,11 +118,11 @@ output.clear()
 
 源码：`src/stdlib/multimedia/audio/windows-output.el:148` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L148)
 
+停止播放并释放设备队列及原生句柄。
+
 ```el
 fn close()
 ```
-
-停止播放并释放设备队列及原生句柄。
 
 ### 示例：关闭音频输出
 

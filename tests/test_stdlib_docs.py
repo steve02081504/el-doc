@@ -336,6 +336,16 @@ class GenerationTests(unittest.TestCase):
 		page = render(model, "https://github.com/example/el/blob/review/src/stdlib/")["modules/math.md"]
 		self.assertIn("https://github.com/example/el/blob/review/src/stdlib/math.el", page)
 
+	def test_reference_leads_with_description_and_folds_long_attributes(self):
+		attribute = '@policy(data: @{\n' + '\n'.join(f'\tfield{i}: {i},' for i in range(8)) + '\n})\n'
+		(self.stdlib / "math.el").write_text(DOCUMENT.replace("export fn", attribute + '@bounded(time: "O(1)")\nexport fn'))
+		page = render(collect(self.root))["modules/math.md"]
+		self.assertLess(page.index("Add one."), page.index("```el"))
+		visible = page[page.index("```el"):page.index("??? note")]
+		self.assertIn('@bounded(time: "O(1)")', visible)
+		self.assertNotIn("field7", visible)
+		self.assertIn("\t@policy(data:", page)
+
 	def test_reference_indexes_link_to_exact_symbol_and_group(self):
 		(self.stdlib / "nested").mkdir()
 		(self.stdlib / "nested/other.el").write_text(DOCUMENT.replace("@api increment", "@api increment~number"))

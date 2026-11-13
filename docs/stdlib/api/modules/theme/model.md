@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/theme/model.el:46` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/theme/model.el#L46)
 
+从动态字段集合构造并校验显式主题角色值；只接受已知颜色或度量角色。
+
 ```el
 export @assign(mode: "shared") class ThemeValues
 ```
-
-从动态字段集合构造并校验显式主题角色值；只接受已知颜色或度量角色。
 
 **参数**：values 角色名到普通 Number 的映射。
 
@@ -34,11 +34,11 @@ let values = ThemeValues(@{base100: 0x191B20; primary: 0x80A7F0})
 
 源码：`src/stdlib/theme/model.el:100` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/theme/model.el#L100)
 
+向主题计算回调提供外部环境值以及可选的父级解析主题。
+
 ```el
 export @assign(mode: "shared") class ThemeContext
 ```
-
-向主题计算回调提供外部环境值以及可选的父级解析主题。
 
 ### 示例：为主题计算创建空上下文
 
@@ -50,11 +50,11 @@ let context = ThemeContext()
 
 源码：`src/stdlib/theme/model.el:113` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/theme/model.el#L113)
 
+表示显式角色值或按 ThemeContext 计算角色值的主题；计算结果在解析时校验。
+
 ```el
 export @assign(mode: "shared") class Theme
 ```
-
-表示显式角色值或按 ThemeContext 计算角色值的主题；计算结果在解析时校验。
 
 ### 示例：定义局部主题计算
 

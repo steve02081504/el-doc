@@ -21,11 +21,11 @@
 
 源码：`src/stdlib/multimedia/audio/music.el:47` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L47)
 
+管理短提示音使用的非等待播放队列；队列饱和时拒绝新提示音。
+
 ```el
 export @assign(mode: "shared") class MusicPlayer
 ```
-
-管理短提示音使用的非等待播放队列；队列饱和时拒绝新提示音。
 
 ### 示例：播放提示音并显式释放
 
@@ -39,13 +39,13 @@ player.close()
 
 源码：`src/stdlib/multimedia/audio/music.el:60` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L60)
 
+将一段公式音频作为短提示音提交到非等待队列。
+
 ```el
 fn formula(sample, milliseconds: Number = 80, gain: Number = 0.12): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-将一段公式音频作为短提示音提交到非等待队列。
 
 **参数**：sample 接收秒数并返回 -1 到 1 之间有限数值的回调。
 
@@ -65,13 +65,13 @@ let accepted = player.formula(seconds => sin(seconds * 880 * 6.283185307179586),
 
 源码：`src/stdlib/multimedia/audio/music.el:79` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L79)
 
+将三角波音调作为短提示音提交到非等待队列。
+
 ```el
 fn play(frequency: Number, milliseconds: Number = 80, gain: Number = 0.12): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-将三角波音调作为短提示音提交到非等待队列。
 
 **参数**：frequency 有效范围为大于 0 且小于 12000 Hz。
 
@@ -91,11 +91,11 @@ let accepted = player.play(660, 70)
 
 源码：`src/stdlib/multimedia/audio/music.el:89` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L89)
 
+清除当前排队的提示音，但保留播放器供后续复用。
+
 ```el
 fn stop()
 ```
-
-清除当前排队的提示音，但保留播放器供后续复用。
 
 ### 示例：停止排队中的声音
 
@@ -107,11 +107,11 @@ player.stop()
 
 源码：`src/stdlib/multimedia/audio/music.el:96` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L96)
 
+关闭底层设备并释放资源；重复调用安全。
+
 ```el
 fn close()
 ```
-
-关闭底层设备并释放资源；重复调用安全。
 
 ### 示例：释放提示音播放器
 
@@ -123,11 +123,11 @@ player.close()
 
 源码：`src/stdlib/multimedia/audio/music.el:117` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L117)
 
+在独立任务中播放三角波音调，持续时间以毫秒计，频率以 Hz 计。
+
 ```el
 export fn playPitch(frequency: Number, milliseconds: Number = 80, gain: Number = 0.12)
 ```
-
-在独立任务中播放三角波音调，持续时间以毫秒计，频率以 Hz 计。
 
 **参数**：frequency 有效范围为大于 0 且小于 12000 Hz。
 
@@ -149,11 +149,11 @@ let task = playPitch(440, 250, 0.1)
 
 源码：`src/stdlib/multimedia/audio/music.el:132` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L132)
 
+在独立任务中按公式逐样本合成音频，并以有界块队列提交给设备。
+
 ```el
 export fn playFormula(sample, milliseconds: Number = 80, gain: Number = 0.12)
 ```
-
-在独立任务中按公式逐样本合成音频，并以有界块队列提交给设备。
 
 **参数**：sample 接收秒数、返回范围 -1 到 1 的有限样本值的回调。
 

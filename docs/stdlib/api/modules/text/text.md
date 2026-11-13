@@ -29,14 +29,14 @@
 
 源码：`src/stdlib/text/text.el:132` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L132)
 
+拥有 Unicode 标量序列的可变文本值；按值复制，UTF-8 字节数由 byte_count 单独提供。
+裸文本视图装载时会复制其标量。切片与拼接可共享不可变 rope 节点，但得到独立 Text 值。
+
 ```el
 @pure
 @assign(mode: "copy")
 export class Text extends Array<element: Char>
 ```
-
-拥有 Unicode 标量序列的可变文本值；按值复制，UTF-8 字节数由 byte_count 单独提供。
-裸文本视图装载时会复制其标量。切片与拼接可共享不可变 rope 节点，但得到独立 Text 值。
 
 ### 示例：读取标量数与 UTF-8 字节数
 
@@ -53,13 +53,13 @@ console.stdout.writeLine(text.count, " ", text.byte_count)
 
 源码：`src/stdlib/text/text.el:175` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L175)
 
+将文本中所有匹配项替换为指定内容，并返回新文本。
+
 ```el
 fn replaceAll(pattern, replacement): Text
 ```
 
 **返回类型**：[`Text`](text.md#api-6116e54b075df026a90a)
-
-将文本中所有匹配项替换为指定内容，并返回新文本。
 
 **参数**：pattern 文本或文本模式。
 
@@ -78,13 +78,13 @@ console.stdout.writeLine(renamed)
 
 源码：`src/stdlib/text/text.el:192` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L192)
 
+按文本分隔符或文本模式拆分内容，返回各段组成的数组。
+
 ```el
 fn split(pattern): Text[]
 ```
 
 **返回类型**：[`Text`](text.md#api-6116e54b075df026a90a)[]
-
-按文本分隔符或文本模式拆分内容，返回各段组成的数组。
 
 **参数**：pattern 文本分隔符或支持 split 的模式。
 
@@ -101,13 +101,13 @@ console.stdout.writeLine(parts.join(" | "))
 
 源码：`src/stdlib/text/text.el:340` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L340)
 
+返回文本编码为 UTF-8 后占用的字节数。
+
 ```el
 get byte_count(): Integer
 ```
 
 **返回类型**：[`Integer`](../../types.md#api-45690472287900730a5f)
-
-返回文本编码为 UTF-8 后占用的字节数。
 
 **返回值**：UTF-8 字节数；这与 Unicode 标量数量不同。
 
@@ -122,13 +122,13 @@ console.stdout.writeLine(text.count, " ", text.byte_count)
 
 源码：`src/stdlib/text/text.el:359` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L359)
 
+返回文本中的 Unicode 标量数量。
+
 ```el
 override get count(): Integer
 ```
 
 **返回类型**：[`Integer`](../../types.md#api-45690472287900730a5f)
-
-返回文本中的 Unicode 标量数量。
 
 **返回值**：标量数；UTF-8 编码字节数请读取 byte_count。
 
@@ -142,13 +142,13 @@ console.stdout.writeLine("你好".count)
 
 源码：`src/stdlib/text/text.el:419` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L419)
 
+判断文本是否以给定前缀开头。
+
 ```el
 fn startsWith(prefix: Text): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-判断文本是否以给定前缀开头。
 
 **参数**：prefix 要检查的前缀。
 
@@ -164,13 +164,13 @@ console.stdout.writeLine("reports/2026".startsWith("reports"))
 
 源码：`src/stdlib/text/text.el:430` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L430)
 
+判断文本是否以给定后缀结尾。
+
 ```el
 fn endsWith(suffix: Text): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-判断文本是否以给定后缀结尾。
 
 **参数**：suffix 要检查的后缀。
 
@@ -186,13 +186,13 @@ console.stdout.writeLine("summary.txt".endsWith(".txt"))
 
 源码：`src/stdlib/text/text.el:441` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L441)
 
+判断文本是否包含给定子串。
+
 ```el
 fn contains(needle: Text): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-判断文本是否包含给定子串。
 
 **参数**：needle 要查找的子串。
 
@@ -208,13 +208,13 @@ console.stdout.writeLine("reports/2026".contains("2026"))
 
 源码：`src/stdlib/text/text.el:465` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L465)
 
+从末尾移除属于给定字符集合的连续标量，返回文本值，不修改接收者。
+
 ```el
 fn trimEndChars(characters: Text): Text
 ```
 
 **返回类型**：[`Text`](text.md#api-6116e54b075df026a90a)
-
-从末尾移除属于给定字符集合的连续标量，返回文本值，不修改接收者。
 
 **参数**：characters 要移除的字符集合；空文本不移除任何字符。
 
@@ -236,13 +236,13 @@ abc
 
 源码：`src/stdlib/text/text.el:502` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L502)
 
+读取指定 Unicode 标量下标处的字符。
+
 ```el
 virtual fn character(index: Number): Char
 ```
 
 **返回类型**：[`Char`](../../types.md#api-3166547d46e101216338)
-
-读取指定 Unicode 标量下标处的字符。
 
 **参数**：index 从零开始的标量下标。
 
@@ -261,13 +261,13 @@ console.stdout.writeLine(first)
 
 源码：`src/stdlib/text/text.el:555` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L555)
 
+返回指定左闭右开标量下标区间的文本。
+
 ```el
 virtual fn slice(start: Number, to: Number): Text
 ```
 
 **返回类型**：[`Text`](text.md#api-6116e54b075df026a90a)
-
-返回指定左闭右开标量下标区间的文本。
 
 **参数**：start 区间起始下标。
 
@@ -287,13 +287,13 @@ console.stdout.writeLine("reports/2026".slice(0, 7))
 
 源码：`src/stdlib/text/text.el:685` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L685)
 
+将 Unicode 标量值转换为只含该标量的文本；拒绝代理项和超出 Unicode 范围的值。
+
 ```el
 export fn text_scalar(value: Integer): Text
 ```
 
 **返回类型**：[`Text`](text.md#api-6116e54b075df026a90a)
-
-将 Unicode 标量值转换为只含该标量的文本；拒绝代理项和超出 Unicode 范围的值。
 
 **参数**：value Unicode 标量数值，范围为 0 到 1114111，且不在代理项区间内。
 
@@ -317,14 +317,14 @@ console.stdout.writeLine(text_scalar(20013))
 
 源码：`src/stdlib/text/text.el:843` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L843)
 
+创建只读 TextView 类型；可将元素统一宽度 bitWidth 和标量数量 size 固定为正值。
+0 表示该维度不固定。固定宽度要求来源宽度相同，固定长度要求请求的视图长度相同。
+
 ```el
 export fn TextView(bitWidth = 0, size = 0): type
 ```
 
 **返回类型**：[`type`](../../../../reference/language/types.md)
-
-创建只读 TextView 类型；可将元素统一宽度 bitWidth 和标量数量 size 固定为正值。
-0 表示该维度不固定。固定宽度要求来源宽度相同，固定长度要求请求的视图长度相同。
 
 **参数**：bitWidth 固定的元素宽度；0 表示沿用来源宽度。
 
@@ -351,14 +351,14 @@ console.stdout.writeLine(view.count())
 
 源码：`src/stdlib/text/text.el:892` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L892)
 
+创建受约束的 Text 类型。bitWidth 固定统一元素宽度，size 固定 Unicode 标量数量；0 表示不固定。
+固定宽度构造和写入会检查字符声明宽度及标量值，固定长度文本不能改变长度。
+
 ```el
 export fn Text(bitWidth = 0, size = 0): type
 ```
 
 **返回类型**：[`type`](../../../../reference/language/types.md)
-
-创建受约束的 Text 类型。bitWidth 固定统一元素宽度，size 固定 Unicode 标量数量；0 表示不固定。
-固定宽度构造和写入会检查字符声明宽度及标量值，固定长度文本不能改变长度。
 
 **参数**：bitWidth 固定元素宽度，必须能容纳构造和写入的字符；0 表示动态宽度。
 

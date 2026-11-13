@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/network/http/index.el:59` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/index.el#L59)
 
+发送 HTTP 请求并返回状态、响应头与响应体。
+
 ```el
 export fn request(url: Text, options: HttpOptions = HttpOptions()): HttpResponse
 ```
 
 **返回类型**：[`HttpResponse`](model.md#api-e49096dfd951764c068f)
-
-发送 HTTP 请求并返回状态、响应头与响应体。
 
 **参数**：url HTTP 或 HTTPS URL。
 
@@ -42,11 +42,11 @@ console.stdout.writeLine(response.status)
 
 源码：`src/stdlib/network/http/index.el:83` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/index.el#L83)
 
+请求 URL，并用指定格式解码成功响应体。
+
 ```el
 export fn fetchAs(format, url: Text, options: HttpOptions = HttpOptions())
 ```
-
-请求 URL，并用指定格式解码成功响应体。
 
 **参数**：format 提供 decode 方法的格式对象。
 

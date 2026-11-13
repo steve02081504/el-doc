@@ -689,6 +689,41 @@ def page_path(source):
 	return "modules/" + source.removesuffix(".el") + ".md"
 
 
+def readable_signature(signature_text):
+	"""Keep the declaration readable while retaining long attribute data separately."""
+	stream = [(text, start, end) for kind, text, start, end in tokens(signature_text) if kind not in ("space", "comment", "doc")]
+	removed = []
+	index = 0
+	while index + 1 < len(stream):
+		if stream[index][0] != "@" or not re.fullmatch(r'\w+', stream[index + 1][0]):
+			index += 1
+			continue
+		begin = stream[index][1]
+		index += 2
+		while index + 1 < len(stream) and stream[index][0] == ":" and re.fullmatch(r'\w+', stream[index + 1][0]):
+			index += 2
+		if index >= len(stream) or stream[index][0] != "(":
+			continue
+		depth = 0
+		while index < len(stream):
+			text, _, end = stream[index]
+			if text == "(": depth += 1
+			elif text == ")": depth -= 1
+			index += 1
+			if depth == 0:
+				if signature_text[begin:end].count("\n") > 4:
+					removed.append((begin, end))
+				break
+	if not removed:
+		return signature_text
+	pieces, cursor = [], 0
+	for start, end in removed:
+		pieces.append(signature_text[cursor:start])
+		cursor = end
+	pieces.append(signature_text[cursor:])
+	return "".join(pieces).strip()
+
+
 def render(model, source_url=SOURCE_URL):
 	pages = {}
 	grouped = {}
@@ -795,11 +830,15 @@ def render(model, source_url=SOURCE_URL):
 			line = entry.get("declaration_line", entry["line"])
 			url = source_url.rstrip("/") + "/" + quote(source, safe="/") + f"#L{line}"
 			lines += [f"## {entry['name']} {{#{anchor(entry['id'])}}}", "", f"源码：`src/stdlib/{source}:{line}` · [在 GitHub 查看源码]({url})", ""]
+			lines += [entry["sections"][0]["markdown"], ""]
 			if "signature" in entry:
 				display = entry["signature"]
 				if entry.get("initializer") is not None:
 					display += " = " + entry["initializer"]
-				lines += ["```el", display, "```", ""]
+				concise = readable_signature(display)
+				lines += ["```el", concise, "```", ""]
+				if concise != display:
+					lines += ['??? note "完整声明与属性"', "", "\t```el", *["\t" + line for line in display.splitlines()], "\t```", ""]
 			for field, label in (("value_type", "类型"), ("return_type", "返回类型")):
 				expression = entry.get(field)
 				if not expression: continue
@@ -823,6 +862,8 @@ def render(model, source_url=SOURCE_URL):
 				if unresolved: lines += ["未解析：" + "、".join(f"`{name}`" for name in dict.fromkeys(unresolved)), ""]
 			for section in entry["sections"]:
 				tag, value = section["tag"], section["value"]
+				if tag == "description":
+					continue
 				if tag == "see":
 					target = by_id[value]
 					# Relative links work both in MkDocs and standalone Markdown.

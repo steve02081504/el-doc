@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/functions/comparison.el:16` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el#L16)
 
+返回 `left > right` 的结果，用于需要二元可调用值的场合。
+
 ```el
 export fn greater(left, right)
 ```
-
-返回 `left > right` 的结果，用于需要二元可调用值的场合。
 
 **参数**：left 左操作数；其类型须支持对应比较运算。
 
@@ -41,11 +41,11 @@ let result = greater(3, 2)
 
 源码：`src/stdlib/functions/comparison.el:30` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el#L30)
 
+返回 `left < right` 的结果，用于需要二元可调用值的场合。
+
 ```el
 export fn less(left, right)
 ```
-
-返回 `left < right` 的结果，用于需要二元可调用值的场合。
 
 **参数**：left 左操作数；其类型须支持对应比较运算。
 
@@ -68,11 +68,11 @@ let result = less(3, 2)
 
 源码：`src/stdlib/functions/comparison.el:44` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el#L44)
 
+返回 `left >= right` 的结果，用于需要二元可调用值的场合。
+
 ```el
 export fn greaterEqual(left, right)
 ```
-
-返回 `left >= right` 的结果，用于需要二元可调用值的场合。
 
 **参数**：left 左操作数；其类型须支持对应比较运算。
 
@@ -95,11 +95,11 @@ let result = greaterEqual(3, 2)
 
 源码：`src/stdlib/functions/comparison.el:58` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el#L58)
 
+返回 `left <= right` 的结果，用于需要二元可调用值的场合。
+
 ```el
 export fn lessEqual(left, right)
 ```
-
-返回 `left <= right` 的结果，用于需要二元可调用值的场合。
 
 **参数**：left 左操作数；其类型须支持对应比较运算。
 
@@ -122,11 +122,11 @@ let result = lessEqual(3, 2)
 
 源码：`src/stdlib/functions/comparison.el:72` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el#L72)
 
+返回 `left == right` 的结果，用于需要二元可调用值的场合。
+
 ```el
 export fn equal(left, right)
 ```
-
-返回 `left == right` 的结果，用于需要二元可调用值的场合。
 
 **参数**：left 左操作数；其类型须支持对应比较运算。
 
@@ -149,11 +149,11 @@ let result = equal(3, 2)
 
 源码：`src/stdlib/functions/comparison.el:86` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/comparison.el#L86)
 
+返回 `left != right` 的结果，用于需要二元可调用值的场合。
+
 ```el
 export fn notEqual(left, right)
 ```
-
-返回 `left != right` 的结果，用于需要二元可调用值的场合。
 
 **参数**：left 左操作数；其类型须支持对应比较运算。
 

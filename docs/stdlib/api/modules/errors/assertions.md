@@ -18,11 +18,11 @@
 
 源码：`src/stdlib/errors/assertions.el:12` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/errors/assertions.el#L12)
 
+表示 assert 条件失败的异常，并保留调用方提供的失败原因。
+
 ```el
 export @assign(mode: "shared") class AssertionError extends Error
 ```
-
-表示 assert 条件失败的异常，并保留调用方提供的失败原因。
 
 ### 示例：捕获断言错误
 
@@ -35,13 +35,13 @@ catch (error: AssertionError) { console.stderr.writeLine(error.reason) }
 
 源码：`src/stdlib/errors/assertions.el:19` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/errors/assertions.el#L19)
 
+断言失败时提供的说明文本。
+
 ```el
 let reason: Text
 ```
 
 **类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
-
-断言失败时提供的说明文本。
 
 ### 示例：输出断言原因
 
@@ -53,13 +53,13 @@ console.stderr.writeLine(error.reason)
 
 源码：`src/stdlib/errors/assertions.el:34` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/errors/assertions.el#L34)
 
+检查条件为真；条件为假时以给定原因抛出 AssertionError。
+
 ```el
 export @pure fn assert(condition: Bool, reason: Text): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-检查条件为真；条件为假时以给定原因抛出 AssertionError。
 
 **参数**：condition 要求为真的条件。
 

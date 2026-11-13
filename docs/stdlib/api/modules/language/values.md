@@ -14,12 +14,12 @@
 
 源码：`src/stdlib/language/values.el:13` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/values.el#L13)
 
+真值 t 的类型，带 xata 条件属性；在条件中选择真分支。
+
 ```el
 @infer(type: nil_t | t_t)
 export @builtin:jahu:xata class t_t
 ```
-
-真值 t 的类型，带 xata 条件属性；在条件中选择真分支。
 
 ### 示例：声明真值类型
 
@@ -31,12 +31,12 @@ let confirmed: t_t = t
 
 源码：`src/stdlib/language/values.el:21` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/values.el#L21)
 
+假值 nil 的类型，带 netra 条件属性；在条件中选择假分支。
+
 ```el
 @infer(type: nil_t | t_t)
 export @builtin:jahu:netra class nil_t
 ```
-
-假值 nil 的类型，带 netra 条件属性；在条件中选择假分支。
 
 ### 示例：声明假值类型
 
@@ -48,12 +48,12 @@ let rejected: nil_t = nil
 
 源码：`src/stdlib/language/values.el:29` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/values.el#L29)
 
+无结果值 void 的类型，带 lohk 条件属性；与假值的 nil_t 是不同类型。
+
 ```el
 @discardable
 export @builtin:jahu:lohk class void_t
 ```
-
-无结果值 void 的类型，带 lohk 条件属性；与假值的 nil_t 是不同类型。
 
 ### 示例：声明缺失结果
 
@@ -65,13 +65,13 @@ let missing: void_t = void
 
 源码：`src/stdlib/language/values.el:43` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/values.el#L43)
 
+标准环境提供的真值绑定，类型为 t_t；它是普通源码值，不是关键字。
+
 ```el
 export let t: t_t = t_t()
 ```
 
 **类型**：[`t_t`](values.md#api-9d7782192c7a4073755a)
-
-标准环境提供的真值绑定，类型为 t_t；它是普通源码值，不是关键字。
 
 ### 示例：使用真值选择分支
 
@@ -86,13 +86,13 @@ yes
 
 源码：`src/stdlib/language/values.el:54` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/values.el#L54)
 
+标准环境提供的假值绑定，类型为 nil_t；它不表示缺失结果。
+
 ```el
 export let nil: nil_t = nil_t()
 ```
 
 **类型**：[`nil_t`](values.md#api-86357ad50ef0535f6333)
-
-标准环境提供的假值绑定，类型为 nil_t；它不表示缺失结果。
 
 ### 示例：使用假值选择分支
 
@@ -108,13 +108,13 @@ no
 
 源码：`src/stdlib/language/values.el:61` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/values.el#L61)
 
+标准环境提供的无结果值绑定，类型为 void_t；它与假值 nil 不同。
+
 ```el
 export let void: void_t = void_t()
 ```
 
 **类型**：[`void_t`](values.md#api-d7b419fab395eef3d142)
-
-标准环境提供的无结果值绑定，类型为 void_t；它与假值 nil 不同。
 
 ### 示例：返回无结果
 
@@ -128,13 +128,13 @@ fn finish(): void_t { return void }
 
 源码：`src/stdlib/language/values.el:77` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/values.el#L77)
 
+布尔类型别名，定义就是 t_t | nil_t；Bool 的值已经属于该联合，不需要再转换成联合类型。
+
 ```el
 export let Bool: type = t_t | nil_t
 ```
 
 **类型**：[`type`](../../../../reference/language/types.md)
-
-布尔类型别名，定义就是 t_t | nil_t；Bool 的值已经属于该联合，不需要再转换成联合类型。
 
 **注意**：t 和 nil 是值名字；联合类型中的成员是类型 t_t 和 nil_t。此别名与同名的条件求值函数有不同声明身份。
 
@@ -155,13 +155,13 @@ let rejected: Bool = nil
 
 源码：`src/stdlib/language/values.el:92` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/values.el#L92)
 
+按输入的条件行为返回 t 或 nil；同名的 Bool 类型本身是 t_t | nil_t 的别名。
+
 ```el
 export fn Bool(value = nil): Bool
 ```
 
 **返回类型**：[`Bool`](values.md#api-3f0af31783849ef30c6e)
-
-按输入的条件行为返回 t 或 nil；同名的 Bool 类型本身是 t_t | nil_t 的别名。
 
 **参数**：value 要判断的值；省略时使用 nil。
 

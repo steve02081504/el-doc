@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/mathematics/functions/discrete.el:33` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/discrete.el#L33)
 
+返回不大于输入值的最大整数，并保留输入数值类型。
+
 ```el
 export fn floor(value)
 ```
-
-返回不大于输入值的最大整数，并保留输入数值类型。
 
 **参数**：value 有限 Number 数值。
 

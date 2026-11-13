@@ -8,13 +8,13 @@
 
 源码：`src/stdlib/numerical-computing/exact-solve.el:21` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/exact-solve.el#L21)
 
+用精确 Number 消元求解方阵系统 A X = B；不使用浮点主元阈值。
+
 ```el
 export fn solve(borrow input: Matrix, borrow right: Matrix): Matrix
 ```
 
 **返回类型**：[`Matrix`](../../types.md#api-621bba5091173b4178ef)
-
-用精确 Number 消元求解方阵系统 A X = B；不使用浮点主元阈值。
 
 **参数**：input 方阵 A，按借用读取。
 

@@ -16,11 +16,11 @@
 
 源码：`src/stdlib/multimedia/audio/macos-output.el:54` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L54)
 
+拥有单线程有界 PCM16 设备队列；入队时复制音频块，队列满时立即返回假。
+
 ```el
 export @assign(mode: "shared") class PcmOutput
 ```
-
-拥有单线程有界 PCM16 设备队列；入队时复制音频块，队列满时立即返回假。
 
 **参数**：format 固定的 PCM16 音频格式。
 
@@ -41,13 +41,13 @@ let accepted = output.enqueue(audio)
 
 源码：`src/stdlib/multimedia/audio/macos-output.el:103` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L103)
 
+尝试提交音频块；样本在返回前复制，队列无空槽时不等待并返回假。
+
 ```el
 fn enqueue(audio: PcmAudio): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-尝试提交音频块；样本在返回前复制，队列无空槽时不等待并返回假。
 
 **参数**：audio 帧数与格式符合构造配置的 PCM 音频块。
 
@@ -65,11 +65,11 @@ if (!output.enqueue(chunk)) sleep(2)
 
 源码：`src/stdlib/multimedia/audio/macos-output.el:137` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L137)
 
+标记不再提交新块；设备继续播放已经提交的音频。
+
 ```el
 fn finish()
 ```
-
-标记不再提交新块；设备继续播放已经提交的音频。
 
 ### 示例：提交完成后等待设备空闲
 
@@ -82,13 +82,13 @@ while (!output.idle()) sleep(2)
 
 源码：`src/stdlib/multimedia/audio/macos-output.el:145` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L145)
 
+检查音频队列中的所有缓冲区是否已完成。
+
 ```el
 fn idle(): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-检查音频队列中的所有缓冲区是否已完成。
 
 **返回值**：没有待播放缓冲区时为真。
 
@@ -102,11 +102,11 @@ while (!output.idle()) sleep(2)
 
 源码：`src/stdlib/multimedia/audio/macos-output.el:160` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L160)
 
+清除设备当前排队的音频块。
+
 ```el
 fn clear()
 ```
-
-清除设备当前排队的音频块。
 
 ### 示例：停止待播音频
 
@@ -118,11 +118,11 @@ output.clear()
 
 源码：`src/stdlib/multimedia/audio/macos-output.el:176` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L176)
 
+停止播放并释放设备队列及原生句柄。
+
 ```el
 fn close()
 ```
-
-停止播放并释放设备队列及原生句柄。
 
 ### 示例：关闭音频输出
 

@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/user-interface/drawing.el:37` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/drawing.el#L37)
 
+提供窗口绘制所需的背景、文字、按钮、选区和字体等颜色与度量；与 Definition.theme 的 Theme 类型不同。
+
 ```el
 export class PaintTheme
 ```
-
-提供窗口绘制所需的背景、文字、按钮、选区和字体等颜色与度量；与 Definition.theme 的 Theme 类型不同。
 
 ### 示例：修改窗口绘制背景色
 
@@ -32,13 +32,13 @@ window.theme = paint
 
 源码：`src/stdlib/user-interface/drawing.el:117` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/drawing.el#L117)
 
+创建一份深色窗口绘制主题。
+
 ```el
 export fn darkPaintTheme(): PaintTheme
 ```
 
 **返回类型**：[`PaintTheme`](drawing.md#api-4be1353cf98b66267dcf)
-
-创建一份深色窗口绘制主题。
 
 **返回值**：可供 Window.theme 使用的 PaintTheme。
 

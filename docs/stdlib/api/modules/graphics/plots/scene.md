@@ -22,11 +22,11 @@
 
 源码：`src/stdlib/graphics/plots/scene.el:53` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L53)
 
+可配置图表线条、标题、坐标标签及图例，并维护当前缩放范围。
+
 ```el
 export @assign(mode: "shared") class Axis
 ```
-
-可配置图表线条、标题、坐标标签及图例，并维护当前缩放范围。
 
 ### 示例：设置标题和图例
 
@@ -39,13 +39,13 @@ figure.axis.legend = @["估计值"]
 
 源码：`src/stdlib/graphics/plots/scene.el:61` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L61)
 
+绘图标题。
+
 ```el
 let title: Text
 ```
 
 **类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
-
-绘图标题。
 
 ### 示例：设置绘图标题
 
@@ -57,13 +57,13 @@ figure.axis.title = "趋势"
 
 源码：`src/stdlib/graphics/plots/scene.el:68` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L68)
 
+横坐标轴标签。
+
 ```el
 let xLabel: Text
 ```
 
 **类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
-
-横坐标轴标签。
 
 ### 示例：标注横轴
 
@@ -75,13 +75,13 @@ figure.axis.xLabel = "时间"
 
 源码：`src/stdlib/graphics/plots/scene.el:75` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L75)
 
+每条线对应的图例文本；若非空，数量必须与线条数一致。
+
 ```el
 let legend: Text[]
 ```
 
 **类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)[]
-
-每条线对应的图例文本；若非空，数量必须与线条数一致。
 
 ### 示例：设置一条线的图例
 
@@ -93,11 +93,11 @@ figure.axis.legend = @["预测"]
 
 源码：`src/stdlib/graphics/plots/scene.el:100` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L100)
 
+以当前视图中心缩放横纵坐标范围。
+
 ```el
 fn zoom(factor: Number)
 ```
-
-以当前视图中心缩放横纵坐标范围。
 
 **参数**：factor 正的有限缩放倍数；大于 1 放大，小于 1 缩小。
 
@@ -113,11 +113,11 @@ figure.axis.zoom(2)
 
 源码：`src/stdlib/graphics/plots/scene.el:112` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L112)
 
+清除显式缩放范围，使范围重新按数据自动计算。
+
 ```el
 fn reset()
 ```
-
-清除显式缩放范围，使范围重新按数据自动计算。
 
 ### 示例：重置图表范围
 

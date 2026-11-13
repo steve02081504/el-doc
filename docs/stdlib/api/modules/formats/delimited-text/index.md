@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/formats/delimited-text/index.el:59` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L59)
 
+按 RFC 4180 引号规则解析逗号分隔文本；单元格保持为文本，不推断表头或类型。
+
 ```el
 export fn parseCSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]
 ```
 
 **返回类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)[][]
-
-按 RFC 4180 引号规则解析逗号分隔文本；单元格保持为文本，不推断表头或类型。
 
 **参数**：source 完整 CSV 文本。
 
@@ -41,13 +41,13 @@ let rows = parseCSV("name,role\nAda,engineer")
 
 源码：`src/stdlib/formats/delimited-text/index.el:71` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L71)
 
+按制表符分隔规则解析文本，单元格内容以文本形式保留。
+
 ```el
 export fn parseTSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]
 ```
 
 **返回类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)[][]
-
-按制表符分隔规则解析文本，单元格内容以文本形式保留。
 
 **参数**：source 完整 TSV 文本。
 

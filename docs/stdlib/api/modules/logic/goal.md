@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/logic/goal.el:45` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/goal.el#L45)
 
+要求两个逻辑项统一，并将所得绑定传递给后续目标。
+
 ```el
 export fn unify(left: Term, right: Term): Goal
 ```
 
 **返回类型**：[`Goal`](../../types.md#api-8930273b0777ef965836)
-
-要求两个逻辑项统一，并将所得绑定传递给后续目标。
 
 **参数**：left 第一个待统一项。
 
@@ -38,13 +38,13 @@ let goal = unify(variable(0), atom("Ada"))
 
 源码：`src/stdlib/logic/goal.el:55` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/goal.el#L55)
 
+延迟检查两个逻辑项不可相等的约束。
+
 ```el
 export fn dif(left: Term, right: Term): Goal
 ```
 
 **返回类型**：[`Goal`](../../types.md#api-8930273b0777ef965836)
-
-延迟检查两个逻辑项不可相等的约束。
 
 **参数**：left 第一个逻辑项。
 
@@ -62,13 +62,13 @@ let goal = dif(variable(0), atom("Ada"))
 
 源码：`src/stdlib/logic/goal.el:64` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/goal.el#L64)
 
+调用由构造子项表示的关系。
+
 ```el
 export fn call(term: Term): Goal
 ```
 
 **返回类型**：[`Goal`](../../types.md#api-8930273b0777ef965836)
-
-调用由构造子项表示的关系。
 
 **参数**：term 关系名与参数组成的关系项。
 
@@ -84,13 +84,13 @@ let goal = call(compound("person", @[variable(0)]))
 
 源码：`src/stdlib/logic/goal.el:73` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/goal.el#L73)
 
+按顺序执行一组目标，并在目标间传递逻辑绑定。
+
 ```el
 export fn all(goals: Goal[]): Goal
 ```
 
 **返回类型**：[`Goal`](../../types.md#api-8930273b0777ef965836)
-
-按顺序执行一组目标，并在目标间传递逻辑绑定。
 
 **参数**：goals 顺序执行的目标。
 
@@ -106,13 +106,13 @@ let goal = all(@[call(compound("person", @[x])), dif(x, atom("Ada"))])
 
 源码：`src/stdlib/logic/goal.el:82` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/goal.el#L82)
 
+构造一组可选逻辑分支；各分支独立枚举答案。
+
 ```el
 export fn choice(goals: Goal[]): Goal
 ```
 
 **返回类型**：[`Goal`](../../types.md#api-8930273b0777ef965836)
-
-构造一组可选逻辑分支；各分支独立枚举答案。
 
 **参数**：goals 备选分支。
 

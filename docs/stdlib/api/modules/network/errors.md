@@ -20,11 +20,11 @@
 
 源码：`src/stdlib/network/errors.el:16` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/errors.el#L16)
 
+表示网络连接、协议或平台网络操作失败。
+
 ```el
 export class NetworkError extends Error
 ```
-
-表示网络连接、协议或平台网络操作失败。
 
 ### 示例：捕获网络请求错误
 
@@ -37,13 +37,13 @@ catch (error: NetworkError) { console.stderr.writeLine(error.operation, ": ", er
 
 源码：`src/stdlib/network/errors.el:23` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/errors.el#L23)
 
+发生失败的网络操作名称。
+
 ```el
 let operation: Text
 ```
 
 **类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
-
-发生失败的网络操作名称。
 
 ### 示例：输出错误操作
 
@@ -55,13 +55,13 @@ console.stderr.writeLine(error.operation)
 
 源码：`src/stdlib/network/errors.el:30` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/errors.el#L30)
 
+描述失败原因的文本。
+
 ```el
 let detail: Text
 ```
 
 **类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
-
-描述失败原因的文本。
 
 ### 示例：输出错误原因
 
@@ -73,13 +73,13 @@ console.stderr.writeLine(error.detail)
 
 源码：`src/stdlib/network/errors.el:37` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/errors.el#L37)
 
+平台提供的可选错误代码；无特定代码时为 0。
+
 ```el
 let code: Number
 ```
 
 **类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-平台提供的可选错误代码；无特定代码时为 0。
 
 ### 示例：查看平台错误码
 

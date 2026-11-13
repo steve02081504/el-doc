@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/network/sockets.el:186` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/sockets.el#L186)
 
+连接到指定主机和 TCP 端口，并返回连接对象。
+
 ```el
 export fn connectTcp(host: Text, port: Number, timeout: Number = 30000): TcpConnection
 ```
 
 **返回类型**：[`TcpConnection`](../../types.md#api-1090d8149506627ae338)
-
-连接到指定主机和 TCP 端口，并返回连接对象。
 
 **参数**：host 主机名或数值地址。
 

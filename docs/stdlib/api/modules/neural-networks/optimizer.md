@@ -18,11 +18,11 @@
 
 源码：`src/stdlib/neural-networks/optimizer.el:17` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizer.el#L17)
 
+创建随机梯度下降优化器；更新时按学习率应用模型梯度。
+
 ```el
 export @assign(mode: "copy") class SGD
 ```
-
-创建随机梯度下降优化器；更新时按学习率应用模型梯度。
 
 **参数**：rate 有限且非负的学习率。
 
@@ -40,11 +40,11 @@ optimizer.update(model, step.grad)
 
 源码：`src/stdlib/neural-networks/optimizer.el:39` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizer.el#L39)
 
+按已配置学习率把梯度应用到模型参数。
+
 ```el
 fn update(model, gradient)
 ```
-
-按已配置学习率把梯度应用到模型参数。
 
 **参数**：model 产生该梯度的模型。
 

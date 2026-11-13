@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/functions/composition.el:23` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/functions/composition.el#L23)
 
-```el
-export fn over(merge, transform)
-```
-
 创建一个二元函数：先分别变换两个输入，再合并变换结果。
 
 调用顺序是 `transform(left)`、`transform(right)`、`merge`；每个输入只变换一次。创建组合函数时不调用这两个函数。
+
+```el
+export fn over(merge, transform)
+```
 
 **参数**：merge 接收两个变换结果的二元可调用值。
 

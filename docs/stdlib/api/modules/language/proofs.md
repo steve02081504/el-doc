@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/language/proofs.el:13` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/proofs.el#L13)
 
+命题的 sort；命题类型中的证明由证明内核检查，不作为普通运行时数据使用。
+
 ```el
 export @builtin:qeth:proof:prop class Prop
 ```
-
-命题的 sort；命题类型中的证明由证明内核检查，不作为普通运行时数据使用。
 
 ### 示例：声明一个命题值
 
@@ -30,13 +30,13 @@ let proposition: Prop = Eq(Nat, zero, zero)
 
 源码：`src/stdlib/language/proofs.el:20` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/proofs.el#L20)
 
+表示给定 universe 层级的类型 sort。
+
 ```el
 export @builtin:qeth:proof:type fn Type(level): type
 ```
 
 **返回类型**：[`type`](../../../../reference/language/types.md)
-
-表示给定 universe 层级的类型 sort。
 
 ### 示例：在类型注解中使用 Type
 
@@ -48,13 +48,13 @@ let naturalType: type = Type(0)
 
 源码：`src/stdlib/language/proofs.el:36` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/proofs.el#L36)
 
+构造载体类型上两个项相等的命题；载体参数明确指定被比较项的类型。
+
 ```el
 export @builtin:qeth:proof:eq fn Eq(carrier: type, left, right): type
 ```
 
 **返回类型**：[`type`](../../../../reference/language/types.md)
-
-构造载体类型上两个项相等的命题；载体参数明确指定被比较项的类型。
 
 **参数**：carrier 两端项的载体类型。
 
@@ -74,11 +74,11 @@ let same: type = Eq(Nat, zero, zero)
 
 源码：`src/stdlib/language/proofs.el:45` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/proofs.el#L45)
 
+为定义上相等的两端构造反身性证据；内核会检查载体与项的一致性。
+
 ```el
 export @builtin:qeth:proof:refl fn refl(carrier: type, value)
 ```
-
-为定义上相等的两端构造反身性证据；内核会检查载体与项的一致性。
 
 **参数**：carrier 被比较项的载体类型。
 

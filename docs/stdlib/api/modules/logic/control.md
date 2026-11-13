@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/logic/control.el:67` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/control.el#L67)
 
+搜索因预算耗尽或主动取消而中断时抛出的信息对象。
+
 ```el
 export @assign(mode: "shared") class SearchInterrupted
 ```
-
-搜索因预算耗尽或主动取消而中断时抛出的信息对象。
 
 ### 示例：捕获受限搜索中断
 

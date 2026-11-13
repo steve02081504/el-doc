@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/formats/json/writer.el:182` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/writer.el#L182)
 
+将 EL 值编码为严格 JSON 文本，并按给定限制控制递归与输出规模。
+
 ```el
 export fn writeJSON(value: any, limits: JsonLimits = JsonLimits()): Text
 ```
 
 **返回类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
-
-将 EL 值编码为严格 JSON 文本，并按给定限制控制递归与输出规模。
 
 **参数**：value 要编码的值；可编码类型受 JSON 数据模型约束。
 

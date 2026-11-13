@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/time/calendar.el:19` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L19)
 
+按公历 400 年规则判断指定年份是否为闰年。
+
 ```el
 export fn leapYear(year: Number): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-按公历 400 年规则判断指定年份是否为闰年。
 
 **参数**：year 公历年份。
 
@@ -38,13 +38,13 @@ leapYear(2000)
 
 源码：`src/stdlib/time/calendar.el:33` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L33)
 
+返回该年月的天数；二月按闰年规则处理。
+
 ```el
 export fn monthDays(year: Number, month: Number): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-返回该年月的天数；二月按闰年规则处理。
 
 **参数**：year 公历年份。
 
@@ -66,13 +66,13 @@ monthDays(2024, 2)
 
 源码：`src/stdlib/time/calendar.el:53` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L53)
 
+将公历年月日换算为自 1970-01-01 起的日数。
+
 ```el
 export fn epochDay(year: Number, month: Number, day: Number): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-将公历年月日换算为自 1970-01-01 起的日数。
 
 **参数**：year 公历年份。
 
@@ -96,13 +96,13 @@ epochDay(1970, 1, 2)
 
 源码：`src/stdlib/time/calendar.el:75` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L75)
 
+返回 Unix 秒数对应 UTC 日期所在的公历年份。
+
 ```el
 export fn yearAtSeconds(seconds: Number): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
-
-返回 Unix 秒数对应 UTC 日期所在的公历年份。
 
 **参数**：seconds Unix 时间秒数。
 
@@ -122,13 +122,13 @@ yearAtSeconds(0)
 
 源码：`src/stdlib/time/calendar.el:138` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L138)
 
+把 Unix 纳秒和偏移量分解为公历字段。
+
 ```el
 export fn calendarAt(nanoseconds: Number, offset: TimeDiff = TimeDiff()): CalendarTime
 ```
 
 **返回类型**：[`CalendarTime`](../../types.md#api-3e2d30f2355f28e55020)
-
-把 Unix 纳秒和偏移量分解为公历字段。
 
 **参数**：nanoseconds Unix 时间纳秒。
 
@@ -150,13 +150,13 @@ calendarAt(0).year
 
 源码：`src/stdlib/time/calendar.el:166` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L166)
 
+将偏移量格式化为带符号的时区偏移文本。
+
 ```el
 export fn offsetText(offset: TimeDiff): Text
 ```
 
 **返回类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
-
-将偏移量格式化为带符号的时区偏移文本。
 
 **参数**：offset 要格式化的偏移。
 

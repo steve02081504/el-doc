@@ -21,11 +21,11 @@
 
 源码：`src/stdlib/graphics/plots/index.el:28` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L28)
 
+持有不可变数据快照生成的绘图坐标场景，可导出 SVG、保存文件或显示窗口。
+
 ```el
 export @assign(mode: "shared") class Figure
 ```
-
-持有不可变数据快照生成的绘图坐标场景，可导出 SVG、保存文件或显示窗口。
 
 ### 示例：绘制并保存一张曲线图
 
@@ -39,13 +39,13 @@ figure.save("curve.svg")
 
 源码：`src/stdlib/graphics/plots/index.el:35` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L35)
 
+可直接配置标题、坐标轴标签、图例、缩放范围的绘图场景对象。
+
 ```el
 let axis: Axis
 ```
 
 **类型**：[`Axis`](scene.md#api-cb6510f18b0f5b284d67)
-
-可直接配置标题、坐标轴标签、图例、缩放范围的绘图场景对象。
 
 ### 示例：设置图标题
 
@@ -57,13 +57,13 @@ figure.axis.title = "二次曲线"
 
 源码：`src/stdlib/graphics/plots/index.el:46` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L46)
 
+将当前坐标场景渲染为 SVG 文本；不打开窗口。
+
 ```el
 fn image(width: Number = 900, height: Number = 600): Text
 ```
 
 **返回类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
-
-将当前坐标场景渲染为 SVG 文本；不打开窗口。
 
 **参数**：width SVG 画布宽度，默认 900。
 
@@ -81,11 +81,11 @@ let svg = figure.image(640, 480)
 
 源码：`src/stdlib/graphics/plots/index.el:56` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L56)
 
+将渲染后的 SVG 文本写入指定文件；不打开窗口。
+
 ```el
 fn save(path: Text, width: Number = 900, height: Number = 600)
 ```
-
-将渲染后的 SVG 文本写入指定文件；不打开窗口。
 
 **参数**：path SVG 目标文件路径。
 
@@ -103,11 +103,11 @@ figure.save("curve.svg")
 
 源码：`src/stdlib/graphics/plots/index.el:64` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L64)
 
+在可用的桌面显示环境中打开图表窗口并阻塞到窗口关闭。
+
 ```el
 fn show()
 ```
-
-在可用的桌面显示环境中打开图表窗口并阻塞到窗口关闭。
 
 **失败与异常**：当前平台没有可用绘图窗口或显示操作失败时抛出错误。
 
@@ -121,11 +121,11 @@ figure.show()
 
 源码：`src/stdlib/graphics/plots/index.el:91` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L91)
 
+管理多个非阻塞图表窗口，并提供集中轮询、运行与关闭生命周期。
+
 ```el
 export @assign(mode: "shared") class PlotHost
 ```
-
-管理多个非阻塞图表窗口，并提供集中轮询、运行与关闭生命周期。
 
 ### 示例：在宿主中运行创建的图表
 
@@ -139,13 +139,13 @@ host.run()
 
 源码：`src/stdlib/graphics/plots/index.el:129` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L129)
 
+从 F64 张量创建折线图；x 的行数须与 y 的行数相同，y 的每一列对应一条线。
+
 ```el
 export fn plot(x: Tensor<element: F64>, y: Tensor<element: F64>): Figure
 ```
 
 **返回类型**：[`Figure`](index.md#api-daf4fb6b08acdf355a69)
-
-从 F64 张量创建折线图；x 的行数须与 y 的行数相同，y 的每一列对应一条线。
 
 **参数**：x 每个样本的横坐标，可为单列张量。
 

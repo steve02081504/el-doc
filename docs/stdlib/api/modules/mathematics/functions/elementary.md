@@ -14,12 +14,12 @@
 
 源码：`src/stdlib/mathematics/functions/elementary.el:27` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L27)
 
+计算非负输入的平方根近似值。
+
 ```el
 @pure
 export fn sqrt(value)
 ```
-
-计算非负输入的平方根近似值。
 
 **参数**：value 非负数值。
 
@@ -38,12 +38,12 @@ let root = sqrt(9)
 
 源码：`src/stdlib/mathematics/functions/elementary.el:38` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L38)
 
+计算自然指数函数的近似值。
+
 ```el
 @pure
 export fn exp(value)
 ```
-
-计算自然指数函数的近似值。
 
 **参数**：value 指数输入。
 
@@ -59,12 +59,12 @@ let growth = exp(1)
 
 源码：`src/stdlib/mathematics/functions/elementary.el:50` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L50)
 
+计算自然对数近似值。
+
 ```el
 @pure
 export fn log(value)
 ```
-
-计算自然对数近似值。
 
 **参数**：value 正数输入。
 
@@ -82,13 +82,13 @@ let logarithm = log(2)
 
 源码：`src/stdlib/mathematics/functions/elementary.el:66` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L66)
 
+计算以弧度表示的正弦近似值。
+
 ```el
 @pure
 @optimize(data: @{ operation: "sin" })
 export fn sin(value)
 ```
-
-计算以弧度表示的正弦近似值。
 
 **参数**：value 有限弧度输入。
 
@@ -106,13 +106,13 @@ let sample = sin(1.5707963267948966)
 
 源码：`src/stdlib/mathematics/functions/elementary.el:124` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L124)
 
+按指定 Number 类型的精度合同构造圆周率近似值。
+
 ```el
 @pure
 @optimize(data: @{ operation: "pi" })
 export fn pi(Result: type)
 ```
-
-按指定 Number 类型的精度合同构造圆周率近似值。
 
 **参数**：Result 输出 Number 类型。
 
@@ -131,11 +131,11 @@ let circle = pi(Scalar)
 
 源码：`src/stdlib/mathematics/functions/elementary.el:145` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L145)
 
+计算底数的实数幂；省略 exponent 时计算平方。
+
 ```el
 export fn pow(base, exponent = Number(2))
 ```
-
-计算底数的实数幂；省略 exponent 时计算平方。
 
 **参数**：base 底数。
 

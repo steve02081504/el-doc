@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/cryptography/hmac.el:80` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/hmac.el#L80)
 
+使用 HMAC-SHA256 对消息生成认证标签。
+
 ```el
 export fn hmac_sha256(key: Number[], message: Number[]): Number[]
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[]
-
-使用 HMAC-SHA256 对消息生成认证标签。
 
 **参数**：key 密钥字节数组。
 
@@ -41,13 +41,13 @@ let tag = hmac_sha256(@[1, 2, 3], @[4, 5])
 
 源码：`src/stdlib/cryptography/hmac.el:102` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/hmac.el#L102)
 
+验证消息的 HMAC-SHA256 标签；比较 32 字节标签时调用 constant_time_equal。
+
 ```el
 export fn hmac_verify(key: Number[], message: Number[], tag: Number[]): Bool
 ```
 
 **返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
-
-验证消息的 HMAC-SHA256 标签；比较 32 字节标签时调用 constant_time_equal。
 
 **参数**：key 生成标签时使用的密钥字节数组。
 

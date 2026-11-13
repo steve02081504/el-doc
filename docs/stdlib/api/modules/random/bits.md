@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/random/bits.el:30` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/bits.el#L30)
 
+检查数值是否有限且为整数。需要拒绝小数、无穷值和 NaN 的整数运算可先调用此函数；不符合条件时抛出范围错误。
+
 ```el
 export fn require_integer(value: Number)
 ```
-
-检查数值是否有限且为整数。需要拒绝小数、无穷值和 NaN 的整数运算可先调用此函数；不符合条件时抛出范围错误。
 
 **参数**：value 要检查的数值。
 
@@ -44,13 +44,13 @@ console.stdout.writeLine(Number(seed))
 
 源码：`src/stdlib/random/bits.el:51` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/bits.el#L51)
 
+校验数值种子并将其转换为库的无符号 64 位字类型。取值范围为包含零、不包含 2^64，与宿主原生整数宽度无关。
+
 ```el
 export fn seed_bits(seed: Number): Word64
 ```
 
 **返回类型**：[`Word64`](../../types.md#api-1a7ac63dc0ed74edb7d6)
-
-校验数值种子并将其转换为库的无符号 64 位字类型。取值范围为包含零、不包含 2^64，与宿主原生整数宽度无关。
 
 **参数**：seed 范围为 0 <= seed < 2^64 的有限整数种子。
 

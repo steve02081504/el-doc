@@ -18,13 +18,13 @@
 
 源码：`src/stdlib/neural-networks/adamw.el:25` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/adamw.el#L25)
 
+创建指定元素与存储类型的 AdamW 优化器类型。
+
 ```el
 export fn AdamW(element: type, storage: type = Tensor<element: element>): type
 ```
 
 **返回类型**：[`type`](../../../../reference/language/types.md)
-
-创建指定元素与存储类型的 AdamW 优化器类型。
 
 **参数**：element 参数及优化状态使用的数值元素类型。
 
@@ -44,11 +44,11 @@ let optimizer = Optimizer(rate: .001, weightDecay: .01)
 
 源码：`src/stdlib/neural-networks/adamw.el:105` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/adamw.el#L105)
 
+按 AdamW 更新规则应用梯度，并维护此优化器身份对应的参数矩状态。
+
 ```el
 fn update(model, gradient)
 ```
-
-按 AdamW 更新规则应用梯度，并维护此优化器身份对应的参数矩状态。
 
 **参数**：model 产生该梯度的模型。
 

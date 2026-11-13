@@ -19,13 +19,13 @@
 
 源码：`src/stdlib/filesystem/writer.el:135` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L135)
 
+将字节数组快照写入目标位置并返回写入回执。
+
 ```el
 fn write(bytes: Number[]): WriteReceipt
 ```
 
 **返回类型**：[`WriteReceipt`](../../types.md#api-3e0e196b89972e8bb0b2)
-
-将字节数组快照写入目标位置并返回写入回执。
 
 **参数**：bytes 要写出的字节数组。
 
@@ -45,13 +45,13 @@ writer.close()
 
 源码：`src/stdlib/filesystem/writer.el:173` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L173)
 
+完成写入器并关闭底层资源。
+
 ```el
 fn close(): void_t
 ```
 
 **返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
-
-完成写入器并关闭底层资源。
 
 **失败与异常**：provider 关闭失败或关闭结果不确定时抛出异常。
 

@@ -22,13 +22,13 @@
 
 源码：`src/stdlib/neural-networks/data/index.el:115` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L115)
 
+创建按 Sampler 索引批次读取 Dataset 的数据加载器类型。
+
 ```el
 export fn DataLoader(sample: type): type
 ```
 
 **返回类型**：[`type`](../../../../../reference/language/types.md)
-
-创建按 Sampler 索引批次读取 Dataset 的数据加载器类型。
 
 **参数**：sample 每个数据样本的类型。
 
@@ -50,13 +50,13 @@ let firstBatch = loader.next()
 
 源码：`src/stdlib/neural-networks/data/index.el:133` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L133)
 
+指示是否还有满足 dropLast 设置的数据可组成下一批。
+
 ```el
 get hasNext(): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
-
-指示是否还有满足 dropLast 设置的数据可组成下一批。
 
 **返回值**：存在下一批时为真。
 
@@ -70,13 +70,13 @@ while (loader.hasNext) consume(loader.next())
 
 源码：`src/stdlib/neural-networks/data/index.el:141` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L141)
 
+返回可用于恢复当前采样进度的状态快照。
+
 ```el
 fn save(): SamplerState
 ```
 
 **返回类型**：[`SamplerState`](../../../types.md#api-807b03f6837422f1581d)
-
-返回可用于恢复当前采样进度的状态快照。
 
 **返回值**：SamplerState 快照。
 
@@ -90,11 +90,11 @@ let state = loader.save()
 
 源码：`src/stdlib/neural-networks/data/index.el:150` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L150)
 
+将加载器游标恢复到兼容的采样状态。
+
 ```el
 fn restore(state: SamplerState)
 ```
-
-将加载器游标恢复到兼容的采样状态。
 
 **参数**：state 此加载器对应的采样状态。
 
@@ -112,11 +112,11 @@ loader.restore(state)
 
 源码：`src/stdlib/neural-networks/data/index.el:161` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L161)
 
+读取下一批样本，先交给 collate 整理；整理成功后才前进采样游标。
+
 ```el
 fn next(collate)
 ```
-
-读取下一批样本，先交给 collate 整理；整理成功后才前进采样游标。
 
 **参数**：collate 接收样本数组并返回批次值的回调。
 
@@ -134,13 +134,13 @@ let batch = loader.next(samples => samples)
 
 源码：`src/stdlib/neural-networks/data/index.el:177` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L177)
 
+读取下一批样本并直接返回样本数组，不执行自定义整理。
+
 ```el
 fn next(): sample[]
 ```
 
 **返回类型**：[`sample`](../../../types.md#api-3ca7635f2367bc2f45d8)[]
-
-读取下一批样本并直接返回样本数组，不执行自定义整理。
 
 **返回值**：下一批原始样本数组。
 

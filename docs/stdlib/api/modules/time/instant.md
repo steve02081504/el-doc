@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/time/instant.el:31` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/instant.el#L31)
 
+选择本地时间映射到多个或零个时间点时的处理策略。
+
 ```el
 export enum TimeResolution
 ```
-
-选择本地时间映射到多个或零个时间点时的处理策略。
 
 ### 示例：选择重复本地时间的解析策略
 
@@ -32,11 +32,11 @@ TimeResolution.Earlier
 
 源码：`src/stdlib/time/instant.el:40` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/instant.el#L40)
 
+选择按日历月移动时目标月份没有原日期的处理策略。
+
 ```el
 export enum MonthOverflow
 ```
-
-选择按日历月移动时目标月份没有原日期的处理策略。
 
 ### 示例：选择月运算的日期溢出策略
 

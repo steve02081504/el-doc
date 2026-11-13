@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/text/patterns/syntax.el:320` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/syntax.el#L320)
 
+声明可组合的解析语法，支持空白跳过、token、递归 rule 与起始规则。
+
 ```el
 export syntax grammar
 ```
-
-声明可组合的解析语法，支持空白跳过、token、递归 rule 与起始规则。
 
 ### 示例：定义整数起始规则
 

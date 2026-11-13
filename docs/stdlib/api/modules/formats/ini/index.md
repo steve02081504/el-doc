@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/formats/ini/index.el:27` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/ini/index.el#L27)
 
+解析此模块支持的 INI 方言，生成嵌套动态对象，键和值均保持文本。
+
 ```el
 export fn parseINI(source: Text, limits: JsonLimits = JsonLimits()): any
 ```
 
 **返回类型**：[`any`](../../../../../reference/language/types.md)
-
-解析此模块支持的 INI 方言，生成嵌套动态对象，键和值均保持文本。
 
 **参数**：source 完整 INI 文本。
 

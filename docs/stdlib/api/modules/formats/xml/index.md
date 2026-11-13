@@ -14,13 +14,13 @@
 
 源码：`src/stdlib/formats/xml/index.el:157` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L157)
 
+解析受限的 XML 文档，保留元素、文本、CDATA、注释和处理指令节点。
+
 ```el
 export fn parseXML(source: Text, limits: JsonLimits = JsonLimits()): XmlDocument
 ```
 
 **返回类型**：[`XmlDocument`](../../../types.md#api-a9b268230a0106556c55)
-
-解析受限的 XML 文档，保留元素、文本、CDATA、注释和处理指令节点。
 
 **参数**：source 完整 XML 文本。
 

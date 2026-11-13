@@ -14,11 +14,11 @@
 
 源码：`src/stdlib/concurrency/tasks/parallel.el:78` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/tasks/parallel.el#L78)
 
+对可计数序列的元素应用变换，并按输入顺序收集结果。
+
 ```el
 export fn parallel_map(values, transform, limit: Number = 0, minimum: Number = 32)
 ```
-
-对可计数序列的元素应用变换，并按输入顺序收集结果。
 
 **参数**：values 输入序列。
 
@@ -45,11 +45,11 @@ let squares = parallel_map(@[1, 2, 3], value => value * value, 2, 1)
 
 源码：`src/stdlib/concurrency/tasks/parallel.el:131` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/tasks/parallel.el#L131)
 
+递归拆分问题，求解叶节点，并按子问题顺序合并两个结果。
+
 ```el
 export fn parallel_divide(problem, is_leaf, solve, split, merge, limit: Number = 0)
 ```
-
-递归拆分问题，求解叶节点，并按子问题顺序合并两个结果。
 
 **参数**：problem 当前问题值。
 
