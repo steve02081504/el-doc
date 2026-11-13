@@ -770,3 +770,28 @@ pre {
     left: 0.83rem;
   }
 }
+.el-virtual-chunk {
+	position: relative;
+	display: flow-root;
+}
+
+.el-virtual-chunk > span[id] {
+	position: absolute;
+	scroll-margin-top: 5rem;
+}
+
+.el-virtual-tools input {
+	display: block;
+	width: 100%;
+	padding: 0.5rem;
+	border: 1px solid var(--md-default-fg-color--light);
+	border-radius: 0.25rem;
+	color: var(--md-default-fg-color);
+	background: var(--md-default-bg-color);
+}
+
+[data-type-results] {
+	max-height: 20rem;
+	overflow: auto;
+}
+

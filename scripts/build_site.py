@@ -59,6 +59,9 @@ def build():
     load_hook("random_pages").write_page_list(ROOT / "docs", site)
     result = load_hook("code_links").link_site(site, ROOT / "docs")
     print(f"Reference links: {result['linked_pages']} pages updated; {result['validated_links']} internal links verified.", flush=True)
+    count = load_hook("virtual_content").virtualize_site(site)
+    load_hook("code_links").validate_site(site)
+    print(f"Virtual content: {count} entries loaded on demand.", flush=True)
 
 
 def main():
