@@ -12,7 +12,9 @@
 | 函数、lambda 与闭包 | [函数](functions.md) |
 | 类、对象与生命周期 | [类与生命周期](classes.md) |
 | 模块与导入 | [模块与导入](modules.md) |
+| 文本替换、条件选择与 include | [文件预处理](preprocessing.md) |
 | 异常、效果与并发 | [执行与并发](execution.md) |
 | 宏与元编程 | [宏与元编程](metaprogramming.md) |
+| 原生声明、调用约定与回调 | [外部接口与 ABI](foreign.md) |
 
 入门教程见[语言教程](../../language/index.md)。语言合同以[语法标准](https://github.com/steve02081504/el/blob/master/docs/spec/12-syntax.md)及各页所列专题规范为准。

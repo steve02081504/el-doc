@@ -38,6 +38,7 @@ console.info.value(@{ language: "EL" })
 | [类型](reference/language/types.md) | [函数与重载](reference/language/functions.md) | [异常与并发](reference/language/execution.md) |
 | [表达式与运算符](reference/language/expressions.md) | [类与生命周期](reference/language/classes.md) | [宏与元编程](reference/language/metaprogramming.md) |
 | [语言参考总览](reference/language/index.md) | [模块与导入](reference/language/modules.md) | [工具链与命令](toolchain.md) |
+| [文件预处理](reference/language/preprocessing.md) | [外部接口与 ABI](reference/language/foreign.md) | [规范与实现边界](appendix/implementation-status.md) |
 
 ## 标准库
 

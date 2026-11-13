@@ -9,6 +9,8 @@
 
     <span class="el-chip">⏱ 约 12 分钟</span> <span class="el-chip">前置：[模块与包](modules.md)</span>
 
+查询完整条件语法、集合 include 或预定义来源值，见[文件预处理参考](../reference/language/preprocessing.md)。
+
 ## 预处理在词法分析之前改一遍文本
 
 每个源码模块先取得源文本快照，再依次经过文件预处理、普通词法、接口发现、源码宏展开与类型检查（语言规范的文件预处理部分）。

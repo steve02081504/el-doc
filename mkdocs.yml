@@ -117,8 +117,10 @@ nav:
       - 函数: reference/language/functions.md
       - 类与生命周期: reference/language/classes.md
       - 模块与导入: reference/language/modules.md
+      - 文件预处理: reference/language/preprocessing.md
       - 异常与并发: reference/language/execution.md
       - 宏与元编程: reference/language/metaprogramming.md
+      - 外部接口与 ABI: reference/language/foreign.md
   - 标准库参考: stdlib/api/index.md
   - 工具链参考:
       - 命令与构建: toolchain.md

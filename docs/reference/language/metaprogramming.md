@@ -18,6 +18,7 @@
 
 - [词法元素](lexical.md)
 - [表达式与运算符](expressions.md)
+- [文件预处理参考](preprocessing.md)
 - [预处理教程](../../language/preprocessing.md)
 - [语法标准](https://github.com/steve02081504/el/blob/master/docs/spec/12-syntax.md)
 - [核心语义规范](https://github.com/steve02081504/el/blob/master/docs/spec/03-core-semantics.md)
