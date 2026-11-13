@@ -26,6 +26,8 @@ let maybeText: Text | void_t = void
 
 `any` 表示动态类型存储。`t_t`、`nil_t`、`void_t` 是标准环境提供的普通类型，不是编译器内建类。`nil` 与 `void` 是不同的值；缺失结果与假值不同，但条件中缺失按假值处理。
 
+`Bool` 是 `t_t | nil_t` 的类型别名，布尔值本来就是这两种类型之一，不需要再转换成该联合。不要把值名字 `t`、`nil` 与类型名字混写成 `t | nil`。`Bool(value)` 是同名的条件求值函数，按输入返回 `t` 或 `nil`；相关例子见[条件转换](conversions.md#conditions)。
+
 ## 相关条目
 
 - [左值、右值与亡值](value-categories.md)

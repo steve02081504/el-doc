@@ -65,8 +65,11 @@ class Catalog:
 				self.modules[entry["source"].removesuffix(".el")][name] = self.named(name, entry["source"])
 		for binding in model.get("environment", []):
 			entry = self.entries.get(binding.get("id"))
-			target = self.named(entry["name"].split("~")[0], entry["source"]) if entry else Target(
-				"stdlib/api/environment.md", anchor(binding["name"]), binding["name"], binding.get("value_type"))
+			target = self.named(entry["name"].split("~")[0], entry["source"]) if entry else None
+			if target is None and binding.get("source"):
+				target = self.named(binding["name"], binding["source"])
+			if target is None:
+				target = Target("stdlib/api/environment.md", anchor(binding["name"]), binding["name"], binding.get("value_type"))
 			self.defaults[binding["name"]] = target
 			# A documented original binding can also be imported from its source.
 			if binding.get("source"):

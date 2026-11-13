@@ -19,7 +19,7 @@ def on_config(config):
 				continue
 			for title, target in item.items():
 				if target == "stdlib/api/index.md":
-					item[title] = [{"分类总览": target}, {"默认环境": "stdlib/api/environment.md"}, {"模块索引": "stdlib/api/modules.md"}, {"符号索引": "stdlib/api/symbols.md"}, *categories]
+					item[title] = [{"分类总览": target}, {"默认环境": "stdlib/api/environment.md"}, {"类型定义": "stdlib/api/types.md"}, {"模块索引": "stdlib/api/modules.md"}, {"符号索引": "stdlib/api/symbols.md"}, *categories]
 				elif isinstance(target, list):
 					expand(target)
 

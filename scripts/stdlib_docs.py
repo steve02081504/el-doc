@@ -227,6 +227,7 @@ def prelude_environment(stdlib, entries):
 			return cache[path]
 		# Only top-level code participates; literals and comments are never parsed as exports.
 		code = [(k, t, start, end) for k, t, start, end in stream if k not in ("space", "comment", "doc")]
+		stream_positions = {token[2]: i for i, token in enumerate(stream)}
 		exports, declarations = {}, {}
 		depth = 0
 		for i, (kind, token, start, end) in enumerate(code):
@@ -251,7 +252,7 @@ def prelude_environment(stdlib, entries):
 					if match:
 						name = match[1]
 						try:
-							sig, line = signature(text, stream, next(j for j, t in enumerate(stream) if t[2] == start))
+							sig, line = signature(text, stream, stream_positions[start])
 						except DocumentationError:
 							continue
 						metadata = declaration_metadata(sig, text, line, name)
@@ -302,6 +303,110 @@ def prelude_environment(stdlib, entries):
 		if resolved_names:
 			public_exports[path.removesuffix(".el")] = resolved_names
 	return result, public_exports
+
+
+def type_index(stdlib, entries):
+	"""Index lexical type declarations and resolve names in their defining module."""
+	documented = {}
+	for e in entries:
+		if e["kind"] != "api": continue
+		name = e["name"].split("~")[0]
+		kind_match = re.search(r"\b(class|interface|enum|data|fn|let|const)\s+" + re.escape(name) + r"\b", e["signature"])
+		if kind_match: documented.setdefault((e["source"], name, kind_match[1]), []).append(e["id"])
+	modules, definitions = {}, []
+	for file in sorted(stdlib.rglob("*.el")):
+		path = file.relative_to(stdlib).as_posix()
+		text = file.read_text(encoding="utf-8-sig").replace("\r\n", "\n")
+		stream = list(tokens(text))
+		if any(k == "code" and t == "#" and not text[text.rfind("\n", 0, a) + 1:a].strip() for k,t,a,_ in stream):
+			continue
+		local, imports, reexports, exported = {}, {}, {}, set()
+		depth = 0
+		for i, (kind, token, start, end) in enumerate(stream):
+			if kind != "code": continue
+			if depth == 0 and token in ("import", "export"):
+				pattern = r'(?:export\s+(?:(?:lazy\s+)?import\s*)?|import\s+)\{([^{}]*)\}\s*from\s*"(file:[^"\n]+)"'
+				match = re.match(pattern, text[start:])
+				if match:
+					target = posixpath.normpath(posixpath.join(posixpath.dirname(path), match[2][5:]))
+					if not (stdlib / target).resolve().is_relative_to(stdlib.resolve()): continue
+					if not target.endswith(".el"):
+						if (stdlib / (target + ".el")).is_file(): target += ".el"
+						elif (stdlib / target / "index.el").is_file(): target += "/index.el"
+					for item in match[1].split(","):
+						part = re.fullmatch(r'\s*(\w+)(?:\s+as\s+(\w+))?\s*', item)
+						if part:
+							mapping = reexports if token == "export" else imports
+							mapping.setdefault(part[2] or part[1], []).append((target, part[1]))
+			if depth == 0 and token in ("class", "interface", "enum", "data", "fn", "let", "const"):
+				try: sig, line = signature(text, stream, i)
+				except DocumentationError: continue
+				match = re.match(r'(?:class|interface|enum|data|fn|let|const)\s+(\w+)', sig)
+				if not match: continue
+				name = match[1]
+				metadata = declaration_metadata(sig, text, line, name)
+				if token in ("fn", "let", "const") and (metadata["return_type"] if token == "fn" else metadata["value_type"]) != "type": continue
+				initializer = initializer_expression(sig, text, line, name)
+				ids = documented.get((path, name, token), [])
+				definition = {"name": name, "source": path, "line": line, "signature": sig, "id": ids[0] if len(ids) == 1 else None, "initializer": initializer}
+				local.setdefault(name, []).append(definition)
+				definitions.append(definition)
+				# Export may precede attributes on the same line.
+				prefix = text[text.rfind("\n", 0, start) + 1:start]
+				if re.search(r'\bexport\b', prefix): exported.add(name)
+			if token == "{": depth += 1
+			elif token == "}": depth = max(0, depth - 1)
+		modules[path] = (local, imports, reexports, exported, bool(re.search(r'@module\s*\(\s*prelude\s*:\s*nil', text)))
+	def exported_resolve(path, name, seen):
+		if (path, name) in seen or path not in modules: return None
+		local, _, reexports, exported, _ = modules[path]
+		found = []
+		if name in exported: found.extend(local.get(name, []))
+		for target, original in reexports.get(name, []):
+			item = exported_resolve(target, original, seen | {(path, name)})
+			if item is None: return None
+			found.append(item)
+		# Type binding is preferable to same-named type factory, e.g. Bool.
+		bindings = [x for x in found if re.match(r'(?:let|const)\b', x["signature"])]
+		if bindings: found = bindings
+		unique = {(x["source"], x["line"]): x for x in found}
+		return next(iter(unique.values())) if len(unique) == 1 else None
+	def resolve(path, name):
+		if path not in modules: return None
+		local, imports, _, _, disabled = modules[path]
+		found = local.get(name, [])
+		bindings = [x for x in found if re.match(r'(?:let|const)\b', x["signature"])]
+		if bindings: found = bindings
+		if found: return found[0] if len(found) == 1 else None
+		if name in imports:
+			resolved = [exported_resolve(target, original, set()) for target, original in imports[name]]
+			if any(x is None for x in resolved): return None
+			unique = {(x["source"], x["line"]): x for x in resolved}
+			return next(iter(unique.values())) if len(unique) == 1 else None
+		return None if disabled else exported_resolve("index.el", name, set())
+	builtins = {"type": "reference/language/types.md", "any": "reference/language/types.md", "ptr": "reference/language/foreign.md"}
+	for entry in entries:
+		if entry["kind"] != "api": continue
+		refs = {}
+		for field in ("value_type", "return_type"):
+			expression = entry.get(field)
+			if not expression: continue
+			items = []
+			for match in re.finditer(r'[A-Za-z_]\w*', expression):
+				name = match.group()
+				if expression[match.end():].lstrip().startswith(":"): continue
+				target = resolve(entry["source"], name)
+				if target:
+					identity = target["source"].removesuffix(".el") + "::" + target["name"]
+					location = {"type": "definition", "source": target["source"], "name": target["name"], "id": target["id"], "path": page_path(target["source"]) if target["id"] else "types.md", "fragment": anchor(target["id"] or identity)}
+				elif name in builtins:
+					location = {"type": "builtin", "source": None, "name": name, "id": None, "path": builtins[name], "fragment": None}
+				else:
+					location = None
+				items.append({"name": name, "start": match.start(), "end": match.end(), "target": location})
+			refs[field] = items
+		entry["type_references"] = refs
+	return definitions
 
 
 def parse_comment(lines):
@@ -412,7 +517,8 @@ def collect(root):
 	documented = {entry['source'] for entry in entries}
 	digest = hashlib.sha256(json.dumps(files, ensure_ascii=False, separators=(",", ":")).encode()).hexdigest()
 	environment, exports = prelude_environment(stdlib, entries)
-	return {"environment": environment, "exports": exports, "source_digest": digest, "files": [file for file in files if file['path'] in documented], "entries": entries, "coverage": {"source_files": len(files), "documented_files": len(documented), "documented_apis": sum(entry['kind'] == 'api' for entry in entries)}}
+	types = type_index(stdlib, entries)
+	return {"environment": environment, "exports": exports, "types": types, "source_digest": digest, "files": [file for file in files if file['path'] in documented], "entries": entries, "coverage": {"source_files": len(files), "documented_files": len(documented), "documented_apis": sum(entry['kind'] == 'api' for entry in entries)}}
 
 
 def anchor(identity):
@@ -432,7 +538,7 @@ def render(model, source_url=SOURCE_URL):
 	index = ["# 标准库 API 参考", "", "由 EL 源码中的文档注释生成。仅列出已标注接口；示例预期结果由作者提供，尚未运行验证。", "", "[结构化文档数据](api.json)", ""]
 	coverage = model["coverage"]
 	index += [f"已标注文档的文件：{coverage['documented_files']} / {coverage['source_files']}；API 条目：{coverage['documented_apis']}。此比例不是公开 API 覆盖率。", ""]
-	index += ["[按模块查找](modules.md) · [按符号查找](symbols.md) · [默认环境](environment.md)", "", "## 按库分类", "", "| 库 | 已标注模块 | API 条目 |", "| --- | ---: | ---: |"]
+	index += ["[按模块查找](modules.md) · [按符号查找](symbols.md) · [默认环境](environment.md) · [类型定义](types.md)", "", "## 按库分类", "", "| 库 | 已标注模块 | API 条目 |", "| --- | ---: | ---: |"]
 	categories = {}
 	for source, entries in grouped.items():
 		categories.setdefault(source.split('/')[0] if '/' in source else 'root', {})[source] = entries
@@ -479,10 +585,25 @@ def render(model, source_url=SOURCE_URL):
 			declaration += f"<br>`{signature_text}`"
 		environment.append(f"| <span id=\"{anchor(item['name'])}\"></span>`{item['name']}` | {declaration} | {summary} |")
 	pages["environment.md"] = "\n".join(environment) + "\n"
-	types = {}
-	for entry in model["entries"]:
-		if entry["kind"] == "api" and re.search(r"\b(?:class|interface|enum|data)\s+" + re.escape(entry["name"]) + r"\b", entry.get("signature", "")):
-			types.setdefault(entry["name"], []).append(entry)
+	type_groups = {}
+	for definition in model.get("types", []):
+		type_groups.setdefault((definition["source"], definition["name"]), []).append(definition)
+	type_lines = ["# 类型定义索引", "", "由源码声明词法提取；类型工厂及绑定分别列出。未执行或验证类型表达式。", ""]
+	for (source, name), group in sorted(type_groups.items()):
+		identity = source.removesuffix(".el") + "::" + name
+		type_lines += [f"## {name} · {source} {{#{anchor(identity)}}}", ""]
+		for definition in group:
+			url = source_url.rstrip("/") + "/" + quote(source, safe="/") + f"#L{definition['line']}"
+			type_lines += [f"[源码 {source}:{definition['line']}]({url})", "", "```el", definition["signature"] + (" = " + definition["initializer"] if definition["initializer"] is not None else ""), "```", ""]
+			if definition["id"]:
+				type_lines += [f"[API 文档]({page_path(source)}#{anchor(definition['id'])})", ""]
+		for entry in model["entries"]:
+			if entry["source"] != source or entry["kind"] != "api" or entry["name"].split("~")[0] != name:
+				continue
+			if any(item["id"] == entry["id"] for item in group): continue
+			if not re.search(r"\bfn\s+" + re.escape(name) + r"\b", entry["signature"]): continue
+			type_lines += [f"[同名函数 API]({page_path(source)}#{anchor(entry['id'])})", "", "```el", entry["signature"], "```", ""]
+	pages["types.md"] = "\n".join(type_lines)
 	labels = {"param": "参数", "returns": "返回值", "throws": "失败与异常", "complexity": "复杂度", "note": "注意", "example": "示例"}
 	for source, entries in grouped.items():
 		path = page_path(source)
@@ -515,16 +636,26 @@ def render(model, source_url=SOURCE_URL):
 					display += " = " + entry["initializer"]
 				lines += ["```el", display, "```", ""]
 			for field, label in (("value_type", "类型"), ("return_type", "返回类型")):
-				type_name = entry.get(field)
-				if type_name:
-					candidates = types.get(type_name, [])
-					if len(candidates) == 1:
-						target = candidates[0]
-						link = posixpath.relpath(page_path(target["source"]), posixpath.dirname(path))
-						formatted = f"[`{type_name}`]({link}#{anchor(target['id'])})"
+				expression = entry.get(field)
+				if not expression: continue
+				pieces, offset, unresolved = [], 0, []
+				for ref in entry.get("type_references", {}).get(field, []):
+					pieces.append(expression[offset:ref["start"]])
+					target = ref["target"]
+					if target:
+						if target["type"] == "builtin":
+							link = posixpath.relpath("../../" + target["path"], posixpath.dirname(path))
+						else:
+							link = posixpath.relpath(target["path"], posixpath.dirname(path))
+						if target["fragment"]: link += "#" + target["fragment"]
+						pieces.append(f"[`{ref['name']}`]({link})")
 					else:
-						formatted = f"`{type_name}`"
-					lines += [f"**{label}**：{formatted}", ""]
+						pieces.append(f"`{ref['name']}`")
+						unresolved.append(ref["name"])
+					offset = ref["end"]
+				pieces.append(expression[offset:])
+				lines += [f"**{label}**：" + "".join(pieces), ""]
+				if unresolved: lines += ["未解析：" + "、".join(f"`{name}`" for name in dict.fromkeys(unresolved)), ""]
 			for section in entry["sections"]:
 				tag, value = section["tag"], section["value"]
 				if tag == "see":

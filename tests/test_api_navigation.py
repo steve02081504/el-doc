@@ -30,6 +30,7 @@ class NavigationTests(unittest.TestCase):
 			self.assertIn("stdlib/api/modules/text/nested/parser.md", actual)
 			self.assertIn("stdlib/api/modules.md", actual)
 			self.assertIn("stdlib/api/symbols.md", actual)
+			self.assertIn("stdlib/api/types.md", actual)
 			self.assertIn("stdlib/api/categories/text.md", actual)
 
 
