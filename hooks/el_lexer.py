@@ -1,7 +1,7 @@
-"""Pygments lexers and MkDocs hook for EL source code blocks.
+"""Pygments lexers for EL source code blocks.
 
 The site uses ```el fences throughout. Pygments has no built-in EL lexer, so
-this hook registers small RegexLexers before rendering: `el` for source, `eol`
+the build script registers small RegexLexers before rendering: `el` for source, `eol`
 for the data literal format used by project files, and `repl` for interactive
 session transcripts. Keeping them here means the site stays self-contained and
 no extra package is needed on CI.
@@ -132,7 +132,3 @@ LEXERS["ELReplLexer"] = (
 )
 _lexer_cache["EL"] = ELLexer
 _lexer_cache["EL REPL"] = ELReplLexer
-
-
-def on_config(config):
-    return config

@@ -2,13 +2,15 @@ from html import unescape
 from pathlib import Path
 import re
 import sys
+import subprocess
+import tempfile
 import unittest
 
 import markdown
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import hooks.el_lexer
-from hooks.code_links import Catalog, CodeLinker, anchor, code_targets
+from hooks.code_links import Catalog, CodeLinker, anchor, code_targets, validate_site
 
 
 def entry(name, value_type=None, return_type=None, source="console/facade.el"):
@@ -32,6 +34,19 @@ def catalog():
 class CodeLinkTests(unittest.TestCase):
 	def setUp(self):
 		self.catalog = catalog()
+
+	def test_hook_loads_without_repository_on_python_path(self):
+		script = '''import importlib.util, sys
+spec = importlib.util.spec_from_file_location("standalone_code_links", sys.argv[1])
+module = importlib.util.module_from_spec(spec)
+sys.modules[spec.name] = module
+spec.loader.exec_module(module)
+'''
+		with tempfile.TemporaryDirectory() as directory:
+			result = subprocess.run([sys.executable, "-I", "-c", script,
+				str(Path(__file__).resolve().parents[1] / "hooks/code_links.py")],
+				cwd=directory, capture_output=True, text=True)
+		self.assertEqual(result.returncode, 0, result.stderr)
 
 	def names(self, code):
 		return {code[offset:offset + length]: target for offset, (length, target) in code_targets(code, self.catalog).items()}
@@ -83,6 +98,29 @@ class CodeLinkTests(unittest.TestCase):
 		self.assertEqual(self.names("if condition { return value }")["if"].path, "reference/language/control-flow.md")
 		self.assertEqual(self.names('@assign(mode: "copy")')["@assign"].path, "reference/language/assignment-semantics.md")
 
+	def test_signature_types_follow_defining_module_not_default_names(self):
+		definition = entry("lookup", source="custom.el")
+		definition.update(signature="fn lookup(): Number | ptr", return_type="Number | ptr", type_references={"return_type": [
+			{"name": "Number", "start": 0, "end": 6, "target": {"type": "definition", "path": "types.md", "fragment": "custom-number"}},
+			{"name": "ptr", "start": 9, "end": 12, "target": {"type": "builtin", "path": "reference/language/foreign.md", "fragment": None}}]})
+		other = {**definition, "source": "other.el", "id": "other::lookup", "type_references": {"return_type": []}}
+		model = {"entries": [definition, other], "environment": [{"name": "Number", "id": None, "source": None}]}
+		catalog = Catalog(model)
+		targets = code_targets(definition["signature"], catalog, "custom.el")
+		self.assertEqual(targets[13][1].fragment, "custom-number")
+		self.assertEqual(targets[22][1].path, "reference/language/foreign.md")
+
+	def test_rendered_site_validator_checks_real_targets_and_fragments(self):
+		with tempfile.TemporaryDirectory() as directory:
+			root = Path(directory)
+			(root / "index.html").write_text('<a href="type/#number">Number</a>', encoding="utf-8")
+			(root / "type").mkdir()
+			(root / "type/index.html").write_text('<h1 id="number">Number</h1>', encoding="utf-8")
+			self.assertEqual(validate_site(root), 1)
+			(root / "type/index.html").write_text('<h1 id="other">Other</h1>', encoding="utf-8")
+			with self.assertRaisesRegex(ValueError, "missing site anchor"):
+				validate_site(root)
+
 	def test_explicitly_typed_local_links_only_members(self):
 		code = 'let output: ConsolePort = selected\noutput.writeLine("hello")'
 		targets = self.names(code)
@@ -102,7 +140,8 @@ class CodeLinkTests(unittest.TestCase):
 		self.assertEqual(linked.count('class="el-code-link"'), 3)
 		plain = lambda content: unescape(re.sub(r"<[^>]+>", "", content))
 		self.assertEqual(plain(html), plain(linked))
-		self.assertIn('&quot;&lt;hello&gt; &amp; world&quot;', linked)
+		self.assertIn('&lt;hello&gt; &amp; world', linked)
+		self.assertNotIn('<hello>', linked)
 		self.assertEqual(CodeLinker(linked, self.catalog, lambda target: "wrong").render(), linked)
 
 	def test_non_el_and_inline_code_are_unchanged(self):

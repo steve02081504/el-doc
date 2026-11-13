@@ -1,30 +1,18 @@
-"""Publish the list of content pages used by the footer's random-page button.
-
-The button needs the site's page URLs relative to the site root. Collecting
-them while pages render keeps the list in sync with the navigation without a
-second source of truth.
-"""
+"""Publish the content page URLs used by the random-page button."""
 
 import json
-import os
-
-_pages: set[str] = set()
+from pathlib import Path
 
 
-def on_config(config):
-    _pages.clear()
-    return config
-
-
-def on_page_context(context, *, page, config, nav):
-    if page.file.src_uri != "404.md":
-        _pages.add(page.url)
-    return context
-
-
-def on_post_build(config):
-    assets = os.path.join(config["site_dir"], "assets")
-    os.makedirs(assets, exist_ok=True)
-    path = os.path.join(assets, "random-pages.json")
-    with open(path, "w", encoding="utf-8") as handle:
-        json.dump(sorted(_pages), handle, ensure_ascii=False, separators=(",", ":"))
+def write_page_list(docs_dir, site_dir):
+    docs_dir = Path(docs_dir)
+    pages = []
+    for source in docs_dir.rglob("*.md"):
+        relative = source.relative_to(docs_dir)
+        if relative.as_posix() == "404.md":
+            continue
+        url = relative.parent.as_posix() + "/" if relative.name == "index.md" else relative.with_suffix("").as_posix() + "/"
+        pages.append("" if url == "./" else url)
+    path = Path(site_dir) / "assets" / "random-pages.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(sorted(pages), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

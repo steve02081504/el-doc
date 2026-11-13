@@ -41,12 +41,6 @@ theme:
     - content.code.annotate
     - content.tabs.link
 
-hooks:
-  - hooks/api_navigation.py
-  - hooks/el_lexer.py
-  - hooks/code_links.py
-  - hooks/random_pages.py
-
 markdown_extensions:
   - admonition
   - attr_list

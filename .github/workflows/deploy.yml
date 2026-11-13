@@ -26,10 +26,10 @@ jobs:
           cache: pip
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Build site
-        run: mkdocs build --strict
-      - name: Test documentation extractor
+      - name: Test documentation tools
         run: python -m unittest discover -s tests -v
+      - name: Build site
+        run: python scripts/build_site.py build
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:

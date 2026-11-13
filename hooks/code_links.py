@@ -7,17 +7,24 @@ Local declarations suppress automatic links; unknown receiver types stay plain.
 from collections import defaultdict
 from dataclasses import dataclass
 import hashlib
+import importlib.util
 from html import escape, unescape
 from html.parser import HTMLParser
 import json
 from pathlib import Path
+import posixpath
 import re
+from types import SimpleNamespace
+from urllib.parse import unquote, urlsplit
 
-from mkdocs.utils import get_relative_url
 from pygments.lexers import get_lexer_by_name
 from pygments.token import Comment, Keyword, Name, String, Text, Whitespace
 
-from scripts.stdlib_docs import DocumentationError, tokens as source_tokens
+_source_spec = importlib.util.spec_from_file_location("el_doc_source", Path(__file__).resolve().parents[1] / "scripts/stdlib_docs.py")
+_source_docs = importlib.util.module_from_spec(_source_spec)
+_source_spec.loader.exec_module(_source_docs)
+DocumentationError = _source_docs.DocumentationError
+source_tokens = _source_docs.tokens
 
 
 def anchor(identity):
@@ -57,8 +64,14 @@ class Catalog:
 		self.names = defaultdict(list)
 		self.modules = defaultdict(dict)
 		self.defaults = {}
+		self.signature_types = {}
 		for entry in self.entries.values():
 			self.names[entry["name"].split("~")[0]].append(entry)
+			if "signature" in entry:
+				display = entry["signature"]
+				if entry.get("initializer") is not None:
+					display += " = " + entry["initializer"]
+				self.signature_types.setdefault(display, []).append(entry)
 		for entry in self.entries.values():
 			name = entry["name"].split("~")[0]
 			if "." not in name:
@@ -103,8 +116,35 @@ class Catalog:
 			return self.defaults.get(name)
 		return self.modules.get(module, {}).get(name)
 
+	def type_targets(self, code, source=None):
+		"""Use declaration-context references only for an exact generated signature."""
+		result = {}
+		matches = self.signature_types.get(code.strip(), [])
+		if source is not None:
+			matches = [entry for entry in matches if entry["source"] == source]
+		if len(matches) != 1:
+			return result
+		entry = matches[0]
+		base = code.find(entry["signature"])
+		for field, references in entry.get("type_references", {}).items():
+			expression = entry.get(field)
+			if not expression:
+				continue
+			start = entry["signature"].rfind(expression)
+			if start < 0:
+				continue
+			for reference in references:
+				target = reference["target"]
+				# Explicitly unresolved names suppress default same-name lookup.
+				location = None
+				if target:
+					path = target["path"] if target["type"] == "builtin" else "stdlib/api/" + target["path"]
+					location = Target(path, target.get("fragment") or "", reference["name"])
+				result[base + start + reference["start"]] = (reference["end"] - reference["start"], location)
+		return result
 
-def code_targets(code, catalog):
+
+def code_targets(code, catalog, source=None):
 	"""Return source offsets for names whose documentation target is known.
 
 	Bindings declared anywhere in a fragment suppress default lookup throughout
@@ -215,15 +255,21 @@ def code_targets(code, catalog):
 		resolved[index] = target
 		if target and target.path:
 			result[offset] = (len(value), target)
+	for offset, (length, target) in catalog.type_targets(code, source).items():
+		if target:
+			result[offset] = (length, target)
+		else:
+			result.pop(offset, None)
 	return result
 
 
 class CodeLinker(HTMLParser):
-	def __init__(self, html, catalog, url_for):
+	def __init__(self, html, catalog, url_for, source=None):
 		super().__init__(convert_charrefs=False)
 		self.html = html
 		self.catalog = catalog
 		self.url_for = url_for
+		self.source = source
 		self.lines = [0]
 		self.lines.extend(match.end() for match in re.finditer("\n", html))
 		self.stack = []
@@ -280,7 +326,7 @@ class CodeLinker(HTMLParser):
 		self.part(raw, unescape(raw))
 
 	def link_block(self):
-		targets = code_targets(self.code["text"], self.catalog)
+		targets = code_targets(self.code["text"], self.catalog, self.source)
 		for start, raw_start, raw, decoded in self.code["parts"]:
 			pieces = []
 			cursor = 0
@@ -326,9 +372,15 @@ def on_files(files, config):
 def on_page_content(html, page, config, files):
 	def url_for(target):
 		_used_targets.add(target)
-		url = get_relative_url(_files[target.path], page.url)
+		target_url = _files[target.path]
+		parent = page.url if page.url.endswith("/") else posixpath.dirname(page.url)
+		url = posixpath.relpath(target_url or ".", parent or ".")
+		if (not target_url or target_url.endswith("/")) and not url.endswith("/"):
+			url += "/"
 		return url + ("#" + target.fragment if target.fragment else "")
-	return CodeLinker(html, _catalog, url_for).render()
+	uri = getattr(getattr(page, "file", None), "src_uri", "")
+	source = uri.removeprefix("stdlib/api/modules/").removesuffix(".md") + ".el" if uri.startswith("stdlib/api/modules/") else None
+	return CodeLinker(html, _catalog, url_for, source).render()
 
 
 class FragmentIndex(HTMLParser):
@@ -351,3 +403,66 @@ def on_post_build(config):
 			fragments[target.path] = FragmentIndex(Path(_destinations[target.path]).read_text(encoding="utf-8")).ids
 		if target.fragment and target.fragment not in fragments[target.path]:
 			raise ValueError(f"missing code reference anchor: {target.path}#{target.fragment}")
+
+
+class PageIndex(FragmentIndex):
+	def __init__(self, html):
+		self.links = []
+		super().__init__(html)
+
+	def handle_starttag(self, tag, attrs):
+		super().handle_starttag(tag, attrs)
+		attributes = dict(attrs)
+		if tag == "a" and attributes.get("href"):
+			self.links.append(attributes["href"])
+
+
+def validate_site(site_dir):
+	"""Check actual rendered internal hyperlinks, including generated type links."""
+	site_dir = Path(site_dir).resolve()
+	pages = {path.resolve(): PageIndex(path.read_text(encoding="utf-8")) for path in site_dir.rglob("*.html")}
+	count = 0
+	for path, page in pages.items():
+		for href in page.links:
+			url = urlsplit(href)
+			if url.scheme or url.netloc or url.path.startswith("/"):
+				continue
+			target = (path.parent / unquote(url.path)).resolve() if url.path else path
+			if target.is_dir():
+				target /= "index.html"
+			if not target.is_relative_to(site_dir) or not target.is_file():
+				raise ValueError(f"missing site link: {path.relative_to(site_dir)} -> {href}")
+			if url.fragment and target in pages and unquote(url.fragment) not in pages[target].ids:
+				raise ValueError(f"missing site anchor: {path.relative_to(site_dir)} -> {href}")
+			count += 1
+	return count
+
+
+def link_site(site_dir, docs_dir, *, use_directory_urls=True):
+	"""Apply reference links to a built static site without builder plugin APIs."""
+	site_dir, docs_dir = Path(site_dir).resolve(), Path(docs_dir).resolve()
+	files = []
+	for path in sorted(docs_dir.rglob("*.md")):
+		uri = path.relative_to(docs_dir).as_posix()
+		stem = uri.removesuffix(".md")
+		if stem == "404" or not use_directory_urls:
+			url = stem + ".html"
+		elif path.name == "index.md":
+			url = stem.removesuffix("index")
+		else:
+			url = stem + "/"
+		destination = site_dir / (url + "index.html" if not url or url.endswith("/") else url)
+		if destination.is_file():
+			files.append(SimpleNamespace(src_uri=uri, url=url, abs_dest_path=str(destination)))
+	config = {"site_dir": str(site_dir), "docs_dir": str(docs_dir)}
+	on_files(files, config)
+	changed = 0
+	for file in files:
+		path = Path(file.abs_dest_path)
+		original = path.read_text(encoding="utf-8")
+		linked = on_page_content(original, SimpleNamespace(url=file.url, file=file), config, files)
+		if linked != original:
+			_source_docs.atomic_write(path, linked)
+			changed += 1
+	on_post_build(config)
+	return {"linked_pages": changed, "validated_links": validate_site(site_dir)}

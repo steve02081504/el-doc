@@ -3,7 +3,7 @@
 from pathlib import Path
 
 
-def on_config(config):
+def expand_navigation(config):
 	root = Path(config["docs_dir"]) / "stdlib/api/modules"
 	categories = []
 	for category in sorted((root.parent / "categories").glob("*.md")):

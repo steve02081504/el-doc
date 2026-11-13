@@ -368,7 +368,9 @@ def type_index(stdlib, entries):
 			found.append(item)
 		# Type binding is preferable to same-named type factory, e.g. Bool.
 		bindings = [x for x in found if re.match(r'(?:let|const)\b', x["signature"])]
+		nominal = [x for x in found if re.match(r'(?:class|interface|enum|data)\b', x["signature"])]
 		if bindings: found = bindings
+		elif nominal: found = nominal
 		unique = {(x["source"], x["line"]): x for x in found}
 		return next(iter(unique.values())) if len(unique) == 1 else None
 	def resolve(path, name):
@@ -376,7 +378,9 @@ def type_index(stdlib, entries):
 		local, imports, _, _, disabled = modules[path]
 		found = local.get(name, [])
 		bindings = [x for x in found if re.match(r'(?:let|const)\b', x["signature"])]
+		nominal = [x for x in found if re.match(r'(?:class|interface|enum|data)\b', x["signature"])]
 		if bindings: found = bindings
+		elif nominal: found = nominal
 		if found: return found[0] if len(found) == 1 else None
 		if name in imports:
 			resolved = [exported_resolve(target, original, set()) for target, original in imports[name]]

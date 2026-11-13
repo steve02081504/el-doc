@@ -1,0 +1,44 @@
+"""Checks for generated navigation and random-page URLs."""
+
+import importlib.util
+import json
+from pathlib import Path
+import tempfile
+import unittest
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def load(name):
+    spec = importlib.util.spec_from_file_location(name, ROOT / "hooks" / f"{name}.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+class SiteAssetsTest(unittest.TestCase):
+    def test_random_page_urls_match_directory_urls(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            docs = root / "docs"
+            (docs / "guide").mkdir(parents=True)
+            for path in ("index.md", "404.md", "guide/index.md", "guide/start.md"):
+                (docs / path).write_text("# Page", encoding="utf-8")
+            load("random_pages").write_page_list(docs, root / "site")
+            pages = json.loads((root / "site/assets/random-pages.json").read_text(encoding="utf-8"))
+            self.assertEqual(pages, ["", "guide/", "guide/start/"])
+
+    def test_navigation_includes_generated_modules(self):
+        with tempfile.TemporaryDirectory() as temp:
+            docs = Path(temp)
+            (docs / "stdlib/api/categories").mkdir(parents=True)
+            (docs / "stdlib/api/modules/io").mkdir(parents=True)
+            (docs / "stdlib/api/categories/io.md").touch()
+            (docs / "stdlib/api/modules/io/file.md").touch()
+            config = {"docs_dir": str(docs), "nav": [{"API": "stdlib/api/index.md"}]}
+            load("api_navigation").expand_navigation(config)
+            self.assertIn({"io/file": "stdlib/api/modules/io/file.md"}, config["nav"][0]["API"][-1]["io"])
+
+
+if __name__ == "__main__":
+    unittest.main()

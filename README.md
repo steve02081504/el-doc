@@ -1,10 +1,10 @@
 # EL 语言参考
 
-EL 的语言、标准库和工具链参考站，附入门教程与实战指南。使用 MkDocs Material 构建，通过 GitHub Pages 发布。
+EL 的语言、标准库和工具链参考站，附入门教程与实战指南。使用 Zensical 构建，通过 GitHub Pages 发布。
 
 - 在线阅读：[EL 语言参考](https://steve02081504.github.io/el-doc/)
-- 本地预览：安装 `requirements.txt` 中的依赖后运行 `mkdocs serve`。
-- 构建检查：`mkdocs build --strict`。
+- 本地预览：安装 `requirements.txt` 中的依赖后运行 `python scripts/build_site.py serve`（修改后需重新运行）。
+- 构建检查：`python scripts/build_site.py build`。
 - 写作约定：[AUTHORING.md](AUTHORING.md)。
 
 ## 结构
@@ -27,7 +27,7 @@ EL 的语言、标准库和工具链参考站，附入门教程与实战指南�
 python scripts/stdlib_docs.py --el-root /path/to/el
 python scripts/stdlib_docs.py --el-root /path/to/el --check
 python -m unittest discover -s tests -v
-mkdocs build --strict
+python scripts/build_site.py build
 ```
 
 提取器读取 `src/stdlib/**/*.el` 中的功能性注释，输出 Markdown 与 `api.json`。API 页、默认环境、分类页、模块索引和符号索引均从同一模型生成；`hooks/api_navigation.py` 将分类和模块自动加入导航。格式、覆盖统计与提取边界见[文档注释与生成](docs/stdlib/documentation-comments.md)。生成快照随本仓库提交，站点构建不要求另行检出 EL。

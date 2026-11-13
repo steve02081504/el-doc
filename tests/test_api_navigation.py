@@ -4,7 +4,7 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "hooks"))
-from api_navigation import on_config
+from api_navigation import expand_navigation
 
 
 class NavigationTests(unittest.TestCase):
@@ -16,7 +16,7 @@ class NavigationTests(unittest.TestCase):
 				path.parent.mkdir(parents=True, exist_ok=True)
 				path.write_text("# Reference\n", encoding="utf-8")
 			config = {"docs_dir": str(root), "nav": [{"标准库": "stdlib/api/index.md"}]}
-			on_config(config)
+			expand_navigation(config)
 			def paths(items):
 				for item in items:
 					for target in item.values():
