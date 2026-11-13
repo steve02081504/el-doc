@@ -40,4 +40,6 @@ python scripts/build_site.py build
 
 `hooks/code_links.py` 使用生成的声明模型，把 EL 代码块中的标准环境名字、可确定的导入和成员链接到参考条目，关键词链接到语言参考。构建结束时检查链接页面和锚点；局部遮盖与未知接收者不按同名猜测。
 
+`hooks/virtual_content.py` 在构建后拆分超过 120 项的章节目录、平面表格和列表；`docs/assets/virtual-content.js` 按阅读位置加载每批 40 项，并释放远离视口的内容。旧锚点仍可跳转，页内搜索查询完整条目索引；浏览器自带查找与打印请使用页面上的“完整页面”入口。嵌套列表保留层级，不拆分。
+
 推送到 `master` 后，`.github/workflows/deploy.yml` 检查站点与提取器，再发布到 GitHub Pages。

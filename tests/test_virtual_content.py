@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import re
 from pathlib import Path
 import tempfile
 import unittest
@@ -51,6 +52,15 @@ class VirtualContentTests(unittest.TestCase):
 				contents = [part for chunk in path.parent.glob('content-*.json') if chunk.name != 'content-index.json' for part in json.loads(chunk.read_text(encoding='utf-8'))]
 				self.assertIn('After list', ''.join(contents))
 				for part in contents:
-					self.assertLessEqual(part.count('<' + tag + '>'), 1)
-					self.assertEqual(part.count('<' + tag + '>'), part.count('</' + tag + '>'))
+					opening_count = len(re.findall('<' + tag + r'\b', part))
+					self.assertLessEqual(opening_count, 1)
+					self.assertEqual(opening_count, part.count('</' + tag + '>'))
 				self.assertTrue(set(item['id'] for item in index).issubset(set(virtual.Ids(''.join(contents)).ids)))
+
+	def test_nested_lists_stay_intact(self):
+		with tempfile.TemporaryDirectory() as directory:
+			path = Path(directory) / 'index.html'
+			html = '<article><ul><li>Parent<ul>' + ''.join(f'<li>Nested{i}</li>' for i in range(160)) + '</ul></li></ul></article>'
+			path.write_text(html, encoding='utf-8')
+			self.assertEqual(virtual.virtualize_page(path), 0)
+			self.assertEqual(path.read_text(encoding='utf-8'), html)

@@ -28,7 +28,20 @@
 					if (stopped) return;
 					chunk.element.innerHTML = sections.join("");
 					chunk.element.style.minHeight = "0";
+					chunk.element.querySelectorAll(".highlight pre").forEach(function (pre) {
+						var copy = document.createElement("button");
+						copy.className = "el-copy-button";
+						copy.textContent = "复制";
+						copy.setAttribute("aria-label", "复制代码");
+						copy.onclick = function () {
+							navigator.clipboard.writeText(pre.querySelector("code").textContent).then(function () {
+								copy.textContent = "已复制";
+							}, function () { copy.textContent = "复制失败，请手动选择"; });
+						};
+						pre.before(copy);
+					});
 					chunk.loaded = true;
+					chunk.failed = false;
 				})
 				.catch(function () {
 					if (stopped) return;
@@ -38,7 +51,8 @@
 					retry.textContent = "重试";
 					retry.onclick = function () { chunk.promise = null; load(chunk); };
 					error.appendChild(retry);
-					chunk.element.replaceChildren(error);
+					chunk.element.innerHTML = chunk.placeholder;
+					chunk.element.appendChild(error);
 					chunk.failed = true;
 				})
 				.finally(function () {
@@ -73,7 +87,7 @@
 			chunk.visible = true;
 			chunk.pinned = true;
 			load(chunk).then(function () {
-				if (stopped || ticket !== navigation) return;
+				if (stopped || ticket !== navigation) { chunk.pinned = false; return; }
 				var destination = document.getElementById(identity);
 				if (destination) destination.scrollIntoView();
 				chunk.pinned = false;

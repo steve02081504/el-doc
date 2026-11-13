@@ -1,12 +1,11 @@
 """Keep large reference pages out of the browser's initial DOM and layout."""
 
-from html import escape
+from html import escape, unescape
 import hashlib
 from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
-from html import unescape
 
 
 class TocRanges(HTMLParser):
@@ -45,6 +44,28 @@ class Ids(HTMLParser):
 		if identity: self.ids.append(identity)
 
 
+class ListBlocks(HTMLParser):
+	"""Locate complete outer blocks, so nested lists are never cut in half."""
+	def __init__(self, html):
+		super().__init__()
+		self.lines = [0] + [match.end() for match in re.finditer("\n", html)]
+		self.stack = []
+		self.blocks = []
+		self.feed(html)
+
+	def handle_starttag(self, tag, attrs):
+		if tag in ("table", "ul", "ol"):
+			line, column = self.getpos()
+			self.stack.append((tag, self.lines[line - 1] + column))
+
+	def handle_endtag(self, tag):
+		if self.stack and tag == self.stack[-1][0]:
+			_, start = self.stack.pop()
+			if not self.stack:
+				line, column = self.getpos()
+				self.blocks.append((tag, start, self.lines[line - 1] + column + len(tag) + 3))
+
+
 def virtualize_page(path, batch_size=40):
 	path = Path(path)
 	html = path.read_text(encoding="utf-8")
@@ -62,28 +83,34 @@ def virtualize_page(path, batch_size=40):
 		sections, labels = [], []
 		cursor = 0
 		prefix = ""
-		for block in re.finditer(r'<(table|ul|ol)\b[^>]*>.*?</\1>', article[1], re.S):
-			tag = block[1]
-			if tag != "table" and len(re.findall(r'<(?:ul|ol)\b', block[0])) != 1: continue
+		for tag, begin, end in ListBlocks(article[1]).blocks:
+			block = article[1][begin:end]
+			if len(re.findall(r'<(?:table|ul|ol)\b', block)) != 1: continue
 			row_tag = "tr" if tag == "table" else "li"
-			body = re.search(r'<tbody\b[^>]*>(.*?)</tbody>', block[0], re.S) if tag == "table" else None
-			content = body[1] if body else block[0]
+			body = re.search(r'<tbody\b[^>]*>(.*?)</tbody>', block, re.S) if tag == "table" else None
+			content = body[1] if body else block
 			rows = list(re.finditer(fr'<{row_tag}\b[^>]*>.*?</{row_tag}>', content, re.S))
 			if len(rows) <= batch_size * 3: continue
 			if tag == "table" and body is None: continue
-			before = article[1][cursor:block.start()]
+			before = article[1][cursor:begin]
 			if not sections: prefix = before
 			elif before.strip():
 				sections.append(before)
 				labels.append(before)
 			if body:
-				opening, closing = block[0][:body.start(1)], block[0][body.end(1):]
+				opening, closing = block[:body.start(1)], block[body.end(1):]
 			else:
-				opening, closing = block[0][:rows[0].start()], block[0][rows[-1].end():]
-			for row in rows:
-				sections.append(opening + row[0] + closing)
+				opening, closing = block[:rows[0].start()], block[rows[-1].end():]
+			for row_index, row in enumerate(rows):
+				row_opening = opening if row_index == 0 else re.sub(r'\s+id="[^"]*"', '', opening)
+				if tag == 'ol':
+					start_match = re.search(r'\bstart="(-?\d+)"', opening)
+					initial = int(start_match[1]) if start_match else 1
+					row_opening = re.sub(r'\s+start="[^"]*"', '', row_opening)
+					row_opening = row_opening.replace('<ol', f'<ol start="{initial + row_index}"', 1)
+				sections.append(row_opening + row[0] + closing)
 				labels.append(row[0])
-			cursor = block.end()
+			cursor = end
 		if not sections: return 0
 		if article[1][cursor:].strip():
 			sections.append(article[1][cursor:])

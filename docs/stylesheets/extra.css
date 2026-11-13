@@ -775,6 +775,13 @@ pre {
 	display: flow-root;
 }
 
+.el-copy-button {
+	float: right;
+	padding: 0.2rem 0.5rem;
+	color: var(--md-default-fg-color--light);
+	cursor: pointer;
+}
+
 .el-virtual-chunk > span[id] {
 	position: absolute;
 	scroll-margin-top: 5rem;
@@ -794,4 +801,3 @@ pre {
 	max-height: 20rem;
 	overflow: auto;
 }
-
