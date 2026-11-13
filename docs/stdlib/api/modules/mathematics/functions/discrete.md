@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../../categories/mathematics.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
+
 ## 离散数学函数 {#api-f2c13b25cd31a256e9f9}
 
 源码：`src/stdlib/mathematics/functions/discrete.el:11` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/discrete.el#L11)

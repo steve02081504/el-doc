@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/errors.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 断言错误 {#api-c4ee9f181a993c384404}
 
 源码：`src/stdlib/errors/assertions.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/errors/assertions.el#L1)

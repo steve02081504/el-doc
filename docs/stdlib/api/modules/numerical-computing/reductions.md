@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/numerical-computing.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 数值张量归约 {#api-87971c168de59c1f7b6a}
 
 源码：`src/stdlib/numerical-computing/reductions.el:11` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/reductions.el#L11)

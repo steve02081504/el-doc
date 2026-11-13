@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../../categories/collections.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
+
 ## 哈希映射 {#api-e6d15a4109b1ed7292c3}
 
 源码：`src/stdlib/collections/maps/hash-map.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L1)

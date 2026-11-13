@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../../categories/tools.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
+
 ## 测试比较断言 {#api-f960aaa2ccb3388fd730}
 
 源码：`src/stdlib/tools/testing/check.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L1)

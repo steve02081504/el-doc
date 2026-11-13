@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/numerical-computing.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 数值求解诊断 {#api-fc9691112daee7143abd}
 
 源码：`src/stdlib/numerical-computing/diagnostics.el:10` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/diagnostics.el#L10)

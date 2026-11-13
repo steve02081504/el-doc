@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../../categories/mathematics.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
+
 ## 数学初等函数 {#api-7d8af95145ca6c477bdb}
 
 源码：`src/stdlib/mathematics/functions/elementary.el:14` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L14)
@@ -121,7 +123,7 @@ export fn pi(Result: type)
 ### 示例：请求指定精度的圆周率
 
 ```el
-let Scalar = Number<epsilon: 0.001>
+let Scalar = Number<min: unbounded, max: unbounded, epsilon: 0.001>
 let circle = pi(Scalar)
 ```
 

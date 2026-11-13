@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../../categories/collections.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
+
 ## 固定位宽集合 {#api-dfad88fa0fa6c0a8b573}
 
 源码：`src/stdlib/collections/sets/bit-set.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/bit-set.el#L1)

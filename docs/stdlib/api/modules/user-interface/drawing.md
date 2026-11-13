@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/user-interface.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 界面绘制主题 {#api-5c268392242b9719f437}
 
 源码：`src/stdlib/user-interface/drawing.el:17` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/drawing.el#L17)
@@ -28,7 +30,7 @@ window.theme = paint
 
 ## darkPaintTheme {#api-507fa392da014efe2281}
 
-源码：`src/stdlib/user-interface/drawing.el:113` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/drawing.el#L113)
+源码：`src/stdlib/user-interface/drawing.el:117` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/drawing.el#L117)
 
 ```el
 export fn darkPaintTheme(): PaintTheme

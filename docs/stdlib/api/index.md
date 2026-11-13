@@ -4,76 +4,34 @@
 
 [结构化文档数据](api.json)
 
-已标注文档的文件：71 / 3566；API 条目：391。此比例不是公开 API 覆盖率。
+已标注文档的文件：95 / 3630；API 条目：455。此比例不是公开 API 覆盖率。
 
-- [collections/arrays/dynamic.el](modules/collections/arrays/dynamic.md)
-- [collections/arrays/lazy.el](modules/collections/arrays/lazy.md)
-- [collections/batch/syntax.el](modules/collections/batch/syntax.md)
-- [collections/maps/base.el](modules/collections/maps/base.md)
-- [collections/maps/hash-map.el](modules/collections/maps/hash-map.md)
-- [collections/sequences/demand.el](modules/collections/sequences/demand.md)
-- [collections/sets/bit-set.el](modules/collections/sets/bit-set.md)
-- [collections/sets/hash-set.el](modules/collections/sets/hash-set.md)
-- [concurrency/async.el](modules/concurrency/async.md)
-- [console/facade.el](modules/console/facade.md)
-- [errors/assertions.el](modules/errors/assertions.md)
-- [filesystem/index.el](modules/filesystem/index.md)
-- [filesystem/reader.el](modules/filesystem/reader.md)
-- [filesystem/writer.el](modules/filesystem/writer.md)
-- [formats/index.el](modules/formats/index.md)
-- [formats/json/index.el](modules/formats/json/index.md)
-- [formats/json/limits.el](modules/formats/json/limits.md)
-- [formats/json/writer.el](modules/formats/json/writer.md)
-- [functions/comparison.el](modules/functions/comparison.md)
-- [functions/composition.el](modules/functions/composition.md)
-- [graphics/plots/index.el](modules/graphics/plots/index.md)
-- [graphics/plots/scene.el](modules/graphics/plots/scene.md)
-- [language/proofs.el](modules/language/proofs.md)
-- [logic/control.el](modules/logic/control.md)
-- [logic/goal.el](modules/logic/goal.md)
-- [logic/search.el](modules/logic/search.md)
-- [logic/surface.el](modules/logic/surface.md)
-- [logic/term.el](modules/logic/term.md)
-- [mathematics/functions/discrete.el](modules/mathematics/functions/discrete.md)
-- [mathematics/functions/elementary.el](modules/mathematics/functions/elementary.md)
-- [multimedia/audio/index.el](modules/multimedia/audio/index.md)
-- [multimedia/audio/linux-output.el](modules/multimedia/audio/linux-output.md)
-- [multimedia/audio/macos-output.el](modules/multimedia/audio/macos-output.md)
-- [multimedia/audio/music.el](modules/multimedia/audio/music.md)
-- [multimedia/audio/wav.el](modules/multimedia/audio/wav.md)
-- [multimedia/audio/windows-output.el](modules/multimedia/audio/windows-output.md)
-- [multimedia/capture/model.el](modules/multimedia/capture/model.md)
-- [network/errors.el](modules/network/errors.md)
-- [network/http/index.el](modules/network/http/index.md)
-- [network/http/model.el](modules/network/http/model.md)
-- [neural-networks/adamw.el](modules/neural-networks/adamw.md)
-- [neural-networks/autograd.el](modules/neural-networks/autograd.md)
-- [neural-networks/data/index.el](modules/neural-networks/data/index.md)
-- [neural-networks/functional.el](modules/neural-networks/functional.md)
-- [neural-networks/losses/index.el](modules/neural-networks/losses/index.md)
-- [neural-networks/model.el](modules/neural-networks/model.md)
-- [neural-networks/optimizer.el](modules/neural-networks/optimizer.md)
-- [numerical-computing/arrays.el](modules/numerical-computing/arrays.md)
-- [numerical-computing/diagnostics.el](modules/numerical-computing/diagnostics.md)
-- [numerical-computing/exact-solve.el](modules/numerical-computing/exact-solve.md)
-- [numerical-computing/matrix-syntax.el](modules/numerical-computing/matrix-syntax.md)
-- [numerical-computing/reductions.el](modules/numerical-computing/reductions.md)
-- [numerical-computing/tensor.el](modules/numerical-computing/tensor.md)
-- [random/bits.el](modules/random/bits.md)
-- [random/index.el](modules/random/index.md)
-- [text/operations.el](modules/text/operations.md)
-- [text/patterns/combinators.el](modules/text/patterns/combinators.md)
-- [text/patterns/parser.el](modules/text/patterns/parser.md)
-- [text/patterns/syntax.el](modules/text/patterns/syntax.md)
-- [text/text.el](modules/text/text.md)
-- [theme/model.el](modules/theme/model.md)
-- [theme/resolve.el](modules/theme/resolve.md)
-- [tools/testing/check.el](modules/tools/testing/check.md)
-- [tools/testing/compiler.el](modules/tools/testing/compiler.md)
-- [tools/testing/index.el](modules/tools/testing/index.md)
-- [tools/testing/registry.el](modules/tools/testing/registry.md)
-- [user-interface/drawing.el](modules/user-interface/drawing.md)
-- [user-interface/model.el](modules/user-interface/model.md)
-- [user-interface/platform/windows/window.el](modules/user-interface/platform/windows/window.md)
-- [user-interface/sound.el](modules/user-interface/sound.md)
-- [user-interface/window.el](modules/user-interface/window.md)
+[按模块查找](modules.md) · [按符号查找](symbols.md)
+
+## 按库分类
+
+| 库 | 已标注模块 | API 条目 |
+| --- | ---: | ---: |
+| [collections](categories/collections.md) | 10 | 79 |
+| [concurrency](categories/concurrency.md) | 2 | 4 |
+| [console](categories/console.md) | 1 | 16 |
+| [cryptography](categories/cryptography.md) | 7 | 12 |
+| [errors](categories/errors.md) | 1 | 3 |
+| [filesystem](categories/filesystem.md) | 3 | 27 |
+| [formats](categories/formats.md) | 9 | 16 |
+| [functions](categories/functions.md) | 2 | 7 |
+| [graphics](categories/graphics.md) | 2 | 13 |
+| [language](categories/language.md) | 1 | 4 |
+| [logic](categories/logic.md) | 5 | 17 |
+| [mathematics](categories/mathematics.md) | 2 | 7 |
+| [multimedia](categories/multimedia.md) | 7 | 34 |
+| [network](categories/network.md) | 6 | 35 |
+| [neural-networks](categories/neural-networks.md) | 7 | 28 |
+| [numerical-computing](categories/numerical-computing.md) | 6 | 33 |
+| [random](categories/random.md) | 3 | 18 |
+| [streams](categories/streams.md) | 1 | 2 |
+| [text](categories/text.md) | 5 | 35 |
+| [theme](categories/theme.md) | 2 | 4 |
+| [time](categories/time.md) | 4 | 15 |
+| [tools](categories/tools.md) | 4 | 14 |
+| [user-interface](categories/user-interface.md) | 5 | 32 |

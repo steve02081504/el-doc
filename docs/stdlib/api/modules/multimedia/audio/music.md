@@ -2,15 +2,17 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../../categories/multimedia.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
+
 ## 音频合成与播放 {#api-e33a9bf98fb80b944c00}
 
-源码：`src/stdlib/multimedia/audio/music.el:6` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L6)
+源码：`src/stdlib/multimedia/audio/music.el:7` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L7)
 
 将单声道公式采样转换为 PCM16 音频，通过有界设备队列异步播放短提示音或较长片段。
 
 ## MusicPlayer {#api-dd93e8dfc04fdbadfcb9}
 
-源码：`src/stdlib/multimedia/audio/music.el:46` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L46)
+源码：`src/stdlib/multimedia/audio/music.el:47` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L47)
 
 ```el
 export @assign(mode: "shared") class MusicPlayer
@@ -28,7 +30,7 @@ player.close()
 
 ## MusicPlayer.formula {#api-baf68ca88eb889649eb3}
 
-源码：`src/stdlib/multimedia/audio/music.el:59` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L59)
+源码：`src/stdlib/multimedia/audio/music.el:60` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L60)
 
 ```el
 fn formula(sample, milliseconds: Number = 80, gain: Number = 0.12): Bool
@@ -52,7 +54,7 @@ let accepted = player.formula(seconds => sin(seconds * 880 * 6.283185307179586),
 
 ## MusicPlayer.play {#api-acd751dc2f58267cd866}
 
-源码：`src/stdlib/multimedia/audio/music.el:78` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L78)
+源码：`src/stdlib/multimedia/audio/music.el:79` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L79)
 
 ```el
 fn play(frequency: Number, milliseconds: Number = 80, gain: Number = 0.12): Bool
@@ -76,7 +78,7 @@ let accepted = player.play(660, 70)
 
 ## MusicPlayer.stop {#api-878b318a6d2c1a57a85e}
 
-源码：`src/stdlib/multimedia/audio/music.el:88` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L88)
+源码：`src/stdlib/multimedia/audio/music.el:89` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L89)
 
 ```el
 fn stop()
@@ -92,7 +94,7 @@ player.stop()
 
 ## MusicPlayer.close {#api-74a7a57af495951c63ea}
 
-源码：`src/stdlib/multimedia/audio/music.el:95` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L95)
+源码：`src/stdlib/multimedia/audio/music.el:96` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L96)
 
 ```el
 fn close()
@@ -108,7 +110,7 @@ player.close()
 
 ## playPitch {#api-14ec176406410644f42a}
 
-源码：`src/stdlib/multimedia/audio/music.el:116` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L116)
+源码：`src/stdlib/multimedia/audio/music.el:117` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L117)
 
 ```el
 export fn playPitch(frequency: Number, milliseconds: Number = 80, gain: Number = 0.12)
@@ -134,7 +136,7 @@ let task = playPitch(440, 250, 0.1)
 
 ## playFormula {#api-dd17e7a0384ee0e866a0}
 
-源码：`src/stdlib/multimedia/audio/music.el:131` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L131)
+源码：`src/stdlib/multimedia/audio/music.el:132` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L132)
 
 ```el
 export fn playFormula(sample, milliseconds: Number = 80, gain: Number = 0.12)

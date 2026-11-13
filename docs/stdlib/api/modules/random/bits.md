@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/random.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 随机种子的定宽位表示 {#api-9048b7e7469dca7c1a6f}
 
 源码：`src/stdlib/random/bits.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/bits.el#L1)

@@ -1,13 +1,6 @@
 # 工具链
 
-> 改完一行想看结果、明天要交一个可执行文件、下个月要给 Linux 出一份——三件事，三条命令。
-
-!!! abstract "🎯 读完这页，你能"
-    - 按“我现在想干什么”选对 `el` 子命令，而不是背下全部参数
-    - 说清 `el` 与 `elc` 为什么不是两套工具链，什么时候才需要 `elc`
-    - 看懂诊断和退出码，决定何时关缓存、何时清理、怎么给另一个系统出产物
-
-    <span class="el-chip">⏱ 约 20 分钟</span> <span class="el-chip">前置：[安装与第一个程序](getting-started.md)</span>
+本页按命令、参数、配置和诊断组织。实际发行支持的选项以 `el --help` 为准；语言合同见[工具链规范](https://github.com/steve02081504/el/blob/master/docs/spec/11-build-and-toolchain.md)，实现与验收的区别见[规范与实现边界](appendix/implementation-status.md)。
 
 ## 先查这张表：五条命令，各管一件事
 
@@ -23,8 +16,7 @@
 
 ## `el` 和 `elc` 不是两套工具链
 
-??? question "先猜：发行里找不到 `elc`，`el run` 还能用吗？"
-    能。`el` 自带编译器源码，`el run` 和 `el build` 不依赖 `elc` 可执行文件。`elc` 只是同一编译器的单独入口，外部构建脚本、自举或排查编译链时才直接调用它。
+`el` 自带编译器源码，`el run` 和 `el build` 不依赖 `elc` 可执行文件。`elc` 只是同一编译器的单独入口，外部构建脚本、自举或排查编译链时才直接调用它。
 
 - 同一发行、同一编译链：`elc` 的源码入口直接调用 compiler 命令模块的参数解析与编译实现，和 `el compiler` 是同一个入口，参数集与产物一致。
 - `EL_ELC` 与 `el test --compiler PATH` 指定测试使用的工作编译器，默认是 `el` 自身；它们是测试选项，不是编译前提。
@@ -191,15 +183,8 @@ el clean --repo .
 | 缺少编译服务 | `el run`/`el build` 需要 `src/` 与 `lib/compiler-service.eir` | 重新解压完整发行，或用 `EL_COMPILER_SERVICE` 指向现成映像；只复制 `el` 一个文件不能编译 |
 | 改了源码但行为没变 | 缓存没失效，或导入了别的同名模块 | 先 `ELC_CACHE=0` 重跑，再检查导入来源 |
 
-## 带走这三样
+## 相关指南
 
-- 常见五条里，`run`、`repl`、`test` 会运行程序，`build`、`formatter` 不会。
-- `el` 自带编译器，`elc` 只是同一编译链的单独入口；找不到 `elc` 不影响日常开发。
-- 诊断走 stderr，退出码 0／1／2／3 分工不同；缓存可以关，清理默认保留最贵的两样。
-
-## 下一站：[命令行工具](practice/cli-tool.md)
-
-> 命令单独都会敲了，串在一个项目里还差哪几块？
-
-- 主推进：[命令行工具](practice/cli-tool.md)：从空目录走到可交付产物。
-- 想先看测试：[测试](stdlib/testing.md)：`*.test.el`、项目配置与断言。
+- [第一个程序](getting-started.md)：准备工具并运行源码。
+- [命令行工具](practice/cli-tool.md)：组织可交付项目。
+- [测试](stdlib/testing.md)：项目配置与断言。

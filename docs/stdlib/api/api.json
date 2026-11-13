@@ -1,13 +1,17 @@
 {
-	"source_digest": "359d20f1450ab4bc116175ef84d5e90216fbb5bbd68956322ac18dd4cf3a4ac0",
+	"source_digest": "b472321ab39720fb90e3b2165e091e4e12fd23748737390a4511b60d5192f901",
 	"files": [
 		{
 			"path": "collections/arrays/dynamic.el",
-			"sha256": "b1a82db449dc569bf41819a98519a6ce26026157c9c0f94830f49de31a9f2fe0"
+			"sha256": "4d2d90a7dcf0ff7368b91bd06dd2e9e017a486c63642240e4bef1c43c75b276c"
 		},
 		{
 			"path": "collections/arrays/lazy.el",
-			"sha256": "6060a58b4c6b89f6f78a8649c2d23b4364bda8f2d3c99645e8e06c64230289f4"
+			"sha256": "03779a2e482e0c54bbd1ded24ad1b661f8f28143895cfa45f1d2fafc230eeaf4"
+		},
+		{
+			"path": "collections/arrays/operations.el",
+			"sha256": "d0d1db6ae033a5483587d6204b19f25c3fe0a60a4a8e14536e876c0ba7f64507"
 		},
 		{
 			"path": "collections/batch/syntax.el",
@@ -26,6 +30,10 @@
 			"sha256": "e28bd416330c53641ffe7aa84ed72293e12beae68034705a196f3da774d68c20"
 		},
 		{
+			"path": "collections/sequences/enumerate.el",
+			"sha256": "50d32bb7d00bffa4cc67ad149840be3c3d207755b233b11cffc0db7cfc86df51"
+		},
+		{
 			"path": "collections/sets/bit-set.el",
 			"sha256": "a243d5dfb6397fb1f2343d92dbeaf556661ed264cb75797684fd1b7ac35c2a54"
 		},
@@ -38,8 +46,40 @@
 			"sha256": "5ebb11385eaea24c924974e5ea184f3c320bbb8684da14a3ea1c0ff0854ac42c"
 		},
 		{
+			"path": "concurrency/tasks/parallel.el",
+			"sha256": "7b917e10b61c7943aa96fdaaa4e1dba0017a4b2277e442f93334073cfff8c9ad"
+		},
+		{
 			"path": "console/facade.el",
-			"sha256": "d4710ff8bedc34931025988039e0d07d8b7265aad841eb1a224525a02dca6aec"
+			"sha256": "9dee8cb7050aec8134dcc95c30fef9dc4f46bb4aeae8a21199d82e701c4dd519"
+		},
+		{
+			"path": "cryptography/aead.el",
+			"sha256": "75deff8232301c7eeb2333b57a25f398faf9084b6f6480fda9e5d089f391f655"
+		},
+		{
+			"path": "cryptography/chacha20.el",
+			"sha256": "9d1a85401961fce112cc6bb28502ee0da7e6efad58d958a6eeca86d71f72784b"
+		},
+		{
+			"path": "cryptography/hkdf.el",
+			"sha256": "86dd741fa78cf8276f7c859342b6fda7dfc7b8a26ec6f4a46c956de972bbe6c7"
+		},
+		{
+			"path": "cryptography/hmac.el",
+			"sha256": "c437ca4f12fa77168639be1050864202956ca7c775bbd28c0f7fce069de94f57"
+		},
+		{
+			"path": "cryptography/pbkdf2.el",
+			"sha256": "e7063dbf7f18713190a837c5d7b2f12c175bb458726a6dde963b0a96cae1c6b2"
+		},
+		{
+			"path": "cryptography/rand.el",
+			"sha256": "6b3f740ea18e27bffef1242f7b8ff978add5c440a3d8d56a1b763f15fb52bf87"
+		},
+		{
+			"path": "cryptography/sha256.el",
+			"sha256": "20b65e3fc12c96332f474fa4f3024fc811881f2a3e425fb4a242a38b793393cc"
 		},
 		{
 			"path": "errors/assertions.el",
@@ -47,7 +87,7 @@
 		},
 		{
 			"path": "filesystem/index.el",
-			"sha256": "d58d5b2843f716064581c113b588a9bd088ac3704c5902ba8e75a5abb499560e"
+			"sha256": "fd90551af691925980e2e0774e33f6233a5841a72eed1a414b68b7e514c8cab5"
 		},
 		{
 			"path": "filesystem/reader.el",
@@ -58,12 +98,20 @@
 			"sha256": "9dda14e72bc6d0e599737d81f1dacee6428abc1348caed93285ae8cfdda87221"
 		},
 		{
+			"path": "formats/delimited-text/index.el",
+			"sha256": "655ece4f442240162f0d73e5505291480b4d9f7751cb736767372d0bac60ac5a"
+		},
+		{
 			"path": "formats/index.el",
-			"sha256": "b5c72c1278140e0ff5e3ee74b413c33011fc977bae554c3b5a7d24cf7b3a6762"
+			"sha256": "8715520688ac5cbe504041abd6c672f22cbb829e83f38fa71294533b019ec32e"
+		},
+		{
+			"path": "formats/ini/index.el",
+			"sha256": "21eb62f84868beea5e7f9f895f9114c01a9fa89d8467a203d3a16252715147ef"
 		},
 		{
 			"path": "formats/json/index.el",
-			"sha256": "7bbc00b7a0054daf35a121303250560a7f084447f2367e367dc060dbd58e2a1f"
+			"sha256": "3c92c9bd20267b1ef0321484490b468f70bd15a1afdc4459f22eae96a4ec3ae7"
 		},
 		{
 			"path": "formats/json/limits.el",
@@ -72,6 +120,18 @@
 		{
 			"path": "formats/json/writer.el",
 			"sha256": "4e9074d4d250787529685c621a2f9ba55d1c53b4a723c43afd1f2fa3469fc541"
+		},
+		{
+			"path": "formats/toml/index.el",
+			"sha256": "b2c74ffb5c1afcfad78bf7047cec3c193a39a31e0ac368be5a3e88e4c4665f51"
+		},
+		{
+			"path": "formats/xml/index.el",
+			"sha256": "35dc6b82b976b83fba88b14f84f2276b2eafd8fbed156ed1a9800afa038384ae"
+		},
+		{
+			"path": "formats/yaml/index.el",
+			"sha256": "188faf02e7d7b3e1f9d74fcf2ff4c5863b0a48fe164705796921645dda5ba829"
 		},
 		{
 			"path": "functions/comparison.el",
@@ -119,7 +179,7 @@
 		},
 		{
 			"path": "mathematics/functions/elementary.el",
-			"sha256": "d59ef328a6493bf5576b44cd0fe25f1252e719c22c786a414bc4b75d08faffea"
+			"sha256": "a47e6d38c2a26a46fed8008d953dccd653ef38ab15a21c2349a07b5df3143831"
 		},
 		{
 			"path": "multimedia/audio/index.el",
@@ -135,7 +195,7 @@
 		},
 		{
 			"path": "multimedia/audio/music.el",
-			"sha256": "0494998424e8d0863480bf10ee7cf02259a25652c02c81735d62c50f40495c24"
+			"sha256": "19aef5db5aa999937bde0b97cdd8cbe7c273c5938cc7d8a5a5cb05577e328a68"
 		},
 		{
 			"path": "multimedia/audio/wav.el",
@@ -160,6 +220,18 @@
 		{
 			"path": "network/http/model.el",
 			"sha256": "0a47bd5e3ed3556cdffaa9cf2713efb928322f709176d72917f2cbdbf0817c9b"
+		},
+		{
+			"path": "network/parsers.el",
+			"sha256": "5c6d3227c7e92166a1c4e78dac9b05a65215c795ba68552a2a6cd7059efe0fae"
+		},
+		{
+			"path": "network/sockets.el",
+			"sha256": "6fdbca5c092262ce2a988da1f4f460cae4c1fdbf4905d8440b0e198ce33cf0da"
+		},
+		{
+			"path": "network/url.el",
+			"sha256": "12e82d66b6050de583f9c24ab65715e0c2b70fe2f0ec807f1846f8445a1b185a"
 		},
 		{
 			"path": "neural-networks/adamw.el",
@@ -222,8 +294,16 @@
 			"sha256": "2378a218a03d9a5193659d06873274ed090e27babc76cfacfb439b62c444cd2f"
 		},
 		{
+			"path": "random/seed.el",
+			"sha256": "4cdc04131f7a49ee86b9ea8ebddec9a4713e147d67fe7b10c4e6f6fd2af79b86"
+		},
+		{
+			"path": "streams/input-file.el",
+			"sha256": "de5a7c2ac60543a88aace4c9e075c605d94b116270b1236ab4a0d3fb60f66179"
+		},
+		{
 			"path": "text/operations.el",
-			"sha256": "ccff8598bd980e75c27ecbe513117c890011ba28e83269c31b5345ef048d9844"
+			"sha256": "f4aa78c944e47b0968de61d2d244123f4fa49492c47acad5d7039b01ee99abd8"
 		},
 		{
 			"path": "text/patterns/combinators.el",
@@ -231,7 +311,7 @@
 		},
 		{
 			"path": "text/patterns/parser.el",
-			"sha256": "4fd9b6f5eaadd53b92a57d79a1de376a8fc9b91d405dcc4037ffb5b1a2c0a195"
+			"sha256": "e362d762c59d13784ab44c1836bbebd9f6322faf41892d78e9b1ae47eadaab7b"
 		},
 		{
 			"path": "text/patterns/syntax.el",
@@ -248,6 +328,22 @@
 		{
 			"path": "theme/resolve.el",
 			"sha256": "62905dd08e8d1119989f8b14ae6594cc674065151bcf641a357125bce02e0a9c"
+		},
+		{
+			"path": "time/calendar.el",
+			"sha256": "6e2f70c3508b9ab0bd5fcffe87d7e788f9bde23d7f8ba0d6f8bca43672c37927"
+		},
+		{
+			"path": "time/instant.el",
+			"sha256": "c39f13e92eaa4b7c1cae9f218124350c737508eae0fd018cdba80a9e122934c8"
+		},
+		{
+			"path": "time/parse.el",
+			"sha256": "5ed7ff482571c5bda35e25e47c9b5cd093ac9dd17230bdaf9537130b5eb9b630"
+		},
+		{
+			"path": "time/units.el",
+			"sha256": "e7ba0b5cd0400680a374c8fc62124d6a3995c20a073ffae673de589c57b10479"
 		},
 		{
 			"path": "tools/testing/check.el",
@@ -267,15 +363,15 @@
 		},
 		{
 			"path": "user-interface/drawing.el",
-			"sha256": "5c9ac9e8ffcd116b37741ece8b8746b97c17f94042694984e7c33662782ae494"
+			"sha256": "7262b0643e7e7c478e9fcd2ab0e3d2fc97a68abd433d48a5dd2a1335c6ae7bc4"
 		},
 		{
 			"path": "user-interface/model.el",
-			"sha256": "7bf1b6a09460e7500789a166fb03891678e11d5a1e194af463fed9fe80b91863"
+			"sha256": "6d1f2e3bb0a9045b2445fbee449cd6503e831c71d354bf39f96ef70e75b9bbad"
 		},
 		{
 			"path": "user-interface/platform/windows/window.el",
-			"sha256": "780c52affbddaa1a716a09771d1e629b487a30c8af9fbf80c859ce97026c5263"
+			"sha256": "0df6de6e2a27374664ac1d87aabee0c2d6f4360fde399c561bdb48796a9135fd"
 		},
 		{
 			"path": "user-interface/sound.el",
@@ -1008,6 +1104,637 @@
 			"signature": "export syntax lazy",
 			"declaration_line": 29,
 			"id": "collections/arrays/lazy::lazy"
+		},
+		{
+			"kind": "module",
+			"name": "数组操作",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "对可迭代序列执行查询、变换和排序。"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 1,
+			"id": "collections/arrays/operations"
+		},
+		{
+			"kind": "api",
+			"name": "some",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "按迭代顺序检查元素，存在满足谓词的元素时立即返回真。"
+				},
+				{
+					"tag": "param",
+					"value": "values 被检查的可迭代值。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "predicate 接收元素并返回布尔值的函数。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { some } from \"el:collections/arrays/operations.el\"\nsome(@[1, 3, 4], value => value % 2 == 0)\n```\n预期结果：真。",
+					"code": "import { some } from \"el:collections/arrays/operations.el\"\nsome(@[1, 3, 4], value => value % 2 == 0)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 19,
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"some\", receiver: \"argument\" })\nexport fn some(values, predicate): Bool",
+			"declaration_line": 29,
+			"id": "collections/arrays/operations::some"
+		},
+		{
+			"kind": "api",
+			"name": "any",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "判断序列中是否有元素满足谓词。"
+				},
+				{
+					"tag": "param",
+					"value": "values 被检查的可迭代值。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "predicate 接收元素并返回布尔值的函数。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { any } from \"el:collections/arrays/operations.el\"\nany(@[-2, 0, 5], value => value > 0)\n```\n预期结果：真。",
+					"code": "import { any } from \"el:collections/arrays/operations.el\"\nany(@[-2, 0, 5], value => value > 0)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 35,
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"some\", receiver: \"argument\" })\nexport fn any(values, predicate): Bool",
+			"declaration_line": 45,
+			"id": "collections/arrays/operations::any"
+		},
+		{
+			"kind": "api",
+			"name": "none",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "判断序列中没有元素满足谓词。"
+				},
+				{
+					"tag": "param",
+					"value": "values 被检查的可迭代值。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "predicate 接收元素并返回布尔值的函数。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { none } from \"el:collections/arrays/operations.el\"\nnone(@[1, 2, 3], value => value < 0)\n```\n预期结果：真。",
+					"code": "import { none } from \"el:collections/arrays/operations.el\"\nnone(@[1, 2, 3], value => value < 0)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 50,
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"none\", receiver: \"argument\" })\nexport fn none(values, predicate): Bool",
+			"declaration_line": 60,
+			"id": "collections/arrays/operations::none"
+		},
+		{
+			"kind": "api",
+			"name": "all",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "判断所有元素是否满足谓词；遇到首个不满足项时停止。"
+				},
+				{
+					"tag": "param",
+					"value": "values 被检查的可迭代值。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "predicate 接收元素并返回布尔值的函数。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { all } from \"el:collections/arrays/operations.el\"\nall(@[1, 2, 3], value => value > 0)\n```\n预期结果：真。",
+					"code": "import { all } from \"el:collections/arrays/operations.el\"\nall(@[1, 2, 3], value => value > 0)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 65,
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"all\", receiver: \"argument\" })\nexport fn all(values, predicate): Bool",
+			"declaration_line": 75,
+			"id": "collections/arrays/operations::all"
+		},
+		{
+			"kind": "api",
+			"name": "every",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "判断序列中的每个元素是否满足谓词，与 all 使用相同规则。"
+				},
+				{
+					"tag": "param",
+					"value": "values 被检查的可迭代值。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "predicate 接收元素并返回布尔值的函数。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { every } from \"el:collections/arrays/operations.el\"\nevery(@[\"oak\", \"elm\"], word => word.count == 3)\n```\n预期结果：真。",
+					"code": "import { every } from \"el:collections/arrays/operations.el\"\nevery(@[\"oak\", \"elm\"], word => word.count == 3)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 81,
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"all\", receiver: \"argument\" })\nexport fn every(values, predicate): Bool",
+			"declaration_line": 91,
+			"id": "collections/arrays/operations::every"
+		},
+		{
+			"kind": "api",
+			"name": "concat",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "依次把两个序列的元素复制到新数组。"
+				},
+				{
+					"tag": "param",
+					"value": "left 结果前段的序列。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "right 接在前段之后的序列。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { concat } from \"el:collections/arrays/operations.el\"\nconcat(@[1, 2], @[3])\n```\n预期结果：[1, 2, 3]。",
+					"code": "import { concat } from \"el:collections/arrays/operations.el\"\nconcat(@[1, 2], @[3])\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 96,
+			"signature": "export fn concat(left, right)",
+			"declaration_line": 106,
+			"id": "collections/arrays/operations::concat"
+		},
+		{
+			"kind": "api",
+			"name": "includes",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "判断序列是否包含与给定值相等的元素。"
+				},
+				{
+					"tag": "param",
+					"value": "values 提供元素比较操作的序列。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "value 要查找的值。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { includes } from \"el:collections/arrays/operations.el\"\nincludes(@[\"red\", \"blue\"], \"blue\")\n```\n预期结果：真。",
+					"code": "import { includes } from \"el:collections/arrays/operations.el\"\nincludes(@[\"red\", \"blue\"], \"blue\")\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 111,
+			"signature": "export fn includes(values, value): Bool",
+			"declaration_line": 121,
+			"id": "collections/arrays/operations::includes"
+		},
+		{
+			"kind": "api",
+			"name": "map~transform",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将变换函数应用于每个元素，并按原顺序收集结果。"
+				},
+				{
+					"tag": "param",
+					"value": "values 输入序列。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "transform 接收一个元素并产生对应结果的函数。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { map } from \"el:collections/arrays/operations.el\"\nmap(@[1, 2], value => value + 1)\n```\n预期结果：[2, 3]。",
+					"code": "import { map } from \"el:collections/arrays/operations.el\"\nmap(@[1, 2], value => value + 1)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 126,
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"map\", receiver: \"argument\" })\nexport fn map(values, transform)",
+			"declaration_line": 136,
+			"id": "collections/arrays/operations::map~transform"
+		},
+		{
+			"kind": "api",
+			"name": "filter",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "保留满足谓词的元素，并保持其相对顺序。"
+				},
+				{
+					"tag": "param",
+					"value": "values 输入序列。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "predicate 接收元素并返回布尔值的函数。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { filter } from \"el:collections/arrays/operations.el\"\nfilter(@[1, 2, 3], value => value % 2 == 1)\n```\n预期结果：[1, 3]。",
+					"code": "import { filter } from \"el:collections/arrays/operations.el\"\nfilter(@[1, 2, 3], value => value % 2 == 1)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 147,
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"filter\", receiver: \"argument\" })\nexport fn filter(values, predicate)",
+			"declaration_line": 157,
+			"id": "collections/arrays/operations::filter"
+		},
+		{
+			"kind": "api",
+			"name": "drop",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "跳过指定数量的前置元素并复制剩余元素。"
+				},
+				{
+					"tag": "param",
+					"value": "values 输入序列。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "count 要跳过的数量；按 normalize_count 规则规范化。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { drop } from \"el:collections/arrays/operations.el\"\ndrop(@[1, 2, 3], 1)\n```\n预期结果：[2, 3]。",
+					"code": "import { drop } from \"el:collections/arrays/operations.el\"\ndrop(@[1, 2, 3], 1)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 164,
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"drop\", receiver: \"argument\", prepare: normalize_count })\nexport fn drop(values, count)",
+			"declaration_line": 174,
+			"id": "collections/arrays/operations::drop"
+		},
+		{
+			"kind": "api",
+			"name": "take",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "复制序列开头至多指定数量的元素。"
+				},
+				{
+					"tag": "param",
+					"value": "values 输入序列。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "count 要取得的数量；按 normalize_count 规则规范化。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { take } from \"el:collections/arrays/operations.el\"\ntake(@[1, 2, 3], 2)\n```\n预期结果：[1, 2]。",
+					"code": "import { take } from \"el:collections/arrays/operations.el\"\ntake(@[1, 2, 3], 2)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 186,
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"take\", receiver: \"argument\", prepare: normalize_count })\nexport fn take(values, count)",
+			"declaration_line": 196,
+			"id": "collections/arrays/operations::take"
+		},
+		{
+			"kind": "api",
+			"name": "each",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "按迭代顺序对每个元素调用回调。"
+				},
+				{
+					"tag": "param",
+					"value": "values 输入序列。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "callback 接收一个元素的函数。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { each } from \"el:collections/arrays/operations.el\"\neach(@[1, 2], value => value)\n```\n预期结果：依次输出 1 和 2。",
+					"code": "import { each } from \"el:collections/arrays/operations.el\"\neach(@[1, 2], value => value)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 205,
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"each\", receiver: \"argument\" })\nexport fn each(values, callback): void_t",
+			"declaration_line": 215,
+			"id": "collections/arrays/operations::each"
+		},
+		{
+			"kind": "api",
+			"name": "index_of",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回首个与目标值相等的元素下标；未找到时返回 -1。"
+				},
+				{
+					"tag": "param",
+					"value": "values 输入序列。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "wanted 要查找的值。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { index_of } from \"el:collections/arrays/operations.el\"\nindex_of(@[4, 7, 9], 7)\n```\n预期结果：1。",
+					"code": "import { index_of } from \"el:collections/arrays/operations.el\"\nindex_of(@[4, 7, 9], 7)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 220,
+			"signature": "export fn index_of(values, wanted): Number",
+			"declaration_line": 230,
+			"id": "collections/arrays/operations::index_of"
+		},
+		{
+			"kind": "api",
+			"name": "find",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回首个满足谓词的迭代步骤；没有匹配项时返回空步骤。"
+				},
+				{
+					"tag": "param",
+					"value": "values 输入序列。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "predicate 接收元素并返回布尔值的函数。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { find } from \"el:collections/arrays/operations.el\"\nfind(@[2, 4, 5], value => value % 2 == 1).value\n```\n预期结果：5。",
+					"code": "import { find } from \"el:collections/arrays/operations.el\"\nfind(@[2, 4, 5], value => value % 2 == 1).value\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 239,
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"find\", receiver: \"argument\" })\nexport fn find(values, predicate)",
+			"declaration_line": 249,
+			"id": "collections/arrays/operations::find"
+		},
+		{
+			"kind": "api",
+			"name": "find_or_add",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "查找满足谓词的元素；若不存在则创建、追加并返回新元素。"
+				},
+				{
+					"tag": "param",
+					"value": "values 支持 push 的可变序列。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "predicate 查找谓词。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "create 无参数的创建函数。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { find_or_add } from \"el:collections/arrays/operations.el\"\nlet values = @[1, 3]\nfind_or_add(values, value => value == 2, () => 2)\n```\n预期结果：2。",
+					"code": "import { find_or_add } from \"el:collections/arrays/operations.el\"\nlet values = @[1, 3]\nfind_or_add(values, value => value == 2, () => 2)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 256,
+			"signature": "export fn find_or_add(values, predicate, create)",
+			"declaration_line": 268,
+			"id": "collections/arrays/operations::find_or_add"
+		},
+		{
+			"kind": "api",
+			"name": "sort",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "对输入副本排序并返回排序结果，输入保持不变。"
+				},
+				{
+					"tag": "param",
+					"value": "values 支持迭代且其副本可排序。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "less 当左值应排在右值之前时返回真。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "strategy 选择排序策略，默认 stable_memory_sort。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "排序后的新序列；输入通过复制路径排序，不原地修改。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { sort } from \"el:collections/arrays/operations.el\"\nsort(@[3, 1, 2])\n```\n预期结果：[1, 2, 3]。",
+					"code": "import { sort } from \"el:collections/arrays/operations.el\"\nsort(@[3, 1, 2])\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 275,
+			"signature": "@optimize(using: optimize_sort, data: @{ receiver: \"argument\", independent: t, copy: copy_sort_input, pass: insertion_pass, tail: insertion_tail, ascending: ascending, merge: merge_sort, adaptive: adaptive_number_sort, insertion: insertion_sort, bucket: bounded_number_sort })\nexport fn sort(values, less = (left, right) => left < right, strategy = stable_memory_sort)",
+			"declaration_line": 287,
+			"id": "collections/arrays/operations::sort"
+		},
+		{
+			"kind": "api",
+			"name": "reverse",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "原地反转可写序列，并返回该序列。"
+				},
+				{
+					"tag": "param",
+					"value": "values 支持按下标读写的可变序列。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { reverse } from \"el:collections/arrays/operations.el\"\nlet values = @[1, 2, 3]\nreverse(values)\n```\n预期结果：[3, 2, 1]。",
+					"code": "import { reverse } from \"el:collections/arrays/operations.el\"\nlet values = @[1, 2, 3]\nreverse(values)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 292,
+			"signature": "@discardable\nexport fn reverse(values)",
+			"declaration_line": 302,
+			"id": "collections/arrays/operations::reverse"
+		},
+		{
+			"kind": "api",
+			"name": "reversed",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "按相反顺序复制序列元素到新数组。"
+				},
+				{
+					"tag": "param",
+					"value": "values 输入序列。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { reversed } from \"el:collections/arrays/operations.el\"\nreversed(@[1, 2, 3])\n```\n预期结果：[3, 2, 1]。",
+					"code": "import { reversed } from \"el:collections/arrays/operations.el\"\nreversed(@[1, 2, 3])\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 312,
+			"signature": "export fn reversed(values)",
+			"declaration_line": 321,
+			"id": "collections/arrays/operations::reversed"
 		},
 		{
 			"kind": "module",
@@ -1756,6 +2483,49 @@
 		},
 		{
 			"kind": "module",
+			"name": "带下标的迭代",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "为迭代元素附加从零开始的下标。"
+				}
+			],
+			"source": "collections/sequences/enumerate.el",
+			"line": 1,
+			"id": "collections/sequences/enumerate"
+		},
+		{
+			"kind": "api",
+			"name": "enumerate",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "惰性包装迭代源，为每个产出元素配上从零开始的下标。"
+				},
+				{
+					"tag": "param",
+					"value": "source 可迭代值；每次创建迭代器时从下标零开始。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { enumerate } from \"el:collections/sequences/enumerate.el\"\nlet entries = enumerate(@[\"a\", \"b\"])\nfor (let {index, value} in entries) { let pair = @[index, value] }\n```\n预期结果：依次输出 0 和 1。",
+					"code": "import { enumerate } from \"el:collections/sequences/enumerate.el\"\nlet entries = enumerate(@[\"a\", \"b\"])\nfor (let {index, value} in entries) { let pair = @[index, value] }\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/sequences/enumerate.el",
+			"line": 61,
+			"signature": "export fn enumerate(source)",
+			"declaration_line": 71,
+			"id": "collections/sequences/enumerate::enumerate"
+		},
+		{
+			"kind": "module",
 			"name": "固定位宽集合",
 			"sections": [
 				{
@@ -2424,6 +3194,143 @@
 		},
 		{
 			"kind": "module",
+			"name": "并行任务",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供有界并行映射与二分递归求解工具。"
+				}
+			],
+			"source": "concurrency/tasks/parallel.el",
+			"line": 1,
+			"id": "concurrency/tasks/parallel"
+		},
+		{
+			"kind": "api",
+			"name": "parallel_map",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "对可计数序列的元素应用变换，并按输入顺序收集结果。"
+				},
+				{
+					"tag": "param",
+					"value": "values 输入序列。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "transform 每个元素调用一次的变换函数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "limit 最大参与并行预算，0 表示使用可用预算；预算包含调用方。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "minimum 只有元素数达到该阈值时才尝试并行。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "与输入顺序对应的变换结果数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "参数范围无效或变换/工作线程失败时传播错误；已启动的项目会完成。",
+					"markdown": ""
+				},
+				{
+					"tag": "note",
+					"value": "共享捕获需要调用方同步；嵌套调用和低于阈值的工作会串行执行。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "并行映射一组数",
+					"markdown": "```el\nimport { parallel_map } from \"el:concurrency/tasks/parallel.el\"\nlet squares = parallel_map(@[1, 2, 3], value => value * value, 2, 1)\n```",
+					"code": "import { parallel_map } from \"el:concurrency/tasks/parallel.el\"\nlet squares = parallel_map(@[1, 2, 3], value => value * value, 2, 1)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "concurrency/tasks/parallel.el",
+			"line": 64,
+			"signature": "export fn parallel_map(values, transform, limit: Number = 0, minimum: Number = 32)",
+			"declaration_line": 78,
+			"id": "concurrency/tasks/parallel::parallel_map"
+		},
+		{
+			"kind": "api",
+			"name": "parallel_divide",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "递归拆分问题，求解叶节点，并按子问题顺序合并两个结果。"
+				},
+				{
+					"tag": "param",
+					"value": "problem 当前问题值。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "is_leaf 判断问题是否已可直接求解。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "solve 求解叶问题的函数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "split 将非叶问题拆为恰好两个子问题。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "merge 按左、右顺序合并两个子结果。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "limit 并行预算，0 表示使用可用预算。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "根问题对应的合并结果。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "拆分结果不是两个元素、预算无效或回调失败时传播错误。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "求和分治",
+					"markdown": "```el\nimport { parallel_divide } from \"el:concurrency/tasks/parallel.el\"\nlet total = parallel_divide(4, value => value <= 1, value => value, value => @[value / 2, value / 2], (left, right) => left + right, 2)\n```",
+					"code": "import { parallel_divide } from \"el:concurrency/tasks/parallel.el\"\nlet total = parallel_divide(4, value => value <= 1, value => value, value => @[value / 2, value / 2], (left, right) => left + right, 2)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "concurrency/tasks/parallel.el",
+			"line": 116,
+			"signature": "export fn parallel_divide(problem, is_leaf, solve, split, merge, limit: Number = 0)",
+			"declaration_line": 131,
+			"id": "concurrency/tasks/parallel::parallel_divide"
+		},
+		{
+			"kind": "module",
 			"name": "控制台输出与日志",
 			"sections": [
 				{
@@ -2465,9 +3372,9 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 21,
+			"line": 58,
 			"signature": "@discardable fn writeText(text: Text): Number",
-			"declaration_line": 29,
+			"declaration_line": 66,
 			"id": "console/facade::ConsolePort.writeText"
 		},
 		{
@@ -2499,9 +3406,9 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 34,
+			"line": 71,
 			"signature": "@discardable fn write(...values): Number",
-			"declaration_line": 42,
+			"declaration_line": 79,
 			"id": "console/facade::ConsolePort.write"
 		},
 		{
@@ -2533,9 +3440,9 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 47,
+			"line": 84,
 			"signature": "@discardable fn writeLine(...values): Number",
-			"declaration_line": 55,
+			"declaration_line": 92,
 			"id": "console/facade::ConsolePort.writeLine"
 		},
 		{
@@ -2567,9 +3474,9 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 61,
+			"line": 98,
 			"signature": "@discardable fn writeBytes(bytes: Buffer): Number",
-			"declaration_line": 70,
+			"declaration_line": 107,
 			"id": "console/facade::ConsolePort.writeBytes"
 		},
 		{
@@ -2601,9 +3508,9 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 75,
+			"line": 112,
 			"signature": "fn emit(value): void_t",
-			"declaration_line": 83,
+			"declaration_line": 120,
 			"id": "console/facade::ConsolePort.emit"
 		},
 		{
@@ -2650,9 +3557,9 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 108,
+			"line": 145,
 			"signature": "export fn capture(work, latePolicy: ConsoleLatePolicy = ConsoleLatePolicy.Forward, maxRecords: Number | void_t = void)",
-			"declaration_line": 121,
+			"declaration_line": 158,
 			"id": "console/facade::capture"
 		},
 		{
@@ -2689,9 +3596,9 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 146,
+			"line": 183,
 			"signature": "operator()(message: Text | LocalizedMessage | LocalizedContent, parameters = @{}): void_t",
-			"declaration_line": 155,
+			"declaration_line": 192,
 			"id": "console/facade::ConsoleLevelPort.operator"
 		},
 		{
@@ -2728,9 +3635,9 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 161,
+			"line": 198,
 			"signature": "fn value(snapshot: ConsoleValueSnapshot, channel: ConsoleChannel = this.#channel): void_t",
-			"declaration_line": 170,
+			"declaration_line": 207,
 			"id": "console/facade::ConsoleLevelPort.value~snapshot"
 		},
 		{
@@ -2767,9 +3674,9 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 176,
+			"line": 213,
 			"signature": "fn value(borrow value, channel: ConsoleChannel = this.#channel): void_t",
-			"declaration_line": 185,
+			"declaration_line": 222,
 			"id": "console/facade::ConsoleLevelPort.value~value"
 		},
 		{
@@ -2791,9 +3698,9 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 219,
+			"line": 258,
 			"signature": "get log(): ConsoleLevelPort",
-			"declaration_line": 225,
+			"declaration_line": 264,
 			"id": "console/facade::ConsoleFacade.log"
 		},
 		{
@@ -2815,9 +3722,9 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 226,
+			"line": 265,
 			"signature": "get info(): ConsoleLevelPort",
-			"declaration_line": 232,
+			"declaration_line": 271,
 			"id": "console/facade::ConsoleFacade.info"
 		},
 		{
@@ -2839,9 +3746,9 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 233,
+			"line": 272,
 			"signature": "get warning(): ConsoleLevelPort",
-			"declaration_line": 239,
+			"declaration_line": 278,
 			"id": "console/facade::ConsoleFacade.warning"
 		},
 		{
@@ -2863,9 +3770,9 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 240,
+			"line": 279,
 			"signature": "get error(): ConsoleLevelPort",
-			"declaration_line": 246,
+			"declaration_line": 285,
 			"id": "console/facade::ConsoleFacade.error"
 		},
 		{
@@ -2887,9 +3794,9 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 247,
+			"line": 286,
 			"signature": "get fatal(): ConsoleLevelPort",
-			"declaration_line": 253,
+			"declaration_line": 292,
 			"id": "console/facade::ConsoleFacade.fatal"
 		},
 		{
@@ -2911,9 +3818,9 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 254,
+			"line": 293,
 			"signature": "get debug(): ConsoleLevelPort",
-			"declaration_line": 260,
+			"declaration_line": 299,
 			"id": "console/facade::ConsoleFacade.debug"
 		},
 		{
@@ -2935,10 +3842,681 @@
 				}
 			],
 			"source": "console/facade.el",
-			"line": 261,
+			"line": 300,
 			"signature": "get trace(): ConsoleLevelPort",
-			"declaration_line": 267,
+			"declaration_line": 306,
 			"id": "console/facade::ConsoleFacade.trace"
+		},
+		{
+			"kind": "module",
+			"name": "ChaCha20-Poly1305",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供认证加密与先验证后解密的 ChaCha20-Poly1305 接口。"
+				}
+			],
+			"source": "cryptography/aead.el",
+			"line": 1,
+			"id": "cryptography/aead"
+		},
+		{
+			"kind": "api",
+			"name": "chacha20_poly1305_encrypt",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "使用 ChaCha20-Poly1305 加密并认证明文及关联数据。"
+				},
+				{
+					"tag": "param",
+					"value": "key 恰好 32 字节的密钥。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "nonce 恰好 12 字节且不可在同一密钥下重用的 nonce。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "associated_data 不加密但参与认证的字节。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "plaintext 待加密明文字节。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "密文后附加 16 字节认证标签。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "字节输入无效或消息超过算法长度范围时抛出 CryptoError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "加密短消息",
+					"markdown": "```el\nimport { chacha20_poly1305_encrypt } from \"el:cryptography/\"\nlet sealed = chacha20_poly1305_encrypt(@[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], @[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], @[], @[72, 105])\n```",
+					"code": "import { chacha20_poly1305_encrypt } from \"el:cryptography/\"\nlet sealed = chacha20_poly1305_encrypt(@[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], @[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], @[], @[72, 105])\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "cryptography/aead.el",
+			"line": 41,
+			"signature": "export fn chacha20_poly1305_encrypt(key: Number[], nonce: Number[], associated_data: Number[], plaintext: Number[]): Number[]",
+			"declaration_line": 54,
+			"id": "cryptography/aead::chacha20_poly1305_encrypt"
+		},
+		{
+			"kind": "api",
+			"name": "chacha20_poly1305_decrypt",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "验证 ChaCha20-Poly1305 标签后解密密文。"
+				},
+				{
+					"tag": "param",
+					"value": "key 加密时使用的 32 字节密钥。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "nonce 加密时使用的 12 字节 nonce。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "associated_data 加密时认证的关联数据。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "sealed 密文及其末尾的 16 字节标签。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "认证成功后的明文字节；验证失败不会返回明文。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "输入格式无效或标签验证失败时抛出 CryptoError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "解密并认证密文",
+					"markdown": "```el\nimport { chacha20_poly1305_decrypt, chacha20_poly1305_encrypt } from \"el:cryptography/\"\nlet key = @[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\nlet nonce = @[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\nlet sealed = chacha20_poly1305_encrypt(key, nonce, @[], @[72, 105])\nlet plaintext = chacha20_poly1305_decrypt(key, nonce, @[], sealed)\n```",
+					"code": "import { chacha20_poly1305_decrypt, chacha20_poly1305_encrypt } from \"el:cryptography/\"\nlet key = @[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\nlet nonce = @[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\nlet sealed = chacha20_poly1305_encrypt(key, nonce, @[], @[72, 105])\nlet plaintext = chacha20_poly1305_decrypt(key, nonce, @[], sealed)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "cryptography/aead.el",
+			"line": 74,
+			"signature": "export fn chacha20_poly1305_decrypt(key: Number[], nonce: Number[], associated_data: Number[], sealed: Number[]): Number[]",
+			"declaration_line": 90,
+			"id": "cryptography/aead::chacha20_poly1305_decrypt"
+		},
+		{
+			"kind": "module",
+			"name": "ChaCha20",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供 RFC 8439 ChaCha20 密钥流与字节异或操作。"
+				}
+			],
+			"source": "cryptography/chacha20.el",
+			"line": 1,
+			"id": "cryptography/chacha20"
+		},
+		{
+			"kind": "api",
+			"name": "chacha20_xor",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将 ChaCha20 密钥流与输入字节异或，得到同长度输出。"
+				},
+				{
+					"tag": "param",
+					"value": "key 恰好 32 字节的密钥。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "nonce 恰好 12 字节的 nonce；同一密钥下不得重用。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "initial_counter 首个 32 位块计数器。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "input 要处理的字节数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "与输入等长的异或结果。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "密钥、nonce、计数器或输入无效，或块计数器将溢出时抛出 CryptoError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "加密一段字节",
+					"markdown": "```el\nimport { chacha20_xor } from \"el:cryptography/\"\nlet ciphertext = chacha20_xor(@[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], @[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 1, @[72, 105])\n```",
+					"code": "import { chacha20_xor } from \"el:cryptography/\"\nlet ciphertext = chacha20_xor(@[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], @[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 1, @[72, 105])\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "cryptography/chacha20.el",
+			"line": 76,
+			"signature": "export fn chacha20_xor(key: Number[], nonce: Number[], initial_counter: Number, input: Number[]): Number[]",
+			"declaration_line": 89,
+			"id": "cryptography/chacha20::chacha20_xor"
+		},
+		{
+			"kind": "module",
+			"name": "HKDF-SHA256",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供 RFC 5869 的 HKDF-SHA256 提取、扩展与便捷派生函数。"
+				}
+			],
+			"source": "cryptography/hkdf.el",
+			"line": 1,
+			"id": "cryptography/hkdf"
+		},
+		{
+			"kind": "api",
+			"name": "hkdf_sha256",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "依次执行 HKDF-SHA256 的 Extract 与 Expand。"
+				},
+				{
+					"tag": "param",
+					"value": "ikm 输入密钥材料字节。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "salt 可选盐值；缺省时按 HKDF 使用零值盐。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "info 可选的上下文信息字节。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "length 输出密钥材料长度，范围为 0 到 8160 字节。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "派生出的字节数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "输出长度无效或超过上限时抛出 CryptoError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "派生 32 字节密钥材料",
+					"markdown": "```el\nimport { hkdf_sha256 } from \"el:cryptography/\"\nlet keyMaterial = hkdf_sha256(@[1, 2, 3])\n```",
+					"code": "import { hkdf_sha256 } from \"el:cryptography/\"\nlet keyMaterial = hkdf_sha256(@[1, 2, 3])\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "cryptography/hkdf.el",
+			"line": 54,
+			"signature": "export fn hkdf_sha256(ikm: Number[], salt: Number[] | void_t = void, info: Number[] | void_t = void, length: Number = 32): Number[]",
+			"declaration_line": 67,
+			"id": "cryptography/hkdf::hkdf_sha256"
+		},
+		{
+			"kind": "module",
+			"name": "HMAC-SHA256",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供基于 SHA-256 的 HMAC 标签计算与验证。"
+				}
+			],
+			"source": "cryptography/hmac.el",
+			"line": 1,
+			"id": "cryptography/hmac"
+		},
+		{
+			"kind": "api",
+			"name": "hmac_sha256",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "使用 HMAC-SHA256 对消息生成认证标签。"
+				},
+				{
+					"tag": "param",
+					"value": "key 密钥字节数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "message 要认证的消息字节数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "32 字节 HMAC 标签。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "任一输入包含非字节值时抛出 CryptoError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "生成 HMAC 标签",
+					"markdown": "```el\nimport { hmac_sha256 } from \"el:cryptography/\"\nlet tag = hmac_sha256(@[1, 2, 3], @[4, 5])\n```",
+					"code": "import { hmac_sha256 } from \"el:cryptography/\"\nlet tag = hmac_sha256(@[1, 2, 3], @[4, 5])\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "cryptography/hmac.el",
+			"line": 69,
+			"signature": "export fn hmac_sha256(key: Number[], message: Number[]): Number[]",
+			"declaration_line": 80,
+			"id": "cryptography/hmac::hmac_sha256"
+		},
+		{
+			"kind": "api",
+			"name": "hmac_verify",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "验证消息的 HMAC-SHA256 标签；比较 32 字节标签时使用常量时间字节比较。"
+				},
+				{
+					"tag": "param",
+					"value": "key 生成标签时使用的密钥字节数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "message 已认证的消息字节数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "tag 待验证标签；长度不是 32 时直接返回假。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "标签有效时为真。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "输入字节无效时抛出 CryptoError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "验证 HMAC 标签",
+					"markdown": "```el\nimport { hmac_sha256, hmac_verify } from \"el:cryptography/\"\nlet key = @[1, 2, 3]\nlet message = @[4, 5]\nlet valid = hmac_verify(key, message, hmac_sha256(key, message))\n```",
+					"code": "import { hmac_sha256, hmac_verify } from \"el:cryptography/\"\nlet key = @[1, 2, 3]\nlet message = @[4, 5]\nlet valid = hmac_verify(key, message, hmac_sha256(key, message))\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "cryptography/hmac.el",
+			"line": 88,
+			"signature": "export fn hmac_verify(key: Number[], message: Number[], tag: Number[]): Bool",
+			"declaration_line": 102,
+			"id": "cryptography/hmac::hmac_verify"
+		},
+		{
+			"kind": "module",
+			"name": "PBKDF2",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供基于 HMAC-SHA1 与 HMAC-SHA256 的 PBKDF2 密钥派生。"
+				}
+			],
+			"source": "cryptography/pbkdf2.el",
+			"line": 1,
+			"id": "cryptography/pbkdf2"
+		},
+		{
+			"kind": "api",
+			"name": "pbkdf2_sha1",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "使用 PBKDF2-HMAC-SHA1 从密码和盐派生密钥字节。"
+				},
+				{
+					"tag": "param",
+					"value": "password 密码字节。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "salt 派生盐字节。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "iterations 正整数迭代次数，最大为 4294967295。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "count 输出字节数，范围为 0 到 1048576。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "派生的密钥字节。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "参数不是范围内的整数、迭代次数为零或字节输入无效时抛出 CryptoError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "派生密码密钥",
+					"markdown": "```el\nimport { pbkdf2_sha1 } from \"el:cryptography/\"\nlet derived = pbkdf2_sha1(@[112, 97, 115, 115], @[1, 2, 3, 4], 1000, 32)\n```",
+					"code": "import { pbkdf2_sha1 } from \"el:cryptography/\"\nlet derived = pbkdf2_sha1(@[112, 97, 115, 115], @[1, 2, 3, 4], 1000, 32)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "cryptography/pbkdf2.el",
+			"line": 40,
+			"signature": "export fn pbkdf2_sha1(password: Number[], salt: Number[], iterations: Number, count: Number): Number[]",
+			"declaration_line": 53,
+			"id": "cryptography/pbkdf2::pbkdf2_sha1"
+		},
+		{
+			"kind": "api",
+			"name": "pbkdf2_sha256",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "使用 PBKDF2-HMAC-SHA256 从密码和盐派生密钥字节。"
+				},
+				{
+					"tag": "param",
+					"value": "password 密码字节。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "salt 派生盐字节。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "iterations 每个输出块使用的迭代次数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "count 输出字节数。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "派生的密钥字节。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "迭代次数或输出长度无效时抛出 CryptoError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "派生密码密钥",
+					"markdown": "```el\nimport { pbkdf2_sha256 } from \"el:cryptography/\"\nlet derived = pbkdf2_sha256(@[112, 97, 115, 115], @[1, 2, 3, 4], 1000, 32)\n```",
+					"code": "import { pbkdf2_sha256 } from \"el:cryptography/\"\nlet derived = pbkdf2_sha256(@[112, 97, 115, 115], @[1, 2, 3, 4], 1000, 32)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "cryptography/pbkdf2.el",
+			"line": 54,
+			"signature": "export fn pbkdf2_sha256(password: Number[], salt: Number[], iterations: Number, count: Number): Number[]",
+			"declaration_line": 67,
+			"id": "cryptography/pbkdf2::pbkdf2_sha256"
+		},
+		{
+			"kind": "module",
+			"name": "密码学随机数",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供从操作系统密码学随机源读取字节的接口。"
+				}
+			],
+			"source": "cryptography/rand.el",
+			"line": 1,
+			"id": "cryptography/rand"
+		},
+		{
+			"kind": "api",
+			"name": "secure_random_bytes",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "从操作系统随机源读取指定数量的密码学随机字节。"
+				},
+				{
+					"tag": "param",
+					"value": "count 要读取的字节数，范围为 0 到 1048576。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "随机字节数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "字节数无效或操作系统熵源失败时抛出 CryptoError；不会回退到弱生成器。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "生成随机 nonce 字节",
+					"markdown": "```el\nimport { secure_random_bytes } from \"el:cryptography/\"\nlet nonce = secure_random_bytes(12)\n```",
+					"code": "import { secure_random_bytes } from \"el:cryptography/\"\nlet nonce = secure_random_bytes(12)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "cryptography/rand.el",
+			"line": 14,
+			"signature": "export fn secure_random_bytes(count: Number): Number[]",
+			"declaration_line": 24,
+			"id": "cryptography/rand::secure_random_bytes"
+		},
+		{
+			"kind": "api",
+			"name": "secure_random_hex",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "读取密码学随机字节并返回小写十六进制编码。"
+				},
+				{
+					"tag": "param",
+					"value": "count 随机字节数，范围为 0 到 1048576。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "长度为 count 乘以 2 的十六进制文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "字节数无效或操作系统熵源失败时抛出 CryptoError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "生成随机令牌文本",
+					"markdown": "```el\nimport { secure_random_hex } from \"el:cryptography/\"\nlet token = secure_random_hex(16)\n```",
+					"code": "import { secure_random_hex } from \"el:cryptography/\"\nlet token = secure_random_hex(16)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "cryptography/rand.el",
+			"line": 41,
+			"signature": "export fn secure_random_hex(count: Number): Text",
+			"declaration_line": 51,
+			"id": "cryptography/rand::secure_random_hex"
+		},
+		{
+			"kind": "module",
+			"name": "密码学摘要",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供基于字节数组的 SHA-256 流式与一次性摘要接口。"
+				}
+			],
+			"source": "cryptography/sha256.el",
+			"line": 1,
+			"id": "cryptography/sha256"
+		},
+		{
+			"kind": "api",
+			"name": "sha256_digest",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "计算消息的 SHA-256 摘要。"
+				},
+				{
+					"tag": "param",
+					"value": "message 输入字节数组，每个元素必须是 0 到 255 的整数。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "32 字节摘要。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "输入字节无效或消息超过 SHA-256 长度字段范围时抛出 CryptoError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "计算空消息摘要",
+					"markdown": "```el\nimport { sha256_digest } from \"el:cryptography/\"\nlet digest = sha256_digest(@[])\n```",
+					"code": "import { sha256_digest } from \"el:cryptography/\"\nlet digest = sha256_digest(@[])\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "cryptography/sha256.el",
+			"line": 157,
+			"signature": "export fn sha256_digest(message: Number[]): Number[]",
+			"declaration_line": 167,
+			"id": "cryptography/sha256::sha256_digest"
+		},
+		{
+			"kind": "api",
+			"name": "sha256_hex",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "计算消息的 SHA-256 摘要并编码为小写十六进制文本。"
+				},
+				{
+					"tag": "param",
+					"value": "message 输入字节数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "64 个十六进制字符。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "输入字节无效或消息超过 SHA-256 长度字段范围时抛出 CryptoError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "计算消息摘要文本",
+					"markdown": "```el\nimport { sha256_hex } from \"el:cryptography/\"\nlet digest = sha256_hex(@[97, 98, 99])\n```",
+					"code": "import { sha256_hex } from \"el:cryptography/\"\nlet digest = sha256_hex(@[97, 98, 99])\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "cryptography/sha256.el",
+			"line": 173,
+			"signature": "export fn sha256_hex(message: Number[]): Text",
+			"declaration_line": 183,
+			"id": "cryptography/sha256::sha256_hex"
 		},
 		{
 			"kind": "module",
@@ -3281,6 +4859,50 @@
 		},
 		{
 			"kind": "api",
+			"name": "openRandomFileReader",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "打开支持随机访问的文件读取器。"
+				},
+				{
+					"tag": "param",
+					"value": "reference 文件或 provider 位置引用。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "lock 可选的读取保护配置。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "可读取并定位的 FileReader。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "位置解析、打开或随机访问能力不可用时抛出文件系统异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "按需读取文件内容",
+					"markdown": "```el\nimport { openRandomFileReader } from \"el:filesystem/\"\nlet reader = openRandomFileReader(\"file:./archive.bin\")\nlet prefix = reader.readAt(0, 8)\nreader.close()\n```",
+					"code": "import { openRandomFileReader } from \"el:filesystem/\"\nlet reader = openRandomFileReader(\"file:./archive.bin\")\nlet prefix = reader.readAt(0, 8)\nreader.close()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "filesystem/index.el",
+			"line": 89,
+			"signature": "export fn openRandomFileReader(reference, lock: Bool | void_t = void): FileReader",
+			"declaration_line": 102,
+			"id": "filesystem/index::openRandomFileReader"
+		},
+		{
+			"kind": "api",
 			"name": "openFileWriter",
 			"sections": [
 				{
@@ -3313,9 +4935,9 @@
 				}
 			],
 			"source": "filesystem/index.el",
-			"line": 90,
+			"line": 103,
 			"signature": "export fn openFileWriter(reference): FileWriter",
-			"declaration_line": 102,
+			"declaration_line": 115,
 			"id": "filesystem/index::openFileWriter"
 		},
 		{
@@ -3357,9 +4979,9 @@
 				}
 			],
 			"source": "filesystem/index.el",
-			"line": 103,
+			"line": 116,
 			"signature": "export fn readFileBytes(reference, maximumBytes: Number | void_t = void): Number[]",
-			"declaration_line": 115,
+			"declaration_line": 128,
 			"id": "filesystem/index::readFileBytes"
 		},
 		{
@@ -3401,9 +5023,9 @@
 				}
 			],
 			"source": "filesystem/index.el",
-			"line": 116,
+			"line": 129,
 			"signature": "export fn readFileBytesIfPresent(reference, maximumBytes: Number | void_t = void): Number[] | void_t",
-			"declaration_line": 127,
+			"declaration_line": 140,
 			"id": "filesystem/index::readFileBytesIfPresent"
 		},
 		{
@@ -3445,9 +5067,9 @@
 				}
 			],
 			"source": "filesystem/index.el",
-			"line": 128,
+			"line": 141,
 			"signature": "export fn readTextFileIfPresent(reference, maximumBytes: Number | void_t = void): Text | void_t",
-			"declaration_line": 140,
+			"declaration_line": 153,
 			"id": "filesystem/index::readTextFileIfPresent"
 		},
 		{
@@ -3489,10 +5111,54 @@
 				}
 			],
 			"source": "filesystem/index.el",
-			"line": 145,
+			"line": 158,
 			"signature": "export fn writeFileBytes(reference, bytes: Number[]): Number",
-			"declaration_line": 156,
+			"declaration_line": 169,
 			"id": "filesystem/index::writeFileBytes"
+		},
+		{
+			"kind": "api",
+			"name": "readFileBuffer",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将文件内容读入拥有其底层存储的 FileBuffer，可设置字节上限。"
+				},
+				{
+					"tag": "param",
+					"value": "reference 文件或 provider 位置引用。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "maximumBytes 可选最大字节数。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "调用方负责关闭的 FileBuffer。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "读取失败、超出显式上限或 provider 违反上限时抛出异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "读取并释放文件缓冲区",
+					"markdown": "```el\nimport { readFileBuffer } from \"el:filesystem/\"\nlet buffer = readFileBuffer(\"file:./image.bin\")\nlet size = buffer.count\nbuffer.close()\n```",
+					"code": "import { readFileBuffer } from \"el:filesystem/\"\nlet buffer = readFileBuffer(\"file:./image.bin\")\nlet size = buffer.count\nbuffer.close()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "filesystem/index.el",
+			"line": 170,
+			"signature": "export fn readFileBuffer(reference, maximumBytes: Number | void_t = void): FileBuffer",
+			"declaration_line": 183,
+			"id": "filesystem/index::readFileBuffer"
 		},
 		{
 			"kind": "api",
@@ -3538,9 +5204,9 @@
 				}
 			],
 			"source": "filesystem/index.el",
-			"line": 174,
+			"line": 200,
 			"signature": "export fn readFileAs(format, reference, lock: Bool | void_t = void)",
-			"declaration_line": 187,
+			"declaration_line": 213,
 			"id": "filesystem/index::readFileAs"
 		},
 		{
@@ -3587,9 +5253,9 @@
 				}
 			],
 			"source": "filesystem/index.el",
-			"line": 213,
+			"line": 239,
 			"signature": "export fn writeFileAs(format, reference, value): Number",
-			"declaration_line": 226,
+			"declaration_line": 252,
 			"id": "filesystem/index::writeFileAs"
 		},
 		{
@@ -3631,9 +5297,9 @@
 				}
 			],
 			"source": "filesystem/index.el",
-			"line": 232,
+			"line": 258,
 			"signature": "export fn readTextFile(reference, maximumBytes: Number | void_t = void): Text",
-			"declaration_line": 244,
+			"declaration_line": 270,
 			"id": "filesystem/index::readTextFile"
 		},
 		{
@@ -3675,9 +5341,9 @@
 				}
 			],
 			"source": "filesystem/index.el",
-			"line": 245,
+			"line": 271,
 			"signature": "export fn writeTextFile(reference, value: Text): Number",
-			"declaration_line": 256,
+			"declaration_line": 282,
 			"id": "filesystem/index::writeTextFile"
 		},
 		{
@@ -3714,9 +5380,9 @@
 				}
 			],
 			"source": "filesystem/index.el",
-			"line": 257,
+			"line": 283,
 			"signature": "export fn directoryNames(reference): Text[]",
-			"declaration_line": 267,
+			"declaration_line": 293,
 			"id": "filesystem/index::directoryNames"
 		},
 		{
@@ -3748,9 +5414,9 @@
 				}
 			],
 			"source": "filesystem/index.el",
-			"line": 268,
+			"line": 294,
 			"signature": "export fn isDirectory(reference): Bool",
-			"declaration_line": 277,
+			"declaration_line": 303,
 			"id": "filesystem/index::isDirectory"
 		},
 		{
@@ -3782,9 +5448,9 @@
 				}
 			],
 			"source": "filesystem/index.el",
-			"line": 278,
+			"line": 304,
 			"signature": "export fn makeDirectories(reference): void_t",
-			"declaration_line": 287,
+			"declaration_line": 313,
 			"id": "filesystem/index::makeDirectories"
 		},
 		{
@@ -3816,9 +5482,9 @@
 				}
 			],
 			"source": "filesystem/index.el",
-			"line": 288,
+			"line": 314,
 			"signature": "export fn removeFile(reference): void_t",
-			"declaration_line": 297,
+			"declaration_line": 323,
 			"id": "filesystem/index::removeFile"
 		},
 		{
@@ -3855,9 +5521,9 @@
 				}
 			],
 			"source": "filesystem/index.el",
-			"line": 298,
+			"line": 324,
 			"signature": "export fn replaceFile(source, target): void_t",
-			"declaration_line": 308,
+			"declaration_line": 334,
 			"id": "filesystem/index::replaceFile"
 		},
 		{
@@ -3899,9 +5565,9 @@
 				}
 			],
 			"source": "filesystem/index.el",
-			"line": 313,
+			"line": 339,
 			"signature": "export fn copyFile(source, target): Number",
-			"declaration_line": 325,
+			"declaration_line": 351,
 			"id": "filesystem/index::copyFile"
 		},
 		{
@@ -4067,6 +5733,108 @@
 			"signature": "fn close(): void_t",
 			"declaration_line": 173,
 			"id": "filesystem/writer::FileWriter.close"
+		},
+		{
+			"kind": "module",
+			"name": "分隔文本",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供 RFC 4180 风格 CSV 与制表符分隔文本解析。"
+				}
+			],
+			"source": "formats/delimited-text/index.el",
+			"line": 1,
+			"id": "formats/delimited-text/index"
+		},
+		{
+			"kind": "api",
+			"name": "parseCSV",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "按 RFC 4180 引号规则解析逗号分隔文本；单元格保持为文本，不推断表头或类型。"
+				},
+				{
+					"tag": "param",
+					"value": "source 完整 CSV 文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "limits 输入与解析资源限制。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "每行对应一个文本数组的二维数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "引号、分隔符、换行无效或超出限制时抛出解析异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "解析两列 CSV",
+					"markdown": "```el\nimport { parseCSV } from \"el:formats/delimited-text/\"\nlet rows = parseCSV(\"name,role\\nAda,engineer\")\n```",
+					"code": "import { parseCSV } from \"el:formats/delimited-text/\"\nlet rows = parseCSV(\"name,role\\nAda,engineer\")\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/delimited-text/index.el",
+			"line": 48,
+			"signature": "export fn parseCSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]",
+			"declaration_line": 59,
+			"id": "formats/delimited-text/index::parseCSV"
+		},
+		{
+			"kind": "api",
+			"name": "parseTSV",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "按制表符分隔规则解析文本，单元格内容以文本形式保留。"
+				},
+				{
+					"tag": "param",
+					"value": "source 完整 TSV 文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "limits 输入与解析资源限制。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "每行对应一个文本数组的二维数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "引号、分隔符、换行无效或超出限制时抛出解析异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "解析制表符分隔数据",
+					"markdown": "```el\nimport { parseTSV } from \"el:formats/delimited-text/\"\nlet rows = parseTSV(\"name\\trole\\nAda\\tengineer\")\n```",
+					"code": "import { parseTSV } from \"el:formats/delimited-text/\"\nlet rows = parseTSV(\"name\\trole\\nAda\\tengineer\")\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/delimited-text/index.el",
+			"line": 60,
+			"signature": "export fn parseTSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]",
+			"declaration_line": 71,
+			"id": "formats/delimited-text/index::parseTSV"
 		},
 		{
 			"kind": "module",
@@ -4243,6 +6011,64 @@
 		},
 		{
 			"kind": "module",
+			"name": "INI",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "解析本模块定义的轻量 INI 方言。"
+				}
+			],
+			"source": "formats/ini/index.el",
+			"line": 1,
+			"id": "formats/ini/index"
+		},
+		{
+			"kind": "api",
+			"name": "parseINI",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "解析此模块支持的 INI 方言，生成嵌套动态对象，键和值均保持文本。"
+				},
+				{
+					"tag": "param",
+					"value": "source 完整 INI 文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "limits 输入与解析资源限制。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "根对象；节名映射到节对象，键映射到文本值。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "语法无效、标量与节冲突或超出限制时抛出解析异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "读取 INI 节",
+					"markdown": "```el\nimport { parseINI } from \"el:formats/ini/\"\nlet settings = parseINI(\"[server]\\nport=8080\")\n```",
+					"code": "import { parseINI } from \"el:formats/ini/\"\nlet settings = parseINI(\"[server]\\nport=8080\")\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/ini/index.el",
+			"line": 16,
+			"signature": "export fn parseINI(source: Text, limits: JsonLimits = JsonLimits()): any",
+			"declaration_line": 27,
+			"id": "formats/ini/index::parseINI"
+		},
+		{
+			"kind": "module",
 			"name": "JSON 解码",
 			"sections": [
 				{
@@ -4252,7 +6078,7 @@
 				}
 			],
 			"source": "formats/json/index.el",
-			"line": 1,
+			"line": 2,
 			"id": "formats/json/index"
 		},
 		{
@@ -4294,9 +6120,9 @@
 				}
 			],
 			"source": "formats/json/index.el",
-			"line": 105,
+			"line": 127,
 			"signature": "export fn parseJSON(source: Text, limits: JsonLimits = JsonLimits()): any",
-			"declaration_line": 116,
+			"declaration_line": 138,
 			"id": "formats/json/index::parseJSON"
 		},
 		{
@@ -4338,9 +6164,9 @@
 				}
 			],
 			"source": "formats/json/index.el",
-			"line": 127,
+			"line": 149,
 			"signature": "export fn jsonField(value: any, key: Text): any",
-			"declaration_line": 139,
+			"declaration_line": 161,
 			"id": "formats/json/index::jsonField"
 		},
 		{
@@ -4438,6 +6264,180 @@
 			"signature": "export fn writeJSON(value: any, limits: JsonLimits = JsonLimits()): Text",
 			"declaration_line": 182,
 			"id": "formats/json/writer::writeJSON"
+		},
+		{
+			"kind": "module",
+			"name": "TOML",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "解析 TOML 文档并保留日期时间与表等类型信息。"
+				}
+			],
+			"source": "formats/toml/index.el",
+			"line": 1,
+			"id": "formats/toml/index"
+		},
+		{
+			"kind": "api",
+			"name": "parseTOML",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "解析 TOML 文档并保留 TOML 值种类，包括日期时间、数组和表。"
+				},
+				{
+					"tag": "param",
+					"value": "source 完整 TOML 文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "limits 输入与解析资源限制。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "TOML 根表值。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "TOML 语法无效或超出限制时抛出解析异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "解析 TOML 设置",
+					"markdown": "```el\nimport { parseTOML } from \"el:formats/toml/\"\nlet settings = parseTOML(\"port = 8080\")\n```",
+					"code": "import { parseTOML } from \"el:formats/toml/\"\nlet settings = parseTOML(\"port = 8080\")\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/toml/index.el",
+			"line": 253,
+			"signature": "export fn parseTOML(source: Text, limits: JsonLimits = JsonLimits()): Toml",
+			"declaration_line": 264,
+			"id": "formats/toml/index::parseTOML"
+		},
+		{
+			"kind": "module",
+			"name": "XML",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "解析受限 XML 文档并保留节点结构。"
+				}
+			],
+			"source": "formats/xml/index.el",
+			"line": 1,
+			"id": "formats/xml/index"
+		},
+		{
+			"kind": "api",
+			"name": "parseXML",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "解析受限的 XML 文档，保留元素、文本、CDATA、注释和处理指令节点。"
+				},
+				{
+					"tag": "param",
+					"value": "source 完整 XML 文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "limits 输入与解析资源限制。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "包含声明属性和顶层节点的 XmlDocument。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "XML 语法无效、包含 DTD/实体声明或超出限制时抛出解析异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "解析 XML 根节点",
+					"markdown": "```el\nimport { parseXML } from \"el:formats/xml/\"\nlet document = parseXML(\"<message>hello</message>\")\n```",
+					"code": "import { parseXML } from \"el:formats/xml/\"\nlet document = parseXML(\"<message>hello</message>\")\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/xml/index.el",
+			"line": 146,
+			"signature": "export fn parseXML(source: Text, limits: JsonLimits = JsonLimits()): XmlDocument",
+			"declaration_line": 157,
+			"id": "formats/xml/index::parseXML"
+		},
+		{
+			"kind": "module",
+			"name": "YAML",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "解析本实现支持的 YAML 文档子集。"
+				}
+			],
+			"source": "formats/yaml/index.el",
+			"line": 1,
+			"id": "formats/yaml/index"
+		},
+		{
+			"kind": "api",
+			"name": "parseYAML",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将受支持的单个 YAML 文档解析为动态对象、数组及标量值。"
+				},
+				{
+					"tag": "param",
+					"value": "source 完整 YAML 文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "limits 输入与解析资源限制。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "对应的 EL 值。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "YAML 语法无效或超出限制时抛出解析异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "解析 YAML 映射",
+					"markdown": "```el\nimport { parseYAML } from \"el:formats/yaml/\"\nlet settings = parseYAML(\"name: Ada\")\n```",
+					"code": "import { parseYAML } from \"el:formats/yaml/\"\nlet settings = parseYAML(\"name: Ada\")\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/yaml/index.el",
+			"line": 357,
+			"signature": "export fn parseYAML(source: Text, limits: JsonLimits = JsonLimits()): any",
+			"declaration_line": 368,
+			"id": "formats/yaml/index::parseYAML"
 		},
 		{
 			"kind": "module",
@@ -6193,8 +8193,8 @@
 				{
 					"tag": "example",
 					"value": "请求指定精度的圆周率",
-					"markdown": "```el\nlet Scalar = Number<epsilon: 0.001>\nlet circle = pi(Scalar)\n```",
-					"code": "let Scalar = Number<epsilon: 0.001>\nlet circle = pi(Scalar)\n",
+					"markdown": "```el\nlet Scalar = Number<min: unbounded, max: unbounded, epsilon: 0.001>\nlet circle = pi(Scalar)\n```",
+					"code": "let Scalar = Number<min: unbounded, max: unbounded, epsilon: 0.001>\nlet circle = pi(Scalar)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -6637,7 +8637,7 @@
 				}
 			],
 			"source": "multimedia/audio/music.el",
-			"line": 6,
+			"line": 7,
 			"id": "multimedia/audio/music"
 		},
 		{
@@ -6659,9 +8659,9 @@
 				}
 			],
 			"source": "multimedia/audio/music.el",
-			"line": 38,
+			"line": 39,
 			"signature": "export @assign(mode: \"shared\") class MusicPlayer",
-			"declaration_line": 46,
+			"declaration_line": 47,
 			"id": "multimedia/audio/music::MusicPlayer"
 		},
 		{
@@ -6703,9 +8703,9 @@
 				}
 			],
 			"source": "multimedia/audio/music.el",
-			"line": 49,
+			"line": 50,
 			"signature": "fn formula(sample, milliseconds: Number = 80, gain: Number = 0.12): Bool",
-			"declaration_line": 59,
+			"declaration_line": 60,
 			"id": "multimedia/audio/music::MusicPlayer.formula"
 		},
 		{
@@ -6747,9 +8747,9 @@
 				}
 			],
 			"source": "multimedia/audio/music.el",
-			"line": 68,
+			"line": 69,
 			"signature": "fn play(frequency: Number, milliseconds: Number = 80, gain: Number = 0.12): Bool",
-			"declaration_line": 78,
+			"declaration_line": 79,
 			"id": "multimedia/audio/music::MusicPlayer.play"
 		},
 		{
@@ -6771,9 +8771,9 @@
 				}
 			],
 			"source": "multimedia/audio/music.el",
-			"line": 82,
+			"line": 83,
 			"signature": "fn stop()",
-			"declaration_line": 88,
+			"declaration_line": 89,
 			"id": "multimedia/audio/music::MusicPlayer.stop"
 		},
 		{
@@ -6795,9 +8795,9 @@
 				}
 			],
 			"source": "multimedia/audio/music.el",
-			"line": 89,
+			"line": 90,
 			"signature": "fn close()",
-			"declaration_line": 95,
+			"declaration_line": 96,
 			"id": "multimedia/audio/music::MusicPlayer.close"
 		},
 		{
@@ -6844,9 +8844,9 @@
 				}
 			],
 			"source": "multimedia/audio/music.el",
-			"line": 105,
+			"line": 106,
 			"signature": "export fn playPitch(frequency: Number, milliseconds: Number = 80, gain: Number = 0.12)",
-			"declaration_line": 116,
+			"declaration_line": 117,
 			"id": "multimedia/audio/music::playPitch"
 		},
 		{
@@ -6893,9 +8893,9 @@
 				}
 			],
 			"source": "multimedia/audio/music.el",
-			"line": 120,
+			"line": 121,
 			"signature": "export fn playFormula(sample, milliseconds: Number = 80, gain: Number = 0.12)",
-			"declaration_line": 131,
+			"declaration_line": 132,
 			"id": "multimedia/audio/music::playFormula"
 		},
 		{
@@ -8425,6 +10425,180 @@
 			"signature": "constructor(response: HttpResponse)",
 			"declaration_line": 308,
 			"id": "network/http/model::HttpStatusError.constructor"
+		},
+		{
+			"kind": "module",
+			"name": "网络输入解析",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供网络表单与 URL 相关文本解析辅助接口。"
+				}
+			],
+			"source": "network/parsers.el",
+			"line": 1,
+			"id": "network/parsers"
+		},
+		{
+			"kind": "api",
+			"name": "parseForm",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "解析 application/x-www-form-urlencoded 格式的字段序列。"
+				},
+				{
+					"tag": "param",
+					"value": "source 表单编码文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "保留输入顺序的 FormField 数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "百分号转义无效或文本解码失败时抛出解析异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "解析重复表单键",
+					"markdown": "```el\nimport { parseForm } from \"el:network/parsers.el\"\nlet fields = parseForm(\"tag=el&tag=language\")\n```",
+					"code": "import { parseForm } from \"el:network/parsers.el\"\nlet fields = parseForm(\"tag=el&tag=language\")\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "network/parsers.el",
+			"line": 46,
+			"signature": "export fn parseForm(source: Text): FormField[]",
+			"declaration_line": 56,
+			"id": "network/parsers::parseForm"
+		},
+		{
+			"kind": "module",
+			"name": "网络套接字",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供 TCP 连接、监听和 UDP 套接字接口。"
+				}
+			],
+			"source": "network/sockets.el",
+			"line": 1,
+			"id": "network/sockets"
+		},
+		{
+			"kind": "api",
+			"name": "connectTcp",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "连接到指定主机和 TCP 端口，并返回连接对象。"
+				},
+				{
+					"tag": "param",
+					"value": "host 主机名或数值地址。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "port 目标端口。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "timeout 连接超时毫秒数。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "已连接的 TcpConnection；调用方负责关闭连接。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "地址解析、连接或超时失败时抛出网络异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "连接到可访问的服务并关闭连接",
+					"markdown": "```el\nimport { connectTcp } from \"el:network/\"\n// 将地址与端口替换为正在监听的服务。\nlet connection = connectTcp(\"127.0.0.1\", 443)\nconnection.close()\n```",
+					"code": "import { connectTcp } from \"el:network/\"\n// 将地址与端口替换为正在监听的服务。\nlet connection = connectTcp(\"127.0.0.1\", 443)\nconnection.close()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "network/sockets.el",
+			"line": 168,
+			"signature": "export fn connectTcp(host: Text, port: Number, timeout: Number = 30000): TcpConnection",
+			"declaration_line": 182,
+			"id": "network/sockets::connectTcp"
+		},
+		{
+			"kind": "module",
+			"name": "网络 URL",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "解析受限的 HTTP、HTTPS、WS 与 WSS URL，并解析相对引用。"
+				}
+			],
+			"source": "network/url.el",
+			"line": 1,
+			"id": "network/url"
+		},
+		{
+			"kind": "api",
+			"name": "resolveUrl",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "根据基础 URL 解析绝对或相对引用，并规范化相对路径中的点段。"
+				},
+				{
+					"tag": "param",
+					"value": "base 已解析的基础 URL。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "location 绝对 URL、根相对路径、查询、片段或相对路径引用。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "解析后的 NetworkUrl。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "组合结果不是受支持的 URL 时抛出 NetworkError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "解析相对资源路径",
+					"markdown": "```el\nimport { NetworkUrl, resolveUrl } from \"el:network/url.el\"\nlet asset = resolveUrl(NetworkUrl(\"https://example.test/app/index.html\"), \"../logo.svg\")\n```",
+					"code": "import { NetworkUrl, resolveUrl } from \"el:network/url.el\"\nlet asset = resolveUrl(NetworkUrl(\"https://example.test/app/index.html\"), \"../logo.svg\")\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "network/url.el",
+			"line": 97,
+			"signature": "export fn resolveUrl(base: NetworkUrl, location: Text): NetworkUrl",
+			"declaration_line": 108,
+			"id": "network/url::resolveUrl"
 		},
 		{
 			"kind": "module",
@@ -11567,6 +13741,170 @@
 		},
 		{
 			"kind": "module",
+			"name": "随机种子",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "从平台熵源或墙上时间取得随机数生成器种子。"
+				}
+			],
+			"source": "random/seed.el",
+			"line": 1,
+			"id": "random/seed"
+		},
+		{
+			"kind": "api",
+			"name": "generateSeed",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "从当前平台的系统熵来源取得随机种子。"
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { generateSeed } from \"el:random/seed.el\"\nlet seed = generateSeed()\n```\n预期结果：取得一个种子数值；系统熵不可用时抛 EntropyUnavailable。",
+					"code": "import { generateSeed } from \"el:random/seed.el\"\nlet seed = generateSeed()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "random/seed.el",
+			"line": 14,
+			"signature": "export fn generateSeed(): Number",
+			"declaration_line": 22,
+			"id": "random/seed::generateSeed"
+		},
+		{
+			"kind": "api",
+			"name": "automaticSeed",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "优先取得系统随机种子；熵不可用时使用当前墙上时间纳秒构造种子。"
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { automaticSeed } from \"el:random/seed.el\"\nlet seed = automaticSeed()\n```\n预期结果：取得一个种子数值。",
+					"code": "import { automaticSeed } from \"el:random/seed.el\"\nlet seed = automaticSeed()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "random/seed.el",
+			"line": 24,
+			"signature": "export fn automaticSeed(): Number",
+			"declaration_line": 32,
+			"id": "random/seed::automaticSeed"
+		},
+		{
+			"kind": "module",
+			"name": "原生输入文件",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供面向原生文件句柄的输入所有权与关闭管理。"
+				}
+			],
+			"source": "streams/input-file.el",
+			"line": 1,
+			"id": "streams/input-file"
+		},
+		{
+			"kind": "api",
+			"name": "openInputFile",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "打开原生文件作为顺序输入流。"
+				},
+				{
+					"tag": "param",
+					"value": "path 原生文件系统路径。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "lock 可选的读取保护请求。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "protection 记录读取保护请求与观察结果的对象。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "拥有原生句柄的输入文件对象；调用方负责关闭或让其析构清理。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "路径无效、文件打开失败或保护配置状态不匹配时抛出异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "打开并读取输入文件",
+					"markdown": "```el\nimport { openInputFile } from \"el:streams/input-file.el\"\nlet input = openInputFile(\"data.bin\")\ninput.close()\n```",
+					"code": "import { openInputFile } from \"el:streams/input-file.el\"\nlet input = openInputFile(\"data.bin\")\ninput.close()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "streams/input-file.el",
+			"line": 125,
+			"signature": "export fn openInputFile(path: Text, lock: Bool | void_t = void, protection: FileReadProtection = FileReadProtection(lock is t_t)): NativeInputFile",
+			"declaration_line": 138,
+			"id": "streams/input-file::openInputFile"
+		},
+		{
+			"kind": "api",
+			"name": "openOptionalInputFile",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "尝试打开原生输入文件；仅在平台报告文件缺失时返回 void。"
+				},
+				{
+					"tag": "param",
+					"value": "path 原生文件系统路径。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "已打开的输入文件对象，或目标不存在时的 void。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "除文件缺失以外的打开失败时抛出异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "可选读取输入文件",
+					"markdown": "```el\nimport { openOptionalInputFile } from \"el:streams/input-file.el\"\nlet input = openOptionalInputFile(\"optional.bin\")\n```",
+					"code": "import { openOptionalInputFile } from \"el:streams/input-file.el\"\nlet input = openOptionalInputFile(\"optional.bin\")\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "streams/input-file.el",
+			"line": 143,
+			"signature": "export fn openOptionalInputFile(path: Text): NativeInputFile | void_t",
+			"declaration_line": 153,
+			"id": "streams/input-file::openOptionalInputFile"
+		},
+		{
+			"kind": "module",
 			"name": "文本辅助操作",
 			"sections": [
 				{
@@ -11578,6 +13916,35 @@
 			"source": "text/operations.el",
 			"line": 1,
 			"id": "text/operations"
+		},
+		{
+			"kind": "api",
+			"name": "frame",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将文本编码为十进制标量长度、冒号和原文组成的定帧。"
+				},
+				{
+					"tag": "param",
+					"value": "text 要编码的文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { frame } from \"el:text/operations.el\"\nframe(\"猫:咪\")\n```\n预期结果：3:猫:咪。",
+					"code": "import { frame } from \"el:text/operations.el\"\nframe(\"猫:咪\")\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "text/operations.el",
+			"line": 6,
+			"signature": "export fn frame(text: Text): Text",
+			"declaration_line": 15,
+			"id": "text/operations::frame"
 		},
 		{
 			"kind": "api",
@@ -11611,16 +13978,16 @@
 				{
 					"tag": "example",
 					"value": "查找路径片段",
-					"markdown": "```el\nimport { find_text } from \"el:text/operations.el\"\nconsole.stdout.writeLine(find_text(\"reports/2026\", \"2026\", 0))\n```",
-					"code": "import { find_text } from \"el:text/operations.el\"\nconsole.stdout.writeLine(find_text(\"reports/2026\", \"2026\", 0))\n",
+					"markdown": "```el\nimport { find_text } from \"el:text/operations.el\"\nfind_text(\"reports/2026\", \"2026\", 0)\n```",
+					"code": "import { find_text } from \"el:text/operations.el\"\nfind_text(\"reports/2026\", \"2026\", 0)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
 			],
 			"source": "text/operations.el",
-			"line": 8,
+			"line": 17,
 			"signature": "export fn find_text(text: Text, needle: Text, start: Number): Number",
-			"declaration_line": 19,
+			"declaration_line": 28,
 			"id": "text/operations::find_text"
 		},
 		{
@@ -12073,9 +14440,9 @@
 				}
 			],
 			"source": "text/patterns/parser.el",
-			"line": 63,
+			"line": 92,
 			"signature": "let matched: Bool",
-			"declaration_line": 69,
+			"declaration_line": 98,
 			"id": "text/patterns/parser::ParseReply.matched"
 		},
 		{
@@ -12097,9 +14464,9 @@
 				}
 			],
 			"source": "text/patterns/parser.el",
-			"line": 70,
+			"line": 100,
 			"signature": "let end: Number",
-			"declaration_line": 76,
+			"declaration_line": 106,
 			"id": "text/patterns/parser::ParseReply.end"
 		},
 		{
@@ -12121,9 +14488,9 @@
 				}
 			],
 			"source": "text/patterns/parser.el",
-			"line": 78,
+			"line": 108,
 			"signature": "let error: ParseError",
-			"declaration_line": 84,
+			"declaration_line": 114,
 			"id": "text/patterns/parser::ParseReply.error"
 		},
 		{
@@ -12155,9 +14522,9 @@
 				}
 			],
 			"source": "text/patterns/parser.el",
-			"line": 107,
+			"line": 137,
 			"signature": "fn value(): output",
-			"declaration_line": 115,
+			"declaration_line": 145,
 			"id": "text/patterns/parser::ParseReply.value"
 		},
 		{
@@ -12177,16 +14544,16 @@
 				{
 					"tag": "example",
 					"value": "解析完整输入",
-					"markdown": "```el\nlet value = integer().asParser().parse(\"42\")\n```",
-					"code": "let value = integer().asParser().parse(\"42\")\n",
+					"markdown": "```el\nlet value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse(\"42\")\n```",
+					"code": "let value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse(\"42\")\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
 			],
 			"source": "text/patterns/parser.el",
-			"line": 140,
+			"line": 209,
 			"signature": "fn asParser()",
-			"declaration_line": 147,
+			"declaration_line": 216,
 			"id": "text/patterns/parser::Parser.asParser"
 		},
 		{
@@ -12221,16 +14588,16 @@
 				{
 					"tag": "example",
 					"value": "解析完整整数",
-					"markdown": "```el\nimport { integer } from \"el:text/patterns/index.el\"\nlet value = integer().asParser().parse(\"42\")\nconsole.stdout.writeLine(value)\n```",
-					"code": "import { integer } from \"el:text/patterns/index.el\"\nlet value = integer().asParser().parse(\"42\")\nconsole.stdout.writeLine(value)\n",
+					"markdown": "```el\nimport { integer } from \"el:text/patterns/index.el\"\nlet value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse(\"42\")\nconsole.stdout.writeLine(value)\n```",
+					"code": "import { integer } from \"el:text/patterns/index.el\"\nlet value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse(\"42\")\nconsole.stdout.writeLine(value)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
 			],
 			"source": "text/patterns/parser.el",
-			"line": 159,
+			"line": 238,
 			"signature": "fn parse(source: Text, limits: PatternLimits = PatternLimits()): output",
-			"declaration_line": 171,
+			"declaration_line": 250,
 			"id": "text/patterns/parser::Parser.parse"
 		},
 		{
@@ -12265,16 +14632,16 @@
 				{
 					"tag": "example",
 					"value": "只解析数字前缀",
-					"markdown": "```el\nimport { integer } from \"el:text/patterns/index.el\"\nlet reply = integer().asParser().parsePrefix(\"12 items\")\nconsole.stdout.writeLine(reply.matched, \" \", reply.end)\n```",
-					"code": "import { integer } from \"el:text/patterns/index.el\"\nlet reply = integer().asParser().parsePrefix(\"12 items\")\nconsole.stdout.writeLine(reply.matched, \" \", reply.end)\n",
+					"markdown": "```el\nimport { integer } from \"el:text/patterns/index.el\"\nlet reply = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parsePrefix(\"12 items\")\nconsole.stdout.writeLine(reply.matched, \" \", reply.end)\n```",
+					"code": "import { integer } from \"el:text/patterns/index.el\"\nlet reply = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parsePrefix(\"12 items\")\nconsole.stdout.writeLine(reply.matched, \" \", reply.end)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
 			],
 			"source": "text/patterns/parser.el",
-			"line": 179,
+			"line": 258,
 			"signature": "fn parsePrefix(source: Text, from: Number = 0, limits: PatternLimits = PatternLimits()): ParseReply<output: output>",
-			"declaration_line": 191,
+			"declaration_line": 270,
 			"id": "text/patterns/parser::Parser.parsePrefix"
 		},
 		{
@@ -12311,9 +14678,9 @@
 				}
 			],
 			"source": "text/patterns/parser.el",
-			"line": 414,
+			"line": 586,
 			"signature": "export fn firstOf(first, ...rest)",
-			"declaration_line": 424,
+			"declaration_line": 596,
 			"id": "text/patterns/parser::firstOf"
 		},
 		{
@@ -12350,9 +14717,9 @@
 				}
 			],
 			"source": "text/patterns/parser.el",
-			"line": 443,
+			"line": 627,
 			"signature": "export fn constant(text: Text, value)",
-			"declaration_line": 453,
+			"declaration_line": 637,
 			"id": "text/patterns/parser::constant"
 		},
 		{
@@ -12394,9 +14761,9 @@
 				}
 			],
 			"source": "text/patterns/parser.el",
-			"line": 463,
+			"line": 647,
 			"signature": "export fn pair(left, separator, right)",
-			"declaration_line": 474,
+			"declaration_line": 658,
 			"id": "text/patterns/parser::pair"
 		},
 		{
@@ -12441,16 +14808,16 @@
 				{
 					"tag": "example",
 					"value": "解析逗号分隔数组",
-					"markdown": "```el\nimport { list, integer } from \"el:text/patterns/index.el\"\nlet numbers = list(\"[\", integer(), \"]\", separator: \",\")\n```",
-					"code": "import { list, integer } from \"el:text/patterns/index.el\"\nlet numbers = list(\"[\", integer(), \"]\", separator: \",\")\n",
+					"markdown": "```el\nimport { list, integer } from \"el:text/patterns/index.el\"\nlet numbers = list(\"[\", integer(min: unbounded, max: unbounded, epsilon: 0), \"]\", separator: \",\")\n```",
+					"code": "import { list, integer } from \"el:text/patterns/index.el\"\nlet numbers = list(\"[\", integer(min: unbounded, max: unbounded, epsilon: 0), \"]\", separator: \",\")\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
 			],
 			"source": "text/patterns/parser.el",
-			"line": 524,
+			"line": 732,
 			"signature": "export fn list(open, element, close, separator = \",\", allowTrailing: Bool = nil)",
-			"declaration_line": 537,
+			"declaration_line": 745,
 			"id": "text/patterns/parser::list"
 		},
 		{
@@ -12969,6 +15336,577 @@
 			"signature": "export fn resolveTheme(theme: Theme, context: ThemeContext = ThemeContext()): ResolvedTheme",
 			"declaration_line": 35,
 			"id": "theme/resolve::resolveTheme"
+		},
+		{
+			"kind": "module",
+			"name": "公历换算",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供公历字段、Unix 时间和时区偏移之间的换算。"
+				}
+			],
+			"source": "time/calendar.el",
+			"line": 1,
+			"id": "time/calendar"
+		},
+		{
+			"kind": "api",
+			"name": "leapYear",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "按公历 400 年规则判断指定年份是否为闰年。"
+				},
+				{
+					"tag": "param",
+					"value": "year 公历年份。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { leapYear } from \"el:time/calendar.el\"\nleapYear(2000)\n```\n预期结果：真。",
+					"code": "import { leapYear } from \"el:time/calendar.el\"\nleapYear(2000)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "time/calendar.el",
+			"line": 9,
+			"signature": "export fn leapYear(year: Number): Bool",
+			"declaration_line": 18,
+			"id": "time/calendar::leapYear"
+		},
+		{
+			"kind": "api",
+			"name": "monthDays",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回该年月的天数；二月按闰年规则处理。"
+				},
+				{
+					"tag": "param",
+					"value": "year 公历年份。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "month 月份编号。",
+					"markdown": ""
+				},
+				{
+					"tag": "note",
+					"value": "本函数不校验年月；除二月和四个 30 天月份外，其他月份值均按 31 天处理。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { monthDays } from \"el:time/calendar.el\"\nmonthDays(2024, 2)\n```\n预期结果：29。",
+					"code": "import { monthDays } from \"el:time/calendar.el\"\nmonthDays(2024, 2)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "time/calendar.el",
+			"line": 20,
+			"signature": "export fn monthDays(year: Number, month: Number): Number",
+			"declaration_line": 31,
+			"id": "time/calendar::monthDays"
+		},
+		{
+			"kind": "api",
+			"name": "epochDay",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将公历年月日换算为自 1970-01-01 起的日数。"
+				},
+				{
+					"tag": "param",
+					"value": "year 公历年份。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "month 月份编号。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "day 当月日期。",
+					"markdown": ""
+				},
+				{
+					"tag": "note",
+					"value": "本函数不校验年月日字段；调用者应传入有效的公历日期。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { epochDay } from \"el:time/calendar.el\"\nepochDay(1970, 1, 2)\n```\n预期结果：1。",
+					"code": "import { epochDay } from \"el:time/calendar.el\"\nepochDay(1970, 1, 2)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "time/calendar.el",
+			"line": 38,
+			"signature": "export fn epochDay(year: Number, month: Number, day: Number): Number",
+			"declaration_line": 50,
+			"id": "time/calendar::epochDay"
+		},
+		{
+			"kind": "api",
+			"name": "yearAtSeconds",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回 Unix 秒数对应 UTC 日期所在的公历年份。"
+				},
+				{
+					"tag": "param",
+					"value": "seconds Unix 时间秒数。",
+					"markdown": ""
+				},
+				{
+					"tag": "note",
+					"value": "调用者应传入有限整数秒；本函数不校验输入。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { yearAtSeconds } from \"el:time/calendar.el\"\nyearAtSeconds(0)\n```\n预期结果：1970。",
+					"code": "import { yearAtSeconds } from \"el:time/calendar.el\"\nyearAtSeconds(0)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "time/calendar.el",
+			"line": 61,
+			"signature": "export fn yearAtSeconds(seconds: Number): Number",
+			"declaration_line": 71,
+			"id": "time/calendar::yearAtSeconds"
+		},
+		{
+			"kind": "api",
+			"name": "calendarAt",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "把 Unix 纳秒和偏移量分解为公历字段。"
+				},
+				{
+					"tag": "param",
+					"value": "nanoseconds Unix 时间纳秒。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "offset 加到时间值上的偏移。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "纳秒值非有限或非整数、或换算日期超出 CalendarTime 支持范围时抛 RangeError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { calendarAt } from \"el:time/calendar.el\"\ncalendarAt(0).year\n```\n预期结果：1970。",
+					"code": "import { calendarAt } from \"el:time/calendar.el\"\ncalendarAt(0).year\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "time/calendar.el",
+			"line": 122,
+			"signature": "export fn calendarAt(nanoseconds: Number, offset: TimeDiff = TimeDiff()): CalendarTime",
+			"declaration_line": 133,
+			"id": "time/calendar::calendarAt"
+		},
+		{
+			"kind": "api",
+			"name": "offsetText",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将偏移量格式化为带符号的时区偏移文本。"
+				},
+				{
+					"tag": "param",
+					"value": "offset 要格式化的偏移。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { offsetText } from \"el:time/calendar.el\"\nimport { TimeDiff } from \"el:time/diff.el\"\noffsetText(TimeDiff.seconds(19800))\n```\n预期结果：+05:30。",
+					"code": "import { offsetText } from \"el:time/calendar.el\"\nimport { TimeDiff } from \"el:time/diff.el\"\noffsetText(TimeDiff.seconds(19800))\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "time/calendar.el",
+			"line": 150,
+			"signature": "export fn offsetText(offset: TimeDiff): Text",
+			"declaration_line": 160,
+			"id": "time/calendar::offsetText"
+		},
+		{
+			"kind": "module",
+			"name": "时间点",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "表示 Unix 纳秒时间点，并提供文本、日历和时区转换。"
+				}
+			],
+			"source": "time/instant.el",
+			"line": 1,
+			"id": "time/instant"
+		},
+		{
+			"kind": "api",
+			"name": "TimeResolution",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "选择本地时间映射到多个或零个时间点时的处理策略。"
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { TimeResolution } from \"el:time/instant.el\"\nTimeResolution.Earlier\n```\n预期结果：选择较早的候选时间点。",
+					"code": "import { TimeResolution } from \"el:time/instant.el\"\nTimeResolution.Earlier\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "time/instant.el",
+			"line": 23,
+			"signature": "export enum TimeResolution",
+			"declaration_line": 31,
+			"id": "time/instant::TimeResolution"
+		},
+		{
+			"kind": "api",
+			"name": "MonthOverflow",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "选择按日历月移动时目标月份没有原日期的处理策略。"
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { MonthOverflow } from \"el:time/instant.el\"\nMonthOverflow.Clamp\n```\n预期结果：将日期限制为目标月最后一天。",
+					"code": "import { MonthOverflow } from \"el:time/instant.el\"\nMonthOverflow.Clamp\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "time/instant.el",
+			"line": 32,
+			"signature": "export enum MonthOverflow",
+			"declaration_line": 40,
+			"id": "time/instant::MonthOverflow"
+		},
+		{
+			"kind": "module",
+			"name": "时间文本解析",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "解析常见时间文本并返回结构化字段。"
+				}
+			],
+			"source": "time/parse.el",
+			"line": 1,
+			"id": "time/parse"
+		},
+		{
+			"kind": "api",
+			"name": "parseTime",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "解析时间文本并返回字段、偏移和解析状态。"
+				},
+				{
+					"tag": "param",
+					"value": "source 要解析的时间文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "standard 是否要求标准时间格式。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "文本结构无效、精度超过纳秒、偏移缺失/未知/越界或日历字段无效时抛出相应解析错误或 RangeError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { parseTime } from \"el:time/parse.el\"\nimport { t } from \"el:language/values.el\"\nparseTime(\"1970-01-01T00:00:00Z\", t).calendar.year\n```\n预期结果：1970。",
+					"code": "import { parseTime } from \"el:time/parse.el\"\nimport { t } from \"el:language/values.el\"\nparseTime(\"1970-01-01T00:00:00Z\", t).calendar.year\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "time/parse.el",
+			"line": 73,
+			"signature": "export fn parseTime(source: Text, standard: Bool): ParsedTime",
+			"declaration_line": 85,
+			"id": "time/parse::parseTime"
+		},
+		{
+			"kind": "module",
+			"name": "时间单位与格式化",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供秒、日和纳秒的换算常量及时间数字格式化函数。"
+				}
+			],
+			"source": "time/units.el",
+			"line": 1,
+			"id": "time/units"
+		},
+		{
+			"kind": "api",
+			"name": "whole",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "要求数值为有限整数并返回该值。"
+				},
+				{
+					"tag": "param",
+					"value": "value 待检查的数值。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "非有限值或非整数值时抛 RangeError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { whole } from \"el:time/units.el\"\nwhole(12)\n```\n预期结果：12。",
+					"code": "import { whole } from \"el:time/units.el\"\nwhole(12)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "time/units.el",
+			"line": 10,
+			"signature": "export fn whole(value: Number): Number",
+			"declaration_line": 20,
+			"id": "time/units::whole"
+		},
+		{
+			"kind": "api",
+			"name": "floorDivide",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "计算向负无穷取整的商，处理负值时不同于向零截断。"
+				},
+				{
+					"tag": "param",
+					"value": "value 被除数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "divisor 除数。",
+					"markdown": ""
+				},
+				{
+					"tag": "note",
+					"value": "divisor 必须非零；本函数不显式检查零除数或数值范围。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { floorDivide } from \"el:time/units.el\"\nfloorDivide(-7, 3)\n```\n预期结果：-3。",
+					"code": "import { floorDivide } from \"el:time/units.el\"\nfloorDivide(-7, 3)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "time/units.el",
+			"line": 26,
+			"signature": "export fn floorDivide(value: Number, divisor: Number): Number",
+			"declaration_line": 37,
+			"id": "time/units::floorDivide"
+		},
+		{
+			"kind": "api",
+			"name": "positiveRemainder",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "按向下取整商计算正向余数。"
+				},
+				{
+					"tag": "param",
+					"value": "value 被除数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "divisor 除数。",
+					"markdown": ""
+				},
+				{
+					"tag": "note",
+					"value": "divisor 必须非零；本函数不显式检查零除数或数值范围。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { positiveRemainder } from \"el:time/units.el\"\npositiveRemainder(-7, 3)\n```\n预期结果：2。",
+					"code": "import { positiveRemainder } from \"el:time/units.el\"\npositiveRemainder(-7, 3)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "time/units.el",
+			"line": 44,
+			"signature": "export fn positiveRemainder(value: Number, divisor: Number): Number",
+			"declaration_line": 55,
+			"id": "time/units::positiveRemainder"
+		},
+		{
+			"kind": "api",
+			"name": "decimalDigits",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "把数值转为文本，并在左侧补零至至少指定宽度。"
+				},
+				{
+					"tag": "param",
+					"value": "value 待格式化数值。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "width 最小字符数。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { decimalDigits } from \"el:time/units.el\"\ndecimalDigits(7, 3)\n```\n预期结果：007。",
+					"code": "import { decimalDigits } from \"el:time/units.el\"\ndecimalDigits(7, 3)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "time/units.el",
+			"line": 59,
+			"signature": "export fn decimalDigits(value: Number, width: Number): Text",
+			"declaration_line": 69,
+			"id": "time/units::decimalDigits"
+		},
+		{
+			"kind": "api",
+			"name": "fractionalSecond",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将纳秒小数部分格式化为可选的小数点后缀，并去掉末尾零。"
+				},
+				{
+					"tag": "param",
+					"value": "nanoseconds 秒内的纳秒部分。",
+					"markdown": ""
+				},
+				{
+					"tag": "note",
+					"value": "调用者应传入 0 到 999999999 的整数；本函数不校验范围。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { fractionalSecond } from \"el:time/units.el\"\nfractionalSecond(120000000)\n```\n预期结果：.12。",
+					"code": "import { fractionalSecond } from \"el:time/units.el\"\nfractionalSecond(120000000)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "time/units.el",
+			"line": 75,
+			"signature": "export fn fractionalSecond(nanoseconds: Number): Text",
+			"declaration_line": 85,
+			"id": "time/units::fractionalSecond"
+		},
+		{
+			"kind": "api",
+			"name": "secondsText",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将纳秒数格式化为秒文本，保留负号并省略无意义的末尾小数零。"
+				},
+				{
+					"tag": "param",
+					"value": "nanoseconds 有符号的纳秒数。",
+					"markdown": ""
+				},
+				{
+					"tag": "note",
+					"value": "调用者应传入整数纳秒；本函数不校验有限性或整数性。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "示例",
+					"markdown": "```el\nimport { secondsText } from \"el:time/units.el\"\nsecondsText(1250000000)\n```\n预期结果：1.25。",
+					"code": "import { secondsText } from \"el:time/units.el\"\nsecondsText(1250000000)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "time/units.el",
+			"line": 92,
+			"signature": "export fn secondsText(nanoseconds: Number): Text",
+			"declaration_line": 102,
+			"id": "time/units::secondsText"
 		},
 		{
 			"kind": "module",
@@ -13639,9 +16577,9 @@
 				}
 			],
 			"source": "user-interface/drawing.el",
-			"line": 106,
+			"line": 110,
 			"signature": "export fn darkPaintTheme(): PaintTheme",
-			"declaration_line": 113,
+			"declaration_line": 117,
 			"id": "user-interface/drawing::darkPaintTheme"
 		},
 		{
@@ -13655,7 +16593,7 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 6,
+			"line": 10,
 			"id": "user-interface/model"
 		},
 		{
@@ -13677,9 +16615,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 9,
+			"line": 13,
 			"signature": "@assign(mode: \"shared\")\nexport class LayoutStyle",
-			"declaration_line": 17,
+			"declaration_line": 21,
 			"id": "user-interface/model::LayoutStyle"
 		},
 		{
@@ -13701,9 +16639,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 66,
+			"line": 70,
 			"signature": "@assign(mode: \"shared\")\nexport class Definition",
-			"declaration_line": 74,
+			"declaration_line": 78,
 			"id": "user-interface/model::Definition"
 		},
 		{
@@ -13725,9 +16663,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 78,
+			"line": 82,
 			"signature": "let theme: Theme | void_t",
-			"declaration_line": 84,
+			"declaration_line": 88,
 			"id": "user-interface/model::Definition.theme"
 		},
 		{
@@ -13749,9 +16687,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 104,
+			"line": 111,
 			"signature": "@assign(mode: \"shared\")\nexport class GuiEvent",
-			"declaration_line": 110,
+			"declaration_line": 117,
 			"id": "user-interface/model::GuiEvent"
 		},
 		{
@@ -13793,9 +16731,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 143,
+			"line": 150,
 			"signature": "export fn on(element: Definition, kind: Text, action, capture: Bool = nil)",
-			"declaration_line": 153,
+			"declaration_line": 160,
 			"id": "user-interface/model::on"
 		},
 		{
@@ -13842,9 +16780,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 157,
+			"line": 164,
 			"signature": "export fn element(kind: Text, text: Text = \"\", id: Text = \"\"): Definition",
-			"declaration_line": 168,
+			"declaration_line": 175,
 			"id": "user-interface/model::element"
 		},
 		{
@@ -13886,9 +16824,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 184,
+			"line": 191,
 			"signature": "export fn appendChild(parent: Definition, key: Text, target: Definition)",
-			"declaration_line": 195,
+			"declaration_line": 202,
 			"id": "user-interface/model::appendChild"
 		},
 		{
@@ -13925,9 +16863,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 203,
+			"line": 210,
 			"signature": "export fn removeChild(parent: Definition, key: Text): Bool",
-			"declaration_line": 212,
+			"declaration_line": 219,
 			"id": "user-interface/model::removeChild"
 		},
 		{
@@ -13969,9 +16907,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 224,
+			"line": 231,
 			"signature": "export fn moveChild(parent: Definition, key: Text, destination: Number)",
-			"declaration_line": 234,
+			"declaration_line": 241,
 			"id": "user-interface/model::moveChild"
 		},
 		{
@@ -14007,9 +16945,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 157,
+			"line": 164,
 			"signature": "export class WindowTimer",
-			"declaration_line": 164,
+			"declaration_line": 171,
 			"id": "user-interface/platform/windows/window::WindowTimer"
 		},
 		{
@@ -14036,9 +16974,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 176,
+			"line": 183,
 			"signature": "fn cancel()",
-			"declaration_line": 183,
+			"declaration_line": 190,
 			"id": "user-interface/platform/windows/window::WindowTimer.cancel"
 		},
 		{
@@ -14060,9 +16998,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 202,
+			"line": 209,
 			"signature": "export class Window",
-			"declaration_line": 209,
+			"declaration_line": 216,
 			"id": "user-interface/platform/windows/window::Window"
 		},
 		{
@@ -14084,9 +17022,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 247,
+			"line": 254,
 			"signature": "get theme(): PaintTheme",
-			"declaration_line": 253,
+			"declaration_line": 260,
 			"id": "user-interface/platform/windows/window::Window.theme"
 		},
 		{
@@ -14113,9 +17051,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 589,
+			"line": 596,
 			"signature": "fn onArrow(action)",
-			"declaration_line": 596,
+			"declaration_line": 603,
 			"id": "user-interface/platform/windows/window::Window.onArrow"
 		},
 		{
@@ -14157,9 +17095,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 602,
+			"line": 609,
 			"signature": "@discardable fn every(milliseconds: Number, action): WindowTimer",
-			"declaration_line": 612,
+			"declaration_line": 619,
 			"id": "user-interface/platform/windows/window::Window.every"
 		},
 		{
@@ -14196,9 +17134,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 632,
+			"line": 639,
 			"signature": "fn getById(id: Text): ElementHandle",
-			"declaration_line": 642,
+			"declaration_line": 649,
 			"id": "user-interface/platform/windows/window::Window.getById"
 		},
 		{
@@ -14225,9 +17163,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 731,
+			"line": 738,
 			"signature": "export fn runWindow(window: Window)",
-			"declaration_line": 738,
+			"declaration_line": 745,
 			"id": "user-interface/platform/windows/window::runWindow"
 		},
 		{
@@ -14254,9 +17192,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 754,
+			"line": 761,
 			"signature": "export fn runWindows(windows: Window[])",
-			"declaration_line": 761,
+			"declaration_line": 768,
 			"id": "user-interface/platform/windows/window::runWindows"
 		},
 		{
@@ -14762,8 +17700,8 @@
 		}
 	],
 	"coverage": {
-		"source_files": 3566,
-		"documented_files": 71,
-		"documented_apis": 391
+		"source_files": 3630,
+		"documented_files": 95,
+		"documented_apis": 455
 	}
 }

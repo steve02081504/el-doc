@@ -1,112 +1,42 @@
-<div class="el-hero" markdown>
-<p class="el-hero__eyebrow">EviL LANGUAGE · EL 教学文档</p>
-<h1>一份源码，<br>既开窗口，也开网页。</h1>
-<p class="el-hero__lead">EL 是一门面向整个应用的通用语言：脚本、原生程序、服务、标签式 GUI 与数据库查询共用一套语法、类型和运行时。同一套界面代码既能打开系统窗口，也能编译成单文件网页，双击就在浏览器里跑起来。</p>
-<div class="el-hero__actions">
-<a class="md-button md-button--primary" href="getting-started/">3 分钟跑起来</a>
-<a class="md-button" href="roadmap/">先看学习地图</a>
-<a class="md-button" href="stdlib/api/">查标准库 API</a>
-</div>
-<div class="el-hero__code" markdown>
-```el
-fn greet(name: Text = "world") => "hello " + name
+# EL 语言参考
 
-console.stdout.writeLine(greet())
-console.info.value(@{ language: "EL" })
-```
-</div>
-</div>
+查阅 EL 的语法、语言合同和标准库接口。已知名字时使用搜索或符号索引；按领域浏览时从下列分类进入。
 
-<div class="el-progress" data-el-progress hidden>
-<div class="el-progress__head">
-<p class="el-progress__count"><span data-el-progress-count>0</span><small data-el-progress-total> / 0 页</small></p>
-<p class="el-progress__label">读过的页面会记在这台设备上</p>
-</div>
-<div class="el-progress__track"><div class="el-progress__fill" data-el-progress-fill></div></div>
-<p class="el-progress__resume" data-el-progress-resume hidden></p>
-<button class="el-progress__reset" type="button" data-el-progress-reset>清空本机进度</button>
-</div>
+## 语言
 
-## EL 是什么味道
+| 基础 | 程序结构 | 执行与扩展 |
+| --- | --- | --- |
+| [词法与字面量](reference/language/lexical.md) | [声明与绑定](reference/language/declarations.md) | [控制流](reference/language/control-flow.md) |
+| [类型](reference/language/types.md) | [函数与重载](reference/language/functions.md) | [异常与并发](reference/language/execution.md) |
+| [表达式与运算符](reference/language/expressions.md) | [类与生命周期](reference/language/classes.md) | [宏与元编程](reference/language/metaprogramming.md) |
+| [语言参考总览](reference/language/index.md) | [模块与导入](reference/language/modules.md) | [工具链与命令](toolchain.md) |
 
-- **一套语言覆盖应用与平台。** 脚本、原生程序、服务、GUI 和远程模块更新使用同一份源码；原生目标覆盖 Windows、Linux、macOS、FreeBSD、iOS、Android，浏览器里则是单文件页面：wasm 模块内嵌在 HTML 中，界面仍由 EL 用 Canvas 自绘。
-- **数值不将就。** 日常的 `Number` 是精确有理数：`1/3` 可以精确保存，数值变大时按需扩展表示，不会仅因超过固定机器位宽就溢出。
-- **资源规则是语言的一部分。** 对象明确选择复制还是共享，构造与析构有固定时机，需要时能直接指定存储位置与借用来源。
-- **Debug 护具穿满，Release 跑得快。** 两种模式共用一条优化流水线；安全检查可以关闭，但语言合同不会因此改变。
+## 标准库
 
-想先看它长什么样，读[15 分钟速览](tour.md)；想直接动手，去[安装与第一个程序](getting-started.md)。
+[库分类总览](stdlib/api/index.md) · [模块索引](stdlib/api/modules.md) · [符号索引](stdlib/api/symbols.md)
 
-## 做完第一个作品之后
+| 领域 | 参考 |
+| --- | --- |
+| 容器与函数组合 | [collections](stdlib/api/categories/collections.md) · [functions](stdlib/api/categories/functions.md) |
+| 文本与格式 | [text](stdlib/api/categories/text.md) · [formats](stdlib/api/categories/formats.md) |
+| 数学与数值计算 | [mathematics](stdlib/api/categories/mathematics.md) · [numerical-computing](stdlib/api/categories/numerical-computing.md) · [random](stdlib/api/categories/random.md) |
+| 文件、网络与输出 | [filesystem](stdlib/api/categories/filesystem.md) · [streams](stdlib/api/categories/streams.md) · [network](stdlib/api/categories/network.md) · [console](stdlib/api/categories/console.md) |
+| 时间与密码学 | [time](stdlib/api/categories/time.md) · [cryptography](stdlib/api/categories/cryptography.md) |
+| 并发与错误 | [concurrency](stdlib/api/categories/concurrency.md) · [errors](stdlib/api/categories/errors.md) |
+| 图形、界面与媒体 | [graphics](stdlib/api/categories/graphics.md) · [user-interface](stdlib/api/categories/user-interface.md) · [multimedia](stdlib/api/categories/multimedia.md) · [theme](stdlib/api/categories/theme.md) |
+| 神经网络 | [neural-networks](stdlib/api/categories/neural-networks.md) |
+| 语言扩展与工具 | [language](stdlib/api/categories/language.md) · [logic](stdlib/api/categories/logic.md) · [tools](stdlib/api/categories/tools.md) |
 
-零基础先走[采购小助手路线](beginner/index.md)。下面是更完整的章节地图，适合做完第一个作品后按需查阅；无需先读完才能动手。
+API 条目包含源码签名、参数、返回值、失败条件和示例，并链接到定义位置。当前索引只包含已补文档的接口；完整度以[生成页统计](stdlib/api/index.md)为准。
 
-<div class="el-grid" markdown>
-<div class="el-card" markdown>
-<span class="el-card__num">00</span>
-### [起步](getting-started.md)
-让第一行代码跑起来，再沿零基础路线完成采购小助手。
-<span class="el-card__meta">分小节练习 · 可以随时停下</span>
-</div>
-<div class="el-card" markdown>
-<span class="el-card__num">01</span>
-### [语言基础](language/index.md)
-值、类型、运算符、控制流、函数——日常写代码真正会用到的部分。
-<span class="el-card__meta">约 3 小时 · 6 页</span>
-</div>
-<div class="el-card" markdown>
-<span class="el-card__num">02</span>
-### [语言进阶](language/lifetimes.md)
-生命周期、类、模块、预处理、错误与异步。深水区可以跳过。
-<span class="el-card__meta">约 4–5 小时 · 9 页</span>
-</div>
-<div class="el-card" markdown>
-<span class="el-card__num">03</span>
-### [标准库](stdlib/index.md)
-输出、集合、文件与网络、GUI、声音、神经网络、测试。
-<span class="el-card__meta">约 3 小时 · 7 页</span>
-</div>
-<div class="el-card" markdown>
-<span class="el-card__num">04</span>
-### [交付与实战](practice/cli-tool.md)
-构建产物，再用两个完整项目把前面的知识串起来。
-<span class="el-card__meta">约 30 分钟 + 每个项目 30–60 分钟</span>
-</div>
-<div class="el-card" markdown>
-<span class="el-card__num">05</span>
-### [多范式](practice/json-parser.md)
-手写解析器、规则式机器人、定理证明、矩阵脚本。
-<span class="el-card__meta">换脑子用的 · 4 页</span>
-</div>
-</div>
+## 工具与状态
 
-## 三条常见路线
+- [工具链](toolchain.md)：命令、项目、构建与产物。
+- [规范与实现边界](appendix/implementation-status.md)：区分规范合同、源码实现与实际验收。
+- [文档注释与生成](stdlib/documentation-comments.md)：维护接口说明、生成网页与结构化数据。
 
-=== "第一次学编程"
+语言参考按规范解释合同，不表示所有合同均已完成实现；源码注释示例当前未运行验证。站点构建检查链接和排版，不能证明 EL 程序能编译或运行。
 
-    从[第一个程序](getting-started.md)开始，再走[零基础路线](beginner/index.md)。先运行例子，再改一处，最后收起例子独立做。速览、内存、异步和底层章节留到需要时查。
+## 学习 EL
 
-=== "会别的语言，想快速上手"
-
-    先读[15 分钟速览](tour.md)和[从其他语言过来](appendix/coming-from.md)，再按需要跳到具体章节。EL 的写法接近 JavaScript 与 C 的混合体，但有四处关键差异：`async {}` 与 `await(p)` 是标准库宏而不是关键字、逻辑运算不是 `&&`/`||`、`^` 是乘方而不是异或、类必须声明复制还是共享。
-
-=== "只想查写法"
-
-    [语言总览](language/index.md)按主题拆分，每页开头就是结论和最小例子；[标准库 API 参考](stdlib/api/index.md)可查函数签名、参数、异常与示例；[工具链](toolchain.md)有完整的命令速查；[常见问题](appendix/faq.md)按主题分组。用右上角的搜索比翻目录快。
-
-<div class="el-status" markdown>
-<strong>文档状态</strong>
-<div>EL 仍在开发中。规范描述的是目标合同，部分能力还没走完实现与验收；本教程会在对应位置用「实现状态」注明。代码示例按当前语言规范编写，不保证每个都能在现有发行版上直接运行。</div>
-</div>
-
-## 这份文档怎么来的
-
-本教程按 EL 仓库里的语言规范、标准库源码和示例编写，尽量只教已经定下来的写法；规范与示例冲突时以规范为准。三种“能不能用”的说法见[规范与实现边界](appendix/implementation-status.md)。
-
-发现错误或想补内容，欢迎在[仓库](https://github.com/steve02081504/el-doc)提 issue 或 PR。
-
-## 选择起点
-
-- [第一个程序](getting-started.md)：从保存文件和运行命令开始。
-- [零基础路线](beginner/index.md)：用生活里的小任务学写程序。
-- [15 分钟速览](tour.md)：想先看看这门语言长什么样。
-- [学习地图](roadmap.md)：想知道整份教程有多少、要花多久。
+[教程与指南](tutorials/index.md)收录零基础课程、语言讲解、标准库入门和实战项目。第一次接触编程可从[第一个程序](getting-started.md)开始；有经验的读者可读[15 分钟速览](tour.md)。

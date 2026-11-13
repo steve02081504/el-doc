@@ -2,15 +2,17 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../../categories/formats.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
+
 ## JSON 解码 {#api-7ea00058a6d26927fcd0}
 
-源码：`src/stdlib/formats/json/index.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/index.el#L1)
+源码：`src/stdlib/formats/json/index.el:2` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/index.el#L2)
 
 将严格 JSON 文本解析为 EL 的动态对象、数组、文本、数值与布尔/空值。
 
 ## parseJSON {#api-c4f131a4d226bac61cce}
 
-源码：`src/stdlib/formats/json/index.el:116` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/index.el#L116)
+源码：`src/stdlib/formats/json/index.el:138` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/index.el#L138)
 
 ```el
 export fn parseJSON(source: Text, limits: JsonLimits = JsonLimits()): any
@@ -35,7 +37,7 @@ let config = parseJSON("{\"name\":\"EL\"}")
 
 ## jsonField {#api-aa387b2b22b62084db00}
 
-源码：`src/stdlib/formats/json/index.el:139` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/index.el#L139)
+源码：`src/stdlib/formats/json/index.el:161` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/index.el#L161)
 
 ```el
 export fn jsonField(value: any, key: Text): any

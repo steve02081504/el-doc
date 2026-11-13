@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/text.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 文本与字符 {#api-df8646ac427828d0bbf5}
 
 源码：`src/stdlib/text/text.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1)

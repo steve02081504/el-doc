@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/console.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 控制台输出与日志 {#api-625df3bb66413ba4ff2c}
 
 源码：`src/stdlib/console/facade.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L1)
@@ -10,7 +12,7 @@
 
 ## ConsolePort.writeText {#api-fae6bc208bf9391a9866}
 
-源码：`src/stdlib/console/facade.el:29` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L29)
+源码：`src/stdlib/console/facade.el:66` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L66)
 
 ```el
 @discardable fn writeText(text: Text): Number
@@ -30,7 +32,7 @@ console.stdout.writeText("already text")
 
 ## ConsolePort.write {#api-54304963a81ae8272c7a}
 
-源码：`src/stdlib/console/facade.el:42` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L42)
+源码：`src/stdlib/console/facade.el:79` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L79)
 
 ```el
 @discardable fn write(...values): Number
@@ -50,7 +52,7 @@ console.stdout.write("ready")
 
 ## ConsolePort.writeLine {#api-e81005183e8ea76848da}
 
-源码：`src/stdlib/console/facade.el:55` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L55)
+源码：`src/stdlib/console/facade.el:92` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L92)
 
 ```el
 @discardable fn writeLine(...values): Number
@@ -70,7 +72,7 @@ console.stdout.writeLine("count: ", 3)
 
 ## ConsolePort.writeBytes {#api-fe5fbcd5c1d1a9dfc277}
 
-源码：`src/stdlib/console/facade.el:70` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L70)
+源码：`src/stdlib/console/facade.el:107` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L107)
 
 ```el
 @discardable fn writeBytes(bytes: Buffer): Number
@@ -91,7 +93,7 @@ console.stdout.writeBytes(bufferFromBytes(@[72, 105]))
 
 ## ConsolePort.emit {#api-74e095bfa3652f82157f}
 
-源码：`src/stdlib/console/facade.el:83` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L83)
+源码：`src/stdlib/console/facade.el:120` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L120)
 
 ```el
 fn emit(value): void_t
@@ -111,7 +113,7 @@ console.stdout.emit(@{ status: "ready" })
 
 ## capture {#api-db1d137769d65c8ddae2}
 
-源码：`src/stdlib/console/facade.el:121` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L121)
+源码：`src/stdlib/console/facade.el:158` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L158)
 
 ```el
 export fn capture(work, latePolicy: ConsoleLatePolicy = ConsoleLatePolicy.Forward, maxRecords: Number | void_t = void)
@@ -139,7 +141,7 @@ console.stdout.writeLine(captured.output.records.count)
 
 ## ConsoleLevelPort.operator {#api-975f263a222f7699e4e2}
 
-源码：`src/stdlib/console/facade.el:155` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L155)
+源码：`src/stdlib/console/facade.el:192` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L192)
 
 ```el
 operator()(message: Text | LocalizedMessage | LocalizedContent, parameters = @{}): void_t
@@ -161,7 +163,7 @@ console.info("task.done", @{ count: 3 })
 
 ## ConsoleLevelPort.value~snapshot {#api-4f80af39229b7be2b8ea}
 
-源码：`src/stdlib/console/facade.el:170` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L170)
+源码：`src/stdlib/console/facade.el:207` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L207)
 
 ```el
 fn value(snapshot: ConsoleValueSnapshot, channel: ConsoleChannel = this.#channel): void_t
@@ -183,7 +185,7 @@ console.info.value(consoleSnapshot(@{ count: 3 }))
 
 ## ConsoleLevelPort.value~value {#api-0cfa9b1274a2860fc25e}
 
-源码：`src/stdlib/console/facade.el:185` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L185)
+源码：`src/stdlib/console/facade.el:222` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L222)
 
 ```el
 fn value(borrow value, channel: ConsoleChannel = this.#channel): void_t
@@ -205,7 +207,7 @@ console.info.value(@{ count: 3, names: @["Ada", "Grace"] })
 
 ## ConsoleFacade.log {#api-92438e496693c0cffd45}
 
-源码：`src/stdlib/console/facade.el:225` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L225)
+源码：`src/stdlib/console/facade.el:264` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L264)
 
 ```el
 get log(): ConsoleLevelPort
@@ -221,7 +223,7 @@ console.log("cache.hit", @{ key: "index" })
 
 ## ConsoleFacade.info {#api-a2bee699cc550babdfbb}
 
-源码：`src/stdlib/console/facade.el:232` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L232)
+源码：`src/stdlib/console/facade.el:271` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L271)
 
 ```el
 get info(): ConsoleLevelPort
@@ -237,7 +239,7 @@ console.info("task.done", @{ count: 3 })
 
 ## ConsoleFacade.warning {#api-580597298bc5bf52b50c}
 
-源码：`src/stdlib/console/facade.el:239` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L239)
+源码：`src/stdlib/console/facade.el:278` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L278)
 
 ```el
 get warning(): ConsoleLevelPort
@@ -253,7 +255,7 @@ console.warning("cache.stale", @{})
 
 ## ConsoleFacade.error {#api-1e98a963c922a8010dcc}
 
-源码：`src/stdlib/console/facade.el:246` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L246)
+源码：`src/stdlib/console/facade.el:285` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L285)
 
 ```el
 get error(): ConsoleLevelPort
@@ -269,7 +271,7 @@ console.error("http.failed", @{ status: 500 })
 
 ## ConsoleFacade.fatal {#api-ea2f5c4637892df4ad82}
 
-源码：`src/stdlib/console/facade.el:253` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L253)
+源码：`src/stdlib/console/facade.el:292` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L292)
 
 ```el
 get fatal(): ConsoleLevelPort
@@ -285,7 +287,7 @@ console.fatal("app.unrecoverable", @{})
 
 ## ConsoleFacade.debug {#api-c49cfbb9a0f6d0235a35}
 
-源码：`src/stdlib/console/facade.el:260` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L260)
+源码：`src/stdlib/console/facade.el:299` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L299)
 
 ```el
 get debug(): ConsoleLevelPort
@@ -301,7 +303,7 @@ console.debug("cache.miss", @{ key: "index" })
 
 ## ConsoleFacade.trace {#api-d101bdd8b41f988731ea}
 
-源码：`src/stdlib/console/facade.el:267` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L267)
+源码：`src/stdlib/console/facade.el:306` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L306)
 
 ```el
 get trace(): ConsoleLevelPort

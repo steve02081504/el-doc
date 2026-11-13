@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/logic.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 逻辑搜索计划与游标 {#api-9d1814bb150c9a4284a6}
 
 源码：`src/stdlib/logic/search.el:19` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L19)

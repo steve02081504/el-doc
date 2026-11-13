@@ -156,6 +156,17 @@ class GenerationTests(unittest.TestCase):
 		page = render(model, "https://github.com/example/el/blob/review/src/stdlib/")["modules/math.md"]
 		self.assertIn("https://github.com/example/el/blob/review/src/stdlib/math.el", page)
 
+	def test_reference_indexes_link_to_exact_symbol_and_group(self):
+		(self.stdlib / "nested").mkdir()
+		(self.stdlib / "nested/other.el").write_text(DOCUMENT.replace("@api increment", "@api increment~number"))
+		pages = render(collect(self.root))
+		self.assertIn("[root](categories/root.md)", pages["index.md"])
+		self.assertIn("[nested](categories/nested.md)", pages["index.md"])
+		self.assertIn("[math.el](modules/math.md)", pages["modules.md"])
+		self.assertIn("[increment~number](../modules/nested/other.md#api-", pages["categories/nested.md"])
+		self.assertIn("[increment~number](modules/nested/other.md#api-", pages["symbols.md"])
+		self.assertLess(pages["symbols.md"].index("[increment]"), pages["symbols.md"].index("[increment~number]"))
+
 
 if __name__ == "__main__":
 	unittest.main()

@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/logic.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 逻辑项 {#api-649e018218a84eac0f6c}
 
 源码：`src/stdlib/logic/term.el:3` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/term.el#L3)

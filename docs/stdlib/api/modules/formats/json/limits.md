@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../../categories/formats.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
+
 ## JSON 解码限制 {#api-66f30aa8740c6156fc1a}
 
 源码：`src/stdlib/formats/json/limits.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/limits.el#L1)

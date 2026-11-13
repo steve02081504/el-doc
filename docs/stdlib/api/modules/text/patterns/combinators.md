@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../../categories/text.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
+
 ## 文本模式组合子 {#api-513366e809a4be863729}
 
 源码：`src/stdlib/text/patterns/combinators.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/combinators.el#L1)

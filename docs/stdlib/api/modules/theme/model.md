@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/theme.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 主题模型 {#api-86ff18a8894db178fcbf}
 
 源码：`src/stdlib/theme/model.el:5` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/theme/model.el#L5)

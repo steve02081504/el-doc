@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../../categories/graphics.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
+
 ## 绘图坐标场景 {#api-14c028464fad264c9025}
 
 源码：`src/stdlib/graphics/plots/scene.el:9` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L9)

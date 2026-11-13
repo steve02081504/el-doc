@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/language.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 证明内核原语 {#api-61171ddb609ecb13e078}
 
 源码：`src/stdlib/language/proofs.el:2` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/proofs.el#L2)

@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/neural-networks.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 随机梯度下降 {#api-2f34095d6329c5f02f1c}
 
 源码：`src/stdlib/neural-networks/optimizer.el:4` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizer.el#L4)

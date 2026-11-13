@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/concurrency.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## async 与 await 语法 {#api-18c3f6e86eba2c32a087}
 
 源码：`src/stdlib/concurrency/async.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/async.el#L1)

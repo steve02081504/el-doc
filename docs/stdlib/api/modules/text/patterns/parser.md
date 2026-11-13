@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../../categories/text.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
+
 ## 文本解析器 {#api-456334438bfab20db4a4}
 
 源码：`src/stdlib/text/patterns/parser.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L1)
@@ -77,7 +79,7 @@ console.stderr.writeLine(error.contexts.join("/"))
 
 ## ParseReply.matched {#api-eed8f57e3bc622e71c4d}
 
-源码：`src/stdlib/text/patterns/parser.el:69` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L69)
+源码：`src/stdlib/text/patterns/parser.el:98` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L98)
 
 ```el
 let matched: Bool
@@ -93,7 +95,7 @@ console.stdout.writeLine(reply.matched)
 
 ## ParseReply.end {#api-aa042bd0e5020bde8f9a}
 
-源码：`src/stdlib/text/patterns/parser.el:76` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L76)
+源码：`src/stdlib/text/patterns/parser.el:106` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L106)
 
 ```el
 let end: Number
@@ -109,7 +111,7 @@ console.stdout.writeLine(reply.end)
 
 ## ParseReply.error {#api-c04ba9afd567cf3d838f}
 
-源码：`src/stdlib/text/patterns/parser.el:84` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L84)
+源码：`src/stdlib/text/patterns/parser.el:114` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L114)
 
 ```el
 let error: ParseError
@@ -125,7 +127,7 @@ console.stderr.writeLine(reply.error.offset)
 
 ## ParseReply.value {#api-51d18d3ab11cb736b67e}
 
-源码：`src/stdlib/text/patterns/parser.el:115` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L115)
+源码：`src/stdlib/text/patterns/parser.el:145` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L145)
 
 ```el
 fn value(): output
@@ -145,7 +147,7 @@ if (reply.matched) console.stdout.writeLine(reply.value())
 
 ## Parser.asParser {#api-d229b8c3837af00d72d9}
 
-源码：`src/stdlib/text/patterns/parser.el:147` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L147)
+源码：`src/stdlib/text/patterns/parser.el:216` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L216)
 
 ```el
 fn asParser()
@@ -158,12 +160,12 @@ fn asParser()
 ### 示例：解析完整输入
 
 ```el
-let value = integer().asParser().parse("42")
+let value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse("42")
 ```
 
 ## Parser.parse {#api-d313f1ac56d1be2399e2}
 
-源码：`src/stdlib/text/patterns/parser.el:171` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L171)
+源码：`src/stdlib/text/patterns/parser.el:250` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L250)
 
 ```el
 fn parse(source: Text, limits: PatternLimits = PatternLimits()): output
@@ -183,13 +185,13 @@ fn parse(source: Text, limits: PatternLimits = PatternLimits()): output
 
 ```el
 import { integer } from "el:text/patterns/index.el"
-let value = integer().asParser().parse("42")
+let value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse("42")
 console.stdout.writeLine(value)
 ```
 
 ## Parser.parsePrefix {#api-7aff463fca2745d8ab80}
 
-源码：`src/stdlib/text/patterns/parser.el:191` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L191)
+源码：`src/stdlib/text/patterns/parser.el:270` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L270)
 
 ```el
 fn parsePrefix(source: Text, from: Number = 0, limits: PatternLimits = PatternLimits()): ParseReply<output: output>
@@ -209,13 +211,13 @@ fn parsePrefix(source: Text, from: Number = 0, limits: PatternLimits = PatternLi
 
 ```el
 import { integer } from "el:text/patterns/index.el"
-let reply = integer().asParser().parsePrefix("12 items")
+let reply = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parsePrefix("12 items")
 console.stdout.writeLine(reply.matched, " ", reply.end)
 ```
 
 ## firstOf {#api-f45406a31ca93535cd3d}
 
-源码：`src/stdlib/text/patterns/parser.el:424` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L424)
+源码：`src/stdlib/text/patterns/parser.el:596` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L596)
 
 ```el
 export fn firstOf(first, ...rest)
@@ -238,7 +240,7 @@ let literalParser = firstOf(constant("null", nil), constant("true", t))
 
 ## constant {#api-e3e533cb002f8125c11d}
 
-源码：`src/stdlib/text/patterns/parser.el:453` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L453)
+源码：`src/stdlib/text/patterns/parser.el:637` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L637)
 
 ```el
 export fn constant(text: Text, value)
@@ -261,7 +263,7 @@ let trueParser = constant("true", t)
 
 ## pair {#api-cd138cf7450ba86c77a7}
 
-源码：`src/stdlib/text/patterns/parser.el:474` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L474)
+源码：`src/stdlib/text/patterns/parser.el:658` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L658)
 
 ```el
 export fn pair(left, separator, right)
@@ -286,7 +288,7 @@ let member = pair("name", ":", "EL")
 
 ## list {#api-71fc4d87dd834fa519c1}
 
-源码：`src/stdlib/text/patterns/parser.el:537` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L537)
+源码：`src/stdlib/text/patterns/parser.el:745` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L745)
 
 ```el
 export fn list(open, element, close, separator = ",", allowTrailing: Bool = nil)
@@ -310,5 +312,5 @@ export fn list(open, element, close, separator = ",", allowTrailing: Bool = nil)
 
 ```el
 import { list, integer } from "el:text/patterns/index.el"
-let numbers = list("[", integer(), "]", separator: ",")
+let numbers = list("[", integer(min: unbounded, max: unbounded, epsilon: 0), "]", separator: ",")
 ```

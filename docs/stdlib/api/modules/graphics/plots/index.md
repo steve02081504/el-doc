@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../../categories/graphics.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
+
 ## 数值绘图 {#api-0072837f4ccf6b725f73}
 
 源码：`src/stdlib/graphics/plots/index.el:9` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L9)

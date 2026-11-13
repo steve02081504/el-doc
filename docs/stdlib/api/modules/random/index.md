@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/random.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 随机数 {#api-dc3aa6c88fb0f8bdec24}
 
 源码：`src/stdlib/random/index.el:17` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L17)

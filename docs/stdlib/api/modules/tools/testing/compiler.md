@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../../categories/tools.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
+
 ## 编译夹具 {#api-3bdddcd69863e9b8252f}
 
 源码：`src/stdlib/tools/testing/compiler.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/compiler.el#L1)

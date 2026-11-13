@@ -256,11 +256,36 @@ def render(model, source_url=SOURCE_URL):
 	index = ["# 标准库 API 参考", "", "由 EL 源码中的文档注释生成。仅列出已标注接口；示例预期结果由作者提供，尚未运行验证。", "", "[结构化文档数据](api.json)", ""]
 	coverage = model["coverage"]
 	index += [f"已标注文档的文件：{coverage['documented_files']} / {coverage['source_files']}；API 条目：{coverage['documented_apis']}。此比例不是公开 API 覆盖率。", ""]
+	index += ["[按模块查找](modules.md) · [按符号查找](symbols.md)", "", "## 按库分类", "", "| 库 | 已标注模块 | API 条目 |", "| --- | ---: | ---: |"]
+	categories = {}
+	for source, entries in grouped.items():
+		categories.setdefault(source.split('/')[0] if '/' in source else 'root', {})[source] = entries
+	module_index = ["# 标准库模块索引", "", "按源码路径排列，仅包含已标注文档的模块。[按库分类](index.md) · [符号索引](symbols.md)", ""]
+	for category, modules in sorted(categories.items()):
+		count = sum(entry['kind'] == 'api' for entries in modules.values() for entry in entries)
+		index.append(f"| [{category}](categories/{category}.md) | {len(modules)} | {count} |")
+		category_lines = [f"# {category}", "", "[标准库分类](../index.md) · [模块索引](../modules.md) · [符号索引](../symbols.md)", "", "本页按源码模块组织已标注接口；未标注部分不在此列表中。", "", "| 模块 | 接口 |", "| --- | --- |"]
+		module_index += [f"## {category}", ""]
+		for source, entries in sorted(modules.items()):
+			path = page_path(source)
+			apis = [entry for entry in entries if entry['kind'] == 'api']
+			links = '、'.join(f"[{entry['name']}](../{path}#{anchor(entry['id'])})" for entry in apis) or '模块说明'
+			category_lines.append(f"| [{source}](../{path}) | {links} |")
+			module_index.append(f"- [{source}]({path})（{len(apis)} 个 API）")
+		module_index.append("")
+		pages[f"categories/{category}.md"] = '\n'.join(category_lines) + '\n'
+	symbols = ["# 标准库符号索引", "", "按文档名字排序；成员使用限定名，重载保留标签。索引只覆盖已标注接口，不代表编译器解析后的全部导出集合。", "", "[库分类](index.md) · [模块索引](modules.md)", "", "| 符号 | 模块 |", "| --- | --- |"]
+	for entry in sorted((entry for entry in model['entries'] if entry['kind'] == 'api'), key=lambda entry: (entry['name'].casefold(), entry['source'])):
+		symbols.append(f"| [{entry['name']}]({page_path(entry['source'])}#{anchor(entry['id'])}) | `{entry['source']}` |")
+	pages['modules.md'] = '\n'.join(module_index) + '\n'
+	pages['symbols.md'] = '\n'.join(symbols) + '\n'
 	labels = {"param": "参数", "returns": "返回值", "throws": "失败与异常", "complexity": "复杂度", "note": "注意", "example": "示例"}
 	for source, entries in grouped.items():
 		path = page_path(source)
-		index.append(f"- [{source}]({path})")
 		lines = [f"# {source}", "", "本页由源码注释生成；示例未运行验证。", ""]
+		category = source.split('/')[0] if '/' in source else 'root'
+		links = [f"[{title}]({posixpath.relpath(target, posixpath.dirname(path))})" for title, target in (("库分类", f"categories/{category}.md"), ("模块索引", "modules.md"), ("符号索引", "symbols.md"))]
+		lines += [' · '.join(links), ""]
 		for entry in entries:
 			line = entry.get("declaration_line", entry["line"])
 			url = source_url.rstrip("/") + "/" + quote(source, safe="/") + f"#L{line}"

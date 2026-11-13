@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../../categories/multimedia.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
+
 ## 音视频捕获模型 {#api-318c16b07ac1855df25d}
 
 源码：`src/stdlib/multimedia/capture/model.el:10` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L10)

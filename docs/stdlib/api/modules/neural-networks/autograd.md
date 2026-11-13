@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/neural-networks.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 自动微分 {#api-4a1ebdbc6830dc672faf}
 
 源码：`src/stdlib/neural-networks/autograd.el:20` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L20)

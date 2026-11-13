@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/numerical-computing.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 数值张量 {#api-0c5b8f6b01bf3f9f281e}
 
 源码：`src/stdlib/numerical-computing/tensor.el:28` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L28)

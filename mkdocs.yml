@@ -1,5 +1,5 @@
-site_name: EL 语言教程
-site_description: 从零花钱计算到采购小助手，面向零基础读者的 EL 教程与进阶参考
+site_name: EL 语言参考
+site_description: EL 语言、标准库与工具链参考；按主题、模块和符号查阅，附入门教程与实战指南
 site_url: https://steve02081504.github.io/el-doc/
 repo_url: https://github.com/steve02081504/el-doc
 repo_name: steve02081504/el-doc
@@ -106,57 +106,72 @@ extra_javascript:
   - assets/learning.js
 
 nav:
-  - 首页: index.md
-  - 学习地图: roadmap.md
-  - 起步:
-      - 第一个程序: getting-started.md
-      - 零基础路线:
-          - 从零开始: beginner/index.md
-          - 零花钱还剩多少: beginner/budget.md
-          - 钱够不够买: beginner/decisions.md
-          - 把阅读记录加起来: beginner/lists.md
-          - 重复的计算只写一次: beginner/functions.md
-          - 文具采购小助手: beginner/shopping.md
-      - 15 分钟速览: tour.md
-  - 语言:
-      - 语言总览: language/index.md
-      - 读语言之前: language/before-you-start.md
-      - 值与类型: language/values.md
-      - 数值与位类型: language/numeric-types.md
-      - 运算符与表达式: language/operators.md
-      - 控制流: language/control-flow.md
-      - 函数与闭包: language/functions.md
-      - 生命周期与析构: language/lifetimes.md
-      - 类与对象: language/classes.md
-      - 内存布局与 GC 钩子: language/memory-layout.md
-      - 模块与包: language/modules.md
-      - 文件预处理: language/preprocessing.md
-      - Shell 语法: language/shell.md
-      - 错误处理与异步: language/errors-async.md
-      - 性能与底层优化: language/performance.md
-      - 外部接口与 ABI: language/foreign.md
-  - 标准库:
-      - 标准库总览: stdlib/index.md
-      - API 参考: stdlib/api/index.md
-      - 文档注释与生成: stdlib/documentation-comments.md
-      - Console 与日志: stdlib/console.md
-      - 集合与文本: stdlib/collections.md
-      - 从遍历到函数组合: stdlib/function-composition.md
-      - 文件与网络: stdlib/files-network.md
-      - 图形界面: stdlib/gui.md
-      - 声音与音频: stdlib/audio.md
-      - 神经网络: stdlib/neural-networks.md
-      - 测试: stdlib/testing.md
-  - 工具链: toolchain.md
-  - 实战:
-      - 命令行工具: practice/cli-tool.md
-      - 图形程序: practice/gui-app.md
-  - 多范式:
-      - 手写 JSON 解析器: practice/json-parser.md
-      - 规则式下棋机器人: practice/logic-game.md
-      - 定理证明: practice/proofs.md
-      - 矩阵与数值脚本: practice/numerics.md
-  - 附录:
-      - 从其他语言过来: appendix/coming-from.md
-      - 常见问题: appendix/faq.md
+  - 参考首页: index.md
+  - 语言参考:
+      - 总览: reference/language/index.md
+      - 词法与字面量: reference/language/lexical.md
+      - 声明与绑定: reference/language/declarations.md
+      - 类型: reference/language/types.md
+      - 表达式与运算符: reference/language/expressions.md
+      - 控制流: reference/language/control-flow.md
+      - 函数: reference/language/functions.md
+      - 类与生命周期: reference/language/classes.md
+      - 模块与导入: reference/language/modules.md
+      - 异常与并发: reference/language/execution.md
+      - 宏与元编程: reference/language/metaprogramming.md
+  - 标准库参考: stdlib/api/index.md
+  - 工具链参考:
+      - 命令与构建: toolchain.md
       - 规范与实现边界: appendix/implementation-status.md
+  - 教程与指南:
+      - 教程入口: tutorials/index.md
+      - 学习地图: roadmap.md
+      - 起步:
+          - 第一个程序: getting-started.md
+          - 零基础路线:
+              - 从零开始: beginner/index.md
+              - 零花钱还剩多少: beginner/budget.md
+              - 钱够不够买: beginner/decisions.md
+              - 把阅读记录加起来: beginner/lists.md
+              - 重复的计算只写一次: beginner/functions.md
+              - 文具采购小助手: beginner/shopping.md
+          - 15 分钟速览: tour.md
+      - 语言:
+          - 语言总览: language/index.md
+          - 读语言之前: language/before-you-start.md
+          - 值与类型: language/values.md
+          - 数值与位类型: language/numeric-types.md
+          - 运算符与表达式: language/operators.md
+          - 控制流: language/control-flow.md
+          - 函数与闭包: language/functions.md
+          - 生命周期与析构: language/lifetimes.md
+          - 类与对象: language/classes.md
+          - 内存布局与 GC 钩子: language/memory-layout.md
+          - 模块与包: language/modules.md
+          - 文件预处理: language/preprocessing.md
+          - Shell 语法: language/shell.md
+          - 错误处理与异步: language/errors-async.md
+          - 性能与底层优化: language/performance.md
+          - 外部接口与 ABI: language/foreign.md
+      - 标准库:
+          - 标准库总览: stdlib/index.md
+          - Console 与日志: stdlib/console.md
+          - 集合与文本: stdlib/collections.md
+          - 从遍历到函数组合: stdlib/function-composition.md
+          - 文件与网络: stdlib/files-network.md
+          - 图形界面: stdlib/gui.md
+          - 声音与音频: stdlib/audio.md
+          - 神经网络: stdlib/neural-networks.md
+          - 测试: stdlib/testing.md
+      - 实战:
+          - 命令行工具: practice/cli-tool.md
+          - 图形程序: practice/gui-app.md
+      - 多范式:
+          - 手写 JSON 解析器: practice/json-parser.md
+          - 规则式下棋机器人: practice/logic-game.md
+          - 定理证明: practice/proofs.md
+          - 矩阵与数值脚本: practice/numerics.md
+      - 附录:
+          - 从其他语言过来: appendix/coming-from.md
+          - 常见问题: appendix/faq.md
+  - 文档编写: stdlib/documentation-comments.md

@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../../../categories/user-interface.md) · [模块索引](../../../../modules.md) · [符号索引](../../../../symbols.md)
+
 ## Windows 窗口后端 {#api-d5cc2fc198b485a29d89}
 
 源码：`src/stdlib/user-interface/platform/windows/window.el:13` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L13)
@@ -10,7 +12,7 @@
 
 ## WindowTimer {#api-9b651467460e89936d5f}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:164` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L164)
+源码：`src/stdlib/user-interface/platform/windows/window.el:171` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L171)
 
 ```el
 export class WindowTimer
@@ -27,7 +29,7 @@ timer.cancel()
 
 ## WindowTimer.cancel {#api-8629377d5cfbe5cd888b}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:183` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L183)
+源码：`src/stdlib/user-interface/platform/windows/window.el:190` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L190)
 
 ```el
 fn cancel()
@@ -45,7 +47,7 @@ timer.cancel()
 
 ## Window {#api-9dc34e68c5ad778621d4}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:209` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L209)
+源码：`src/stdlib/user-interface/platform/windows/window.el:216` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L216)
 
 ```el
 export class Window
@@ -62,7 +64,7 @@ runWindow(window)
 
 ## Window.theme {#api-e300f3030755d4c6f210}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:253` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L253)
+源码：`src/stdlib/user-interface/platform/windows/window.el:260` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L260)
 
 ```el
 get theme(): PaintTheme
@@ -78,7 +80,7 @@ window.theme = darkPaintTheme()
 
 ## Window.onArrow {#api-0d5ac5569f84380b00ef}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:596` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L596)
+源码：`src/stdlib/user-interface/platform/windows/window.el:603` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L603)
 
 ```el
 fn onArrow(action)
@@ -96,7 +98,7 @@ window.onArrow((dx, dy) => moveSelection(dx, dy))
 
 ## Window.every {#api-397c3dde87e61de92229}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:612` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L612)
+源码：`src/stdlib/user-interface/platform/windows/window.el:619` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L619)
 
 ```el
 @discardable fn every(milliseconds: Number, action): WindowTimer
@@ -120,7 +122,7 @@ discard(window.every(1000, tick => label.text = "更新"))
 
 ## Window.getById {#api-10abbed4e4f712c61c10}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:642` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L642)
+源码：`src/stdlib/user-interface/platform/windows/window.el:649` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L649)
 
 ```el
 fn getById(id: Text): ElementHandle
@@ -143,7 +145,7 @@ label.text = "就绪"
 
 ## runWindow {#api-5a35178b26a593b8361d}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:738` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L738)
+源码：`src/stdlib/user-interface/platform/windows/window.el:745` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L745)
 
 ```el
 export fn runWindow(window: Window)
@@ -161,7 +163,7 @@ runWindow(window)
 
 ## runWindows {#api-d58299be18ae530eb594}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:761` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L761)
+源码：`src/stdlib/user-interface/platform/windows/window.el:768` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L768)
 
 ```el
 export fn runWindows(windows: Window[])

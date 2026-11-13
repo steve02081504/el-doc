@@ -2,15 +2,17 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/user-interface.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 界面对象模型 {#api-df995c8f898cdfd44f5d}
 
-源码：`src/stdlib/user-interface/model.el:6` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L6)
+源码：`src/stdlib/user-interface/model.el:10` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L10)
 
 以 Definition 与带键 Edge 组成可复用的界面对象图；布局、事件与绘制阶段读取这份模型。
 
 ## LayoutStyle {#api-531edebc70e3c82ee7a8}
 
-源码：`src/stdlib/user-interface/model.el:17` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L17)
+源码：`src/stdlib/user-interface/model.el:21` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L21)
 
 ```el
 @assign(mode: "shared")
@@ -29,7 +31,7 @@ style.gap = 8
 
 ## Definition {#api-92b8f0fb1d93b4e22dc2}
 
-源码：`src/stdlib/user-interface/model.el:74` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L74)
+源码：`src/stdlib/user-interface/model.el:78` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L78)
 
 ```el
 @assign(mode: "shared")
@@ -48,7 +50,7 @@ title.enabled = t
 
 ## Definition.theme {#api-5faf0a2c3aefbf7d59fd}
 
-源码：`src/stdlib/user-interface/model.el:84` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L84)
+源码：`src/stdlib/user-interface/model.el:88` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L88)
 
 ```el
 let theme: Theme | void_t
@@ -64,7 +66,7 @@ root.theme = Theme(@{primary: 0x80A7F0})
 
 ## GuiEvent {#api-d0161616ebcc781b1631}
 
-源码：`src/stdlib/user-interface/model.el:110` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L110)
+源码：`src/stdlib/user-interface/model.el:117` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L117)
 
 ```el
 @assign(mode: "shared")
@@ -81,7 +83,7 @@ on(button, "click", event => event.preventDefault())
 
 ## on {#api-bec5c16251ba4e97600c}
 
-源码：`src/stdlib/user-interface/model.el:153` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L153)
+源码：`src/stdlib/user-interface/model.el:160` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L160)
 
 ```el
 export fn on(element: Definition, kind: Text, action, capture: Bool = nil)
@@ -105,7 +107,7 @@ on(button, "click", event => status.text = "已点击")
 
 ## element {#api-8fd177f7546412758246}
 
-源码：`src/stdlib/user-interface/model.el:168` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L168)
+源码：`src/stdlib/user-interface/model.el:175` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L175)
 
 ```el
 export fn element(kind: Text, text: Text = "", id: Text = ""): Definition
@@ -131,7 +133,7 @@ let save = element("button", "保存", "save")
 
 ## appendChild {#api-cdf7dba1323f03ef85c8}
 
-源码：`src/stdlib/user-interface/model.el:195` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L195)
+源码：`src/stdlib/user-interface/model.el:202` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L202)
 
 ```el
 export fn appendChild(parent: Definition, key: Text, target: Definition)
@@ -156,7 +158,7 @@ appendChild(root, "heading", element("label", "设置"))
 
 ## removeChild {#api-89c99015e38050658540}
 
-源码：`src/stdlib/user-interface/model.el:212` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L212)
+源码：`src/stdlib/user-interface/model.el:219` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L219)
 
 ```el
 export fn removeChild(parent: Definition, key: Text): Bool
@@ -178,7 +180,7 @@ let removed = removeChild(root, "hint")
 
 ## moveChild {#api-0a122f09a5627320ce81}
 
-源码：`src/stdlib/user-interface/model.el:234` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L234)
+源码：`src/stdlib/user-interface/model.el:241` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L241)
 
 ```el
 export fn moveChild(parent: Definition, key: Text, destination: Number)

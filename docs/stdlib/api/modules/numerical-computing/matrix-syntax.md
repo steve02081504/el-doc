@@ -2,6 +2,8 @@
 
 本页由源码注释生成；示例未运行验证。
 
+[库分类](../../categories/numerical-computing.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
+
 ## 矩阵字面量宏 {#api-48b7562a1a347b3658c3}
 
 源码：`src/stdlib/numerical-computing/matrix-syntax.el:5` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/matrix-syntax.el#L5)
