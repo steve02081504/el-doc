@@ -1,17 +1,18 @@
 <div class="el-hero" markdown>
 <p class="el-hero__eyebrow">EviL LANGUAGE · EL 教学文档</p>
-<h1>从一笔零花钱，<br>开始写自己的程序。</h1>
-<p class="el-hero__lead">不需要先懂编程。先让电脑算出买文具还剩多少钱，再一步步做出采购小助手。每一步都有完整例子、预期结果和可以自己检查的小任务。</p>
+<h1>一份源码，<br>既开窗口，也开网页。</h1>
+<p class="el-hero__lead">EL 是一门面向整个应用的通用语言：脚本、原生程序、服务、标签式 GUI 与数据库查询共用一套语法、类型和运行时。同一套界面代码既能打开系统窗口，也能编译成单文件网页，双击就在浏览器里跑起来。</p>
 <div class="el-hero__actions">
-<a class="md-button md-button--primary" href="getting-started/">写第一个程序</a>
+<a class="md-button md-button--primary" href="getting-started/">3 分钟跑起来</a>
 <a class="md-button" href="roadmap/">先看学习地图</a>
 <a class="md-button" href="stdlib/api/">查标准库 API</a>
 </div>
 <div class="el-hero__code" markdown>
 ```el
-let budget = 20
-let cost = 4 * 3
-console.stdout.writeLine("余额：", budget - cost, " 元")
+fn greet(name: Text = "world") => "hello " + name
+
+console.stdout.writeLine(greet())
+console.info.value(@{ language: "EL" })
 ```
 </div>
 </div>
@@ -26,18 +27,12 @@ console.stdout.writeLine("余额：", budget - cost, " 元")
 <button class="el-progress__reset" type="button" data-el-progress-reset>清空本机进度</button>
 </div>
 
-## 第一次写代码，从这里走
+## EL 是什么味道
 
-上面的程序会显示 `余额：8 元`。看不懂英文也没关系，[第一个程序](getting-started.md)会从保存文件、打开终端开始；[零基础路线](beginner/index.md)再带你逐步读懂、修改和独立写程序。
-
-==先做成一件小事，再学它背后的规则。== 每次只改一处，先预测结果，再运行检查。页面访问记录只代表来过，不代表已经学会。
-
-## EL 能用来做什么
-
-- **从计算脚本到应用。** EL 是仍在开发中的通用语言，目标包括原生程序、服务和图形界面。浏览器与各平台的实际可用范围请看[规范与实现边界](appendix/implementation-status.md)，不要把设计目标当作已经验证的能力。
+- **一套语言覆盖应用与平台。** 脚本、原生程序、服务、GUI 和远程模块更新使用同一份源码；原生目标覆盖 Windows、Linux、macOS、FreeBSD、iOS、Android，浏览器里则是单文件页面：wasm 模块内嵌在 HTML 中，界面仍由 EL 用 Canvas 自绘。
 - **数值不将就。** 日常的 `Number` 是精确有理数：`1/3` 可以精确保存，数值变大时按需扩展表示，不会仅因超过固定机器位宽就溢出。
 - **资源规则是语言的一部分。** 对象明确选择复制还是共享，构造与析构有固定时机，需要时能直接指定存储位置与借用来源。
-- **构建模式有明确边界。** Debug 与 Release 共用一条优化流水线，部分标准库安全检查随模式选择，语言合同保持一致。
+- **Debug 护具穿满，Release 跑得快。** 两种模式共用一条优化流水线；安全检查可以关闭，但语言合同不会因此改变。
 
 想先看它长什么样，读[15 分钟速览](tour.md)；想直接动手，去[安装与第一个程序](getting-started.md)。
 
