@@ -4,6 +4,14 @@
 
 [库分类](../../../categories/multimedia.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
 
+## 成员总览
+
+- [PcmOutput.enqueue](#api-f7fc20d16cdc9fcf6a7f)
+- [PcmOutput.finish](#api-a9232d52a82db940d1c1)
+- [PcmOutput.idle](#api-252297757c2e3d93dbbb)
+- [PcmOutput.clear](#api-022cec408375d7d0fe85)
+- [PcmOutput.close](#api-098b06b79bc52eca15af)
+
 ## PcmOutput {#api-07a36f3fcbe4431833df}
 
 源码：`src/stdlib/multimedia/audio/macos-output.el:54` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L54)
@@ -36,6 +44,8 @@ let accepted = output.enqueue(audio)
 ```el
 fn enqueue(audio: PcmAudio): Bool
 ```
+
+**返回类型**：`Bool`
 
 尝试提交音频块；样本在返回前复制，队列无空槽时不等待并返回假。
 
@@ -75,6 +85,8 @@ while (!output.idle()) sleep(2)
 ```el
 fn idle(): Bool
 ```
+
+**返回类型**：`Bool`
 
 检查音频队列中的所有缓冲区是否已完成。
 

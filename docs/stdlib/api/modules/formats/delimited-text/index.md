@@ -18,6 +18,8 @@
 export fn parseCSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]
 ```
 
+**返回类型**：`Text[][]`
+
 按 RFC 4180 引号规则解析逗号分隔文本；单元格保持为文本，不推断表头或类型。
 
 **参数**：source 完整 CSV 文本。
@@ -42,6 +44,8 @@ let rows = parseCSV("name,role\nAda,engineer")
 ```el
 export fn parseTSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]
 ```
+
+**返回类型**：`Text[][]`
 
 按制表符分隔规则解析文本，单元格内容以文本形式保留。
 

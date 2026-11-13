@@ -4,6 +4,18 @@
 
 [库分类](../../../categories/collections.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
 
+## 成员总览
+
+- [Map.count](#api-0c7a0f184281a95f6821)
+- [Map.remove](#api-86c98fb1130f62b84401)
+- [Map.clear](#api-7c378e1cc018ee51ecee)
+- [Map.entries](#api-37209e2cfdae04240843)
+- [Map.has](#api-d0a46e913af4f7a66ee6)
+- [Map.get](#api-52852aadc467c16e4d8a)
+- [Map.getOr](#api-9b5fac9ee67f5fe57436)
+- [Map.keys](#api-bc2703a8337e9d87c267)
+- [Map.values](#api-10056afaf272a33d1f68)
+
 ## Map.count {#api-0c7a0f184281a95f6821}
 
 源码：`src/stdlib/collections/maps/base.el:31` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L31)
@@ -11,6 +23,8 @@
 ```el
 virtual get count(): Number
 ```
+
+**返回类型**：`Number`
 
 返回当前映射中的键值对数量。
 
@@ -31,6 +45,8 @@ console.stdout.writeLine(scores.count)
 ```el
 @discardable virtual fn remove(lookupKey: key): Bool
 ```
+
+**返回类型**：`Bool`
 
 删除给定键对应的条目。
 
@@ -72,6 +88,8 @@ scores.clear()
 virtual fn entries(): Entry[]
 ```
 
+**返回类型**：`Entry[]`
+
 返回当前键值对组成的数组快照。
 
 **返回值**：每项包含 key 与 value 的条目数组。
@@ -91,6 +109,8 @@ for (let entry in scores) console.stdout.writeLine(entry.key, " = ", entry.value
 ```el
 fn has(lookupKey: key): Bool
 ```
+
+**返回类型**：`Bool`
 
 判断映射是否含有给定键，不读取或修改对应值。
 
@@ -114,6 +134,8 @@ console.stdout.writeLine(users.has("ada"))
 fn get(lookupKey: key): value | void_t
 ```
 
+**返回类型**：`value | void_t`
+
 查询键对应的值；键不存在时返回 void。
 
 **参数**：lookupKey 要查询的键。
@@ -134,6 +156,8 @@ let score = scores.get("ada")
 ```el
 fn getOr(lookupKey: key, fallback: value): value
 ```
+
+**返回类型**：`value`
 
 查询映射中的键；键不存在时返回调用方提供的默认值。
 
@@ -159,6 +183,8 @@ console.stdout.writeLine(counts.getOr("red", 0))
 fn keys(): key[]
 ```
 
+**返回类型**：`key[]`
+
 返回当前键组成的数组快照。
 
 **返回值**：键数组。
@@ -178,6 +204,8 @@ console.stdout.writeLine(scores.keys().join(", "))
 ```el
 fn values(): value[]
 ```
+
+**返回类型**：`value[]`
 
 返回当前值组成的数组快照。
 

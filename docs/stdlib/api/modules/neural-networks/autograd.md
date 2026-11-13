@@ -4,6 +4,14 @@
 
 [库分类](../../categories/neural-networks.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 成员总览
+
+- [Autograd.square](#api-c7cdb29630ea7e9ca4c3)
+- [Autograd.sum](#api-4c5a860a89bb4e088fe1)
+- [Autograd.mean](#api-31175d2b66a5ce9e4d5f)
+- [Autograd.variable](#api-ab3276f9117e60133442)
+- [Autograd.valueAndGrad](#api-2c37c8b473d37f9243b7)
+
 ## 自动微分 {#api-4a1ebdbc6830dc672faf}
 
 源码：`src/stdlib/neural-networks/autograd.el:20` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L20)
@@ -17,6 +25,8 @@
 ```el
 export fn Autograd(element: type, storage: type = Tensor<element: element>): type
 ```
+
+**返回类型**：`type`
 
 创建指定元素和存储类型的自动微分 tape 类型。
 
@@ -96,6 +106,8 @@ let loss = (prediction - target).square().mean()
 fn variable(value: Dense): Tracked
 ```
 
+**返回类型**：`Tracked`
+
 将输入张量注册为需要对其求导的叶变量。
 
 **参数**：value 作为叶节点的张量值。
@@ -115,6 +127,8 @@ let x = tape.variable(input)
 ```el
 fn valueAndGrad(loss: Tracked, variables: Tracked[]): Result
 ```
+
+**返回类型**：`Result`
 
 对 rank-zero 跟踪损失反向传播，返回损失值及各变量梯度。
 

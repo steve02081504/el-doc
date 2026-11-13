@@ -4,6 +4,14 @@
 
 [库分类](../../../categories/neural-networks.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
 
+## 成员总览
+
+- [DataLoader.hasNext](#api-58e98b45921aef94fd81)
+- [DataLoader.save](#api-e9c87836c8629fb1669a)
+- [DataLoader.restore](#api-45d2fb6c47561221639f)
+- [DataLoader.next~collate](#api-d4dc9ac658fe6e9c968a)
+- [DataLoader.next~samples](#api-4232412f3e2beb1e4a64)
+
 ## 神经网络数据加载 {#api-5723adb17123dbcbdba2}
 
 源码：`src/stdlib/neural-networks/data/index.el:6` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L6)
@@ -17,6 +25,8 @@
 ```el
 export fn DataLoader(sample: type): type
 ```
+
+**返回类型**：`type`
 
 创建按 Sampler 索引批次读取 Dataset 的数据加载器类型。
 
@@ -44,6 +54,8 @@ let firstBatch = loader.next()
 get hasNext(): Bool
 ```
 
+**返回类型**：`Bool`
+
 指示是否还有满足 dropLast 设置的数据可组成下一批。
 
 **返回值**：存在下一批时为真。
@@ -61,6 +73,8 @@ while (loader.hasNext) consume(loader.next())
 ```el
 fn save(): SamplerState
 ```
+
+**返回类型**：`SamplerState`
 
 返回可用于恢复当前采样进度的状态快照。
 
@@ -92,6 +106,8 @@ fn restore(state: SamplerState)
 loader.restore(state)
 ```
 
+<span id="api-06111c27e3c8c37e67a6"></span>
+
 ## DataLoader.next~collate {#api-d4dc9ac658fe6e9c968a}
 
 源码：`src/stdlib/neural-networks/data/index.el:161` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L161)
@@ -121,6 +137,8 @@ let batch = loader.next(samples => samples)
 ```el
 fn next(): sample[]
 ```
+
+**返回类型**：`sample[]`
 
 读取下一批样本并直接返回样本数组，不执行自定义整理。
 

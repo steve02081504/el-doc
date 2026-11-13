@@ -18,6 +18,8 @@
 export fn parseYAML(source: Text, limits: JsonLimits = JsonLimits()): any
 ```
 
+**返回类型**：`any`
+
 将受支持的单个 YAML 文档解析为动态对象、数组及标量值。
 
 **参数**：source 完整 YAML 文本。

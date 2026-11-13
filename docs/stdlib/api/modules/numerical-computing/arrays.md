@@ -10,6 +10,8 @@
 
 提供常用张量初始化、行列向量、采样点和列优先展开函数。
 
+<span id="api-b98ba9e759d7eef8e401"></span>
+
 ## row~reshape {#api-9eb863b8b4a108974ea1}
 
 源码：`src/stdlib/numerical-computing/arrays.el:30` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L30)
@@ -31,6 +33,8 @@ export fn row(values)
 ```el
 let values = row(vector)
 ```
+
+<span id="api-583fcaa3af9e70e0647b"></span>
 
 ## col~reshape {#api-cc7a5482094f12f275cb}
 

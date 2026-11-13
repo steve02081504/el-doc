@@ -131,6 +131,179 @@ def signature(source, stream, start):
 	raise DocumentationError("unsupported or incomplete declaration after @api")
 
 
+def initializer_expression(sig, source, line, name):
+	"""Read a balanced top-level variable initializer without evaluating it."""
+	if "." in name or not re.search(r"\b(?:let|const)\s+\w+(?:\s*:[^=]+)?$", sig):
+		return None
+	start_line = sum(len(part) for part in source.splitlines(keepends=True)[:line - 1])
+	start = source.find(sig, start_line)
+	if start < 0:
+		return None
+	position = start + len(sig)
+	while position < len(source) and source[position] in " \t": position += 1
+	if position >= len(source) or source[position] != "=" or source[position:position + 2] in ("==", "=>"):
+		return None
+	position += 1
+	while position < len(source) and source[position] in " \t": position += 1
+	begin = position
+	stack = []
+	last = None
+	pairs = {")": "(", "]": "[", "}": "{"}
+	for kind, text, offset, end in tokens(source[begin:]):
+		if kind == "space" and "\n" in text and not stack:
+			break
+		if kind in ("comment", "doc") and not stack:
+			break
+		if kind == "code":
+			if text in ("(", "[", "{"): stack.append(text)
+			elif text in pairs:
+				if not stack or stack.pop() != pairs[text]: return None
+			elif text in (";", ",") and not stack:
+				if text == ",": return None
+				break
+		if kind not in ("space", "comment", "doc"):
+			last = (text, end)
+	if stack or not last or last[0] in ("+", "-", "*", "/", ".", "=", "&", "|", "^", ":", "?", "<", ">", "!"):
+		return None
+	result = source[begin:begin + last[1]].strip()
+	# A following operator can continue an expression across a newline.
+	rest = source[begin + last[1]:].lstrip()
+	if not rest.startswith(("//", "/*")) and rest.startswith((".", "+", "-", "*", "/", "&", "|", "^")):
+		return None
+	return result or None
+
+
+def declaration_metadata(sig, source, declaration_line, name):
+	"""Extract only simple lexical types; this is not semantic type inference."""
+	owner = name.split("~")[0].rpartition(".")[0] or None
+	value_type = None
+	return_type = None
+	binding = re.search(r"\b(?:let|const)\s+\w+\s*:\s*([^=\n]+)$", sig)
+	if binding:
+		value_type = binding.group(1).strip()
+	elif re.search(r"\b(?:let|const)\s+\w+\s*$", sig):
+		line = source.splitlines()[declaration_line - 1]
+		match = re.search(r"\b(?:let|const)\s+\w+\s*=\s*([A-Za-z_]\w*)\s*\([^()]*\)\s*;?\s*$", line)
+		if match:
+			value_type = match.group(1)
+	# Inspect only the declaration's outer parameter list, not callback parameters.
+	decl = re.search(r"\b(fn|operator|get)\s*(?:[A-Za-z_]\w*)?", sig)
+	if decl:
+		tail = sig[decl.end():]
+		if decl.group(1) == "get":
+			match = re.fullmatch(r"\s*(?:\(\s*\))?\s*:\s*(.+)", tail, re.S)
+		else:
+			match = None
+			start = tail.find("(")
+			if start >= 0:
+				depth = 0
+				for kind, text, _, end in tokens(tail[start:]):
+					if kind != "code": continue
+					if text == "(": depth += 1
+					elif text == ")":
+						depth -= 1
+						if depth == 0:
+							match = re.fullmatch(r"\s*:\s*(.+)", tail[start + end:], re.S)
+							break
+		if match:
+			return_type = match.group(1).strip()
+	return {"value_type": value_type, "owner": owner, "return_type": return_type}
+
+
+def prelude_environment(stdlib, entries):
+	"""Follow explicit file re-export name lists without evaluating modules."""
+	by_identity = {(e["source"], e["name"]): e for e in entries if e["kind"] == "api" and "." not in e["name"] and "~" not in e["name"]}
+	cache = {}
+	def module(path):
+		if path in cache:
+			return cache[path]
+		file = stdlib / path
+		if not file.is_file() or not file.resolve().is_relative_to(stdlib.resolve()):
+			return {}, {}
+		text = file.read_text(encoding="utf-8-sig").replace("\r\n", "\n")
+		stream = list(tokens(text))
+		if any(kind == "code" and token == "#" and not text[text.rfind("\n", 0, start) + 1:start].strip() for kind, token, start, _ in stream):
+			cache[path] = ({}, {})
+			return cache[path]
+		# Only top-level code participates; literals and comments are never parsed as exports.
+		code = [(k, t, start, end) for k, t, start, end in stream if k not in ("space", "comment", "doc")]
+		exports, declarations = {}, {}
+		depth = 0
+		for i, (kind, token, start, end) in enumerate(code):
+			if kind != "code":
+				continue
+			if depth == 0 and token == "export":
+				match = re.match(r'export\s+(?:(?:lazy\s+)?import\s*)?\{([^{}]*)\}\s*from\s*"(file:[^"\n]+)"', text[start:])
+				if match:
+					target = posixpath.normpath(posixpath.join(posixpath.dirname(path), match[2][5:]))
+					if not (stdlib / target).resolve().is_relative_to(stdlib.resolve()):
+						target = '../__outside_stdlib__'
+					elif not target.endswith('.el'):
+						if (stdlib / (target + '.el')).is_file(): target += '.el'
+						elif (stdlib / target / 'index.el').is_file(): target += '/index.el'
+					for item in match[1].split(','):
+						part = re.fullmatch(r'\s*(\w+)(?:\s+as\s+(\w+))?\s*', item)
+						if part:
+							exports.setdefault(part[2] or part[1], []).append((target, part[1]))
+				else:
+					# Skip attributes, then capture a straightforward exported declaration.
+					match = re.match(r'export\s+(?:@\w+(?:\([^\n]*?\))?\s+)*(?:fn|class|interface|let|const|syntax|enum|data)\s+(\w+)', text[start:])
+					if match:
+						name = match[1]
+						try:
+							sig, line = signature(text, stream, next(j for j, t in enumerate(stream) if t[2] == start))
+						except DocumentationError:
+							continue
+						metadata = declaration_metadata(sig, text, line, name)
+						declarations.setdefault(name, []).append((line, sig, metadata["value_type"]))
+			if token == "{": depth += 1
+			elif token == "}": depth = max(0, depth - 1)
+		cache[path] = exports, declarations
+		return exports, declarations
+	def resolve(path, name, seen):
+		if (path, name) in seen:
+			return None
+		exports, declarations = module(path)
+		candidates = []
+		local = declarations.get(name, [])
+		if local:
+			# Same-module declarations form an overload/type family, not ambiguous imports.
+			entry = by_identity.get((path, name))
+			line = entry["declaration_line"] if entry else local[0][0]
+			sig = entry["signature"] if entry else "\n".join(item[1] for item in local)
+			value_types = {item[2] for item in local}
+			value_type = next(iter(value_types)) if len(value_types) == 1 else None
+			candidates.append((entry["id"] if entry else None, path, line, sig, value_type))
+		for target, original in exports.get(name, []):
+			resolved = resolve(target, original, seen | {(path, name)})
+			if resolved is None: return None
+			candidates.append(resolved)
+		unique = list(dict.fromkeys(candidates))
+		return unique[0] if len(unique) == 1 else None
+	exports, _ = module("index.el")
+	result = []
+	for name in sorted(exports, key=str.casefold):
+		resolved = resolve("index.el", name, set())
+		if resolved:
+			identity, source, line, sig, value_type = resolved
+		else:
+			identity, source, line, sig, value_type = None, None, None, None, None
+		result.append({"name": name, "id": identity, "source": source, "line": line, "signature": sig, "value_type": value_type})
+	public_exports = {}
+	for file in sorted(stdlib.rglob("*.el")):
+		path = file.relative_to(stdlib).as_posix()
+		reexports, declarations = module(path)
+		names = set(reexports) | set(declarations)
+		resolved_names = {}
+		for name in sorted(names):
+			resolved = resolve(path, name, set())
+			if resolved and resolved[0]:
+				resolved_names[name] = resolved[0]
+		if resolved_names:
+			public_exports[path.removesuffix(".el")] = resolved_names
+	return result, public_exports
+
+
 def parse_comment(lines):
 	first = re.fullmatch(r"@(module|api)\s+(.+)", lines[0])
 	if not first:
@@ -206,6 +379,8 @@ def extract(source, path):
 				if declared and declared[1] != entry["name"].split("~")[0].split(".")[-1]:
 					raise DocumentationError("@api name does not match the following declaration")
 				entry["id"] = path.removesuffix(".el") + "::" + entry["name"]
+				entry.update(declaration_metadata(entry["signature"], source, entry["declaration_line"], entry["name"]))
+				entry["initializer"] = initializer_expression(entry["signature"], source, entry["declaration_line"], entry["name"])
 			else:
 				entry["id"] = path.removesuffix(".el")
 			entries.append(entry)
@@ -236,7 +411,8 @@ def collect(root):
 				raise DocumentationError(f"{entry['source']}:{entry['line']}: unknown @see {section['value']}")
 	documented = {entry['source'] for entry in entries}
 	digest = hashlib.sha256(json.dumps(files, ensure_ascii=False, separators=(",", ":")).encode()).hexdigest()
-	return {"source_digest": digest, "files": [file for file in files if file['path'] in documented], "entries": entries, "coverage": {"source_files": len(files), "documented_files": len(documented), "documented_apis": sum(entry['kind'] == 'api' for entry in entries)}}
+	environment, exports = prelude_environment(stdlib, entries)
+	return {"environment": environment, "exports": exports, "source_digest": digest, "files": [file for file in files if file['path'] in documented], "entries": entries, "coverage": {"source_files": len(files), "documented_files": len(documented), "documented_apis": sum(entry['kind'] == 'api' for entry in entries)}}
 
 
 def anchor(identity):
@@ -256,7 +432,7 @@ def render(model, source_url=SOURCE_URL):
 	index = ["# 标准库 API 参考", "", "由 EL 源码中的文档注释生成。仅列出已标注接口；示例预期结果由作者提供，尚未运行验证。", "", "[结构化文档数据](api.json)", ""]
 	coverage = model["coverage"]
 	index += [f"已标注文档的文件：{coverage['documented_files']} / {coverage['source_files']}；API 条目：{coverage['documented_apis']}。此比例不是公开 API 覆盖率。", ""]
-	index += ["[按模块查找](modules.md) · [按符号查找](symbols.md)", "", "## 按库分类", "", "| 库 | 已标注模块 | API 条目 |", "| --- | ---: | ---: |"]
+	index += ["[按模块查找](modules.md) · [按符号查找](symbols.md) · [默认环境](environment.md)", "", "## 按库分类", "", "| 库 | 已标注模块 | API 条目 |", "| --- | ---: | ---: |"]
 	categories = {}
 	for source, entries in grouped.items():
 		categories.setdefault(source.split('/')[0] if '/' in source else 'root', {})[source] = entries
@@ -279,6 +455,34 @@ def render(model, source_url=SOURCE_URL):
 		symbols.append(f"| [{entry['name']}]({page_path(entry['source'])}#{anchor(entry['id'])}) | `{entry['source']}` |")
 	pages['modules.md'] = '\n'.join(module_index) + '\n'
 	pages['symbols.md'] = '\n'.join(symbols) + '\n'
+	environment = ["# 默认环境", "", "由标准库入口显式重导出名字表生成；仅按词法解析 file: 路径，不执行模块。未解析或有歧义的来源留空。", "", "按名称首字母分组；声明签名和类型为词法提取结果，不代表编译器的语义分析。", ""]
+	current_initial = None
+	for item in model.get("environment", []):
+		initial = item["name"][0].upper() if item["name"][0].isalpha() else "#"
+		if initial != current_initial:
+			environment += [f"## {initial}", "", "| 名字 | 声明 | 说明 |", "| --- | --- | --- |"]
+			current_initial = initial
+		entry = by_id.get(item["id"])
+		if entry:
+			declaration = f"[{item['source']}:{item['line']}]({page_path(item['source'])}#{anchor(item['id'])})"
+			summary = entry["sections"][0]["markdown"].replace("\n", " ").replace("|", "\\|")
+		elif item["source"]:
+			url = source_url.rstrip("/") + "/" + quote(item["source"], safe="/") + f"#L{item['line']}"
+			declaration = f"[{item['source']}:{item['line']}]({url})"
+			summary = "未标注文档"
+			if item.get("value_type"):
+				summary += f"；词法类型：`{item['value_type']}`"
+		else:
+			declaration, summary = "—", "来源未解析或有歧义"
+		signature_text = (item["signature"] or "").replace("`", "\\`").replace("|", "\\|").replace("\n", " ")
+		if signature_text:
+			declaration += f"<br>`{signature_text}`"
+		environment.append(f"| <span id=\"{anchor(item['name'])}\"></span>`{item['name']}` | {declaration} | {summary} |")
+	pages["environment.md"] = "\n".join(environment) + "\n"
+	types = {}
+	for entry in model["entries"]:
+		if entry["kind"] == "api" and re.search(r"\b(?:class|interface|enum|data)\s+" + re.escape(entry["name"]) + r"\b", entry.get("signature", "")):
+			types.setdefault(entry["name"], []).append(entry)
 	labels = {"param": "参数", "returns": "返回值", "throws": "失败与异常", "complexity": "复杂度", "note": "注意", "example": "示例"}
 	for source, entries in grouped.items():
 		path = page_path(source)
@@ -286,12 +490,41 @@ def render(model, source_url=SOURCE_URL):
 		category = source.split('/')[0] if '/' in source else 'root'
 		links = [f"[{title}]({posixpath.relpath(target, posixpath.dirname(path))})" for title, target in (("库分类", f"categories/{category}.md"), ("模块索引", "modules.md"), ("符号索引", "symbols.md"))]
 		lines += [' · '.join(links), ""]
+		members = [entry for entry in entries if entry.get("owner")]
+		if members:
+			lines += ["## 成员总览", ""]
+			for entry in members:
+				lines.append(f"- [{entry['name']}](#{anchor(entry['id'])})")
+			lines.append("")
+		families = {}
 		for entry in entries:
+			if entry["kind"] == "api" and "~" in entry["name"]:
+				families.setdefault(entry["id"].split("~")[0], []).append(entry)
+		emitted = set()
+		for entry in entries:
+			family = entry["id"].split("~")[0]
+			if family in families and family not in emitted and family not in by_id:
+				lines += [f'<span id="{anchor(family)}"></span>', ""]
+				emitted.add(family)
 			line = entry.get("declaration_line", entry["line"])
 			url = source_url.rstrip("/") + "/" + quote(source, safe="/") + f"#L{line}"
 			lines += [f"## {entry['name']} {{#{anchor(entry['id'])}}}", "", f"源码：`src/stdlib/{source}:{line}` · [在 GitHub 查看源码]({url})", ""]
 			if "signature" in entry:
-				lines += ["```el", entry["signature"], "```", ""]
+				display = entry["signature"]
+				if entry.get("initializer") is not None:
+					display += " = " + entry["initializer"]
+				lines += ["```el", display, "```", ""]
+			for field, label in (("value_type", "类型"), ("return_type", "返回类型")):
+				type_name = entry.get(field)
+				if type_name:
+					candidates = types.get(type_name, [])
+					if len(candidates) == 1:
+						target = candidates[0]
+						link = posixpath.relpath(page_path(target["source"]), posixpath.dirname(path))
+						formatted = f"[`{type_name}`]({link}#{anchor(target['id'])})"
+					else:
+						formatted = f"`{type_name}`"
+					lines += [f"**{label}**：{formatted}", ""]
 			for section in entry["sections"]:
 				tag, value = section["tag"], section["value"]
 				if tag == "see":

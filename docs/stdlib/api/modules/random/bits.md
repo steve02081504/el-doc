@@ -31,13 +31,13 @@ export fn require_integer(value: Number)
 ```el
 import { Number } from "file:../number/number.el"
 import { require_integer, seed_bits } from "file:./bits.el"
-require_integer(42)
-let seed = seed_bits(42)
+require_integer(72)
+let seed = seed_bits(72)
 console.stdout.writeLine(Number(seed))
 ```
 预期标准输出：
 ```text
-42
+72
 ```
 
 ## seed_bits {#api-26c100bd4eb558e472c0}
@@ -47,6 +47,8 @@ console.stdout.writeLine(Number(seed))
 ```el
 export fn seed_bits(seed: Number): Word64
 ```
+
+**返回类型**：`Word64`
 
 校验数值种子并将其转换为库的无符号 64 位字类型。取值范围为包含零、不包含 2^64，与宿主原生整数宽度无关。
 
@@ -61,10 +63,10 @@ export fn seed_bits(seed: Number): Word64
 ```el
 import { Number } from "file:../number/number.el"
 import { seed_bits } from "file:./bits.el"
-let seed = seed_bits(42)
+let seed = seed_bits(72)
 console.stdout.writeLine(Number(seed))
 ```
 预期标准输出：
 ```text
-42
+72
 ```

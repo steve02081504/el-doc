@@ -18,6 +18,8 @@
 export fn writeJSON(value: any, limits: JsonLimits = JsonLimits()): Text
 ```
 
+**返回类型**：`Text`
+
 将 EL 值编码为严格 JSON 文本，并按给定限制控制递归与输出规模。
 
 **参数**：value 要编码的值；可编码类型受 JSON 数据模型约束。

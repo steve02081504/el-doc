@@ -1,10 +1,15 @@
 # 类、对象与生命周期
 
+| 查询 | 规则 |
+| --- | --- |
+| 赋值模式 | 具名用户类必须选择 copy 或 shared |
+| 构造转换 | 默认显式；合格的 `implicit constructor` 可隐式参与 |
+| 析构 | 默认 aggressive；scope 至少等到名称作用域结束 |
+| 共享 | 引用同一对象，不提供并发同步 |
+
 ## 类声明
 
 ```el
-import { assign } from "el:language/contracts.el"
-
 @assign(mode: "copy")
 class Point {
 	let x = 0
@@ -12,7 +17,7 @@ class Point {
 }
 ```
 
-用户类型必须明确选择 `@assign(mode: "copy")` 或 `@assign(mode: "shared")`，没有默认赋值模式。此例从 `el:language/contracts.el` 导入 `assign` 属性绑定。类可声明字段、方法、构造器、析构器和运算符。继承用 `extends`，接口使用结构匹配；`implements` 可声明完整契约断言。普通字段在构造时确定类型，动态类则通过 `@dynamic` 采用专门的动态字段操作。
+用户类型必须明确选择 `@assign(mode: "copy")` 或 `@assign(mode: "shared")`，没有默认赋值模式。`assign` 和 `destruct` 已由默认环境提供，通常无需显式导入。类可声明字段、方法、构造器、析构器和运算符。继承用 `extends`，接口使用结构匹配；`implements` 可声明完整契约断言。普通字段在构造时确定类型，动态类则通过 `@dynamic` 采用专门的动态字段操作。
 
 ## 构造与分派
 
@@ -20,11 +25,16 @@ class Point {
 
 ## 析构与清理
 
+带完整代码和输出的对照见[激进生命周期与析构时机](aggressive-lifetimes.md)。默认策略允许对象在作用域内部就结束生命；`scope` 才要求至少等到名称作用域末尾。
+
 类声明可用 `@destruct(mode: "scope")` 或 `@destruct(mode: "aggressive")` 选择析构策略；未标注时为 aggressive。实际具体类自己的设置决定策略。析构失败、异步清理及构造失败时的部分对象清理由生命周期合同规定；控制转移也必须履行清理义务。
 
 赋值模式属性是必需的。经 const 访问路径的写入受限，但不会冻结所有别名。构造失败后的部分初始化清理有独立规则。
 
 ## 相关条目
+
+- [类型转换](conversions.md)
+- [生命周期、借用与清理](lifetimes.md)
 
 - [类型](types.md)
 - [声明与绑定](declarations.md)

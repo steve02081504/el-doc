@@ -18,6 +18,8 @@
 export fn connectTcp(host: Text, port: Number, timeout: Number = 30000): TcpConnection
 ```
 
+**返回类型**：`TcpConnection`
+
 连接到指定主机和 TCP 端口，并返回连接对象。
 
 **参数**：host 主机名或数值地址。

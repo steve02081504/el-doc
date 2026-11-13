@@ -18,6 +18,8 @@
 export fn parseTime(source: Text, standard: Bool): ParsedTime
 ```
 
+**返回类型**：`ParsedTime`
+
 解析时间文本并返回字段、偏移和解析状态。
 
 **参数**：source 要解析的时间文本。

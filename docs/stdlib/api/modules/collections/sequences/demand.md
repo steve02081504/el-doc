@@ -4,6 +4,17 @@
 
 [库分类](../../../categories/collections.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
 
+## 成员总览
+
+- [Sequence.consume](#api-45dc347b6a31d11d535a)
+- [Sequence.drop](#api-20db4321c06f72ac55a5)
+- [Sequence.take](#api-b415cd6c8b485fb55cfc)
+- [Sequence.slice](#api-1a13690071622bccebd0)
+- [Sequence.map](#api-a9dd3fbd45fbdbc235ae)
+- [Sequence.filter](#api-779750da0080921fdd71)
+- [Sequence.collect](#api-12bd7b94b2871a2ffb6c)
+- [Sequence.sum](#api-f18006015ef6f920209d)
+
 ## 惰性序列 {#api-7a16f7a075763e8cea09}
 
 源码：`src/stdlib/collections/sequences/demand.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L1)
@@ -53,6 +64,8 @@ numbers.consume()
 fn drop(count: Number): Sequence
 ```
 
+**返回类型**：[`Sequence`](demand.md#api-f1b57111a81f88477e0f)
+
 返回跳过前 count 个元素后的惰性序列。
 
 **参数**：count 要跳过的非负整数个数。
@@ -73,6 +86,8 @@ console.stdout.writeLine(lazy @[1, 2, 3].drop(2).collect().join(", "))
 fn take(count: Number): Sequence
 ```
 
+**返回类型**：[`Sequence`](demand.md#api-f1b57111a81f88477e0f)
+
 返回最多取前 count 个元素的惰性序列；后续元素不会被求值。
 
 **参数**：count 要取的非负整数个数。
@@ -92,6 +107,8 @@ console.stdout.writeLine(lazy @[1, 2, 3].take(2).collect().join(", "))
 ```el
 fn slice(start: Number, end: Number | void_t = void): Sequence
 ```
+
+**返回类型**：[`Sequence`](demand.md#api-f1b57111a81f88477e0f)
 
 返回指定区间的惰性序列；省略 end 时延伸到序列末尾。
 
@@ -115,6 +132,8 @@ console.stdout.writeLine(lazy @[1, 2, 3, 4].slice(1, 3).collect().join(", "))
 fn map(transform): Sequence
 ```
 
+**返回类型**：[`Sequence`](demand.md#api-f1b57111a81f88477e0f)
+
 按需对每个元素应用转换函数，返回新的惰性序列。
 
 **参数**：transform 将元素转换为新值的函数。
@@ -135,6 +154,8 @@ console.stdout.writeLine(lazy @[1, 2].map(value => value * 2).collect().join(", 
 fn filter(predicate): Sequence
 ```
 
+**返回类型**：[`Sequence`](demand.md#api-f1b57111a81f88477e0f)
+
 按需保留谓词为真的元素。
 
 **参数**：predicate 接收元素并返回布尔值的函数。
@@ -154,6 +175,8 @@ console.stdout.writeLine(lazy @[-1, 2, 3].filter(value => value > 0).collect().j
 ```el
 fn collect(): any[]
 ```
+
+**返回类型**：`any[]`
 
 迭代至序列结束，并将产生的元素收集到数组。
 

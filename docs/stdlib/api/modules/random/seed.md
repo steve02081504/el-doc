@@ -18,6 +18,8 @@
 export fn generateSeed(): Number
 ```
 
+**返回类型**：`Number`
+
 从当前平台的系统熵来源取得随机种子。
 
 ### 示例：读取系统随机种子
@@ -37,6 +39,8 @@ let seed = generateSeed()
 ```el
 export fn automaticSeed(): Number
 ```
+
+**返回类型**：`Number`
 
 优先取得系统随机种子；熵不可用时使用当前墙上时间纳秒构造种子。
 

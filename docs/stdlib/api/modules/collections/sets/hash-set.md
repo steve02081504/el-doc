@@ -4,6 +4,21 @@
 
 [库分类](../../../categories/collections.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
 
+## 成员总览
+
+- [Set.count](#api-7dcae9213eb8c6bddb8d)
+- [Set.has](#api-8c4967d005886141d35a)
+- [Set.add](#api-19526eaad9f7ef5a50cf)
+- [Set.remove](#api-cec6fa071bc6bf0b9a95)
+- [Set.values](#api-08e9c0e43ab2da7101aa)
+- [Set.union](#api-6fc99da40e2de7ac073d)
+- [Set.intersection](#api-b7027b62e6689eb23a7f)
+- [Set.difference](#api-374a5786f13d6e5ba4d3)
+- [Set.symmetricDifference](#api-84114d3fe59c80193055)
+- [Set.isSubsetOf](#api-5dd01f2e69fa12046ef8)
+- [Set.isSupersetOf](#api-01377dfbc1aa88307fa5)
+- [Set.isDisjointFrom](#api-dcb2b454234c09158e47)
+
 ## 哈希集合 {#api-3c2602063f2b32fe6910}
 
 源码：`src/stdlib/collections/sets/hash-set.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L1)
@@ -17,6 +32,8 @@
 ```el
 export fn Set(element: type): type
 ```
+
+**返回类型**：`type`
 
 创建按元素去重的哈希集合类型。
 
@@ -40,6 +57,8 @@ console.stdout.writeLine(tags.has("el"))
 get count(): Number
 ```
 
+**返回类型**：`Number`
+
 返回集合中不同元素的数量。
 
 **返回值**：不重复元素数。
@@ -60,6 +79,8 @@ console.stdout.writeLine(tags.count)
 ```el
 fn has(value: element): Bool
 ```
+
+**返回类型**：`Bool`
 
 判断集合中是否已有给定元素。
 
@@ -82,6 +103,8 @@ console.stdout.writeLine(tags.has("el"))
 ```el
 @discardable fn add(value: element): Bool
 ```
+
+**返回类型**：`Bool`
 
 将元素加入集合；集合已有该元素时不产生重复项。
 
@@ -106,6 +129,8 @@ console.stdout.writeLine(tags.count)
 @discardable fn remove(value: element): Bool
 ```
 
+**返回类型**：`Bool`
+
 从集合中删除给定元素（如果存在）。
 
 **参数**：value 要删除的元素。
@@ -128,6 +153,8 @@ tags.remove("el")
 fn values(): element[]
 ```
 
+**返回类型**：`element[]`
+
 返回集合中元素组成的数组快照。
 
 **返回值**：含当前集合元素的数组。
@@ -147,6 +174,8 @@ console.stdout.writeLine(tags.values().join(", "))
 ```el
 fn union(other): Set<element: element>
 ```
+
+**返回类型**：`Set<element: element>`
 
 返回包含当前集合和另一个集合全部元素的新集合。
 
@@ -172,6 +201,8 @@ console.stdout.writeLine(allTags.union(more).count)
 fn intersection(other): Set<element: element>
 ```
 
+**返回类型**：`Set<element: element>`
+
 返回仅包含同时存在于两个集合中的元素的新集合。
 
 **参数**：other 参与交集的集合。
@@ -194,6 +225,8 @@ let common = first.intersection(second)
 ```el
 fn difference(other): Set<element: element>
 ```
+
+**返回类型**：`Set<element: element>`
 
 返回存在于当前集合但不在另一个集合中的元素。
 
@@ -218,6 +251,8 @@ let remaining = all.difference(done)
 fn symmetricDifference(other): Set<element: element>
 ```
 
+**返回类型**：`Set<element: element>`
+
 返回只出现在其中一个集合中的元素。
 
 **参数**：other 参与对称差运算的集合。
@@ -240,6 +275,8 @@ let changed = before.symmetricDifference(after)
 ```el
 fn isSubsetOf(other): Bool
 ```
+
+**返回类型**：`Bool`
 
 判断当前集合是否为另一个集合的子集。
 
@@ -264,6 +301,8 @@ console.stdout.writeLine(required.isSubsetOf(granted))
 fn isSupersetOf(other): Bool
 ```
 
+**返回类型**：`Bool`
+
 判断当前集合是否包含另一个集合的全部元素。
 
 **参数**：other 候选子集。
@@ -286,6 +325,8 @@ console.stdout.writeLine(granted.isSupersetOf(required))
 ```el
 fn isDisjointFrom(other): Bool
 ```
+
+**返回类型**：`Bool`
 
 判断两个集合是否没有共同元素。
 

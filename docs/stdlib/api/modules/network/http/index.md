@@ -18,6 +18,8 @@
 export fn request(url: Text, options: HttpOptions = HttpOptions()): HttpResponse
 ```
 
+**返回类型**：[`HttpResponse`](model.md#api-e49096dfd951764c068f)
+
 发送 HTTP 请求并返回状态、响应头与响应体。
 
 **参数**：url HTTP 或 HTTPS URL。

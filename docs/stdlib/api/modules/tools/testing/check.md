@@ -4,6 +4,18 @@
 
 [库分类](../../../categories/tools.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
 
+## 成员总览
+
+- [Checks.equal](#api-9bc8bfe594dbb59dd408)
+- [Checks.same](#api-614ee7f25af8cfe5ae5c)
+- [Checks.near](#api-5c82c4bd1b5ec6b37fdb)
+- [Checks.throws](#api-8db3d707f3691300a2a5)
+- [Checks.items](#api-e911952584eb01963356)
+- [Checks.collect](#api-80bbd1f2ffdd433e943e)
+- [Checks.snapshot](#api-a2dedfe1b1939a02b3e0)
+- [Checks.compiles](#api-2e049b79fd2a4c6c9dcb)
+- [Checks.diagnostic](#api-ca64dd756b7a7d68a372)
+
 ## 测试比较断言 {#api-f960aaa2ccb3388fd730}
 
 源码：`src/stdlib/tools/testing/check.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L1)
@@ -231,8 +243,10 @@ check.diagnostic(result, phase: "check", code: "EL.ACCESS.PRIVATE", marker: "den
 源码：`src/stdlib/tools/testing/check.el:173` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L173)
 
 ```el
-export lazy let check
+export lazy let check = Checks()
 ```
+
+**类型**：`Checks`
 
 提供比较断言入口；失败时抛出带结构化差异信息的 TestFailure。
 

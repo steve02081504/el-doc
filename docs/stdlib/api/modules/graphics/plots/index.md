@@ -4,6 +4,13 @@
 
 [库分类](../../../categories/graphics.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
 
+## 成员总览
+
+- [Figure.axis](#api-a0ab54cd34a79111132b)
+- [Figure.image](#api-05f4dfef014a883b90ed)
+- [Figure.save](#api-4c3befca40a6315cb486)
+- [Figure.show](#api-f8da8e4d08474a501002)
+
 ## 数值绘图 {#api-0072837f4ccf6b725f73}
 
 源码：`src/stdlib/graphics/plots/index.el:9` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L9)
@@ -36,6 +43,8 @@ figure.save("curve.svg")
 let axis: Axis
 ```
 
+**类型**：[`Axis`](scene.md#api-cb6510f18b0f5b284d67)
+
 可直接配置标题、坐标轴标签、图例、缩放范围的绘图场景对象。
 
 ### 示例：设置图标题
@@ -51,6 +60,8 @@ figure.axis.title = "二次曲线"
 ```el
 fn image(width: Number = 900, height: Number = 600): Text
 ```
+
+**返回类型**：`Text`
 
 将当前坐标场景渲染为 SVG 文本；不打开窗口。
 
@@ -131,6 +142,8 @@ host.run()
 ```el
 export fn plot(x: Tensor<element: F64>, y: Tensor<element: F64>): Figure
 ```
+
+**返回类型**：[`Figure`](index.md#api-daf4fb6b08acdf355a69)
 
 从 F64 张量创建折线图；x 的行数须与 y 的行数相同，y 的每一列对应一条线。
 

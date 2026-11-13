@@ -18,6 +18,8 @@
 export fn frame(text: Text): Text
 ```
 
+**返回类型**：`Text`
+
 将文本编码为十进制标量长度、冒号和原文组成的定帧。
 
 **参数**：text 要编码的文本。
@@ -34,11 +36,13 @@ frame("猫:咪")
 
 ## find_text {#api-57c9ddeea00803ab4467}
 
-源码：`src/stdlib/text/operations.el:29` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/operations.el#L29)
+源码：`src/stdlib/text/operations.el:37` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/operations.el#L37)
 
 ```el
 export fn find_text(text: Text, needle: Text, start: Number): Number
 ```
+
+**返回类型**：`Number`
 
 在文本中从给定标量下标开始查找子串，返回首次匹配位置；未找到时返回 -1。
 
@@ -46,13 +50,21 @@ export fn find_text(text: Text, needle: Text, start: Number): Number
 
 **参数**：needle 要查找的子串。
 
-**参数**：start 起始标量下标。
+**参数**：start 起始标量下标；应为 0 到 text.count 之间的整数。
 
-**返回值**：子串起始下标；未找到为 -1。
+**返回值**：子串起始下标；未找到为 -1。空 needle 在有效起点返回 start。
 
 ### 示例：查找文本中的子串
 
 ```el
 import { find_text } from "el:text/operations.el"
-find_text("reports/2026", "2026", 0)
+console.stdout.writeLine(find_text("reports/2026", "2026", 0))
+console.stdout.writeLine(find_text("abc", "", 3))
+console.stdout.writeLine(find_text("abc", "z", 0))
+```
+预期标准输出：
+```text
+8
+3
+-1
 ```

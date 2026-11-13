@@ -18,6 +18,8 @@
 export fn parseXML(source: Text, limits: JsonLimits = JsonLimits()): XmlDocument
 ```
 
+**返回类型**：`XmlDocument`
+
 解析受限的 XML 文档，保留元素、文本、CDATA、注释和处理指令节点。
 
 **参数**：source 完整 XML 文本。

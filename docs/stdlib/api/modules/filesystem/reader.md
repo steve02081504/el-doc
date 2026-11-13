@@ -4,6 +4,11 @@
 
 [库分类](../../categories/filesystem.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 成员总览
+
+- [FileReader.read](#api-de5485f845b68f2bcf8a)
+- [FileReader.close](#api-226f1d4ed93e75e92625)
+
 ## 文件读取器 {#api-6e76e3b3e1ee0eb46bc7}
 
 源码：`src/stdlib/filesystem/reader.el:15` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L15)
@@ -17,6 +22,8 @@
 ```el
 fn read(maximumBytes: Number): Number[]
 ```
+
+**返回类型**：`Number[]`
 
 从当前位置读取至多指定数量的原始字节。
 
@@ -41,6 +48,8 @@ reader.close()
 ```el
 fn close(): void_t
 ```
+
+**返回类型**：`void_t`
 
 关闭读取器并结束其底层资源使用。
 

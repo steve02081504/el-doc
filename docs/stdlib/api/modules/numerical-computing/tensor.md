@@ -4,6 +4,29 @@
 
 [库分类](../../categories/numerical-computing.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 成员总览
+
+- [Tensor.rank](#api-8989b012c5ff4897d155)
+- [Tensor.count](#api-8f71ce2d0b728ce22cc4)
+- [Tensor.extent](#api-38b5b9e81e2498a3e6bb)
+- [Tensor.shape](#api-8a47192a9a127d6b6d2b)
+- [Tensor.flat](#api-825767ce76fe7eef8efd)
+- [Tensor.select](#api-d8dd2e62324729c9b49e)
+- [Tensor.transpose](#api-7e4fb4ba61b8777c2bf6)
+- [Tensor.T](#api-fbb3a0168dd46111c500)
+- [Tensor.matmul](#api-0cc7fa30cddda72138c2)
+- [Tensor.slice](#api-9144b6f4fe4ac3b11647)
+- [Tensor.scalar](#api-b1378abafa0ef3b02d23)
+- [Tensor.square](#api-3199e5962816d7efaa4d)
+- [Tensor.operator[]](#api-5fecdaf1aca28b5f3863)
+- [Tensor.operator+~tensor](#api-51f9006e889164679433)
+- [Tensor.operator+~scalar](#api-011941fe7f27cae1385a)
+- [Tensor.operator*~matmul](#api-86ecd494e284cf6ea6d2)
+- [Tensor.operator*~scalar](#api-f516ec5297f69640fe7b)
+- [Tensor.operator.*~broadcast](#api-7c07d1978993329814a0)
+- [Tensor.operator.*~scalar](#api-b9b6c6c9e508dff7f537)
+- [Tensor.operator.^~scalar](#api-14a097654827e65155e7)
+
 ## 数值张量 {#api-0c5b8f6b01bf3f9f281e}
 
 源码：`src/stdlib/numerical-computing/tensor.el:28` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L28)
@@ -17,6 +40,8 @@
 ```el
 export fn Tensor(element: type): type
 ```
+
+**返回类型**：`type`
 
 创建指定元素类型的张量类型；实例由形状和按列优先排列的元素构成。
 
@@ -40,6 +65,8 @@ let matrix = Dense(@[2, 2], @[1, 2, 3, 4])
 get rank(): Number
 ```
 
+**返回类型**：`Number`
+
 返回张量的轴数；标量张量的 rank 为 0。
 
 **返回值**：形状数组中的维度数。
@@ -58,6 +85,8 @@ let dimensions = tensor.rank
 get count(): Number
 ```
 
+**返回类型**：`Number`
+
 返回张量包含的逻辑元素数。
 
 **返回值**：所有轴长度的乘积；标量张量为 1。
@@ -75,6 +104,8 @@ let elements = tensor.count
 ```el
 fn extent(axis: Number): Number
 ```
+
+**返回类型**：`Number`
 
 返回指定轴的长度。
 
@@ -98,6 +129,8 @@ let columns = matrix.extent(1)
 fn shape(): Number[]
 ```
 
+**返回类型**：`Number[]`
+
 返回描述各轴长度的独立数组快照。
 
 **返回值**：按轴编号排列的长度数组。
@@ -115,6 +148,8 @@ let dimensions = tensor.shape()
 ```el
 fn flat(index: Number): element
 ```
+
+**返回类型**：`element`
 
 按列优先线性索引读取一个元素。
 
@@ -139,6 +174,8 @@ let first = tensor.flat(0)
 		fn select(selectors: Selector[]): Value
 ```
 
+**返回类型**：`Value`
+
 按每个轴的标量或选择器抽取张量；标量选择会移除对应结果轴，范围选择保留该轴。
 
 **参数**：selectors 按轴顺序提供、长度等于 rank 的选择器数组。
@@ -161,6 +198,8 @@ let selected = matrix.select(@[1, 0..3])
 @optimize(data: @{ reorder: reorderTranspose })
 		fn transpose(): Value
 ```
+
+**返回类型**：`Value`
 
 交换 rank-2 张量的两个轴并返回转置值。
 
@@ -222,6 +261,8 @@ let result = coefficients.matmul(vector)
 fn slice(axis: Number, start: Number, count: Number): Value
 ```
 
+**返回类型**：`Value`
+
 沿指定轴从 start 开始截取 count 个连续元素，其他轴保持不变。
 
 **参数**：axis 要切片的轴。
@@ -248,6 +289,8 @@ let leading = matrix.slice(1, 0, 2)
 fn scalar(): element
 ```
 
+**返回类型**：`element`
+
 读取 rank-zero 张量唯一的标量元素。
 
 **返回值**：标量张量所含元素。
@@ -267,6 +310,8 @@ let lossValue = loss.scalar()
 ```el
 fn square(): Value
 ```
+
+**返回类型**：`Value`
 
 对张量逐元素平方。
 
@@ -299,6 +344,8 @@ operator[](...selectors: Selector)
 ```el
 let selected = matrix[1, 0..3]
 ```
+
+<span id="api-be00e383db221ede2acf"></span>
 
 ## Tensor.operator+~tensor {#api-51f9006e889164679433}
 
@@ -342,6 +389,8 @@ operator +(other)
 let shifted = matrix + 1
 ```
 
+<span id="api-4273625e7cff6fdadb40"></span>
+
 ## Tensor.operator*~matmul {#api-86ecd494e284cf6ea6d2}
 
 源码：`src/stdlib/numerical-computing/tensor.el:671` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L671)
@@ -384,6 +433,8 @@ operator *(other)
 let doubled = matrix * 2
 ```
 
+<span id="api-86fce1b196c9509646b9"></span>
+
 ## Tensor.operator.*~broadcast {#api-7c07d1978993329814a0}
 
 源码：`src/stdlib/numerical-computing/tensor.el:691` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L691)
@@ -425,6 +476,8 @@ operator .*(other)
 ```el
 let scaled = matrix .* 2
 ```
+
+<span id="api-952510de7575c1f05d8c"></span>
 
 ## Tensor.operator.^~scalar {#api-14a097654827e65155e7}
 

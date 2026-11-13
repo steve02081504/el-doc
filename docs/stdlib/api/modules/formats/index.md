@@ -4,6 +4,13 @@
 
 [库分类](../../categories/formats.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 成员总览
+
+- [Formats.Text](#api-f86695e611fe3e71fa9d)
+- [Formats.JSON](#api-82a6375e413cd8e3c5b0)
+- [Formats.YAML](#api-b651a1c802ea9634a3bd)
+- [Formats.CSV](#api-1489e37be5f3818f494f)
+
 ## 文件格式 {#api-06411e5ab51d129e868f}
 
 源码：`src/stdlib/formats/index.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L1)
@@ -17,6 +24,8 @@
 ```el
 export fn TextFormat(output: type, input: type = output): type
 ```
+
+**返回类型**：`type`
 
 创建文本格式对象，按需解码文本，并可选提供反向编码器。
 
@@ -111,8 +120,10 @@ let rows = readFileAs(formats.CSV, "file:./table.csv")
 源码：`src/stdlib/formats/index.el:166` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L166)
 
 ```el
-export const formats
+export const formats = Formats()
 ```
+
+**类型**：`Formats`
 
 标准格式对象集合，提供 Text、JSON、YAML、CSV 等格式值。
 

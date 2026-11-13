@@ -4,6 +4,14 @@
 
 [库分类](../../../categories/multimedia.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
 
+## 成员总览
+
+- [PcmOutput.enqueue](#api-5372746934d5b8e5c997)
+- [PcmOutput.finish](#api-df13597f5e16ed137856)
+- [PcmOutput.idle](#api-70c6bd7ef71832546cf8)
+- [PcmOutput.clear](#api-573c3b322bc864f723be)
+- [PcmOutput.close](#api-5ea91df086c9987b32dd)
+
 ## PcmOutput {#api-3405bba76a30486bbb83}
 
 源码：`src/stdlib/multimedia/audio/windows-output.el:54` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L54)
@@ -36,6 +44,8 @@ let accepted = output.enqueue(audio)
 ```el
 fn enqueue(audio: PcmAudio): Bool
 ```
+
+**返回类型**：`Bool`
 
 尝试提交音频块；样本在返回前复制，队列无空槽时不等待并返回假。
 
@@ -75,6 +85,8 @@ while (!output.idle()) sleep(2)
 ```el
 fn idle(): Bool
 ```
+
+**返回类型**：`Bool`
 
 检查设备队列是否已完成所有已提交块。
 

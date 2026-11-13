@@ -4,6 +4,15 @@
 
 [库分类](../../categories/user-interface.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 成员总览
+
+- [SoundPlayer.cue](#api-a832a21f3fe936cbb93d)
+- [SoundPlayer.engine](#api-e28773542d6de5c25c75)
+- [SoundPlayer.tryCue](#api-bdf8aa6e71523e364ba2)
+- [SoundPlayer.loop](#api-12729f274be6bb28fd2c)
+- [SoundPlayer.stop](#api-38b098ba7017124aed8a)
+- [SoundPlayer.close](#api-27a2cdf8d9f4095bd7b5)
+
 ## 界面提示音 {#api-3f30a95ee9b027857187}
 
 源码：`src/stdlib/user-interface/sound.el:5` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L5)
@@ -35,6 +44,8 @@ sound.close()
 ```el
 fn cue(name: Text, value: Number = 0, maximum: Number = 1): Bool
 ```
+
+**返回类型**：`Bool`
 
 尝试将命名提示音加入短音效队列，不等待播放完成。
 
@@ -81,6 +92,8 @@ sound.engine(0.6)
 ```el
 fn tryCue(name: Text, value: Number = 0, maximum: Number = 1): Bool
 ```
+
+**返回类型**：`Bool`
 
 尝试播放提示音，并将捕获设备错误转换为未接受状态。
 

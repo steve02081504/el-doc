@@ -1,5 +1,12 @@
 # 函数
 
+| 查询 | 规则 |
+| --- | --- |
+| 参数 | 位置实参在具名实参前；实参从左到右各求值一次 |
+| 默认值 | 省略或传 `void` 触发；`nil` 不触发 |
+| 函数名取值 | 保留重载集，具体调用或目标契约才选择候选 |
+| 闭包 | 捕获逻辑绑定，逃逸时保持绑定有效 |
+
 ## 声明与 lambda
 
 ```el
@@ -28,6 +35,9 @@ let increment = (value) => value + 1
 EL 没有 `async`、`await` 关键字。异步属性由函数行为推断，普通调用在合同要求处自动等待。`spawn(() => expression)` 显式启动独立任务并返回 Promise；`.get()` 等待其结果。标准库的 `async { ... }` 和 `await(p)` 是宏。
 
 ## 相关条目
+
+- [重载解析](overload-resolution.md)
+- [生命周期、借用与清理](lifetimes.md)
 
 - [控制流](control-flow.md)
 - [执行与并发](execution.md)

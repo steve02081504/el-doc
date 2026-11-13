@@ -48,7 +48,7 @@ export syntax await
 
 ```el
 import { async, await } from "el:concurrency/"
-let task = async { return 42 }
+let task = async { return 72 }
 let result = await(task)
 console.stdout.writeLine(result)
 ```

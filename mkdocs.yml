@@ -44,6 +44,7 @@ theme:
 hooks:
   - hooks/api_navigation.py
   - hooks/el_lexer.py
+  - hooks/code_links.py
   - hooks/random_pages.py
 
 markdown_extensions:
@@ -112,10 +113,17 @@ nav:
       - 词法与字面量: reference/language/lexical.md
       - 声明与绑定: reference/language/declarations.md
       - 类型: reference/language/types.md
+      - 左值、右值与亡值: reference/language/value-categories.md
+      - 赋值、复制与共享: reference/language/assignment-semantics.md
+      - 复制消除: reference/language/copy-elision.md
+      - 类型转换: reference/language/conversions.md
       - 表达式与运算符: reference/language/expressions.md
       - 控制流: reference/language/control-flow.md
       - 函数: reference/language/functions.md
+      - 重载解析: reference/language/overload-resolution.md
       - 类与生命周期: reference/language/classes.md
+      - 借用与清理: reference/language/lifetimes.md
+      - 激进生命周期与析构时机: reference/language/aggressive-lifetimes.md
       - 模块与导入: reference/language/modules.md
       - 文件预处理: reference/language/preprocessing.md
       - 异常与并发: reference/language/execution.md

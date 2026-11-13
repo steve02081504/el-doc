@@ -18,6 +18,8 @@
 export fn hkdf_sha256(ikm: Number[], salt: Number[] | void_t = void, info: Number[] | void_t = void, length: Number = 32): Number[]
 ```
 
+**返回类型**：`Number[]`
+
 依次执行 HKDF-SHA256 的 Extract 与 Expand。
 
 **参数**：ikm 输入密钥材料字节。

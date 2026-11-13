@@ -4,6 +4,19 @@
 
 [库分类](../../../categories/text.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
 
+## 成员总览
+
+- [ParseError.offset](#api-6dd7855dda76480009da)
+- [ParseError.expected](#api-2b3956bc77cb8ed6d897)
+- [ParseError.contexts](#api-2d3bebc3de2f96ffe6a8)
+- [ParseReply.matched](#api-eed8f57e3bc622e71c4d)
+- [ParseReply.end](#api-aa042bd0e5020bde8f9a)
+- [ParseReply.error](#api-c04ba9afd567cf3d838f)
+- [ParseReply.value](#api-51d18d3ab11cb736b67e)
+- [Parser.asParser](#api-d229b8c3837af00d72d9)
+- [Parser.parse](#api-d313f1ac56d1be2399e2)
+- [Parser.parsePrefix](#api-7aff463fca2745d8ab80)
+
 ## 文本解析器 {#api-456334438bfab20db4a4}
 
 源码：`src/stdlib/text/patterns/parser.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L1)
@@ -37,6 +50,8 @@ catch (error) { if (error is ParseError) console.stderr.writeLine(error.offset) 
 let offset: Number
 ```
 
+**类型**：`Number`
+
 输入中第一个没有成功解析的位置，以 Unicode 标量下标计。
 
 ### 示例：显示失败偏移
@@ -52,6 +67,8 @@ console.stderr.writeLine(error.offset)
 ```el
 let expected: Text[]
 ```
+
+**类型**：`Text[]`
 
 在失败位置可接受的预期项列表。
 
@@ -69,6 +86,8 @@ console.stderr.writeLine(error.expected.join(", "))
 let contexts: Text[]
 ```
 
+**类型**：`Text[]`
+
 失败时处于活动状态的解析规则上下文栈。
 
 ### 示例：显示解析上下文
@@ -84,6 +103,8 @@ console.stderr.writeLine(error.contexts.join("/"))
 ```el
 let matched: Bool
 ```
+
+**类型**：`Bool`
 
 指示前缀解析是否成功。
 
@@ -101,6 +122,8 @@ console.stdout.writeLine(reply.matched)
 let end: Number
 ```
 
+**类型**：`Number`
+
 成功解析后第一个未消费位置的标量下标。
 
 ### 示例：查看消费偏移
@@ -117,6 +140,8 @@ console.stdout.writeLine(reply.end)
 let error: ParseError
 ```
 
+**类型**：[`ParseError`](parser.md#api-134641b6a74ac9dc39ed)
+
 未匹配时保存的 ParseError。
 
 ### 示例：查看失败偏移
@@ -132,6 +157,8 @@ console.stderr.writeLine(reply.error.offset)
 ```el
 fn value(): output
 ```
+
+**返回类型**：`output`
 
 返回成功解析得到的语义值；失败时抛出保存的 ParseError。
 
@@ -160,7 +187,7 @@ fn asParser()
 ### 示例：解析完整输入
 
 ```el
-let value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse("42")
+let value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse("72")
 ```
 
 ## Parser.parse {#api-d313f1ac56d1be2399e2}
@@ -170,6 +197,8 @@ let value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse
 ```el
 fn parse(source: Text, limits: PatternLimits = PatternLimits()): output
 ```
+
+**返回类型**：`output`
 
 从输入起点解析完整文本；输入有剩余或无法匹配时抛出 ParseError。
 
@@ -185,7 +214,7 @@ fn parse(source: Text, limits: PatternLimits = PatternLimits()): output
 
 ```el
 import { integer } from "el:text/patterns/index.el"
-let value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse("42")
+let value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse("72")
 console.stdout.writeLine(value)
 ```
 
@@ -196,6 +225,8 @@ console.stdout.writeLine(value)
 ```el
 fn parsePrefix(source: Text, from: Number = 0, limits: PatternLimits = PatternLimits()): ParseReply<output: output>
 ```
+
+**返回类型**：`ParseReply<output: output>`
 
 从指定偏移尝试解析输入前缀，不要求消费完整文本，并以 ParseReply 返回匹配状态。
 

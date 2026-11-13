@@ -4,12 +4,12 @@
 
 ## collections
 
-- [collections/arrays/dynamic.el](modules/collections/arrays/dynamic.md)（20 个 API）
+- [collections/arrays/dynamic.el](modules/collections/arrays/dynamic.md)（21 个 API）
 - [collections/arrays/lazy.el](modules/collections/arrays/lazy.md)（1 个 API）
 - [collections/arrays/operations.el](modules/collections/arrays/operations.md)（18 个 API）
 - [collections/batch/syntax.el](modules/collections/batch/syntax.md)（2 个 API）
 - [collections/maps/base.el](modules/collections/maps/base.md)（9 个 API）
-- [collections/maps/hash-map.el](modules/collections/maps/hash-map.md)（2 个 API）
+- [collections/maps/hash-map.el](modules/collections/maps/hash-map.md)（6 个 API）
 - [collections/sequences/demand.el](modules/collections/sequences/demand.md)（9 个 API）
 - [collections/sequences/enumerate.el](modules/collections/sequences/enumerate.md)（1 个 API）
 - [collections/sets/bit-set.el](modules/collections/sets/bit-set.md)（4 个 API）
@@ -22,7 +22,7 @@
 
 ## console
 
-- [console/facade.el](modules/console/facade.md)（16 个 API）
+- [console/facade.el](modules/console/facade.md)（35 个 API）
 
 ## cryptography
 
@@ -137,7 +137,7 @@
 - [text/patterns/combinators.el](modules/text/patterns/combinators.md)（8 个 API）
 - [text/patterns/parser.el](modules/text/patterns/parser.md)（15 个 API）
 - [text/patterns/syntax.el](modules/text/patterns/syntax.md)（1 个 API）
-- [text/text.el](modules/text/text.md)（9 个 API）
+- [text/text.el](modules/text/text.md)（10 个 API）
 
 ## theme
 

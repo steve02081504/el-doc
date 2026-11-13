@@ -10,6 +10,8 @@
 
 返回浮点求解结果、残差范数、实际方法与阈值判定信息。
 
+<span id="api-90f3bafe179eee9379d1"></span>
+
 ## solveDiagnostic~dense {#api-e0ab268d3c4c908e5d38}
 
 源码：`src/stdlib/numerical-computing/diagnostics.el:41` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/diagnostics.el#L41)
@@ -17,6 +19,8 @@
 ```el
 export fn solveDiagnostic(a: Tensor<element: F64>, b: Tensor<element: F64>, policy: NumericsPolicy = NumericsPolicy()): SolveReport
 ```
+
+**返回类型**：`SolveReport`
 
 用 F64 稠密 LU 求解并返回残差与主元阈值诊断。
 
@@ -42,6 +46,8 @@ let residualMagnitude = report.residualNorm
 ```el
 export fn leastSquaresDiagnostic(a: Tensor<element: F64>, b: Tensor<element: F64>, policy: NumericsPolicy = NumericsPolicy()): SolveReport
 ```
+
+**返回类型**：`SolveReport`
 
 用 F64 列主元 QR 求最小二乘解并返回残差与秩阈值诊断。
 

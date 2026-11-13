@@ -18,6 +18,8 @@
 export fn resolvePath(reference): Location
 ```
 
+**返回类型**：`Location`
+
 将路径或 provider 引用解析为当前文件系统上下文中的逻辑位置。
 
 **参数**：reference 相对路径、绝对 file 引用或已注册 provider 的引用。
@@ -41,6 +43,8 @@ let config = resolvePath("file:./config.json")
 export fn currentDirectory(): Location
 ```
 
+**返回类型**：`Location`
+
 返回当前逻辑文件系统上下文的位置。
 
 **返回值**：当前工作目录的 Location。
@@ -59,6 +63,8 @@ console.stdout.writeLine(currentDirectory().identifier)
 ```el
 export fn resolveFrom(base, reference): Location
 ```
+
+**返回类型**：`Location`
 
 先解析基准位置，再以该位置为上下文解析另一个引用。
 
@@ -83,6 +89,8 @@ let resource = resolveFrom("file:./config", "assets/logo.png")
 export fn parentPath(reference): Location
 ```
 
+**返回类型**：`Location`
+
 返回给定位置的父目录 Location。
 
 **参数**：reference 路径或位置引用。
@@ -104,6 +112,8 @@ let directory = parentPath("file:./config.json")
 export fn fileName(reference): Text
 ```
 
+**返回类型**：`Text`
+
 返回给定位置的末级名称。
 
 **参数**：reference 路径或位置引用。
@@ -124,6 +134,8 @@ console.stdout.writeLine(fileName("file:./config.json"))
 ```el
 export fn openFileReader(reference, lock: Bool | void_t = void): FileReader
 ```
+
+**返回类型**：`FileReader`
 
 为逻辑位置打开顺序读取器；需要随机访问时使用 openRandomFileReader。
 
@@ -152,6 +164,8 @@ reader.close()
 export fn openRandomFileReader(reference, lock: Bool | void_t = void): FileReader
 ```
 
+**返回类型**：`FileReader`
+
 打开支持随机访问的文件读取器。
 
 **参数**：reference 文件或 provider 位置引用。
@@ -179,6 +193,8 @@ reader.close()
 export fn openFileWriter(reference): FileWriter
 ```
 
+**返回类型**：`FileWriter`
+
 为逻辑位置打开文件写入器。
 
 **参数**：reference 目标文件或 provider 位置引用。
@@ -203,6 +219,8 @@ writer.close()
 ```el
 export fn readFileBytes(reference, maximumBytes: Number | void_t = void): Number[]
 ```
+
+**返回类型**：`Number[]`
 
 读取文件原始字节，可选地设置读取上限。
 
@@ -230,6 +248,8 @@ console.stdout.writeLine(bytes.count)
 export fn readFileBytesIfPresent(reference, maximumBytes: Number | void_t = void): Number[] | void_t
 ```
 
+**返回类型**：`Number[] | void_t`
+
 读取文件原始字节；目标不存在时返回 void。
 
 **参数**：reference 文件或 provider 位置引用。
@@ -254,6 +274,8 @@ let bytes = readFileBytesIfPresent("file:./optional.bin")
 ```el
 export fn readTextFileIfPresent(reference, maximumBytes: Number | void_t = void): Text | void_t
 ```
+
+**返回类型**：`Text | void_t`
 
 读取并解码文本文件；目标不存在时返回 void。
 
@@ -281,6 +303,8 @@ if (text is void_t) console.stdout.writeLine("missing")
 export fn writeFileBytes(reference, bytes: Number[]): Number
 ```
 
+**返回类型**：`Number`
+
 将字节数组原样写入文件。
 
 **参数**：reference 目标文件或 provider 位置引用。
@@ -305,6 +329,8 @@ writeFileBytes("file:./message.bin", @[72, 105])
 ```el
 export fn readFileBuffer(reference, maximumBytes: Number | void_t = void): FileBuffer
 ```
+
+**返回类型**：`FileBuffer`
 
 将文件内容读入拥有其底层存储的 FileBuffer，可设置字节上限。
 
@@ -361,6 +387,8 @@ let config = readFileAs(formats.JSON, "file:./config.json")
 export fn writeFileAs(format, reference, value): Number
 ```
 
+**返回类型**：`Number`
+
 使用指定格式编码值并将结果写入文件。
 
 **参数**：format 提供 encode 方法的格式对象。
@@ -389,6 +417,8 @@ writeFileAs(formats.Text, "file:./copy.txt", "already text")
 export fn readTextFile(reference, maximumBytes: Number | void_t = void): Text
 ```
 
+**返回类型**：`Text`
+
 读取文件并按 UTF-8 解码为文本。
 
 **参数**：reference 文件路径或可解析的位置引用。
@@ -415,6 +445,8 @@ console.stdout.writeLine(configuration.count)
 export fn writeTextFile(reference, value: Text): Number
 ```
 
+**返回类型**：`Number`
+
 将文本编码为 UTF-8 并写入文件。
 
 **参数**：reference 目标文件路径或位置引用。
@@ -440,6 +472,8 @@ writeTextFile("settings.json", "{}")
 export fn directoryNames(reference): Text[]
 ```
 
+**返回类型**：`Text[]`
+
 列出逻辑目录中的名称。
 
 **参数**：reference 目录路径或位置引用。
@@ -463,6 +497,8 @@ for (let name in directoryNames("file:./config")) console.stdout.writeLine(name)
 export fn isDirectory(reference): Bool
 ```
 
+**返回类型**：`Bool`
+
 判断逻辑位置是否为目录。
 
 **参数**：reference 路径或位置引用。
@@ -483,6 +519,8 @@ console.stdout.writeLine(isDirectory(parentPath("file:./config.json")))
 ```el
 export fn makeDirectories(reference): void_t
 ```
+
+**返回类型**：`void_t`
 
 创建指定目录及其尚不存在的父目录。
 
@@ -505,6 +543,8 @@ makeDirectories("file:./output/reports")
 export fn removeFile(reference): void_t
 ```
 
+**返回类型**：`void_t`
+
 删除指定文件。
 
 **参数**：reference 文件路径或位置引用。
@@ -525,6 +565,8 @@ removeFile("file:./temporary.txt")
 ```el
 export fn replaceFile(source, target): void_t
 ```
+
+**返回类型**：`void_t`
 
 将源文件原子替换到目标位置。
 
@@ -548,6 +590,8 @@ replaceFile("file:./report.tmp", "file:./report.txt")
 ```el
 export fn copyFile(source, target): Number
 ```
+
+**返回类型**：`Number`
 
 将源文件内容复制到目标位置。
 

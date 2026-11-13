@@ -4,6 +4,10 @@
 
 [库分类](../../categories/errors.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 成员总览
+
+- [AssertionError.reason](#api-870d60eb5f4f1d987a9e)
+
 ## 断言错误 {#api-c4ee9f181a993c384404}
 
 源码：`src/stdlib/errors/assertions.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/errors/assertions.el#L1)
@@ -35,6 +39,8 @@ catch (error: AssertionError) { console.stderr.writeLine(error.reason) }
 let reason: Text
 ```
 
+**类型**：`Text`
+
 断言失败时提供的说明文本。
 
 ### 示例：输出断言原因
@@ -50,6 +56,8 @@ console.stderr.writeLine(error.reason)
 ```el
 export @pure fn assert(condition: Bool, reason: Text): Bool
 ```
+
+**返回类型**：`Bool`
 
 检查条件为真；条件为假时以给定原因抛出 AssertionError。
 

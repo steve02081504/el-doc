@@ -36,6 +36,8 @@ window.theme = paint
 export fn darkPaintTheme(): PaintTheme
 ```
 
+**返回类型**：[`PaintTheme`](drawing.md#api-4be1353cf98b66267dcf)
+
 创建一份深色窗口绘制主题。
 
 **返回值**：可供 Window.theme 使用的 PaintTheme。

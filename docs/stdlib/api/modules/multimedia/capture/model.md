@@ -4,6 +4,11 @@
 
 [库分类](../../../categories/multimedia.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
 
+## 成员总览
+
+- [PcmAudio.sample](#api-8a550e9ca9ac7d948cde)
+- [PcmAudio.setSample](#api-5d599038539e68d30f37)
+
 ## 音视频捕获模型 {#api-318c16b07ac1855df25d}
 
 源码：`src/stdlib/multimedia/capture/model.el:10` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L10)
@@ -64,6 +69,8 @@ audio.setSample(0, 0, 12000)
 ```el
 fn sample(frame: Number, channel: Number = 0): Number
 ```
+
+**返回类型**：`Number`
 
 读取指定帧和声道的有符号 PCM16 整数样本。
 

@@ -4,6 +4,10 @@
 
 [库分类](../../../categories/tools.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
 
+## 成员总览
+
+- [TestRegistrar.each](#api-e087607adc055d5b5e61)
+
 ## 测试注册表 {#api-9e23dc64691268adfbdb}
 
 源码：`src/stdlib/tools/testing/registry.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/registry.el#L1)
@@ -44,8 +48,10 @@ test.each("double", @[
 源码：`src/stdlib/tools/testing/registry.el:109` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/registry.el#L109)
 
 ```el
-export lazy let test
+export lazy let test = TestRegistrar()
 ```
+
+**类型**：`TestRegistrar`
 
 注册一个测试用例；用例主体在测试执行阶段调用，可选择接收 TestContext。
 

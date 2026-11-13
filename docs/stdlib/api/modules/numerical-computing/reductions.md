@@ -10,6 +10,8 @@
 
 提供张量求和、均值、乘积、极值与布尔归约。
 
+<span id="api-ff8e054448f282d474a0"></span>
+
 ## sum~all {#api-d58fd8966d5de0726a4a}
 
 源码：`src/stdlib/numerical-computing/reductions.el:39` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/reductions.el#L39)
@@ -53,6 +55,8 @@ export fn sum(values, axis: Number)
 ```el
 let totals = sum(@(1, 2; 3, 4), 0)
 ```
+
+<span id="api-e0d75cdf0dc930852a16"></span>
 
 ## mean~all {#api-1b092a7a4f6058d36233}
 

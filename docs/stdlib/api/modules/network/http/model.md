@@ -4,6 +4,31 @@
 
 [库分类](../../../categories/network.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
 
+## 成员总览
+
+- [HttpHeader.constructor](#api-0549edb36255a79d2ca5)
+- [HttpOptions.method](#api-475f97593e614073ed6d)
+- [HttpOptions.headers](#api-b62e4b8b5709bbc9f08c)
+- [HttpOptions.body](#api-2423c7ff209b593cab3b)
+- [HttpOptions.timeout](#api-144a9e027290b0df45e4)
+- [HttpOptions.maximumBodyBytes](#api-63fa6a530786b3e21d04)
+- [HttpOptions.maximumHeaderBytes](#api-0adac10b091b2a26a25c)
+- [HttpOptions.maximumRedirects](#api-1114afde4fc20fb2667e)
+- [HttpOptions.forceRefresh](#api-9a787364b17ad804ed35)
+- [HttpOptions.tls](#api-d641795490ee1d451170)
+- [HttpOptions.constructor](#api-98d4531c02450c1b7eb2)
+- [HttpResponse.status](#api-94a7ee2eb19c23484254)
+- [HttpResponse.headers](#api-13457e67b9172ccbf05d)
+- [HttpResponse.body](#api-c6cdd2d8c232982199d4)
+- [HttpResponse.url](#api-c72aa9a6acb07d01133a)
+- [HttpResponse.ok](#api-833651302d6ba4264de8)
+- [HttpResponse.text](#api-6cda717c77ed293047df)
+- [HttpResponse.json](#api-fd727a1f0f4a5400e858)
+- [HttpResponse.as](#api-babd6c7262ef7ec82f76)
+- [HttpResponse.header](#api-af4458df84318ed403f0)
+- [HttpStatusError.response](#api-84ea870701b770626b47)
+- [HttpStatusError.constructor](#api-8cd621216a6f8df9a3be)
+
 ## HTTP 请求与响应模型 {#api-4c1eab6b042d0bb5f906}
 
 源码：`src/stdlib/network/http/model.el:2` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L2)
@@ -80,6 +105,8 @@ let options = HttpOptions(@{ timeout: 5000 })
 let method: Text
 ```
 
+**类型**：`Text`
+
 请求使用的 HTTP 方法，默认是 GET。
 
 ### 示例：指定 POST 方法
@@ -95,6 +122,8 @@ let options = HttpOptions(@{ method: "POST" })
 ```el
 let headers: HttpHeader[]
 ```
+
+**类型**：`HttpHeader[]`
 
 要发送的请求头数组。
 
@@ -112,6 +141,8 @@ let options = HttpOptions(@{ headers: @[HttpHeader("Accept", "application/json")
 let body: Number[]
 ```
 
+**类型**：`Number[]`
+
 要发送的请求体字节；GET 与 HEAD 不接受非空请求体。
 
 ### 示例：设置字节请求体
@@ -127,6 +158,8 @@ let options = HttpOptions(@{ method: "POST", body: @[65, 66] })
 ```el
 let timeout: Number
 ```
+
+**类型**：`Number`
 
 请求超时毫秒数，默认 30000，必须为正数。
 
@@ -144,6 +177,8 @@ let options = HttpOptions(@{ timeout: 5000 })
 let maximumBodyBytes: Number | void_t
 ```
 
+**类型**：`Number | void_t`
+
 请求或响应消息体字节上限；void 表示不设显式上限。
 
 ### 示例：限制响应体大小
@@ -159,6 +194,8 @@ let options = HttpOptions(@{ maximumBodyBytes: 1048576 })
 ```el
 let maximumHeaderBytes: Number
 ```
+
+**类型**：`Number`
 
 请求与响应头的最大字节数。
 
@@ -176,6 +213,8 @@ let options = HttpOptions(@{ maximumHeaderBytes: 16384 })
 let maximumRedirects: Number
 ```
 
+**类型**：`Number`
+
 允许跟随的最大重定向次数。
 
 ### 示例：禁止自动跟随重定向
@@ -192,6 +231,8 @@ let options = HttpOptions(@{ maximumRedirects: 0 })
 let forceRefresh: Bool
 ```
 
+**类型**：`Bool`
+
 请求是否绕过可复用的缓存响应。
 
 ### 示例：强制刷新响应
@@ -207,6 +248,8 @@ let options = HttpOptions(@{ forceRefresh: t })
 ```el
 let tls: TlsOptions
 ```
+
+**类型**：`TlsOptions`
 
 HTTPS 请求使用的 TLS 配置。
 
@@ -261,6 +304,8 @@ console.stdout.writeLine(response.status, " ", response.ok)
 let status: Number
 ```
 
+**类型**：`Number`
+
 HTTP 状态码。
 
 ### 示例：检查状态码
@@ -276,6 +321,8 @@ console.stdout.writeLine(response.status)
 ```el
 let headers: HttpHeader[]
 ```
+
+**类型**：`HttpHeader[]`
 
 响应头列表。
 
@@ -293,6 +340,8 @@ console.stdout.writeLine(response.headers.count)
 let body: Number[]
 ```
 
+**类型**：`Number[]`
+
 响应体的原始字节。
 
 ### 示例：检查响应体字节数
@@ -309,6 +358,8 @@ console.stdout.writeLine(response.body.count)
 let url: Text
 ```
 
+**类型**：`Text`
+
 请求跟随重定向后的最终 URL。
 
 ### 示例：查看最终 URL
@@ -324,6 +375,8 @@ console.stdout.writeLine(response.url)
 ```el
 get ok(): Bool
 ```
+
+**返回类型**：`Bool`
 
 判断状态码是否位于 200 到 299 的成功范围。
 
@@ -342,6 +395,8 @@ if (response.ok) console.stdout.writeLine("success")
 ```el
 fn text(): Text
 ```
+
+**返回类型**：`Text`
 
 将响应体按 UTF-8 解码为文本；拒绝未解码的非 identity 内容编码。
 
@@ -362,6 +417,8 @@ console.stdout.writeLine(response.text())
 ```el
 fn json(limits: JsonLimits = JsonLimits()): any
 ```
+
+**返回类型**：`any`
 
 将响应文本解析为 JSON 值。
 
@@ -407,6 +464,8 @@ let config = response.as(formats.JSON)
 fn header(name: Text): Text | void_t
 ```
 
+**返回类型**：`Text | void_t`
+
 按大小写无关的名称查找首个响应头。
 
 **参数**：name 响应头名称。
@@ -443,6 +502,8 @@ catch (error: HttpStatusError) { console.stderr.writeLine(error.response.status)
 ```el
 let response: HttpResponse
 ```
+
+**类型**：[`HttpResponse`](model.md#api-e49096dfd951764c068f)
 
 引发状态错误的完整 HTTP 响应。
 

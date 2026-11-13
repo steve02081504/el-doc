@@ -4,6 +4,13 @@
 
 [库分类](../../../categories/multimedia.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
 
+## 成员总览
+
+- [MusicPlayer.formula](#api-baf68ca88eb889649eb3)
+- [MusicPlayer.play](#api-acd751dc2f58267cd866)
+- [MusicPlayer.stop](#api-878b318a6d2c1a57a85e)
+- [MusicPlayer.close](#api-74a7a57af495951c63ea)
+
 ## 音频合成与播放 {#api-e33a9bf98fb80b944c00}
 
 源码：`src/stdlib/multimedia/audio/music.el:7` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L7)
@@ -36,6 +43,8 @@ player.close()
 fn formula(sample, milliseconds: Number = 80, gain: Number = 0.12): Bool
 ```
 
+**返回类型**：`Bool`
+
 将一段公式音频作为短提示音提交到非等待队列。
 
 **参数**：sample 接收秒数并返回 -1 到 1 之间有限数值的回调。
@@ -59,6 +68,8 @@ let accepted = player.formula(seconds => sin(seconds * 880 * 6.283185307179586),
 ```el
 fn play(frequency: Number, milliseconds: Number = 80, gain: Number = 0.12): Bool
 ```
+
+**返回类型**：`Bool`
 
 将三角波音调作为短提示音提交到非等待队列。
 

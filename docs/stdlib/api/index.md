@@ -4,17 +4,17 @@
 
 [结构化文档数据](api.json)
 
-已标注文档的文件：95 / 3630；API 条目：455。此比例不是公开 API 覆盖率。
+已标注文档的文件：95 / 3630；API 条目：480。此比例不是公开 API 覆盖率。
 
-[按模块查找](modules.md) · [按符号查找](symbols.md)
+[按模块查找](modules.md) · [按符号查找](symbols.md) · [默认环境](environment.md)
 
 ## 按库分类
 
 | 库 | 已标注模块 | API 条目 |
 | --- | ---: | ---: |
-| [collections](categories/collections.md) | 10 | 79 |
+| [collections](categories/collections.md) | 10 | 84 |
 | [concurrency](categories/concurrency.md) | 2 | 4 |
-| [console](categories/console.md) | 1 | 16 |
+| [console](categories/console.md) | 1 | 35 |
 | [cryptography](categories/cryptography.md) | 7 | 12 |
 | [errors](categories/errors.md) | 1 | 3 |
 | [filesystem](categories/filesystem.md) | 3 | 27 |
@@ -30,7 +30,7 @@
 | [numerical-computing](categories/numerical-computing.md) | 6 | 33 |
 | [random](categories/random.md) | 3 | 18 |
 | [streams](categories/streams.md) | 1 | 2 |
-| [text](categories/text.md) | 5 | 35 |
+| [text](categories/text.md) | 5 | 36 |
 | [theme](categories/theme.md) | 2 | 4 |
 | [time](categories/time.md) | 4 | 15 |
 | [tools](categories/tools.md) | 4 | 14 |

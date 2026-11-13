@@ -18,6 +18,8 @@
 export fn openInputFile(path: Text, lock: Bool | void_t = void, protection: FileReadProtection = FileReadProtection(lock is t_t)): NativeInputFile
 ```
 
+**返回类型**：`NativeInputFile`
+
 打开原生文件作为顺序输入流。
 
 **参数**：path 原生文件系统路径。
@@ -45,6 +47,8 @@ input.close()
 ```el
 export fn openOptionalInputFile(path: Text): NativeInputFile | void_t
 ```
+
+**返回类型**：`NativeInputFile | void_t`
 
 尝试打开原生输入文件；仅在平台报告文件缺失时返回 void。
 

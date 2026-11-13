@@ -4,6 +4,10 @@
 
 [库分类](../../categories/neural-networks.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 成员总览
+
+- [Sequential.forward](#api-daa36f8828e242c94dc1)
+
 ## 神经网络模型 {#api-36f84d954a69a30a4783}
 
 源码：`src/stdlib/neural-networks/model.el:10` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L10)
@@ -17,6 +21,8 @@
 ```el
 export fn Linear(input: Number, output: Number): Layer
 ```
+
+**返回类型**：`Layer`
 
 创建全连接层，前向计算输入与转置权重的矩阵积并加上偏置。
 
@@ -44,6 +50,8 @@ console.stdout.writeLine(layer.input, " -> ", layer.output)
 export fn ReLU(): Layer
 ```
 
+**返回类型**：`Layer`
+
 创建逐元素整流线性单元层，将负值变为零。
 
 **返回值**：用于 Sequential 层列表的 ReLU 层描述。
@@ -61,6 +69,8 @@ let layer = ReLU()
 ```el
 export fn Sequential(element: type, storage: type = Tensor<element: element>): type
 ```
+
+**返回类型**：`type`
 
 创建按顺序应用层列表的模型类型，可选择元素类型和参数存储类型。
 
@@ -85,6 +95,8 @@ let model = Network(@[Linear(2, 4), ReLU(), Linear(4, 1)], seed: 1)
 ```el
 fn forward(input: Values): Values
 ```
+
+**返回类型**：`Values`
 
 依次执行模型中的各层并返回前向结果；Linear 使用权重转置与偏置，ReLU 对负值置零。
 

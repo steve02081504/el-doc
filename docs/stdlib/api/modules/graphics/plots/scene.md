@@ -4,6 +4,14 @@
 
 [库分类](../../../categories/graphics.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
 
+## 成员总览
+
+- [Axis.title](#api-a4d4797ed3404ce71849)
+- [Axis.xLabel](#api-f10c0642fe5d004d0498)
+- [Axis.legend](#api-f02143990b2a187771a6)
+- [Axis.zoom](#api-18baa6ba4368d91ece80)
+- [Axis.reset](#api-ff466b801a4f53e1e402)
+
 ## 绘图坐标场景 {#api-14c028464fad264c9025}
 
 源码：`src/stdlib/graphics/plots/scene.el:9` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L9)
@@ -35,6 +43,8 @@ figure.axis.legend = @["估计值"]
 let title: Text
 ```
 
+**类型**：`Text`
+
 绘图标题。
 
 ### 示例：设置绘图标题
@@ -51,6 +61,8 @@ figure.axis.title = "趋势"
 let xLabel: Text
 ```
 
+**类型**：`Text`
+
 横坐标轴标签。
 
 ### 示例：标注横轴
@@ -66,6 +78,8 @@ figure.axis.xLabel = "时间"
 ```el
 let legend: Text[]
 ```
+
+**类型**：`Text[]`
 
 每条线对应的图例文本；若非空，数量必须与线条数一致。
 

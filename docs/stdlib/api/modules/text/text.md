@@ -4,6 +4,19 @@
 
 [库分类](../../categories/text.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 成员总览
+
+- [Text.replaceAll](#api-29663683ec276c29c64c)
+- [Text.split](#api-571742e199721a51aeb1)
+- [Text.byte_count](#api-13f81dad5b9b0b1e9d52)
+- [Text.count](#api-19e144cbe3af4ec540f3)
+- [Text.startsWith](#api-92f3f2d6c9caa632ff40)
+- [Text.endsWith](#api-a0002f7421f94384e4e1)
+- [Text.contains](#api-60a702a27df0fb3b6913)
+- [Text.trimEndChars](#api-3f97c8338da803f449ff)
+- [Text.character](#api-72c219d2c7971b4efd7e)
+- [Text.slice](#api-79542d4a724d1d48d0f4)
+
 ## 文本与字符 {#api-df8646ac427828d0bbf5}
 
 源码：`src/stdlib/text/text.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1)
@@ -17,6 +30,8 @@
 ```el
 fn replaceAll(pattern, replacement): Text
 ```
+
+**返回类型**：`Text`
 
 将文本中所有匹配项替换为指定内容，并返回新文本。
 
@@ -41,6 +56,8 @@ console.stdout.writeLine(renamed)
 fn split(pattern): Text[]
 ```
 
+**返回类型**：`Text[]`
+
 按文本分隔符或文本模式拆分内容，返回各段组成的数组。
 
 **参数**：pattern 文本分隔符或支持 split 的模式。
@@ -62,6 +79,8 @@ console.stdout.writeLine(parts.join(" | "))
 get byte_count(): Integer
 ```
 
+**返回类型**：`Integer`
+
 返回文本编码为 UTF-8 后占用的字节数。
 
 **返回值**：UTF-8 字节数；这与 Unicode 标量数量不同。
@@ -81,6 +100,8 @@ console.stdout.writeLine(text.count, " ", text.byte_count)
 override get count(): Integer
 ```
 
+**返回类型**：`Integer`
+
 返回文本中的 Unicode 标量数量。
 
 **返回值**：标量数；UTF-8 编码字节数请读取 byte_count。
@@ -99,11 +120,13 @@ console.stdout.writeLine("你好".count)
 fn startsWith(prefix: Text): Bool
 ```
 
+**返回类型**：`Bool`
+
 判断文本是否以给定前缀开头。
 
 **参数**：prefix 要检查的前缀。
 
-**返回值**：匹配时为真，否则为假。
+**返回值**：匹配时为真，否则为假；空前缀总是匹配。
 
 ### 示例：检查目录前缀
 
@@ -119,11 +142,13 @@ console.stdout.writeLine("reports/2026".startsWith("reports"))
 fn endsWith(suffix: Text): Bool
 ```
 
+**返回类型**：`Bool`
+
 判断文本是否以给定后缀结尾。
 
 **参数**：suffix 要检查的后缀。
 
-**返回值**：匹配时为真，否则为假。
+**返回值**：匹配时为真，否则为假；空后缀总是匹配。
 
 ### 示例：检查文本扩展名
 
@@ -139,11 +164,13 @@ console.stdout.writeLine("summary.txt".endsWith(".txt"))
 fn contains(needle: Text): Bool
 ```
 
+**返回类型**：`Bool`
+
 判断文本是否包含给定子串。
 
 **参数**：needle 要查找的子串。
 
-**返回值**：包含时为真，否则为假。
+**返回值**：包含时为真，否则为假；空子串总是包含在内。
 
 ### 示例：检查路径年份
 
@@ -151,13 +178,43 @@ fn contains(needle: Text): Bool
 console.stdout.writeLine("reports/2026".contains("2026"))
 ```
 
+## Text.trimEndChars {#api-3f97c8338da803f449ff}
+
+源码：`src/stdlib/text/text.el:453` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L453)
+
+```el
+fn trimEndChars(characters: Text): Text
+```
+
+**返回类型**：`Text`
+
+从末尾移除属于给定字符集合的连续标量，返回文本值，不修改接收者。
+
+**参数**：characters 要移除的字符集合；空文本不移除任何字符。
+
+**返回值**：去除末尾匹配标量后的文本。
+
+### 示例：去除路径末尾分隔符
+
+```el
+console.stdout.writeLine("reports///".trimEndChars("/"))
+console.stdout.writeLine("abc".trimEndChars(""))
+```
+预期标准输出：
+```text
+reports
+abc
+```
+
 ## Text.character {#api-72c219d2c7971b4efd7e}
 
-源码：`src/stdlib/text/text.el:476` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L476)
+源码：`src/stdlib/text/text.el:490` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L490)
 
 ```el
 virtual fn character(index: Number): Char
 ```
+
+**返回类型**：`Char`
 
 读取指定 Unicode 标量下标处的字符。
 
@@ -176,11 +233,13 @@ console.stdout.writeLine(first)
 
 ## Text.slice {#api-79542d4a724d1d48d0f4}
 
-源码：`src/stdlib/text/text.el:528` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L528)
+源码：`src/stdlib/text/text.el:543` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L543)
 
 ```el
 virtual fn slice(start: Number, to: Number): Text
 ```
+
+**返回类型**：`Text`
 
 返回指定左闭右开标量下标区间的文本。
 
@@ -188,7 +247,9 @@ virtual fn slice(start: Number, to: Number): Text
 
 **参数**：to 区间结束下标，不包含该位置。
 
-**返回值**：区间文本。
+**返回值**：新文本值，接收者不变；起点与终点相同时为空文本。
+
+**失败与异常**：debug 构建中区间越界或终点小于起点时抛出 RangeError。
 
 ### 示例：取文本前缀
 

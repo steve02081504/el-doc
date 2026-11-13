@@ -12,6 +12,8 @@
 export fn solve(borrow input: Matrix, borrow right: Matrix): Matrix
 ```
 
+**返回类型**：`Matrix`
+
 用精确 Number 消元求解方阵系统 A X = B；不使用浮点主元阈值。
 
 **参数**：input 方阵 A，按借用读取。

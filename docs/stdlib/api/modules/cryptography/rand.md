@@ -18,6 +18,8 @@
 export fn secure_random_bytes(count: Number): Number[]
 ```
 
+**返回类型**：`Number[]`
+
 从操作系统随机源读取指定数量的密码学随机字节。
 
 **参数**：count 要读取的字节数，范围为 0 到 1048576。
@@ -40,6 +42,8 @@ let nonce = secure_random_bytes(12)
 ```el
 export fn secure_random_hex(count: Number): Text
 ```
+
+**返回类型**：`Text`
 
 读取密码学随机字节并返回小写十六进制编码。
 

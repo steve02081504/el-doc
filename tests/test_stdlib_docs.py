@@ -24,6 +24,34 @@ export fn increment(value: Number): Number => value + 1
 
 
 class ExtractionTests(unittest.TestCase):
+	def test_lexical_type_and_owner_metadata(self):
+		variable = DOCUMENT.replace("@api increment", "@api console").replace("export fn increment(value: Number): Number => value + 1", "export const console = ConsoleFacade()")
+		entry, = extract(variable, "console.el")
+		self.assertEqual(entry["value_type"], "ConsoleFacade")
+		self.assertIsNone(entry["owner"])
+		typed = variable.replace("console = ConsoleFacade()", "console: ConsoleFacade = makeConsole()")
+		self.assertEqual(extract(typed, "console.el")[0]["value_type"], "ConsoleFacade")
+		member = DOCUMENT.replace("@api increment", "@api ConsoleFacade.stdout").replace("export fn increment(value: Number): Number => value + 1", "get stdout(): ConsolePort { return this.output }")
+		entry, = extract(member, "console.el")
+		self.assertEqual((entry["owner"], entry["return_type"]), ("ConsoleFacade", "ConsolePort"))
+		unknown = variable.replace("ConsoleFacade()", "makeConsole().value")
+		self.assertIsNone(extract(unknown, "console.el")[0]["value_type"])
+
+	def test_return_annotation_ignores_callback_parameter(self):
+		source = DOCUMENT.replace("export fn increment(value: Number): Number => value + 1", "export fn increment(callback: fn(): Number) { return callback() }")
+		self.assertIsNone(extract(source, "math.el")[0]["return_type"])
+		source = source.replace("callback: fn(): Number) {", "callback: fn(): Number): Text {")
+		self.assertEqual(extract(source, "math.el")[0]["return_type"], "Text")
+
+	def test_initializer_balanced_multiline_and_uncertain(self):
+		prefix = DOCUMENT.replace("@api increment", "@api value").replace("export fn increment(value: Number): Number => value + 1", "export const value = @{\n name: \"a; }\",\n nested: @[1, 2]\n}\n")
+		entry, = extract(prefix, "sample.el")
+		self.assertEqual(entry["initializer"], '@{\n name: "a; }",\n nested: @[1, 2]\n}')
+		entry, = extract(prefix.replace('@{\n name: "a; }",\n nested: @[1, 2]\n}', 'make(\n 1, 2\n)'), "sample.el")
+		self.assertEqual(entry["initializer"], 'make(\n 1, 2\n)')
+		entry, = extract(prefix.replace('@{\n name: "a; }",\n nested: @[1, 2]\n}', 'first +\n second'), "sample.el")
+		self.assertIsNone(entry["initializer"])
+
 	def test_module_documentation(self):
 		entry, = extract("//! @module Math\n//! Number utilities.\n", "math.el")
 		self.assertEqual(entry["kind"], "module")
@@ -98,6 +126,82 @@ class GenerationTests(unittest.TestCase):
 		self.stdlib.mkdir(parents=True)
 		(self.stdlib / "math.el").write_text(DOCUMENT, encoding="utf-8")
 		self.output = self.root / "docs"
+
+	def test_environment_alias_cycles_and_source_link(self):
+		(self.stdlib / "index.el").write_text('export lazy import { increment as count } from "file:./bridge.el"\nexport import { mystery } from "file:./missing.el"\nexport import { cycle } from "file:./cycle.el"\n')
+		(self.stdlib / "bridge.el").write_text('export import { increment } from "file:./math.el"\n')
+		(self.stdlib / "cycle.el").write_text('export lazy import { cycle } from "file:./index.el"\n')
+		model = collect(self.root)
+		items = {item["name"]: item for item in model["environment"]}
+		self.assertEqual(items["count"]["id"], "math::increment")
+		self.assertEqual(items["count"]["signature"], "export fn increment(value: Number): Number")
+		self.assertIsNone(items["mystery"]["id"])
+		self.assertIsNone(items["cycle"]["source"])
+		page = render(model)["environment.md"]
+		self.assertIn("[math.el:12](modules/math.md#api-", page)
+		self.assertIn("`count`", page)
+
+	def test_environment_keeps_same_module_overload_families(self):
+		(self.stdlib / "index.el").write_text('export lazy import { increment, Widget } from "file:./math.el"\n')
+		(self.stdlib / "math.el").write_text(DOCUMENT + '\nexport fn increment(value: Text): Text => value\nexport class Widget {}\nexport fn Widget(): type {}\n')
+		items = {item["name"]: item for item in collect(self.root)["environment"]}
+		self.assertEqual(items["increment"]["id"], "math::increment")
+		self.assertEqual(items["Widget"]["source"], "math.el")
+		self.assertIn("export class Widget", items["Widget"]["signature"])
+		self.assertIn("export fn Widget", items["Widget"]["signature"])
+
+	def test_environment_conservative_sources_and_anchors(self):
+		(self.stdlib / "index.el").write_text('export import { thing } from "file:./plain.el"\nexport import { absent } from "file:./conditional.el"\nexport import { outside } from "file:../../outside.el"\nlet fake = \'export import { invented } from "file:./plain.el"\'\n// export import { madeup } from "file:./plain.el"\n')
+		(self.stdlib / "plain.el").write_text('export const thing = Widget()\n')
+		(self.stdlib / "conditional.el").write_text('#if FLAG\nexport const absent = Widget()\n#endif\n')
+		(self.root / "outside.el").write_text('export const outside = Widget()\n')
+		model = collect(self.root)
+		items = {item["name"]: item for item in model["environment"]}
+		self.assertEqual(items["thing"]["value_type"], "Widget")
+		self.assertIsNone(items["thing"]["id"])
+		self.assertIsNone(items["absent"]["source"])
+		self.assertIsNone(items["outside"]["source"])
+		self.assertNotIn("invented", items)
+		self.assertNotIn("madeup", items)
+		from stdlib_docs import anchor
+		page = render(model)["environment.md"]
+		self.assertIn(f'<span id="{anchor("thing")}"></span>', page)
+		self.assertIn('`export const thing`', page)
+		self.assertIn('## T', page)
+
+	def test_public_module_exports_resolve_alias_identity(self):
+		(self.stdlib / "public").mkdir()
+		(self.stdlib / "public/index.el").write_text('export { increment as count } from "file:../math.el"\nexport import { unknown } from "file:../missing.el"\n')
+		model = collect(self.root)
+		self.assertEqual(model["exports"]["public/index"]["count"], "math::increment")
+		self.assertEqual(model["exports"]["math"]["increment"], "math::increment")
+		self.assertNotIn("increment", model["exports"]["public/index"])
+		self.assertNotIn("unknown", model["exports"]["public/index"])
+
+	def test_overload_family_anchor_and_member_overview(self):
+		one = DOCUMENT.replace("@api increment", "@api Widget.increment~one")
+		two = DOCUMENT.replace("@api increment", "@api Widget.increment~two")
+		(self.stdlib / "math.el").write_text(one + two)
+		model = collect(self.root)
+		page = render(model)["modules/math.md"]
+		from stdlib_docs import anchor
+		self.assertIn(f'<span id="{anchor("math::Widget.increment")}"></span>', page)
+		self.assertIn("## 成员总览", page)
+		self.assertEqual(page.count(f'<span id="{anchor("math::Widget.increment")}"></span>'), 1)
+
+	def test_render_initializer_and_link_unique_types(self):
+		doc = DOCUMENT.replace("@api increment", "@api Widget").replace("export fn increment(value: Number): Number => value + 1", "export class Widget {}")
+		value = DOCUMENT.replace("@api increment", "@api thing").replace("export fn increment(value: Number): Number => value + 1", "export const thing = Widget()")
+		member = DOCUMENT.replace("@api increment", "@api Widget.child").replace("export fn increment(value: Number): Number => value + 1", "get child(): Widget { return this }")
+		(self.stdlib / "math.el").write_text(doc + value + member, encoding="utf-8")
+		model = collect(self.root)
+		page = render(model)["modules/math.md"]
+		self.assertIn("export const thing = Widget()", page)
+		self.assertIn("**类型**：[`Widget`](math.md#api-", page)
+		self.assertIn("**返回类型**：[`Widget`](math.md#api-", page)
+		(self.stdlib / "other.el").write_text(doc, encoding="utf-8")
+		page = render(collect(self.root))["modules/math.md"]
+		self.assertIn("**类型**：`Widget`", page)
 
 	def test_determinism_check_and_stale_cleanup(self):
 		pages = render(collect(self.root))

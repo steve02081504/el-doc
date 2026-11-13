@@ -4,6 +4,11 @@
 
 [库分类](../../categories/filesystem.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 成员总览
+
+- [FileWriter.write](#api-60eb68cfed70401fd999)
+- [FileWriter.close](#api-95af169891a6620e73da)
+
 ## 文件写入器 {#api-f9004a464dbaefb64a37}
 
 源码：`src/stdlib/filesystem/writer.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L1)
@@ -17,6 +22,8 @@
 ```el
 fn write(bytes: Number[]): WriteReceipt
 ```
+
+**返回类型**：`WriteReceipt`
 
 将字节数组快照写入目标位置并返回写入回执。
 
@@ -41,6 +48,8 @@ writer.close()
 ```el
 fn close(): void_t
 ```
+
+**返回类型**：`void_t`
 
 完成写入器并关闭底层资源。
 

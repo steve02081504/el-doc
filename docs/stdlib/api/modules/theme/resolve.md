@@ -18,6 +18,8 @@
 export fn resolveTheme(theme: Theme, context: ThemeContext = ThemeContext()): ResolvedTheme
 ```
 
+**返回类型**：`ResolvedTheme`
+
 根据主题及可选父级上下文生成完整的解析主题，缺失角色使用生成值或基线值补齐。
 
 **参数**：theme 要解析的主题。

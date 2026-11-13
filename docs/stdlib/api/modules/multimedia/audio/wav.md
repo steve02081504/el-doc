@@ -60,6 +60,8 @@ writeWav("tone.wav", audio)
 export fn encodeWav(audio: PcmAudio): Number[]
 ```
 
+**返回类型**：`Number[]`
+
 将 PCM 音频编码为包含 RIFF/WAVE 头部的字节数组。
 
 **参数**：audio 要编码的 PCM16 音频。
@@ -81,6 +83,8 @@ let bytes = encodeWav(audio)
 ```el
 export fn decodeWav(bytes: Number[], maxFrames: Number = 16777216): PcmAudio
 ```
+
+**返回类型**：[`PcmAudio`](../capture/model.md#api-cb1ec5de04201d03778d)
 
 从内存中的字节数组解析经典 PCM16 WAV。
 
@@ -105,6 +109,8 @@ let audio = decodeWav(bytes)
 ```el
 export fn readWav(path: Text, maxFrames: Number = 16777216): PcmAudio
 ```
+
+**返回类型**：[`PcmAudio`](../capture/model.md#api-cb1ec5de04201d03778d)
 
 从文件读取并解析经典 PCM16 WAV，拒绝超出上限或带额外尾随数据的文件。
 

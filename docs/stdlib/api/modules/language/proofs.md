@@ -34,6 +34,8 @@ let proposition: Prop = Eq(Nat, zero, zero)
 export @builtin:qeth:proof:type fn Type(level): type
 ```
 
+**返回类型**：`type`
+
 表示给定 universe 层级的类型 sort。
 
 ### 示例：在类型注解中使用 Type
@@ -49,6 +51,8 @@ let naturalType: type = Type(0)
 ```el
 export @builtin:qeth:proof:eq fn Eq(carrier: type, left, right): type
 ```
+
+**返回类型**：`type`
 
 构造载体类型上两个项相等的命题；载体参数明确指定被比较项的类型。
 

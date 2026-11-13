@@ -18,6 +18,8 @@
 export fn parseForm(source: Text): FormField[]
 ```
 
+**返回类型**：`FormField[]`
+
 解析 application/x-www-form-urlencoded 格式的字段序列。
 
 **参数**：source 表单编码文本。

@@ -4,6 +4,14 @@
 
 [库分类](../../../categories/multimedia.md) · [模块索引](../../../modules.md) · [符号索引](../../../symbols.md)
 
+## 成员总览
+
+- [PcmOutput.enqueue](#api-a4541dd8879f0ac94c1d)
+- [PcmOutput.finish](#api-2c4c730664ab8d398430)
+- [PcmOutput.idle](#api-9c4aeae8f2aae4510c1b)
+- [PcmOutput.clear](#api-a4ef6b8c6e52a3dea8f4)
+- [PcmOutput.close](#api-d0948c04bf83f86cfcdb)
+
 ## PcmOutput {#api-9f5da8fa68d02b9e4158}
 
 源码：`src/stdlib/multimedia/audio/linux-output.el:47` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L47)
@@ -36,6 +44,8 @@ let accepted = output.enqueue(audio)
 ```el
 fn enqueue(audio: PcmAudio): Bool
 ```
+
+**返回类型**：`Bool`
 
 尝试提交音频块；样本在返回前复制，队列无空槽时不等待并返回假。
 
@@ -75,6 +85,8 @@ while (!output.idle()) sleep(2)
 ```el
 fn idle(): Bool
 ```
+
+**返回类型**：`Bool`
 
 检查设备是否已播放完所有已提交样本。
 

@@ -4,6 +4,14 @@
 
 [库分类](../../../../categories/user-interface.md) · [模块索引](../../../../modules.md) · [符号索引](../../../../symbols.md)
 
+## 成员总览
+
+- [WindowTimer.cancel](#api-8629377d5cfbe5cd888b)
+- [Window.theme](#api-e300f3030755d4c6f210)
+- [Window.onArrow](#api-0d5ac5569f84380b00ef)
+- [Window.every](#api-397c3dde87e61de92229)
+- [Window.getById](#api-10abbed4e4f712c61c10)
+
 ## Windows 窗口后端 {#api-d5cc2fc198b485a29d89}
 
 源码：`src/stdlib/user-interface/platform/windows/window.el:13` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L13)
@@ -70,6 +78,8 @@ runWindow(window)
 get theme(): PaintTheme
 ```
 
+**返回类型**：[`PaintTheme`](../../drawing.md#api-4be1353cf98b66267dcf)
+
 读取或替换窗口的绘制主题；赋值后立即刷新绘制。
 
 ### 示例：设置深色绘制主题
@@ -104,6 +114,8 @@ window.onArrow((dx, dy) => moveSelection(dx, dy))
 @discardable fn every(milliseconds: Number, action): WindowTimer
 ```
 
+**返回类型**：[`WindowTimer`](window.md#api-9b651467460e89936d5f)
+
 注册窗口级近似定时器，窗口关闭时自动取消。
 
 **参数**：milliseconds 整数毫秒间隔，范围 10 到 2147483647。
@@ -127,6 +139,8 @@ discard(window.every(1000, tick => label.text = "更新"))
 ```el
 fn getById(id: Text): ElementHandle
 ```
+
+**返回类型**：`ElementHandle`
 
 按精确 id 获取当前呈现中的元素句柄。
 

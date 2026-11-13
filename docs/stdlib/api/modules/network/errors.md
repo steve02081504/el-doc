@@ -4,6 +4,12 @@
 
 [库分类](../../categories/network.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 成员总览
+
+- [NetworkError.operation](#api-53e0c3fc1ec8e63196e5)
+- [NetworkError.detail](#api-bba6955c6787070c5b63)
+- [NetworkError.code](#api-0daf359682bcfc8d6e85)
+
 ## 网络错误 {#api-3210950d25b55d7d79be}
 
 源码：`src/stdlib/network/errors.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/errors.el#L1)
@@ -35,6 +41,8 @@ catch (error: NetworkError) { console.stderr.writeLine(error.operation, ": ", er
 let operation: Text
 ```
 
+**类型**：`Text`
+
 发生失败的网络操作名称。
 
 ### 示例：输出错误操作
@@ -51,6 +59,8 @@ console.stderr.writeLine(error.operation)
 let detail: Text
 ```
 
+**类型**：`Text`
+
 描述失败原因的文本。
 
 ### 示例：输出错误原因
@@ -66,6 +76,8 @@ console.stderr.writeLine(error.detail)
 ```el
 let code: Number
 ```
+
+**类型**：`Number`
 
 平台提供的可选错误代码；无特定代码时为 0。
 

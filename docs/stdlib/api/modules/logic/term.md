@@ -34,6 +34,8 @@ let person = compound("person", @[atom("Ada")])
 export fn variable_scope(): VariableScope
 ```
 
+**返回类型**：`VariableScope`
+
 创建一份独立的逻辑变量作用域，使不同作用域中的同索引变量互不相同。
 
 **返回值**：新的变量作用域身份。
@@ -52,6 +54,8 @@ let x = variable(0, scope)
 ```el
 export fn variable(index: Number, scope: VariableScope | void_t = void): Term
 ```
+
+**返回类型**：[`Term`](term.md#api-7560e808aaee9c6517d2)
 
 创建指定索引的逻辑变量，可显式提供作用域以避免变量身份冲突。
 
@@ -77,6 +81,8 @@ let x = variable(0, variable_scope())
 export fn atom(symbol: Text): Term
 ```
 
+**返回类型**：[`Term`](term.md#api-7560e808aaee9c6517d2)
+
 创建由文本符号标识的零元逻辑项。
 
 **参数**：symbol 原子名称。
@@ -96,6 +102,8 @@ let ada = atom("Ada")
 ```el
 export fn compound(symbol: Text, fields: Term[]): Term
 ```
+
+**返回类型**：[`Term`](term.md#api-7560e808aaee9c6517d2)
 
 创建带文本符号及有序字段的复合逻辑项。
 

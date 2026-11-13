@@ -4,6 +4,10 @@
 
 [库分类](../../categories/user-interface.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 成员总览
+
+- [Definition.theme](#api-5faf0a2c3aefbf7d59fd)
+
 ## 界面对象模型 {#api-df995c8f898cdfd44f5d}
 
 源码：`src/stdlib/user-interface/model.el:10` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L10)
@@ -55,6 +59,8 @@ title.enabled = t
 ```el
 let theme: Theme | void_t
 ```
+
+**类型**：`Theme | void_t`
 
 可选的局部语义 Theme，按当前出现位置参与父子主题解析。
 
@@ -113,6 +119,8 @@ on(button, "click", event => status.text = "已点击")
 export fn element(kind: Text, text: Text = "", id: Text = ""): Definition
 ```
 
+**返回类型**：[`Definition`](model.md#api-92b8f0fb1d93b4e22dc2)
+
 创建 `column`、`row`、`label`、`button` 或 `input` 定义；未知种类会抛出错误。
 
 **参数**：kind 支持的元素种类。
@@ -163,6 +171,8 @@ appendChild(root, "heading", element("label", "设置"))
 ```el
 export fn removeChild(parent: Definition, key: Text): Bool
 ```
+
+**返回类型**：`Bool`
 
 按子边键移除第一个匹配项；未找到时不修改模型。
 

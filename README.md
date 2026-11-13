@@ -30,12 +30,14 @@ python -m unittest discover -s tests -v
 mkdocs build --strict
 ```
 
-提取器读取 `src/stdlib/**/*.el` 中的功能性注释，输出 Markdown 与 `api.json`。API 页、分类页、模块索引和符号索引均从同一模型生成；`hooks/api_navigation.py` 将分类和模块自动加入导航。格式、覆盖统计与提取边界见[文档注释与生成](docs/stdlib/documentation-comments.md)。生成快照随本仓库提交，站点构建不要求另行检出 EL。
+提取器读取 `src/stdlib/**/*.el` 中的功能性注释，输出 Markdown 与 `api.json`。API 页、默认环境、分类页、模块索引和符号索引均从同一模型生成；`hooks/api_navigation.py` 将分类和模块自动加入导航。格式、覆盖统计与提取边界见[文档注释与生成](docs/stdlib/documentation-comments.md)。生成快照随本仓库提交，站点构建不要求另行检出 EL。
 
 语言参考描述规范合同，API 注释描述对应源码。示例未运行验证；站点构建不证明语言能力或示例执行通过。
 
 ## 站点功能与发布
 
 `hooks/el_lexer.py` 注册 EL 代码高亮；`hooks/random_pages.py` 与 `docs/assets/random-page.js` 提供随机页面；`docs/assets/learning.js` 提供本机阅读记录与进度组件，教程可按需使用。样式位于 `docs/stylesheets/extra.css`。
+
+`hooks/code_links.py` 使用生成的声明模型，把 EL 代码块中的标准环境名字、可确定的导入和成员链接到参考条目，关键词链接到语言参考。构建结束时检查链接页面和锚点；局部遮盖与未知接收者不按同名猜测。
 
 推送到 `master` 后，`.github/workflows/deploy.yml` 检查站点与提取器，再发布到 GitHub Pages。

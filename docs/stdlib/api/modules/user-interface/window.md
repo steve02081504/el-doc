@@ -41,6 +41,8 @@ let window = showWindow(element("label", "欢迎"))
 runWindow(window)
 ```
 
+<span id="api-3906d489e4796caf3b0c"></span>
+
 ## showWindow~definition {#api-7620d642b498e399181d}
 
 源码：`src/stdlib/user-interface/window.el:114` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L114)

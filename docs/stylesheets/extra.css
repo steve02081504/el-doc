@@ -732,6 +732,18 @@ pre {
 }
 
 /* Section landing pages get a quiet eyebrow label. */
+.highlight .el-code-link {
+  color: inherit;
+  text-decoration: underline dotted;
+  text-underline-offset: 0.2em;
+}
+
+.highlight .el-code-link:hover,
+.highlight .el-code-link:focus-visible {
+  color: var(--md-accent-fg-color);
+  text-decoration-style: solid;
+}
+
 .el-kicker {
   margin: 1.4rem 0 0.3rem;
   color: var(--el-accent);

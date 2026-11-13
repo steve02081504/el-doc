@@ -4,6 +4,21 @@
 
 [库分类](../../categories/random.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 成员总览
+
+- [Random.seed](#api-f67e41d7ecf4e4cd8c79)
+- [Random.reseed](#api-b10f87f55955d4297680)
+- [Random.nextWord](#api-792c160b0802c5d93977)
+- [Random.nextBits](#api-dc108d59626669d79b43)
+- [Random.between](#api-cc4a8e461bbf2f97ad80)
+- [Random.betweenExclusive](#api-e99cb6140b0881ce2db8)
+- [Random.unit](#api-3bd6f39bf7301f499820)
+- [Random.realBetween](#api-d06ddbd268a99ed5151c)
+- [Random.boolean](#api-6e4a27bee2d63ff38225)
+- [Random.pick](#api-3277706d087c8d369660)
+- [Random.bytes](#api-ced6c72398fdb237f1e5)
+- [Random.shuffle](#api-2622caa6ab97ff7091e9)
+
 ## 随机数 {#api-dc3aa6c88fb0f8bdec24}
 
 源码：`src/stdlib/random/index.el:17` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L17)
@@ -44,6 +59,8 @@ let value = random.between(1, 6)
 get seed(): Number
 ```
 
+**返回类型**：`Number`
+
 返回构造或最近一次 reseed 使用的原始种子。
 
 **返回值**：当前流记录的种子值。
@@ -82,6 +99,8 @@ random.reseed(42)
 	fn nextWord(width: Number): Number
 ```
 
+**返回类型**：`Number`
+
 从随机流生成一个 8、16 或 32 位无符号字值。
 
 **参数**：width 允许的输出宽度：8、16 或 32。
@@ -104,6 +123,8 @@ let word = Random(42).nextWord(16)
 fn nextBits(bitCount: Number): Number
 ```
 
+**返回类型**：`Number`
+
 从随机流取得指定数量的随机位，并按高位优先累积为 Number。
 
 **参数**：bitCount 非负整数位数；零返回零。
@@ -125,6 +146,8 @@ let bits = Random(42).nextBits(8)
 ```el
 fn between(minimum: Number, maximum: Number): Number
 ```
+
+**返回类型**：`Number`
 
 在两个整数端点之间均匀抽取整数，端点均包含且次序可互换。
 
@@ -151,6 +174,8 @@ let die = Random(42).between(1, 6)
 	fn betweenExclusive(minimum: Number, maximum: Number): Number
 ```
 
+**返回类型**：`Number`
+
 在两个整数端点之间抽取整数，包含较小端点但排除较大端点。
 
 **参数**：minimum 第一个有限整数端点。
@@ -175,6 +200,8 @@ let index = Random(42).betweenExclusive(0, 6)
 fn unit(bitCount: Number = Number(53), inclusive: Bool = nil): Number
 ```
 
+**返回类型**：`Number`
+
 在二进制网格上抽取 [0, 1) 内的数；inclusive 为真时包含 1。
 
 **参数**：bitCount 网格精度，必须为正整数，默认 53。
@@ -198,6 +225,8 @@ let sample = Random(42).unit()
 ```el
 fn realBetween(minimum: Number, maximum: Number, bitCount: Number = Number(53), inclusive: Bool = nil): Number
 ```
+
+**返回类型**：`Number`
 
 在两个有限实数端点之间按指定二进制网格精度抽样。
 
@@ -226,6 +255,8 @@ let sample = Random(42).realBetween(-1, 1)
 ```el
 fn boolean(): Bool
 ```
+
+**返回类型**：`Bool`
 
 从随机流抽取一个布尔值。
 
@@ -268,6 +299,8 @@ let choice = Random(42).pick(@["red", "blue"])
 	fn bytes(count: Number): Array<element: Number>
 ```
 
+**返回类型**：`Array<element: Number>`
+
 生成指定长度、每项取值 0 到 255 的随机字节数组。
 
 **参数**：count 非负整数数组长度。
@@ -308,8 +341,10 @@ Random(42).shuffle(values)
 源码：`src/stdlib/random/index.el:377` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L377)
 
 ```el
-export lazy let rand: SharedRandom
+export lazy let rand: SharedRandom = SharedRandom()
 ```
+
+**类型**：`SharedRandom`
 
 共享的线程安全随机数流；各调用按同一状态序列消耗随机值。
 
