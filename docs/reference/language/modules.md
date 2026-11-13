@@ -1,10 +1,12 @@
-# Modules and imports
+# 模块与导入
 
-## Module identity and exports
+## 模块身份与导出
 
-An EL module is a source module with an identity determined by its resolved source. Exported names are visible to importers; module top-level code is allowed, so no `main` function is required. A dependency module is initialized once per process according to module initialization rules.
+EL 模块由解析后的源码来源确定身份。模块顶层允许执行代码，不要求 `main` 函数；依赖模块在进程内按模块初始化规则只初始化一次。导出名字供其他模块导入。
 
-## Import forms
+## 导入形式
+
+下列各行展示独立形式，不应在同一模块重复导入相同绑定。
 
 ```el
 import { run, helper as h } from "file:./tools.el"
@@ -13,15 +15,24 @@ import /.*/ from "file:./tools.el"
 import /.*/ as tools from "file:./tools.el"
 ```
 
-Imports explicitly state which names are selected. The forms cover named imports, regex-selected imports, and compile-time namespace access. There is no `import *`, side-effect-only import, or runtime namespace value. Direct imported names follow updates; a saved function value retains the version it captured.
+每种普通导入都明确选择名字。以上分别展示具名导入、正则选择、全量选择和编译期命名空间。EL 没有 `import *`、副作用导入或运行期命名空间值。直接导入名是活绑定；保存下来的函数值保持其取得时的版本。
 
-## Resolution and lazy forms
+## 惰性具名导入
 
-Source resolution, package configuration, caching, and hot-update policy are specified in the module contract. Lazy bindings initialize at runtime on first read. **Regex imports are deliberately not allowed to be lazy**; this is an intentional design restriction documented in [Deferred bindings and imports](https://github.com/steve02081504/el/blob/master/docs/spec/deferred-bindings-and-imports.md#惰性导入的有意限制). This reference preserves that restriction.
+惰性导入必须列出非空具名表，可以逐项重命名。下列两行分别展示导入与重导出：
 
-## Related entries
+```el
+lazy import { compute as calculate } from "file:./backend.el"
+export lazy import { compute as calculate } from "file:./backend.el"
+```
 
-- [Declarations and bindings](declarations.md)
-- [Module tutorial](../../language/modules.md)
-- [Modules specification](https://github.com/steve02081504/el/blob/master/docs/spec/08-modules.md)
-- [Deferred bindings and imports](https://github.com/steve02081504/el/blob/master/docs/spec/deferred-bindings-and-imports.md)
+惰性导入不是运行期首次访问才打开模块；编译期名称解析实际选择某个导入绑定时，才按需打开来源模块并使其参与编译。运行期初始化仍遵守模块初始化规则。没有被引用的名字不会触发来源模块。惰性重导出保留延迟关系，消费者实际引用转发名时需求才传递到来源。
+
+`lazy import` 和 `export lazy import` 禁止正则名字选择，即使正则只匹配单个名称也不例外；这是明确的设计限制。普通 `import /pattern/` 与普通正则重导出仍可用。
+
+## 相关条目
+
+- [声明与绑定](declarations.md)
+- [模块教程](../../language/modules.md)
+- [模块规范](https://github.com/steve02081504/el/blob/master/docs/spec/08-modules.md)
+- [惰性绑定与导入](https://github.com/steve02081504/el/blob/master/docs/spec/deferred-bindings-and-imports.md)

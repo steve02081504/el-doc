@@ -53,13 +53,13 @@ export fn pbkdf2_sha256(password: Number[], salt: Number[], iterations: Number, 
 
 **参数**：salt 派生盐字节。
 
-**参数**：iterations 每个输出块使用的迭代次数。
+**参数**：iterations 正整数迭代次数，最大为 4294967295。
 
-**参数**：count 输出字节数。
+**参数**：count 输出字节数，范围为 0 到 1048576。
 
 **返回值**：派生的密钥字节。
 
-**失败与异常**：迭代次数或输出长度无效时抛出 CryptoError。
+**失败与异常**：参数不是范围内的整数、迭代次数为零或字节输入无效时抛出 CryptoError。
 
 ### 示例：派生密码密钥
 

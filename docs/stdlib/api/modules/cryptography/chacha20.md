@@ -12,7 +12,7 @@
 
 ## chacha20_xor {#api-bc7a25de7cb7e0682650}
 
-源码：`src/stdlib/cryptography/chacha20.el:89` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/chacha20.el#L89)
+源码：`src/stdlib/cryptography/chacha20.el:92` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/chacha20.el#L92)
 
 ```el
 export fn chacha20_xor(key: Number[], nonce: Number[], initial_counter: Number, input: Number[]): Number[]
@@ -32,9 +32,13 @@ export fn chacha20_xor(key: Number[], nonce: Number[], initial_counter: Number, 
 
 **失败与异常**：密钥、nonce、计数器或输入无效，或块计数器将溢出时抛出 CryptoError。
 
-### 示例：加密一段字节
+**注意**：此低层流密码操作不提供认证；同一密钥下 nonce 必须唯一。
+
+### 示例：处理一段字节
 
 ```el
-import { chacha20_xor } from "el:cryptography/"
-let ciphertext = chacha20_xor(@[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], @[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 1, @[72, 105])
+import { chacha20_xor, secure_random_bytes } from "el:cryptography/"
+let key = secure_random_bytes(32)
+let nonce = secure_random_bytes(12)
+let output = chacha20_xor(key, nonce, 1, @[72, 105])
 ```

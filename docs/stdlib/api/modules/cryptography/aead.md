@@ -12,7 +12,7 @@
 
 ## chacha20_poly1305_encrypt {#api-08ed02675294d0f1cc7d}
 
-源码：`src/stdlib/cryptography/aead.el:54` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/aead.el#L54)
+源码：`src/stdlib/cryptography/aead.el:56` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/aead.el#L56)
 
 ```el
 export fn chacha20_poly1305_encrypt(key: Number[], nonce: Number[], associated_data: Number[], plaintext: Number[]): Number[]
@@ -35,13 +35,15 @@ export fn chacha20_poly1305_encrypt(key: Number[], nonce: Number[], associated_d
 ### 示例：加密短消息
 
 ```el
-import { chacha20_poly1305_encrypt } from "el:cryptography/"
-let sealed = chacha20_poly1305_encrypt(@[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], @[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], @[], @[72, 105])
+import { chacha20_poly1305_encrypt, secure_random_bytes } from "el:cryptography/"
+let key = secure_random_bytes(32)
+let nonce = secure_random_bytes(12)
+let sealed = chacha20_poly1305_encrypt(key, nonce, @[], @[72, 105])
 ```
 
 ## chacha20_poly1305_decrypt {#api-12a7d04f1b0e750acedd}
 
-源码：`src/stdlib/cryptography/aead.el:90` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/aead.el#L90)
+源码：`src/stdlib/cryptography/aead.el:92` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/aead.el#L92)
 
 ```el
 export fn chacha20_poly1305_decrypt(key: Number[], nonce: Number[], associated_data: Number[], sealed: Number[]): Number[]
@@ -64,9 +66,9 @@ export fn chacha20_poly1305_decrypt(key: Number[], nonce: Number[], associated_d
 ### 示例：解密并认证密文
 
 ```el
-import { chacha20_poly1305_decrypt, chacha20_poly1305_encrypt } from "el:cryptography/"
-let key = @[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-let nonce = @[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+import { chacha20_poly1305_decrypt, chacha20_poly1305_encrypt, secure_random_bytes } from "el:cryptography/"
+let key = secure_random_bytes(32)
+let nonce = secure_random_bytes(12)
 let sealed = chacha20_poly1305_encrypt(key, nonce, @[], @[72, 105])
 let plaintext = chacha20_poly1305_decrypt(key, nonce, @[], sealed)
 ```

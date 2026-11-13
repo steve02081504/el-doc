@@ -12,7 +12,7 @@
 
 ## connectTcp {#api-9e19203d508cfc9d0fcd}
 
-源码：`src/stdlib/network/sockets.el:182` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/sockets.el#L182)
+源码：`src/stdlib/network/sockets.el:186` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/sockets.el#L186)
 
 ```el
 export fn connectTcp(host: Text, port: Number, timeout: Number = 30000): TcpConnection
@@ -36,5 +36,9 @@ export fn connectTcp(host: Text, port: Number, timeout: Number = 30000): TcpConn
 import { connectTcp } from "el:network/"
 // 将地址与端口替换为正在监听的服务。
 let connection = connectTcp("127.0.0.1", 443)
-connection.close()
+try {
+	connection.send(@[72, 105])
+} finally {
+	connection.close()
+}
 ```

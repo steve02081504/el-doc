@@ -1,33 +1,43 @@
-# Expressions and operators
+# 表达式与运算符
 
-## Expression forms
+## 表达式
 
-Expressions include literals, names, calls, member and index access, construction, lambdas, conditional expressions, and operator applications. Blocks and control constructs also produce values. The final executed statement supplies a block's value; an empty block yields `void`.
+表达式包括字面量、名字、调用、成员与下标访问、构造、lambda、条件表达式和运算符应用。块与控制结构也产生值：块的值是最后执行语句的值，空块为 `void`。
 
-## Operators
+## 优先级与结合性
 
-| Operator family | Notation and notes |
-|---|---|
-| Arithmetic | `+`, `-`, `*`, `/`, `%`; exponentiation is `^`. |
-| Comparison | `==`, `!=`, `<`, `<=`, `>`, `>=`, `is`. |
-| Logic | `!`, `&`, `|`; `&&` and `||` are not EL operators. |
-| Assignment | `=`, compound assignment, and prefix/postfix updates as defined by the grammar. |
-| Range | `a..b` and `a..|b` denote the range forms used by iteration. |
-| Conditional | `if ... { ... } else { ... }`; there is no `?:` operator. |
+下表从低到高排列，依据语法标准。显式值重载的求值方式另见下文。
 
-The grammar specifies precedence and associativity. Operators may be overloaded through class or eligible class-external declarations. Overload selection uses applicability; import order does not grant a candidate priority.
+| 优先级 | 运算符 | 结合性与说明 |
+|---:|---|---|
+| 1 | `=` `+=` `-=` `*=` `/=` `%=` `&=` `\|=` `^=` `<<=` `>>=` `??=` | 右结合；赋值，左侧须为可赋值目标。短路赋值仅在需要写回时求 RHS。 |
+| 3 | `\|` | 左结合；逻辑或，短路。 |
+| 4 | `??` | 左结合；空值合并，短路。 |
+| 6 | `&` | 左结合；逻辑与，短路。 |
+| 7 | `==` `!=` `===` `!==` | 左结合；相等与对象身份比较。 |
+| 8 | `<` `>` `<=` `>=` `<=>` `is` `isnot` | 左结合；关系、三路比较和类型判断。 |
+| 8.5 | `..` `..\|` | 不结合；范围。 |
+| 8.75 | `<<` `>>` | 左结合；移位。 |
+| 9 | `+` `-` | 左结合；加减。 |
+| 10 | `*` `/` `%` | 左结合；乘除取余。 |
+| 10.5 | 前缀 `-` `+` `!` | 右结合；指数高于符号。 |
+| 11 | `^` | 右结合；普通重载运算符。 |
+| 12 | 前缀 `++` `--`、`new` | 右结合。 |
+| 13 | 空格调用 `f x` | 左结合；低于调用和下标，高于二元运算符。 |
+| 14 | `()` `[]` `.` `?.` `::` 后缀 `++` `--` | 左结合；调用、下标、成员和后缀运算。 |
 
-## Evaluation and results
+`===` 和 `!==` 比较对象身份；`==` 与 `!=` 比较值。`isnot` 是 `is` 判断的否定。`?.` 是可选成员访问或可选调用：接收者为 `void` 时跳过后续访问、实参求值与调用；触发值是 `void`，`nil` 不触发。`??` 在左值为 `void` 时求右值，否则保留左值。
 
-Operands are evaluated under the language's sequencing and effect rules. Some expression contexts permit implementation freedom only where the specification says so. `&` and `|` have type-sensitive contracts and must not be assumed to be boolean short-circuit operators in every context. Calls can await asynchronous results automatically; explicit task creation is described in [Effects and concurrency](execution.md).
+## 逻辑短路与显式值重载
 
-## Boundaries
+`&`、`|` 的默认逻辑语义会短路，但显式值运算符重载优先：适用的显式重载按普通 eager 调用执行，两侧各求值一次。没有适用显式值重载时，才按条件属性协议作逻辑短路；例如 `7 & 8` 取右值 `8`，`7 | 8` 取左值 `7`，结果保留被选操作数原值而不归一化为 `Bool`。类型联合中的 `|` 属于类型语法，不是运行期逻辑运算。`^` 始终按普通 eager 重载求值，不短路；Number 可用它表示乘方，其他类型也可声明自己的语义。
 
-EL does not use C-style `&&`, `||`, `**`, or ternary `?:`. The token `=` is assignment, while `==` is comparison. A type's overload declarations determine custom operator behavior; the spelling alone does not promise a built-in numeric operation.
+关系运算符不可链写为 `a < b < c`，也不会自动形成比较链。
 
-## Related entries
+## 相关条目
 
-- [Control flow](control-flow.md)
-- [Types](types.md)
-- [Syntax standard §12.6](https://github.com/steve02081504/el/blob/master/docs/spec/12-syntax.md#126-表达式)
-- [Core semantics §3.3 and §3.11](https://github.com/steve02081504/el/blob/master/docs/spec/03-core-semantics.md)
+- [控制流](control-flow.md)
+- [类型](types.md)
+- [语法标准](https://github.com/steve02081504/el/blob/master/docs/spec/12-syntax.md)
+- [核心语义](https://github.com/steve02081504/el/blob/master/docs/spec/03-core-semantics.md)
+- [静态序列与查询](https://github.com/steve02081504/el/blob/master/docs/spec/static-sequences-and-queries.md)

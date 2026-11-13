@@ -12,7 +12,7 @@
 
 ## enumerate {#api-b0470098b0916d891bc1}
 
-源码：`src/stdlib/collections/sequences/enumerate.el:71` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/enumerate.el#L71)
+源码：`src/stdlib/collections/sequences/enumerate.el:72` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/enumerate.el#L72)
 
 ```el
 export fn enumerate(source)
@@ -22,11 +22,13 @@ export fn enumerate(source)
 
 **参数**：source 可迭代值；每次创建迭代器时从下标零开始。
 
-### 示例：示例
+### 示例：遍历并附加下标
 
 ```el
 import { enumerate } from "el:collections/sequences/enumerate.el"
 let entries = enumerate(@["a", "b"])
 for (let {index, value} in entries) { let pair = @[index, value] }
 ```
-预期结果：依次输出 0 和 1。
+预期结果：迭代依次产生 index 为 0、1 的记录。
+
+**返回值**：惰性可迭代包装器。

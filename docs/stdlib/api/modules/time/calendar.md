@@ -12,7 +12,7 @@
 
 ## leapYear {#api-ad84a9fa89b0aa136c8f}
 
-源码：`src/stdlib/time/calendar.el:18` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L18)
+源码：`src/stdlib/time/calendar.el:19` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L19)
 
 ```el
 export fn leapYear(year: Number): Bool
@@ -22,7 +22,7 @@ export fn leapYear(year: Number): Bool
 
 **参数**：year 公历年份。
 
-### 示例：示例
+### 示例：检查闰年
 
 ```el
 import { leapYear } from "el:time/calendar.el"
@@ -30,9 +30,11 @@ leapYear(2000)
 ```
 预期结果：真。
 
+**返回值**：Bool。
+
 ## monthDays {#api-e4a535b45fe088abf757}
 
-源码：`src/stdlib/time/calendar.el:31` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L31)
+源码：`src/stdlib/time/calendar.el:33` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L33)
 
 ```el
 export fn monthDays(year: Number, month: Number): Number
@@ -44,9 +46,9 @@ export fn monthDays(year: Number, month: Number): Number
 
 **参数**：month 月份编号。
 
-**注意**：本函数不校验年月；除二月和四个 30 天月份外，其他月份值均按 31 天处理。
+**注意**：本函数不校验年月；2 月返回 28 或 29，4、6、9、11 月返回 30，其他月份值均返回 31。
 
-### 示例：示例
+### 示例：取得闰年二月的天数
 
 ```el
 import { monthDays } from "el:time/calendar.el"
@@ -54,9 +56,11 @@ monthDays(2024, 2)
 ```
 预期结果：29。
 
+**返回值**：月份天数。
+
 ## epochDay {#api-950b85c66afa43590243}
 
-源码：`src/stdlib/time/calendar.el:50` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L50)
+源码：`src/stdlib/time/calendar.el:53` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L53)
 
 ```el
 export fn epochDay(year: Number, month: Number, day: Number): Number
@@ -72,7 +76,7 @@ export fn epochDay(year: Number, month: Number, day: Number): Number
 
 **注意**：本函数不校验年月日字段；调用者应传入有效的公历日期。
 
-### 示例：示例
+### 示例：换算纪元日
 
 ```el
 import { epochDay } from "el:time/calendar.el"
@@ -80,9 +84,11 @@ epochDay(1970, 1, 2)
 ```
 预期结果：1。
 
+**返回值**：相对 1970-01-01 的日数。
+
 ## yearAtSeconds {#api-0924938c7200fc49f4ca}
 
-源码：`src/stdlib/time/calendar.el:71` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L71)
+源码：`src/stdlib/time/calendar.el:75` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L75)
 
 ```el
 export fn yearAtSeconds(seconds: Number): Number
@@ -94,7 +100,7 @@ export fn yearAtSeconds(seconds: Number): Number
 
 **注意**：调用者应传入有限整数秒；本函数不校验输入。
 
-### 示例：示例
+### 示例：取得 Unix 时间对应年份
 
 ```el
 import { yearAtSeconds } from "el:time/calendar.el"
@@ -102,9 +108,11 @@ yearAtSeconds(0)
 ```
 预期结果：1970。
 
+**返回值**：UTC 公历年份。
+
 ## calendarAt {#api-3adcdd1b11385bb4eac1}
 
-源码：`src/stdlib/time/calendar.el:133` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L133)
+源码：`src/stdlib/time/calendar.el:138` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L138)
 
 ```el
 export fn calendarAt(nanoseconds: Number, offset: TimeDiff = TimeDiff()): CalendarTime
@@ -118,7 +126,7 @@ export fn calendarAt(nanoseconds: Number, offset: TimeDiff = TimeDiff()): Calend
 
 **失败与异常**：纳秒值非有限或非整数、或换算日期超出 CalendarTime 支持范围时抛 RangeError。
 
-### 示例：示例
+### 示例：换算 Unix 纳秒时间
 
 ```el
 import { calendarAt } from "el:time/calendar.el"
@@ -126,9 +134,11 @@ calendarAt(0).year
 ```
 预期结果：1970。
 
+**返回值**：CalendarTime；要求时间字段位于其支持范围。
+
 ## offsetText {#api-77dcea13bebddbd7baf5}
 
-源码：`src/stdlib/time/calendar.el:160` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L160)
+源码：`src/stdlib/time/calendar.el:166` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/calendar.el#L166)
 
 ```el
 export fn offsetText(offset: TimeDiff): Text
@@ -138,7 +148,7 @@ export fn offsetText(offset: TimeDiff): Text
 
 **参数**：offset 要格式化的偏移。
 
-### 示例：示例
+### 示例：格式化时区偏移
 
 ```el
 import { offsetText } from "el:time/calendar.el"
@@ -146,3 +156,5 @@ import { TimeDiff } from "el:time/diff.el"
 offsetText(TimeDiff.seconds(19800))
 ```
 预期结果：+05:30。
+
+**返回值**：带符号的时区偏移文本。

@@ -12,7 +12,7 @@
 
 ## parseTime {#api-d1e2465e19b2276f6ee0}
 
-源码：`src/stdlib/time/parse.el:85` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/parse.el#L85)
+源码：`src/stdlib/time/parse.el:86` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/parse.el#L86)
 
 ```el
 export fn parseTime(source: Text, standard: Bool): ParsedTime
@@ -24,9 +24,9 @@ export fn parseTime(source: Text, standard: Bool): ParsedTime
 
 **参数**：standard 是否要求标准时间格式。
 
-**失败与异常**：文本结构无效、精度超过纳秒、偏移缺失/未知/越界或日历字段无效时抛出相应解析错误或 RangeError。
+**失败与异常**：格式无效时抛 InvalidTimeText；小数精度超过九位时抛 TimePrecisionExceedsNanoseconds；缺少标准格式要求的偏移时抛 TimeRequiresExplicitOffset；未知零偏移时抛 UnknownTimeOffset；偏移或日期字段越界时抛 RangeError。
 
-### 示例：示例
+### 示例：解析带 UTC 偏移的时间
 
 ```el
 import { parseTime } from "el:time/parse.el"
@@ -34,3 +34,5 @@ import { t } from "el:language/values.el"
 parseTime("1970-01-01T00:00:00Z", t).calendar.year
 ```
 预期结果：1970。
+
+**返回值**：ParsedTime，包含解析所得的 calendar 和 hasOffset。

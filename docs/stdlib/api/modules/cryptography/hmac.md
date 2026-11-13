@@ -43,7 +43,7 @@ let tag = hmac_sha256(@[1, 2, 3], @[4, 5])
 export fn hmac_verify(key: Number[], message: Number[], tag: Number[]): Bool
 ```
 
-验证消息的 HMAC-SHA256 标签；比较 32 字节标签时使用常量时间字节比较。
+验证消息的 HMAC-SHA256 标签；比较 32 字节标签时调用 constant_time_equal。
 
 **参数**：key 生成标签时使用的密钥字节数组。
 

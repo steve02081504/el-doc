@@ -12,7 +12,7 @@
 
 ## frame {#api-df8b8d8436fc50452262}
 
-源码：`src/stdlib/text/operations.el:15` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/operations.el#L15)
+源码：`src/stdlib/text/operations.el:16` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/operations.el#L16)
 
 ```el
 export fn frame(text: Text): Text
@@ -22,7 +22,7 @@ export fn frame(text: Text): Text
 
 **参数**：text 要编码的文本。
 
-### 示例：示例
+### 示例：对含分隔符的文本定帧
 
 ```el
 import { frame } from "el:text/operations.el"
@@ -30,9 +30,11 @@ frame("猫:咪")
 ```
 预期结果：3:猫:咪。
 
+**返回值**：长度定帧文本。
+
 ## find_text {#api-57c9ddeea00803ab4467}
 
-源码：`src/stdlib/text/operations.el:28` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/operations.el#L28)
+源码：`src/stdlib/text/operations.el:29` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/operations.el#L29)
 
 ```el
 export fn find_text(text: Text, needle: Text, start: Number): Number
@@ -48,7 +50,7 @@ export fn find_text(text: Text, needle: Text, start: Number): Number
 
 **返回值**：子串起始下标；未找到为 -1。
 
-### 示例：查找路径片段
+### 示例：查找文本中的子串
 
 ```el
 import { find_text } from "el:text/operations.el"

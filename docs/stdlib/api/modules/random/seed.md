@@ -12,7 +12,7 @@
 
 ## generateSeed {#api-36d3ff723851611bfabb}
 
-源码：`src/stdlib/random/seed.el:22` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/seed.el#L22)
+源码：`src/stdlib/random/seed.el:23` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/seed.el#L23)
 
 ```el
 export fn generateSeed(): Number
@@ -20,7 +20,7 @@ export fn generateSeed(): Number
 
 从当前平台的系统熵来源取得随机种子。
 
-### 示例：示例
+### 示例：读取系统随机种子
 
 ```el
 import { generateSeed } from "el:random/seed.el"
@@ -28,9 +28,11 @@ let seed = generateSeed()
 ```
 预期结果：取得一个种子数值；系统熵不可用时抛 EntropyUnavailable。
 
+**返回值**：Number。
+
 ## automaticSeed {#api-4425691b7b12732b9f8a}
 
-源码：`src/stdlib/random/seed.el:32` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/seed.el#L32)
+源码：`src/stdlib/random/seed.el:35` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/seed.el#L35)
 
 ```el
 export fn automaticSeed(): Number
@@ -38,10 +40,14 @@ export fn automaticSeed(): Number
 
 优先取得系统随机种子；熵不可用时使用当前墙上时间纳秒构造种子。
 
-### 示例：示例
+### 示例：取得自动种子
 
 ```el
 import { automaticSeed } from "el:random/seed.el"
 let seed = automaticSeed()
 ```
 预期结果：取得一个种子数值。
+
+**返回值**：Number。
+
+**失败与异常**：系统种子失败且错误并非 EntropyUnavailable 时，原错误向调用者传播。

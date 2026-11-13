@@ -1,10 +1,10 @@
-# Classes, objects, and lifecycle
+# 类、对象与生命周期
 
-## Class declarations
-
-Every user type declares assignment semantics explicitly:
+## 类声明
 
 ```el
+import { assign } from "el:language/contracts.el"
+
 @assign(mode: "copy")
 class Point {
 	let x = 0
@@ -12,24 +12,22 @@ class Point {
 }
 ```
 
-Use `@assign(mode: "shared")` for shared assignment. Classes can define fields, methods, constructors, destructors, and operators; inheritance uses `extends`, while interfaces are structurally satisfied unless an `implements` assertion is written. Fields normally acquire a fixed type during construction. Dynamic classes use `@dynamic` and have separate field creation and deletion operations.
+用户类型必须明确选择 `@assign(mode: "copy")` 或 `@assign(mode: "shared")`，没有默认赋值模式。此例从 `el:language/contracts.el` 导入 `assign` 属性绑定。类可声明字段、方法、构造器、析构器和运算符。继承用 `extends`，接口使用结构匹配；`implements` 可声明完整契约断言。普通字段在构造时确定类型，动态类则通过 `@dynamic` 采用专门的动态字段操作。
 
-## Construction and dispatch
+## 构造与分派
 
-Named classes are constructed by calling the class name. Constructors are explicit by default; `implicit constructor` makes eligible conversions candidates without changing constructor identity. Virtual methods are marked `virtual`, and overrides must say `override`. Operator overloads can be declared inside a class or as eligible class-external functions.
+具名类通过调用类名构造实例。构造器默认只参与显式构造；`implicit constructor` 可成为符合规则的隐式目标转换候选。虚方法显式标记 `virtual`，覆盖必须写 `override`。运算符重载可在类内或满足关联规则的类外声明。
 
-## Destruction and cleanup
+## 析构与清理
 
-Destruction policy is selected on the class declaration with `@destruct(mode: "scope")` or `@destruct(mode: "aggressive")`; the default is aggressive. The concrete runtime class's own setting controls destruction. Destructors may participate in cleanup and can fail or be asynchronous under the lifecycle contract; exits and control transfers must honor cleanup.
+类声明可用 `@destruct(mode: "scope")` 或 `@destruct(mode: "aggressive")` 选择析构策略；未标注时为 aggressive。实际具体类自己的设置决定策略。析构失败、异步清理及构造失败时的部分对象清理由生命周期合同规定；控制转移也必须履行清理义务。
 
-## Boundaries
+赋值模式属性是必需的。经 const 访问路径的写入受限，但不会冻结所有别名。构造失败后的部分初始化清理有独立规则。
 
-The assignment attribute is mandatory. A const access path constrains writes through that path but does not freeze all aliases. Construction failure and partially initialized object cleanup have their own rules; see the object specification.
+## 相关条目
 
-## Related entries
-
-- [Types](types.md)
-- [Declarations and bindings](declarations.md)
-- [Objects and types](https://github.com/steve02081504/el/blob/master/docs/spec/05-objects-and-types.md)
-- [Functions and lifetimes](https://github.com/steve02081504/el/blob/master/docs/spec/06-functions-and-lifetimes.md)
-- [Syntax standard §12.4.3](https://github.com/steve02081504/el/blob/master/docs/spec/12-syntax.md#1243-类与接口)
+- [类型](types.md)
+- [声明与绑定](declarations.md)
+- [对象与类型规范](https://github.com/steve02081504/el/blob/master/docs/spec/05-objects-and-types.md)
+- [函数与生命周期规范](https://github.com/steve02081504/el/blob/master/docs/spec/06-functions-and-lifetimes.md)
+- [语法标准](https://github.com/steve02081504/el/blob/master/docs/spec/12-syntax.md)

@@ -20,7 +20,7 @@ export enum TimeResolution
 
 选择本地时间映射到多个或零个时间点时的处理策略。
 
-### 示例：示例
+### 示例：选择重复本地时间的解析策略
 
 ```el
 import { TimeResolution } from "el:time/instant.el"
@@ -38,7 +38,7 @@ export enum MonthOverflow
 
 选择按日历月移动时目标月份没有原日期的处理策略。
 
-### 示例：示例
+### 示例：选择月运算的日期溢出策略
 
 ```el
 import { MonthOverflow } from "el:time/instant.el"

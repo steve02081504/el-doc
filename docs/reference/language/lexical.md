@@ -1,33 +1,30 @@
-# Lexical elements and literals
+# 词法元素与字面量
 
-## Source form
+## 源码形式
 
-EL source uses UTF-8. Whitespace separates tokens where needed; line and block comments are discarded before parsing. File preprocessing occurs before ordinary lexical analysis and is specified separately.
+源码为 UTF-8 文本，可带 BOM。空格、制表符和换行是空白，缩进不决定语法。注释有行注释与块注释，块注释不嵌套，遇到第一个 `*/` 即结束。文档注释形式为 `///`、`//!` 和 `/** ... */`。
 
-| Form | Summary |
+| 形式 | 摘要 |
 |---|---|
-| Identifier | Identifier spelling and contextual keyword rules are defined in §12.2.3. |
-| Integer and real | Numeric tokens support the radix and exponent forms in §12.2.4; numeric meaning is supplied by the number model and literal providers. |
-| String | Quoted strings support the escapes and interpolation boundaries in §12.2.5. |
-| Array | `@[first, second]` |
-| Matrix | `@(1, 2; 3, 4)` |
-| Object | `@{ name: "value" }` |
-| Regular expression | `/pattern/` is a literal form with its own delimiters and escape rules. |
+| 标识符 | 以字母或 `_` 开头，后续可含字母、`_` 和 ASCII 数字；区分大小写。 |
+| 数值 | 十进制、十六进制 `0x`、二进制 `0b`、八进制 `0o`；数字间可用单个 `_` 分隔。 |
+| 字符串 | 单引号和双引号等价；反引号字符串支持 `${expression}` 插值。 |
+| 数组 | `@[first, second]` |
+| 矩阵 | `@(1, 2; 3, 4)` |
+| 对象 | `@{ name: "value" }` |
 
-Object literal shorthand `@{ name }` uses the in-scope `name` as both key and value. Explicit string keys use a colon and value. Literal expansion and provider behavior are described by the syntax and literal contracts.
+对象字面量可写 `@{ name }`，表示键和值都取当前绑定 `name`。正则字面量 `/pattern/` **只在 `import` 或 `export` 的名字选择位置**有效；其他位置的 `/` 是除法运算符。
 
-## Separators and comments
+## 字符串转义与注释
 
-Newlines and semicolons can terminate statements in the contexts specified by the grammar. A semicolon is not interchangeable with a comma: commas separate parameters, arguments, and literal entries. Comments do not nest unless the lexical specification explicitly permits it.
+字符串转义仅包括 `\n`、`\r`、`\t`、`\0`、`\\`、`\"`、`\'` 和 `\u{...}`。未知转义、未闭合字符串和非法字节序列属于词法错误。
 
-## Boundaries
+文件预处理发生在普通词法分析之前；`#include` 和条件指令不是表达式语法。数值及字符串字面量的类型和表示由字面量提供者合同决定，词法形式本身不证明特定后端已实现。
 
-Preprocessing directives such as `#include` and conditional directives are handled before normal tokenization; they are not ordinary expression syntax. Whether a literal is accepted and what type it denotes can depend on an available provider. The syntax alone does not establish that a backend or provider implements every form.
+## 相关条目
 
-## Related entries
-
-- [Expressions and operators](expressions.md)
-- [Declarations and bindings](declarations.md)
-- [Syntax standard §12.2](https://github.com/steve02081504/el/blob/master/docs/spec/12-syntax.md#122-词法)
-- [Numbers](https://github.com/steve02081504/el/blob/master/docs/spec/04-numbers.md)
-- [Preprocessing](https://github.com/steve02081504/el/blob/master/docs/spec/preprocessing.md)
+- [表达式与运算符](expressions.md)
+- [声明与绑定](declarations.md)
+- [语法标准](https://github.com/steve02081504/el/blob/master/docs/spec/12-syntax.md)
+- [数值语义](https://github.com/steve02081504/el/blob/master/docs/spec/04-numbers.md)
+- [文件预处理](https://github.com/steve02081504/el/blob/master/docs/spec/preprocessing.md)

@@ -1,30 +1,28 @@
-# Types
+# 类型
 
-## Type expressions
+## 类型表达式
 
-Type annotations use `name: Type`. Function types, generic arguments, unions, intersections, tuples, and type queries have grammar-defined forms. Generic arguments use named parameters; the name may be omitted only for a single argument when it supplies the declaration's first type parameter, as in `Array<Point>`.
+类型注解写作 `name: Type`。类型语法包括函数类型、泛型实参、联合类型、交集、元组与类型查询。泛型实参通常必须写出形参名；仅当实参列表恰有一个参数且声明的首个形参是类型参数时，允许省略名称，例如 `Array<Point>`。
 
 ```el
 let point: Point = origin
 let maybeText: Text | void_t = void
 ```
 
-The examples show notation only. `|` in a type expression denotes a union; its expression-level meaning depends on operand types and context.
+这里仅展示注解写法。类型位置的 `|` 表示联合类型；表达式中的同一符号按表达式上下文解释。
 
-## Inference and constraints
+## 推断、约束与数值
 
-An omitted annotation is inferred from the initializer and later use. For a local `let`, an explicit annotation is an upper bound, permitting value-version refinement or widening within that bound. Parameters, fields, and container element annotations do not use that local flow-sensitive rule. A fixed-width or fixed-length bound cannot be crossed by runtime widening.
+省略注解时，类型由初始化值和使用推断。局部 `let` 上的显式注解是上界，允许值版本在范围内细化或加宽；参数、字段和容器元素注解不采用这一流敏感规则。固定宽度或长度约束不能通过运行期加宽越过。
 
-EL uses `Number` and its type parameters for ordinary numeric constraints; machine integer representations are explicit low-level boundaries, not ordinary language types. See [numeric types](../../language/numeric-types.md).
+普通源码使用 `Number` 及其类型参数表达数值约束。机器整数表示属于显式底层边界，不替代语言层数值类型。
 
-## Runtime values and special types
+`any` 表示动态类型存储。`t_t`、`nil_t`、`void_t` 是标准环境提供的普通类型，不是编译器内建类。`nil` 与 `void` 是不同的值；缺失结果不会自动等同于假值。
 
-`any` permits dynamically typed storage under its contract. `t_t`, `nil_t`, and `void_t` are ordinary source-defined types available through the standard environment, not compiler-intrinsic classes. `nil` and `void` are distinct values; a missing result is not automatically false.
+## 相关条目
 
-## Related entries
-
-- [Declarations and bindings](declarations.md)
-- [Expressions and operators](expressions.md)
-- [Syntax standard §12.5](https://github.com/steve02081504/el/blob/master/docs/spec/12-syntax.md#125-类型)
-- [Core semantics §3.2 and §3.4–3.8](https://github.com/steve02081504/el/blob/master/docs/spec/03-core-semantics.md)
-- [Numbers](https://github.com/steve02081504/el/blob/master/docs/spec/04-numbers.md)
+- [声明与绑定](declarations.md)
+- [表达式与运算符](expressions.md)
+- [语法标准](https://github.com/steve02081504/el/blob/master/docs/spec/12-syntax.md)
+- [核心语义](https://github.com/steve02081504/el/blob/master/docs/spec/03-core-semantics.md)
+- [数值语义](https://github.com/steve02081504/el/blob/master/docs/spec/04-numbers.md)
