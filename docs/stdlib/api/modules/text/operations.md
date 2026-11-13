@@ -18,7 +18,7 @@
 export fn frame(text: Text): Text
 ```
 
-**返回类型**：`Text`
+**返回类型**：[`Text`](text.md#api-6116e54b075df026a90a)
 
 将文本编码为十进制标量长度、冒号和原文组成的定帧。
 
@@ -42,7 +42,7 @@ frame("猫:咪")
 export fn find_text(text: Text, needle: Text, start: Number): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 在文本中从给定标量下标开始查找子串，返回首次匹配位置；未找到时返回 -1。
 

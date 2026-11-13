@@ -41,7 +41,7 @@ catch (error: NetworkError) { console.stderr.writeLine(error.operation, ": ", er
 let operation: Text
 ```
 
-**类型**：`Text`
+**类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
 
 发生失败的网络操作名称。
 
@@ -59,7 +59,7 @@ console.stderr.writeLine(error.operation)
 let detail: Text
 ```
 
-**类型**：`Text`
+**类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
 
 描述失败原因的文本。
 
@@ -77,7 +77,7 @@ console.stderr.writeLine(error.detail)
 let code: Number
 ```
 
-**类型**：`Number`
+**类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 平台提供的可选错误代码；无特定代码时为 0。
 

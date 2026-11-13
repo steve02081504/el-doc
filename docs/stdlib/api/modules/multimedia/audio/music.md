@@ -43,7 +43,7 @@ player.close()
 fn formula(sample, milliseconds: Number = 80, gain: Number = 0.12): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 将一段公式音频作为短提示音提交到非等待队列。
 
@@ -69,7 +69,7 @@ let accepted = player.formula(seconds => sin(seconds * 880 * 6.283185307179586),
 fn play(frequency: Number, milliseconds: Number = 80, gain: Number = 0.12): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 将三角波音调作为短提示音提交到非等待队列。
 

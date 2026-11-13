@@ -26,7 +26,7 @@
 export fn Map(key: type, value: type): type
 ```
 
-**返回类型**：`type`
+**返回类型**：[`type`](../../../../../reference/language/types.md)
 
 创建以键和值类型参数化的哈希映射类型。
 
@@ -78,7 +78,7 @@ console.stdout.writeLine(scores.count)
 @discardable override fn set(lookupKey: key, newValue: value): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 写入键值；若键已存在则保留原键并替换原值。
 
@@ -103,7 +103,7 @@ scores.set("ada", 98)
 @discardable override fn tryAdd(lookupKey: key, newValue: value): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 仅当键不存在时插入键值，已有值保持不变。
 
@@ -136,7 +136,7 @@ console.stdout.writeLine(scores.getOr("ada", 0))
 override fn getOrInsert(lookupKey: key, make): value
 ```
 
-**返回类型**：`value`
+**返回类型**：[`value`](../../../types.md#api-e66d20f23d46dbcc3bf5)
 
 返回已有值；键缺失时调用 make 一次，将结果插入并返回。
 
@@ -169,7 +169,7 @@ console.stdout.writeLine(counts.getOrInsert("red", () => 9))
 @discardable override fn update(lookupKey: key, change, initial: value): value
 ```
 
-**返回类型**：`value`
+**返回类型**：[`value`](../../../types.md#api-e66d20f23d46dbcc3bf5)
 
 用回调计算并保存新值；键缺失时以 initial 为输入。
 

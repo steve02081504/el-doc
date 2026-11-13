@@ -18,7 +18,7 @@
 export fn pbkdf2_sha1(password: Number[], salt: Number[], iterations: Number, count: Number): Number[]
 ```
 
-**返回类型**：`Number[]`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[]
 
 使用 PBKDF2-HMAC-SHA1 从密码和盐派生密钥字节。
 
@@ -49,7 +49,7 @@ let derived = pbkdf2_sha1(@[112, 97, 115, 115], @[1, 2, 3, 4], 1000, 32)
 export fn pbkdf2_sha256(password: Number[], salt: Number[], iterations: Number, count: Number): Number[]
 ```
 
-**返回类型**：`Number[]`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[]
 
 使用 PBKDF2-HMAC-SHA256 从密码和盐派生密钥字节。
 

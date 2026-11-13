@@ -18,7 +18,7 @@
 export fn parseTime(source: Text, standard: Bool): ParsedTime
 ```
 
-**返回类型**：`ParsedTime`
+**返回类型**：[`ParsedTime`](../../types.md#api-0d1958b2407e78d1230d)
 
 解析时间文本并返回字段、偏移和解析状态。
 

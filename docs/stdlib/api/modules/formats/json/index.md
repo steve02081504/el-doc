@@ -18,7 +18,7 @@
 export fn parseJSON(source: Text, limits: JsonLimits = JsonLimits()): any
 ```
 
-**返回类型**：`any`
+**返回类型**：[`any`](../../../../../reference/language/types.md)
 
 将完整严格 JSON 文本解析为 EL 值，并应用输入字节数与解析资源限制。
 
@@ -45,7 +45,7 @@ let config = parseJSON("{\"name\":\"EL\"}")
 export fn jsonField(value: any, key: Text): any
 ```
 
-**返回类型**：`any`
+**返回类型**：[`any`](../../../../../reference/language/types.md)
 
 从 JSON 对象中按名称读取成员。
 

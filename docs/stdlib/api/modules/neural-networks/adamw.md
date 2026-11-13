@@ -22,7 +22,7 @@
 export fn AdamW(element: type, storage: type = Tensor<element: element>): type
 ```
 
-**返回类型**：`type`
+**返回类型**：[`type`](../../../../reference/language/types.md)
 
 创建指定元素与存储类型的 AdamW 优化器类型。
 

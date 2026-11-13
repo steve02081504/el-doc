@@ -59,7 +59,7 @@ let value = random.between(1, 6)
 get seed(): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 返回构造或最近一次 reseed 使用的原始种子。
 
@@ -99,7 +99,7 @@ random.reseed(42)
 	fn nextWord(width: Number): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 从随机流生成一个 8、16 或 32 位无符号字值。
 
@@ -123,7 +123,7 @@ let word = Random(42).nextWord(16)
 fn nextBits(bitCount: Number): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 从随机流取得指定数量的随机位，并按高位优先累积为 Number。
 
@@ -147,7 +147,7 @@ let bits = Random(42).nextBits(8)
 fn between(minimum: Number, maximum: Number): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 在两个整数端点之间均匀抽取整数，端点均包含且次序可互换。
 
@@ -174,7 +174,7 @@ let die = Random(42).between(1, 6)
 	fn betweenExclusive(minimum: Number, maximum: Number): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 在两个整数端点之间抽取整数，包含较小端点但排除较大端点。
 
@@ -200,7 +200,7 @@ let index = Random(42).betweenExclusive(0, 6)
 fn unit(bitCount: Number = Number(53), inclusive: Bool = nil): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 在二进制网格上抽取 [0, 1) 内的数；inclusive 为真时包含 1。
 
@@ -226,7 +226,7 @@ let sample = Random(42).unit()
 fn realBetween(minimum: Number, maximum: Number, bitCount: Number = Number(53), inclusive: Bool = nil): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 在两个有限实数端点之间按指定二进制网格精度抽样。
 
@@ -256,7 +256,7 @@ let sample = Random(42).realBetween(-1, 1)
 fn boolean(): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
 
 从随机流抽取一个布尔值。
 
@@ -299,7 +299,7 @@ let choice = Random(42).pick(@["red", "blue"])
 	fn bytes(count: Number): Array<element: Number>
 ```
 
-**返回类型**：`Array<element: Number>`
+**返回类型**：[`Array`](../../types.md#api-02f04934b15030edb96d)<element: [`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)>
 
 生成指定长度、每项取值 0 到 255 的随机字节数组。
 
@@ -344,7 +344,7 @@ Random(42).shuffle(values)
 export lazy let rand: SharedRandom = SharedRandom()
 ```
 
-**类型**：`SharedRandom`
+**类型**：[`SharedRandom`](../../types.md#api-ce68e64dbdcc8304c331)
 
 共享的线程安全随机数流；各调用按同一状态序列消耗随机值。
 

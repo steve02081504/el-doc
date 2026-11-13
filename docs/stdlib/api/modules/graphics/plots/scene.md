@@ -43,7 +43,7 @@ figure.axis.legend = @["估计值"]
 let title: Text
 ```
 
-**类型**：`Text`
+**类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
 
 绘图标题。
 
@@ -61,7 +61,7 @@ figure.axis.title = "趋势"
 let xLabel: Text
 ```
 
-**类型**：`Text`
+**类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
 
 横坐标轴标签。
 
@@ -79,7 +79,7 @@ figure.axis.xLabel = "时间"
 let legend: Text[]
 ```
 
-**类型**：`Text[]`
+**类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)[]
 
 每条线对应的图例文本；若非空，数量必须与线条数一致。
 

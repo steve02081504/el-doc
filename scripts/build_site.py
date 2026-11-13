@@ -2,6 +2,8 @@
 
 import argparse
 import importlib.util
+import hashlib
+import json
 from pathlib import Path
 import sys
 import tempfile
@@ -22,9 +24,25 @@ def load_hook(name):
     return module
 
 
+def validate_snapshot(directory):
+    directory = Path(directory).resolve()
+    manifest = json.loads((directory / ".generated.json").read_text(encoding="utf-8"))
+    for required in ("api.json", "index.md", "environment.md", "types.md"):
+        if required not in manifest:
+            raise ValueError(f"generated documentation manifest is missing {required}; regenerate the API snapshot")
+    for name, expected in manifest.items():
+        path = (directory / name).resolve()
+        if not path.is_relative_to(directory):
+            raise ValueError(f"generated documentation path escapes snapshot: {name}")
+        if not path.is_file():
+            raise ValueError(f"generated documentation is missing {name}; include the complete API snapshot")
+        if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+            raise ValueError(f"generated documentation differs from its manifest: {name}")
+
+
 def build():
+    validate_snapshot(ROOT / "docs/stdlib/api")
     config = yaml.safe_load((ROOT / "mkdocs.yml").read_text(encoding="utf-8"))
-    config["docs_dir"] = "docs"
     config["site_dir"] = "site"
     config["docs_dir"] = str(ROOT / "docs")
     load_hook("api_navigation").expand_navigation(config)
@@ -39,7 +57,8 @@ def build():
         config_path.unlink()
     site = ROOT / "site"
     load_hook("random_pages").write_page_list(ROOT / "docs", site)
-    load_hook("code_links").link_site(site, ROOT / "docs")
+    result = load_hook("code_links").link_site(site, ROOT / "docs")
+    print(f"Reference links: {result['linked_pages']} pages updated; {result['validated_links']} internal links verified.", flush=True)
 
 
 def main():

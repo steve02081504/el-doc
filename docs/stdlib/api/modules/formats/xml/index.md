@@ -18,7 +18,7 @@
 export fn parseXML(source: Text, limits: JsonLimits = JsonLimits()): XmlDocument
 ```
 
-**返回类型**：`XmlDocument`
+**返回类型**：[`XmlDocument`](../../../types.md#api-a9b268230a0106556c55)
 
 解析受限的 XML 文档，保留元素、文本、CDATA、注释和处理指令节点。
 

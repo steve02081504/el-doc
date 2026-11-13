@@ -215,7 +215,7 @@ console.error.value(error)
 
 ## 组件手册
 
-所有部件都只用 Material 自带能力和 `docs/stylesheets/extra.css` 里已有的类，不引外部脚本、不加外链图片。
+所有部件都只用 Zensical 内置组件和 `docs/stylesheets/extra.css` 里已有的类，不引外部脚本、不加外链图片。
 
 ### 产出框
 

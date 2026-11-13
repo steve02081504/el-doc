@@ -34,7 +34,7 @@ let person = compound("person", @[atom("Ada")])
 export fn variable_scope(): VariableScope
 ```
 
-**返回类型**：`VariableScope`
+**返回类型**：[`VariableScope`](../../types.md#api-bef3353d1cb343b10b6c)
 
 创建一份独立的逻辑变量作用域，使不同作用域中的同索引变量互不相同。
 

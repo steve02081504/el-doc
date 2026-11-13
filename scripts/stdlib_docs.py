@@ -248,7 +248,7 @@ def prelude_environment(stdlib, entries):
 							exports.setdefault(part[2] or part[1], []).append((target, part[1]))
 				else:
 					# Skip attributes, then capture a straightforward exported declaration.
-					match = re.match(r'export\s+(?:@\w+(?:\([^\n]*?\))?\s+)*(?:fn|class|interface|let|const|syntax|enum|data)\s+(\w+)', text[start:])
+					match = re.match(r'export\s+(?:@\w+(?::\w+)*(?:\([^\n]*?\))?\s+)*(?:fn|class|interface|let|const|syntax|enum|data)\s+(\w+)', text[start:])
 					if match:
 						name = match[1]
 						try:
@@ -354,6 +354,11 @@ def type_index(stdlib, entries):
 				# Export may precede attributes on the same line.
 				prefix = text[text.rfind("\n", 0, start) + 1:start]
 				if re.search(r'\bexport\b', prefix): exported.add(name)
+				else:
+					previous = text[:text.rfind("\n", 0, start)].splitlines()
+					while previous and previous[-1].strip().startswith("@"):
+						previous.pop()
+					if previous and re.match(r'\s*export\s+@', previous[-1]): exported.add(name)
 			if token == "{": depth += 1
 			elif token == "}": depth = max(0, depth - 1)
 		modules[path] = (local, imports, reexports, exported, bool(re.search(r'@module\s*\(\s*prelude\s*:\s*nil', text)))
@@ -373,6 +378,65 @@ def type_index(stdlib, entries):
 		elif nominal: found = nominal
 		unique = {(x["source"], x["line"]): x for x in found}
 		return next(iter(unique.values())) if len(unique) == 1 else None
+	conditional_cache = {}
+	def conditional_export(path, name):
+		key = (path, name)
+		if key in conditional_cache: return conditional_cache[key]
+		conditional_cache[key] = None
+		if path not in modules: return None
+		text = (stdlib / path).read_text(encoding="utf-8-sig").replace("\r\n", "\n")
+		stream = [item for item in tokens(text) if item[0] not in ("space", "comment", "doc")]
+		depth = 0
+		for i, (kind, token, start, end) in enumerate(stream):
+			if kind != "code": continue
+			if depth == 0 and token == "if":
+				# Locate the top-level bodies using balanced token pairs, then require else.
+				j = i + 1; parens = 0
+				while j < len(stream):
+					t = stream[j][1]
+					if stream[j][0] == "code":
+						if t == "(": parens += 1
+						elif t == ")": parens -= 1
+						elif t == "{" and parens == 0: break
+					j += 1
+				if j == len(stream): continue
+				def close(opening):
+					level = 0
+					for index in range(opening, len(stream)):
+						if stream[index][0] != "code": continue
+						if stream[index][1] == "{": level += 1
+						elif stream[index][1] == "}":
+							level -= 1
+							if level == 0: return index
+					return None
+				first_end = close(j)
+				if first_end is None or first_end + 2 >= len(stream) or stream[first_end + 1][1] != "else" or stream[first_end + 2][1] != "{": continue
+				second = first_end + 2; last = close(second)
+				if last is None: continue
+				def branch_exports(first, last_index):
+					found = []
+					level = 0
+					for n in range(first + 1, last_index):
+						k, t, a, _ = stream[n]
+						if k != "code": continue
+						if level == 0 and t == "export":
+							match = re.match(r'export\s+(?:(?:lazy\s+)?import\s*)?\{([^{}]*)\}\s*from\s*"(file:[^"\n]+)"', text[a:])
+							if match:
+								for piece in match[1].split(","):
+									part = re.fullmatch(r'\s*(\w+)(?:\s+as\s+(\w+))?\s*', piece)
+									if part and (part[2] or part[1]) == name: found.append(match[2])
+						if t == "{": level += 1
+						elif t == "}": level -= 1
+					return found
+				if len(branch_exports(j, first_end)) == 1 and len(branch_exports(second, last)) == 1:
+					identity = path.removesuffix(".el") + "::conditional:" + name
+					item = {"name": name, "source": path, "line": text.count("\n", 0, start) + 1, "signature": text[start:stream[last][3]], "id": None, "initializer": None, "anchor": anchor(identity), "conditional": True}
+					conditional_cache[key] = item
+					definitions.append(item)
+					return item
+			if token == "{": depth += 1
+			elif token == "}": depth = max(0, depth - 1)
+		return None
 	def resolve(path, name):
 		if path not in modules: return None
 		local, imports, _, _, disabled = modules[path]
@@ -383,7 +447,7 @@ def type_index(stdlib, entries):
 		elif nominal: found = nominal
 		if found: return found[0] if len(found) == 1 else None
 		if name in imports:
-			resolved = [exported_resolve(target, original, set()) for target, original in imports[name]]
+			resolved = [exported_resolve(target, original, set()) or conditional_export(target, original) for target, original in imports[name]]
 			if any(x is None for x in resolved): return None
 			unique = {(x["source"], x["line"]): x for x in resolved}
 			return next(iter(unique.values())) if len(unique) == 1 else None
@@ -402,7 +466,7 @@ def type_index(stdlib, entries):
 				target = resolve(entry["source"], name)
 				if target:
 					identity = target["source"].removesuffix(".el") + "::" + target["name"]
-					location = {"type": "definition", "source": target["source"], "name": target["name"], "id": target["id"], "path": page_path(target["source"]) if target["id"] else "types.md", "fragment": anchor(target["id"] or identity)}
+					location = {"type": "conditional" if target.get("conditional") else "definition", "source": target["source"], "name": target["name"], "id": target["id"], "path": page_path(target["source"]) if target["id"] else "types.md", "fragment": target.get("anchor") or anchor(target["id"] or identity)}
 				elif name in builtins:
 					location = {"type": "builtin", "source": None, "name": name, "id": None, "path": builtins[name], "fragment": None}
 				else:
@@ -411,6 +475,97 @@ def type_index(stdlib, entries):
 			refs[field] = items
 		entry["type_references"] = refs
 	return definitions
+
+
+def lexical_type_scopes(stdlib, entries, definitions):
+	"""Resolve visible factory parameters and local type bindings from lexical blocks."""
+	by_source = {}
+	for entry in entries:
+		if entry["kind"] == "api" and any(ref["target"] is None for refs in entry.get("type_references", {}).values() for ref in refs):
+			by_source.setdefault(entry["source"], []).append(entry)
+	parameters = []
+	for source, source_entries in by_source.items():
+		text = (stdlib / source).read_text(encoding="utf-8-sig").replace("\r\n", "\n")
+		stream = list(tokens(text))
+		# Pair brace tokens once; literals and comments cannot introduce scopes.
+		stack, pairs = [], {}
+		for i, (kind, token, start, end) in enumerate(stream):
+			if kind != "code": continue
+			if token == "{": stack.append(i)
+			elif token == "}" and stack:
+				opening = stack.pop(); pairs[opening] = i
+		scopes = []
+		for i, (kind, token, start, end) in enumerate(stream):
+			if kind != "code" or token != "fn": continue
+			try: sig, line = signature(text, stream, i)
+			except DocumentationError: continue
+			name_match = re.match(r'fn\s+(\w+)\s*\(', sig)
+			if not name_match: continue
+			# The function body immediately follows its signature; expression functions have no block.
+			body = next((j for j in range(i + 1, len(stream)) if stream[j][2] >= start + len(sig) and stream[j][0] not in ("space", "comment", "doc")), None)
+			if body is None or stream[body][1] != "{" or body not in pairs: continue
+			params = []
+			param_text = sig[name_match.end():]
+			level = 0; pieces = []; part_start = 0
+			for match in re.finditer(r'[()\[\]{}]|,', param_text):
+				ch = match.group()
+				if ch in '([{': level += 1
+				elif ch in ')]}':
+					if level == 0:
+						pieces.append(param_text[part_start:match.start()]); break
+					level -= 1
+				elif ch == ',' and level == 0:
+					pieces.append(param_text[part_start:match.start()]); part_start = match.end()
+			for piece in pieces:
+				match = re.match(r'\s*(\w+)\s*(?::\s*([^=]+))?', piece)
+				if match: params.append((match[1], "type" if (match[2] or "").strip() == "type" else "value"))
+			scopes.append({"start": stream[body][2], "end": stream[pairs[body]][3], "line": line, "signature": sig, "name": name_match[1], "params": params, "body": body, "close": pairs[body]})
+		for entry in source_entries:
+			offset = sum(len(line) for line in text.splitlines(keepends=True)[:entry["declaration_line"] - 1])
+			containing = [scope for scope in scopes if scope["start"] < offset < scope["end"]]
+			containing.sort(key=lambda scope: scope["start"], reverse=True)
+			# Include the API's own parameter list for dimensions in its return type.
+			own = next((scope for scope in scopes if scope["line"] == entry["declaration_line"] or (scope["line"] >= entry["declaration_line"] and scope["line"] <= entry["declaration_line"] + entry["signature"].count("\n"))), None)
+			if own: containing.insert(0, own)
+			for field, refs in entry["type_references"].items():
+				for ref in refs:
+					if ref["target"]: continue
+					name = ref["name"]
+					for scope in containing:
+						param = next((kind for param_name, kind in scope["params"] if param_name == name), None)
+						if param:
+							identity = source.removesuffix(".el") + f"::parameter@{scope['line']}:{name}"
+							item = {"name": name, "source": source, "line": scope["line"], "signature": scope["signature"], "kind": param, "anchor": anchor(identity)}
+							if item not in parameters: parameters.append(item)
+							ref["target"] = {"type": "parameter", "source": source, "name": name, "id": None, "path": "types.md", "fragment": item["anchor"], "parameter_kind": param}
+							break
+						# A direct local binding in the enclosing function is visible in its nested class.
+						depth = 0
+						for j in range(scope["body"] + 1, scope["close"]):
+							k, token, start, end = stream[j]
+							if start >= offset: break
+							if k != "code": continue
+							if token == "{": depth += 1
+							elif token == "}": depth -= 1
+							if depth != 0 or token not in ("let", "const"): continue
+							match = re.match(r'(?:let|const)\s+' + re.escape(name) + r'\b', text[start:])
+							if not match: continue
+							line_end = text.find("\n", start)
+							if line_end < 0: line_end = len(text)
+							declaration = text[start:line_end]
+							type_parameters = {param_name for param_name, kind in scope["params"] if kind == "type"}
+							alias = re.match(r'(?:let|const)\s+\w+\s*=\s*(\w+)\s*$', declaration.strip())
+							if not (re.match(r'(?:let|const)\s+\w+\s*:\s*type\b', declaration) or re.search(r'=\s*(?:@[^\n]*\s+)?class\b', declaration) or (alias and alias[1] in type_parameters)):
+								continue
+							line = text.count("\n", 0, start) + 1
+							identity = source.removesuffix(".el") + f"::local@{line}:{name}"
+							fragment = anchor(identity)
+							definition = {"name": name, "source": source, "line": line, "signature": text[start:text.find("\n", start)].strip(), "id": None, "initializer": None, "anchor": fragment}
+							if definition not in definitions: definitions.append(definition)
+							ref["target"] = {"type": "definition", "source": source, "name": name, "id": None, "path": "types.md", "fragment": fragment}
+							break
+						if ref["target"]: break
+	return parameters
 
 
 def parse_comment(lines):
@@ -522,7 +677,8 @@ def collect(root):
 	digest = hashlib.sha256(json.dumps(files, ensure_ascii=False, separators=(",", ":")).encode()).hexdigest()
 	environment, exports = prelude_environment(stdlib, entries)
 	types = type_index(stdlib, entries)
-	return {"environment": environment, "exports": exports, "types": types, "source_digest": digest, "files": [file for file in files if file['path'] in documented], "entries": entries, "coverage": {"source_files": len(files), "documented_files": len(documented), "documented_apis": sum(entry['kind'] == 'api' for entry in entries)}}
+	parameters = lexical_type_scopes(stdlib, entries, types)
+	return {"environment": environment, "exports": exports, "types": types, "type_parameters": parameters, "source_digest": digest, "files": [file for file in files if file['path'] in documented], "entries": entries, "coverage": {"source_files": len(files), "documented_files": len(documented), "documented_apis": sum(entry['kind'] == 'api' for entry in entries)}}
 
 
 def anchor(identity):
@@ -591,12 +747,14 @@ def render(model, source_url=SOURCE_URL):
 	pages["environment.md"] = "\n".join(environment) + "\n"
 	type_groups = {}
 	for definition in model.get("types", []):
-		type_groups.setdefault((definition["source"], definition["name"]), []).append(definition)
+		type_groups.setdefault((definition["source"], definition["name"], definition.get("anchor")), []).append(definition)
 	type_lines = ["# 类型定义索引", "", "由源码声明词法提取；类型工厂及绑定分别列出。未执行或验证类型表达式。", ""]
-	for (source, name), group in sorted(type_groups.items()):
+	for (source, name, custom_anchor), group in sorted(type_groups.items(), key=lambda item: (item[0][0], item[0][1], item[0][2] or "")):
 		identity = source.removesuffix(".el") + "::" + name
-		type_lines += [f"## {name} · {source} {{#{anchor(identity)}}}", ""]
+		type_lines += [f"## {name} · {source} {{#{custom_anchor or anchor(identity)}}}", ""]
 		for definition in group:
+			if definition.get("conditional"):
+				type_lines += ["来源选择规则；条件未执行，分支未选定。", ""]
 			url = source_url.rstrip("/") + "/" + quote(source, safe="/") + f"#L{definition['line']}"
 			type_lines += [f"[源码 {source}:{definition['line']}]({url})", "", "```el", definition["signature"] + (" = " + definition["initializer"] if definition["initializer"] is not None else ""), "```", ""]
 			if definition["id"]:
@@ -607,6 +765,9 @@ def render(model, source_url=SOURCE_URL):
 			if any(item["id"] == entry["id"] for item in group): continue
 			if not re.search(r"\bfn\s+" + re.escape(name) + r"\b", entry["signature"]): continue
 			type_lines += [f"[同名函数 API]({page_path(source)}#{anchor(entry['id'])})", "", "```el", entry["signature"], "```", ""]
+	for item in model.get("type_parameters", []):
+		label = "类型参数" if item["kind"] == "type" else "值参数"
+		type_lines += [f"## {item['name']} · {item['source']} {{#{item['anchor']}}}", "", f"{label}，位于 `{item['source']}:{item['line']}`。", "", "```el", item["signature"], "```", ""]
 	pages["types.md"] = "\n".join(type_lines)
 	labels = {"param": "参数", "returns": "返回值", "throws": "失败与异常", "complexity": "复杂度", "note": "注意", "example": "示例"}
 	for source, entries in grouped.items():

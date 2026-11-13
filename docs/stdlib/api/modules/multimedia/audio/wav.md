@@ -60,7 +60,7 @@ writeWav("tone.wav", audio)
 export fn encodeWav(audio: PcmAudio): Number[]
 ```
 
-**返回类型**：`Number[]`
+**返回类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)[]
 
 将 PCM 音频编码为包含 RIFF/WAVE 头部的字节数组。
 

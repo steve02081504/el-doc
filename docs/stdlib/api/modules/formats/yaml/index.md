@@ -18,7 +18,7 @@
 export fn parseYAML(source: Text, limits: JsonLimits = JsonLimits()): any
 ```
 
-**返回类型**：`any`
+**返回类型**：[`any`](../../../../../reference/language/types.md)
 
 将受支持的单个 YAML 文档解析为动态对象、数组及标量值。
 

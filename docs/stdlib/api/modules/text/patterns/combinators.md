@@ -18,7 +18,7 @@
 export fn scalarSet(ranges: Number[], negate: Bool = nil): Pattern<output: Char>
 ```
 
-**返回类型**：`Pattern<output: Char>`
+**返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Char`](../../../types.md#api-3166547d46e101216338)>
 
 根据成对的 Unicode 标量起止值构造字符集合模式。
 
@@ -43,7 +43,7 @@ let printable = scalarSet(@[32, 33, 35, 91, 93, 1114111])
 export fn chars(text: Text): Pattern<output: Char>
 ```
 
-**返回类型**：`Pattern<output: Char>`
+**返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Char`](../../../types.md#api-3166547d46e101216338)>
 
 构造匹配给定文本中任一字符的模式。
 
@@ -66,7 +66,7 @@ let hexLetter = chars("abcdefABCDEF")
 export fn range(first: Text, last: Text): Pattern<output: Char>
 ```
 
-**返回类型**：`Pattern<output: Char>`
+**返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Char`](../../../types.md#api-3166547d46e101216338)>
 
 构造匹配首尾字符标量值之间任一字符的模式，端点包含在内。
 
@@ -91,7 +91,7 @@ let lower = range("a", "z")
 export fn sequence(...elements): Pattern<output: Text>
 ```
 
-**返回类型**：`Pattern<output: Text>`
+**返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Text`](../text.md#api-6116e54b075df026a90a)>
 
 按顺序匹配多个文本片段或模式，并合并为一个文本结果。
 
@@ -114,7 +114,7 @@ let escapedQuote = sequence("\\", chars("\""))
 export fn anyOf(first, ...rest): Pattern<output: Text>
 ```
 
-**返回类型**：`Pattern<output: Text>`
+**返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Text`](../text.md#api-6116e54b075df026a90a)>
 
 从同一起点按顺序尝试候选模式，匹配第一个成功的候选。
 

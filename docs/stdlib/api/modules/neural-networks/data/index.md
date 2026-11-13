@@ -26,7 +26,7 @@
 export fn DataLoader(sample: type): type
 ```
 
-**返回类型**：`type`
+**返回类型**：[`type`](../../../../../reference/language/types.md)
 
 创建按 Sampler 索引批次读取 Dataset 的数据加载器类型。
 
@@ -54,7 +54,7 @@ let firstBatch = loader.next()
 get hasNext(): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 指示是否还有满足 dropLast 设置的数据可组成下一批。
 
@@ -74,7 +74,7 @@ while (loader.hasNext) consume(loader.next())
 fn save(): SamplerState
 ```
 
-**返回类型**：`SamplerState`
+**返回类型**：[`SamplerState`](../../../types.md#api-807b03f6837422f1581d)
 
 返回可用于恢复当前采样进度的状态快照。
 
@@ -138,7 +138,7 @@ let batch = loader.next(samples => samples)
 fn next(): sample[]
 ```
 
-**返回类型**：`sample[]`
+**返回类型**：[`sample`](../../../types.md#api-3ca7635f2367bc2f45d8)[]
 
 读取下一批样本并直接返回样本数组，不执行自定义整理。
 

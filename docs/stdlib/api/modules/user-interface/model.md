@@ -60,7 +60,7 @@ title.enabled = t
 let theme: Theme | void_t
 ```
 
-**类型**：`Theme | void_t`
+**类型**：[`Theme`](../theme/model.md#api-2f8f76e6db4068dfe678) | [`void_t`](../language/values.md#api-d7b419fab395eef3d142)
 
 可选的局部语义 Theme，按当前出现位置参与父子主题解析。
 
@@ -172,7 +172,7 @@ appendChild(root, "heading", element("label", "设置"))
 export fn removeChild(parent: Definition, key: Text): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
 
 按子边键移除第一个匹配项；未找到时不修改模型。
 

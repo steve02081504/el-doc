@@ -50,7 +50,7 @@ catch (error) { if (error is ParseError) console.stderr.writeLine(error.offset) 
 let offset: Number
 ```
 
-**类型**：`Number`
+**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
 
 输入中第一个没有成功解析的位置，以 Unicode 标量下标计。
 
@@ -68,7 +68,7 @@ console.stderr.writeLine(error.offset)
 let expected: Text[]
 ```
 
-**类型**：`Text[]`
+**类型**：[`Text`](../text.md#api-6116e54b075df026a90a)[]
 
 在失败位置可接受的预期项列表。
 
@@ -86,7 +86,7 @@ console.stderr.writeLine(error.expected.join(", "))
 let contexts: Text[]
 ```
 
-**类型**：`Text[]`
+**类型**：[`Text`](../text.md#api-6116e54b075df026a90a)[]
 
 失败时处于活动状态的解析规则上下文栈。
 
@@ -104,7 +104,7 @@ console.stderr.writeLine(error.contexts.join("/"))
 let matched: Bool
 ```
 
-**类型**：`Bool`
+**类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 指示前缀解析是否成功。
 
@@ -122,7 +122,7 @@ console.stdout.writeLine(reply.matched)
 let end: Number
 ```
 
-**类型**：`Number`
+**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
 
 成功解析后第一个未消费位置的标量下标。
 
@@ -158,7 +158,7 @@ console.stderr.writeLine(reply.error.offset)
 fn value(): output
 ```
 
-**返回类型**：`output`
+**返回类型**：[`output`](../../../types.md#api-1838af8aafa47f26bba3)
 
 返回成功解析得到的语义值；失败时抛出保存的 ParseError。
 
@@ -198,7 +198,7 @@ let value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse
 fn parse(source: Text, limits: PatternLimits = PatternLimits()): output
 ```
 
-**返回类型**：`output`
+**返回类型**：[`output`](../../../types.md#api-e1b1b22430ae1dac04e7)
 
 从输入起点解析完整文本；输入有剩余或无法匹配时抛出 ParseError。
 
@@ -226,7 +226,7 @@ console.stdout.writeLine(value)
 fn parsePrefix(source: Text, from: Number = 0, limits: PatternLimits = PatternLimits()): ParseReply<output: output>
 ```
 
-**返回类型**：`ParseReply<output: output>`
+**返回类型**：[`ParseReply`](../../../types.md#api-97a3a0dc8d534b09c3e7)<output: [`output`](../../../types.md#api-e1b1b22430ae1dac04e7)>
 
 从指定偏移尝试解析输入前缀，不要求消费完整文本，并以 ParseReply 返回匹配状态。
 

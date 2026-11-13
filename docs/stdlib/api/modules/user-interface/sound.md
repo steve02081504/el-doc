@@ -45,7 +45,7 @@ sound.close()
 fn cue(name: Text, value: Number = 0, maximum: Number = 1): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
 
 尝试将命名提示音加入短音效队列，不等待播放完成。
 
@@ -93,7 +93,7 @@ sound.engine(0.6)
 fn tryCue(name: Text, value: Number = 0, maximum: Number = 1): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
 
 尝试播放提示音，并将捕获设备错误转换为未接受状态。
 

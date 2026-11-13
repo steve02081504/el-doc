@@ -18,7 +18,7 @@
 export fn secure_random_bytes(count: Number): Number[]
 ```
 
-**返回类型**：`Number[]`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[]
 
 从操作系统随机源读取指定数量的密码学随机字节。
 
@@ -43,7 +43,7 @@ let nonce = secure_random_bytes(12)
 export fn secure_random_hex(count: Number): Text
 ```
 
-**返回类型**：`Text`
+**返回类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
 
 读取密码学随机字节并返回小写十六进制编码。
 

@@ -69,6 +69,7 @@
 ## language
 
 - [language/proofs.el](modules/language/proofs.md)（4 个 API）
+- [language/values.el](modules/language/values.md)（8 个 API）
 
 ## logic
 
@@ -112,6 +113,10 @@
 - [neural-networks/model.el](modules/neural-networks/model.md)（5 个 API）
 - [neural-networks/optimizer.el](modules/neural-networks/optimizer.md)（2 个 API）
 
+## number
+
+- [number/number.el](modules/number/number.md)（2 个 API）
+
 ## numerical-computing
 
 - [numerical-computing/arrays.el](modules/numerical-computing/arrays.md)（4 个 API）
@@ -137,7 +142,7 @@
 - [text/patterns/combinators.el](modules/text/patterns/combinators.md)（8 个 API）
 - [text/patterns/parser.el](modules/text/patterns/parser.md)（15 个 API）
 - [text/patterns/syntax.el](modules/text/patterns/syntax.md)（1 个 API）
-- [text/text.el](modules/text/text.md)（10 个 API）
+- [text/text.el](modules/text/text.md)（14 个 API）
 
 ## theme
 

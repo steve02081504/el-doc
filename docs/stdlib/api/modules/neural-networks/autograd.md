@@ -26,7 +26,7 @@
 export fn Autograd(element: type, storage: type = Tensor<element: element>): type
 ```
 
-**返回类型**：`type`
+**返回类型**：[`type`](../../../../reference/language/types.md)
 
 创建指定元素和存储类型的自动微分 tape 类型。
 
@@ -106,7 +106,7 @@ let loss = (prediction - target).square().mean()
 fn variable(value: Dense): Tracked
 ```
 
-**返回类型**：`Tracked`
+**返回类型**：[`Tracked`](../../types.md#api-90e17b44158251ad4d5b)
 
 将输入张量注册为需要对其求导的叶变量。
 
@@ -128,7 +128,7 @@ let x = tape.variable(input)
 fn valueAndGrad(loss: Tracked, variables: Tracked[]): Result
 ```
 
-**返回类型**：`Result`
+**返回类型**：[`Result`](../../types.md#api-666c52dd6d3d5f3f1651)
 
 对 rank-zero 跟踪损失反向传播，返回损失值及各变量梯度。
 

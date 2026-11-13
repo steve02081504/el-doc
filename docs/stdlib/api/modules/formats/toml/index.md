@@ -18,7 +18,7 @@
 export fn parseTOML(source: Text, limits: JsonLimits = JsonLimits()): Toml
 ```
 
-**返回类型**：`Toml`
+**返回类型**：[`Toml`](../../../types.md#api-1ded7c60633c334bf6e6)
 
 解析 TOML 文档并保留 TOML 值种类，包括日期时间、数组和表。
 

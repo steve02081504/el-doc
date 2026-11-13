@@ -61,7 +61,7 @@ figure.axis.title = "二次曲线"
 fn image(width: Number = 900, height: Number = 600): Text
 ```
 
-**返回类型**：`Text`
+**返回类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
 
 将当前坐标场景渲染为 SVG 文本；不打开窗口。
 

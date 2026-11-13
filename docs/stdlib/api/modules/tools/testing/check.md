@@ -246,7 +246,7 @@ check.diagnostic(result, phase: "check", code: "EL.ACCESS.PRIVATE", marker: "den
 export lazy let check = Checks()
 ```
 
-**类型**：`Checks`
+**类型**：[`Checks`](../../../types.md#api-a49fc65730d49506a183)
 
 提供比较断言入口；失败时抛出带结构化差异信息的 TestFailure。
 

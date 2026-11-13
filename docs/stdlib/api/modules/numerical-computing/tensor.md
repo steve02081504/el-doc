@@ -41,7 +41,7 @@
 export fn Tensor(element: type): type
 ```
 
-**返回类型**：`type`
+**返回类型**：[`type`](../../../../reference/language/types.md)
 
 创建指定元素类型的张量类型；实例由形状和按列优先排列的元素构成。
 
@@ -65,7 +65,7 @@ let matrix = Dense(@[2, 2], @[1, 2, 3, 4])
 get rank(): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 返回张量的轴数；标量张量的 rank 为 0。
 
@@ -85,7 +85,7 @@ let dimensions = tensor.rank
 get count(): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 返回张量包含的逻辑元素数。
 
@@ -105,7 +105,7 @@ let elements = tensor.count
 fn extent(axis: Number): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 返回指定轴的长度。
 
@@ -129,7 +129,7 @@ let columns = matrix.extent(1)
 fn shape(): Number[]
 ```
 
-**返回类型**：`Number[]`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[]
 
 返回描述各轴长度的独立数组快照。
 
@@ -149,7 +149,7 @@ let dimensions = tensor.shape()
 fn flat(index: Number): element
 ```
 
-**返回类型**：`element`
+**返回类型**：[`element`](../../types.md#api-50bbdcd76206fb0195f1)
 
 按列优先线性索引读取一个元素。
 
@@ -174,7 +174,7 @@ let first = tensor.flat(0)
 		fn select(selectors: Selector[]): Value
 ```
 
-**返回类型**：`Value`
+**返回类型**：[`Value`](../../types.md#api-70087f43333f7c566f19)
 
 按每个轴的标量或选择器抽取张量；标量选择会移除对应结果轴，范围选择保留该轴。
 
@@ -199,7 +199,7 @@ let selected = matrix.select(@[1, 0..3])
 		fn transpose(): Value
 ```
 
-**返回类型**：`Value`
+**返回类型**：[`Value`](../../types.md#api-70087f43333f7c566f19)
 
 交换 rank-2 张量的两个轴并返回转置值。
 
@@ -261,7 +261,7 @@ let result = coefficients.matmul(vector)
 fn slice(axis: Number, start: Number, count: Number): Value
 ```
 
-**返回类型**：`Value`
+**返回类型**：[`Value`](../../types.md#api-70087f43333f7c566f19)
 
 沿指定轴从 start 开始截取 count 个连续元素，其他轴保持不变。
 
@@ -289,7 +289,7 @@ let leading = matrix.slice(1, 0, 2)
 fn scalar(): element
 ```
 
-**返回类型**：`element`
+**返回类型**：[`element`](../../types.md#api-50bbdcd76206fb0195f1)
 
 读取 rank-zero 张量唯一的标量元素。
 
@@ -311,7 +311,7 @@ let lossValue = loss.scalar()
 fn square(): Value
 ```
 
-**返回类型**：`Value`
+**返回类型**：[`Value`](../../types.md#api-70087f43333f7c566f19)
 
 对张量逐元素平方。
 

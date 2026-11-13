@@ -19,7 +19,7 @@
 export fn some(values, predicate): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 按迭代顺序检查元素，存在满足谓词的元素时立即返回真。
 
@@ -46,7 +46,7 @@ some(@[1, 3, 4], value => value % 2 == 0)
 export fn any(values, predicate): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 判断序列中是否有元素满足谓词。
 
@@ -73,7 +73,7 @@ any(@[-2, 0, 5], value => value > 0)
 export fn none(values, predicate): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 判断序列中没有元素满足谓词。
 
@@ -100,7 +100,7 @@ none(@[1, 2, 3], value => value < 0)
 export fn all(values, predicate): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 判断所有元素是否满足谓词；遇到首个不满足项时停止。
 
@@ -127,7 +127,7 @@ all(@[1, 2, 3], value => value > 0)
 export fn every(values, predicate): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 判断序列中的每个元素是否满足谓词，与 all 使用相同规则。
 
@@ -177,7 +177,7 @@ concat(@[1, 2], @[3])
 export fn includes(values, value): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 判断序列是否包含与给定值相等的元素。
 
@@ -306,7 +306,7 @@ take(@[1, 2, 3], 2)
 export fn each(values, callback): void_t
 ```
 
-**返回类型**：`void_t`
+**返回类型**：[`void_t`](../../language/values.md#api-d7b419fab395eef3d142)
 
 按迭代顺序对每个元素调用回调。
 
@@ -332,7 +332,7 @@ each(@[1, 2], value => value)
 export fn index_of(values, wanted): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
 
 返回首个与目标值相等的元素下标；未找到时返回 -1。
 

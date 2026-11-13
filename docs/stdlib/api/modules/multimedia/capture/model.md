@@ -70,7 +70,7 @@ audio.setSample(0, 0, 12000)
 fn sample(frame: Number, channel: Number = 0): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
 
 读取指定帧和声道的有符号 PCM16 整数样本。
 

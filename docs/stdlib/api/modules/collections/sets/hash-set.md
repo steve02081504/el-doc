@@ -33,7 +33,7 @@
 export fn Set(element: type): type
 ```
 
-**返回类型**：`type`
+**返回类型**：[`type`](../../../../../reference/language/types.md)
 
 创建按元素去重的哈希集合类型。
 
@@ -57,7 +57,7 @@ console.stdout.writeLine(tags.has("el"))
 get count(): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
 
 返回集合中不同元素的数量。
 
@@ -80,7 +80,7 @@ console.stdout.writeLine(tags.count)
 fn has(value: element): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 判断集合中是否已有给定元素。
 
@@ -104,7 +104,7 @@ console.stdout.writeLine(tags.has("el"))
 @discardable fn add(value: element): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 将元素加入集合；集合已有该元素时不产生重复项。
 
@@ -129,7 +129,7 @@ console.stdout.writeLine(tags.count)
 @discardable fn remove(value: element): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 从集合中删除给定元素（如果存在）。
 
@@ -153,7 +153,7 @@ tags.remove("el")
 fn values(): element[]
 ```
 
-**返回类型**：`element[]`
+**返回类型**：[`element`](../../../types.md#api-5ff3a25653b6ee6116cf)[]
 
 返回集合中元素组成的数组快照。
 
@@ -175,7 +175,7 @@ console.stdout.writeLine(tags.values().join(", "))
 fn union(other): Set<element: element>
 ```
 
-**返回类型**：`Set<element: element>`
+**返回类型**：[`Set`](hash-set.md#api-d0e70967a499a59ddcdc)<element: [`element`](../../../types.md#api-5ff3a25653b6ee6116cf)>
 
 返回包含当前集合和另一个集合全部元素的新集合。
 
@@ -201,7 +201,7 @@ console.stdout.writeLine(allTags.union(more).count)
 fn intersection(other): Set<element: element>
 ```
 
-**返回类型**：`Set<element: element>`
+**返回类型**：[`Set`](hash-set.md#api-d0e70967a499a59ddcdc)<element: [`element`](../../../types.md#api-5ff3a25653b6ee6116cf)>
 
 返回仅包含同时存在于两个集合中的元素的新集合。
 
@@ -226,7 +226,7 @@ let common = first.intersection(second)
 fn difference(other): Set<element: element>
 ```
 
-**返回类型**：`Set<element: element>`
+**返回类型**：[`Set`](hash-set.md#api-d0e70967a499a59ddcdc)<element: [`element`](../../../types.md#api-5ff3a25653b6ee6116cf)>
 
 返回存在于当前集合但不在另一个集合中的元素。
 
@@ -251,7 +251,7 @@ let remaining = all.difference(done)
 fn symmetricDifference(other): Set<element: element>
 ```
 
-**返回类型**：`Set<element: element>`
+**返回类型**：[`Set`](hash-set.md#api-d0e70967a499a59ddcdc)<element: [`element`](../../../types.md#api-5ff3a25653b6ee6116cf)>
 
 返回只出现在其中一个集合中的元素。
 
@@ -276,7 +276,7 @@ let changed = before.symmetricDifference(after)
 fn isSubsetOf(other): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 判断当前集合是否为另一个集合的子集。
 
@@ -301,7 +301,7 @@ console.stdout.writeLine(required.isSubsetOf(granted))
 fn isSupersetOf(other): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 判断当前集合是否包含另一个集合的全部元素。
 
@@ -326,7 +326,7 @@ console.stdout.writeLine(granted.isSupersetOf(required))
 fn isDisjointFrom(other): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 判断两个集合是否没有共同元素。
 

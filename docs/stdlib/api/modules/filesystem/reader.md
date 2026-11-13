@@ -23,7 +23,7 @@
 fn read(maximumBytes: Number): Number[]
 ```
 
-**返回类型**：`Number[]`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[]
 
 从当前位置读取至多指定数量的原始字节。
 
@@ -49,7 +49,7 @@ reader.close()
 fn close(): void_t
 ```
 
-**返回类型**：`void_t`
+**返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
 
 关闭读取器并结束其底层资源使用。
 

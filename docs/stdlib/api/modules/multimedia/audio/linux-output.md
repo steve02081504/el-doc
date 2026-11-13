@@ -45,7 +45,7 @@ let accepted = output.enqueue(audio)
 fn enqueue(audio: PcmAudio): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 尝试提交音频块；样本在返回前复制，队列无空槽时不等待并返回假。
 
@@ -86,7 +86,7 @@ while (!output.idle()) sleep(2)
 fn idle(): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 检查设备是否已播放完所有已提交样本。
 

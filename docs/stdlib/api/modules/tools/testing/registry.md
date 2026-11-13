@@ -51,7 +51,7 @@ test.each("double", @[
 export lazy let test = TestRegistrar()
 ```
 
-**类型**：`TestRegistrar`
+**类型**：[`TestRegistrar`](../../../types.md#api-8356b2948558480877af)
 
 注册一个测试用例；用例主体在测试执行阶段调用，可选择接收 TestContext。
 

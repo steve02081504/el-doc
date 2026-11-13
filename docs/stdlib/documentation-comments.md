@@ -59,7 +59,7 @@ export fn over(merge, transform) {
 python scripts/stdlib_docs.py --el-root /path/to/el
 python scripts/stdlib_docs.py --el-root /path/to/el --check
 python -m unittest discover -s tests -v
-mkdocs build --strict
+python scripts/build_site.py build
 ```
 
 只依赖 Python 3.10 及以上版本的标准库。默认写入 `docs/stdlib/api`，也可以用 `--output` 指定独立目录。输出是确定性的 UTF-8/LF；未变化页面不重写。生成前检查所有文档与引用；格式错误、重复身份、悬空引用及过期检查均返回非零状态。
@@ -80,6 +80,8 @@ mkdocs build --strict
 - 声明元数据：`initializer` 保存可安全分离的变量初始化表达式，`value_type`、`owner` 和 `return_type` 保存词法可识别的变量类型、文档成员归属和返回类型；未知项为空。这些字段不是编译器类型检查结果。
 - `environment`：从标准库入口的显式重导出名字表追踪默认可见名字、原声明位置及可对应的文档身份。同模块重载族保留为一组；未解析或来源有歧义时保留名字而不猜定义。
 - `exports`：模块公开名字到原已注释 API 身份的词法映射，支持显式重导出别名；未解析的项目不发布映射。
+- `types`：类、接口、枚举、类型别名与类型工厂的源码声明，包含未写 API 注释的定义；[类型索引](api/types.md)展示原始声明与可安全提取的初始化表达式。
+- `type_references`：API 声明的类型表达式内各名字及其定义来源；按声明所在模块的本地绑定、导入和词法作用域解析，联合和泛型表达式中的名字分别链接。泛型类型参数、长度等值参数链接到所属声明；条件重导出链接到实际选择规则，不擅自选定目标分支。未知来源不按全库同名猜测。
 - `sections`：`tag`、`value`、`markdown`；示例还包含 `code`、可空的 `expected_stdout` 和 `verification`。
 - `coverage`：扫描文件数、已标注文件数和 API 条目数；不伪装成全库公开符号覆盖率。
 
@@ -89,7 +91,7 @@ API 身份采用“相对模块路径去掉 `.el` + `::` + 文档名字”，成
 
 EL 代码块中的点状下划线表示可点击的参考链接。例如 `console.stdout.writeLine` 的三个名字分别链接变量、成员端口与写入方法；声明页的类型字段继续链接可唯一识别的类型条目。链接在构建时生成，复制代码时仍得到原来的纯文本。
 
-`hooks/code_links.py` 消费同一份 `api.json`：默认名字来自 `environment`，具名导入及别名通过 `exports` 和原模块定位，已知成员链通过声明类型与返回类型继续查找。显式简单类型注解可用于定位局部变量的成员，但变量本身不冒充某个全局 API。语言关键词和相关属性链接到对应语言参考。
+`scripts/build_site.py` 先验证生成快照完整，再由 Zensical 构建页面，最后生成代码跳转并验证站内链接。`hooks/code_links.py` 消费同一份 `api.json`：默认名字来自 `environment`，具名导入及别名通过 `exports` 和原模块定位，已知成员链通过声明类型与返回类型继续查找。显式简单类型注解可用于定位局部变量的成员，但变量本身不冒充某个全局 API。语言关键词和相关属性链接到对应语言参考。
 
 这不是编译器的语义导航。局部声明和函数参数遮盖默认名字时保守取消链接；未知接收者、复杂类型推断、宏生成成员和无法确定的导入保持原样。字符串、模板和注释不生成符号链接。构建结束会对实际生成的代码链接逐项检查页面与锚点，缺失即构建失败。
 

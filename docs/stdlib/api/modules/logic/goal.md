@@ -18,7 +18,7 @@
 export fn unify(left: Term, right: Term): Goal
 ```
 
-**返回类型**：`Goal`
+**返回类型**：[`Goal`](../../types.md#api-8930273b0777ef965836)
 
 要求两个逻辑项统一，并将所得绑定传递给后续目标。
 
@@ -42,7 +42,7 @@ let goal = unify(variable(0), atom("Ada"))
 export fn dif(left: Term, right: Term): Goal
 ```
 
-**返回类型**：`Goal`
+**返回类型**：[`Goal`](../../types.md#api-8930273b0777ef965836)
 
 延迟检查两个逻辑项不可相等的约束。
 
@@ -66,7 +66,7 @@ let goal = dif(variable(0), atom("Ada"))
 export fn call(term: Term): Goal
 ```
 
-**返回类型**：`Goal`
+**返回类型**：[`Goal`](../../types.md#api-8930273b0777ef965836)
 
 调用由构造子项表示的关系。
 
@@ -88,7 +88,7 @@ let goal = call(compound("person", @[variable(0)]))
 export fn all(goals: Goal[]): Goal
 ```
 
-**返回类型**：`Goal`
+**返回类型**：[`Goal`](../../types.md#api-8930273b0777ef965836)
 
 按顺序执行一组目标，并在目标间传递逻辑绑定。
 
@@ -110,7 +110,7 @@ let goal = all(@[call(compound("person", @[x])), dif(x, atom("Ada"))])
 export fn choice(goals: Goal[]): Goal
 ```
 
-**返回类型**：`Goal`
+**返回类型**：[`Goal`](../../types.md#api-8930273b0777ef965836)
 
 构造一组可选逻辑分支；各分支独立枚举答案。
 

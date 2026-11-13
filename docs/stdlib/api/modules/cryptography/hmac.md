@@ -18,7 +18,7 @@
 export fn hmac_sha256(key: Number[], message: Number[]): Number[]
 ```
 
-**返回类型**：`Number[]`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[]
 
 使用 HMAC-SHA256 对消息生成认证标签。
 
@@ -45,7 +45,7 @@ let tag = hmac_sha256(@[1, 2, 3], @[4, 5])
 export fn hmac_verify(key: Number[], message: Number[], tag: Number[]): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
 
 验证消息的 HMAC-SHA256 标签；比较 32 字节标签时调用 constant_time_equal。
 

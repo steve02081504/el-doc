@@ -105,7 +105,7 @@ let options = HttpOptions(@{ timeout: 5000 })
 let method: Text
 ```
 
-**类型**：`Text`
+**类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
 
 请求使用的 HTTP 方法，默认是 GET。
 
@@ -123,7 +123,7 @@ let options = HttpOptions(@{ method: "POST" })
 let headers: HttpHeader[]
 ```
 
-**类型**：`HttpHeader[]`
+**类型**：[`HttpHeader`](model.md#api-de461259064c77488732)[]
 
 要发送的请求头数组。
 
@@ -141,7 +141,7 @@ let options = HttpOptions(@{ headers: @[HttpHeader("Accept", "application/json")
 let body: Number[]
 ```
 
-**类型**：`Number[]`
+**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)[]
 
 要发送的请求体字节；GET 与 HEAD 不接受非空请求体。
 
@@ -159,7 +159,7 @@ let options = HttpOptions(@{ method: "POST", body: @[65, 66] })
 let timeout: Number
 ```
 
-**类型**：`Number`
+**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
 
 请求超时毫秒数，默认 30000，必须为正数。
 
@@ -177,7 +177,7 @@ let options = HttpOptions(@{ timeout: 5000 })
 let maximumBodyBytes: Number | void_t
 ```
 
-**类型**：`Number | void_t`
+**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4) | [`void_t`](../../language/values.md#api-d7b419fab395eef3d142)
 
 请求或响应消息体字节上限；void 表示不设显式上限。
 
@@ -195,7 +195,7 @@ let options = HttpOptions(@{ maximumBodyBytes: 1048576 })
 let maximumHeaderBytes: Number
 ```
 
-**类型**：`Number`
+**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
 
 请求与响应头的最大字节数。
 
@@ -213,7 +213,7 @@ let options = HttpOptions(@{ maximumHeaderBytes: 16384 })
 let maximumRedirects: Number
 ```
 
-**类型**：`Number`
+**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
 
 允许跟随的最大重定向次数。
 
@@ -231,7 +231,7 @@ let options = HttpOptions(@{ maximumRedirects: 0 })
 let forceRefresh: Bool
 ```
 
-**类型**：`Bool`
+**类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 请求是否绕过可复用的缓存响应。
 
@@ -249,7 +249,7 @@ let options = HttpOptions(@{ forceRefresh: t })
 let tls: TlsOptions
 ```
 
-**类型**：`TlsOptions`
+**类型**：[`TlsOptions`](../../../types.md#api-d66684475437485e3301)
 
 HTTPS 请求使用的 TLS 配置。
 
@@ -304,7 +304,7 @@ console.stdout.writeLine(response.status, " ", response.ok)
 let status: Number
 ```
 
-**类型**：`Number`
+**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
 
 HTTP 状态码。
 
@@ -322,7 +322,7 @@ console.stdout.writeLine(response.status)
 let headers: HttpHeader[]
 ```
 
-**类型**：`HttpHeader[]`
+**类型**：[`HttpHeader`](model.md#api-de461259064c77488732)[]
 
 响应头列表。
 
@@ -340,7 +340,7 @@ console.stdout.writeLine(response.headers.count)
 let body: Number[]
 ```
 
-**类型**：`Number[]`
+**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)[]
 
 响应体的原始字节。
 
@@ -358,7 +358,7 @@ console.stdout.writeLine(response.body.count)
 let url: Text
 ```
 
-**类型**：`Text`
+**类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
 
 请求跟随重定向后的最终 URL。
 
@@ -376,7 +376,7 @@ console.stdout.writeLine(response.url)
 get ok(): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 判断状态码是否位于 200 到 299 的成功范围。
 
@@ -396,7 +396,7 @@ if (response.ok) console.stdout.writeLine("success")
 fn text(): Text
 ```
 
-**返回类型**：`Text`
+**返回类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
 
 将响应体按 UTF-8 解码为文本；拒绝未解码的非 identity 内容编码。
 
@@ -418,7 +418,7 @@ console.stdout.writeLine(response.text())
 fn json(limits: JsonLimits = JsonLimits()): any
 ```
 
-**返回类型**：`any`
+**返回类型**：[`any`](../../../../../reference/language/types.md)
 
 将响应文本解析为 JSON 值。
 
@@ -464,7 +464,7 @@ let config = response.as(formats.JSON)
 fn header(name: Text): Text | void_t
 ```
 
-**返回类型**：`Text | void_t`
+**返回类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a) | [`void_t`](../../language/values.md#api-d7b419fab395eef3d142)
 
 按大小写无关的名称查找首个响应头。
 

@@ -141,6 +141,14 @@ class GenerationTests(unittest.TestCase):
 		self.assertIn("[math.el:12](modules/math.md#api-", page)
 		self.assertIn("`count`", page)
 
+	def test_environment_follows_declarations_with_qualified_attributes(self):
+		(self.stdlib / "index.el").write_text('export lazy import { Truth } from "file:./truth.el"\n')
+		(self.stdlib / "truth.el").write_text('export @builtin:jahu:xata class Truth {}\n')
+		item, = collect(self.root)["environment"]
+		self.assertEqual(item["name"], "Truth")
+		self.assertEqual(item["source"], "truth.el")
+		self.assertIn("class Truth", item["signature"])
+
 	def test_environment_keeps_same_module_overload_families(self):
 		(self.stdlib / "index.el").write_text('export lazy import { increment, Widget } from "file:./math.el"\n')
 		(self.stdlib / "math.el").write_text(DOCUMENT + '\nexport fn increment(value: Text): Text => value\nexport class Widget {}\nexport fn Widget(): type {}\n')
@@ -227,6 +235,49 @@ class GenerationTests(unittest.TestCase):
 		self.assertIn("[`Bool`](../types.md#api-", page)
 		self.assertIn("reference/language/foreign.md", page)
 		self.assertIn("let Bool: type = t_t | nil_t", render(model)["types.md"])
+
+	def test_lexical_factory_and_value_parameters_and_local_alias(self):
+		doc = DOCUMENT.replace("@api increment", "@api Box.item").replace("export fn increment(value: Number): Number => value + 1", "fn item(start: Number, end: Number): Entry<element: element, size: end - start> { return value }")
+		(self.stdlib / "math.el").write_text('export fn Box(element: type): type {\n let Entry: type = element\n class BoxValue {\n' + doc + '}\n}\n')
+		model = collect(self.root)
+		entry = next(e for e in model["entries"] if e["name"] == "Box.item")
+		refs = {ref["name"]: ref["target"] for ref in entry["type_references"]["return_type"]}
+		self.assertEqual(refs["element"]["parameter_kind"], "type")
+		self.assertEqual(refs["start"]["parameter_kind"], "value")
+		self.assertEqual(refs["end"]["parameter_kind"], "value")
+		self.assertEqual(refs["Entry"]["type"], "definition")
+		page = render(model)["types.md"]
+		for target in refs.values(): self.assertIn(target["fragment"], page)
+
+	def test_multiline_export_attributes_resolve_imported_type(self):
+		(self.stdlib / "types.el").write_text('export @assign(mode: "copy")\n@defaults(options: @{})\nclass Reader {}\n')
+		doc = DOCUMENT.replace("export fn increment(value: Number): Number => value + 1", "export fn increment(): Reader { return value }")
+		(self.stdlib / "math.el").write_text('import { Reader } from "file:./types.el"\n' + doc)
+		entry = next(e for e in collect(self.root)["entries"] if e["name"] == "increment")
+		self.assertEqual(entry["type_references"]["return_type"][0]["target"]["source"], "types.el")
+
+	def test_conditional_export_links_selection_without_picking_branch(self):
+		selection = 'if (target()) {\n export { Word as W } from "file:./fast.el"\n} else {\n export { Other as W } from "file:./slow.el"\n}\n'
+		(self.stdlib / "choice.el").write_text(selection)
+		(self.stdlib / "fast.el").write_text("export class Word {}\n")
+		(self.stdlib / "slow.el").write_text("export class Other {}\n")
+		doc = DOCUMENT.replace("export fn increment(value: Number): Number => value + 1", "export fn increment(): Alias { return value }")
+		(self.stdlib / "math.el").write_text('import { W as Alias } from "file:./choice.el"\n' + doc)
+		model = collect(self.root)
+		entry = next(e for e in model["entries"] if e["name"] == "increment")
+		target = entry["type_references"]["return_type"][0]["target"]
+		self.assertEqual(target["type"], "conditional")
+		self.assertEqual(target["source"], "choice.el")
+		self.assertIsNone(target["id"])
+		definition = next(x for x in model["types"] if x.get("conditional"))
+		self.assertEqual(definition["signature"], selection.strip())
+		page = render(model)["types.md"]
+		self.assertIn(target["fragment"], page)
+		self.assertIn('file:./fast.el', page)
+		self.assertIn('file:./slow.el', page)
+		(self.stdlib / "choice.el").write_text(selection.replace('export { Other as W }', 'export { Other as Missing }'))
+		entry = next(e for e in collect(self.root)["entries"] if e["name"] == "increment")
+		self.assertIsNone(entry["type_references"]["return_type"][0]["target"])
 
 	def test_determinism_check_and_stale_cleanup(self):
 		pages = render(collect(self.root))

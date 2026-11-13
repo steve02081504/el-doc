@@ -25,7 +25,7 @@
 export fn TextFormat(output: type, input: type = output): type
 ```
 
-**返回类型**：`type`
+**返回类型**：[`type`](../../../../reference/language/types.md)
 
 创建文本格式对象，按需解码文本，并可选提供反向编码器。
 
@@ -123,7 +123,7 @@ let rows = readFileAs(formats.CSV, "file:./table.csv")
 export const formats = Formats()
 ```
 
-**类型**：`Formats`
+**类型**：[`Formats`](../../types.md#api-6768ac9ca087f5de0440)
 
 标准格式对象集合，提供 Text、JSON、YAML、CSV 等格式值。
 

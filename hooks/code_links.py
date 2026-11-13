@@ -11,6 +11,7 @@ import importlib.util
 from html import escape, unescape
 from html.parser import HTMLParser
 import json
+import os
 from pathlib import Path
 import posixpath
 import re
@@ -343,10 +344,13 @@ class CodeLinker(HTMLParser):
 				self.replacements.append((raw_start, raw_start + len(raw), "".join(pieces)))
 
 	def render(self):
-		result = self.html
-		for start, end, replacement in reversed(sorted(self.replacements)):
-			result = result[:start] + replacement + result[end:]
-		return result
+		pieces = []
+		cursor = 0
+		for start, end, replacement in sorted(self.replacements):
+			pieces.extend((self.html[cursor:start], replacement))
+			cursor = end
+		pieces.append(self.html[cursor:])
+		return "".join(pieces)
 
 
 _catalog = None
@@ -420,17 +424,18 @@ class PageIndex(FragmentIndex):
 def validate_site(site_dir):
 	"""Check actual rendered internal hyperlinks, including generated type links."""
 	site_dir = Path(site_dir).resolve()
-	pages = {path.resolve(): PageIndex(path.read_text(encoding="utf-8")) for path in site_dir.rglob("*.html")}
+	files = {path for path in site_dir.rglob("*") if path.is_file()}
+	pages = {path: PageIndex(path.read_text(encoding="utf-8")) for path in files if path.suffix == ".html"}
 	count = 0
 	for path, page in pages.items():
 		for href in page.links:
 			url = urlsplit(href)
 			if url.scheme or url.netloc or url.path.startswith("/"):
 				continue
-			target = (path.parent / unquote(url.path)).resolve() if url.path else path
-			if target.is_dir():
+			target = Path(os.path.normpath(path.parent / unquote(url.path))) if url.path else path
+			if target / "index.html" in pages:
 				target /= "index.html"
-			if not target.is_relative_to(site_dir) or not target.is_file():
+			if not target.is_relative_to(site_dir) or target not in files:
 				raise ValueError(f"missing site link: {path.relative_to(site_dir)} -> {href}")
 			if url.fragment and target in pages and unquote(url.fragment) not in pages[target].ids:
 				raise ValueError(f"missing site anchor: {path.relative_to(site_dir)} -> {href}")

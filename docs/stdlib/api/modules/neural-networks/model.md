@@ -22,7 +22,7 @@
 export fn Linear(input: Number, output: Number): Layer
 ```
 
-**返回类型**：`Layer`
+**返回类型**：[`Layer`](../../types.md#api-ae837ac9d0c0c17cc8d9)
 
 创建全连接层，前向计算输入与转置权重的矩阵积并加上偏置。
 
@@ -50,7 +50,7 @@ console.stdout.writeLine(layer.input, " -> ", layer.output)
 export fn ReLU(): Layer
 ```
 
-**返回类型**：`Layer`
+**返回类型**：[`Layer`](../../types.md#api-ae837ac9d0c0c17cc8d9)
 
 创建逐元素整流线性单元层，将负值变为零。
 
@@ -70,7 +70,7 @@ let layer = ReLU()
 export fn Sequential(element: type, storage: type = Tensor<element: element>): type
 ```
 
-**返回类型**：`type`
+**返回类型**：[`type`](../../../../reference/language/types.md)
 
 创建按顺序应用层列表的模型类型，可选择元素类型和参数存储类型。
 
@@ -96,7 +96,7 @@ let model = Network(@[Linear(2, 4), ReLU(), Linear(4, 1)], seed: 1)
 fn forward(input: Values): Values
 ```
 
-**返回类型**：`Values`
+**返回类型**：[`Values`](../../types.md#api-c0b0b3479fb3a5e71dee)
 
 依次执行模型中的各层并返回前向结果；Linear 使用权重转置与偏置，ReLU 对负值置零。
 

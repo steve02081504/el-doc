@@ -59,6 +59,8 @@
 | [BitSet.rotateLeft](modules/collections/sets/bit-set.md#api-5e4f408fca127d781277) | `collections/sets/bit-set.el` |
 | [BitSet.rotateRight](modules/collections/sets/bit-set.md#api-4e27c28ecd1abebd4b77) | `collections/sets/bit-set.el` |
 | [BitSet.toNumber](modules/collections/sets/bit-set.md#api-a461f9fa010d45dc6fa5) | `collections/sets/bit-set.el` |
+| [Bool~condition](modules/language/values.md#api-3bcf0c5bba9b54c4a14d) | `language/values.el` |
+| [Bool~type](modules/language/values.md#api-3f0af31783849ef30c6e) | `language/values.el` |
 | [calendarAt](modules/time/calendar.md#api-3adcdd1b11385bb4eac1) | `time/calendar.el` |
 | [call](modules/logic/goal.md#api-ba744e200119324d52ac) | `logic/goal.el` |
 | [capture](modules/console/facade.md#api-db1d137769d65c8ddae2) | `console/facade.el` |
@@ -261,8 +263,12 @@
 | [NetworkError.code](modules/network/errors.md#api-0daf359682bcfc8d6e85) | `network/errors.el` |
 | [NetworkError.detail](modules/network/errors.md#api-bba6955c6787070c5b63) | `network/errors.el` |
 | [NetworkError.operation](modules/network/errors.md#api-53e0c3fc1ec8e63196e5) | `network/errors.el` |
+| [nil](modules/language/values.md#api-4bd0d9b4e484c9dd0771) | `language/values.el` |
+| [nil_t](modules/language/values.md#api-86357ad50ef0535f6333) | `language/values.el` |
 | [none](modules/collections/arrays/operations.md#api-1e145e1a1577e85ae421) | `collections/arrays/operations.el` |
 | [notEqual](modules/functions/comparison.md#api-38d267c230a373d3b311) | `functions/comparison.el` |
+| [Number~constraints](modules/number/number.md#api-ad6f905ba12a9a7c223e) | `number/number.el` |
+| [Number~type](modules/number/number.md#api-3cc24d3ef702e8652fb4) | `number/number.el` |
 | [offsetText](modules/time/calendar.md#api-77dcea13bebddbd7baf5) | `time/calendar.el` |
 | [on](modules/user-interface/model.md#api-bec5c16251ba4e97600c) | `user-interface/model.el` |
 | [oneHot](modules/neural-networks/functional.md#api-956d05922bbc9c543e7d) | `neural-networks/functional.el` |
@@ -426,6 +432,8 @@
 | [sqrt](modules/mathematics/functions/elementary.md#api-fb173a899ba66d1e403d) | `mathematics/functions/elementary.el` |
 | [sum~all](modules/numerical-computing/reductions.md#api-d58fd8966d5de0726a4a) | `numerical-computing/reductions.el` |
 | [sum~axis](modules/numerical-computing/reductions.md#api-da20ccaa7740d44e7fec) | `numerical-computing/reductions.el` |
+| [t](modules/language/values.md#api-d518aa3528cdac961832) | `language/values.el` |
+| [t_t](modules/language/values.md#api-9d7782192c7a4073755a) | `language/values.el` |
 | [take](modules/collections/arrays/operations.md#api-9aad8a70644d002e329e) | `collections/arrays/operations.el` |
 | [Tensor](modules/numerical-computing/tensor.md#api-7c7e7cebd20d307966e1) | `numerical-computing/tensor.el` |
 | [Tensor.count](modules/numerical-computing/tensor.md#api-8f71ce2d0b728ce22cc4) | `numerical-computing/tensor.el` |
@@ -461,7 +469,11 @@
 | [Text.split](modules/text/text.md#api-571742e199721a51aeb1) | `text/text.el` |
 | [Text.startsWith](modules/text/text.md#api-92f3f2d6c9caa632ff40) | `text/text.el` |
 | [Text.trimEndChars](modules/text/text.md#api-3f97c8338da803f449ff) | `text/text.el` |
+| [text_scalar](modules/text/text.md#api-0d11d4c56187bc5fad70) | `text/text.el` |
 | [TextFormat](modules/formats/index.md#api-c603856b0e561e7ac3e8) | `formats/index.el` |
+| [TextView~constraints](modules/text/text.md#api-0c1cf6c54bcc86167e47) | `text/text.el` |
+| [Text~constraints](modules/text/text.md#api-82ffe95d03da0efc6fde) | `text/text.el` |
+| [Text~type](modules/text/text.md#api-6116e54b075df026a90a) | `text/text.el` |
 | [Theme](modules/theme/model.md#api-2f8f76e6db4068dfe678) | `theme/model.el` |
 | [ThemeContext](modules/theme/model.md#api-49fc863aa032653764b7) | `theme/model.el` |
 | [ThemeValues](modules/theme/model.md#api-a5393d1df1641800ca1f) | `theme/model.el` |
@@ -471,6 +483,8 @@
 | [valueAndGrad](modules/neural-networks/model.md#api-74a208b8786c54fae08b) | `neural-networks/model.el` |
 | [variable](modules/logic/term.md#api-c456fe7ff5956d254aa2) | `logic/term.el` |
 | [variable_scope](modules/logic/term.md#api-eca5da0b5d022e6d8dc0) | `logic/term.el` |
+| [void](modules/language/values.md#api-9df4f08e67ebcfb3d76a) | `language/values.el` |
+| [void_t](modules/language/values.md#api-d7b419fab395eef3d142) | `language/values.el` |
 | [WavWriter](modules/multimedia/audio/wav.md#api-fccc5e339fd9a3fa8554) | `multimedia/audio/wav.el` |
 | [whole](modules/time/units.md#api-8e669783c5c018bc539e) | `time/units.el` |
 | [Window](modules/user-interface/platform/windows/window.md#api-9dc34e68c5ad778621d4) | `user-interface/platform/windows/window.el` |

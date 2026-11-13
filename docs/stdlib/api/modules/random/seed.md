@@ -18,7 +18,7 @@
 export fn generateSeed(): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 从当前平台的系统熵来源取得随机种子。
 
@@ -40,7 +40,7 @@ let seed = generateSeed()
 export fn automaticSeed(): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 优先取得系统随机种子；熵不可用时使用当前墙上时间纳秒构造种子。
 

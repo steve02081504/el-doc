@@ -18,7 +18,7 @@
 export fn leapYear(year: Number): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
 
 按公历 400 年规则判断指定年份是否为闰年。
 
@@ -42,7 +42,7 @@ leapYear(2000)
 export fn monthDays(year: Number, month: Number): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 返回该年月的天数；二月按闰年规则处理。
 
@@ -70,7 +70,7 @@ monthDays(2024, 2)
 export fn epochDay(year: Number, month: Number, day: Number): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 将公历年月日换算为自 1970-01-01 起的日数。
 
@@ -100,7 +100,7 @@ epochDay(1970, 1, 2)
 export fn yearAtSeconds(seconds: Number): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 返回 Unix 秒数对应 UTC 日期所在的公历年份。
 
@@ -126,7 +126,7 @@ yearAtSeconds(0)
 export fn calendarAt(nanoseconds: Number, offset: TimeDiff = TimeDiff()): CalendarTime
 ```
 
-**返回类型**：`CalendarTime`
+**返回类型**：[`CalendarTime`](../../types.md#api-3e2d30f2355f28e55020)
 
 把 Unix 纳秒和偏移量分解为公历字段。
 
@@ -154,7 +154,7 @@ calendarAt(0).year
 export fn offsetText(offset: TimeDiff): Text
 ```
 
-**返回类型**：`Text`
+**返回类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
 
 将偏移量格式化为带符号的时区偏移文本。
 

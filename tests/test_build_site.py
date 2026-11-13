@@ -1,6 +1,7 @@
 """Checks for generated navigation and random-page URLs."""
 
 import importlib.util
+import hashlib
 import json
 from pathlib import Path
 import tempfile
@@ -17,6 +18,22 @@ def load(name):
 
 
 class SiteAssetsTest(unittest.TestCase):
+    def test_incomplete_type_snapshot_fails_before_build(self):
+        spec = importlib.util.spec_from_file_location("build_site", ROOT / "scripts/build_site.py")
+        builder = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(builder)
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            content = b"generated"
+            manifest = {name: hashlib.sha256(content).hexdigest() for name in ("api.json", "index.md", "environment.md", "types.md")}
+            (root / ".generated.json").write_text(json.dumps(manifest), encoding="utf-8")
+            for name in ("api.json", "index.md", "environment.md"):
+                (root / name).write_bytes(content)
+            with self.assertRaisesRegex(ValueError, "missing types.md"):
+                builder.validate_snapshot(root)
+            (root / "types.md").write_bytes(content)
+            builder.validate_snapshot(root)
+
     def test_random_page_urls_match_directory_urls(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

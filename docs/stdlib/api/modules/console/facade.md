@@ -66,7 +66,7 @@ let input = console.stdin
 get isTTY(): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
 
 当前输入端是否为终端。
 
@@ -84,7 +84,7 @@ let terminal = console.stdin.isTTY
 get supportsAnsi(): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
 
 当前输入端是否支持 ANSI。
 
@@ -141,7 +141,7 @@ let output = console.stdout
 get channel(): ConsoleChannel
 ```
 
-**返回类型**：`ConsoleChannel`
+**返回类型**：[`ConsoleChannel`](../../types.md#api-014dddb6e6d5af8b8537)
 
 此端口的逻辑通道。
 
@@ -159,7 +159,7 @@ let channel = console.stdout.channel
 get isTTY(): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
 
 当前目标对应输出端是否为终端。
 
@@ -177,7 +177,7 @@ let terminal = console.stdout.isTTY
 get supportsAnsi(): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
 
 当前目标对应输出端是否支持 ANSI。
 
@@ -195,7 +195,7 @@ let ansi = console.stdout.supportsAnsi
 @discardable fn writeText(text: Text): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 将已确定的文本直接写到对应通道，不调用任意值的文本转换。
 
@@ -217,7 +217,7 @@ console.stdout.writeText("already text")
 @discardable fn write(...values): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 将参数依次转换为文本写到对应通道，不追加换行或分隔符。
 
@@ -239,7 +239,7 @@ console.stdout.write("ready")
 @discardable fn writeLine(...values): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 将参数依次转换为文本并写到对应通道，最后追加一个 LF。
 
@@ -261,7 +261,7 @@ console.stdout.writeLine("count: ", 3)
 @discardable fn writeBytes(bytes: Buffer): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
 将字节缓冲原样写到对应通道，不进行文本编码。
 
@@ -284,7 +284,7 @@ console.stdout.writeBytes(bufferFromBytes(@[72, 105]))
 fn emit(value): void_t
 ```
 
-**返回类型**：`void_t`
+**返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
 
 将值作为数据记录发送到对应通道，不转换成文本或结构化展示记录。
 
@@ -350,7 +350,7 @@ console.info.value(@{ count: 3 })
 get level(): ConsoleLevel
 ```
 
-**返回类型**：`ConsoleLevel`
+**返回类型**：[`ConsoleLevel`](../../types.md#api-bcca0db28d7f511b4f1f)
 
 此端口的日志等级。
 
@@ -368,7 +368,7 @@ let level = console.info.level
 get channel(): ConsoleChannel
 ```
 
-**返回类型**：`ConsoleChannel`
+**返回类型**：[`ConsoleChannel`](../../types.md#api-014dddb6e6d5af8b8537)
 
 此端口的默认通道。
 
@@ -386,7 +386,7 @@ let channel = console.info.channel
 fn enabled(): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
 
 查询此端口的等级是否被当前筛选器和纯上下文规则允许。
 
@@ -430,7 +430,7 @@ console.info("task.done", @{ count: 3 })
 fn value(snapshot: ConsoleValueSnapshot, channel: ConsoleChannel = this.#channel): void_t
 ```
 
-**返回类型**：`void_t`
+**返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
 
 将已有安全快照作为指定等级的结构化展示记录发送。
 
@@ -454,7 +454,7 @@ console.info.value(consoleSnapshot(@{ count: 3 }))
 fn value(borrow value, channel: ConsoleChannel = this.#channel): void_t
 ```
 
-**返回类型**：`void_t`
+**返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
 
 获取值的安全快照并作为结构化展示记录发送，不调用 getter、转换或迭代器。
 
@@ -678,7 +678,7 @@ console.trace("request.start", @{ path: "/" })
 fn enabled(level: ConsoleLevel): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../language/values.md#api-3f0af31783849ef30c6e)
 
 查询指定等级是否被此 facade 的筛选器和纯上下文规则允许。
 

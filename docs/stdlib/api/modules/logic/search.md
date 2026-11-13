@@ -73,7 +73,7 @@ if (!step.done) consume(step.value)
 fn next(): IterationStep<element: Term>
 ```
 
-**返回类型**：`IterationStep<element: Term>`
+**返回类型**：[`IterationStep`](../../types.md#api-e4b3e3cc13c7cec14564)<element: [`Term`](term.md#api-7560e808aaee9c6517d2)>
 
 继续搜索并返回下一项地面 Term；耗尽时返回 done 步骤。
 

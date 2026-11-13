@@ -48,7 +48,7 @@ console.stdout.writeLine(Number(seed))
 export fn seed_bits(seed: Number): Word64
 ```
 
-**返回类型**：`Word64`
+**返回类型**：[`Word64`](../../types.md#api-1a7ac63dc0ed74edb7d6)
 
 校验数值种子并将其转换为库的无符号 64 位字类型。取值范围为包含零、不包含 2^64，与宿主原生整数宽度无关。
 

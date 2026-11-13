@@ -12,7 +12,7 @@
 export fn solve(borrow input: Matrix, borrow right: Matrix): Matrix
 ```
 
-**返回类型**：`Matrix`
+**返回类型**：[`Matrix`](../../types.md#api-621bba5091173b4178ef)
 
 用精确 Number 消元求解方阵系统 A X = B；不使用浮点主元阈值。
 

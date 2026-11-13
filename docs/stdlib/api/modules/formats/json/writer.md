@@ -18,7 +18,7 @@
 export fn writeJSON(value: any, limits: JsonLimits = JsonLimits()): Text
 ```
 
-**返回类型**：`Text`
+**返回类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
 
 将 EL 值编码为严格 JSON 文本，并按给定限制控制递归与输出规模。
 

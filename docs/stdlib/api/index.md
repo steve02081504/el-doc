@@ -4,9 +4,9 @@
 
 [结构化文档数据](api.json)
 
-已标注文档的文件：95 / 3630；API 条目：480。此比例不是公开 API 覆盖率。
+已标注文档的文件：97 / 3630；API 条目：494。此比例不是公开 API 覆盖率。
 
-[按模块查找](modules.md) · [按符号查找](symbols.md) · [默认环境](environment.md)
+[按模块查找](modules.md) · [按符号查找](symbols.md) · [默认环境](environment.md) · [类型定义](types.md)
 
 ## 按库分类
 
@@ -21,16 +21,17 @@
 | [formats](categories/formats.md) | 9 | 16 |
 | [functions](categories/functions.md) | 2 | 7 |
 | [graphics](categories/graphics.md) | 2 | 13 |
-| [language](categories/language.md) | 1 | 4 |
+| [language](categories/language.md) | 2 | 12 |
 | [logic](categories/logic.md) | 5 | 17 |
 | [mathematics](categories/mathematics.md) | 2 | 7 |
 | [multimedia](categories/multimedia.md) | 7 | 34 |
 | [network](categories/network.md) | 6 | 35 |
 | [neural-networks](categories/neural-networks.md) | 7 | 28 |
+| [number](categories/number.md) | 1 | 2 |
 | [numerical-computing](categories/numerical-computing.md) | 6 | 33 |
 | [random](categories/random.md) | 3 | 18 |
 | [streams](categories/streams.md) | 1 | 2 |
-| [text](categories/text.md) | 5 | 36 |
+| [text](categories/text.md) | 5 | 40 |
 | [theme](categories/theme.md) | 2 | 4 |
 | [time](categories/time.md) | 4 | 15 |
 | [tools](categories/tools.md) | 4 | 14 |

@@ -41,7 +41,7 @@
 virtual get count(): Integer
 ```
 
-**返回类型**：`Integer`
+**返回类型**：[`Integer`](../../../types.md#api-45690472287900730a5f)
 
 返回数组中当前元素数量。
 
@@ -61,7 +61,7 @@ console.stdout.writeLine(@[10, 20, 30].count)
 @discardable virtual fn unshift(value: any): Array
 ```
 
-**返回类型**：`Array`
+**返回类型**：[`Array`](../../../types.md#api-02f04934b15030edb96d)
 
 将元素插入数组开头，并返回数组。
 
@@ -85,7 +85,7 @@ console.stdout.writeLine(values[0])
 export fn Array(element: type): type
 ```
 
-**返回类型**：`type`
+**返回类型**：[`type`](../../../../../reference/language/types.md)
 
 创建带元素类型的可变长数组类型，实例支持索引读写、增删和常用遍历操作。
 
@@ -109,7 +109,7 @@ console.stdout.writeLine(values.count)
 @discardable virtual fn push(value: element): Array
 ```
 
-**返回类型**：`Array`
+**返回类型**：[`Array`](../../../types.md#api-02f04934b15030edb96d)
 
 将一个元素追加到数组末尾，并返回数组以便继续链式操作。
 
@@ -133,7 +133,7 @@ console.stdout.writeLine(values[1])
 @discardable virtual fn pop(): element
 ```
 
-**返回类型**：`element`
+**返回类型**：[`element`](../../../types.md#api-6207c2be7b9194e457db)
 
 移除并返回数组末尾元素。
 
@@ -157,7 +157,7 @@ console.stdout.writeLine(last)
 @discardable virtual fn shift(): element
 ```
 
-**返回类型**：`element`
+**返回类型**：[`element`](../../../types.md#api-6207c2be7b9194e457db)
 
 移除并返回数组首元素。
 
@@ -181,7 +181,7 @@ console.stdout.writeLine(first)
 virtual fn clear(): void_t
 ```
 
-**返回类型**：`void_t`
+**返回类型**：[`void_t`](../../language/values.md#api-d7b419fab395eef3d142)
 
 原地移除全部元素；空数组调用后仍为空。
 
@@ -205,7 +205,7 @@ console.stdout.writeLine(values.count)
 fn some(predicate): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 判断是否至少有一个元素满足谓词；找到首个匹配项后即停止遍历。
 
@@ -227,7 +227,7 @@ console.stdout.writeLine(@[1, 30, 2].some(value => value > 20))
 fn all(predicate): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 判断所有元素是否都满足谓词；遇到首个不匹配项后即停止遍历。
 
@@ -313,7 +313,7 @@ console.stdout.writeLine(@[1, 2, 3].take(2).join(", "))
 fn indexOf(value: element): Number
 ```
 
-**返回类型**：`Number`
+**返回类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
 
 查找与给定值相等的第一个元素位置。
 
@@ -397,7 +397,7 @@ console.stdout.writeLine(values.reversed().join(", "))
 fn slice(start: Number, end: Number): FixedArray<element: element, length: end - start>
 ```
 
-**返回类型**：`FixedArray<element: element, length: end - start>`
+**返回类型**：[`FixedArray`](../../../types.md#api-8e0808f859fa2f98651f)<element: [`element`](../../../types.md#api-6207c2be7b9194e457db), length: [`end`](../../../types.md#api-c88e49e5917dcab9c75c) - [`start`](../../../types.md#api-322f684f4d6852360882)>
 
 返回指定左闭右开区间的定长切片。
 
@@ -422,7 +422,7 @@ console.stdout.writeLine(middle[0], middle[1])
 fn sliceDynamic(start: Number, end: Number): Array<element: element>
 ```
 
-**返回类型**：`Array<element: element>`
+**返回类型**：[`Array`](../../../types.md#api-02f04934b15030edb96d)<element: [`element`](../../../types.md#api-6207c2be7b9194e457db)>
 
 复制指定左闭右开区间，并返回变长数组。
 
@@ -447,7 +447,7 @@ console.stdout.writeLine(copy.join(", "))
 fn join(separator: Text = Text()): Text
 ```
 
-**返回类型**：`Text`
+**返回类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
 
 将元素依次转换为文本并用分隔文本连接。
 
@@ -491,7 +491,7 @@ console.stdout.writeLine(doubled.join(", "))
 fn includes(value: element): Bool
 ```
 
-**返回类型**：`Bool`
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 判断数组是否含有与给定值相等的元素。
 

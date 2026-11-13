@@ -7,7 +7,7 @@ edit_uri: edit/master/docs/
 copyright: Copyright &copy; 2026 steve02081504 · 本文档按 EL 语言规范编写
 
 theme:
-  name: material
+  variant: classic
   language: zh
   font: false
   logo: assets/evil-illusion.svg

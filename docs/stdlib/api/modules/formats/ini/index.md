@@ -18,7 +18,7 @@
 export fn parseINI(source: Text, limits: JsonLimits = JsonLimits()): any
 ```
 
-**返回类型**：`any`
+**返回类型**：[`any`](../../../../../reference/language/types.md)
 
 解析此模块支持的 INI 方言，生成嵌套动态对象，键和值均保持文本。
 

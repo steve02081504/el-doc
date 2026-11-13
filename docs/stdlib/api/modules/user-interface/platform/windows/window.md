@@ -140,7 +140,7 @@ discard(window.every(1000, tick => label.text = "更新"))
 fn getById(id: Text): ElementHandle
 ```
 
-**返回类型**：`ElementHandle`
+**返回类型**：[`ElementHandle`](../../../../types.md#api-39bd689370affc26fc34)
 
 按精确 id 获取当前呈现中的元素句柄。
 

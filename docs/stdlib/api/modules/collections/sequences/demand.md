@@ -176,7 +176,7 @@ console.stdout.writeLine(lazy @[-1, 2, 3].filter(value => value > 0).collect().j
 fn collect(): any[]
 ```
 
-**返回类型**：`any[]`
+**返回类型**：[`any`](../../../../../reference/language/types.md)[]
 
 迭代至序列结束，并将产生的元素收集到数组。
 

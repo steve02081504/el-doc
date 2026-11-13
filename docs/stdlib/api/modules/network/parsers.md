@@ -18,7 +18,7 @@
 export fn parseForm(source: Text): FormField[]
 ```
 
-**返回类型**：`FormField[]`
+**返回类型**：[`FormField`](../../types.md#api-f973a41aa0f5893b7825)[]
 
 解析 application/x-www-form-urlencoded 格式的字段序列。
 

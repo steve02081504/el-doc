@@ -23,7 +23,7 @@
 fn write(bytes: Number[]): WriteReceipt
 ```
 
-**返回类型**：`WriteReceipt`
+**返回类型**：[`WriteReceipt`](../../types.md#api-3e0e196b89972e8bb0b2)
 
 将字节数组快照写入目标位置并返回写入回执。
 
@@ -49,7 +49,7 @@ writer.close()
 fn close(): void_t
 ```
 
-**返回类型**：`void_t`
+**返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
 
 完成写入器并关闭底层资源。
 
