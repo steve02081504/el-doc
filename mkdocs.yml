@@ -107,7 +107,9 @@ nav:
       - 总览: reference/language/index.md
       - 词法与字面量: reference/language/lexical.md
       - 声明与绑定: reference/language/declarations.md
+      - 解构绑定: reference/language/destructuring.md
       - 类型: reference/language/types.md
+      - 泛型与约束: reference/language/generics.md
       - 左值、右值与亡值: reference/language/value-categories.md
       - 赋值、复制与共享: reference/language/assignment-semantics.md
       - 复制消除: reference/language/copy-elision.md

@@ -6,7 +6,9 @@
 |---|---|
 | 词法元素与字面量 | [词法元素](lexical.md) |
 | 声明与绑定 | [声明与绑定](declarations.md) |
+| 字段选择、默认值、嵌套与剩余项 | [解构绑定](destructuring.md) |
 | 类型 | [类型](types.md) |
+| 类型参数、值参数与候选约束 | [泛型与约束](generics.md) |
 | 位置、消费与移动后的状态 | [左值、右值与亡值](value-categories.md) |
 | 值对象、共享对象与引用参数 | [赋值、复制与共享](assignment-semantics.md) |
 | 直接交付、临时对象与必要的复制 | [复制消除](copy-elision.md) |
