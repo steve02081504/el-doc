@@ -12,7 +12,7 @@
 
 ## parseTOML {#api-3d751bf4576089574ccb}
 
-源码：`src/stdlib/formats/toml/index.el:264` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L264)
+源码：`src/stdlib/formats/toml/index.el:268` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L268)
 
 解析 TOML 文档并保留 TOML 值种类，包括日期时间、数组和表。
 
@@ -35,4 +35,31 @@ export fn parseTOML(source: Text, limits: JsonLimits = JsonLimits()): Toml
 ```el
 import { parseTOML } from "el:formats/toml/"
 let settings = parseTOML("port = 8080")
+```
+
+## writeTOML {#api-385192dc27d78c6eef68}
+
+源码：`src/stdlib/formats/toml/index.el:352` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L352)
+
+将 TOML 根表编码为文档，嵌套表使用内联表；数字必须能精确表示。
+
+```el
+export fn writeTOML(value: Toml, limits: JsonLimits = JsonLimits()): Text
+```
+
+**返回类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
+
+**参数**：value 要编码的 TOML 根表。
+
+**参数**：limits 输出字节、深度和工作预算。
+
+**返回值**：TOML 文本。
+
+**失败与异常**：根值不是表、键重复、值不可表示或超出限制时抛出异常。
+
+### 示例：编码设置
+
+```el
+import { parseTOML, writeTOML } from "el:formats/toml/"
+let text = writeTOML(parseTOML("port = 8080"))
 ```

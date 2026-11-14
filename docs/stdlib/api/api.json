@@ -684,7 +684,7 @@
 			"name": "Array",
 			"id": "collections/arrays/dynamic::Array",
 			"source": "collections/arrays/dynamic.el",
-			"line": 120,
+			"line": 129,
 			"signature": "export fn Array(element: type): type",
 			"value_type": null
 		},
@@ -780,7 +780,7 @@
 			"name": "assignFields",
 			"id": null,
 			"source": "language/objects.el",
-			"line": 32,
+			"line": 41,
 			"signature": "export fn assignFields(target, ...sources)",
 			"value_type": null
 		},
@@ -1260,7 +1260,7 @@
 			"name": "BufferFormat",
 			"id": null,
 			"source": "formats/index.el",
-			"line": 85,
+			"line": 97,
 			"signature": "export @assign(mode: \"copy\") class BufferFormat",
 			"value_type": null
 		},
@@ -1620,7 +1620,7 @@
 			"name": "ClassicArray",
 			"id": null,
 			"source": "collections/arrays/dynamic.el",
-			"line": 341,
+			"line": 350,
 			"signature": "export fn ClassicArray(element: type): type",
 			"value_type": null
 		},
@@ -3804,7 +3804,7 @@
 			"name": "destroyLocation",
 			"id": null,
 			"source": "memory/storage/dynamic.el",
-			"line": 27,
+			"line": 30,
 			"signature": "export fn destroyLocation(location)",
 			"value_type": null
 		},
@@ -4004,7 +4004,7 @@
 			"name": "DynamicArray",
 			"id": null,
 			"source": "collections/arrays/dynamic.el",
-			"line": 350,
+			"line": 359,
 			"signature": "export fn DynamicArray(element: type, count = -1): type",
 			"value_type": null
 		},
@@ -4012,7 +4012,7 @@
 			"name": "DynamicObject",
 			"id": null,
 			"source": "language/objects.el",
-			"line": 53,
+			"line": 62,
 			"signature": "export class DynamicObject",
 			"value_type": null
 		},
@@ -4020,7 +4020,7 @@
 			"name": "dynamicObject",
 			"id": null,
 			"source": "language/objects.el",
-			"line": 55,
+			"line": 64,
 			"signature": "export fn dynamicObject(source)",
 			"value_type": null
 		},
@@ -4324,7 +4324,7 @@
 			"name": "EodFormat",
 			"id": null,
 			"source": "formats/index.el",
-			"line": 78,
+			"line": 85,
 			"signature": "export @assign(mode: \"copy\") class EodFormat",
 			"value_type": null
 		},
@@ -4340,7 +4340,7 @@
 			"name": "EolFormat",
 			"id": null,
 			"source": "formats/index.el",
-			"line": 67,
+			"line": 68,
 			"signature": "export @assign(mode: \"copy\") class EolFormat",
 			"value_type": null
 		},
@@ -4724,7 +4724,7 @@
 			"name": "FileBuffer",
 			"id": null,
 			"source": "filesystem/buffer.el",
-			"line": 7,
+			"line": 9,
 			"signature": "export @assign(mode: \"shared\") class FileBuffer",
 			"value_type": null
 		},
@@ -5100,7 +5100,7 @@
 			"name": "formats",
 			"id": "formats/index::formats",
 			"source": "formats/index.el",
-			"line": 166,
+			"line": 234,
 			"signature": "export const formats",
 			"value_type": "Formats"
 		},
@@ -6108,7 +6108,7 @@
 			"name": "initializeLocation",
 			"id": null,
 			"source": "memory/storage/dynamic.el",
-			"line": 21,
+			"line": 24,
 			"signature": "export fn initializeLocation(location, value)",
 			"value_type": null
 		},
@@ -8124,7 +8124,7 @@
 			"name": "offsetLocation",
 			"id": null,
 			"source": "memory/storage/dynamic.el",
-			"line": 29,
+			"line": 32,
 			"signature": "export fn offsetLocation(location, count)",
 			"value_type": null
 		},
@@ -8404,7 +8404,7 @@
 			"name": "OrderedSet",
 			"id": null,
 			"source": "collections/sets/hash-set.el",
-			"line": 179,
+			"line": 180,
 			"signature": "export fn OrderedSet(element: type): type",
 			"value_type": null
 		},
@@ -8420,7 +8420,7 @@
 			"name": "ownKeys",
 			"id": null,
 			"source": "language/objects.el",
-			"line": 11,
+			"line": 20,
 			"signature": "export fn ownKeys(value): Array<element: Text>",
 			"value_type": null
 		},
@@ -8548,7 +8548,7 @@
 			"name": "parseCSV",
 			"id": "formats/delimited-text/index::parseCSV",
 			"source": "formats/delimited-text/index.el",
-			"line": 59,
+			"line": 61,
 			"signature": "export fn parseCSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]",
 			"value_type": null
 		},
@@ -8556,7 +8556,7 @@
 			"name": "parseDelimited",
 			"id": null,
 			"source": "formats/delimited-text/index.el",
-			"line": 8,
+			"line": 10,
 			"signature": "export fn parseDelimited(source: Text, delimiter: Text = \",\", limits: JsonLimits = JsonLimits()): Text[][]",
 			"value_type": null
 		},
@@ -8572,7 +8572,7 @@
 			"name": "parseINI",
 			"id": "formats/ini/index::parseINI",
 			"source": "formats/ini/index.el",
-			"line": 27,
+			"line": 33,
 			"signature": "export fn parseINI(source: Text, limits: JsonLimits = JsonLimits()): any",
 			"value_type": null
 		},
@@ -8644,7 +8644,7 @@
 			"name": "parseTOML",
 			"id": "formats/toml/index::parseTOML",
 			"source": "formats/toml/index.el",
-			"line": 264,
+			"line": 268,
 			"signature": "export fn parseTOML(source: Text, limits: JsonLimits = JsonLimits()): Toml",
 			"value_type": null
 		},
@@ -8652,7 +8652,7 @@
 			"name": "parseTSV",
 			"id": "formats/delimited-text/index::parseTSV",
 			"source": "formats/delimited-text/index.el",
-			"line": 71,
+			"line": 73,
 			"signature": "export fn parseTSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]",
 			"value_type": null
 		},
@@ -8660,7 +8660,7 @@
 			"name": "parseXML",
 			"id": "formats/xml/index::parseXML",
 			"source": "formats/xml/index.el",
-			"line": 157,
+			"line": 158,
 			"signature": "export fn parseXML(source: Text, limits: JsonLimits = JsonLimits()): XmlDocument",
 			"value_type": null
 		},
@@ -8668,7 +8668,7 @@
 			"name": "parseYAML",
 			"id": "formats/yaml/index::parseYAML",
 			"source": "formats/yaml/index.el",
-			"line": 368,
+			"line": 369,
 			"signature": "export fn parseYAML(source: Text, limits: JsonLimits = JsonLimits()): any",
 			"value_type": null
 		},
@@ -9732,7 +9732,7 @@
 			"name": "readField",
 			"id": null,
 			"source": "language/objects.el",
-			"line": 24,
+			"line": 33,
 			"signature": "export fn readField(value, key: Text)",
 			"value_type": null
 		},
@@ -9780,7 +9780,7 @@
 			"name": "readLocation",
 			"id": null,
 			"source": "memory/storage/dynamic.el",
-			"line": 23,
+			"line": 26,
 			"signature": "export fn readLocation(location)",
 			"value_type": null
 		},
@@ -10388,7 +10388,7 @@
 			"name": "relocateLocations",
 			"id": null,
 			"source": "memory/storage/dynamic.el",
-			"line": 31,
+			"line": 34,
 			"signature": "export fn relocateLocations(target, source, count)",
 			"value_type": null
 		},
@@ -10492,7 +10492,7 @@
 			"name": "replaceLocation",
 			"id": null,
 			"source": "memory/storage/dynamic.el",
-			"line": 25,
+			"line": 28,
 			"signature": "export fn replaceLocation(location, value)",
 			"value_type": null
 		},
@@ -11412,7 +11412,7 @@
 			"name": "SortedSet",
 			"id": null,
 			"source": "collections/sets/hash-set.el",
-			"line": 232,
+			"line": 234,
 			"signature": "export fn SortedSet(element: type): type",
 			"value_type": null
 		},
@@ -11572,7 +11572,7 @@
 			"name": "storageBorrowElement",
 			"id": null,
 			"source": "memory/storage/dynamic.el",
-			"line": 18,
+			"line": 21,
 			"signature": "export fn storageBorrowElement(storage, index)",
 			"value_type": null
 		},
@@ -11596,7 +11596,7 @@
 			"name": "storageLive",
 			"id": null,
 			"source": "memory/storage/dynamic.el",
-			"line": 16,
+			"line": 19,
 			"signature": "export fn storageLive(storage)",
 			"value_type": null
 		},
@@ -11620,7 +11620,7 @@
 			"name": "storageReadable",
 			"id": null,
 			"source": "memory/storage/dynamic.el",
-			"line": 32,
+			"line": 35,
 			"signature": "export @unsafeCall fn storageReadable(borrow storage)",
 			"value_type": null
 		},
@@ -12124,7 +12124,7 @@
 			"name": "TextFormat",
 			"id": "formats/index::TextFormat",
 			"source": "formats/index.el",
-			"line": 44,
+			"line": 45,
 			"signature": "export fn TextFormat(output: type, input: type = output): type",
 			"value_type": null
 		},
@@ -12132,7 +12132,7 @@
 			"name": "TextView",
 			"id": null,
 			"source": "text/text.el",
-			"line": 756,
+			"line": 764,
 			"signature": "export class TextView\nexport fn TextView(bitWidth = 0, size = 0): type",
 			"value_type": null
 		},
@@ -12300,7 +12300,7 @@
 			"name": "Toml",
 			"id": null,
 			"source": "formats/toml/index.el",
-			"line": 10,
+			"line": 14,
 			"signature": "export data Toml",
 			"value_type": null
 		},
@@ -12308,7 +12308,7 @@
 			"name": "TomlDateTimeKind",
 			"id": null,
 			"source": "formats/toml/index.el",
-			"line": 9,
+			"line": 13,
 			"signature": "export enum TomlDateTimeKind",
 			"value_type": null
 		},
@@ -12316,7 +12316,7 @@
 			"name": "tomlField",
 			"id": null,
 			"source": "formats/toml/index.el",
-			"line": 23,
+			"line": 27,
 			"signature": "export fn tomlField(value: Toml, key: Text): Toml",
 			"value_type": null
 		},
@@ -12324,7 +12324,7 @@
 			"name": "TomlMember",
 			"id": null,
 			"source": "formats/toml/index.el",
-			"line": 18,
+			"line": 22,
 			"signature": "export @assign(mode: \"copy\") class TomlMember",
 			"value_type": null
 		},
@@ -13140,7 +13140,7 @@
 			"name": "writeField",
 			"id": null,
 			"source": "language/objects.el",
-			"line": 25,
+			"line": 34,
 			"signature": "export fn writeField(value, key: Text, replacement)",
 			"value_type": null
 		},
@@ -13172,7 +13172,7 @@
 			"name": "writeJSON",
 			"id": "formats/json/writer::writeJSON",
 			"source": "formats/json/writer.el",
-			"line": 182,
+			"line": 183,
 			"signature": "export fn writeJSON(value: any, limits: JsonLimits = JsonLimits()): Text",
 			"value_type": null
 		},
@@ -13180,7 +13180,7 @@
 			"name": "writeJSON5",
 			"id": null,
 			"source": "formats/json/writer.el",
-			"line": 188,
+			"line": 189,
 			"signature": "export fn writeJSON5(value: any, limits: JsonLimits = JsonLimits()): Text",
 			"value_type": null
 		},
@@ -13188,7 +13188,7 @@
 			"name": "writeJSONC",
 			"id": null,
 			"source": "formats/json/writer.el",
-			"line": 187,
+			"line": 188,
 			"signature": "export fn writeJSONC(value: any, limits: JsonLimits = JsonLimits()): Text",
 			"value_type": null
 		},
@@ -13196,7 +13196,7 @@
 			"name": "writeJSONLines",
 			"id": null,
 			"source": "formats/json/writer.el",
-			"line": 191,
+			"line": 192,
 			"signature": "export fn writeJSONLines(values: ArrayBase, limits: JsonLimits = JsonLimits()): Text",
 			"value_type": null
 		},
@@ -13220,7 +13220,7 @@
 			"name": "XmlAttribute",
 			"id": null,
 			"source": "formats/xml/index.el",
-			"line": 8,
+			"line": 9,
 			"signature": "export @assign(mode: \"copy\") class XmlAttribute",
 			"value_type": null
 		},
@@ -13228,7 +13228,7 @@
 			"name": "XmlDocument",
 			"id": null,
 			"source": "formats/xml/index.el",
-			"line": 20,
+			"line": 21,
 			"signature": "export @assign(mode: \"copy\") class XmlDocument",
 			"value_type": null
 		},
@@ -13236,7 +13236,7 @@
 			"name": "XmlNode",
 			"id": null,
 			"source": "formats/xml/index.el",
-			"line": 13,
+			"line": 14,
 			"signature": "export data XmlNode",
 			"value_type": null
 		},
@@ -13576,11 +13576,16 @@
 			"writeTextFile": "filesystem/index::writeTextFile"
 		},
 		"formats/delimited-text/index": {
+			"FormatWriteError": "formats/internal/writer::FormatWriteError",
 			"parseCSV": "formats/delimited-text/index::parseCSV",
-			"parseTSV": "formats/delimited-text/index::parseTSV"
+			"parseTSV": "formats/delimited-text/index::parseTSV",
+			"writeCSV": "formats/delimited-text/index::writeCSV",
+			"writeDelimited": "formats/delimited-text/index::writeDelimited",
+			"writeTSV": "formats/delimited-text/index::writeTSV"
 		},
 		"formats/index": {
 			"FormatLimits": "formats/json/limits::JsonLimits",
+			"FormatWriteError": "formats/internal/writer::FormatWriteError",
 			"JsonLimits": "formats/json/limits::JsonLimits",
 			"TextFormat": "formats/index::TextFormat",
 			"formats": "formats/index::formats",
@@ -13592,13 +13597,25 @@
 			"parseTSV": "formats/delimited-text/index::parseTSV",
 			"parseXML": "formats/xml/index::parseXML",
 			"parseYAML": "formats/yaml/index::parseYAML",
-			"writeJSON": "formats/json/writer::writeJSON"
+			"writeCSV": "formats/delimited-text/index::writeCSV",
+			"writeDelimited": "formats/delimited-text/index::writeDelimited",
+			"writeINI": "formats/ini/index::writeINI",
+			"writeJSON": "formats/json/writer::writeJSON",
+			"writeTOML": "formats/toml/index::writeTOML",
+			"writeTSV": "formats/delimited-text/index::writeTSV",
+			"writeXML": "formats/xml/index::writeXML",
+			"writeYAML": "formats/yaml/writer::writeYAML"
 		},
 		"formats/ini/index": {
-			"parseINI": "formats/ini/index::parseINI"
+			"FormatWriteError": "formats/internal/writer::FormatWriteError",
+			"parseINI": "formats/ini/index::parseINI",
+			"writeINI": "formats/ini/index::writeINI"
 		},
 		"formats/internal/reader": {
 			"FormatLimits": "formats/json/limits::JsonLimits"
+		},
+		"formats/internal/writer": {
+			"FormatWriteError": "formats/internal/writer::FormatWriteError"
 		},
 		"formats/json/index": {
 			"JsonLimits": "formats/json/limits::JsonLimits",
@@ -13616,13 +13633,19 @@
 			"readFileAs": "filesystem/index::readFileAs"
 		},
 		"formats/toml/index": {
-			"parseTOML": "formats/toml/index::parseTOML"
+			"parseTOML": "formats/toml/index::parseTOML",
+			"writeTOML": "formats/toml/index::writeTOML"
 		},
 		"formats/xml/index": {
-			"parseXML": "formats/xml/index::parseXML"
+			"parseXML": "formats/xml/index::parseXML",
+			"writeXML": "formats/xml/index::writeXML"
 		},
 		"formats/yaml/index": {
-			"parseYAML": "formats/yaml/index::parseYAML"
+			"parseYAML": "formats/yaml/index::parseYAML",
+			"writeYAML": "formats/yaml/writer::writeYAML"
+		},
+		"formats/yaml/writer": {
+			"writeYAML": "formats/yaml/writer::writeYAML"
 		},
 		"functions/comparison": {
 			"equal": "functions/comparison::equal",
@@ -13811,6 +13834,9 @@
 			"writeFileBytes": "filesystem/index::writeFileBytes",
 			"writeJSON": "formats/json/writer::writeJSON",
 			"writeTextFile": "filesystem/index::writeTextFile"
+		},
+		"language/objects": {
+			"ownKeyCount": "language/objects::ownKeyCount"
 		},
 		"language/proofs": {
 			"Eq": "language/proofs::Eq",
@@ -14523,7 +14549,7 @@
 		{
 			"name": "ArrayCursor",
 			"source": "collections/arrays/dynamic.el",
-			"line": 74,
+			"line": 83,
 			"signature": "fn ArrayCursor(element: type): type",
 			"id": null,
 			"initializer": null
@@ -14531,7 +14557,7 @@
 		{
 			"name": "ArrayLiteralTail",
 			"source": "collections/arrays/dynamic.el",
-			"line": 97,
+			"line": 106,
 			"signature": "fn ArrayLiteralTail(element: type, count = -1): type",
 			"id": null,
 			"initializer": null
@@ -14539,7 +14565,7 @@
 		{
 			"name": "Array",
 			"source": "collections/arrays/dynamic.el",
-			"line": 120,
+			"line": 129,
 			"signature": "fn Array(element: type): type",
 			"id": "collections/arrays/dynamic::Array",
 			"initializer": null
@@ -14547,7 +14573,7 @@
 		{
 			"name": "ClassicArray",
 			"source": "collections/arrays/dynamic.el",
-			"line": 341,
+			"line": 350,
 			"signature": "fn ClassicArray(element: type): type",
 			"id": null,
 			"initializer": null
@@ -14555,7 +14581,7 @@
 		{
 			"name": "DynamicArray",
 			"source": "collections/arrays/dynamic.el",
-			"line": 350,
+			"line": 359,
 			"signature": "fn DynamicArray(element: type, count = -1): type",
 			"id": null,
 			"initializer": null
@@ -14611,7 +14637,7 @@
 		{
 			"name": "FixedRecordPage",
 			"source": "collections/arrays/storage/fixed-record-page.el",
-			"line": 18,
+			"line": 19,
 			"signature": "fn FixedRecordPage(element: type, codecType: type): type",
 			"id": null,
 			"initializer": null
@@ -14763,7 +14789,7 @@
 		{
 			"name": "ElementRoot",
 			"source": "collections/internal/element-buffer.el",
-			"line": 85,
+			"line": 86,
 			"signature": "fn ElementRoot(element: type): type",
 			"id": null,
 			"initializer": null
@@ -14771,7 +14797,7 @@
 		{
 			"name": "ElementFrame",
 			"source": "collections/internal/element-buffer.el",
-			"line": 119,
+			"line": 125,
 			"signature": "fn ElementFrame(element: type): type",
 			"id": null,
 			"initializer": null
@@ -14779,7 +14805,7 @@
 		{
 			"name": "ElementPosition",
 			"source": "collections/internal/element-buffer.el",
-			"line": 129,
+			"line": 135,
 			"signature": "fn ElementPosition(element: type): type",
 			"id": null,
 			"initializer": null
@@ -14787,7 +14813,7 @@
 		{
 			"name": "ElementCursor",
 			"source": "collections/internal/element-buffer.el",
-			"line": 144,
+			"line": 150,
 			"signature": "fn ElementCursor(element: type): type",
 			"id": null,
 			"initializer": null
@@ -14795,7 +14821,7 @@
 		{
 			"name": "ElementBuffer",
 			"source": "collections/internal/element-buffer.el",
-			"line": 176,
+			"line": 182,
 			"signature": "fn ElementBuffer(element: type): type",
 			"id": null,
 			"initializer": null
@@ -15059,7 +15085,7 @@
 		{
 			"name": "OrderedSet",
 			"source": "collections/sets/hash-set.el",
-			"line": 179,
+			"line": 180,
 			"signature": "fn OrderedSet(element: type): type",
 			"id": null,
 			"initializer": null
@@ -15067,7 +15093,7 @@
 		{
 			"name": "SortedSet",
 			"source": "collections/sets/hash-set.el",
-			"line": 232,
+			"line": 234,
 			"signature": "fn SortedSet(element: type): type",
 			"id": null,
 			"initializer": null
@@ -30939,7 +30965,7 @@
 		{
 			"name": "FileBuffer",
 			"source": "filesystem/buffer.el",
-			"line": 7,
+			"line": 9,
 			"signature": "class FileBuffer",
 			"id": null,
 			"initializer": null
@@ -31571,7 +31597,7 @@
 		{
 			"name": "TextFormat",
 			"source": "formats/index.el",
-			"line": 44,
+			"line": 45,
 			"signature": "fn TextFormat(output: type, input: type = output): type",
 			"id": "formats/index::TextFormat",
 			"initializer": null
@@ -31579,7 +31605,7 @@
 		{
 			"name": "EolFormat",
 			"source": "formats/index.el",
-			"line": 67,
+			"line": 68,
 			"signature": "class EolFormat",
 			"id": null,
 			"initializer": null
@@ -31587,7 +31613,7 @@
 		{
 			"name": "EodFormat",
 			"source": "formats/index.el",
-			"line": 78,
+			"line": 85,
 			"signature": "class EodFormat",
 			"id": null,
 			"initializer": null
@@ -31595,7 +31621,7 @@
 		{
 			"name": "BufferFormat",
 			"source": "formats/index.el",
-			"line": 85,
+			"line": 97,
 			"signature": "class BufferFormat",
 			"id": null,
 			"initializer": null
@@ -31603,7 +31629,7 @@
 		{
 			"name": "Formats",
 			"source": "formats/index.el",
-			"line": 106,
+			"line": 118,
 			"signature": "class Formats",
 			"id": null,
 			"initializer": null
@@ -31613,6 +31639,22 @@
 			"source": "formats/internal/reader.el",
 			"line": 12,
 			"signature": "class FormatReader",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "FormatWriteError",
+			"source": "formats/internal/writer.el",
+			"line": 14,
+			"signature": "class FormatWriteError extends Error",
+			"id": "formats/internal/writer::FormatWriteError",
+			"initializer": null
+		},
+		{
+			"name": "FormatWriter",
+			"source": "formats/internal/writer.el",
+			"line": 19,
+			"signature": "class FormatWriter",
 			"id": null,
 			"initializer": null
 		},
@@ -31851,7 +31893,7 @@
 		{
 			"name": "TomlDateTimeKind",
 			"source": "formats/toml/index.el",
-			"line": 9,
+			"line": 13,
 			"signature": "enum TomlDateTimeKind",
 			"id": null,
 			"initializer": null
@@ -31859,7 +31901,7 @@
 		{
 			"name": "Toml",
 			"source": "formats/toml/index.el",
-			"line": 10,
+			"line": 14,
 			"signature": "data Toml",
 			"id": null,
 			"initializer": null
@@ -31867,7 +31909,7 @@
 		{
 			"name": "TomlMember",
 			"source": "formats/toml/index.el",
-			"line": 18,
+			"line": 22,
 			"signature": "class TomlMember",
 			"id": null,
 			"initializer": null
@@ -31875,7 +31917,7 @@
 		{
 			"name": "TableNode",
 			"source": "formats/toml/index.el",
-			"line": 29,
+			"line": 33,
 			"signature": "class TableNode",
 			"id": null,
 			"initializer": null
@@ -31883,15 +31925,23 @@
 		{
 			"name": "TomlReader",
 			"source": "formats/toml/index.el",
-			"line": 54,
+			"line": 58,
 			"signature": "class TomlReader extends FormatReader",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "TomlWriter",
+			"source": "formats/toml/index.el",
+			"line": 271,
+			"signature": "class TomlWriter",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "XmlAttribute",
 			"source": "formats/xml/index.el",
-			"line": 8,
+			"line": 9,
 			"signature": "class XmlAttribute",
 			"id": null,
 			"initializer": null
@@ -31899,7 +31949,7 @@
 		{
 			"name": "XmlNode",
 			"source": "formats/xml/index.el",
-			"line": 13,
+			"line": 14,
 			"signature": "data XmlNode",
 			"id": null,
 			"initializer": null
@@ -31907,7 +31957,7 @@
 		{
 			"name": "XmlDocument",
 			"source": "formats/xml/index.el",
-			"line": 20,
+			"line": 21,
 			"signature": "class XmlDocument",
 			"id": null,
 			"initializer": null
@@ -31915,15 +31965,23 @@
 		{
 			"name": "XmlReader",
 			"source": "formats/xml/index.el",
-			"line": 37,
+			"line": 38,
 			"signature": "class XmlReader extends FormatReader",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "XmlWriter",
+			"source": "formats/xml/index.el",
+			"line": 181,
+			"signature": "class XmlWriter",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "YamlLine",
 			"source": "formats/yaml/index.el",
-			"line": 18,
+			"line": 19,
 			"signature": "class YamlLine",
 			"id": null,
 			"initializer": null
@@ -31931,7 +31989,7 @@
 		{
 			"name": "YamlState",
 			"source": "formats/yaml/index.el",
-			"line": 27,
+			"line": 28,
 			"signature": "class YamlState",
 			"id": null,
 			"initializer": null
@@ -31939,7 +31997,7 @@
 		{
 			"name": "YamlFlow",
 			"source": "formats/yaml/index.el",
-			"line": 91,
+			"line": 92,
 			"signature": "class YamlFlow extends FormatReader",
 			"id": null,
 			"initializer": null
@@ -31947,8 +32005,24 @@
 		{
 			"name": "YamlReader",
 			"source": "formats/yaml/index.el",
-			"line": 190,
+			"line": 191,
 			"signature": "class YamlReader",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "YamlWriteError",
+			"source": "formats/yaml/writer.el",
+			"line": 16,
+			"signature": "class YamlWriteError extends Error",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "YamlWriter",
+			"source": "formats/yaml/writer.el",
+			"line": 20,
+			"signature": "class YamlWriter",
 			"id": null,
 			"initializer": null
 		},
@@ -34571,7 +34645,7 @@
 		{
 			"name": "DynamicObject",
 			"source": "language/objects.el",
-			"line": 53,
+			"line": 62,
 			"signature": "class DynamicObject",
 			"id": null,
 			"initializer": null
@@ -44211,7 +44285,7 @@
 		{
 			"name": "TextHashIndex",
 			"source": "text/internal/data.el",
-			"line": 57,
+			"line": 58,
 			"signature": "class TextHashIndex",
 			"id": null,
 			"initializer": null
@@ -44219,7 +44293,7 @@
 		{
 			"name": "TextEmpty",
 			"source": "text/internal/data.el",
-			"line": 87,
+			"line": 88,
 			"signature": "class TextEmpty extends TextData",
 			"id": null,
 			"initializer": null
@@ -44227,7 +44301,7 @@
 		{
 			"name": "TextOwned",
 			"source": "text/internal/data.el",
-			"line": 97,
+			"line": 98,
 			"signature": "class TextOwned extends TextData",
 			"id": null,
 			"initializer": null
@@ -44235,7 +44309,7 @@
 		{
 			"name": "TextSlice",
 			"source": "text/internal/data.el",
-			"line": 148,
+			"line": 152,
 			"signature": "class TextSlice extends TextData",
 			"id": null,
 			"initializer": null
@@ -44243,7 +44317,7 @@
 		{
 			"name": "TextConcat",
 			"source": "text/internal/data.el",
-			"line": 180,
+			"line": 184,
 			"signature": "class TextConcat extends TextData",
 			"id": null,
 			"initializer": null
@@ -44251,7 +44325,7 @@
 		{
 			"name": "TextRepeat",
 			"source": "text/internal/data.el",
-			"line": 219,
+			"line": 223,
 			"signature": "class TextRepeat extends TextData",
 			"id": null,
 			"initializer": null
@@ -44259,7 +44333,7 @@
 		{
 			"name": "TextSplice",
 			"source": "text/internal/data.el",
-			"line": 260,
+			"line": 264,
 			"signature": "class TextSplice extends TextData",
 			"id": null,
 			"initializer": null
@@ -44331,7 +44405,7 @@
 		{
 			"name": "PatternBuffer",
 			"source": "text/patterns/buffer.el",
-			"line": 72,
+			"line": 83,
 			"signature": "fn PatternBuffer(element: type): type",
 			"id": null,
 			"initializer": null
@@ -44339,7 +44413,7 @@
 		{
 			"name": "BufferCursor",
 			"source": "text/patterns/buffer.el",
-			"line": 131,
+			"line": 151,
 			"signature": "fn BufferCursor(element: type): type",
 			"id": null,
 			"initializer": null
@@ -44683,7 +44757,7 @@
 		{
 			"name": "TextCursor",
 			"source": "text/text.el",
-			"line": 657,
+			"line": 665,
 			"signature": "class TextCursor",
 			"id": null,
 			"initializer": null
@@ -44691,7 +44765,7 @@
 		{
 			"name": "TextView",
 			"source": "text/text.el",
-			"line": 756,
+			"line": 764,
 			"signature": "class TextView",
 			"id": null,
 			"initializer": null
@@ -44699,7 +44773,7 @@
 		{
 			"name": "TextRangeView",
 			"source": "text/text.el",
-			"line": 789,
+			"line": 797,
 			"signature": "class TextRangeView extends TextView",
 			"id": null,
 			"initializer": null
@@ -44707,7 +44781,7 @@
 		{
 			"name": "DataTextView",
 			"source": "text/text.el",
-			"line": 816,
+			"line": 824,
 			"signature": "class DataTextView extends TextView",
 			"id": null,
 			"initializer": null
@@ -44715,7 +44789,7 @@
 		{
 			"name": "TextBase",
 			"source": "text/text.el",
-			"line": 839,
+			"line": 847,
 			"signature": "let TextBase: type",
 			"id": null,
 			"initializer": "Text"
@@ -44723,7 +44797,7 @@
 		{
 			"name": "TextRangeViewBase",
 			"source": "text/text.el",
-			"line": 840,
+			"line": 848,
 			"signature": "let TextRangeViewBase: type",
 			"id": null,
 			"initializer": "TextRangeView"
@@ -44731,7 +44805,7 @@
 		{
 			"name": "TextView",
 			"source": "text/text.el",
-			"line": 862,
+			"line": 870,
 			"signature": "fn TextView(bitWidth = 0, size = 0): type",
 			"id": "text/text::TextView~constraints",
 			"initializer": null
@@ -44739,7 +44813,7 @@
 		{
 			"name": "Text",
 			"source": "text/text.el",
-			"line": 911,
+			"line": 919,
 			"signature": "fn Text(bitWidth = 0, size = 0): type",
 			"id": "text/text::Text~constraints",
 			"initializer": null
@@ -44747,7 +44821,7 @@
 		{
 			"name": "TextPushUpdate",
 			"source": "text/text.el",
-			"line": 999,
+			"line": 1007,
 			"signature": "fn TextPushUpdate(bitWidth = 0, size = 0, value: type, value_bitWidth = 0): type",
 			"id": null,
 			"initializer": null
@@ -44755,7 +44829,7 @@
 		{
 			"name": "TextIndexWriteUpdate",
 			"source": "text/text.el",
-			"line": 1006,
+			"line": 1014,
 			"signature": "fn TextIndexWriteUpdate(bitWidth = 0, size = 0, index: type, value: type, index_bitWidth = 0, value_bitWidth = 0): type",
 			"id": null,
 			"initializer": null
@@ -46332,26 +46406,26 @@
 		{
 			"name": "element",
 			"source": "collections/arrays/dynamic.el",
-			"line": 120,
+			"line": 129,
 			"signature": "fn Array(element: type): type",
 			"kind": "type",
-			"anchor": "api-4dc18da8e9adc4a782b3"
+			"anchor": "api-6ece51202a051f1cd7ff"
 		},
 		{
 			"name": "end",
 			"source": "collections/arrays/dynamic.el",
-			"line": 285,
+			"line": 294,
 			"signature": "fn slice(start: Number, end: Number): FixedArray<element: element, length: end - start>",
 			"kind": "value",
-			"anchor": "api-4ba1a576461b796e199f"
+			"anchor": "api-c88e49e5917dcab9c75c"
 		},
 		{
 			"name": "start",
 			"source": "collections/arrays/dynamic.el",
-			"line": 285,
+			"line": 294,
 			"signature": "fn slice(start: Number, end: Number): FixedArray<element: element, length: end - start>",
 			"kind": "value",
-			"anchor": "api-b3cd3e74411f6c5d07b7"
+			"anchor": "api-322f684f4d6852360882"
 		},
 		{
 			"name": "value",
@@ -46426,11 +46500,11 @@
 			"anchor": "api-e1b1b22430ae1dac04e7"
 		}
 	],
-	"source_digest": "7561206aa678ed2b9163a52fd65d95f4dc58b8c2e2d0a5806eed565823e6bc83",
+	"source_digest": "caac72c742a180da2e0891e78d2d4b4da88c7dcc769ded758723af6e57c9cc92",
 	"files": [
 		{
 			"path": "collections/arrays/dynamic.el",
-			"sha256": "a4cb17350f3aefa6c10d1b8d94a3adb42d8cd7c268a25a7c9166348fd383ef2f"
+			"sha256": "783b0bd284e2e839e7fd3c41e5a6f03f606e6a107b2e4f98c2133b50e33af131"
 		},
 		{
 			"path": "collections/arrays/lazy.el",
@@ -46450,11 +46524,11 @@
 		},
 		{
 			"path": "collections/maps/base.el",
-			"sha256": "37261cf6c81858f28e18bc4c472aa737f8a574229f07904bb3a55113e370802f"
+			"sha256": "4ded60beff059581ba1518c9e6cf5831d67243c140c132512662ab5a6b22b48a"
 		},
 		{
 			"path": "collections/maps/hash-map.el",
-			"sha256": "e2f9aca498afe05620623e165cd3bab84a44807463c9cd82ee446854f6b02151"
+			"sha256": "c9de37f978a38595f802eca4f5313edbacf983f90e1b8952c3f49451f16a5b9d"
 		},
 		{
 			"path": "collections/sequences/demand.el",
@@ -46470,7 +46544,7 @@
 		},
 		{
 			"path": "collections/sets/hash-set.el",
-			"sha256": "6cea1d30fc38905a5855a81b0f11fdd2c354cce56f86a0775a1df0c4d8fa0862"
+			"sha256": "a5f92b4febc6f8cdaac0d1fc3654543391e154ac7d70fa48caab3bf8ad86c4c4"
 		},
 		{
 			"path": "concurrency/async.el",
@@ -46530,15 +46604,19 @@
 		},
 		{
 			"path": "formats/delimited-text/index.el",
-			"sha256": "655ece4f442240162f0d73e5505291480b4d9f7751cb736767372d0bac60ac5a"
+			"sha256": "366a64d6a185bc323cea887ea728f221cc60dec67ad3867cfabe59cd0ded3683"
 		},
 		{
 			"path": "formats/index.el",
-			"sha256": "8715520688ac5cbe504041abd6c672f22cbb829e83f38fa71294533b019ec32e"
+			"sha256": "064d65fa46f06adbc4c0365a2e0f031c83b30acd54757b3ff75269fb4adc2cda"
 		},
 		{
 			"path": "formats/ini/index.el",
-			"sha256": "21eb62f84868beea5e7f9f895f9114c01a9fa89d8467a203d3a16252715147ef"
+			"sha256": "a78a75859975d9eee09ad4962f38c60828b782a9f73de906f4ec5506cf8acd9f"
+		},
+		{
+			"path": "formats/internal/writer.el",
+			"sha256": "84b31c81f9661fe9ae051a7eccea1df17049d4c5e709ca77638b86db7b8fee45"
 		},
 		{
 			"path": "formats/json/index.el",
@@ -46550,19 +46628,23 @@
 		},
 		{
 			"path": "formats/json/writer.el",
-			"sha256": "4e9074d4d250787529685c621a2f9ba55d1c53b4a723c43afd1f2fa3469fc541"
+			"sha256": "9c02b7d5b0263e118e3fbf202508dc30f2decf88282bef061c720254bc891b74"
 		},
 		{
 			"path": "formats/toml/index.el",
-			"sha256": "b2c74ffb5c1afcfad78bf7047cec3c193a39a31e0ac368be5a3e88e4c4665f51"
+			"sha256": "f459cadd24856a87070d0cc18459c341fe45142ec3add4ed55117a3c01913bb0"
 		},
 		{
 			"path": "formats/xml/index.el",
-			"sha256": "35dc6b82b976b83fba88b14f84f2276b2eafd8fbed156ed1a9800afa038384ae"
+			"sha256": "f3ec42602bbd2077a50142bc7a3d7c9153361947155ef76e3ee65b6ffaa2cd3d"
 		},
 		{
 			"path": "formats/yaml/index.el",
-			"sha256": "188faf02e7d7b3e1f9d74fcf2ff4c5863b0a48fe164705796921645dda5ba829"
+			"sha256": "ba32ddc8d04be80ff149cdefe94d971240c9457b88876ab1b6c63a0b040cb65d"
+		},
+		{
+			"path": "formats/yaml/writer.el",
+			"sha256": "95c93a78c12789dd35086b7680bfd2d46644ef0f12a7b3f6a9069bf7c5b31343"
 		},
 		{
 			"path": "functions/comparison.el",
@@ -46579,6 +46661,10 @@
 		{
 			"path": "graphics/plots/scene.el",
 			"sha256": "3e729cbfb27184ae24a13ebcd097de0b5e0a5e4564a1ef7b4536fda826299454"
+		},
+		{
+			"path": "language/objects.el",
+			"sha256": "8502804578da259df5d2c143e0a64affc2b7bb42bbe02eb5c5eac9341bf8422c"
 		},
 		{
 			"path": "language/proofs.el",
@@ -46798,7 +46884,7 @@
 		},
 		{
 			"path": "text/text.el",
-			"sha256": "616823fac5e7034fe0cbe527c92add0c5de151bffd5f2affcf443d3ed86bc931"
+			"sha256": "6a7832982821bd6a38e9559600ae1e0f0814d880bf7c9b3e768b587bc460a555"
 		},
 		{
 			"path": "theme/model.el",
@@ -46878,6 +46964,35 @@
 		},
 		{
 			"kind": "api",
+			"name": "Array.compact",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "释放可回收的预留存储，保留元素及顺序；可能使物理元素引用失效。\n计算数组、定长数组和借用视图没有可释放的预留容量。"
+				},
+				{
+					"tag": "example",
+					"value": "回收数组预留容量",
+					"markdown": "```el\nlet values = @[1, 2, 3]\nvalues.compact()\n```",
+					"code": "let values = @[1, 2, 3]\nvalues.compact()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/dynamic.el",
+			"line": 40,
+			"signature": "virtual fn compact()",
+			"declaration_line": 48,
+			"id": "collections/arrays/dynamic::Array.compact",
+			"value_type": null,
+			"owner": "Array",
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
 			"name": "Array.count",
 			"sections": [
 				{
@@ -46900,9 +47015,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 40,
+			"line": 49,
 			"signature": "virtual get count(): Integer",
-			"declaration_line": 47,
+			"declaration_line": 56,
 			"id": "collections/arrays/dynamic::Array.count",
 			"value_type": null,
 			"owner": "Array",
@@ -46955,9 +47070,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 61,
+			"line": 70,
 			"signature": "@discardable virtual fn unshift(value: any): Array",
-			"declaration_line": 71,
+			"declaration_line": 80,
 			"id": "collections/arrays/dynamic::Array.unshift",
 			"value_type": null,
 			"owner": "Array",
@@ -47010,9 +47125,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 110,
+			"line": 119,
 			"signature": "export fn Array(element: type): type",
-			"declaration_line": 120,
+			"declaration_line": 129,
 			"id": "collections/arrays/dynamic::Array",
 			"value_type": null,
 			"owner": null,
@@ -47065,9 +47180,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 130,
+			"line": 139,
 			"signature": "@discardable virtual fn push(value: element): Array",
-			"declaration_line": 140,
+			"declaration_line": 149,
 			"id": "collections/arrays/dynamic::Array.push",
 			"value_type": null,
 			"owner": "Array",
@@ -47120,9 +47235,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 141,
+			"line": 150,
 			"signature": "@discardable virtual fn pop(): element",
-			"declaration_line": 151,
+			"declaration_line": 160,
 			"id": "collections/arrays/dynamic::Array.pop",
 			"value_type": null,
 			"owner": "Array",
@@ -47140,7 +47255,7 @@
 							"name": "element",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-4dc18da8e9adc4a782b3",
+							"fragment": "api-6ece51202a051f1cd7ff",
 							"parameter_kind": "type"
 						}
 					}
@@ -47176,9 +47291,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 153,
+			"line": 162,
 			"signature": "@discardable virtual fn shift(): element",
-			"declaration_line": 163,
+			"declaration_line": 172,
 			"id": "collections/arrays/dynamic::Array.shift",
 			"value_type": null,
 			"owner": "Array",
@@ -47196,7 +47311,7 @@
 							"name": "element",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-4dc18da8e9adc4a782b3",
+							"fragment": "api-6ece51202a051f1cd7ff",
 							"parameter_kind": "type"
 						}
 					}
@@ -47222,9 +47337,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 164,
+			"line": 173,
 			"signature": "virtual fn clear(): void_t",
-			"declaration_line": 176,
+			"declaration_line": 185,
 			"id": "collections/arrays/dynamic::Array.clear",
 			"value_type": null,
 			"owner": "Array",
@@ -47277,9 +47392,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 180,
+			"line": 189,
 			"signature": "fn some(predicate): Bool",
-			"declaration_line": 188,
+			"declaration_line": 197,
 			"id": "collections/arrays/dynamic::Array.some",
 			"value_type": null,
 			"owner": "Array",
@@ -47332,9 +47447,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 194,
+			"line": 203,
 			"signature": "fn all(predicate): Bool",
-			"declaration_line": 202,
+			"declaration_line": 211,
 			"id": "collections/arrays/dynamic::Array.all",
 			"value_type": null,
 			"owner": "Array",
@@ -47387,9 +47502,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 206,
+			"line": 215,
 			"signature": "fn filter(predicate)",
-			"declaration_line": 216,
+			"declaration_line": 225,
 			"id": "collections/arrays/dynamic::Array.filter",
 			"value_type": null,
 			"owner": "Array",
@@ -47426,9 +47541,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 219,
+			"line": 228,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"drop\", receiver: \"member\", prepare: normalize_count })\n\t\tfn drop(count)",
-			"declaration_line": 227,
+			"declaration_line": 236,
 			"id": "collections/arrays/dynamic::Array.drop",
 			"value_type": null,
 			"owner": "Array",
@@ -47465,9 +47580,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 229,
+			"line": 238,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"take\", receiver: \"member\", prepare: normalize_count })\n\t\tfn take(count)",
-			"declaration_line": 237,
+			"declaration_line": 246,
 			"id": "collections/arrays/dynamic::Array.take",
 			"value_type": null,
 			"owner": "Array",
@@ -47504,9 +47619,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 241,
+			"line": 250,
 			"signature": "fn indexOf(value: element): Number",
-			"declaration_line": 249,
+			"declaration_line": 258,
 			"id": "collections/arrays/dynamic::Array.indexOf",
 			"value_type": null,
 			"owner": "Array",
@@ -47564,9 +47679,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 255,
+			"line": 264,
 			"signature": "fn sort(less = (left, right) => left < right, strategy = stable_memory_sort)",
-			"declaration_line": 265,
+			"declaration_line": 274,
 			"id": "collections/arrays/dynamic::Array.sort",
 			"value_type": null,
 			"owner": "Array",
@@ -47598,9 +47713,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 266,
+			"line": 275,
 			"signature": "fn reverse()",
-			"declaration_line": 274,
+			"declaration_line": 283,
 			"id": "collections/arrays/dynamic::Array.reverse",
 			"value_type": null,
 			"owner": "Array",
@@ -47642,9 +47757,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 275,
+			"line": 284,
 			"signature": "fn slice(start: Number, end: Number): FixedArray<element: element, length: end - start>",
-			"declaration_line": 285,
+			"declaration_line": 294,
 			"id": "collections/arrays/dynamic::Array.slice",
 			"value_type": null,
 			"owner": "Array",
@@ -47675,7 +47790,7 @@
 							"name": "element",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-4dc18da8e9adc4a782b3",
+							"fragment": "api-6ece51202a051f1cd7ff",
 							"parameter_kind": "type"
 						}
 					},
@@ -47689,7 +47804,7 @@
 							"name": "end",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-4ba1a576461b796e199f",
+							"fragment": "api-c88e49e5917dcab9c75c",
 							"parameter_kind": "value"
 						}
 					},
@@ -47703,7 +47818,7 @@
 							"name": "start",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-b3cd3e74411f6c5d07b7",
+							"fragment": "api-322f684f4d6852360882",
 							"parameter_kind": "value"
 						}
 					}
@@ -47744,9 +47859,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 286,
+			"line": 295,
 			"signature": "fn sliceDynamic(start: Number, end: Number): Array<element: element>",
-			"declaration_line": 296,
+			"declaration_line": 305,
 			"id": "collections/arrays/dynamic::Array.sliceDynamic",
 			"value_type": null,
 			"owner": "Array",
@@ -47777,7 +47892,7 @@
 							"name": "element",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-4dc18da8e9adc4a782b3",
+							"fragment": "api-6ece51202a051f1cd7ff",
 							"parameter_kind": "type"
 						}
 					}
@@ -47813,9 +47928,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 298,
+			"line": 307,
 			"signature": "fn join(separator: Text = Text()): Text",
-			"declaration_line": 307,
+			"declaration_line": 316,
 			"id": "collections/arrays/dynamic::Array.join",
 			"value_type": null,
 			"owner": "Array",
@@ -47868,9 +47983,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 310,
+			"line": 319,
 			"signature": "fn map(transform)",
-			"declaration_line": 319,
+			"declaration_line": 328,
 			"id": "collections/arrays/dynamic::Array.map",
 			"value_type": null,
 			"owner": "Array",
@@ -47907,9 +48022,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 325,
+			"line": 334,
 			"signature": "fn includes(value: element): Bool",
-			"declaration_line": 333,
+			"declaration_line": 342,
 			"id": "collections/arrays/dynamic::Array.includes",
 			"value_type": null,
 			"owner": "Array",
@@ -49167,6 +49282,35 @@
 		},
 		{
 			"kind": "api",
+			"name": "Map.compact",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "释放预留容量及删除留下的空槽，保持现有键值及顺序合同。"
+				},
+				{
+					"tag": "example",
+					"value": "回收映射预留容量",
+					"markdown": "```el\nlet scores = Map<key: Text, value: Number>()\nscores.set(\"ada\", 98)\nscores.compact()\n```",
+					"code": "let scores = Map<key: Text, value: Number>()\nscores.set(\"ada\", 98)\nscores.compact()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/maps/base.el",
+			"line": 45,
+			"signature": "virtual fn compact()",
+			"declaration_line": 53,
+			"id": "collections/maps/base::Map.compact",
+			"value_type": null,
+			"owner": "Map",
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
 			"name": "Map.clear",
 			"sections": [
 				{
@@ -49184,9 +49328,9 @@
 				}
 			],
 			"source": "collections/maps/base.el",
-			"line": 45,
+			"line": 54,
 			"signature": "virtual fn clear()",
-			"declaration_line": 53,
+			"declaration_line": 62,
 			"id": "collections/maps/base::Map.clear",
 			"value_type": null,
 			"owner": "Map",
@@ -49201,7 +49345,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "返回当前键值对组成的数组快照。"
+					"markdown": "返回当前键值对组成的数组快照；直接遍历映射也使用此快照。\n条目的 key 和 value 是只读属性；使用 set 更新映射，不会修改已有快照中的条目。\n快照不保证深复制键或值。"
 				},
 				{
 					"tag": "returns",
@@ -49211,16 +49355,16 @@
 				{
 					"tag": "example",
 					"value": "遍历映射条目",
-					"markdown": "```el\nlet scores = Map<key: Text, value: Number>()\nscores.set(\"ada\", 98)\nfor (let entry in scores) console.stdout.writeLine(entry.key, \" = \", entry.value)\n```",
-					"code": "let scores = Map<key: Text, value: Number>()\nscores.set(\"ada\", 98)\nfor (let entry in scores) console.stdout.writeLine(entry.key, \" = \", entry.value)\n",
+					"markdown": "```el\nlet scores = Map<key: Text, value: Number>()\nscores.set(\"ada\", 98)\nfor (let {key, value} in scores) console.stdout.writeLine(key, \" = \", value)\nfor (let {key: name, value: score} in scores) console.stdout.writeLine(name, \" = \", score)\n```",
+					"code": "let scores = Map<key: Text, value: Number>()\nscores.set(\"ada\", 98)\nfor (let {key, value} in scores) console.stdout.writeLine(key, \" = \", value)\nfor (let {key: name, value: score} in scores) console.stdout.writeLine(name, \" = \", score)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
 			],
 			"source": "collections/maps/base.el",
-			"line": 54,
+			"line": 63,
 			"signature": "virtual fn entries(): Entry[]",
-			"declaration_line": 63,
+			"declaration_line": 75,
 			"id": "collections/maps/base::Map.entries",
 			"value_type": null,
 			"owner": "Map",
@@ -49273,9 +49417,9 @@
 				}
 			],
 			"source": "collections/maps/base.el",
-			"line": 67,
+			"line": 79,
 			"signature": "fn has(lookupKey: key): Bool",
-			"declaration_line": 77,
+			"declaration_line": 89,
 			"id": "collections/maps/base::Map.has",
 			"value_type": null,
 			"owner": "Map",
@@ -49328,9 +49472,9 @@
 				}
 			],
 			"source": "collections/maps/base.el",
-			"line": 78,
+			"line": 90,
 			"signature": "fn get(lookupKey: key): value | void_t",
-			"declaration_line": 87,
+			"declaration_line": 99,
 			"id": "collections/maps/base::Map.get",
 			"value_type": null,
 			"owner": "Map",
@@ -49402,9 +49546,9 @@
 				}
 			],
 			"source": "collections/maps/base.el",
-			"line": 92,
+			"line": 104,
 			"signature": "fn getOr(lookupKey: key, fallback: value): value",
-			"declaration_line": 103,
+			"declaration_line": 115,
 			"id": "collections/maps/base::Map.getOr",
 			"value_type": null,
 			"owner": "Map",
@@ -49453,9 +49597,9 @@
 				}
 			],
 			"source": "collections/maps/base.el",
-			"line": 131,
+			"line": 143,
 			"signature": "fn keys(): key[]",
-			"declaration_line": 140,
+			"declaration_line": 152,
 			"id": "collections/maps/base::Map.keys",
 			"value_type": null,
 			"owner": "Map",
@@ -49504,9 +49648,9 @@
 				}
 			],
 			"source": "collections/maps/base.el",
-			"line": 145,
+			"line": 157,
 			"signature": "fn values(): value[]",
-			"declaration_line": 154,
+			"declaration_line": 166,
 			"id": "collections/maps/base::Map.values",
 			"value_type": null,
 			"owner": "Map",
@@ -49678,9 +49822,9 @@
 				}
 			],
 			"source": "collections/maps/hash-map.el",
-			"line": 160,
+			"line": 166,
 			"signature": "@discardable override fn set(lookupKey: key, newValue: value): Bool",
-			"declaration_line": 170,
+			"declaration_line": 176,
 			"id": "collections/maps/hash-map::Map.set",
 			"value_type": null,
 			"owner": "Map",
@@ -49743,9 +49887,9 @@
 				}
 			],
 			"source": "collections/maps/hash-map.el",
-			"line": 179,
+			"line": 185,
 			"signature": "@discardable override fn tryAdd(lookupKey: key, newValue: value): Bool",
-			"declaration_line": 196,
+			"declaration_line": 202,
 			"id": "collections/maps/hash-map::Map.tryAdd",
 			"value_type": null,
 			"owner": "Map",
@@ -49808,9 +49952,9 @@
 				}
 			],
 			"source": "collections/maps/hash-map.el",
-			"line": 204,
+			"line": 210,
 			"signature": "override fn getOrInsert(lookupKey: key, make): value",
-			"declaration_line": 221,
+			"declaration_line": 227,
 			"id": "collections/maps/hash-map::Map.getOrInsert",
 			"value_type": null,
 			"owner": "Map",
@@ -49879,9 +50023,9 @@
 				}
 			],
 			"source": "collections/maps/hash-map.el",
-			"line": 231,
+			"line": 237,
 			"signature": "@discardable override fn update(lookupKey: key, change, initial: value): value",
-			"declaration_line": 248,
+			"declaration_line": 254,
 			"id": "collections/maps/hash-map::Map.update",
 			"value_type": null,
 			"owner": "Map",
@@ -50970,9 +51114,9 @@
 				}
 			],
 			"source": "collections/sets/hash-set.el",
-			"line": 76,
+			"line": 77,
 			"signature": "fn values(): element[]",
-			"declaration_line": 85,
+			"declaration_line": 86,
 			"id": "collections/sets/hash-set::Set.values",
 			"value_type": null,
 			"owner": "Set",
@@ -51026,9 +51170,9 @@
 				}
 			],
 			"source": "collections/sets/hash-set.el",
-			"line": 90,
+			"line": 91,
 			"signature": "fn union(other): Set<element: element>",
-			"declaration_line": 102,
+			"declaration_line": 103,
 			"id": "collections/sets/hash-set::Set.union",
 			"value_type": null,
 			"owner": "Set",
@@ -51095,9 +51239,9 @@
 				}
 			],
 			"source": "collections/sets/hash-set.el",
-			"line": 103,
+			"line": 104,
 			"signature": "fn intersection(other): Set<element: element>",
-			"declaration_line": 114,
+			"declaration_line": 115,
 			"id": "collections/sets/hash-set::Set.intersection",
 			"value_type": null,
 			"owner": "Set",
@@ -51164,9 +51308,9 @@
 				}
 			],
 			"source": "collections/sets/hash-set.el",
-			"line": 115,
+			"line": 116,
 			"signature": "fn difference(other): Set<element: element>",
-			"declaration_line": 126,
+			"declaration_line": 127,
 			"id": "collections/sets/hash-set::Set.difference",
 			"value_type": null,
 			"owner": "Set",
@@ -51233,9 +51377,9 @@
 				}
 			],
 			"source": "collections/sets/hash-set.el",
-			"line": 127,
+			"line": 128,
 			"signature": "fn symmetricDifference(other): Set<element: element>",
-			"declaration_line": 138,
+			"declaration_line": 139,
 			"id": "collections/sets/hash-set::Set.symmetricDifference",
 			"value_type": null,
 			"owner": "Set",
@@ -51302,9 +51446,9 @@
 				}
 			],
 			"source": "collections/sets/hash-set.el",
-			"line": 139,
+			"line": 140,
 			"signature": "fn isSubsetOf(other): Bool",
-			"declaration_line": 150,
+			"declaration_line": 151,
 			"id": "collections/sets/hash-set::Set.isSubsetOf",
 			"value_type": null,
 			"owner": "Set",
@@ -51357,9 +51501,9 @@
 				}
 			],
 			"source": "collections/sets/hash-set.el",
-			"line": 151,
+			"line": 152,
 			"signature": "fn isSupersetOf(other): Bool",
-			"declaration_line": 162,
+			"declaration_line": 163,
 			"id": "collections/sets/hash-set::Set.isSupersetOf",
 			"value_type": null,
 			"owner": "Set",
@@ -51412,9 +51556,9 @@
 				}
 			],
 			"source": "collections/sets/hash-set.el",
-			"line": 163,
+			"line": 164,
 			"signature": "fn isDisjointFrom(other): Bool",
-			"declaration_line": 174,
+			"declaration_line": 175,
 			"id": "collections/sets/hash-set::Set.isDisjointFrom",
 			"value_type": null,
 			"owner": "Set",
@@ -56083,7 +56227,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "提供 RFC 4180 风格 CSV 与制表符分隔文本解析。"
+					"markdown": "提供 RFC 4180 风格 CSV 与制表符分隔文本的解析和编码。"
 				}
 			],
 			"source": "formats/delimited-text/index.el",
@@ -56129,9 +56273,9 @@
 				}
 			],
 			"source": "formats/delimited-text/index.el",
-			"line": 48,
+			"line": 50,
 			"signature": "export fn parseCSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]",
-			"declaration_line": 59,
+			"declaration_line": 61,
 			"id": "formats/delimited-text/index::parseCSV",
 			"value_type": null,
 			"owner": null,
@@ -56194,13 +56338,213 @@
 				}
 			],
 			"source": "formats/delimited-text/index.el",
-			"line": 60,
+			"line": 62,
 			"signature": "export fn parseTSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]",
-			"declaration_line": 71,
+			"declaration_line": 73,
 			"id": "formats/delimited-text/index::parseTSV",
 			"value_type": null,
 			"owner": null,
 			"return_type": "Text[][]",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Text",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "text/text.el",
+							"name": "Text",
+							"id": "text/text::Text~type",
+							"path": "modules/text/text.md",
+							"fragment": "api-6116e54b075df026a90a"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "writeDelimited",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "编码文本行数组；含分隔符、引号或换行的单元格加引号，内部引号双写。"
+				},
+				{
+					"tag": "param",
+					"value": "rows 文本单元格二维数组；每行至少有一个单元格。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "delimiter 单个标量分隔符，不能是引号、CR 或 LF。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "limits 输出字节数与编码资源限制。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "以 CRLF 结束每条记录的分隔文本；空表返回空文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "分隔符无效、空行数组不可表示或资源超限时失败。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "编码分号分隔的表格",
+					"markdown": "```el\nimport { writeDelimited } from \"el:formats/delimited-text/\"\nlet text = writeDelimited(@[@[\"name\", \"role\"], @[\"Ada\", \"engineer\"]], \";\")\n```",
+					"code": "import { writeDelimited } from \"el:formats/delimited-text/\"\nlet text = writeDelimited(@[@[\"name\", \"role\"], @[\"Ada\", \"engineer\"]], \";\")\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/delimited-text/index.el",
+			"line": 77,
+			"signature": "export fn writeDelimited(rows: Text[][], delimiter: Text = \",\", limits: JsonLimits = JsonLimits()): Text",
+			"declaration_line": 89,
+			"id": "formats/delimited-text/index::writeDelimited",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Text",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Text",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "text/text.el",
+							"name": "Text",
+							"id": "text/text::Text~type",
+							"path": "modules/text/text.md",
+							"fragment": "api-6116e54b075df026a90a"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "writeCSV",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将文本单元格二维数组编码为 RFC 4180 风格 CSV，不添加表头或推断类型。"
+				},
+				{
+					"tag": "param",
+					"value": "rows 每行至少包含一个文本单元格；空表允许。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "limits 输出与编码资源限制。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "逗号分隔、CRLF 记录结束的文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "不可表示的空行数组或资源超限时失败。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "写出 CSV",
+					"markdown": "```el\nimport { writeCSV } from \"el:formats/delimited-text/\"\nlet text = writeCSV(@[@[\"name\", \"role\"], @[\"Ada\", \"engineer\"]])\n```",
+					"code": "import { writeCSV } from \"el:formats/delimited-text/\"\nlet text = writeCSV(@[@[\"name\", \"role\"], @[\"Ada\", \"engineer\"]])\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/delimited-text/index.el",
+			"line": 122,
+			"signature": "export fn writeCSV(rows: Text[][], limits: JsonLimits = JsonLimits()): Text",
+			"declaration_line": 133,
+			"id": "formats/delimited-text/index::writeCSV",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Text",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Text",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "text/text.el",
+							"name": "Text",
+							"id": "text/text::Text~type",
+							"path": "modules/text/text.md",
+							"fragment": "api-6116e54b075df026a90a"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "writeTSV",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将文本单元格二维数组编码为制表符分隔文本，使用与 CSV 相同的引号规则。"
+				},
+				{
+					"tag": "param",
+					"value": "rows 每行至少包含一个文本单元格；空表允许。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "limits 输出与编码资源限制。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "制表符分隔、CRLF 记录结束的文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "不可表示的空行数组或资源超限时失败。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "写出 TSV",
+					"markdown": "```el\nimport { writeTSV } from \"el:formats/delimited-text/\"\nlet text = writeTSV(@[@[\"name\", \"role\"], @[\"Ada\", \"engineer\"]])\n```",
+					"code": "import { writeTSV } from \"el:formats/delimited-text/\"\nlet text = writeTSV(@[@[\"name\", \"role\"], @[\"Ada\", \"engineer\"]])\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/delimited-text/index.el",
+			"line": 135,
+			"signature": "export fn writeTSV(rows: Text[][], limits: JsonLimits = JsonLimits()): Text",
+			"declaration_line": 146,
+			"id": "formats/delimited-text/index::writeTSV",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Text",
 			"initializer": null,
 			"type_references": {
 				"return_type": [
@@ -56268,9 +56612,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 33,
+			"line": 34,
 			"signature": "export fn TextFormat(output: type, input: type = output): type",
-			"declaration_line": 44,
+			"declaration_line": 45,
 			"id": "formats/index::TextFormat",
 			"value_type": null,
 			"owner": null,
@@ -56313,9 +56657,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 107,
+			"line": 119,
 			"signature": "get Text()",
-			"declaration_line": 115,
+			"declaration_line": 127,
 			"id": "formats/index::Formats.Text",
 			"value_type": null,
 			"owner": "Formats",
@@ -56342,9 +56686,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 117,
+			"line": 129,
 			"signature": "get JSON()",
-			"declaration_line": 125,
+			"declaration_line": 137,
 			"id": "formats/index::Formats.JSON",
 			"value_type": null,
 			"owner": "Formats",
@@ -56359,7 +56703,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "返回 YAML 文本解码格式；当前对象只提供解码器。"
+					"markdown": "返回 YAML 文本读写格式；编码输出流式集合，不保留注释或排版。"
 				},
 				{
 					"tag": "example",
@@ -56371,10 +56715,68 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 129,
+			"line": 141,
 			"signature": "get YAML()",
-			"declaration_line": 137,
+			"declaration_line": 149,
 			"id": "formats/index::Formats.YAML",
+			"value_type": null,
+			"owner": "Formats",
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "Formats.TOML",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回保留 TOML 值类型的读写格式，写入根值须为 Toml.Table。"
+				},
+				{
+					"tag": "example",
+					"value": "写出 TOML",
+					"markdown": "```el\nimport { formats, parseTOML } from \"el:formats/\"\nimport { writeFileAs } from \"el:filesystem/\"\nlet value = parseTOML(\"port = 8080\")\nwriteFileAs(formats.TOML, \"file:./config.toml\", value)\n```",
+					"code": "import { formats, parseTOML } from \"el:formats/\"\nimport { writeFileAs } from \"el:filesystem/\"\nlet value = parseTOML(\"port = 8080\")\nwriteFileAs(formats.TOML, \"file:./config.toml\", value)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/index.el",
+			"line": 150,
+			"signature": "get TOML()",
+			"declaration_line": 159,
+			"id": "formats/index::Formats.TOML",
+			"value_type": null,
+			"owner": "Formats",
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "Formats.XML",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回 XmlDocument 文档读写格式。"
+				},
+				{
+					"tag": "example",
+					"value": "写出 XML",
+					"markdown": "```el\nimport { formats, parseXML } from \"el:formats/\"\nimport { writeFileAs } from \"el:filesystem/\"\nlet value = parseXML(\"<message>hello</message>\")\nwriteFileAs(formats.XML, \"file:./message.xml\", value)\n```",
+					"code": "import { formats, parseXML } from \"el:formats/\"\nimport { writeFileAs } from \"el:filesystem/\"\nlet value = parseXML(\"<message>hello</message>\")\nwriteFileAs(formats.XML, \"file:./message.xml\", value)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/index.el",
+			"line": 160,
+			"signature": "get XML()",
+			"declaration_line": 169,
+			"id": "formats/index::Formats.XML",
 			"value_type": null,
 			"owner": "Formats",
 			"return_type": null,
@@ -56388,7 +56790,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "返回 CSV 表格解码格式，解析结果为文本单元格二维数组。"
+					"markdown": "返回 CSV 表格读写格式，单元格使用文本，编码使用 CRLF 记录结束。"
 				},
 				{
 					"tag": "example",
@@ -56400,10 +56802,134 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 140,
+			"line": 170,
 			"signature": "get CSV()",
-			"declaration_line": 148,
+			"declaration_line": 178,
 			"id": "formats/index::Formats.CSV",
+			"value_type": null,
+			"owner": "Formats",
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "Formats.TSV",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回制表符分隔文本读写格式；单元格使用文本。"
+				},
+				{
+					"tag": "example",
+					"value": "写出 TSV",
+					"markdown": "```el\nimport { formats } from \"el:formats/\"\nimport { writeFileAs } from \"el:filesystem/\"\nwriteFileAs(formats.TSV, \"file:./table.tsv\", @[@[\"name\", \"role\"], @[\"Ada\", \"engineer\"]])\n```",
+					"code": "import { formats } from \"el:formats/\"\nimport { writeFileAs } from \"el:filesystem/\"\nwriteFileAs(formats.TSV, \"file:./table.tsv\", @[@[\"name\", \"role\"], @[\"Ada\", \"engineer\"]])\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/index.el",
+			"line": 179,
+			"signature": "get TSV()",
+			"declaration_line": 187,
+			"id": "formats/index::Formats.TSV",
+			"value_type": null,
+			"owner": "Formats",
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "Formats.INI",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回轻量 INI 方言的文本读写格式；编码拒绝无法无损表示的名称、值和嵌套结构。"
+				},
+				{
+					"tag": "example",
+					"value": "读取 INI 配置",
+					"markdown": "```el\nimport { formats } from \"el:formats/\"\nimport { readFileAs } from \"el:filesystem/\"\nlet config = readFileAs(formats.INI, \"file:./config.ini\")\n```",
+					"code": "import { formats } from \"el:formats/\"\nimport { readFileAs } from \"el:filesystem/\"\nlet config = readFileAs(formats.INI, \"file:./config.ini\")\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				},
+				{
+					"tag": "example",
+					"value": "写出 INI 配置",
+					"markdown": "```el\nimport { formats } from \"el:formats/\"\nimport { writeFileAs } from \"el:filesystem/\"\nwriteFileAs(formats.INI, \"file:./config.ini\", @{ name: \"demo\", server: @{ port: \"8080\" } })\n```",
+					"code": "import { formats } from \"el:formats/\"\nimport { writeFileAs } from \"el:filesystem/\"\nwriteFileAs(formats.INI, \"file:./config.ini\", @{ name: \"demo\", server: @{ port: \"8080\" } })\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/index.el",
+			"line": 188,
+			"signature": "get INI()",
+			"declaration_line": 202,
+			"id": "formats/index::Formats.INI",
+			"value_type": null,
+			"owner": "Formats",
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "Formats.EOL",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回自包含 EOL 文本读写格式；节点、深度和整数限制用于解码，字节上限也在编码完成后检查。"
+				},
+				{
+					"tag": "example",
+					"value": "写出 EOL",
+					"markdown": "```el\nimport { formats } from \"el:formats/\"\nimport { writeFileAs } from \"el:filesystem/\"\nwriteFileAs(formats.EOL, \"file:./value.eol\", @[1, 2, 3])\n```",
+					"code": "import { formats } from \"el:formats/\"\nimport { writeFileAs } from \"el:filesystem/\"\nwriteFileAs(formats.EOL, \"file:./value.eol\", @[1, 2, 3])\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/index.el",
+			"line": 203,
+			"signature": "get EOL()",
+			"declaration_line": 211,
+			"id": "formats/index::Formats.EOL",
+			"value_type": null,
+			"owner": "Formats",
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "Formats.EOD",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回自包含 EOD 二进制读写格式；节点、深度和整数限制用于解码，字节上限也在编码完成后检查。"
+				},
+				{
+					"tag": "example",
+					"value": "写出 EOD",
+					"markdown": "```el\nimport { formats } from \"el:formats/\"\nimport { writeFileAs } from \"el:filesystem/\"\nwriteFileAs(formats.EOD, \"file:./value.eod\", @[1, 2, 3])\n```",
+					"code": "import { formats } from \"el:formats/\"\nimport { writeFileAs } from \"el:filesystem/\"\nwriteFileAs(formats.EOD, \"file:./value.eod\", @[1, 2, 3])\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/index.el",
+			"line": 212,
+			"signature": "get EOD()",
+			"declaration_line": 220,
+			"id": "formats/index::Formats.EOD",
 			"value_type": null,
 			"owner": "Formats",
 			"return_type": null,
@@ -56429,9 +56955,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 158,
+			"line": 226,
 			"signature": "export const formats",
-			"declaration_line": 166,
+			"declaration_line": 234,
 			"id": "formats/index::formats",
 			"value_type": "Formats",
 			"owner": null,
@@ -56476,7 +57002,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "解析此模块支持的 INI 方言，生成嵌套动态对象，键和值均保持文本。"
+					"markdown": "解析轻量 INI 方言，生成嵌套动态对象，键和值均保持文本。\n节名和键区分大小写；键值以 `=` 或 `:` 分隔，`;` 或 `#` 开头的整行是注释。\n值按字面文本读取，不转换数字或布尔值，也不解析行内注释；重复节合并，重复键以最后一个值为准。"
 				},
 				{
 					"tag": "param",
@@ -56508,9 +57034,9 @@
 				}
 			],
 			"source": "formats/ini/index.el",
-			"line": 16,
+			"line": 20,
 			"signature": "export fn parseINI(source: Text, limits: JsonLimits = JsonLimits()): any",
-			"declaration_line": 27,
+			"declaration_line": 33,
 			"id": "formats/ini/index::parseINI",
 			"value_type": null,
 			"owner": null,
@@ -56533,6 +57059,100 @@
 					}
 				]
 			}
+		},
+		{
+			"kind": "api",
+			"name": "writeINI",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将根对象的文本字段和一层节对象编码为轻量 INI；根键先于各节输出。\n不保留原注释或排版；不转换非文本值，不静默去除空白或换行。"
+				},
+				{
+					"tag": "param",
+					"value": "value 动态对象或公开数据对象；节内字段必须为文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "limits 输出字节数与编码资源限制。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "可由 parseINI 读取的文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "名称、值或嵌套结构无法无损表示时抛出 FormatWriteError；资源超限也会失败。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "写出配置",
+					"markdown": "```el\nimport { writeINI, parseINI } from \"el:formats/ini/\"\nlet text = writeINI(parseINI(\"name=demo\\n[server]\\nport=8080\\n\"))\n```",
+					"code": "import { writeINI, parseINI } from \"el:formats/ini/\"\nlet text = writeINI(parseINI(\"name=demo\\n[server]\\nport=8080\\n\"))\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/ini/index.el",
+			"line": 103,
+			"signature": "export fn writeINI(value: any, limits: JsonLimits = JsonLimits()): Text",
+			"declaration_line": 115,
+			"id": "formats/ini/index::writeINI",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Text",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Text",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "text/text.el",
+							"name": "Text",
+							"id": "text/text::Text~type",
+							"path": "modules/text/text.md",
+							"fragment": "api-6116e54b075df026a90a"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "FormatWriteError",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "表示值无法无损编码为所选文本格式，或输出超过字节限制。"
+				},
+				{
+					"tag": "example",
+					"value": "捕获格式写入错误",
+					"markdown": "```el\nimport { FormatWriteError, writeINI } from \"el:formats/\"\ntry { discard(writeINI(@{ value: \"two\\nlines\" })) }\ncatch (error: FormatWriteError) { console.error.value(error) }\n```",
+					"code": "import { FormatWriteError, writeINI } from \"el:formats/\"\ntry { discard(writeINI(@{ value: \"two\\nlines\" })) }\ncatch (error: FormatWriteError) { console.error.value(error) }\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/internal/writer.el",
+			"line": 6,
+			"signature": "export @assign(mode: \"copy\") class FormatWriteError extends Error",
+			"declaration_line": 14,
+			"id": "formats/internal/writer::FormatWriteError",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
 		},
 		{
 			"kind": "module",
@@ -56774,9 +57394,9 @@
 				}
 			],
 			"source": "formats/json/writer.el",
-			"line": 170,
+			"line": 171,
 			"signature": "export fn writeJSON(value: any, limits: JsonLimits = JsonLimits()): Text",
-			"declaration_line": 182,
+			"declaration_line": 183,
 			"id": "formats/json/writer::writeJSON",
 			"value_type": null,
 			"owner": null,
@@ -56853,9 +57473,9 @@
 				}
 			],
 			"source": "formats/toml/index.el",
-			"line": 253,
+			"line": 257,
 			"signature": "export fn parseTOML(source: Text, limits: JsonLimits = JsonLimits()): Toml",
-			"declaration_line": 264,
+			"declaration_line": 268,
 			"id": "formats/toml/index::parseTOML",
 			"value_type": null,
 			"owner": null,
@@ -56874,6 +57494,71 @@
 							"id": null,
 							"path": "types.md",
 							"fragment": "api-1ded7c60633c334bf6e6"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "writeTOML",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将 TOML 根表编码为文档，嵌套表使用内联表；数字必须能精确表示。"
+				},
+				{
+					"tag": "param",
+					"value": "value 要编码的 TOML 根表。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "limits 输出字节、深度和工作预算。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "TOML 文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "根值不是表、键重复、值不可表示或超出限制时抛出异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "编码设置",
+					"markdown": "```el\nimport { parseTOML, writeTOML } from \"el:formats/toml/\"\nlet text = writeTOML(parseTOML(\"port = 8080\"))\n```",
+					"code": "import { parseTOML, writeTOML } from \"el:formats/toml/\"\nlet text = writeTOML(parseTOML(\"port = 8080\"))\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/toml/index.el",
+			"line": 341,
+			"signature": "export fn writeTOML(value: Toml, limits: JsonLimits = JsonLimits()): Text",
+			"declaration_line": 352,
+			"id": "formats/toml/index::writeTOML",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Text",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Text",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "text/text.el",
+							"name": "Text",
+							"id": "text/text::Text~type",
+							"path": "modules/text/text.md",
+							"fragment": "api-6116e54b075df026a90a"
 						}
 					}
 				]
@@ -56932,9 +57617,9 @@
 				}
 			],
 			"source": "formats/xml/index.el",
-			"line": 146,
+			"line": 147,
 			"signature": "export fn parseXML(source: Text, limits: JsonLimits = JsonLimits()): XmlDocument",
-			"declaration_line": 157,
+			"declaration_line": 158,
 			"id": "formats/xml/index::parseXML",
 			"value_type": null,
 			"owner": null,
@@ -56959,13 +57644,78 @@
 			}
 		},
 		{
+			"kind": "api",
+			"name": "writeXML",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将 XML 文档编码为 XML 1.0 文本，并验证节点、声明和文档结构。"
+				},
+				{
+					"tag": "param",
+					"value": "value 要编码的文档。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "limits 输出字节、深度和工作预算。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "UTF-8 XML 文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "文档不可表示、结构无效或超出限制时抛出异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "编码文档",
+					"markdown": "```el\nimport { parseXML, writeXML } from \"el:formats/xml/\"\nlet text = writeXML(parseXML(\"<message>hello</message>\"))\n```",
+					"code": "import { parseXML, writeXML } from \"el:formats/xml/\"\nlet text = writeXML(parseXML(\"<message>hello</message>\"))\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/xml/index.el",
+			"line": 259,
+			"signature": "export fn writeXML(value: XmlDocument, limits: JsonLimits = JsonLimits()): Text",
+			"declaration_line": 270,
+			"id": "formats/xml/index::writeXML",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Text",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Text",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "text/text.el",
+							"name": "Text",
+							"id": "text/text::Text~type",
+							"path": "modules/text/text.md",
+							"fragment": "api-6116e54b075df026a90a"
+						}
+					}
+				]
+			}
+		},
+		{
 			"kind": "module",
 			"name": "YAML",
 			"sections": [
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "解析本实现支持的 YAML 文档子集。"
+					"markdown": "解析与编码本实现支持的 YAML 文档子集。"
 				}
 			],
 			"source": "formats/yaml/index.el",
@@ -57011,9 +57761,9 @@
 				}
 			],
 			"source": "formats/yaml/index.el",
-			"line": 357,
+			"line": 358,
 			"signature": "export fn parseYAML(source: Text, limits: JsonLimits = JsonLimits()): any",
-			"declaration_line": 368,
+			"declaration_line": 369,
 			"id": "formats/yaml/index::parseYAML",
 			"value_type": null,
 			"owner": null,
@@ -57032,6 +57782,85 @@
 							"id": null,
 							"path": "reference/language/types.md",
 							"fragment": null
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "module",
+			"name": "YAML 编码",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将受支持的 EL 值编码为 YAML 流式子集文本。"
+				}
+			],
+			"source": "formats/yaml/writer.el",
+			"line": 1,
+			"id": "formats/yaml/writer"
+		},
+		{
+			"kind": "api",
+			"name": "writeYAML",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将公开数据对象、数组和标量编码为可由 parseYAML 读取的 YAML 流式文档。\n数值必须能在解析器的数值词素范围内精确表示；共享对象按树展开。"
+				},
+				{
+					"tag": "param",
+					"value": "value 要编码的值，支持 void、Bool、Text、Number、数组、DynamicObject 和可重建的公开数据对象。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "limits 输出字节、深度及工作预算。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "YAML 文本。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "不支持的值、循环引用、不可精确表示的数值或输出字节超限时抛出 YamlWriteError；其他预算超限抛出 PatternLimitError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "编码映射",
+					"markdown": "```el\nimport { writeYAML } from \"el:formats/yaml/\"\nlet document = writeYAML(@{ name: \"EL\" })\n```",
+					"code": "import { writeYAML } from \"el:formats/yaml/\"\nlet document = writeYAML(@{ name: \"EL\" })\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "formats/yaml/writer.el",
+			"line": 117,
+			"signature": "export fn writeYAML(value: any, limits: JsonLimits = JsonLimits()): Text",
+			"declaration_line": 129,
+			"id": "formats/yaml/writer::writeYAML",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Text",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Text",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "text/text.el",
+							"name": "Text",
+							"id": "text/text::Text~type",
+							"path": "modules/text/text.md",
+							"fragment": "api-6116e54b075df026a90a"
 						}
 					}
 				]
@@ -58013,6 +58842,51 @@
 			"return_type": null,
 			"initializer": null,
 			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "ownKeyCount",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回自身字段数量，不先创建键数组，供有界枚举预留工作空间。"
+				},
+				{
+					"tag": "example",
+					"value": "查询对象字段数",
+					"markdown": "```el\nimport { ownKeyCount } from \"el:language/objects.el\"\nconsole.stdout.writeLine(ownKeyCount(@{ name: \"EL\", version: \"1\" }))\n```",
+					"code": "import { ownKeyCount } from \"el:language/objects.el\"\nconsole.stdout.writeLine(ownKeyCount(@{ name: \"EL\", version: \"1\" }))\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "language/objects.el",
+			"line": 11,
+			"signature": "export fn ownKeyCount(value): Number",
+			"declaration_line": 18,
+			"id": "language/objects::ownKeyCount",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Number",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Number",
+						"start": 0,
+						"end": 6,
+						"target": {
+							"type": "definition",
+							"source": "number/number.el",
+							"name": "Number",
+							"id": "number/number::Number~type",
+							"path": "modules/number/number.md",
+							"fragment": "api-3cc24d3ef702e8652fb4"
+						}
+					}
+				]
+			}
 		},
 		{
 			"kind": "module",
@@ -71265,6 +72139,35 @@
 		},
 		{
 			"kind": "api",
+			"name": "Text.compact",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "展平当前 rope，释放本值对多余片段及编码缓存的持有，保持字符宽度。"
+				},
+				{
+					"tag": "example",
+					"value": "整理文本存储",
+					"markdown": "```el\nlet text = \"hello\" + \" world\"\ntext.compact()\n```",
+					"code": "let text = \"hello\" + \" world\"\ntext.compact()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "text/text.el",
+			"line": 347,
+			"signature": "override fn compact()",
+			"declaration_line": 354,
+			"id": "text/text::Text.compact",
+			"value_type": null,
+			"owner": "Text",
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
 			"name": "Text.byte_count",
 			"sections": [
 				{
@@ -71287,9 +72190,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 351,
+			"line": 359,
 			"signature": "get byte_count(): Integer",
-			"declaration_line": 359,
+			"declaration_line": 367,
 			"id": "text/text::Text.byte_count",
 			"value_type": null,
 			"owner": "Text",
@@ -71337,9 +72240,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 371,
+			"line": 379,
 			"signature": "override get count(): Integer",
-			"declaration_line": 378,
+			"declaration_line": 386,
 			"id": "text/text::Text.count",
 			"value_type": null,
 			"owner": "Text",
@@ -71392,9 +72295,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 430,
+			"line": 438,
 			"signature": "fn startsWith(prefix: Text): Bool",
-			"declaration_line": 438,
+			"declaration_line": 446,
 			"id": "text/text::Text.startsWith",
 			"value_type": null,
 			"owner": "Text",
@@ -71447,9 +72350,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 441,
+			"line": 449,
 			"signature": "fn endsWith(suffix: Text): Bool",
-			"declaration_line": 449,
+			"declaration_line": 457,
 			"id": "text/text::Text.endsWith",
 			"value_type": null,
 			"owner": "Text",
@@ -71502,9 +72405,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 452,
+			"line": 460,
 			"signature": "fn contains(needle: Text): Bool",
-			"declaration_line": 460,
+			"declaration_line": 468,
 			"id": "text/text::Text.contains",
 			"value_type": null,
 			"owner": "Text",
@@ -71557,9 +72460,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 470,
+			"line": 478,
 			"signature": "fn trimEndChars(characters: Text): Text",
-			"declaration_line": 484,
+			"declaration_line": 492,
 			"id": "text/text::Text.trimEndChars",
 			"value_type": null,
 			"owner": "Text",
@@ -71617,9 +72520,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 511,
+			"line": 519,
 			"signature": "virtual fn character(index: Number): Char",
-			"declaration_line": 521,
+			"declaration_line": 529,
 			"id": "text/text::Text.character",
 			"value_type": null,
 			"owner": "Text",
@@ -71682,9 +72585,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 564,
+			"line": 572,
 			"signature": "virtual fn slice(start: Number, to: Number): Text",
-			"declaration_line": 574,
+			"declaration_line": 582,
 			"id": "text/text::Text.slice",
 			"value_type": null,
 			"owner": "Text",
@@ -71742,9 +72645,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 691,
+			"line": 699,
 			"signature": "export fn text_scalar(value: Integer): Text",
-			"declaration_line": 704,
+			"declaration_line": 712,
 			"id": "text/text::text_scalar",
 			"value_type": null,
 			"owner": null,
@@ -71807,9 +72710,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 844,
+			"line": 852,
 			"signature": "export fn TextView(bitWidth = 0, size = 0): type",
-			"declaration_line": 862,
+			"declaration_line": 870,
 			"id": "text/text::TextView~constraints",
 			"value_type": null,
 			"owner": null,
@@ -71872,9 +72775,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 894,
+			"line": 902,
 			"signature": "export fn Text(bitWidth = 0, size = 0): type",
-			"declaration_line": 911,
+			"declaration_line": 919,
 			"id": "text/text::Text~constraints",
 			"value_type": null,
 			"owner": null,
@@ -75218,8 +76121,8 @@
 		}
 	],
 	"coverage": {
-		"source_files": 3663,
-		"documented_files": 108,
-		"documented_apis": 537
+		"source_files": 3665,
+		"documented_files": 111,
+		"documented_apis": 555
 	}
 }

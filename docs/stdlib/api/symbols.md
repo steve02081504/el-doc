@@ -40,6 +40,7 @@
 | [Array](modules/collections/arrays/dynamic.md#api-02f04934b15030edb96d) | `collections/arrays/dynamic.el` |
 | [Array.all](modules/collections/arrays/dynamic.md#api-8981ea4aa2a88e2d41b5) | `collections/arrays/dynamic.el` |
 | [Array.clear](modules/collections/arrays/dynamic.md#api-2f0dc66bf9a8acb8acc6) | `collections/arrays/dynamic.el` |
+| [Array.compact](modules/collections/arrays/dynamic.md#api-b5d526b100604be1a50c) | `collections/arrays/dynamic.el` |
 | [Array.count](modules/collections/arrays/dynamic.md#api-dc53f1b7c7bb205456fe) | `collections/arrays/dynamic.el` |
 | [Array.drop](modules/collections/arrays/dynamic.md#api-effa05c31b8b8f5e7352) | `collections/arrays/dynamic.el` |
 | [Array.filter](modules/collections/arrays/dynamic.md#api-e9c5cd664038d0ffd435) | `collections/arrays/dynamic.el` |
@@ -191,9 +192,16 @@
 | [floorDivide](modules/time/units.md#api-a45599efdbefd59dc9cf) | `time/units.el` |
 | [formats](modules/formats/index.md#api-a357aae7f29cecb69598) | `formats/index.el` |
 | [Formats.CSV](modules/formats/index.md#api-1489e37be5f3818f494f) | `formats/index.el` |
+| [Formats.EOD](modules/formats/index.md#api-9ebcb5f224a4de1a6115) | `formats/index.el` |
+| [Formats.EOL](modules/formats/index.md#api-88f51cd42742b14a0df6) | `formats/index.el` |
+| [Formats.INI](modules/formats/index.md#api-b61644417a01eaaa15ee) | `formats/index.el` |
 | [Formats.JSON](modules/formats/index.md#api-82a6375e413cd8e3c5b0) | `formats/index.el` |
 | [Formats.Text](modules/formats/index.md#api-f86695e611fe3e71fa9d) | `formats/index.el` |
+| [Formats.TOML](modules/formats/index.md#api-164a5d9b563b6f25f9d5) | `formats/index.el` |
+| [Formats.TSV](modules/formats/index.md#api-318f5a03d7a4da9c00e9) | `formats/index.el` |
+| [Formats.XML](modules/formats/index.md#api-628fee3513a3531d0e12) | `formats/index.el` |
 | [Formats.YAML](modules/formats/index.md#api-b651a1c802ea9634a3bd) | `formats/index.el` |
+| [FormatWriteError](modules/formats/internal/writer.md#api-c764748c8516ed415ecb) | `formats/internal/writer.el` |
 | [fractionalSecond](modules/time/units.md#api-1cba6f923c3983128204) | `time/units.el` |
 | [frame](modules/text/operations.md#api-df8b8d8436fc50452262) | `text/operations.el` |
 | [generateSeed](modules/random/seed.md#api-36d3ff723851611bfabb) | `random/seed.el` |
@@ -259,6 +267,7 @@
 | [many](modules/text/patterns/combinators.md#api-3805e29d6c725ee7c9c8) | `text/patterns/combinators.el` |
 | [Map](modules/collections/maps/hash-map.md#api-4f70fe0b29e63a840346) | `collections/maps/hash-map.el` |
 | [Map.clear](modules/collections/maps/base.md#api-7c378e1cc018ee51ecee) | `collections/maps/base.el` |
+| [Map.compact](modules/collections/maps/base.md#api-216207f74418a0afe4f3) | `collections/maps/base.el` |
 | [Map.count](modules/collections/maps/base.md#api-0c7a0f184281a95f6821) | `collections/maps/base.el` |
 | [Map.entries](modules/collections/maps/base.md#api-37209e2cfdae04240843) | `collections/maps/base.el` |
 | [Map.get](modules/collections/maps/base.md#api-52852aadc467c16e4d8a) | `collections/maps/base.el` |
@@ -312,6 +321,7 @@
 | [openRandomFileReader](modules/filesystem/index.md#api-ad810a684ec6f474efc0) | `filesystem/index.el` |
 | [optional](modules/text/patterns/combinators.md#api-55180568f6c1181ab847) | `text/patterns/combinators.el` |
 | [over](modules/functions/composition.md#api-e0ba7eca2990075a35ab) | `functions/composition.el` |
+| [ownKeyCount](modules/language/objects.md#api-7f663edadbdc0b343c1b) | `language/objects.el` |
 | [PaintTheme](modules/user-interface/drawing.md#api-4be1353cf98b66267dcf) | `user-interface/drawing.el` |
 | [pair](modules/text/patterns/parser.md#api-cd138cf7450ba86c77a7) | `text/patterns/parser.el` |
 | [parallel_divide](modules/concurrency/tasks/parallel.md#api-dac72591c8ac45297242) | `concurrency/tasks/parallel.el` |
@@ -501,6 +511,7 @@
 | [TestRegistrar.each](modules/tools/testing/registry.md#api-e087607adc055d5b5e61) | `tools/testing/registry.el` |
 | [Text.byte_count](modules/text/text.md#api-13f81dad5b9b0b1e9d52) | `text/text.el` |
 | [Text.character](modules/text/text.md#api-72c219d2c7971b4efd7e) | `text/text.el` |
+| [Text.compact](modules/text/text.md#api-f186aaf724ad8de13d29) | `text/text.el` |
 | [Text.contains](modules/text/text.md#api-60a702a27df0fb3b6913) | `text/text.el` |
 | [Text.count](modules/text/text.md#api-19e144cbe3af4ec540f3) | `text/text.el` |
 | [Text.endsWith](modules/text/text.md#api-a0002f7421f94384e4e1) | `text/text.el` |
@@ -537,9 +548,16 @@
 | [WindowTimer.cancel](modules/user-interface/platform/windows/window.md#api-8629377d5cfbe5cd888b) | `user-interface/platform/windows/window.el` |
 | [with_allocation_owner](modules/memory/allocation/context.md#api-8c691c298879362345cc) | `memory/allocation/context.el` |
 | [with_allocation_tracking](modules/memory/allocation/resources.md#api-3ab81e903cbcfb4211ca) | `memory/allocation/resources.el` |
+| [writeCSV](modules/formats/delimited-text/index.md#api-6923a298b8fb07b04435) | `formats/delimited-text/index.el` |
+| [writeDelimited](modules/formats/delimited-text/index.md#api-c6f0fe52fab397d738da) | `formats/delimited-text/index.el` |
 | [writeFileAs](modules/filesystem/index.md#api-5ea2e001353e67ba555f) | `filesystem/index.el` |
 | [writeFileBytes](modules/filesystem/index.md#api-b2192b677345809bb08f) | `filesystem/index.el` |
+| [writeINI](modules/formats/ini/index.md#api-d2152ba4c73076d311c6) | `formats/ini/index.el` |
 | [writeJSON](modules/formats/json/writer.md#api-9d180199328600f27fc7) | `formats/json/writer.el` |
 | [writeTextFile](modules/filesystem/index.md#api-19066393ecef9611add1) | `filesystem/index.el` |
+| [writeTOML](modules/formats/toml/index.md#api-385192dc27d78c6eef68) | `formats/toml/index.el` |
+| [writeTSV](modules/formats/delimited-text/index.md#api-26c2444ceca591f8fbee) | `formats/delimited-text/index.el` |
 | [writeWav](modules/multimedia/audio/wav.md#api-8708e42303b382c64743) | `multimedia/audio/wav.el` |
+| [writeXML](modules/formats/xml/index.md#api-57cd03717e66684e353a) | `formats/xml/index.el` |
+| [writeYAML](modules/formats/yaml/writer.md#api-189d2f47d242742dd0c4) | `formats/yaml/writer.el` |
 | [yearAtSeconds](modules/time/calendar.md#api-0924938c7200fc49f4ca) | `time/calendar.el` |

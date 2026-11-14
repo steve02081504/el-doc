@@ -94,10 +94,22 @@ console.stdout.writeLine("has grace: ", scores.has("grace"))
 - `keys()`、`values()`、`entries()` 取快照数组，`for in` 遍历条目。
 
 ```el
-for (let entry in scores) {
-	console.stdout.writeLine(entry.key, " = ", entry.value)
+for (let {key, value} in scores) {
+	console.stdout.writeLine(key, " = ", value)
 }
 ```
+
+这个片段接在上面的 `scores` 示例后，输出包含 `ada = 98` 和 `grace = 96` 两行；哈希映射不保证两行的先后顺序。也可以写 `for (let entry in scores)`，再读取条目的 `key` 和 `value`。
+
+需要换成业务名称时，使用[对象解构](../reference/language/destructuring.md)的重命名写法：
+
+```el
+for (let {key: name, value: score} in scores) {
+	console.stdout.writeLine(name, ": ", score)
+}
+```
+
+`for` 接受一个元素绑定或解构模式，不支持 `for (let key, value in scores)`。当前 Map 的迭代器先取得条目数组快照，需要与条目数成正比的额外空间；循环期间新增、删除或替换映射条目不会改变这份快照。快照不深复制共享对象，修改共享值的字段仍可能被其他引用看到。给解构变量重新赋值不会写回映射；要替换映射中的值，显式调用 `scores.set(key, newValue)`。
 
 下标写法 `scores["ada"]` 也能读，但键不存在时抛 `MissingKeyError`，而不是返回 `void`。需要“缺失可接受”时用 `get` 或 `getOr`。
 

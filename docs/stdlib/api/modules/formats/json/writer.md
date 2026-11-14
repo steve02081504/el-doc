@@ -12,7 +12,7 @@
 
 ## writeJSON {#api-9d180199328600f27fc7}
 
-源码：`src/stdlib/formats/json/writer.el:182` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/writer.el#L182)
+源码：`src/stdlib/formats/json/writer.el:183` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/writer.el#L183)
 
 将 EL 值编码为严格 JSON 文本，并按给定限制控制递归与输出规模。
 

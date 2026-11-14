@@ -8,6 +8,7 @@
 
 - [Map.count](#api-0c7a0f184281a95f6821)
 - [Map.remove](#api-86c98fb1130f62b84401)
+- [Map.compact](#api-216207f74418a0afe4f3)
 - [Map.clear](#api-7c378e1cc018ee51ecee)
 - [Map.entries](#api-37209e2cfdae04240843)
 - [Map.has](#api-d0a46e913af4f7a66ee6)
@@ -62,9 +63,27 @@ scores.set("ada", 98)
 scores.remove("ada")
 ```
 
-## Map.clear {#api-7c378e1cc018ee51ecee}
+## Map.compact {#api-216207f74418a0afe4f3}
 
 源码：`src/stdlib/collections/maps/base.el:53` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L53)
+
+释放预留容量及删除留下的空槽，保持现有键值及顺序合同。
+
+```el
+virtual fn compact()
+```
+
+### 示例：回收映射预留容量
+
+```el
+let scores = Map<key: Text, value: Number>()
+scores.set("ada", 98)
+scores.compact()
+```
+
+## Map.clear {#api-7c378e1cc018ee51ecee}
+
+源码：`src/stdlib/collections/maps/base.el:62` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L62)
 
 删除映射中的全部条目。
 
@@ -82,9 +101,11 @@ scores.clear()
 
 ## Map.entries {#api-37209e2cfdae04240843}
 
-源码：`src/stdlib/collections/maps/base.el:63` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L63)
+源码：`src/stdlib/collections/maps/base.el:75` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L75)
 
-返回当前键值对组成的数组快照。
+返回当前键值对组成的数组快照；直接遍历映射也使用此快照。
+条目的 key 和 value 是只读属性；使用 set 更新映射，不会修改已有快照中的条目。
+快照不保证深复制键或值。
 
 ```el
 virtual fn entries(): Entry[]
@@ -99,12 +120,13 @@ virtual fn entries(): Entry[]
 ```el
 let scores = Map<key: Text, value: Number>()
 scores.set("ada", 98)
-for (let entry in scores) console.stdout.writeLine(entry.key, " = ", entry.value)
+for (let {key, value} in scores) console.stdout.writeLine(key, " = ", value)
+for (let {key: name, value: score} in scores) console.stdout.writeLine(name, " = ", score)
 ```
 
 ## Map.has {#api-d0a46e913af4f7a66ee6}
 
-源码：`src/stdlib/collections/maps/base.el:77` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L77)
+源码：`src/stdlib/collections/maps/base.el:89` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L89)
 
 判断映射是否含有给定键，不读取或修改对应值。
 
@@ -128,7 +150,7 @@ console.stdout.writeLine(users.has("ada"))
 
 ## Map.get {#api-52852aadc467c16e4d8a}
 
-源码：`src/stdlib/collections/maps/base.el:87` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L87)
+源码：`src/stdlib/collections/maps/base.el:99` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L99)
 
 查询键对应的值；键不存在时返回 void。
 
@@ -151,7 +173,7 @@ let score = scores.get("ada")
 
 ## Map.getOr {#api-9b5fac9ee67f5fe57436}
 
-源码：`src/stdlib/collections/maps/base.el:103` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L103)
+源码：`src/stdlib/collections/maps/base.el:115` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L115)
 
 查询映射中的键；键不存在时返回调用方提供的默认值。
 
@@ -177,7 +199,7 @@ console.stdout.writeLine(counts.getOr("red", 0))
 
 ## Map.keys {#api-bc2703a8337e9d87c267}
 
-源码：`src/stdlib/collections/maps/base.el:140` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L140)
+源码：`src/stdlib/collections/maps/base.el:152` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L152)
 
 返回当前键组成的数组快照。
 
@@ -199,7 +221,7 @@ console.stdout.writeLine(scores.keys().join(", "))
 
 ## Map.values {#api-10056afaf272a33d1f68}
 
-源码：`src/stdlib/collections/maps/base.el:154` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L154)
+源码：`src/stdlib/collections/maps/base.el:166` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L166)
 
 返回当前值组成的数组快照。
 

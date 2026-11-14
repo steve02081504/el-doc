@@ -64,7 +64,7 @@ console.stdout.writeLine("dir: ", isDirectory(parentPath(config)))
 
 ## 用格式读写：把字节转换交给格式对象
 
-`readFileAs(format, reference)` 与 `writeFileAs(format, reference, value)` 把“取字节”和“解码/编码”组合起来。格式对象由 `formats` 提供，例如 `formats.JSON`、`formats.Text`、`formats.YAML`、`formats.CSV`。
+`readFileAs(format, reference)` 与 `writeFileAs(format, reference, value)` 把“取字节”和“解码/编码”组合起来。格式对象由 `formats` 提供，例如 `formats.JSON`、`formats.Text`、`formats.YAML`、`formats.CSV`。这些内置格式均提供编码器；下表列出写入时使用的值类型。
 
 ```el
 import { readFileAs, writeFileAs } from "el:filesystem/"
@@ -76,8 +76,75 @@ writeFileAs(formats.Text, "file:./copy.txt", "already text")
 
 `writeFileAs` 需要所选格式提供编码器。`formats.Text` 的编码就是原样输出文本；`formats.JSON` 通过 `writeJSON` 编码支持的 JSON 值。自定义 `TextFormat` 如果没有提供编码器，调用它的 `encode` 会明确报“这个文本格式没有编码器”。
 
+| 格式对象 | 写入值 | 编码约定 |
+| --- | --- | --- |
+| `formats.Text` / `formats.Buffer` | `Text` / `Buffer` | 原样 UTF-8 文本或字节。 |
+| `formats.JSON` / `formats.JSONC` / `formats.JSON5` | 支持的标量、数组和公开数据对象 | JSONC 输出严格 JSON；JSON5 另允许非有限数。 |
+| `formats.JSONLines` | 值数组 | 每个值一行 JSON。 |
+| `formats.YAML` | 支持的标量、数组和公开数据对象 | 输出带引号键的流式集合，支持非有限数；共享对象按树展开，循环引用报错。 |
+| `formats.TOML` | `Toml.Table` 根表 | 嵌套表编码为内联表，保留日期时间类型；重复键报错。 |
+| `formats.XML` | `XmlDocument` | 验证文档结构并转义文本和属性；拒绝非法节点内容。 |
+| `formats.CSV` / `formats.TSV` | `Text[][]` | 按需加引号、内部引号双写，以 CRLF 结束记录；每行至少一个单元格。 |
+| `formats.INI` | 文本字段和一层节对象组成的公开数据对象 | 根键先于节输出，拒绝无法无损表示的名称和值。 |
+| `formats.EOL` / `formats.EOD` | 满足对应序列化能力合同的值 | 使用现有自包含序列化编码，保存 EL 的类型与共享关系。 |
+| `formats.XLSX` / `formats.ODS` | `Workbook` | 使用工作簿模型编码。 |
+| `formats.DOCX` / `formats.ODT` | `WordDocument` | 使用文档模型编码。 |
+
+这些编码器重新生成内容，不保留原文件的注释或排版。JSON、YAML 和 TOML 写入器对数值使用精确转换；格式数值词素范围内不能精确表示的数（例如 `1 / 3`）会报错，不会静默舍入。可以先修改解码得到的数据，再用同一种格式写出；TOML 和 XML 保留各自的数据模型，不把任意 EL 对象当作对应文档。
+
+文本格式通过 `JsonLimits` 控制输出字节与编码工作预算。EOL/EOD 格式中的 `SerializationLimits` 节点、深度和整数限制只用于解码；编码调用对应序列化入口，生成完整结果后才检查字节上限。自定义 `TextFormat` 仍可只提供解码器。
+
 !!! note "JSON 与 EL 序列化的用途"
     JSON 编码只接受编码器支持的值，并受格式预算限制。需要按 EL 序列化合同保存结构化值时，使用语言规范第 15 章的 EOL/EOD 入口生成文本或字节，再交给显式写入。
+
+## INI 配置：节和键保留名字，值保持文本
+
+下面是一个完整的内存解析示例；`jsonField` 也可以读取 INI 返回的动态对象成员：
+
+```el
+import { parseINI } from "el:formats/ini/"
+import { jsonField } from "el:formats/json/"
+
+let config = parseINI("name=demo\n[server]\nport=8080\n")
+let server = jsonField(config, "server")
+console.stdout.writeLine(jsonField(config, "name"))
+console.stdout.writeLine(jsonField(server, "port"))
+```
+
+预期输出：
+
+```text
+demo
+8080
+```
+
+`port` 的值是文本 `"8080"`，不会自动变成数字。若配置已保存在 UTF-8 文件 `config.ini` 中，可以直接读取：
+
+```el
+import { readFileAs } from "el:filesystem/"
+import { formats } from "el:formats/"
+
+let config = readFileAs(formats.INI, "file:./config.ini")
+```
+
+当前支持轻量 INI 方言：
+
+- 节写作 `[server]`；第一个节之前的键放在根对象中，节内的键放在对应节对象中。
+- 键和值以 `=` 或 `:` 分隔，两端空格和制表符会去掉；节名和键名区分大小写。
+- `;` 和 `#` 支持整行注释；节头后也允许注释。值中的这些字符仍是文本，不会作为行尾注释去掉。
+- 重复键使用最后一个值，重复节合并；标量键与节名冲突会报错。
+- 值按字面文本保留，不处理引号、转义、插值或多行值。
+
+`parseINI` 的第二个参数可传 `JsonLimits`，限制输入字节数与解析资源。语法错误或资源超限会抛异常。使用 `writeINI(value)` 可得到文本；也可以直接写入文件：
+
+```el
+import { writeFileAs } from "el:filesystem/"
+import { formats } from "el:formats/"
+
+writeFileAs(formats.INI, "file:./config.ini", @{ name: "demo", server: @{ port: "8080" } })
+```
+
+写入器不自动将数字转换成文本；空白位于名称或值两端、多行值、超过一层的节，以及含语法分隔符的名称都会报错，避免写出后含义改变。接口参数见 [INI API 参考](api/modules/formats/ini/index.md)。
 
 ## 先猜：服务器返回 404，`request` 会抛异常吗？
 
@@ -160,11 +227,14 @@ fn loadName() {
 }
 ```
 
-写配置时直接写文本。真实项目里要对插入的字符串做 JSON 转义，这里为了看清流程省略了它：
+写配置时交给 JSON 编码器处理引号、反斜杠和换行：
 
 ```el
+import { writeFileAs } from "el:filesystem/"
+import { formats } from "el:formats/"
+
 fn saveName(name: Text) {
-	writeTextFile("file:./config.json", `{"name": "${name}"}`)
+	discard(writeFileAs(formats.JSON, "file:./config.json", @{ name: name }))
 }
 ```
 
@@ -196,7 +266,7 @@ try {
 
 !!! warning "常见坑：错误发生在哪一层"
     - 文件不存在却得到空串：那是代码把失败吞了。默认入口抛异常，只有 `...IfPresent` 系列返回 `void`。
-    - `writeFileAs(formats.JSON, ...)` 报“没有编码器”：JSON 格式只解码，先拼文本再 `writeTextFile`。
+    - 自定义 `TextFormat` 报“没有编码器”：构造它时需要传入 `write`；内置 INI 已提供编码器，值仍须符合其文本与节结构限制。
     - 404 之后程序继续往下跑：`request` 不抛 HTTP 错误，必须检查 `response.ok`，或用 `fetchAs`。
     - 用 `https://...` 去列目录或写文件：Web provider 只保证读，缺能力时返回明确错误。
 

@@ -72,7 +72,7 @@ console.stdout.writeLine(scores.count)
 
 ## Map.set {#api-2237aab881f7dd69a3e3}
 
-源码：`src/stdlib/collections/maps/hash-map.el:170` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L170)
+源码：`src/stdlib/collections/maps/hash-map.el:176` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L176)
 
 写入键值；若键已存在则保留原键并替换原值。
 
@@ -97,7 +97,7 @@ scores.set("ada", 98)
 
 ## Map.tryAdd {#api-e277e1770ee904b688d8}
 
-源码：`src/stdlib/collections/maps/hash-map.el:196` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L196)
+源码：`src/stdlib/collections/maps/hash-map.el:202` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L202)
 
 仅当键不存在时插入键值，已有值保持不变。
 
@@ -130,7 +130,7 @@ console.stdout.writeLine(scores.getOr("ada", 0))
 
 ## Map.getOrInsert {#api-dbfec9db9a187199f071}
 
-源码：`src/stdlib/collections/maps/hash-map.el:221` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L221)
+源码：`src/stdlib/collections/maps/hash-map.el:227` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L227)
 
 返回已有值；键缺失时调用 make 一次，将结果插入并返回。
 
@@ -163,7 +163,7 @@ console.stdout.writeLine(counts.getOrInsert("red", () => 9))
 
 ## Map.update {#api-ecbb1ca6393ae8693785}
 
-源码：`src/stdlib/collections/maps/hash-map.el:248` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L248)
+源码：`src/stdlib/collections/maps/hash-map.el:254` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L254)
 
 用回调计算并保存新值；键缺失时以 initial 为输入。
 

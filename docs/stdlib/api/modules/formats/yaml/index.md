@@ -8,11 +8,11 @@
 
 源码：`src/stdlib/formats/yaml/index.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L1)
 
-解析本实现支持的 YAML 文档子集。
+解析与编码本实现支持的 YAML 文档子集。
 
 ## parseYAML {#api-9cc1ddf8a8c4fb2a80f8}
 
-源码：`src/stdlib/formats/yaml/index.el:368` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L368)
+源码：`src/stdlib/formats/yaml/index.el:369` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L369)
 
 将受支持的单个 YAML 文档解析为动态对象、数组及标量值。
 

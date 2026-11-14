@@ -234,7 +234,7 @@ class ZipFile
 class Array
 ```
 
-[源码 collections/arrays/dynamic.el:120](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L120)
+[源码 collections/arrays/dynamic.el:129](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L129)
 
 ```el
 fn Array(element: type): type
@@ -244,7 +244,7 @@ fn Array(element: type): type
 
 ## ArrayCursor · collections/arrays/dynamic.el {#api-745e67b3b180acb3f95c}
 
-[源码 collections/arrays/dynamic.el:74](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L74)
+[源码 collections/arrays/dynamic.el:83](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L83)
 
 ```el
 fn ArrayCursor(element: type): type
@@ -252,7 +252,7 @@ fn ArrayCursor(element: type): type
 
 ## ArrayLiteralTail · collections/arrays/dynamic.el {#api-8cca1b929908a3728b29}
 
-[源码 collections/arrays/dynamic.el:97](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L97)
+[源码 collections/arrays/dynamic.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L106)
 
 ```el
 fn ArrayLiteralTail(element: type, count = -1): type
@@ -260,7 +260,7 @@ fn ArrayLiteralTail(element: type, count = -1): type
 
 ## ClassicArray · collections/arrays/dynamic.el {#api-257247efc6d9544b6cca}
 
-[源码 collections/arrays/dynamic.el:341](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L341)
+[源码 collections/arrays/dynamic.el:350](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L350)
 
 ```el
 fn ClassicArray(element: type): type
@@ -268,7 +268,7 @@ fn ClassicArray(element: type): type
 
 ## DynamicArray · collections/arrays/dynamic.el {#api-1d30e7929db536315a31}
 
-[源码 collections/arrays/dynamic.el:350](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L350)
+[源码 collections/arrays/dynamic.el:359](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L359)
 
 ```el
 fn DynamicArray(element: type, count = -1): type
@@ -324,7 +324,7 @@ class ArrayResources
 
 ## FixedRecordPage · collections/arrays/storage/fixed-record-page.el {#api-4d64058b4a1e225aa794}
 
-[源码 collections/arrays/storage/fixed-record-page.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/storage/fixed-record-page.el#L18)
+[源码 collections/arrays/storage/fixed-record-page.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/storage/fixed-record-page.el#L19)
 
 ```el
 fn FixedRecordPage(element: type, codecType: type): type
@@ -468,7 +468,7 @@ fn ElementBlock(element: type): type
 
 ## ElementBuffer · collections/internal/element-buffer.el {#api-36a2aef80e544a9b4bd9}
 
-[源码 collections/internal/element-buffer.el:176](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/internal/element-buffer.el#L176)
+[源码 collections/internal/element-buffer.el:182](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/internal/element-buffer.el#L182)
 
 ```el
 fn ElementBuffer(element: type): type
@@ -484,7 +484,7 @@ fn ElementCell(element: type): type
 
 ## ElementCursor · collections/internal/element-buffer.el {#api-dc7b199d15d003e9e0c5}
 
-[源码 collections/internal/element-buffer.el:144](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/internal/element-buffer.el#L144)
+[源码 collections/internal/element-buffer.el:150](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/internal/element-buffer.el#L150)
 
 ```el
 fn ElementCursor(element: type): type
@@ -492,7 +492,7 @@ fn ElementCursor(element: type): type
 
 ## ElementFrame · collections/internal/element-buffer.el {#api-1ffec73d5b8dc924e509}
 
-[源码 collections/internal/element-buffer.el:119](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/internal/element-buffer.el#L119)
+[源码 collections/internal/element-buffer.el:125](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/internal/element-buffer.el#L125)
 
 ```el
 fn ElementFrame(element: type): type
@@ -500,7 +500,7 @@ fn ElementFrame(element: type): type
 
 ## ElementPosition · collections/internal/element-buffer.el {#api-0b0aa9812efc5de9522c}
 
-[源码 collections/internal/element-buffer.el:129](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/internal/element-buffer.el#L129)
+[源码 collections/internal/element-buffer.el:135](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/internal/element-buffer.el#L135)
 
 ```el
 fn ElementPosition(element: type): type
@@ -508,7 +508,7 @@ fn ElementPosition(element: type): type
 
 ## ElementRoot · collections/internal/element-buffer.el {#api-1a6805d085ab31e5da7c}
 
-[源码 collections/internal/element-buffer.el:85](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/internal/element-buffer.el#L85)
+[源码 collections/internal/element-buffer.el:86](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/internal/element-buffer.el#L86)
 
 ```el
 fn ElementRoot(element: type): type
@@ -778,7 +778,7 @@ fn BitSet(size: Number): type
 
 ## OrderedSet · collections/sets/hash-set.el {#api-a2bde962cb10da80cd36}
 
-[源码 collections/sets/hash-set.el:179](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L179)
+[源码 collections/sets/hash-set.el:180](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L180)
 
 ```el
 fn OrderedSet(element: type): type
@@ -796,7 +796,7 @@ fn Set(element: type): type
 
 ## SortedSet · collections/sets/hash-set.el {#api-e6b225de706f31a15947}
 
-[源码 collections/sets/hash-set.el:232](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L232)
+[源码 collections/sets/hash-set.el:234](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L234)
 
 ```el
 fn SortedSet(element: type): type
@@ -16678,7 +16678,7 @@ class Limb
 
 ## FileBuffer · filesystem/buffer.el {#api-46bf41868bd77b4bb737}
 
-[源码 filesystem/buffer.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/buffer.el#L7)
+[源码 filesystem/buffer.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/buffer.el#L9)
 
 ```el
 class FileBuffer
@@ -17310,7 +17310,7 @@ class TargetFacts
 
 ## BufferFormat · formats/index.el {#api-4b10152d04d71ddc756e}
 
-[源码 formats/index.el:85](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L85)
+[源码 formats/index.el:97](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L97)
 
 ```el
 class BufferFormat
@@ -17318,7 +17318,7 @@ class BufferFormat
 
 ## EodFormat · formats/index.el {#api-ca9eddf9d85bd918e571}
 
-[源码 formats/index.el:78](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L78)
+[源码 formats/index.el:85](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L85)
 
 ```el
 class EodFormat
@@ -17326,7 +17326,7 @@ class EodFormat
 
 ## EolFormat · formats/index.el {#api-7a5e0b123494d48b661f}
 
-[源码 formats/index.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L67)
+[源码 formats/index.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L68)
 
 ```el
 class EolFormat
@@ -17334,7 +17334,7 @@ class EolFormat
 
 ## Formats · formats/index.el {#api-6768ac9ca087f5de0440}
 
-[源码 formats/index.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L106)
+[源码 formats/index.el:118](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L118)
 
 ```el
 class Formats
@@ -17342,7 +17342,7 @@ class Formats
 
 ## TextFormat · formats/index.el {#api-c603856b0e561e7ac3e8}
 
-[源码 formats/index.el:44](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L44)
+[源码 formats/index.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L45)
 
 ```el
 fn TextFormat(output: type, input: type = output): type
@@ -17356,6 +17356,24 @@ fn TextFormat(output: type, input: type = output): type
 
 ```el
 class FormatReader
+```
+
+## FormatWriteError · formats/internal/writer.el {#api-c764748c8516ed415ecb}
+
+[源码 formats/internal/writer.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/internal/writer.el#L14)
+
+```el
+class FormatWriteError extends Error
+```
+
+[API 文档](modules/formats/internal/writer.md#api-c764748c8516ed415ecb)
+
+## FormatWriter · formats/internal/writer.el {#api-c119096ed889139d1491}
+
+[源码 formats/internal/writer.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/internal/writer.el#L19)
+
+```el
+class FormatWriter
 ```
 
 ## JsonReader · formats/json/index.el {#api-8498e0f8ba5ec2e5c3a3}
@@ -17594,7 +17612,7 @@ class SerializationVariants
 
 ## TableNode · formats/toml/index.el {#api-6309c1fff2582c55bd14}
 
-[源码 formats/toml/index.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L29)
+[源码 formats/toml/index.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L33)
 
 ```el
 class TableNode
@@ -17602,7 +17620,7 @@ class TableNode
 
 ## Toml · formats/toml/index.el {#api-1ded7c60633c334bf6e6}
 
-[源码 formats/toml/index.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L10)
+[源码 formats/toml/index.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L14)
 
 ```el
 data Toml
@@ -17610,7 +17628,7 @@ data Toml
 
 ## TomlDateTimeKind · formats/toml/index.el {#api-c42202ead8ee9aa3b6d2}
 
-[源码 formats/toml/index.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L9)
+[源码 formats/toml/index.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L13)
 
 ```el
 enum TomlDateTimeKind
@@ -17618,7 +17636,7 @@ enum TomlDateTimeKind
 
 ## TomlMember · formats/toml/index.el {#api-b784e52f7b9e2a07cb21}
 
-[源码 formats/toml/index.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L18)
+[源码 formats/toml/index.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L22)
 
 ```el
 class TomlMember
@@ -17626,15 +17644,23 @@ class TomlMember
 
 ## TomlReader · formats/toml/index.el {#api-5d0e10c31c574bc04c2b}
 
-[源码 formats/toml/index.el:54](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L54)
+[源码 formats/toml/index.el:58](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L58)
 
 ```el
 class TomlReader extends FormatReader
 ```
 
+## TomlWriter · formats/toml/index.el {#api-9d9e6decdb9376881c65}
+
+[源码 formats/toml/index.el:271](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L271)
+
+```el
+class TomlWriter
+```
+
 ## XmlAttribute · formats/xml/index.el {#api-acb12bd0f1efdbf23f22}
 
-[源码 formats/xml/index.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L8)
+[源码 formats/xml/index.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L9)
 
 ```el
 class XmlAttribute
@@ -17642,7 +17668,7 @@ class XmlAttribute
 
 ## XmlDocument · formats/xml/index.el {#api-a9b268230a0106556c55}
 
-[源码 formats/xml/index.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L20)
+[源码 formats/xml/index.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L21)
 
 ```el
 class XmlDocument
@@ -17650,7 +17676,7 @@ class XmlDocument
 
 ## XmlNode · formats/xml/index.el {#api-3e2ce6d18298299dc5cc}
 
-[源码 formats/xml/index.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L13)
+[源码 formats/xml/index.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L14)
 
 ```el
 data XmlNode
@@ -17658,15 +17684,23 @@ data XmlNode
 
 ## XmlReader · formats/xml/index.el {#api-6b90d922a3864eeb0f0e}
 
-[源码 formats/xml/index.el:37](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L37)
+[源码 formats/xml/index.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L38)
 
 ```el
 class XmlReader extends FormatReader
 ```
 
+## XmlWriter · formats/xml/index.el {#api-b1e1daafea9d6c2e430d}
+
+[源码 formats/xml/index.el:181](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L181)
+
+```el
+class XmlWriter
+```
+
 ## YamlFlow · formats/yaml/index.el {#api-c273d9c235cfec89910d}
 
-[源码 formats/yaml/index.el:91](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L91)
+[源码 formats/yaml/index.el:92](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L92)
 
 ```el
 class YamlFlow extends FormatReader
@@ -17674,7 +17708,7 @@ class YamlFlow extends FormatReader
 
 ## YamlLine · formats/yaml/index.el {#api-c8647f4f16b4ad29236b}
 
-[源码 formats/yaml/index.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L18)
+[源码 formats/yaml/index.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L19)
 
 ```el
 class YamlLine
@@ -17682,7 +17716,7 @@ class YamlLine
 
 ## YamlReader · formats/yaml/index.el {#api-8ffd3f96fbbad872fcf7}
 
-[源码 formats/yaml/index.el:190](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L190)
+[源码 formats/yaml/index.el:191](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L191)
 
 ```el
 class YamlReader
@@ -17690,10 +17724,26 @@ class YamlReader
 
 ## YamlState · formats/yaml/index.el {#api-03dfe90ddcfb8f435bd4}
 
-[源码 formats/yaml/index.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L27)
+[源码 formats/yaml/index.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L28)
 
 ```el
 class YamlState
+```
+
+## YamlWriteError · formats/yaml/writer.el {#api-1476e51f8cc18f6dc218}
+
+[源码 formats/yaml/writer.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/writer.el#L16)
+
+```el
+class YamlWriteError extends Error
+```
+
+## YamlWriter · formats/yaml/writer.el {#api-8faf3ee6c89bd99f2ad3}
+
+[源码 formats/yaml/writer.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/writer.el#L20)
+
+```el
+class YamlWriter
 ```
 
 ## LinearColor · graphics/color.el {#api-dde21a7439d65bc0647e}
@@ -20318,7 +20368,7 @@ class ToolSourceScan
 
 ## DynamicObject · language/objects.el {#api-e3d29af11f62e4970b53}
 
-[源码 language/objects.el:53](https://github.com/steve02081504/el/blob/master/src/stdlib/language/objects.el#L53)
+[源码 language/objects.el:62](https://github.com/steve02081504/el/blob/master/src/stdlib/language/objects.el#L62)
 
 ```el
 class DynamicObject
@@ -30078,7 +30128,7 @@ class TextOperand
 
 ## TextConcat · text/internal/data.el {#api-60a6997417bb6f60bbbb}
 
-[源码 text/internal/data.el:180](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L180)
+[源码 text/internal/data.el:184](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L184)
 
 ```el
 class TextConcat extends TextData
@@ -30094,7 +30144,7 @@ class TextData
 
 ## TextEmpty · text/internal/data.el {#api-d4063d6e73118b500016}
 
-[源码 text/internal/data.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L87)
+[源码 text/internal/data.el:88](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L88)
 
 ```el
 class TextEmpty extends TextData
@@ -30102,7 +30152,7 @@ class TextEmpty extends TextData
 
 ## TextHashIndex · text/internal/data.el {#api-be8e57d6fc0fc571f410}
 
-[源码 text/internal/data.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L57)
+[源码 text/internal/data.el:58](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L58)
 
 ```el
 class TextHashIndex
@@ -30110,7 +30160,7 @@ class TextHashIndex
 
 ## TextOwned · text/internal/data.el {#api-b6ec28d5a6ed15c0a470}
 
-[源码 text/internal/data.el:97](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L97)
+[源码 text/internal/data.el:98](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L98)
 
 ```el
 class TextOwned extends TextData
@@ -30118,7 +30168,7 @@ class TextOwned extends TextData
 
 ## TextRepeat · text/internal/data.el {#api-ad20f8ccd73a43f153f8}
 
-[源码 text/internal/data.el:219](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L219)
+[源码 text/internal/data.el:223](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L223)
 
 ```el
 class TextRepeat extends TextData
@@ -30126,7 +30176,7 @@ class TextRepeat extends TextData
 
 ## TextSlice · text/internal/data.el {#api-8e0fe8c0862d6754fa03}
 
-[源码 text/internal/data.el:148](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L148)
+[源码 text/internal/data.el:152](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L152)
 
 ```el
 class TextSlice extends TextData
@@ -30134,7 +30184,7 @@ class TextSlice extends TextData
 
 ## TextSplice · text/internal/data.el {#api-1582a3860b643607fc26}
 
-[源码 text/internal/data.el:260](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L260)
+[源码 text/internal/data.el:264](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L264)
 
 ```el
 class TextSplice extends TextData
@@ -30198,7 +30248,7 @@ class NormalizedText
 
 ## BufferCursor · text/patterns/buffer.el {#api-b92a52b1a896b54c8754}
 
-[源码 text/patterns/buffer.el:131](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/buffer.el#L131)
+[源码 text/patterns/buffer.el:151](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/buffer.el#L151)
 
 ```el
 fn BufferCursor(element: type): type
@@ -30214,7 +30264,7 @@ fn BufferNode(element: type): type
 
 ## PatternBuffer · text/patterns/buffer.el {#api-bee62fcbf45cd65079b3}
 
-[源码 text/patterns/buffer.el:72](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/buffer.el#L72)
+[源码 text/patterns/buffer.el:83](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/buffer.el#L83)
 
 ```el
 fn PatternBuffer(element: type): type
@@ -30520,7 +30570,7 @@ class PatternRejected
 
 ## DataTextView · text/text.el {#api-876275f9f62d8f9e5710}
 
-[源码 text/text.el:816](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L816)
+[源码 text/text.el:824](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L824)
 
 ```el
 class DataTextView extends TextView
@@ -30536,7 +30586,7 @@ class Text extends Array<element: Char>
 
 [API 文档](modules/text/text.md#api-6116e54b075df026a90a)
 
-[源码 text/text.el:911](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L911)
+[源码 text/text.el:919](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L919)
 
 ```el
 fn Text(bitWidth = 0, size = 0): type
@@ -30560,7 +30610,7 @@ fn TextArea(bitWidth): type
 
 ## TextBase · text/text.el {#api-b68ff01b78c61022469f}
 
-[源码 text/text.el:839](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L839)
+[源码 text/text.el:847](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L847)
 
 ```el
 let TextBase: type = Text
@@ -30568,7 +30618,7 @@ let TextBase: type = Text
 
 ## TextCursor · text/text.el {#api-75ceb470331839830dc7}
 
-[源码 text/text.el:657](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L657)
+[源码 text/text.el:665](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L665)
 
 ```el
 class TextCursor
@@ -30576,7 +30626,7 @@ class TextCursor
 
 ## TextIndexWriteUpdate · text/text.el {#api-10375fdc7207c5494819}
 
-[源码 text/text.el:1006](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1006)
+[源码 text/text.el:1014](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1014)
 
 ```el
 fn TextIndexWriteUpdate(bitWidth = 0, size = 0, index: type, value: type, index_bitWidth = 0, value_bitWidth = 0): type
@@ -30584,7 +30634,7 @@ fn TextIndexWriteUpdate(bitWidth = 0, size = 0, index: type, value: type, index_
 
 ## TextPushUpdate · text/text.el {#api-9dcddc94fc17f31c7ca8}
 
-[源码 text/text.el:999](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L999)
+[源码 text/text.el:1007](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1007)
 
 ```el
 fn TextPushUpdate(bitWidth = 0, size = 0, value: type, value_bitWidth = 0): type
@@ -30592,7 +30642,7 @@ fn TextPushUpdate(bitWidth = 0, size = 0, value: type, value_bitWidth = 0): type
 
 ## TextRangeView · text/text.el {#api-ea0b39b574895c30c0b7}
 
-[源码 text/text.el:789](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L789)
+[源码 text/text.el:797](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L797)
 
 ```el
 class TextRangeView extends TextView
@@ -30600,7 +30650,7 @@ class TextRangeView extends TextView
 
 ## TextRangeViewBase · text/text.el {#api-182272bf982bd7ce64f3}
 
-[源码 text/text.el:840](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L840)
+[源码 text/text.el:848](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L848)
 
 ```el
 let TextRangeViewBase: type = TextRangeView
@@ -30608,13 +30658,13 @@ let TextRangeViewBase: type = TextRangeView
 
 ## TextView · text/text.el {#api-5684c75000d17c66817d}
 
-[源码 text/text.el:756](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L756)
+[源码 text/text.el:764](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L764)
 
 ```el
 class TextView
 ```
 
-[源码 text/text.el:862](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L862)
+[源码 text/text.el:870](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L870)
 
 ```el
 fn TextView(bitWidth = 0, size = 0): type
@@ -32174,25 +32224,25 @@ class VirtualTextList extends Definition
 class WindowCelebration
 ```
 
-## element · collections/arrays/dynamic.el {#api-4dc18da8e9adc4a782b3}
+## element · collections/arrays/dynamic.el {#api-6ece51202a051f1cd7ff}
 
-类型参数，位于 `collections/arrays/dynamic.el:120`。
+类型参数，位于 `collections/arrays/dynamic.el:129`。
 
 ```el
 fn Array(element: type): type
 ```
 
-## end · collections/arrays/dynamic.el {#api-4ba1a576461b796e199f}
+## end · collections/arrays/dynamic.el {#api-c88e49e5917dcab9c75c}
 
-值参数，位于 `collections/arrays/dynamic.el:285`。
+值参数，位于 `collections/arrays/dynamic.el:294`。
 
 ```el
 fn slice(start: Number, end: Number): FixedArray<element: element, length: end - start>
 ```
 
-## start · collections/arrays/dynamic.el {#api-b3cd3e74411f6c5d07b7}
+## start · collections/arrays/dynamic.el {#api-322f684f4d6852360882}
 
-值参数，位于 `collections/arrays/dynamic.el:285`。
+值参数，位于 `collections/arrays/dynamic.el:294`。
 
 ```el
 fn slice(start: Number, end: Number): FixedArray<element: element, length: end - start>

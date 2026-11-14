@@ -147,7 +147,7 @@ tags.remove("el")
 
 ## Set.values {#api-08e9c0e43ab2da7101aa}
 
-源码：`src/stdlib/collections/sets/hash-set.el:85` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L85)
+源码：`src/stdlib/collections/sets/hash-set.el:86` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L86)
 
 返回集合中元素组成的数组快照。
 
@@ -169,7 +169,7 @@ console.stdout.writeLine(tags.values().join(", "))
 
 ## Set.union {#api-6fc99da40e2de7ac073d}
 
-源码：`src/stdlib/collections/sets/hash-set.el:102` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L102)
+源码：`src/stdlib/collections/sets/hash-set.el:103` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L103)
 
 返回包含当前集合和另一个集合全部元素的新集合。
 
@@ -195,7 +195,7 @@ console.stdout.writeLine(allTags.union(more).count)
 
 ## Set.intersection {#api-b7027b62e6689eb23a7f}
 
-源码：`src/stdlib/collections/sets/hash-set.el:114` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L114)
+源码：`src/stdlib/collections/sets/hash-set.el:115` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L115)
 
 返回仅包含同时存在于两个集合中的元素的新集合。
 
@@ -220,7 +220,7 @@ let common = first.intersection(second)
 
 ## Set.difference {#api-374a5786f13d6e5ba4d3}
 
-源码：`src/stdlib/collections/sets/hash-set.el:126` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L126)
+源码：`src/stdlib/collections/sets/hash-set.el:127` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L127)
 
 返回存在于当前集合但不在另一个集合中的元素。
 
@@ -245,7 +245,7 @@ let remaining = all.difference(done)
 
 ## Set.symmetricDifference {#api-84114d3fe59c80193055}
 
-源码：`src/stdlib/collections/sets/hash-set.el:138` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L138)
+源码：`src/stdlib/collections/sets/hash-set.el:139` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L139)
 
 返回只出现在其中一个集合中的元素。
 
@@ -270,7 +270,7 @@ let changed = before.symmetricDifference(after)
 
 ## Set.isSubsetOf {#api-5dd01f2e69fa12046ef8}
 
-源码：`src/stdlib/collections/sets/hash-set.el:150` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L150)
+源码：`src/stdlib/collections/sets/hash-set.el:151` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L151)
 
 判断当前集合是否为另一个集合的子集。
 
@@ -295,7 +295,7 @@ console.stdout.writeLine(required.isSubsetOf(granted))
 
 ## Set.isSupersetOf {#api-01377dfbc1aa88307fa5}
 
-源码：`src/stdlib/collections/sets/hash-set.el:162` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L162)
+源码：`src/stdlib/collections/sets/hash-set.el:163` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L163)
 
 判断当前集合是否包含另一个集合的全部元素。
 
@@ -320,7 +320,7 @@ console.stdout.writeLine(granted.isSupersetOf(required))
 
 ## Set.isDisjointFrom {#api-dcb2b454234c09158e47}
 
-源码：`src/stdlib/collections/sets/hash-set.el:174` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L174)
+源码：`src/stdlib/collections/sets/hash-set.el:175` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L175)
 
 判断两个集合是否没有共同元素。
 
