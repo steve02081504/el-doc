@@ -169,6 +169,7 @@ nav:
           - 图形界面: stdlib/gui.md
           - 声音与音频: stdlib/audio.md
           - 神经网络: stdlib/neural-networks.md
+          - 分配器与内存跟踪: stdlib/allocators.md
           - 测试: stdlib/testing.md
       - 实战:
           - 命令行工具: practice/cli-tool.md

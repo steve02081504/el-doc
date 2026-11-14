@@ -314,10 +314,10 @@
 		},
 		{
 			"name": "allocate_language_storage",
-			"id": null,
+			"id": "memory/allocation/index::allocate_language_storage",
 			"source": "memory/allocation/index.el",
-			"line": 37,
-			"signature": "export fn allocate_language_storage(size: AllocationSize, alignment: AllocationSize): ptr",
+			"line": 57,
+			"signature": "@builtin:vome:allocator\n@builtin:vome:effect:alloc(family: @[ProcessStorageFamily])\nexport fn allocate_language_storage(size: AllocationSize, alignment: AllocationSize): ptr",
 			"value_type": null
 		},
 		{
@@ -10370,10 +10370,10 @@
 		},
 		{
 			"name": "release_language_storage",
-			"id": null,
+			"id": "memory/allocation/index::release_language_storage",
 			"source": "memory/allocation/index.el",
-			"line": 48,
-			"signature": "export fn release_language_storage(pointer: ptr, size: AllocationSize, alignment: AllocationSize)",
+			"line": 88,
+			"signature": "@builtin:vome:deallocator\n@builtin:vome:effect:free(family: @[ProcessStorageFamily])\nexport fn release_language_storage(pointer: ptr, size: AllocationSize, alignment: AllocationSize)",
 			"value_type": null
 		},
 		{
@@ -10570,10 +10570,10 @@
 		},
 		{
 			"name": "resize_language_storage",
-			"id": null,
+			"id": "memory/allocation/index::resize_language_storage",
 			"source": "memory/allocation/index.el",
-			"line": 58,
-			"signature": "export fn resize_language_storage(pointer: ptr, old_size: AllocationSize, new_size: AllocationSize, alignment: AllocationSize): ptr",
+			"line": 120,
+			"signature": "@builtin:vome:reallocator\n@builtin:vome:effect:realloc(family: @[ProcessStorageFamily])\nexport fn resize_language_storage(pointer: ptr, old_size: AllocationSize, new_size: AllocationSize, alignment: AllocationSize): ptr",
 			"value_type": null
 		},
 		{
@@ -13681,6 +13681,7 @@
 			"ThemeContext": "theme/model::ThemeContext",
 			"ThemeValues": "theme/model::ThemeValues",
 			"TimeResolution": "time/instant::TimeResolution",
+			"allocate_language_storage": "memory/allocation/index::allocate_language_storage",
 			"anyOf": "text/patterns/combinators::anyOf",
 			"appendChild": "user-interface/model::appendChild",
 			"arrayAll": "collections/arrays/operations::all",
@@ -13778,10 +13779,12 @@
 			"readTextFile": "filesystem/index::readTextFile",
 			"readTextFileIfPresent": "filesystem/index::readTextFileIfPresent",
 			"refl": "language/proofs::refl",
+			"release_language_storage": "memory/allocation/index::release_language_storage",
 			"removeChild": "user-interface/model::removeChild",
 			"removeFile": "filesystem/index::removeFile",
 			"replaceFile": "filesystem/index::replaceFile",
 			"request": "network/http/index::request",
+			"resize_language_storage": "memory/allocation/index::resize_language_storage",
 			"resolveFrom": "filesystem/index::resolveFrom",
 			"resolvePath": "filesystem/index::resolvePath",
 			"resolveTheme": "theme/resolve::resolveTheme",
@@ -13907,6 +13910,50 @@
 			"Prop": "language/proofs::Prop",
 			"Type": "language/proofs::Type",
 			"refl": "language/proofs::refl"
+		},
+		"memory/allocation/context": {
+			"with_allocation_owner": "memory/allocation/context::with_allocation_owner"
+		},
+		"memory/allocation/heap": {
+			"heap_alloc": "memory/allocation/heap::heap_alloc",
+			"heap_free": "memory/allocation/heap::heap_free",
+			"try_heap_alloc": "memory/allocation/heap::try_heap_alloc"
+		},
+		"memory/allocation/index": {
+			"allocate_language_base_storage": "memory/allocation/index::allocate_language_base_storage",
+			"allocate_language_storage": "memory/allocation/index::allocate_language_storage",
+			"release_language_storage": "memory/allocation/index::release_language_storage",
+			"resize_language_storage": "memory/allocation/index::resize_language_storage"
+		},
+		"memory/allocation/observation": {
+			"PressureGeneration": "memory/allocation/observation::PressureGeneration",
+			"allocationPressureGeneration": "memory/allocation/observation::allocationPressureGeneration"
+		},
+		"memory/allocation/pressure": {
+			"MemoryPressure": "memory/allocation/pressure::MemoryPressure",
+			"MemoryPressureStateError": "memory/allocation/pressure::MemoryPressureStateError",
+			"ReclaimRegistration": "memory/allocation/pressure::ReclaimRegistration"
+		},
+		"memory/allocation/resources": {
+			"AllocationResource": "memory/allocation/resources::AllocationResource",
+			"AllocationResourceError": "memory/allocation/resources::AllocationResourceError",
+			"AllocationSnapshot": "memory/allocation/resources::AllocationSnapshot",
+			"allocation_arena": "memory/allocation/resources::allocation_arena",
+			"allocation_observer": "memory/allocation/resources::allocation_observer",
+			"allocation_resource": "memory/allocation/resources::allocation_resource",
+			"allocation_tracker": "memory/allocation/resources::allocation_tracker",
+			"with_allocation_tracking": "memory/allocation/resources::with_allocation_tracking"
+		},
+		"memory/index": {
+			"AllocationResource": "memory/allocation/resources::AllocationResource",
+			"AllocationResourceError": "memory/allocation/resources::AllocationResourceError",
+			"AllocationSnapshot": "memory/allocation/resources::AllocationSnapshot",
+			"allocate_language_base_storage": "memory/allocation/index::allocate_language_base_storage",
+			"allocation_arena": "memory/allocation/resources::allocation_arena",
+			"allocation_observer": "memory/allocation/resources::allocation_observer",
+			"allocation_resource": "memory/allocation/resources::allocation_resource",
+			"allocation_tracker": "memory/allocation/resources::allocation_tracker",
+			"with_allocation_tracking": "memory/allocation/resources::with_allocation_tracking"
 		},
 		"multimedia/audio/index": {
 			"AudioFormat": "multimedia/capture/model::AudioFormat",
@@ -38124,7 +38171,7 @@
 		{
 			"name": "AllocationFlag",
 			"source": "memory/allocation/index.el",
-			"line": 22,
+			"line": 24,
 			"signature": "class AllocationFlag",
 			"id": null,
 			"initializer": null
@@ -38132,23 +38179,23 @@
 		{
 			"name": "PressureGeneration",
 			"source": "memory/allocation/observation.el",
-			"line": 5,
+			"line": 14,
 			"signature": "class PressureGeneration",
-			"id": null,
+			"id": "memory/allocation/observation::PressureGeneration",
 			"initializer": null
 		},
 		{
 			"name": "MemoryPressureStateError",
 			"source": "memory/allocation/pressure.el",
-			"line": 18,
+			"line": 28,
 			"signature": "class MemoryPressureStateError extends Error",
-			"id": null,
+			"id": "memory/allocation/pressure::MemoryPressureStateError",
 			"initializer": null
 		},
 		{
 			"name": "Reclaimer",
 			"source": "memory/allocation/pressure.el",
-			"line": 22,
+			"line": 32,
 			"signature": "class Reclaimer",
 			"id": null,
 			"initializer": null
@@ -38156,7 +38203,7 @@
 		{
 			"name": "ReserveBlock",
 			"source": "memory/allocation/pressure.el",
-			"line": 28,
+			"line": 38,
 			"signature": "class ReserveBlock",
 			"id": null,
 			"initializer": null
@@ -38164,31 +38211,31 @@
 		{
 			"name": "ReclaimRegistration",
 			"source": "memory/allocation/pressure.el",
-			"line": 41,
+			"line": 61,
 			"signature": "class ReclaimRegistration",
-			"id": null,
+			"id": "memory/allocation/pressure::ReclaimRegistration",
 			"initializer": null
 		},
 		{
 			"name": "MemoryPressure",
 			"source": "memory/allocation/pressure.el",
-			"line": 55,
+			"line": 94,
 			"signature": "class MemoryPressure",
-			"id": null,
+			"id": "memory/allocation/pressure::MemoryPressure",
 			"initializer": null
 		},
 		{
 			"name": "AllocationResourceError",
 			"source": "memory/allocation/resources.el",
-			"line": 38,
+			"line": 48,
 			"signature": "class AllocationResourceError extends Error",
-			"id": null,
+			"id": "memory/allocation/resources::AllocationResourceError",
 			"initializer": null
 		},
 		{
 			"name": "AllocationCallbacks",
 			"source": "memory/allocation/resources.el",
-			"line": 45,
+			"line": 55,
 			"signature": "class AllocationCallbacks",
 			"id": null,
 			"initializer": null
@@ -38196,7 +38243,7 @@
 		{
 			"name": "AllocationObserverCallbacks",
 			"source": "memory/allocation/resources.el",
-			"line": 89,
+			"line": 99,
 			"signature": "class AllocationObserverCallbacks",
 			"id": null,
 			"initializer": null
@@ -38204,23 +38251,23 @@
 		{
 			"name": "AllocationSnapshot",
 			"source": "memory/allocation/resources.el",
-			"line": 122,
+			"line": 141,
 			"signature": "class AllocationSnapshot",
-			"id": null,
+			"id": "memory/allocation/resources::AllocationSnapshot",
 			"initializer": null
 		},
 		{
 			"name": "AllocationResource",
 			"source": "memory/allocation/resources.el",
-			"line": 149,
+			"line": 176,
 			"signature": "class AllocationResource",
-			"id": null,
+			"id": "memory/allocation/resources::AllocationResource",
 			"initializer": null
 		},
 		{
 			"name": "AllocationSize",
 			"source": "memory/allocation/types.el",
-			"line": 4,
+			"line": 6,
 			"signature": "class AllocationSize",
 			"id": null,
 			"initializer": null
@@ -38228,7 +38275,7 @@
 		{
 			"name": "ProcessStorageFamily",
 			"source": "memory/allocation/types.el",
-			"line": 8,
+			"line": 10,
 			"signature": "class ProcessStorageFamily",
 			"id": null,
 			"initializer": null
@@ -46379,7 +46426,7 @@
 			"anchor": "api-e1b1b22430ae1dac04e7"
 		}
 	],
-	"source_digest": "de9f0cb454e70f483560c1bff9c823b1f03508e78d48a3e35d8985e05deba8c9",
+	"source_digest": "7561206aa678ed2b9163a52fd65d95f4dc58b8c2e2d0a5806eed565823e6bc83",
 	"files": [
 		{
 			"path": "collections/arrays/dynamic.el",
@@ -46572,6 +46619,38 @@
 		{
 			"path": "mathematics/functions/elementary.el",
 			"sha256": "a689d88b31160a0561306daa53470a54fb3fe2f87965a3c9b5b04351c4e3ac1b"
+		},
+		{
+			"path": "memory/allocation/context.el",
+			"sha256": "352a447c76b4e985559e6406238f077d89f0592cba79fd2760c1e2e27131bef8"
+		},
+		{
+			"path": "memory/allocation/heap.el",
+			"sha256": "623deab2b0999c3bb2f31395baecc1b1d5aea38ad0db2b5d390591f07cd86cde"
+		},
+		{
+			"path": "memory/allocation/index.el",
+			"sha256": "b77fa60ea2e81e0f6c1e957dd436cb053ad41cf1d46ca7ccc4718d4b16f3b162"
+		},
+		{
+			"path": "memory/allocation/native.el",
+			"sha256": "6c4f3c587d6ab585f1fe7eaae6cf9ad941206d5dda6ba9c8d92a5b1cfc7de694"
+		},
+		{
+			"path": "memory/allocation/observation.el",
+			"sha256": "3a28796ed6cf730ea55488708d569363abef4e0c5f2b6d6abd176ff02ffa3355"
+		},
+		{
+			"path": "memory/allocation/pressure.el",
+			"sha256": "4845ea12fa70a656489dc020c9bd31ce643586e3ae1760e26014a56b189ab0d5"
+		},
+		{
+			"path": "memory/allocation/resources.el",
+			"sha256": "61933dfda702cb05f67104b9f7cdd68f05600d9355a1a2709833e9250a1d1cea"
+		},
+		{
+			"path": "memory/allocation/types.el",
+			"sha256": "92b7fc15c2063e944dec9a1315f1938797b1c1c1919608bf7e30f1e348f9d755"
 		},
 		{
 			"path": "multimedia/audio/index.el",
@@ -59732,6 +59811,2012 @@
 			"return_type": null,
 			"initializer": null,
 			"type_references": {}
+		},
+		{
+			"kind": "module",
+			"name": "分配来源上下文",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "在拥有者原始分配来源中构造依赖存储。"
+				}
+			],
+			"source": "memory/allocation/context.el",
+			"line": 1,
+			"id": "memory/allocation/context"
+		},
+		{
+			"kind": "api",
+			"name": "with_allocation_owner",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "借用 owner，在其原始分配绑定中执行 body 并返回结果；结束或异常时恢复调用前的绑定。owner 必须在调用期间保持有效。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { with_allocation_owner } from \"el:memory/allocation/context.el\"\nlet owner = @[1, 2]\nlet result = with_allocation_owner(owner, fn() { return 1 })\n```",
+					"code": "import { with_allocation_owner } from \"el:memory/allocation/context.el\"\nlet owner = @[1, 2]\nlet result = with_allocation_owner(owner, fn() { return 1 })\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/context.el",
+			"line": 20,
+			"signature": "export fn with_allocation_owner(borrow owner, body)",
+			"declaration_line": 28,
+			"id": "memory/allocation/context::with_allocation_owner",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "module",
+			"name": "平台堆分配",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供平台堆的直接分配和释放入口。"
+				}
+			],
+			"source": "memory/allocation/heap.el",
+			"line": 1,
+			"id": "memory/allocation/heap"
+		},
+		{
+			"kind": "api",
+			"name": "try_heap_alloc",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "尝试从平台堆分配，不主动触发压力回收。"
+				},
+				{
+					"tag": "param",
+					"value": "bytes 请求的字节数。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "成功时返回指针，失败时返回空指针；成功的块须用 heap_free 释放。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "检查并释放",
+					"markdown": "```el\nimport { try_heap_alloc, heap_free } from \"el:memory/allocation/heap.el\"\nimport { null_pointer } from \"el:memory/storage/raw.el\"\nlet block = try_heap_alloc(64)\nif (block != null_pointer()) {\n\ttry {\n\t\t// 在这里使用申请到的存储。\n\t}\n\tfinally { heap_free(block) }\n}\n```",
+					"code": "import { try_heap_alloc, heap_free } from \"el:memory/allocation/heap.el\"\nimport { null_pointer } from \"el:memory/storage/raw.el\"\nlet block = try_heap_alloc(64)\nif (block != null_pointer()) {\n\ttry {\n\t\t// 在这里使用申请到的存储。\n\t}\n\tfinally { heap_free(block) }\n}\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/heap.el",
+			"line": 11,
+			"signature": "export fn try_heap_alloc(bytes: Number): ptr",
+			"declaration_line": 27,
+			"id": "memory/allocation/heap::try_heap_alloc",
+			"value_type": null,
+			"owner": null,
+			"return_type": "ptr",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "ptr",
+						"start": 0,
+						"end": 3,
+						"target": {
+							"type": "builtin",
+							"source": null,
+							"name": "ptr",
+							"id": null,
+							"path": "reference/language/foreign.md",
+							"fragment": null
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "heap_alloc",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "从平台堆分配；首次失败后请求压力回收并重试一次。"
+				},
+				{
+					"tag": "param",
+					"value": "bytes 请求的字节数。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "成功的分配指针，调用者须用 heap_free 释放。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "重试失败时抛出 AllocationError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "分配和释放",
+					"markdown": "```el\nimport { heap_alloc, heap_free } from \"el:memory/allocation/heap.el\"\nlet block = heap_alloc(64)\ntry {\n\t// 在这里使用申请到的存储。\n}\nfinally { heap_free(block) }\n```",
+					"code": "import { heap_alloc, heap_free } from \"el:memory/allocation/heap.el\"\nlet block = heap_alloc(64)\ntry {\n\t// 在这里使用申请到的存储。\n}\nfinally { heap_free(block) }\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/heap.el",
+			"line": 29,
+			"signature": "export fn heap_alloc(bytes: Number): ptr",
+			"declaration_line": 43,
+			"id": "memory/allocation/heap::heap_alloc",
+			"value_type": null,
+			"owner": null,
+			"return_type": "ptr",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "ptr",
+						"start": 0,
+						"end": 3,
+						"target": {
+							"type": "builtin",
+							"source": null,
+							"name": "ptr",
+							"id": null,
+							"path": "reference/language/foreign.md",
+							"fragment": null
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "heap_free",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "释放由平台堆分配入口取得的块。"
+				},
+				{
+					"tag": "param",
+					"value": "block 待释放的堆指针。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "平台释放操作的数值结果。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "分配和释放",
+					"markdown": "```el\nimport { heap_alloc, heap_free } from \"el:memory/allocation/heap.el\"\nlet block = heap_alloc(64)\ntry {\n\t// 在这里使用申请到的存储。\n}\nfinally { heap_free(block) }\n```",
+					"code": "import { heap_alloc, heap_free } from \"el:memory/allocation/heap.el\"\nlet block = heap_alloc(64)\ntry {\n\t// 在这里使用申请到的存储。\n}\nfinally { heap_free(block) }\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/heap.el",
+			"line": 52,
+			"signature": "export fn heap_free(block: ptr): Number",
+			"declaration_line": 65,
+			"id": "memory/allocation/heap::heap_free",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Number",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Number",
+						"start": 0,
+						"end": 6,
+						"target": {
+							"type": "definition",
+							"source": "number/number.el",
+							"name": "Number",
+							"id": "number/number::Number~type",
+							"path": "modules/number/number.md",
+							"fragment": "api-3cc24d3ef702e8652fb4"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "module",
+			"name": "语言存储分配入口",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供语言存储分配、调整和按原来源释放的底层入口。"
+				}
+			],
+			"source": "memory/allocation/index.el",
+			"line": 1,
+			"id": "memory/allocation/index"
+		},
+		{
+			"kind": "api",
+			"name": "allocate_language_storage",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "通过当前资源分配语言存储，零大小实际请求至少一个字节。"
+				},
+				{
+					"tag": "param",
+					"value": "size 请求的字节数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "alignment 请求的对齐。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "分配指针；失败时为空指针，成功后由调用者释放。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "分配和释放",
+					"markdown": "```el\nimport { allocate_language_storage, release_language_storage } from \"el:memory/allocation/index.el\"\nimport { AllocationSize } from \"el:memory/allocation/types.el\"\nimport { null_pointer } from \"el:memory/storage/raw.el\"\nlet size = AllocationSize(64)\nlet alignment = AllocationSize(8)\nlet block = allocate_language_storage(size, alignment)\nif (block != null_pointer()) {\n\ttry {\n\t\t// 在这里使用申请到的存储。\n\t}\n\tfinally { release_language_storage(block, size, alignment) }\n}\n```",
+					"code": "import { allocate_language_storage, release_language_storage } from \"el:memory/allocation/index.el\"\nimport { AllocationSize } from \"el:memory/allocation/types.el\"\nimport { null_pointer } from \"el:memory/storage/raw.el\"\nlet size = AllocationSize(64)\nlet alignment = AllocationSize(8)\nlet block = allocate_language_storage(size, alignment)\nif (block != null_pointer()) {\n\ttry {\n\t\t// 在这里使用申请到的存储。\n\t}\n\tfinally { release_language_storage(block, size, alignment) }\n}\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/index.el",
+			"line": 37,
+			"signature": "@builtin:vome:allocator\n@builtin:vome:effect:alloc(family: @[ProcessStorageFamily])\nexport fn allocate_language_storage(size: AllocationSize, alignment: AllocationSize): ptr",
+			"declaration_line": 57,
+			"id": "memory/allocation/index::allocate_language_storage",
+			"value_type": null,
+			"owner": null,
+			"return_type": "ptr",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "ptr",
+						"start": 0,
+						"end": 3,
+						"target": {
+							"type": "builtin",
+							"source": null,
+							"name": "ptr",
+							"id": null,
+							"path": "reference/language/foreign.md",
+							"fragment": null
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "release_language_storage",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "按分配时的原始来源释放语言存储。"
+				},
+				{
+					"tag": "param",
+					"value": "pointer 待释放的分配指针。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "size 原分配大小。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "alignment 原分配对齐。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "分配和释放",
+					"markdown": "```el\nimport { allocate_language_storage, release_language_storage } from \"el:memory/allocation/index.el\"\nimport { AllocationSize } from \"el:memory/allocation/types.el\"\nimport { null_pointer } from \"el:memory/storage/raw.el\"\nlet size = AllocationSize(64)\nlet alignment = AllocationSize(8)\nlet block = allocate_language_storage(size, alignment)\nif (block != null_pointer()) {\n\ttry {\n\t\t// 在这里使用申请到的存储。\n\t}\n\tfinally { release_language_storage(block, size, alignment) }\n}\n```",
+					"code": "import { allocate_language_storage, release_language_storage } from \"el:memory/allocation/index.el\"\nimport { AllocationSize } from \"el:memory/allocation/types.el\"\nimport { null_pointer } from \"el:memory/storage/raw.el\"\nlet size = AllocationSize(64)\nlet alignment = AllocationSize(8)\nlet block = allocate_language_storage(size, alignment)\nif (block != null_pointer()) {\n\ttry {\n\t\t// 在这里使用申请到的存储。\n\t}\n\tfinally { release_language_storage(block, size, alignment) }\n}\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/index.el",
+			"line": 68,
+			"signature": "@builtin:vome:deallocator\n@builtin:vome:effect:free(family: @[ProcessStorageFamily])\nexport fn release_language_storage(pointer: ptr, size: AllocationSize, alignment: AllocationSize)",
+			"declaration_line": 88,
+			"id": "memory/allocation/index::release_language_storage",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "resize_language_storage",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "调整存储大小；新大小为零时实际请求至少一个字节。失败时原块仍归调用者，成功时改用返回指针。"
+				},
+				{
+					"tag": "param",
+					"value": "pointer 原分配指针。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "old_size 原大小。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "new_size 新大小。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "alignment 分配对齐。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "新指针；失败时为空指针。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "调整后释放",
+					"markdown": "```el\nimport { allocate_language_storage, resize_language_storage, release_language_storage } from \"el:memory/allocation/index.el\"\nimport { AllocationSize } from \"el:memory/allocation/types.el\"\nimport { null_pointer } from \"el:memory/storage/raw.el\"\nlet size = AllocationSize(64)\nlet alignment = AllocationSize(8)\nlet block = allocate_language_storage(size, alignment)\nif (block != null_pointer()) {\n\ttry {\n\t\tlet grown = resize_language_storage(block, size, AllocationSize(128), alignment)\n\t\tif (grown != null_pointer()) { block = grown; size = AllocationSize(128) }\n\t} finally { release_language_storage(block, size, alignment) }\n}\n```",
+					"code": "import { allocate_language_storage, resize_language_storage, release_language_storage } from \"el:memory/allocation/index.el\"\nimport { AllocationSize } from \"el:memory/allocation/types.el\"\nimport { null_pointer } from \"el:memory/storage/raw.el\"\nlet size = AllocationSize(64)\nlet alignment = AllocationSize(8)\nlet block = allocate_language_storage(size, alignment)\nif (block != null_pointer()) {\n\ttry {\n\t\tlet grown = resize_language_storage(block, size, AllocationSize(128), alignment)\n\t\tif (grown != null_pointer()) { block = grown; size = AllocationSize(128) }\n\t} finally { release_language_storage(block, size, alignment) }\n}\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/index.el",
+			"line": 98,
+			"signature": "@builtin:vome:reallocator\n@builtin:vome:effect:realloc(family: @[ProcessStorageFamily])\nexport fn resize_language_storage(pointer: ptr, old_size: AllocationSize, new_size: AllocationSize, alignment: AllocationSize): ptr",
+			"declaration_line": 120,
+			"id": "memory/allocation/index::resize_language_storage",
+			"value_type": null,
+			"owner": null,
+			"return_type": "ptr",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "ptr",
+						"start": 0,
+						"end": 3,
+						"target": {
+							"type": "builtin",
+							"source": null,
+							"name": "ptr",
+							"id": null,
+							"path": "reference/language/foreign.md",
+							"fragment": null
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "allocate_language_base_storage",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "绕过用户资源链从基础资源分配，保留来源释放和调试登记。"
+				},
+				{
+					"tag": "param",
+					"value": "size 请求的字节数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "alignment 请求的对齐。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "分配指针；失败时为空指针，成功后用 release_language_storage 释放。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "使用基础资源",
+					"markdown": "```el\nimport { allocate_language_base_storage, release_language_storage } from \"el:memory/allocation/index.el\"\nimport { AllocationSize } from \"el:memory/allocation/types.el\"\nimport { null_pointer } from \"el:memory/storage/raw.el\"\nlet size = AllocationSize(64)\nlet alignment = AllocationSize(8)\nlet block = allocate_language_base_storage(size, alignment)\nif (block != null_pointer()) {\n\ttry {\n\t\t// 在这里使用申请到的存储。\n\t}\n\tfinally { release_language_storage(block, size, alignment) }\n}\n```",
+					"code": "import { allocate_language_base_storage, release_language_storage } from \"el:memory/allocation/index.el\"\nimport { AllocationSize } from \"el:memory/allocation/types.el\"\nimport { null_pointer } from \"el:memory/storage/raw.el\"\nlet size = AllocationSize(64)\nlet alignment = AllocationSize(8)\nlet block = allocate_language_base_storage(size, alignment)\nif (block != null_pointer()) {\n\ttry {\n\t\t// 在这里使用申请到的存储。\n\t}\n\tfinally { release_language_storage(block, size, alignment) }\n}\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/index.el",
+			"line": 143,
+			"signature": "@builtin:vome:effect:alloc(family: @[ProcessStorageFamily])\nexport fn allocate_language_base_storage(size: AllocationSize, alignment: AllocationSize): ptr",
+			"declaration_line": 163,
+			"id": "memory/allocation/index::allocate_language_base_storage",
+			"value_type": null,
+			"owner": null,
+			"return_type": "ptr",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "ptr",
+						"start": 0,
+						"end": 3,
+						"target": {
+							"type": "builtin",
+							"source": null,
+							"name": "ptr",
+							"id": null,
+							"path": "reference/language/foreign.md",
+							"fragment": null
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "module",
+			"name": "原生对齐分配",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "按目标平台选择 native_allocate、native_resize 和 native_release。分配失败返回空指针；调整失败保留原块，成功后使用返回的新指针。调用者以 native_release 释放成功的块，不能与语言存储释放入口混用。"
+				},
+				{
+					"tag": "example",
+					"value": "分配和释放",
+					"markdown": "```el\nimport { native_allocate, native_release } from \"el:memory/allocation/native.el\"\nimport { AllocationSize } from \"el:memory/allocation/types.el\"\nimport { null_pointer } from \"el:memory/storage/raw.el\"\nlet block: ptr = null_pointer()\nunsafe { block = native_allocate(AllocationSize(64), AllocationSize(8)) }\nif (block != null_pointer()) {\n\ttry {\n\t\t// 在这里使用申请到的存储。\n\t}\n\tfinally { unsafe { native_release(block) } }\n}\n```",
+					"code": "import { native_allocate, native_release } from \"el:memory/allocation/native.el\"\nimport { AllocationSize } from \"el:memory/allocation/types.el\"\nimport { null_pointer } from \"el:memory/storage/raw.el\"\nlet block: ptr = null_pointer()\nunsafe { block = native_allocate(AllocationSize(64), AllocationSize(8)) }\nif (block != null_pointer()) {\n\ttry {\n\t\t// 在这里使用申请到的存储。\n\t}\n\tfinally { unsafe { native_release(block) } }\n}\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/native.el",
+			"line": 1,
+			"id": "memory/allocation/native"
+		},
+		{
+			"kind": "module",
+			"name": "内存压力观察",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "读取进程压力变化令牌，不安装压力服务。"
+				}
+			],
+			"source": "memory/allocation/observation.el",
+			"line": 1,
+			"id": "memory/allocation/observation"
+		},
+		{
+			"kind": "api",
+			"name": "PressureGeneration",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "只用于相等比较的进程观察令牌，不拥有资源；计数按 2^64 回绕，完整回绕前须轮询才能区分变化。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { allocationPressureGeneration } from \"el:memory/allocation/observation.el\"\nlet generation = allocationPressureGeneration()\n```",
+					"code": "import { allocationPressureGeneration } from \"el:memory/allocation/observation.el\"\nlet generation = allocationPressureGeneration()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/observation.el",
+			"line": 7,
+			"signature": "export @builtin:vome:unsigned:integer(bits: 64) class PressureGeneration",
+			"declaration_line": 14,
+			"id": "memory/allocation/observation::PressureGeneration",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "allocationPressureGeneration",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "读取当前压力令牌；新的消费者应先保存初值，之后在自身同步下比较，历史压力不会重放。令牌反映安全压力分派尝试，不表示释放字节或可用内存。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { allocationPressureGeneration } from \"el:memory/allocation/observation.el\"\nlet before = allocationPressureGeneration()\nlet changed = allocationPressureGeneration() != before\n```",
+					"code": "import { allocationPressureGeneration } from \"el:memory/allocation/observation.el\"\nlet before = allocationPressureGeneration()\nlet changed = allocationPressureGeneration() != before\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/observation.el",
+			"line": 23,
+			"signature": "export fn allocationPressureGeneration(): PressureGeneration",
+			"declaration_line": 31,
+			"id": "memory/allocation/observation::allocationPressureGeneration",
+			"value_type": null,
+			"owner": null,
+			"return_type": "PressureGeneration",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "PressureGeneration",
+						"start": 0,
+						"end": 18,
+						"target": {
+							"type": "definition",
+							"source": "memory/allocation/observation.el",
+							"name": "PressureGeneration",
+							"id": "memory/allocation/observation::PressureGeneration",
+							"path": "modules/memory/allocation/observation.md",
+							"fragment": "api-c6a2c947c022768dfb89"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "module",
+			"name": "内存压力回收服务",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "显式安装回收服务并管理回调和储备；导入本模块不会安装服务。"
+				}
+			],
+			"source": "memory/allocation/pressure.el",
+			"line": 1,
+			"id": "memory/allocation/pressure"
+		},
+		{
+			"kind": "api",
+			"name": "MemoryPressureStateError",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "压力服务处于无效状态时抛出的错误。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\npressure.close()\n```",
+					"code": "import { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\npressure.close()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/pressure.el",
+			"line": 20,
+			"signature": "export @assign(mode: \"copy\") class MemoryPressureStateError extends Error",
+			"declaration_line": 28,
+			"id": "memory/allocation/pressure::MemoryPressureStateError",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "ReclaimRegistration",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "回收回调的共享注册句柄；close 或析构取消注册。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nlet registration = pressure.register_reclaimer(fn(bytes) { return nil })\nregistration.close()\npressure.close()\n```",
+					"code": "import { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nlet registration = pressure.register_reclaimer(fn(bytes) { return nil })\nregistration.close()\npressure.close()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/pressure.el",
+			"line": 51,
+			"signature": "export @assign(mode: \"shared\") class ReclaimRegistration",
+			"declaration_line": 61,
+			"id": "memory/allocation/pressure::ReclaimRegistration",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "ReclaimRegistration.close",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "取消注册；重复调用无操作。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nlet registration = pressure.register_reclaimer(fn(bytes) { return nil })\nregistration.close()\npressure.close()\n```",
+					"code": "import { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nlet registration = pressure.register_reclaimer(fn(bytes) { return nil })\nregistration.close()\npressure.close()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/pressure.el",
+			"line": 65,
+			"signature": "fn close()",
+			"declaration_line": 75,
+			"id": "memory/allocation/pressure::ReclaimRegistration.close",
+			"value_type": null,
+			"owner": "ReclaimRegistration",
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "MemoryPressure",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "显式构造的压力服务；可安装进程回调、保留储备并登记回收器，使用后调用 close。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\npressure.install()\npressure.close()\n```",
+					"code": "import { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\npressure.install()\npressure.close()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/pressure.el",
+			"line": 85,
+			"signature": "export @assign(mode: \"shared\") class MemoryPressure",
+			"declaration_line": 94,
+			"id": "memory/allocation/pressure::MemoryPressure",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "MemoryPressure.install",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "安装进程压力回调；已关闭、正在关闭、已安装或安装失败时抛出 MemoryPressureStateError。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\npressure.install()\npressure.close()\n```",
+					"code": "import { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\npressure.install()\npressure.close()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/pressure.el",
+			"line": 134,
+			"signature": "fn install()",
+			"declaration_line": 143,
+			"id": "memory/allocation/pressure::MemoryPressure.install",
+			"value_type": null,
+			"owner": "MemoryPressure",
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "MemoryPressure.register_reclaimer",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "注册接收请求字节数并返回是否取得进展的回调；保留返回的注册句柄以维持注册。回调异常记录在 last_failure。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nlet registration = pressure.register_reclaimer(fn(bytes) { return nil })\nregistration.close()\npressure.close()\n```",
+					"code": "import { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nlet registration = pressure.register_reclaimer(fn(bytes) { return nil })\nregistration.close()\npressure.close()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/pressure.el",
+			"line": 157,
+			"signature": "fn register_reclaimer(callback: fn(bytes: Integer): Bool): ReclaimRegistration",
+			"declaration_line": 167,
+			"id": "memory/allocation/pressure::MemoryPressure.register_reclaimer",
+			"value_type": null,
+			"owner": "MemoryPressure",
+			"return_type": "ReclaimRegistration",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "ReclaimRegistration",
+						"start": 0,
+						"end": 19,
+						"target": {
+							"type": "definition",
+							"source": "memory/allocation/pressure.el",
+							"name": "ReclaimRegistration",
+							"id": "memory/allocation/pressure::ReclaimRegistration",
+							"path": "modules/memory/allocation/pressure.md",
+							"fragment": "api-66b03d8c0b1ef268ec44"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "MemoryPressure.needs_refill",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "查询储备是否需要且可以尝试补充。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nlet needed = pressure.needs_refill()\npressure.close()\n```",
+					"code": "import { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nlet needed = pressure.needs_refill()\npressure.close()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/pressure.el",
+			"line": 208,
+			"signature": "fn needs_refill(): Bool",
+			"declaration_line": 217,
+			"id": "memory/allocation/pressure::MemoryPressure.needs_refill",
+			"value_type": null,
+			"owner": "MemoryPressure",
+			"return_type": "Bool",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Bool",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "language/values.el",
+							"name": "Bool",
+							"id": "language/values::Bool~type",
+							"path": "modules/language/values.md",
+							"fragment": "api-3f0af31783849ef30c6e"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "MemoryPressure.refill",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "尝试补充一个储备块；成功返回 t，无法补充时返回 nil。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nlet added = pressure.refill()\npressure.close()\n```",
+					"code": "import { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nlet added = pressure.refill()\npressure.close()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/pressure.el",
+			"line": 223,
+			"signature": "fn refill(): Bool",
+			"declaration_line": 232,
+			"id": "memory/allocation/pressure::MemoryPressure.refill",
+			"value_type": null,
+			"owner": "MemoryPressure",
+			"return_type": "Bool",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Bool",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "language/values.el",
+							"name": "Bool",
+							"id": "language/values::Bool~type",
+							"path": "modules/language/values.md",
+							"fragment": "api-3f0af31783849ef30c6e"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "MemoryPressure.reclaim",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "释放至多一个储备块并依次调用当前登记的回收器；任一操作有进展时返回 t。回调异常记录在 last_failure。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nlet progress = pressure.reclaim(1024)\npressure.close()\n```",
+					"code": "import { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nlet progress = pressure.reclaim(1024)\npressure.close()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/pressure.el",
+			"line": 266,
+			"signature": "fn reclaim(bytes: Integer): Bool",
+			"declaration_line": 275,
+			"id": "memory/allocation/pressure::MemoryPressure.reclaim",
+			"value_type": null,
+			"owner": "MemoryPressure",
+			"return_type": "Bool",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Bool",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "language/values.el",
+							"name": "Bool",
+							"id": "language/values::Bool~type",
+							"path": "modules/language/values.md",
+							"fragment": "api-3f0af31783849ef30c6e"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "MemoryPressure.close",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "卸载进程回调、等待进行中的回收或补充并释放储备和注册；重复调用无操作。在自身回收回调中调用会抛出 MemoryPressureStateError。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\npressure.close()\n```",
+					"code": "import { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\npressure.close()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/pressure.el",
+			"line": 319,
+			"signature": "fn close()",
+			"declaration_line": 327,
+			"id": "memory/allocation/pressure::MemoryPressure.close",
+			"value_type": null,
+			"owner": "MemoryPressure",
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "module",
+			"name": "分配资源与观察",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "组合分配资源、统计和观察器；分配的释放沿其原始来源进行。"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 1,
+			"id": "memory/allocation/resources"
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResourceError",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "创建资源、运行作用域或采集快照失败时使用的错误。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\n```",
+					"code": "import { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 40,
+			"signature": "export @assign(mode: \"copy\") class AllocationResourceError extends Error",
+			"declaration_line": 48,
+			"id": "memory/allocation/resources::AllocationResourceError",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationSnapshot",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "同一时刻的资源统计：存活分配数和字节、累计分配与释放次数、累计字节、存活峰值、物理字节、未完整观察次数及参与者数。计数按 2^64 回绕。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\nlet snapshot = tracker.snapshot()\n```",
+					"code": "import { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\nlet snapshot = tracker.snapshot()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 132,
+			"signature": "export @assign(mode: \"copy\") class AllocationSnapshot",
+			"declaration_line": 141,
+			"id": "memory/allocation/resources::AllocationSnapshot",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResource",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "共享的分配资源句柄；复制句柄共享状态。作用域及其后代的分配可在 run 返回后继续计入。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\n```",
+					"code": "import { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 168,
+			"signature": "export @assign(mode: \"shared\") class AllocationResource",
+			"declaration_line": 176,
+			"id": "memory/allocation/resources::AllocationResource",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResource.run",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将资源与当前资源及观察器组合后执行 body，返回其结果，并在正常返回或异常时恢复原上下文。"
+				},
+				{
+					"tag": "param",
+					"value": "body 在组合后的资源上下文中执行的无参回调。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "body 的结果。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "资源绑定创建失败抛出 AllocationResourceError；body 的异常向上传播。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\n```",
+					"code": "import { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 232,
+			"signature": "fn run(body)",
+			"declaration_line": 243,
+			"id": "memory/allocation/resources::AllocationResource.run",
+			"value_type": null,
+			"owner": "AllocationResource",
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResource.snapshot",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "取得一致时刻的统计快照；各独立计数方法分别读取，不能保证属于同一时刻。"
+				},
+				{
+					"tag": "throws",
+					"value": "快照创建失败时抛出 AllocationResourceError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\nlet snapshot = tracker.snapshot()\n```",
+					"code": "import { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\nlet snapshot = tracker.snapshot()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 285,
+			"signature": "fn snapshot(): AllocationSnapshot",
+			"declaration_line": 295,
+			"id": "memory/allocation/resources::AllocationResource.snapshot",
+			"value_type": null,
+			"owner": "AllocationResource",
+			"return_type": "AllocationSnapshot",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "AllocationSnapshot",
+						"start": 0,
+						"end": 18,
+						"target": {
+							"type": "definition",
+							"source": "memory/allocation/resources.el",
+							"name": "AllocationSnapshot",
+							"id": "memory/allocation/resources::AllocationSnapshot",
+							"path": "modules/memory/allocation/resources.md",
+							"fragment": "api-2ebb6b2c7191b869a60b"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResource.live_allocations",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "读取当前存活的分配数；计数按 2^64 回绕。"
+				},
+				{
+					"tag": "example",
+					"value": "读取统计",
+					"markdown": "```el\nimport { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.live_allocations()\n```",
+					"code": "import { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.live_allocations()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 327,
+			"signature": "fn live_allocations(): Integer",
+			"declaration_line": 335,
+			"id": "memory/allocation/resources::AllocationResource.live_allocations",
+			"value_type": null,
+			"owner": "AllocationResource",
+			"return_type": "Integer",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Integer",
+						"start": 0,
+						"end": 7,
+						"target": {
+							"type": "definition",
+							"source": "platform/machine/integer.el",
+							"name": "NativeSignedInteger",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-45690472287900730a5f"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResource.live_bytes",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "读取当前存活的逻辑字节数；计数按 2^64 回绕。"
+				},
+				{
+					"tag": "example",
+					"value": "读取统计",
+					"markdown": "```el\nimport { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.live_bytes()\n```",
+					"code": "import { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.live_bytes()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 336,
+			"signature": "fn live_bytes(): Integer",
+			"declaration_line": 344,
+			"id": "memory/allocation/resources::AllocationResource.live_bytes",
+			"value_type": null,
+			"owner": "AllocationResource",
+			"return_type": "Integer",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Integer",
+						"start": 0,
+						"end": 7,
+						"target": {
+							"type": "definition",
+							"source": "platform/machine/integer.el",
+							"name": "NativeSignedInteger",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-45690472287900730a5f"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResource.allocations",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "读取累计分配次数；计数按 2^64 回绕。"
+				},
+				{
+					"tag": "example",
+					"value": "读取统计",
+					"markdown": "```el\nimport { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.allocations()\n```",
+					"code": "import { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.allocations()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 345,
+			"signature": "fn allocations(): Integer",
+			"declaration_line": 353,
+			"id": "memory/allocation/resources::AllocationResource.allocations",
+			"value_type": null,
+			"owner": "AllocationResource",
+			"return_type": "Integer",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Integer",
+						"start": 0,
+						"end": 7,
+						"target": {
+							"type": "definition",
+							"source": "platform/machine/integer.el",
+							"name": "NativeSignedInteger",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-45690472287900730a5f"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResource.releases",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "读取累计释放次数；计数按 2^64 回绕。"
+				},
+				{
+					"tag": "example",
+					"value": "读取统计",
+					"markdown": "```el\nimport { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.releases()\n```",
+					"code": "import { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.releases()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 354,
+			"signature": "fn releases(): Integer",
+			"declaration_line": 362,
+			"id": "memory/allocation/resources::AllocationResource.releases",
+			"value_type": null,
+			"owner": "AllocationResource",
+			"return_type": "Integer",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Integer",
+						"start": 0,
+						"end": 7,
+						"target": {
+							"type": "definition",
+							"source": "platform/machine/integer.el",
+							"name": "NativeSignedInteger",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-45690472287900730a5f"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResource.cumulative_bytes",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "读取累计分配的逻辑字节数；计数按 2^64 回绕。"
+				},
+				{
+					"tag": "example",
+					"value": "读取统计",
+					"markdown": "```el\nimport { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.cumulative_bytes()\n```",
+					"code": "import { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.cumulative_bytes()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 363,
+			"signature": "fn cumulative_bytes(): Integer",
+			"declaration_line": 371,
+			"id": "memory/allocation/resources::AllocationResource.cumulative_bytes",
+			"value_type": null,
+			"owner": "AllocationResource",
+			"return_type": "Integer",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Integer",
+						"start": 0,
+						"end": 7,
+						"target": {
+							"type": "definition",
+							"source": "platform/machine/integer.el",
+							"name": "NativeSignedInteger",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-45690472287900730a5f"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResource.peak_live_bytes",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "读取存活逻辑字节数的峰值；计数按 2^64 回绕。"
+				},
+				{
+					"tag": "example",
+					"value": "读取统计",
+					"markdown": "```el\nimport { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.peak_live_bytes()\n```",
+					"code": "import { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.peak_live_bytes()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 372,
+			"signature": "fn peak_live_bytes(): Integer",
+			"declaration_line": 380,
+			"id": "memory/allocation/resources::AllocationResource.peak_live_bytes",
+			"value_type": null,
+			"owner": "AllocationResource",
+			"return_type": "Integer",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Integer",
+						"start": 0,
+						"end": 7,
+						"target": {
+							"type": "definition",
+							"source": "platform/machine/integer.el",
+							"name": "NativeSignedInteger",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-45690472287900730a5f"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResource.incomplete_observations",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "读取未完整交付的观察事件数；计数按 2^64 回绕。"
+				},
+				{
+					"tag": "example",
+					"value": "读取统计",
+					"markdown": "```el\nimport { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.incomplete_observations()\n```",
+					"code": "import { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.incomplete_observations()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 381,
+			"signature": "fn incomplete_observations(): Integer",
+			"declaration_line": 389,
+			"id": "memory/allocation/resources::AllocationResource.incomplete_observations",
+			"value_type": null,
+			"owner": "AllocationResource",
+			"return_type": "Integer",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Integer",
+						"start": 0,
+						"end": 7,
+						"target": {
+							"type": "definition",
+							"source": "platform/machine/integer.el",
+							"name": "NativeSignedInteger",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-45690472287900730a5f"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResource.participants",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "读取当前参与者数；计数按 2^64 回绕。"
+				},
+				{
+					"tag": "example",
+					"value": "读取统计",
+					"markdown": "```el\nimport { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.participants()\n```",
+					"code": "import { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.participants()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 390,
+			"signature": "fn participants(): Integer",
+			"declaration_line": 398,
+			"id": "memory/allocation/resources::AllocationResource.participants",
+			"value_type": null,
+			"owner": "AllocationResource",
+			"return_type": "Integer",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Integer",
+						"start": 0,
+						"end": 7,
+						"target": {
+							"type": "definition",
+							"source": "platform/machine/integer.el",
+							"name": "NativeSignedInteger",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-45690472287900730a5f"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResource.physical_bytes",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "读取本资源拥有的 arena slab 物理字节数，包含头部和未用容量；计数按 2^64 回绕。"
+				},
+				{
+					"tag": "example",
+					"value": "读取统计",
+					"markdown": "```el\nimport { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.physical_bytes()\n```",
+					"code": "import { allocation_tracker } from \"el:memory/\"\nlet tracker = allocation_tracker()\nlet value = tracker.physical_bytes()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 400,
+			"signature": "fn physical_bytes(): Integer",
+			"declaration_line": 408,
+			"id": "memory/allocation/resources::AllocationResource.physical_bytes",
+			"value_type": null,
+			"owner": "AllocationResource",
+			"return_type": "Integer",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Integer",
+						"start": 0,
+						"end": 7,
+						"target": {
+							"type": "definition",
+							"source": "platform/machine/integer.el",
+							"name": "NativeSignedInteger",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-45690472287900730a5f"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResource.check_empty",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "立即检查并报告存活分配；子任务或返回值仍可能持有分配。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\nlet empty = tracker.check_empty()\n```",
+					"code": "import { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\nlet empty = tracker.check_empty()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 410,
+			"signature": "fn check_empty(): Bool",
+			"declaration_line": 419,
+			"id": "memory/allocation/resources::AllocationResource.check_empty",
+			"value_type": null,
+			"owner": "AllocationResource",
+			"return_type": "Bool",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Bool",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "language/values.el",
+							"name": "Bool",
+							"id": "language/values::Bool~type",
+							"path": "modules/language/values.md",
+							"fragment": "api-3f0af31783849ef30c6e"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResource.check_when_idle",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "参与者空闲时检查并报告：返回 0 表示延期，1 表示为空，2 表示报告了非空快照。"
+				},
+				{
+					"tag": "throws",
+					"value": "无法安排检查时抛出 AllocationResourceError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\nlet result = tracker.check_when_idle()\n```",
+					"code": "import { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\nlet result = tracker.check_when_idle()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 421,
+			"signature": "fn check_when_idle(): Integer",
+			"declaration_line": 431,
+			"id": "memory/allocation/resources::AllocationResource.check_when_idle",
+			"value_type": null,
+			"owner": "AllocationResource",
+			"return_type": "Integer",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Integer",
+						"start": 0,
+						"end": 7,
+						"target": {
+							"type": "definition",
+							"source": "platform/machine/integer.el",
+							"name": "NativeSignedInteger",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-45690472287900730a5f"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "AllocationResource.reset",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "重置 arena；tracker 或仍有后代存活分配时返回 nil。成功后释放 arena 所持的块。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet arena = allocation_arena()\narena.run(fn() { return 1 })\nlet reset = arena.reset()\n```",
+					"code": "import { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet arena = allocation_arena()\narena.run(fn() { return 1 })\nlet reset = arena.reset()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 439,
+			"signature": "fn reset(): Bool",
+			"declaration_line": 448,
+			"id": "memory/allocation/resources::AllocationResource.reset",
+			"value_type": null,
+			"owner": "AllocationResource",
+			"return_type": "Bool",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Bool",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "language/values.el",
+							"name": "Bool",
+							"id": "language/values::Bool~type",
+							"path": "modules/language/values.md",
+							"fragment": "api-3f0af31783849ef30c6e"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "allocation_tracker",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "创建统计资源；check_on_drop 为真时析构时立即检查是否为空。"
+				},
+				{
+					"tag": "param",
+					"value": "check_on_drop 是否在句柄析构时立即检查。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "共享的统计资源。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\n```",
+					"code": "import { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet tracker = allocation_tracker()\ntracker.run(fn() { return 1 })\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 464,
+			"signature": "export fn allocation_tracker(check_on_drop: Bool = nil): AllocationResource",
+			"declaration_line": 474,
+			"id": "memory/allocation/resources::allocation_tracker",
+			"value_type": null,
+			"owner": null,
+			"return_type": "AllocationResource",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "AllocationResource",
+						"start": 0,
+						"end": 18,
+						"target": {
+							"type": "definition",
+							"source": "memory/allocation/resources.el",
+							"name": "AllocationResource",
+							"id": "memory/allocation/resources::AllocationResource",
+							"path": "modules/memory/allocation/resources.md",
+							"fragment": "api-8eba7d4cbf772f8d630b"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "allocation_arena",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "创建 arena；省略 upstream 时使用基础堆，显式 upstream 须为自定义终端分配资源，不能是 arena 或观察器。"
+				},
+				{
+					"tag": "param",
+					"value": "upstream 可选的终端分配资源；void 选择基础堆。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "共享的 arena 资源。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet arena = allocation_arena()\narena.run(fn() { return 1 })\n```",
+					"code": "import { allocation_tracker, allocation_arena } from \"el:memory/\"\nlet arena = allocation_arena()\narena.run(fn() { return 1 })\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 477,
+			"signature": "export fn allocation_arena(upstream: AllocationResource | void_t = void): AllocationResource",
+			"declaration_line": 487,
+			"id": "memory/allocation/resources::allocation_arena",
+			"value_type": null,
+			"owner": null,
+			"return_type": "AllocationResource",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "AllocationResource",
+						"start": 0,
+						"end": 18,
+						"target": {
+							"type": "definition",
+							"source": "memory/allocation/resources.el",
+							"name": "AllocationResource",
+							"id": "memory/allocation/resources::AllocationResource",
+							"path": "modules/memory/allocation/resources.md",
+							"fragment": "api-8eba7d4cbf772f8d630b"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "allocation_resource",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "创建自定义终端分配资源。回调同步执行、可能并发，不能重新进入分配引擎或抛异常；回调抛异常会触发陷阱。"
+				},
+				{
+					"tag": "param",
+					"value": "allocate 接收物理范围大小和对齐，返回存储指针；普通分配失败返回空指针。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "release 接收分配时的指针、物理范围大小和对齐；成功返回 Integer(1)。当前对齐为 8。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "code_owner 保持回调代码及其模块在资源和分配退役前有效的所有者。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "共享的分配资源句柄。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "使用原生对齐分配作为后端",
+					"markdown": "```el\nimport { allocation_resource } from \"el:memory/\"\nimport { native_allocate, native_release } from \"el:memory/allocation/native.el\"\nimport { AllocationSize } from \"el:memory/allocation/types.el\"\nimport { NativeSignedInteger as Integer } from \"el:platform/machine/integer.el\"\nimport { sync } from \"el:language/contracts.el\"\nlet resource = allocation_resource(\n\t@sync fn(size: Integer, alignment: Integer): ptr {\n\t\tunsafe { return native_allocate(AllocationSize(size), AllocationSize(alignment)) }\n\t},\n\t@sync fn(pointer: ptr, size: Integer, alignment: Integer): Integer {\n\t\tunsafe { native_release(pointer) }\n\t\treturn Integer(1)\n\t},\n\tvoid\n)\nresource.run(fn() { let values = @[1, 2, 3]; return values.count })\n```",
+					"code": "import { allocation_resource } from \"el:memory/\"\nimport { native_allocate, native_release } from \"el:memory/allocation/native.el\"\nimport { AllocationSize } from \"el:memory/allocation/types.el\"\nimport { NativeSignedInteger as Integer } from \"el:platform/machine/integer.el\"\nimport { sync } from \"el:language/contracts.el\"\nlet resource = allocation_resource(\n\t@sync fn(size: Integer, alignment: Integer): ptr {\n\t\tunsafe { return native_allocate(AllocationSize(size), AllocationSize(alignment)) }\n\t},\n\t@sync fn(pointer: ptr, size: Integer, alignment: Integer): Integer {\n\t\tunsafe { native_release(pointer) }\n\t\treturn Integer(1)\n\t},\n\tvoid\n)\nresource.run(fn() { let values = @[1, 2, 3]; return values.count })\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				},
+				{
+					"tag": "note",
+					"value": "此示例的回调定义在当前程序模块中；动态加载的回调须提供保持代码加载的所有者。",
+					"markdown": ""
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 493,
+			"signature": "@callbackSafe(parameter: \"allocate\") @callbackSafe(parameter: \"release\")\nexport fn allocation_resource(allocate: @sync fn(size: Integer, alignment: Integer): ptr, release: @sync fn(pointer: ptr, size: Integer, alignment: Integer): Integer, code_owner): AllocationResource",
+			"declaration_line": 519,
+			"id": "memory/allocation/resources::allocation_resource",
+			"value_type": null,
+			"owner": null,
+			"return_type": "AllocationResource",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "AllocationResource",
+						"start": 0,
+						"end": 18,
+						"target": {
+							"type": "definition",
+							"source": "memory/allocation/resources.el",
+							"name": "AllocationResource",
+							"id": "memory/allocation/resources::AllocationResource",
+							"path": "modules/memory/allocation/resources.md",
+							"fragment": "api-8eba7d4cbf772f8d630b"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "with_allocation_tracking",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "在新 tracker 中运行 body 并返回结果；check_empty 选择结束时检查，final 选择参与者空闲后检查。返回值和仍运行的子任务可能保留分配。"
+				},
+				{
+					"tag": "param",
+					"value": "body 在统计上下文中执行的无参回调。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "check_empty 是否在结束时检查存活分配。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "final 为真时将检查推迟到参与者空闲。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "body 的结果。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { with_allocation_tracking } from \"el:memory/\"\nlet result = with_allocation_tracking(fn() { return 1 })\n```",
+					"code": "import { with_allocation_tracking } from \"el:memory/\"\nlet result = with_allocation_tracking(fn() { return 1 })\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 527,
+			"signature": "export fn with_allocation_tracking(body, check_empty: Bool = nil, final: Bool = nil)",
+			"declaration_line": 538,
+			"id": "memory/allocation/resources::with_allocation_tracking",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "allocation_observer",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "创建观察资源。事件 1、2 是逻辑分配和释放，3、4 是成功和失败的调整大小，5、6 是物理 slab 分配和释放；成功调整也产生底层分配和释放事件。"
+				},
+				{
+					"tag": "param",
+					"value": "observe 同步观察回调；返回 1 表示完整，返回 0 或抛异常记为不完整。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "code_owner 保持回调代码及其模块在资源和分配退役前有效的所有者。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "共享的观察资源句柄。",
+					"markdown": ""
+				},
+				{
+					"tag": "note",
+					"value": "identity 标识成功分配，address 是整数令牌而非借用；backing_identity 为关联 slab 的身份，0 表示无 slab。调整成功使用新 identity，失败使用旧 identity。回调可能并发，不能分配或重新进入。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "接收观察事件",
+					"markdown": "```el\nimport { allocation_observer } from \"el:memory/\"\nimport { NativeSignedInteger as Integer } from \"el:platform/machine/integer.el\"\nimport { sync } from \"el:language/contracts.el\"\nlet observer = allocation_observer(\n\t@sync fn(event: Integer, identity: Integer, address: Integer, size: Integer, alignment: Integer, backing_identity: Integer): Integer {\n\t\treturn Integer(1)\n\t},\n\tvoid\n)\nobserver.run(fn() { let values = @[1, 2, 3]; return values.count })\n```",
+					"code": "import { allocation_observer } from \"el:memory/\"\nimport { NativeSignedInteger as Integer } from \"el:platform/machine/integer.el\"\nimport { sync } from \"el:language/contracts.el\"\nlet observer = allocation_observer(\n\t@sync fn(event: Integer, identity: Integer, address: Integer, size: Integer, alignment: Integer, backing_identity: Integer): Integer {\n\t\treturn Integer(1)\n\t},\n\tvoid\n)\nobserver.run(fn() { let values = @[1, 2, 3]; return values.count })\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				},
+				{
+					"tag": "note",
+					"value": "此无状态回调位于当前程序模块；动态加载的回调须提供保持代码加载的所有者。",
+					"markdown": ""
+				}
+			],
+			"source": "memory/allocation/resources.el",
+			"line": 562,
+			"signature": "@callbackSafe(parameter: \"observe\")\nexport fn allocation_observer(observe: @sync fn(event: Integer, identity: Integer, address: Integer, size: Integer, alignment: Integer, backing_identity: Integer): Integer, code_owner): AllocationResource",
+			"declaration_line": 582,
+			"id": "memory/allocation/resources::allocation_observer",
+			"value_type": null,
+			"owner": null,
+			"return_type": "AllocationResource",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "AllocationResource",
+						"start": 0,
+						"end": 18,
+						"target": {
+							"type": "definition",
+							"source": "memory/allocation/resources.el",
+							"name": "AllocationResource",
+							"id": "memory/allocation/resources::AllocationResource",
+							"path": "modules/memory/allocation/resources.md",
+							"fragment": "api-8eba7d4cbf772f8d630b"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "module",
+			"name": "存储分配类型",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供分配大小和进程存储族的类型。"
+				}
+			],
+			"source": "memory/allocation/types.el",
+			"line": 1,
+			"id": "memory/allocation/types"
 		},
 		{
 			"kind": "module",
@@ -73134,7 +75219,7 @@
 	],
 	"coverage": {
 		"source_files": 3663,
-		"documented_files": 100,
-		"documented_apis": 495
+		"documented_files": 108,
+		"documented_apis": 537
 	}
 }

@@ -4,7 +4,7 @@
 
 [结构化文档数据](api.json)
 
-已标注文档的文件：100 / 3663；API 条目：495。此比例不是公开 API 覆盖率。
+已标注文档的文件：108 / 3663；API 条目：537。此比例不是公开 API 覆盖率。
 
 [按模块查找](modules.md) · [按符号查找](symbols.md) · [默认环境](environment.md) · [类型定义](types.md)
 
@@ -24,6 +24,7 @@
 | [language](categories/language.md) | 2 | 12 |
 | [logic](categories/logic.md) | 5 | 17 |
 | [mathematics](categories/mathematics.md) | 3 | 8 |
+| [memory](categories/memory.md) | 8 | 42 |
 | [multimedia](categories/multimedia.md) | 7 | 34 |
 | [network](categories/network.md) | 6 | 35 |
 | [neural-networks](categories/neural-networks.md) | 7 | 28 |

@@ -23948,7 +23948,7 @@ class AllocationDebugToken
 
 ## AllocationFlag · memory/allocation/index.el {#api-aff27b36652cba9467e6}
 
-[源码 memory/allocation/index.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/index.el#L22)
+[源码 memory/allocation/index.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/index.el#L24)
 
 ```el
 class AllocationFlag
@@ -23956,39 +23956,47 @@ class AllocationFlag
 
 ## PressureGeneration · memory/allocation/observation.el {#api-c6a2c947c022768dfb89}
 
-[源码 memory/allocation/observation.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/observation.el#L5)
+[源码 memory/allocation/observation.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/observation.el#L14)
 
 ```el
 class PressureGeneration
 ```
 
+[API 文档](modules/memory/allocation/observation.md#api-c6a2c947c022768dfb89)
+
 ## MemoryPressure · memory/allocation/pressure.el {#api-3cf76fe53a08ce9b879e}
 
-[源码 memory/allocation/pressure.el:55](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L55)
+[源码 memory/allocation/pressure.el:94](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L94)
 
 ```el
 class MemoryPressure
 ```
 
+[API 文档](modules/memory/allocation/pressure.md#api-3cf76fe53a08ce9b879e)
+
 ## MemoryPressureStateError · memory/allocation/pressure.el {#api-37be22995aa184e8d4db}
 
-[源码 memory/allocation/pressure.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L18)
+[源码 memory/allocation/pressure.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L28)
 
 ```el
 class MemoryPressureStateError extends Error
 ```
 
+[API 文档](modules/memory/allocation/pressure.md#api-37be22995aa184e8d4db)
+
 ## ReclaimRegistration · memory/allocation/pressure.el {#api-66b03d8c0b1ef268ec44}
 
-[源码 memory/allocation/pressure.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L41)
+[源码 memory/allocation/pressure.el:61](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L61)
 
 ```el
 class ReclaimRegistration
 ```
 
+[API 文档](modules/memory/allocation/pressure.md#api-66b03d8c0b1ef268ec44)
+
 ## Reclaimer · memory/allocation/pressure.el {#api-6ec2dd6b0df47ad369a2}
 
-[源码 memory/allocation/pressure.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L22)
+[源码 memory/allocation/pressure.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L32)
 
 ```el
 class Reclaimer
@@ -23996,7 +24004,7 @@ class Reclaimer
 
 ## ReserveBlock · memory/allocation/pressure.el {#api-7755dd2a032963ab3381}
 
-[源码 memory/allocation/pressure.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L28)
+[源码 memory/allocation/pressure.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L38)
 
 ```el
 class ReserveBlock
@@ -24004,7 +24012,7 @@ class ReserveBlock
 
 ## AllocationCallbacks · memory/allocation/resources.el {#api-9dd69e5e150d86f50179}
 
-[源码 memory/allocation/resources.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L45)
+[源码 memory/allocation/resources.el:55](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L55)
 
 ```el
 class AllocationCallbacks
@@ -24012,7 +24020,7 @@ class AllocationCallbacks
 
 ## AllocationObserverCallbacks · memory/allocation/resources.el {#api-44bdcfefaebe2b24c28f}
 
-[源码 memory/allocation/resources.el:89](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L89)
+[源码 memory/allocation/resources.el:99](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L99)
 
 ```el
 class AllocationObserverCallbacks
@@ -24020,31 +24028,37 @@ class AllocationObserverCallbacks
 
 ## AllocationResource · memory/allocation/resources.el {#api-8eba7d4cbf772f8d630b}
 
-[源码 memory/allocation/resources.el:149](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L149)
+[源码 memory/allocation/resources.el:176](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L176)
 
 ```el
 class AllocationResource
 ```
 
+[API 文档](modules/memory/allocation/resources.md#api-8eba7d4cbf772f8d630b)
+
 ## AllocationResourceError · memory/allocation/resources.el {#api-74c8810a150913ec336d}
 
-[源码 memory/allocation/resources.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L38)
+[源码 memory/allocation/resources.el:48](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L48)
 
 ```el
 class AllocationResourceError extends Error
 ```
 
+[API 文档](modules/memory/allocation/resources.md#api-74c8810a150913ec336d)
+
 ## AllocationSnapshot · memory/allocation/resources.el {#api-2ebb6b2c7191b869a60b}
 
-[源码 memory/allocation/resources.el:122](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L122)
+[源码 memory/allocation/resources.el:141](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L141)
 
 ```el
 class AllocationSnapshot
 ```
 
+[API 文档](modules/memory/allocation/resources.md#api-2ebb6b2c7191b869a60b)
+
 ## AllocationSize · memory/allocation/types.el {#api-4b4432c821d87942e622}
 
-[源码 memory/allocation/types.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/types.el#L4)
+[源码 memory/allocation/types.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/types.el#L6)
 
 ```el
 class AllocationSize
@@ -24052,7 +24066,7 @@ class AllocationSize
 
 ## ProcessStorageFamily · memory/allocation/types.el {#api-9da34328f7c969d28624}
 
-[源码 memory/allocation/types.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/types.el#L8)
+[源码 memory/allocation/types.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/types.el#L10)
 
 ```el
 class ProcessStorageFamily

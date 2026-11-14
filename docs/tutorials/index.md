@@ -18,7 +18,7 @@
 | 已会其他语言 | [15 分钟速览](../tour.md) · [从其他语言过来](../appendix/coming-from.md) |
 | 安排学习顺序 | [学习地图](../roadmap.md) |
 | 理解语言机制 | [语言指南](../language/index.md) |
-| 学习使用标准库 | [标准库指南](../stdlib/index.md) |
+| 学习使用标准库 | [标准库指南](../stdlib/index.md) · [分配器与内存跟踪](../stdlib/allocators.md) |
 | 完成命令行或图形程序 | [命令行工具](../practice/cli-tool.md) · [图形程序](../practice/gui-app.md) |
 | 探索多种编程方式 | [JSON 解析器](../practice/json-parser.md) · [规则式机器人](../practice/logic-game.md) · [定理证明](../practice/proofs.md) · [矩阵脚本](../practice/numerics.md) |
 | 排查常见疑问 | [常见问题](../appendix/faq.md) |

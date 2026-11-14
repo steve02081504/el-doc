@@ -86,6 +86,17 @@
 - [mathematics/functions/discrete.el](modules/mathematics/functions/discrete.md)（1 个 API）
 - [mathematics/functions/elementary.el](modules/mathematics/functions/elementary.md)（6 个 API）
 
+## memory
+
+- [memory/allocation/context.el](modules/memory/allocation/context.md)（1 个 API）
+- [memory/allocation/heap.el](modules/memory/allocation/heap.md)（3 个 API）
+- [memory/allocation/index.el](modules/memory/allocation/index.md)（4 个 API）
+- [memory/allocation/native.el](modules/memory/allocation/native.md)（0 个 API）
+- [memory/allocation/observation.el](modules/memory/allocation/observation.md)（2 个 API）
+- [memory/allocation/pressure.el](modules/memory/allocation/pressure.md)（10 个 API）
+- [memory/allocation/resources.el](modules/memory/allocation/resources.md)（22 个 API）
+- [memory/allocation/types.el](modules/memory/allocation/types.md)（0 个 API）
+
 ## multimedia
 
 - [multimedia/audio/index.el](modules/multimedia/audio/index.md)（0 个 API）
