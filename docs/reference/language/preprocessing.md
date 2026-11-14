@@ -93,11 +93,38 @@ error/warning 消息必须是字符串字面量，不接受裸文本或拼接表
 | --- | --- |
 | `__BUILTIN_FILEPATH__` | 当前引用点源 URI 的带引号、正确转义的 EL 字符串字面量 |
 | `__BUILTIN_LINENUMBER__` | 当前引用点从 1 开始的物理行号；include 使用包含文件位置 |
+| `__BUILTIN_LINE_CONTENT__` | 引用点所在物理行的预处理前原文，转换为带引号、正确转义的 EL 字符串字面量；不含行尾 |
+| `__BUILTIN_FILE_CONTENT__` | 引用点所在输入文件的完整预处理前文本，转换为带引号、正确转义的 EL 字符串字面量 |
 | `__EVIL_EDITION__` | 当前编译器产物构建时间的 Unix 整数秒，同一 image 内固定 |
 
 旧拼写 `LINENUMER` 不提供别名。上述值同样机械替换，不能假设放进字符串后会智能去掉引号。`__EVIL_EDITION__` 不是语言年份版本，也不是编译用户程序时的当前时间。
 
+两个内容项都读取已经取得的源文本快照，不重新读取文件。行内容保留缩进、注释和原始宏名；文件内容还保留预处理指令、未选分支、原始 LF／CRLF／CR 行尾及可选 BOM，不把 include 替换成被包含的内容。第一行的行内容也保留 BOM。
+
+在 include 内引用时，内容来自被包含文件；通过 define 间接引用时，内容来自本次引用点，而非 define 定义点。生成字面量中的宏名不会再次展开。这两项同样不能被 define 或 undefine。
+
+以下是预处理结果对照，不是程序输出：
+
+```el
+let sourceLine = __BUILTIN_LINE_CONTENT__
+```
+
+进入普通词法分析的文本为：
+
+```el
+let sourceLine = "let sourceLine = __BUILTIN_LINE_CONTENT__"
+```
+
 `__BUILTIN_FUNCTION_INFO__` 则是保留的原生表达式，文件预处理原样保留它；字符串内只是普通文字。它在函数内产生包含 `name`、`kind`、`module`、`file`、`line`、`column` 的位置快照，模块顶层拒绝使用；它不是完整运行期反射或函数身份。
+
+## eval 文本的预处理
+
+按语言合同，`eval` 的输入也必须先经过本预处理阶段，再进入普通词法与编译流程。每次求值从只含预定义项的新宏环境开始，不继承调用者或先前求值的 define。
+
+根求值文本的 FILEPATH 项固定生成字符串字面量 `"your lovely mom"`，行号从该文本第一物理行的 1 开始。行内容与文件内容分别读取本次求值文本的原始行和完整原文。这个展示地址不授予来源获取能力，也不充当相对路径基址或模块身份；include 仍使用显式来源能力，被包含文件中的来源值取其真实来源信息。
+
+!!! note "实现状态"
+    标准库 eval 与持久求值会话尚无完整实现；这里说明其预处理合同，不表示当前已有可调用的 eval API。
 
 ## 与源码宏的区别
 
@@ -110,4 +137,4 @@ error/warning 消息必须是字符串字面量，不接受裸文本或拼接表
 - [宏与元编程](metaprogramming.md)
 - [文件预处理教程](../../language/preprocessing.md)
 
-本页合同对应[文件预处理与内建来源信息](https://github.com/steve02081504/el/blob/master/docs/spec/preprocessing.md) PP-1 至 PP-16；流水线入口见[词法与语法](https://github.com/steve02081504/el/blob/master/docs/spec/02-lexical-and-syntax.md)，模块边界见[模块系统](https://github.com/steve02081504/el/blob/master/docs/spec/08-modules.md)。
+本页合同对应[文件预处理与内建来源信息](https://github.com/steve02081504/el/blob/master/docs/spec/preprocessing.md) PP-1 至 PP-16；流水线入口见[词法与语法](https://github.com/steve02081504/el/blob/master/docs/spec/02-lexical-and-syntax.md)，模块边界见[模块系统](https://github.com/steve02081504/el/blob/master/docs/spec/08-modules.md)，eval 文本入口见[执行模型](https://github.com/steve02081504/el/blob/master/docs/spec/07-execution-model.md)的运行时求值合同。

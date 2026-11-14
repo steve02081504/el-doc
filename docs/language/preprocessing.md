@@ -61,7 +61,7 @@ console.stdout.writeLine(description)
 之后重新 `#define B`，下一次引用 `A` 也跟着变；直接或间接递归会给出带位置的诊断并列出展开链，不会留下半展开 token 或无限循环。
 替换结果不会被重新识别成指令。
 
-**三个来源文本值也走机械替换。**
+**预定义来源值也走机械替换。**
 `__BUILTIN_FILEPATH__` 是当前引用点源 URI 的带引号且正确转义的 EL 字符串字面量。
 `__BUILTIN_LINENUMBER__` 是引用点从 1 起的物理行号；include 文本里取 include 文件行号，不是 define 定义行。
 `__EVIL_EDITION__` 是当前编译器产物构建时间的 Unix 整数秒，不是语言版本，也不是编译你程序时的当前时间。
@@ -75,6 +75,20 @@ let bad = "__BUILTIN_FILEPATH__"   // 会再嵌一层引号，通常是词法错
 
 第一行得到来源文本值；第二行把数字嵌进现有字符串；第三行嵌套引号，通常是词法错误。
 要保留名字本身就把拼写拆开，例如 `"__BUILTIN_" + "FILEPATH__"`；旧拼写 `__BUILTIN_LINENUMER__` 不提供别名。
+
+要把写下的源码本身保存为文本，可以用 `__BUILTIN_LINE_CONTENT__` 取得当前物理行，用 `__BUILTIN_FILE_CONTENT__` 取得整个输入文件。它们会添加引号并正确转义，直接当字符串字面量使用，不要再包一层引号。
+
+下面是局部源码及其预处理结果，不是运行输出：
+
+```el
+let sourceLine = __BUILTIN_LINE_CONTENT__
+```
+
+```el
+let sourceLine = "let sourceLine = __BUILTIN_LINE_CONTENT__"
+```
+
+字符串里保存的是替换前的原文，所以里面的内建量名称不会继续展开。行内容不含行尾，但保留缩进和注释；文件内容保留原始换行、指令和未选分支。在 include 内取被包含文件，通过 define 间接引用时取调用位置。BOM 等完整边界及 eval 文本的特殊展示地址，见[文件预处理参考](../reference/language/preprocessing.md)。
 
 ??? note "可选 · 深入：`__BUILTIN_FUNCTION_INFO__` 与几条边界"
     `__BUILTIN_FUNCTION_INFO__` 不是文本替换项，而是保留的原生表达式，文件阶段把它原样留给后面的正常函数语义。
