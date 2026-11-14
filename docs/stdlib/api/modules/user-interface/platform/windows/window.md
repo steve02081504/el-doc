@@ -14,13 +14,13 @@
 
 ## Windows 窗口后端 {#api-d5cc2fc198b485a29d89}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:13` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L13)
+源码：`src/stdlib/user-interface/platform/windows/window.el:12` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L12)
 
 实现 Windows 原生窗口、窗口事件循环、定时器和界面元素查找接口。
 
 ## WindowTimer {#api-9b651467460e89936d5f}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:171` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L171)
+源码：`src/stdlib/user-interface/platform/windows/window.el:170` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L170)
 
 由窗口拥有的定时器句柄；取消会停止后续回调并释放回调捕获。
 
@@ -37,7 +37,7 @@ timer.cancel()
 
 ## WindowTimer.cancel {#api-8629377d5cfbe5cd888b}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:190` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L190)
+源码：`src/stdlib/user-interface/platform/windows/window.el:189` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L189)
 
 停止定时器并释放其回调；重复调用不会产生额外副作用。
 
@@ -55,7 +55,7 @@ timer.cancel()
 
 ## Window {#api-9dc34e68c5ad778621d4}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:216` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L216)
+源码：`src/stdlib/user-interface/platform/windows/window.el:215` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L215)
 
 表示一个原生窗口及其界面视图、输入状态、绘制主题和窗口级资源。
 
@@ -72,7 +72,7 @@ runWindow(window)
 
 ## Window.theme {#api-e300f3030755d4c6f210}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:260` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L260)
+源码：`src/stdlib/user-interface/platform/windows/window.el:256` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L256)
 
 读取或替换窗口的绘制主题；赋值后立即刷新绘制。
 
@@ -90,7 +90,7 @@ window.theme = darkPaintTheme()
 
 ## Window.onArrow {#api-0d5ac5569f84380b00ef}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:603` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L603)
+源码：`src/stdlib/user-interface/platform/windows/window.el:599` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L599)
 
 设置窗口级方向键处理器；没有元素焦点时接收方向键按下事件。
 
@@ -108,7 +108,7 @@ window.onArrow((dx, dy) => moveSelection(dx, dy))
 
 ## Window.every {#api-397c3dde87e61de92229}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:619` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L619)
+源码：`src/stdlib/user-interface/platform/windows/window.el:615` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L615)
 
 注册窗口级近似定时器，窗口关闭时自动取消。
 
@@ -134,7 +134,7 @@ discard(window.every(1000, tick => label.text = "更新"))
 
 ## Window.getById {#api-10abbed4e4f712c61c10}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:649` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L649)
+源码：`src/stdlib/user-interface/platform/windows/window.el:645` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L645)
 
 按精确 id 获取当前呈现中的元素句柄。
 
@@ -159,7 +159,7 @@ label.text = "就绪"
 
 ## runWindow {#api-5a35178b26a593b8361d}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:745` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L745)
+源码：`src/stdlib/user-interface/platform/windows/window.el:724` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L724)
 
 运行单个窗口的事件循环，并在退出时关闭窗口。
 
@@ -177,7 +177,7 @@ runWindow(window)
 
 ## runWindows {#api-d58299be18ae530eb594}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:768` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L768)
+源码：`src/stdlib/user-interface/platform/windows/window.el:747` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L747)
 
 在同一事件循环中运行多个窗口；循环退出时关闭列表中的窗口。
 

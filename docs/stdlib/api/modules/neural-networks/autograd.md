@@ -14,13 +14,13 @@
 
 ## 自动微分 {#api-4a1ebdbc6830dc672faf}
 
-源码：`src/stdlib/neural-networks/autograd.el:20` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L20)
+源码：`src/stdlib/neural-networks/autograd.el:21` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L21)
 
 提供记录张量运算并通过反向传播计算梯度的 tape 类型。
 
 ## Autograd {#api-fe9b9dee2c2f03ef38d0}
 
-源码：`src/stdlib/neural-networks/autograd.el:37` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L37)
+源码：`src/stdlib/neural-networks/autograd.el:38` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L38)
 
 创建指定元素和存储类型的自动微分 tape 类型。
 
@@ -46,7 +46,7 @@ let tape = Tape()
 
 ## Autograd.square {#api-c7cdb29630ea7e9ca4c3}
 
-源码：`src/stdlib/neural-networks/autograd.el:333` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L333)
+源码：`src/stdlib/neural-networks/autograd.el:334` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L334)
 
 对跟踪张量逐元素平方，并在 tape 上记录乘法节点。
 
@@ -64,7 +64,7 @@ let squared = x.square()
 
 ## Autograd.sum {#api-4c5a860a89bb4e088fe1}
 
-源码：`src/stdlib/neural-networks/autograd.el:342` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L342)
+源码：`src/stdlib/neural-networks/autograd.el:343` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L343)
 
 将跟踪张量所有元素相加，返回可继续参与求导的 rank-zero 值。
 
@@ -82,7 +82,7 @@ let loss = x.square().sum()
 
 ## Autograd.mean {#api-31175d2b66a5ce9e4d5f}
 
-源码：`src/stdlib/neural-networks/autograd.el:350` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L350)
+源码：`src/stdlib/neural-networks/autograd.el:351` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L351)
 
 对跟踪张量所有元素求平均并在 tape 上记录归约。
 
@@ -100,7 +100,7 @@ let loss = (prediction - target).square().mean()
 
 ## Autograd.variable {#api-ab3276f9117e60133442}
 
-源码：`src/stdlib/neural-networks/autograd.el:523` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L523)
+源码：`src/stdlib/neural-networks/autograd.el:446` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L446)
 
 将输入张量注册为需要对其求导的叶变量。
 
@@ -108,7 +108,7 @@ let loss = (prediction - target).square().mean()
 fn variable(value: Dense): Tracked
 ```
 
-**返回类型**：[`Tracked`](../../types.md#api-90e17b44158251ad4d5b)
+**返回类型**：[`Tracked`](../../types.md#api-6501c19f8e6f0cba0f0d)
 
 **参数**：value 作为叶节点的张量值。
 
@@ -122,7 +122,7 @@ let x = tape.variable(input)
 
 ## Autograd.valueAndGrad {#api-2c37c8b473d37f9243b7}
 
-源码：`src/stdlib/neural-networks/autograd.el:811` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L811)
+源码：`src/stdlib/neural-networks/autograd.el:734` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L734)
 
 对 rank-zero 跟踪损失反向传播，返回损失值及各变量梯度。
 
@@ -130,7 +130,7 @@ let x = tape.variable(input)
 fn valueAndGrad(loss: Tracked, variables: Tracked[]): Result
 ```
 
-**返回类型**：[`Result`](../../types.md#api-666c52dd6d3d5f3f1651)
+**返回类型**：[`Result`](../../types.md#api-219def6e1e48ab59942f)
 
 **参数**：loss tape 上的 rank-zero 损失。
 

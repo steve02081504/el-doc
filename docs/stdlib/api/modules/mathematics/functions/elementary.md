@@ -6,13 +6,13 @@
 
 ## 数学初等函数 {#api-7d8af95145ca6c477bdb}
 
-源码：`src/stdlib/mathematics/functions/elementary.el:14` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L14)
+源码：`src/stdlib/mathematics/functions/elementary.el:15` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L15)
 
 提供常用初等函数与圆周率近似，精度遵循输入 Number 类型的数值合同。
 
 ## sqrt {#api-fb173a899ba66d1e403d}
 
-源码：`src/stdlib/mathematics/functions/elementary.el:27` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L27)
+源码：`src/stdlib/mathematics/functions/elementary.el:28` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L28)
 
 计算非负输入的平方根近似值。
 
@@ -36,7 +36,7 @@ let root = sqrt(9)
 
 ## exp {#api-0eb3fa03c258f8a9125a}
 
-源码：`src/stdlib/mathematics/functions/elementary.el:38` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L38)
+源码：`src/stdlib/mathematics/functions/elementary.el:39` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L39)
 
 计算自然指数函数的近似值。
 
@@ -57,7 +57,7 @@ let growth = exp(1)
 
 ## log {#api-1c0e614a110e84422686}
 
-源码：`src/stdlib/mathematics/functions/elementary.el:50` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L50)
+源码：`src/stdlib/mathematics/functions/elementary.el:51` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L51)
 
 计算自然对数近似值。
 
@@ -80,7 +80,7 @@ let logarithm = log(2)
 
 ## sin {#api-b86d1300e2b18347e166}
 
-源码：`src/stdlib/mathematics/functions/elementary.el:66` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L66)
+源码：`src/stdlib/mathematics/functions/elementary.el:67` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L67)
 
 计算以弧度表示的正弦近似值。
 
@@ -104,7 +104,7 @@ let sample = sin(1.5707963267948966)
 
 ## pi {#api-ef44ff89f90725f1110c}
 
-源码：`src/stdlib/mathematics/functions/elementary.el:124` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L124)
+源码：`src/stdlib/mathematics/functions/elementary.el:125` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L125)
 
 按指定 Number 类型的精度合同构造圆周率近似值。
 
@@ -129,7 +129,7 @@ let circle = pi(Scalar)
 
 ## pow {#api-fa68c880d86864b1595c}
 
-源码：`src/stdlib/mathematics/functions/elementary.el:145` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L145)
+源码：`src/stdlib/mathematics/functions/elementary.el:146` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L146)
 
 计算底数的实数幂；省略 exponent 时计算平方。
 

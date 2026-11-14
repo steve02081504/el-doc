@@ -4,9 +4,10 @@
 
 ## collections
 
-- [collections/arrays/dynamic.el](modules/collections/arrays/dynamic.md)（21 个 API）
+- [collections/arrays/dynamic.el](modules/collections/arrays/dynamic.md)（20 个 API）
 - [collections/arrays/lazy.el](modules/collections/arrays/lazy.md)（1 个 API）
 - [collections/arrays/operations.el](modules/collections/arrays/operations.md)（18 个 API）
+- [collections/arrays/positional.el](modules/collections/arrays/positional.md)（1 个 API）
 - [collections/batch/syntax.el](modules/collections/batch/syntax.md)（2 个 API）
 - [collections/maps/base.el](modules/collections/maps/base.md)（9 个 API）
 - [collections/maps/hash-map.el](modules/collections/maps/hash-map.md)（6 个 API）
@@ -81,6 +82,7 @@
 
 ## mathematics
 
+- [mathematics/functions/aggregation.el](modules/mathematics/functions/aggregation.md)（1 个 API）
 - [mathematics/functions/discrete.el](modules/mathematics/functions/discrete.md)（1 个 API）
 - [mathematics/functions/elementary.el](modules/mathematics/functions/elementary.md)（6 个 API）
 
@@ -142,6 +144,7 @@
 - [text/patterns/combinators.el](modules/text/patterns/combinators.md)（8 个 API）
 - [text/patterns/parser.el](modules/text/patterns/parser.md)（15 个 API）
 - [text/patterns/syntax.el](modules/text/patterns/syntax.md)（1 个 API）
+- [text/resources.el](modules/text/resources.md)（0 个 API）
 - [text/text.el](modules/text/text.md)（14 个 API）
 
 ## theme

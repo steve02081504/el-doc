@@ -12,7 +12,7 @@
 
 ## floor {#api-bd10102e4c50e2f82d0e}
 
-源码：`src/stdlib/mathematics/functions/discrete.el:33` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/discrete.el#L33)
+源码：`src/stdlib/mathematics/functions/discrete.el:34` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/discrete.el#L34)
 
 返回不大于输入值的最大整数，并保留输入数值类型。
 

@@ -222,9 +222,36 @@ map(@[1, 2], value => value + 1)
 
 **返回值**：保存变换结果的新数组。
 
+## reduceOr {#api-2d211277de656c11a05b}
+
+源码：`src/stdlib/collections/arrays/operations.el:167` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L167)
+
+非空序列从首项开始按顺序归约；空序列调用 empty，单项序列不调用 combine。
+
+```el
+export fn reduceOr(values, combine, empty)
+```
+
+**参数**：values 被归约的序列。
+
+**参数**：combine 接收累计结果和当前项的可调用值。
+
+**参数**：empty 零参数回调，仅在序列为空时执行。
+
+**返回值**：归约结果，或 empty 的结果。
+
+**失败与异常**：迭代、归约与空序列回调的异常原样传播，迭代器始终关闭。
+
+### 示例：求和
+
+```el
+import { reduceOr } from "el:collections/arrays/operations.el"
+reduceOr(@[1, 2, 3], (sum, value) => sum + value, () => 0)
+```
+
 ## filter {#api-b8bf1cd68b49358dbdef}
 
-源码：`src/stdlib/collections/arrays/operations.el:166` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L166)
+源码：`src/stdlib/collections/arrays/operations.el:192` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L192)
 
 保留满足谓词的元素，并保持其相对顺序。
 
@@ -249,7 +276,7 @@ filter(@[1, 2, 3], value => value % 2 == 1)
 
 ## drop {#api-6f4f6cc4e32930aa04c8}
 
-源码：`src/stdlib/collections/arrays/operations.el:184` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L184)
+源码：`src/stdlib/collections/arrays/operations.el:210` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L210)
 
 跳过指定数量的前置元素并复制剩余元素。
 
@@ -274,7 +301,7 @@ drop(@[1, 2, 3], 1)
 
 ## take {#api-9aad8a70644d002e329e}
 
-源码：`src/stdlib/collections/arrays/operations.el:207` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L207)
+源码：`src/stdlib/collections/arrays/operations.el:233` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L233)
 
 复制序列开头至多指定数量的元素。
 
@@ -299,7 +326,7 @@ take(@[1, 2, 3], 2)
 
 ## each {#api-abd0044e05f4d936ba48}
 
-源码：`src/stdlib/collections/arrays/operations.el:227` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L227)
+源码：`src/stdlib/collections/arrays/operations.el:253` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L253)
 
 按迭代顺序对每个元素调用回调。
 
@@ -326,7 +353,7 @@ each(@[1, 2], value => value)
 
 ## index_of {#api-1d673464d0f4a1e9259f}
 
-源码：`src/stdlib/collections/arrays/operations.el:243` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L243)
+源码：`src/stdlib/collections/arrays/operations.el:269` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L269)
 
 返回首个与目标值相等的元素下标；未找到时返回 -1。
 
@@ -352,7 +379,7 @@ index_of(@[4, 7, 9], 7)
 
 ## find {#api-460916110d52e2afe0bc}
 
-源码：`src/stdlib/collections/arrays/operations.el:263` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L263)
+源码：`src/stdlib/collections/arrays/operations.el:289` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L289)
 
 返回首个满足谓词的迭代步骤；没有匹配项时返回空步骤。
 
@@ -377,7 +404,7 @@ find(@[2, 4, 5], value => value % 2 == 1).value
 
 ## find_or_add {#api-067148f9a59780a84648}
 
-源码：`src/stdlib/collections/arrays/operations.el:283` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L283)
+源码：`src/stdlib/collections/arrays/operations.el:309` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L309)
 
 查找满足谓词的元素；若不存在则创建、追加并返回新元素。
 
@@ -404,7 +431,7 @@ find_or_add(values, value => value == 2, () => 2)
 
 ## sort {#api-ae02065b29d656bd9fa4}
 
-源码：`src/stdlib/collections/arrays/operations.el:302` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L302)
+源码：`src/stdlib/collections/arrays/operations.el:328` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L328)
 
 对输入副本排序并返回排序结果，输入保持不变。
 
@@ -431,46 +458,22 @@ sort(@[3, 1, 2])
 
 ## reverse {#api-e7e440001fd92e7e7aab}
 
-源码：`src/stdlib/collections/arrays/operations.el:318` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L318)
+源码：`src/stdlib/collections/arrays/operations.el:343` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L343)
 
-原地反转可写序列，并返回该序列。
+按相反顺序复制序列元素到新数组，不改写来源。
 
 ```el
-@discardable
 export fn reverse(values)
 ```
 
-**参数**：values 支持按下标读写的可变序列。
-
-### 示例：原地反转数组
-
-```el
-import { reverse } from "el:collections/arrays/operations.el"
-let values = @[1, 2, 3]
-reverse(values)
-```
-预期结果：[3, 2, 1]。
-
-**返回值**：原序列（已原地反转）。
-
-## reversed {#api-9fcbfa328be62b344c58}
-
-源码：`src/stdlib/collections/arrays/operations.el:338` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/operations.el#L338)
-
-按相反顺序复制序列元素到新数组。
-
-```el
-export fn reversed(values)
-```
-
-**参数**：values 输入序列。
+**参数**：values 支持按下标读取的输入序列。
 
 ### 示例：反向复制数组
 
 ```el
-import { reversed } from "el:collections/arrays/operations.el"
-reversed(@[1, 2, 3])
+import { reverse } from "el:collections/arrays/operations.el"
+reverse(@[1, 2, 3])
 ```
 预期结果：[3, 2, 1]。
 
-**返回值**：顺序反转的新数组。
+**返回值**：顺序反转的新数组；元素遵守自身的 Copy/shared 合同。

@@ -21,7 +21,14 @@ EL 的语言、标准库和工具链参考站，附入门教程与实战指南�
 
 ## 从源码生成标准库参考
 
-在本仓库运行，显式指定 EL 检出：
+运行对应平台的脚本，默认使用与本仓库同级的 `el` 检出：
+
+```text
+update_stdlib.bat
+sh update_stdlib.sh
+```
+
+生成需要一些时间。Windows 批处理无参数运行时会在结束后暂停，方便查看结果。脚本接受提取器的参数，例如 `--el-root /path/to/el` 指定其他检出，或 `--check` 检查快照是否过期。也可以直接运行提取器：
 
 ```text
 python scripts/stdlib_docs.py --el-root /path/to/el

@@ -26,7 +26,6 @@
 | [Array.pop](modules/collections/arrays/dynamic.md#api-b2d6f065ddc035962676) | `collections/arrays/dynamic.el` |
 | [Array.push](modules/collections/arrays/dynamic.md#api-667c1e6be4c14a58cf83) | `collections/arrays/dynamic.el` |
 | [Array.reverse](modules/collections/arrays/dynamic.md#api-87bcb7d8c6070a3515c9) | `collections/arrays/dynamic.el` |
-| [Array.reversed](modules/collections/arrays/dynamic.md#api-5dd9c5add2a8a84dbdd5) | `collections/arrays/dynamic.el` |
 | [Array.shift](modules/collections/arrays/dynamic.md#api-f5ecc5c0a1649295acd5) | `collections/arrays/dynamic.el` |
 | [Array.slice](modules/collections/arrays/dynamic.md#api-798006d6685ff5c33c0b) | `collections/arrays/dynamic.el` |
 | [Array.sliceDynamic](modules/collections/arrays/dynamic.md#api-bd2715c4bb37b48f50de) | `collections/arrays/dynamic.el` |
@@ -332,6 +331,7 @@
 | [playPitch](modules/multimedia/audio/music.md#api-14ec176406410644f42a) | `multimedia/audio/music.el` |
 | [plot](modules/graphics/plots/index.md#api-99a112e21dc6a727ab6d) | `graphics/plots/index.el` |
 | [PlotHost](modules/graphics/plots/index.md#api-5f295492cd4341ff9541) | `graphics/plots/index.el` |
+| [positionalArray](modules/collections/arrays/positional.md#api-6bb9e0f6b72f22340b48) | `collections/arrays/positional.el` |
 | [positiveRemainder](modules/time/units.md#api-5e84633337d1771b191b) | `time/units.el` |
 | [pow](modules/mathematics/functions/elementary.md#api-fa68c880d86864b1595c) | `mathematics/functions/elementary.el` |
 | [PreparedSearch](modules/logic/search.md#api-903be40199787b3f4b1f) | `logic/search.el` |
@@ -359,6 +359,7 @@
 | [readTextFileIfPresent](modules/filesystem/index.md#api-c11e9a934447ba0ec1ac) | `filesystem/index.el` |
 | [readWav](modules/multimedia/audio/wav.md#api-f9e2d41c929d9370ea5e) | `multimedia/audio/wav.el` |
 | [reduceLoss](modules/neural-networks/losses/index.md#api-a63260eef4f189bf2f49) | `neural-networks/losses/index.el` |
+| [reduceOr](modules/collections/arrays/operations.md#api-2d211277de656c11a05b) | `collections/arrays/operations.el` |
 | [refl](modules/language/proofs.md#api-216f2c238f4488e3dbb6) | `language/proofs.el` |
 | [ReLU](modules/neural-networks/model.md#api-f46f2b7a970cd6420534) | `neural-networks/model.el` |
 | [removeChild](modules/user-interface/model.md#api-89c99015e38050658540) | `user-interface/model.el` |
@@ -371,7 +372,6 @@
 | [resolveTheme](modules/theme/resolve.md#api-f08855dc7eaf1293eeb0) | `theme/resolve.el` |
 | [resolveUrl](modules/network/url.md#api-e85150a75a8ab3b2c844) | `network/url.el` |
 | [reverse](modules/collections/arrays/operations.md#api-e7e440001fd92e7e7aab) | `collections/arrays/operations.el` |
-| [reversed](modules/collections/arrays/operations.md#api-9fcbfa328be62b344c58) | `collections/arrays/operations.el` |
 | [row~reshape](modules/numerical-computing/arrays.md#api-9eb863b8b4a108974ea1) | `numerical-computing/arrays.el` |
 | [rules](modules/logic/surface.md#api-bc0f4317802278bb03e0) | `logic/surface.el` |
 | [runWindow](modules/user-interface/platform/windows/window.md#api-5a35178b26a593b8361d) | `user-interface/platform/windows/window.el` |
@@ -430,6 +430,7 @@
 | [SoundPlayer.stop](modules/user-interface/sound.md#api-38b098ba7017124aed8a) | `user-interface/sound.el` |
 | [SoundPlayer.tryCue](modules/user-interface/sound.md#api-bdf8aa6e71523e364ba2) | `user-interface/sound.el` |
 | [sqrt](modules/mathematics/functions/elementary.md#api-fb173a899ba66d1e403d) | `mathematics/functions/elementary.el` |
+| [sum](modules/mathematics/functions/aggregation.md#api-6e9b4c8195eebb551a52) | `mathematics/functions/aggregation.el` |
 | [sum~all](modules/numerical-computing/reductions.md#api-d58fd8966d5de0726a4a) | `numerical-computing/reductions.el` |
 | [sum~axis](modules/numerical-computing/reductions.md#api-da20ccaa7740d44e7fec) | `numerical-computing/reductions.el` |
 | [t](modules/language/values.md#api-d518aa3528cdac961832) | `language/values.el` |

@@ -4,7 +4,7 @@
 
 [结构化文档数据](api.json)
 
-已标注文档的文件：97 / 3630；API 条目：494。此比例不是公开 API 覆盖率。
+已标注文档的文件：100 / 3663；API 条目：495。此比例不是公开 API 覆盖率。
 
 [按模块查找](modules.md) · [按符号查找](symbols.md) · [默认环境](environment.md) · [类型定义](types.md)
 
@@ -12,7 +12,7 @@
 
 | 库 | 已标注模块 | API 条目 |
 | --- | ---: | ---: |
-| [collections](categories/collections.md) | 10 | 84 |
+| [collections](categories/collections.md) | 11 | 84 |
 | [concurrency](categories/concurrency.md) | 2 | 4 |
 | [console](categories/console.md) | 1 | 35 |
 | [cryptography](categories/cryptography.md) | 7 | 12 |
@@ -23,7 +23,7 @@
 | [graphics](categories/graphics.md) | 2 | 13 |
 | [language](categories/language.md) | 2 | 12 |
 | [logic](categories/logic.md) | 5 | 17 |
-| [mathematics](categories/mathematics.md) | 2 | 7 |
+| [mathematics](categories/mathematics.md) | 3 | 8 |
 | [multimedia](categories/multimedia.md) | 7 | 34 |
 | [network](categories/network.md) | 6 | 35 |
 | [neural-networks](categories/neural-networks.md) | 7 | 28 |
@@ -31,7 +31,7 @@
 | [numerical-computing](categories/numerical-computing.md) | 6 | 33 |
 | [random](categories/random.md) | 3 | 18 |
 | [streams](categories/streams.md) | 1 | 2 |
-| [text](categories/text.md) | 5 | 40 |
+| [text](categories/text.md) | 6 | 40 |
 | [theme](categories/theme.md) | 2 | 4 |
 | [time](categories/time.md) | 4 | 15 |
 | [tools](categories/tools.md) | 4 | 14 |

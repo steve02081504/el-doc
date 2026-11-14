@@ -46,7 +46,7 @@ export class Random
 
 ```el
 import { Random } from "el:random/index.el"
-let random = Random(42)
+let random = Random(72)
 let value = random.between(1, 6)
 ```
 示例展示接口用法；未运行验证。
@@ -68,7 +68,7 @@ get seed(): Number
 ### 示例：查看随机流的种子
 
 ```el
-let seed = Random(42).seed
+let seed = Random(72).seed
 ```
 
 ## Random.reseed {#api-b10f87f55955d4297680}
@@ -87,7 +87,7 @@ fn reseed(seed: Number)
 
 ```el
 let random = Random(1)
-random.reseed(42)
+random.reseed(72)
 ```
 
 ## Random.nextWord {#api-792c160b0802c5d93977}
@@ -112,7 +112,7 @@ random.reseed(42)
 ### 示例：生成一个 16 位字
 
 ```el
-let word = Random(42).nextWord(16)
+let word = Random(72).nextWord(16)
 ```
 
 ## Random.nextBits {#api-dc108d59626669d79b43}
@@ -136,7 +136,7 @@ fn nextBits(bitCount: Number): Number
 ### 示例：生成八个随机位
 
 ```el
-let bits = Random(42).nextBits(8)
+let bits = Random(72).nextBits(8)
 ```
 
 ## Random.between {#api-cc4a8e461bbf2f97ad80}
@@ -162,7 +162,7 @@ fn between(minimum: Number, maximum: Number): Number
 ### 示例：掷一个六面骰
 
 ```el
-let die = Random(42).between(1, 6)
+let die = Random(72).between(1, 6)
 ```
 
 ## Random.betweenExclusive {#api-e99cb6140b0881ce2db8}
@@ -189,7 +189,7 @@ let die = Random(42).between(1, 6)
 ### 示例：抽取 0 到 5 的整数
 
 ```el
-let index = Random(42).betweenExclusive(0, 6)
+let index = Random(72).betweenExclusive(0, 6)
 ```
 
 ## Random.unit {#api-3bd6f39bf7301f499820}
@@ -215,7 +215,7 @@ fn unit(bitCount: Number = Number(53), inclusive: Bool = nil): Number
 ### 示例：生成单位区间样本
 
 ```el
-let sample = Random(42).unit()
+let sample = Random(72).unit()
 ```
 
 ## Random.realBetween {#api-d06ddbd268a99ed5151c}
@@ -245,7 +245,7 @@ fn realBetween(minimum: Number, maximum: Number, bitCount: Number = Number(53), 
 ### 示例：抽取两个实数之间的值
 
 ```el
-let sample = Random(42).realBetween(-1, 1)
+let sample = Random(72).realBetween(-1, 1)
 ```
 
 ## Random.boolean {#api-6e4a27bee2d63ff38225}
@@ -265,7 +265,7 @@ fn boolean(): Bool
 ### 示例：抛一次随机硬币
 
 ```el
-let heads = Random(42).boolean()
+let heads = Random(72).boolean()
 ```
 
 ## Random.pick {#api-3277706d087c8d369660}
@@ -287,7 +287,7 @@ fn pick(values)
 ### 示例：从候选值中抽样
 
 ```el
-let choice = Random(42).pick(@["red", "blue"])
+let choice = Random(72).pick(@["red", "blue"])
 ```
 
 ## Random.bytes {#api-ced6c72398fdb237f1e5}
@@ -312,7 +312,7 @@ let choice = Random(42).pick(@["red", "blue"])
 ### 示例：生成四个随机字节
 
 ```el
-let data = Random(42).bytes(4)
+let data = Random(72).bytes(4)
 ```
 
 ## Random.shuffle {#api-2622caa6ab97ff7091e9}
@@ -333,7 +333,7 @@ fn shuffle(values)
 
 ```el
 let values = @[1, 2, 3]
-Random(42).shuffle(values)
+Random(72).shuffle(values)
 ```
 
 ## rand {#api-0e70a2dfa7186c77e160}

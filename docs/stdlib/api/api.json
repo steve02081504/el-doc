@@ -316,7 +316,7 @@
 			"name": "allocate_language_storage",
 			"id": null,
 			"source": "memory/allocation/index.el",
-			"line": 32,
+			"line": 37,
 			"signature": "export fn allocate_language_storage(size: AllocationSize, alignment: AllocationSize): ptr",
 			"value_type": null
 		},
@@ -516,7 +516,7 @@
 			"name": "arccos",
 			"id": null,
 			"source": "mathematics/functions/elementary.el",
-			"line": 96,
+			"line": 97,
 			"signature": "export fn arccos(value)",
 			"value_type": null
 		},
@@ -524,7 +524,7 @@
 			"name": "arccot",
 			"id": null,
 			"source": "mathematics/functions/elementary.el",
-			"line": 104,
+			"line": 105,
 			"signature": "export fn arccot(value)",
 			"value_type": null
 		},
@@ -532,7 +532,7 @@
 			"name": "arccsc",
 			"id": null,
 			"source": "mathematics/functions/elementary.el",
-			"line": 112,
+			"line": 113,
 			"signature": "export fn arccsc(value)",
 			"value_type": null
 		},
@@ -612,7 +612,7 @@
 			"name": "arcsec",
 			"id": null,
 			"source": "mathematics/functions/elementary.el",
-			"line": 108,
+			"line": 109,
 			"signature": "export fn arcsec(value)",
 			"value_type": null
 		},
@@ -620,7 +620,7 @@
 			"name": "arcsin",
 			"id": null,
 			"source": "mathematics/functions/elementary.el",
-			"line": 92,
+			"line": 93,
 			"signature": "export fn arcsin(value)",
 			"value_type": null
 		},
@@ -628,7 +628,7 @@
 			"name": "arctan",
 			"id": null,
 			"source": "mathematics/functions/elementary.el",
-			"line": 100,
+			"line": 101,
 			"signature": "export fn arctan(value)",
 			"value_type": null
 		},
@@ -684,7 +684,7 @@
 			"name": "Array",
 			"id": "collections/arrays/dynamic::Array",
 			"source": "collections/arrays/dynamic.el",
-			"line": 119,
+			"line": 120,
 			"signature": "export fn Array(element: type): type",
 			"value_type": null
 		},
@@ -716,7 +716,7 @@
 			"name": "arrayLiteral",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 58,
+			"line": 59,
 			"signature": "export @builtin:khaz:literal:array fn arrayLiteral()",
 			"value_type": null
 		},
@@ -1140,7 +1140,7 @@
 			"name": "blocking",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 29,
+			"line": 30,
 			"signature": "export @builtin:khaz:attribute:foreign:blocking fn blocking()",
 			"value_type": null
 		},
@@ -1148,7 +1148,7 @@
 			"name": "blockingBridge",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 43,
+			"line": 44,
 			"signature": "export @builtin:fass:provider:blocking:call fn blockingBridge()",
 			"value_type": null
 		},
@@ -1204,7 +1204,7 @@
 			"name": "bounded",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 26,
+			"line": 27,
 			"signature": "export @builtin:khaz:attribute:bounded fn bounded()",
 			"value_type": null
 		},
@@ -1388,7 +1388,7 @@
 			"name": "callbackSafe",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 36,
+			"line": 37,
 			"signature": "export @builtin:khaz:attribute:callback:control fn callbackSafe()",
 			"value_type": null
 		},
@@ -1444,7 +1444,7 @@
 			"name": "ceil",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 40,
+			"line": 41,
 			"signature": "export fn ceil(value)",
 			"value_type": null
 		},
@@ -1452,7 +1452,7 @@
 			"name": "ceil_div",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 87,
+			"line": 88,
 			"signature": "export fn ceil_div(left, right)",
 			"value_type": null
 		},
@@ -1620,7 +1620,7 @@
 			"name": "ClassicArray",
 			"id": null,
 			"source": "collections/arrays/dynamic.el",
-			"line": 349,
+			"line": 341,
 			"signature": "export fn ClassicArray(element: type): type",
 			"value_type": null
 		},
@@ -1636,7 +1636,7 @@
 			"name": "classLayoutProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 48,
+			"line": 49,
 			"signature": "export @builtin:khaz:provider:class:layout fn classLayoutProvider()",
 			"value_type": null
 		},
@@ -1796,7 +1796,7 @@
 			"name": "CompilationFailure",
 			"id": null,
 			"source": "compiler/operations.el",
-			"line": 96,
+			"line": 99,
 			"signature": "export class CompilationFailure",
 			"value_type": null
 		},
@@ -1804,7 +1804,7 @@
 			"name": "CompilationOperation",
 			"id": null,
 			"source": "compiler/operations.el",
-			"line": 46,
+			"line": 49,
 			"signature": "export enum CompilationOperation",
 			"value_type": null
 		},
@@ -1812,7 +1812,7 @@
 			"name": "CompilationOptions",
 			"id": null,
 			"source": "compiler/operations.el",
-			"line": 49,
+			"line": 52,
 			"signature": "export class CompilationOptions",
 			"value_type": null
 		},
@@ -1820,7 +1820,7 @@
 			"name": "compile_file",
 			"id": null,
 			"source": "compiler/operations.el",
-			"line": 457,
+			"line": 478,
 			"signature": "export fn compile_file(options: CompilationOptions)",
 			"value_type": null
 		},
@@ -1828,7 +1828,7 @@
 			"name": "compile_source",
 			"id": null,
 			"source": "compiler/main.el",
-			"line": 513,
+			"line": 506,
 			"signature": "export fn compile_source(c: Compiler, prelude_path: Text, source: Text, source_tokens: Token[] | void_t = void)",
 			"value_type": null
 		},
@@ -2137,6 +2137,14 @@
 			"value_type": null
 		},
 		{
+			"name": "contextReinitialize",
+			"id": null,
+			"source": "language/contracts.el",
+			"line": 12,
+			"signature": "export @builtin:khaz:attribute:context:reinitialize fn contextReinitialize()",
+			"value_type": null
+		},
+		{
 			"name": "copy_bytes",
 			"id": null,
 			"source": "cryptography/bytes.el",
@@ -2188,7 +2196,7 @@
 			"name": "cos",
 			"id": null,
 			"source": "mathematics/functions/elementary.el",
-			"line": 72,
+			"line": 73,
 			"signature": "export fn cos(value)",
 			"value_type": null
 		},
@@ -2204,7 +2212,7 @@
 			"name": "cot",
 			"id": null,
 			"source": "mathematics/functions/elementary.el",
-			"line": 80,
+			"line": 81,
 			"signature": "export fn cot(value)",
 			"value_type": null
 		},
@@ -2252,7 +2260,7 @@
 			"name": "csc",
 			"id": null,
 			"source": "mathematics/functions/elementary.el",
-			"line": 88,
+			"line": 89,
 			"signature": "export fn csc(value)",
 			"value_type": null
 		},
@@ -3084,7 +3092,7 @@
 			"name": "DbRequestStatus",
 			"id": null,
 			"source": "database/service.el",
-			"line": 38,
+			"line": 39,
 			"signature": "export class DbRequestStatus",
 			"value_type": null
 		},
@@ -3124,7 +3132,7 @@
 			"name": "dbRowCodec",
 			"id": null,
 			"source": "database/row-codec.el",
-			"line": 326,
+			"line": 316,
 			"signature": "export fn dbRowCodec(catalog: Catalog, catalogName: Text = \"local\", limits: SerializationLimits = SerializationLimits(16777216, 100000, 256)): DbCanonicalRowCodec",
 			"value_type": null
 		},
@@ -3180,7 +3188,7 @@
 			"name": "DbService",
 			"id": null,
 			"source": "database/service.el",
-			"line": 72,
+			"line": 73,
 			"signature": "export class DbService",
 			"value_type": null
 		},
@@ -3188,7 +3196,7 @@
 			"name": "DbServiceOptions",
 			"id": null,
 			"source": "database/service.el",
-			"line": 26,
+			"line": 27,
 			"signature": "export class DbServiceOptions",
 			"value_type": null
 		},
@@ -3644,7 +3652,7 @@
 			"name": "defaultClassLayoutProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 49,
+			"line": 50,
 			"signature": "export @builtin:khaz:provider:class:layout:default fn defaultClassLayoutProvider()",
 			"value_type": null
 		},
@@ -3652,7 +3660,7 @@
 			"name": "defaults",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 22,
+			"line": 23,
 			"signature": "export @builtin:khaz:attribute:defaults fn defaults()",
 			"value_type": null
 		},
@@ -3676,7 +3684,7 @@
 			"name": "deferredWaitProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 44,
+			"line": 45,
 			"signature": "export @builtin:fass:provider:deferred:wait fn deferredWaitProvider()",
 			"value_type": null
 		},
@@ -3740,7 +3748,7 @@
 			"name": "delayProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 42,
+			"line": 43,
 			"signature": "export @builtin:fass:provider:delay fn delayProvider()",
 			"value_type": null
 		},
@@ -3748,7 +3756,7 @@
 			"name": "demand",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 28,
+			"line": 29,
 			"signature": "export @builtin:khaz:attribute:control:summary fn demand()",
 			"value_type": null
 		},
@@ -3876,7 +3884,7 @@
 			"name": "discardable",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 19,
+			"line": 20,
 			"signature": "export @builtin:khaz:attribute:discardable fn discardable()",
 			"value_type": null
 		},
@@ -3908,7 +3916,7 @@
 			"name": "DistributedService",
 			"id": null,
 			"source": "database/cluster/distributed-service.el",
-			"line": 16,
+			"line": 17,
 			"signature": "export class DistributedService",
 			"value_type": null
 		},
@@ -3972,7 +3980,7 @@
 			"name": "drop",
 			"id": "collections/arrays/operations::drop",
 			"source": "collections/arrays/operations.el",
-			"line": 184,
+			"line": 210,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"drop\", receiver: \"argument\", prepare: normalize_count })\nexport fn drop(values, count)",
 			"value_type": null
 		},
@@ -3996,7 +4004,7 @@
 			"name": "DynamicArray",
 			"id": null,
 			"source": "collections/arrays/dynamic.el",
-			"line": 358,
+			"line": 350,
 			"signature": "export fn DynamicArray(element: type, count = -1): type",
 			"value_type": null
 		},
@@ -4028,7 +4036,7 @@
 			"name": "each",
 			"id": "collections/arrays/operations::each",
 			"source": "collections/arrays/operations.el",
-			"line": 227,
+			"line": 253,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"each\", receiver: \"argument\" })\nexport fn each(values, callback): void_t",
 			"value_type": null
 		},
@@ -4044,7 +4052,7 @@
 			"name": "effects",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 13,
+			"line": 14,
 			"signature": "export @builtin:khaz:attribute:effects fn effects()",
 			"value_type": null
 		},
@@ -4580,7 +4588,7 @@
 			"name": "exp",
 			"id": "mathematics/functions/elementary::exp",
 			"source": "mathematics/functions/elementary.el",
-			"line": 38,
+			"line": 39,
 			"signature": "@pure\nexport fn exp(value)",
 			"value_type": null
 		},
@@ -4604,7 +4612,7 @@
 			"name": "factorial",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 145,
+			"line": 146,
 			"signature": "export fn factorial(value, start = void)",
 			"value_type": null
 		},
@@ -4644,7 +4652,7 @@
 			"name": "familyGateProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 45,
+			"line": 46,
 			"signature": "export @builtin:fass:provider:family:gate fn familyGateProvider()",
 			"value_type": null
 		},
@@ -4764,7 +4772,7 @@
 			"name": "filter",
 			"id": "collections/arrays/operations::filter",
 			"source": "collections/arrays/operations.el",
-			"line": 166,
+			"line": 192,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"filter\", receiver: \"argument\" })\nexport fn filter(values, predicate)",
 			"value_type": null
 		},
@@ -4772,7 +4780,7 @@
 			"name": "find",
 			"id": "collections/arrays/operations::find",
 			"source": "collections/arrays/operations.el",
-			"line": 263,
+			"line": 289,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"find\", receiver: \"argument\" })\nexport fn find(values, predicate)",
 			"value_type": null
 		},
@@ -4780,7 +4788,7 @@
 			"name": "find_or_add",
 			"id": "collections/arrays/operations::find_or_add",
 			"source": "collections/arrays/operations.el",
-			"line": 283,
+			"line": 309,
 			"signature": "export fn find_or_add(values, predicate, create)",
 			"value_type": null
 		},
@@ -4956,7 +4964,7 @@
 			"name": "floor",
 			"id": "mathematics/functions/discrete::floor",
 			"source": "mathematics/functions/discrete.el",
-			"line": 33,
+			"line": 34,
 			"signature": "export fn floor(value)",
 			"value_type": null
 		},
@@ -4972,7 +4980,7 @@
 			"name": "foreignAbiProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 47,
+			"line": 48,
 			"signature": "export @builtin:vyrh:provider:foreign:abi fn foreignAbiProvider()",
 			"value_type": null
 		},
@@ -4980,7 +4988,7 @@
 			"name": "foreignControlSafe",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 38,
+			"line": 39,
 			"signature": "export @builtin:khaz:attribute:foreign:control fn foreignControlSafe()",
 			"value_type": null
 		},
@@ -5164,7 +5172,7 @@
 			"name": "functionPlan",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 55,
+			"line": 56,
 			"signature": "export @builtin:khaz:specialization:function:plan fn functionPlan()",
 			"value_type": null
 		},
@@ -5284,16 +5292,16 @@
 			"name": "greater",
 			"id": "functions/comparison::greater",
 			"source": "functions/comparison.el",
-			"line": 16,
-			"signature": "export fn greater(left, right)",
+			"line": 30,
+			"signature": "export fn greater(...values)",
 			"value_type": null
 		},
 		{
 			"name": "greaterEqual",
 			"id": "functions/comparison::greaterEqual",
 			"source": "functions/comparison.el",
-			"line": 44,
-			"signature": "export fn greaterEqual(left, right)",
+			"line": 60,
+			"signature": "export fn greaterEqual(...values)",
 			"value_type": null
 		},
 		{
@@ -5964,7 +5972,7 @@
 			"name": "implicit_read",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 18,
+			"line": 19,
 			"signature": "export @builtin:khaz:attribute:implicit:read fn implicit_read()",
 			"value_type": null
 		},
@@ -6044,7 +6052,7 @@
 			"name": "index_of",
 			"id": "collections/arrays/operations::index_of",
 			"source": "collections/arrays/operations.el",
-			"line": 243,
+			"line": 269,
 			"signature": "export fn index_of(values, wanted): Number",
 			"value_type": null
 		},
@@ -6060,7 +6068,7 @@
 			"name": "infer",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 16,
+			"line": 17,
 			"signature": "export @builtin:khaz:attribute:infer fn infer()",
 			"value_type": null
 		},
@@ -6156,7 +6164,7 @@
 			"name": "integer_log",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 134,
+			"line": 135,
 			"signature": "export fn integer_log(value, base)",
 			"value_type": null
 		},
@@ -6164,7 +6172,7 @@
 			"name": "integer_pow",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 116,
+			"line": 117,
 			"signature": "export fn integer_pow(base, exponent)",
 			"value_type": null
 		},
@@ -6196,7 +6204,7 @@
 			"name": "interpolate",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 221,
+			"line": 222,
 			"signature": "export fn interpolate(first, second, offset)",
 			"value_type": null
 		},
@@ -6228,7 +6236,7 @@
 			"name": "invsqrt",
 			"id": null,
 			"source": "mathematics/functions/elementary.el",
-			"line": 54,
+			"line": 55,
 			"signature": "export fn invsqrt(value)",
 			"value_type": null
 		},
@@ -6508,7 +6516,7 @@
 			"name": "is_prime",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 159,
+			"line": 160,
 			"signature": "export fn is_prime(value): Bool",
 			"value_type": null
 		},
@@ -6684,7 +6692,7 @@
 			"name": "lcm",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 108,
+			"line": 109,
 			"signature": "export fn lcm(left, right)",
 			"value_type": null
 		},
@@ -6708,16 +6716,16 @@
 			"name": "less",
 			"id": "functions/comparison::less",
 			"source": "functions/comparison.el",
-			"line": 30,
-			"signature": "export fn less(left, right)",
+			"line": 45,
+			"signature": "export fn less(...values)",
 			"value_type": null
 		},
 		{
 			"name": "lessEqual",
 			"id": "functions/comparison::lessEqual",
 			"source": "functions/comparison.el",
-			"line": 58,
-			"signature": "export fn lessEqual(left, right)",
+			"line": 75,
+			"signature": "export fn lessEqual(...values)",
 			"value_type": null
 		},
 		{
@@ -6924,7 +6932,7 @@
 			"name": "log",
 			"id": "mathematics/functions/elementary::log",
 			"source": "mathematics/functions/elementary.el",
-			"line": 50,
+			"line": 51,
 			"signature": "@pure\nexport fn log(value)",
 			"value_type": null
 		},
@@ -6940,7 +6948,7 @@
 			"name": "log_base",
 			"id": null,
 			"source": "mathematics/functions/elementary.el",
-			"line": 129,
+			"line": 130,
 			"signature": "export fn log_base(value, base)",
 			"value_type": null
 		},
@@ -7076,7 +7084,7 @@
 			"name": "mathDivmod",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 78,
+			"line": 79,
 			"signature": "export fn divmod(left, right)",
 			"value_type": null
 		},
@@ -7084,7 +7092,7 @@
 			"name": "mathGcd",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 94,
+			"line": 95,
 			"signature": "export fn gcd(left, right)",
 			"value_type": null
 		},
@@ -7092,7 +7100,7 @@
 			"name": "mathIsEven",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 74,
+			"line": 75,
 			"signature": "export fn is_even(value): Bool",
 			"value_type": null
 		},
@@ -7100,7 +7108,7 @@
 			"name": "mathIsOdd",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 68,
+			"line": 69,
 			"signature": "export fn is_odd(value): Bool",
 			"value_type": null
 		},
@@ -7108,23 +7116,23 @@
 			"name": "mathMax",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 16,
-			"signature": "export fn max(left, right)",
+			"line": 17,
+			"signature": "export fn max(...values)",
 			"value_type": null
 		},
 		{
 			"name": "mathMin",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 15,
-			"signature": "export fn min(left, right)",
+			"line": 16,
+			"signature": "export fn min(...values)",
 			"value_type": null
 		},
 		{
 			"name": "mathMod",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 86,
+			"line": 87,
 			"signature": "export fn mod(left, right)",
 			"value_type": null
 		},
@@ -7132,7 +7140,7 @@
 			"name": "mathPow",
 			"id": "mathematics/functions/elementary::pow",
 			"source": "mathematics/functions/elementary.el",
-			"line": 145,
+			"line": 146,
 			"signature": "export fn pow(base, exponent = Number(2))",
 			"value_type": null
 		},
@@ -7156,7 +7164,7 @@
 			"name": "matrixLiteral",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 59,
+			"line": 60,
 			"signature": "export @builtin:khaz:literal:matrix fn matrixLiteral()",
 			"value_type": null
 		},
@@ -7324,7 +7332,7 @@
 			"name": "mergeExchange",
 			"id": null,
 			"source": "database/service.el",
-			"line": 502,
+			"line": 494,
 			"signature": "export fn mergeExchange(streams: Map<key: Text, value: any[]>, keyOf): any[]",
 			"value_type": null
 		},
@@ -7732,7 +7740,7 @@
 			"name": "next_prime",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 183,
+			"line": 184,
 			"signature": "export fn next_prime(value)",
 			"value_type": null
 		},
@@ -7844,8 +7852,8 @@
 			"name": "notEqual",
 			"id": "functions/comparison::notEqual",
 			"source": "functions/comparison.el",
-			"line": 86,
-			"signature": "export fn notEqual(left, right)",
+			"line": 105,
+			"signature": "export fn notEqual(...values)",
 			"value_type": null
 		},
 		{
@@ -7892,7 +7900,7 @@
 			"name": "numberLiteral",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 56,
+			"line": 57,
 			"signature": "export @builtin:khaz:literal:number fn numberLiteral()",
 			"value_type": null
 		},
@@ -8236,7 +8244,7 @@
 			"name": "openService",
 			"id": null,
 			"source": "database/service.el",
-			"line": 508,
+			"line": 500,
 			"signature": "export fn openService(root: Text, node: Text, options: DbServiceOptions = DbServiceOptions()): DbService",
 			"value_type": null
 		},
@@ -8284,7 +8292,7 @@
 			"name": "optimize",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 25,
+			"line": 26,
 			"signature": "export @builtin:khaz:attribute:optimize fn optimize()",
 			"value_type": null
 		},
@@ -8524,7 +8532,7 @@
 			"name": "parse_text",
 			"id": null,
 			"source": "compiler/main.el",
-			"line": 88,
+			"line": 89,
 			"signature": "export fn parse_text(c: Compiler, path: Text, text: Text, source_tokens: Token[] | void_t = void): Node",
 			"value_type": null
 		},
@@ -8676,7 +8684,7 @@
 			"name": "partitionExchange",
 			"id": null,
 			"source": "database/service.el",
-			"line": 498,
+			"line": 490,
 			"signature": "export fn partitionExchange(shards: Text[], rows: any[], keyOf, maxRows: Number = 1024): ExchangeBatch[]",
 			"value_type": null
 		},
@@ -8836,7 +8844,7 @@
 			"name": "pi",
 			"id": "mathematics/functions/elementary::pi",
 			"source": "mathematics/functions/elementary.el",
-			"line": 124,
+			"line": 125,
 			"signature": "@pure\n@optimize(data: @{ operation: \"pi\" })\nexport fn pi(Result: type)",
 			"value_type": null
 		},
@@ -8921,6 +8929,22 @@
 			"value_type": null
 		},
 		{
+			"name": "PositionalArray",
+			"id": null,
+			"source": "collections/arrays/positional.el",
+			"line": 22,
+			"signature": "export fn PositionalArray(element: type, storage: type, length = 0): type",
+			"value_type": null
+		},
+		{
+			"name": "positionalArray",
+			"id": "collections/arrays/positional::positionalArray",
+			"source": "collections/arrays/positional.el",
+			"line": 64,
+			"signature": "export syntax positionalArray",
+			"value_type": null
+		},
+		{
 			"name": "pow",
 			"id": null,
 			"source": "number/arithmetic.el",
@@ -8980,7 +9004,7 @@
 			"name": "preserve",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 20,
+			"line": 21,
 			"signature": "export @builtin:khaz:attribute:preserve fn preserve()",
 			"value_type": null
 		},
@@ -8988,7 +9012,7 @@
 			"name": "prime_at_least",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 174,
+			"line": 175,
 			"signature": "export fn prime_at_least(value)",
 			"value_type": null
 		},
@@ -8996,7 +9020,7 @@
 			"name": "prime_at_most",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 185,
+			"line": 186,
 			"signature": "export fn prime_at_most(value)",
 			"value_type": null
 		},
@@ -9004,7 +9028,7 @@
 			"name": "prime_factors",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 197,
+			"line": 198,
 			"signature": "export fn prime_factors(value, unique: Bool = nil)",
 			"value_type": null
 		},
@@ -9132,7 +9156,7 @@
 			"name": "public_source_uri",
 			"id": null,
 			"source": "compiler/main.el",
-			"line": 216,
+			"line": 217,
 			"signature": "export fn public_source_uri(path: Text, working_directory: Text): Text",
 			"value_type": null
 		},
@@ -9228,7 +9252,7 @@
 			"name": "quantityLiteral",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 60,
+			"line": 61,
 			"signature": "export @builtin:khaz:literal:quantity fn quantityLiteral()",
 			"value_type": null
 		},
@@ -9516,7 +9540,7 @@
 			"name": "quotedLiteral",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 61,
+			"line": 62,
 			"signature": "export @builtin:khaz:literal:quoted fn quotedLiteral()",
 			"value_type": null
 		},
@@ -9556,7 +9580,7 @@
 			"name": "raises",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 14,
+			"line": 15,
 			"signature": "export @builtin:khaz:attribute:raises fn raises()",
 			"value_type": null
 		},
@@ -9828,7 +9852,7 @@
 			"name": "receiver_update",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 17,
+			"line": 18,
 			"signature": "export @builtin:khaz:attribute:receiver:update fn receiver_update()",
 			"value_type": null
 		},
@@ -9836,7 +9860,7 @@
 			"name": "reciprocal",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 58,
+			"line": 59,
 			"signature": "export fn reciprocal(value)",
 			"value_type": null
 		},
@@ -10348,7 +10372,7 @@
 			"name": "release_language_storage",
 			"id": null,
 			"source": "memory/allocation/index.el",
-			"line": 43,
+			"line": 48,
 			"signature": "export fn release_language_storage(pointer: ptr, size: AllocationSize, alignment: AllocationSize)",
 			"value_type": null
 		},
@@ -10476,7 +10500,7 @@
 			"name": "representation",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 24,
+			"line": 25,
 			"signature": "export @builtin:khaz:attribute:representation fn representation()",
 			"value_type": null
 		},
@@ -10540,7 +10564,7 @@
 			"name": "requires",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 27,
+			"line": 28,
 			"signature": "export @builtin:khaz:attribute:requires fn requires()",
 			"value_type": null
 		},
@@ -10548,7 +10572,7 @@
 			"name": "resize_language_storage",
 			"id": null,
 			"source": "memory/allocation/index.el",
-			"line": 53,
+			"line": 58,
 			"signature": "export fn resize_language_storage(pointer: ptr, old_size: AllocationSize, new_size: AllocationSize, alignment: AllocationSize): ptr",
 			"value_type": null
 		},
@@ -10668,7 +10692,7 @@
 			"name": "reverse_interpolate",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 222,
+			"line": 223,
 			"signature": "export fn reverse_interpolate(first, second, value)",
 			"value_type": null
 		},
@@ -10692,7 +10716,7 @@
 			"name": "round",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 48,
+			"line": 49,
 			"signature": "export fn round(value)",
 			"value_type": null
 		},
@@ -11068,7 +11092,7 @@
 			"name": "sec",
 			"id": null,
 			"source": "mathematics/functions/elementary.el",
-			"line": 84,
+			"line": 85,
 			"signature": "export fn sec(value)",
 			"value_type": null
 		},
@@ -11292,7 +11316,7 @@
 			"name": "sin",
 			"id": "mathematics/functions/elementary::sin",
 			"source": "mathematics/functions/elementary.el",
-			"line": 66,
+			"line": 67,
 			"signature": "@pure\n@optimize(data: @{ operation: \"sin\" })\nexport fn sin(value)",
 			"value_type": null
 		},
@@ -11324,7 +11348,7 @@
 			"name": "slope",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 220,
+			"line": 221,
 			"signature": "export fn slope(first, second, distance)",
 			"value_type": null
 		},
@@ -11372,7 +11396,7 @@
 			"name": "sort",
 			"id": "collections/arrays/operations::sort",
 			"source": "collections/arrays/operations.el",
-			"line": 302,
+			"line": 328,
 			"signature": "@optimize(using: optimize_sort, data: @{ receiver: \"argument\", independent: t, copy: copy_sort_input, pass: insertion_pass, tail: insertion_tail, ascending: ascending, merge: merge_sort, adaptive: adaptive_number_sort, insertion: insertion_sort, bucket: bounded_number_sort })\nexport fn sort(values, less = (left, right) => left < right, strategy = stable_memory_sort)",
 			"value_type": null
 		},
@@ -11444,7 +11468,7 @@
 			"name": "sqrt",
 			"id": "mathematics/functions/elementary::sqrt",
 			"source": "mathematics/functions/elementary.el",
-			"line": 27,
+			"line": 28,
 			"signature": "@pure\nexport fn sqrt(value)",
 			"value_type": null
 		},
@@ -11524,7 +11548,7 @@
 			"name": "staticDecodeProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 54,
+			"line": 55,
 			"signature": "export @builtin:khaz:provider:static:decode fn staticDecodeProvider()",
 			"value_type": null
 		},
@@ -11532,7 +11556,7 @@
 			"name": "staticEncodeProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 50,
+			"line": 51,
 			"signature": "export @builtin:khaz:provider:static:encode fn staticEncodeProvider()",
 			"value_type": null
 		},
@@ -11620,7 +11644,7 @@
 			"name": "stringLiteral",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 57,
+			"line": 58,
 			"signature": "export @builtin:khaz:literal:string fn stringLiteral()",
 			"value_type": null
 		},
@@ -11699,9 +11723,9 @@
 		{
 			"name": "sum",
 			"id": null,
-			"source": "database/typed-aggregate.el",
-			"line": 18,
-			"signature": "export fn sum(rows: any, selector: fn(any): any, initial: Number): Number",
+			"source": null,
+			"line": null,
+			"signature": null,
 			"value_type": null
 		},
 		{
@@ -11756,7 +11780,7 @@
 			"name": "Syntax",
 			"id": null,
 			"source": "language/syntax/index.el",
-			"line": 255,
+			"line": 256,
 			"signature": "export class Syntax",
 			"value_type": null
 		},
@@ -11780,7 +11804,7 @@
 			"name": "SyntaxContext",
 			"id": null,
 			"source": "language/syntax/index.el",
-			"line": 273,
+			"line": 274,
 			"signature": "export class SyntaxContext",
 			"value_type": null
 		},
@@ -11788,7 +11812,7 @@
 			"name": "SyntaxRecord",
 			"id": null,
 			"source": "language/syntax/index.el",
-			"line": 191,
+			"line": 192,
 			"signature": "export class SyntaxRecord",
 			"value_type": null
 		},
@@ -11796,7 +11820,7 @@
 			"name": "SyntaxScope",
 			"id": null,
 			"source": "language/syntax/index.el",
-			"line": 236,
+			"line": 237,
 			"signature": "export class SyntaxScope",
 			"value_type": null
 		},
@@ -11804,7 +11828,7 @@
 			"name": "SyntaxSymbol",
 			"id": null,
 			"source": "language/syntax/index.el",
-			"line": 202,
+			"line": 203,
 			"signature": "export class SyntaxSymbol",
 			"value_type": null
 		},
@@ -11884,7 +11908,7 @@
 			"name": "take",
 			"id": "collections/arrays/operations::take",
 			"source": "collections/arrays/operations.el",
-			"line": 207,
+			"line": 233,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"take\", receiver: \"argument\", prepare: normalize_count })\nexport fn take(values, count)",
 			"value_type": null
 		},
@@ -11892,7 +11916,7 @@
 			"name": "tan",
 			"id": null,
 			"source": "mathematics/functions/elementary.el",
-			"line": 76,
+			"line": 77,
 			"signature": "export fn tan(value)",
 			"value_type": null
 		},
@@ -12068,7 +12092,7 @@
 			"name": "Text",
 			"id": null,
 			"source": "text/text.el",
-			"line": 134,
+			"line": 144,
 			"signature": "export class Text extends Array<element: Char>\nexport fn Text(bitWidth = 0, size = 0): type",
 			"value_type": null
 		},
@@ -12083,8 +12107,8 @@
 		{
 			"name": "text_bytes",
 			"id": null,
-			"source": "cryptography/bytes.el",
-			"line": 184,
+			"source": "text/byte-array.el",
+			"line": 4,
 			"signature": "export fn text_bytes(text: Text): Number[]",
 			"value_type": null
 		},
@@ -12108,7 +12132,7 @@
 			"name": "TextView",
 			"id": null,
 			"source": "text/text.el",
-			"line": 737,
+			"line": 756,
 			"signature": "export class TextView\nexport fn TextView(bitWidth = 0, size = 0): type",
 			"value_type": null
 		},
@@ -12308,7 +12332,7 @@
 			"name": "tool_export_find",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 284,
+			"line": 295,
 			"signature": "export fn tool_export_find(generation: ToolGeneration, module: Text, symbol: Text): ToolExport | void_t",
 			"value_type": null
 		},
@@ -12316,7 +12340,7 @@
 			"name": "tool_export_resolve",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 292,
+			"line": 303,
 			"signature": "export fn tool_export_resolve(generation: ToolGeneration, module: Text, symbol: Text): ToolExport | void_t",
 			"value_type": null
 		},
@@ -12324,7 +12348,7 @@
 			"name": "tool_generation_begin_call",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 461,
+			"line": 476,
 			"signature": "export fn tool_generation_begin_call(host: ToolModuleHost, generation: ToolGeneration)",
 			"value_type": null
 		},
@@ -12332,7 +12356,7 @@
 			"name": "tool_generation_build",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 272,
+			"line": 283,
 			"signature": "export fn tool_generation_build(host: ToolModuleHost, tool: Text, entry: Text, target: Text, options: Text, source_root: Text, prelude: Text, compiler_identity: Text, diagnostics: Text[] | void_t = void): ToolGeneration",
 			"value_type": null
 		},
@@ -12340,7 +12364,7 @@
 			"name": "tool_generation_commit",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 436,
+			"line": 450,
 			"signature": "export fn tool_generation_commit(host: ToolModuleHost, generation: ToolGeneration): Bool",
 			"value_type": null
 		},
@@ -12348,7 +12372,7 @@
 			"name": "tool_generation_end_call",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 468,
+			"line": 484,
 			"signature": "export fn tool_generation_end_call(host: ToolModuleHost, generation: ToolGeneration)",
 			"value_type": null
 		},
@@ -12356,7 +12380,7 @@
 			"name": "tool_generation_entry_export",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 304,
+			"line": 316,
 			"signature": "export fn tool_generation_entry_export(generation: ToolGeneration): ToolExport | void_t",
 			"value_type": null
 		},
@@ -12364,7 +12388,7 @@
 			"name": "tool_generation_from_graph",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 259,
+			"line": 270,
 			"signature": "export fn tool_generation_from_graph(tool: Text, graph: ToolSourceGraph, target: Text, options: Text, source_root: Text, prelude: Text, prelude_identity: Text, compiler_identity: Text): ToolGeneration",
 			"value_type": null
 		},
@@ -12372,7 +12396,7 @@
 			"name": "tool_generation_initialize",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 332,
+			"line": 344,
 			"signature": "export fn tool_generation_initialize(generation: ToolGeneration, initialize, cleanup): Text",
 			"value_type": null
 		},
@@ -12380,7 +12404,7 @@
 			"name": "tool_generation_key",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 107,
+			"line": 112,
 			"signature": "export fn tool_generation_key(tool: Text, graph: ToolSourceGraph, target: Text, options: Text, source_root: Text, prelude: Text, prelude_identity: Text, compiler_identity: Text): Text",
 			"value_type": null
 		},
@@ -12388,7 +12412,7 @@
 			"name": "tool_generation_live",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 412,
+			"line": 426,
 			"signature": "export fn tool_generation_live(host: ToolModuleHost, generation: ToolGeneration): Bool",
 			"value_type": null
 		},
@@ -12396,7 +12420,7 @@
 			"name": "tool_generation_live_count",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 417,
+			"line": 431,
 			"signature": "export fn tool_generation_live_count(host: ToolModuleHost): Number",
 			"value_type": null
 		},
@@ -12404,7 +12428,7 @@
 			"name": "tool_generation_release",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 420,
+			"line": 434,
 			"signature": "export fn tool_generation_release(host: ToolModuleHost, generation: ToolGeneration)",
 			"value_type": null
 		},
@@ -12412,7 +12436,7 @@
 			"name": "tool_generation_verify",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 396,
+			"line": 408,
 			"signature": "export fn tool_generation_verify(generation: ToolGeneration): Text",
 			"value_type": null
 		},
@@ -12420,7 +12444,7 @@
 			"name": "tool_invoke_generation",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 474,
+			"line": 490,
 			"signature": "export fn tool_invoke_generation(host: ToolModuleHost, generation: ToolGeneration, arguments: Text[], timeout: Number, invoke): Number",
 			"value_type": null
 		},
@@ -12428,7 +12452,7 @@
 			"name": "tool_key_digest",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 130,
+			"line": 135,
 			"signature": "export fn tool_key_digest(key_text: Text): Text",
 			"value_type": null
 		},
@@ -12436,8 +12460,8 @@
 			"name": "tool_module_acquire",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 491,
-			"signature": "export fn tool_module_acquire(host: ToolModuleHost, tool: Text, entry: Text, target: Text, options: Text, source_root: Text, prelude: Text, compiler_identity: Text, initialize, cleanup, diagnostics: Text[] | void_t = void): ToolGeneration",
+			"line": 508,
+			"signature": "export fn tool_module_acquire(host: ToolModuleHost, tool: Text, entry: Text, target: Text, options: Text, source_root: Text, prelude: Text, compiler_identity: Text, initialize, cleanup, diagnostics: Text[] | void_t = void, compiler_inputs_complete: Bool = t, validate: fn(ToolGeneration): Text = (generation: ToolGeneration) => \"\"): ToolGeneration",
 			"value_type": null
 		},
 		{
@@ -12452,7 +12476,7 @@
 			"name": "tool_module_verify",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 405,
+			"line": 419,
 			"signature": "export fn tool_module_verify(module: ToolModule): Text",
 			"value_type": null
 		},
@@ -12460,7 +12484,7 @@
 			"name": "tool_source_digest",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 506,
+			"line": 606,
 			"signature": "export fn tool_source_digest(text: Text): Text",
 			"value_type": null
 		},
@@ -12468,15 +12492,15 @@
 			"name": "tool_source_graph",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 712,
-			"signature": "export fn tool_source_graph(entry: Text, configuration: SourceMap | void_t = void, acquisition: SourceAcquisitionState = SourceAcquisitionState()): ToolSourceGraph",
+			"line": 817,
+			"signature": "export fn tool_source_graph(entry: Text, configuration: SourceMap | void_t = void, acquisition: SourceAcquisitionState = SourceAcquisitionState(), target: Text = \"\"): ToolSourceGraph",
 			"value_type": null
 		},
 		{
 			"name": "tool_source_is_cycle_edge",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 876,
+			"line": 983,
 			"signature": "export fn tool_source_is_cycle_edge(graph: ToolSourceGraph, owner: Text, path: Text): Bool",
 			"value_type": null
 		},
@@ -12484,7 +12508,7 @@
 			"name": "tool_source_module",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 563,
+			"line": 666,
 			"signature": "export fn tool_source_module(graph: ToolSourceGraph, path: Text): ToolSourceModule | void_t",
 			"value_type": null
 		},
@@ -12492,7 +12516,7 @@
 			"name": "tool_source_prelude_identity",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 829,
+			"line": 936,
 			"signature": "export fn tool_source_prelude_identity(prelude: Text, consumer: ToolSourceGraph | void_t = void): Text",
 			"value_type": null
 		},
@@ -12500,7 +12524,7 @@
 			"name": "tool_source_resolve",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 590,
+			"line": 693,
 			"signature": "export fn tool_source_resolve(module_path: Text, specifier: Text, configuration: SourceMap | void_t = void, acquisition: SourceAcquisitionState = SourceAcquisitionState()): Text",
 			"value_type": null
 		},
@@ -12508,15 +12532,15 @@
 			"name": "tool_source_scan",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 438,
-			"signature": "export fn tool_source_scan(original: Text): ToolSourceScan",
+			"line": 538,
+			"signature": "export fn tool_source_scan(original: Text, target: Text = \"\"): ToolSourceScan",
 			"value_type": null
 		},
 		{
 			"name": "tool_source_verify",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 790,
+			"line": 897,
 			"signature": "export fn tool_source_verify(graph: ToolSourceGraph): Text",
 			"value_type": null
 		},
@@ -12524,7 +12548,7 @@
 			"name": "ToolExport",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 46,
+			"line": 47,
 			"signature": "export class ToolExport",
 			"value_type": null
 		},
@@ -12532,7 +12556,7 @@
 			"name": "ToolGeneration",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 55,
+			"line": 56,
 			"signature": "export class ToolGeneration",
 			"value_type": null
 		},
@@ -12548,7 +12572,7 @@
 			"name": "ToolModuleHost",
 			"id": null,
 			"source": "language/modules/source/generation.el",
-			"line": 87,
+			"line": 92,
 			"signature": "export class ToolModuleHost",
 			"value_type": null
 		},
@@ -12564,7 +12588,7 @@
 			"name": "ToolSourceGraph",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 536,
+			"line": 637,
 			"signature": "export class ToolSourceGraph",
 			"value_type": null
 		},
@@ -12572,7 +12596,7 @@
 			"name": "ToolSourceModule",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 511,
+			"line": 611,
 			"signature": "export class ToolSourceModule",
 			"value_type": null
 		},
@@ -12580,7 +12604,7 @@
 			"name": "ToolSourceScan",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 201,
+			"line": 204,
 			"signature": "export class ToolSourceScan",
 			"value_type": null
 		},
@@ -12660,7 +12684,7 @@
 			"name": "trunc",
 			"id": null,
 			"source": "mathematics/functions/discrete.el",
-			"line": 19,
+			"line": 20,
 			"signature": "export fn trunc(value: Integer): Integer\nexport fn trunc(value)",
 			"value_type": null
 		},
@@ -12940,7 +12964,7 @@
 			"name": "value_record",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 33,
+			"line": 34,
 			"signature": "export @builtin:khaz:attribute:compose fn value_record()",
 			"value_type": null
 		},
@@ -13421,11 +13445,14 @@
 			"includes": "collections/arrays/operations::includes",
 			"index_of": "collections/arrays/operations::index_of",
 			"none": "collections/arrays/operations::none",
+			"reduceOr": "collections/arrays/operations::reduceOr",
 			"reverse": "collections/arrays/operations::reverse",
-			"reversed": "collections/arrays/operations::reversed",
 			"some": "collections/arrays/operations::some",
 			"sort": "collections/arrays/operations::sort",
 			"take": "collections/arrays/operations::take"
+		},
+		"collections/arrays/positional": {
+			"positionalArray": "collections/arrays/positional::positionalArray"
 		},
 		"collections/batch/index": {
 			"batch": "collections/batch/syntax::batch"
@@ -13742,6 +13769,7 @@
 			"pbkdf2_sha256": "cryptography/pbkdf2::pbkdf2_sha256",
 			"pi": "mathematics/functions/elementary::pi",
 			"plot": "graphics/plots/index::plot",
+			"positionalArray": "collections/arrays/positional::positionalArray",
 			"range": "text/patterns/combinators::range",
 			"readFileAs": "filesystem/index::readFileAs",
 			"readFileBuffer": "filesystem/index::readFileBuffer",
@@ -13844,6 +13872,9 @@
 			"variable": "logic/term::variable",
 			"variable_scope": "logic/term::variable_scope"
 		},
+		"mathematics/functions/aggregation": {
+			"sum": "mathematics/functions/aggregation::sum"
+		},
 		"mathematics/functions/discrete": {
 			"floor": "mathematics/functions/discrete::floor"
 		},
@@ -13854,7 +13885,8 @@
 			"pi": "mathematics/functions/elementary::pi",
 			"pow": "mathematics/functions/elementary::pow",
 			"sin": "mathematics/functions/elementary::sin",
-			"sqrt": "mathematics/functions/elementary::sqrt"
+			"sqrt": "mathematics/functions/elementary::sqrt",
+			"sum": "mathematics/functions/aggregation::sum"
 		},
 		"mathematics/index": {
 			"Eq": "language/proofs::Eq",
@@ -13867,7 +13899,8 @@
 			"pow": "mathematics/functions/elementary::pow",
 			"refl": "language/proofs::refl",
 			"sin": "mathematics/functions/elementary::sin",
-			"sqrt": "mathematics/functions/elementary::sqrt"
+			"sqrt": "mathematics/functions/elementary::sqrt",
+			"sum": "mathematics/functions/aggregation::sum"
 		},
 		"mathematics/proofs": {
 			"Eq": "language/proofs::Eq",
@@ -14435,7 +14468,7 @@
 		{
 			"name": "Array",
 			"source": "collections/arrays/dynamic.el",
-			"line": 38,
+			"line": 39,
 			"signature": "class Array",
 			"id": null,
 			"initializer": null
@@ -14443,7 +14476,7 @@
 		{
 			"name": "ArrayCursor",
 			"source": "collections/arrays/dynamic.el",
-			"line": 73,
+			"line": 74,
 			"signature": "fn ArrayCursor(element: type): type",
 			"id": null,
 			"initializer": null
@@ -14451,7 +14484,7 @@
 		{
 			"name": "ArrayLiteralTail",
 			"source": "collections/arrays/dynamic.el",
-			"line": 96,
+			"line": 97,
 			"signature": "fn ArrayLiteralTail(element: type, count = -1): type",
 			"id": null,
 			"initializer": null
@@ -14459,7 +14492,7 @@
 		{
 			"name": "Array",
 			"source": "collections/arrays/dynamic.el",
-			"line": 119,
+			"line": 120,
 			"signature": "fn Array(element: type): type",
 			"id": "collections/arrays/dynamic::Array",
 			"initializer": null
@@ -14467,7 +14500,7 @@
 		{
 			"name": "ClassicArray",
 			"source": "collections/arrays/dynamic.el",
-			"line": 349,
+			"line": 341,
 			"signature": "fn ClassicArray(element: type): type",
 			"id": null,
 			"initializer": null
@@ -14475,7 +14508,7 @@
 		{
 			"name": "DynamicArray",
 			"source": "collections/arrays/dynamic.el",
-			"line": 358,
+			"line": 350,
 			"signature": "fn DynamicArray(element: type, count = -1): type",
 			"id": null,
 			"initializer": null
@@ -14509,6 +14542,14 @@
 			"source": "collections/arrays/fixed.el",
 			"line": 153,
 			"signature": "fn FixedArrayIterator(element: type, length = 0): type",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "PositionalArray",
+			"source": "collections/arrays/positional.el",
+			"line": 22,
+			"signature": "fn PositionalArray(element: type, storage: type, length = 0): type",
 			"id": null,
 			"initializer": null
 		},
@@ -15019,7 +15060,7 @@
 		{
 			"name": "AbiSourceScope",
 			"source": "compiler/attributes/abi-attributes.el",
-			"line": 40,
+			"line": 41,
 			"signature": "class AbiSourceScope",
 			"id": null,
 			"initializer": null
@@ -15259,7 +15300,7 @@
 		{
 			"name": "InterfaceKey",
 			"source": "compiler/cache/interface-cache.el",
-			"line": 52,
+			"line": 48,
 			"signature": "class InterfaceKey",
 			"id": null,
 			"initializer": null
@@ -15267,7 +15308,7 @@
 		{
 			"name": "InterfaceOrigin",
 			"source": "compiler/cache/interface-cache.el",
-			"line": 85,
+			"line": 81,
 			"signature": "class InterfaceOrigin",
 			"id": null,
 			"initializer": null
@@ -15275,7 +15316,7 @@
 		{
 			"name": "InterfaceField",
 			"source": "compiler/cache/interface-cache.el",
-			"line": 94,
+			"line": 90,
 			"signature": "class InterfaceField",
 			"id": null,
 			"initializer": null
@@ -15283,7 +15324,7 @@
 		{
 			"name": "InterfaceMethod",
 			"source": "compiler/cache/interface-cache.el",
-			"line": 104,
+			"line": 100,
 			"signature": "class InterfaceMethod",
 			"id": null,
 			"initializer": null
@@ -15291,7 +15332,7 @@
 		{
 			"name": "InterfaceEntry",
 			"source": "compiler/cache/interface-cache.el",
-			"line": 123,
+			"line": 119,
 			"signature": "class InterfaceEntry",
 			"id": null,
 			"initializer": null
@@ -15299,7 +15340,7 @@
 		{
 			"name": "InterfaceMember",
 			"source": "compiler/cache/interface-cache.el",
-			"line": 132,
+			"line": 128,
 			"signature": "class InterfaceMember",
 			"id": null,
 			"initializer": null
@@ -15307,7 +15348,7 @@
 		{
 			"name": "InterfaceDeclaration",
 			"source": "compiler/cache/interface-cache.el",
-			"line": 138,
+			"line": 134,
 			"signature": "class InterfaceDeclaration",
 			"id": null,
 			"initializer": null
@@ -15315,7 +15356,7 @@
 		{
 			"name": "InterfaceProvider",
 			"source": "compiler/cache/interface-cache.el",
-			"line": 194,
+			"line": 190,
 			"signature": "class InterfaceProvider",
 			"id": null,
 			"initializer": null
@@ -15323,7 +15364,7 @@
 		{
 			"name": "InterfaceModule",
 			"source": "compiler/cache/interface-cache.el",
-			"line": 202,
+			"line": 198,
 			"signature": "class InterfaceModule",
 			"id": null,
 			"initializer": null
@@ -15331,7 +15372,7 @@
 		{
 			"name": "InterfacePlan",
 			"source": "compiler/cache/interface-cache.el",
-			"line": 804,
+			"line": 800,
 			"signature": "class InterfacePlan",
 			"id": null,
 			"initializer": null
@@ -15356,14 +15397,14 @@
 			"name": "SyntaxReader",
 			"source": "compiler/cache/syntax-cache.el",
 			"line": 44,
-			"signature": "class SyntaxReader",
+			"signature": "class SyntaxReader extends CacheReader",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "SyntaxEvidenceBatch",
 			"source": "compiler/cache/syntax-cache.el",
-			"line": 104,
+			"line": 86,
 			"signature": "class SyntaxEvidenceBatch",
 			"id": null,
 			"initializer": null
@@ -15603,7 +15644,7 @@
 		{
 			"name": "ClosedSpan",
 			"source": "compiler/compute/closed-source-values.el",
-			"line": 94,
+			"line": 92,
 			"signature": "class ClosedSpan",
 			"id": null,
 			"initializer": null
@@ -15611,7 +15652,7 @@
 		{
 			"name": "ClosedBinding",
 			"source": "compiler/compute/closed-source-values.el",
-			"line": 109,
+			"line": 107,
 			"signature": "class ClosedBinding",
 			"id": null,
 			"initializer": null
@@ -15619,7 +15660,7 @@
 		{
 			"name": "ClosedOperand",
 			"source": "compiler/compute/closed-source-values.el",
-			"line": 138,
+			"line": 136,
 			"signature": "class ClosedOperand",
 			"id": null,
 			"initializer": null
@@ -15627,7 +15668,7 @@
 		{
 			"name": "ClosedComparison",
 			"source": "compiler/compute/closed-source-values.el",
-			"line": 204,
+			"line": 202,
 			"signature": "class ClosedComparison",
 			"id": null,
 			"initializer": null
@@ -15635,7 +15676,7 @@
 		{
 			"name": "ClosedSourceValues",
 			"source": "compiler/compute/closed-source-values.el",
-			"line": 235,
+			"line": 233,
 			"signature": "class ClosedSourceValues",
 			"id": null,
 			"initializer": null
@@ -15643,7 +15684,7 @@
 		{
 			"name": "FiniteMapOperation",
 			"source": "compiler/compute/finite-map-expression.el",
-			"line": 50,
+			"line": 48,
 			"signature": "class FiniteMapOperation",
 			"id": null,
 			"initializer": null
@@ -15651,7 +15692,7 @@
 		{
 			"name": "FiniteSourceCall",
 			"source": "compiler/compute/finite-map-expression.el",
-			"line": 106,
+			"line": 104,
 			"signature": "class FiniteSourceCall",
 			"id": null,
 			"initializer": null
@@ -15659,7 +15700,7 @@
 		{
 			"name": "FiniteMapExpressions",
 			"source": "compiler/compute/finite-map-expression.el",
-			"line": 169,
+			"line": 167,
 			"signature": "class FiniteMapExpressions",
 			"id": null,
 			"initializer": null
@@ -15667,7 +15708,7 @@
 		{
 			"name": "Projection",
 			"source": "compiler/compute/finite-map-expression.el",
-			"line": 215,
+			"line": 213,
 			"signature": "class Projection",
 			"id": null,
 			"initializer": null
@@ -15675,7 +15716,7 @@
 		{
 			"name": "FiniteScalarNode",
 			"source": "compiler/compute/finite-map.el",
-			"line": 117,
+			"line": 118,
 			"signature": "class FiniteScalarNode",
 			"id": null,
 			"initializer": null
@@ -15683,7 +15724,7 @@
 		{
 			"name": "FiniteScalarValue",
 			"source": "compiler/compute/finite-map.el",
-			"line": 128,
+			"line": 129,
 			"signature": "class FiniteScalarValue",
 			"id": null,
 			"initializer": null
@@ -15691,7 +15732,7 @@
 		{
 			"name": "FiniteScalarMemo",
 			"source": "compiler/compute/finite-map.el",
-			"line": 133,
+			"line": 134,
 			"signature": "class FiniteScalarMemo",
 			"id": null,
 			"initializer": null
@@ -15699,7 +15740,7 @@
 		{
 			"name": "FiniteScalarProgram",
 			"source": "compiler/compute/finite-map.el",
-			"line": 138,
+			"line": 139,
 			"signature": "class FiniteScalarProgram",
 			"id": null,
 			"initializer": null
@@ -15707,7 +15748,7 @@
 		{
 			"name": "FiniteMap",
 			"source": "compiler/compute/finite-map.el",
-			"line": 209,
+			"line": 210,
 			"signature": "class FiniteMap",
 			"id": null,
 			"initializer": null
@@ -15715,7 +15756,7 @@
 		{
 			"name": "FiniteMapAuthority",
 			"source": "compiler/compute/finite-map.el",
-			"line": 489,
+			"line": 487,
 			"signature": "class FiniteMapAuthority",
 			"id": null,
 			"initializer": null
@@ -15723,7 +15764,7 @@
 		{
 			"name": "FiniteMapProvider",
 			"source": "compiler/compute/finite-map.el",
-			"line": 518,
+			"line": 516,
 			"signature": "class FiniteMapProvider",
 			"id": null,
 			"initializer": null
@@ -15731,7 +15772,7 @@
 		{
 			"name": "FiniteMapReceipt",
 			"source": "compiler/compute/finite-map.el",
-			"line": 559,
+			"line": 557,
 			"signature": "class FiniteMapReceipt",
 			"id": null,
 			"initializer": null
@@ -16157,6 +16198,14 @@
 			"source": "compiler/context/contract-state.el",
 			"line": 295,
 			"signature": "class ContextBinding",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "LoweringContext",
+			"source": "compiler/context/lowering-context.el",
+			"line": 3,
+			"signature": "class LoweringContext",
 			"id": null,
 			"initializer": null
 		},
@@ -17355,7 +17404,7 @@
 		{
 			"name": "MemberReadChoice",
 			"source": "compiler/expressions/member.el",
-			"line": 29,
+			"line": 30,
 			"signature": "class MemberReadChoice",
 			"id": null,
 			"initializer": null
@@ -17371,7 +17420,7 @@
 		{
 			"name": "SourceCodeDependency",
 			"source": "compiler/inputs/code-input-graph.el",
-			"line": 8,
+			"line": 10,
 			"signature": "class SourceCodeDependency",
 			"id": null,
 			"initializer": null
@@ -17379,7 +17428,7 @@
 		{
 			"name": "SourceCodeGraph",
 			"source": "compiler/inputs/code-input-graph.el",
-			"line": 16,
+			"line": 18,
 			"signature": "class SourceCodeGraph",
 			"id": null,
 			"initializer": null
@@ -17387,7 +17436,7 @@
 		{
 			"name": "SourceCodeBindings",
 			"source": "compiler/inputs/code-input-graph.el",
-			"line": 24,
+			"line": 26,
 			"signature": "class SourceCodeBindings",
 			"id": null,
 			"initializer": null
@@ -17397,6 +17446,14 @@
 			"source": "compiler/inputs/code-metadata.el",
 			"line": 13,
 			"signature": "class CodeMetadata",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DependencyReceipt",
+			"source": "compiler/inputs/dependency-manifest.el",
+			"line": 15,
+			"signature": "class DependencyReceipt",
 			"id": null,
 			"initializer": null
 		},
@@ -17411,7 +17468,7 @@
 		{
 			"name": "FactoryShapePreparation",
 			"source": "compiler/main.el",
-			"line": 409,
+			"line": 410,
 			"signature": "class FactoryShapePreparation",
 			"id": null,
 			"initializer": null
@@ -17465,9 +17522,33 @@
 			"initializer": null
 		},
 		{
+			"name": "ImportSourceEntry",
+			"source": "compiler/modules/import-source-map.el",
+			"line": 5,
+			"signature": "class ImportSourceEntry",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "ImportSourceMap",
+			"source": "compiler/modules/import-source-map.el",
+			"line": 14,
+			"signature": "class ImportSourceMap",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "ImportSourceChoice",
+			"source": "compiler/modules/import-source-map.el",
+			"line": 17,
+			"signature": "class ImportSourceChoice",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "MissingImportDiagnostics",
 			"source": "compiler/modules/imports.el",
-			"line": 474,
+			"line": 502,
 			"signature": "class MissingImportDiagnostics",
 			"id": null,
 			"initializer": null
@@ -17475,7 +17556,7 @@
 		{
 			"name": "StaticImportGraph",
 			"source": "compiler/modules/imports.el",
-			"line": 541,
+			"line": 569,
 			"signature": "class StaticImportGraph",
 			"id": null,
 			"initializer": null
@@ -17507,7 +17588,7 @@
 		{
 			"name": "MutationValues",
 			"source": "compiler/modules/module-mutation-proof.el",
-			"line": 26,
+			"line": 27,
 			"signature": "class MutationValues",
 			"id": null,
 			"initializer": null
@@ -17515,7 +17596,7 @@
 		{
 			"name": "MutationVertex",
 			"source": "compiler/modules/module-mutation-proof.el",
-			"line": 37,
+			"line": 38,
 			"signature": "class MutationVertex",
 			"id": null,
 			"initializer": null
@@ -17523,7 +17604,7 @@
 		{
 			"name": "MutationScope",
 			"source": "compiler/modules/module-mutation-proof.el",
-			"line": 45,
+			"line": 46,
 			"signature": "class MutationScope",
 			"id": null,
 			"initializer": null
@@ -17531,7 +17612,7 @@
 		{
 			"name": "NeedsMutationBudget",
 			"source": "compiler/modules/module-mutation-proof.el",
-			"line": 54,
+			"line": 55,
 			"signature": "class NeedsMutationBudget",
 			"id": null,
 			"initializer": null
@@ -17539,7 +17620,7 @@
 		{
 			"name": "ModuleMutationProof",
 			"source": "compiler/modules/module-mutation-proof.el",
-			"line": 56,
+			"line": 57,
 			"signature": "class ModuleMutationProof",
 			"id": null,
 			"initializer": null
@@ -17587,7 +17668,7 @@
 		{
 			"name": "NativeIntegerCondition",
 			"source": "compiler/native/native-memory-domain-types.el",
-			"line": 24,
+			"line": 41,
 			"signature": "class NativeIntegerCondition",
 			"id": null,
 			"initializer": null
@@ -17691,7 +17772,7 @@
 		{
 			"name": "NativeScalarOperation",
 			"source": "compiler/native/native-scalar-operations.el",
-			"line": 23,
+			"line": 21,
 			"signature": "class NativeScalarOperation",
 			"id": null,
 			"initializer": null
@@ -17699,7 +17780,7 @@
 		{
 			"name": "NativeScalarOperations",
 			"source": "compiler/native/native-scalar-operations.el",
-			"line": 79,
+			"line": 77,
 			"signature": "class NativeScalarOperations",
 			"id": null,
 			"initializer": null
@@ -17707,7 +17788,7 @@
 		{
 			"name": "CompilationOperation",
 			"source": "compiler/operations.el",
-			"line": 46,
+			"line": 49,
 			"signature": "enum CompilationOperation",
 			"id": null,
 			"initializer": null
@@ -17715,7 +17796,7 @@
 		{
 			"name": "CompilationOptions",
 			"source": "compiler/operations.el",
-			"line": 49,
+			"line": 52,
 			"signature": "class CompilationOptions",
 			"id": null,
 			"initializer": null
@@ -17723,7 +17804,7 @@
 		{
 			"name": "CompilationFailure",
 			"source": "compiler/operations.el",
-			"line": 96,
+			"line": 99,
 			"signature": "class CompilationFailure",
 			"id": null,
 			"initializer": null
@@ -17731,7 +17812,7 @@
 		{
 			"name": "PreparedCompilation",
 			"source": "compiler/operations.el",
-			"line": 130,
+			"line": 151,
 			"signature": "class PreparedCompilation",
 			"id": null,
 			"initializer": null
@@ -17739,7 +17820,7 @@
 		{
 			"name": "FrontendCompilation",
 			"source": "compiler/operations.el",
-			"line": 175,
+			"line": 196,
 			"signature": "class FrontendCompilation",
 			"id": null,
 			"initializer": null
@@ -20547,7 +20628,7 @@
 		{
 			"name": "RuntimeModuleProjection",
 			"source": "compiler/runtime/runtime-module-projection.el",
-			"line": 52,
+			"line": 53,
 			"signature": "class RuntimeModuleProjection",
 			"id": null,
 			"initializer": null
@@ -20723,7 +20804,7 @@
 		{
 			"name": "SourceCallableInput",
 			"source": "compiler/source/source-callback-inputs.el",
-			"line": 13,
+			"line": 14,
 			"signature": "class SourceCallableInput",
 			"id": null,
 			"initializer": null
@@ -20731,7 +20812,7 @@
 		{
 			"name": "SourceCallInputs",
 			"source": "compiler/source/source-callback-inputs.el",
-			"line": 71,
+			"line": 69,
 			"signature": "class SourceCallInputs",
 			"id": null,
 			"initializer": null
@@ -20763,7 +20844,7 @@
 		{
 			"name": "SourceCaptureSpan",
 			"source": "compiler/source/source-capture-inputs.el",
-			"line": 13,
+			"line": 11,
 			"signature": "class SourceCaptureSpan",
 			"id": null,
 			"initializer": null
@@ -20771,7 +20852,7 @@
 		{
 			"name": "SourceCaptureCell",
 			"source": "compiler/source/source-capture-inputs.el",
-			"line": 48,
+			"line": 46,
 			"signature": "class SourceCaptureCell",
 			"id": null,
 			"initializer": null
@@ -20779,7 +20860,7 @@
 		{
 			"name": "SourceCaptureAddress",
 			"source": "compiler/source/source-capture-inputs.el",
-			"line": 89,
+			"line": 87,
 			"signature": "class SourceCaptureAddress",
 			"id": null,
 			"initializer": null
@@ -20787,7 +20868,7 @@
 		{
 			"name": "SourceCaptureCleanup",
 			"source": "compiler/source/source-capture-inputs.el",
-			"line": 129,
+			"line": 127,
 			"signature": "class SourceCaptureCleanup",
 			"id": null,
 			"initializer": null
@@ -20795,7 +20876,7 @@
 		{
 			"name": "SourceCaptureInput",
 			"source": "compiler/source/source-capture-inputs.el",
-			"line": 161,
+			"line": 159,
 			"signature": "class SourceCaptureInput",
 			"id": null,
 			"initializer": null
@@ -20803,7 +20884,7 @@
 		{
 			"name": "SourceCaptureParameterEmission",
 			"source": "compiler/source/source-capture-inputs.el",
-			"line": 232,
+			"line": 230,
 			"signature": "class SourceCaptureParameterEmission",
 			"id": null,
 			"initializer": null
@@ -20811,7 +20892,7 @@
 		{
 			"name": "SourceCaptureFrame",
 			"source": "compiler/source/source-capture-inputs.el",
-			"line": 246,
+			"line": 244,
 			"signature": "class SourceCaptureFrame",
 			"id": null,
 			"initializer": null
@@ -21283,7 +21364,7 @@
 		{
 			"name": "SourceKhraBody",
 			"source": "compiler/source/source-khra.el",
-			"line": 21,
+			"line": 19,
 			"signature": "class SourceKhraBody",
 			"id": null,
 			"initializer": null
@@ -22171,7 +22252,7 @@
 		{
 			"name": "SyntaxImportKind",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 76,
+			"line": 77,
 			"signature": "data SyntaxImportKind",
 			"id": null,
 			"initializer": null
@@ -22179,7 +22260,7 @@
 		{
 			"name": "ImportBinding",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 81,
+			"line": 82,
 			"signature": "class ImportBinding",
 			"id": null,
 			"initializer": null
@@ -22187,7 +22268,7 @@
 		{
 			"name": "ImportSelection",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 92,
+			"line": 93,
 			"signature": "data ImportSelection",
 			"id": null,
 			"initializer": null
@@ -22195,7 +22276,7 @@
 		{
 			"name": "SyntaxImport",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 96,
+			"line": 97,
 			"signature": "class SyntaxImport",
 			"id": null,
 			"initializer": null
@@ -22203,7 +22284,7 @@
 		{
 			"name": "ModuleSettingScope",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 109,
+			"line": 111,
 			"signature": "data ModuleSettingScope",
 			"id": null,
 			"initializer": null
@@ -22211,7 +22292,7 @@
 		{
 			"name": "ModuleSwitchKind",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 112,
+			"line": 114,
 			"signature": "data ModuleSwitchKind",
 			"id": null,
 			"initializer": null
@@ -22219,7 +22300,7 @@
 		{
 			"name": "ModuleSwitch",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 116,
+			"line": 118,
 			"signature": "class ModuleSwitch",
 			"id": null,
 			"initializer": null
@@ -22227,7 +22308,7 @@
 		{
 			"name": "NamedExpression",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 126,
+			"line": 128,
 			"signature": "class NamedExpression",
 			"id": null,
 			"initializer": null
@@ -22235,7 +22316,7 @@
 		{
 			"name": "SyntaxModuleDirective",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 135,
+			"line": 137,
 			"signature": "data SyntaxModuleDirective",
 			"id": null,
 			"initializer": null
@@ -22243,7 +22324,7 @@
 		{
 			"name": "SyntaxModuleImport",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 139,
+			"line": 141,
 			"signature": "class SyntaxModuleImport",
 			"id": null,
 			"initializer": null
@@ -22251,7 +22332,7 @@
 		{
 			"name": "SyntaxImportAliases",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 146,
+			"line": 148,
 			"signature": "class SyntaxImportAliases",
 			"id": null,
 			"initializer": null
@@ -22259,7 +22340,7 @@
 		{
 			"name": "SyntaxImportDemand",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 155,
+			"line": 157,
 			"signature": "class SyntaxImportDemand",
 			"id": null,
 			"initializer": null
@@ -22267,7 +22348,7 @@
 		{
 			"name": "SyntaxScopeResolutionKind",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 156,
+			"line": 158,
 			"signature": "data SyntaxScopeResolutionKind",
 			"id": null,
 			"initializer": null
@@ -22275,7 +22356,7 @@
 		{
 			"name": "SyntaxScopeResolution",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 160,
+			"line": 162,
 			"signature": "class SyntaxScopeResolution",
 			"id": null,
 			"initializer": null
@@ -22283,7 +22364,7 @@
 		{
 			"name": "SyntaxArgumentAppend",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 173,
+			"line": 175,
 			"signature": "class SyntaxArgumentAppend",
 			"id": null,
 			"initializer": null
@@ -22291,7 +22372,7 @@
 		{
 			"name": "SyntaxCheckedTransform",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 183,
+			"line": 185,
 			"signature": "class SyntaxCheckedTransform",
 			"id": null,
 			"initializer": null
@@ -22299,7 +22380,7 @@
 		{
 			"name": "SyntaxScopeBinding",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 196,
+			"line": 198,
 			"signature": "class SyntaxScopeBinding",
 			"id": null,
 			"initializer": null
@@ -22307,7 +22388,7 @@
 		{
 			"name": "SyntaxLexicalScope",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 206,
+			"line": 208,
 			"signature": "class SyntaxLexicalScope",
 			"id": null,
 			"initializer": null
@@ -22315,7 +22396,7 @@
 		{
 			"name": "SyntaxSourceSelection",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 232,
+			"line": 234,
 			"signature": "class SyntaxSourceSelection",
 			"id": null,
 			"initializer": null
@@ -22323,7 +22404,7 @@
 		{
 			"name": "SourceControlKind",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 236,
+			"line": 238,
 			"signature": "data SourceControlKind",
 			"id": null,
 			"initializer": null
@@ -22331,7 +22412,7 @@
 		{
 			"name": "SourceControl",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 242,
+			"line": 244,
 			"signature": "data SourceControl",
 			"id": null,
 			"initializer": null
@@ -22339,7 +22420,7 @@
 		{
 			"name": "SyntaxRequiredBindingProbe",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 276,
+			"line": 278,
 			"signature": "class SyntaxRequiredBindingProbe",
 			"id": null,
 			"initializer": null
@@ -22347,7 +22428,7 @@
 		{
 			"name": "SyntaxRequiredEodValue",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 288,
+			"line": 290,
 			"signature": "class SyntaxRequiredEodValue",
 			"id": null,
 			"initializer": null
@@ -22355,7 +22436,7 @@
 		{
 			"name": "SyntaxObjectEntry",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 299,
+			"line": 301,
 			"signature": "data SyntaxObjectEntry",
 			"id": null,
 			"initializer": null
@@ -22363,7 +22444,7 @@
 		{
 			"name": "SyntaxDynamicObject",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 303,
+			"line": 305,
 			"signature": "class SyntaxDynamicObject",
 			"id": null,
 			"initializer": null
@@ -22371,7 +22452,7 @@
 		{
 			"name": "FunctionInformationContext",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 331,
+			"line": 333,
 			"signature": "class FunctionInformationContext",
 			"id": null,
 			"initializer": null
@@ -22379,7 +22460,7 @@
 		{
 			"name": "SyntaxFunctionInformation",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 349,
+			"line": 351,
 			"signature": "class SyntaxFunctionInformation",
 			"id": null,
 			"initializer": null
@@ -22387,7 +22468,7 @@
 		{
 			"name": "SyntaxInterface",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 351,
+			"line": 353,
 			"signature": "class SyntaxInterface",
 			"id": null,
 			"initializer": null
@@ -22395,7 +22476,7 @@
 		{
 			"name": "SyntaxEnumMember",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 357,
+			"line": 359,
 			"signature": "class SyntaxEnumMember",
 			"id": null,
 			"initializer": null
@@ -22403,7 +22484,7 @@
 		{
 			"name": "SyntaxSourceSiteReference",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 367,
+			"line": 369,
 			"signature": "class SyntaxSourceSiteReference",
 			"id": null,
 			"initializer": null
@@ -22411,7 +22492,7 @@
 		{
 			"name": "SyntaxSourceModuleReference",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 371,
+			"line": 373,
 			"signature": "class SyntaxSourceModuleReference",
 			"id": null,
 			"initializer": null
@@ -22419,7 +22500,7 @@
 		{
 			"name": "SyntaxInvocationState",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 374,
+			"line": 376,
 			"signature": "data SyntaxInvocationState",
 			"id": null,
 			"initializer": null
@@ -22427,7 +22508,7 @@
 		{
 			"name": "SyntaxInvocation",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 379,
+			"line": 381,
 			"signature": "class SyntaxInvocation",
 			"id": null,
 			"initializer": null
@@ -22435,7 +22516,7 @@
 		{
 			"name": "SyntaxBodyAlias",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 404,
+			"line": 406,
 			"signature": "class SyntaxBodyAlias",
 			"id": null,
 			"initializer": null
@@ -22443,7 +22524,7 @@
 		{
 			"name": "SyntaxCleanupAggregateCall",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 443,
+			"line": 445,
 			"signature": "class SyntaxCleanupAggregateCall",
 			"id": null,
 			"initializer": null
@@ -22451,7 +22532,7 @@
 		{
 			"name": "FinallyGuard",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 448,
+			"line": 450,
 			"signature": "class FinallyGuard",
 			"id": null,
 			"initializer": null
@@ -22459,7 +22540,7 @@
 		{
 			"name": "SyntaxBindingSnapshot",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 458,
+			"line": 460,
 			"signature": "class SyntaxBindingSnapshot",
 			"id": null,
 			"initializer": null
@@ -22467,7 +22548,7 @@
 		{
 			"name": "SyntaxStatementPolicy",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 467,
+			"line": 469,
 			"signature": "class SyntaxStatementPolicy",
 			"id": null,
 			"initializer": null
@@ -22475,7 +22556,7 @@
 		{
 			"name": "SyntaxGenericValue",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 477,
+			"line": 479,
 			"signature": "class SyntaxGenericValue",
 			"id": null,
 			"initializer": null
@@ -22483,7 +22564,7 @@
 		{
 			"name": "SyntaxExecutionProtocol",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 489,
+			"line": 491,
 			"signature": "class SyntaxExecutionProtocol",
 			"id": null,
 			"initializer": null
@@ -22491,7 +22572,7 @@
 		{
 			"name": "FactoryPublication",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 498,
+			"line": 500,
 			"signature": "data FactoryPublication",
 			"id": null,
 			"initializer": null
@@ -22499,7 +22580,7 @@
 		{
 			"name": "FactoryGroupSource",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 503,
+			"line": 505,
 			"signature": "data FactoryGroupSource",
 			"id": null,
 			"initializer": null
@@ -22507,7 +22588,7 @@
 		{
 			"name": "SyntaxFactoryValue",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 507,
+			"line": 509,
 			"signature": "class SyntaxFactoryValue",
 			"id": null,
 			"initializer": null
@@ -22515,7 +22596,7 @@
 		{
 			"name": "SyntaxFactoryGroupInit",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 518,
+			"line": 520,
 			"signature": "class SyntaxFactoryGroupInit",
 			"id": null,
 			"initializer": null
@@ -22523,7 +22604,7 @@
 		{
 			"name": "SyntaxFactoryCodecGroup",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 528,
+			"line": 530,
 			"signature": "class SyntaxFactoryCodecGroup",
 			"id": null,
 			"initializer": null
@@ -22531,7 +22612,7 @@
 		{
 			"name": "SyntaxOptimizationReplacement",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 534,
+			"line": 536,
 			"signature": "class SyntaxOptimizationReplacement",
 			"id": null,
 			"initializer": null
@@ -22539,7 +22620,7 @@
 		{
 			"name": "SyntaxOptimizationReplacements",
 			"source": "compiler/syntax/special-payload.el",
-			"line": 540,
+			"line": 542,
 			"signature": "class SyntaxOptimizationReplacements",
 			"id": null,
 			"initializer": null
@@ -23067,7 +23148,7 @@
 		{
 			"name": "RegionQueryUnavailable",
 			"source": "compiler/types/type-query.el",
-			"line": 68,
+			"line": 69,
 			"signature": "class RegionQueryUnavailable",
 			"id": null,
 			"initializer": null
@@ -23227,7 +23308,7 @@
 		{
 			"name": "NativeJoinFailure",
 			"source": "concurrency/platform/linux/tasks.el",
-			"line": 68,
+			"line": 32,
 			"signature": "class NativeJoinFailure",
 			"id": null,
 			"initializer": null
@@ -23235,7 +23316,7 @@
 		{
 			"name": "NativeTask",
 			"source": "concurrency/platform/linux/tasks.el",
-			"line": 72,
+			"line": 36,
 			"signature": "class NativeTask",
 			"id": null,
 			"initializer": null
@@ -24307,7 +24388,7 @@
 		{
 			"name": "NativeTerminalInput",
 			"source": "console/platform/posix-input.el",
-			"line": 35,
+			"line": 33,
 			"signature": "class NativeTerminalInput",
 			"id": null,
 			"initializer": null
@@ -25203,7 +25284,7 @@
 		{
 			"name": "CdcOperationGate",
 			"source": "database/admin/cdc-rows.el",
-			"line": 37,
+			"line": 38,
 			"signature": "class CdcOperationGate",
 			"id": null,
 			"initializer": null
@@ -25211,7 +25292,7 @@
 		{
 			"name": "CommittedRowChange",
 			"source": "database/admin/cdc-rows.el",
-			"line": 61,
+			"line": 62,
 			"signature": "class CommittedRowChange",
 			"id": null,
 			"initializer": null
@@ -25219,7 +25300,7 @@
 		{
 			"name": "CommittedSchemaChange",
 			"source": "database/admin/cdc-rows.el",
-			"line": 96,
+			"line": 97,
 			"signature": "class CommittedSchemaChange",
 			"id": null,
 			"initializer": null
@@ -25227,7 +25308,7 @@
 		{
 			"name": "CommittedTransaction",
 			"source": "database/admin/cdc-rows.el",
-			"line": 102,
+			"line": 103,
 			"signature": "class CommittedTransaction",
 			"id": null,
 			"initializer": null
@@ -25235,7 +25316,7 @@
 		{
 			"name": "CommittedBatch",
 			"source": "database/admin/cdc-rows.el",
-			"line": 112,
+			"line": 113,
 			"signature": "class CommittedBatch",
 			"id": null,
 			"initializer": null
@@ -25243,7 +25324,7 @@
 		{
 			"name": "CommittedRowDelta",
 			"source": "database/admin/cdc-rows.el",
-			"line": 171,
+			"line": 172,
 			"signature": "class CommittedRowDelta",
 			"id": null,
 			"initializer": null
@@ -25251,7 +25332,7 @@
 		{
 			"name": "CommittedChangeBatch",
 			"source": "database/admin/cdc-rows.el",
-			"line": 185,
+			"line": 186,
 			"signature": "class CommittedChangeBatch",
 			"id": null,
 			"initializer": null
@@ -25259,7 +25340,7 @@
 		{
 			"name": "CanonicalCdcCheckpoint",
 			"source": "database/admin/cdc-rows.el",
-			"line": 207,
+			"line": 208,
 			"signature": "class CanonicalCdcCheckpoint",
 			"id": null,
 			"initializer": null
@@ -25267,7 +25348,7 @@
 		{
 			"name": "CdcConsumerCapture",
 			"source": "database/admin/cdc-rows.el",
-			"line": 219,
+			"line": 220,
 			"signature": "class CdcConsumerCapture",
 			"id": null,
 			"initializer": null
@@ -25275,7 +25356,7 @@
 		{
 			"name": "CanonicalCdcBootstrap",
 			"source": "database/admin/cdc-rows.el",
-			"line": 252,
+			"line": 253,
 			"signature": "class CanonicalCdcBootstrap",
 			"id": null,
 			"initializer": null
@@ -25283,7 +25364,7 @@
 		{
 			"name": "CanonicalCdcMemoryCheckpoint",
 			"source": "database/admin/cdc-rows.el",
-			"line": 312,
+			"line": 302,
 			"signature": "class CanonicalCdcMemoryCheckpoint",
 			"id": null,
 			"initializer": null
@@ -25291,7 +25372,7 @@
 		{
 			"name": "CanonicalCdcCheckpointStore",
 			"source": "database/admin/cdc-rows.el",
-			"line": 357,
+			"line": 347,
 			"signature": "class CanonicalCdcCheckpointStore",
 			"id": null,
 			"initializer": null
@@ -25299,7 +25380,7 @@
 		{
 			"name": "CommittedCdcStream",
 			"source": "database/admin/cdc-rows.el",
-			"line": 501,
+			"line": 491,
 			"signature": "class CommittedCdcStream",
 			"id": null,
 			"initializer": null
@@ -25307,7 +25388,7 @@
 		{
 			"name": "CdcCheckpointStore",
 			"source": "database/admin/cdc.el",
-			"line": 51,
+			"line": 41,
 			"signature": "class CdcCheckpointStore",
 			"id": null,
 			"initializer": null
@@ -25315,7 +25396,7 @@
 		{
 			"name": "CdcEvent",
 			"source": "database/admin/cdc.el",
-			"line": 121,
+			"line": 111,
 			"signature": "class CdcEvent",
 			"id": null,
 			"initializer": null
@@ -25323,7 +25404,7 @@
 		{
 			"name": "CdcBatch",
 			"source": "database/admin/cdc.el",
-			"line": 148,
+			"line": 138,
 			"signature": "class CdcBatch",
 			"id": null,
 			"initializer": null
@@ -25331,7 +25412,7 @@
 		{
 			"name": "DurableCdcConsumer",
 			"source": "database/admin/cdc.el",
-			"line": 155,
+			"line": 145,
 			"signature": "class DurableCdcConsumer",
 			"id": null,
 			"initializer": null
@@ -25771,7 +25852,7 @@
 		{
 			"name": "DistributedService",
 			"source": "database/cluster/distributed-service.el",
-			"line": 16,
+			"line": 17,
 			"signature": "class DistributedService",
 			"id": null,
 			"initializer": null
@@ -27499,7 +27580,7 @@
 		{
 			"name": "PlatformConnection",
 			"source": "database/replication/platform/socket-linux.el",
-			"line": 144,
+			"line": 95,
 			"signature": "class PlatformConnection",
 			"id": null,
 			"initializer": null
@@ -27507,7 +27588,7 @@
 		{
 			"name": "PlatformListener",
 			"source": "database/replication/platform/socket-linux.el",
-			"line": 199,
+			"line": 150,
 			"signature": "class PlatformListener",
 			"id": null,
 			"initializer": null
@@ -27619,7 +27700,7 @@
 		{
 			"name": "FileRaftStore",
 			"source": "database/replication/store-file.el",
-			"line": 72,
+			"line": 59,
 			"signature": "class FileRaftStore extends RaftStore",
 			"id": null,
 			"initializer": null
@@ -27627,7 +27708,7 @@
 		{
 			"name": "WalGroupState",
 			"source": "database/replication/store-wal.el",
-			"line": 36,
+			"line": 22,
 			"signature": "class WalGroupState",
 			"id": null,
 			"initializer": null
@@ -27635,7 +27716,7 @@
 		{
 			"name": "WalRaftStore",
 			"source": "database/replication/store-wal.el",
-			"line": 88,
+			"line": 74,
 			"signature": "class WalRaftStore extends RaftStore",
 			"id": null,
 			"initializer": null
@@ -27883,7 +27964,7 @@
 		{
 			"name": "DbServiceOptions",
 			"source": "database/service.el",
-			"line": 26,
+			"line": 27,
 			"signature": "class DbServiceOptions",
 			"id": null,
 			"initializer": null
@@ -27891,7 +27972,7 @@
 		{
 			"name": "DbRequestStatus",
 			"source": "database/service.el",
-			"line": 38,
+			"line": 39,
 			"signature": "class DbRequestStatus",
 			"id": null,
 			"initializer": null
@@ -27899,7 +27980,7 @@
 		{
 			"name": "DbShard",
 			"source": "database/service.el",
-			"line": 50,
+			"line": 51,
 			"signature": "class DbShard",
 			"id": null,
 			"initializer": null
@@ -27907,7 +27988,7 @@
 		{
 			"name": "CoordinatorRuntimeFence",
 			"source": "database/service.el",
-			"line": 58,
+			"line": 59,
 			"signature": "class CoordinatorRuntimeFence",
 			"id": null,
 			"initializer": null
@@ -27915,7 +27996,7 @@
 		{
 			"name": "DbService",
 			"source": "database/service.el",
-			"line": 72,
+			"line": 73,
 			"signature": "class DbService",
 			"id": null,
 			"initializer": null
@@ -28171,7 +28252,7 @@
 		{
 			"name": "VarintResult",
 			"source": "database/storage/bytes.el",
-			"line": 127,
+			"line": 128,
 			"signature": "class VarintResult",
 			"id": null,
 			"initializer": null
@@ -28995,7 +29076,7 @@
 		{
 			"name": "CoordinatorIntent",
 			"source": "database/transaction/coordinator-snapshot.el",
-			"line": 42,
+			"line": 43,
 			"signature": "class CoordinatorIntent",
 			"id": null,
 			"initializer": null
@@ -29003,7 +29084,7 @@
 		{
 			"name": "CoordinatorSnapshot",
 			"source": "database/transaction/coordinator-snapshot.el",
-			"line": 47,
+			"line": 48,
 			"signature": "class CoordinatorSnapshot",
 			"id": null,
 			"initializer": null
@@ -29499,7 +29580,7 @@
 		{
 			"name": "ReplicatedSnapshot",
 			"source": "database/transaction/snapshot-state.el",
-			"line": 28,
+			"line": 29,
 			"signature": "class ReplicatedSnapshot",
 			"id": null,
 			"initializer": null
@@ -29507,7 +29588,7 @@
 		{
 			"name": "SnapshotIntent",
 			"source": "database/transaction/snapshot-state.el",
-			"line": 41,
+			"line": 42,
 			"signature": "class SnapshotIntent",
 			"id": null,
 			"initializer": null
@@ -32843,7 +32924,7 @@
 		{
 			"name": "ReturnFieldFact",
 			"source": "intermediate-representation/abi/interprocedural/return-fields.el",
-			"line": 8,
+			"line": 9,
 			"signature": "class ReturnFieldFact",
 			"id": null,
 			"initializer": null
@@ -32851,7 +32932,7 @@
 		{
 			"name": "ReturnFieldAnalysis",
 			"source": "intermediate-representation/abi/interprocedural/return-fields.el",
-			"line": 15,
+			"line": 16,
 			"signature": "class ReturnFieldAnalysis",
 			"id": null,
 			"initializer": null
@@ -32931,7 +33012,7 @@
 		{
 			"name": "StorageFlow",
 			"source": "intermediate-representation/abi/memory-optimization/module.el",
-			"line": 96,
+			"line": 83,
 			"signature": "class StorageFlow",
 			"id": null,
 			"initializer": null
@@ -33011,7 +33092,7 @@
 		{
 			"name": "PartialCandidate",
 			"source": "intermediate-representation/abi/partial-inlining.el",
-			"line": 36,
+			"line": 37,
 			"signature": "class PartialCandidate",
 			"id": null,
 			"initializer": null
@@ -33427,7 +33508,7 @@
 		{
 			"name": "IrLinuxJit",
 			"source": "intermediate-representation/native/linux/jit.el",
-			"line": 100,
+			"line": 68,
 			"signature": "class IrLinuxJit",
 			"id": null,
 			"initializer": null
@@ -34371,7 +34452,7 @@
 		{
 			"name": "ToolExport",
 			"source": "language/modules/source/generation.el",
-			"line": 46,
+			"line": 47,
 			"signature": "class ToolExport",
 			"id": null,
 			"initializer": null
@@ -34379,7 +34460,7 @@
 		{
 			"name": "ToolGeneration",
 			"source": "language/modules/source/generation.el",
-			"line": 55,
+			"line": 56,
 			"signature": "class ToolGeneration",
 			"id": null,
 			"initializer": null
@@ -34387,7 +34468,7 @@
 		{
 			"name": "ToolModuleHost",
 			"source": "language/modules/source/generation.el",
-			"line": 87,
+			"line": 92,
 			"signature": "class ToolModuleHost",
 			"id": null,
 			"initializer": null
@@ -34395,7 +34476,7 @@
 		{
 			"name": "RawText",
 			"source": "language/modules/source/source.el",
-			"line": 59,
+			"line": 62,
 			"signature": "class RawText",
 			"id": null,
 			"initializer": null
@@ -34403,7 +34484,7 @@
 		{
 			"name": "SanitizedSource",
 			"source": "language/modules/source/source.el",
-			"line": 93,
+			"line": 96,
 			"signature": "class SanitizedSource",
 			"id": null,
 			"initializer": null
@@ -34411,15 +34492,23 @@
 		{
 			"name": "ToolSourceScan",
 			"source": "language/modules/source/source.el",
-			"line": 201,
+			"line": 204,
 			"signature": "class ToolSourceScan",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "ScannedSourceMap",
+			"source": "language/modules/source/source.el",
+			"line": 230,
+			"signature": "class ScannedSourceMap",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "ToolSourceModule",
 			"source": "language/modules/source/source.el",
-			"line": 511,
+			"line": 611,
 			"signature": "class ToolSourceModule",
 			"id": null,
 			"initializer": null
@@ -34427,7 +34516,7 @@
 		{
 			"name": "ToolSourceGraph",
 			"source": "language/modules/source/source.el",
-			"line": 536,
+			"line": 637,
 			"signature": "class ToolSourceGraph",
 			"id": null,
 			"initializer": null
@@ -34555,7 +34644,7 @@
 		{
 			"name": "SyntaxRecord",
 			"source": "language/syntax/index.el",
-			"line": 191,
+			"line": 192,
 			"signature": "class SyntaxRecord",
 			"id": null,
 			"initializer": null
@@ -34563,7 +34652,7 @@
 		{
 			"name": "SyntaxSymbol",
 			"source": "language/syntax/index.el",
-			"line": 202,
+			"line": 203,
 			"signature": "class SyntaxSymbol",
 			"id": null,
 			"initializer": null
@@ -34571,7 +34660,7 @@
 		{
 			"name": "SyntaxBindings",
 			"source": "language/syntax/index.el",
-			"line": 227,
+			"line": 228,
 			"signature": "class SyntaxBindings",
 			"id": null,
 			"initializer": null
@@ -34579,7 +34668,7 @@
 		{
 			"name": "SyntaxScope",
 			"source": "language/syntax/index.el",
-			"line": 236,
+			"line": 237,
 			"signature": "class SyntaxScope",
 			"id": null,
 			"initializer": null
@@ -34587,7 +34676,7 @@
 		{
 			"name": "Syntax",
 			"source": "language/syntax/index.el",
-			"line": 255,
+			"line": 256,
 			"signature": "class Syntax",
 			"id": null,
 			"initializer": null
@@ -34595,7 +34684,7 @@
 		{
 			"name": "SyntaxContext",
 			"source": "language/syntax/index.el",
-			"line": 273,
+			"line": 274,
 			"signature": "class SyntaxContext",
 			"id": null,
 			"initializer": null
@@ -38089,6 +38178,46 @@
 			"initializer": null
 		},
 		{
+			"name": "AllocationResourceError",
+			"source": "memory/allocation/resources.el",
+			"line": 38,
+			"signature": "class AllocationResourceError extends Error",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "AllocationCallbacks",
+			"source": "memory/allocation/resources.el",
+			"line": 45,
+			"signature": "class AllocationCallbacks",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "AllocationObserverCallbacks",
+			"source": "memory/allocation/resources.el",
+			"line": 89,
+			"signature": "class AllocationObserverCallbacks",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "AllocationSnapshot",
+			"source": "memory/allocation/resources.el",
+			"line": 122,
+			"signature": "class AllocationSnapshot",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "AllocationResource",
+			"source": "memory/allocation/resources.el",
+			"line": 149,
+			"signature": "class AllocationResource",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "AllocationSize",
 			"source": "memory/allocation/types.el",
 			"line": 4,
@@ -39203,7 +39332,7 @@
 		{
 			"name": "WireHttpBody",
 			"source": "network/http/wire.el",
-			"line": 179,
+			"line": 184,
 			"signature": "class WireHttpBody extends HttpBodySource",
 			"id": null,
 			"initializer": null
@@ -39555,7 +39684,7 @@
 		{
 			"name": "LoRAConfig",
 			"source": "neural-networks/adapters/lora.el",
-			"line": 15,
+			"line": 14,
 			"signature": "class LoRAConfig",
 			"id": null,
 			"initializer": null
@@ -39563,7 +39692,7 @@
 		{
 			"name": "LoRAState",
 			"source": "neural-networks/adapters/lora.el",
-			"line": 101,
+			"line": 100,
 			"signature": "fn LoRAState(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -39571,7 +39700,7 @@
 		{
 			"name": "DifferentiationError",
 			"source": "neural-networks/autograd.el",
-			"line": 23,
+			"line": 24,
 			"signature": "class DifferentiationError extends Error",
 			"id": null,
 			"initializer": null
@@ -39579,7 +39708,7 @@
 		{
 			"name": "Autograd",
 			"source": "neural-networks/autograd.el",
-			"line": 37,
+			"line": 38,
 			"signature": "fn Autograd(element: type, storage: type = Tensor<element: element>): type",
 			"id": "neural-networks/autograd::Autograd",
 			"initializer": null
@@ -40001,9 +40130,17 @@
 			"initializer": null
 		},
 		{
-			"name": "Adam",
+			"name": "AdaptiveOptimizerForwarder",
 			"source": "neural-networks/optimizers/index.el",
 			"line": 297,
+			"signature": "fn AdaptiveOptimizerForwarder(Engine: type, storage: type): type",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "Adam",
+			"source": "neural-networks/optimizers/index.el",
+			"line": 311,
 			"signature": "fn Adam(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -40011,7 +40148,7 @@
 		{
 			"name": "RMSprop",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 311,
+			"line": 318,
 			"signature": "fn RMSprop(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -40027,7 +40164,7 @@
 		{
 			"name": "Momentum",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 339,
+			"line": 332,
 			"signature": "fn Momentum(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -40035,7 +40172,7 @@
 		{
 			"name": "Adadelta",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 357,
+			"line": 343,
 			"signature": "fn Adadelta(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -40043,7 +40180,7 @@
 		{
 			"name": "Adamax",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 373,
+			"line": 352,
 			"signature": "fn Adamax(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -40051,7 +40188,7 @@
 		{
 			"name": "Rprop",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 389,
+			"line": 361,
 			"signature": "fn Rprop(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -40059,7 +40196,7 @@
 		{
 			"name": "NAdam",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 405,
+			"line": 370,
 			"signature": "fn NAdam(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -40067,7 +40204,7 @@
 		{
 			"name": "RAdam",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 421,
+			"line": 379,
 			"signature": "fn RAdam(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -40075,7 +40212,7 @@
 		{
 			"name": "ASGD",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 437,
+			"line": 388,
 			"signature": "fn ASGD(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -40251,7 +40388,7 @@
 		{
 			"name": "CosineAnnealingLR",
 			"source": "neural-networks/schedulers/index.el",
-			"line": 52,
+			"line": 50,
 			"signature": "class CosineAnnealingLR",
 			"id": null,
 			"initializer": null
@@ -40259,7 +40396,7 @@
 		{
 			"name": "CosineAnnealingWarmRestarts",
 			"source": "neural-networks/schedulers/index.el",
-			"line": 66,
+			"line": 64,
 			"signature": "class CosineAnnealingWarmRestarts",
 			"id": null,
 			"initializer": null
@@ -40269,6 +40406,14 @@
 			"source": "neural-networks/sparse-autograd.el",
 			"line": 7,
 			"signature": "fn SparseAutograd(element: type, storage: type = Tensor<element: element>): type",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "InvalidTrainingState",
+			"source": "neural-networks/state/errors.el",
+			"line": 3,
+			"signature": "class InvalidTrainingState",
 			"id": null,
 			"initializer": null
 		},
@@ -40301,14 +40446,6 @@
 			"source": "neural-networks/state/file-session.el",
 			"line": 124,
 			"signature": "class CheckpointPublication",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "InvalidTrainingState",
-			"source": "neural-networks/state/index.el",
-			"line": 17,
-			"signature": "class InvalidTrainingState",
 			"id": null,
 			"initializer": null
 		},
@@ -42067,7 +42204,7 @@
 		{
 			"name": "NativeCallStatus",
 			"source": "operating-system/processes/posix-capture.el",
-			"line": 188,
+			"line": 119,
 			"signature": "class NativeCallStatus",
 			"id": null,
 			"initializer": null
@@ -42075,7 +42212,7 @@
 		{
 			"name": "PosixPipelineChild",
 			"source": "operating-system/processes/posix-capture.el",
-			"line": 374,
+			"line": 305,
 			"signature": "class PosixPipelineChild",
 			"id": null,
 			"initializer": null
@@ -42083,7 +42220,7 @@
 		{
 			"name": "PipelineObservationFailure",
 			"source": "operating-system/processes/posix-capture.el",
-			"line": 433,
+			"line": 364,
 			"signature": "class PipelineObservationFailure",
 			"id": null,
 			"initializer": null
@@ -42139,7 +42276,7 @@
 		{
 			"name": "PosixPipelineInput",
 			"source": "operating-system/processes/posix-input.el",
-			"line": 77,
+			"line": 64,
 			"signature": "class PosixPipelineInput",
 			"id": null,
 			"initializer": null
@@ -42163,7 +42300,7 @@
 		{
 			"name": "PosixTerminalRestore",
 			"source": "operating-system/processes/posix-terminal.el",
-			"line": 63,
+			"line": 31,
 			"signature": "enum PosixTerminalRestore",
 			"id": null,
 			"initializer": null
@@ -42171,7 +42308,7 @@
 		{
 			"name": "PosixTerminalLease",
 			"source": "operating-system/processes/posix-terminal.el",
-			"line": 67,
+			"line": 35,
 			"signature": "class PosixTerminalLease",
 			"id": null,
 			"initializer": null
@@ -42747,7 +42884,7 @@
 		{
 			"name": "NativeOperationSignalError",
 			"source": "platform/posix/operation-signal.el",
-			"line": 69,
+			"line": 29,
 			"signature": "class NativeOperationSignalError extends Error",
 			"id": null,
 			"initializer": null
@@ -42755,7 +42892,7 @@
 		{
 			"name": "OperationSignalState",
 			"source": "platform/posix/operation-signal.el",
-			"line": 80,
+			"line": 40,
 			"signature": "class OperationSignalState",
 			"id": null,
 			"initializer": null
@@ -42763,7 +42900,7 @@
 		{
 			"name": "OperationSignalCalls",
 			"source": "platform/posix/operation-signal.el",
-			"line": 87,
+			"line": 47,
 			"signature": "class OperationSignalCalls",
 			"id": null,
 			"initializer": null
@@ -42771,7 +42908,7 @@
 		{
 			"name": "NativeSignalCalls",
 			"source": "platform/posix/operation-signal.el",
-			"line": 99,
+			"line": 59,
 			"signature": "class NativeSignalCalls extends OperationSignalCalls",
 			"id": null,
 			"initializer": null
@@ -42811,7 +42948,7 @@
 		{
 			"name": "NativeRandomFile",
 			"source": "platform/posix/random-file.el",
-			"line": 81,
+			"line": 37,
 			"signature": "class NativeRandomFile extends NativeRandomFileSource",
 			"id": null,
 			"initializer": null
@@ -43275,7 +43412,7 @@
 		{
 			"name": "DiagnosticDescriptor",
 			"source": "runtime/platform/linux/diagnostics.el",
-			"line": 10,
+			"line": 9,
 			"signature": "class DiagnosticDescriptor",
 			"id": null,
 			"initializer": null
@@ -43283,7 +43420,7 @@
 		{
 			"name": "DiagnosticResult",
 			"source": "runtime/platform/linux/diagnostics.el",
-			"line": 11,
+			"line": 10,
 			"signature": "class DiagnosticResult",
 			"id": null,
 			"initializer": null
@@ -43291,7 +43428,7 @@
 		{
 			"name": "DiagnosticSize",
 			"source": "runtime/platform/linux/diagnostics.el",
-			"line": 12,
+			"line": 11,
 			"signature": "class DiagnosticSize",
 			"id": null,
 			"initializer": null
@@ -43299,7 +43436,7 @@
 		{
 			"name": "SignalNumber",
 			"source": "runtime/platform/linux/signals.el",
-			"line": 10,
+			"line": 9,
 			"signature": "class SignalNumber",
 			"id": null,
 			"initializer": null
@@ -43307,7 +43444,7 @@
 		{
 			"name": "SignalResult",
 			"source": "runtime/platform/linux/signals.el",
-			"line": 11,
+			"line": 10,
 			"signature": "class SignalResult",
 			"id": null,
 			"initializer": null
@@ -43315,7 +43452,7 @@
 		{
 			"name": "SignalSize",
 			"source": "runtime/platform/linux/signals.el",
-			"line": 12,
+			"line": 11,
 			"signature": "class SignalSize",
 			"id": null,
 			"initializer": null
@@ -44459,7 +44596,7 @@
 		{
 			"name": "TextArea",
 			"source": "text/text.el",
-			"line": 82,
+			"line": 92,
 			"signature": "class TextArea extends Area<element: Char>",
 			"id": null,
 			"initializer": null
@@ -44467,7 +44604,7 @@
 		{
 			"name": "TextArea",
 			"source": "text/text.el",
-			"line": 88,
+			"line": 98,
 			"signature": "fn TextArea(bitWidth): type",
 			"id": null,
 			"initializer": null
@@ -44475,7 +44612,7 @@
 		{
 			"name": "TextViewArea",
 			"source": "text/text.el",
-			"line": 101,
+			"line": 111,
 			"signature": "class TextViewArea extends ReadArea<element: Char>",
 			"id": null,
 			"initializer": null
@@ -44483,7 +44620,7 @@
 		{
 			"name": "TextViewArea",
 			"source": "text/text.el",
-			"line": 107,
+			"line": 117,
 			"signature": "fn TextViewArea(bitWidth): type",
 			"id": null,
 			"initializer": null
@@ -44491,7 +44628,7 @@
 		{
 			"name": "Text",
 			"source": "text/text.el",
-			"line": 134,
+			"line": 144,
 			"signature": "class Text extends Array<element: Char>",
 			"id": "text/text::Text~type",
 			"initializer": null
@@ -44499,7 +44636,7 @@
 		{
 			"name": "TextCursor",
 			"source": "text/text.el",
-			"line": 638,
+			"line": 657,
 			"signature": "class TextCursor",
 			"id": null,
 			"initializer": null
@@ -44507,7 +44644,7 @@
 		{
 			"name": "TextView",
 			"source": "text/text.el",
-			"line": 737,
+			"line": 756,
 			"signature": "class TextView",
 			"id": null,
 			"initializer": null
@@ -44515,7 +44652,7 @@
 		{
 			"name": "TextRangeView",
 			"source": "text/text.el",
-			"line": 770,
+			"line": 789,
 			"signature": "class TextRangeView extends TextView",
 			"id": null,
 			"initializer": null
@@ -44523,7 +44660,7 @@
 		{
 			"name": "DataTextView",
 			"source": "text/text.el",
-			"line": 797,
+			"line": 816,
 			"signature": "class DataTextView extends TextView",
 			"id": null,
 			"initializer": null
@@ -44531,7 +44668,7 @@
 		{
 			"name": "TextBase",
 			"source": "text/text.el",
-			"line": 820,
+			"line": 839,
 			"signature": "let TextBase: type",
 			"id": null,
 			"initializer": "Text"
@@ -44539,7 +44676,7 @@
 		{
 			"name": "TextRangeViewBase",
 			"source": "text/text.el",
-			"line": 821,
+			"line": 840,
 			"signature": "let TextRangeViewBase: type",
 			"id": null,
 			"initializer": "TextRangeView"
@@ -44547,7 +44684,7 @@
 		{
 			"name": "TextView",
 			"source": "text/text.el",
-			"line": 843,
+			"line": 862,
 			"signature": "fn TextView(bitWidth = 0, size = 0): type",
 			"id": "text/text::TextView~constraints",
 			"initializer": null
@@ -44555,7 +44692,7 @@
 		{
 			"name": "Text",
 			"source": "text/text.el",
-			"line": 892,
+			"line": 911,
 			"signature": "fn Text(bitWidth = 0, size = 0): type",
 			"id": "text/text::Text~constraints",
 			"initializer": null
@@ -44563,7 +44700,7 @@
 		{
 			"name": "TextPushUpdate",
 			"source": "text/text.el",
-			"line": 980,
+			"line": 999,
 			"signature": "fn TextPushUpdate(bitWidth = 0, size = 0, value: type, value_bitWidth = 0): type",
 			"id": null,
 			"initializer": null
@@ -44571,7 +44708,7 @@
 		{
 			"name": "TextIndexWriteUpdate",
 			"source": "text/text.el",
-			"line": 987,
+			"line": 1006,
 			"signature": "fn TextIndexWriteUpdate(bitWidth = 0, size = 0, index: type, value: type, index_bitWidth = 0, value_bitWidth = 0): type",
 			"id": null,
 			"initializer": null
@@ -45123,7 +45260,7 @@
 		{
 			"name": "PeakMeasurement",
 			"source": "tools/host/linux/peak-memory.el",
-			"line": 56,
+			"line": 28,
 			"signature": "class PeakMeasurement",
 			"id": null,
 			"initializer": null
@@ -45139,7 +45276,7 @@
 		{
 			"name": "HostProcess",
 			"source": "tools/host/linux/process.el",
-			"line": 166,
+			"line": 85,
 			"signature": "class HostProcess",
 			"id": null,
 			"initializer": null
@@ -45827,7 +45964,7 @@
 		{
 			"name": "WindowTimer",
 			"source": "user-interface/platform/linux/window.el",
-			"line": 58,
+			"line": 57,
 			"signature": "class WindowTimer",
 			"id": null,
 			"initializer": null
@@ -45835,7 +45972,7 @@
 		{
 			"name": "Window",
 			"source": "user-interface/platform/linux/window.el",
-			"line": 79,
+			"line": 78,
 			"signature": "class Window",
 			"id": null,
 			"initializer": null
@@ -45883,7 +46020,7 @@
 		{
 			"name": "WindowTimer",
 			"source": "user-interface/platform/macos/window.el",
-			"line": 28,
+			"line": 27,
 			"signature": "class WindowTimer",
 			"id": null,
 			"initializer": null
@@ -45891,7 +46028,7 @@
 		{
 			"name": "Window",
 			"source": "user-interface/platform/macos/window.el",
-			"line": 45,
+			"line": 44,
 			"signature": "class Window",
 			"id": null,
 			"initializer": null
@@ -45979,7 +46116,7 @@
 		{
 			"name": "DirtyFrame",
 			"source": "user-interface/platform/windows/window.el",
-			"line": 33,
+			"line": 32,
 			"signature": "class DirtyFrame",
 			"id": null,
 			"initializer": null
@@ -45987,7 +46124,7 @@
 		{
 			"name": "WindowTimer",
 			"source": "user-interface/platform/windows/window.el",
-			"line": 171,
+			"line": 170,
 			"signature": "class WindowTimer",
 			"id": "user-interface/platform/windows/window::WindowTimer",
 			"initializer": null
@@ -45995,7 +46132,7 @@
 		{
 			"name": "Window",
 			"source": "user-interface/platform/windows/window.el",
-			"line": 216,
+			"line": 215,
 			"signature": "class Window",
 			"id": "user-interface/platform/windows/window::Window",
 			"initializer": null
@@ -46081,6 +46218,14 @@
 			"initializer": null
 		},
 		{
+			"name": "WindowCelebration",
+			"source": "user-interface/window-celebration.el",
+			"line": 6,
+			"signature": "class WindowCelebration",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "Word64",
 			"source": "number/internal/word64/index.el",
 			"line": 9,
@@ -46102,20 +46247,20 @@
 		{
 			"name": "Tracked",
 			"source": "neural-networks/autograd.el",
-			"line": 159,
+			"line": 160,
 			"signature": "let Tracked = @assign(mode: \"shared\") class {",
 			"id": null,
 			"initializer": null,
-			"anchor": "api-90e17b44158251ad4d5b"
+			"anchor": "api-6501c19f8e6f0cba0f0d"
 		},
 		{
 			"name": "Result",
 			"source": "neural-networks/autograd.el",
-			"line": 44,
+			"line": 45,
 			"signature": "let Result = @assign(mode: \"copy\") class {",
 			"id": null,
 			"initializer": null,
-			"anchor": "api-666c52dd6d3d5f3f1651"
+			"anchor": "api-219def6e1e48ab59942f"
 		},
 		{
 			"name": "Values",
@@ -46140,26 +46285,26 @@
 		{
 			"name": "element",
 			"source": "collections/arrays/dynamic.el",
-			"line": 119,
+			"line": 120,
 			"signature": "fn Array(element: type): type",
 			"kind": "type",
-			"anchor": "api-6207c2be7b9194e457db"
+			"anchor": "api-4dc18da8e9adc4a782b3"
 		},
 		{
 			"name": "end",
 			"source": "collections/arrays/dynamic.el",
-			"line": 294,
+			"line": 285,
 			"signature": "fn slice(start: Number, end: Number): FixedArray<element: element, length: end - start>",
 			"kind": "value",
-			"anchor": "api-c88e49e5917dcab9c75c"
+			"anchor": "api-4ba1a576461b796e199f"
 		},
 		{
 			"name": "start",
 			"source": "collections/arrays/dynamic.el",
-			"line": 294,
+			"line": 285,
 			"signature": "fn slice(start: Number, end: Number): FixedArray<element: element, length: end - start>",
 			"kind": "value",
-			"anchor": "api-322f684f4d6852360882"
+			"anchor": "api-b3cd3e74411f6c5d07b7"
 		},
 		{
 			"name": "value",
@@ -46234,11 +46379,11 @@
 			"anchor": "api-e1b1b22430ae1dac04e7"
 		}
 	],
-	"source_digest": "4330ac0c604646df4c5a8771e13bb421ea1960d08ae68887776b876c99bd5317",
+	"source_digest": "de9f0cb454e70f483560c1bff9c823b1f03508e78d48a3e35d8985e05deba8c9",
 	"files": [
 		{
 			"path": "collections/arrays/dynamic.el",
-			"sha256": "5108de75b1bab971248dcb024deb482d7e51873d791c333d4f30882d6461c3d3"
+			"sha256": "a4cb17350f3aefa6c10d1b8d94a3adb42d8cd7c268a25a7c9166348fd383ef2f"
 		},
 		{
 			"path": "collections/arrays/lazy.el",
@@ -46246,7 +46391,11 @@
 		},
 		{
 			"path": "collections/arrays/operations.el",
-			"sha256": "c2370a62cc4957b957df1f398657f4965c0355ec2e7423ad61a2dcb279c834be"
+			"sha256": "53e42250cabbbec6060ee25ad776ff68e0486114bac5c174d1cf17142b8fc52d"
+		},
+		{
+			"path": "collections/arrays/positional.el",
+			"sha256": "0965819ad75cae4778d5ae7a8bb63502b54b8b7d73139a5288b03b7d616a8b9e"
 		},
 		{
 			"path": "collections/batch/syntax.el",
@@ -46370,11 +46519,11 @@
 		},
 		{
 			"path": "functions/comparison.el",
-			"sha256": "9829229e8098ed4a8aa044c050e2c818845231feea73947d8eff79f73a78bf1b"
+			"sha256": "18de1c00f32660f0df0553051032c0b3b7e0fe3ccb1b24d5880cb5f7856b2dde"
 		},
 		{
 			"path": "functions/composition.el",
-			"sha256": "58412433e5324c3500a2d534630aa2e7a93095d74cae4069694233bc440361b2"
+			"sha256": "c2a6eb37239a02b877e15a4a23998e66c7d628cc7fe36aa3529f1b9f11252ffa"
 		},
 		{
 			"path": "graphics/plots/index.el",
@@ -46413,12 +46562,16 @@
 			"sha256": "b5930069a616058912cfa9928d0cb30f34559546b03da8028ac74ccfe55b2edb"
 		},
 		{
+			"path": "mathematics/functions/aggregation.el",
+			"sha256": "2a2dd17b67cee7ebda56c17d0f918f2b4af6872f9541f0201397ffdacc3b23df"
+		},
+		{
 			"path": "mathematics/functions/discrete.el",
-			"sha256": "0282952ee502ec50f695b254e8cb9d2ac6df7dc94f3bf9d52e1066d66dbff297"
+			"sha256": "a7f1f3069d0791f68c08e0d658b77f6d506c8b180b05e9e57768229e66ae4598"
 		},
 		{
 			"path": "mathematics/functions/elementary.el",
-			"sha256": "a47e6d38c2a26a46fed8008d953dccd653ef38ab15a21c2349a07b5df3143831"
+			"sha256": "a689d88b31160a0561306daa53470a54fb3fe2f87965a3c9b5b04351c4e3ac1b"
 		},
 		{
 			"path": "multimedia/audio/index.el",
@@ -46478,7 +46631,7 @@
 		},
 		{
 			"path": "neural-networks/autograd.el",
-			"sha256": "9587a06422fc08db9d1a97b1711afa837ff195f79d28d69ba262d5a15dd38feb"
+			"sha256": "d3edf937a61c2e0b219454c8113a6bb8f7250f44ce0028db16b81725932c067e"
 		},
 		{
 			"path": "neural-networks/data/index.el",
@@ -46534,7 +46687,7 @@
 		},
 		{
 			"path": "random/index.el",
-			"sha256": "2378a218a03d9a5193659d06873274ed090e27babc76cfacfb439b62c444cd2f"
+			"sha256": "0d9fadb073c43b1f131c4abeb242fd56af2493d41f2d5a40f835e879b835f4d5"
 		},
 		{
 			"path": "random/seed.el",
@@ -46561,8 +46714,12 @@
 			"sha256": "c114e100d98f741c0cd0ad72085ea65f932c9f0115ebce9d8a4ba57a974a97e2"
 		},
 		{
+			"path": "text/resources.el",
+			"sha256": "ebadf2c24018792e4c69f20232b838f9fd445cb949c66866c7612ac16538d548"
+		},
+		{
 			"path": "text/text.el",
-			"sha256": "e77f0b2df5786c05dc5b5dd08d19088d6cc1f9b752a659d2b15037c1c9f22880"
+			"sha256": "616823fac5e7034fe0cbe527c92add0c5de151bffd5f2affcf443d3ed86bc931"
 		},
 		{
 			"path": "theme/model.el",
@@ -46614,7 +46771,7 @@
 		},
 		{
 			"path": "user-interface/platform/windows/window.el",
-			"sha256": "0df6de6e2a27374664ac1d87aabee0c2d6f4360fde399c561bdb48796a9135fd"
+			"sha256": "0d3d030685c3d99b33ffd4c4df436614c6f035a32f8cb1d98b0e8677eea68e5f"
 		},
 		{
 			"path": "user-interface/sound.el",
@@ -46664,9 +46821,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 39,
+			"line": 40,
 			"signature": "virtual get count(): Integer",
-			"declaration_line": 46,
+			"declaration_line": 47,
 			"id": "collections/arrays/dynamic::Array.count",
 			"value_type": null,
 			"owner": "Array",
@@ -46719,9 +46876,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 60,
+			"line": 61,
 			"signature": "@discardable virtual fn unshift(value: any): Array",
-			"declaration_line": 70,
+			"declaration_line": 71,
 			"id": "collections/arrays/dynamic::Array.unshift",
 			"value_type": null,
 			"owner": "Array",
@@ -46774,9 +46931,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 109,
+			"line": 110,
 			"signature": "export fn Array(element: type): type",
-			"declaration_line": 119,
+			"declaration_line": 120,
 			"id": "collections/arrays/dynamic::Array",
 			"value_type": null,
 			"owner": null,
@@ -46829,9 +46986,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 129,
+			"line": 130,
 			"signature": "@discardable virtual fn push(value: element): Array",
-			"declaration_line": 139,
+			"declaration_line": 140,
 			"id": "collections/arrays/dynamic::Array.push",
 			"value_type": null,
 			"owner": "Array",
@@ -46884,9 +47041,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 140,
+			"line": 141,
 			"signature": "@discardable virtual fn pop(): element",
-			"declaration_line": 150,
+			"declaration_line": 151,
 			"id": "collections/arrays/dynamic::Array.pop",
 			"value_type": null,
 			"owner": "Array",
@@ -46904,7 +47061,7 @@
 							"name": "element",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-6207c2be7b9194e457db",
+							"fragment": "api-4dc18da8e9adc4a782b3",
 							"parameter_kind": "type"
 						}
 					}
@@ -46940,9 +47097,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 152,
+			"line": 153,
 			"signature": "@discardable virtual fn shift(): element",
-			"declaration_line": 162,
+			"declaration_line": 163,
 			"id": "collections/arrays/dynamic::Array.shift",
 			"value_type": null,
 			"owner": "Array",
@@ -46960,7 +47117,7 @@
 							"name": "element",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-6207c2be7b9194e457db",
+							"fragment": "api-4dc18da8e9adc4a782b3",
 							"parameter_kind": "type"
 						}
 					}
@@ -46986,9 +47143,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 163,
+			"line": 164,
 			"signature": "virtual fn clear(): void_t",
-			"declaration_line": 175,
+			"declaration_line": 176,
 			"id": "collections/arrays/dynamic::Array.clear",
 			"value_type": null,
 			"owner": "Array",
@@ -47041,9 +47198,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 179,
+			"line": 180,
 			"signature": "fn some(predicate): Bool",
-			"declaration_line": 187,
+			"declaration_line": 188,
 			"id": "collections/arrays/dynamic::Array.some",
 			"value_type": null,
 			"owner": "Array",
@@ -47096,9 +47253,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 193,
+			"line": 194,
 			"signature": "fn all(predicate): Bool",
-			"declaration_line": 201,
+			"declaration_line": 202,
 			"id": "collections/arrays/dynamic::Array.all",
 			"value_type": null,
 			"owner": "Array",
@@ -47151,9 +47308,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 205,
+			"line": 206,
 			"signature": "fn filter(predicate)",
-			"declaration_line": 215,
+			"declaration_line": 216,
 			"id": "collections/arrays/dynamic::Array.filter",
 			"value_type": null,
 			"owner": "Array",
@@ -47190,9 +47347,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 218,
+			"line": 219,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"drop\", receiver: \"member\", prepare: normalize_count })\n\t\tfn drop(count)",
-			"declaration_line": 226,
+			"declaration_line": 227,
 			"id": "collections/arrays/dynamic::Array.drop",
 			"value_type": null,
 			"owner": "Array",
@@ -47229,9 +47386,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 228,
+			"line": 229,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"take\", receiver: \"member\", prepare: normalize_count })\n\t\tfn take(count)",
-			"declaration_line": 236,
+			"declaration_line": 237,
 			"id": "collections/arrays/dynamic::Array.take",
 			"value_type": null,
 			"owner": "Array",
@@ -47268,9 +47425,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 240,
+			"line": 241,
 			"signature": "fn indexOf(value: element): Number",
-			"declaration_line": 248,
+			"declaration_line": 249,
 			"id": "collections/arrays/dynamic::Array.indexOf",
 			"value_type": null,
 			"owner": "Array",
@@ -47328,9 +47485,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 254,
+			"line": 255,
 			"signature": "fn sort(less = (left, right) => left < right, strategy = stable_memory_sort)",
-			"declaration_line": 264,
+			"declaration_line": 265,
 			"id": "collections/arrays/dynamic::Array.sort",
 			"value_type": null,
 			"owner": "Array",
@@ -47345,40 +47502,6 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "原地反转数组元素顺序，并返回当前数组。"
-				},
-				{
-					"tag": "returns",
-					"value": "已反转的当前数组。",
-					"markdown": ""
-				},
-				{
-					"tag": "example",
-					"value": "原地反转",
-					"markdown": "```el\nlet values = @[1, 2, 3]\nvalues.reverse()\nconsole.stdout.writeLine(values.join(\", \"))\n```",
-					"code": "let values = @[1, 2, 3]\nvalues.reverse()\nconsole.stdout.writeLine(values.join(\", \"))\n",
-					"expected_stdout": null,
-					"verification": "not-run"
-				}
-			],
-			"source": "collections/arrays/dynamic.el",
-			"line": 265,
-			"signature": "@discardable fn reverse()",
-			"declaration_line": 274,
-			"id": "collections/arrays/dynamic::Array.reverse",
-			"value_type": null,
-			"owner": "Array",
-			"return_type": null,
-			"initializer": null,
-			"type_references": {}
-		},
-		{
-			"kind": "api",
-			"name": "Array.reversed",
-			"sections": [
-				{
-					"tag": "description",
-					"value": "",
 					"markdown": "返回元素顺序相反的新数组，不改变原数组。"
 				},
 				{
@@ -47389,17 +47512,17 @@
 				{
 					"tag": "example",
 					"value": "保留原数组并取反序副本",
-					"markdown": "```el\nlet values = @[1, 2, 3]\nconsole.stdout.writeLine(values.reversed().join(\", \"))\n```",
-					"code": "let values = @[1, 2, 3]\nconsole.stdout.writeLine(values.reversed().join(\", \"))\n",
+					"markdown": "```el\nlet values = @[1, 2, 3]\nconsole.stdout.writeLine(values.reverse().join(\", \"))\n```",
+					"code": "let values = @[1, 2, 3]\nconsole.stdout.writeLine(values.reverse().join(\", \"))\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 275,
-			"signature": "fn reversed()",
-			"declaration_line": 283,
-			"id": "collections/arrays/dynamic::Array.reversed",
+			"line": 266,
+			"signature": "fn reverse()",
+			"declaration_line": 274,
+			"id": "collections/arrays/dynamic::Array.reverse",
 			"value_type": null,
 			"owner": "Array",
 			"return_type": null,
@@ -47440,9 +47563,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 284,
+			"line": 275,
 			"signature": "fn slice(start: Number, end: Number): FixedArray<element: element, length: end - start>",
-			"declaration_line": 294,
+			"declaration_line": 285,
 			"id": "collections/arrays/dynamic::Array.slice",
 			"value_type": null,
 			"owner": "Array",
@@ -47473,7 +47596,7 @@
 							"name": "element",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-6207c2be7b9194e457db",
+							"fragment": "api-4dc18da8e9adc4a782b3",
 							"parameter_kind": "type"
 						}
 					},
@@ -47487,7 +47610,7 @@
 							"name": "end",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-c88e49e5917dcab9c75c",
+							"fragment": "api-4ba1a576461b796e199f",
 							"parameter_kind": "value"
 						}
 					},
@@ -47501,7 +47624,7 @@
 							"name": "start",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-322f684f4d6852360882",
+							"fragment": "api-b3cd3e74411f6c5d07b7",
 							"parameter_kind": "value"
 						}
 					}
@@ -47542,9 +47665,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 295,
+			"line": 286,
 			"signature": "fn sliceDynamic(start: Number, end: Number): Array<element: element>",
-			"declaration_line": 305,
+			"declaration_line": 296,
 			"id": "collections/arrays/dynamic::Array.sliceDynamic",
 			"value_type": null,
 			"owner": "Array",
@@ -47575,7 +47698,7 @@
 							"name": "element",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-6207c2be7b9194e457db",
+							"fragment": "api-4dc18da8e9adc4a782b3",
 							"parameter_kind": "type"
 						}
 					}
@@ -47611,9 +47734,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 307,
+			"line": 298,
 			"signature": "fn join(separator: Text = Text()): Text",
-			"declaration_line": 316,
+			"declaration_line": 307,
 			"id": "collections/arrays/dynamic::Array.join",
 			"value_type": null,
 			"owner": "Array",
@@ -47666,9 +47789,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 319,
+			"line": 310,
 			"signature": "fn map(transform)",
-			"declaration_line": 328,
+			"declaration_line": 319,
 			"id": "collections/arrays/dynamic::Array.map",
 			"value_type": null,
 			"owner": "Array",
@@ -47705,9 +47828,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 333,
+			"line": 325,
 			"signature": "fn includes(value: element): Bool",
-			"declaration_line": 341,
+			"declaration_line": 333,
 			"id": "collections/arrays/dynamic::Array.includes",
 			"value_type": null,
 			"owner": "Array",
@@ -48238,6 +48361,60 @@
 		},
 		{
 			"kind": "api",
+			"name": "reduceOr",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "非空序列从首项开始按顺序归约；空序列调用 empty，单项序列不调用 combine。"
+				},
+				{
+					"tag": "param",
+					"value": "values 被归约的序列。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "combine 接收累计结果和当前项的可调用值。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "empty 零参数回调，仅在序列为空时执行。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "归约结果，或 empty 的结果。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "迭代、归约与空序列回调的异常原样传播，迭代器始终关闭。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "求和",
+					"markdown": "```el\nimport { reduceOr } from \"el:collections/arrays/operations.el\"\nreduceOr(@[1, 2, 3], (sum, value) => sum + value, () => 0)\n```",
+					"code": "import { reduceOr } from \"el:collections/arrays/operations.el\"\nreduceOr(@[1, 2, 3], (sum, value) => sum + value, () => 0)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/operations.el",
+			"line": 155,
+			"signature": "export fn reduceOr(values, combine, empty)",
+			"declaration_line": 167,
+			"id": "collections/arrays/operations::reduceOr",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
 			"name": "filter",
 			"sections": [
 				{
@@ -48270,9 +48447,9 @@
 				}
 			],
 			"source": "collections/arrays/operations.el",
-			"line": 155,
+			"line": 181,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"filter\", receiver: \"argument\" })\nexport fn filter(values, predicate)",
-			"declaration_line": 166,
+			"declaration_line": 192,
 			"id": "collections/arrays/operations::filter",
 			"value_type": null,
 			"owner": null,
@@ -48314,9 +48491,9 @@
 				}
 			],
 			"source": "collections/arrays/operations.el",
-			"line": 173,
+			"line": 199,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"drop\", receiver: \"argument\", prepare: normalize_count })\nexport fn drop(values, count)",
-			"declaration_line": 184,
+			"declaration_line": 210,
 			"id": "collections/arrays/operations::drop",
 			"value_type": null,
 			"owner": null,
@@ -48358,9 +48535,9 @@
 				}
 			],
 			"source": "collections/arrays/operations.el",
-			"line": 196,
+			"line": 222,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"take\", receiver: \"argument\", prepare: normalize_count })\nexport fn take(values, count)",
-			"declaration_line": 207,
+			"declaration_line": 233,
 			"id": "collections/arrays/operations::take",
 			"value_type": null,
 			"owner": null,
@@ -48402,9 +48579,9 @@
 				}
 			],
 			"source": "collections/arrays/operations.el",
-			"line": 216,
+			"line": 242,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"each\", receiver: \"argument\" })\nexport fn each(values, callback): void_t",
-			"declaration_line": 227,
+			"declaration_line": 253,
 			"id": "collections/arrays/operations::each",
 			"value_type": null,
 			"owner": null,
@@ -48462,9 +48639,9 @@
 				}
 			],
 			"source": "collections/arrays/operations.el",
-			"line": 232,
+			"line": 258,
 			"signature": "export fn index_of(values, wanted): Number",
-			"declaration_line": 243,
+			"declaration_line": 269,
 			"id": "collections/arrays/operations::index_of",
 			"value_type": null,
 			"owner": null,
@@ -48522,9 +48699,9 @@
 				}
 			],
 			"source": "collections/arrays/operations.el",
-			"line": 252,
+			"line": 278,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"find\", receiver: \"argument\" })\nexport fn find(values, predicate)",
-			"declaration_line": 263,
+			"declaration_line": 289,
 			"id": "collections/arrays/operations::find",
 			"value_type": null,
 			"owner": null,
@@ -48571,9 +48748,9 @@
 				}
 			],
 			"source": "collections/arrays/operations.el",
-			"line": 270,
+			"line": 296,
 			"signature": "export fn find_or_add(values, predicate, create)",
-			"declaration_line": 283,
+			"declaration_line": 309,
 			"id": "collections/arrays/operations::find_or_add",
 			"value_type": null,
 			"owner": null,
@@ -48620,9 +48797,9 @@
 				}
 			],
 			"source": "collections/arrays/operations.el",
-			"line": 290,
+			"line": 316,
 			"signature": "@optimize(using: optimize_sort, data: @{ receiver: \"argument\", independent: t, copy: copy_sort_input, pass: insertion_pass, tail: insertion_tail, ascending: ascending, merge: merge_sort, adaptive: adaptive_number_sort, insertion: insertion_sort, bucket: bounded_number_sort })\nexport fn sort(values, less = (left, right) => left < right, strategy = stable_memory_sort)",
-			"declaration_line": 302,
+			"declaration_line": 328,
 			"id": "collections/arrays/operations::sort",
 			"value_type": null,
 			"owner": null,
@@ -48637,31 +48814,31 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "原地反转可写序列，并返回该序列。"
+					"markdown": "按相反顺序复制序列元素到新数组，不改写来源。"
 				},
 				{
 					"tag": "param",
-					"value": "values 支持按下标读写的可变序列。",
+					"value": "values 支持按下标读取的输入序列。",
 					"markdown": ""
 				},
 				{
 					"tag": "example",
-					"value": "原地反转数组",
-					"markdown": "```el\nimport { reverse } from \"el:collections/arrays/operations.el\"\nlet values = @[1, 2, 3]\nreverse(values)\n```\n预期结果：[3, 2, 1]。",
-					"code": "import { reverse } from \"el:collections/arrays/operations.el\"\nlet values = @[1, 2, 3]\nreverse(values)\n",
+					"value": "反向复制数组",
+					"markdown": "```el\nimport { reverse } from \"el:collections/arrays/operations.el\"\nreverse(@[1, 2, 3])\n```\n预期结果：[3, 2, 1]。",
+					"code": "import { reverse } from \"el:collections/arrays/operations.el\"\nreverse(@[1, 2, 3])\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				},
 				{
 					"tag": "returns",
-					"value": "原序列（已原地反转）。",
+					"value": "顺序反转的新数组；元素遵守自身的 Copy/shared 合同。",
 					"markdown": ""
 				}
 			],
 			"source": "collections/arrays/operations.el",
-			"line": 307,
-			"signature": "@discardable\nexport fn reverse(values)",
-			"declaration_line": 318,
+			"line": 333,
+			"signature": "export fn reverse(values)",
+			"declaration_line": 343,
 			"id": "collections/arrays/operations::reverse",
 			"value_type": null,
 			"owner": null,
@@ -48670,38 +48847,52 @@
 			"type_references": {}
 		},
 		{
-			"kind": "api",
-			"name": "reversed",
+			"kind": "module",
+			"name": "逐位置类型数组",
 			"sections": [
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "按相反顺序复制序列元素到新数组。"
+					"markdown": "将封闭记录的字段次序作为固定位置存储；元素的声明类型不随数组视图擦除。"
+				}
+			],
+			"source": "collections/arrays/positional.el",
+			"line": 1,
+			"id": "collections/arrays/positional"
+		},
+		{
+			"kind": "api",
+			"name": "positionalArray",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "创建固定长度、只读的数组；已知下标或下标范围的读取保留对应位置的类型联合。"
 				},
 				{
 					"tag": "param",
-					"value": "values 输入序列。",
+					"value": "values 按源码顺序各求值一次的元素表达式。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "派生于 Array 的逐位置类型数组。",
 					"markdown": ""
 				},
 				{
 					"tag": "example",
-					"value": "反向复制数组",
-					"markdown": "```el\nimport { reversed } from \"el:collections/arrays/operations.el\"\nreversed(@[1, 2, 3])\n```\n预期结果：[3, 2, 1]。",
-					"code": "import { reversed } from \"el:collections/arrays/operations.el\"\nreversed(@[1, 2, 3])\n",
+					"value": "创建逐位置类型数组",
+					"markdown": "```el\nimport { positionalArray } from \"el:collections/arrays/positional.el\"\npositionalArray(1, \"two\")\n```",
+					"code": "import { positionalArray } from \"el:collections/arrays/positional.el\"\npositionalArray(1, \"two\")\n",
 					"expected_stdout": null,
 					"verification": "not-run"
-				},
-				{
-					"tag": "returns",
-					"value": "顺序反转的新数组。",
-					"markdown": ""
 				}
 			],
-			"source": "collections/arrays/operations.el",
-			"line": 328,
-			"signature": "export fn reversed(values)",
-			"declaration_line": 338,
-			"id": "collections/arrays/operations::reversed",
+			"source": "collections/arrays/positional.el",
+			"line": 55,
+			"signature": "export syntax positionalArray",
+			"declaration_line": 64,
+			"id": "collections/arrays/positional::positionalArray",
 			"value_type": null,
 			"owner": null,
 			"return_type": null,
@@ -56774,7 +56965,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "将比较运算符作为二元函数传递；这些函数由默认前导模块重导出。"
+					"markdown": "将比较运算符作为多元函数传递；零个或一个输入返回 t，二元调用保留运算符结果，多元调用短路。"
 				}
 			],
 			"source": "functions/comparison.el",
@@ -56788,7 +56979,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "返回 `left > right` 的结果，用于需要二元可调用值的场合。"
+					"markdown": "二元调用返回 `left > right` 的结果；零个或一个输入返回 t。\n更多输入按从左到右的相邻对比较，遇到失败即停止。"
 				},
 				{
 					"tag": "param",
@@ -56802,7 +56993,7 @@
 				},
 				{
 					"tag": "returns",
-					"value": "原运算符的返回值；不额外转换成 Bool，也保留条件载体。",
+					"value": "二元调用原样返回运算符结果；多元调用在前缀通过后返回最后一次比较结果，提前失败返回 nil。",
 					"markdown": ""
 				},
 				{
@@ -56812,7 +57003,7 @@
 				},
 				{
 					"tag": "complexity",
-					"value": "等于一次对应运算符调用的开销。",
+					"value": "二元调用执行一次比较；多元调用最多执行 n-1 次比较。",
 					"markdown": ""
 				},
 				{
@@ -56825,9 +57016,9 @@
 				}
 			],
 			"source": "functions/comparison.el",
-			"line": 4,
-			"signature": "export fn greater(left, right)",
-			"declaration_line": 16,
+			"line": 17,
+			"signature": "export fn greater(...values)",
+			"declaration_line": 30,
 			"id": "functions/comparison::greater",
 			"value_type": null,
 			"owner": null,
@@ -56842,7 +57033,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "返回 `left < right` 的结果，用于需要二元可调用值的场合。"
+					"markdown": "二元调用返回 `left < right` 的结果；零个或一个输入返回 t。\n更多输入按从左到右的相邻对比较，遇到失败即停止。"
 				},
 				{
 					"tag": "param",
@@ -56856,7 +57047,7 @@
 				},
 				{
 					"tag": "returns",
-					"value": "原运算符的返回值；不额外转换成 Bool，也保留条件载体。",
+					"value": "二元调用原样返回运算符结果；多元调用在前缀通过后返回最后一次比较结果，提前失败返回 nil。",
 					"markdown": ""
 				},
 				{
@@ -56866,7 +57057,7 @@
 				},
 				{
 					"tag": "complexity",
-					"value": "等于一次对应运算符调用的开销。",
+					"value": "二元调用执行一次比较；多元调用最多执行 n-1 次比较。",
 					"markdown": ""
 				},
 				{
@@ -56879,9 +57070,9 @@
 				}
 			],
 			"source": "functions/comparison.el",
-			"line": 18,
-			"signature": "export fn less(left, right)",
-			"declaration_line": 30,
+			"line": 32,
+			"signature": "export fn less(...values)",
+			"declaration_line": 45,
 			"id": "functions/comparison::less",
 			"value_type": null,
 			"owner": null,
@@ -56896,7 +57087,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "返回 `left >= right` 的结果，用于需要二元可调用值的场合。"
+					"markdown": "二元调用返回 `left >= right` 的结果；零个或一个输入返回 t。\n更多输入按从左到右的相邻对比较，遇到失败即停止。"
 				},
 				{
 					"tag": "param",
@@ -56910,7 +57101,7 @@
 				},
 				{
 					"tag": "returns",
-					"value": "原运算符的返回值；不额外转换成 Bool，也保留条件载体。",
+					"value": "二元调用原样返回运算符结果；多元调用在前缀通过后返回最后一次比较结果，提前失败返回 nil。",
 					"markdown": ""
 				},
 				{
@@ -56920,7 +57111,7 @@
 				},
 				{
 					"tag": "complexity",
-					"value": "等于一次对应运算符调用的开销。",
+					"value": "二元调用执行一次比较；多元调用最多执行 n-1 次比较。",
 					"markdown": ""
 				},
 				{
@@ -56933,9 +57124,9 @@
 				}
 			],
 			"source": "functions/comparison.el",
-			"line": 32,
-			"signature": "export fn greaterEqual(left, right)",
-			"declaration_line": 44,
+			"line": 47,
+			"signature": "export fn greaterEqual(...values)",
+			"declaration_line": 60,
 			"id": "functions/comparison::greaterEqual",
 			"value_type": null,
 			"owner": null,
@@ -56950,7 +57141,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "返回 `left <= right` 的结果，用于需要二元可调用值的场合。"
+					"markdown": "二元调用返回 `left <= right` 的结果；零个或一个输入返回 t。\n更多输入按从左到右的相邻对比较，遇到失败即停止。"
 				},
 				{
 					"tag": "param",
@@ -56964,7 +57155,7 @@
 				},
 				{
 					"tag": "returns",
-					"value": "原运算符的返回值；不额外转换成 Bool，也保留条件载体。",
+					"value": "二元调用原样返回运算符结果；多元调用在前缀通过后返回最后一次比较结果，提前失败返回 nil。",
 					"markdown": ""
 				},
 				{
@@ -56974,7 +57165,7 @@
 				},
 				{
 					"tag": "complexity",
-					"value": "等于一次对应运算符调用的开销。",
+					"value": "二元调用执行一次比较；多元调用最多执行 n-1 次比较。",
 					"markdown": ""
 				},
 				{
@@ -56987,9 +57178,9 @@
 				}
 			],
 			"source": "functions/comparison.el",
-			"line": 46,
-			"signature": "export fn lessEqual(left, right)",
-			"declaration_line": 58,
+			"line": 62,
+			"signature": "export fn lessEqual(...values)",
+			"declaration_line": 75,
 			"id": "functions/comparison::lessEqual",
 			"value_type": null,
 			"owner": null,
@@ -57004,7 +57195,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "返回 `left == right` 的结果，用于需要二元可调用值的场合。"
+					"markdown": "二元调用返回 `left == right` 的结果；零个或一个输入返回 t。\n更多输入按从左到右的相邻对比较，遇到失败即停止。"
 				},
 				{
 					"tag": "param",
@@ -57018,7 +57209,7 @@
 				},
 				{
 					"tag": "returns",
-					"value": "原运算符的返回值；不额外转换成 Bool，也保留条件载体。",
+					"value": "二元调用原样返回运算符结果；多元调用在前缀通过后返回最后一次比较结果，提前失败返回 nil。",
 					"markdown": ""
 				},
 				{
@@ -57028,7 +57219,7 @@
 				},
 				{
 					"tag": "complexity",
-					"value": "等于一次对应运算符调用的开销。",
+					"value": "二元调用执行一次比较；多元调用最多执行 n-1 次比较。",
 					"markdown": ""
 				},
 				{
@@ -57041,9 +57232,9 @@
 				}
 			],
 			"source": "functions/comparison.el",
-			"line": 60,
-			"signature": "export fn equal(left, right)",
-			"declaration_line": 72,
+			"line": 77,
+			"signature": "export fn equal(...values)",
+			"declaration_line": 90,
 			"id": "functions/comparison::equal",
 			"value_type": null,
 			"owner": null,
@@ -57058,7 +57249,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "返回 `left != right` 的结果，用于需要二元可调用值的场合。"
+					"markdown": "二元调用返回 `left != right` 的结果；零个或一个输入返回 t。\n更多输入检查所有位置对均满足 !=，按后项顺序依次与此前各项比较，遇到失败即停止。"
 				},
 				{
 					"tag": "param",
@@ -57072,7 +57263,7 @@
 				},
 				{
 					"tag": "returns",
-					"value": "原运算符的返回值；不额外转换成 Bool，也保留条件载体。",
+					"value": "二元调用原样返回运算符结果；多元调用在前缀通过后返回最后一次比较结果，提前失败返回 nil。",
 					"markdown": ""
 				},
 				{
@@ -57082,7 +57273,7 @@
 				},
 				{
 					"tag": "complexity",
-					"value": "等于一次对应运算符调用的开销。",
+					"value": "二元调用执行一次比较；多元调用最多执行 n(n-1)/2 次比较。",
 					"markdown": ""
 				},
 				{
@@ -57095,9 +57286,9 @@
 				}
 			],
 			"source": "functions/comparison.el",
-			"line": 74,
-			"signature": "export fn notEqual(left, right)",
-			"declaration_line": 86,
+			"line": 92,
+			"signature": "export fn notEqual(...values)",
+			"declaration_line": 105,
 			"id": "functions/comparison::notEqual",
 			"value_type": null,
 			"owner": null,
@@ -57126,21 +57317,21 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "创建一个二元函数：先分别变换两个输入，再合并变换结果。\n\n调用顺序是 `transform(left)`、`transform(right)`、`merge`；每个输入只变换一次。创建组合函数时不调用这两个函数。"
+					"markdown": "创建函数：先逐项变换输入，再以相同数量、相同顺序的结果调用 merge。\n\ntransform 按输入顺序执行，每个输入只变换一次，全部成功后才调用 merge。创建组合函数时不调用这两个函数。"
 				},
 				{
 					"tag": "param",
-					"value": "merge 接收两个变换结果的二元可调用值。",
+					"value": "merge 接收变换结果的可调用值；其普通元数、默认参数与位置类型合同继续适用。",
 					"markdown": ""
 				},
 				{
 					"tag": "param",
-					"value": "transform 接收单个输入的可调用值；左右输入必须都能被它接受。",
+					"value": "transform 接收单个输入的可调用值；每个输入都必须能被它接受。",
 					"markdown": ""
 				},
 				{
 					"tag": "returns",
-					"value": "捕获 merge 和 transform 的二元函数，返回 merge 的结果。",
+					"value": "捕获 merge 和 transform 的函数，返回 merge 的结果；merge 允许零实参时也允许零输入。",
 					"markdown": ""
 				},
 				{
@@ -57150,7 +57341,7 @@
 				},
 				{
 					"tag": "complexity",
-					"value": "每次调用包含两次变换和一次合并；具体开销取决于传入函数。",
+					"value": "n 个输入调用 n 次变换和一次合并；参数序列的物化与转发开销取决于输入形状和优化。",
 					"markdown": ""
 				},
 				{
@@ -57160,10 +57351,10 @@
 				},
 				{
 					"tag": "example",
-					"value": "比较两个数的平方",
-					"markdown": "```el\nlet largerSquare = over(max, value => value * value)\nconsole.stdout.writeLine(largerSquare(-3, 2))\n```\n预期标准输出：\n```text\n9\n```",
-					"code": "let largerSquare = over(max, value => value * value)\nconsole.stdout.writeLine(largerSquare(-3, 2))\n",
-					"expected_stdout": "9\n",
+					"value": "比较多个数的平方",
+					"markdown": "```el\nlet largerSquare = over(max, value => value * value)\nconsole.stdout.writeLine(largerSquare(-3, 2, -4))\n```\n预期标准输出：\n```text\n16\n```",
+					"code": "let largerSquare = over(max, value => value * value)\nconsole.stdout.writeLine(largerSquare(-3, 2, -4))\n",
+					"expected_stdout": "16\n",
 					"verification": "not-run"
 				}
 			],
@@ -59160,6 +59351,69 @@
 		},
 		{
 			"kind": "module",
+			"name": "标量聚合",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "按实参顺序执行普通加法；不改变数组或张量模块中 sum 的归约合同。"
+				}
+			],
+			"source": "mathematics/functions/aggregation.el",
+			"line": 1,
+			"id": "mathematics/functions/aggregation"
+		},
+		{
+			"kind": "api",
+			"name": "sum",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "从左到右累加所有输入；单个输入原样返回，零输入返回 Number 的零。"
+				},
+				{
+					"tag": "param",
+					"value": "values 支持相邻累加的普通值；非空输入不额外与 Number 的零相加。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "普通加法的结果，遵循输入类型的精度、溢出与效果合同。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "加法抛出的异常原样传播，后续加法不执行。",
+					"markdown": ""
+				},
+				{
+					"tag": "complexity",
+					"value": "n 个非空输入执行 n-1 次加法。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "累加多个数",
+					"markdown": "```el\nlet total = sum(1, 2, 3, 4)\n// 预期 total 为 10。\n```",
+					"code": "let total = sum(1, 2, 3, 4)\n// 预期 total 为 10。\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "mathematics/functions/aggregation.el",
+			"line": 4,
+			"signature": "export fn sum(...values)",
+			"declaration_line": 15,
+			"id": "mathematics/functions/aggregation::sum",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "module",
 			"name": "离散数学函数",
 			"sections": [
 				{
@@ -59201,9 +59455,9 @@
 				}
 			],
 			"source": "mathematics/functions/discrete.el",
-			"line": 24,
+			"line": 25,
 			"signature": "export fn floor(value)",
-			"declaration_line": 33,
+			"declaration_line": 34,
 			"id": "mathematics/functions/discrete::floor",
 			"value_type": null,
 			"owner": null,
@@ -59222,7 +59476,7 @@
 				}
 			],
 			"source": "mathematics/functions/elementary.el",
-			"line": 14,
+			"line": 15,
 			"id": "mathematics/functions/elementary"
 		},
 		{
@@ -59259,9 +59513,9 @@
 				}
 			],
 			"source": "mathematics/functions/elementary.el",
-			"line": 17,
+			"line": 18,
 			"signature": "@pure\nexport fn sqrt(value)",
-			"declaration_line": 27,
+			"declaration_line": 28,
 			"id": "mathematics/functions/elementary::sqrt",
 			"value_type": null,
 			"owner": null,
@@ -59298,9 +59552,9 @@
 				}
 			],
 			"source": "mathematics/functions/elementary.el",
-			"line": 30,
+			"line": 31,
 			"signature": "@pure\nexport fn exp(value)",
-			"declaration_line": 38,
+			"declaration_line": 39,
 			"id": "mathematics/functions/elementary::exp",
 			"value_type": null,
 			"owner": null,
@@ -59342,9 +59596,9 @@
 				}
 			],
 			"source": "mathematics/functions/elementary.el",
-			"line": 41,
+			"line": 42,
 			"signature": "@pure\nexport fn log(value)",
-			"declaration_line": 50,
+			"declaration_line": 51,
 			"id": "mathematics/functions/elementary::log",
 			"value_type": null,
 			"owner": null,
@@ -59381,9 +59635,9 @@
 				}
 			],
 			"source": "mathematics/functions/elementary.el",
-			"line": 56,
+			"line": 57,
 			"signature": "@pure\n@optimize(data: @{ operation: \"sin\" })\nexport fn sin(value)",
-			"declaration_line": 66,
+			"declaration_line": 67,
 			"id": "mathematics/functions/elementary::sin",
 			"value_type": null,
 			"owner": null,
@@ -59425,9 +59679,9 @@
 				}
 			],
 			"source": "mathematics/functions/elementary.el",
-			"line": 114,
+			"line": 115,
 			"signature": "@pure\n@optimize(data: @{ operation: \"pi\" })\nexport fn pi(Result: type)",
-			"declaration_line": 124,
+			"declaration_line": 125,
 			"id": "mathematics/functions/elementary::pi",
 			"value_type": null,
 			"owner": null,
@@ -59469,9 +59723,9 @@
 				}
 			],
 			"source": "mathematics/functions/elementary.el",
-			"line": 136,
+			"line": 137,
 			"signature": "export fn pow(base, exponent = Number(2))",
-			"declaration_line": 145,
+			"declaration_line": 146,
 			"id": "mathematics/functions/elementary::pow",
 			"value_type": null,
 			"owner": null,
@@ -62927,7 +63181,7 @@
 				}
 			],
 			"source": "neural-networks/autograd.el",
-			"line": 20,
+			"line": 21,
 			"id": "neural-networks/autograd"
 		},
 		{
@@ -62964,9 +63218,9 @@
 				}
 			],
 			"source": "neural-networks/autograd.el",
-			"line": 26,
+			"line": 27,
 			"signature": "export fn Autograd(element: type, storage: type = Tensor<element: element>): type",
-			"declaration_line": 37,
+			"declaration_line": 38,
 			"id": "neural-networks/autograd::Autograd",
 			"value_type": null,
 			"owner": null,
@@ -63014,9 +63268,9 @@
 				}
 			],
 			"source": "neural-networks/autograd.el",
-			"line": 326,
+			"line": 327,
 			"signature": "fn square()",
-			"declaration_line": 333,
+			"declaration_line": 334,
 			"id": "neural-networks/autograd::Autograd.square",
 			"value_type": null,
 			"owner": "Autograd",
@@ -63048,9 +63302,9 @@
 				}
 			],
 			"source": "neural-networks/autograd.el",
-			"line": 335,
+			"line": 336,
 			"signature": "fn sum()",
-			"declaration_line": 342,
+			"declaration_line": 343,
 			"id": "neural-networks/autograd::Autograd.sum",
 			"value_type": null,
 			"owner": "Autograd",
@@ -63082,9 +63336,9 @@
 				}
 			],
 			"source": "neural-networks/autograd.el",
-			"line": 343,
+			"line": 344,
 			"signature": "fn mean()",
-			"declaration_line": 350,
+			"declaration_line": 351,
 			"id": "neural-networks/autograd::Autograd.mean",
 			"value_type": null,
 			"owner": "Autograd",
@@ -63121,9 +63375,9 @@
 				}
 			],
 			"source": "neural-networks/autograd.el",
-			"line": 515,
+			"line": 438,
 			"signature": "fn variable(value: Dense): Tracked",
-			"declaration_line": 523,
+			"declaration_line": 446,
 			"id": "neural-networks/autograd::Autograd.variable",
 			"value_type": null,
 			"owner": "Autograd",
@@ -63141,7 +63395,7 @@
 							"name": "Tracked",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-90e17b44158251ad4d5b"
+							"fragment": "api-6501c19f8e6f0cba0f0d"
 						}
 					}
 				]
@@ -63186,9 +63440,9 @@
 				}
 			],
 			"source": "neural-networks/autograd.el",
-			"line": 801,
+			"line": 724,
 			"signature": "fn valueAndGrad(loss: Tracked, variables: Tracked[]): Result",
-			"declaration_line": 811,
+			"declaration_line": 734,
 			"id": "neural-networks/autograd::Autograd.valueAndGrad",
 			"value_type": null,
 			"owner": "Autograd",
@@ -63206,7 +63460,7 @@
 							"name": "Result",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-666c52dd6d3d5f3f1651"
+							"fragment": "api-219def6e1e48ab59942f"
 						}
 					}
 				]
@@ -66307,8 +66561,8 @@
 				{
 					"tag": "example",
 					"value": "创建可重现的随机数流",
-					"markdown": "```el\nimport { Random } from \"el:random/index.el\"\nlet random = Random(42)\nlet value = random.between(1, 6)\n```\n示例展示接口用法；未运行验证。",
-					"code": "import { Random } from \"el:random/index.el\"\nlet random = Random(42)\nlet value = random.between(1, 6)\n",
+					"markdown": "```el\nimport { Random } from \"el:random/index.el\"\nlet random = Random(72)\nlet value = random.between(1, 6)\n```\n示例展示接口用法；未运行验证。",
+					"code": "import { Random } from \"el:random/index.el\"\nlet random = Random(72)\nlet value = random.between(1, 6)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66341,8 +66595,8 @@
 				{
 					"tag": "example",
 					"value": "查看随机流的种子",
-					"markdown": "```el\nlet seed = Random(42).seed\n```",
-					"code": "let seed = Random(42).seed\n",
+					"markdown": "```el\nlet seed = Random(72).seed\n```",
+					"code": "let seed = Random(72).seed\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66391,8 +66645,8 @@
 				{
 					"tag": "example",
 					"value": "重置随机流",
-					"markdown": "```el\nlet random = Random(1)\nrandom.reseed(42)\n```",
-					"code": "let random = Random(1)\nrandom.reseed(42)\n",
+					"markdown": "```el\nlet random = Random(1)\nrandom.reseed(72)\n```",
+					"code": "let random = Random(1)\nrandom.reseed(72)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66435,8 +66689,8 @@
 				{
 					"tag": "example",
 					"value": "生成一个 16 位字",
-					"markdown": "```el\nlet word = Random(42).nextWord(16)\n```",
-					"code": "let word = Random(42).nextWord(16)\n",
+					"markdown": "```el\nlet word = Random(72).nextWord(16)\n```",
+					"code": "let word = Random(72).nextWord(16)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66495,8 +66749,8 @@
 				{
 					"tag": "example",
 					"value": "生成八个随机位",
-					"markdown": "```el\nlet bits = Random(42).nextBits(8)\n```",
-					"code": "let bits = Random(42).nextBits(8)\n",
+					"markdown": "```el\nlet bits = Random(72).nextBits(8)\n```",
+					"code": "let bits = Random(72).nextBits(8)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66560,8 +66814,8 @@
 				{
 					"tag": "example",
 					"value": "掷一个六面骰",
-					"markdown": "```el\nlet die = Random(42).between(1, 6)\n```",
-					"code": "let die = Random(42).between(1, 6)\n",
+					"markdown": "```el\nlet die = Random(72).between(1, 6)\n```",
+					"code": "let die = Random(72).between(1, 6)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66625,8 +66879,8 @@
 				{
 					"tag": "example",
 					"value": "抽取 0 到 5 的整数",
-					"markdown": "```el\nlet index = Random(42).betweenExclusive(0, 6)\n```",
-					"code": "let index = Random(42).betweenExclusive(0, 6)\n",
+					"markdown": "```el\nlet index = Random(72).betweenExclusive(0, 6)\n```",
+					"code": "let index = Random(72).betweenExclusive(0, 6)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66690,8 +66944,8 @@
 				{
 					"tag": "example",
 					"value": "生成单位区间样本",
-					"markdown": "```el\nlet sample = Random(42).unit()\n```",
-					"code": "let sample = Random(42).unit()\n",
+					"markdown": "```el\nlet sample = Random(72).unit()\n```",
+					"code": "let sample = Random(72).unit()\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66765,8 +67019,8 @@
 				{
 					"tag": "example",
 					"value": "抽取两个实数之间的值",
-					"markdown": "```el\nlet sample = Random(42).realBetween(-1, 1)\n```",
-					"code": "let sample = Random(42).realBetween(-1, 1)\n",
+					"markdown": "```el\nlet sample = Random(72).realBetween(-1, 1)\n```",
+					"code": "let sample = Random(72).realBetween(-1, 1)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66815,8 +67069,8 @@
 				{
 					"tag": "example",
 					"value": "抛一次随机硬币",
-					"markdown": "```el\nlet heads = Random(42).boolean()\n```",
-					"code": "let heads = Random(42).boolean()\n",
+					"markdown": "```el\nlet heads = Random(72).boolean()\n```",
+					"code": "let heads = Random(72).boolean()\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66875,8 +67129,8 @@
 				{
 					"tag": "example",
 					"value": "从候选值中抽样",
-					"markdown": "```el\nlet choice = Random(42).pick(@[\"red\", \"blue\"])\n```",
-					"code": "let choice = Random(42).pick(@[\"red\", \"blue\"])\n",
+					"markdown": "```el\nlet choice = Random(72).pick(@[\"red\", \"blue\"])\n```",
+					"code": "let choice = Random(72).pick(@[\"red\", \"blue\"])\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66919,8 +67173,8 @@
 				{
 					"tag": "example",
 					"value": "生成四个随机字节",
-					"markdown": "```el\nlet data = Random(42).bytes(4)\n```",
-					"code": "let data = Random(42).bytes(4)\n",
+					"markdown": "```el\nlet data = Random(72).bytes(4)\n```",
+					"code": "let data = Random(72).bytes(4)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66987,8 +67241,8 @@
 				{
 					"tag": "example",
 					"value": "打乱数组中的项目",
-					"markdown": "```el\nlet values = @[1, 2, 3]\nRandom(42).shuffle(values)\n```",
-					"code": "let values = @[1, 2, 3]\nRandom(42).shuffle(values)\n",
+					"markdown": "```el\nlet values = @[1, 2, 3]\nRandom(72).shuffle(values)\n```",
+					"code": "let values = @[1, 2, 3]\nRandom(72).shuffle(values)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -68754,6 +69008,20 @@
 		},
 		{
 			"kind": "module",
+			"name": "文本分配资源",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "显式选择文本复制与拼接产生的新存储所用的分配资源。"
+				}
+			],
+			"source": "text/resources.el",
+			"line": 1,
+			"id": "text/resources"
+		},
+		{
+			"kind": "module",
 			"name": "文本与字符",
 			"sections": [
 				{
@@ -68785,9 +69053,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 120,
+			"line": 130,
 			"signature": "@pure\n@assign(mode: \"copy\")\nexport class Text extends Array<element: Char>",
-			"declaration_line": 132,
+			"declaration_line": 142,
 			"id": "text/text::Text~type",
 			"value_type": null,
 			"owner": null,
@@ -68829,9 +69097,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 165,
+			"line": 184,
 			"signature": "fn replaceAll(pattern, replacement): Text",
-			"declaration_line": 175,
+			"declaration_line": 194,
 			"id": "text/text::Text.replaceAll",
 			"value_type": null,
 			"owner": "Text",
@@ -68884,9 +69152,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 183,
+			"line": 202,
 			"signature": "fn split(pattern): Text[]",
-			"declaration_line": 192,
+			"declaration_line": 211,
 			"id": "text/text::Text.split",
 			"value_type": null,
 			"owner": "Text",
@@ -68934,9 +69202,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 332,
+			"line": 351,
 			"signature": "get byte_count(): Integer",
-			"declaration_line": 340,
+			"declaration_line": 359,
 			"id": "text/text::Text.byte_count",
 			"value_type": null,
 			"owner": "Text",
@@ -68984,9 +69252,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 352,
+			"line": 371,
 			"signature": "override get count(): Integer",
-			"declaration_line": 359,
+			"declaration_line": 378,
 			"id": "text/text::Text.count",
 			"value_type": null,
 			"owner": "Text",
@@ -69039,9 +69307,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 411,
+			"line": 430,
 			"signature": "fn startsWith(prefix: Text): Bool",
-			"declaration_line": 419,
+			"declaration_line": 438,
 			"id": "text/text::Text.startsWith",
 			"value_type": null,
 			"owner": "Text",
@@ -69094,9 +69362,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 422,
+			"line": 441,
 			"signature": "fn endsWith(suffix: Text): Bool",
-			"declaration_line": 430,
+			"declaration_line": 449,
 			"id": "text/text::Text.endsWith",
 			"value_type": null,
 			"owner": "Text",
@@ -69149,9 +69417,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 433,
+			"line": 452,
 			"signature": "fn contains(needle: Text): Bool",
-			"declaration_line": 441,
+			"declaration_line": 460,
 			"id": "text/text::Text.contains",
 			"value_type": null,
 			"owner": "Text",
@@ -69204,9 +69472,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 451,
+			"line": 470,
 			"signature": "fn trimEndChars(characters: Text): Text",
-			"declaration_line": 465,
+			"declaration_line": 484,
 			"id": "text/text::Text.trimEndChars",
 			"value_type": null,
 			"owner": "Text",
@@ -69264,9 +69532,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 492,
+			"line": 511,
 			"signature": "virtual fn character(index: Number): Char",
-			"declaration_line": 502,
+			"declaration_line": 521,
 			"id": "text/text::Text.character",
 			"value_type": null,
 			"owner": "Text",
@@ -69329,9 +69597,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 545,
+			"line": 564,
 			"signature": "virtual fn slice(start: Number, to: Number): Text",
-			"declaration_line": 555,
+			"declaration_line": 574,
 			"id": "text/text::Text.slice",
 			"value_type": null,
 			"owner": "Text",
@@ -69389,9 +69657,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 672,
+			"line": 691,
 			"signature": "export fn text_scalar(value: Integer): Text",
-			"declaration_line": 685,
+			"declaration_line": 704,
 			"id": "text/text::text_scalar",
 			"value_type": null,
 			"owner": null,
@@ -69454,9 +69722,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 825,
+			"line": 844,
 			"signature": "export fn TextView(bitWidth = 0, size = 0): type",
-			"declaration_line": 843,
+			"declaration_line": 862,
 			"id": "text/text::TextView~constraints",
 			"value_type": null,
 			"owner": null,
@@ -69519,9 +69787,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 875,
+			"line": 894,
 			"signature": "export fn Text(bitWidth = 0, size = 0): type",
-			"declaration_line": 892,
+			"declaration_line": 911,
 			"id": "text/text::Text~constraints",
 			"value_type": null,
 			"owner": null,
@@ -71903,7 +72171,7 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 13,
+			"line": 12,
 			"id": "user-interface/platform/windows/window"
 		},
 		{
@@ -71925,9 +72193,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 164,
+			"line": 163,
 			"signature": "export class WindowTimer",
-			"declaration_line": 171,
+			"declaration_line": 170,
 			"id": "user-interface/platform/windows/window::WindowTimer",
 			"value_type": null,
 			"owner": null,
@@ -71959,9 +72227,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 183,
+			"line": 182,
 			"signature": "fn cancel()",
-			"declaration_line": 190,
+			"declaration_line": 189,
 			"id": "user-interface/platform/windows/window::WindowTimer.cancel",
 			"value_type": null,
 			"owner": "WindowTimer",
@@ -71988,9 +72256,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 209,
+			"line": 208,
 			"signature": "export class Window",
-			"declaration_line": 216,
+			"declaration_line": 215,
 			"id": "user-interface/platform/windows/window::Window",
 			"value_type": null,
 			"owner": null,
@@ -72017,9 +72285,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 254,
+			"line": 250,
 			"signature": "get theme(): PaintTheme",
-			"declaration_line": 260,
+			"declaration_line": 256,
 			"id": "user-interface/platform/windows/window::Window.theme",
 			"value_type": null,
 			"owner": "Window",
@@ -72067,9 +72335,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 596,
+			"line": 592,
 			"signature": "fn onArrow(action)",
-			"declaration_line": 603,
+			"declaration_line": 599,
 			"id": "user-interface/platform/windows/window::Window.onArrow",
 			"value_type": null,
 			"owner": "Window",
@@ -72116,9 +72384,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 609,
+			"line": 605,
 			"signature": "@discardable fn every(milliseconds: Number, action): WindowTimer",
-			"declaration_line": 619,
+			"declaration_line": 615,
 			"id": "user-interface/platform/windows/window::Window.every",
 			"value_type": null,
 			"owner": "Window",
@@ -72176,9 +72444,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 639,
+			"line": 635,
 			"signature": "fn getById(id: Text): ElementHandle",
-			"declaration_line": 649,
+			"declaration_line": 645,
 			"id": "user-interface/platform/windows/window::Window.getById",
 			"value_type": null,
 			"owner": "Window",
@@ -72226,9 +72494,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 738,
+			"line": 717,
 			"signature": "export fn runWindow(window: Window)",
-			"declaration_line": 745,
+			"declaration_line": 724,
 			"id": "user-interface/platform/windows/window::runWindow",
 			"value_type": null,
 			"owner": null,
@@ -72260,9 +72528,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 761,
+			"line": 740,
 			"signature": "export fn runWindows(windows: Window[])",
-			"declaration_line": 768,
+			"declaration_line": 747,
 			"id": "user-interface/platform/windows/window::runWindows",
 			"value_type": null,
 			"owner": null,
@@ -72865,8 +73133,8 @@
 		}
 	],
 	"coverage": {
-		"source_files": 3630,
-		"documented_files": 97,
-		"documented_apis": 494
+		"source_files": 3663,
+		"documented_files": 100,
+		"documented_apis": 495
 	}
 }
