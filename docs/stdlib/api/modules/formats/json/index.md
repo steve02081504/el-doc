@@ -6,13 +6,13 @@
 
 ## JSON 解码 {#api-7ea00058a6d26927fcd0}
 
-源码：`src/stdlib/formats/json/index.el:2` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/index.el#L2)
+源码：`src/stdlib/formats/json/index.el:4` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/index.el#L4)
 
 将严格 JSON 文本解析为 EL 的动态对象、数组、文本、数值与布尔/空值。
 
 ## parseJSON {#api-c4f131a4d226bac61cce}
 
-源码：`src/stdlib/formats/json/index.el:138` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/index.el#L138)
+源码：`src/stdlib/formats/json/index.el:137` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/index.el#L137)
 
 将完整严格 JSON 文本解析为 EL 值，并应用输入字节数与解析资源限制。
 
@@ -39,7 +39,7 @@ let config = parseJSON("{\"name\":\"EL\"}")
 
 ## jsonField {#api-aa387b2b22b62084db00}
 
-源码：`src/stdlib/formats/json/index.el:161` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/index.el#L161)
+源码：`src/stdlib/formats/json/index.el:160` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/index.el#L160)
 
 从 JSON 对象中按名称读取成员。
 
@@ -63,4 +63,23 @@ export fn jsonField(value: any, key: Text): any
 import { jsonField, parseJSON } from "el:formats/json/"
 let name = jsonField(parseJSON("{\"name\":\"EL\"}"), "name")
 console.stdout.writeLine(name)
+```
+
+## parseOrderedJSON {#api-4091752e8755cd3e7bde}
+
+源码：`src/stdlib/formats/json/index.el:173` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/index.el#L173)
+
+解析 JSON 并递归保留映射键的首次插入顺序；重复键覆盖不移动位置。
+
+```el
+export fn parseOrderedJSON(source: Text, limits: JsonLimits = JsonLimits()): any
+```
+
+**返回类型**：[`any`](../../../../../reference/language/types.md)
+
+### 示例：按输入顺序解析两个键
+
+```el
+import { parseOrderedJSON } from "el:formats/json/index.el"
+let parsed = parseOrderedJSON("{\"first\":1,\"second\":2}")
 ```

@@ -115,6 +115,7 @@ nav:
       - 复制消除: reference/language/copy-elision.md
       - 类型转换: reference/language/conversions.md
       - 表达式与运算符: reference/language/expressions.md
+      - 推导式与惰性生成式: reference/language/comprehensions.md
       - 控制流: reference/language/control-flow.md
       - 函数: reference/language/functions.md
       - 重载解析: reference/language/overload-resolution.md
@@ -164,6 +165,7 @@ nav:
           - 标准库总览: stdlib/index.md
           - Console 与日志: stdlib/console.md
           - 集合与文本: stdlib/collections.md
+          - 用推导式列出组合: stdlib/comprehensions.md
           - 从遍历到函数组合: stdlib/function-composition.md
           - 文件与网络: stdlib/files-network.md
           - 图形界面: stdlib/gui.md

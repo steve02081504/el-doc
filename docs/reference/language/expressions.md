@@ -38,6 +38,7 @@
 
 ## 相关条目
 
+- [推导式与惰性生成式](comprehensions.md)
 - [控制流](control-flow.md)
 - [类型](types.md)
 - [语法标准](https://github.com/steve02081504/el/blob/master/docs/spec/12-syntax.md)

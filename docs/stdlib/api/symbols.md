@@ -188,8 +188,10 @@
 | [find_text](modules/text/operations.md#api-57c9ddeea00803ab4467) | `text/operations.el` |
 | [firstOf](modules/text/patterns/parser.md#api-f45406a31ca93535cd3d) | `text/patterns/parser.el` |
 | [FixtureOptions](modules/tools/testing/compiler.md#api-2c4c4f04dba5902ef37e) | `tools/testing/compiler.el` |
+| [flatMap](modules/collections/sequences/comprehension-iteration.md#api-c361b1582755a3fc1e51) | `collections/sequences/comprehension-iteration.el` |
 | [floor](modules/mathematics/functions/discrete.md#api-bd10102e4c50e2f82d0e) | `mathematics/functions/discrete.el` |
 | [floorDivide](modules/time/units.md#api-a45599efdbefd59dc9cf) | `time/units.el` |
+| [for](modules/collections/sequences/comprehension.md#api-cc9ca1586767db3090d8) | `collections/sequences/comprehension.el` |
 | [formats](modules/formats/index.md#api-a357aae7f29cecb69598) | `formats/index.el` |
 | [Formats.CSV](modules/formats/index.md#api-1489e37be5f3818f494f) | `formats/index.el` |
 | [Formats.EOD](modules/formats/index.md#api-9ebcb5f224a4de1a6115) | `formats/index.el` |
@@ -211,6 +213,7 @@
 | [GroundCursor](modules/logic/search.md#api-5942ab836ae0713bf70d) | `logic/search.el` |
 | [GroundCursor.next](modules/logic/search.md#api-9a2563bdfb8e857f0b0f) | `logic/search.el` |
 | [GroundSearch](modules/logic/search.md#api-7a238a9cc648b83300d3) | `logic/search.el` |
+| [guarded](modules/collections/sequences/comprehension-iteration.md#api-e493441f4d4d0b54d914) | `collections/sequences/comprehension-iteration.el` |
 | [GuiEvent](modules/user-interface/model.md#api-d0161616ebcc781b1631) | `user-interface/model.el` |
 | [heap_alloc](modules/memory/allocation/heap.md#api-b7871e91d49bbde9993d) | `memory/allocation/heap.el` |
 | [heap_free](modules/memory/allocation/heap.md#api-0f5cb29929b7fbf1ffbe) | `memory/allocation/heap.el` |
@@ -335,6 +338,13 @@
 | [parseForm](modules/network/parsers.md#api-1f7812157bf2991a8b30) | `network/parsers.el` |
 | [parseINI](modules/formats/ini/index.md#api-e4172fc09fb95d53c347) | `formats/ini/index.el` |
 | [parseJSON](modules/formats/json/index.md#api-c4f131a4d226bac61cce) | `formats/json/index.el` |
+| [parseOrderedINI](modules/formats/ini/index.md#api-8a94a4fc0dc91dbafc21) | `formats/ini/index.el` |
+| [parseOrderedJSON](modules/formats/json/index.md#api-4091752e8755cd3e7bde) | `formats/json/index.el` |
+| [parseOrderedJSON5](modules/formats/json/variants.md#api-8f168af352cd23c13804) | `formats/json/variants.el` |
+| [parseOrderedJSONC](modules/formats/json/variants.md#api-6b7cc691bb029a8d80d1) | `formats/json/variants.el` |
+| [parseOrderedJSONLines](modules/formats/json/variants.md#api-504082fee10734d04334) | `formats/json/variants.el` |
+| [parseOrderedTOML](modules/formats/toml/index.md#api-5580b3b042100058a9fa) | `formats/toml/index.el` |
+| [parseOrderedYAML](modules/formats/yaml/index.md#api-bd520a15ef20f49b9075) | `formats/yaml/index.el` |
 | [Parser.asParser](modules/text/patterns/parser.md#api-d229b8c3837af00d72d9) | `text/patterns/parser.el` |
 | [Parser.parse](modules/text/patterns/parser.md#api-d313f1ac56d1be2399e2) | `text/patterns/parser.el` |
 | [Parser.parsePrefix](modules/text/patterns/parser.md#api-7aff463fca2745d8ab80) | `text/patterns/parser.el` |
@@ -466,6 +476,7 @@
 | [showWindow~description](modules/user-interface/window.md#api-a2854832980685a2c064) | `user-interface/window.el` |
 | [showWindow~description-data](modules/user-interface/window.md#api-a2a3a0d3094ea4e44215) | `user-interface/window.el` |
 | [sin](modules/mathematics/functions/elementary.md#api-b86d1300e2b18347e166) | `mathematics/functions/elementary.el` |
+| [singleton](modules/collections/sequences/comprehension-iteration.md#api-e9c1a017b7d3372054d3) | `collections/sequences/comprehension-iteration.el` |
 | [softmax](modules/neural-networks/functional.md#api-b4b475e208e3fc45c7a0) | `neural-networks/functional.el` |
 | [solve](modules/numerical-computing/exact-solve.md#api-6f0056070dbd04cf6e3a) | `numerical-computing/exact-solve.el` |
 | [solveDiagnostic~dense](modules/numerical-computing/diagnostics.md#api-e0ab268d3c4c908e5d38) | `numerical-computing/diagnostics.el` |

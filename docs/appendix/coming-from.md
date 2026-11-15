@@ -77,7 +77,7 @@ let point = @{x: 1, y: 2}
 | --- | --- | --- |
 | 缩进 | 花括号 | 块由花括号界定，缩进不参与语法判断，格式化器会统一缩进 |
 | `self` | `this` | 方法里显式写 `this`，没有隐式的 `self` 参数；构造器写 `constructor(...)` 并以 `init this` 初始化自身 |
-| 列表推导式 | `map`、`filter` 与普通 `for` | 写法换掉，逐元素处理的语义还在 |
+| 列表推导式 | [数组推导式与惰性生成式](../stdlib/comprehensions.md)；也可用 `map`、`filter` | 绑定写 `for let`；筛选写 `if`，实现与验收边界见链接页 |
 | `yield` 生成器 | 库宏包装普通函数 | 不是独立的 `yield` 关键字 |
 | `try` / `except` | `try` / `catch` | 写法接近：`try` 块可以取值，`catch (error)` 绑定异常对象，也可以写不带绑定的 `catch` |
 | `__init__` / `__str__` | `constructor`／显式方法与运算符重载 | 类同样必须 `@assign`，没有双下划线协议 |

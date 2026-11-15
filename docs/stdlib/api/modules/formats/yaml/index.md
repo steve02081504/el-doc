@@ -6,13 +6,13 @@
 
 ## YAML {#api-22f418b16890bb65cf80}
 
-源码：`src/stdlib/formats/yaml/index.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L1)
+源码：`src/stdlib/formats/yaml/index.el:3` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L3)
 
 解析与编码本实现支持的 YAML 文档子集。
 
 ## parseYAML {#api-9cc1ddf8a8c4fb2a80f8}
 
-源码：`src/stdlib/formats/yaml/index.el:369` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L369)
+源码：`src/stdlib/formats/yaml/index.el:371` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L371)
 
 将受支持的单个 YAML 文档解析为动态对象、数组及标量值。
 
@@ -35,4 +35,23 @@ export fn parseYAML(source: Text, limits: JsonLimits = JsonLimits()): any
 ```el
 import { parseYAML } from "el:formats/yaml/"
 let settings = parseYAML("name: Ada")
+```
+
+## parseOrderedYAML {#api-bd520a15ef20f49b9075}
+
+源码：`src/stdlib/formats/yaml/index.el:380` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L380)
+
+解析 YAML 并递归保留映射键的首次插入顺序；重复键覆盖不移动位置。
+
+```el
+export fn parseOrderedYAML(source: Text, limits: JsonLimits = JsonLimits()): any
+```
+
+**返回类型**：[`any`](../../../../../reference/language/types.md)
+
+### 示例：按输入顺序解析两个键
+
+```el
+import { parseOrderedYAML } from "el:formats/yaml/index.el"
+let parsed = parseOrderedYAML("first: 1\nsecond: 2\n")
 ```

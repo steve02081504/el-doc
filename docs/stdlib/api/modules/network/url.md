@@ -12,7 +12,7 @@
 
 ## resolveUrl {#api-e85150a75a8ab3b2c844}
 
-源码：`src/stdlib/network/url.el:108` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/url.el#L108)
+源码：`src/stdlib/network/url.el:107` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/url.el#L107)
 
 根据基础 URL 解析绝对或相对引用，并规范化相对路径中的点段。
 

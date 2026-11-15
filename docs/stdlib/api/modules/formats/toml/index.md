@@ -6,13 +6,13 @@
 
 ## TOML {#api-0c6ccd536b686ea05e79}
 
-源码：`src/stdlib/formats/toml/index.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L1)
+源码：`src/stdlib/formats/toml/index.el:5` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L5)
 
 解析 TOML 文档并保留日期时间与表等类型信息。
 
 ## parseTOML {#api-3d751bf4576089574ccb}
 
-源码：`src/stdlib/formats/toml/index.el:268` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L268)
+源码：`src/stdlib/formats/toml/index.el:269` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L269)
 
 解析 TOML 文档并保留 TOML 值种类，包括日期时间、数组和表。
 
@@ -39,7 +39,7 @@ let settings = parseTOML("port = 8080")
 
 ## writeTOML {#api-385192dc27d78c6eef68}
 
-源码：`src/stdlib/formats/toml/index.el:352` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L352)
+源码：`src/stdlib/formats/toml/index.el:360` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L360)
 
 将 TOML 根表编码为文档，嵌套表使用内联表；数字必须能精确表示。
 
@@ -62,4 +62,23 @@ export fn writeTOML(value: Toml, limits: JsonLimits = JsonLimits()): Text
 ```el
 import { parseTOML, writeTOML } from "el:formats/toml/"
 let text = writeTOML(parseTOML("port = 8080"))
+```
+
+## parseOrderedTOML {#api-5580b3b042100058a9fa}
+
+源码：`src/stdlib/formats/toml/index.el:375` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L375)
+
+解析 TOML 并递归保留每个表的首次插入顺序。
+
+```el
+export fn parseOrderedTOML(source: Text, limits: JsonLimits = JsonLimits()): Toml
+```
+
+**返回类型**：[`Toml`](../../../types.md#api-1ded7c60633c334bf6e6)
+
+### 示例：按输入顺序解析两个键
+
+```el
+import { parseOrderedTOML } from "el:formats/toml/index.el"
+let parsed = parseOrderedTOML("first=1\nsecond=2\n")
 ```

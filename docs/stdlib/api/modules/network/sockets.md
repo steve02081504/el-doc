@@ -12,7 +12,7 @@
 
 ## connectTcp {#api-9e19203d508cfc9d0fcd}
 
-源码：`src/stdlib/network/sockets.el:186` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/sockets.el#L186)
+源码：`src/stdlib/network/sockets.el:187` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/sockets.el#L187)
 
 连接到指定主机和 TCP 端口，并返回连接对象。
 

@@ -29,7 +29,7 @@
 
 ## AllocationResourceError {#api-74c8810a150913ec336d}
 
-源码：`src/stdlib/memory/allocation/resources.el:48` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L48)
+源码：`src/stdlib/memory/allocation/resources.el:51` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L51)
 
 创建资源、运行作用域或采集快照失败时使用的错误。
 
@@ -47,9 +47,9 @@ tracker.run(fn() { return 1 })
 
 ## AllocationSnapshot {#api-2ebb6b2c7191b869a60b}
 
-源码：`src/stdlib/memory/allocation/resources.el:141` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L141)
+源码：`src/stdlib/memory/allocation/resources.el:144` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L144)
 
-同一时刻的资源统计：存活分配数和字节、累计分配与释放次数、累计字节、存活峰值、物理字节、未完整观察次数及参与者数。计数按 2^64 回绕。
+同一时刻的资源统计：存活分配数和字节、累计分配与释放次数、累计字节、存活峰值、物理字节、未完整观察次数及参与者数。计数使用目标原生表示。
 
 ```el
 export @assign(mode: "copy") class AllocationSnapshot
@@ -66,7 +66,7 @@ let snapshot = tracker.snapshot()
 
 ## AllocationResource {#api-8eba7d4cbf772f8d630b}
 
-源码：`src/stdlib/memory/allocation/resources.el:176` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L176)
+源码：`src/stdlib/memory/allocation/resources.el:179` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L179)
 
 共享的分配资源句柄；复制句柄共享状态。作用域及其后代的分配可在 run 返回后继续计入。
 
@@ -84,7 +84,7 @@ tracker.run(fn() { return 1 })
 
 ## AllocationResource.run {#api-4594f61d969df01f11c4}
 
-源码：`src/stdlib/memory/allocation/resources.el:243` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L243)
+源码：`src/stdlib/memory/allocation/resources.el:246` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L246)
 
 将资源与当前资源及观察器组合后执行 body，返回其结果，并在正常返回或异常时恢复原上下文。
 
@@ -108,7 +108,7 @@ tracker.run(fn() { return 1 })
 
 ## AllocationResource.snapshot {#api-0b6ef92ff8094e1cbbe3}
 
-源码：`src/stdlib/memory/allocation/resources.el:295` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L295)
+源码：`src/stdlib/memory/allocation/resources.el:298` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L298)
 
 取得一致时刻的统计快照；各独立计数方法分别读取，不能保证属于同一时刻。
 
@@ -131,15 +131,15 @@ let snapshot = tracker.snapshot()
 
 ## AllocationResource.live_allocations {#api-5c03c0ca799f66aa7d73}
 
-源码：`src/stdlib/memory/allocation/resources.el:335` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L335)
+源码：`src/stdlib/memory/allocation/resources.el:338` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L338)
 
-读取当前存活的分配数；计数按 2^64 回绕。
+读取当前存活的分配数；计数使用目标原生表示。
 
 ```el
-fn live_allocations(): Integer
+fn live_allocations(): RuntimeWord
 ```
 
-**返回类型**：[`Integer`](../../../types.md#api-45690472287900730a5f)
+**返回类型**：[`RuntimeWord`](../../../types.md#api-b33b987a810fb17f83e0)
 
 ### 示例：读取统计
 
@@ -151,15 +151,15 @@ let value = tracker.live_allocations()
 
 ## AllocationResource.live_bytes {#api-c980a03effcac60dbbff}
 
-源码：`src/stdlib/memory/allocation/resources.el:344` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L344)
+源码：`src/stdlib/memory/allocation/resources.el:347` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L347)
 
-读取当前存活的逻辑字节数；计数按 2^64 回绕。
+读取当前存活的逻辑字节数；计数使用目标原生表示。
 
 ```el
-fn live_bytes(): Integer
+fn live_bytes(): NativeStorageSize
 ```
 
-**返回类型**：[`Integer`](../../../types.md#api-45690472287900730a5f)
+**返回类型**：[`NativeStorageSize`](../../../types.md#api-56e936010cbf9fb04ba1)
 
 ### 示例：读取统计
 
@@ -171,15 +171,15 @@ let value = tracker.live_bytes()
 
 ## AllocationResource.allocations {#api-c99c9345210af5d3fc7f}
 
-源码：`src/stdlib/memory/allocation/resources.el:353` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L353)
+源码：`src/stdlib/memory/allocation/resources.el:356` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L356)
 
-读取累计分配次数；计数按 2^64 回绕。
+读取累计分配次数；计数使用目标原生表示。
 
 ```el
-fn allocations(): Integer
+fn allocations(): RuntimeWord
 ```
 
-**返回类型**：[`Integer`](../../../types.md#api-45690472287900730a5f)
+**返回类型**：[`RuntimeWord`](../../../types.md#api-b33b987a810fb17f83e0)
 
 ### 示例：读取统计
 
@@ -191,15 +191,15 @@ let value = tracker.allocations()
 
 ## AllocationResource.releases {#api-34385919c82bc7e37c76}
 
-源码：`src/stdlib/memory/allocation/resources.el:362` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L362)
+源码：`src/stdlib/memory/allocation/resources.el:365` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L365)
 
-读取累计释放次数；计数按 2^64 回绕。
+读取累计释放次数；计数使用目标原生表示。
 
 ```el
-fn releases(): Integer
+fn releases(): RuntimeWord
 ```
 
-**返回类型**：[`Integer`](../../../types.md#api-45690472287900730a5f)
+**返回类型**：[`RuntimeWord`](../../../types.md#api-b33b987a810fb17f83e0)
 
 ### 示例：读取统计
 
@@ -211,15 +211,15 @@ let value = tracker.releases()
 
 ## AllocationResource.cumulative_bytes {#api-b4aed26da644089ff7c2}
 
-源码：`src/stdlib/memory/allocation/resources.el:371` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L371)
+源码：`src/stdlib/memory/allocation/resources.el:374` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L374)
 
-读取累计分配的逻辑字节数；计数按 2^64 回绕。
+读取累计分配的逻辑字节数；计数使用目标原生表示。
 
 ```el
-fn cumulative_bytes(): Integer
+fn cumulative_bytes(): NativeStorageSize
 ```
 
-**返回类型**：[`Integer`](../../../types.md#api-45690472287900730a5f)
+**返回类型**：[`NativeStorageSize`](../../../types.md#api-56e936010cbf9fb04ba1)
 
 ### 示例：读取统计
 
@@ -231,15 +231,15 @@ let value = tracker.cumulative_bytes()
 
 ## AllocationResource.peak_live_bytes {#api-b9bf0dcf44cea02a2df2}
 
-源码：`src/stdlib/memory/allocation/resources.el:380` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L380)
+源码：`src/stdlib/memory/allocation/resources.el:383` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L383)
 
-读取存活逻辑字节数的峰值；计数按 2^64 回绕。
+读取存活逻辑字节数的峰值；计数使用目标原生表示。
 
 ```el
-fn peak_live_bytes(): Integer
+fn peak_live_bytes(): NativeStorageSize
 ```
 
-**返回类型**：[`Integer`](../../../types.md#api-45690472287900730a5f)
+**返回类型**：[`NativeStorageSize`](../../../types.md#api-56e936010cbf9fb04ba1)
 
 ### 示例：读取统计
 
@@ -251,15 +251,15 @@ let value = tracker.peak_live_bytes()
 
 ## AllocationResource.incomplete_observations {#api-13a43d2e72a34a6dd6e5}
 
-源码：`src/stdlib/memory/allocation/resources.el:389` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L389)
+源码：`src/stdlib/memory/allocation/resources.el:392` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L392)
 
-读取未完整交付的观察事件数；计数按 2^64 回绕。
+读取未完整交付的观察事件数；计数使用目标原生表示。
 
 ```el
-fn incomplete_observations(): Integer
+fn incomplete_observations(): RuntimeWord
 ```
 
-**返回类型**：[`Integer`](../../../types.md#api-45690472287900730a5f)
+**返回类型**：[`RuntimeWord`](../../../types.md#api-b33b987a810fb17f83e0)
 
 ### 示例：读取统计
 
@@ -271,15 +271,15 @@ let value = tracker.incomplete_observations()
 
 ## AllocationResource.participants {#api-91bdf3f280f723a62e3e}
 
-源码：`src/stdlib/memory/allocation/resources.el:398` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L398)
+源码：`src/stdlib/memory/allocation/resources.el:401` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L401)
 
-读取当前参与者数；计数按 2^64 回绕。
+读取当前参与者数；计数使用目标原生表示。
 
 ```el
-fn participants(): Integer
+fn participants(): RuntimeWord
 ```
 
-**返回类型**：[`Integer`](../../../types.md#api-45690472287900730a5f)
+**返回类型**：[`RuntimeWord`](../../../types.md#api-b33b987a810fb17f83e0)
 
 ### 示例：读取统计
 
@@ -291,15 +291,15 @@ let value = tracker.participants()
 
 ## AllocationResource.physical_bytes {#api-b5e3b89a8c582a97acf3}
 
-源码：`src/stdlib/memory/allocation/resources.el:408` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L408)
+源码：`src/stdlib/memory/allocation/resources.el:411` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L411)
 
-读取本资源拥有的 arena slab 物理字节数，包含头部和未用容量；计数按 2^64 回绕。
+读取本资源拥有的 arena slab 物理字节数，包含头部和未用容量；计数使用目标原生表示。
 
 ```el
-fn physical_bytes(): Integer
+fn physical_bytes(): NativeStorageSize
 ```
 
-**返回类型**：[`Integer`](../../../types.md#api-45690472287900730a5f)
+**返回类型**：[`NativeStorageSize`](../../../types.md#api-56e936010cbf9fb04ba1)
 
 ### 示例：读取统计
 
@@ -311,7 +311,7 @@ let value = tracker.physical_bytes()
 
 ## AllocationResource.check_empty {#api-8d62410eb64ebec2d90e}
 
-源码：`src/stdlib/memory/allocation/resources.el:419` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L419)
+源码：`src/stdlib/memory/allocation/resources.el:422` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L422)
 
 立即检查并报告存活分配；子任务或返回值仍可能持有分配。
 
@@ -332,7 +332,7 @@ let empty = tracker.check_empty()
 
 ## AllocationResource.check_when_idle {#api-fd2600d92cd142340fe1}
 
-源码：`src/stdlib/memory/allocation/resources.el:431` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L431)
+源码：`src/stdlib/memory/allocation/resources.el:434` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L434)
 
 参与者空闲时检查并报告：返回 0 表示延期，1 表示为空，2 表示报告了非空快照。
 
@@ -355,7 +355,7 @@ let result = tracker.check_when_idle()
 
 ## AllocationResource.reset {#api-f3a34cf7aca61613268a}
 
-源码：`src/stdlib/memory/allocation/resources.el:448` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L448)
+源码：`src/stdlib/memory/allocation/resources.el:451` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L451)
 
 重置 arena；tracker 或仍有后代存活分配时返回 nil。成功后释放 arena 所持的块。
 
@@ -376,7 +376,7 @@ let reset = arena.reset()
 
 ## allocation_tracker {#api-e8fa0007d514f447ec99}
 
-源码：`src/stdlib/memory/allocation/resources.el:474` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L474)
+源码：`src/stdlib/memory/allocation/resources.el:477` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L477)
 
 创建统计资源；check_on_drop 为真时析构时立即检查是否为空。
 
@@ -400,7 +400,7 @@ tracker.run(fn() { return 1 })
 
 ## allocation_arena {#api-d7c42030098dd223bcbb}
 
-源码：`src/stdlib/memory/allocation/resources.el:487` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L487)
+源码：`src/stdlib/memory/allocation/resources.el:490` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L490)
 
 创建 arena；省略 upstream 时使用基础堆，显式 upstream 须为自定义终端分配资源，不能是 arena 或观察器。
 
@@ -424,20 +424,20 @@ arena.run(fn() { return 1 })
 
 ## allocation_resource {#api-909a6f9e1fc2a3457a85}
 
-源码：`src/stdlib/memory/allocation/resources.el:519` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L519)
+源码：`src/stdlib/memory/allocation/resources.el:523` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L523)
 
 创建自定义终端分配资源。回调同步执行、可能并发，不能重新进入分配引擎或抛异常；回调抛异常会触发陷阱。
 
 ```el
 @callbackSafe(parameter: "allocate") @callbackSafe(parameter: "release")
-export fn allocation_resource(allocate: @sync fn(size: Integer, alignment: Integer): ptr, release: @sync fn(pointer: ptr, size: Integer, alignment: Integer): Integer, code_owner): AllocationResource
+export fn allocation_resource(allocate: @sync fn(size: NativeStorageSize, alignment: NativeStorageSize): ptr, release: @sync fn(pointer: ptr, size: NativeStorageSize, alignment: NativeStorageSize): RuntimeWord, code_owner): AllocationResource
 ```
 
 **返回类型**：[`AllocationResource`](resources.md#api-8eba7d4cbf772f8d630b)
 
 **参数**：allocate 接收物理范围大小和对齐，返回存储指针；普通分配失败返回空指针。
 
-**参数**：release 接收分配时的指针、物理范围大小和对齐；成功返回 Integer(1)。当前对齐为 8。
+**参数**：release 接收分配时的指针、物理范围大小和对齐；成功返回 RuntimeWord(1)；对齐由目标布局决定。
 
 **参数**：code_owner 保持回调代码及其模块在资源和分配退役前有效的所有者。
 
@@ -450,14 +450,15 @@ import { allocation_resource } from "el:memory/"
 import { native_allocate, native_release } from "el:memory/allocation/native.el"
 import { AllocationSize } from "el:memory/allocation/types.el"
 import { NativeSignedInteger as Integer } from "el:platform/machine/integer.el"
+import { NativeStorageSize, NativeSignedWord as RuntimeWord } from "el:runtime/native-types.el"
 import { sync } from "el:language/contracts.el"
 let resource = allocation_resource(
-	@sync fn(size: Integer, alignment: Integer): ptr {
+	@sync fn(size: NativeStorageSize, alignment: NativeStorageSize): ptr {
 		unsafe { return native_allocate(AllocationSize(size), AllocationSize(alignment)) }
 	},
-	@sync fn(pointer: ptr, size: Integer, alignment: Integer): Integer {
+	@sync fn(pointer: ptr, size: NativeStorageSize, alignment: NativeStorageSize): RuntimeWord {
 		unsafe { native_release(pointer) }
-		return Integer(1)
+		return RuntimeWord(1)
 	},
 	void
 )
@@ -468,7 +469,7 @@ resource.run(fn() { let values = @[1, 2, 3]; return values.count })
 
 ## with_allocation_tracking {#api-3ab81e903cbcfb4211ca}
 
-源码：`src/stdlib/memory/allocation/resources.el:538` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L538)
+源码：`src/stdlib/memory/allocation/resources.el:542` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L542)
 
 在新 tracker 中运行 body 并返回结果；check_empty 选择结束时检查，final 选择参与者空闲后检查。返回值和仍运行的子任务可能保留分配。
 
@@ -493,13 +494,13 @@ let result = with_allocation_tracking(fn() { return 1 })
 
 ## allocation_observer {#api-745b0e48de8321bdb0ba}
 
-源码：`src/stdlib/memory/allocation/resources.el:582` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L582)
+源码：`src/stdlib/memory/allocation/resources.el:587` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L587)
 
 创建观察资源。事件 1、2 是逻辑分配和释放，3、4 是成功和失败的调整大小，5、6 是物理 slab 分配和释放；成功调整也产生底层分配和释放事件。
 
 ```el
 @callbackSafe(parameter: "observe")
-export fn allocation_observer(observe: @sync fn(event: Integer, identity: Integer, address: Integer, size: Integer, alignment: Integer, backing_identity: Integer): Integer, code_owner): AllocationResource
+export fn allocation_observer(observe: @sync fn(event: RuntimeWord, identity: RuntimeWord, address: NativeStorageSize, size: NativeStorageSize, alignment: NativeStorageSize, backing_identity: RuntimeWord): RuntimeWord, code_owner): AllocationResource
 ```
 
 **返回类型**：[`AllocationResource`](resources.md#api-8eba7d4cbf772f8d630b)
@@ -517,10 +518,11 @@ export fn allocation_observer(observe: @sync fn(event: Integer, identity: Intege
 ```el
 import { allocation_observer } from "el:memory/"
 import { NativeSignedInteger as Integer } from "el:platform/machine/integer.el"
+import { NativeStorageSize, NativeSignedWord as RuntimeWord } from "el:runtime/native-types.el"
 import { sync } from "el:language/contracts.el"
 let observer = allocation_observer(
-	@sync fn(event: Integer, identity: Integer, address: Integer, size: Integer, alignment: Integer, backing_identity: Integer): Integer {
-		return Integer(1)
+	@sync fn(event: RuntimeWord, identity: RuntimeWord, address: NativeStorageSize, size: NativeStorageSize, alignment: NativeStorageSize, backing_identity: RuntimeWord): RuntimeWord {
+		return RuntimeWord(1)
 	},
 	void
 )

@@ -194,10 +194,10 @@ let options = HttpOptions(@{ maximumBodyBytes: 1048576 })
 请求与响应头的最大字节数。
 
 ```el
-let maximumHeaderBytes: Number
+let maximumHeaderBytes: Number | void_t
 ```
 
-**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
+**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4) | [`void_t`](../../language/values.md#api-d7b419fab395eef3d142)
 
 ### 示例：设置头部上限
 
@@ -212,10 +212,10 @@ let options = HttpOptions(@{ maximumHeaderBytes: 16384 })
 允许跟随的最大重定向次数。
 
 ```el
-let maximumRedirects: Number
+let maximumRedirects: Number | void_t
 ```
 
-**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
+**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4) | [`void_t`](../../language/values.md#api-d7b419fab395eef3d142)
 
 ### 示例：禁止自动跟随重定向
 
@@ -281,7 +281,7 @@ let options = HttpOptions(@{ timeout: 5000, maximumRedirects: 3 })
 
 ## HttpResponse {#api-e49096dfd951764c068f}
 
-源码：`src/stdlib/network/http/model.el:199` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L199)
+源码：`src/stdlib/network/http/model.el:194` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L194)
 
 保存 HTTP 状态码、响应头、响应体和最终 URL，并提供常用解码操作。
 
@@ -298,7 +298,7 @@ console.stdout.writeLine(response.status, " ", response.ok)
 
 ## HttpResponse.status {#api-94a7ee2eb19c23484254}
 
-源码：`src/stdlib/network/http/model.el:206` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L206)
+源码：`src/stdlib/network/http/model.el:201` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L201)
 
 HTTP 状态码。
 
@@ -316,7 +316,7 @@ console.stdout.writeLine(response.status)
 
 ## HttpResponse.headers {#api-13457e67b9172ccbf05d}
 
-源码：`src/stdlib/network/http/model.el:213` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L213)
+源码：`src/stdlib/network/http/model.el:208` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L208)
 
 响应头列表。
 
@@ -334,7 +334,7 @@ console.stdout.writeLine(response.headers.count)
 
 ## HttpResponse.body {#api-c6cdd2d8c232982199d4}
 
-源码：`src/stdlib/network/http/model.el:220` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L220)
+源码：`src/stdlib/network/http/model.el:215` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L215)
 
 响应体的原始字节。
 
@@ -352,7 +352,7 @@ console.stdout.writeLine(response.body.count)
 
 ## HttpResponse.url {#api-c72aa9a6acb07d01133a}
 
-源码：`src/stdlib/network/http/model.el:227` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L227)
+源码：`src/stdlib/network/http/model.el:222` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L222)
 
 请求跟随重定向后的最终 URL。
 
@@ -370,7 +370,7 @@ console.stdout.writeLine(response.url)
 
 ## HttpResponse.ok {#api-833651302d6ba4264de8}
 
-源码：`src/stdlib/network/http/model.el:236` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L236)
+源码：`src/stdlib/network/http/model.el:231` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L231)
 
 判断状态码是否位于 200 到 299 的成功范围。
 
@@ -390,7 +390,7 @@ if (response.ok) console.stdout.writeLine("success")
 
 ## HttpResponse.text {#api-6cda717c77ed293047df}
 
-源码：`src/stdlib/network/http/model.el:245` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L245)
+源码：`src/stdlib/network/http/model.el:240` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L240)
 
 将响应体按 UTF-8 解码为文本；拒绝未解码的非 identity 内容编码。
 
@@ -412,7 +412,7 @@ console.stdout.writeLine(response.text())
 
 ## HttpResponse.json {#api-fd727a1f0f4a5400e858}
 
-源码：`src/stdlib/network/http/model.el:259` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L259)
+源码：`src/stdlib/network/http/model.el:254` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L254)
 
 将响应文本解析为 JSON 值。
 
@@ -436,7 +436,7 @@ let configuration = response.json()
 
 ## HttpResponse.as {#api-babd6c7262ef7ec82f76}
 
-源码：`src/stdlib/network/http/model.el:269` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L269)
+源码：`src/stdlib/network/http/model.el:264` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L264)
 
 使用指定格式对象解码响应体。
 
@@ -458,7 +458,7 @@ let config = response.as(formats.JSON)
 
 ## HttpResponse.header {#api-af4458df84318ed403f0}
 
-源码：`src/stdlib/network/http/model.el:282` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L282)
+源码：`src/stdlib/network/http/model.el:277` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L277)
 
 按大小写无关的名称查找首个响应头。
 
@@ -480,7 +480,7 @@ let contentType = response.header("Content-Type")
 
 ## HttpStatusError {#api-b0c306dbfe7c9ba3158d}
 
-源码：`src/stdlib/network/http/model.el:293` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L293)
+源码：`src/stdlib/network/http/model.el:288` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L288)
 
 表示 HTTP 响应状态不成功；异常保留原始响应供调用方检查。
 
@@ -497,7 +497,7 @@ catch (error: HttpStatusError) { console.stderr.writeLine(error.response.status)
 
 ## HttpStatusError.response {#api-84ea870701b770626b47}
 
-源码：`src/stdlib/network/http/model.el:300` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L300)
+源码：`src/stdlib/network/http/model.el:295` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L295)
 
 引发状态错误的完整 HTTP 响应。
 
@@ -515,7 +515,7 @@ console.stderr.writeLine(error.response.status)
 
 ## HttpStatusError.constructor {#api-8cd621216a6f8df9a3be}
 
-源码：`src/stdlib/network/http/model.el:308` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L308)
+源码：`src/stdlib/network/http/model.el:303` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L303)
 
 将不成功的 HTTP 响应封装为状态异常。
 

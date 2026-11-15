@@ -11,6 +11,8 @@
 - [collections/batch/syntax.el](modules/collections/batch/syntax.md)（2 个 API）
 - [collections/maps/base.el](modules/collections/maps/base.md)（10 个 API）
 - [collections/maps/hash-map.el](modules/collections/maps/hash-map.md)（6 个 API）
+- [collections/sequences/comprehension-iteration.el](modules/collections/sequences/comprehension-iteration.md)（3 个 API）
+- [collections/sequences/comprehension.el](modules/collections/sequences/comprehension.md)（1 个 API）
 - [collections/sequences/demand.el](modules/collections/sequences/demand.md)（9 个 API）
 - [collections/sequences/enumerate.el](modules/collections/sequences/enumerate.md)（1 个 API）
 - [collections/sets/bit-set.el](modules/collections/sets/bit-set.md)（4 个 API）
@@ -49,14 +51,15 @@
 
 - [formats/delimited-text/index.el](modules/formats/delimited-text/index.md)（5 个 API）
 - [formats/index.el](modules/formats/index.md)（12 个 API）
-- [formats/ini/index.el](modules/formats/ini/index.md)（2 个 API）
+- [formats/ini/index.el](modules/formats/ini/index.md)（3 个 API）
 - [formats/internal/writer.el](modules/formats/internal/writer.md)（1 个 API）
-- [formats/json/index.el](modules/formats/json/index.md)（2 个 API）
+- [formats/json/index.el](modules/formats/json/index.md)（3 个 API）
 - [formats/json/limits.el](modules/formats/json/limits.md)（1 个 API）
+- [formats/json/variants.el](modules/formats/json/variants.md)（3 个 API）
 - [formats/json/writer.el](modules/formats/json/writer.md)（1 个 API）
-- [formats/toml/index.el](modules/formats/toml/index.md)（2 个 API）
+- [formats/toml/index.el](modules/formats/toml/index.md)（3 个 API）
 - [formats/xml/index.el](modules/formats/xml/index.md)（2 个 API）
-- [formats/yaml/index.el](modules/formats/yaml/index.md)（1 个 API）
+- [formats/yaml/index.el](modules/formats/yaml/index.md)（2 个 API）
 - [formats/yaml/writer.el](modules/formats/yaml/writer.md)（1 个 API）
 
 ## functions

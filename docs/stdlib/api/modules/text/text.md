@@ -28,7 +28,7 @@
 
 ## Text~type {#api-6116e54b075df026a90a}
 
-源码：`src/stdlib/text/text.el:142` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L142)
+源码：`src/stdlib/text/text.el:181` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L181)
 
 拥有 Unicode 标量序列的可变文本值；按值复制，UTF-8 字节数由 byte_count 单独提供。
 裸文本视图装载时会复制其标量。切片与拼接可共享不可变 rope 节点，但得到独立 Text 值。
@@ -52,7 +52,7 @@ console.stdout.writeLine(text.count, " ", text.byte_count)
 
 ## Text.replaceAll {#api-29663683ec276c29c64c}
 
-源码：`src/stdlib/text/text.el:194` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L194)
+源码：`src/stdlib/text/text.el:233` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L233)
 
 将文本中所有匹配项替换为指定内容，并返回新文本。
 
@@ -77,7 +77,7 @@ console.stdout.writeLine(renamed)
 
 ## Text.split {#api-571742e199721a51aeb1}
 
-源码：`src/stdlib/text/text.el:211` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L211)
+源码：`src/stdlib/text/text.el:250` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L250)
 
 按文本分隔符或文本模式拆分内容，返回各段组成的数组。
 
@@ -100,7 +100,7 @@ console.stdout.writeLine(parts.join(" | "))
 
 ## Text.compact {#api-f186aaf724ad8de13d29}
 
-源码：`src/stdlib/text/text.el:354` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L354)
+源码：`src/stdlib/text/text.el:416` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L416)
 
 展平当前 rope，释放本值对多余片段及编码缓存的持有，保持字符宽度。
 
@@ -117,7 +117,7 @@ text.compact()
 
 ## Text.byte_count {#api-13f81dad5b9b0b1e9d52}
 
-源码：`src/stdlib/text/text.el:367` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L367)
+源码：`src/stdlib/text/text.el:431` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L431)
 
 返回文本编码为 UTF-8 后占用的字节数。
 
@@ -138,7 +138,7 @@ console.stdout.writeLine(text.count, " ", text.byte_count)
 
 ## Text.count {#api-19e144cbe3af4ec540f3}
 
-源码：`src/stdlib/text/text.el:386` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L386)
+源码：`src/stdlib/text/text.el:450` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L450)
 
 返回文本中的 Unicode 标量数量。
 
@@ -158,7 +158,7 @@ console.stdout.writeLine("你好".count)
 
 ## Text.startsWith {#api-92f3f2d6c9caa632ff40}
 
-源码：`src/stdlib/text/text.el:446` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L446)
+源码：`src/stdlib/text/text.el:510` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L510)
 
 判断文本是否以给定前缀开头。
 
@@ -180,7 +180,7 @@ console.stdout.writeLine("reports/2026".startsWith("reports"))
 
 ## Text.endsWith {#api-a0002f7421f94384e4e1}
 
-源码：`src/stdlib/text/text.el:457` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L457)
+源码：`src/stdlib/text/text.el:521` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L521)
 
 判断文本是否以给定后缀结尾。
 
@@ -202,7 +202,7 @@ console.stdout.writeLine("summary.txt".endsWith(".txt"))
 
 ## Text.contains {#api-60a702a27df0fb3b6913}
 
-源码：`src/stdlib/text/text.el:468` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L468)
+源码：`src/stdlib/text/text.el:532` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L532)
 
 判断文本是否包含给定子串。
 
@@ -224,7 +224,7 @@ console.stdout.writeLine("reports/2026".contains("2026"))
 
 ## Text.trimEndChars {#api-3f97c8338da803f449ff}
 
-源码：`src/stdlib/text/text.el:492` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L492)
+源码：`src/stdlib/text/text.el:556` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L556)
 
 从末尾移除属于给定字符集合的连续标量，返回文本值，不修改接收者。
 
@@ -252,7 +252,7 @@ abc
 
 ## Text.character {#api-72c219d2c7971b4efd7e}
 
-源码：`src/stdlib/text/text.el:529` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L529)
+源码：`src/stdlib/text/text.el:593` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L593)
 
 读取指定 Unicode 标量下标处的字符。
 
@@ -277,7 +277,7 @@ console.stdout.writeLine(first)
 
 ## Text.slice {#api-79542d4a724d1d48d0f4}
 
-源码：`src/stdlib/text/text.el:582` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L582)
+源码：`src/stdlib/text/text.el:646` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L646)
 
 返回指定左闭右开标量下标区间的文本。
 
@@ -303,7 +303,7 @@ console.stdout.writeLine("reports/2026".slice(0, 7))
 
 ## text_scalar {#api-0d11d4c56187bc5fad70}
 
-源码：`src/stdlib/text/text.el:712` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L712)
+源码：`src/stdlib/text/text.el:776` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L776)
 
 将 Unicode 标量值转换为只含该标量的文本；拒绝代理项和超出 Unicode 范围的值。
 
@@ -333,7 +333,7 @@ console.stdout.writeLine(text_scalar(20013))
 
 ## TextView~constraints {#api-0c1cf6c54bcc86167e47}
 
-源码：`src/stdlib/text/text.el:870` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L870)
+源码：`src/stdlib/text/text.el:934` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L934)
 
 创建只读 TextView 类型；可将元素统一宽度 bitWidth 和标量数量 size 固定为正值。
 0 表示该维度不固定。固定宽度要求来源宽度相同，固定长度要求请求的视图长度相同。
@@ -367,7 +367,7 @@ console.stdout.writeLine(view.count())
 
 ## Text~constraints {#api-82ffe95d03da0efc6fde}
 
-源码：`src/stdlib/text/text.el:919` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L919)
+源码：`src/stdlib/text/text.el:983` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L983)
 
 创建受约束的 Text 类型。bitWidth 固定统一元素宽度，size 固定 Unicode 标量数量；0 表示不固定。
 固定宽度构造和写入会检查字符声明宽度及标量值，固定长度文本不能改变长度。

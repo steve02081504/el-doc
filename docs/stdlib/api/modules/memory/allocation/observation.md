@@ -14,10 +14,10 @@
 
 源码：`src/stdlib/memory/allocation/observation.el:14` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/observation.el#L14)
 
-只用于相等比较的进程观察令牌，不拥有资源；计数按 2^64 回绕，完整回绕前须轮询才能区分变化。
+只用于相等比较的进程观察令牌，不拥有资源；计数按目标 native.word 的无符号值域回绕，完整回绕前须轮询才能区分变化。
 
 ```el
-export @builtin:vome:unsigned:integer(bits: 64) class PressureGeneration
+export @builtin:vome:unsigned:integer(format: "native.word") class PressureGeneration
 ```
 
 ### 示例：使用示例

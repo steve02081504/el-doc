@@ -14,6 +14,7 @@
 | 直接交付、临时对象与必要的复制 | [复制消除](copy-elision.md) |
 | 隐式、显式与条件转换 | [类型转换](conversions.md) |
 | 表达式与运算符 | [表达式与运算符](expressions.md) |
+| 组合枚举、筛选与真假归约 | [推导式与惰性生成式](comprehensions.md) |
 | 分支、循环与控制转移 | [控制流](control-flow.md) |
 | 函数、lambda 与闭包 | [函数](functions.md) |
 | 候选适用性与歧义 | [重载解析](overload-resolution.md) |
