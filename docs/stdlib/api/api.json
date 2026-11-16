@@ -1820,7 +1820,7 @@
 			"name": "compile_file",
 			"id": null,
 			"source": "compiler/operations.el",
-			"line": 478,
+			"line": 482,
 			"signature": "export fn compile_file(options: CompilationOptions)",
 			"value_type": null
 		},
@@ -1828,7 +1828,7 @@
 			"name": "compile_source",
 			"id": null,
 			"source": "compiler/main.el",
-			"line": 510,
+			"line": 509,
 			"signature": "export fn compile_source(c: Compiler, prelude_path: Text, source: Text, source_tokens: Token[] | void_t = void)",
 			"value_type": null
 		},
@@ -1852,7 +1852,7 @@
 			"name": "compiler_module",
 			"id": null,
 			"source": "compiler/modules/module.el",
-			"line": 741,
+			"line": 764,
 			"signature": "export fn compiler_module(c: Compiler, interpreted: InterpretedModulePlan | void_t = void): IrAbiModule | void_t",
 			"value_type": null
 		},
@@ -8484,7 +8484,7 @@
 			"name": "parse_text",
 			"id": null,
 			"source": "compiler/main.el",
-			"line": 90,
+			"line": 89,
 			"signature": "export fn parse_text(c: Compiler, path: Text, text: Text, source_tokens: Token[] | void_t = void): Node",
 			"value_type": null
 		},
@@ -9164,7 +9164,7 @@
 			"name": "public_source_uri",
 			"id": null,
 			"source": "compiler/main.el",
-			"line": 218,
+			"line": 217,
 			"signature": "export fn public_source_uri(path: Text, working_directory: Text): Text",
 			"value_type": null
 		},
@@ -10828,7 +10828,7 @@
 			"name": "runtime_module",
 			"id": null,
 			"source": "runtime/module.el",
-			"line": 41,
+			"line": 40,
 			"signature": "export fn runtime_module(sources: RuntimeSources, target: IrNativeTarget = IrNativeTarget.WindowsX64): IrAbiModule",
 			"value_type": null
 		},
@@ -10836,7 +10836,7 @@
 			"name": "RuntimeSources",
 			"id": null,
 			"source": "runtime/module.el",
-			"line": 16,
+			"line": 15,
 			"signature": "export class RuntimeSources",
 			"value_type": null
 		},
@@ -12140,7 +12140,7 @@
 			"name": "TextView",
 			"id": null,
 			"source": "text/text.el",
-			"line": 828,
+			"line": 827,
 			"signature": "export class TextView\nexport fn TextView(bitWidth = 0, size = 0): type",
 			"value_type": null
 		},
@@ -16405,7 +16405,7 @@
 		{
 			"name": "PrimitiveTypedValue",
 			"source": "compiler/context/primitive-transport.el",
-			"line": 38,
+			"line": 39,
 			"signature": "class PrimitiveTypedValue",
 			"id": null,
 			"initializer": null
@@ -16413,7 +16413,7 @@
 		{
 			"name": "PrimitiveTypedSlot",
 			"source": "compiler/context/primitive-transport.el",
-			"line": 45,
+			"line": 46,
 			"signature": "class PrimitiveTypedSlot",
 			"id": null,
 			"initializer": null
@@ -16605,7 +16605,7 @@
 		{
 			"name": "SourceAbiAuditEntry",
 			"source": "compiler/context/source-abi-audit.el",
-			"line": 6,
+			"line": 7,
 			"signature": "class SourceAbiAuditEntry",
 			"id": null,
 			"initializer": null
@@ -16613,15 +16613,31 @@
 		{
 			"name": "SourceAbiPendingBoundary",
 			"source": "compiler/context/source-abi-audit.el",
-			"line": 17,
+			"line": 18,
 			"signature": "class SourceAbiPendingBoundary",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "SourceAbiProjection",
+			"source": "compiler/context/source-abi-audit.el",
+			"line": 29,
+			"signature": "class SourceAbiProjection",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "SourceAbiBinding",
+			"source": "compiler/context/source-abi-audit.el",
+			"line": 49,
+			"signature": "class SourceAbiBinding",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "SourceAbiCallAudit",
 			"source": "compiler/context/source-abi-audit.el",
-			"line": 27,
+			"line": 66,
 			"signature": "class SourceAbiCallAudit",
 			"id": null,
 			"initializer": null
@@ -16629,7 +16645,7 @@
 		{
 			"name": "SourceTaskAbi",
 			"source": "compiler/context/source-task-abi.el",
-			"line": 4,
+			"line": 3,
 			"signature": "enum SourceTaskAbi",
 			"id": null,
 			"initializer": null
@@ -17581,7 +17597,7 @@
 		{
 			"name": "HostStdioResult",
 			"source": "compiler/execution/execution-host-stdio.el",
-			"line": 8,
+			"line": 9,
 			"signature": "class HostStdioResult",
 			"id": null,
 			"initializer": null
@@ -17717,7 +17733,7 @@
 		{
 			"name": "FactoryShapePreparation",
 			"source": "compiler/main.el",
-			"line": 411,
+			"line": 410,
 			"signature": "class FactoryShapePreparation",
 			"id": null,
 			"initializer": null
@@ -17773,7 +17789,7 @@
 		{
 			"name": "ImportSourceEntry",
 			"source": "compiler/modules/import-source-map.el",
-			"line": 5,
+			"line": 6,
 			"signature": "class ImportSourceEntry",
 			"id": null,
 			"initializer": null
@@ -17781,7 +17797,7 @@
 		{
 			"name": "ImportSourceMap",
 			"source": "compiler/modules/import-source-map.el",
-			"line": 14,
+			"line": 15,
 			"signature": "class ImportSourceMap",
 			"id": null,
 			"initializer": null
@@ -17789,7 +17805,7 @@
 		{
 			"name": "ImportSourceChoice",
 			"source": "compiler/modules/import-source-map.el",
-			"line": 17,
+			"line": 18,
 			"signature": "class ImportSourceChoice",
 			"id": null,
 			"initializer": null
@@ -17797,7 +17813,7 @@
 		{
 			"name": "MissingImportDiagnostics",
 			"source": "compiler/modules/imports.el",
-			"line": 503,
+			"line": 504,
 			"signature": "class MissingImportDiagnostics",
 			"id": null,
 			"initializer": null
@@ -17805,7 +17821,7 @@
 		{
 			"name": "StaticImportGraph",
 			"source": "compiler/modules/imports.el",
-			"line": 570,
+			"line": 571,
 			"signature": "class StaticImportGraph",
 			"id": null,
 			"initializer": null
@@ -17853,7 +17869,7 @@
 		{
 			"name": "MutationScope",
 			"source": "compiler/modules/module-mutation-proof.el",
-			"line": 46,
+			"line": 47,
 			"signature": "class MutationScope",
 			"id": null,
 			"initializer": null
@@ -17861,7 +17877,7 @@
 		{
 			"name": "ModuleMutationProof",
 			"source": "compiler/modules/module-mutation-proof.el",
-			"line": 56,
+			"line": 57,
 			"signature": "class ModuleMutationProof",
 			"id": null,
 			"initializer": null
@@ -17877,7 +17893,7 @@
 		{
 			"name": "CompilerModuleBuilder",
 			"source": "compiler/modules/module.el",
-			"line": 462,
+			"line": 471,
 			"signature": "class CompilerModuleBuilder",
 			"id": null,
 			"initializer": null
@@ -20861,7 +20877,7 @@
 		{
 			"name": "RuntimeNominalEmission",
 			"source": "compiler/runtime/runtime-nominal-emission.el",
-			"line": 39,
+			"line": 42,
 			"signature": "class RuntimeNominalEmission",
 			"id": null,
 			"initializer": null
@@ -20949,7 +20965,7 @@
 		{
 			"name": "ShapeInitialization",
 			"source": "compiler/runtime/runtime-shape-initialization.el",
-			"line": 12,
+			"line": 13,
 			"signature": "class ShapeInitialization",
 			"id": null,
 			"initializer": null
@@ -20983,6 +20999,14 @@
 			"source": "compiler/runtime/runtime-source-inputs.el",
 			"line": 64,
 			"signature": "class RuntimeFunctionSourceInputs",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "RuntimeSourceInputs",
+			"source": "compiler/runtime/runtime-source.el",
+			"line": 73,
+			"signature": "class RuntimeSourceInputs",
 			"id": null,
 			"initializer": null
 		},
@@ -21165,7 +21189,7 @@
 		{
 			"name": "SourceAuditFunction",
 			"source": "compiler/source/source-elision-audit.el",
-			"line": 96,
+			"line": 97,
 			"signature": "class SourceAuditFunction",
 			"id": null,
 			"initializer": null
@@ -21173,7 +21197,7 @@
 		{
 			"name": "SourceAuditFrame",
 			"source": "compiler/source/source-elision-audit.el",
-			"line": 108,
+			"line": 109,
 			"signature": "class SourceAuditFrame",
 			"id": null,
 			"initializer": null
@@ -21181,7 +21205,7 @@
 		{
 			"name": "SourceElisionAudit",
 			"source": "compiler/source/source-elision-audit.el",
-			"line": 117,
+			"line": 118,
 			"signature": "class SourceElisionAudit extends IrExecutionObserver",
 			"id": null,
 			"initializer": null
@@ -21597,7 +21621,7 @@
 		{
 			"name": "SourceMap",
 			"source": "compiler/source/source-map.el",
-			"line": 9,
+			"line": 8,
 			"signature": "class SourceMap",
 			"id": null,
 			"initializer": null
@@ -21605,7 +21629,7 @@
 		{
 			"name": "MappedSource",
 			"source": "compiler/source/source-map.el",
-			"line": 21,
+			"line": 23,
 			"signature": "class MappedSource",
 			"id": null,
 			"initializer": null
@@ -31373,7 +31397,7 @@
 		{
 			"name": "ForeignAbiFacts",
 			"source": "foreign-functions/abi.el",
-			"line": 741,
+			"line": 742,
 			"signature": "class ForeignAbiFacts",
 			"id": null,
 			"initializer": null
@@ -31381,7 +31405,7 @@
 		{
 			"name": "ForeignAbiArgumentExport",
 			"source": "foreign-functions/abi.el",
-			"line": 756,
+			"line": 757,
 			"signature": "class ForeignAbiArgumentExport",
 			"id": null,
 			"initializer": null
@@ -31389,7 +31413,7 @@
 		{
 			"name": "ForeignAbiResultExport",
 			"source": "foreign-functions/abi.el",
-			"line": 775,
+			"line": 776,
 			"signature": "class ForeignAbiResultExport",
 			"id": null,
 			"initializer": null
@@ -31397,7 +31421,7 @@
 		{
 			"name": "ForeignAbiPlanExport",
 			"source": "foreign-functions/abi.el",
-			"line": 782,
+			"line": 783,
 			"signature": "class ForeignAbiPlanExport",
 			"id": null,
 			"initializer": null
@@ -31405,7 +31429,7 @@
 		{
 			"name": "ForeignAbiBatchExport",
 			"source": "foreign-functions/abi.el",
-			"line": 830,
+			"line": 831,
 			"signature": "class ForeignAbiBatchExport",
 			"id": null,
 			"initializer": null
@@ -31611,6 +31635,30 @@
 			"initializer": null
 		},
 		{
+			"name": "PointerOwnershipAbi",
+			"source": "foreign-functions/pointer-ownership-abi.el",
+			"line": 22,
+			"signature": "class PointerOwnershipAbi",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "PointerOwnershipExport",
+			"source": "foreign-functions/pointer-ownership-abi.el",
+			"line": 38,
+			"signature": "class PointerOwnershipExport",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "PointerOwnershipBatch",
+			"source": "foreign-functions/pointer-ownership-abi.el",
+			"line": 52,
+			"signature": "class PointerOwnershipBatch",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "ReceiptStorageUnit",
 			"source": "foreign-functions/receipt-slot.el",
 			"line": 22,
@@ -31639,54 +31687,6 @@
 			"source": "foreign-functions/representation.el",
 			"line": 76,
 			"signature": "class ForeignRecordLowering",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "ShioriProtocolError",
-			"source": "foreign-functions/shiori/messages.el",
-			"line": 5,
-			"signature": "class ShioriProtocolError extends Error",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "ShioriHeader",
-			"source": "foreign-functions/shiori/messages.el",
-			"line": 53,
-			"signature": "class ShioriHeader",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "ShioriRequest",
-			"source": "foreign-functions/shiori/messages.el",
-			"line": 87,
-			"signature": "class ShioriRequest",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "ShioriResponse",
-			"source": "foreign-functions/shiori/messages.el",
-			"line": 114,
-			"signature": "class ShioriResponse",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "ShioriStatus",
-			"source": "foreign-functions/shiori/staging.el",
-			"line": 1,
-			"signature": "class ShioriStatus",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "ShioriBufferReleaseFailure",
-			"source": "foreign-functions/shiori/windows.el",
-			"line": 19,
-			"signature": "class ShioriBufferReleaseFailure",
 			"id": null,
 			"initializer": null
 		},
@@ -32765,7 +32765,7 @@
 		{
 			"name": "IrAbiCallPolicy",
 			"source": "intermediate-representation/abi/call-policy.el",
-			"line": 8,
+			"line": 9,
 			"signature": "class IrAbiCallPolicy",
 			"id": null,
 			"initializer": null
@@ -33333,7 +33333,7 @@
 		{
 			"name": "IrAbiOpaqueConsumer",
 			"source": "intermediate-representation/abi/opaque-parameters.el",
-			"line": 6,
+			"line": 7,
 			"signature": "class IrAbiOpaqueConsumer",
 			"id": null,
 			"initializer": null
@@ -33341,7 +33341,7 @@
 		{
 			"name": "OpaqueFormals",
 			"source": "intermediate-representation/abi/opaque-parameters.el",
-			"line": 16,
+			"line": 17,
 			"signature": "class OpaqueFormals",
 			"id": null,
 			"initializer": null
@@ -33367,6 +33367,14 @@
 			"source": "intermediate-representation/abi/partial-inlining.el",
 			"line": 37,
 			"signature": "class PartialCandidate",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "IrAbiPrivateTransportSlot",
+			"source": "intermediate-representation/abi/private-transport-slots.el",
+			"line": 7,
+			"signature": "class IrAbiPrivateTransportSlot",
 			"id": null,
 			"initializer": null
 		},
@@ -33539,9 +33547,17 @@
 			"initializer": null
 		},
 		{
-			"name": "IrForeignAbi",
+			"name": "IrForeignPointerOwnership",
 			"source": "intermediate-representation/foreign-abi.el",
 			"line": 28,
+			"signature": "class IrForeignPointerOwnership",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "IrForeignAbi",
+			"source": "intermediate-representation/foreign-abi.el",
+			"line": 43,
 			"signature": "class IrForeignAbi",
 			"id": null,
 			"initializer": null
@@ -34627,17 +34643,9 @@
 			"initializer": null
 		},
 		{
-			"name": "SessionThreadId",
-			"source": "language/modules/session/image.el",
-			"line": 19,
-			"signature": "class SessionThreadId",
-			"id": null,
-			"initializer": null
-		},
-		{
 			"name": "RuntimeSessionState",
 			"source": "language/modules/session/image.el",
-			"line": 35,
+			"line": 33,
 			"signature": "enum RuntimeSessionState",
 			"id": null,
 			"initializer": null
@@ -34645,7 +34653,7 @@
 		{
 			"name": "RuntimeSessionFailure",
 			"source": "language/modules/session/image.el",
-			"line": 36,
+			"line": 34,
 			"signature": "class RuntimeSessionFailure",
 			"id": null,
 			"initializer": null
@@ -34653,7 +34661,7 @@
 		{
 			"name": "LeaseToken",
 			"source": "language/modules/session/image.el",
-			"line": 41,
+			"line": 39,
 			"signature": "class LeaseToken",
 			"id": null,
 			"initializer": null
@@ -34661,7 +34669,7 @@
 		{
 			"name": "RuntimeSessionImage",
 			"source": "language/modules/session/image.el",
-			"line": 64,
+			"line": 62,
 			"signature": "class RuntimeSessionImage",
 			"id": null,
 			"initializer": null
@@ -34669,7 +34677,7 @@
 		{
 			"name": "RuntimeCodeLease",
 			"source": "language/modules/session/image.el",
-			"line": 202,
+			"line": 200,
 			"signature": "class RuntimeCodeLease",
 			"id": null,
 			"initializer": null
@@ -38573,7 +38581,7 @@
 		{
 			"name": "MemoryPressureStateError",
 			"source": "memory/allocation/pressure.el",
-			"line": 28,
+			"line": 29,
 			"signature": "class MemoryPressureStateError extends Error",
 			"id": "memory/allocation/pressure::MemoryPressureStateError",
 			"initializer": null
@@ -38581,7 +38589,7 @@
 		{
 			"name": "Reclaimer",
 			"source": "memory/allocation/pressure.el",
-			"line": 32,
+			"line": 33,
 			"signature": "class Reclaimer",
 			"id": null,
 			"initializer": null
@@ -38589,7 +38597,7 @@
 		{
 			"name": "ReserveBlock",
 			"source": "memory/allocation/pressure.el",
-			"line": 38,
+			"line": 39,
 			"signature": "class ReserveBlock",
 			"id": null,
 			"initializer": null
@@ -38597,7 +38605,7 @@
 		{
 			"name": "ReclaimRegistration",
 			"source": "memory/allocation/pressure.el",
-			"line": 61,
+			"line": 62,
 			"signature": "class ReclaimRegistration",
 			"id": "memory/allocation/pressure::ReclaimRegistration",
 			"initializer": null
@@ -38605,7 +38613,7 @@
 		{
 			"name": "MemoryPressure",
 			"source": "memory/allocation/pressure.el",
-			"line": 94,
+			"line": 95,
 			"signature": "class MemoryPressure",
 			"id": "memory/allocation/pressure::MemoryPressure",
 			"initializer": null
@@ -38693,7 +38701,7 @@
 		{
 			"name": "BitFloatCodec",
 			"source": "memory/native/bit-float-codec.el",
-			"line": 10,
+			"line": 9,
 			"signature": "fn BitFloatCodec(element: type, format): type",
 			"id": null,
 			"initializer": null
@@ -38797,7 +38805,7 @@
 		{
 			"name": "MemoryServices",
 			"source": "memory/services.el",
-			"line": 7,
+			"line": 9,
 			"signature": "class MemoryServices",
 			"id": null,
 			"initializer": null
@@ -38853,7 +38861,7 @@
 		{
 			"name": "IntegerStoragePlan",
 			"source": "memory/storage/integer-layout.el",
-			"line": 8,
+			"line": 7,
 			"signature": "class IntegerStoragePlan",
 			"id": null,
 			"initializer": null
@@ -39797,7 +39805,7 @@
 		{
 			"name": "SocketRuntime",
 			"source": "network/platform/windows.el",
-			"line": 51,
+			"line": 52,
 			"signature": "class SocketRuntime",
 			"id": null,
 			"initializer": null
@@ -39805,7 +39813,7 @@
 		{
 			"name": "NativePort",
 			"source": "network/platform/winhttp.el",
-			"line": 21,
+			"line": 22,
 			"signature": "class NativePort",
 			"id": null,
 			"initializer": null
@@ -39813,7 +39821,7 @@
 		{
 			"name": "WideText",
 			"source": "network/platform/winhttp.el",
-			"line": 75,
+			"line": 76,
 			"signature": "class WideText",
 			"id": null,
 			"initializer": null
@@ -39821,7 +39829,7 @@
 		{
 			"name": "NativeRequest",
 			"source": "network/platform/winhttp.el",
-			"line": 90,
+			"line": 91,
 			"signature": "class NativeRequest",
 			"id": null,
 			"initializer": null
@@ -39829,7 +39837,7 @@
 		{
 			"name": "WindowsHttpBody",
 			"source": "network/platform/winhttp.el",
-			"line": 223,
+			"line": 224,
 			"signature": "class WindowsHttpBody extends HttpBodySource",
 			"id": null,
 			"initializer": null
@@ -39837,7 +39845,7 @@
 		{
 			"name": "NativeWebSocket",
 			"source": "network/platform/winhttp.el",
-			"line": 273,
+			"line": 274,
 			"signature": "class NativeWebSocket",
 			"id": null,
 			"initializer": null
@@ -41389,7 +41397,7 @@
 		{
 			"name": "BitFloatBits",
 			"source": "number/ieee754/codec.el",
-			"line": 39,
+			"line": 38,
 			"signature": "fn BitFloatBits(element: type, format): type",
 			"id": null,
 			"initializer": null
@@ -41453,7 +41461,7 @@
 		{
 			"name": "NumberParameterError",
 			"source": "number/internal/exact.el",
-			"line": 45,
+			"line": 44,
 			"signature": "class NumberParameterError extends Error",
 			"id": null,
 			"initializer": null
@@ -42245,7 +42253,7 @@
 		{
 			"name": "RandomFileReceipt",
 			"source": "operating-system/files/random-receipt.el",
-			"line": 14,
+			"line": 15,
 			"signature": "class RandomFileReceipt",
 			"id": null,
 			"initializer": null
@@ -42253,7 +42261,7 @@
 		{
 			"name": "RandomFileCloseState",
 			"source": "operating-system/files/random-receipt.el",
-			"line": 33,
+			"line": 34,
 			"signature": "enum RandomFileCloseState",
 			"id": null,
 			"initializer": null
@@ -42261,7 +42269,7 @@
 		{
 			"name": "RandomFileCloseReceipt",
 			"source": "operating-system/files/random-receipt.el",
-			"line": 36,
+			"line": 37,
 			"signature": "class RandomFileCloseReceipt",
 			"id": null,
 			"initializer": null
@@ -42269,7 +42277,7 @@
 		{
 			"name": "RandomFileError",
 			"source": "operating-system/files/random-receipt.el",
-			"line": 58,
+			"line": 59,
 			"signature": "class RandomFileError extends Error",
 			"id": null,
 			"initializer": null
@@ -42277,7 +42285,7 @@
 		{
 			"name": "NativeRandomFileSource",
 			"source": "operating-system/files/random-receipt.el",
-			"line": 68,
+			"line": 69,
 			"signature": "class NativeRandomFileSource",
 			"id": null,
 			"initializer": null
@@ -42621,7 +42629,7 @@
 		{
 			"name": "NativeShort",
 			"source": "operating-system/processes/posix-capture.el",
-			"line": 26,
+			"line": 27,
 			"signature": "class NativeShort",
 			"id": null,
 			"initializer": null
@@ -42629,7 +42637,7 @@
 		{
 			"name": "NativeCallStatus",
 			"source": "operating-system/processes/posix-capture.el",
-			"line": 119,
+			"line": 120,
 			"signature": "class NativeCallStatus",
 			"id": null,
 			"initializer": null
@@ -42637,7 +42645,7 @@
 		{
 			"name": "PosixPipelineChild",
 			"source": "operating-system/processes/posix-capture.el",
-			"line": 305,
+			"line": 306,
 			"signature": "class PosixPipelineChild",
 			"id": null,
 			"initializer": null
@@ -42645,7 +42653,7 @@
 		{
 			"name": "PipelineObservationFailure",
 			"source": "operating-system/processes/posix-capture.el",
-			"line": 364,
+			"line": 365,
 			"signature": "class PipelineObservationFailure",
 			"id": null,
 			"initializer": null
@@ -42669,7 +42677,7 @@
 		{
 			"name": "GatedFunctions",
 			"source": "operating-system/processes/posix-gated-spawn.el",
-			"line": 85,
+			"line": 86,
 			"signature": "class GatedFunctions",
 			"id": null,
 			"initializer": null
@@ -42677,7 +42685,7 @@
 		{
 			"name": "PosixGatedCleanupFailure",
 			"source": "operating-system/processes/posix-gated-spawn.el",
-			"line": 113,
+			"line": 114,
 			"signature": "class PosixGatedCleanupFailure",
 			"id": null,
 			"initializer": null
@@ -42685,7 +42693,7 @@
 		{
 			"name": "GatedChild",
 			"source": "operating-system/processes/posix-gated-spawn.el",
-			"line": 122,
+			"line": 123,
 			"signature": "class GatedChild",
 			"id": null,
 			"initializer": null
@@ -42693,7 +42701,7 @@
 		{
 			"name": "PosixGatedGroup",
 			"source": "operating-system/processes/posix-gated-spawn.el",
-			"line": 304,
+			"line": 305,
 			"signature": "class PosixGatedGroup",
 			"id": null,
 			"initializer": null
@@ -42701,7 +42709,7 @@
 		{
 			"name": "PosixPipelineInput",
 			"source": "operating-system/processes/posix-input.el",
-			"line": 64,
+			"line": 65,
 			"signature": "class PosixPipelineInput",
 			"id": null,
 			"initializer": null
@@ -42725,7 +42733,7 @@
 		{
 			"name": "PosixTerminalRestore",
 			"source": "operating-system/processes/posix-terminal.el",
-			"line": 31,
+			"line": 32,
 			"signature": "enum PosixTerminalRestore",
 			"id": null,
 			"initializer": null
@@ -42733,7 +42741,7 @@
 		{
 			"name": "PosixTerminalLease",
 			"source": "operating-system/processes/posix-terminal.el",
-			"line": 35,
+			"line": 36,
 			"signature": "class PosixTerminalLease",
 			"id": null,
 			"initializer": null
@@ -43341,7 +43349,7 @@
 		{
 			"name": "SignalInt",
 			"source": "platform/posix/operation-signal.el",
-			"line": 13,
+			"line": 14,
 			"signature": "class SignalInt",
 			"id": null,
 			"initializer": null
@@ -43349,7 +43357,7 @@
 		{
 			"name": "NativeOperationSignalError",
 			"source": "platform/posix/operation-signal.el",
-			"line": 29,
+			"line": 30,
 			"signature": "class NativeOperationSignalError extends Error",
 			"id": null,
 			"initializer": null
@@ -43357,7 +43365,7 @@
 		{
 			"name": "OperationSignalState",
 			"source": "platform/posix/operation-signal.el",
-			"line": 40,
+			"line": 41,
 			"signature": "class OperationSignalState",
 			"id": null,
 			"initializer": null
@@ -43365,7 +43373,7 @@
 		{
 			"name": "OperationSignalCalls",
 			"source": "platform/posix/operation-signal.el",
-			"line": 47,
+			"line": 48,
 			"signature": "class OperationSignalCalls",
 			"id": null,
 			"initializer": null
@@ -43373,7 +43381,7 @@
 		{
 			"name": "NativeSignalCalls",
 			"source": "platform/posix/operation-signal.el",
-			"line": 59,
+			"line": 60,
 			"signature": "class NativeSignalCalls extends OperationSignalCalls",
 			"id": null,
 			"initializer": null
@@ -43381,7 +43389,7 @@
 		{
 			"name": "FileInt",
 			"source": "platform/posix/random-file.el",
-			"line": 16,
+			"line": 17,
 			"signature": "class FileInt",
 			"id": null,
 			"initializer": null
@@ -43389,7 +43397,7 @@
 		{
 			"name": "FileMode",
 			"source": "platform/posix/random-file.el",
-			"line": 17,
+			"line": 18,
 			"signature": "class FileMode",
 			"id": null,
 			"initializer": null
@@ -43397,7 +43405,7 @@
 		{
 			"name": "FileOffset",
 			"source": "platform/posix/random-file.el",
-			"line": 18,
+			"line": 19,
 			"signature": "class FileOffset",
 			"id": null,
 			"initializer": null
@@ -43405,7 +43413,7 @@
 		{
 			"name": "FileSize",
 			"source": "platform/posix/random-file.el",
-			"line": 19,
+			"line": 20,
 			"signature": "class FileSize",
 			"id": null,
 			"initializer": null
@@ -43413,7 +43421,7 @@
 		{
 			"name": "NativeRandomFile",
 			"source": "platform/posix/random-file.el",
-			"line": 37,
+			"line": 38,
 			"signature": "class NativeRandomFile extends NativeRandomFileSource",
 			"id": null,
 			"initializer": null
@@ -43421,7 +43429,7 @@
 		{
 			"name": "FileInt",
 			"source": "platform/posix/read-file.el",
-			"line": 11,
+			"line": 12,
 			"signature": "class FileInt",
 			"id": null,
 			"initializer": null
@@ -43493,7 +43501,7 @@
 		{
 			"name": "FileOffset",
 			"source": "platform/windows/files.el",
-			"line": 50,
+			"line": 51,
 			"signature": "class FileOffset",
 			"id": null,
 			"initializer": null
@@ -43501,7 +43509,7 @@
 		{
 			"name": "FileReadResult",
 			"source": "platform/windows/files.el",
-			"line": 59,
+			"line": 60,
 			"signature": "class FileReadResult",
 			"id": null,
 			"initializer": null
@@ -43509,7 +43517,7 @@
 		{
 			"name": "FileWriteResult",
 			"source": "platform/windows/files.el",
-			"line": 68,
+			"line": 69,
 			"signature": "class FileWriteResult",
 			"id": null,
 			"initializer": null
@@ -43533,7 +43541,7 @@
 		{
 			"name": "FileOffset",
 			"source": "platform/windows/random-file.el",
-			"line": 13,
+			"line": 14,
 			"signature": "class FileOffset",
 			"id": null,
 			"initializer": null
@@ -43541,7 +43549,7 @@
 		{
 			"name": "NativeRandomFile",
 			"source": "platform/windows/random-file.el",
-			"line": 26,
+			"line": 27,
 			"signature": "class NativeRandomFile extends NativeRandomFileSource",
 			"id": null,
 			"initializer": null
@@ -43939,6 +43947,14 @@
 			"initializer": null
 		},
 		{
+			"name": "NativeCInt",
+			"source": "runtime/linux-thread-policy.el",
+			"line": 5,
+			"signature": "class NativeCInt",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "Byte",
 			"source": "runtime/memory-arena.el",
 			"line": 6,
@@ -43965,7 +43981,7 @@
 		{
 			"name": "RuntimeSources",
 			"source": "runtime/module.el",
-			"line": 16,
+			"line": 15,
 			"signature": "class RuntimeSources",
 			"id": null,
 			"initializer": null
@@ -44005,7 +44021,7 @@
 		{
 			"name": "NativePredicate",
 			"source": "runtime/native-types.el",
-			"line": 5,
+			"line": 4,
 			"signature": "class NativePredicate",
 			"id": null,
 			"initializer": null
@@ -44013,7 +44029,7 @@
 		{
 			"name": "NativeSignedWord",
 			"source": "runtime/native-types.el",
-			"line": 16,
+			"line": 15,
 			"signature": "class NativeSignedWord",
 			"id": null,
 			"initializer": null
@@ -44021,7 +44037,7 @@
 		{
 			"name": "NativeUnsignedWord",
 			"source": "runtime/native-types.el",
-			"line": 55,
+			"line": 54,
 			"signature": "class NativeUnsignedWord",
 			"id": null,
 			"initializer": null
@@ -44029,7 +44045,7 @@
 		{
 			"name": "NativeFactIndex",
 			"source": "runtime/native-types.el",
-			"line": 105,
+			"line": 104,
 			"signature": "class NativeFactIndex",
 			"id": null,
 			"initializer": null
@@ -44037,7 +44053,7 @@
 		{
 			"name": "NativeStorageSize",
 			"source": "runtime/native-types.el",
-			"line": 106,
+			"line": 105,
 			"signature": "class NativeStorageSize",
 			"id": null,
 			"initializer": null
@@ -44045,7 +44061,7 @@
 		{
 			"name": "NativeStorageOffset",
 			"source": "runtime/native-types.el",
-			"line": 144,
+			"line": 143,
 			"signature": "class NativeStorageOffset",
 			"id": null,
 			"initializer": null
@@ -44203,6 +44219,38 @@
 			"initializer": null
 		},
 		{
+			"name": "NativeCInt",
+			"source": "runtime/platform-thread-policy.el",
+			"line": 5,
+			"signature": "class NativeCInt",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "NativeCInt",
+			"source": "runtime/posix-condition-policy.el",
+			"line": 5,
+			"signature": "class NativeCInt",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "NativeCInt",
+			"source": "runtime/posix-gated-spawn.el",
+			"line": 5,
+			"signature": "class NativeCInt",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "UnwindStatus",
+			"source": "runtime/posix-stacktrace-policy.el",
+			"line": 5,
+			"signature": "class UnwindStatus",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "ValueTag",
 			"source": "runtime/protocol.el",
 			"line": 2,
@@ -44247,6 +44295,14 @@
 			"source": "runtime/value-identity.el",
 			"line": 6,
 			"signature": "class Scalar",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "NativeDword",
+			"source": "runtime/windows-thread-policy.el",
+			"line": 5,
+			"signature": "class NativeDword",
 			"id": null,
 			"initializer": null
 		},
@@ -44733,7 +44789,7 @@
 		{
 			"name": "NativeInputFile",
 			"source": "streams/input-file.el",
-			"line": 29,
+			"line": 30,
 			"signature": "class NativeInputFile",
 			"id": null,
 			"initializer": null
@@ -44741,7 +44797,7 @@
 		{
 			"name": "NativeOutputFile",
 			"source": "streams/output-file.el",
-			"line": 26,
+			"line": 27,
 			"signature": "class NativeOutputFile",
 			"id": null,
 			"initializer": null
@@ -44749,7 +44805,7 @@
 		{
 			"name": "OutputState",
 			"source": "streams/output-receipt.el",
-			"line": 10,
+			"line": 11,
 			"signature": "enum OutputState",
 			"id": null,
 			"initializer": null
@@ -44757,7 +44813,7 @@
 		{
 			"name": "WriteReceipt",
 			"source": "streams/output-receipt.el",
-			"line": 18,
+			"line": 19,
 			"signature": "class WriteReceipt",
 			"id": null,
 			"initializer": null
@@ -44765,7 +44821,7 @@
 		{
 			"name": "FlushReceipt",
 			"source": "streams/output-receipt.el",
-			"line": 60,
+			"line": 61,
 			"signature": "class FlushReceipt",
 			"id": null,
 			"initializer": null
@@ -44773,7 +44829,7 @@
 		{
 			"name": "NativeOutputError",
 			"source": "streams/output-receipt.el",
-			"line": 80,
+			"line": 81,
 			"signature": "class NativeOutputError extends Error",
 			"id": null,
 			"initializer": null
@@ -45285,7 +45341,7 @@
 		{
 			"name": "TextCursor",
 			"source": "text/text.el",
-			"line": 729,
+			"line": 728,
 			"signature": "class TextCursor",
 			"id": null,
 			"initializer": null
@@ -45293,7 +45349,7 @@
 		{
 			"name": "TextView",
 			"source": "text/text.el",
-			"line": 828,
+			"line": 827,
 			"signature": "class TextView",
 			"id": null,
 			"initializer": null
@@ -45301,7 +45357,7 @@
 		{
 			"name": "TextRangeView",
 			"source": "text/text.el",
-			"line": 861,
+			"line": 860,
 			"signature": "class TextRangeView extends TextView",
 			"id": null,
 			"initializer": null
@@ -45309,7 +45365,7 @@
 		{
 			"name": "DataTextView",
 			"source": "text/text.el",
-			"line": 888,
+			"line": 887,
 			"signature": "class DataTextView extends TextView",
 			"id": null,
 			"initializer": null
@@ -45317,7 +45373,7 @@
 		{
 			"name": "TextBase",
 			"source": "text/text.el",
-			"line": 911,
+			"line": 910,
 			"signature": "let TextBase: type",
 			"id": null,
 			"initializer": "Text"
@@ -45325,7 +45381,7 @@
 		{
 			"name": "TextRangeViewBase",
 			"source": "text/text.el",
-			"line": 912,
+			"line": 911,
 			"signature": "let TextRangeViewBase: type",
 			"id": null,
 			"initializer": "TextRangeView"
@@ -45333,7 +45389,7 @@
 		{
 			"name": "TextView",
 			"source": "text/text.el",
-			"line": 934,
+			"line": 933,
 			"signature": "fn TextView(bitWidth = 0, size = 0): type",
 			"id": "text/text::TextView~constraints",
 			"initializer": null
@@ -45341,7 +45397,7 @@
 		{
 			"name": "Text",
 			"source": "text/text.el",
-			"line": 983,
+			"line": 982,
 			"signature": "fn Text(bitWidth = 0, size = 0): type",
 			"id": "text/text::Text~constraints",
 			"initializer": null
@@ -45349,7 +45405,7 @@
 		{
 			"name": "TextPushUpdate",
 			"source": "text/text.el",
-			"line": 1071,
+			"line": 1070,
 			"signature": "fn TextPushUpdate(bitWidth = 0, size = 0, value: type, value_bitWidth = 0): type",
 			"id": null,
 			"initializer": null
@@ -45357,7 +45413,7 @@
 		{
 			"name": "TextIndexWriteUpdate",
 			"source": "text/text.el",
-			"line": 1078,
+			"line": 1077,
 			"signature": "fn TextIndexWriteUpdate(bitWidth = 0, size = 0, index: type, value: type, index_bitWidth = 0, value_bitWidth = 0): type",
 			"id": null,
 			"initializer": null
@@ -45917,7 +45973,7 @@
 		{
 			"name": "NativeShort",
 			"source": "tools/host/linux/process.el",
-			"line": 18,
+			"line": 19,
 			"signature": "class NativeShort",
 			"id": null,
 			"initializer": null
@@ -45925,7 +45981,7 @@
 		{
 			"name": "HostProcess",
 			"source": "tools/host/linux/process.el",
-			"line": 85,
+			"line": 86,
 			"signature": "class HostProcess",
 			"id": null,
 			"initializer": null
@@ -47020,7 +47076,7 @@
 			"anchor": "api-e1b1b22430ae1dac04e7"
 		}
 	],
-	"source_digest": "331265cd72133a2c8c555ecdfba8d8db623d40ba90ed1ff856b34157c08ed952",
+	"source_digest": "a3c2d999dbabd12a44e01f41441c8e5d2314da3c98cdc1f758ea6d5bf1aa733b",
 	"files": [
 		{
 			"path": "collections/arrays/dynamic.el",
@@ -47168,7 +47224,7 @@
 		},
 		{
 			"path": "formats/xml/index.el",
-			"sha256": "7ce7c7b7da3a70e1cf03fc86966ce063065703d80090b3a67ac6929902fec3a8"
+			"sha256": "16a17d6463707c7ee7e13df4df4c2636ab8bf703fb449bccbd217601d4d15531"
 		},
 		{
 			"path": "formats/yaml/index.el",
@@ -47240,7 +47296,7 @@
 		},
 		{
 			"path": "memory/allocation/context.el",
-			"sha256": "352a447c76b4e985559e6406238f077d89f0592cba79fd2760c1e2e27131bef8"
+			"sha256": "c3372203523cd95d57908cf197a25abdddc221d0fc861aa04843ff48cca5423b"
 		},
 		{
 			"path": "memory/allocation/heap.el",
@@ -47260,11 +47316,11 @@
 		},
 		{
 			"path": "memory/allocation/pressure.el",
-			"sha256": "4845ea12fa70a656489dc020c9bd31ce643586e3ae1760e26014a56b189ab0d5"
+			"sha256": "f58dc11cae5527c8135951df2f64864fb89fc64d7185edc6372021f218c19bd0"
 		},
 		{
 			"path": "memory/allocation/resources.el",
-			"sha256": "eba7f102f0b52ddd058c91867cfccbdce45d104c3e75da5efe342819a65d4557"
+			"sha256": "48d2ac9c157b9f75c048b74c92de3b2d6f0ee997c130d22d2746c490565e0ce5"
 		},
 		{
 			"path": "memory/allocation/types.el",
@@ -47392,7 +47448,7 @@
 		},
 		{
 			"path": "streams/input-file.el",
-			"sha256": "c16f55e54e90516604ebcb9b43809522bcc7f13216ce62b3f30ec67327fdd9b5"
+			"sha256": "ce6b66bd3957fbd87bcfec229fbdb52f9f03d04605da6e233c5f3d92376d7808"
 		},
 		{
 			"path": "text/operations.el",
@@ -47416,7 +47472,7 @@
 		},
 		{
 			"path": "text/text.el",
-			"sha256": "5b366e77e4df96d32976e00e4b50d744fff43b8bdf12227337fee6ec1ce0343f"
+			"sha256": "032807a494f7193d900c1254764a8de398a37740e828dde338240ac5afb0f7ee"
 		},
 		{
 			"path": "theme/model.el",
@@ -62454,9 +62510,9 @@
 				}
 			],
 			"source": "memory/allocation/pressure.el",
-			"line": 20,
+			"line": 21,
 			"signature": "export @assign(mode: \"copy\") class MemoryPressureStateError extends Error",
-			"declaration_line": 28,
+			"declaration_line": 29,
 			"id": "memory/allocation/pressure::MemoryPressureStateError",
 			"value_type": null,
 			"owner": null,
@@ -62483,9 +62539,9 @@
 				}
 			],
 			"source": "memory/allocation/pressure.el",
-			"line": 51,
+			"line": 52,
 			"signature": "export @assign(mode: \"shared\") class ReclaimRegistration",
-			"declaration_line": 61,
+			"declaration_line": 62,
 			"id": "memory/allocation/pressure::ReclaimRegistration",
 			"value_type": null,
 			"owner": null,
@@ -62512,9 +62568,9 @@
 				}
 			],
 			"source": "memory/allocation/pressure.el",
-			"line": 65,
+			"line": 66,
 			"signature": "fn close()",
-			"declaration_line": 75,
+			"declaration_line": 76,
 			"id": "memory/allocation/pressure::ReclaimRegistration.close",
 			"value_type": null,
 			"owner": "ReclaimRegistration",
@@ -62541,9 +62597,9 @@
 				}
 			],
 			"source": "memory/allocation/pressure.el",
-			"line": 85,
+			"line": 86,
 			"signature": "export @assign(mode: \"shared\") class MemoryPressure",
-			"declaration_line": 94,
+			"declaration_line": 95,
 			"id": "memory/allocation/pressure::MemoryPressure",
 			"value_type": null,
 			"owner": null,
@@ -62570,9 +62626,9 @@
 				}
 			],
 			"source": "memory/allocation/pressure.el",
-			"line": 134,
+			"line": 135,
 			"signature": "fn install()",
-			"declaration_line": 143,
+			"declaration_line": 144,
 			"id": "memory/allocation/pressure::MemoryPressure.install",
 			"value_type": null,
 			"owner": "MemoryPressure",
@@ -62599,9 +62655,9 @@
 				}
 			],
 			"source": "memory/allocation/pressure.el",
-			"line": 157,
-			"signature": "fn register_reclaimer(callback: fn(bytes: Integer): Bool): ReclaimRegistration",
-			"declaration_line": 167,
+			"line": 158,
+			"signature": "fn register_reclaimer(callback: fn(bytes: AllocationSize): Bool): ReclaimRegistration",
+			"declaration_line": 168,
 			"id": "memory/allocation/pressure::MemoryPressure.register_reclaimer",
 			"value_type": null,
 			"owner": "MemoryPressure",
@@ -62644,9 +62700,9 @@
 				}
 			],
 			"source": "memory/allocation/pressure.el",
-			"line": 208,
+			"line": 209,
 			"signature": "fn needs_refill(): Bool",
-			"declaration_line": 217,
+			"declaration_line": 218,
 			"id": "memory/allocation/pressure::MemoryPressure.needs_refill",
 			"value_type": null,
 			"owner": "MemoryPressure",
@@ -62689,9 +62745,9 @@
 				}
 			],
 			"source": "memory/allocation/pressure.el",
-			"line": 223,
+			"line": 224,
 			"signature": "fn refill(): Bool",
-			"declaration_line": 232,
+			"declaration_line": 233,
 			"id": "memory/allocation/pressure::MemoryPressure.refill",
 			"value_type": null,
 			"owner": "MemoryPressure",
@@ -62727,16 +62783,16 @@
 				{
 					"tag": "example",
 					"value": "使用示例",
-					"markdown": "```el\nimport { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nlet progress = pressure.reclaim(1024)\npressure.close()\n```",
-					"code": "import { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nlet progress = pressure.reclaim(1024)\npressure.close()\n",
+					"markdown": "```el\nimport { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nimport { AllocationSize } from \"el:memory/allocation/types.el\"\nlet progress = pressure.reclaim(AllocationSize(1024))\npressure.close()\n```",
+					"code": "import { MemoryPressure } from \"el:memory/allocation/pressure.el\"\nlet pressure = MemoryPressure()\nimport { AllocationSize } from \"el:memory/allocation/types.el\"\nlet progress = pressure.reclaim(AllocationSize(1024))\npressure.close()\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
 			],
 			"source": "memory/allocation/pressure.el",
-			"line": 266,
-			"signature": "fn reclaim(bytes: Integer): Bool",
-			"declaration_line": 275,
+			"line": 267,
+			"signature": "fn reclaim(bytes: AllocationSize): Bool",
+			"declaration_line": 277,
 			"id": "memory/allocation/pressure::MemoryPressure.reclaim",
 			"value_type": null,
 			"owner": "MemoryPressure",
@@ -62779,9 +62835,9 @@
 				}
 			],
 			"source": "memory/allocation/pressure.el",
-			"line": 319,
+			"line": 321,
 			"signature": "fn close()",
-			"declaration_line": 327,
+			"declaration_line": 329,
 			"id": "memory/allocation/pressure::MemoryPressure.close",
 			"value_type": null,
 			"owner": "MemoryPressure",
@@ -63802,9 +63858,9 @@
 				}
 			],
 			"source": "memory/allocation/resources.el",
-			"line": 566,
+			"line": 565,
 			"signature": "@callbackSafe(parameter: \"observe\")\nexport fn allocation_observer(observe: @sync fn(event: RuntimeWord, identity: RuntimeWord, address: NativeStorageSize, size: NativeStorageSize, alignment: NativeStorageSize, backing_identity: RuntimeWord): RuntimeWord, code_owner): AllocationResource",
-			"declaration_line": 587,
+			"declaration_line": 586,
 			"id": "memory/allocation/resources::allocation_observer",
 			"value_type": null,
 			"owner": null,
@@ -71558,7 +71614,7 @@
 				}
 			],
 			"source": "streams/input-file.el",
-			"line": 1,
+			"line": 2,
 			"id": "streams/input-file"
 		},
 		{
@@ -71605,9 +71661,9 @@
 				}
 			],
 			"source": "streams/input-file.el",
-			"line": 125,
+			"line": 126,
 			"signature": "export fn openInputFile(path: Text, lock: Bool | void_t = void, protection: FileReadProtection = FileReadProtection(lock is t_t)): NativeInputFile",
-			"declaration_line": 138,
+			"declaration_line": 139,
 			"id": "streams/input-file::openInputFile",
 			"value_type": null,
 			"owner": null,
@@ -71665,9 +71721,9 @@
 				}
 			],
 			"source": "streams/input-file.el",
-			"line": 143,
+			"line": 144,
 			"signature": "export fn openOptionalInputFile(path: Text): NativeInputFile | void_t",
-			"declaration_line": 153,
+			"declaration_line": 154,
 			"id": "streams/input-file::openOptionalInputFile",
 			"value_type": null,
 			"owner": null,
@@ -73356,9 +73412,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 423,
+			"line": 422,
 			"signature": "get byte_count(): Integer",
-			"declaration_line": 431,
+			"declaration_line": 430,
 			"id": "text/text::Text.byte_count",
 			"value_type": null,
 			"owner": "Text",
@@ -73406,9 +73462,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 443,
+			"line": 442,
 			"signature": "override get count(): Integer",
-			"declaration_line": 450,
+			"declaration_line": 449,
 			"id": "text/text::Text.count",
 			"value_type": null,
 			"owner": "Text",
@@ -73461,9 +73517,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 502,
+			"line": 501,
 			"signature": "fn startsWith(prefix: Text): Bool",
-			"declaration_line": 510,
+			"declaration_line": 509,
 			"id": "text/text::Text.startsWith",
 			"value_type": null,
 			"owner": "Text",
@@ -73516,9 +73572,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 513,
+			"line": 512,
 			"signature": "fn endsWith(suffix: Text): Bool",
-			"declaration_line": 521,
+			"declaration_line": 520,
 			"id": "text/text::Text.endsWith",
 			"value_type": null,
 			"owner": "Text",
@@ -73571,9 +73627,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 524,
+			"line": 523,
 			"signature": "fn contains(needle: Text): Bool",
-			"declaration_line": 532,
+			"declaration_line": 531,
 			"id": "text/text::Text.contains",
 			"value_type": null,
 			"owner": "Text",
@@ -73626,9 +73682,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 542,
+			"line": 541,
 			"signature": "fn trimEndChars(characters: Text): Text",
-			"declaration_line": 556,
+			"declaration_line": 555,
 			"id": "text/text::Text.trimEndChars",
 			"value_type": null,
 			"owner": "Text",
@@ -73686,9 +73742,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 583,
+			"line": 582,
 			"signature": "virtual fn character(index: Number): Char",
-			"declaration_line": 593,
+			"declaration_line": 592,
 			"id": "text/text::Text.character",
 			"value_type": null,
 			"owner": "Text",
@@ -73751,9 +73807,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 636,
+			"line": 635,
 			"signature": "virtual fn slice(start: Number, to: Number): Text",
-			"declaration_line": 646,
+			"declaration_line": 645,
 			"id": "text/text::Text.slice",
 			"value_type": null,
 			"owner": "Text",
@@ -73811,9 +73867,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 763,
+			"line": 762,
 			"signature": "export fn text_scalar(value: Integer): Text",
-			"declaration_line": 776,
+			"declaration_line": 775,
 			"id": "text/text::text_scalar",
 			"value_type": null,
 			"owner": null,
@@ -73876,9 +73932,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 916,
+			"line": 915,
 			"signature": "export fn TextView(bitWidth = 0, size = 0): type",
-			"declaration_line": 934,
+			"declaration_line": 933,
 			"id": "text/text::TextView~constraints",
 			"value_type": null,
 			"owner": null,
@@ -73941,9 +73997,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 966,
+			"line": 965,
 			"signature": "export fn Text(bitWidth = 0, size = 0): type",
-			"declaration_line": 983,
+			"declaration_line": 982,
 			"id": "text/text::Text~constraints",
 			"value_type": null,
 			"owner": null,
@@ -77287,7 +77343,7 @@
 		}
 	],
 	"coverage": {
-		"source_files": 3818,
+		"source_files": 3907,
 		"documented_files": 114,
 		"documented_apis": 566
 	}

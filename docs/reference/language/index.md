@@ -27,5 +27,6 @@
 | 异常、效果与并发 | [执行与并发](execution.md) |
 | 宏与元编程 | [宏与元编程](metaprogramming.md) |
 | 原生声明、调用约定与回调 | [外部接口与 ABI](foreign.md) |
+| 底层源码块与中间表示 | [EIR 与底层源码块](eir.md) |
 
 入门教程见[语言教程](../../language/index.md)。语言合同以[语法标准](https://github.com/steve02081504/el/blob/master/docs/spec/12-syntax.md)及各页所列专题规范为准。

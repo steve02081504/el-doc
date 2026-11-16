@@ -494,7 +494,7 @@ let result = with_allocation_tracking(fn() { return 1 })
 
 ## allocation_observer {#api-745b0e48de8321bdb0ba}
 
-源码：`src/stdlib/memory/allocation/resources.el:587` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L587)
+源码：`src/stdlib/memory/allocation/resources.el:586` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L586)
 
 创建观察资源。事件 1、2 是逻辑分配和释放，3、4 是成功和失败的调整大小，5、6 是物理 slab 分配和释放；成功调整也产生底层分配和释放事件。
 

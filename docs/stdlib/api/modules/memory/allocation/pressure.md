@@ -22,7 +22,7 @@
 
 ## MemoryPressureStateError {#api-37be22995aa184e8d4db}
 
-源码：`src/stdlib/memory/allocation/pressure.el:28` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L28)
+源码：`src/stdlib/memory/allocation/pressure.el:29` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L29)
 
 压力服务处于无效状态时抛出的错误。
 
@@ -40,7 +40,7 @@ pressure.close()
 
 ## ReclaimRegistration {#api-66b03d8c0b1ef268ec44}
 
-源码：`src/stdlib/memory/allocation/pressure.el:61` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L61)
+源码：`src/stdlib/memory/allocation/pressure.el:62` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L62)
 
 回收回调的共享注册句柄；close 或析构取消注册。
 
@@ -60,7 +60,7 @@ pressure.close()
 
 ## ReclaimRegistration.close {#api-d88d4fd3c0806624a27d}
 
-源码：`src/stdlib/memory/allocation/pressure.el:75` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L75)
+源码：`src/stdlib/memory/allocation/pressure.el:76` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L76)
 
 取消注册；重复调用无操作。
 
@@ -80,7 +80,7 @@ pressure.close()
 
 ## MemoryPressure {#api-3cf76fe53a08ce9b879e}
 
-源码：`src/stdlib/memory/allocation/pressure.el:94` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L94)
+源码：`src/stdlib/memory/allocation/pressure.el:95` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L95)
 
 显式构造的压力服务；可安装进程回调、保留储备并登记回收器，使用后调用 close。
 
@@ -99,7 +99,7 @@ pressure.close()
 
 ## MemoryPressure.install {#api-bd17e2436ac452296350}
 
-源码：`src/stdlib/memory/allocation/pressure.el:143` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L143)
+源码：`src/stdlib/memory/allocation/pressure.el:144` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L144)
 
 安装进程压力回调；已关闭、正在关闭、已安装或安装失败时抛出 MemoryPressureStateError。
 
@@ -118,12 +118,12 @@ pressure.close()
 
 ## MemoryPressure.register_reclaimer {#api-d793fcf9bb26d2c0a1b1}
 
-源码：`src/stdlib/memory/allocation/pressure.el:167` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L167)
+源码：`src/stdlib/memory/allocation/pressure.el:168` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L168)
 
 注册接收请求字节数并返回是否取得进展的回调；保留返回的注册句柄以维持注册。回调异常记录在 last_failure。
 
 ```el
-fn register_reclaimer(callback: fn(bytes: Integer): Bool): ReclaimRegistration
+fn register_reclaimer(callback: fn(bytes: AllocationSize): Bool): ReclaimRegistration
 ```
 
 **返回类型**：[`ReclaimRegistration`](pressure.md#api-66b03d8c0b1ef268ec44)
@@ -140,7 +140,7 @@ pressure.close()
 
 ## MemoryPressure.needs_refill {#api-5170bd3e63658901a65d}
 
-源码：`src/stdlib/memory/allocation/pressure.el:217` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L217)
+源码：`src/stdlib/memory/allocation/pressure.el:218` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L218)
 
 查询储备是否需要且可以尝试补充。
 
@@ -161,7 +161,7 @@ pressure.close()
 
 ## MemoryPressure.refill {#api-afd4944353952e9a493a}
 
-源码：`src/stdlib/memory/allocation/pressure.el:232` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L232)
+源码：`src/stdlib/memory/allocation/pressure.el:233` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L233)
 
 尝试补充一个储备块；成功返回 t，无法补充时返回 nil。
 
@@ -182,12 +182,12 @@ pressure.close()
 
 ## MemoryPressure.reclaim {#api-23f93e549cc1866c7906}
 
-源码：`src/stdlib/memory/allocation/pressure.el:275` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L275)
+源码：`src/stdlib/memory/allocation/pressure.el:277` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L277)
 
 释放至多一个储备块并依次调用当前登记的回收器；任一操作有进展时返回 t。回调异常记录在 last_failure。
 
 ```el
-fn reclaim(bytes: Integer): Bool
+fn reclaim(bytes: AllocationSize): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
@@ -197,13 +197,14 @@ fn reclaim(bytes: Integer): Bool
 ```el
 import { MemoryPressure } from "el:memory/allocation/pressure.el"
 let pressure = MemoryPressure()
-let progress = pressure.reclaim(1024)
+import { AllocationSize } from "el:memory/allocation/types.el"
+let progress = pressure.reclaim(AllocationSize(1024))
 pressure.close()
 ```
 
 ## MemoryPressure.close {#api-0c5a84044c0742c3b9ba}
 
-源码：`src/stdlib/memory/allocation/pressure.el:327` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L327)
+源码：`src/stdlib/memory/allocation/pressure.el:329` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L329)
 
 卸载进程回调、等待进行中的回收或补充并释放储备和注册；重复调用无操作。在自身回收回调中调用会抛出 MemoryPressureStateError。
 

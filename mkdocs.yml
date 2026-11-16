@@ -127,6 +127,7 @@ nav:
       - 异常与并发: reference/language/execution.md
       - 宏与元编程: reference/language/metaprogramming.md
       - 外部接口与 ABI: reference/language/foreign.md
+      - EIR 与底层源码块: reference/language/eir.md
   - 标准库参考: stdlib/api/index.md
   - 工具链参考:
       - 命令与构建: toolchain.md

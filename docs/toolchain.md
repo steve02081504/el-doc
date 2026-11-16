@@ -165,8 +165,8 @@ el clean --repo .
 | `el clean --repo ROOT` | 清理该根目录下可重建的产物与缓存 |
 | `el compiler ...` | 直接调用编译器（参数同 `elc`） |
 | `el shell SCRIPT` / `esh` | 编译并执行 `.esh` 脚本文件 |
-| `el eir ...` | 编译 ABI EIR 或处理执行 profile |
-| `el debug ...` | 检查并执行有界 ABI EIR |
+| `el eir ...` | 编译内部 ABI EIR 或处理执行 profile；见 [EIR 参考](reference/language/eir.md) |
+| `el debug ...` | 检查并执行带预算的 ABI EIR，预算选项见 `el debug --help` |
 | `el exec ...` | 启动外部程序 |
 | `el publish SOURCE TARGET` | 发布已完成的候选文件 |
 

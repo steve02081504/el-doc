@@ -6,13 +6,13 @@
 
 ## 原生输入文件 {#api-e0a8d72b3ff014281d5f}
 
-源码：`src/stdlib/streams/input-file.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/input-file.el#L1)
+源码：`src/stdlib/streams/input-file.el:2` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/input-file.el#L2)
 
 提供面向原生文件句柄的输入所有权与关闭管理。
 
 ## openInputFile {#api-3457cba5be48dc94b859}
 
-源码：`src/stdlib/streams/input-file.el:138` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/input-file.el#L138)
+源码：`src/stdlib/streams/input-file.el:139` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/input-file.el#L139)
 
 打开原生文件作为顺序输入流。
 
@@ -42,7 +42,7 @@ input.close()
 
 ## openOptionalInputFile {#api-ee8a540efdae1657f07b}
 
-源码：`src/stdlib/streams/input-file.el:153` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/input-file.el#L153)
+源码：`src/stdlib/streams/input-file.el:154` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/input-file.el#L154)
 
 尝试打开原生输入文件；仅在平台报告文件缺失时返回 void。
 
