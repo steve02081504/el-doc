@@ -42,6 +42,7 @@ _EL_CODE_RULES = [
         r"\b(let|const)(\s+)([A-Za-z_\u0080-\uffff][\w]*)",
         bygroups(Keyword.Declaration, Text, Name.Variable),
     ),
+    (r"\b(let|const)\b", Keyword.Declaration),
     (
         r"\b(import|export)(\s+)(extern|from|lazy)\b",
         bygroups(Keyword.Namespace, Whitespace, Keyword.Namespace),
