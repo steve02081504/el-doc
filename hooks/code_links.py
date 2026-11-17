@@ -167,7 +167,7 @@ def code_targets(code, catalog, source=None):
 	bindings = dict(catalog.defaults)
 	local_types = defaultdict(set)
 	structure = " ".join(value if kind not in String else "STRING" for _, kind, value in tokens)
-	if re.search(r"@(module|runtime)\s*\([^)]*\bprelude\s*:\s*nil\b", structure):
+	if re.search(r"@(module|runtime)\s*\([^)]*\bprelude\s*:\s*f\b", structure):
 		bindings.clear()
 	imports = set()
 	declarations = set()

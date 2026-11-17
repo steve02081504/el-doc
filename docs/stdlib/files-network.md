@@ -22,22 +22,22 @@ writeTextFile("file:./copy.txt", text + "\n")
 常用的 `readTextFile`、`writeTextFile` 等入口 prelude 已经提供，写出来是为了说清它们来自 `el:filesystem/`；显式导入与 prelude 的同一声明不冲突，也不会重复初始化。`readTextFileIfPresent` 这类变体需要显式导入。
 
 !!! example "动手 30 秒"
-    把 `notes.txt` 换成不存在的文件名再跑一次。`readTextFile` 会抛异常，而 `readTextFileIfPresent` 返回 `void`；看到“没有这个文件”就说明分支生效。
+    把 `notes.txt` 换成不存在的文件名再跑一次。`readTextFile` 会抛异常，而 `readTextFileIfPresent` 返回 `nil`；看到“没有这个文件”就说明分支生效。
 
 ## 读文本还是读字节
 
-- `readTextFile(reference, maximumBytes = void)` 读入整个文件并按 UTF-8 解码成 `Text`；
+- `readTextFile(reference, maximumBytes = nil)` 读入整个文件并按 UTF-8 解码成 `Text`；
 - `writeTextFile(reference, value)` 把 `Text` 按 UTF-8 写入，返回写入的字节数；
-- `readFileBytes(reference, maximumBytes = void)` 返回 `Number[]`，每个元素是一个字节；
+- `readFileBytes(reference, maximumBytes = nil)` 返回 `Number[]`，每个元素是一个字节；
 - `writeFileBytes(reference, bytes)` 写入字节数组，返回写入的字节数；
-- `readTextFileIfPresent(reference, maximumBytes = void)` 与 `readFileBytesIfPresent(...)` 在文件不存在时返回 `void`，而不是抛错。
+- `readTextFileIfPresent(reference, maximumBytes = nil)` 与 `readFileBytesIfPresent(...)` 在文件不存在时返回 `nil`，而不是抛错。
 
 ```el
 let bytes = readFileBytes("file:./logo.png")
 console.stdout.writeLine("size: ", bytes.size, " bytes")
 
 let missing = readTextFileIfPresent("file:./absent.txt")
-if (missing is void_t) {
+if (missing is nil_t) {
 	console.stdout.writeLine("没有这个文件，按默认值处理")
 }
 ```
@@ -215,7 +215,7 @@ import { readTextFileIfPresent } from "el:filesystem/"
 
 fn loadName() {
 	let source = readTextFileIfPresent("file:./config.json")
-	if (source is void_t) return "anonymous"
+	if (source is nil_t) return "anonymous"
 
 	let config = try { parseJSON(source) } catch { return "anonymous" }
 	let value = try { jsonField(config, "name") } catch { return "anonymous" }
@@ -265,12 +265,12 @@ try {
 两个 `catch` 分别处理“服务器返回了错误状态”和“请求本身失败”，其余异常继续向外传播。`console.error.value(error)` 发出该等级的结构化展示记录，默认走 stderr。
 
 !!! warning "常见坑：错误发生在哪一层"
-    - 文件不存在却得到空串：那是代码把失败吞了。默认入口抛异常，只有 `...IfPresent` 系列返回 `void`。
+    - 文件不存在却得到空串：那是代码把失败吞了。默认入口抛异常，只有 `...IfPresent` 系列返回 `nil`。
     - 自定义 `TextFormat` 报“没有编码器”：构造它时需要传入 `write`；内置 INI 已提供编码器，值仍须符合其文本与节结构限制。
     - 404 之后程序继续往下跑：`request` 不抛 HTTP 错误，必须检查 `response.ok`，或用 `fetchAs`。
     - 用 `https://...` 去列目录或写文件：Web provider 只保证读，缺能力时返回明确错误。
 
-文件与网络共用同一套失败语义：失败要用异常或 `void` 表达，上限要在解码之前生效，而不是靠猜一个默认值继续跑。
+文件与网络共用同一套失败语义：失败要用异常或 `nil` 表达，上限要在解码之前生效，而不是靠猜一个默认值继续跑。
 
 ??? note "可选 · 深入：为什么要有逻辑文件系统"
     逻辑位置的意义是让同一段代码换一个 provider 就换一种存储：本地文件、HTTP 资源、未来的其它后端都走同一套 `Location`、读、写与失败语义。代价是你不能把系统路径直接塞进去，也不能假设“文件系统”只有本地磁盘。`maximumBytes`、`HttpOptions.maximumBodyBytes` 这些上限是这套模型的一部分：它们在解析之前就把过大的输入挡掉。

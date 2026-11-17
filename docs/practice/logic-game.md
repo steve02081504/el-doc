@@ -75,7 +75,7 @@ let board = @(
 
 !!! success "检查点"
     - [ ] `chooseMove(board, 2, 0)` 应报告搜索中断，不能返回“无候选”
-    - [ ] 完整搜索得到空候选才返回 void；平局另由“无赢家且满盘”判断
+    - [ ] 完整搜索得到空候选才返回 nil；平局另由“无赢家且满盘”判断
 
 ## 第五步：先准备完整结果，再发布到窗口
 
@@ -170,7 +170,7 @@ export fn isFull(board: Tensor<element: Number>): Bool {
 	checkBoard(board)
 	for (let row = 0; row < 3; row++) {
 		for (let column = 0; column < 3; column++) {
-			if (board[row, column] == 0) return nil
+			if (board[row, column] == 0) return f
 		}
 	}
 	return t
@@ -200,7 +200,7 @@ export fn winner(board: Tensor<element: Number>, limit: Number = 100000): Number
 }
 
 // 调用前提：合法的进行中棋局，mark 为轮到的一方。
-// 返回坐标记录，满盘无候选返回 void；预算/取消/错误不会变成 void。
+// 返回坐标记录，满盘无候选返回 nil；预算/取消/错误不会变成 nil。
 export fn chooseMove(board: Tensor<element: Number>, mark: Number,
 	limit: Number = 100000) {
 	if (mark != 1 & mark != 2) throw "Expected X or O"
@@ -227,7 +227,7 @@ export fn chooseMove(board: Tensor<element: Number>, mark: Number,
 				if (better) best = item
 			}
 			if (!cursor.complete) throw SearchInterrupted(cursor.status)
-			if (best.count == 0) return void
+			if (best.count == 0) return nil
 			return @{row: best[0], column: best[1]}
 		} finally { cursor.close() }
 	} finally { plan.close() }
@@ -289,7 +289,7 @@ export @assign(mode: "shared") class Game {
 	fn summary(): Text { return this.#message }
 	fn canRetry(): Bool { return this.#phase == "failed" }
 	fn canPlay(row: Number, column: Number): Bool {
-		if (this.#phase != "human" | !inside(row, column)) return nil
+		if (this.#phase != "human" | !inside(row, column)) return f
 		return this.#board[row, column] == 0
 	}
 
@@ -305,7 +305,7 @@ export @assign(mode: "shared") class Game {
 
 	fn play(row: Number, column: Number) {
 		if (!this.canPlay(row, column)) return
-		let prepared: PreparedTurn | void_t = void
+		let prepared: PreparedTurn | nil_t = nil
 		try {
 			let next = this.#board
 			next[row, column] = 1
@@ -314,7 +314,7 @@ export @assign(mode: "shared") class Game {
 			this.#message = "这一步未提交：" + failureText(error) + "；可重试或重开"
 			return
 		}
-		if (prepared is void_t) throw "Missing prepared turn"
+		if (prepared is nil_t) throw "Missing prepared turn"
 		// 放在准备阶段的 catch 之外，不能吞掉可能的发布失败。
 		this.#publish(prepared)
 		if (this.#phase == "thinking") this.#bot()
@@ -324,12 +324,12 @@ export @assign(mode: "shared") class Game {
 		this.#phase = "thinking"
 		this.#message = "机器人正在思考…"
 		let expected = this.#revision
-		let prepared: PreparedTurn | void_t = void
+		let prepared: PreparedTurn | nil_t = nil
 		try {
 			let snapshot = this.#board
 			let move = chooseMove(snapshot, 2, this.moveLimit)
 			if (this.#phase != "thinking" | this.#revision != expected) return
-			if (move is void_t) throw "Ongoing board has no candidate"
+			if (move is nil_t) throw "Ongoing board has no candidate"
 			if (!inside(move.row, move.column)) throw "Bot returned an invalid coordinate"
 			if (this.#board[move.row, move.column] != 0) throw "Bot chose an occupied cell"
 			let next = this.#board
@@ -344,7 +344,7 @@ export @assign(mode: "shared") class Game {
 			return
 		}
 		if (this.#phase != "thinking" | this.#revision != expected) return
-		if (prepared is void_t) throw "Missing prepared turn"
+		if (prepared is nil_t) throw "Missing prepared turn"
 		this.#publish(prepared)
 	}
 
@@ -382,7 +382,7 @@ export @assign(mode: "shared") class GameView {
 	let restart = element("button", "重新开始", "restart")
 	let retry = element("button", "重试机器人", "retry")
 	let cells: Definition[][] = @[]
-	let #closed: Bool = nil
+	let #closed: Bool = f
 
 	constructor(game: Game = Game()) {
 		init this
@@ -418,12 +418,12 @@ export @assign(mode: "shared") class GameView {
 			}
 			on(this.restart, "click", (event: GuiEvent) => {
 				let view = weak.lock()
-				if (view is void_t) return
+				if (view is nil_t) return
 				view.game.restart(); view.render()
 			})
 			on(this.retry, "click", (event: GuiEvent) => {
 				let view = weak.lock()
-				if (view is void_t) return
+				if (view is nil_t) return
 				view.game.retry(); view.render()
 			})
 			this.render()
@@ -459,7 +459,7 @@ export @assign(mode: "shared") class GameView {
 fn bindCell(weak: WeakShared<element: GameView>, row: Number, column: Number, cell: Definition) {
 	on(cell, "click", (event: GuiEvent) => {
 		let view = weak.lock()
-		if (view is void_t) return
+		if (view is nil_t) return
 		view.game.play(row, column)
 		view.render()
 	})

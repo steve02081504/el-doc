@@ -162,7 +162,7 @@ let total = left + right
 console.stdout.writeLine(total.toHost().flat(0))
 ```
 
-`TensorDevice<element: T>(deviceIndex: -1, portable: nil)` 的第一个参数选物理设备，`portable: t` 要求可移植驱动。后端由目标选择：Windows 默认 D3D11，`portable` 或显式设备索引走 Vulkan；Linux、FreeBSD、Android 用 Vulkan；macOS 用 Metal；没有适配器会明确抛错。
+`TensorDevice<element: T>(deviceIndex: -1, portable: f)` 的第一个参数选物理设备，`portable: t` 要求可移植驱动。后端由目标选择：Windows 默认 D3D11，`portable` 或显式设备索引走 Vulkan；Linux、FreeBSD、Android 用 Vulkan；macOS 用 Metal；没有适配器会明确抛错。
 
 - `fromHost` 是同步上传；`toHost()` 是显式回读边界，`scalar()` 同样会等待并取回一个标量。设备张量在两次操作之间保持驻留，不要在每个小运算前后来回搬运。
 - 存储精度用工厂参数声明，例如 `precision: "binary16"`；只接受 `binary16` 与 `bfloat16`，要求元素本身是 binary32 载体，存储 16 位、计算仍按 binary32。

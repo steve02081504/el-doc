@@ -185,7 +185,7 @@ unsafe {
 
     规范还定义了 `@borrow`、`@transfer`、`@retain` 以及返回侧的 `@owned(release: ...)`／`@borrowed(owner: ...)` 所有权声明；本文没有找到这些属性的内建使用实例，实际写库时以当前编译器接受的签名检查为准。
 
-    `@layout` 没有 `repr`、C mode 或字符串模式，ABI 消费这份布局而不是重排源码类型。`ptr<noescape_when_void: p>` 只在指定参数 `p` 可以证明为缺失值 `void` 时提供同一不留存承诺。`@representation` 讲的是受审计的逻辑模型，不是 C 布局，也不能替代 ABI、布局或证明。
+    `@layout` 没有 `repr`、C mode 或字符串模式，ABI 消费这份布局而不是重排源码类型。`ptr<noescape_when_void: p>` 只在指定参数 `p` 可以证明为缺失值 `nil` 时提供同一不留存承诺。`@representation` 讲的是受审计的逻辑模型，不是 C 布局，也不能替代 ABI、布局或证明。
 
     `@layout` 的用法示例：
 

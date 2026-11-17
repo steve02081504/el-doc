@@ -59,7 +59,7 @@ _EL_CODE_RULES = [
         r"implements|enum|typeof|discard)\b",
         Keyword,
     ),
-    (r"\b(t|nil|void|true|false|any)\b", Keyword.Constant),
+    (r"\b(t|f|nil|true|false|any)\b", Keyword.Constant),
     (r"\b(0[xX][0-9a-fA-F_]+|0[bB][01_]+|0[oO][0-7_]+)\b", Number.Hex),
     (
         r"\b\d[\d_]*(?:\.[\d_]+)?(?:[eE][+-]?\d+)?\b",

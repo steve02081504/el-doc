@@ -176,7 +176,7 @@ let flags: Text[] = @["--oneline", "-n", "3"]
 
 ??? note "可选 · 深入：失败策略、会话与后台作业"
 
-    失败与退出码策略注册在 `ShellSession` 上：`session.onFailure(callback)` 收到带 `stage` 与 `output` 的 `ShellFailure`，返回 `ShellFailureAction.Default` 交给后续 hook、`Continue` 继续块内后续语句、`Exit` 结束会话；`session.onExitCode(callback)` 把汇总退出码映射为另一个整数，返回 `void_t` 表示不映射。两者都返回 `ShellHookRegistration`，`remove()` 可重复调用。没有 hook 时未处理失败默认停止当前块；`.esh` 入口最后展示一次已收集输出，并以汇总退出码退出进程。
+    失败与退出码策略注册在 `ShellSession` 上：`session.onFailure(callback)` 收到带 `stage` 与 `output` 的 `ShellFailure`，返回 `ShellFailureAction.Default` 交给后续 hook、`Continue` 继续块内后续语句、`Exit` 结束会话；`session.onExitCode(callback)` 把汇总退出码映射为另一个整数，返回 `nil_t` 表示不映射。两者都返回 `ShellHookRegistration`，`remove()` 可重复调用。没有 hook 时未处理失败默认停止当前块；`.esh` 入口最后展示一次已收集输出，并以汇总退出码退出进程。
 
     `session.run(work)` 在会话的逻辑目录与环境里执行 `work`，结束后恢复外层上下文并返回它的结果。会话保存逻辑工作目录、环境快照、失败 hook 和 Job 表；`replaceShellSession(session)` 切换当前会话，`cd(path)` 修改逻辑目录。
 
@@ -198,7 +198,7 @@ let flags: Text[] = @["--oneline", "-n", "3"]
     session.forget(job)
     ```
 
-    作者语法也可以直接把 shell 语句写成后台任务：单独导入 `start` 宏，写法是 `import /^start$/ as jobs from "el:shell/index.el"`，之后 `let job = jobs.start { git status }`。块里的 `return` 只结束这个后台回调，不影响外层函数；回调返回的非 `void` 值会进入 Job 的结果。
+    作者语法也可以直接把 shell 语句写成后台任务：单独导入 `start` 宏，写法是 `import /^start$/ as jobs from "el:shell/index.el"`，之后 `let job = jobs.start { git status }`。块里的 `return` 只结束这个后台回调，不影响外层函数；回调返回的非 `nil` 值会进入 Job 的结果。
 
 ## 实现状态
 

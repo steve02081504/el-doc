@@ -21,8 +21,8 @@
 ```el
 console.stdout.writeLine(7 & 8)    // 8：左侧真，取右值
 console.stdout.writeLine(7 | 8)    // 7：左侧真，取左值
-console.log.value(nil & 8)         // nil：左侧假，保留左值
-console.log.value(nil | 8)         // 8：左侧假，取右值
+console.log.value(f & 8)         // f：左侧假，保留左值
+console.log.value(f | 8)         // 8：左侧假，取右值
 
 let selected = 3 & 4
 console.stdout.writeLine(selected)   // 4，结果不是 t
@@ -37,7 +37,7 @@ console.stdout.writeLine(selected)   // 4，结果不是 t
 
 ```el
 let ready = t
-let healthy = nil
+let healthy = f
 
 if (ready & healthy) {
 	console.stdout.writeLine("start")
@@ -53,7 +53,7 @@ console.stdout.writeLine(label)   // on
 ```
 
 !!! example "动手 30 秒"
-    把 `3 & 4` 换成 `nil & 4` 再跑。打印 `nil` 而不是 `4`，因为 `&` 返回的是被选中的那个操作数。
+    把 `3 & 4` 换成 `f & 4` 再跑。打印 `f` 而不是 `4`，因为 `&` 返回的是被选中的那个操作数。
 
 ## 乘方 `^`：右结合，且压过前缀负号
 
@@ -80,7 +80,7 @@ let a = 1
 let b = a
 
 console.log.value(a == b)    // t：值相等
-console.log.value(a === b)   // nil：两个对象身份不同
+console.log.value(a === b)   // f：两个对象身份不同
 ```
 
 `is` 与 `isnot` 做类型判断，右侧只接一个类型原子；联合类型必须加括号：
@@ -93,7 +93,7 @@ if (value is Number) {
 }
 
 console.log.value(value is (Number | Text))           // t
-console.log.value(value isnot Number | value is Text) // nil：等价于 (value isnot Number) | (value is Text)
+console.log.value(value isnot Number | value is Text) // f：等价于 (value isnot Number) | (value is Text)
 ```
 
 - `a isnot X | b` 里的 `|` 是逻辑或，不是类型联合；类型联合只能出现在括号里，或是不含 `|` 的单个类型原子。
@@ -121,32 +121,32 @@ for (let i in 0..|3) {
 
 ## 空值三件套：`??`、`?.`、`??=`
 
-三个运算符都只认 `void`；`nil` 是普通值，不触发：
+三个运算符都只认 `nil`；`f` 是普通值，不触发：
 
 ```el
-let maybe: Text | void_t = void
+let maybe: Text | nil_t = nil
 console.log.value(maybe ?? "fallback")   // "fallback"
 
-let box: Text | void_t = void
-console.log.value(box?.count)            // void：接收者缺失，整个后缀链短路
+let box: Text | nil_t = nil
+console.log.value(box?.count)            // nil：接收者缺失，整个后缀链短路
 
-let name: Text | void_t = void
+let name: Text | nil_t = nil
 name ??= "anonymous"
 console.log.value(name)                  // "anonymous"
 ```
 
-- `a ?? b` 在 `a` 是 `void` 时求 `b`，否则取 `a`；右侧只在需要时求值。`nil ?? b` 得 `nil`。
-- `a?.b` 在 `a` 是 `void` 时短路整个后缀链并得 `void`；否则与普通成员访问相同。
+- `a ?? b` 在 `a` 是 `nil` 时求 `b`，否则取 `a`；右侧只在需要时求值。`f ?? b` 得 `f`。
+- `a?.b` 在 `a` 是 `nil` 时短路整个后缀链并得 `nil`；否则与普通成员访问相同。
 - 可选的 `?.[` 不提供，`a?.[i]` 是语法错误；可选调用写 `callback?.(x)`。
 - `?.` 出现在赋值目标里是“补齐”而不是短路：`a?.b?.c = 1` 会为缺失的层建立空值再写。
-- `??` 的优先级低于 `&`、高于 `|`；`??=` 是条件赋值，只在目标为 `void` 时写。
+- `??` 的优先级低于 `&`、高于 `|`；`??=` 是条件赋值，只在目标为 `nil` 时写。
 
 ## `|=` 与 `&=`：按条件写回
 
 它们对应逻辑 `|`／`&` 的短路写回：目标只读取一次，右侧只在真的要写时才求值，写回值与表达式结果都取被选中操作数的原值。
 
 ```el
-let flag = nil
+let flag = f
 flag |= "yes"     // 目标是假值 → 求右侧 "yes" 并写回，表达式值也是 "yes"
 flag &= "again"   // 目标现在是真值 → 求右侧 "again" 并写回
 ```
@@ -307,7 +307,7 @@ console.stdout.writeLine(twice(5))
 - 重载不授予数学性质：`+` 就是一次普通调用，不意味着交换律、结合律或纯性。
 - 重载按声明签名选择；不要指望“左边是 `Text` 就把右边转成文本”（OP-2），需要时显式写 `Text(value)`。
 - `<=>` 的结果要能继续使用：Number 的 `<=>` 返回 Number，自定义类型返回 `Comparison`，与 `0` 比较或取三路结果（OP-8）。
-- 显式 `operator =` 可返回 `this`、代理或 `void`；后续使用仍遵守复制、借用与生命周期规则。
+- 显式 `operator =` 可返回 `this`、代理或 `nil`；后续使用仍遵守复制、借用与生命周期规则。
 
 ## 没有位运算运算符
 

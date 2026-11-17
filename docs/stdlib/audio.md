@@ -84,9 +84,9 @@ discard(long.cancel())
 | `stop()` | 清空这个播放器的队列 |
 | `close()` | 清空并释放设备，析构时也会调用 |
 
-提交不等待：返回 `Bool` 表示这次提交是否被接受，队列忙时返回 `nil`，调用方决定丢弃还是稍后重试。提示音最长 1 秒（24000 帧），更长的声音用包级的 `playFormula`。
+提交不等待：返回 `Bool` 表示这次提交是否被接受，队列忙时返回 `f`，调用方决定丢弃还是稍后重试。提示音最长 1 秒（24000 帧），更长的声音用包级的 `playFormula`。
 
-GUI 程序用 `el:user-interface/` 导出的 `SoundPlayer`，它由窗口拥有，内部就是一个 `MusicPlayer`。`SoundPlayer(window)` 的 `cue(name, value = 0, maximum = 1)` 按名字发提示音，名字有 `"drag"`、`"exchange"`、`"increase"`、`"decrease"`、`"disappear"`、`"engine"`、`"celebrate"`；`tryCue(...)` 在底层报 `CaptureError` 时返回 `nil`；`loop("engine")` 循环发引擎音，`engine(speed)` 设置 0..1 的速度，`stop()` 停止，`close()` 释放。
+GUI 程序用 `el:user-interface/` 导出的 `SoundPlayer`，它由窗口拥有，内部就是一个 `MusicPlayer`。`SoundPlayer(window)` 的 `cue(name, value = 0, maximum = 1)` 按名字发提示音，名字有 `"drag"`、`"exchange"`、`"increase"`、`"decrease"`、`"disappear"`、`"engine"`、`"celebrate"`；`tryCue(...)` 在底层报 `CaptureError` 时返回 `f`；`loop("engine")` 循环发引擎音，`engine(speed)` 设置 0..1 的速度，`stop()` 停止，`close()` 释放。
 
 ## WAV 读写只认整数 PCM16
 
@@ -131,7 +131,7 @@ writeTone("file:./tone.wav")
 !!! note "实现状态：WAV 没有一行播放接口"
     当前没有把 WAV 直接交给播放器的一行接口：要播放就先 `readWav`，再按块提交给 `PcmOutput`。这既是平台差异的暴露，也是队列与设备释放规则的一部分。
 
-没有“播放一个 wav 文件”的一行入口：要播放 `readWav` 得到的数据，得自己按块提交给 `PcmOutput`。`PcmOutput(format, queueChunks = 4, maximumFrames = 4096)` 是平台后端的公共包装，`enqueue(audio)` 在返回前复制样本，队列满时返回 `nil`。
+没有“播放一个 wav 文件”的一行入口：要播放 `readWav` 得到的数据，得自己按块提交给 `PcmOutput`。`PcmOutput(format, queueChunks = 4, maximumFrames = 4096)` 是平台后端的公共包装，`enqueue(audio)` 在返回前复制样本，队列满时返回 `f`。
 
 ```el
 import { PcmAudio, PcmOutput, readWav } from "el:multimedia/audio/"
@@ -177,13 +177,13 @@ playWav("file:./tone.wav")
 !!! warning "常见坑：没有声音时先查这四处"
     - 程序很快退出，只听到半声：没等 `get()`，播放任务随进程结束被取消。
     - GUI 卡住：在事件回调里 `get()` 了；保留任务，窗口关闭时 `cancel()`。
-    - 提示音提交返回 `nil`：队列忙，不是设备坏了；决定丢弃还是重试。
+    - 提示音提交返回 `f`：队列忙，不是设备坏了；决定丢弃还是重试。
     - 在没有后端的平台上静默失败：错误在播放任务的 `get()` 里，构造或调用那行不会报。
 
 正常路径上还有一层不用天天记、但调试时需要知道的边界：
 
 ??? note "可选 · 深入：队列容量的边界"
-    `PcmOutput` 的队列块数限制在 1..16，每块帧数上限 1048576；`enqueue` 在队列满时返回 `nil`，是等待还是丢弃由调用方决定。播放 WAV 的循环里用 `sleep(2)` 等队列腾空，就是这一决定的直接结果。
+    `PcmOutput` 的队列块数限制在 1..16，每块帧数上限 1048576；`enqueue` 在队列满时返回 `f`，是等待还是丢弃由调用方决定。播放 WAV 的循环里用 `sleep(2)` 等队列腾空，就是这一决定的直接结果。
 
 ## 带走这三样
 

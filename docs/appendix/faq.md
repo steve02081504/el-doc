@@ -51,7 +51,7 @@ console.log.value(@{result: 72}, stdoutChannel)
 
 ### 为什么写 `&&` 会报错？
 
-EL 没有 `&&` 和 `||`，逻辑运算是 `!`、`&`、`|`。`&` 与 `|` 都短路，并且返回被选中操作数的原值而不归一成布尔值：`7 & 8` 得 `8`，`nil & 8` 得 `nil`。需要按条件取值时用 `if` 表达式，没有三目运算符。
+EL 没有 `&&` 和 `||`，逻辑运算是 `!`、`&`、`|`。`&` 与 `|` 都短路，并且返回被选中操作数的原值而不归一成布尔值：`7 & 8` 得 `8`，`f & 8` 得 `f`。需要按条件取值时用 `if` 表达式，没有三目运算符。
 
 ```el
 let label = if (count > 0) "有" else "无"
@@ -71,7 +71,7 @@ console.stdout.writeLine(2 ^ 10)
 
 ### try/catch 怎么取值？
 
-`try` 是表达式，值是正常完成的 try 块或实际处理了异常的 catch 块的末尾语句结果，空块得到 `void`。`catch (error)` 的括号绑定异常对象，也可以省略绑定只处理异常；`finally` 的结果被丢弃，但清理照常执行。
+`try` 是表达式，值是正常完成的 try 块或实际处理了异常的 catch 块的末尾语句结果，空块得到 `nil`。`catch (error)` 的括号绑定异常对象，也可以省略绑定只处理异常；`finally` 的结果被丢弃，但清理照常执行。
 
 ```el
 import { readTextFile } from "el:filesystem/index.el"
@@ -110,11 +110,11 @@ class Counter {
 
 ### 没有 `undefined`，缺失值写什么？
 
-缺失用 `void`，假值用 `nil`，两者不混用。可选值写联合类型 `T | void_t`，用 `is void_t` 判断；`void` 只表示“这里没有值”，不表示假值，但在条件和逻辑判定中按假值处理。普通代码里 `0` 与空文本仍按假值处理。
+缺失用 `nil`，假值用 `f`，两者不混用。可选值写联合类型 `T | nil_t`，用 `is nil_t` 判断；`nil` 只表示“这里没有值”，不表示假值，但在条件和逻辑判定中按假值处理。普通代码里 `0` 与空文本仍按假值处理。
 
 ```el
-let missing: Number | void_t = void
-console.log.value(missing is void_t)   // t
+let missing: Number | nil_t = nil
+console.log.value(missing is nil_t)   // t
 ```
 
 详见 [值与类型](../language/values.md)。
@@ -210,7 +210,7 @@ let config = try { fetchAs(formats.JSON, url) } catch { Json.Null }
 
 - 输出先分清 stdout 与 stderr：数据用 `console.stdout.write`／`writeLine`，日志用等级对象。
 - 语法差异集中在 `&&`／`||`、`^`、`if` 表达式、没有 `main` 和 `import *`。
-- 类必须写 `@assign`；缺失是 `void`，假值是 `nil`，别混用。
+- 类必须写 `@assign`；缺失是 `nil`，假值是 `f`，别混用。
 
 ## 下一站：[规范与实现边界](implementation-status.md)
 

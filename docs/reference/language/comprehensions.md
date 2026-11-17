@@ -51,10 +51,10 @@ let sum = total(a + b for let a in ..2 for let b in ..2) // 4
 ```el
 import { any, all } from "el:collections/arrays/operations.el"
 let exists = any(a == b for let a in ..2 for let b in ..2) // t
-let universal = all(a == b for let a in ..2 for let b in ..2) // nil
+let universal = all(a == b for let a in ..2 for let b in ..2) // f
 ```
 
-数组操作库的 `some/any/none/all/every` 省略 predicate 时，判断每个元素本身的普通条件行为；显式 predicate 的原有调用形式仍可用。`any` 遇到首个真值短路，`all` 遇到首个假值短路；空来源分别返回 `nil` 和 `t`。这些运行期结果不会生成证明层的 `forall` 命题或证明。
+数组操作库的 `some/any/none/all/every` 省略 predicate 时，判断每个元素本身的普通条件行为；显式 predicate 的原有调用形式仍可用。`any` 遇到首个真值短路，`all` 遇到首个假值短路；空来源分别返回 `f` 和 `t`。这些运行期结果不会生成证明层的 `forall` 命题或证明。
 
 默认环境的裸 `any/all` 属于 Promise 组合。这里使用显式导入，或使用默认环境的 `arrayAny/arrayAll` 别名。函数详见[数组操作 API](../../stdlib/api/modules/collections/arrays/operations.md)。
 
@@ -63,7 +63,7 @@ let universal = all(a == b for let a in ..2 for let b in ..2) // nil
 ```el
 import { any, all } from "el:collections/arrays/operations.el"
 let eachHasMatch = all(any(a == b for let b in ..2) for let a in ..2) // t
-let oneMatchesAll = any(all(a == b for let a in ..2) for let b in ..2) // nil
+let oneMatchesAll = any(all(a == b for let a in ..2) for let b in ..2) // f
 ```
 
 ## 退出时关闭已打开的游标

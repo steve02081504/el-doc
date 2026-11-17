@@ -81,15 +81,15 @@ console.stdout.writeLine("全部组合相等：", if (universal) "是" else "否
 全部组合相等：否
 ```
 
-两个函数都返回真假值：这里 `exists` 为 `t`，`universal` 为 `nil`。`any` 看到首个真值就停止；`all` 看到首个假值就停止。它们不返回满足条件的变量组合。
+两个函数都返回真假值：这里 `exists` 为 `t`，`universal` 为 `f`。`any` 看到首个真值就停止；`all` 看到首个假值就停止。它们不返回满足条件的变量组合。
 
 显式导入很重要：默认环境里的裸 `any/all` 用于 Promise 组合。这里选择的是可迭代值归约函数，也可以用默认环境中的 `arrayAny/arrayAll` 别名。
 
-来源为空时，没有成立的项，所以 `any` 返回 `nil`；也没有反例，所以 `all` 返回 `t`。下面是独立片段，包含所需导入：
+来源为空时，没有成立的项，所以 `any` 返回 `f`；也没有反例，所以 `all` 返回 `t`。下面是独立片段，包含所需导入：
 
 ```el
 import { any, all } from "el:collections/arrays/operations.el"
-let exists = any(value > 0 for let value in 0..0) // nil
+let exists = any(value > 0 for let value in 0..0) // f
 let universal = all(value > 0 for let value in 0..0) // t
 ```
 

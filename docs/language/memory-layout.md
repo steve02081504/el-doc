@@ -176,7 +176,7 @@ console.stdout.writeLine("after scope: ", hits)
 
 用 `gc_collect()` 主动请求一轮，返回值是这一轮清扫掉的受管理载荷字节数（不含分配头、引用计数单独释放的存储和仍存活对象）；没有可回收存储、或请求与进行中的回收合并时返回 0。`gc_set_threshold(n)` 设置触发安全点回收的分配欠债阈值：0 表示每个启用回收的安全点都可能请求，负值拒绝，平台启动配置的阈值优先。两者都由默认标准库导入提供，实现在 `el:memory/garbage-collection/control.el`（标准库根重导出）。
 
-模块用 `@module(gc: nil)` 关闭 GC 时，构造带回收钩子的实例会编译报错，不会静默启用 GC。
+模块用 `@module(gc: f)` 关闭 GC 时，构造带回收钩子的实例会编译报错，不会静默启用 GC。
 
 !!! example "动手 30 秒"
     把 `Watched` 的 `maintain` 改成 `rounds += 10`，再跑一次。第一次 `gc_collect()` 后看到 `10` 而不是 `1`，就说明钩子确实是在那一轮回收里被调用的。

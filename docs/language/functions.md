@@ -85,7 +85,7 @@ console.stdout.writeLine(recordExpense(3)) // -3：账本中把支出记为负�
 console.log.value(expenses)                // 结构化展示三笔支出：-12、-8、-5
 ```
 
-- 裸 `=> 表达式` 接受任意数量实参，`it` 默认指第一实参，没有实参时是 `void`；它优先于外层同名绑定，不捕获外层的 `it`。
+- 裸 `=> 表达式` 接受任意数量实参，`it` 默认指第一实参，没有实参时是 `nil`；它优先于外层同名绑定，不捕获外层的 `it`。
 - 显式写 `() => 表达式` 仍是空参数列表，其中的 `it` 按外层解析；无名变长参数 `fn f(...)` 的函数体里，`it` 指收到的参数集合本身。
 
 `it` 不是关键字：按普通名字解析不到时这条候选链才启用，显式声明了名为 `it` 的绑定就听显式的。
@@ -93,7 +93,7 @@ console.log.value(expenses)                // 结构化展示三笔支出：-12�
 !!! example "动手 30 秒"
     给清单增加一笔 `3` 元支出，再运行。应有四笔记录，新增的一笔是 `-3`。解释 `it` 在四次调用中各代表多少。
 
-## 默认参数：省略或传 `void` 才触发
+## 默认参数：省略或传 `nil` 才触发
 
 ```el
 fn greet(name: Text = "world") => `Hello, ${name}!`
@@ -101,13 +101,13 @@ fn area(width: Number, height: Number = width) => width * height
 fn pick(value: any = 0) => value
 
 console.stdout.writeLine(greet())        // Hello, world!
-console.stdout.writeLine(greet(void))    // Hello, world!
+console.stdout.writeLine(greet(nil))    // Hello, world!
 console.stdout.writeLine(area(3))        // 9
 console.stdout.writeLine(area(3, 4))     // 12
-console.log.value(pick(nil))             // nil：默认值不触发
+console.log.value(pick(f))             // f：默认值不触发
 ```
 
-- 实参省略或为 `void` 时求默认表达式，`nil` 不触发。
+- 实参省略或为 `nil` 时求默认表达式，`f` 不触发。
 - 参数从左到右初始化；默认表达式可以引用前面已初始化的参数和外部绑定，不能引用尚未初始化的后续参数。
 - 默认表达式的副作用、异常、异步与族属性参与函数属性推断；关键字传参写 `area(3, height: 4)`，位置实参在前。
 
@@ -185,7 +185,7 @@ fn finish() {
 
 fn finishExplicitly() {
 	invoke(fn() {
-		return void from finishExplicitly
+		return nil from finishExplicitly
 	})
 }
 
@@ -198,7 +198,7 @@ fn findName(target: Text) {
 ```
 
 - `return value from func`：把值交给目标函数的调用者，并结束目标那次调用。
-- `return from func` 是无值形式，返回 `void`；`return void from func` 显式写出同一件事。
+- `return from func` 是无值形式，返回 `nil`；`return nil from func` 显式写出同一件事。
 
 `from` 后的名字不是被求值的实参，也不参与返回值表达式，只是目标分隔符；括号内部按普通表达式解析。
 
@@ -234,7 +234,7 @@ fn shadow() {
 
 ### 返回类型包含定向返回，`Never` 不污染合流
 
-返回类型推断包含所有 `return ... from 目标` 的返回值，不只是普通 `return`；`findName` 因此能从 `name` 推断出返回 `Text`。定向返回本身不产生可读取的值，类型是 `Never`，能放在表达式位置或分支里，不会给类型合流制造假的 `void` 分支：
+返回类型推断包含所有 `return ... from 目标` 的返回值，不只是普通 `return`；`findName` 因此能从 `name` 推断出返回 `Text`。定向返回本身不产生可读取的值，类型是 `Never`，能放在表达式位置或分支里，不会给类型合流制造假的 `nil` 分支：
 
 ```el
 fn requireReady(ready: Bool) {

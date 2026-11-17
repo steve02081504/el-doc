@@ -4,7 +4,7 @@
 
 !!! abstract "🎯 读完这页，你能"
     - 写出精确有理数、文本和布尔值的字面量，并解释 `(1 / 3) * 3` 为什么正好是 `1`
-    - 区分 `t`、`nil`、`void` 三种“空”，知道什么时候该用哪个
+    - 区分 `t`、`f`、`nil` 三种“空”，知道什么时候该用哪个
     - 用类型注解、解构和三种字面量组装数据
     - 说出 `any` 为什么不是“自动适配一切”的捷径
 
@@ -105,41 +105,41 @@ console.stdout.writeLine(greeting.slice(0, 1))    // 你
 ??? quote "彩蛋：`Char` 不是“一个字符”"
     名字容易骗人：`Char` 存的是任意 N 位的数据单元，不保证是合法 Unicode 标量。`'a'` 反而是 `Text`。把两者当同义词，会在处理非 UTF-8 数据时出问题。
 
-## t、nil、void：三种“空”
+## t、f、nil：三种“空”
 
-`t`、`nil`、`void` 不是关键字，而是预导入提供的普通值绑定，类型分别是 `t_t`、`nil_t`、`void_t`。它们在名字解析上与普通绑定没有区别，可以被同名的局部绑定遮蔽。
+`t`、`f`、`nil` 不是关键字，而是预导入提供的普通值绑定，类型分别是 `t_t`、`f_t`、`nil_t`。它们在名字解析上与普通绑定没有区别，可以被同名的局部绑定遮蔽。
 
 - `t` 是真值，带 xata 条件属性。
-- `nil` 是标准假值，带 netra 条件属性。
-- `void` 表示没有结果，带 lohk 条件属性；`void` 只表示缺失，不表示假值，但在条件和逻辑判定中按假值处理。
-- `Bool` 是 `t_t | nil_t` 的类型别名，`Bool(value)` 按标准库的条件转换给出 `t` 或 `nil`。
+- `f` 是标准假值，带 netra 条件属性。
+- `nil` 表示没有结果，带 lohk 条件属性；`nil` 只表示缺失，不表示假值，但在条件和逻辑判定中按假值处理。
+- `Bool` 是 `t_t | f_t` 的类型别名，`Bool(value)` 按标准库的条件转换给出 `t` 或 `f`。
 
 ```el
 let yes: Bool = t
-let no: Bool = nil
-let nothing = void
+let no: Bool = f
+let nothing = nil
 
 console.log.value(yes)                // t
-console.log.value(no)                 // nil
-console.log.value(nothing)            // void
-console.log.value(nothing is void_t)  // t
-console.log.value(Bool(0))            // nil
+console.log.value(no)                 // f
+console.log.value(nothing)            // nil
+console.log.value(nothing is nil_t)  // t
+console.log.value(Bool(0))            // f
 console.log.value(Bool(1))            // t
 ```
 
-`nil` 与 `void` 是两种状态：`nil` 是普通值，可以保存、比较、当假值；`void` 表示这个位置没有值。需要可选值时写联合类型 `T | void_t`，缺失时存 `void`。普通读取动态对象上不存在的字段会报错，而不是自动得到 `void`。
+`f` 与 `nil` 是两种状态：`f` 是普通值，可以保存、比较、当假值；`nil` 表示这个位置没有值。需要可选值时写联合类型 `T | nil_t`，缺失时存 `nil`。普通读取动态对象上不存在的字段会报错，而不是自动得到 `nil`。
 
 ```el
-fn logLine(message: Text): void_t {
+fn logLine(message: Text): nil_t {
 	console.stdout.writeLine(message)
-	return void
+	return nil
 }
 
 logLine("done")
 ```
 
-!!! warning "常见坑：默认值不认 `nil`"
-    参数默认值和解构默认值只在**项缺失或值为 `void`** 时生效，`nil` 会原样传进去。写 `fn f(x: Number = 10)` 之后调用 `f(nil)`，进函数的是 `nil`，不是 `10`。
+!!! warning "常见坑：默认值不认 `f`"
+    参数默认值和解构默认值只在**项缺失或值为 `nil`** 时生效，`f` 会原样传进去。写 `fn f(x: Number = 10)` 之后调用 `f(f)`，进函数的是 `f`，不是 `10`。
 
 ## let、const 与类型注解
 
@@ -189,7 +189,7 @@ console.log.value(tail)              // [4]
 ```
 
 - `name: userName` 是重命名，`age = 0` 是默认值。
-- 默认值只在项缺失或值为 `void` 时求值，`nil` 不触发默认值；默认表达式可以引用前面已初始化的绑定。
+- 默认值只在项缺失或值为 `nil` 时求值，`f` 不触发默认值；默认表达式可以引用前面已初始化的绑定。
 - rest 必须放在最后且不能带默认值；数组 rest 是结构独立的新变长数组，对象 rest 是新的 shared 动态对象，只含来源自己的公开数据字段。
 - 无默认值的必需项若静态可判定缺失，编译期拒绝；运行期才发现时抛异常。
 
@@ -227,7 +227,7 @@ if (value is Number) {
 console.log.value(value)                  // "one"
 ```
 
-`any` 可以保存 `nil` 和 `void`：排除缺失只证明非 `void`，不能凭此获得任意对象成员的能力。显式 `any` 的运算默认不纯、可能抛出任意异常，动态返回也是 `any`；已知的返回类型声明仍然保留。
+`any` 可以保存 `f` 和 `nil`：排除缺失只证明非 `nil`，不能凭此获得任意对象成员的能力。显式 `any` 的运算默认不纯、可能抛出任意异常，动态返回也是 `any`；已知的返回类型声明仍然保留。
 
 !!! warning "常见坑：以为 `any` 会自动适配"
     `let x: any = 1` 之后写 `x + 1` 不一定合法：运算前得先缩窄。`any` 是“我放弃静态保证”的声明，不是“编译器帮我兜底”的开关。
@@ -235,7 +235,7 @@ console.log.value(value)                  // "one"
 ## 带走这三样
 
 - `Number` 是精确有理数，`(1 / 3) * 3` 正好是 `1`；需要位宽、浮点或位集合时换专门类型。
-- `t`、`nil`、`void` 是三种不同的“空”：真值、标准假值、没有结果；默认值只认 `void`。
+- `t`、`f`、`nil` 是三种不同的“空”：真值、标准假值、没有结果；默认值只认 `nil`。
 - 类型注解是上界；`any` 要显式缩窄，`const` 只保护绑定本身。
 
 ## 下一站：数值与位类型

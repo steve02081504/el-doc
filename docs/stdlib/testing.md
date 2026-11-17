@@ -199,7 +199,7 @@ el test --full --jobs 4
 - 一个源文件配一个测试文件，命名和目录结构对齐，例如 `src/math.el` 对应 `tests/math.test.el`。
 - 每个测试文件是一个隔离单位：文件内用例按注册顺序串行执行，共享该文件的模块初始化状态；依赖初始化状态的用例尽量拆到独立文件。
 - 需要每条用例一个新进程时，给用例传 `TestOptions(isolation: "case")`；需要自定义超时用 `TestOptions(timeout: TimeDiff.seconds(10))`。
-- 用例显式读取实时系统状态、未声明文件或外部服务时，用 `TestOptions(incremental: nil)` 关闭该文件的结果复用。
+- 用例显式读取实时系统状态、未声明文件或外部服务时，用 `TestOptions(incremental: f)` 关闭该文件的结果复用。
 - 单条用例默认总期限 60 秒，包含夹具创建、主体、受管理任务等待和正常清理；超时会先请求取消，再终止该执行单元拥有的进程树。
 
 !!! warning "常见坑：测试没跑、跑错或假装通过"

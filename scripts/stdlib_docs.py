@@ -361,7 +361,7 @@ def type_index(stdlib, entries):
 					if previous and re.match(r'\s*export\s+@', previous[-1]): exported.add(name)
 			if token == "{": depth += 1
 			elif token == "}": depth = max(0, depth - 1)
-		modules[path] = (local, imports, reexports, exported, bool(re.search(r'@module\s*\(\s*prelude\s*:\s*nil', text)))
+		modules[path] = (local, imports, reexports, exported, bool(re.search(r'@module\s*\(\s*prelude\s*:\s*f', text)))
 	def exported_resolve(path, name, seen):
 		if (path, name) in seen or path not in modules: return None
 		local, _, reexports, exported, _ = modules[path]

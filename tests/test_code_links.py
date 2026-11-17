@@ -91,7 +91,7 @@ spec.loader.exec_module(module)
 	def test_unknown_receivers_keys_and_disabled_prelude_stay_plain(self):
 		self.assertNotIn("writeLine", self.names('object.writeLine("hello")'))
 		self.assertNotIn("console", self.names('@{ console: "hello" }'))
-		self.assertNotIn("console", self.names('@module(prelude: nil)\nconsole.stdout.writeLine("hello")'))
+		self.assertNotIn("console", self.names('@module(prelude: f)\nconsole.stdout.writeLine("hello")'))
 		self.assertIn("Number", self.names("let count: Number = 3"))
 
 	def test_keywords_link_to_reference_pages(self):
@@ -138,7 +138,7 @@ spec.loader.exec_module(module)
 		self.assertNotIn("output", targets)
 		self.assertEqual(targets["writeLine"].fragment, anchor("console/facade::ConsolePort.writeLine"))
 		self.assertNotIn("writeLine", self.names(code + '\nfn test(output) { output.writeLine("hello") }'))
-		self.assertNotIn("writeLine", self.names(code.replace("ConsolePort =", "ConsolePort | void_t =")))
+		self.assertNotIn("writeLine", self.names(code.replace("ConsolePort =", "ConsolePort | nil_t =")))
 
 	def test_getter_declarations_do_not_link_to_same_named_defaults(self):
 		self.assertNotIn("console", self.names("get console(): Text"))

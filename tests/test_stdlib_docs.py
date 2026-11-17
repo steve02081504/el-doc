@@ -214,7 +214,7 @@ class GenerationTests(unittest.TestCase):
 	def test_contextual_type_definitions_and_compound_links(self):
 		(self.stdlib / "public").mkdir()
 		(self.stdlib / "public/index.el").write_text('export { Original as Alias } from "file:../types.el"\n')
-		(self.stdlib / "types.el").write_text('export class Original {}\nexport let Bool: type = t_t | nil_t\nexport fn Bool(value): Bool { return value }\nexport @builtin:jahu:xata class t_t {}\nexport @builtin:jahu:netra class nil_t {}\n')
+		(self.stdlib / "types.el").write_text('export class Original {}\nexport let Bool: type = t_t | f_t\nexport fn Bool(value): Bool { return value }\nexport @builtin:jahu:xata class t_t {}\nexport @builtin:jahu:netra class f_t {}\n')
 		(self.stdlib / "other.el").write_text('export class Original {}\n')
 		doc = DOCUMENT.replace("export fn increment(value: Number): Number => value + 1", "export fn increment(value: ptr): Alias<element: Bool>[] | type | any | ptr { return value }")
 		(self.stdlib / "math.el").write_text('import { Alias } from "file:./public/index.el"\nimport { Bool } from "file:./types.el"\n' + doc)
@@ -228,13 +228,13 @@ class GenerationTests(unittest.TestCase):
 		self.assertEqual(refs["any"]["type"], "builtin")
 		self.assertEqual(refs["ptr"]["type"], "builtin")
 		bool_def = next(x for x in model["types"] if x["name"] == "Bool" and x["signature"].startswith("let"))
-		self.assertEqual(bool_def["initializer"], "t_t | nil_t")
+		self.assertEqual(bool_def["initializer"], "t_t | f_t")
 		self.assertTrue(any(x["name"] == "t_t" for x in model["types"]))
 		page = render(model)["modules/math.md"]
 		self.assertIn("[`Alias`](../types.md#api-", page)
 		self.assertIn("[`Bool`](../types.md#api-", page)
 		self.assertIn("reference/language/foreign.md", page)
-		self.assertIn("let Bool: type = t_t | nil_t", render(model)["types.md"])
+		self.assertIn("let Bool: type = t_t | f_t", render(model)["types.md"])
 
 	def test_lexical_factory_and_value_parameters_and_local_alias(self):
 		doc = DOCUMENT.replace("@api increment", "@api Box.item").replace("export fn increment(value: Number): Number => value + 1", "fn item(start: Number, end: Number): Entry<element: element, size: end - start> { return value }")

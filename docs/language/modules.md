@@ -75,12 +75,12 @@ export /.*/ from "file:./internal.el"
 
 ## 预导入（prelude）：不用写 import 的默认名字
 
-每个模块默认导入标准库的 prelude，不需要逐个写 `import`。当前源码的默认入口是 `src/stdlib/index.el`，可见基础值 `t`、`nil`、`void`，文本与集合类型、`console`，以及 `typeof`、`assert`、`formats`、`spawn`、`parseJSON`、`readFileAs` 等名字。这是当前聚合入口的导出情况，不是语言永久保证的默认名字清单；规范 SRC-18 要求默认集合限于基础能力及其实际依赖，大型便利入口应显式导入。模块需要某个具体 API 时，写出显式导入可以明确依赖，接口以[标准库参考](../stdlib/api/index.md)与真实源码为准。
+每个模块默认导入标准库的 prelude，不需要逐个写 `import`。当前源码的默认入口是 `src/stdlib/index.el`，可见基础值 `t`、`f`、`nil`，文本与集合类型、`console`，以及 `typeof`、`assert`、`formats`、`spawn`、`parseJSON`、`readFileAs` 等名字。这是当前聚合入口的导出情况，不是语言永久保证的默认名字清单；规范 SRC-18 要求默认集合限于基础能力及其实际依赖，大型便利入口应显式导入。模块需要某个具体 API 时，写出显式导入可以明确依赖，接口以[标准库参考](../stdlib/api/index.md)与真实源码为准。
 
-prelude 是普通模块，显式导入和本模块自己的声明优先，可以遮盖同名 prelude 绑定；未被遮盖的 prelude 名字同样是只读导入绑定。要关掉当前模块的默认导入，写模块属性 `@module(prelude: nil)`；关掉之后 `t`、`nil`、`void` 和常用类型都需要显式导入或自行定义，否则在用到的地方报编译错误。
+prelude 是普通模块，显式导入和本模块自己的声明优先，可以遮盖同名 prelude 绑定；未被遮盖的 prelude 名字同样是只读导入绑定。要关掉当前模块的默认导入，写模块属性 `@module(prelude: f)`；关掉之后 `t`、`f`、`nil` 和常用类型都需要显式导入或自行定义，否则在用到的地方报编译错误。
 
 ??? note "可选 · 深入：关掉 prelude 的两种层级"
-    `@runtime(prelude: nil)` 是程序级关闭，它只能出现在编译根模块上，并作为硬上限：被它关掉的项没有任何模块能再打开。`@module(prelude: nil)` 只影响当前模块。两者都写在模块属性位置，不是普通语句。
+    `@runtime(prelude: f)` 是程序级关闭，它只能出现在编译根模块上，并作为硬上限：被它关掉的项没有任何模块能再打开。`@module(prelude: f)` 只影响当前模块。两者都写在模块属性位置，不是普通语句。
 
 ## 来源写法：导入的内容从哪里来
 
@@ -104,7 +104,7 @@ import /.*/ as backend from @{ windows-x64: "file:./backend-win.el"; linux-x64: 
 
 ## `lazy import`：用到才装载
 
-如果一个模块很大、或者只在少数路径上需要，可以用 `lazy import { renderReport } from "file:./report.el"` 推迟装载。`lazy import` 只能写非空的名字表，不支持正则形式；它按编译期真实的名字需求打开来源模块，只有真的用到选中名字时才装载。模块属性 `@module(gc: nil)` 关闭当前模块的 GC，只影响本模块，生命周期改走非 GC 路径。
+如果一个模块很大、或者只在少数路径上需要，可以用 `lazy import { renderReport } from "file:./report.el"` 推迟装载。`lazy import` 只能写非空的名字表，不支持正则形式；它按编译期真实的名字需求打开来源模块，只有真的用到选中名字时才装载。模块属性 `@module(gc: f)` 关闭当前模块的 GC，只影响本模块，生命周期改走非 GC 路径。
 
 ## 模块没有 `main`：顶层代码就是入口
 

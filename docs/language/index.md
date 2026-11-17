@@ -31,7 +31,7 @@
 <div class="el-card" markdown>
 <span class="el-card__num">02</span>
 ### [值与类型](values.md)
-`Number` 是精确有理数，`Text` 按 Unicode 标量计数，`t`/`nil`/`void` 是三种不同的“空”。
+`Number` 是精确有理数，`Text` 按 Unicode 标量计数，`t`/`f`/`nil` 是三种不同的“空”。
 <span class="el-card__meta">12 分钟 · 前置：01</span>
 </div>
 <div class="el-card" markdown>

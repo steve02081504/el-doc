@@ -222,7 +222,7 @@ console.error.value(error)
 ````markdown
 !!! abstract "🎯 读完这页，你能"
     - 写出精确有理数字面量，并解释 `1/3 * 3` 为什么正好是 `1`
-    - 区分 `t`、`nil`、`void` 三种“空”
+    - 区分 `t`、`f`、`nil` 三种“空”
     - 用解构一次取出对象和数组里的值
 
     <span class="el-chip">⏱ 约 12 分钟</span> <span class="el-chip">前置：[读语言之前](before-you-start.md)</span>

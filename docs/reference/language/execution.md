@@ -3,7 +3,7 @@
 | 需要做什么 | 写法 | 关键边界 |
 | --- | --- | --- |
 | 抛出、处理错误 | `throw error`、`catch (error: Error)` | 按类型从上到下选择第一个匹配的处理器 |
-| 捕获任意异常值 | `catch (error)` 或 `catch { ... }` | 包括 `nil`、`void`；兜底处理器必须最后写 |
+| 捕获任意异常值 | `catch (error)` 或 `catch { ... }` | 包括 `f`、`nil`；兜底处理器必须最后写 |
 | 无论如何都清理 | `try { ... } finally { ... }` | 正常完成、异常和控制退出都经过必要清理 |
 | 启动独立任务 | `spawn(() => expression)` | 立即返回 Promise，不等待任务完成 |
 | 等待任务结果 | `promise.get()` | 成功返回值，失败抛出保存的异常 |
@@ -23,7 +23,7 @@
 import { Error, StateError, RangeError } from "el:errors/"
 
 fn checkedStock(stock) {
-	if (stock is void_t) throw StateError("stock record missing")
+	if (stock is nil_t) throw StateError("stock record missing")
 	if (stock < 0) throw RangeError()
 	return stock
 }
@@ -40,7 +40,7 @@ fn showStock(stock) {
 	}
 }
 
-showStock(void)
+showStock(nil)
 showStock(-1)
 showStock(12)
 ```
@@ -53,7 +53,7 @@ showStock(12)
 
 ## `try` 可以产生值，`finally` 负责清理
 
-`try` 是表达式：正常完成时取保护块的末尾结果；异常被处理时取实际执行的处理块结果。空块或无值末尾产生 `void`，不返回的分支不参与结果类型合并。`finally` 正常完成时，其普通结果被丢弃，不替换此前结果。
+`try` 是表达式：正常完成时取保护块的末尾结果；异常被处理时取实际执行的处理块结果。空块或无值末尾产生 `nil`，不返回的分支不参与结果类型合并。`finally` 正常完成时，其普通结果被丢弃，不替换此前结果。
 
 下面是完整的局部语义示例，用默认库存 0 处理记录缺失，并说明清理块中的 `99` 不成为查询结果。
 
@@ -78,7 +78,7 @@ console.stdout.writeLine(stock)
 
 ## `Error` 保留错误来源与构建栈
 
-`Error` 包含 `name`、`message`，以及可选源码位置、建议、参考链接与 `cause`；`errors` 默认是空数组。缺失的辅助字段为 `void`，而 `cause` 可以合法保存 `nil`。系统错误还需保留平台及原始系统错误码，不能仅凭数字推测跨平台含义。
+`Error` 包含 `name`、`message`，以及可选源码位置、建议、参考链接与 `cause`；`errors` 默认是空数组。缺失的辅助字段为 `nil`，而 `cause` 可以合法保存 `f`。系统错误还需保留平台及原始系统错误码，不能仅凭数字推测跨平台含义。
 
 栈在构建 `Error` 时捕获，复制、捕获绑定、重抛和异步交付保留原栈。重新构造包装错误会获得自己的构建栈，可通过 `cause` 保留原错误。捕获失败或资源不足时允许缺失或截断，但不能用伪造的完整空栈掩盖状态；普通非 `Error` 异常值也不会被强制包装。
 
@@ -107,7 +107,7 @@ try {
 
 `async` 与 `await` 从 `el:concurrency/` 具名导入。`async { return expression }` 把块交给 `spawn`，`await(promise)` 只生成一次 `promise.get()`；它们不是语言关键字，也不改变普通调用的自动等待合同。
 
-多个等待者可以读取同一个 Promise。任务成功结果（包括 `void`）完成 Promise，未处理异常使其失败；`.get()` 在失败时抛出保存的载荷。只在启动操作外包一层 `try`，不能接住任务后来发生的错误，应把等待或错误接收边界放在实际读取结果的位置。
+多个等待者可以读取同一个 Promise。任务成功结果（包括 `nil`）完成 Promise，未处理异常使其失败；`.get()` 在失败时抛出保存的载荷。只在启动操作外包一层 `try`，不能接住任务后来发生的错误，应把等待或错误接收边界放在实际读取结果的位置。
 
 ## 组合等待不自动取消其余任务
 

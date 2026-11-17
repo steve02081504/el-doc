@@ -128,7 +128,7 @@ let values = @[3, 1, 2]
 | `let mut` | `let` | 绑定默认可重新赋值，没有 `mut` 修饰；要常量用 `const` |
 | `&` 引用 | 逻辑与 | 借用不写成 Rust 那样的引用前缀；所有权与借用通过参数标记（`take`、`ref`、`rvalue`）和返回来源合同表达，规范第 6 章与第 20 章管这块 |
 | `Result` | 异常 | 没有 `Result` 组合子，直接抛异常 |
-| `Option<T>` + `match` | `T` 与 `void_t` 的联合类型 + `is void_t` | 可能缺失的值用 `void` 和联合类型，用 `is void_t` 判断 |
+| `Option<T>` + `match` | `T` 与 `nil_t` 的联合类型 + `is nil_t` | 可能缺失的值用 `nil` 和联合类型，用 `is nil_t` 判断 |
 | 宏／模式匹配／trait | 普通库宏／`switch` 加 `data` 与 `match`／`interface` | 类还是普通 `class` 加 `@assign`；这些能力按规范分阶段实现，别把 Rust 的心智模型整套搬来 |
 
 ## 对象：赋值是复制还是共享，由类自己声明
@@ -163,7 +163,7 @@ console.stdout.writeLine(counter.advance(3))
 - **`print()`。** 没有全局输出函数：文字用 `console.stdout.write`／`writeLine`，结构化值用 `console.log.value(...)`。
 - **直接写类。** 类必须写 `@assign(mode: "copy")` 或 `@assign(mode: "shared")`，没写就是编译错误。
 - **`{}` 对象字面量。** 对象字面量必须带 `@`，写 `@{ name: "x" }`；裸 `{}` 在语句位置是块。
-- **`undefined` / `null`。** 没有 `undefined`：缺失是 `void`，假值是 `nil`，两者不混用；`0` 与空文本仍按假值处理。
+- **`undefined` / `null`。** 没有 `undefined`：缺失是 `nil`，假值是 `f`，两者不混用；`0` 与空文本仍按假值处理。
 
 !!! tip "迁移顺序"
     先把变量、函数、循环改成 EL 语法，再处理输出；这两步走通后，把类补上 `@assign`，最后处理错误与并发。GUI 不是 HTML，界面代码基本要重写，见[图形界面](../stdlib/gui.md)。

@@ -1,6 +1,6 @@
 # 数值与位类型
 
-> `1 / 10 + 2 / 10 == 3 / 10` 是 `t`，`F64(0.1) + F64(0.2) == F64(0.3)` 却是 `nil`。差别不在精度高低，在你选了哪一种数值类型。
+> `1 / 10 + 2 / 10 == 3 / 10` 是 `t`，`F64(0.1) + F64(0.2) == F64(0.3)` 却是 `f`。差别不在精度高低，在你选了哪一种数值类型。
 
 !!! abstract "🎯 读完这页，你能"
     - 说出 `Number` 与 `BitFloat` 各自保证什么，什么时候必须换类型
@@ -101,7 +101,7 @@ let within = Narrow(8)
 ```el
 let F64 = BitFloat<sign_bits: 1, fraction_bits: 52, exponent_bits: 11, exponent_bias: 1023>
 let rounded = F64(0.1) + F64(0.2)
-let equal = rounded == F64(0.3)      // nil
+let equal = rounded == F64(0.3)      // f
 
 let exact = 1 / 10 + 2 / 10
 let exactEqual = exact == 3 / 10     // t

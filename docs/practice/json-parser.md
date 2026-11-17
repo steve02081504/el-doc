@@ -61,7 +61,7 @@ import { firstOf, constant } from "el:text/patterns/index.el"
 let literalParser = firstOf(
 	constant("null", Json.Null),
 	constant("true", Json.Boolean(t)),
-	constant("false", Json.Boolean(nil))
+	constant("false", Json.Boolean(f))
 )
 ```
 
@@ -74,7 +74,7 @@ literalParser("true ")  → ParseError（末尾还有剩文本）
 ```
 
 !!! success "检查点"
-    - [ ] `literalParser("false")` 得到 `Json.Boolean(nil)`
+    - [ ] `literalParser("false")` 得到 `Json.Boolean(f)`
     - [ ] `literalParser("nullx")` 抛错，而不是返回 `Json.Null`
 
 ## 第三步：给数字补一条完整规则
@@ -295,7 +295,7 @@ try {
     		if (this.nextIs("\"")) return Json.String(this.parseString())
     		if (this.nextIs("n")) { this.expect("null"); return Json.Null }
     		if (this.nextIs("t")) { this.expect("true"); return Json.Boolean(t) }
-    		if (this.nextIs("f")) { this.expect("false"); return Json.Boolean(nil) }
+        if (this.nextIs("f")) { this.expect("false"); return Json.Boolean(f) }
     		return Json.Numeric(this.parseNumber())
     	}
 
@@ -365,7 +365,7 @@ class JsonMember {
 let literalParser = firstOf(
 	constant("null", Json.Null),
 	constant("true", Json.Boolean(t)),
-	constant("false", Json.Boolean(nil))
+	constant("false", Json.Boolean(f))
 )
 
 let digit = range("0", "9")

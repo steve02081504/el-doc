@@ -6,7 +6,7 @@
 | --- | --- |
 | 对象取值 | `{ name: localName }` 按字段名选择，冒号后是新绑定 |
 | 数组取值 | `[first, , third]` 按位置选择，空项跳过一个位置 |
-| 默认值 | 只在项缺失或值为 `void` 时求值，`nil` 不触发 |
+| 默认值 | 只在项缺失或值为 `nil` 时求值，`f` 不触发 |
 | 初始化顺序 | 来源只求值一次，绑定从左到右建立 |
 | 剩余项 | `...rest` 必须最后，不能带默认值 |
 | 值的关系 | 新绑定遵循字段或元素类型的复制／共享协议，不是来源槽的别名 |
@@ -42,10 +42,10 @@ console.stdout.writeLine(monday + wednesday)
 
 ## 默认表达式按需执行，可以引用前序绑定
 
-下例完整展示存在值、缺失项、`void` 和 `nil` 的区别：
+下例完整展示存在值、缺失项、`nil` 和 `f` 的区别：
 
 ```el
-let settings = @{ minimum: 3, preferred: void, enabled: nil }
+let settings = @{ minimum: 3, preferred: nil, enabled: f }
 let { minimum = 1, preferred = minimum + 1, maximum = preferred + 1, enabled = t } = settings
 console.stdout.writeLine(minimum)
 console.stdout.writeLine(preferred)
@@ -62,7 +62,7 @@ console.stdout.writeLine(if (enabled) "开启" else "关闭")
 关闭
 ```
 
-`minimum` 已有值，因此不执行默认表达式；`preferred` 是 `void`，使用前序绑定算出 `4`；缺失的 `maximum` 算出 `5`。`enabled` 的 `nil` 被保留。默认表达式只有在需要时才执行，其副作用和异常也只在那时发生。
+`minimum` 已有值，因此不执行默认表达式；`preferred` 是 `nil`，使用前序绑定算出 `4`；缺失的 `maximum` 算出 `5`。`enabled` 的 `f` 被保留。默认表达式只有在需要时才执行，其副作用和异常也只在那时发生。
 
 没有默认值的必需项若缺失，静态可判定时编译拒绝，运行期才发现时抛异常。默认值不会吞掉读取过程中的任意异常；字段读取或默认表达式失败仍按普通异常规则传播，已发生的副作用不会回滚，已建立的值仍按正常规则清理。
 

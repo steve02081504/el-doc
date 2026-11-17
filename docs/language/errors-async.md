@@ -53,7 +53,7 @@ fn requirePort(value: Number) {
 `throw` 不产生可读取的结果（内部是 never 流），所以它常出现在分支或提前返回的位置。需要按条件抛错时，用 `if` 把控制流写清楚：
 
 ```el
-let config = if (candidate is void_t) {
+let config = if (candidate is nil_t) {
 	throw StateError("missing config")
 } else {
 	candidate

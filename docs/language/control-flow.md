@@ -27,11 +27,11 @@ console.stdout.writeLine(status)   // 继续阅读
 ```
 
 - 每个分支是一个块，块的值就是它最后执行语句的值；`if` 的值取被选中分支的值。
-- 没有 `else` 且条件为假时，结果是 `void`：
+- 没有 `else` 且条件为假时，结果是 `nil`：
 
 ```el
 let reminder = if (pagesRead >= totalPages) { "请在周五前归还" }
-console.log.value(reminder)   // void：尚未读完，这次没有生成归还提醒
+console.log.value(reminder)   // nil：尚未读完，这次没有生成归还提醒
 ```
 
 - 条件不需要外层括号，圆括号只用于表达式分组：
@@ -68,7 +68,7 @@ do {
 
 - `while` 的条件同样可以省略外层括号；`do while` 的尾部条件要求括号。
 - `do while` 先执行一次循环体再检查条件，所以循环体至少执行一次。
-- 两个循环的值都按“最后执行语句的值”规则；零次迭代时值是 `void`。
+- 两个循环的值都按“最后执行语句的值”规则；零次迭代时值是 `nil`。
 
 ## 需要计数器时：C 风格 `for`
 
@@ -87,7 +87,7 @@ console.stdout.writeLine(sum)   // 55
 - 三段式必须带括号，形式是 `for (init; cond; step) statement`。
 - `init` 里声明的 `let` 只在循环内可见；省略 `cond` 视为 `t`。
 - `continue` 先执行 `step` 再判断条件；`break` 跳过 `step`。
-- 零次执行时循环的值是 `void`，`break`／`continue` 保留此前最后产生的语句值。
+- 零次执行时循环的值是 `nil`，`break`／`continue` 保留此前最后产生的语句值。
 
 !!! warning "常见坑：`in` 形式能省括号，三段式不能"
     **现象。** 写惯了 `for (let name in names)`，改成 `for let i = 0; i < 3; i += 1` 就报语法错误。**原因。** 只有带 `in` 的头部可以省略括号。**改法。** 三段式一律写 `for (...)`，别跟 `in` 形式混。
@@ -249,16 +249,16 @@ console.stdout.writeLine(sumTo(4))       // 10
 console.stdout.writeLine(describe(-5))   // negative
 ```
 
-- 循环零次执行时值是 `void`；`break`／`continue` 保留此前最后产生的语句值，没有则为 `void`。
-- 空函数体、空块的值是 `void`。显式写出无结果用 `return void`，显式返回假值用 `return nil`。
+- 循环零次执行时值是 `nil`；`break`／`continue` 保留此前最后产生的语句值，没有则为 `nil`。
+- 空函数体、空块的值是 `nil`。显式写出无结果用 `return nil`，显式返回假值用 `return f`。
 - `return`、`throw` 这类不继续的控制转移不产生可读取的占位值，分支类型合并时忽略它们。
 
 ```el
-fn doNothing(): void_t {
-	return void
+fn doNothing(): nil_t {
+	return nil
 }
 
-console.log.value(doNothing())   // void
+console.log.value(doNothing())   // nil
 ```
 
 ## 完整例子：FizzBuzz
@@ -298,7 +298,7 @@ FizzBuzz
 
 ```el
 let words = @["alpha", "beta", "gamma"]
-let found: Text | void_t = void
+let found: Text | nil_t = nil
 
 for (let word in words) {
 	if (word == "beta") {
@@ -314,7 +314,7 @@ if (found is Text) {
 }
 ```
 
-`found` 被声明为 `Text | void_t`，循环外仍然保留这个类型；`is` 判断让你在分支里安全使用它，不需要先塞一个假字符串当“没找到”。
+`found` 被声明为 `Text | nil_t`，循环外仍然保留这个类型；`is` 判断让你在分支里安全使用它，不需要先塞一个假字符串当“没找到”。
 
 ## 带走这三样
 

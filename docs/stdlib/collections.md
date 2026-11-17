@@ -89,7 +89,7 @@ console.stdout.writeLine("has grace: ", scores.has("grace"))
 ```
 
 - `set(key, value)` 写入并返回是否新增了键；
-- `get(key)` 返回 `value | void_t`，键不存在时得到 `void`；
+- `get(key)` 返回 `value | nil_t`，键不存在时得到 `nil`；
 - `getOr(key, fallback)` 在缺失时返回默认值；
 - `has(key)` 判断键是否存在；
 - `count` 是条目数，`remove(key)` 删除，`clear()` 清空；
@@ -113,7 +113,7 @@ for (let {key: name, value: score} in scores) {
 
 `for` 接受一个元素绑定或解构模式，不支持 `for (let key, value in scores)`。当前 Map 的迭代器先取得条目数组快照，需要与条目数成正比的额外空间；循环期间新增、删除或替换映射条目不会改变这份快照。快照不深复制共享对象，修改共享值的字段仍可能被其他引用看到。给解构变量重新赋值不会写回映射；要替换映射中的值，显式调用 `scores.set(key, newValue)`。
 
-下标写法 `scores["ada"]` 也能读，但键不存在时抛 `MissingKeyError`，而不是返回 `void`。需要“缺失可接受”时用 `get` 或 `getOr`。
+下标写法 `scores["ada"]` 也能读，但键不存在时抛 `MissingKeyError`，而不是返回 `nil`。需要“缺失可接受”时用 `get` 或 `getOr`。
 
 ## Set 去重，BitSet 记位
 
@@ -230,7 +230,7 @@ console.stdout.writeLine(result.join(", "))   // 6, 8, 10
 `@[1, 2, 3]` 是长度可变的一维数组；`@(1, 2; 3, 4)` 是矩阵字面量，构造的是固定形状的数值表，两者不是同一种类型。矩阵的索引、运算与广播规则属于数值计算库的内容，不在这一页展开。
 
 !!! warning "常见坑：三种“取不到”和一次“没生效”"
-    - `Map["缺失键"]` 抛 `MissingKeyError`，不是返回 `void`；不确定有没有时用 `get` 或 `getOr`。
+    - `Map["缺失键"]` 抛 `MissingKeyError`，不是返回 `nil`；不确定有没有时用 `get` 或 `getOr`。
     - `sort` 不修改原数组，`reverse` 才原地改；把 `sort` 的返回值丢掉，会以为排序没生效。
     - release 构建不做数组越界检查，`values[10]` 不报错，只会给出无法预期的结果。
 

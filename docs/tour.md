@@ -179,7 +179,7 @@ sum: 50
 @assign(mode: "shared")
 class Task {
 	let title: Text
-	let done: Bool = nil
+	let done: Bool = f
 
 	constructor(title: Text) {
 		this.title = title

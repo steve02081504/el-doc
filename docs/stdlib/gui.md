@@ -113,7 +113,7 @@ root.theme = Theme(fn(context: ThemeContext) => @{base100: 0x191B20; primary: 0x
 
 ## 事件从捕获到冒泡，输入框给完整文本
 
-`on(element, kind, action, capture = nil)` 挂监听器。事件先捕获（根到目标），再在目标调用，最后沿父链冒泡；`capture = t` 的监听器只在捕获阶段调用。当前分发的 `kind` 包括 `click`、`pointerdown`、`pointermove`、`pointerup`、`pointercancel`、`wheel`、`keydown`、`keyup`、`beforeinput`、`input` 与列表行的 `itemactivate`。
+`on(element, kind, action, capture = f)` 挂监听器。事件先捕获（根到目标），再在目标调用，最后沿父链冒泡；`capture = t` 的监听器只在捕获阶段调用。当前分发的 `kind` 包括 `click`、`pointerdown`、`pointermove`、`pointerup`、`pointercancel`、`wheel`、`keydown`、`keyup`、`beforeinput`、`input` 与列表行的 `itemactivate`。
 
 处理器收到 `GuiEvent`，字段有 `kind`、`target`、`currentTarget`、`phase`、`x`、`y`、`key`、`text`、`inputType`、`deltaX`、`deltaY`、`itemIndex`。`input` 的 `text` 是编辑后的完整文本，`beforeinput` 的 `inputType` 说明编辑种类；`stopPropagation()` 停止后续传播，`preventDefault()` 取消可取消的默认动作。
 

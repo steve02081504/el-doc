@@ -104,7 +104,7 @@ let sourceLine = "let sourceLine = __BUILTIN_LINE_CONTENT__"
 `#if` 和 `#else_if` 后面的条件语言不运行 EL，也不调用用户函数、getter、宏展开器或 I/O。
 支持的东西只有这些：
 
-- 十进制整数、正负号，以及 `true`／`false`（`t`／`nil` 等价）；整数零为假，其余为真。
+- 十进制整数、正负号，以及 `true`／`false`（`t`／`f` 等价）；整数零为假，其余为真。
 - `defined('NAME')`、`defined("NAME")`，也可以不写引号写成 `defined(NAME)`。
 - `time('timestamp')` 或双引号形式，返回精确的 Unix 秒常量。
 - 比较 `== != < <= > >=`、括号、`!`、`&`、`|`，优先级从高到低是括号与前缀、比较、`&`、`|`。
