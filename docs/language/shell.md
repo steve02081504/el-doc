@@ -96,7 +96,7 @@ git.name
 & git status
 ```
 
-shell 域里的 `f a b` 是一次 `f(a, b)`，不是普通 EL 的空格应用；完整 EL 调用 `f(a, b)` 仍然合法，复杂算式用完整括号调用。原生调用（被绑定的 EL 函数）还支持 shell 风格的具名参数：`-name value`、`-name:value`，`--` 终止参数标记解析。
+shell 域和普通 EL 都把 `f a b` 解释为一次 `f(a, b)`；复杂算式用完整括号调用。shell 中的原生调用（被绑定的 EL 函数）还支持 shell 风格的具名参数：`-name value`、`-name:value`，`--` 终止参数标记解析。
 
 | 写法 | 解释 |
 | --- | --- |

@@ -42,6 +42,7 @@ if pagesRead >= totalPages {
 }
 ```
 
+- 不写外层括号时，条件到行末结束，下一条语句就是分支；同一行也可以用 `{` 或 `return` 等控制流起始项标出分支。例如 `if canBorrow book return book` 的条件是 `canBorrow(book)`，分支是 `return book`。函数有几个参数不改变条件与分支的边界。
 - `else` 结合最近的、尚未匹配的 `if`，嵌套时按这个规则读，不要靠缩进猜。
 - `if` 的值可以直接作为初始化器、实参或隐式返回值，不要求先赋给变量。
 
