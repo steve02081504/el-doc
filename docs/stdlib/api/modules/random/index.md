@@ -199,7 +199,7 @@ let index = Random(72).betweenExclusive(0, 6)
 在二进制网格上抽取 [0, 1) 内的数；inclusive 为真时包含 1。
 
 ```el
-fn unit(bitCount: Number = Number(53), inclusive: Bool = nil): Number
+fn unit(bitCount: Number = Number(53), inclusive: Bool = f): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
@@ -225,7 +225,7 @@ let sample = Random(72).unit()
 在两个有限实数端点之间按指定二进制网格精度抽样。
 
 ```el
-fn realBetween(minimum: Number, maximum: Number, bitCount: Number = Number(53), inclusive: Bool = nil): Number
+fn realBetween(minimum: Number, maximum: Number, bitCount: Number = Number(53), inclusive: Bool = f): Number
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)

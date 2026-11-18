@@ -98,7 +98,7 @@ window.theme = darkPaintTheme()
 fn onArrow(action)
 ```
 
-**参数**：action 接收 dx、dy 的回调；传入 void 移除处理器。
+**参数**：action 接收 dx、dy 的回调；传入 nil 移除处理器。
 
 ### 示例：注册方向键处理
 

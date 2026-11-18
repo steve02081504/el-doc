@@ -11,13 +11,13 @@
 
 ## 文件读取器 {#api-6e76e3b3e1ee0eb46bc7}
 
-源码：`src/stdlib/filesystem/reader.el:15` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L15)
+源码：`src/stdlib/filesystem/reader.el:16` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L16)
 
 提供顺序及可选随机访问的逻辑位置读取器。
 
 ## FileReader.read {#api-de5485f845b68f2bcf8a}
 
-源码：`src/stdlib/filesystem/reader.el:142` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L142)
+源码：`src/stdlib/filesystem/reader.el:143` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L143)
 
 从当前位置读取至多指定数量的原始字节。
 
@@ -43,15 +43,15 @@ reader.close()
 
 ## FileReader.close {#api-226f1d4ed93e75e92625}
 
-源码：`src/stdlib/filesystem/reader.el:200` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L200)
+源码：`src/stdlib/filesystem/reader.el:201` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L201)
 
 关闭读取器并结束其底层资源使用。
 
 ```el
-fn close(): void_t
+fn close(): nil_t
 ```
 
-**返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
+**返回类型**：[`nil_t`](../language/values.md#api-86357ad50ef0535f6333)
 
 **失败与异常**：底层关闭失败时传播文件系统异常。
 

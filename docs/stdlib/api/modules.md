@@ -43,7 +43,7 @@
 
 ## filesystem
 
-- [filesystem/index.el](modules/filesystem/index.md)（23 个 API）
+- [filesystem/index.el](modules/filesystem/index.md)（22 个 API）
 - [filesystem/reader.el](modules/filesystem/reader.md)（2 个 API）
 - [filesystem/writer.el](modules/filesystem/writer.md)（2 个 API）
 
@@ -82,9 +82,11 @@
 
 - [logic/control.el](modules/logic/control.md)（1 个 API）
 - [logic/goal.el](modules/logic/goal.md)（5 个 API）
+- [logic/proof-conflict.el](modules/logic/proof-conflict.md)（1 个 API）
 - [logic/search.el](modules/logic/search.md)（4 个 API）
 - [logic/surface.el](modules/logic/surface.md)（2 个 API）
 - [logic/term.el](modules/logic/term.md)（5 个 API）
+- [logic/well-founded.el](modules/logic/well-founded.md)（1 个 API）
 
 ## mathematics
 
@@ -157,12 +159,12 @@
 
 ## text
 
-- [text/operations.el](modules/text/operations.md)（2 个 API）
+- [text/operations.el](modules/text/operations.md)（1 个 API）
 - [text/patterns/combinators.el](modules/text/patterns/combinators.md)（8 个 API）
 - [text/patterns/parser.el](modules/text/patterns/parser.md)（15 个 API）
 - [text/patterns/syntax.el](modules/text/patterns/syntax.md)（1 个 API）
 - [text/resources.el](modules/text/resources.md)（0 个 API）
-- [text/text.el](modules/text/text.md)（15 个 API）
+- [text/text.el](modules/text/text.md)（16 个 API）
 
 ## theme
 

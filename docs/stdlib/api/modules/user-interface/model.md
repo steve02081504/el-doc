@@ -59,10 +59,10 @@ title.enabled = t
 可选的局部语义 Theme，按当前出现位置参与父子主题解析。
 
 ```el
-let theme: Theme | void_t
+let theme: Theme | nil_t
 ```
 
-**类型**：[`Theme`](../theme/model.md#api-2f8f76e6db4068dfe678) | [`void_t`](../language/values.md#api-d7b419fab395eef3d142)
+**类型**：[`Theme`](../theme/model.md#api-2f8f76e6db4068dfe678) | [`nil_t`](../language/values.md#api-86357ad50ef0535f6333)
 
 ### 示例：为根节点设置主色
 
@@ -94,7 +94,7 @@ on(button, "click", event => event.preventDefault())
 为定义节点注册指定类型的事件监听器，可选择在捕获阶段运行。
 
 ```el
-export fn on(element: Definition, kind: Text, action, capture: Bool = nil)
+export fn on(element: Definition, kind: Text, action, capture: Bool = f)
 ```
 
 **参数**：element 接收事件的界面定义。

@@ -47,7 +47,7 @@ let equalPairs = @[@[a, b] for let a in ..2 for let b in ..2 if a == b]
 ```el
 import { any, all } from "el:collections/arrays/operations.el"
 let exists = any(a == b for let a in ..2 for let b in ..2) // t
-let universal = all(a == b for let a in ..2 for let b in ..2) // nil
+let universal = all(a == b for let a in ..2 for let b in ..2) // f
 ```
 
 参见：[collections/arrays/operations::any](../arrays/operations.md#api-1fff05563d7e913b33e0)

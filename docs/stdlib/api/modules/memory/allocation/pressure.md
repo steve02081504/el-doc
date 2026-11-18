@@ -53,7 +53,7 @@ export @assign(mode: "shared") class ReclaimRegistration
 ```el
 import { MemoryPressure } from "el:memory/allocation/pressure.el"
 let pressure = MemoryPressure()
-let registration = pressure.register_reclaimer(fn(bytes) { return nil })
+let registration = pressure.register_reclaimer(fn(bytes) { return f })
 registration.close()
 pressure.close()
 ```
@@ -73,7 +73,7 @@ fn close()
 ```el
 import { MemoryPressure } from "el:memory/allocation/pressure.el"
 let pressure = MemoryPressure()
-let registration = pressure.register_reclaimer(fn(bytes) { return nil })
+let registration = pressure.register_reclaimer(fn(bytes) { return f })
 registration.close()
 pressure.close()
 ```
@@ -133,7 +133,7 @@ fn register_reclaimer(callback: fn(bytes: AllocationSize): Bool): ReclaimRegistr
 ```el
 import { MemoryPressure } from "el:memory/allocation/pressure.el"
 let pressure = MemoryPressure()
-let registration = pressure.register_reclaimer(fn(bytes) { return nil })
+let registration = pressure.register_reclaimer(fn(bytes) { return f })
 registration.close()
 pressure.close()
 ```
@@ -163,7 +163,7 @@ pressure.close()
 
 源码：`src/stdlib/memory/allocation/pressure.el:233` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/pressure.el#L233)
 
-尝试补充一个储备块；成功返回 t，无法补充时返回 nil。
+尝试补充一个储备块；成功返回 t，无法补充时返回 f。
 
 ```el
 fn refill(): Bool

@@ -173,13 +173,13 @@ let options = HttpOptions(@{ timeout: 5000 })
 
 源码：`src/stdlib/network/http/model.el:107` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L107)
 
-请求或响应消息体字节上限；void 表示不设显式上限。
+请求或响应消息体字节上限；nil 表示不设显式上限。
 
 ```el
-let maximumBodyBytes: Number | void_t
+let maximumBodyBytes: Number | nil_t
 ```
 
-**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4) | [`void_t`](../../language/values.md#api-d7b419fab395eef3d142)
+**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4) | [`nil_t`](../../language/values.md#api-86357ad50ef0535f6333)
 
 ### 示例：限制响应体大小
 
@@ -194,10 +194,10 @@ let options = HttpOptions(@{ maximumBodyBytes: 1048576 })
 请求与响应头的最大字节数。
 
 ```el
-let maximumHeaderBytes: Number | void_t
+let maximumHeaderBytes: Number | nil_t
 ```
 
-**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4) | [`void_t`](../../language/values.md#api-d7b419fab395eef3d142)
+**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4) | [`nil_t`](../../language/values.md#api-86357ad50ef0535f6333)
 
 ### 示例：设置头部上限
 
@@ -212,10 +212,10 @@ let options = HttpOptions(@{ maximumHeaderBytes: 16384 })
 允许跟随的最大重定向次数。
 
 ```el
-let maximumRedirects: Number | void_t
+let maximumRedirects: Number | nil_t
 ```
 
-**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4) | [`void_t`](../../language/values.md#api-d7b419fab395eef3d142)
+**类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4) | [`nil_t`](../../language/values.md#api-86357ad50ef0535f6333)
 
 ### 示例：禁止自动跟随重定向
 
@@ -463,14 +463,14 @@ let config = response.as(formats.JSON)
 按大小写无关的名称查找首个响应头。
 
 ```el
-fn header(name: Text): Text | void_t
+fn header(name: Text): Text | nil_t
 ```
 
-**返回类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a) | [`void_t`](../../language/values.md#api-d7b419fab395eef3d142)
+**返回类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a) | [`nil_t`](../../language/values.md#api-86357ad50ef0535f6333)
 
 **参数**：name 响应头名称。
 
-**返回值**：响应头值；不存在时返回 void。
+**返回值**：响应头值；不存在时返回 nil。
 
 ### 示例：读取内容类型
 

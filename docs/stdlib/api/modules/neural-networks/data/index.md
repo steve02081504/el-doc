@@ -41,7 +41,7 @@ import { Dataset, Sampler, DataLoader } from "el:neural-networks/data/index.el"
 let Data = Dataset<sample: Number>
 let Loader = DataLoader<sample: Number>
 let dataset = Data(@[10, 20, 30])
-let loader = Loader(dataset, Sampler(3, shuffle: nil), batchSize: 2)
+let loader = Loader(dataset, Sampler(3, shuffle: f), batchSize: 2)
 let firstBatch = loader.next()
 ```
 示例展示接口用法；未运行验证。

@@ -18,7 +18,7 @@
 
 ```el
 @pure
-export fn sqrt(value, epsilon = void)
+export fn sqrt(value, epsilon = nil)
 ```
 
 **参数**：value 非负数值。

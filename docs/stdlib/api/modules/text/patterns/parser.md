@@ -266,7 +266,7 @@ export fn firstOf(first, ...rest)
 
 ```el
 import { firstOf, constant } from "el:text/patterns/index.el"
-let literalParser = firstOf(constant("null", nil), constant("true", t))
+let literalParser = firstOf(constant("null", f), constant("true", t))
 ```
 
 ## constant {#api-e3e533cb002f8125c11d}
@@ -324,7 +324,7 @@ let member = pair("name", ":", "EL")
 解析由括号包围、以分隔符隔开的元素序列；默认拒绝尾随分隔符。
 
 ```el
-export fn list(open, element, close, separator = ",", allowTrailing: Bool = nil)
+export fn list(open, element, close, separator = ",", allowTrailing: Bool = f)
 ```
 
 **参数**：open 起始解析器或文本。

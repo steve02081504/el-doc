@@ -152,17 +152,17 @@ console.stdout.writeLine(users.has("ada"))
 
 源码：`src/stdlib/collections/maps/base.el:99` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L99)
 
-查询键对应的值；键不存在时返回 void。
+查询键对应的值；键不存在时返回 nil。
 
 ```el
-fn get(lookupKey: key): value | void_t
+fn get(lookupKey: key): value | nil_t
 ```
 
-**返回类型**：[`value`](../../../types.md#api-55134cc5930243ac905e) | [`void_t`](../../language/values.md#api-d7b419fab395eef3d142)
+**返回类型**：[`value`](../../../types.md#api-55134cc5930243ac905e) | [`nil_t`](../../language/values.md#api-86357ad50ef0535f6333)
 
 **参数**：lookupKey 要查询的键。
 
-**返回值**：已存储的值或 void。
+**返回值**：已存储的值或 nil。
 
 ### 示例：读取可缺失的键
 

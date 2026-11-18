@@ -6,18 +6,18 @@
 
 ## 原生输入文件 {#api-e0a8d72b3ff014281d5f}
 
-源码：`src/stdlib/streams/input-file.el:2` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/input-file.el#L2)
+源码：`src/stdlib/streams/input-file.el:3` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/input-file.el#L3)
 
 提供面向原生文件句柄的输入所有权与关闭管理。
 
 ## openInputFile {#api-3457cba5be48dc94b859}
 
-源码：`src/stdlib/streams/input-file.el:139` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/input-file.el#L139)
+源码：`src/stdlib/streams/input-file.el:141` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/input-file.el#L141)
 
 打开原生文件作为顺序输入流。
 
 ```el
-export fn openInputFile(path: Text, lock: Bool | void_t = void, protection: FileReadProtection = FileReadProtection(lock is t_t)): NativeInputFile
+export fn openInputFile(path: Path, lock: Bool | nil_t = nil, protection: FileReadProtection = FileReadProtection(lock is t_t)): NativeInputFile
 ```
 
 **返回类型**：[`NativeInputFile`](../../types.md#api-cac9566a49a1edb75a36)
@@ -36,25 +36,26 @@ export fn openInputFile(path: Text, lock: Bool | void_t = void, protection: File
 
 ```el
 import { openInputFile } from "el:streams/input-file.el"
-let input = openInputFile("data.bin")
+import { Path } from "el:operating-system/paths/"
+let input = openInputFile(Path("data.bin"))
 input.close()
 ```
 
 ## openOptionalInputFile {#api-ee8a540efdae1657f07b}
 
-源码：`src/stdlib/streams/input-file.el:154` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/input-file.el#L154)
+源码：`src/stdlib/streams/input-file.el:157` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/input-file.el#L157)
 
-尝试打开原生输入文件；仅在平台报告文件缺失时返回 void。
+尝试打开原生输入文件；仅在平台报告文件缺失时返回 nil。
 
 ```el
-export fn openOptionalInputFile(path: Text): NativeInputFile | void_t
+export fn openOptionalInputFile(path: Path): NativeInputFile | nil_t
 ```
 
-**返回类型**：[`NativeInputFile`](../../types.md#api-cac9566a49a1edb75a36) | [`void_t`](../language/values.md#api-d7b419fab395eef3d142)
+**返回类型**：[`NativeInputFile`](../../types.md#api-cac9566a49a1edb75a36) | [`nil_t`](../language/values.md#api-86357ad50ef0535f6333)
 
 **参数**：path 原生文件系统路径。
 
-**返回值**：已打开的输入文件对象，或目标不存在时的 void。
+**返回值**：已打开的输入文件对象，或目标不存在时的 nil。
 
 **失败与异常**：除文件缺失以外的打开失败时抛出异常。
 
@@ -62,5 +63,6 @@ export fn openOptionalInputFile(path: Text): NativeInputFile | void_t
 
 ```el
 import { openOptionalInputFile } from "el:streams/input-file.el"
-let input = openOptionalInputFile("optional.bin")
+import { Path } from "el:operating-system/paths/"
+let input = openOptionalInputFile(Path("optional.bin"))
 ```

@@ -35,7 +35,7 @@ some(@[1, 3, 4], value => value % 2 == 0)
 ```
 预期结果：真。
 
-**返回值**：Bool；空来源返回 nil。
+**返回值**：Bool；空来源返回 f。
 
 ## any {#api-1fff05563d7e913b33e0}
 
@@ -64,7 +64,7 @@ any(@[-2, 0, 5], value => value > 0)
 ```
 预期结果：真。
 
-**返回值**：Bool；空来源返回 nil。
+**返回值**：Bool；空来源返回 f。
 
 ### 示例：直接归约生成式的条件值
 
@@ -133,7 +133,7 @@ all(@[1, 2, 3], value => value > 0)
 
 ```el
 import { all } from "el:collections/arrays/operations.el"
-let result = all(a == b for let a in ..2 for let b in ..2) // nil
+let result = all(a == b for let a in ..2 for let b in ..2) // f
 ```
 
 ## every {#api-61e90cb749f6c5e91800}
@@ -350,10 +350,10 @@ take(@[1, 2, 3], 2)
 
 ```el
 @optimize(using: optimize_array, data: @{ stage: "each", receiver: "argument" })
-export fn each(values, callback): void_t
+export fn each(values, callback): nil_t
 ```
 
-**返回类型**：[`void_t`](../../language/values.md#api-d7b419fab395eef3d142)
+**返回类型**：[`nil_t`](../../language/values.md#api-86357ad50ef0535f6333)
 
 **参数**：values 输入序列。
 
@@ -367,7 +367,7 @@ each(@[1, 2], value => value)
 ```
 预期结果：回调依次接收 1 和 2。
 
-**返回值**：void_t。
+**返回值**：nil_t。
 
 ## index_of {#api-1d673464d0f4a1e9259f}
 

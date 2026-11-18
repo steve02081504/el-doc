@@ -17,7 +17,7 @@
 根据成对的 Unicode 标量起止值构造字符集合模式。
 
 ```el
-export fn scalarSet(ranges: Number[], negate: Bool = nil): Pattern<output: Char>
+export fn scalarSet(ranges: Number[], negate: Bool = f): Pattern<output: Char>
 ```
 
 **返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Char`](../../../types.md#api-3166547d46e101216338)>

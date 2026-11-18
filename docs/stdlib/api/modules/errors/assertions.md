@@ -27,7 +27,7 @@ export @assign(mode: "shared") class AssertionError extends Error
 ### 示例：捕获断言错误
 
 ```el
-try { assert(nil, "value required") }
+try { assert(f, "value required") }
 catch (error: AssertionError) { console.stderr.writeLine(error.reason) }
 ```
 

@@ -81,32 +81,9 @@ import { resolveFrom } from "el:filesystem/"
 let resource = resolveFrom("file:./config", "assets/logo.png")
 ```
 
-## parentPath {#api-b73b697330965f107109}
-
-源码：`src/stdlib/filesystem/index.el:64` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L64)
-
-返回给定位置的父目录 Location。
-
-```el
-export fn parentPath(reference): Location
-```
-
-**返回类型**：[`Location`](../../types.md#api-547a9b261b17d994f444)
-
-**参数**：reference 路径或位置引用。
-
-**返回值**：父目录位置。
-
-### 示例：读取配置目录
-
-```el
-import { parentPath } from "el:filesystem/"
-let directory = parentPath("file:./config.json")
-```
-
 ## fileName {#api-0ed89f254561e8445dfb}
 
-源码：`src/stdlib/filesystem/index.el:74` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L74)
+源码：`src/stdlib/filesystem/index.el:64` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L64)
 
 返回给定位置的末级名称。
 
@@ -129,12 +106,12 @@ console.stdout.writeLine(fileName("file:./config.json"))
 
 ## openFileReader {#api-c23461742bf817d5cab2}
 
-源码：`src/stdlib/filesystem/index.el:88` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L88)
+源码：`src/stdlib/filesystem/index.el:78` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L78)
 
 为逻辑位置打开顺序读取器；需要随机访问时使用 openRandomFileReader。
 
 ```el
-export fn openFileReader(reference, lock: Bool | void_t = void): FileReader
+export fn openFileReader(reference, lock: Bool | nil_t = nil): FileReader
 ```
 
 **返回类型**：[`FileReader`](../../types.md#api-3152ff28a38c0533af33)
@@ -158,12 +135,12 @@ reader.close()
 
 ## openRandomFileReader {#api-ad810a684ec6f474efc0}
 
-源码：`src/stdlib/filesystem/index.el:102` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L102)
+源码：`src/stdlib/filesystem/index.el:92` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L92)
 
 打开支持随机访问的文件读取器。
 
 ```el
-export fn openRandomFileReader(reference, lock: Bool | void_t = void): FileReader
+export fn openRandomFileReader(reference, lock: Bool | nil_t = nil): FileReader
 ```
 
 **返回类型**：[`FileReader`](../../types.md#api-3152ff28a38c0533af33)
@@ -187,7 +164,7 @@ reader.close()
 
 ## openFileWriter {#api-941828b08ea8e39ace73}
 
-源码：`src/stdlib/filesystem/index.el:115` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L115)
+源码：`src/stdlib/filesystem/index.el:105` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L105)
 
 为逻辑位置打开文件写入器。
 
@@ -214,12 +191,12 @@ writer.close()
 
 ## readFileBytes {#api-0fe112b23b7c1bbe2b89}
 
-源码：`src/stdlib/filesystem/index.el:128` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L128)
+源码：`src/stdlib/filesystem/index.el:118` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L118)
 
 读取文件原始字节，可选地设置读取上限。
 
 ```el
-export fn readFileBytes(reference, maximumBytes: Number | void_t = void): Number[]
+export fn readFileBytes(reference, maximumBytes: Number | nil_t = nil): Number[]
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[]
@@ -242,21 +219,21 @@ console.stdout.writeLine(bytes.count)
 
 ## readFileBytesIfPresent {#api-96a7f4f820c29fb04c90}
 
-源码：`src/stdlib/filesystem/index.el:140` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L140)
+源码：`src/stdlib/filesystem/index.el:130` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L130)
 
-读取文件原始字节；目标不存在时返回 void。
+读取文件原始字节；目标不存在时返回 nil。
 
 ```el
-export fn readFileBytesIfPresent(reference, maximumBytes: Number | void_t = void): Number[] | void_t
+export fn readFileBytesIfPresent(reference, maximumBytes: Number | nil_t = nil): Number[] | nil_t
 ```
 
-**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[] | [`void_t`](../language/values.md#api-d7b419fab395eef3d142)
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[] | [`nil_t`](../language/values.md#api-86357ad50ef0535f6333)
 
 **参数**：reference 文件或 provider 位置引用。
 
 **参数**：maximumBytes 可选的最大读取字节数。
 
-**返回值**：字节数组，或表示缺失的 void。
+**返回值**：字节数组，或表示缺失的 nil。
 
 **失败与异常**：除缺失以外的读取失败或超过限制时抛出异常。
 
@@ -269,21 +246,21 @@ let bytes = readFileBytesIfPresent("file:./optional.bin")
 
 ## readTextFileIfPresent {#api-c11e9a934447ba0ec1ac}
 
-源码：`src/stdlib/filesystem/index.el:153` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L153)
+源码：`src/stdlib/filesystem/index.el:143` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L143)
 
-读取并解码文本文件；目标不存在时返回 void。
+读取并解码文本文件；目标不存在时返回 nil。
 
 ```el
-export fn readTextFileIfPresent(reference, maximumBytes: Number | void_t = void): Text | void_t
+export fn readTextFileIfPresent(reference, maximumBytes: Number | nil_t = nil): Text | nil_t
 ```
 
-**返回类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a) | [`void_t`](../language/values.md#api-d7b419fab395eef3d142)
+**返回类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a) | [`nil_t`](../language/values.md#api-86357ad50ef0535f6333)
 
 **参数**：reference 文件或 provider 位置引用。
 
 **参数**：maximumBytes 可选的最大读取字节数。
 
-**返回值**：UTF-8 文本，或表示缺失的 void。
+**返回值**：UTF-8 文本，或表示缺失的 nil。
 
 **失败与异常**：除缺失以外的读取或 UTF-8 解码失败时抛出异常。
 
@@ -292,12 +269,12 @@ export fn readTextFileIfPresent(reference, maximumBytes: Number | void_t = void)
 ```el
 import { readTextFileIfPresent } from "el:filesystem/"
 let text = readTextFileIfPresent("file:./absent.txt")
-if (text is void_t) console.stdout.writeLine("missing")
+if (text is nil_t) console.stdout.writeLine("missing")
 ```
 
 ## writeFileBytes {#api-b2192b677345809bb08f}
 
-源码：`src/stdlib/filesystem/index.el:169` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L169)
+源码：`src/stdlib/filesystem/index.el:159` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L159)
 
 将字节数组原样写入文件。
 
@@ -324,12 +301,12 @@ writeFileBytes("file:./message.bin", @[72, 105])
 
 ## readFileBuffer {#api-92cbab09967c14d143de}
 
-源码：`src/stdlib/filesystem/index.el:183` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L183)
+源码：`src/stdlib/filesystem/index.el:173` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L173)
 
 将文件内容读入拥有其底层存储的 FileBuffer，可设置字节上限。
 
 ```el
-export fn readFileBuffer(reference, maximumBytes: Number | void_t = void): FileBuffer
+export fn readFileBuffer(reference, maximumBytes: Number | nil_t = nil): FileBuffer
 ```
 
 **返回类型**：[`FileBuffer`](../../types.md#api-46bf41868bd77b4bb737)
@@ -353,12 +330,12 @@ buffer.close()
 
 ## readFileAs {#api-cff0ea6ed476cb036085}
 
-源码：`src/stdlib/filesystem/index.el:213` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L213)
+源码：`src/stdlib/filesystem/index.el:203` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L203)
 
 读取文件字节并使用指定格式解码。
 
 ```el
-export fn readFileAs(format, reference, lock: Bool | void_t = void)
+export fn readFileAs(format, reference, lock: Bool | nil_t = nil)
 ```
 
 **参数**：format 提供 decode 方法的格式对象。
@@ -381,7 +358,7 @@ let config = readFileAs(formats.JSON, "file:./config.json")
 
 ## writeFileAs {#api-5ea2e001353e67ba555f}
 
-源码：`src/stdlib/filesystem/index.el:252` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L252)
+源码：`src/stdlib/filesystem/index.el:242` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L242)
 
 使用指定格式编码值并将结果写入文件。
 
@@ -411,12 +388,12 @@ writeFileAs(formats.Text, "file:./copy.txt", "already text")
 
 ## readTextFile {#api-029c59b6a5f88aba0c0a}
 
-源码：`src/stdlib/filesystem/index.el:270` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L270)
+源码：`src/stdlib/filesystem/index.el:260` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L260)
 
 读取文件并按 UTF-8 解码为文本。
 
 ```el
-export fn readTextFile(reference, maximumBytes: Number | void_t = void): Text
+export fn readTextFile(reference, maximumBytes: Number | nil_t = nil): Text
 ```
 
 **返回类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
@@ -439,7 +416,7 @@ console.stdout.writeLine(configuration.count)
 
 ## writeTextFile {#api-19066393ecef9611add1}
 
-源码：`src/stdlib/filesystem/index.el:282` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L282)
+源码：`src/stdlib/filesystem/index.el:272` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L272)
 
 将文本编码为 UTF-8 并写入文件。
 
@@ -466,7 +443,7 @@ writeTextFile("settings.json", "{}")
 
 ## directoryNames {#api-2e6df4d53b39fb02da5d}
 
-源码：`src/stdlib/filesystem/index.el:293` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L293)
+源码：`src/stdlib/filesystem/index.el:283` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L283)
 
 列出逻辑目录中的名称。
 
@@ -491,7 +468,7 @@ for (let name in directoryNames("file:./config")) console.stdout.writeLine(name)
 
 ## isDirectory {#api-f293d8e1a091e956afb7}
 
-源码：`src/stdlib/filesystem/index.el:303` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L303)
+源码：`src/stdlib/filesystem/index.el:293` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L293)
 
 判断逻辑位置是否为目录。
 
@@ -508,21 +485,21 @@ export fn isDirectory(reference): Bool
 ### 示例：检查父路径
 
 ```el
-import { isDirectory, parentPath } from "el:filesystem/"
-console.stdout.writeLine(isDirectory(parentPath("file:./config.json")))
+import { isDirectory, resolvePath } from "el:filesystem/"
+console.stdout.writeLine(isDirectory(resolvePath("file:./config.json").parent))
 ```
 
 ## makeDirectories {#api-e81e7c2a8174ea07561d}
 
-源码：`src/stdlib/filesystem/index.el:313` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L313)
+源码：`src/stdlib/filesystem/index.el:303` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L303)
 
 创建指定目录及其尚不存在的父目录。
 
 ```el
-export fn makeDirectories(reference): void_t
+export fn makeDirectories(reference): nil_t
 ```
 
-**返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
+**返回类型**：[`nil_t`](../language/values.md#api-86357ad50ef0535f6333)
 
 **参数**：reference 目标目录路径或位置引用。
 
@@ -537,15 +514,15 @@ makeDirectories("file:./output/reports")
 
 ## removeFile {#api-9fe2fe3278290a7205a1}
 
-源码：`src/stdlib/filesystem/index.el:323` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L323)
+源码：`src/stdlib/filesystem/index.el:313` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L313)
 
 删除指定文件。
 
 ```el
-export fn removeFile(reference): void_t
+export fn removeFile(reference): nil_t
 ```
 
-**返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
+**返回类型**：[`nil_t`](../language/values.md#api-86357ad50ef0535f6333)
 
 **参数**：reference 文件路径或位置引用。
 
@@ -560,15 +537,15 @@ removeFile("file:./temporary.txt")
 
 ## replaceFile {#api-801d5c08c7f9a46b97dd}
 
-源码：`src/stdlib/filesystem/index.el:334` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L334)
+源码：`src/stdlib/filesystem/index.el:324` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L324)
 
 将源文件原子替换到目标位置。
 
 ```el
-export fn replaceFile(source, target): void_t
+export fn replaceFile(source, target): nil_t
 ```
 
-**返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
+**返回类型**：[`nil_t`](../language/values.md#api-86357ad50ef0535f6333)
 
 **参数**：source 已存在的源文件路径。
 
@@ -585,7 +562,7 @@ replaceFile("file:./report.tmp", "file:./report.txt")
 
 ## copyFile {#api-3600e50270be961b4bb9}
 
-源码：`src/stdlib/filesystem/index.el:351` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L351)
+源码：`src/stdlib/filesystem/index.el:341` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L341)
 
 将源文件内容复制到目标位置。
 

@@ -93,6 +93,7 @@
 | [chacha20_xor](modules/cryptography/chacha20.md#api-bc7a25de7cb7e0682650) | `cryptography/chacha20.el` |
 | [chars](modules/text/patterns/combinators.md#api-94ce174e6824f8a6bf5a) | `text/patterns/combinators.el` |
 | [check](modules/tools/testing/check.md#api-b55c78812b9aee65b8c4) | `tools/testing/check.el` |
+| [checkProofConflict](modules/logic/proof-conflict.md#api-ec7f2befb75a09d9dd76) | `logic/proof-conflict.el` |
 | [Checks.collect](modules/tools/testing/check.md#api-80bbd1f2ffdd433e943e) | `tools/testing/check.el` |
 | [Checks.compiles](modules/tools/testing/check.md#api-2e049b79fd2a4c6c9dcb) | `tools/testing/check.el` |
 | [Checks.diagnostic](modules/tools/testing/check.md#api-ca64dd756b7a7d68a372) | `tools/testing/check.el` |
@@ -171,6 +172,8 @@
 | [every](modules/collections/arrays/operations.md#api-61e90cb749f6c5e91800) | `collections/arrays/operations.el` |
 | [exactly](modules/text/patterns/combinators.md#api-7007858c46655109f135) | `text/patterns/combinators.el` |
 | [exp](modules/mathematics/functions/elementary.md#api-0eb3fa03c258f8a9125a) | `mathematics/functions/elementary.el` |
+| [f](modules/language/values.md#api-8ff7422d762b18c223b5) | `language/values.el` |
+| [f_t](modules/language/values.md#api-7b0ece8c7cd2bbab0c15) | `language/values.el` |
 | [fetchAs](modules/network/http/index.md#api-fe57871ae4aba18485ea) | `network/http/index.el` |
 | [Figure](modules/graphics/plots/index.md#api-daf4fb6b08acdf355a69) | `graphics/plots/index.el` |
 | [Figure.axis](modules/graphics/plots/index.md#api-a0ab54cd34a79111132b) | `graphics/plots/index.el` |
@@ -185,7 +188,6 @@
 | [filter](modules/collections/arrays/operations.md#api-b8bf1cd68b49358dbdef) | `collections/arrays/operations.el` |
 | [find](modules/collections/arrays/operations.md#api-460916110d52e2afe0bc) | `collections/arrays/operations.el` |
 | [find_or_add](modules/collections/arrays/operations.md#api-067148f9a59780a84648) | `collections/arrays/operations.el` |
-| [find_text](modules/text/operations.md#api-57c9ddeea00803ab4467) | `text/operations.el` |
 | [firstOf](modules/text/patterns/parser.md#api-f45406a31ca93535cd3d) | `text/patterns/parser.el` |
 | [FixtureOptions](modules/tools/testing/compiler.md#api-2c4c4f04dba5902ef37e) | `tools/testing/compiler.el` |
 | [flatMap](modules/collections/sequences/comprehension-iteration.md#api-c361b1582755a3fc1e51) | `collections/sequences/comprehension-iteration.el` |
@@ -329,7 +331,6 @@
 | [pair](modules/text/patterns/parser.md#api-cd138cf7450ba86c77a7) | `text/patterns/parser.el` |
 | [parallel_divide](modules/concurrency/tasks/parallel.md#api-dac72591c8ac45297242) | `concurrency/tasks/parallel.el` |
 | [parallel_map](modules/concurrency/tasks/parallel.md#api-ff4dc52370410fcff59a) | `concurrency/tasks/parallel.el` |
-| [parentPath](modules/filesystem/index.md#api-b73b697330965f107109) | `filesystem/index.el` |
 | [parseCSV](modules/formats/delimited-text/index.md#api-a8e5bd5c6af9392c0c0c) | `formats/delimited-text/index.el` |
 | [ParseError](modules/text/patterns/parser.md#api-134641b6a74ac9dc39ed) | `text/patterns/parser.el` |
 | [ParseError.contexts](modules/text/patterns/parser.md#api-2d3bebc3de2f96ffe6a8) | `text/patterns/parser.el` |
@@ -526,6 +527,7 @@
 | [Text.contains](modules/text/text.md#api-60a702a27df0fb3b6913) | `text/text.el` |
 | [Text.count](modules/text/text.md#api-19e144cbe3af4ec540f3) | `text/text.el` |
 | [Text.endsWith](modules/text/text.md#api-a0002f7421f94384e4e1) | `text/text.el` |
+| [Text.indexOf](modules/text/text.md#api-c4985f768195ddc70afb) | `text/text.el` |
 | [Text.replaceAll](modules/text/text.md#api-29663683ec276c29c64c) | `text/text.el` |
 | [Text.slice](modules/text/text.md#api-79542d4a724d1d48d0f4) | `text/text.el` |
 | [Text.split](modules/text/text.md#api-571742e199721a51aeb1) | `text/text.el` |
@@ -546,9 +548,8 @@
 | [valueAndGrad](modules/neural-networks/model.md#api-74a208b8786c54fae08b) | `neural-networks/model.el` |
 | [variable](modules/logic/term.md#api-c456fe7ff5956d254aa2) | `logic/term.el` |
 | [variable_scope](modules/logic/term.md#api-eca5da0b5d022e6d8dc0) | `logic/term.el` |
-| [void](modules/language/values.md#api-9df4f08e67ebcfb3d76a) | `language/values.el` |
-| [void_t](modules/language/values.md#api-d7b419fab395eef3d142) | `language/values.el` |
 | [WavWriter](modules/multimedia/audio/wav.md#api-fccc5e339fd9a3fa8554) | `multimedia/audio/wav.el` |
+| [WellFoundedTable](modules/logic/well-founded.md#api-f64e03ca1939d841cce2) | `logic/well-founded.el` |
 | [whole](modules/time/units.md#api-8e669783c5c018bc539e) | `time/units.el` |
 | [Window](modules/user-interface/platform/windows/window.md#api-9dc34e68c5ad778621d4) | `user-interface/platform/windows/window.el` |
 | [Window.every](modules/user-interface/platform/windows/window.md#api-397c3dde87e61de92229) | `user-interface/platform/windows/window.el` |

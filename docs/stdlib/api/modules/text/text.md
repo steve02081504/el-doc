@@ -13,6 +13,7 @@
 - [Text.count](#api-19e144cbe3af4ec540f3)
 - [Text.startsWith](#api-92f3f2d6c9caa632ff40)
 - [Text.endsWith](#api-a0002f7421f94384e4e1)
+- [Text.indexOf](#api-c4985f768195ddc70afb)
 - [Text.contains](#api-60a702a27df0fb3b6913)
 - [Text.trimEndChars](#api-3f97c8338da803f449ff)
 - [Text.character](#api-72c219d2c7971b4efd7e)
@@ -200,9 +201,32 @@ fn endsWith(suffix: Text): Bool
 console.stdout.writeLine("summary.txt".endsWith(".txt"))
 ```
 
+## Text.indexOf {#api-c4985f768195ddc70afb}
+
+源码：`src/stdlib/text/text.el:532` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L532)
+
+查找子串，返回首个匹配的标量下标，未找到为 nil。
+
+```el
+fn indexOf(needle: Text, start: Number = 0): Number | nil_t
+```
+
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4) | [`nil_t`](../language/values.md#api-86357ad50ef0535f6333)
+
+**参数**：needle 要查找的子串。
+
+**参数**：start 起始标量下标，默认 0；非有限、非整数或超出范围的起点返回 nil。空子串在有效起点返回该下标。
+
+### 示例：从指定下标查找重复出现的子串
+
+```el
+let text = "one two one"
+console.stdout.writeLine(text.indexOf("one", 1) ?? -1)
+```
+
 ## Text.contains {#api-60a702a27df0fb3b6913}
 
-源码：`src/stdlib/text/text.el:531` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L531)
+源码：`src/stdlib/text/text.el:554` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L554)
 
 判断文本是否包含给定子串。
 
@@ -224,7 +248,7 @@ console.stdout.writeLine("reports/2026".contains("2026"))
 
 ## Text.trimEndChars {#api-3f97c8338da803f449ff}
 
-源码：`src/stdlib/text/text.el:555` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L555)
+源码：`src/stdlib/text/text.el:571` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L571)
 
 从末尾移除属于给定字符集合的连续标量，返回文本值，不修改接收者。
 
@@ -252,7 +276,7 @@ abc
 
 ## Text.character {#api-72c219d2c7971b4efd7e}
 
-源码：`src/stdlib/text/text.el:592` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L592)
+源码：`src/stdlib/text/text.el:608` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L608)
 
 读取指定 Unicode 标量下标处的字符。
 
@@ -277,7 +301,7 @@ console.stdout.writeLine(first)
 
 ## Text.slice {#api-79542d4a724d1d48d0f4}
 
-源码：`src/stdlib/text/text.el:645` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L645)
+源码：`src/stdlib/text/text.el:661` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L661)
 
 返回指定左闭右开标量下标区间的文本。
 
@@ -303,7 +327,7 @@ console.stdout.writeLine("reports/2026".slice(0, 7))
 
 ## text_scalar {#api-0d11d4c56187bc5fad70}
 
-源码：`src/stdlib/text/text.el:775` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L775)
+源码：`src/stdlib/text/text.el:795` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L795)
 
 将 Unicode 标量值转换为只含该标量的文本；拒绝代理项和超出 Unicode 范围的值。
 
@@ -333,7 +357,7 @@ console.stdout.writeLine(text_scalar(20013))
 
 ## TextView~constraints {#api-0c1cf6c54bcc86167e47}
 
-源码：`src/stdlib/text/text.el:933` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L933)
+源码：`src/stdlib/text/text.el:953` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L953)
 
 创建只读 TextView 类型；可将元素统一宽度 bitWidth 和标量数量 size 固定为正值。
 0 表示该维度不固定。固定宽度要求来源宽度相同，固定长度要求请求的视图长度相同。
@@ -367,7 +391,7 @@ console.stdout.writeLine(view.count())
 
 ## Text~constraints {#api-82ffe95d03da0efc6fde}
 
-源码：`src/stdlib/text/text.el:982` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L982)
+源码：`src/stdlib/text/text.el:1002` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1002)
 
 创建受约束的 Text 类型。bitWidth 固定统一元素宽度，size 固定 Unicode 标量数量；0 表示不固定。
 固定宽度构造和写入会检查字符声明宽度及标量值，固定长度文本不能改变长度。

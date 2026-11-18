@@ -23,7 +23,7 @@ export fn writeYAML(value: any, limits: JsonLimits = JsonLimits()): Text
 
 **返回类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
 
-**参数**：value 要编码的值，支持 void、Bool、Text、Number、数组、DynamicObject 和可重建的公开数据对象。
+**参数**：value 要编码的值，支持 nil、Bool、Text、Number、数组、DynamicObject 和可重建的公开数据对象。
 
 **参数**：limits 输出字节、深度及工作预算。
 

@@ -17,7 +17,7 @@
 依次执行 HKDF-SHA256 的 Extract 与 Expand。
 
 ```el
-export fn hkdf_sha256(ikm: Number[], salt: Number[] | void_t = void, info: Number[] | void_t = void, length: Number = 32): Number[]
+export fn hkdf_sha256(ikm: Number[], salt: Number[] | nil_t = nil, info: Number[] | nil_t = nil, length: Number = 32): Number[]
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[]

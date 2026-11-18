@@ -17,7 +17,7 @@
 将主题加载与刷新生命周期绑定到窗口；窗口关闭时刷新控制器随 View 释放。
 
 ```el
-export fn installWindowThemes(window, root: Definition, environment = void, loader: (fn(any): Theme) | void_t = void, loaderRevision: (fn(): Number) | void_t = void, prepare: (fn(Bool): void_t) | void_t = void)
+export fn installWindowThemes(window, root: Definition, environment = nil, loader: (fn(any): Theme) | nil_t = nil, loaderRevision: (fn(): Number) | nil_t = nil, prepare: (fn(Bool): nil_t) | nil_t = nil)
 ```
 
 **参数**：window 已创建的原生窗口。

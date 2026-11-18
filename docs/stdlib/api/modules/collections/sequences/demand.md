@@ -107,7 +107,7 @@ console.stdout.writeLine(lazy @[1, 2, 3].take(2).collect().join(", "))
 返回指定区间的惰性序列；省略 end 时延伸到序列末尾。
 
 ```el
-fn slice(start: Number, end: Number | void_t = void): Sequence
+fn slice(start: Number, end: Number | nil_t = nil): Sequence
 ```
 
 **返回类型**：[`Sequence`](demand.md#api-f1b57111a81f88477e0f)

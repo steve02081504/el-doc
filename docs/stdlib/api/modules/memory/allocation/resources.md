@@ -357,7 +357,7 @@ let result = tracker.check_when_idle()
 
 源码：`src/stdlib/memory/allocation/resources.el:451` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L451)
 
-重置 arena；tracker 或仍有后代存活分配时返回 nil。成功后释放 arena 所持的块。
+重置 arena；tracker 或仍有后代存活分配时返回 f。成功后释放 arena 所持的块。
 
 ```el
 fn reset(): Bool
@@ -381,7 +381,7 @@ let reset = arena.reset()
 创建统计资源；check_on_drop 为真时析构时立即检查是否为空。
 
 ```el
-export fn allocation_tracker(check_on_drop: Bool = nil): AllocationResource
+export fn allocation_tracker(check_on_drop: Bool = f): AllocationResource
 ```
 
 **返回类型**：[`AllocationResource`](resources.md#api-8eba7d4cbf772f8d630b)
@@ -405,12 +405,12 @@ tracker.run(fn() { return 1 })
 创建 arena；省略 upstream 时使用基础堆，显式 upstream 须为自定义终端分配资源，不能是 arena 或观察器。
 
 ```el
-export fn allocation_arena(upstream: AllocationResource | void_t = void): AllocationResource
+export fn allocation_arena(upstream: AllocationResource | nil_t = nil): AllocationResource
 ```
 
 **返回类型**：[`AllocationResource`](resources.md#api-8eba7d4cbf772f8d630b)
 
-**参数**：upstream 可选的终端分配资源；void 选择基础堆。
+**参数**：upstream 可选的终端分配资源；nil 选择基础堆。
 
 **返回值**：共享的 arena 资源。
 
@@ -460,7 +460,7 @@ let resource = allocation_resource(
 		unsafe { native_release(pointer) }
 		return RuntimeWord(1)
 	},
-	void
+	nil
 )
 resource.run(fn() { let values = @[1, 2, 3]; return values.count })
 ```
@@ -474,7 +474,7 @@ resource.run(fn() { let values = @[1, 2, 3]; return values.count })
 在新 tracker 中运行 body 并返回结果；check_empty 选择结束时检查，final 选择参与者空闲后检查。返回值和仍运行的子任务可能保留分配。
 
 ```el
-export fn with_allocation_tracking(body, check_empty: Bool = nil, final: Bool = nil)
+export fn with_allocation_tracking(body, check_empty: Bool = f, final: Bool = f)
 ```
 
 **参数**：body 在统计上下文中执行的无参回调。
@@ -524,7 +524,7 @@ let observer = allocation_observer(
 	@sync fn(event: RuntimeWord, identity: RuntimeWord, address: NativeStorageSize, size: NativeStorageSize, alignment: NativeStorageSize, backing_identity: RuntimeWord): RuntimeWord {
 		return RuntimeWord(1)
 	},
-	void
+	nil
 )
 observer.run(fn() { let values = @[1, 2, 3]; return values.count })
 ```

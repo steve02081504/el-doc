@@ -48,10 +48,10 @@ writer.close()
 完成写入器并关闭底层资源。
 
 ```el
-fn close(): void_t
+fn close(): nil_t
 ```
 
-**返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
+**返回类型**：[`nil_t`](../language/values.md#api-86357ad50ef0535f6333)
 
 **失败与异常**：provider 关闭失败或关闭结果不确定时抛出异常。
 

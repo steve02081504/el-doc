@@ -283,14 +283,14 @@ console.stdout.writeBytes(bufferFromBytes(@[72, 105]))
 将值作为数据记录发送到对应通道，不转换成文本或结构化展示记录。
 
 ```el
-fn emit(value): void_t
+fn emit(value): nil_t
 ```
 
-**返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
+**返回类型**：[`nil_t`](../language/values.md#api-86357ad50ef0535f6333)
 
 **参数**：value 要发送的数据值。
 
-**返回值**：void。
+**返回值**：nil。
 
 ### 示例：发送数据记录
 
@@ -305,7 +305,7 @@ console.stdout.emit(@{ status: "ready" })
 在临时控制台目标中执行回调，并返回回调结果与捕获的输出记录。
 
 ```el
-export fn capture(work, latePolicy: ConsoleLatePolicy = ConsoleLatePolicy.Forward, maxRecords: Number | void_t = void)
+export fn capture(work, latePolicy: ConsoleLatePolicy = ConsoleLatePolicy.Forward, maxRecords: Number | nil_t = nil)
 ```
 
 **参数**：work 要执行的无参回调。
@@ -405,14 +405,14 @@ let active = console.info.enabled()
 发送本地化消息 key 或已构造的本地化内容，并附带参数对象。
 
 ```el
-operator()(message: Text | LocalizedMessage | LocalizedContent, parameters = @{}): void_t
+operator()(message: Text | LocalizedMessage | LocalizedContent, parameters = @{}): nil_t
 ```
 
 **参数**：message 消息 key、LocalizedMessage 或 LocalizedContent。
 
 **参数**：parameters 用于本地化消息的字段值。
 
-**返回值**：void。
+**返回值**：nil。
 
 ### 示例：发送带计数参数的消息
 
@@ -429,16 +429,16 @@ console.info("task.done", @{ count: 3 })
 将已有安全快照作为指定等级的结构化展示记录发送。
 
 ```el
-fn value(snapshot: ConsoleValueSnapshot, channel: ConsoleChannel = this.#channel): void_t
+fn value(snapshot: ConsoleValueSnapshot, channel: ConsoleChannel = this.#channel): nil_t
 ```
 
-**返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
+**返回类型**：[`nil_t`](../language/values.md#api-86357ad50ef0535f6333)
 
 **参数**：snapshot 已构造的展示快照。
 
 **参数**：channel 输出通道，默认使用此等级端口的通道。
 
-**返回值**：void。
+**返回值**：nil。
 
 ### 示例：输出结构化快照
 
@@ -453,16 +453,16 @@ console.info.value(consoleSnapshot(@{ count: 3 }))
 获取值的安全快照并作为结构化展示记录发送，不调用 getter、转换或迭代器。
 
 ```el
-fn value(borrow value, channel: ConsoleChannel = this.#channel): void_t
+fn value(borrow value, channel: ConsoleChannel = this.#channel): nil_t
 ```
 
-**返回类型**：[`void_t`](../language/values.md#api-d7b419fab395eef3d142)
+**返回类型**：[`nil_t`](../language/values.md#api-86357ad50ef0535f6333)
 
 **参数**：value 要展示的值。
 
 **参数**：channel 输出通道，默认使用此等级端口的通道。
 
-**返回值**：void。
+**返回值**：nil。
 
 ### 示例：展示结构化值
 
@@ -700,7 +700,7 @@ let active = console.enabled(ConsoleLevel.Info)
 在临时控制台目标中执行回调，返回结果和捕获的记录。
 
 ```el
-fn capture(work, latePolicy: ConsoleLatePolicy = ConsoleLatePolicy.Forward, maxRecords: Number | void_t = void)
+fn capture(work, latePolicy: ConsoleLatePolicy = ConsoleLatePolicy.Forward, maxRecords: Number | nil_t = nil)
 ```
 
 **参数**：work 无参回调。

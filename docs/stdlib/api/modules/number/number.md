@@ -67,7 +67,7 @@ integer 为真时结果必须为整数。overflow 支持 ub、error、nan、wrap
 epsilon 用于算术结果在约束域内的紧凑表示，不把 Number 改成二进制浮点类型。
 
 ```el
-export fn Number(min = void, max = void, epsilon = void, integer = nil, overflow = "ub"): type
+export fn Number(min = nil, max = nil, epsilon = nil, integer = f, overflow = "ub"): type
 ```
 
 **返回类型**：[`type`](../../../../reference/language/types.md)

@@ -64,7 +64,7 @@ export fn guarded(conditionFactory, outputFactory)
 ```el
 import { guarded, singleton } from "el:collections/sequences/comprehension-iteration.el"
 let opened = 0
-let values = guarded(() => nil, () => { opened++; return singleton(() => 7) })
+let values = guarded(() => f, () => { opened++; return singleton(() => 7) })
 let result = values.collect() // @[]；opened 仍为 0。
 ```
 

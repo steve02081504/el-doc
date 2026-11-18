@@ -54,7 +54,7 @@ let x = variable(0, scope)
 创建指定索引的逻辑变量，可显式提供作用域以避免变量身份冲突。
 
 ```el
-export fn variable(index: Number, scope: VariableScope | void_t = void): Term
+export fn variable(index: Number, scope: VariableScope | nil_t = nil): Term
 ```
 
 **返回类型**：[`Term`](term.md#api-7560e808aaee9c6517d2)
