@@ -3,9 +3,21 @@
 EL 的语言、标准库和工具链参考站，附入门教程与实战指南。使用 Zensical 构建，通过 GitHub Pages 发布。
 
 - 在线阅读：[EL 语言参考](https://steve02081504.github.io/el-doc/)
-- 本地预览：安装 `requirements.txt` 中的依赖后运行 `python scripts/build_site.py serve`（修改后需重新运行）。
-- 构建检查：`python scripts/build_site.py build`。
+- 本地预览与构建：见[本地构建](#本地构建)。
 - 写作约定：[AUTHORING.md](AUTHORING.md)。
+
+## 本地构建
+
+使用宿主 Python，不创建或激活虚拟环境。CI 使用 Python 3.12；下列命令在仓库根目录运行。Windows 如果习惯使用 `py -3.12`，或 Unix 上只有 `python3`，将以下所有 `python` 换成同一个解释器命令。
+
+```text
+python -m pip install -r requirements.txt
+python scripts/build_site.py serve
+```
+
+若系统将 Python 标为由发行版管理，请通过发行版的包管理器安装 `requirements.txt` 所需依赖；若发行版不提供所需版本，使用另一套由自己管理的宿主 Python。不要强制 pip 覆盖系统 Python 的限制。
+
+修改后重启预览以重新构建；只做构建检查时运行 `python scripts/build_site.py build`。
 
 ## 结构
 
