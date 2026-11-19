@@ -53,7 +53,7 @@ let value = random.between(1, 6)
 
 ## Random.seed {#api-f67e41d7ecf4e4cd8c79}
 
-源码：`src/stdlib/random/index.el:77` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L77)
+源码：`src/stdlib/random/index.el:78` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L78)
 
 返回构造或最近一次 reseed 使用的原始种子。
 
@@ -73,7 +73,7 @@ let seed = Random(72).seed
 
 ## Random.reseed {#api-b10f87f55955d4297680}
 
-源码：`src/stdlib/random/index.el:86` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L86)
+源码：`src/stdlib/random/index.el:87` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L87)
 
 将生成器状态重置为指定种子对应的初始状态。
 
@@ -92,7 +92,7 @@ random.reseed(72)
 
 ## Random.nextWord {#api-792c160b0802c5d93977}
 
-源码：`src/stdlib/random/index.el:103` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L103)
+源码：`src/stdlib/random/index.el:104` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L104)
 
 从随机流生成一个 8、16 或 32 位无符号字值。
 
@@ -117,7 +117,7 @@ let word = Random(72).nextWord(16)
 
 ## Random.nextBits {#api-dc108d59626669d79b43}
 
-源码：`src/stdlib/random/index.el:137` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L137)
+源码：`src/stdlib/random/index.el:140` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L140)
 
 从随机流取得指定数量的随机位，并按高位优先累积为 Number。
 
@@ -141,7 +141,7 @@ let bits = Random(72).nextBits(8)
 
 ## Random.between {#api-cc4a8e461bbf2f97ad80}
 
-源码：`src/stdlib/random/index.el:167` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L167)
+源码：`src/stdlib/random/index.el:170` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L170)
 
 在两个整数端点之间均匀抽取整数，端点均包含且次序可互换。
 
@@ -167,7 +167,7 @@ let die = Random(72).between(1, 6)
 
 ## Random.betweenExclusive {#api-e99cb6140b0881ce2db8}
 
-源码：`src/stdlib/random/index.el:192` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L192)
+源码：`src/stdlib/random/index.el:195` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L195)
 
 在两个整数端点之间抽取整数，包含较小端点但排除较大端点。
 
@@ -194,7 +194,7 @@ let index = Random(72).betweenExclusive(0, 6)
 
 ## Random.unit {#api-3bd6f39bf7301f499820}
 
-源码：`src/stdlib/random/index.el:213` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L213)
+源码：`src/stdlib/random/index.el:216` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L216)
 
 在二进制网格上抽取 [0, 1) 内的数；inclusive 为真时包含 1。
 
@@ -220,7 +220,7 @@ let sample = Random(72).unit()
 
 ## Random.realBetween {#api-d06ddbd268a99ed5151c}
 
-源码：`src/stdlib/random/index.el:232` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L232)
+源码：`src/stdlib/random/index.el:235` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L235)
 
 在两个有限实数端点之间按指定二进制网格精度抽样。
 
@@ -250,7 +250,7 @@ let sample = Random(72).realBetween(-1, 1)
 
 ## Random.boolean {#api-6e4a27bee2d63ff38225}
 
-源码：`src/stdlib/random/index.el:249` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L249)
+源码：`src/stdlib/random/index.el:252` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L252)
 
 从随机流抽取一个布尔值。
 
@@ -270,7 +270,7 @@ let heads = Random(72).boolean()
 
 ## Random.pick {#api-3277706d087c8d369660}
 
-源码：`src/stdlib/random/index.el:259` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L259)
+源码：`src/stdlib/random/index.el:262` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L262)
 
 从非空、可按整数索引读取的集合中均匀选择一个元素。
 
@@ -292,7 +292,7 @@ let choice = Random(72).pick(@["red", "blue"])
 
 ## Random.bytes {#api-ced6c72398fdb237f1e5}
 
-源码：`src/stdlib/random/index.el:273` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L273)
+源码：`src/stdlib/random/index.el:276` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L276)
 
 生成指定长度、每项取值 0 到 255 的随机字节数组。
 
@@ -317,7 +317,7 @@ let data = Random(72).bytes(4)
 
 ## Random.shuffle {#api-2622caa6ab97ff7091e9}
 
-源码：`src/stdlib/random/index.el:290` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L290)
+源码：`src/stdlib/random/index.el:293` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L293)
 
 原地随机打乱可读写、支持 count 和整数索引的集合。
 
@@ -338,7 +338,7 @@ Random(72).shuffle(values)
 
 ## rand {#api-0e70a2dfa7186c77e160}
 
-源码：`src/stdlib/random/index.el:377` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L377)
+源码：`src/stdlib/random/index.el:380` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/random/index.el#L380)
 
 共享的线程安全随机数流；各调用按同一状态序列消耗随机值。
 

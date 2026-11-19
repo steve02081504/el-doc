@@ -151,6 +151,7 @@ nav:
           - 值与类型: language/values.md
           - 数值与位类型: language/numeric-types.md
           - 运算符与表达式: language/operators.md
+          - 为什么 EL 没有异或: language/why-no-xor.md
           - 控制流: language/control-flow.md
           - 函数与闭包: language/functions.md
           - 生命周期与析构: language/lifetimes.md

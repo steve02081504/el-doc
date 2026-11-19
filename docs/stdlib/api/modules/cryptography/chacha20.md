@@ -12,7 +12,7 @@
 
 ## chacha20_xor {#api-bc7a25de7cb7e0682650}
 
-源码：`src/stdlib/cryptography/chacha20.el:92` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/chacha20.el#L92)
+源码：`src/stdlib/cryptography/chacha20.el:95` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/chacha20.el#L95)
 
 将 ChaCha20 密钥流与输入字节异或，得到同长度输出。
 

@@ -327,7 +327,7 @@ console.stdout.writeLine("reports/2026".slice(0, 7))
 
 ## text_scalar {#api-0d11d4c56187bc5fad70}
 
-源码：`src/stdlib/text/text.el:795` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L795)
+源码：`src/stdlib/text/text.el:797` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L797)
 
 将 Unicode 标量值转换为只含该标量的文本；拒绝代理项和超出 Unicode 范围的值。
 
@@ -357,7 +357,7 @@ console.stdout.writeLine(text_scalar(20013))
 
 ## TextView~constraints {#api-0c1cf6c54bcc86167e47}
 
-源码：`src/stdlib/text/text.el:953` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L953)
+源码：`src/stdlib/text/text.el:955` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L955)
 
 创建只读 TextView 类型；可将元素统一宽度 bitWidth 和标量数量 size 固定为正值。
 0 表示该维度不固定。固定宽度要求来源宽度相同，固定长度要求请求的视图长度相同。
@@ -391,7 +391,7 @@ console.stdout.writeLine(view.count())
 
 ## Text~constraints {#api-82ffe95d03da0efc6fde}
 
-源码：`src/stdlib/text/text.el:1002` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1002)
+源码：`src/stdlib/text/text.el:1004` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1004)
 
 创建受约束的 Text 类型。bitWidth 固定统一元素宽度，size 固定 Unicode 标量数量；0 表示不固定。
 固定宽度构造和写入会检查字符声明宽度及标量值，固定长度文本不能改变长度。

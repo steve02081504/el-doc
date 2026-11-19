@@ -85,8 +85,10 @@
 | [BitSet.toNumber](modules/collections/sets/bit-set.md#api-a461f9fa010d45dc6fa5) | `collections/sets/bit-set.el` |
 | [Bool~condition](modules/language/values.md#api-3bcf0c5bba9b54c4a14d) | `language/values.el` |
 | [Bool~type](modules/language/values.md#api-3f0af31783849ef30c6e) | `language/values.el` |
+| [build](modules/collections/trees/lca.md#api-d7bd504f7ed5fa93a3f8) | `collections/trees/lca.el` |
 | [calendarAt](modules/time/calendar.md#api-3adcdd1b11385bb4eac1) | `time/calendar.el` |
 | [call](modules/logic/goal.md#api-ba744e200119324d52ac) | `logic/goal.el` |
+| [canRepresentExactly](modules/number/native-float.md#api-4ba6311e8edff7e59788) | `number/native-float.el` |
 | [capture](modules/console/facade.md#api-db1d137769d65c8ddae2) | `console/facade.el` |
 | [chacha20_poly1305_decrypt](modules/cryptography/aead.md#api-12a7d04f1b0e750acedd) | `cryptography/aead.el` |
 | [chacha20_poly1305_encrypt](modules/cryptography/aead.md#api-08ed02675294d0f1cc7d) | `cryptography/aead.el` |
@@ -169,6 +171,7 @@
 | [epochDay](modules/time/calendar.md#api-950b85c66afa43590243) | `time/calendar.el` |
 | [Eq](modules/language/proofs.md#api-d323fe4b5742a94294fc) | `language/proofs.el` |
 | [equal](modules/functions/comparison.md#api-2cfd60af70cef1c6c2c0) | `functions/comparison.el` |
+| [euler_tour](modules/collections/trees/euler-tour.md#api-347b8c5b0509471819bd) | `collections/trees/euler-tour.el` |
 | [every](modules/collections/arrays/operations.md#api-61e90cb749f6c5e91800) | `collections/arrays/operations.el` |
 | [exactly](modules/text/patterns/combinators.md#api-7007858c46655109f135) | `text/patterns/combinators.el` |
 | [exp](modules/mathematics/functions/elementary.md#api-0eb3fa03c258f8a9125a) | `mathematics/functions/elementary.el` |
@@ -386,6 +389,7 @@
 | [playPitch](modules/multimedia/audio/music.md#api-14ec176406410644f42a) | `multimedia/audio/music.el` |
 | [plot](modules/graphics/plots/index.md#api-99a112e21dc6a727ab6d) | `graphics/plots/index.el` |
 | [PlotHost](modules/graphics/plots/index.md#api-5f295492cd4341ff9541) | `graphics/plots/index.el` |
+| [plus_minus_rmq](modules/collections/arrays/plus-minus-rmq.md#api-a9b09a48c1e38238e73b) | `collections/arrays/plus-minus-rmq.el` |
 | [positionalArray](modules/collections/arrays/positional.md#api-6bb9e0f6b72f22340b48) | `collections/arrays/positional.el` |
 | [positiveRemainder](modules/time/units.md#api-5e84633337d1771b191b) | `time/units.el` |
 | [pow](modules/mathematics/functions/elementary.md#api-fa68c880d86864b1595c) | `mathematics/functions/elementary.el` |
@@ -407,6 +411,7 @@
 | [Random.shuffle](modules/random/index.md#api-2622caa6ab97ff7091e9) | `random/index.el` |
 | [Random.unit](modules/random/index.md#api-3bd6f39bf7301f499820) | `random/index.el` |
 | [range](modules/text/patterns/combinators.md#api-34c63714beff83abf769) | `text/patterns/combinators.el` |
+| [range_argmin_sparse_table](modules/collections/arrays/sparse-argmin.md#api-56cb02464b2fc4b3f421) | `collections/arrays/sparse-argmin.el` |
 | [readFileAs](modules/filesystem/index.md#api-cff0ea6ed476cb036085) | `filesystem/index.el` |
 | [readFileBuffer](modules/filesystem/index.md#api-92cbab09967c14d143de) | `filesystem/index.el` |
 | [readFileBytes](modules/filesystem/index.md#api-0fe112b23b7c1bbe2b89) | `filesystem/index.el` |
@@ -491,6 +496,9 @@
 | [SoundPlayer.stop](modules/user-interface/sound.md#api-38b098ba7017124aed8a) | `user-interface/sound.el` |
 | [SoundPlayer.tryCue](modules/user-interface/sound.md#api-bdf8aa6e71523e364ba2) | `user-interface/sound.el` |
 | [sqrt](modules/mathematics/functions/elementary.md#api-fb173a899ba66d1e403d) | `mathematics/functions/elementary.el` |
+| [subtree_interval_bounds](modules/collections/trees/subtree-intervals.md#api-58102f2d42f76134f8dc) | `collections/trees/subtree-intervals.el` |
+| [subtree_intervals](modules/collections/trees/subtree-intervals.md#api-37e0a96d3351f37024a3) | `collections/trees/subtree-intervals.el` |
+| [SubtreeIntervalError](modules/collections/trees/tree-traversal.md#api-cb7126c5c995ac3f2f87) | `collections/trees/tree-traversal.el` |
 | [sum](modules/mathematics/functions/aggregation.md#api-6e9b4c8195eebb551a52) | `mathematics/functions/aggregation.el` |
 | [sum~all](modules/numerical-computing/reductions.md#api-d58fd8966d5de0726a4a) | `numerical-computing/reductions.el` |
 | [sum~axis](modules/numerical-computing/reductions.md#api-da20ccaa7740d44e7fec) | `numerical-computing/reductions.el` |
@@ -542,6 +550,9 @@
 | [ThemeContext](modules/theme/model.md#api-49fc863aa032653764b7) | `theme/model.el` |
 | [ThemeValues](modules/theme/model.md#api-a5393d1df1641800ca1f) | `theme/model.el` |
 | [TimeResolution](modules/time/instant.md#api-9d758eb17ca9b412a29d) | `time/instant.el` |
+| [tree_dfs_events](modules/collections/trees/tree-traversal.md#api-1e880ea408abc13e01b7) | `collections/trees/tree-traversal.el` |
+| [tree_node_count](modules/collections/trees/tree-traversal.md#api-a1b0b41129f878566799) | `collections/trees/tree-traversal.el` |
+| [tree_node_key](modules/collections/trees/tree-traversal.md#api-448ba0c99e25940c7132) | `collections/trees/tree-traversal.el` |
 | [try_heap_alloc](modules/memory/allocation/heap.md#api-ed06bd17d4112704658d) | `memory/allocation/heap.el` |
 | [Type](modules/language/proofs.md#api-2c69e2f6858e85964893) | `language/proofs.el` |
 | [unify](modules/logic/goal.md#api-dcdf93cd11ed18b33734) | `logic/goal.el` |

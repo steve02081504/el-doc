@@ -7,7 +7,9 @@
 - [collections/arrays/dynamic.el](modules/collections/arrays/dynamic.md)（21 个 API）
 - [collections/arrays/lazy.el](modules/collections/arrays/lazy.md)（1 个 API）
 - [collections/arrays/operations.el](modules/collections/arrays/operations.md)（18 个 API）
+- [collections/arrays/plus-minus-rmq.el](modules/collections/arrays/plus-minus-rmq.md)（1 个 API）
 - [collections/arrays/positional.el](modules/collections/arrays/positional.md)（1 个 API）
+- [collections/arrays/sparse-argmin.el](modules/collections/arrays/sparse-argmin.md)（1 个 API）
 - [collections/batch/syntax.el](modules/collections/batch/syntax.md)（2 个 API）
 - [collections/maps/base.el](modules/collections/maps/base.md)（10 个 API）
 - [collections/maps/hash-map.el](modules/collections/maps/hash-map.md)（6 个 API）
@@ -17,6 +19,10 @@
 - [collections/sequences/enumerate.el](modules/collections/sequences/enumerate.md)（1 个 API）
 - [collections/sets/bit-set.el](modules/collections/sets/bit-set.md)（4 个 API）
 - [collections/sets/hash-set.el](modules/collections/sets/hash-set.md)（13 个 API）
+- [collections/trees/euler-tour.el](modules/collections/trees/euler-tour.md)（1 个 API）
+- [collections/trees/lca.el](modules/collections/trees/lca.md)（1 个 API）
+- [collections/trees/subtree-intervals.el](modules/collections/trees/subtree-intervals.md)（2 个 API）
+- [collections/trees/tree-traversal.el](modules/collections/trees/tree-traversal.md)（4 个 API）
 
 ## concurrency
 
@@ -136,6 +142,7 @@
 
 ## number
 
+- [number/native-float.el](modules/number/native-float.md)（1 个 API）
 - [number/number.el](modules/number/number.md)（2 个 API）
 
 ## numerical-computing

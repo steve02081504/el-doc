@@ -42,6 +42,8 @@
 
 关系运算符不可链写为 `a < b < c`，也不会自动形成比较链。
 
+对 `Number`，逐位模加、模减分别用 `digit_add_mod`、`digit_sub_mod`，基数来自编译目标；`BitSet` 不提供 `^`。设计理由和迁移例子见[为什么 EL 没有异或](../../language/why-no-xor.md)。
+
 ## 相关条目
 
 - [推导式与惰性生成式](comprehensions.md)

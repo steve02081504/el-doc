@@ -132,23 +132,22 @@ let infinity = NativeFloat(1) / NativeFloat(0)
 
 ## 位掩码用 `BitSet<size:N>`
 
-`BitSet<size:N>` 是普通标准库类型，内部是普通 Bool 数组，`N` 是编译期非负整数，索引 0 是最低位。允许 `N = 0`，此时唯一数值是零。二元 `&`、`|`、`^` 要求两侧同宽并返回独立的新位集合，`==` 也要求同宽并返回 `Bool`。
+`BitSet<size:N>` 是普通标准库类型，内部是普通 Bool 数组，`N` 是编译期非负整数，索引 0 是最低位。允许 `N = 0`，此时唯一数值是零。二元 `&`、`|` 要求两侧同宽并返回独立的新位集合，`==` 也要求同宽并返回 `Bool`。
 
 ```el
 let low = BitSet<size: 8>(0b1010_0101)
 let high = BitSet<size: 8>(0b1111_0000)
 let anded = low & high          // 0b1010_0000
 let ored = low | high           // 0b1111_0101
-let xored = low ^ high          // 0b0101_0101
 let inverted = !low             // 0b0101_1010
 let shifted = low << 1          // 0b0100_1010
 let rotated = low.rotateRight(1)  // 0b1101_0010
-let value = xored.toNumber()    // 85
+let value = ored.toNumber()     // 245
 ```
 
 构造只接受非负有限整数，并且必须能被请求的位宽完整表示：不截断、不补码、不饱和。不同宽度的位集合、以及与普通数值混合的二元运算都会被拒绝。
 
-`^` 在 `BitSet` 上是逐位异或；普通 `Number` 的 `^` 是乘方，两个重载按接收者类型选择。`!` 只翻转恰好 `N` 位，不产生无限高位。左移、右移与旋转同样保持 `N` 位：位移量必须是有限非负整数，大于等于 `N` 的移位得到零，旋转按 `N` 取模。
+`BitSet` 不提供 `^`；普通 `Number` 的 `^` 是乘方。`!` 只翻转恰好 `N` 位，不产生无限高位。左移、右移与旋转同样保持 `N` 位：位移量必须是有限非负整数，大于等于 `N` 的移位得到零，旋转按 `N` 取模。
 
 `toNumber()` 用精确整数累积逐位还原数值，不经过舍入；`Number(bits)` 与它共享同一转换核心。位集合适合位掩码、协议字段和需要按位组合的配置，不适合普通算术。
 
@@ -161,7 +160,7 @@ let value = xored.toNumber()    // 85
 | 固定位宽整数、移位旋转、ABI | `BitInteger` | `bits` 与 `sign_bits` 决定范围；布局进入类型身份 |
 | 固定 IEEE 浮点格式 | `BitFloat` | 布局参数决定舍入格式；不是 `epsilon` |
 | 目标默认机器浮点、外部 ABI | `NativeFloat` | 显式导入；目标选择格式；IEEE 运算 |
-| 位掩码、协议字段、位集合 | `BitSet<size:N>` | Bool 位数组；同宽按位与、或、异或 |
+| 位掩码、协议字段、位集合 | `BitSet<size:N>` | Bool 位数组；同宽按位与、或 |
 
 需要跨目标复现位级结果时，固定 `BitFloat` 布局比 `NativeFloat` 更直接。需要精确数学时不要为性能提前换浮点，`Number` 的精确性本身就是默认合同。
 
@@ -172,7 +171,7 @@ let value = xored.toNumber()    // 85
 
 - 默认 `Number`；位宽、布局、机器浮点、位集合这四件事各有专门类型。
 - `Number<...>` 的约束是类型身份的一部分，越界按 `overflow` 策略表现，不按机器字长环绕。
-- `^` 在 `Number` 上是乘方、在 `BitSet` 上是逐位异或；同符号两套语义靠接收者类型分派。
+- `BitSet` 的位是布尔值；按目标机器数位组合或撤销是另一回事，见[为什么 EL 没有异或](why-no-xor.md)。
 
 ## 下一站：运算符与表达式
 

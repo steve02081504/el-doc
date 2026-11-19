@@ -260,7 +260,7 @@
 			"name": "Aes",
 			"id": null,
 			"source": "cryptography/aes.el",
-			"line": 34,
+			"line": 37,
 			"signature": "export @assign(mode: \"shared\") class Aes",
 			"value_type": null
 		},
@@ -268,7 +268,7 @@
 			"name": "aes_cbc",
 			"id": null,
 			"source": "cryptography/aes.el",
-			"line": 115,
+			"line": 118,
 			"signature": "export fn aes_cbc(key: Number[], iv: Number[], bytes: Number[], decrypt: Bool = f): Number[]",
 			"value_type": null
 		},
@@ -276,7 +276,7 @@
 			"name": "aes_zip_ctr",
 			"id": null,
 			"source": "cryptography/aes.el",
-			"line": 145,
+			"line": 148,
 			"signature": "export fn aes_zip_ctr(key: Number[], bytes: Number[]): Number[]",
 			"value_type": null
 		},
@@ -1044,7 +1044,7 @@
 			"name": "bit_and",
 			"id": null,
 			"source": "number/bit-operations.el",
-			"line": 50,
+			"line": 49,
 			"signature": "export fn bit_and(left: Number, right: Number): Number",
 			"value_type": null
 		},
@@ -1068,7 +1068,7 @@
 			"name": "bit_not",
 			"id": null,
 			"source": "number/bit-operations.el",
-			"line": 56,
+			"line": 88,
 			"signature": "export fn bit_not(value: Number): Number",
 			"value_type": null
 		},
@@ -1076,7 +1076,7 @@
 			"name": "bit_or",
 			"id": null,
 			"source": "number/bit-operations.el",
-			"line": 51,
+			"line": 50,
 			"signature": "export fn bit_or(left: Number, right: Number): Number",
 			"value_type": null
 		},
@@ -1092,16 +1092,8 @@
 			"name": "bit_width",
 			"id": null,
 			"source": "platform/numeric-syntax.el",
-			"line": 32,
+			"line": 58,
 			"signature": "export syntax bit_width",
-			"value_type": null
-		},
-		{
-			"name": "bit_xor",
-			"id": null,
-			"source": "number/bit-operations.el",
-			"line": 52,
-			"signature": "export fn bit_xor(left: Number, right: Number): Number\nexport fn bit_xor(left, right)",
 			"value_type": null
 		},
 		{
@@ -1116,7 +1108,7 @@
 			"name": "BitInteger",
 			"id": null,
 			"source": "number/bit-integer.el",
-			"line": 18,
+			"line": 47,
 			"signature": "export fn BitInteger(bits = 0, sign_bits = 0, min = nil, max = nil, overflow = \"ub\"): type",
 			"value_type": null
 		},
@@ -1270,6 +1262,14 @@
 			"source": "streams/buffer.el",
 			"line": 9,
 			"signature": "export fn bufferFromBytes(bytes: Number[]): Buffer",
+			"value_type": null
+		},
+		{
+			"name": "build_tree_lca",
+			"id": "collections/trees/lca::build",
+			"source": "collections/trees/lca.el",
+			"line": 70,
+			"signature": "export fn build(nodeCount: Number, root: Number, childrenOf: fn(key: Number): Number[], rmq: (fn(values: Number[]): fn(lo: Number, hi: Number): Number) | nil_t = nil): TreeLca",
 			"value_type": null
 		},
 		{
@@ -1460,7 +1460,7 @@
 			"name": "chacha20_block",
 			"id": null,
 			"source": "cryptography/chacha20.el",
-			"line": 52,
+			"line": 55,
 			"signature": "export fn chacha20_block(key: Number[], counter: Number, nonce: Number[]): Number[]",
 			"value_type": null
 		},
@@ -1468,7 +1468,7 @@
 			"name": "chacha20_block_bytes",
 			"id": null,
 			"source": "cryptography/chacha20.el",
-			"line": 12,
+			"line": 15,
 			"signature": "export const chacha20_block_bytes",
 			"value_type": null
 		},
@@ -1476,7 +1476,7 @@
 			"name": "chacha20_key_bytes",
 			"id": null,
 			"source": "cryptography/chacha20.el",
-			"line": 10,
+			"line": 13,
 			"signature": "export const chacha20_key_bytes",
 			"value_type": null
 		},
@@ -1484,7 +1484,7 @@
 			"name": "chacha20_nonce_bytes",
 			"id": null,
 			"source": "cryptography/chacha20.el",
-			"line": 11,
+			"line": 14,
 			"signature": "export const chacha20_nonce_bytes",
 			"value_type": null
 		},
@@ -1524,7 +1524,7 @@
 			"name": "chacha20_xor",
 			"id": "cryptography/chacha20::chacha20_xor",
 			"source": "cryptography/chacha20.el",
-			"line": 92,
+			"line": 95,
 			"signature": "export fn chacha20_xor(key: Number[], nonce: Number[], initial_counter: Number, input: Number[]): Number[]",
 			"value_type": null
 		},
@@ -3849,6 +3849,22 @@
 			"value_type": null
 		},
 		{
+			"name": "digit_add_mod",
+			"id": null,
+			"source": "number/bit-operations.el",
+			"line": 82,
+			"signature": "export fn digit_add_mod(left: Number, right: Number): Number\nexport fn digit_add_mod(left, right)",
+			"value_type": null
+		},
+		{
+			"name": "digit_sub_mod",
+			"id": null,
+			"source": "number/bit-operations.el",
+			"line": 83,
+			"signature": "export fn digit_sub_mod(left: Number, right: Number): Number\nexport fn digit_sub_mod(left, right)",
+			"value_type": null
+		},
+		{
 			"name": "digits",
 			"id": null,
 			"source": "text/patterns/lexical.el",
@@ -4393,6 +4409,22 @@
 			"value_type": null
 		},
 		{
+			"name": "euler_tour",
+			"id": "collections/trees/euler-tour::euler_tour",
+			"source": "collections/trees/euler-tour.el",
+			"line": 99,
+			"signature": "export fn euler_tour(nodeCount: Number, root: Number, childrenOf: fn(key: Number): Number[]): EulerTour",
+			"value_type": null
+		},
+		{
+			"name": "EulerTour",
+			"id": null,
+			"source": "collections/trees/euler-tour.el",
+			"line": 10,
+			"signature": "export class EulerTour",
+			"value_type": null
+		},
+		{
 			"name": "Events",
 			"id": null,
 			"source": "concurrency/events/index.el",
@@ -4772,7 +4804,7 @@
 			"name": "FileSystemContext",
 			"id": null,
 			"source": "filesystem/model.el",
-			"line": 207,
+			"line": 208,
 			"signature": "export @assign(mode: \"shared\") class FileSystemContext",
 			"value_type": null
 		},
@@ -4780,7 +4812,7 @@
 			"name": "FileSystemError",
 			"id": null,
 			"source": "filesystem/model.el",
-			"line": 11,
+			"line": 12,
 			"signature": "export @assign(mode: \"copy\") class FileSystemError extends Error",
 			"value_type": null
 		},
@@ -4916,7 +4948,7 @@
 			"name": "float_binary",
 			"id": null,
 			"source": "number/ieee754/number.el",
-			"line": 107,
+			"line": 108,
 			"signature": "export fn float_binary(a: NumberBase, b: NumberBase, operation: Number): NumberBase\nexport fn float_binary(a: NumberBase, b: NumberBase, operation: Integer): NumberBase",
 			"value_type": null
 		},
@@ -4924,7 +4956,7 @@
 			"name": "float_comparison",
 			"id": null,
 			"source": "number/ieee754/number.el",
-			"line": 139,
+			"line": 140,
 			"signature": "export fn float_comparison(a: NumberBase, b: NumberBase, operation: Number): Bool\nexport fn float_comparison(a: NumberBase, b: NumberBase, operation: Integer): Bool",
 			"value_type": null
 		},
@@ -4932,7 +4964,7 @@
 			"name": "float_initialize",
 			"id": null,
 			"source": "number/ieee754/number.el",
-			"line": 73,
+			"line": 74,
 			"signature": "export fn float_initialize(target: NumberBase, value)",
 			"value_type": null
 		},
@@ -4940,7 +4972,7 @@
 			"name": "float_integer_power",
 			"id": null,
 			"source": "number/ieee754/number.el",
-			"line": 167,
+			"line": 168,
 			"signature": "export fn float_integer_power(value: NumberBase, power: Number): NumberBase",
 			"value_type": null
 		},
@@ -4948,7 +4980,7 @@
 			"name": "float_negate",
 			"id": null,
 			"source": "number/ieee754/number.el",
-			"line": 150,
+			"line": 151,
 			"signature": "export fn float_negate(value: NumberBase): NumberBase",
 			"value_type": null
 		},
@@ -4956,7 +4988,7 @@
 			"name": "float_operand",
 			"id": null,
 			"source": "number/ieee754/number.el",
-			"line": 56,
+			"line": 57,
 			"signature": "export fn float_operand(value, prototype: NumberBase): NumberBase",
 			"value_type": null
 		},
@@ -4964,7 +4996,7 @@
 			"name": "float_truth",
 			"id": null,
 			"source": "number/ieee754/number.el",
-			"line": 149,
+			"line": 150,
 			"signature": "export fn float_truth(value: NumberBase): Bool",
 			"value_type": null
 		},
@@ -5300,7 +5332,7 @@
 			"name": "grammar",
 			"id": "text/patterns/syntax::grammar",
 			"source": "text/patterns/syntax.el",
-			"line": 320,
+			"line": 323,
 			"signature": "export syntax grammar",
 			"value_type": null
 		},
@@ -5436,7 +5468,7 @@
 			"name": "hmac_sha1",
 			"id": null,
 			"source": "cryptography/sha1.el",
-			"line": 55,
+			"line": 58,
 			"signature": "export fn hmac_sha1(key: Number[], message: Number[]): Number[]",
 			"value_type": null
 		},
@@ -6308,7 +6340,7 @@
 			"name": "ir_abi_verify",
 			"id": null,
 			"source": "intermediate-representation/abi/verify.el",
-			"line": 572,
+			"line": 585,
 			"signature": "export fn ir_abi_verify(m: IrAbiModule): Text",
 			"value_type": null
 		},
@@ -7172,7 +7204,7 @@
 			"name": "maximum_chacha20_counter",
 			"id": null,
 			"source": "cryptography/chacha20.el",
-			"line": 13,
+			"line": 16,
 			"signature": "export const maximum_chacha20_counter",
 			"value_type": null
 		},
@@ -7188,7 +7220,7 @@
 			"name": "maximum_pointer_bytes",
 			"id": null,
 			"source": "cryptography/sha256.el",
-			"line": 25,
+			"line": 28,
 			"signature": "export const maximum_pointer_bytes",
 			"value_type": null
 		},
@@ -7196,7 +7228,7 @@
 			"name": "maximum_sha256_bytes",
 			"id": null,
 			"source": "cryptography/sha256.el",
-			"line": 23,
+			"line": 26,
 			"signature": "export const maximum_sha256_bytes",
 			"value_type": null
 		},
@@ -7604,7 +7636,7 @@
 			"name": "NativeSignedInteger",
 			"id": null,
 			"source": "platform/machine/integer.el",
-			"line": 26,
+			"line": 27,
 			"signature": "export @builtin:vome:signed:integer class NativeSignedInteger",
 			"value_type": null
 		},
@@ -7620,7 +7652,7 @@
 			"name": "NativeUnsignedInteger",
 			"id": null,
 			"source": "platform/machine/integer.el",
-			"line": 45,
+			"line": 47,
 			"signature": "export @builtin:vome:unsigned:integer class NativeUnsignedInteger",
 			"value_type": null
 		},
@@ -7796,8 +7828,8 @@
 			"name": "Number",
 			"id": null,
 			"source": "number/number.el",
-			"line": 61,
-			"signature": "export class Number\nexport fn Number(min = nil, max = nil, epsilon = nil, integer = f, overflow = \"ub\"): type",
+			"line": 65,
+			"signature": "export class Number\nexport fn Number(): Number\nexport fn Number(value: Integer): Number\nexport fn Number(value: UnsignedInteger): Number\nexport fn Number(value: Number): Number\nexport fn Number(value: NumericInt): Number\nexport fn Number(value: NumericRatio): Number\nexport fn Number(value): Number\nexport fn Number(value: NumericRatio, domain: NumberDomain): Number\nexport fn Number(min = nil, max = nil, epsilon = nil, integer = f, overflow = \"ub\"): type",
 			"value_type": null
 		},
 		{
@@ -8444,7 +8476,7 @@
 			"name": "parse_program",
 			"id": null,
 			"source": "compiler/parser/parser.el",
-			"line": 1021,
+			"line": 1027,
 			"signature": "export fn parse_program(c: Compiler, p: Parser): Node",
 			"value_type": null
 		},
@@ -8460,7 +8492,7 @@
 			"name": "parse_statement",
 			"id": null,
 			"source": "compiler/parser/parser.el",
-			"line": 710,
+			"line": 716,
 			"signature": "export fn parse_statement(c: Compiler, p: Parser, at_module_level: Bool = f, class_member: Bool = f): Node",
 			"value_type": null
 		},
@@ -8604,7 +8636,7 @@
 			"name": "parser",
 			"id": null,
 			"source": "text/patterns/syntax.el",
-			"line": 299,
+			"line": 302,
 			"signature": "export syntax parser",
 			"value_type": null
 		},
@@ -8684,7 +8716,7 @@
 			"name": "Path",
 			"id": null,
 			"source": "filesystem/model.el",
-			"line": 105,
+			"line": 106,
 			"signature": "export @assign(mode: \"copy\") class Path extends TextOperand",
 			"value_type": null
 		},
@@ -8700,7 +8732,7 @@
 			"name": "pattern",
 			"id": null,
 			"source": "text/patterns/syntax.el",
-			"line": 304,
+			"line": 307,
 			"signature": "export syntax pattern",
 			"value_type": null
 		},
@@ -8886,6 +8918,30 @@
 			"source": "graphics/plots/index.el",
 			"line": 91,
 			"signature": "export @assign(mode: \"shared\") class PlotHost",
+			"value_type": null
+		},
+		{
+			"name": "plus_minus_rmq",
+			"id": "collections/arrays/plus-minus-rmq::plus_minus_rmq",
+			"source": "collections/arrays/plus-minus-rmq.el",
+			"line": 170,
+			"signature": "export fn plus_minus_rmq(values: Number[]): PlusMinusRmq",
+			"value_type": null
+		},
+		{
+			"name": "PlusMinusRmq",
+			"id": null,
+			"source": "collections/arrays/plus-minus-rmq.el",
+			"line": 28,
+			"signature": "export class PlusMinusRmq",
+			"value_type": null
+		},
+		{
+			"name": "PlusMinusRmqError",
+			"id": null,
+			"source": "collections/arrays/plus-minus-rmq.el",
+			"line": 10,
+			"signature": "export class PlusMinusRmqError extends Error",
 			"value_type": null
 		},
 		{
@@ -9108,7 +9164,7 @@
 			"name": "ProviderRegistration",
 			"id": null,
 			"source": "filesystem/model.el",
-			"line": 67,
+			"line": 68,
 			"signature": "export @assign(mode: \"shared\") class ProviderRegistration",
 			"value_type": null
 		},
@@ -9598,6 +9654,22 @@
 			"source": "text/patterns/combinators.el",
 			"line": 70,
 			"signature": "export fn range(first: Text, last: Text): Pattern<output: Char>",
+			"value_type": null
+		},
+		{
+			"name": "range_argmin_sparse_table",
+			"id": "collections/arrays/sparse-argmin::range_argmin_sparse_table",
+			"source": "collections/arrays/sparse-argmin.el",
+			"line": 98,
+			"signature": "export fn range_argmin_sparse_table(values: Number[]): RangeArgminSparseTable",
+			"value_type": null
+		},
+		{
+			"name": "RangeArgminSparseTable",
+			"id": null,
+			"source": "collections/arrays/sparse-argmin.el",
+			"line": 9,
+			"signature": "export class RangeArgminSparseTable",
 			"value_type": null
 		},
 		{
@@ -10500,7 +10572,7 @@
 			"name": "representation_digits",
 			"id": null,
 			"source": "platform/numeric-syntax.el",
-			"line": 42,
+			"line": 68,
 			"signature": "export syntax representation_digits",
 			"value_type": null
 		},
@@ -10508,7 +10580,7 @@
 			"name": "representation_radix",
 			"id": null,
 			"source": "platform/numeric-syntax.el",
-			"line": 37,
+			"line": 63,
 			"signature": "export syntax representation_radix",
 			"value_type": null
 		},
@@ -10572,7 +10644,7 @@
 			"name": "ResolvedTheme",
 			"id": null,
 			"source": "theme/model.el",
-			"line": 74,
+			"line": 75,
 			"signature": "export @assign(mode: \"shared\") class ResolvedTheme",
 			"value_type": null
 		},
@@ -11204,7 +11276,7 @@
 			"name": "sha1_digest",
 			"id": null,
 			"source": "cryptography/sha1.el",
-			"line": 12,
+			"line": 15,
 			"signature": "export fn sha1_digest(message: Number[]): Number[]",
 			"value_type": null
 		},
@@ -11212,7 +11284,7 @@
 			"name": "Sha256",
 			"id": null,
 			"source": "cryptography/sha256.el",
-			"line": 99,
+			"line": 102,
 			"signature": "export class Sha256",
 			"value_type": null
 		},
@@ -11220,7 +11292,7 @@
 			"name": "sha256_bytes",
 			"id": null,
 			"source": "cryptography/sha256.el",
-			"line": 187,
+			"line": 190,
 			"signature": "export fn sha256_bytes(data: ptr, size: Number): Text",
 			"value_type": null
 		},
@@ -11228,7 +11300,7 @@
 			"name": "sha256_digest",
 			"id": "cryptography/sha256::sha256_digest",
 			"source": "cryptography/sha256.el",
-			"line": 167,
+			"line": 170,
 			"signature": "export fn sha256_digest(message: Number[]): Number[]",
 			"value_type": null
 		},
@@ -11244,7 +11316,7 @@
 			"name": "sha256_hex",
 			"id": "cryptography/sha256::sha256_hex",
 			"source": "cryptography/sha256.el",
-			"line": 183,
+			"line": 186,
 			"signature": "export fn sha256_hex(message: Number[]): Text",
 			"value_type": null
 		},
@@ -11644,7 +11716,7 @@
 			"name": "structural_hash_cells",
 			"id": null,
 			"source": "collections/hashing/structural.el",
-			"line": 115,
+			"line": 125,
 			"signature": "export fn structural_hash_cells(data): StructuralHash",
 			"value_type": null
 		},
@@ -11652,7 +11724,7 @@
 			"name": "StructuralHash",
 			"id": null,
 			"source": "collections/hashing/structural.el",
-			"line": 48,
+			"line": 53,
 			"signature": "export class StructuralHash",
 			"value_type": null
 		},
@@ -11710,6 +11782,38 @@
 			"source": "collections/sets/algebra.el",
 			"line": 17,
 			"signature": "export fn subtract_sets(first, second)",
+			"value_type": null
+		},
+		{
+			"name": "subtree_interval_bounds",
+			"id": "collections/trees/subtree-intervals::subtree_interval_bounds",
+			"source": "collections/trees/subtree-intervals.el",
+			"line": 72,
+			"signature": "export fn subtree_interval_bounds(count: Number, root: Number, childrenOf: fn(key: Number): Number[]): Number[]",
+			"value_type": null
+		},
+		{
+			"name": "subtree_intervals",
+			"id": "collections/trees/subtree-intervals::subtree_intervals",
+			"source": "collections/trees/subtree-intervals.el",
+			"line": 52,
+			"signature": "export fn subtree_intervals(count: Number, root: Number, childrenOf: fn(key: Number): Number[]): SubtreeIntervalIndex",
+			"value_type": null
+		},
+		{
+			"name": "SubtreeIntervalError",
+			"id": "collections/trees/tree-traversal::SubtreeIntervalError",
+			"source": "collections/trees/tree-traversal.el",
+			"line": 15,
+			"signature": "@assign(mode: \"copy\")\nexport class SubtreeIntervalError extends Error",
+			"value_type": null
+		},
+		{
+			"name": "SubtreeIntervalIndex",
+			"id": null,
+			"source": "collections/trees/subtree-intervals.el",
+			"line": 13,
+			"signature": "export class SubtreeIntervalIndex",
 			"value_type": null
 		},
 		{
@@ -12124,7 +12228,7 @@
 			"name": "TextView",
 			"id": null,
 			"source": "text/text.el",
-			"line": 847,
+			"line": 849,
 			"signature": "export class TextView\nexport fn TextView(bitWidth = 0, size = 0): type",
 			"value_type": null
 		},
@@ -12132,7 +12236,7 @@
 			"name": "Theme",
 			"id": "theme/model::Theme",
 			"source": "theme/model.el",
-			"line": 113,
+			"line": 114,
 			"signature": "export @assign(mode: \"shared\") class Theme",
 			"value_type": null
 		},
@@ -12148,7 +12252,7 @@
 			"name": "ThemeContext",
 			"id": "theme/model::ThemeContext",
 			"source": "theme/model.el",
-			"line": 100,
+			"line": 101,
 			"signature": "export @assign(mode: \"shared\") class ThemeContext",
 			"value_type": null
 		},
@@ -12156,7 +12260,7 @@
 			"name": "ThemeContrastIssue",
 			"id": null,
 			"source": "theme/model.el",
-			"line": 66,
+			"line": 67,
 			"signature": "export @assign(mode: \"shared\") class ThemeContrastIssue",
 			"value_type": null
 		},
@@ -12164,7 +12268,7 @@
 			"name": "ThemeEntry",
 			"id": null,
 			"source": "theme/model.el",
-			"line": 25,
+			"line": 26,
 			"signature": "export @assign(mode: \"shared\") class ThemeEntry",
 			"value_type": null
 		},
@@ -12172,7 +12276,7 @@
 			"name": "ThemeError",
 			"id": null,
 			"source": "theme/model.el",
-			"line": 9,
+			"line": 10,
 			"signature": "export @assign(mode: \"copy\") class ThemeError extends Error",
 			"value_type": null
 		},
@@ -12180,7 +12284,7 @@
 			"name": "ThemeOrigin",
 			"id": null,
 			"source": "theme/model.el",
-			"line": 8,
+			"line": 9,
 			"signature": "export enum ThemeOrigin",
 			"value_type": null
 		},
@@ -12188,7 +12292,7 @@
 			"name": "ThemeValues",
 			"id": "theme/model::ThemeValues",
 			"source": "theme/model.el",
-			"line": 46,
+			"line": 47,
 			"signature": "export @assign(mode: \"shared\") class ThemeValues",
 			"value_type": null
 		},
@@ -12633,6 +12737,22 @@
 			"value_type": null
 		},
 		{
+			"name": "tree_dfs_events",
+			"id": "collections/trees/tree-traversal::tree_dfs_events",
+			"source": "collections/trees/tree-traversal.el",
+			"line": 76,
+			"signature": "export fn tree_dfs_events(count: Number, root: Number, childrenOf: fn(key: Number): Number[], visit: fn(key: Number, parent: Number, entering: Bool): nil_t): Number",
+			"value_type": null
+		},
+		{
+			"name": "TreeLca",
+			"id": null,
+			"source": "collections/trees/lca.el",
+			"line": 13,
+			"signature": "export class TreeLca",
+			"value_type": null
+		},
+		{
 			"name": "Tridiagonal",
 			"id": null,
 			"source": "numerical-computing/tridiagonal.el",
@@ -12692,7 +12812,7 @@
 			"name": "type_max",
 			"id": null,
 			"source": "platform/numeric-syntax.el",
-			"line": 87,
+			"line": 113,
 			"signature": "export syntax type_max",
 			"value_type": null
 		},
@@ -12700,7 +12820,7 @@
 			"name": "type_min",
 			"id": null,
 			"source": "platform/numeric-syntax.el",
-			"line": 82,
+			"line": 108,
 			"signature": "export syntax type_min",
 			"value_type": null
 		},
@@ -12804,7 +12924,7 @@
 			"name": "unbounded",
 			"id": null,
 			"source": "number/number.el",
-			"line": 22,
+			"line": 26,
 			"signature": "export const unbounded",
 			"value_type": "UnboundedNumberLimit"
 		},
@@ -12900,7 +13020,7 @@
 			"name": "unsigned_bits",
 			"id": null,
 			"source": "platform/machine/integer.el",
-			"line": 48,
+			"line": 50,
 			"signature": "export @builtin:ris:integer:convert(mode: \"wrap\") fn unsigned_bits(value: NativeUnsignedInteger): NativeSignedInteger",
 			"value_type": null
 		},
@@ -13276,7 +13396,7 @@
 			"name": "zeroize_bytes",
 			"id": null,
 			"source": "cryptography/bytes.el",
-			"line": 180,
+			"line": 182,
 			"signature": "export fn zeroize_bytes(target: Number[])",
 			"value_type": null
 		},
@@ -13427,8 +13547,14 @@
 			"sort": "collections/arrays/operations::sort",
 			"take": "collections/arrays/operations::take"
 		},
+		"collections/arrays/plus-minus-rmq": {
+			"plus_minus_rmq": "collections/arrays/plus-minus-rmq::plus_minus_rmq"
+		},
 		"collections/arrays/positional": {
 			"positionalArray": "collections/arrays/positional::positionalArray"
+		},
+		"collections/arrays/sparse-argmin": {
+			"range_argmin_sparse_table": "collections/arrays/sparse-argmin::range_argmin_sparse_table"
 		},
 		"collections/batch/index": {
 			"batch": "collections/batch/syntax::batch"
@@ -13458,6 +13584,23 @@
 		},
 		"collections/sets/hash-set": {
 			"Set": "collections/sets/hash-set::Set"
+		},
+		"collections/trees/euler-tour": {
+			"euler_tour": "collections/trees/euler-tour::euler_tour"
+		},
+		"collections/trees/lca": {
+			"build": "collections/trees/lca::build"
+		},
+		"collections/trees/subtree-intervals": {
+			"SubtreeIntervalError": "collections/trees/tree-traversal::SubtreeIntervalError",
+			"subtree_interval_bounds": "collections/trees/subtree-intervals::subtree_interval_bounds",
+			"subtree_intervals": "collections/trees/subtree-intervals::subtree_intervals"
+		},
+		"collections/trees/tree-traversal": {
+			"SubtreeIntervalError": "collections/trees/tree-traversal::SubtreeIntervalError",
+			"tree_dfs_events": "collections/trees/tree-traversal::tree_dfs_events",
+			"tree_node_count": "collections/trees/tree-traversal::tree_node_count",
+			"tree_node_key": "collections/trees/tree-traversal::tree_node_key"
 		},
 		"compiler/diagnostics/messages": {
 			"console": "console/facade::console"
@@ -13696,6 +13839,7 @@
 			"SearchInterrupted": "logic/control::SearchInterrupted",
 			"Sequence": "collections/sequences/demand::Sequence",
 			"Set": "collections/sets/hash-set::Set",
+			"SubtreeIntervalError": "collections/trees/tree-traversal::SubtreeIntervalError",
 			"Tensor": "numerical-computing/tensor::Tensor",
 			"Term": "logic/term::Term",
 			"TextFormat": "formats/index::TextFormat",
@@ -13713,6 +13857,7 @@
 			"atom": "logic/term::atom",
 			"await": "concurrency/async::await",
 			"batch": "collections/batch/syntax::batch",
+			"build_tree_lca": "collections/trees/lca::build",
 			"call": "logic/goal::call",
 			"chacha20_poly1305_decrypt": "cryptography/aead::chacha20_poly1305_decrypt",
 			"chacha20_poly1305_encrypt": "cryptography/aead::chacha20_poly1305_encrypt",
@@ -13733,6 +13878,7 @@
 			"each": "collections/arrays/operations::each",
 			"element": "user-interface/model::element",
 			"enumerate": "collections/sequences/enumerate::enumerate",
+			"euler_tour": "collections/trees/euler-tour::euler_tour",
 			"every": "collections/arrays/operations::every",
 			"exactly": "text/patterns/combinators::exactly",
 			"exp": "mathematics/functions/elementary::exp",
@@ -13800,8 +13946,10 @@
 			"pbkdf2_sha256": "cryptography/pbkdf2::pbkdf2_sha256",
 			"pi": "mathematics/functions/elementary::pi",
 			"plot": "graphics/plots/index::plot",
+			"plus_minus_rmq": "collections/arrays/plus-minus-rmq::plus_minus_rmq",
 			"positionalArray": "collections/arrays/positional::positionalArray",
 			"range": "text/patterns/combinators::range",
+			"range_argmin_sparse_table": "collections/arrays/sparse-argmin::range_argmin_sparse_table",
 			"readFileAs": "filesystem/index::readFileAs",
 			"readFileBuffer": "filesystem/index::readFileBuffer",
 			"readFileBytes": "filesystem/index::readFileBytes",
@@ -13829,9 +13977,12 @@
 			"some": "collections/arrays/operations::some",
 			"sort": "collections/arrays/operations::sort",
 			"sqrt": "mathematics/functions/elementary::sqrt",
+			"subtree_interval_bounds": "collections/trees/subtree-intervals::subtree_interval_bounds",
+			"subtree_intervals": "collections/trees/subtree-intervals::subtree_intervals",
 			"t": "language/values::t",
 			"t_t": "language/values::t_t",
 			"take": "collections/arrays/operations::take",
+			"tree_dfs_events": "collections/trees/tree-traversal::tree_dfs_events",
 			"unify": "logic/goal::unify",
 			"variable": "logic/term::variable",
 			"variable_scope": "logic/term::variable_scope",
@@ -14134,6 +14285,12 @@
 		"neural-networks/optimizer": {
 			"SGD": "neural-networks/optimizer::SGD"
 		},
+		"number/index": {
+			"canRepresentExactly": "number/native-float::canRepresentExactly"
+		},
+		"number/native-float": {
+			"canRepresentExactly": "number/native-float::canRepresentExactly"
+		},
 		"numerical-computing/arrays": {
 			"columnMajor": "numerical-computing/arrays::columnMajor",
 			"linspace": "numerical-computing/arrays::linspace"
@@ -14330,7 +14487,7 @@
 		{
 			"name": "ArchiveReader",
 			"source": "archives/binary.el",
-			"line": 22,
+			"line": 25,
 			"signature": "class ArchiveReader",
 			"id": null,
 			"initializer": null
@@ -14450,7 +14607,7 @@
 		{
 			"name": "RarBits",
 			"source": "archives/rar-codec.el",
-			"line": 9,
+			"line": 12,
 			"signature": "class RarBits",
 			"id": null,
 			"initializer": null
@@ -14458,7 +14615,7 @@
 		{
 			"name": "RarTree",
 			"source": "archives/rar-codec.el",
-			"line": 32,
+			"line": 35,
 			"signature": "class RarTree",
 			"id": null,
 			"initializer": null
@@ -14466,7 +14623,7 @@
 		{
 			"name": "RarBitWriter",
 			"source": "archives/rar-codec.el",
-			"line": 97,
+			"line": 100,
 			"signature": "class RarBitWriter",
 			"id": null,
 			"initializer": null
@@ -14474,7 +14631,7 @@
 		{
 			"name": "Rar5Dictionary",
 			"source": "archives/rar-codec.el",
-			"line": 202,
+			"line": 205,
 			"signature": "class Rar5Dictionary",
 			"id": null,
 			"initializer": null
@@ -14632,6 +14789,22 @@
 			"initializer": null
 		},
 		{
+			"name": "PlusMinusRmqError",
+			"source": "collections/arrays/plus-minus-rmq.el",
+			"line": 10,
+			"signature": "class PlusMinusRmqError extends Error",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "PlusMinusRmq",
+			"source": "collections/arrays/plus-minus-rmq.el",
+			"line": 28,
+			"signature": "class PlusMinusRmq",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "PositionalArray",
 			"source": "collections/arrays/positional.el",
 			"line": 22,
@@ -14644,6 +14817,14 @@
 			"source": "collections/arrays/resources.el",
 			"line": 18,
 			"signature": "class ArrayResources",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "RangeArgminSparseTable",
+			"source": "collections/arrays/sparse-argmin.el",
+			"line": 9,
+			"signature": "class RangeArgminSparseTable",
 			"id": null,
 			"initializer": null
 		},
@@ -14778,7 +14959,7 @@
 		{
 			"name": "StructuralHash",
 			"source": "collections/hashing/structural.el",
-			"line": 48,
+			"line": 53,
 			"signature": "class StructuralHash",
 			"id": null,
 			"initializer": null
@@ -15165,6 +15346,38 @@
 			"line": 234,
 			"signature": "fn SortedSet(element: type): type",
 			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "EulerTour",
+			"source": "collections/trees/euler-tour.el",
+			"line": 10,
+			"signature": "class EulerTour",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "TreeLca",
+			"source": "collections/trees/lca.el",
+			"line": 13,
+			"signature": "class TreeLca",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "SubtreeIntervalIndex",
+			"source": "collections/trees/subtree-intervals.el",
+			"line": 13,
+			"signature": "class SubtreeIntervalIndex",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "SubtreeIntervalError",
+			"source": "collections/trees/tree-traversal.el",
+			"line": 16,
+			"signature": "class SubtreeIntervalError extends Error",
+			"id": "collections/trees/tree-traversal::SubtreeIntervalError",
 			"initializer": null
 		},
 		{
@@ -18562,7 +18775,7 @@
 		{
 			"name": "CallableParseState",
 			"source": "compiler/parser/parser.el",
-			"line": 517,
+			"line": 523,
 			"signature": "class CallableParseState",
 			"id": null,
 			"initializer": null
@@ -24490,7 +24703,7 @@
 		{
 			"name": "SnapshotText",
 			"source": "console/display-text.el",
-			"line": 10,
+			"line": 11,
 			"signature": "class SnapshotText",
 			"id": null,
 			"initializer": null
@@ -24618,7 +24831,7 @@
 		{
 			"name": "ConsoleClosed",
 			"source": "console/model.el",
-			"line": 10,
+			"line": 11,
 			"signature": "class ConsoleClosed extends Error",
 			"id": null,
 			"initializer": null
@@ -24626,7 +24839,7 @@
 		{
 			"name": "ConsoleCursorError",
 			"source": "console/model.el",
-			"line": 11,
+			"line": 12,
 			"signature": "class ConsoleCursorError extends Error",
 			"id": null,
 			"initializer": null
@@ -24634,7 +24847,7 @@
 		{
 			"name": "ConsoleIncomplete",
 			"source": "console/model.el",
-			"line": 12,
+			"line": 13,
 			"signature": "class ConsoleIncomplete extends Error",
 			"id": null,
 			"initializer": null
@@ -24642,7 +24855,7 @@
 		{
 			"name": "ConsoleProjectionError",
 			"source": "console/model.el",
-			"line": 13,
+			"line": 14,
 			"signature": "class ConsoleProjectionError extends Error",
 			"id": null,
 			"initializer": null
@@ -24650,7 +24863,7 @@
 		{
 			"name": "ConsoleResourceError",
 			"source": "console/model.el",
-			"line": 14,
+			"line": 15,
 			"signature": "class ConsoleResourceError extends Error",
 			"id": null,
 			"initializer": null
@@ -24658,7 +24871,7 @@
 		{
 			"name": "ConsoleWriteError",
 			"source": "console/model.el",
-			"line": 15,
+			"line": 16,
 			"signature": "class ConsoleWriteError extends Error",
 			"id": null,
 			"initializer": null
@@ -24666,7 +24879,7 @@
 		{
 			"name": "ConsoleSnapshotError",
 			"source": "console/model.el",
-			"line": 16,
+			"line": 17,
 			"signature": "class ConsoleSnapshotError extends Error",
 			"id": null,
 			"initializer": null
@@ -24674,7 +24887,7 @@
 		{
 			"name": "ConsoleTargetError",
 			"source": "console/model.el",
-			"line": 17,
+			"line": 18,
 			"signature": "class ConsoleTargetError extends Error",
 			"id": null,
 			"initializer": null
@@ -24682,7 +24895,7 @@
 		{
 			"name": "ConsoleChannel",
 			"source": "console/model.el",
-			"line": 42,
+			"line": 43,
 			"signature": "class ConsoleChannel",
 			"id": null,
 			"initializer": null
@@ -24690,7 +24903,7 @@
 		{
 			"name": "ConsoleKind",
 			"source": "console/model.el",
-			"line": 50,
+			"line": 51,
 			"signature": "enum ConsoleKind",
 			"id": null,
 			"initializer": null
@@ -24698,7 +24911,7 @@
 		{
 			"name": "ConsoleLevel",
 			"source": "console/model.el",
-			"line": 51,
+			"line": 52,
 			"signature": "enum ConsoleLevel",
 			"id": null,
 			"initializer": null
@@ -24706,7 +24919,7 @@
 		{
 			"name": "ConsoleSnapshotKind",
 			"source": "console/model.el",
-			"line": 52,
+			"line": 53,
 			"signature": "enum ConsoleSnapshotKind",
 			"id": null,
 			"initializer": null
@@ -24714,7 +24927,7 @@
 		{
 			"name": "ConsoleSnapshotField",
 			"source": "console/model.el",
-			"line": 56,
+			"line": 57,
 			"signature": "class ConsoleSnapshotField",
 			"id": null,
 			"initializer": null
@@ -24722,7 +24935,7 @@
 		{
 			"name": "ConsoleValueSnapshot",
 			"source": "console/model.el",
-			"line": 68,
+			"line": 69,
 			"signature": "class ConsoleValueSnapshot",
 			"id": null,
 			"initializer": null
@@ -24730,7 +24943,7 @@
 		{
 			"name": "ConsoleBytes",
 			"source": "console/model.el",
-			"line": 95,
+			"line": 96,
 			"signature": "class ConsoleBytes",
 			"id": null,
 			"initializer": null
@@ -24738,7 +24951,7 @@
 		{
 			"name": "ConsoleDataValue",
 			"source": "console/model.el",
-			"line": 107,
+			"line": 108,
 			"signature": "class ConsoleDataValue",
 			"id": null,
 			"initializer": null
@@ -24746,7 +24959,7 @@
 		{
 			"name": "ConsoleContent",
 			"source": "console/model.el",
-			"line": 113,
+			"line": 114,
 			"signature": "let ConsoleContent: type",
 			"id": null,
 			"initializer": "Text | ConsoleBytes | LocalizedMessageSnapshot | LocalizedContentSnapshot | ConsoleValueSnapshot | ConsoleDataValue"
@@ -24754,7 +24967,7 @@
 		{
 			"name": "ConsoleRecord",
 			"source": "console/model.el",
-			"line": 117,
+			"line": 118,
 			"signature": "class ConsoleRecord",
 			"id": null,
 			"initializer": null
@@ -24762,7 +24975,7 @@
 		{
 			"name": "ConsoleLevelFilter",
 			"source": "console/model.el",
-			"line": 184,
+			"line": 186,
 			"signature": "class ConsoleLevelFilter",
 			"id": null,
 			"initializer": null
@@ -25610,7 +25823,7 @@
 		{
 			"name": "Aes",
 			"source": "cryptography/aes.el",
-			"line": 34,
+			"line": 37,
 			"signature": "class Aes",
 			"id": null,
 			"initializer": null
@@ -25642,7 +25855,7 @@
 		{
 			"name": "Sha256",
 			"source": "cryptography/sha256.el",
-			"line": 99,
+			"line": 102,
 			"signature": "class Sha256",
 			"id": null,
 			"initializer": null
@@ -25666,7 +25879,7 @@
 		{
 			"name": "CdcOperationGate",
 			"source": "database/admin/cdc-rows.el",
-			"line": 39,
+			"line": 40,
 			"signature": "class CdcOperationGate",
 			"id": null,
 			"initializer": null
@@ -25674,7 +25887,7 @@
 		{
 			"name": "CommittedRowChange",
 			"source": "database/admin/cdc-rows.el",
-			"line": 63,
+			"line": 64,
 			"signature": "class CommittedRowChange",
 			"id": null,
 			"initializer": null
@@ -25682,7 +25895,7 @@
 		{
 			"name": "CommittedSchemaChange",
 			"source": "database/admin/cdc-rows.el",
-			"line": 98,
+			"line": 99,
 			"signature": "class CommittedSchemaChange",
 			"id": null,
 			"initializer": null
@@ -25690,7 +25903,7 @@
 		{
 			"name": "CommittedTransaction",
 			"source": "database/admin/cdc-rows.el",
-			"line": 104,
+			"line": 105,
 			"signature": "class CommittedTransaction",
 			"id": null,
 			"initializer": null
@@ -25698,7 +25911,7 @@
 		{
 			"name": "CommittedBatch",
 			"source": "database/admin/cdc-rows.el",
-			"line": 114,
+			"line": 115,
 			"signature": "class CommittedBatch",
 			"id": null,
 			"initializer": null
@@ -25706,7 +25919,7 @@
 		{
 			"name": "CommittedRowDelta",
 			"source": "database/admin/cdc-rows.el",
-			"line": 173,
+			"line": 174,
 			"signature": "class CommittedRowDelta",
 			"id": null,
 			"initializer": null
@@ -25714,7 +25927,7 @@
 		{
 			"name": "CommittedChangeBatch",
 			"source": "database/admin/cdc-rows.el",
-			"line": 187,
+			"line": 188,
 			"signature": "class CommittedChangeBatch",
 			"id": null,
 			"initializer": null
@@ -25722,7 +25935,7 @@
 		{
 			"name": "CanonicalCdcCheckpoint",
 			"source": "database/admin/cdc-rows.el",
-			"line": 209,
+			"line": 210,
 			"signature": "class CanonicalCdcCheckpoint",
 			"id": null,
 			"initializer": null
@@ -25730,7 +25943,7 @@
 		{
 			"name": "CdcConsumerCapture",
 			"source": "database/admin/cdc-rows.el",
-			"line": 221,
+			"line": 222,
 			"signature": "class CdcConsumerCapture",
 			"id": null,
 			"initializer": null
@@ -25738,7 +25951,7 @@
 		{
 			"name": "CanonicalCdcBootstrap",
 			"source": "database/admin/cdc-rows.el",
-			"line": 254,
+			"line": 255,
 			"signature": "class CanonicalCdcBootstrap",
 			"id": null,
 			"initializer": null
@@ -25746,7 +25959,7 @@
 		{
 			"name": "CanonicalCdcMemoryCheckpoint",
 			"source": "database/admin/cdc-rows.el",
-			"line": 303,
+			"line": 304,
 			"signature": "class CanonicalCdcMemoryCheckpoint",
 			"id": null,
 			"initializer": null
@@ -25754,7 +25967,7 @@
 		{
 			"name": "CanonicalCdcCheckpointStore",
 			"source": "database/admin/cdc-rows.el",
-			"line": 348,
+			"line": 349,
 			"signature": "class CanonicalCdcCheckpointStore",
 			"id": null,
 			"initializer": null
@@ -25762,7 +25975,7 @@
 		{
 			"name": "CommittedCdcStream",
 			"source": "database/admin/cdc-rows.el",
-			"line": 491,
+			"line": 492,
 			"signature": "class CommittedCdcStream",
 			"id": null,
 			"initializer": null
@@ -28546,7 +28759,7 @@
 		{
 			"name": "DbCapturedValue",
 			"source": "database/spill-capture.el",
-			"line": 34,
+			"line": 37,
 			"signature": "class DbCapturedValue",
 			"id": null,
 			"initializer": null
@@ -28554,7 +28767,7 @@
 		{
 			"name": "DbCaptureArena",
 			"source": "database/spill-capture.el",
-			"line": 51,
+			"line": 54,
 			"signature": "class DbCaptureArena",
 			"id": null,
 			"initializer": null
@@ -28562,7 +28775,7 @@
 		{
 			"name": "DbCaptureReader",
 			"source": "database/spill-capture.el",
-			"line": 141,
+			"line": 144,
 			"signature": "class DbCaptureReader",
 			"id": null,
 			"initializer": null
@@ -31106,7 +31319,7 @@
 		{
 			"name": "HttpComputeEndpoint",
 			"source": "execution/remote/index.el",
-			"line": 32,
+			"line": 34,
 			"signature": "class HttpComputeEndpoint extends ExecutionEndpoint",
 			"id": null,
 			"initializer": null
@@ -31282,7 +31495,7 @@
 		{
 			"name": "FileSystemError",
 			"source": "filesystem/model.el",
-			"line": 11,
+			"line": 12,
 			"signature": "class FileSystemError extends Error",
 			"id": null,
 			"initializer": null
@@ -31290,7 +31503,7 @@
 		{
 			"name": "ProviderRegistration",
 			"source": "filesystem/model.el",
-			"line": 67,
+			"line": 68,
 			"signature": "class ProviderRegistration",
 			"id": null,
 			"initializer": null
@@ -31298,7 +31511,7 @@
 		{
 			"name": "Path",
 			"source": "filesystem/model.el",
-			"line": 105,
+			"line": 106,
 			"signature": "class Path extends TextOperand",
 			"id": null,
 			"initializer": null
@@ -31306,7 +31519,7 @@
 		{
 			"name": "Location",
 			"source": "filesystem/model.el",
-			"line": 113,
+			"line": 114,
 			"signature": "class Location extends TextOperand",
 			"id": null,
 			"initializer": null
@@ -31314,7 +31527,7 @@
 		{
 			"name": "FileSystemContext",
 			"source": "filesystem/model.el",
-			"line": 207,
+			"line": 208,
 			"signature": "class FileSystemContext",
 			"id": null,
 			"initializer": null
@@ -32770,7 +32983,7 @@
 		{
 			"name": "PluralOperand",
 			"source": "i18n/plural.el",
-			"line": 24,
+			"line": 25,
 			"signature": "class PluralOperand",
 			"id": null,
 			"initializer": null
@@ -32778,7 +32991,7 @@
 		{
 			"name": "PluralCategoryRule",
 			"source": "i18n/plural.el",
-			"line": 70,
+			"line": 71,
 			"signature": "class PluralCategoryRule",
 			"id": null,
 			"initializer": null
@@ -32786,7 +32999,7 @@
 		{
 			"name": "PluralZeroRule",
 			"source": "i18n/plural.el",
-			"line": 95,
+			"line": 96,
 			"signature": "class PluralZeroRule",
 			"id": null,
 			"initializer": null
@@ -32794,7 +33007,7 @@
 		{
 			"name": "PluralRuleSnapshot",
 			"source": "i18n/plural.el",
-			"line": 117,
+			"line": 118,
 			"signature": "class PluralRuleSnapshot",
 			"id": null,
 			"initializer": null
@@ -32802,7 +33015,7 @@
 		{
 			"name": "PluralRules",
 			"source": "i18n/plural.el",
-			"line": 155,
+			"line": 156,
 			"signature": "class PluralRules",
 			"id": null,
 			"initializer": null
@@ -32810,7 +33023,7 @@
 		{
 			"name": "ParameterSnapshot",
 			"source": "i18n/rendering.el",
-			"line": 26,
+			"line": 27,
 			"signature": "class ParameterSnapshot",
 			"id": null,
 			"initializer": null
@@ -32818,7 +33031,7 @@
 		{
 			"name": "Requirements",
 			"source": "i18n/rendering.el",
-			"line": 70,
+			"line": 71,
 			"signature": "class Requirements",
 			"id": null,
 			"initializer": null
@@ -32826,7 +33039,7 @@
 		{
 			"name": "FrozenNode",
 			"source": "i18n/rendering.el",
-			"line": 117,
+			"line": 118,
 			"signature": "class FrozenNode",
 			"id": null,
 			"initializer": null
@@ -32834,7 +33047,7 @@
 		{
 			"name": "FreezeContext",
 			"source": "i18n/rendering.el",
-			"line": 186,
+			"line": 187,
 			"signature": "class FreezeContext",
 			"id": null,
 			"initializer": null
@@ -32842,7 +33055,7 @@
 		{
 			"name": "FrozenBundle",
 			"source": "i18n/resources.el",
-			"line": 12,
+			"line": 13,
 			"signature": "class FrozenBundle",
 			"id": null,
 			"initializer": null
@@ -32850,7 +33063,7 @@
 		{
 			"name": "ComponentSchema",
 			"source": "i18n/resources.el",
-			"line": 40,
+			"line": 41,
 			"signature": "class ComponentSchema",
 			"id": null,
 			"initializer": null
@@ -32858,7 +33071,7 @@
 		{
 			"name": "ComponentSnapshot",
 			"source": "i18n/resources.el",
-			"line": 62,
+			"line": 63,
 			"signature": "class ComponentSnapshot",
 			"id": null,
 			"initializer": null
@@ -32866,7 +33079,7 @@
 		{
 			"name": "ResourceSnapshot",
 			"source": "i18n/resources.el",
-			"line": 129,
+			"line": 130,
 			"signature": "class ResourceSnapshot",
 			"id": null,
 			"initializer": null
@@ -33634,7 +33847,7 @@
 		{
 			"name": "IrAbiRepresentationResult",
 			"source": "intermediate-representation/abi/representation.el",
-			"line": 13,
+			"line": 14,
 			"signature": "class IrAbiRepresentationResult",
 			"id": null,
 			"initializer": null
@@ -33690,7 +33903,7 @@
 		{
 			"name": "IrAbiNames",
 			"source": "intermediate-representation/abi/verify.el",
-			"line": 16,
+			"line": 17,
 			"signature": "class IrAbiNames",
 			"id": null,
 			"initializer": null
@@ -33698,7 +33911,7 @@
 		{
 			"name": "IrAbiFlow",
 			"source": "intermediate-representation/abi/verify.el",
-			"line": 396,
+			"line": 409,
 			"signature": "class IrAbiFlow",
 			"id": null,
 			"initializer": null
@@ -33706,7 +33919,7 @@
 		{
 			"name": "IrAbiVerificationContext",
 			"source": "intermediate-representation/abi/verify.el",
-			"line": 588,
+			"line": 601,
 			"signature": "class IrAbiVerificationContext",
 			"id": null,
 			"initializer": null
@@ -34266,7 +34479,7 @@
 		{
 			"name": "IrSourceLine",
 			"source": "intermediate-representation/source.el",
-			"line": 12,
+			"line": 13,
 			"signature": "class IrSourceLine",
 			"id": null,
 			"initializer": null
@@ -34274,7 +34487,7 @@
 		{
 			"name": "IrSourceFragment",
 			"source": "intermediate-representation/source.el",
-			"line": 18,
+			"line": 19,
 			"signature": "class IrSourceFragment",
 			"id": null,
 			"initializer": null
@@ -34322,7 +34535,7 @@
 		{
 			"name": "IrRecordField",
 			"source": "intermediate-representation/types/index.el",
-			"line": 417,
+			"line": 432,
 			"signature": "class IrRecordField",
 			"id": null,
 			"initializer": null
@@ -34330,7 +34543,7 @@
 		{
 			"name": "IrRecordType",
 			"source": "intermediate-representation/types/index.el",
-			"line": 422,
+			"line": 437,
 			"signature": "class IrRecordType",
 			"id": null,
 			"initializer": null
@@ -39090,7 +39303,7 @@
 		{
 			"name": "ScalarStorage",
 			"source": "memory/storage/raw.el",
-			"line": 9,
+			"line": 11,
 			"signature": "class ScalarStorage",
 			"id": null,
 			"initializer": null
@@ -39098,7 +39311,7 @@
 		{
 			"name": "NativeI32",
 			"source": "memory/storage/raw.el",
-			"line": 32,
+			"line": 38,
 			"signature": "class NativeI32",
 			"id": null,
 			"initializer": null
@@ -39658,7 +39871,7 @@
 		{
 			"name": "PngHeader",
 			"source": "multimedia/image/portable/png.el",
-			"line": 34,
+			"line": 37,
 			"signature": "class PngHeader",
 			"id": null,
 			"initializer": null
@@ -39730,7 +39943,7 @@
 		{
 			"name": "QrLayout",
 			"source": "multimedia/qr/layout.el",
-			"line": 45,
+			"line": 48,
 			"signature": "class QrLayout",
 			"id": null,
 			"initializer": null
@@ -39802,7 +40015,7 @@
 		{
 			"name": "CorrectedBlock",
 			"source": "multimedia/qr/reed-solomon.el",
-			"line": 62,
+			"line": 65,
 			"signature": "class CorrectedBlock",
 			"id": null,
 			"initializer": null
@@ -41584,9 +41797,49 @@
 			"initializer": null
 		},
 		{
+			"name": "IntegerBits8",
+			"source": "number/bit-integer.el",
+			"line": 19,
+			"signature": "class IntegerBits8",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "IntegerBits16",
+			"source": "number/bit-integer.el",
+			"line": 20,
+			"signature": "class IntegerBits16",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "IntegerBits32",
+			"source": "number/bit-integer.el",
+			"line": 21,
+			"signature": "class IntegerBits32",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "IntegerBits64",
+			"source": "number/bit-integer.el",
+			"line": 22,
+			"signature": "class IntegerBits64",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "integer_payload",
+			"source": "number/bit-integer.el",
+			"line": 28,
+			"signature": "fn integer_payload(width: Integer): type",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "BitInteger",
 			"source": "number/bit-integer.el",
-			"line": 18,
+			"line": 47,
 			"signature": "fn BitInteger(bits = 0, sign_bits = 0, min = nil, max = nil, overflow = \"ub\"): type",
 			"id": null,
 			"initializer": null
@@ -41688,9 +41941,17 @@
 			"initializer": null
 		},
 		{
+			"name": "NativeFloatCodecUnavailable",
+			"source": "number/native-float.el",
+			"line": 12,
+			"signature": "class NativeFloatCodecUnavailable extends Error",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "UnboundedNumberLimit",
 			"source": "number/number.el",
-			"line": 21,
+			"line": 25,
 			"signature": "class UnboundedNumberLimit",
 			"id": null,
 			"initializer": null
@@ -41698,15 +41959,111 @@
 		{
 			"name": "Number",
 			"source": "number/number.el",
-			"line": 61,
+			"line": 65,
 			"signature": "class Number",
 			"id": "number/number::Number~type",
 			"initializer": null
 		},
 		{
+			"name": "StorageUnsignedUnit",
+			"source": "number/number.el",
+			"line": 132,
+			"signature": "class StorageUnsignedUnit",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "StorageSignedSmall",
+			"source": "number/number.el",
+			"line": 133,
+			"signature": "class StorageSignedSmall",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "StorageUnsignedMedium",
+			"source": "number/number.el",
+			"line": 134,
+			"signature": "class StorageUnsignedMedium",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "StorageSignedMedium",
+			"source": "number/number.el",
+			"line": 135,
+			"signature": "class StorageSignedMedium",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "StorageUnsignedLarge",
+			"source": "number/number.el",
+			"line": 136,
+			"signature": "class StorageUnsignedLarge",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "StorageSignedLarge",
+			"source": "number/number.el",
+			"line": 137,
+			"signature": "class StorageSignedLarge",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "NativeIntegerValue",
+			"source": "number/number.el",
+			"line": 139,
+			"signature": "fn NativeIntegerValue(carrier: type): type",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "NativeFractionValue",
+			"source": "number/number.el",
+			"line": 152,
+			"signature": "fn NativeFractionValue(carrier: type): type",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "BigIntegerValue",
+			"source": "number/number.el",
+			"line": 165,
+			"signature": "class BigIntegerValue extends Number",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "RatioValue",
+			"source": "number/number.el",
+			"line": 173,
+			"signature": "class RatioValue extends Number",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "UnorderedValue",
+			"source": "number/number.el",
+			"line": 181,
+			"signature": "class UnorderedValue extends Number",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "BoundedNativeInteger",
+			"source": "number/number.el",
+			"line": 268,
+			"signature": "fn BoundedNativeInteger(carrier: type, min, max, epsilon, overflow, unsigned: Bool): type",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "Number",
 			"source": "number/number.el",
-			"line": 177,
+			"line": 312,
 			"signature": "fn Number(min = nil, max = nil, epsilon = nil, integer = f, overflow = \"ub\"): type",
 			"id": "number/number::Number~constraints",
 			"initializer": null
@@ -42042,7 +42399,7 @@
 		{
 			"name": "IntegralTensorDevice",
 			"source": "numerical-computing/integral-device.el",
-			"line": 361,
+			"line": 362,
 			"signature": "class IntegralTensorDevice",
 			"id": null,
 			"initializer": null
@@ -42562,7 +42919,7 @@
 		{
 			"name": "ProcessSystemError",
 			"source": "operating-system/processes/capture-model.el",
-			"line": 15,
+			"line": 20,
 			"signature": "class ProcessSystemError extends Error",
 			"id": null,
 			"initializer": null
@@ -42570,7 +42927,7 @@
 		{
 			"name": "ProcessCaptureState",
 			"source": "operating-system/processes/capture-model.el",
-			"line": 22,
+			"line": 27,
 			"signature": "class ProcessCaptureState",
 			"id": null,
 			"initializer": null
@@ -42578,7 +42935,7 @@
 		{
 			"name": "ProcessCaptureReceipt",
 			"source": "operating-system/processes/capture-model.el",
-			"line": 33,
+			"line": 38,
 			"signature": "class ProcessCaptureReceipt",
 			"id": null,
 			"initializer": null
@@ -42698,7 +43055,7 @@
 		{
 			"name": "ProcessPipelineInputFailure",
 			"source": "operating-system/processes/input-model.el",
-			"line": 20,
+			"line": 21,
 			"signature": "class ProcessPipelineInputFailure",
 			"id": null,
 			"initializer": null
@@ -42706,7 +43063,7 @@
 		{
 			"name": "ProcessPipelineInputClosed",
 			"source": "operating-system/processes/input-model.el",
-			"line": 24,
+			"line": 25,
 			"signature": "class ProcessPipelineInputClosed",
 			"id": null,
 			"initializer": null
@@ -42714,7 +43071,7 @@
 		{
 			"name": "ProcessPipelineInput",
 			"source": "operating-system/processes/input-model.el",
-			"line": 30,
+			"line": 31,
 			"signature": "class ProcessPipelineInput",
 			"id": null,
 			"initializer": null
@@ -42722,7 +43079,7 @@
 		{
 			"name": "InputLease",
 			"source": "operating-system/processes/input-model.el",
-			"line": 47,
+			"line": 48,
 			"signature": "class InputLease",
 			"id": null,
 			"initializer": null
@@ -42730,7 +43087,7 @@
 		{
 			"name": "ProcessPipelineInputState",
 			"source": "operating-system/processes/input-model.el",
-			"line": 58,
+			"line": 59,
 			"signature": "class ProcessPipelineInputState",
 			"id": null,
 			"initializer": null
@@ -42738,7 +43095,7 @@
 		{
 			"name": "ProcessPipelineInputReceipt",
 			"source": "operating-system/processes/input-model.el",
-			"line": 67,
+			"line": 68,
 			"signature": "class ProcessPipelineInputReceipt",
 			"id": null,
 			"initializer": null
@@ -42746,7 +43103,7 @@
 		{
 			"name": "InputFrame",
 			"source": "operating-system/processes/input-model.el",
-			"line": 86,
+			"line": 87,
 			"signature": "class InputFrame",
 			"id": null,
 			"initializer": null
@@ -42754,7 +43111,7 @@
 		{
 			"name": "InputState",
 			"source": "operating-system/processes/input-model.el",
-			"line": 94,
+			"line": 95,
 			"signature": "class InputState",
 			"id": null,
 			"initializer": null
@@ -42762,7 +43119,7 @@
 		{
 			"name": "InputBody",
 			"source": "operating-system/processes/input-model.el",
-			"line": 104,
+			"line": 105,
 			"signature": "class InputBody extends TaskBody",
 			"id": null,
 			"initializer": null
@@ -42770,7 +43127,7 @@
 		{
 			"name": "ProcessPipelineFeed",
 			"source": "operating-system/processes/input-model.el",
-			"line": 140,
+			"line": 141,
 			"signature": "class ProcessPipelineFeed",
 			"id": null,
 			"initializer": null
@@ -42786,7 +43143,7 @@
 		{
 			"name": "ProcessPipelineOutputFailure",
 			"source": "operating-system/processes/pipeline-model.el",
-			"line": 8,
+			"line": 9,
 			"signature": "class ProcessPipelineOutputFailure",
 			"id": null,
 			"initializer": null
@@ -42794,7 +43151,7 @@
 		{
 			"name": "ProcessPipelineOutput",
 			"source": "operating-system/processes/pipeline-model.el",
-			"line": 14,
+			"line": 15,
 			"signature": "class ProcessPipelineOutput",
 			"id": null,
 			"initializer": null
@@ -42802,7 +43159,7 @@
 		{
 			"name": "ProcessPipelineRead",
 			"source": "operating-system/processes/pipeline-model.el",
-			"line": 29,
+			"line": 30,
 			"signature": "class ProcessPipelineRead",
 			"id": null,
 			"initializer": null
@@ -42810,7 +43167,7 @@
 		{
 			"name": "NativeProcessCommand",
 			"source": "operating-system/processes/pipeline-model.el",
-			"line": 50,
+			"line": 51,
 			"signature": "class NativeProcessCommand",
 			"id": null,
 			"initializer": null
@@ -42818,7 +43175,7 @@
 		{
 			"name": "ProcessPipelineState",
 			"source": "operating-system/processes/pipeline-model.el",
-			"line": 68,
+			"line": 69,
 			"signature": "class ProcessPipelineState",
 			"id": null,
 			"initializer": null
@@ -42826,7 +43183,7 @@
 		{
 			"name": "ProcessPipelineInterrupted",
 			"source": "operating-system/processes/pipeline-model.el",
-			"line": 99,
+			"line": 100,
 			"signature": "class ProcessPipelineInterrupted",
 			"id": null,
 			"initializer": null
@@ -42834,7 +43191,7 @@
 		{
 			"name": "ProcessPipelineReceipt",
 			"source": "operating-system/processes/pipeline-model.el",
-			"line": 105,
+			"line": 106,
 			"signature": "class ProcessPipelineReceipt",
 			"id": null,
 			"initializer": null
@@ -43482,7 +43839,7 @@
 		{
 			"name": "NativeSignedInteger",
 			"source": "platform/machine/integer.el",
-			"line": 26,
+			"line": 27,
 			"signature": "class NativeSignedInteger",
 			"id": null,
 			"initializer": null
@@ -43490,7 +43847,7 @@
 		{
 			"name": "NativeUnsignedInteger",
 			"source": "platform/machine/integer.el",
-			"line": 45,
+			"line": 47,
 			"signature": "class NativeUnsignedInteger",
 			"id": null,
 			"initializer": null
@@ -44114,7 +44471,7 @@
 		{
 			"name": "SharedRandom",
 			"source": "random/index.el",
-			"line": 303,
+			"line": 306,
 			"signature": "class SharedRandom",
 			"id": null,
 			"initializer": null
@@ -44426,7 +44783,7 @@
 		{
 			"name": "StackShort",
 			"source": "runtime/platform/windows/stacktrace.el",
-			"line": 8,
+			"line": 9,
 			"signature": "class StackShort",
 			"id": null,
 			"initializer": null
@@ -44434,7 +44791,7 @@
 		{
 			"name": "StackBool",
 			"source": "runtime/platform/windows/stacktrace.el",
-			"line": 9,
+			"line": 10,
 			"signature": "class StackBool",
 			"id": null,
 			"initializer": null
@@ -44442,7 +44799,7 @@
 		{
 			"name": "StackDword",
 			"source": "runtime/platform/windows/stacktrace.el",
-			"line": 10,
+			"line": 11,
 			"signature": "class StackDword",
 			"id": null,
 			"initializer": null
@@ -44450,7 +44807,7 @@
 		{
 			"name": "StackSize",
 			"source": "runtime/platform/windows/stacktrace.el",
-			"line": 11,
+			"line": 12,
 			"signature": "class StackSize",
 			"id": null,
 			"initializer": null
@@ -45578,7 +45935,7 @@
 		{
 			"name": "TextCursor",
 			"source": "text/text.el",
-			"line": 748,
+			"line": 750,
 			"signature": "class TextCursor",
 			"id": null,
 			"initializer": null
@@ -45586,7 +45943,7 @@
 		{
 			"name": "TextView",
 			"source": "text/text.el",
-			"line": 847,
+			"line": 849,
 			"signature": "class TextView",
 			"id": null,
 			"initializer": null
@@ -45594,7 +45951,7 @@
 		{
 			"name": "TextRangeView",
 			"source": "text/text.el",
-			"line": 880,
+			"line": 882,
 			"signature": "class TextRangeView extends TextView",
 			"id": null,
 			"initializer": null
@@ -45602,7 +45959,7 @@
 		{
 			"name": "DataTextView",
 			"source": "text/text.el",
-			"line": 907,
+			"line": 909,
 			"signature": "class DataTextView extends TextView",
 			"id": null,
 			"initializer": null
@@ -45610,7 +45967,7 @@
 		{
 			"name": "TextBase",
 			"source": "text/text.el",
-			"line": 930,
+			"line": 932,
 			"signature": "let TextBase: type",
 			"id": null,
 			"initializer": "Text"
@@ -45618,7 +45975,7 @@
 		{
 			"name": "TextRangeViewBase",
 			"source": "text/text.el",
-			"line": 931,
+			"line": 933,
 			"signature": "let TextRangeViewBase: type",
 			"id": null,
 			"initializer": "TextRangeView"
@@ -45626,7 +45983,7 @@
 		{
 			"name": "TextView",
 			"source": "text/text.el",
-			"line": 953,
+			"line": 955,
 			"signature": "fn TextView(bitWidth = 0, size = 0): type",
 			"id": "text/text::TextView~constraints",
 			"initializer": null
@@ -45634,7 +45991,7 @@
 		{
 			"name": "Text",
 			"source": "text/text.el",
-			"line": 1002,
+			"line": 1004,
 			"signature": "fn Text(bitWidth = 0, size = 0): type",
 			"id": "text/text::Text~constraints",
 			"initializer": null
@@ -45642,7 +45999,7 @@
 		{
 			"name": "TextPushUpdate",
 			"source": "text/text.el",
-			"line": 1090,
+			"line": 1092,
 			"signature": "fn TextPushUpdate(bitWidth = 0, size = 0, value: type, value_bitWidth = 0): type",
 			"id": null,
 			"initializer": null
@@ -45650,7 +46007,7 @@
 		{
 			"name": "TextIndexWriteUpdate",
 			"source": "text/text.el",
-			"line": 1097,
+			"line": 1099,
 			"signature": "fn TextIndexWriteUpdate(bitWidth = 0, size = 0, index: type, value: type, index_bitWidth = 0, value_bitWidth = 0): type",
 			"id": null,
 			"initializer": null
@@ -45658,7 +46015,7 @@
 		{
 			"name": "SystemColor",
 			"source": "theme/appearance-model.el",
-			"line": 18,
+			"line": 23,
 			"signature": "class SystemColor",
 			"id": null,
 			"initializer": null
@@ -45666,7 +46023,7 @@
 		{
 			"name": "SystemAppearanceIssue",
 			"source": "theme/appearance-model.el",
-			"line": 32,
+			"line": 37,
 			"signature": "class SystemAppearanceIssue",
 			"id": null,
 			"initializer": null
@@ -45674,7 +46031,7 @@
 		{
 			"name": "SystemAppearance",
 			"source": "theme/appearance-model.el",
-			"line": 47,
+			"line": 52,
 			"signature": "class SystemAppearance",
 			"id": null,
 			"initializer": null
@@ -45738,7 +46095,7 @@
 		{
 			"name": "ThemeOrigin",
 			"source": "theme/model.el",
-			"line": 8,
+			"line": 9,
 			"signature": "enum ThemeOrigin",
 			"id": null,
 			"initializer": null
@@ -45746,7 +46103,7 @@
 		{
 			"name": "ThemeError",
 			"source": "theme/model.el",
-			"line": 9,
+			"line": 10,
 			"signature": "class ThemeError extends Error",
 			"id": null,
 			"initializer": null
@@ -45754,7 +46111,7 @@
 		{
 			"name": "ThemeEntry",
 			"source": "theme/model.el",
-			"line": 25,
+			"line": 26,
 			"signature": "class ThemeEntry",
 			"id": null,
 			"initializer": null
@@ -45762,7 +46119,7 @@
 		{
 			"name": "ThemeValues",
 			"source": "theme/model.el",
-			"line": 46,
+			"line": 47,
 			"signature": "class ThemeValues",
 			"id": "theme/model::ThemeValues",
 			"initializer": null
@@ -45770,7 +46127,7 @@
 		{
 			"name": "ThemeContrastIssue",
 			"source": "theme/model.el",
-			"line": 66,
+			"line": 67,
 			"signature": "class ThemeContrastIssue",
 			"id": null,
 			"initializer": null
@@ -45778,7 +46135,7 @@
 		{
 			"name": "ResolvedTheme",
 			"source": "theme/model.el",
-			"line": 74,
+			"line": 75,
 			"signature": "class ResolvedTheme",
 			"id": null,
 			"initializer": null
@@ -45786,7 +46143,7 @@
 		{
 			"name": "ThemeContext",
 			"source": "theme/model.el",
-			"line": 100,
+			"line": 101,
 			"signature": "class ThemeContext",
 			"id": "theme/model::ThemeContext",
 			"initializer": null
@@ -45794,7 +46151,7 @@
 		{
 			"name": "Theme",
 			"source": "theme/model.el",
-			"line": 113,
+			"line": 114,
 			"signature": "class Theme",
 			"id": "theme/model::Theme",
 			"initializer": null
@@ -46754,7 +47111,7 @@
 		{
 			"name": "FontLineMetrics",
 			"source": "user-interface/font-metrics.el",
-			"line": 12,
+			"line": 13,
 			"signature": "class FontLineMetrics",
 			"id": null,
 			"initializer": null
@@ -46762,7 +47119,7 @@
 		{
 			"name": "FontMetricsFrame",
 			"source": "user-interface/font-metrics.el",
-			"line": 20,
+			"line": 21,
 			"signature": "class FontMetricsFrame",
 			"id": null,
 			"initializer": null
@@ -47187,7 +47544,7 @@
 			"name": "Word64",
 			"source": "number/internal/word64/index.el",
 			"line": 9,
-			"signature": "if (is_unsigned_binary_width(representation_kind(NativeUnsignedInteger), representation_bits(NativeUnsignedInteger), representation_encoding_radix(NativeUnsignedInteger), Integer(64))) {\n\texport { Word64, word_from_number, add_bits, multiply_bits, xor_bits, or_bits, left_bits, shift_bits } from \"file:./native.el\"\n} else {\n\texport { Word64, word_from_number, add_bits, multiply_bits, xor_bits, or_bits, left_bits, shift_bits } from \"file:./exact.el\"\n}",
+			"signature": "if (is_unsigned_binary_width(representation_kind(NativeUnsignedInteger), representation_bits(NativeUnsignedInteger), representation_encoding_radix(NativeUnsignedInteger), Integer(64))) {\n\texport { Word64, word_from_number, add_bits, multiply_bits, subtract_bits, and_bits, or_bits, left_bits, shift_bits } from \"file:./native.el\"\n} else {\n\texport { Word64, word_from_number, add_bits, multiply_bits, subtract_bits, and_bits, or_bits, left_bits, shift_bits } from \"file:./exact.el\"\n}",
 			"id": null,
 			"initializer": null,
 			"anchor": "api-1a7ac63dc0ed74edb7d6",
@@ -47337,7 +47694,7 @@
 			"anchor": "api-e1b1b22430ae1dac04e7"
 		}
 	],
-	"source_digest": "f523299654672b52a820d90b215d97d0a23975659ee95f2d75d35f35e264ad7d",
+	"source_digest": "74b3331fd9d087ec5f64cece89a5451ac3182118fdd369e53f96bac101c549d2",
 	"files": [
 		{
 			"path": "collections/arrays/dynamic.el",
@@ -47352,8 +47709,16 @@
 			"sha256": "e17e68973c56591cbe49ad40d3a821eb60dab3bc19e5af271f77e9873c83e000"
 		},
 		{
+			"path": "collections/arrays/plus-minus-rmq.el",
+			"sha256": "87f97b71299bda99e1de3a9f161103c445cdabe044d0b8aa91f4df496315d8b6"
+		},
+		{
 			"path": "collections/arrays/positional.el",
 			"sha256": "6a1c354460024e1e58ba86aeb35a1a4a4ed923f3b3ca736d5f8a0be42b9c4009"
+		},
+		{
+			"path": "collections/arrays/sparse-argmin.el",
+			"sha256": "9bfa1f3b6501a9896028d7d628fd14ee6f9e7f9d68ab9bfca422c97b73610b3a"
 		},
 		{
 			"path": "collections/batch/syntax.el",
@@ -47365,7 +47730,7 @@
 		},
 		{
 			"path": "collections/maps/hash-map.el",
-			"sha256": "c58372488ca23c77ed751566ccc6d3c5f98d5bac53d78ab65520611df49d02a8"
+			"sha256": "e97c6d63eb06961db4bf96d827f5c402135b02bd014749504f1172c0da8d681e"
 		},
 		{
 			"path": "collections/sequences/comprehension-iteration.el",
@@ -47385,11 +47750,27 @@
 		},
 		{
 			"path": "collections/sets/bit-set.el",
-			"sha256": "a7c91d6b9aa6426a6f629b30de43ddd28aebd5373f1a82ad77a0a7bd527bccfb"
+			"sha256": "2257d7c46daf2985df21c82e3cad603e2bb60e0ef49480372094889887e97d3c"
 		},
 		{
 			"path": "collections/sets/hash-set.el",
 			"sha256": "dc3156c1828963aefd73cf8c11a512f5624a6b56117564fdaca5c6cd81f5138f"
+		},
+		{
+			"path": "collections/trees/euler-tour.el",
+			"sha256": "0d48426c9ad1d0e155154135f8240bf8021de2035e67ec81eb4880e289e3b3de"
+		},
+		{
+			"path": "collections/trees/lca.el",
+			"sha256": "6012ebfa86fc0d21cfbaecb13a884cc089992cba89ac56a9b09a21195e375f48"
+		},
+		{
+			"path": "collections/trees/subtree-intervals.el",
+			"sha256": "2148d0ad5984ca5fe744681398a105dae94eb7b014933a0d4d929ae12907c9c3"
+		},
+		{
+			"path": "collections/trees/tree-traversal.el",
+			"sha256": "70c4874f96ba7636814204973bc5a04a69ae356bc1b31bb0cc4b0a5023796c9d"
 		},
 		{
 			"path": "concurrency/async.el",
@@ -47409,7 +47790,7 @@
 		},
 		{
 			"path": "cryptography/chacha20.el",
-			"sha256": "894ba67c374855a3c3021efa586005c711a4b26c6d904d092a0639ea893034ab"
+			"sha256": "22efeb4329f3e58ce2fe71dfd058a609c21bc33122240ac131ba67128ed4379a"
 		},
 		{
 			"path": "cryptography/hkdf.el",
@@ -47417,11 +47798,11 @@
 		},
 		{
 			"path": "cryptography/hmac.el",
-			"sha256": "f02ac4d58b394ee4ba0229bbd7c7613b550ef9764a90dc301c22b12b3bb99bc1"
+			"sha256": "b2e3844694038cde49da5f1f8d77da55fa2cb7af7ca3b635cce8d7512c0b9474"
 		},
 		{
 			"path": "cryptography/pbkdf2.el",
-			"sha256": "ac5bdb7430c2a8deda189ce79a6d955fb6fe220b80e2f3f3829f54f9b44584f5"
+			"sha256": "dcffdf2e4522f497643b9e8599276b61423d1e6c9c50206004f7aefd11e69e5e"
 		},
 		{
 			"path": "cryptography/rand.el",
@@ -47429,7 +47810,7 @@
 		},
 		{
 			"path": "cryptography/sha256.el",
-			"sha256": "2c1c103f6f9d9043ca41f57a6040a7184cd70b8a305fb2971a679900e107cecc"
+			"sha256": "93092d03334a0be3e0f65cc3212106a6d5f4ddbd0954914243342fd27a484743"
 		},
 		{
 			"path": "errors/assertions.el",
@@ -47676,8 +48057,12 @@
 			"sha256": "4e81d9577704715e8141983f167f6ed070fcc956495cb3e9d36c2a39aef9f343"
 		},
 		{
+			"path": "number/native-float.el",
+			"sha256": "f6d6ce9a6a1836df33a62abc60bf9fdde52d76b923b1f88c504b2ad9f7cf3207"
+		},
+		{
 			"path": "number/number.el",
-			"sha256": "1f033a8bfbcf4a9302aabfa5a4f5a8924833f5b6f5690e8d974a5a98049f0b12"
+			"sha256": "7746c5fd07c582289450af9974d0ed768008672960ecdb8acff895732d967d81"
 		},
 		{
 			"path": "numerical-computing/arrays.el",
@@ -47705,11 +48090,11 @@
 		},
 		{
 			"path": "random/bits.el",
-			"sha256": "956663c520896b8496a745b854007ff433b145f77be4323f83f85e44d7de1fc3"
+			"sha256": "f15817f5f826355a2938a9e1ac43d78e8e6afce58fe71eb2166c4cf73f6998a5"
 		},
 		{
 			"path": "random/index.el",
-			"sha256": "cbb693be236524a193cc260318f2c5f1656b02e66cb5a5f2d0cd4664212cf091"
+			"sha256": "57fa87ea8a5155c833c5a405db9eb58aeac12858f2172c1b266ea4f963c74390"
 		},
 		{
 			"path": "random/seed.el",
@@ -47733,7 +48118,7 @@
 		},
 		{
 			"path": "text/patterns/syntax.el",
-			"sha256": "6fd85c709479421675386e8fc45632cbe83f979669e2e30a7cec608ca0cc7b65"
+			"sha256": "a3442793d1c9130bd61b1434dffc83a8b97a6d6f491c9d3d98f8a87bcb915b16"
 		},
 		{
 			"path": "text/resources.el",
@@ -47741,11 +48126,11 @@
 		},
 		{
 			"path": "text/text.el",
-			"sha256": "a0d61f2b792542dec97ecadd42898e624295ad7986d02331476b2906ac88dba9"
+			"sha256": "5d270229ec0c91bdbc580bf549410f3205a7ad27aab39c1905ca085999556a2d"
 		},
 		{
 			"path": "theme/model.el",
-			"sha256": "135e589548a4da4c201de0edc62d4d3f53531e59e04d495f88111156ee352c49"
+			"sha256": "cae63207ded96399e49993e9a74e5a2f591f55fe8634fa1fcf80ba1ba2d5659e"
 		},
 		{
 			"path": "theme/resolve.el",
@@ -47793,7 +48178,7 @@
 		},
 		{
 			"path": "user-interface/platform/windows/window.el",
-			"sha256": "dfae95456c496eb61b9d83c1771f0105a78cf33ee2b8dae686faa7560b39481b"
+			"sha256": "980ff19358908cdb2561c64355306ee11d3dce52bbfa6c27f96803734eb76359"
 		},
 		{
 			"path": "user-interface/sound.el",
@@ -49925,6 +50310,80 @@
 		},
 		{
 			"kind": "module",
+			"name": "±1 RMQ",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "在相邻差严格为 ±1 的数值序列上做 O(1) 区间最小值原下标查询。"
+				}
+			],
+			"source": "collections/arrays/plus-minus-rmq.el",
+			"line": 1,
+			"id": "collections/arrays/plus-minus-rmq"
+		},
+		{
+			"kind": "api",
+			"name": "plus_minus_rmq",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "从相邻差严格为 ±1 的数值数组建立区间 argmin 索引。"
+				},
+				{
+					"tag": "param",
+					"value": "values 数值数组；构造时复制并检验相邻差。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "统一 [lo, hi)、并列取最左原下标的 ±1 RMQ。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "存在非有限值或相邻差不是 1 或 -1 时抛出 PlusMinusRmqError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "找区间内最左的最低点",
+					"markdown": "```el\nlet index = plus_minus_rmq(@[2, 1, 0, 1, 0])\nconsole.stdout.writeLine(index.argmin(0, 5))\n```\n```text\n2\n```",
+					"code": "let index = plus_minus_rmq(@[2, 1, 0, 1, 0])\nconsole.stdout.writeLine(index.argmin(0, 5))\n",
+					"expected_stdout": "2\n",
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/plus-minus-rmq.el",
+			"line": 157,
+			"signature": "export fn plus_minus_rmq(values: Number[]): PlusMinusRmq",
+			"declaration_line": 170,
+			"id": "collections/arrays/plus-minus-rmq::plus_minus_rmq",
+			"value_type": null,
+			"owner": null,
+			"return_type": "PlusMinusRmq",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "PlusMinusRmq",
+						"start": 0,
+						"end": 12,
+						"target": {
+							"type": "definition",
+							"source": "collections/arrays/plus-minus-rmq.el",
+							"name": "PlusMinusRmq",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-46e6fe6afedea524a4b7"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "module",
 			"name": "逐位置类型数组",
 			"sections": [
 				{
@@ -49975,6 +50434,80 @@
 			"return_type": null,
 			"initializer": null,
 			"type_references": {}
+		},
+		{
+			"kind": "module",
+			"name": "静态区间 argmin 稀疏表",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "对固定数值快照建立 [lo, hi) 区间最小值的原下标查询。"
+				}
+			],
+			"source": "collections/arrays/sparse-argmin.el",
+			"line": 1,
+			"id": "collections/arrays/sparse-argmin"
+		},
+		{
+			"kind": "api",
+			"name": "range_argmin_sparse_table",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "从固定数值数组建立区间 argmin 稀疏表。"
+				},
+				{
+					"tag": "param",
+					"value": "values 有限数值数组；构造时复制。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "输入包含非有限值时抛出 RangeError。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "统一 [lo, hi)、并列取最左原下标的静态索引。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "查询区间最小值的下标",
+					"markdown": "```el\nlet table = range_argmin_sparse_table(@[3, 1, 2])\nconsole.stdout.writeLine(table.argmin(0, 3))\n```",
+					"code": "let table = range_argmin_sparse_table(@[3, 1, 2])\nconsole.stdout.writeLine(table.argmin(0, 3))\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/arrays/sparse-argmin.el",
+			"line": 88,
+			"signature": "export fn range_argmin_sparse_table(values: Number[]): RangeArgminSparseTable",
+			"declaration_line": 98,
+			"id": "collections/arrays/sparse-argmin::range_argmin_sparse_table",
+			"value_type": null,
+			"owner": null,
+			"return_type": "RangeArgminSparseTable",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "RangeArgminSparseTable",
+						"start": 0,
+						"end": 22,
+						"target": {
+							"type": "definition",
+							"source": "collections/arrays/sparse-argmin.el",
+							"name": "RangeArgminSparseTable",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-c71fa8fe2f844daa33ce"
+						}
+					}
+				]
+			}
 		},
 		{
 			"kind": "module",
@@ -52734,6 +53267,551 @@
 		},
 		{
 			"kind": "module",
+			"name": "树 Euler 游走",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "在共享的迭代 DFS 事件骨架上记录首次到达和每次沿边回父。"
+				}
+			],
+			"source": "collections/trees/euler-tour.el",
+			"line": 1,
+			"id": "collections/trees/euler-tour"
+		},
+		{
+			"kind": "api",
+			"name": "euler_tour",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "从根键和直接子键遍历构建 Euler 游走。"
+				},
+				{
+					"tag": "param",
+					"value": "nodeCount 节点键上界；有效键是 [0, nodeCount) 内的整数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "root 根键；nodeCount 为零时忽略。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "childrenOf 返回给定键的直接子节点键数组；不保留返回的数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "可按位置查询节点和深度、按节点查询首次位置的游走。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "节点数、根键或子键非法，或同一键从根被到达多次时抛出 SubtreeIntervalError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "找到子节点首次出现的位置",
+					"markdown": "```el\nlet children: Number[][] = @[@[1, 2], @[], @[]]\nlet tour = euler_tour(3, 0, (key: Number): Number[] => children[key])\nconsole.stdout.writeLine(tour.first(2))\n```\n```text\n3\n```",
+					"code": "let children: Number[][] = @[@[1, 2], @[], @[]]\nlet tour = euler_tour(3, 0, (key: Number): Number[] => children[key])\nconsole.stdout.writeLine(tour.first(2))\n",
+					"expected_stdout": "3\n",
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/trees/euler-tour.el",
+			"line": 83,
+			"signature": "export fn euler_tour(nodeCount: Number, root: Number, childrenOf: fn(key: Number): Number[]): EulerTour",
+			"declaration_line": 99,
+			"id": "collections/trees/euler-tour::euler_tour",
+			"value_type": null,
+			"owner": null,
+			"return_type": "EulerTour",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "EulerTour",
+						"start": 0,
+						"end": 9,
+						"target": {
+							"type": "definition",
+							"source": "collections/trees/euler-tour.el",
+							"name": "EulerTour",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-cd53273398ddc932fa34"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "module",
+			"name": "静态树 LCA",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "用 Euler 游走和可替换的区间 argmin 后端回答最近公共祖先。"
+				}
+			],
+			"source": "collections/trees/lca.el",
+			"line": 1,
+			"id": "collections/trees/lca"
+		},
+		{
+			"kind": "api",
+			"name": "build",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "从稳定整数键树建立 LCA 索引；默认使用 ±1 RMQ。"
+				},
+				{
+					"tag": "param",
+					"value": "nodeCount 节点键上界；有效键是 [0, nodeCount) 内的整数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "root 根键；nodeCount 为零时忽略。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "childrenOf 返回给定键的直接子节点键数组；不保留返回的数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "rmq 可选后端构造器：接收 Euler 深度快照，返回 [lo, hi) 内最小深度的最左下标；nil 使用 ±1 RMQ。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "支持 lca、first、depth 等查询的索引。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "节点数、根键或子键非法，或同一键从根被到达多次时抛出 SubtreeIntervalError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "查询最近公共祖先",
+					"markdown": "```el\nlet children: Number[][] = @[@[1, 2], @[], @[]]\nlet tree = build(3, 0, (key: Number): Number[] => children[key])\nconsole.stdout.writeLine(tree.lca(1, 2))\n```",
+					"code": "let children: Number[][] = @[@[1, 2], @[], @[]]\nlet tree = build(3, 0, (key: Number): Number[] => children[key])\nconsole.stdout.writeLine(tree.lca(1, 2))\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/trees/lca.el",
+			"line": 56,
+			"signature": "export fn build(nodeCount: Number, root: Number, childrenOf: fn(key: Number): Number[], rmq: (fn(values: Number[]): fn(lo: Number, hi: Number): Number) | nil_t = nil): TreeLca",
+			"declaration_line": 70,
+			"id": "collections/trees/lca::build",
+			"value_type": null,
+			"owner": null,
+			"return_type": "TreeLca",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "TreeLca",
+						"start": 0,
+						"end": 7,
+						"target": {
+							"type": "definition",
+							"source": "collections/trees/lca.el",
+							"name": "TreeLca",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-e28f9d138e7f53b2d548"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "module",
+			"name": "树区间索引",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "在共享 DFS 事件骨架上为稳定整数键的树建立子树区间。"
+				}
+			],
+			"source": "collections/trees/subtree-intervals.el",
+			"line": 1,
+			"id": "collections/trees/subtree-intervals"
+		},
+		{
+			"kind": "api",
+			"name": "subtree_intervals",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "从根键和直接子键遍历构建子树区间索引。"
+				},
+				{
+					"tag": "param",
+					"value": "count 节点键上界；有效键是 [0, count) 内的整数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "root 根键；count 为零时忽略。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "childrenOf 返回给定键的直接子节点键数组；不保留返回的数组。子节点顺序只影响区间编号，不影响祖先关系。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "可按祖先关系查询的索引。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "节点数、根键或子键非法，或同一键从根被到达多次时抛出 SubtreeIntervalError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "查询树中的祖先关系",
+					"markdown": "```el\nlet children: Number[][] = @[@[1, 2], @[], @[]]\nlet index = subtree_intervals(3, 0, (key: Number): Number[] => children[key])\nconsole.stdout.writeLine(index.contains(0, 2))\n```",
+					"code": "let children: Number[][] = @[@[1, 2], @[], @[]]\nlet index = subtree_intervals(3, 0, (key: Number): Number[] => children[key])\nconsole.stdout.writeLine(index.contains(0, 2))\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/trees/subtree-intervals.el",
+			"line": 39,
+			"signature": "export fn subtree_intervals(count: Number, root: Number, childrenOf: fn(key: Number): Number[]): SubtreeIntervalIndex",
+			"declaration_line": 52,
+			"id": "collections/trees/subtree-intervals::subtree_intervals",
+			"value_type": null,
+			"owner": null,
+			"return_type": "SubtreeIntervalIndex",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "SubtreeIntervalIndex",
+						"start": 0,
+						"end": 20,
+						"target": {
+							"type": "definition",
+							"source": "collections/trees/subtree-intervals.el",
+							"name": "SubtreeIntervalIndex",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-1eb0061b759a5fb3e533"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "subtree_interval_bounds",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "直接构建调用方拥有的稠密子树区间表，不经索引包装和数组复制。"
+				},
+				{
+					"tag": "param",
+					"value": "count 节点键上界；有效键是 [0, count) 内的整数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "root 根键；count 为零时忽略。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "childrenOf 返回给定键的直接子节点键数组；不保留返回的数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "每个节点两个端点；未索引键保持 [-1,-1)。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "节点数、根键或子键非法，或同一键从根被到达多次时抛出 SubtreeIntervalError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "读取根节点的半开区间",
+					"markdown": "```el\nlet children: Number[][] = @[@[1], @[]]\nlet bounds = subtree_interval_bounds(2, 0, (key: Number): Number[] => children[key])\nconsole.stdout.writeLine(bounds[0], \", \", bounds[1])\n```\n```text\n0, 2\n```",
+					"code": "let children: Number[][] = @[@[1], @[]]\nlet bounds = subtree_interval_bounds(2, 0, (key: Number): Number[] => children[key])\nconsole.stdout.writeLine(bounds[0], \", \", bounds[1])\n",
+					"expected_stdout": "0, 2\n",
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/trees/subtree-intervals.el",
+			"line": 56,
+			"signature": "export fn subtree_interval_bounds(count: Number, root: Number, childrenOf: fn(key: Number): Number[]): Number[]",
+			"declaration_line": 72,
+			"id": "collections/trees/subtree-intervals::subtree_interval_bounds",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Number[]",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Number",
+						"start": 0,
+						"end": 6,
+						"target": {
+							"type": "definition",
+							"source": "number/number.el",
+							"name": "Number",
+							"id": "number/number::Number~type",
+							"path": "modules/number/number.md",
+							"fragment": "api-3cc24d3ef702e8652fb4"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "module",
+			"name": "树 DFS 事件",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "用非递归事件栈遍历稳定整数键的根可达树。"
+				}
+			],
+			"source": "collections/trees/tree-traversal.el",
+			"line": 1,
+			"id": "collections/trees/tree-traversal"
+		},
+		{
+			"kind": "api",
+			"name": "SubtreeIntervalError",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "树索引遍历的输入契约失败；子树区间与 Euler 游走共享此错误。"
+				},
+				{
+					"tag": "example",
+					"value": "构造一个树索引错误",
+					"markdown": "```el\nlet error = SubtreeIntervalError(\"node key out of range\")\nthrow error\n```",
+					"code": "let error = SubtreeIntervalError(\"node key out of range\")\nthrow error\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/trees/tree-traversal.el",
+			"line": 8,
+			"signature": "@assign(mode: \"copy\")\nexport class SubtreeIntervalError extends Error",
+			"declaration_line": 15,
+			"id": "collections/trees/tree-traversal::SubtreeIntervalError",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "tree_node_count",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "校验并返回树索引的节点键上界。"
+				},
+				{
+					"tag": "throws",
+					"value": "不是非负有限整数时抛出 SubtreeIntervalError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "校验三个节点",
+					"markdown": "```el\nconsole.stdout.writeLine(tree_node_count(3))\n```\n```text\n3\n```",
+					"code": "console.stdout.writeLine(tree_node_count(3))\n",
+					"expected_stdout": "3\n",
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/trees/tree-traversal.el",
+			"line": 29,
+			"signature": "export fn tree_node_count(count: Number): Number",
+			"declaration_line": 39,
+			"id": "collections/trees/tree-traversal::tree_node_count",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Number",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Number",
+						"start": 0,
+						"end": 6,
+						"target": {
+							"type": "definition",
+							"source": "number/number.el",
+							"name": "Number",
+							"id": "number/number::Number~type",
+							"path": "modules/number/number.md",
+							"fragment": "api-3cc24d3ef702e8652fb4"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "tree_node_key",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "校验并返回 [0, count) 内的稳定整数节点键。"
+				},
+				{
+					"tag": "throws",
+					"value": "键非法时抛出 SubtreeIntervalError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "校验最后一个有效键",
+					"markdown": "```el\nconsole.stdout.writeLine(tree_node_key(2, 3))\n```\n```text\n2\n```",
+					"code": "console.stdout.writeLine(tree_node_key(2, 3))\n",
+					"expected_stdout": "2\n",
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/trees/tree-traversal.el",
+			"line": 41,
+			"signature": "export fn tree_node_key(key: Number, count: Number): Number",
+			"declaration_line": 51,
+			"id": "collections/trees/tree-traversal::tree_node_key",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Number",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Number",
+						"start": 0,
+						"end": 6,
+						"target": {
+							"type": "definition",
+							"source": "number/number.el",
+							"name": "Number",
+							"id": "number/number::Number~type",
+							"path": "modules/number/number.md",
+							"fragment": "api-3cc24d3ef702e8652fb4"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "tree_dfs_events",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "用迭代事件栈遍历根可达的稳定整数键树；进入和退出各报告一次。\n事件顺序保证先报告父节点的进入、再报告其子节点事件，最后报告父节点的退出。"
+				},
+				{
+					"tag": "param",
+					"value": "count 节点键上界；有效键是 [0, count) 内的整数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "root 根键；count 为零时不调用回调，也不检查根键。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "childrenOf 返回给定键的直接子节点键数组；不保留返回的数组。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "visit 接收 (key, parent, entering)；根节点的 parent 是 -1。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "根可达节点数。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "节点数、根键或子键非法，或同一键从根被到达多次时抛出 SubtreeIntervalError。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "按访问顺序打印进入事件",
+					"markdown": "```el\nlet children: Number[][] = @[@[1], @[]]\nlet count = tree_dfs_events(2, 0, (key: Number): Number[] => children[key], (key: Number, parent: Number, entering: Bool): nil_t => {\n\tif (entering) console.stdout.writeLine(key)\n\treturn nil\n})\nconsole.stdout.writeLine(count)\n```\n```text\n0\n1\n2\n```",
+					"code": "let children: Number[][] = @[@[1], @[]]\nlet count = tree_dfs_events(2, 0, (key: Number): Number[] => children[key], (key: Number, parent: Number, entering: Bool): nil_t => {\n\tif (entering) console.stdout.writeLine(key)\n\treturn nil\n})\nconsole.stdout.writeLine(count)\n",
+					"expected_stdout": "0\n1\n2\n",
+					"verification": "not-run"
+				}
+			],
+			"source": "collections/trees/tree-traversal.el",
+			"line": 53,
+			"signature": "export fn tree_dfs_events(count: Number, root: Number, childrenOf: fn(key: Number): Number[], visit: fn(key: Number, parent: Number, entering: Bool): nil_t): Number",
+			"declaration_line": 76,
+			"id": "collections/trees/tree-traversal::tree_dfs_events",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Number",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Number",
+						"start": 0,
+						"end": 6,
+						"target": {
+							"type": "definition",
+							"source": "number/number.el",
+							"name": "Number",
+							"id": "number/number::Number~type",
+							"path": "modules/number/number.md",
+							"fragment": "api-3cc24d3ef702e8652fb4"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "module",
 			"name": "async 与 await 语法",
 			"sections": [
 				{
@@ -54834,9 +55912,9 @@
 				}
 			],
 			"source": "cryptography/chacha20.el",
-			"line": 76,
+			"line": 79,
 			"signature": "export fn chacha20_xor(key: Number[], nonce: Number[], initial_counter: Number, input: Number[]): Number[]",
-			"declaration_line": 92,
+			"declaration_line": 95,
 			"id": "cryptography/chacha20::chacha20_xor",
 			"value_type": null,
 			"owner": null,
@@ -55444,9 +56522,9 @@
 				}
 			],
 			"source": "cryptography/sha256.el",
-			"line": 157,
+			"line": 160,
 			"signature": "export fn sha256_digest(message: Number[]): Number[]",
-			"declaration_line": 167,
+			"declaration_line": 170,
 			"id": "cryptography/sha256::sha256_digest",
 			"value_type": null,
 			"owner": null,
@@ -55504,9 +56582,9 @@
 				}
 			],
 			"source": "cryptography/sha256.el",
-			"line": 173,
+			"line": 176,
 			"signature": "export fn sha256_hex(message: Number[]): Text",
-			"declaration_line": 183,
+			"declaration_line": 186,
 			"id": "cryptography/sha256::sha256_hex",
 			"value_type": null,
 			"owner": null,
@@ -69041,6 +70119,51 @@
 		},
 		{
 			"kind": "api",
+			"name": "canRepresentExactly",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "判断目标原生浮点类型能否无舍入地表达该有限有理数；目标没有可用的数值编解码器时报 NativeFloatCodecUnavailable。"
+				},
+				{
+					"tag": "example",
+					"value": "在使用二进制浮点编解码器的目标上检查二分之一",
+					"markdown": "```el\nimport { NativeFloatExponent5 } from \"el:platform/machine/float-codec.el\"\nimport { NumericRatio } from \"el:number/arithmetic.el\"\nlet exact = canRepresentExactly<NativeFloatExponent5>(NumericRatio(1, 2))\nconsole.stdout.writeLine(if (exact) \"exact\" else \"rounded\")\n```\n```text\nexact\n```",
+					"code": "import { NativeFloatExponent5 } from \"el:platform/machine/float-codec.el\"\nimport { NumericRatio } from \"el:number/arithmetic.el\"\nlet exact = canRepresentExactly<NativeFloatExponent5>(NumericRatio(1, 2))\nconsole.stdout.writeLine(if (exact) \"exact\" else \"rounded\")\n",
+					"expected_stdout": "exact\n",
+					"verification": "not-run"
+				}
+			],
+			"source": "number/native-float.el",
+			"line": 63,
+			"signature": "export fn canRepresentExactly<T: type>(value: NumericRatio): Bool",
+			"declaration_line": 75,
+			"id": "number/native-float::canRepresentExactly",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Bool",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Bool",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "language/values.el",
+							"name": "Bool",
+							"id": "language/values::Bool~type",
+							"path": "modules/language/values.md",
+							"fragment": "api-3f0af31783849ef30c6e"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
 			"name": "Number~type",
 			"sections": [
 				{
@@ -69058,9 +70181,9 @@
 				}
 			],
 			"source": "number/number.el",
-			"line": 28,
+			"line": 32,
 			"signature": "@numericRepresentation(format: @{ kind: \"rational\", domain: \"tracked\" })\n@optimize(using: optimize_number, data: @{ model: \"rational\", domain: \"tracked\", zero: Number(Integer(0)) }, proof: @{\n\trelation: NumberPolicy, rules: NumberPolicy,\n\ttrusted: \"registered exact numerical evaluation policy; native types, effects and resources remain checked\",\n\treify: @{\n\t\tzero: PolicyIndex.zero, succ: PolicyIndex.succ, atom: PolicyExpression.atom,\n\t\ttextEmpty: PolicyText.empty, textCons: PolicyText.cons, number: PolicyExpression.number, string: PolicyExpression.string,\n\t\tadd: PolicyExpression.add, sub: PolicyExpression.sub, mul: PolicyExpression.mul, div: PolicyExpression.div, mod: PolicyExpression.mod, neg: PolicyExpression.neg,\n\t\tcompareEqual: PolicyExpression.compareEqual, ifexpression: PolicyExpression.condition,\n\t\tcalls: @[\n\t\t\t@{ target: Number, arity: 1, model: PolicyExpression.convert },\n\t\t\t@{ target: Number, arity: 0, model: PolicyExpression.zero },\n\t\t\t@{ target: Integer, arity: 1, model: PolicyExpression.convert },\n\t\t\t@{ target: Integer, arity: 0, model: PolicyExpression.zero },\n\t\t\t@{ target: NumericRatio, arity: 1, model: PolicyExpression.convert },\n\t\t\t@{ target: NumericRatio, arity: 0, model: PolicyExpression.zero },\n\t\t\t@{ target: NumericRatio, arity: 2, model: PolicyExpression.ratio }\n\t\t]\n\t}\n})\n@assign(mode: \"copy\")\nexport class Number",
-			"declaration_line": 40,
+			"declaration_line": 44,
 			"id": "number/number::Number~type",
 			"value_type": null,
 			"owner": null,
@@ -69132,9 +70255,9 @@
 				}
 			],
 			"source": "number/number.el",
-			"line": 154,
+			"line": 289,
 			"signature": "export fn Number(min = nil, max = nil, epsilon = nil, integer = f, overflow = \"ub\"): type",
-			"declaration_line": 177,
+			"declaration_line": 312,
 			"id": "number/number::Number~constraints",
 			"value_type": null,
 			"owner": null,
@@ -71071,9 +72194,9 @@
 				}
 			],
 			"source": "random/index.el",
-			"line": 70,
+			"line": 71,
 			"signature": "get seed(): Number",
-			"declaration_line": 77,
+			"declaration_line": 78,
 			"id": "random/index::Random.seed",
 			"value_type": null,
 			"owner": "Random",
@@ -71121,9 +72244,9 @@
 				}
 			],
 			"source": "random/index.el",
-			"line": 78,
+			"line": 79,
 			"signature": "fn reseed(seed: Number)",
-			"declaration_line": 86,
+			"declaration_line": 87,
 			"id": "random/index::Random.reseed",
 			"value_type": null,
 			"owner": "Random",
@@ -71165,9 +72288,9 @@
 				}
 			],
 			"source": "random/index.el",
-			"line": 94,
+			"line": 95,
 			"signature": "@optimize(data: @{ sortingScalar: \"finiteInteger\" })\n\tfn nextWord(width: Number): Number",
-			"declaration_line": 103,
+			"declaration_line": 104,
 			"id": "random/index::Random.nextWord",
 			"value_type": null,
 			"owner": "Random",
@@ -71225,9 +72348,9 @@
 				}
 			],
 			"source": "random/index.el",
-			"line": 128,
+			"line": 131,
 			"signature": "fn nextBits(bitCount: Number): Number",
-			"declaration_line": 137,
+			"declaration_line": 140,
 			"id": "random/index::Random.nextBits",
 			"value_type": null,
 			"owner": "Random",
@@ -71290,9 +72413,9 @@
 				}
 			],
 			"source": "random/index.el",
-			"line": 157,
+			"line": 160,
 			"signature": "fn between(minimum: Number, maximum: Number): Number",
-			"declaration_line": 167,
+			"declaration_line": 170,
 			"id": "random/index::Random.between",
 			"value_type": null,
 			"owner": "Random",
@@ -71355,9 +72478,9 @@
 				}
 			],
 			"source": "random/index.el",
-			"line": 182,
+			"line": 185,
 			"signature": "@optimize(data: @{ sortingScalar: \"finiteInteger\", lengthRange: @{ firstArgument: 0, secondArgument: 1 } })\n\tfn betweenExclusive(minimum: Number, maximum: Number): Number",
-			"declaration_line": 192,
+			"declaration_line": 195,
 			"id": "random/index::Random.betweenExclusive",
 			"value_type": null,
 			"owner": "Random",
@@ -71420,9 +72543,9 @@
 				}
 			],
 			"source": "random/index.el",
-			"line": 203,
+			"line": 206,
 			"signature": "fn unit(bitCount: Number = Number(53), inclusive: Bool = f): Number",
-			"declaration_line": 213,
+			"declaration_line": 216,
 			"id": "random/index::Random.unit",
 			"value_type": null,
 			"owner": "Random",
@@ -71495,9 +72618,9 @@
 				}
 			],
 			"source": "random/index.el",
-			"line": 220,
+			"line": 223,
 			"signature": "fn realBetween(minimum: Number, maximum: Number, bitCount: Number = Number(53), inclusive: Bool = f): Number",
-			"declaration_line": 232,
+			"declaration_line": 235,
 			"id": "random/index::Random.realBetween",
 			"value_type": null,
 			"owner": "Random",
@@ -71545,9 +72668,9 @@
 				}
 			],
 			"source": "random/index.el",
-			"line": 242,
+			"line": 245,
 			"signature": "fn boolean(): Bool",
-			"declaration_line": 249,
+			"declaration_line": 252,
 			"id": "random/index::Random.boolean",
 			"value_type": null,
 			"owner": "Random",
@@ -71605,9 +72728,9 @@
 				}
 			],
 			"source": "random/index.el",
-			"line": 250,
+			"line": 253,
 			"signature": "fn pick(values)",
-			"declaration_line": 259,
+			"declaration_line": 262,
 			"id": "random/index::Random.pick",
 			"value_type": null,
 			"owner": "Random",
@@ -71649,9 +72772,9 @@
 				}
 			],
 			"source": "random/index.el",
-			"line": 264,
+			"line": 267,
 			"signature": "@optimize(data: @{ sortingResult: @{ fresh: t, element: \"finiteInteger\", minimum: 0, maximum: 255, lengthArgument: 0 } })\n\tfn bytes(count: Number): Array<element: Number>",
-			"declaration_line": 273,
+			"declaration_line": 276,
 			"id": "random/index::Random.bytes",
 			"value_type": null,
 			"owner": "Random",
@@ -71717,9 +72840,9 @@
 				}
 			],
 			"source": "random/index.el",
-			"line": 281,
+			"line": 284,
 			"signature": "fn shuffle(values)",
-			"declaration_line": 290,
+			"declaration_line": 293,
 			"id": "random/index::Random.shuffle",
 			"value_type": null,
 			"owner": "Random",
@@ -71746,9 +72869,9 @@
 				}
 			],
 			"source": "random/index.el",
-			"line": 369,
+			"line": 372,
 			"signature": "export lazy let rand: SharedRandom",
-			"declaration_line": 377,
+			"declaration_line": 380,
 			"id": "random/index::rand",
 			"value_type": "SharedRandom",
 			"owner": null,
@@ -73400,9 +74523,9 @@
 				}
 			],
 			"source": "text/patterns/syntax.el",
-			"line": 309,
+			"line": 312,
 			"signature": "export syntax grammar",
-			"declaration_line": 320,
+			"declaration_line": 323,
 			"id": "text/patterns/syntax::grammar",
 			"value_type": null,
 			"owner": null,
@@ -74158,9 +75281,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 782,
+			"line": 784,
 			"signature": "export fn text_scalar(value: Integer): Text",
-			"declaration_line": 795,
+			"declaration_line": 797,
 			"id": "text/text::text_scalar",
 			"value_type": null,
 			"owner": null,
@@ -74223,9 +75346,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 935,
+			"line": 937,
 			"signature": "export fn TextView(bitWidth = 0, size = 0): type",
-			"declaration_line": 953,
+			"declaration_line": 955,
 			"id": "text/text::TextView~constraints",
 			"value_type": null,
 			"owner": null,
@@ -74288,9 +75411,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 985,
+			"line": 987,
 			"signature": "export fn Text(bitWidth = 0, size = 0): type",
-			"declaration_line": 1002,
+			"declaration_line": 1004,
 			"id": "text/text::Text~constraints",
 			"value_type": null,
 			"owner": null,
@@ -74325,7 +75448,7 @@
 				}
 			],
 			"source": "theme/model.el",
-			"line": 5,
+			"line": 6,
 			"id": "theme/model"
 		},
 		{
@@ -74357,9 +75480,9 @@
 				}
 			],
 			"source": "theme/model.el",
-			"line": 38,
+			"line": 39,
 			"signature": "export @assign(mode: \"shared\") class ThemeValues",
-			"declaration_line": 46,
+			"declaration_line": 47,
 			"id": "theme/model::ThemeValues",
 			"value_type": null,
 			"owner": null,
@@ -74386,9 +75509,9 @@
 				}
 			],
 			"source": "theme/model.el",
-			"line": 94,
+			"line": 95,
 			"signature": "export @assign(mode: \"shared\") class ThemeContext",
-			"declaration_line": 100,
+			"declaration_line": 101,
 			"id": "theme/model::ThemeContext",
 			"value_type": null,
 			"owner": null,
@@ -74415,9 +75538,9 @@
 				}
 			],
 			"source": "theme/model.el",
-			"line": 107,
+			"line": 108,
 			"signature": "export @assign(mode: \"shared\") class Theme",
-			"declaration_line": 113,
+			"declaration_line": 114,
 			"id": "theme/model::Theme",
 			"value_type": null,
 			"owner": null,
@@ -77634,8 +78757,8 @@
 		}
 	],
 	"coverage": {
-		"source_files": 3940,
-		"documented_files": 116,
-		"documented_apis": 567
+		"source_files": 3950,
+		"documented_files": 123,
+		"documented_apis": 578
 	}
 }

@@ -6,4 +6,5 @@
 
 | 模块 | 接口 |
 | --- | --- |
+| [number/native-float.el](../modules/number/native-float.md) | [canRepresentExactly](../modules/number/native-float.md#api-4ba6311e8edff7e59788) |
 | [number/number.el](../modules/number/number.md) | [Number~type](../modules/number/number.md#api-3cc24d3ef702e8652fb4)、[Number~constraints](../modules/number/number.md#api-ad6f905ba12a9a7c223e) |

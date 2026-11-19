@@ -8,7 +8,7 @@
 
 ## Number~type {#api-3cc24d3ef702e8652fb4}
 
-源码：`src/stdlib/number/number.el:40` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L40)
+源码：`src/stdlib/number/number.el:44` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L44)
 
 表示精确有理数的数值类型，普通算术在约分后的整数分子和分母上进行。
 它也可表示 unordered 状态；该状态不是 IEEE 浮点近似值。
@@ -60,7 +60,7 @@ t
 
 ## Number~constraints {#api-ad6f905ba12a9a7c223e}
 
-源码：`src/stdlib/number/number.el:177` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L177)
+源码：`src/stdlib/number/number.el:312` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L312)
 
 创建带数值域约束的 Number 类型。min/max 可用 unbounded 表示无下界或无上界；epsilon 必须是有限非负值。
 integer 为真时结果必须为整数。overflow 支持 ub、error、nan、wrap；wrap 仅允许有界整数域。

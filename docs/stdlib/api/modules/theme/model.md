@@ -6,13 +6,13 @@
 
 ## 主题模型 {#api-86ff18a8894db178fcbf}
 
-源码：`src/stdlib/theme/model.el:5` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/theme/model.el#L5)
+源码：`src/stdlib/theme/model.el:6` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/theme/model.el#L6)
 
 描述界面主题角色、按父主题继承计算的上下文，以及主题计算和解析结果的数据类型。
 
 ## ThemeValues {#api-a5393d1df1641800ca1f}
 
-源码：`src/stdlib/theme/model.el:46` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/theme/model.el#L46)
+源码：`src/stdlib/theme/model.el:47` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/theme/model.el#L47)
 
 从动态字段集合构造并校验显式主题角色值；只接受已知颜色或度量角色。
 
@@ -32,7 +32,7 @@ let values = ThemeValues(@{base100: 0x191B20; primary: 0x80A7F0})
 
 ## ThemeContext {#api-49fc863aa032653764b7}
 
-源码：`src/stdlib/theme/model.el:100` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/theme/model.el#L100)
+源码：`src/stdlib/theme/model.el:101` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/theme/model.el#L101)
 
 向主题计算回调提供外部环境值以及可选的父级解析主题。
 
@@ -48,7 +48,7 @@ let context = ThemeContext()
 
 ## Theme {#api-2f8f76e6db4068dfe678}
 
-源码：`src/stdlib/theme/model.el:113` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/theme/model.el#L113)
+源码：`src/stdlib/theme/model.el:114` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/theme/model.el#L114)
 
 表示显式角色值或按 ThemeContext 计算角色值的主题；计算结果在解析时校验。
 

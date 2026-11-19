@@ -14,7 +14,7 @@
 
 ==同一个符号在不同类型上可以是完全不同的操作；先看接收者类型，再读符号。==
 
-`^` 在 `Number` 上是乘方、在 `BitSet` 上是逐位异或；`&`／`|` 默认是短路逻辑，只有类型声明了显式值重载才退化成普通 eager 调用。
+`^` 在 `Number` 上是乘方，`BitSet` 不提供这个运算符；`&`／`|` 默认是短路逻辑，只有类型声明了显式值重载才退化成普通 eager 调用。
 
 ## `&` 与 `|` 返回原值，不是 `Bool`
 
@@ -68,7 +68,7 @@ console.stdout.writeLine(2 ^ -3)     // 0.125，右侧允许带符号
 ```
 
 - 没有 `**` 和 `**=`：写 `x ** 2` 得不到乘方。
-- Number 的位异或用标准库函数 `bit_xor(a, b)`，不用 `^`。
+- 逐位模加和模减用标准库函数，见[为什么 EL 没有异或](why-no-xor.md)。
 - `^=` 展开为 `target = target ^ rhs`，目标只定位一次、右侧求值一次。
 
 ## 比较看内容，身份看对象
@@ -309,22 +309,21 @@ console.stdout.writeLine(twice(5))
 - `<=>` 的结果要能继续使用：Number 的 `<=>` 返回 Number，自定义类型返回 `Comparison`，与 `0` 比较或取三路结果（OP-8）。
 - 显式 `operator =` 可返回 `this`、代理或 `nil`；后续使用仍遵守复制、借用与生命周期规则。
 
-## 没有位运算运算符
+## Number 的位运算用标准库函数
 
-`&`、`|`、`^` 在 EL 里都不是位运算。Number 的按位运算使用标准库的普通函数：
+对 `Number`，`&` 和 `|` 是逻辑运算，`^` 是乘方。操作二进制逻辑位时，可用这些标准库函数：
 
 ```el
-import { bit_and, bit_or, bit_xor, bit_not } from "el:number/bit-operations.el"
+import { bit_and, bit_or, bit_not } from "el:number/bit-operations.el"
 
 console.stdout.writeLine(bit_and(0b1100, 0b1010))   // 8
 console.stdout.writeLine(bit_or(0b1100, 0b1010))    // 14
-console.stdout.writeLine(bit_xor(0b1100, 0b1010))   // 6
 console.stdout.writeLine(bit_not(0b1010))           // -11
 ```
 
 - `~`、`&&`、`||` 及其重载声明都不是 EL 的运算符，出现即词法错误。
 - `<<`、`>>` 是普通可重载二元运算符，但 Number 本身不提供移位；需要位宽语义时用标准库的 `BitInteger`、`BitSet` 等显式类型及其操作。
-- 这些函数按无限二补码合同工作，不隐含机器位宽；需要固定宽度截断时显式声明布局。
+- 上述函数按无限二补码合同工作，不隐含机器位宽。要按目标数位组合或撤销，用 `digit_add_mod` 和 `digit_sub_mod`；两者与二进制逻辑位不是同一个抽象。
 
 ## 常见易错点
 
