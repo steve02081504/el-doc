@@ -47,7 +47,7 @@ console.stdout.writeLine("余额：", remaining, " 元") // 余额：8 元
 - `_` 可以分隔数字，例如 `1_000_000`，它不改变数值，只要求夹在同进制的两个数字之间。
 - 需要精确保存时，`Number` 用分子与分母的有理数表示，所以 `1 / 3` 不会被舍入成二进制近似值；`(1 / 3) * 3` 得 `1`。
 - 需要近似计算时，精度由 `Number` 的 `epsilon` 参数表达，而不是由底层机器格式决定。`epsilon` 是最大绝对误差的上限。
-- `Number` 没有固定的 64 位宽度，也不会按机器字长环绕。需要明确位宽时使用标准库的 `BitInteger` 工厂（`bits` 与 `sign_bits` 参数），它是 `Number` 的派生类型，类型身份包含布局参数。
+- `Number` 没有固定的 64 位宽度，也不会按机器字长环绕。需要明确目标数位宽度时使用标准库的 `DitInt` 工厂（`digits` 与 `signed` 参数），它是 `Number` 的派生类型，类型身份包含布局参数。
 
 `Number` 的约束写在类型实参里，赋值时检查：
 
@@ -63,9 +63,9 @@ let precise: Number<epsilon: 0.001> = 0.333
     不能。整数约束一旦写上，小数就超出上界，赋值时被拒绝；它和 `epsilon` 是两件独立的事，`epsilon` 不会自动帮你把值取整。
 
 !!! warning "常见坑：把 `Number` 当 64 位整数用"
-    `Number` 不会在 2⁶³ 附近环绕，也不会悄悄截断。要位宽、要环绕、要位运算，用 `BitInteger`、`BitSet` 这类显式类型；把 `Number` 当 `long` 写，边界处的行为会和预期不同。
+    `Number` 不会在 2⁶³ 附近环绕，也不会悄悄截断。要固定数位宽度、环绕或逐位运算，用 `DitInt`、`DitSet` 这类显式类型；把 `Number` 当 `long` 写，边界处的行为会和预期不同。
 
-数值类型不止普通 `Number`。需要无界精确整数、固定位宽、固定布局浮点、目标机器浮点或位集合时，标准库分别提供 `Integer`/`UnsignedInteger`、`BitInteger`、`BitFloat`、`NativeFloat` 与 `BitSet<size:N>`；它们的构造、约束与取舍见[数值与位类型](numeric-types.md)。
+数值类型不止普通 `Number`。需要无界精确整数、固定数位宽度整数、目标数位浮点或定宽数位集合时，分别用 `Integer`/`UnsignedInteger`、`DitInt`、`DitFloat` 与 `DitSet<size:N>`；它们的构造、约束与取舍见[数值与位类型](numeric-types.md)。
 
 ## Text 与 Char
 
@@ -242,6 +242,6 @@ console.log.value(value)                  // "one"
 
 > 既然 `Number` 是精确有理数，那“必须 64 位、溢出要环绕”的场合怎么办？
 
-- 主推进：[数值与位类型](numeric-types.md)：`BitInteger`、`BitFloat`、`NativeFloat` 与 `BitSet` 各自负责什么。
+- 主推进：[数值与位类型](numeric-types.md)：`DitInt`、`DitFloat`、`DitSet` 与原生表示各自负责什么。
 - 想先练手：[15 分钟速览](../tour.md)：把这一页的字面量放进一个完整小程序里。
 - 后面会用到：[集合与文本](../stdlib/collections.md)：数组和文本的常用方法。

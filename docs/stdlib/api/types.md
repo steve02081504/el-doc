@@ -846,15 +846,15 @@ fn IterationValue(element: type): type
 fn Vector(element: type): type
 ```
 
-## BitSet · collections/sets/bit-set.el {#api-2fd205cada268bede56b}
+## DitSet · collections/sets/dit-set.el {#api-6b020efe38e03cdb8638}
 
-[源码 collections/sets/bit-set.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/bit-set.el#L63)
+[源码 collections/sets/dit-set.el:72](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/dit-set.el#L72)
 
 ```el
-fn BitSet(size: Number): type
+fn DitSet(size: Number): type
 ```
 
-[API 文档](modules/collections/sets/bit-set.md#api-2fd205cada268bede56b)
+[API 文档](modules/collections/sets/dit-set.md#api-6b020efe38e03cdb8638)
 
 ## OrderedSet · collections/sets/hash-set.el {#api-a2bde962cb10da80cd36}
 
@@ -1662,7 +1662,7 @@ class Projection
 
 ## FiniteMap · compiler/compute/finite-map.el {#api-1ce707a37d728795d4ed}
 
-[源码 compiler/compute/finite-map.el:213](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L213)
+[源码 compiler/compute/finite-map.el:216](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L216)
 
 ```el
 class FiniteMap
@@ -1670,7 +1670,7 @@ class FiniteMap
 
 ## FiniteMapAuthority · compiler/compute/finite-map.el {#api-ec400d26c18c3f860a51}
 
-[源码 compiler/compute/finite-map.el:490](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L490)
+[源码 compiler/compute/finite-map.el:493](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L493)
 
 ```el
 class FiniteMapAuthority
@@ -1678,7 +1678,7 @@ class FiniteMapAuthority
 
 ## FiniteMapProvider · compiler/compute/finite-map.el {#api-8ab3062f85076b9e07a8}
 
-[源码 compiler/compute/finite-map.el:519](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L519)
+[源码 compiler/compute/finite-map.el:522](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L522)
 
 ```el
 class FiniteMapProvider
@@ -1686,7 +1686,7 @@ class FiniteMapProvider
 
 ## FiniteMapReceipt · compiler/compute/finite-map.el {#api-7fe9af18af203773aad6}
 
-[源码 compiler/compute/finite-map.el:560](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L560)
+[源码 compiler/compute/finite-map.el:563](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L563)
 
 ```el
 class FiniteMapReceipt
@@ -1694,7 +1694,7 @@ class FiniteMapReceipt
 
 ## FiniteScalarMemo · compiler/compute/finite-map.el {#api-18bbda10478ce984700a}
 
-[源码 compiler/compute/finite-map.el:137](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L137)
+[源码 compiler/compute/finite-map.el:140](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L140)
 
 ```el
 class FiniteScalarMemo
@@ -1702,7 +1702,7 @@ class FiniteScalarMemo
 
 ## FiniteScalarNode · compiler/compute/finite-map.el {#api-7ba050fbadce9df343a1}
 
-[源码 compiler/compute/finite-map.el:121](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L121)
+[源码 compiler/compute/finite-map.el:124](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L124)
 
 ```el
 class FiniteScalarNode
@@ -1710,7 +1710,7 @@ class FiniteScalarNode
 
 ## FiniteScalarProgram · compiler/compute/finite-map.el {#api-9d1b73778757cbd2f5ce}
 
-[源码 compiler/compute/finite-map.el:142](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L142)
+[源码 compiler/compute/finite-map.el:145](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L145)
 
 ```el
 class FiniteScalarProgram
@@ -1718,7 +1718,7 @@ class FiniteScalarProgram
 
 ## FiniteScalarValue · compiler/compute/finite-map.el {#api-5e173ebb660750beed56}
 
-[源码 compiler/compute/finite-map.el:132](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L132)
+[源码 compiler/compute/finite-map.el:135](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/finite-map.el#L135)
 
 ```el
 class FiniteScalarValue
@@ -1726,7 +1726,7 @@ class FiniteScalarValue
 
 ## ScalarCallLowering · compiler/compute/scalar-expression.el {#api-3a4ef932c513b80670ff}
 
-[源码 compiler/compute/scalar-expression.el:146](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/scalar-expression.el#L146)
+[源码 compiler/compute/scalar-expression.el:147](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/compute/scalar-expression.el#L147)
 
 ```el
 class ScalarCallLowering
@@ -2838,7 +2838,7 @@ class SourceSelectionPublication
 
 ## ControlFlowGraph · compiler/control-flow/goto-cfg.el {#api-b135bd535dd3dd3f5303}
 
-[源码 compiler/control-flow/goto-cfg.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L21)
+[源码 compiler/control-flow/goto-cfg.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L23)
 
 ```el
 class ControlFlowGraph
@@ -2846,7 +2846,7 @@ class ControlFlowGraph
 
 ## ControlFlowStep · compiler/control-flow/goto-cfg.el {#api-a169e8a48bd13f15510f}
 
-[源码 compiler/control-flow/goto-cfg.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L10)
+[源码 compiler/control-flow/goto-cfg.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L12)
 
 ```el
 class ControlFlowStep
@@ -2854,7 +2854,7 @@ class ControlFlowStep
 
 ## FlowCleanup · compiler/control-flow/goto-cfg.el {#api-1c0f525c3de6f7cd4a27}
 
-[源码 compiler/control-flow/goto-cfg.el:61](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L61)
+[源码 compiler/control-flow/goto-cfg.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L63)
 
 ```el
 class FlowCleanup
@@ -2862,7 +2862,7 @@ class FlowCleanup
 
 ## FlowContext · compiler/control-flow/goto-cfg.el {#api-46eb922e96901d860cb7}
 
-[源码 compiler/control-flow/goto-cfg.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L66)
+[源码 compiler/control-flow/goto-cfg.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L68)
 
 ```el
 class FlowContext
@@ -2870,7 +2870,7 @@ class FlowContext
 
 ## FlowJump · compiler/control-flow/goto-cfg.el {#api-254e0847d57598754edb}
 
-[源码 compiler/control-flow/goto-cfg.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L41)
+[源码 compiler/control-flow/goto-cfg.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L43)
 
 ```el
 class FlowJump
@@ -2878,7 +2878,7 @@ class FlowJump
 
 ## FlowLabel · compiler/control-flow/goto-cfg.el {#api-01b72a9833950dcb8e47}
 
-[源码 compiler/control-flow/goto-cfg.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L33)
+[源码 compiler/control-flow/goto-cfg.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L35)
 
 ```el
 class FlowLabel
@@ -2886,7 +2886,7 @@ class FlowLabel
 
 ## FlowLoop · compiler/control-flow/goto-cfg.el {#api-3477aa4fc21ce7775119}
 
-[源码 compiler/control-flow/goto-cfg.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L51)
+[源码 compiler/control-flow/goto-cfg.el:53](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L53)
 
 ```el
 class FlowLoop
@@ -2894,7 +2894,7 @@ class FlowLoop
 
 ## FlowScope · compiler/control-flow/goto-cfg.el {#api-1161d71f054a778675f9}
 
-[源码 compiler/control-flow/goto-cfg.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L47)
+[源码 compiler/control-flow/goto-cfg.el:49](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/goto-cfg.el#L49)
 
 ```el
 class FlowScope
@@ -2910,7 +2910,7 @@ class EntryFrame
 
 ## LoopLocalClass · compiler/control-flow/loop-facts.el {#api-4b469a110d13a09a8242}
 
-[源码 compiler/control-flow/loop-facts.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/loop-facts.el#L12)
+[源码 compiler/control-flow/loop-facts.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/loop-facts.el#L13)
 
 ```el
 class LoopLocalClass
@@ -2918,7 +2918,7 @@ class LoopLocalClass
 
 ## LoopTruthInvariant · compiler/control-flow/loop-facts.el {#api-ba200468fc7dcb2412e7}
 
-[源码 compiler/control-flow/loop-facts.el:226](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/loop-facts.el#L226)
+[源码 compiler/control-flow/loop-facts.el:228](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/loop-facts.el#L228)
 
 ```el
 class LoopTruthInvariant
@@ -8174,7 +8174,7 @@ data InitializationSyntax
 
 ## RangePatternPlan · compiler/syntax/loop-syntax.el {#api-6921f7f0ed513c966346}
 
-[源码 compiler/syntax/loop-syntax.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/loop-syntax.el#L64)
+[源码 compiler/syntax/loop-syntax.el:65](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/loop-syntax.el#L65)
 
 ```el
 class RangePatternPlan
@@ -11390,7 +11390,7 @@ class HmacSha256
 
 ## Poly1305 · cryptography/poly1305.el {#api-ea547899b0d6a9ec1072}
 
-[源码 cryptography/poly1305.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/poly1305.el#L27)
+[源码 cryptography/poly1305.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/cryptography/poly1305.el#L26)
 
 ```el
 class Poly1305
@@ -11622,7 +11622,7 @@ class RetentionReservation
 
 ## AccessController · database/admin/security.el {#api-eb791790d5aea36d25bb}
 
-[源码 database/admin/security.el:543](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L543)
+[源码 database/admin/security.el:553](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L553)
 
 ```el
 class AccessController
@@ -11630,7 +11630,7 @@ class AccessController
 
 ## AuditLog · database/admin/security.el {#api-29a39cc1da8ef3c40901}
 
-[源码 database/admin/security.el:438](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L438)
+[源码 database/admin/security.el:448](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L448)
 
 ```el
 class AuditLog
@@ -11638,7 +11638,7 @@ class AuditLog
 
 ## CallerIdentity · database/admin/security.el {#api-1d98b3eb180465025724}
 
-[源码 database/admin/security.el:120](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L120)
+[源码 database/admin/security.el:130](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L130)
 
 ```el
 class CallerIdentity
@@ -11646,7 +11646,7 @@ class CallerIdentity
 
 ## Principal · database/admin/security.el {#api-09bde10a5b8d6d84c40a}
 
-[源码 database/admin/security.el:90](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L90)
+[源码 database/admin/security.el:100](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L100)
 
 ```el
 class Principal
@@ -11654,7 +11654,7 @@ class Principal
 
 ## PrincipalLimits · database/admin/security.el {#api-4d154daf67f0f250f982}
 
-[源码 database/admin/security.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L77)
+[源码 database/admin/security.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L87)
 
 ```el
 class PrincipalLimits
@@ -11662,7 +11662,7 @@ class PrincipalLimits
 
 ## PrincipalStore · database/admin/security.el {#api-d95d9f5e9436b8cb6d09}
 
-[源码 database/admin/security.el:136](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L136)
+[源码 database/admin/security.el:146](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L146)
 
 ```el
 class PrincipalStore
@@ -11670,7 +11670,7 @@ class PrincipalStore
 
 ## RoleEntry · database/admin/security.el {#api-dc94408b04ddadc5dc54}
 
-[源码 database/admin/security.el:100](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L100)
+[源码 database/admin/security.el:110](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L110)
 
 ```el
 class RoleEntry
@@ -11678,7 +11678,7 @@ class RoleEntry
 
 ## TokenEntry · database/admin/security.el {#api-372e6289b88b6c2e183a}
 
-[源码 database/admin/security.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L106)
+[源码 database/admin/security.el:116](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L116)
 
 ```el
 class TokenEntry
@@ -16208,7 +16208,7 @@ class TranscendentalInterval
 
 ## CounterRandom · execution/compute/random.el {#api-0057d125d9d61eab668b}
 
-[源码 execution/compute/random.el:163](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/compute/random.el#L163)
+[源码 execution/compute/random.el:161](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/compute/random.el#L161)
 
 ```el
 class CounterRandom
@@ -16216,7 +16216,7 @@ class CounterRandom
 
 ## CounterRandomState · execution/compute/random.el {#api-860cf2fbf4d04141bbbe}
 
-[源码 execution/compute/random.el:140](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/compute/random.el#L140)
+[源码 execution/compute/random.el:138](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/compute/random.el#L138)
 
 ```el
 class CounterRandomState
@@ -16384,7 +16384,7 @@ class GpuMemoryUsage
 
 ## Allocation · execution/graphics-processors/metal/gpu.el {#api-46361149a4f05fba8bc8}
 
-[源码 execution/graphics-processors/metal/gpu.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/graphics-processors/metal/gpu.el#L32)
+[源码 execution/graphics-processors/metal/gpu.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/graphics-processors/metal/gpu.el#L31)
 
 ```el
 class Allocation
@@ -16392,7 +16392,7 @@ class Allocation
 
 ## CommandQueue · execution/graphics-processors/metal/gpu.el {#api-526b5921ceda090badcd}
 
-[源码 execution/graphics-processors/metal/gpu.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/graphics-processors/metal/gpu.el#L67)
+[源码 execution/graphics-processors/metal/gpu.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/graphics-processors/metal/gpu.el#L66)
 
 ```el
 class CommandQueue
@@ -16400,7 +16400,7 @@ class CommandQueue
 
 ## GpuExecution · execution/graphics-processors/metal/gpu.el {#api-ae28f6046999bcce1338}
 
-[源码 execution/graphics-processors/metal/gpu.el:89](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/graphics-processors/metal/gpu.el#L89)
+[源码 execution/graphics-processors/metal/gpu.el:88](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/graphics-processors/metal/gpu.el#L88)
 
 ```el
 class GpuExecution extends ExecutionResource
@@ -16408,7 +16408,7 @@ class GpuExecution extends ExecutionResource
 
 ## Plan · execution/graphics-processors/metal/gpu.el {#api-cb3e70d9cdbde740335d}
 
-[源码 execution/graphics-processors/metal/gpu.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/graphics-processors/metal/gpu.el#L47)
+[源码 execution/graphics-processors/metal/gpu.el:46](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/graphics-processors/metal/gpu.el#L46)
 
 ```el
 class Plan
@@ -16416,7 +16416,7 @@ class Plan
 
 ## Submission · execution/graphics-processors/metal/gpu.el {#api-ca233bcd5aebbd5755c3}
 
-[源码 execution/graphics-processors/metal/gpu.el:59](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/graphics-processors/metal/gpu.el#L59)
+[源码 execution/graphics-processors/metal/gpu.el:58](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/graphics-processors/metal/gpu.el#L58)
 
 ```el
 class Submission
@@ -16424,7 +16424,7 @@ class Submission
 
 ## TimestampRecord · execution/graphics-processors/metal/gpu.el {#api-d3916c80e2956898a499}
 
-[源码 execution/graphics-processors/metal/gpu.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/graphics-processors/metal/gpu.el#L76)
+[源码 execution/graphics-processors/metal/gpu.el:75](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/graphics-processors/metal/gpu.el#L75)
 
 ```el
 class TimestampRecord
@@ -16992,7 +16992,7 @@ class WorkerBudget
 
 ## ComputeCodec · execution/scalars.el {#api-ea8c18a59434d4a65f3f}
 
-[源码 execution/scalars.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/scalars.el#L30)
+[源码 execution/scalars.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/scalars.el#L29)
 
 ```el
 fn ComputeCodec(element: type): type
@@ -17726,7 +17726,7 @@ class Json5Reader extends FormatReader
 
 ## JsonWriteError · formats/json/writer.el {#api-0ee1f211d0dc68033812}
 
-[源码 formats/json/writer.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/writer.el#L17)
+[源码 formats/json/writer.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/writer.el#L16)
 
 ```el
 class JsonWriteError extends Error
@@ -17734,7 +17734,7 @@ class JsonWriteError extends Error
 
 ## JsonWriter · formats/json/writer.el {#api-069420894daebd5858b8}
 
-[源码 formats/json/writer.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/writer.el#L21)
+[源码 formats/json/writer.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/writer.el#L20)
 
 ```el
 class JsonWriter
@@ -17934,7 +17934,7 @@ class SerializationVariants
 
 ## TableNode · formats/toml/index.el {#api-6309c1fff2582c55bd14}
 
-[源码 formats/toml/index.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L33)
+[源码 formats/toml/index.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L32)
 
 ```el
 class TableNode
@@ -17942,7 +17942,7 @@ class TableNode
 
 ## Toml · formats/toml/index.el {#api-1ded7c60633c334bf6e6}
 
-[源码 formats/toml/index.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L18)
+[源码 formats/toml/index.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L17)
 
 ```el
 data Toml
@@ -17950,7 +17950,7 @@ data Toml
 
 ## TomlDateTimeKind · formats/toml/index.el {#api-c42202ead8ee9aa3b6d2}
 
-[源码 formats/toml/index.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L17)
+[源码 formats/toml/index.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L16)
 
 ```el
 enum TomlDateTimeKind
@@ -17958,7 +17958,7 @@ enum TomlDateTimeKind
 
 ## TomlReader · formats/toml/index.el {#api-5d0e10c31c574bc04c2b}
 
-[源码 formats/toml/index.el:58](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L58)
+[源码 formats/toml/index.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L57)
 
 ```el
 class TomlReader extends FormatReader
@@ -17966,7 +17966,7 @@ class TomlReader extends FormatReader
 
 ## TomlTable · formats/toml/index.el {#api-71916e3b57f51262635b}
 
-[源码 formats/toml/index.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L26)
+[源码 formats/toml/index.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L25)
 
 ```el
 let TomlTable: type
@@ -17974,7 +17974,7 @@ let TomlTable: type
 
 ## TomlWriter · formats/toml/index.el {#api-9d9e6decdb9376881c65}
 
-[源码 formats/toml/index.el:272](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L272)
+[源码 formats/toml/index.el:274](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L274)
 
 ```el
 class TomlWriter
@@ -18054,7 +18054,7 @@ class YamlState
 
 ## YamlWriteError · formats/yaml/writer.el {#api-1476e51f8cc18f6dc218}
 
-[源码 formats/yaml/writer.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/writer.el#L16)
+[源码 formats/yaml/writer.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/writer.el#L15)
 
 ```el
 class YamlWriteError extends Error
@@ -18062,7 +18062,7 @@ class YamlWriteError extends Error
 
 ## YamlWriter · formats/yaml/writer.el {#api-8faf3ee6c89bd99f2ad3}
 
-[源码 formats/yaml/writer.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/writer.el#L20)
+[源码 formats/yaml/writer.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/writer.el#L19)
 
 ```el
 class YamlWriter
@@ -18788,7 +18788,7 @@ class IrExecutionObserver
 
 ## IrExecutionPolicy · intermediate-representation/abi/execution/contracts.el {#api-7b24f0d1bacf1142d43e}
 
-[源码 intermediate-representation/abi/execution/contracts.el:55](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/abi/execution/contracts.el#L55)
+[源码 intermediate-representation/abi/execution/contracts.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/abi/execution/contracts.el#L57)
 
 ```el
 class IrExecutionPolicy
@@ -18796,7 +18796,7 @@ class IrExecutionPolicy
 
 ## IrExecutionToken · intermediate-representation/abi/execution/contracts.el {#api-146b95964c9b27d80a83}
 
-[源码 intermediate-representation/abi/execution/contracts.el:79](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/abi/execution/contracts.el#L79)
+[源码 intermediate-representation/abi/execution/contracts.el:81](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/abi/execution/contracts.el#L81)
 
 ```el
 class IrExecutionToken
@@ -19460,7 +19460,7 @@ class IrAbiReader
 
 ## IrAbiFlow · intermediate-representation/abi/verify.el {#api-91f455a0f942f8b34879}
 
-[源码 intermediate-representation/abi/verify.el:409](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/abi/verify.el#L409)
+[源码 intermediate-representation/abi/verify.el:415](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/abi/verify.el#L415)
 
 ```el
 class IrAbiFlow
@@ -19476,7 +19476,7 @@ class IrAbiNames
 
 ## IrAbiVerificationContext · intermediate-representation/abi/verify.el {#api-3c0b1f8b05ced9759958}
 
-[源码 intermediate-representation/abi/verify.el:601](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/abi/verify.el#L601)
+[源码 intermediate-representation/abi/verify.el:607](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/abi/verify.el#L607)
 
 ```el
 class IrAbiVerificationContext
@@ -19680,6 +19680,14 @@ class IrFreestandingPackage
 
 ```el
 class IrFreestandingTarget
+```
+
+## IrMachineFloatBits · intermediate-representation/native/float.el {#api-558a464c98f5b53af018}
+
+[源码 intermediate-representation/native/float.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/native/float.el#L15)
+
+```el
+class IrMachineFloatBits
 ```
 
 ## IrFrameSave · intermediate-representation/native/frames.el {#api-7ae3dcfb7cd485e2f80e}
@@ -20028,7 +20036,7 @@ class IrPromotion
 
 ## IrSourceTypeSuffix · intermediate-representation/source-types.el {#api-9413986bcec1659a0c01}
 
-[源码 intermediate-representation/source-types.el:44](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/source-types.el#L44)
+[源码 intermediate-representation/source-types.el:37](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/source-types.el#L37)
 
 ```el
 class IrSourceTypeSuffix
@@ -21000,7 +21008,7 @@ fn liftType(value: type, level): type
 
 ## fn · language/reflection.el {#api-505951a6f0b1459d1a96}
 
-[源码 language/reflection.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/language/reflection.el#L31)
+[源码 language/reflection.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/language/reflection.el#L35)
 
 ```el
 class fn reconstruction_class(handle): RawWord
@@ -24726,17 +24734,17 @@ class CollectionSize
 fn IdleMemoryDriver(source: type): type
 ```
 
-## BitFloatCodec · memory/native/bit-float-codec.el {#api-866b430bfafa13c4cb26}
+## DitFloatCodec · memory/native/dit-float-codec.el {#api-44090f9a545a168e0ba4}
 
-[源码 memory/native/bit-float-codec.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/native/bit-float-codec.el#L9)
+[源码 memory/native/dit-float-codec.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/native/dit-float-codec.el#L9)
 
 ```el
-fn BitFloatCodec(element: type, format): type
+fn DitFloatCodec(element: type, encoding: ExternalFloatFormat): type
 ```
 
 ## NativeCodec · memory/native/format.el {#api-0865a77bb5d3176e63eb}
 
-[源码 memory/native/format.el:54](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/native/format.el#L54)
+[源码 memory/native/format.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/native/format.el#L47)
 
 ```el
 fn NativeCodec(element: type): type
@@ -24936,17 +24944,9 @@ class PcmOutput
 
 [API 文档](modules/multimedia/audio/linux-output.md#api-9f5da8fa68d02b9e4158)
 
-## AudioRate · multimedia/audio/macos-output.el {#api-5639d7461a41cf4e59d7}
-
-[源码 multimedia/audio/macos-output.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L12)
-
-```el
-let AudioRate: type
-```
-
 ## Int · multimedia/audio/macos-output.el {#api-c5eb2df946e7a0b56654}
 
-[源码 multimedia/audio/macos-output.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L14)
+[源码 multimedia/audio/macos-output.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L15)
 
 ```el
 class Int
@@ -24954,7 +24954,7 @@ class Int
 
 ## NativeBool · multimedia/audio/macos-output.el {#api-682d7f86c110d655a229}
 
-[源码 multimedia/audio/macos-output.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L16)
+[源码 multimedia/audio/macos-output.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L17)
 
 ```el
 class NativeBool
@@ -24962,7 +24962,7 @@ class NativeBool
 
 ## PcmOutput · multimedia/audio/macos-output.el {#api-07a36f3fcbe4431833df}
 
-[源码 multimedia/audio/macos-output.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L56)
+[源码 multimedia/audio/macos-output.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L57)
 
 ```el
 class PcmOutput
@@ -24972,7 +24972,7 @@ class PcmOutput
 
 ## UInt · multimedia/audio/macos-output.el {#api-6a7648e689d1b173908a}
 
-[源码 multimedia/audio/macos-output.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L15)
+[源码 multimedia/audio/macos-output.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L16)
 
 ```el
 class UInt
@@ -25524,14 +25524,6 @@ class ComScope
 class VariantType
 ```
 
-## QualityFloat · multimedia/image/windows/options.el {#api-a8bf2a2553da71519e51}
-
-[源码 multimedia/image/windows/options.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/windows/options.el#L9)
-
-```el
-let QualityFloat: type
-```
-
 ## QrBits · multimedia/qr/bits.el {#api-71c42db9beaafc2e7513}
 
 [源码 multimedia/qr/bits.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/qr/bits.el#L13)
@@ -26008,7 +26000,7 @@ class NetworkTextInput
 
 ## Point · network/tls/arithmetic.el {#api-5a31098265b743c6d5b4}
 
-[源码 network/tls/arithmetic.el:62](https://github.com/steve02081504/el/blob/master/src/stdlib/network/tls/arithmetic.el#L62)
+[源码 network/tls/arithmetic.el:61](https://github.com/steve02081504/el/blob/master/src/stdlib/network/tls/arithmetic.el#L61)
 
 ```el
 class Point
@@ -26016,7 +26008,7 @@ class Point
 
 ## VerificationCurve · network/tls/arithmetic.el {#api-65053e77f10357b7ea0a}
 
-[源码 network/tls/arithmetic.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/network/tls/arithmetic.el#L68)
+[源码 network/tls/arithmetic.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/network/tls/arithmetic.el#L67)
 
 ```el
 class VerificationCurve
@@ -26584,7 +26576,7 @@ let Values = storage
 
 ## KVCache · neural-networks/modules/attention.el {#api-958d9d3f6768413d0edd}
 
-[源码 neural-networks/modules/attention.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/modules/attention.el#L34)
+[源码 neural-networks/modules/attention.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/modules/attention.el#L32)
 
 ```el
 fn KVCache(element: type, storage: type = Tensor<element: element>): type
@@ -26626,7 +26618,7 @@ class SGD
 
 ## Adafactor · neural-networks/optimizers/adafactor.el {#api-9fead2824e83200fd3ca}
 
-[源码 neural-networks/optimizers/adafactor.el:48](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/adafactor.el#L48)
+[源码 neural-networks/optimizers/adafactor.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/adafactor.el#L47)
 
 ```el
 fn Adafactor(element: type, storage: type = Tensor<element: element>): type
@@ -26634,7 +26626,7 @@ fn Adafactor(element: type, storage: type = Tensor<element: element>): type
 
 ## AdafactorGroup · neural-networks/optimizers/adafactor.el {#api-e01543adc054b8548e71}
 
-[源码 neural-networks/optimizers/adafactor.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/adafactor.el#L36)
+[源码 neural-networks/optimizers/adafactor.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/adafactor.el#L35)
 
 ```el
 class AdafactorGroup
@@ -26642,7 +26634,7 @@ class AdafactorGroup
 
 ## AdafactorOptions · neural-networks/optimizers/adafactor.el {#api-72a5aa84657c04aa77e2}
 
-[源码 neural-networks/optimizers/adafactor.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/adafactor.el#L17)
+[源码 neural-networks/optimizers/adafactor.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/adafactor.el#L16)
 
 ```el
 class AdafactorOptions
@@ -26650,7 +26642,7 @@ class AdafactorOptions
 
 ## ASGD · neural-networks/optimizers/index.el {#api-ff088386220829c16131}
 
-[源码 neural-networks/optimizers/index.el:388](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L388)
+[源码 neural-networks/optimizers/index.el:387](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L387)
 
 ```el
 fn ASGD(element: type, storage: type = Tensor<element: element>): type
@@ -26658,7 +26650,7 @@ fn ASGD(element: type, storage: type = Tensor<element: element>): type
 
 ## Adadelta · neural-networks/optimizers/index.el {#api-83c7f3ad587592159fa3}
 
-[源码 neural-networks/optimizers/index.el:343](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L343)
+[源码 neural-networks/optimizers/index.el:342](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L342)
 
 ```el
 fn Adadelta(element: type, storage: type = Tensor<element: element>): type
@@ -26666,7 +26658,7 @@ fn Adadelta(element: type, storage: type = Tensor<element: element>): type
 
 ## Adagrad · neural-networks/optimizers/index.el {#api-8bd78b66e5e97e23ff82}
 
-[源码 neural-networks/optimizers/index.el:325](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L325)
+[源码 neural-networks/optimizers/index.el:324](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L324)
 
 ```el
 fn Adagrad(element: type, storage: type = Tensor<element: element>): type
@@ -26674,7 +26666,7 @@ fn Adagrad(element: type, storage: type = Tensor<element: element>): type
 
 ## Adam · neural-networks/optimizers/index.el {#api-c9a5708593907844b6ec}
 
-[源码 neural-networks/optimizers/index.el:311](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L311)
+[源码 neural-networks/optimizers/index.el:310](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L310)
 
 ```el
 fn Adam(element: type, storage: type = Tensor<element: element>): type
@@ -26682,7 +26674,7 @@ fn Adam(element: type, storage: type = Tensor<element: element>): type
 
 ## Adamax · neural-networks/optimizers/index.el {#api-6d4135c2b8445142e177}
 
-[源码 neural-networks/optimizers/index.el:352](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L352)
+[源码 neural-networks/optimizers/index.el:351](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L351)
 
 ```el
 fn Adamax(element: type, storage: type = Tensor<element: element>): type
@@ -26690,7 +26682,7 @@ fn Adamax(element: type, storage: type = Tensor<element: element>): type
 
 ## AdaptiveOptimizer · neural-networks/optimizers/index.el {#api-8825ae7cd29822c907b8}
 
-[源码 neural-networks/optimizers/index.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L40)
+[源码 neural-networks/optimizers/index.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L39)
 
 ```el
 fn AdaptiveOptimizer(element: type, storage: type = Tensor<element: element>): type
@@ -26698,7 +26690,7 @@ fn AdaptiveOptimizer(element: type, storage: type = Tensor<element: element>): t
 
 ## AdaptiveOptimizerForwarder · neural-networks/optimizers/index.el {#api-dd44e07b734a46aef927}
 
-[源码 neural-networks/optimizers/index.el:297](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L297)
+[源码 neural-networks/optimizers/index.el:296](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L296)
 
 ```el
 fn AdaptiveOptimizerForwarder(Engine: type, storage: type): type
@@ -26706,7 +26698,7 @@ fn AdaptiveOptimizerForwarder(Engine: type, storage: type): type
 
 ## Momentum · neural-networks/optimizers/index.el {#api-e557979efc86aae940bb}
 
-[源码 neural-networks/optimizers/index.el:332](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L332)
+[源码 neural-networks/optimizers/index.el:331](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L331)
 
 ```el
 fn Momentum(element: type, storage: type = Tensor<element: element>): type
@@ -26714,7 +26706,7 @@ fn Momentum(element: type, storage: type = Tensor<element: element>): type
 
 ## NAdam · neural-networks/optimizers/index.el {#api-cace2b4fab8cbd2eeb1a}
 
-[源码 neural-networks/optimizers/index.el:370](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L370)
+[源码 neural-networks/optimizers/index.el:369](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L369)
 
 ```el
 fn NAdam(element: type, storage: type = Tensor<element: element>): type
@@ -26722,7 +26714,7 @@ fn NAdam(element: type, storage: type = Tensor<element: element>): type
 
 ## ParameterGroup · neural-networks/optimizers/index.el {#api-bbaf8d55bf80807761b6}
 
-[源码 neural-networks/optimizers/index.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L21)
+[源码 neural-networks/optimizers/index.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L20)
 
 ```el
 class ParameterGroup
@@ -26730,7 +26722,7 @@ class ParameterGroup
 
 ## RAdam · neural-networks/optimizers/index.el {#api-c49f8f4753e74135e21b}
 
-[源码 neural-networks/optimizers/index.el:379](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L379)
+[源码 neural-networks/optimizers/index.el:378](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L378)
 
 ```el
 fn RAdam(element: type, storage: type = Tensor<element: element>): type
@@ -26738,7 +26730,7 @@ fn RAdam(element: type, storage: type = Tensor<element: element>): type
 
 ## RMSprop · neural-networks/optimizers/index.el {#api-f09336723c67d9d72ee9}
 
-[源码 neural-networks/optimizers/index.el:318](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L318)
+[源码 neural-networks/optimizers/index.el:317](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L317)
 
 ```el
 fn RMSprop(element: type, storage: type = Tensor<element: element>): type
@@ -26746,7 +26738,7 @@ fn RMSprop(element: type, storage: type = Tensor<element: element>): type
 
 ## Rprop · neural-networks/optimizers/index.el {#api-ae9d1de8526a5251a791}
 
-[源码 neural-networks/optimizers/index.el:361](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L361)
+[源码 neural-networks/optimizers/index.el:360](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/index.el#L360)
 
 ```el
 fn Rprop(element: type, storage: type = Tensor<element: element>): type
@@ -26754,7 +26746,7 @@ fn Rprop(element: type, storage: type = Tensor<element: element>): type
 
 ## LBFGS · neural-networks/optimizers/lbfgs.el {#api-a7ce94a4ec1f1a47dc9a}
 
-[源码 neural-networks/optimizers/lbfgs.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/lbfgs.el#L30)
+[源码 neural-networks/optimizers/lbfgs.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/lbfgs.el#L22)
 
 ```el
 fn LBFGS(element: type, storage: type = Tensor<element: element>): type
@@ -26762,7 +26754,7 @@ fn LBFGS(element: type, storage: type = Tensor<element: element>): type
 
 ## LineSearchFailure · neural-networks/optimizers/lbfgs.el {#api-c4e6a1c676a5e5b9cc5d}
 
-[源码 neural-networks/optimizers/lbfgs.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/lbfgs.el#L12)
+[源码 neural-networks/optimizers/lbfgs.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizers/lbfgs.el#L10)
 
 ```el
 class LineSearchFailure extends Error
@@ -26818,7 +26810,7 @@ class PrecisionPolicy
 
 ## ChainedLR · neural-networks/schedulers/extended.el {#api-c751b72be6603e9cfc95}
 
-[源码 neural-networks/schedulers/extended.el:154](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L154)
+[源码 neural-networks/schedulers/extended.el:153](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L153)
 
 ```el
 class ChainedLR
@@ -26826,7 +26818,7 @@ class ChainedLR
 
 ## ConstantLR · neural-networks/schedulers/extended.el {#api-83287135583843b0c0e4}
 
-[源码 neural-networks/schedulers/extended.el:46](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L46)
+[源码 neural-networks/schedulers/extended.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L45)
 
 ```el
 class ConstantLR
@@ -26834,7 +26826,7 @@ class ConstantLR
 
 ## CyclicLR · neural-networks/schedulers/extended.el {#api-da9275997eef3807a88a}
 
-[源码 neural-networks/schedulers/extended.el:86](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L86)
+[源码 neural-networks/schedulers/extended.el:85](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L85)
 
 ```el
 class CyclicLR
@@ -26842,7 +26834,7 @@ class CyclicLR
 
 ## LambdaLR · neural-networks/schedulers/extended.el {#api-8a677a97d6a0ce76f0ad}
 
-[源码 neural-networks/schedulers/extended.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L68)
+[源码 neural-networks/schedulers/extended.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L67)
 
 ```el
 class LambdaLR
@@ -26850,7 +26842,7 @@ class LambdaLR
 
 ## MultiStepLR · neural-networks/schedulers/extended.el {#api-a8ba0669b1178ae18e1e}
 
-[源码 neural-networks/schedulers/extended.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L28)
+[源码 neural-networks/schedulers/extended.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L27)
 
 ```el
 class MultiStepLR
@@ -26858,7 +26850,7 @@ class MultiStepLR
 
 ## MultiplicativeLR · neural-networks/schedulers/extended.el {#api-f3e294c793d7fdc3508d}
 
-[源码 neural-networks/schedulers/extended.el:74](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L74)
+[源码 neural-networks/schedulers/extended.el:73](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L73)
 
 ```el
 class MultiplicativeLR
@@ -26866,7 +26858,7 @@ class MultiplicativeLR
 
 ## OneCycleLR · neural-networks/schedulers/extended.el {#api-5ca4b33a9f7d00540bad}
 
-[源码 neural-networks/schedulers/extended.el:111](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L111)
+[源码 neural-networks/schedulers/extended.el:110](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L110)
 
 ```el
 class OneCycleLR
@@ -26874,7 +26866,7 @@ class OneCycleLR
 
 ## PolynomialLR · neural-networks/schedulers/extended.el {#api-e06f6d50a5208b91317b}
 
-[源码 neural-networks/schedulers/extended.el:55](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L55)
+[源码 neural-networks/schedulers/extended.el:54](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L54)
 
 ```el
 class PolynomialLR
@@ -26882,7 +26874,7 @@ class PolynomialLR
 
 ## ReduceLROnPlateau · neural-networks/schedulers/extended.el {#api-06cbff9a8588ab8a6d52}
 
-[源码 neural-networks/schedulers/extended.el:166](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L166)
+[源码 neural-networks/schedulers/extended.el:165](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L165)
 
 ```el
 class ReduceLROnPlateau
@@ -26890,7 +26882,7 @@ class ReduceLROnPlateau
 
 ## SequentialLR · neural-networks/schedulers/extended.el {#api-74c96d0e7cd6a9bfee46}
 
-[源码 neural-networks/schedulers/extended.el:136](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L136)
+[源码 neural-networks/schedulers/extended.el:135](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/schedulers/extended.el#L135)
 
 ```el
 class SequentialLR
@@ -27194,7 +27186,7 @@ class LanguageModelWindows
 
 ## CausalLanguageModel · neural-networks/text/decoder.el {#api-f1bfef9fe7b41a7e212c}
 
-[源码 neural-networks/text/decoder.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/decoder.el#L23)
+[源码 neural-networks/text/decoder.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/decoder.el#L21)
 
 ```el
 fn CausalLanguageModel(element: type, storage: type = Tensor<element: element>, parameterBank: type = ParameterModel<element: element, storage: storage>): type
@@ -27250,7 +27242,7 @@ class GenerationStageProfile
 
 ## Candidate · neural-networks/text/generation.el {#api-6b7c286321c5cd9c4974}
 
-[源码 neural-networks/text/generation.el:53](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/generation.el#L53)
+[源码 neural-networks/text/generation.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/generation.el#L51)
 
 ```el
 class Candidate
@@ -27258,7 +27250,7 @@ class Candidate
 
 ## GenerationOptions · neural-networks/text/generation.el {#api-2303e0907642e9bc866e}
 
-[源码 neural-networks/text/generation.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/generation.el#L18)
+[源码 neural-networks/text/generation.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/generation.el#L16)
 
 ```el
 class GenerationOptions
@@ -27266,7 +27258,7 @@ class GenerationOptions
 
 ## GenerationResult · neural-networks/text/generation.el {#api-abaeaf08dceb36cca1bf}
 
-[源码 neural-networks/text/generation.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/generation.el#L38)
+[源码 neural-networks/text/generation.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/generation.el#L36)
 
 ```el
 class GenerationResult
@@ -27274,7 +27266,7 @@ class GenerationResult
 
 ## InvalidGeneration · neural-networks/text/generation.el {#api-68a964359ebf782ae03e}
 
-[源码 neural-networks/text/generation.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/generation.el#L8)
+[源码 neural-networks/text/generation.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/generation.el#L6)
 
 ```el
 class InvalidGeneration
@@ -27362,7 +27354,7 @@ class Work
 
 ## Entry · neural-networks/text/safetensors.el {#api-fc7c7975efd5ef430e81}
 
-[源码 neural-networks/text/safetensors.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L76)
+[源码 neural-networks/text/safetensors.el:75](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L75)
 
 ```el
 class Entry
@@ -27370,7 +27362,7 @@ class Entry
 
 ## InvalidSafeTensor · neural-networks/text/safetensors.el {#api-e1e7db720b69a6b0ac1f}
 
-[源码 neural-networks/text/safetensors.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L16)
+[源码 neural-networks/text/safetensors.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L15)
 
 ```el
 class InvalidSafeTensor
@@ -27378,7 +27370,7 @@ class InvalidSafeTensor
 
 ## SafeTensorFile · neural-networks/text/safetensors.el {#api-1c2140f448b284699a74}
 
-[源码 neural-networks/text/safetensors.el:105](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L105)
+[源码 neural-networks/text/safetensors.el:104](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L104)
 
 ```el
 fn SafeTensorFile(element: type = PrecisionElement("binary32")): type
@@ -27386,7 +27378,7 @@ fn SafeTensorFile(element: type = PrecisionElement("binary32")): type
 
 ## SafeTensorLimits · neural-networks/text/safetensors.el {#api-e902551d5fffe0b057b5}
 
-[源码 neural-networks/text/safetensors.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L20)
+[源码 neural-networks/text/safetensors.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L19)
 
 ```el
 class SafeTensorLimits
@@ -27448,61 +27440,81 @@ class NumericInt
 class NumericRatio
 ```
 
-## BitFloat · number/bit-float.el {#api-391a3d15fa32ad4486cf}
+## ExternalFloatCodec · number/digit-float/codec.el {#api-70643c08c3418de58f9a}
 
-[源码 number/bit-float.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/number/bit-float.el#L17)
-
-```el
-fn BitFloat(sign_bits = 1, fraction_bits = 0, exponent_bits = 0, exponent_bias = 0, min = nil, max = nil, overflow = "ub"): type
-```
-
-## BitInteger · number/bit-integer.el {#api-86b15cfc36b73f950370}
-
-[源码 number/bit-integer.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/number/bit-integer.el#L47)
+[源码 number/digit-float/codec.el:80](https://github.com/steve02081504/el/blob/master/src/stdlib/number/digit-float/codec.el#L80)
 
 ```el
-fn BitInteger(bits = 0, sign_bits = 0, min = nil, max = nil, overflow = "ub"): type
+fn ExternalFloatCodec(element: type, format: ExternalFloatFormat): type
 ```
 
-## IntegerBits16 · number/bit-integer.el {#api-51452198a7f35a19fc27}
+## ExternalFloatFormat · number/digit-float/codec.el {#api-47b6e0b548d89070ec36}
 
-[源码 number/bit-integer.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/number/bit-integer.el#L20)
+[源码 number/digit-float/codec.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/number/digit-float/codec.el#L13)
 
 ```el
-class IntegerBits16
+class ExternalFloatFormat
 ```
 
-## IntegerBits32 · number/bit-integer.el {#api-0df026a0918aa5a48014}
+## DigitFloatLayout · number/digit-float/quantization.el {#api-99e0bef2eac4d138176b}
 
-[源码 number/bit-integer.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/number/bit-integer.el#L21)
+[源码 number/digit-float/quantization.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/number/digit-float/quantization.el#L16)
 
 ```el
-class IntegerBits32
+class DigitFloatLayout
 ```
 
-## IntegerBits64 · number/bit-integer.el {#api-e6be686a42bd8c7dd7ed}
+## DigitFloatParts · number/digit-float/quantization.el {#api-d3d10bb5156bec37cca7}
 
-[源码 number/bit-integer.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/number/bit-integer.el#L22)
+[源码 number/digit-float/quantization.el:85](https://github.com/steve02081504/el/blob/master/src/stdlib/number/digit-float/quantization.el#L85)
 
 ```el
-class IntegerBits64
+class DigitFloatParts
 ```
 
-## IntegerBits8 · number/bit-integer.el {#api-613757efe6e6ab3bb5f9}
+## DitFloatKind · number/digit-float/quantization.el {#api-418ef9b22e18d2f15988}
 
-[源码 number/bit-integer.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/number/bit-integer.el#L19)
+[源码 number/digit-float/quantization.el:83](https://github.com/steve02081504/el/blob/master/src/stdlib/number/digit-float/quantization.el#L83)
 
 ```el
-class IntegerBits8
+enum DitFloatKind
 ```
 
-## integer_payload · number/bit-integer.el {#api-95844893053f87bb1a0d}
+## DitFloat · number/dit-float.el {#api-3bf2f5b6b8ccdfc86851}
 
-[源码 number/bit-integer.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/number/bit-integer.el#L28)
+[源码 number/dit-float.el:281](https://github.com/steve02081504/el/blob/master/src/stdlib/number/dit-float.el#L281)
 
 ```el
-fn integer_payload(width: Integer): type
+fn DitFloat(sign_dits = 1, fraction_dits = 0, exponent_dits = 0, exponent_bias = 0, min = nil, max = nil, overflow = "ub"): type
 ```
+
+[API 文档](modules/number/dit-float.md#api-3bf2f5b6b8ccdfc86851)
+
+## DitFloatValue · number/dit-float.el {#api-6542920313161ccaeff7}
+
+[源码 number/dit-float.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/number/dit-float.el#L18)
+
+```el
+class DitFloatValue extends Number
+```
+
+## ditFloatType · number/dit-float.el {#api-da3f4b2e3806f69fe34d}
+
+[源码 number/dit-float.el:103](https://github.com/steve02081504/el/blob/master/src/stdlib/number/dit-float.el#L103)
+
+```el
+fn ditFloatType(radix: Number, signDits, fractionDits, exponentDits, exponentBias, min, max, overflow): type
+```
+
+## DitInt · number/dit-int.el {#api-f257d1fae552cc435b0b}
+
+[源码 number/dit-int.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/number/dit-int.el#L40)
+
+```el
+fn DitInt(digits = 0, signed = f, min = nil, max = nil, overflow = "ub"): type
+```
+
+[API 文档](modules/number/dit-int.md#api-f257d1fae552cc435b0b)
 
 ## NumberDomain · number/domain.el {#api-fab1c3e3142628f32375}
 
@@ -27518,54 +27530,6 @@ class NumberDomain
 
 ```el
 let U128: type
-```
-
-## BitFloatBits · number/ieee754/codec.el {#api-a898f1b0ea7ff2528817}
-
-[源码 number/ieee754/codec.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/number/ieee754/codec.el#L38)
-
-```el
-fn BitFloatBits(element: type, format): type
-```
-
-## NumberBase · number/ieee754/number.el {#api-aaec3152d6d4dcf59a78}
-
-[源码 number/ieee754/number.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/number/ieee754/number.el#L14)
-
-```el
-class NumberBase extends Number
-```
-
-## IeeeBits · number/ieee754/representation.el {#api-42eb8b0e8deb6c63b4a5}
-
-[源码 number/ieee754/representation.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/number/ieee754/representation.el#L7)
-
-```el
-class IeeeBits
-```
-
-## IeeeContext · number/ieee754/representation.el {#api-fe9d24d655c509c3590c}
-
-[源码 number/ieee754/representation.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/number/ieee754/representation.el#L34)
-
-```el
-class IeeeContext
-```
-
-## IeeeLayout · number/ieee754/representation.el {#api-ac8083bd05a16543fa08}
-
-[源码 number/ieee754/representation.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/number/ieee754/representation.el#L13)
-
-```el
-class IeeeLayout
-```
-
-## IeeeValue · number/ieee754/representation.el {#api-7f00cd38553f01c51593}
-
-[源码 number/ieee754/representation.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/number/ieee754/representation.el#L25)
-
-```el
-class IeeeValue
 ```
 
 ## Integer · number/integer.el {#api-5576cb3365ff716689cd}
@@ -27776,6 +27740,14 @@ class RadixFormat
 class RoundedRadix
 ```
 
+## WorkingFloat · number/working-float.el {#api-c2c00a6f77d95afbdb5e}
+
+[源码 number/working-float.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/number/working-float.el#L18)
+
+```el
+const WorkingFloat: type
+```
+
 ## AccumulationPolicy · numerical-computing/accumulation-policy.el {#api-425f44791ce954662af6}
 
 [源码 numerical-computing/accumulation-policy.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/accumulation-policy.el#L6)
@@ -27794,7 +27766,7 @@ class ContractionPolicyProvider
 
 ## C64 · numerical-computing/complex.el {#api-ef07b51bad9a01cc4de0}
 
-[源码 numerical-computing/complex.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/complex.el#L38)
+[源码 numerical-computing/complex.el:37](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/complex.el#L37)
 
 ```el
 let C64: type
@@ -27802,7 +27774,7 @@ let C64: type
 
 ## Complex · numerical-computing/complex.el {#api-7077585efd465d5e77b1}
 
-[源码 numerical-computing/complex.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/complex.el#L6)
+[源码 numerical-computing/complex.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/complex.el#L5)
 
 ```el
 fn Complex(element: type): type
@@ -27810,7 +27782,7 @@ fn Complex(element: type): type
 
 ## Matrix · numerical-computing/dense.el {#api-1b5e5157b9d1d551ee00}
 
-[源码 numerical-computing/dense.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/dense.el#L9)
+[源码 numerical-computing/dense.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/dense.el#L8)
 
 ```el
 let Matrix: type
@@ -27826,7 +27798,7 @@ fn ComplexDeviceTensor(element: type, storage: Text = "complex64"): type
 
 ## CachedPlan · numerical-computing/device-context.el {#api-1087a5689cfc091268c4}
 
-[源码 numerical-computing/device-context.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L67)
+[源码 numerical-computing/device-context.el:65](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L65)
 
 ```el
 class CachedPlan
@@ -27834,7 +27806,7 @@ class CachedPlan
 
 ## ContextTimestampOwner · numerical-computing/device-context.el {#api-79e9039b5289371086ae}
 
-[源码 numerical-computing/device-context.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L106)
+[源码 numerical-computing/device-context.el:104](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L104)
 
 ```el
 class ContextTimestampOwner
@@ -27842,7 +27814,7 @@ class ContextTimestampOwner
 
 ## DeviceContext · numerical-computing/device-context.el {#api-1782d89c07675e11442e}
 
-[源码 numerical-computing/device-context.el:132](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L132)
+[源码 numerical-computing/device-context.el:130](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L130)
 
 ```el
 class DeviceContext extends IntegralExecutionProvider
@@ -27850,7 +27822,7 @@ class DeviceContext extends IntegralExecutionProvider
 
 ## GraphSourceSnapshot · numerical-computing/device-context.el {#api-40b4fe3c92dd40f2a6cb}
 
-[源码 numerical-computing/device-context.el:97](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L97)
+[源码 numerical-computing/device-context.el:95](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L95)
 
 ```el
 class GraphSourceSnapshot
@@ -27858,7 +27830,7 @@ class GraphSourceSnapshot
 
 ## DeviceGraphArena · numerical-computing/device-graph-arena.el {#api-cc5f3a4de089572dc1b8}
 
-[源码 numerical-computing/device-graph-arena.el:70](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-graph-arena.el#L70)
+[源码 numerical-computing/device-graph-arena.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-graph-arena.el#L68)
 
 ```el
 fn DeviceGraphArena(element: type, Value: type): type
@@ -27866,7 +27838,7 @@ fn DeviceGraphArena(element: type, Value: type): type
 
 ## TensorDevice · numerical-computing/device-tensor.el {#api-6352f607871fe7944c1e}
 
-[源码 numerical-computing/device-tensor.el:71](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-tensor.el#L71)
+[源码 numerical-computing/device-tensor.el:69](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-tensor.el#L69)
 
 ```el
 fn TensorDevice(element: type, precision: Text = ""): type
@@ -27874,7 +27846,7 @@ fn TensorDevice(element: type, precision: Text = ""): type
 
 ## DeviceTensor · numerical-computing/device-value.el {#api-572c72917d65007ba8a7}
 
-[源码 numerical-computing/device-value.el:71](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-value.el#L71)
+[源码 numerical-computing/device-value.el:69](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-value.el#L69)
 
 ```el
 fn DeviceTensor(element: type, precision: Text = ""): type
@@ -27890,7 +27862,7 @@ fn DeviceTensorView(element: type, precision: Text, Value: type, Host: type, Buf
 
 ## SolveReport · numerical-computing/diagnostics.el {#api-cdf1898479477137a49b}
 
-[源码 numerical-computing/diagnostics.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/diagnostics.el#L13)
+[源码 numerical-computing/diagnostics.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/diagnostics.el#L12)
 
 ```el
 class SolveReport
@@ -27898,7 +27870,7 @@ class SolveReport
 
 ## Bernoulli · numerical-computing/distributions/index.el {#api-c7911a07856aa13100f8}
 
-[源码 numerical-computing/distributions/index.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/distributions/index.el#L28)
+[源码 numerical-computing/distributions/index.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/distributions/index.el#L27)
 
 ```el
 class Bernoulli
@@ -27906,7 +27878,7 @@ class Bernoulli
 
 ## Categorical · numerical-computing/distributions/index.el {#api-a254eb4aaeee296225ff}
 
-[源码 numerical-computing/distributions/index.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/distributions/index.el#L40)
+[源码 numerical-computing/distributions/index.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/distributions/index.el#L39)
 
 ```el
 class Categorical
@@ -27914,7 +27886,7 @@ class Categorical
 
 ## Exponential · numerical-computing/distributions/index.el {#api-0cacaf8e5744cdfd5b8d}
 
-[源码 numerical-computing/distributions/index.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/distributions/index.el#L34)
+[源码 numerical-computing/distributions/index.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/distributions/index.el#L33)
 
 ```el
 class Exponential
@@ -27922,7 +27894,7 @@ class Exponential
 
 ## InvalidDistribution · numerical-computing/distributions/index.el {#api-ef3b57caf2c4676041e7}
 
-[源码 numerical-computing/distributions/index.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/distributions/index.el#L6)
+[源码 numerical-computing/distributions/index.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/distributions/index.el#L5)
 
 ```el
 class InvalidDistribution
@@ -27930,7 +27902,7 @@ class InvalidDistribution
 
 ## InvalidRandomSample · numerical-computing/distributions/index.el {#api-d78084807d9e962c5419}
 
-[源码 numerical-computing/distributions/index.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/distributions/index.el#L7)
+[源码 numerical-computing/distributions/index.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/distributions/index.el#L6)
 
 ```el
 class InvalidRandomSample
@@ -27938,7 +27910,7 @@ class InvalidRandomSample
 
 ## Normal · numerical-computing/distributions/index.el {#api-bf47bbd0992ce526253e}
 
-[源码 numerical-computing/distributions/index.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/distributions/index.el#L14)
+[源码 numerical-computing/distributions/index.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/distributions/index.el#L13)
 
 ```el
 class Normal
@@ -27946,7 +27918,7 @@ class Normal
 
 ## Uniform · numerical-computing/distributions/index.el {#api-8a4b06e06499492f6a84}
 
-[源码 numerical-computing/distributions/index.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/distributions/index.el#L22)
+[源码 numerical-computing/distributions/index.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/distributions/index.el#L21)
 
 ```el
 class Uniform
@@ -28042,7 +28014,7 @@ let Matrix: type
 
 ## DeviceFFT · numerical-computing/fft/device.el {#api-3e8ec980a4cd286972bc}
 
-[源码 numerical-computing/fft/device.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/fft/device.el#L12)
+[源码 numerical-computing/fft/device.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/fft/device.el#L11)
 
 ```el
 fn DeviceFFT(element: type, storage: Text = "complex64"): type
@@ -28050,7 +28022,7 @@ fn DeviceFFT(element: type, storage: Text = "complex64"): type
 
 ## FloatTensorBuffer · numerical-computing/float-buffer.el {#api-0fea114d2ad9a25a3e8c}
 
-[源码 numerical-computing/float-buffer.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/float-buffer.el#L13)
+[源码 numerical-computing/float-buffer.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/float-buffer.el#L12)
 
 ```el
 fn FloatTensorBuffer(element: type): type
@@ -28074,7 +28046,7 @@ class IntegralDeviceTensor
 
 ## IntegralTensorDevice · numerical-computing/integral-device.el {#api-c8da379a428f719b9667}
 
-[源码 numerical-computing/integral-device.el:362](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/integral-device.el#L362)
+[源码 numerical-computing/integral-device.el:361](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/integral-device.el#L361)
 
 ```el
 class IntegralTensorDevice
@@ -28090,7 +28062,7 @@ class IntegralExecutionProvider
 
 ## BatchLinearAlgebraError · numerical-computing/linear-algebra/batched.el {#api-6abcfdc83677b6f10e43}
 
-[源码 numerical-computing/linear-algebra/batched.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/linear-algebra/batched.el#L15)
+[源码 numerical-computing/linear-algebra/batched.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/linear-algebra/batched.el#L14)
 
 ```el
 class BatchLinearAlgebraError extends Error
@@ -28098,7 +28070,7 @@ class BatchLinearAlgebraError extends Error
 
 ## DecompositionNotConverged · numerical-computing/linear-algebra/decompositions.el {#api-b12b41ca9fd3e23d36af}
 
-[源码 numerical-computing/linear-algebra/decompositions.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/linear-algebra/decompositions.el#L13)
+[源码 numerical-computing/linear-algebra/decompositions.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/linear-algebra/decompositions.el#L12)
 
 ```el
 class DecompositionNotConverged
@@ -28106,7 +28078,7 @@ class DecompositionNotConverged
 
 ## InvalidDecompositionBudget · numerical-computing/linear-algebra/decompositions.el {#api-25fe25edc9171ce47848}
 
-[源码 numerical-computing/linear-algebra/decompositions.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/linear-algebra/decompositions.el#L14)
+[源码 numerical-computing/linear-algebra/decompositions.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/linear-algebra/decompositions.el#L13)
 
 ```el
 class InvalidDecompositionBudget
@@ -28114,7 +28086,7 @@ class InvalidDecompositionBudget
 
 ## SvdResult · numerical-computing/linear-algebra/decompositions.el {#api-75637167680fac9c2dc9}
 
-[源码 numerical-computing/linear-algebra/decompositions.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/linear-algebra/decompositions.el#L20)
+[源码 numerical-computing/linear-algebra/decompositions.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/linear-algebra/decompositions.el#L19)
 
 ```el
 class SvdResult
@@ -28122,7 +28094,7 @@ class SvdResult
 
 ## SymmetricEigenResult · numerical-computing/linear-algebra/decompositions.el {#api-5d7669c751461d67293d}
 
-[源码 numerical-computing/linear-algebra/decompositions.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/linear-algebra/decompositions.el#L15)
+[源码 numerical-computing/linear-algebra/decompositions.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/linear-algebra/decompositions.el#L14)
 
 ```el
 class SymmetricEigenResult
@@ -28130,7 +28102,7 @@ class SymmetricEigenResult
 
 ## DeviceLinearAlgebra · numerical-computing/linear-algebra/device.el {#api-9b0305072bd30f204c90}
 
-[源码 numerical-computing/linear-algebra/device.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/linear-algebra/device.el#L18)
+[源码 numerical-computing/linear-algebra/device.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/linear-algebra/device.el#L19)
 
 ```el
 fn DeviceLinearAlgebra(element: type): type
@@ -28210,7 +28182,7 @@ class PackedIntegralTensor
 
 ## NumericsPolicy · numerical-computing/policy.el {#api-bbab77cf2e9073a8aa07}
 
-[源码 numerical-computing/policy.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/policy.el#L8)
+[源码 numerical-computing/policy.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/policy.el#L7)
 
 ```el
 class NumericsPolicy
@@ -28218,7 +28190,7 @@ class NumericsPolicy
 
 ## GradientAccumulator · numerical-computing/precision-codec.el {#api-4a254007c1e601368cb2}
 
-[源码 numerical-computing/precision-codec.el:71](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/precision-codec.el#L71)
+[源码 numerical-computing/precision-codec.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/precision-codec.el#L106)
 
 ```el
 fn GradientAccumulator(storage: type): type
@@ -28226,7 +28198,7 @@ fn GradientAccumulator(storage: type): type
 
 ## PrecisionElement · numerical-computing/precision-codec.el {#api-acf75e0d3a4736450526}
 
-[源码 numerical-computing/precision-codec.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/precision-codec.el#L18)
+[源码 numerical-computing/precision-codec.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/precision-codec.el#L31)
 
 ```el
 fn PrecisionElement(name: Text): type
@@ -28234,10 +28206,18 @@ fn PrecisionElement(name: Text): type
 
 ## PrecisionFormat · numerical-computing/precision-codec.el {#api-31006bf390ec92b24125}
 
-[源码 numerical-computing/precision-codec.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/precision-codec.el#L23)
+[源码 numerical-computing/precision-codec.el:75](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/precision-codec.el#L75)
 
 ```el
 class PrecisionFormat
+```
+
+## PrecisionLayout · numerical-computing/precision-codec.el {#api-c02ef2e15dd0fbe544c7}
+
+[源码 numerical-computing/precision-codec.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/precision-codec.el#L11)
+
+```el
+class PrecisionLayout
 ```
 
 ## QuantizationParameters · numerical-computing/quantization/index.el {#api-e30eaa2c86fcca58831c}
@@ -28290,7 +28270,7 @@ fn SparseMatrix(element: type, storage: type): type
 
 ## SpecialFunctionDomain · numerical-computing/special/index.el {#api-104cc9058b6c1de2aa19}
 
-[源码 numerical-computing/special/index.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/special/index.el#L6)
+[源码 numerical-computing/special/index.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/special/index.el#L5)
 
 ```el
 class SpecialFunctionDomain
@@ -28314,7 +28294,7 @@ fn DenseStorage(element: type): type
 
 ## TensorMathPolicy · numerical-computing/tensor-math.el {#api-2625b94d99a7fc0002c3}
 
-[源码 numerical-computing/tensor-math.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor-math.el#L8)
+[源码 numerical-computing/tensor-math.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor-math.el#L7)
 
 ```el
 class TensorMathPolicy
@@ -28330,7 +28310,7 @@ class TensorPlacement
 
 ## Tensor · numerical-computing/tensor.el {#api-7c7e7cebd20d307966e1}
 
-[源码 numerical-computing/tensor.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L41)
+[源码 numerical-computing/tensor.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L39)
 
 ```el
 fn Tensor(element: type): type
@@ -28338,9 +28318,9 @@ fn Tensor(element: type): type
 
 [API 文档](modules/numerical-computing/tensor.md#api-7c7e7cebd20d307966e1)
 
-## Value · numerical-computing/tensor.el {#api-70087f43333f7c566f19}
+## Value · numerical-computing/tensor.el {#api-230feb197d068a60fd3a}
 
-[源码 numerical-computing/tensor.el:89](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L89)
+[源码 numerical-computing/tensor.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L87)
 
 ```el
 let Value = @assign(mode: "copy") class {
@@ -28348,7 +28328,7 @@ let Value = @assign(mode: "copy") class {
 
 ## Band · numerical-computing/tridiagonal.el {#api-eb14ef1106c865ced1fc}
 
-[源码 numerical-computing/tridiagonal.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tridiagonal.el#L13)
+[源码 numerical-computing/tridiagonal.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tridiagonal.el#L12)
 
 ```el
 let Band: type
@@ -28356,7 +28336,7 @@ let Band: type
 
 ## Matrix · numerical-computing/tridiagonal.el {#api-877aeaa601175c65f689}
 
-[源码 numerical-computing/tridiagonal.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tridiagonal.el#L12)
+[源码 numerical-computing/tridiagonal.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tridiagonal.el#L11)
 
 ```el
 let Matrix: type
@@ -28364,7 +28344,7 @@ let Matrix: type
 
 ## Tridiagonal · numerical-computing/tridiagonal.el {#api-42e4b410d2c7087c63a1}
 
-[源码 numerical-computing/tridiagonal.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tridiagonal.el#L15)
+[源码 numerical-computing/tridiagonal.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tridiagonal.el#L14)
 
 ```el
 class Tridiagonal
@@ -29260,7 +29240,7 @@ class Rotor2D
 
 ## U16 · platform/embedded/register.el {#api-c3603dd10e097df5ab34}
 
-[源码 platform/embedded/register.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L14)
+[源码 platform/embedded/register.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L12)
 
 ```el
 let U16: type
@@ -29268,7 +29248,7 @@ let U16: type
 
 ## U32 · platform/embedded/register.el {#api-7426cc317fee3bd30c57}
 
-[源码 platform/embedded/register.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L15)
+[源码 platform/embedded/register.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L13)
 
 ```el
 let U32: type
@@ -29276,7 +29256,7 @@ let U32: type
 
 ## U8 · platform/embedded/register.el {#api-86e8d3e236ed444e4ebc}
 
-[源码 platform/embedded/register.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L13)
+[源码 platform/embedded/register.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L11)
 
 ```el
 let U8: type
@@ -29284,7 +29264,7 @@ let U8: type
 
 ## UnsafeMmioRegion · platform/embedded/register.el {#api-a240639e226b26cb7875}
 
-[源码 platform/embedded/register.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L25)
+[源码 platform/embedded/register.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L22)
 
 ```el
 class UnsafeMmioRegion
@@ -29292,7 +29272,7 @@ class UnsafeMmioRegion
 
 ## UnsafeReadOnlyRegister16 · platform/embedded/register.el {#api-5fa4a6bbe8f0eb0a5702}
 
-[源码 platform/embedded/register.el:169](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L169)
+[源码 platform/embedded/register.el:166](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L166)
 
 ```el
 fn UnsafeReadOnlyRegister16(): type
@@ -29300,7 +29280,7 @@ fn UnsafeReadOnlyRegister16(): type
 
 ## UnsafeReadOnlyRegister32 · platform/embedded/register.el {#api-f0251182c24322a2c746}
 
-[源码 platform/embedded/register.el:173](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L173)
+[源码 platform/embedded/register.el:170](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L170)
 
 ```el
 fn UnsafeReadOnlyRegister32(): type
@@ -29308,7 +29288,7 @@ fn UnsafeReadOnlyRegister32(): type
 
 ## UnsafeReadOnlyRegister8 · platform/embedded/register.el {#api-dab38553e30d4feb897e}
 
-[源码 platform/embedded/register.el:165](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L165)
+[源码 platform/embedded/register.el:162](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L162)
 
 ```el
 fn UnsafeReadOnlyRegister8(): type
@@ -29316,7 +29296,7 @@ fn UnsafeReadOnlyRegister8(): type
 
 ## UnsafeReadWriteRegister16 · platform/embedded/register.el {#api-56386557a333d4d5940f}
 
-[源码 platform/embedded/register.el:171](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L171)
+[源码 platform/embedded/register.el:168](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L168)
 
 ```el
 fn UnsafeReadWriteRegister16(): type
@@ -29324,7 +29304,7 @@ fn UnsafeReadWriteRegister16(): type
 
 ## UnsafeReadWriteRegister32 · platform/embedded/register.el {#api-845acdcf62de3246dd61}
 
-[源码 platform/embedded/register.el:175](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L175)
+[源码 platform/embedded/register.el:172](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L172)
 
 ```el
 fn UnsafeReadWriteRegister32(): type
@@ -29332,7 +29312,7 @@ fn UnsafeReadWriteRegister32(): type
 
 ## UnsafeReadWriteRegister8 · platform/embedded/register.el {#api-68df22c8464900037dbe}
 
-[源码 platform/embedded/register.el:167](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L167)
+[源码 platform/embedded/register.el:164](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L164)
 
 ```el
 fn UnsafeReadWriteRegister8(): type
@@ -29340,7 +29320,7 @@ fn UnsafeReadWriteRegister8(): type
 
 ## UnsafeWriteOneToClearRegister16 · platform/embedded/register.el {#api-b77f48634bf56e755aef}
 
-[源码 platform/embedded/register.el:172](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L172)
+[源码 platform/embedded/register.el:169](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L169)
 
 ```el
 fn UnsafeWriteOneToClearRegister16(): type
@@ -29348,7 +29328,7 @@ fn UnsafeWriteOneToClearRegister16(): type
 
 ## UnsafeWriteOneToClearRegister32 · platform/embedded/register.el {#api-af96353a468fcfa65703}
 
-[源码 platform/embedded/register.el:176](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L176)
+[源码 platform/embedded/register.el:173](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L173)
 
 ```el
 fn UnsafeWriteOneToClearRegister32(): type
@@ -29356,7 +29336,7 @@ fn UnsafeWriteOneToClearRegister32(): type
 
 ## UnsafeWriteOneToClearRegister8 · platform/embedded/register.el {#api-c78ff80ebe4c1d96de3c}
 
-[源码 platform/embedded/register.el:168](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L168)
+[源码 platform/embedded/register.el:165](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L165)
 
 ```el
 fn UnsafeWriteOneToClearRegister8(): type
@@ -29364,7 +29344,7 @@ fn UnsafeWriteOneToClearRegister8(): type
 
 ## UnsafeWriteOnlyRegister16 · platform/embedded/register.el {#api-d5736a8df04d286efe8c}
 
-[源码 platform/embedded/register.el:170](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L170)
+[源码 platform/embedded/register.el:167](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L167)
 
 ```el
 fn UnsafeWriteOnlyRegister16(): type
@@ -29372,7 +29352,7 @@ fn UnsafeWriteOnlyRegister16(): type
 
 ## UnsafeWriteOnlyRegister32 · platform/embedded/register.el {#api-70638fba5045b4eed3e5}
 
-[源码 platform/embedded/register.el:174](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L174)
+[源码 platform/embedded/register.el:171](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L171)
 
 ```el
 fn UnsafeWriteOnlyRegister32(): type
@@ -29380,7 +29360,7 @@ fn UnsafeWriteOnlyRegister32(): type
 
 ## UnsafeWriteOnlyRegister8 · platform/embedded/register.el {#api-b80fda60fd8cb68ad0bd}
 
-[源码 platform/embedded/register.el:166](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L166)
+[源码 platform/embedded/register.el:163](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L163)
 
 ```el
 fn UnsafeWriteOnlyRegister8(): type
@@ -29388,7 +29368,7 @@ fn UnsafeWriteOnlyRegister8(): type
 
 ## core16 · platform/embedded/register.el {#api-2f4a8db15c7adbcb4545}
 
-[源码 platform/embedded/register.el:72](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L72)
+[源码 platform/embedded/register.el:69](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L69)
 
 ```el
 fn core16(): type
@@ -29396,7 +29376,7 @@ fn core16(): type
 
 ## core32 · platform/embedded/register.el {#api-e19d4f35d0d2d09b0a4f}
 
-[源码 platform/embedded/register.el:103](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L103)
+[源码 platform/embedded/register.el:100](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L100)
 
 ```el
 fn core32(): type
@@ -29404,7 +29384,7 @@ fn core32(): type
 
 ## core8 · platform/embedded/register.el {#api-0cdcc96f84c2e8681c7f}
 
-[源码 platform/embedded/register.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L41)
+[源码 platform/embedded/register.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L38)
 
 ```el
 fn core8(): type
@@ -29412,7 +29392,7 @@ fn core8(): type
 
 ## read_only_register · platform/embedded/register.el {#api-8352281c60b25dfba6ab}
 
-[源码 platform/embedded/register.el:135](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L135)
+[源码 platform/embedded/register.el:132](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L132)
 
 ```el
 fn read_only_register(Core: type, valueType: type): type
@@ -29420,7 +29400,7 @@ fn read_only_register(Core: type, valueType: type): type
 
 ## read_write_register · platform/embedded/register.el {#api-cf81ad30d62e20b878a8}
 
-[源码 platform/embedded/register.el:149](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L149)
+[源码 platform/embedded/register.el:146](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L146)
 
 ```el
 fn read_write_register(Core: type, valueType: type): type
@@ -29428,7 +29408,7 @@ fn read_write_register(Core: type, valueType: type): type
 
 ## write_one_to_clear_register · platform/embedded/register.el {#api-fc246d473db8ddd2decf}
 
-[源码 platform/embedded/register.el:157](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L157)
+[源码 platform/embedded/register.el:154](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L154)
 
 ```el
 fn write_one_to_clear_register(Core: type, valueType: type): type
@@ -29436,7 +29416,7 @@ fn write_one_to_clear_register(Core: type, valueType: type): type
 
 ## write_only_register · platform/embedded/register.el {#api-3dd4c6bb7a6cdeaa41be}
 
-[源码 platform/embedded/register.el:142](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L142)
+[源码 platform/embedded/register.el:139](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L139)
 
 ```el
 fn write_only_register(Core: type, valueType: type): type
@@ -32640,7 +32620,7 @@ class UnitError extends Error
 
 ## ScalarAdapter · units/scalar.el {#api-f68395ce263a0ac96bf9}
 
-[源码 units/scalar.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/units/scalar.el#L27)
+[源码 units/scalar.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/units/scalar.el#L21)
 
 ```el
 fn ScalarAdapter(element: type): type
@@ -32648,7 +32628,7 @@ fn ScalarAdapter(element: type): type
 
 ## ScalarClass · units/scalar.el {#api-c95eb4af01e10fd2d836}
 
-[源码 units/scalar.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/units/scalar.el#L6)
+[源码 units/scalar.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/units/scalar.el#L5)
 
 ```el
 enum ScalarClass
@@ -33300,12 +33280,12 @@ fn MapBase(key: type, value: type): type
 fn Map(key: type, value: type): type
 ```
 
-## size · collections/sets/bit-set.el {#api-09fd2333fe50aa733d41}
+## size · collections/sets/dit-set.el {#api-c0d15bc265145c1818ee}
 
-值参数，位于 `collections/sets/bit-set.el:63`。
+值参数，位于 `collections/sets/dit-set.el:72`。
 
 ```el
-fn BitSet(size: Number): type
+fn DitSet(size: Number): type
 ```
 
 ## element · collections/sets/hash-set.el {#api-5ff3a25653b6ee6116cf}
@@ -33324,9 +33304,9 @@ fn Set(element: type): type
 fn DataLoader(sample: type): type
 ```
 
-## element · numerical-computing/tensor.el {#api-50bbdcd76206fb0195f1}
+## element · numerical-computing/tensor.el {#api-224100946b9a04337618}
 
-类型参数，位于 `numerical-computing/tensor.el:41`。
+类型参数，位于 `numerical-computing/tensor.el:39`。
 
 ```el
 fn Tensor(element: type): type

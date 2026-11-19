@@ -1,12 +1,12 @@
 # 数值与位类型
 
-> `1 / 10 + 2 / 10 == 3 / 10` 是 `t`，`F64(0.1) + F64(0.2) == F64(0.3)` 却是 `f`。差别不在精度高低，在你选了哪一种数值类型。
+> 用精确数值算，`1 / 10 + 2 / 10 == 3 / 10` 是 `t`；在采用 binary64 布局的二进制目标上，`F64(0.1) + F64(0.2) == F64(0.3)` 却是 `f`。差别不在精度高低，在你选了哪一种数值类型。
 
 !!! abstract "🎯 读完这页，你能"
-    - 说出 `Number` 与 `BitFloat` 各自保证什么，什么时候必须换类型
+    - 说出 `Number` 与 `DitFloat` 各自保证什么，什么时候必须换类型
     - 给 `Number` 加上范围、整数、精度与溢出约束，并知道越界时看到什么
-    - 用 `BitInteger`、`BitFloat`、`BitSet` 复现固定位宽格式与位运算
-    - 从六个数值类型里挑出该用的那一个
+    - 用 `DitInt`、`DitFloat`、`DitSet` 区分目标数位布局和固定外部编码
+    - 判断什么时候该用精确数、目标数位和外部编码
 
     <span class="el-chip">⏱ 约 10 分钟</span> <span class="el-chip">前置：[值与类型](values.md)</span>
 
@@ -73,105 +73,66 @@ let negative = UnsignedInteger(5) - UnsignedInteger(6)  // RangeError
 
 显式转换同样检查约束：`Integer(UnsignedInteger(5))` 精确保值，`UnsignedInteger(Integer(5))` 检查非负。非整数、NaN 输入抛 `RangeError`；转换到 `UnsignedInteger` 时负数也抛 `RangeError`。转换不截断小数、不取绝对值，也不按模数环绕。
 
-## 要位宽，就让布局推导范围：`BitInteger`
+## 用 DitInt 固定目标数位宽度
 
-`BitInteger(bits, sign_bits, min, max, overflow)` 把总位宽与符号位作为布局参数。整数性是布局的内在性质：`sign_bits` 为 0 时范围是 `[0, 2^bits - 1]`，为 1 时范围是 `[-2^(bits - sign_bits), 2^(bits - sign_bits) - 1]`。可选的 `min`、`max` 只能在这个推导区间内收窄。
+“dit” 是目标表示中的一位。二进制的 dit 是 bit，三进制的一位能放 0、1、2。普通类型工厂不接受覆盖目标基数的参数。
 
-```el
-let U8 = BitInteger<bits: 8, sign_bits: 0, overflow: "error">
-let value = U8(197)
-let width = value.bitWidth()      // 8
-let shifted = value >> 1          // 98
-
-let Wrapped = BitInteger<bits: 8, sign_bits: 0, overflow: "wrap">
-let next = Wrapped(255) + 1       // 0
-
-let Narrow = BitInteger<bits: 8, sign_bits: 0, min: 7, max: 9, overflow: "error">
-let within = Narrow(8)
-```
-
-`U8` 的合法范围是 0 到 255；`U8(197)` 合法，`U8(256)` 在构造时抛 `RangeError`，`U8(197) + 100` 也因 `overflow: "error"` 抛错。`Wrapped` 把 255 加 1 环绕回 0。`Narrow` 在 8 位布局上把范围收窄到 7 至 9，构造 8 合法，构造 6 或 10 越界。
-
-`bits` 是包含符号位的总位宽：8 位无符号是 0 至 255，8 位有符号是 -128 至 127。左移、右移与旋转都保持位宽，位移量必须是有限非负整数。`U128` 可以是 `BitInteger<bits: 128, sign_bits: 0, overflow: "error">` 的普通类型绑定，128 位范围是布局算出来的，不是编译器内建能力。
-
-## 要固定浮点格式，就用 `BitFloat` 的布局参数
-
-`BitFloat(sign_bits, fraction_bits, exponent_bits, exponent_bias, min, max, overflow)` 用布局参数描述一个二进制浮点格式。这些参数是表示布局，不是 `epsilon` 那样的精度要求，也不能替代 `Number` 的精确语义。
+`DitInt(digits, signed, min, max, overflow)` 的宽度按 dit 计，包含符号所需的容量。设 N 是宽度，R 是目标基数，M = R^N。无符号范围是 0 到 M−1，有符号范围是 −floor(M/2) 到 ceil(M/2)−1。`min` 和 `max` 只能收窄范围。移位与旋转也按目标数位，而不是固定二进制位。
 
 ```el
-let F64 = BitFloat<sign_bits: 1, fraction_bits: 52, exponent_bits: 11, exponent_bias: 1023>
-let rounded = F64(0.1) + F64(0.2)
-let equal = rounded == F64(0.3)      // f
-
-let exact = 1 / 10 + 2 / 10
-let exactEqual = exact == 3 / 10     // t
+let Small = DitInt<digits: 8, signed: f, overflow: "error">
+let value = Small(5)
+console.stdout.writeLine(value.digitWidth())  // 8
 ```
 
-布局限制是 `sign_bits` 取 0 或 1、`fraction_bits` 取 1 至 52、`exponent_bits` 取 2 至 15，且总位数不超过 64。`sign_bits: 0` 的格式只表示非负数；需要负数就写 1。上面 `F64` 的布局对应 binary64；`F32` 的布局是 `sign_bits: 1, fraction_bits: 23, exponent_bits: 8, exponent_bias: 127`。
+这个类型在二进制目标容纳 0…255，在三进制目标容纳 0…6560。固定协议字节和真实 ABI 的布局要另外核对，不能从普通数值对象推断。
 
-`F64(0.1)` 把精确有理数舍入到该格式，之后每一步都按格式精度计算，于是 `0.1 + 0.2` 不再等于 `0.3`。要精确分数就用 `Number`，要固定布局与可复现的舍入就用 `BitFloat`。
+## 用 DitFloat 选择浮点布局
 
-## 要目标机器浮点，显式导入 `NativeFloat`
-
-`NativeFloat` 是显式导入的机器浮点声明，不是关键字，也不是 `BitFloat` 的别名。它默认省略位宽，格式由编译目标的默认原生浮点事实决定；内建托管目标默认是 binary32。
+`DitFloat(sign_dits, fraction_dits, exponent_dits, exponent_bias, min, max, overflow)` 同样使用目标基数。`sign_dits` 为 0 或 1；`fraction_dits` 不含正规有效数的首位；`exponent_dits` 至少为 2；`exponent_bias` 是从指数编码中减去的偏置。`min`、`max` 与 `overflow` 约束值，不改变布局。
 
 ```el
-import { NativeFloat } from "el:platform/machine/float.el"
-
-let x = NativeFloat(0.1)
-let annotated: NativeFloat = 0.1
-let doubled = x * NativeFloat(2)
-let infinity = NativeFloat(1) / NativeFloat(0)
+let Small = DitFloat<sign_dits: 1, fraction_dits: 3, exponent_dits: 4, exponent_bias: 7>
+console.stdout.writeLine(Small(4).sqrt().toNumber())  // 2
 ```
 
-`NativeFloat(0.1)` 把精确数字一次舍入到目标格式；`annotated` 演示单一原生浮点注解也能给普通数字字面量提供上下文。
+公开构造和同布局算术以最近偶数舍入，支持有符号零、渐进次正规数、无穷和 NaN。两种零数值相等，NaN 无序且不等于自身。有限值的 `toNumber()` 返回**实际存储值**的精确有理数，不保留负零；无穷和 NaN 不能转成有限有理数。布局参数不是精度约束 `epsilon`。要精确算金额或分数，默认用 `Number`。
 
-运算遵循 IEEE：逐操作最近偶数舍入，保留有符号零、无穷与次正规数，算术得到的 NaN 规范为正安静 NaN。上面的 `1 / 0` 是 IEEE 无穷，而不是普通 `Number` 的除零异常。普通 `Number` 也不会为混合运算自动降精度；需要机器浮点就写 `NativeFloat`，需要精确值就留在 `Number`。精度、有效数字与有限端点等格式事实用 `representation_digits`、`type_max` 一类目标查询读取。
+在二进制目标，`sign_dits: 1, fraction_dits: 52, exponent_dits: 11, exponent_bias: 1023` 对应 binary64 的数值布局；这**不**把 `DitFloat` 对象变成 C ABI 值，也不保证其他基数上的编码相同。在确实读写固定协议时，用 `el:number/digit-float/codec.el` 的 `ExternalFloatFormat`／`ExternalFloatCodec` 指定外部字段。`ExternalFloatFormat.packNumber` 可把精确 `Number` 直接舍入到外部格式，避免先转成 `DitFloat` 再进行第二次舍入。
 
-`NativeFloat` 不承诺标量、SIMD、GPU 与矩阵加速共享同一最快格式，也不以类型声明证明后端零开销；执行成本仍以目标与实测为准。
+## 原生浮点是一项目标能力
 
-## 位掩码用 `BitSet<size:N>`
+原生浮点由显式 RIS 声明确定：`@builtin:vome:float:number(exponent: E)` 对应 EIR `float(E)`，不能省略 E。这里的指数是存储宽度层级，宽度为 R^E 个目标数位，不是数值的指数域，也不保证 IEEE 字段、舍入或浮点算术可用。只有具体目标声明支持的操作才成立，不能从“可以存储”推断“可以执行”。需要判断某个精确值能否被某原生类型表示，参见 [原生浮点合同](https://github.com/steve02081504/el/blob/master/docs/spec/native-float.md) 的 `canRepresentExactly`。
 
-`BitSet<size:N>` 是普通标准库类型，内部是普通 Bool 数组，`N` 是编译期非负整数，索引 0 是最低位。允许 `N = 0`，此时唯一数值是零。二元 `&`、`|` 要求两侧同宽并返回独立的新位集合，`==` 也要求同宽并返回 `Bool`。
+## 用 DitSet 保存固定数量的目标数位
+
+`DitSet<size: N>` 保存 N 个目标数位，索引 0 最低。构造非负有限整数时必须精确放得下；当 N 为零时只接受零。移位补零，旋转按宽度回绕。同宽 `+` 和 `-` 分别逐位模加、模减，不进位、不借位；不会修改输入。
 
 ```el
-let low = BitSet<size: 8>(0b1010_0101)
-let high = BitSet<size: 8>(0b1111_0000)
-let anded = low & high          // 0b1010_0000
-let ored = low | high           // 0b1111_0101
-let inverted = !low             // 0b0101_1010
-let shifted = low << 1          // 0b0100_1010
-let rotated = low.rotateRight(1)  // 0b1101_0010
-let value = ored.toNumber()     // 245
+let value = DitSet<size: 3>(1)
+let combined = value + value
+console.stdout.writeLine((combined - value).toNumber())  // 1
 ```
 
-构造只接受非负有限整数，并且必须能被请求的位宽完整表示：不截断、不补码、不饱和。不同宽度的位集合、以及与普通数值混合的二元运算都会被拒绝。
-
-`BitSet` 不提供 `^`；普通 `Number` 的 `^` 是乘方。`!` 只翻转恰好 `N` 位，不产生无限高位。左移、右移与旋转同样保持 `N` 位：位移量必须是有限非负整数，大于等于 `N` 的移位得到零，旋转按 `N` 取模。
-
-`toNumber()` 用精确整数累积逐位还原数值，不经过舍入；`Number(bits)` 与它共享同一转换核心。位集合适合位掩码、协议字段和需要按位组合的配置，不适合普通算术。
+逐位最小和最大写 `dit_min`、`dit_max`。`DitSet` 不提供 `&`、`|`、`!` 或 `^` 的按位重载；`Number` 的 `^` 仍是乘方。普通集合的对称差是 `Set.symmetricDifference`，固定二进制协议使用自己的表示。详见[为什么 EL 没有异或](why-no-xor.md)。
 
 ## 怎么选
 
-| 需求 | 选用的类型 | 关键点 |
-| --- | --- | --- |
-| 日常计算、精确分数与大整数 | `Number` | 精确有理数；约束写在类型实参里 |
-| 数学整数、无界、非机器字 | `Integer`、`UnsignedInteger` | 精确整数；非整除除法与负的无符号结果抛 `RangeError` |
-| 固定位宽整数、移位旋转、ABI | `BitInteger` | `bits` 与 `sign_bits` 决定范围；布局进入类型身份 |
-| 固定 IEEE 浮点格式 | `BitFloat` | 布局参数决定舍入格式；不是 `epsilon` |
-| 目标默认机器浮点、外部 ABI | `NativeFloat` | 显式导入；目标选择格式；IEEE 运算 |
-| 位掩码、协议字段、位集合 | `BitSet<size:N>` | Bool 位数组；同宽按位与、或 |
-
-需要跨目标复现位级结果时，固定 `BitFloat` 布局比 `NativeFloat` 更直接。需要精确数学时不要为性能提前换浮点，`Number` 的精确性本身就是默认合同。
-
-!!! warning "常见坑：拿 `BitFloat` 当“更高精度的 `Number`”"
-    **现象。** 有人为了“更精确”把金额换成 `F64`，结果 `0.1 + 0.2` 不再等于 `0.3`。**原因。** `BitFloat` 的参数是布局，不是精度要求，它做的是二进制舍入。**改法。** 要精确就用 `Number`（必要时加 `epsilon: 0`）；要固定 IEEE 布局、可复现舍入或对接 ABI，才用 `BitFloat`／`NativeFloat`。
+| 需求 | 选用的类型或接口 |
+| --- | --- |
+| 精确分数与大整数 | `Number` |
+| 无界整数 | `Integer`、`UnsignedInteger` |
+| 固定目标数位的整数 | `DitInt` |
+| 固定目标数位布局的浮点与舍入 | `DitFloat` |
+| 固定外部浮点编码 | `ExternalFloatFormat`／`ExternalFloatCodec` |
+| 原生浮点存储与算术 | 显式 RIS 类型与目标能力 |
+| 固定数量数位的独立组合 | `DitSet` |
 
 ## 带走这三样
 
-- 默认 `Number`；位宽、布局、机器浮点、位集合这四件事各有专门类型。
-- `Number<...>` 的约束是类型身份的一部分，越界按 `overflow` 策略表现，不按机器字长环绕。
-- `BitSet` 的位是布尔值；按目标机器数位组合或撤销是另一回事，见[为什么 EL 没有异或](why-no-xor.md)。
+- `Number` 默认精确；目标数位布局用 `DitInt`、`DitFloat` 或 `DitSet`。
+- “二进制字节”“目标数位”和“原生 ABI”是不同的合同。
+- 组合与撤销用 `dit_add_mod` 与 `dit_sub_mod`；两者只有在二进制中才总相同。
 
 ## 下一站：运算符与表达式
 

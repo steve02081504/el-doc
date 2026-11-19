@@ -17,7 +17,7 @@
 - [collections/sequences/comprehension.el](modules/collections/sequences/comprehension.md)（1 个 API）
 - [collections/sequences/demand.el](modules/collections/sequences/demand.md)（9 个 API）
 - [collections/sequences/enumerate.el](modules/collections/sequences/enumerate.md)（1 个 API）
-- [collections/sets/bit-set.el](modules/collections/sets/bit-set.md)（4 个 API）
+- [collections/sets/dit-set.el](modules/collections/sets/dit-set.md)（4 个 API）
 - [collections/sets/hash-set.el](modules/collections/sets/hash-set.md)（13 个 API）
 - [collections/trees/euler-tour.el](modules/collections/trees/euler-tour.md)（1 个 API）
 - [collections/trees/lca.el](modules/collections/trees/lca.md)（1 个 API）
@@ -142,6 +142,9 @@
 
 ## number
 
+- [number/dit-float.el](modules/number/dit-float.md)（1 个 API）
+- [number/dit-int.el](modules/number/dit-int.md)（1 个 API）
+- [number/dit-operations.el](modules/number/dit-operations.md)（4 个 API）
 - [number/native-float.el](modules/number/native-float.md)（1 个 API）
 - [number/number.el](modules/number/number.md)（2 个 API）
 
@@ -187,6 +190,7 @@
 
 ## tools
 
+- [tools/debugger/attachment.el](modules/tools/debugger/attachment.md)（2 个 API）
 - [tools/testing/check.el](modules/tools/testing/check.md)（10 个 API）
 - [tools/testing/compiler.el](modules/tools/testing/compiler.md)（2 个 API）
 - [tools/testing/index.el](modules/tools/testing/index.md)（0 个 API）

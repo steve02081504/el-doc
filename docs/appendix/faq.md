@@ -61,7 +61,7 @@ let label = if (count > 0) "有" else "无"
 
 ### `^` 为什么不是异或？
 
-`Number` 上的 `^` 是乘方，右结合，右侧允许带符号。`BitSet` 不提供 `^`。EL 将按目标数位组合和撤销分别写成逐位模加、逐位模减，见[为什么 EL 没有异或](../language/why-no-xor.md)。
+`Number` 上的 `^` 是乘方，右结合，右侧允许带符号。`DitSet` 不提供 `^`。EL 将按目标数位组合和撤销分别写成逐位模加、逐位模减，见[为什么 EL 没有异或](../language/why-no-xor.md)。
 
 ```el
 console.stdout.writeLine(2 ^ 10)

@@ -6,7 +6,7 @@
 
 ## canRepresentExactly {#api-4ba6311e8edff7e59788}
 
-源码：`src/stdlib/number/native-float.el:75` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/native-float.el#L75)
+源码：`src/stdlib/number/native-float.el:85` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/native-float.el#L85)
 
 判断目标原生浮点类型能否无舍入地表达该有限有理数；目标没有可用的数值编解码器时报 NativeFloatCodecUnavailable。
 

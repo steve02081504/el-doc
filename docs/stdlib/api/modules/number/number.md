@@ -11,7 +11,7 @@
 源码：`src/stdlib/number/number.el:44` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L44)
 
 表示精确有理数的数值类型，普通算术在约分后的整数分子和分母上进行。
-它也可表示 unordered 状态；该状态不是 IEEE 浮点近似值。
+它也可表示 unordered 状态；该状态不是 浮点 浮点近似值。
 
 ```el
 @numericRepresentation(format: @{ kind: "rational", domain: "tracked" })

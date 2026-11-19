@@ -124,36 +124,37 @@ fn maximum(values: Number[]) {
 
 ```el
 import { normal, ordered, simd } from "el:execution/index.el"
-import { NativeFloat } from "el:platform/machine/float.el"
+import { DitFloat } from "el:number/index.el"
 
-let values = @[NativeFloat(1), NativeFloat(2)]
-let transform = (value: NativeFloat): NativeFloat => value + value
+let F = DitFloat<fraction_dits: 3, exponent_dits: 4, exponent_bias: 7>
+let values = @[F(1), F(2)]
+let transform = (value: F): F => value + value
 let doubled = values.map(transform, policy: ordered(@[simd, normal]))
 console.stdout.writeLine(doubled[0])
 ```
 
-策略是不可变描述：`ordered` 按列表依次准入，第一个可用候选执行；`simd` 要求这次调用确实发出向量算术，完全标量化时拒绝；`normal` 是显式写进列表的普通顺序候选。省略 `policy` 的 `map` 仍只走普通顺序入口；`auto` 在允许集合内按估计成本挑候选，估计不是实测性能。
+此例的源 `DitFloat` 不进入原生 SIMD，显式的 `normal` 使它还能按普通语义执行。策略是不可变描述：`ordered` 按列表依次准入，第一个可用候选执行；`simd` 要求这次调用确实发出向量算术，完全标量化时拒绝；`normal` 是显式写进列表的普通顺序候选。省略 `policy` 的 `map` 仍只走普通顺序入口；`auto` 在允许集合内按估计成本挑候选，估计不是实测性能。
 
 ??? note "可选 · 深入：SIMD 准入条件与向量化写法"
     想让 `simd` 候选通过，代码要满足这些条件：
 
     - 接收者是默认动态 `Array`，元素类型与 `transform` 返回类型相同；定长数组、视图和自定义序列不进入加速候选，策略里要显式保留 `normal` 才能继续执行。
-    - 元素是受检的原生标量，例如 `NativeFloat` 与原生定宽整数。普通 `Number`、`BitFloat`／`BitInteger` 对象当前没有受检对象桥接，加速候选会明确拒绝。
+    - 当前这个 `map` 原生计划接受受检的原生定宽整数，不仅要求元素能存储，还要求运算有受检的降级。普通 `Number`、`DitFloat`／`DitInt` 对象当前没有受检对象桥接，加速候选会明确拒绝。
     - `transform` 是单一表达式、参数带显式标量注解、返回同一名义类型、无捕获、无自定义构造／复制／析构／字段／基类、无默认参数和参数包；表达式深度上限 64，内部后缀上限 8192 标量。
     - 原生计划要求 x64 目标、非空输入至少两个元素、总字节不超过 2147480000；奇数尾部由协调者按普通回调补算一次。
     - 没有合规向量计划时 `simd` 候选被拒绝并带原因；`ordered` 全部不可用时抛 `ExecutionNoViablePlan`，不会静默改用 CPU。
 
-    短直线、无分支、无未知调用的逐元素表达式最容易被向量化：进入内核前一次性转成原生标量，别让 `Number` 与原生浮点混在回调里。规范不要求向量操作在源码或 IR 中紧邻，也不要求输入存放连续或逐标量浮点状态在中间步骤可观察。
+    短直线、无分支、无未知调用的逐元素表达式最容易被向量化：进入内核前一次性转成原生标量，不要在回调里把精确数值对象当成原生标量。规范不要求向量操作在源码或 IR 中紧邻，也不要求输入存放连续或逐标量浮点状态在中间步骤可观察。
 
 ## GPU：只在确实要在设备上算时
 
-GPU 的常规入口是 `TensorDevice`：它打开设备会话，把宿主张量上传成设备驻留值，运算在设备上完成，回读是显式边界。设备缓冲、shader、队列和退役由会话管理。
+下面的设备示例假定二进制目标和受支持的适配器。GPU 的常规入口是 `TensorDevice`：它打开设备会话，把宿主张量上传成设备驻留值，运算在设备上完成，回读是显式边界。设备缓冲、shader、队列和退役由会话管理。
 
 ```el
 import { Tensor, TensorDevice } from "el:numerical-computing/index.el"
-import { BitFloat } from "el:number/index.el"
+import { DitFloat } from "el:number/index.el"
 
-let F32 = BitFloat<sign_bits: 1, fraction_bits: 23, exponent_bits: 8, exponent_bias: 127>
+let F32 = DitFloat<sign_dits: 1, fraction_dits: 23, exponent_dits: 8, exponent_bias: 127>
 let Host = Tensor<element: F32>
 let device = TensorDevice<element: F32>()
 let left = device.fromHost(Host(@[2], @[F32(1), F32(2)]))
@@ -212,7 +213,7 @@ console.stdout.writeLine(total.toHost().flat(0))
 ??? note "可选 · 深入：性能友好写法清单与当前实现边界"
     - **让数据同构且连续。** `simd` 与 `gpu` 候选只对默认动态数组和原生标量生效；矩阵优先用默认列优先的密集 Tensor，需要显式线性顺序时写 `columnMajor(A)`，不要靠转置与手工复制制造中间布局。
     - **保持驻留与批处理。** 上传一次、在设备上多做几步、一次回读；需要重叠时用 `fromHostAsync` 与事件，不要在循环里反复 `fromHost`／`toHost`。
-    - **把数值边界留在边界上。** 日常计算用精确 `Number`；需要机器格式或设备准入时再显式转成 `NativeFloat` 或固定 `BitFloat`（布局参数见[数值与位类型](numeric-types.md)），半精度只在带宽／存储确实重要且精度可接受时使用。
+    - **把数值边界留在边界上。** 日常计算用精确 `Number`；需要目标数位浮点时显式转成 `DitFloat`，进入设备前再核对设备工作格式（布局参数见[数值与位类型](numeric-types.md)），半精度只在带宽／存储确实重要且精度可接受时使用。
     - **测你要比较的东西。** `auto` 的成本是未测启发式，`@bounded` 的预算也不是实测耗时；设备内存用量只统计 EL 自己持有的原生缓冲。
 
     | 能力 | 当前状态 |
@@ -222,7 +223,7 @@ console.stdout.writeLine(total.toHost().flat(0))
     | `@optimize` | 表达式级策略已用于 Number、Array 链、排序与编解码；跨 let、控制流与多消费者的传播仍是规范目标 |
     | SIMD | 只有 `map(policy:)` 入口；要求 x64 原生计划与实际向量发射，没有源码级 intrinsic |
     | GPU | 张量会话覆盖 D3D11、Vulkan 与 Metal；`map` 的加速矩阵以实现文档记录的 Windows D3D11 路径为准，其他平台按适配器能力报告 |
-    | 加速元素 | 仅受检原生标量；普通 `Number`、`BitFloat`／`BitInteger` 对象、f8/f16/f128 不进入当前加速计划 |
+    | 加速元素 | 该 `map` 路径仅接受受检原生整数；普通 `Number`、`DitFloat` 与 `DitInt` 不进入此原生计划 |
 
     本页按语言规范与当前标准库导出编写。设备与后端能力随发行变化：具体支持矩阵、未完成项和验收状态以实现文档和实际发行诊断为准，不要从这一页推断某个平台已经通过性能验收；设备能力与产物能否在目标环境运行同样要实测。
 

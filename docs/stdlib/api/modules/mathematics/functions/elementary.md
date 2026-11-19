@@ -23,9 +23,9 @@ export fn sqrt(value, epsilon = nil)
 
 **参数**：value 非负数值。
 
-**参数**：epsilon 可选的有限非负最大绝对误差；零仅接受精确结果，省略时使用目标类型合同或 BitFloat 布局。
+**参数**：epsilon 可选的有限非负最大绝对误差；零仅接受精确结果，省略时使用目标类型合同或 DitFloat 布局。
 
-**返回值**：BitFloat 保留输入类型；显式精度的普通数值返回带该精度的 Number。
+**返回值**：DitFloat 保留输入类型；显式精度的普通数值返回带该精度的 Number。
 
 **失败与异常**：DomainError 当输入不在平方根定义域时抛出。
 

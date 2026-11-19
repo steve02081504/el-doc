@@ -1012,8 +1012,8 @@
 			"name": "binaryFloatFormat",
 			"id": null,
 			"source": "execution/format.el",
-			"line": 108,
-			"signature": "export fn binaryFloatFormat(fractionBits: Number, exponentBits: Number, exponentBias: Number, signBits: Number = 1, source: Bool = f): ComputeFormat",
+			"line": 124,
+			"signature": "export fn binaryFloatFormat(fractionBits: Number, exponentBits: Number, exponentBias: Number, signBits: Number = 1): ComputeFormat",
 			"value_type": null
 		},
 		{
@@ -1041,14 +1041,6 @@
 			"value_type": null
 		},
 		{
-			"name": "bit_and",
-			"id": null,
-			"source": "number/bit-operations.el",
-			"line": 49,
-			"signature": "export fn bit_and(left: Number, right: Number): Number",
-			"value_type": null
-		},
-		{
 			"name": "bit_at",
 			"id": null,
 			"source": "number/arithmetic.el",
@@ -1062,22 +1054,6 @@
 			"source": "number/arithmetic.el",
 			"line": 523,
 			"signature": "export fn bit_length(value: NumericInt): Integer",
-			"value_type": null
-		},
-		{
-			"name": "bit_not",
-			"id": null,
-			"source": "number/bit-operations.el",
-			"line": 88,
-			"signature": "export fn bit_not(value: Number): Number",
-			"value_type": null
-		},
-		{
-			"name": "bit_or",
-			"id": null,
-			"source": "number/bit-operations.el",
-			"line": 50,
-			"signature": "export fn bit_or(left: Number, right: Number): Number",
 			"value_type": null
 		},
 		{
@@ -1097,35 +1073,11 @@
 			"value_type": null
 		},
 		{
-			"name": "BitFloat",
-			"id": null,
-			"source": "number/bit-float.el",
-			"line": 17,
-			"signature": "export fn BitFloat(sign_bits = 1, fraction_bits = 0, exponent_bits = 0, exponent_bias = 0, min = nil, max = nil, overflow = \"ub\"): type",
-			"value_type": null
-		},
-		{
-			"name": "BitInteger",
-			"id": null,
-			"source": "number/bit-integer.el",
-			"line": 47,
-			"signature": "export fn BitInteger(bits = 0, sign_bits = 0, min = nil, max = nil, overflow = \"ub\"): type",
-			"value_type": null
-		},
-		{
 			"name": "bits",
 			"id": null,
 			"source": "foreign-functions/classification.el",
 			"line": 20,
 			"signature": "export fn bits(offset: Number, count: Number): AbiBits",
-			"value_type": null
-		},
-		{
-			"name": "BitSet",
-			"id": "collections/sets/bit-set::BitSet",
-			"source": "collections/sets/bit-set.el",
-			"line": 63,
-			"signature": "export fn BitSet(size: Number): type",
 			"value_type": null
 		},
 		{
@@ -1316,7 +1268,7 @@
 			"name": "C64",
 			"id": null,
 			"source": "numerical-computing/complex.el",
-			"line": 38,
+			"line": 37,
 			"signature": "export let C64: type",
 			"value_type": "type"
 		},
@@ -1868,7 +1820,7 @@
 			"name": "Complex",
 			"id": null,
 			"source": "numerical-computing/complex.el",
-			"line": 6,
+			"line": 5,
 			"signature": "export fn Complex(element: type): type",
 			"value_type": null
 		},
@@ -1876,7 +1828,7 @@
 			"name": "complexPower",
 			"id": null,
 			"source": "numerical-computing/power.el",
-			"line": 6,
+			"line": 5,
 			"signature": "export fn complexPower(base: C64, exponent: C64): C64",
 			"value_type": null
 		},
@@ -1900,7 +1852,7 @@
 			"name": "computeFormat",
 			"id": null,
 			"source": "execution/scalars.el",
-			"line": 19,
+			"line": 18,
 			"signature": "export fn computeFormat(T: type): ComputeFormat",
 			"value_type": null
 		},
@@ -1908,7 +1860,7 @@
 			"name": "computeFormatIssue",
 			"id": null,
 			"source": "execution/scalars.el",
-			"line": 23,
+			"line": 22,
 			"signature": "export fn computeFormatIssue(T: type): Text",
 			"value_type": null
 		},
@@ -2204,7 +2156,7 @@
 			"name": "cos64",
 			"id": null,
 			"source": "numerical-computing/real.el",
-			"line": 67,
+			"line": 84,
 			"signature": "export fn cos64(value: F64): F64",
 			"value_type": null
 		},
@@ -3457,11 +3409,27 @@
 			"value_type": null
 		},
 		{
+			"name": "debuggerAttached",
+			"id": "tools/debugger/attachment::debuggerAttached",
+			"source": "tools/debugger/attachment.el",
+			"line": 10,
+			"signature": "export fn debuggerAttached(): Bool",
+			"value_type": null
+		},
+		{
 			"name": "DebuggerConsole",
 			"id": null,
 			"source": "tools/debugger/console.el",
 			"line": 13,
 			"signature": "export class DebuggerConsole extends IrDebugSession",
+			"value_type": null
+		},
+		{
+			"name": "debuggerPause",
+			"id": "tools/debugger/attachment::debuggerPause",
+			"source": "tools/debugger/attachment.el",
+			"line": 24,
+			"signature": "export fn debuggerPause()",
 			"value_type": null
 		},
 		{
@@ -3849,22 +3817,6 @@
 			"value_type": null
 		},
 		{
-			"name": "digit_add_mod",
-			"id": null,
-			"source": "number/bit-operations.el",
-			"line": 82,
-			"signature": "export fn digit_add_mod(left: Number, right: Number): Number\nexport fn digit_add_mod(left, right)",
-			"value_type": null
-		},
-		{
-			"name": "digit_sub_mod",
-			"id": null,
-			"source": "number/bit-operations.el",
-			"line": 83,
-			"signature": "export fn digit_sub_mod(left: Number, right: Number): Number\nexport fn digit_sub_mod(left, right)",
-			"value_type": null
-		},
-		{
 			"name": "digits",
 			"id": null,
 			"source": "text/patterns/lexical.el",
@@ -3934,6 +3886,70 @@
 			"source": "database/cluster/distributed-service.el",
 			"line": 17,
 			"signature": "export class DistributedService",
+			"value_type": null
+		},
+		{
+			"name": "dit_add_mod",
+			"id": "number/dit-operations::dit_add_mod",
+			"source": "number/dit-operations.el",
+			"line": 64,
+			"signature": "export fn dit_add_mod(left: Number, right: Number): Number",
+			"value_type": null
+		},
+		{
+			"name": "dit_max",
+			"id": "number/dit-operations::dit_max",
+			"source": "number/dit-operations.el",
+			"line": 106,
+			"signature": "export fn dit_max(left: Number, right: Number): Number",
+			"value_type": null
+		},
+		{
+			"name": "dit_min",
+			"id": "number/dit-operations::dit_min",
+			"source": "number/dit-operations.el",
+			"line": 93,
+			"signature": "export fn dit_min(left: Number, right: Number): Number",
+			"value_type": null
+		},
+		{
+			"name": "dit_sub_mod",
+			"id": "number/dit-operations::dit_sub_mod",
+			"source": "number/dit-operations.el",
+			"line": 77,
+			"signature": "export fn dit_sub_mod(left: Number, right: Number): Number",
+			"value_type": null
+		},
+		{
+			"name": "DitFloat",
+			"id": "number/dit-float::DitFloat",
+			"source": "number/dit-float.el",
+			"line": 281,
+			"signature": "export fn DitFloat(sign_dits = 1, fraction_dits = 0, exponent_dits = 0, exponent_bias = 0, min = nil, max = nil, overflow = \"ub\"): type",
+			"value_type": null
+		},
+		{
+			"name": "DitFloatValue",
+			"id": null,
+			"source": "number/dit-float.el",
+			"line": 18,
+			"signature": "export class DitFloatValue extends Number",
+			"value_type": null
+		},
+		{
+			"name": "DitInt",
+			"id": "number/dit-int::DitInt",
+			"source": "number/dit-int.el",
+			"line": 40,
+			"signature": "export fn DitInt(digits = 0, signed = f, min = nil, max = nil, overflow = \"ub\"): type",
+			"value_type": null
+		},
+		{
+			"name": "DitSet",
+			"id": "collections/sets/dit-set::DitSet",
+			"source": "collections/sets/dit-set.el",
+			"line": 72,
+			"signature": "export fn DitSet(size: Number): type",
 			"value_type": null
 		},
 		{
@@ -4444,8 +4460,8 @@
 			"name": "exact64",
 			"id": null,
 			"source": "numerical-computing/real.el",
-			"line": 7,
-			"signature": "export fn exact64(value: NumberBase): Number",
+			"line": 6,
+			"signature": "export fn exact64(value: F64): Number\nexport fn exact64(value: Number): Number",
 			"value_type": null
 		},
 		{
@@ -4628,7 +4644,7 @@
 			"name": "exp64",
 			"id": null,
 			"source": "numerical-computing/real.el",
-			"line": 68,
+			"line": 85,
 			"signature": "export fn exp64(value: F64): F64",
 			"value_type": null
 		},
@@ -4942,62 +4958,6 @@
 			"source": null,
 			"line": null,
 			"signature": null,
-			"value_type": null
-		},
-		{
-			"name": "float_binary",
-			"id": null,
-			"source": "number/ieee754/number.el",
-			"line": 108,
-			"signature": "export fn float_binary(a: NumberBase, b: NumberBase, operation: Number): NumberBase\nexport fn float_binary(a: NumberBase, b: NumberBase, operation: Integer): NumberBase",
-			"value_type": null
-		},
-		{
-			"name": "float_comparison",
-			"id": null,
-			"source": "number/ieee754/number.el",
-			"line": 140,
-			"signature": "export fn float_comparison(a: NumberBase, b: NumberBase, operation: Number): Bool\nexport fn float_comparison(a: NumberBase, b: NumberBase, operation: Integer): Bool",
-			"value_type": null
-		},
-		{
-			"name": "float_initialize",
-			"id": null,
-			"source": "number/ieee754/number.el",
-			"line": 74,
-			"signature": "export fn float_initialize(target: NumberBase, value)",
-			"value_type": null
-		},
-		{
-			"name": "float_integer_power",
-			"id": null,
-			"source": "number/ieee754/number.el",
-			"line": 168,
-			"signature": "export fn float_integer_power(value: NumberBase, power: Number): NumberBase",
-			"value_type": null
-		},
-		{
-			"name": "float_negate",
-			"id": null,
-			"source": "number/ieee754/number.el",
-			"line": 151,
-			"signature": "export fn float_negate(value: NumberBase): NumberBase",
-			"value_type": null
-		},
-		{
-			"name": "float_operand",
-			"id": null,
-			"source": "number/ieee754/number.el",
-			"line": 57,
-			"signature": "export fn float_operand(value, prototype: NumberBase): NumberBase",
-			"value_type": null
-		},
-		{
-			"name": "float_truth",
-			"id": null,
-			"source": "number/ieee754/number.el",
-			"line": 150,
-			"signature": "export fn float_truth(value: NumberBase): Bool",
 			"value_type": null
 		},
 		{
@@ -5609,206 +5569,6 @@
 			"value_type": null
 		},
 		{
-			"name": "ieee_binary",
-			"id": null,
-			"source": "number/ieee754/arithmetic.el",
-			"line": 46,
-			"signature": "export fn ieee_binary(a_bits: IeeeBits, b_bits: IeeeBits, layout: IeeeLayout, operation: Number, context: IeeeContext): IeeeBits",
-			"value_type": null
-		},
-		{
-			"name": "ieee_binary_values",
-			"id": null,
-			"source": "number/ieee754/arithmetic.el",
-			"line": 51,
-			"signature": "export fn ieee_binary_values(a: IeeeValue, b: IeeeValue, layout: IeeeLayout, operation: Number, context: IeeeContext): IeeeBits",
-			"value_type": null
-		},
-		{
-			"name": "ieee_compare",
-			"id": null,
-			"source": "number/ieee754/arithmetic.el",
-			"line": 103,
-			"signature": "export fn ieee_compare(a_bits: IeeeBits, b_bits: IeeeBits, layout: IeeeLayout, context: IeeeContext): Number",
-			"value_type": null
-		},
-		{
-			"name": "ieee_compare_values",
-			"id": null,
-			"source": "number/ieee754/arithmetic.el",
-			"line": 107,
-			"signature": "export fn ieee_compare_values(a: IeeeValue, b: IeeeValue, context: IeeeContext): Number",
-			"value_type": null
-		},
-		{
-			"name": "ieee_convert",
-			"id": null,
-			"source": "number/ieee754/arithmetic.el",
-			"line": 35,
-			"signature": "export fn ieee_convert(bits: IeeeBits, source: IeeeLayout, target: IeeeLayout, context: IeeeContext): IeeeBits",
-			"value_type": null
-		},
-		{
-			"name": "ieee_decimal_order",
-			"id": null,
-			"source": "number/ieee754/decimal.el",
-			"line": 36,
-			"signature": "export fn ieee_decimal_order(a: Text, b: Text): Number",
-			"value_type": null
-		},
-		{
-			"name": "ieee_decimal_text",
-			"id": null,
-			"source": "number/ieee754/decimal.el",
-			"line": 100,
-			"signature": "export fn ieee_decimal_text(bits: IeeeBits, layout: IeeeLayout): Text",
-			"value_type": null
-		},
-		{
-			"name": "ieee_decode",
-			"id": null,
-			"source": "number/ieee754/representation.el",
-			"line": 54,
-			"signature": "export fn ieee_decode(bits: IeeeBits, layout: IeeeLayout): IeeeValue",
-			"value_type": null
-		},
-		{
-			"name": "ieee_digit",
-			"id": null,
-			"source": "number/ieee754/representation.el",
-			"line": 94,
-			"signature": "export fn ieee_digit(digits: Number[], index: Number): Number",
-			"value_type": null
-		},
-		{
-			"name": "ieee_digits",
-			"id": null,
-			"source": "number/ieee754/representation.el",
-			"line": 85,
-			"signature": "export fn ieee_digits(value: Number): Number[]",
-			"value_type": null
-		},
-		{
-			"name": "ieee_from_decimal",
-			"id": null,
-			"source": "number/ieee754/decimal.el",
-			"line": 48,
-			"signature": "export fn ieee_from_decimal(text: Text, layout: IeeeLayout, context: IeeeContext): IeeeBits",
-			"value_type": null
-		},
-		{
-			"name": "ieee_from_integer",
-			"id": null,
-			"source": "number/ieee754/arithmetic.el",
-			"line": 41,
-			"signature": "export fn ieee_from_integer(value: Number, layout: IeeeLayout, context: IeeeContext): IeeeBits",
-			"value_type": null
-		},
-		{
-			"name": "ieee_infinity",
-			"id": null,
-			"source": "number/ieee754/representation.el",
-			"line": 84,
-			"signature": "export fn ieee_infinity(sign: Number, layout: IeeeLayout): IeeeBits",
-			"value_type": null
-		},
-		{
-			"name": "ieee_magnitude",
-			"id": null,
-			"source": "number/ieee754/representation.el",
-			"line": 101,
-			"signature": "export fn ieee_magnitude(a: Number[], b: Number[]): Number",
-			"value_type": null
-		},
-		{
-			"name": "ieee_nan",
-			"id": null,
-			"source": "number/ieee754/representation.el",
-			"line": 83,
-			"signature": "export fn ieee_nan(layout: IeeeLayout): IeeeBits",
-			"value_type": null
-		},
-		{
-			"name": "ieee_pack",
-			"id": null,
-			"source": "number/ieee754/representation.el",
-			"line": 69,
-			"signature": "export fn ieee_pack(sign: Number, exponent: Number, fraction: Number, layout: IeeeLayout): IeeeBits",
-			"value_type": null
-		},
-		{
-			"name": "ieee_power",
-			"id": null,
-			"source": "number/ieee754/representation.el",
-			"line": 49,
-			"signature": "export fn ieee_power(n: Number): Number",
-			"value_type": null
-		},
-		{
-			"name": "ieee_round",
-			"id": null,
-			"source": "number/ieee754/arithmetic.el",
-			"line": 4,
-			"signature": "export fn ieee_round(digits: Number[], exponent: Number, sign: Number, layout: IeeeLayout, context: IeeeContext, sticky: Bool): IeeeBits",
-			"value_type": null
-		},
-		{
-			"name": "ieee_shift",
-			"id": null,
-			"source": "number/ieee754/representation.el",
-			"line": 95,
-			"signature": "export fn ieee_shift(digits: Number[], count: Number): Number[]",
-			"value_type": null
-		},
-		{
-			"name": "ieee_size",
-			"id": null,
-			"source": "number/ieee754/representation.el",
-			"line": 91,
-			"signature": "export fn ieee_size(digits: Number[]): Number",
-			"value_type": null
-		},
-		{
-			"name": "ieee_sum",
-			"id": null,
-			"source": "number/ieee754/representation.el",
-			"line": 107,
-			"signature": "export fn ieee_sum(a: Number[], b: Number[], subtract: Bool): Number[]",
-			"value_type": null
-		},
-		{
-			"name": "IeeeBits",
-			"id": null,
-			"source": "number/ieee754/representation.el",
-			"line": 7,
-			"signature": "export class IeeeBits",
-			"value_type": null
-		},
-		{
-			"name": "IeeeContext",
-			"id": null,
-			"source": "number/ieee754/representation.el",
-			"line": 34,
-			"signature": "export class IeeeContext",
-			"value_type": null
-		},
-		{
-			"name": "IeeeLayout",
-			"id": null,
-			"source": "number/ieee754/representation.el",
-			"line": 13,
-			"signature": "export class IeeeLayout",
-			"value_type": null
-		},
-		{
-			"name": "IeeeValue",
-			"id": null,
-			"source": "number/ieee754/representation.el",
-			"line": 25,
-			"signature": "export class IeeeValue",
-			"value_type": null
-		},
-		{
 			"name": "Iff",
 			"id": null,
 			"source": "mathematics/proof/logic.el",
@@ -6164,7 +5924,7 @@
 			"name": "integerFormat",
 			"id": null,
 			"source": "execution/format.el",
-			"line": 106,
+			"line": 122,
 			"signature": "export fn integerFormat(bits: Number, signed: Bool = f, source: Bool = f): ComputeFormat",
 			"value_type": null
 		},
@@ -6340,7 +6100,7 @@
 			"name": "ir_abi_verify",
 			"id": null,
 			"source": "intermediate-representation/abi/verify.el",
-			"line": 585,
+			"line": 591,
 			"signature": "export fn ir_abi_verify(m: IrAbiModule): Text",
 			"value_type": null
 		},
@@ -6564,7 +6324,7 @@
 			"name": "JsonWriteError",
 			"id": null,
 			"source": "formats/json/writer.el",
-			"line": 17,
+			"line": 16,
 			"signature": "export @assign(mode: \"copy\") class JsonWriteError extends Error",
 			"value_type": null
 		},
@@ -6676,7 +6436,7 @@
 			"name": "leastSquares",
 			"id": null,
 			"source": "numerical-computing/dense.el",
-			"line": 54,
+			"line": 53,
 			"signature": "export fn leastSquares(borrow input: Matrix, borrow right: Matrix, policy: NumericsPolicy = NumericsPolicy()): Matrix",
 			"value_type": null
 		},
@@ -6684,7 +6444,7 @@
 			"name": "leastSquaresDiagnostic",
 			"id": "numerical-computing/diagnostics::leastSquaresDiagnostic",
 			"source": "numerical-computing/diagnostics.el",
-			"line": 61,
+			"line": 60,
 			"signature": "export fn leastSquaresDiagnostic(a: Tensor<element: F64>, b: Tensor<element: F64>, policy: NumericsPolicy = NumericsPolicy()): SolveReport",
 			"value_type": null
 		},
@@ -6916,7 +6676,7 @@
 			"name": "log64",
 			"id": null,
 			"source": "numerical-computing/real.el",
-			"line": 76,
+			"line": 93,
 			"signature": "export fn log64(value: F64): F64",
 			"value_type": null
 		},
@@ -7788,7 +7548,7 @@
 			"name": "normInf",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 137,
+			"line": 136,
 			"signature": "export fn normInf(values): F64",
 			"value_type": null
 		},
@@ -7857,14 +7617,6 @@
 			"value_type": null
 		},
 		{
-			"name": "NumberBase",
-			"id": null,
-			"source": "number/ieee754/number.el",
-			"line": 14,
-			"signature": "export class NumberBase extends Number",
-			"value_type": null
-		},
-		{
 			"name": "numberLiteral",
 			"id": null,
 			"source": "language/contracts.el",
@@ -7924,7 +7676,7 @@
 			"name": "numericsAll",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 108,
+			"line": 107,
 			"signature": "export fn all(values): Bool\nexport fn all(values, axis: Number)",
 			"value_type": null
 		},
@@ -7932,7 +7684,7 @@
 			"name": "numericsAny",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 104,
+			"line": 103,
 			"signature": "export fn any(values): Bool\nexport fn any(values, axis: Number)",
 			"value_type": null
 		},
@@ -7940,7 +7692,7 @@
 			"name": "numericsCos",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 152,
+			"line": 151,
 			"signature": "export fn cos(value: F64): F64\nexport fn cos(values: Tensor<element: F64>)",
 			"value_type": null
 		},
@@ -7948,7 +7700,7 @@
 			"name": "numericsExp",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 153,
+			"line": 152,
 			"signature": "export fn exp(value: F64): F64\nexport fn exp(values: Tensor<element: F64>)",
 			"value_type": null
 		},
@@ -7956,7 +7708,7 @@
 			"name": "numericsLog",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 154,
+			"line": 153,
 			"signature": "export fn log(value: F64): F64\nexport fn log(values: Tensor<element: F64>)",
 			"value_type": null
 		},
@@ -7964,7 +7716,7 @@
 			"name": "numericsMax",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 120,
+			"line": 119,
 			"signature": "export fn max(values)\nexport fn max(values, axis: Number)",
 			"value_type": null
 		},
@@ -7972,7 +7724,7 @@
 			"name": "numericsMaxPresent",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 135,
+			"line": 134,
 			"signature": "export fn maxPresent(values)",
 			"value_type": null
 		},
@@ -7980,7 +7732,7 @@
 			"name": "numericsMean",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 66,
+			"line": 65,
 			"signature": "export fn mean(values)\nexport fn mean(values, axis: Number)",
 			"value_type": null
 		},
@@ -7988,7 +7740,7 @@
 			"name": "numericsMeanPresent",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 136,
+			"line": 135,
 			"signature": "export fn meanPresent(values)",
 			"value_type": null
 		},
@@ -7996,7 +7748,7 @@
 			"name": "numericsMin",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 114,
+			"line": 113,
 			"signature": "export fn min(values)\nexport fn min(values, axis: Number)",
 			"value_type": null
 		},
@@ -8004,7 +7756,7 @@
 			"name": "numericsMinPresent",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 134,
+			"line": 133,
 			"signature": "export fn minPresent(values)",
 			"value_type": null
 		},
@@ -8012,7 +7764,7 @@
 			"name": "numericsPi",
 			"id": null,
 			"source": "numerical-computing/real.el",
-			"line": 88,
+			"line": 104,
 			"signature": "export fn pi(element: type = F64)",
 			"value_type": null
 		},
@@ -8020,7 +7772,7 @@
 			"name": "NumericsPolicy",
 			"id": null,
 			"source": "numerical-computing/policy.el",
-			"line": 8,
+			"line": 7,
 			"signature": "export @assign(mode: \"copy\") class NumericsPolicy",
 			"value_type": null
 		},
@@ -8028,7 +7780,7 @@
 			"name": "numericsSin",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 151,
+			"line": 150,
 			"signature": "export fn sin(value: F64): F64\nexport fn sin(values: Tensor<element: F64>)",
 			"value_type": null
 		},
@@ -8044,7 +7796,7 @@
 			"name": "numericsSqrt",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 149,
+			"line": 148,
 			"signature": "export fn sqrt(value: F64): F64\nexport fn sqrt(value: C64): C64\nexport fn sqrt(values: Tensor<element: F64>)\nexport fn sqrt(values: Tensor<element: C64>)",
 			"value_type": null
 		},
@@ -8052,7 +7804,7 @@
 			"name": "numericsSum",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 39,
+			"line": 38,
 			"signature": "export fn sum(values)\nexport fn sum(values, axis: Number)",
 			"value_type": null
 		},
@@ -8556,7 +8308,7 @@
 			"name": "parseJSON5",
 			"id": null,
 			"source": "formats/json/variants.el",
-			"line": 156,
+			"line": 160,
 			"signature": "export fn parseJSON5(source: Text, limits: JsonLimits = JsonLimits()): any",
 			"value_type": null
 		},
@@ -8564,7 +8316,7 @@
 			"name": "parseJSONC",
 			"id": null,
 			"source": "formats/json/variants.el",
-			"line": 162,
+			"line": 166,
 			"signature": "export fn parseJSONC(source: Text, limits: JsonLimits = JsonLimits()): any",
 			"value_type": null
 		},
@@ -8572,7 +8324,7 @@
 			"name": "parseJSONLines",
 			"id": null,
 			"source": "formats/json/variants.el",
-			"line": 204,
+			"line": 208,
 			"signature": "export fn parseJSONLines(source: Text, limits: JsonLimits = JsonLimits()): any[]",
 			"value_type": null
 		},
@@ -8596,7 +8348,7 @@
 			"name": "parseOrderedJSON5",
 			"id": "formats/json/variants::parseOrderedJSON5",
 			"source": "formats/json/variants.el",
-			"line": 233,
+			"line": 237,
 			"signature": "export fn parseOrderedJSON5(source: Text, limits: JsonLimits = JsonLimits()): any",
 			"value_type": null
 		},
@@ -8604,7 +8356,7 @@
 			"name": "parseOrderedJSONC",
 			"id": "formats/json/variants::parseOrderedJSONC",
 			"source": "formats/json/variants.el",
-			"line": 224,
+			"line": 228,
 			"signature": "export fn parseOrderedJSONC(source: Text, limits: JsonLimits = JsonLimits()): any",
 			"value_type": null
 		},
@@ -8612,7 +8364,7 @@
 			"name": "parseOrderedJSONLines",
 			"id": "formats/json/variants::parseOrderedJSONLines",
 			"source": "formats/json/variants.el",
-			"line": 242,
+			"line": 246,
 			"signature": "export fn parseOrderedJSONLines(source: Text, limits: JsonLimits = JsonLimits()): any[]",
 			"value_type": null
 		},
@@ -8620,7 +8372,7 @@
 			"name": "parseOrderedTOML",
 			"id": "formats/toml/index::parseOrderedTOML",
 			"source": "formats/toml/index.el",
-			"line": 375,
+			"line": 378,
 			"signature": "export fn parseOrderedTOML(source: Text, limits: JsonLimits = JsonLimits()): Toml",
 			"value_type": null
 		},
@@ -8668,7 +8420,7 @@
 			"name": "parseTOML",
 			"id": "formats/toml/index::parseTOML",
 			"source": "formats/toml/index.el",
-			"line": 269,
+			"line": 271,
 			"signature": "export fn parseTOML(source: Text, limits: JsonLimits = JsonLimits()): Toml",
 			"value_type": null
 		},
@@ -8884,7 +8636,7 @@
 			"name": "pi64",
 			"id": null,
 			"source": "numerical-computing/real.el",
-			"line": 84,
+			"line": 100,
 			"signature": "export fn pi64(): F64",
 			"value_type": null
 		},
@@ -8956,7 +8708,7 @@
 			"name": "Poly1305",
 			"id": null,
 			"source": "cryptography/poly1305.el",
-			"line": 27,
+			"line": 26,
 			"signature": "export class Poly1305",
 			"value_type": null
 		},
@@ -8964,7 +8716,7 @@
 			"name": "poly1305_mac",
 			"id": null,
 			"source": "cryptography/poly1305.el",
-			"line": 85,
+			"line": 84,
 			"signature": "export fn poly1305_mac(key: Number[], message: Number[]): Number[]",
 			"value_type": null
 		},
@@ -8972,7 +8724,7 @@
 			"name": "poly1305_verify",
 			"id": null,
 			"source": "cryptography/poly1305.el",
-			"line": 91,
+			"line": 90,
 			"signature": "export fn poly1305_verify(key: Number[], message: Number[], tag: Number[]): Bool",
 			"value_type": null
 		},
@@ -9004,7 +8756,7 @@
 			"name": "pow64",
 			"id": null,
 			"source": "numerical-computing/real.el",
-			"line": 115,
+			"line": 131,
 			"signature": "export fn pow64(base: F64, exponent: F64): F64",
 			"value_type": null
 		},
@@ -9108,7 +8860,7 @@
 			"name": "prod",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 85,
+			"line": 84,
 			"signature": "export fn prod(values)\nexport fn prod(values, axis: Number)",
 			"value_type": null
 		},
@@ -9964,7 +9716,7 @@
 			"name": "reflectBeginReconstruction",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 81,
+			"line": 85,
 			"signature": "export fn reflectBeginReconstruction(identity: Number)",
 			"value_type": null
 		},
@@ -9972,7 +9724,7 @@
 			"name": "reflectCall",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 77,
+			"line": 81,
 			"signature": "export fn reflectCall(value, name: Text, ...arguments)",
 			"value_type": null
 		},
@@ -9980,7 +9732,7 @@
 			"name": "reflectCallOverload",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 78,
+			"line": 82,
 			"signature": "export fn reflectCallOverload(value, name: Text, ...arguments)",
 			"value_type": null
 		},
@@ -9988,7 +9740,7 @@
 			"name": "reflectCanReconstruct",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 71,
+			"line": 75,
 			"signature": "export fn reflectCanReconstruct(identity: Number): Bool",
 			"value_type": null
 		},
@@ -9996,7 +9748,7 @@
 			"name": "reflectClass",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 57,
+			"line": 61,
 			"signature": "export fn reflectClass(borrow value): Number",
 			"value_type": null
 		},
@@ -10004,7 +9756,7 @@
 			"name": "reflectCount",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 62,
+			"line": 66,
 			"signature": "export fn reflectCount(value): Number",
 			"value_type": null
 		},
@@ -10012,7 +9764,7 @@
 			"name": "reflectDeclaredFieldAnnotation",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 99,
+			"line": 103,
 			"signature": "export fn reflectDeclaredFieldAnnotation(identity: Number, index: Number): Text",
 			"value_type": null
 		},
@@ -10020,7 +9772,7 @@
 			"name": "reflectDeclaredFieldCount",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 97,
+			"line": 101,
 			"signature": "export fn reflectDeclaredFieldCount(identity: Number): Number",
 			"value_type": null
 		},
@@ -10028,7 +9780,7 @@
 			"name": "reflectDeclaredFieldElementType",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 104,
+			"line": 108,
 			"signature": "export fn reflectDeclaredFieldElementType(identity: Number, index: Number): Number",
 			"value_type": null
 		},
@@ -10036,7 +9788,7 @@
 			"name": "reflectDeclaredFieldName",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 98,
+			"line": 102,
 			"signature": "export fn reflectDeclaredFieldName(identity: Number, index: Number): Text",
 			"value_type": null
 		},
@@ -10044,7 +9796,7 @@
 			"name": "reflectDeclaredFieldPrivate",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 105,
+			"line": 109,
 			"signature": "export fn reflectDeclaredFieldPrivate(identity: Number, index: Number): Bool",
 			"value_type": null
 		},
@@ -10052,7 +9804,7 @@
 			"name": "reflectDeclaredFieldType",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 100,
+			"line": 104,
 			"signature": "export fn reflectDeclaredFieldType(identity: Number, index: Number): Number",
 			"value_type": null
 		},
@@ -10060,7 +9812,7 @@
 			"name": "reflectDeclaredFieldTypeValue",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 103,
+			"line": 107,
 			"signature": "export fn reflectDeclaredFieldTypeValue(identity: Number, index: Number)",
 			"value_type": null
 		},
@@ -10068,7 +9820,7 @@
 			"name": "reflectDeclaredGet",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 106,
+			"line": 110,
 			"signature": "export fn reflectDeclaredGet(value, index: Number)",
 			"value_type": null
 		},
@@ -10076,7 +9828,7 @@
 			"name": "reflectFactoryIdentity",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 118,
+			"line": 122,
 			"signature": "export fn reflectFactoryIdentity(identity: Number): Text",
 			"value_type": null
 		},
@@ -10084,7 +9836,7 @@
 			"name": "reflectFieldAnnotation",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 68,
+			"line": 72,
 			"signature": "export fn reflectFieldAnnotation(value, index: Number): Text",
 			"value_type": null
 		},
@@ -10092,7 +9844,7 @@
 			"name": "reflectFieldElementType",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 67,
+			"line": 71,
 			"signature": "export fn reflectFieldElementType(value, index: Number): Number",
 			"value_type": null
 		},
@@ -10100,7 +9852,7 @@
 			"name": "reflectFieldName",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 63,
+			"line": 67,
 			"signature": "export fn reflectFieldName(value, index: Number): Text",
 			"value_type": null
 		},
@@ -10108,7 +9860,7 @@
 			"name": "reflectFieldType",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 66,
+			"line": 70,
 			"signature": "export fn reflectFieldType(value, index: Number): Number",
 			"value_type": null
 		},
@@ -10116,7 +9868,7 @@
 			"name": "reflectGet",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 64,
+			"line": 68,
 			"signature": "export fn reflectGet(value, index: Number)",
 			"value_type": null
 		},
@@ -10124,7 +9876,7 @@
 			"name": "reflectHasMethod",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 75,
+			"line": 79,
 			"signature": "export fn reflectHasMethod(identity: Number, name: Text)",
 			"value_type": null
 		},
@@ -10132,7 +9884,7 @@
 			"name": "reflectHasOverload",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 76,
+			"line": 80,
 			"signature": "export fn reflectHasOverload(identity: Number, name: Text, arity: Number)",
 			"value_type": null
 		},
@@ -10140,7 +9892,7 @@
 			"name": "reflectHasPrivateFields",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 69,
+			"line": 73,
 			"signature": "export fn reflectHasPrivateFields(identity: Number): Bool",
 			"value_type": null
 		},
@@ -10148,7 +9900,7 @@
 			"name": "reflectIsAssignable",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 95,
+			"line": 99,
 			"signature": "export fn reflectIsAssignable(actual: Number, expected: Number): Bool",
 			"value_type": null
 		},
@@ -10156,7 +9908,7 @@
 			"name": "reflectIsDynamic",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 74,
+			"line": 78,
 			"signature": "export fn reflectIsDynamic(identity: Number): Bool",
 			"value_type": null
 		},
@@ -10172,7 +9924,7 @@
 			"name": "reflectNew",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 61,
+			"line": 65,
 			"signature": "export fn reflectNew(identity: Number)",
 			"value_type": null
 		},
@@ -10180,7 +9932,7 @@
 			"name": "reflectReconstructionAbort",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 87,
+			"line": 91,
 			"signature": "export fn reflectReconstructionAbort(handle)",
 			"value_type": null
 		},
@@ -10188,7 +9940,7 @@
 			"name": "reflectReconstructionDeclaredFieldAnnotation",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 90,
+			"line": 94,
 			"signature": "export fn reflectReconstructionDeclaredFieldAnnotation(handle, index: Number): Text",
 			"value_type": null
 		},
@@ -10196,7 +9948,7 @@
 			"name": "reflectReconstructionDeclaredFieldCount",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 88,
+			"line": 92,
 			"signature": "export fn reflectReconstructionDeclaredFieldCount(handle): Number",
 			"value_type": null
 		},
@@ -10204,7 +9956,7 @@
 			"name": "reflectReconstructionDeclaredFieldElementType",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 92,
+			"line": 96,
 			"signature": "export fn reflectReconstructionDeclaredFieldElementType(handle, index: Number): Number",
 			"value_type": null
 		},
@@ -10212,7 +9964,7 @@
 			"name": "reflectReconstructionDeclaredFieldName",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 89,
+			"line": 93,
 			"signature": "export fn reflectReconstructionDeclaredFieldName(handle, index: Number): Text",
 			"value_type": null
 		},
@@ -10220,7 +9972,7 @@
 			"name": "reflectReconstructionDeclaredFieldType",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 91,
+			"line": 95,
 			"signature": "export fn reflectReconstructionDeclaredFieldType(handle, index: Number): Number",
 			"value_type": null
 		},
@@ -10228,7 +9980,7 @@
 			"name": "reflectReconstructionFieldInitialized",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 93,
+			"line": 97,
 			"signature": "export fn reflectReconstructionFieldInitialized(handle, index: Number): Bool",
 			"value_type": null
 		},
@@ -10236,7 +9988,7 @@
 			"name": "reflectReconstructionFinish",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 86,
+			"line": 90,
 			"signature": "export fn reflectReconstructionFinish(handle)",
 			"value_type": null
 		},
@@ -10244,7 +9996,7 @@
 			"name": "reflectReconstructionInsertDynamic",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 84,
+			"line": 88,
 			"signature": "export fn reflectReconstructionInsertDynamic(handle, name: Text, replacement)",
 			"value_type": null
 		},
@@ -10252,7 +10004,7 @@
 			"name": "reflectReconstructionMissingField",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 94,
+			"line": 98,
 			"signature": "export fn reflectReconstructionMissingField(handle): Text",
 			"value_type": null
 		},
@@ -10260,7 +10012,7 @@
 			"name": "reflectReconstructionSetDeclared",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 83,
+			"line": 87,
 			"signature": "export fn reflectReconstructionSetDeclared(handle, name: Text, replacement)",
 			"value_type": null
 		},
@@ -10268,7 +10020,7 @@
 			"name": "reflectReconstructionSetIndex",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 85,
+			"line": 89,
 			"signature": "export fn reflectReconstructionSetIndex(handle, index: Number, replacement)",
 			"value_type": null
 		},
@@ -10276,7 +10028,7 @@
 			"name": "reflectReconstructionTarget",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 82,
+			"line": 86,
 			"signature": "export fn reflectReconstructionTarget(handle)",
 			"value_type": null
 		},
@@ -10284,7 +10036,7 @@
 			"name": "reflectReferenceHash",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 59,
+			"line": 63,
 			"signature": "export fn reflectReferenceHash(value): Number",
 			"value_type": null
 		},
@@ -10292,7 +10044,7 @@
 			"name": "reflectResolve",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 60,
+			"line": 64,
 			"signature": "export fn reflectResolve(source: Text, name: Text): Number",
 			"value_type": null
 		},
@@ -10300,7 +10052,7 @@
 			"name": "reflectSet",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 65,
+			"line": 69,
 			"signature": "export fn reflectSet(value, index: Number, replacement)",
 			"value_type": null
 		},
@@ -10316,7 +10068,7 @@
 			"name": "reflectTypeArgumentCount",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 114,
+			"line": 118,
 			"signature": "export fn reflectTypeArgumentCount(identity: Number): Number",
 			"value_type": null
 		},
@@ -10324,7 +10076,7 @@
 			"name": "reflectTypeArgumentKind",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 116,
+			"line": 120,
 			"signature": "export fn reflectTypeArgumentKind(identity: Number, index: Number): Text",
 			"value_type": null
 		},
@@ -10332,7 +10084,7 @@
 			"name": "reflectTypeArgumentName",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 115,
+			"line": 119,
 			"signature": "export fn reflectTypeArgumentName(identity: Number, index: Number): Text",
 			"value_type": null
 		},
@@ -10340,7 +10092,7 @@
 			"name": "reflectTypeArguments",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 113,
+			"line": 117,
 			"signature": "export fn reflectTypeArguments(identity: Number): Text",
 			"value_type": null
 		},
@@ -10348,7 +10100,7 @@
 			"name": "reflectTypeArgumentValue",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 117,
+			"line": 121,
 			"signature": "export fn reflectTypeArgumentValue(identity: Number, index: Number): Text",
 			"value_type": null
 		},
@@ -10356,7 +10108,7 @@
 			"name": "reflectTypeIdentity",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 110,
+			"line": 114,
 			"signature": "export fn reflectTypeIdentity(value): Number",
 			"value_type": null
 		},
@@ -10364,7 +10116,7 @@
 			"name": "reflectTypeValue",
 			"id": null,
 			"source": "language/reflection.el",
-			"line": 112,
+			"line": 116,
 			"signature": "export fn reflectTypeValue(identity: Number)",
 			"value_type": null
 		},
@@ -10924,7 +10676,7 @@
 			"name": "scalarBits",
 			"id": null,
 			"source": "execution/scalars.el",
-			"line": 17,
+			"line": 16,
 			"signature": "export @builtin:vome:scalar:bits fn scalarBits(value): UnsignedInteger",
 			"value_type": null
 		},
@@ -10932,7 +10684,7 @@
 			"name": "scalarFromBits",
 			"id": null,
 			"source": "execution/scalars.el",
-			"line": 18,
+			"line": 17,
 			"signature": "export @builtin:vome:scalar:from:bits fn scalarFromBits(T: type, bits: UnsignedInteger)",
 			"value_type": null
 		},
@@ -10940,7 +10692,7 @@
 			"name": "scalarPower",
 			"id": null,
 			"source": "numerical-computing/power.el",
-			"line": 26,
+			"line": 25,
 			"signature": "export fn scalarPower(base: C64, exponent)\nexport fn scalarPower(base: F64, exponent)\nexport fn scalarPower(base, exponent)",
 			"value_type": null
 		},
@@ -11388,7 +11140,7 @@
 			"name": "sin64",
 			"id": null,
 			"source": "numerical-computing/real.el",
-			"line": 63,
+			"line": 80,
 			"signature": "export fn sin64(value: F64): F64",
 			"value_type": null
 		},
@@ -11436,7 +11188,7 @@
 			"name": "solveDiagnostic",
 			"id": null,
 			"source": "numerical-computing/diagnostics.el",
-			"line": 41,
+			"line": 40,
 			"signature": "export fn solveDiagnostic(a: Tensor<element: F64>, b: Tensor<element: F64>, policy: NumericsPolicy = NumericsPolicy()): SolveReport\nexport fn solveDiagnostic(a: Tridiagonal, b: Tensor<element: F64>, policy: NumericsPolicy = NumericsPolicy()): SolveReport",
 			"value_type": null
 		},
@@ -11444,7 +11196,7 @@
 			"name": "SolveReport",
 			"id": null,
 			"source": "numerical-computing/diagnostics.el",
-			"line": 13,
+			"line": 12,
 			"signature": "export @assign(mode: \"copy\") class SolveReport",
 			"value_type": null
 		},
@@ -11540,7 +11292,7 @@
 			"name": "sqrt64",
 			"id": null,
 			"source": "numerical-computing/real.el",
-			"line": 25,
+			"line": 41,
 			"signature": "export fn sqrt64(value: F64): F64",
 			"value_type": null
 		},
@@ -12068,7 +11820,7 @@
 			"name": "Tensor",
 			"id": "numerical-computing/tensor::Tensor",
 			"source": "numerical-computing/tensor.el",
-			"line": 41,
+			"line": 39,
 			"signature": "export fn Tensor(element: type): type",
 			"value_type": null
 		},
@@ -12396,7 +12148,7 @@
 			"name": "Toml",
 			"id": null,
 			"source": "formats/toml/index.el",
-			"line": 18,
+			"line": 17,
 			"signature": "export data Toml",
 			"value_type": null
 		},
@@ -12404,7 +12156,7 @@
 			"name": "TomlDateTimeKind",
 			"id": null,
 			"source": "formats/toml/index.el",
-			"line": 17,
+			"line": 16,
 			"signature": "export enum TomlDateTimeKind",
 			"value_type": null
 		},
@@ -12412,7 +12164,7 @@
 			"name": "tomlField",
 			"id": null,
 			"source": "formats/toml/index.el",
-			"line": 27,
+			"line": 26,
 			"signature": "export fn tomlField(value: Toml, key: Text): Toml",
 			"value_type": null
 		},
@@ -12420,7 +12172,7 @@
 			"name": "TomlTable",
 			"id": null,
 			"source": "formats/toml/index.el",
-			"line": 26,
+			"line": 25,
 			"signature": "export let TomlTable: type",
 			"value_type": "type"
 		},
@@ -12756,7 +12508,7 @@
 			"name": "Tridiagonal",
 			"id": null,
 			"source": "numerical-computing/tridiagonal.el",
-			"line": 15,
+			"line": 14,
 			"signature": "export @assign(mode: \"copy\") class Tridiagonal",
 			"value_type": null
 		},
@@ -12764,7 +12516,7 @@
 			"name": "tridiagonal",
 			"id": null,
 			"source": "numerical-computing/tridiagonal.el",
-			"line": 73,
+			"line": 72,
 			"signature": "export fn tridiagonal(element: type, n: Number, lower, diagonal, upper): Tridiagonal",
 			"value_type": null
 		},
@@ -13268,7 +13020,7 @@
 			"name": "writeJSON",
 			"id": "formats/json/writer::writeJSON",
 			"source": "formats/json/writer.el",
-			"line": 157,
+			"line": 156,
 			"signature": "export fn writeJSON(value: any, limits: JsonLimits = JsonLimits()): Text",
 			"value_type": null
 		},
@@ -13276,7 +13028,7 @@
 			"name": "writeJSON5",
 			"id": null,
 			"source": "formats/json/writer.el",
-			"line": 163,
+			"line": 162,
 			"signature": "export fn writeJSON5(value: any, limits: JsonLimits = JsonLimits()): Text",
 			"value_type": null
 		},
@@ -13284,7 +13036,7 @@
 			"name": "writeJSONC",
 			"id": null,
 			"source": "formats/json/writer.el",
-			"line": 162,
+			"line": 161,
 			"signature": "export fn writeJSONC(value: any, limits: JsonLimits = JsonLimits()): Text",
 			"value_type": null
 		},
@@ -13292,7 +13044,7 @@
 			"name": "writeJSONLines",
 			"id": null,
 			"source": "formats/json/writer.el",
-			"line": 166,
+			"line": 165,
 			"signature": "export fn writeJSONLines(values: ArrayBase, limits: JsonLimits = JsonLimits()): Text",
 			"value_type": null
 		},
@@ -13579,8 +13331,8 @@
 		"collections/sequences/enumerate": {
 			"enumerate": "collections/sequences/enumerate::enumerate"
 		},
-		"collections/sets/bit-set": {
-			"BitSet": "collections/sets/bit-set::BitSet"
+		"collections/sets/dit-set": {
+			"DitSet": "collections/sets/dit-set::DitSet"
 		},
 		"collections/sets/hash-set": {
 			"Set": "collections/sets/hash-set::Set"
@@ -13813,8 +13565,10 @@
 			"Array": "collections/arrays/dynamic::Array",
 			"AssertionError": "errors/assertions::AssertionError",
 			"Axis": "graphics/plots/scene::Axis",
-			"BitSet": "collections/sets/bit-set::BitSet",
 			"Definition": "user-interface/model::Definition",
+			"DitFloat": "number/dit-float::DitFloat",
+			"DitInt": "number/dit-int::DitInt",
+			"DitSet": "collections/sets/dit-set::DitSet",
 			"Eq": "language/proofs::Eq",
 			"Figure": "graphics/plots/index::Figure",
 			"FormatLimits": "formats/json/limits::JsonLimits",
@@ -13872,8 +13626,14 @@
 			"copyFile": "filesystem/index::copyFile",
 			"currentDirectory": "filesystem/index::currentDirectory",
 			"darkPaintTheme": "user-interface/drawing::darkPaintTheme",
+			"debuggerAttached": "tools/debugger/attachment::debuggerAttached",
+			"debuggerPause": "tools/debugger/attachment::debuggerPause",
 			"dif": "logic/goal::dif",
 			"directoryNames": "filesystem/index::directoryNames",
+			"dit_add_mod": "number/dit-operations::dit_add_mod",
+			"dit_max": "number/dit-operations::dit_max",
+			"dit_min": "number/dit-operations::dit_min",
+			"dit_sub_mod": "number/dit-operations::dit_sub_mod",
 			"drop": "collections/arrays/operations::drop",
 			"each": "collections/arrays/operations::each",
 			"element": "user-interface/model::element",
@@ -14285,7 +14045,21 @@
 		"neural-networks/optimizer": {
 			"SGD": "neural-networks/optimizer::SGD"
 		},
+		"number/dit-float": {
+			"DitFloat": "number/dit-float::DitFloat"
+		},
+		"number/dit-int": {
+			"DitInt": "number/dit-int::DitInt"
+		},
+		"number/dit-operations": {
+			"dit_add_mod": "number/dit-operations::dit_add_mod",
+			"dit_max": "number/dit-operations::dit_max",
+			"dit_min": "number/dit-operations::dit_min",
+			"dit_sub_mod": "number/dit-operations::dit_sub_mod"
+		},
 		"number/index": {
+			"DitFloat": "number/dit-float::DitFloat",
+			"DitInt": "number/dit-int::DitInt",
 			"canRepresentExactly": "number/native-float::canRepresentExactly"
 		},
 		"number/native-float": {
@@ -14421,6 +14195,14 @@
 			"positiveRemainder": "time/units::positiveRemainder",
 			"secondsText": "time/units::secondsText",
 			"whole": "time/units::whole"
+		},
+		"tools/debugger/attachment": {
+			"debuggerAttached": "tools/debugger/attachment::debuggerAttached",
+			"debuggerPause": "tools/debugger/attachment::debuggerPause"
+		},
+		"tools/debugger/index": {
+			"debuggerAttached": "tools/debugger/attachment::debuggerAttached",
+			"debuggerPause": "tools/debugger/attachment::debuggerPause"
 		},
 		"tools/formatter/messages": {
 			"console": "console/facade::console"
@@ -15317,11 +15099,11 @@
 			"initializer": null
 		},
 		{
-			"name": "BitSet",
-			"source": "collections/sets/bit-set.el",
-			"line": 63,
-			"signature": "fn BitSet(size: Number): type",
-			"id": "collections/sets/bit-set::BitSet",
+			"name": "DitSet",
+			"source": "collections/sets/dit-set.el",
+			"line": 72,
+			"signature": "fn DitSet(size: Number): type",
+			"id": "collections/sets/dit-set::DitSet",
 			"initializer": null
 		},
 		{
@@ -16127,7 +15909,7 @@
 		{
 			"name": "FiniteScalarNode",
 			"source": "compiler/compute/finite-map.el",
-			"line": 121,
+			"line": 124,
 			"signature": "class FiniteScalarNode",
 			"id": null,
 			"initializer": null
@@ -16135,7 +15917,7 @@
 		{
 			"name": "FiniteScalarValue",
 			"source": "compiler/compute/finite-map.el",
-			"line": 132,
+			"line": 135,
 			"signature": "class FiniteScalarValue",
 			"id": null,
 			"initializer": null
@@ -16143,7 +15925,7 @@
 		{
 			"name": "FiniteScalarMemo",
 			"source": "compiler/compute/finite-map.el",
-			"line": 137,
+			"line": 140,
 			"signature": "class FiniteScalarMemo",
 			"id": null,
 			"initializer": null
@@ -16151,7 +15933,7 @@
 		{
 			"name": "FiniteScalarProgram",
 			"source": "compiler/compute/finite-map.el",
-			"line": 142,
+			"line": 145,
 			"signature": "class FiniteScalarProgram",
 			"id": null,
 			"initializer": null
@@ -16159,7 +15941,7 @@
 		{
 			"name": "FiniteMap",
 			"source": "compiler/compute/finite-map.el",
-			"line": 213,
+			"line": 216,
 			"signature": "class FiniteMap",
 			"id": null,
 			"initializer": null
@@ -16167,7 +15949,7 @@
 		{
 			"name": "FiniteMapAuthority",
 			"source": "compiler/compute/finite-map.el",
-			"line": 490,
+			"line": 493,
 			"signature": "class FiniteMapAuthority",
 			"id": null,
 			"initializer": null
@@ -16175,7 +15957,7 @@
 		{
 			"name": "FiniteMapProvider",
 			"source": "compiler/compute/finite-map.el",
-			"line": 519,
+			"line": 522,
 			"signature": "class FiniteMapProvider",
 			"id": null,
 			"initializer": null
@@ -16183,7 +15965,7 @@
 		{
 			"name": "FiniteMapReceipt",
 			"source": "compiler/compute/finite-map.el",
-			"line": 560,
+			"line": 563,
 			"signature": "class FiniteMapReceipt",
 			"id": null,
 			"initializer": null
@@ -16207,7 +15989,7 @@
 		{
 			"name": "ScalarCallLowering",
 			"source": "compiler/compute/scalar-expression.el",
-			"line": 146,
+			"line": 147,
 			"signature": "class ScalarCallLowering",
 			"id": null,
 			"initializer": null
@@ -17303,7 +17085,7 @@
 		{
 			"name": "ControlFlowStep",
 			"source": "compiler/control-flow/goto-cfg.el",
-			"line": 10,
+			"line": 12,
 			"signature": "class ControlFlowStep",
 			"id": null,
 			"initializer": null
@@ -17311,7 +17093,7 @@
 		{
 			"name": "ControlFlowGraph",
 			"source": "compiler/control-flow/goto-cfg.el",
-			"line": 21,
+			"line": 23,
 			"signature": "class ControlFlowGraph",
 			"id": null,
 			"initializer": null
@@ -17319,7 +17101,7 @@
 		{
 			"name": "FlowLabel",
 			"source": "compiler/control-flow/goto-cfg.el",
-			"line": 33,
+			"line": 35,
 			"signature": "class FlowLabel",
 			"id": null,
 			"initializer": null
@@ -17327,7 +17109,7 @@
 		{
 			"name": "FlowJump",
 			"source": "compiler/control-flow/goto-cfg.el",
-			"line": 41,
+			"line": 43,
 			"signature": "class FlowJump",
 			"id": null,
 			"initializer": null
@@ -17335,7 +17117,7 @@
 		{
 			"name": "FlowScope",
 			"source": "compiler/control-flow/goto-cfg.el",
-			"line": 47,
+			"line": 49,
 			"signature": "class FlowScope",
 			"id": null,
 			"initializer": null
@@ -17343,7 +17125,7 @@
 		{
 			"name": "FlowLoop",
 			"source": "compiler/control-flow/goto-cfg.el",
-			"line": 51,
+			"line": 53,
 			"signature": "class FlowLoop",
 			"id": null,
 			"initializer": null
@@ -17351,7 +17133,7 @@
 		{
 			"name": "FlowCleanup",
 			"source": "compiler/control-flow/goto-cfg.el",
-			"line": 61,
+			"line": 63,
 			"signature": "class FlowCleanup",
 			"id": null,
 			"initializer": null
@@ -17359,7 +17141,7 @@
 		{
 			"name": "FlowContext",
 			"source": "compiler/control-flow/goto-cfg.el",
-			"line": 66,
+			"line": 68,
 			"signature": "class FlowContext",
 			"id": null,
 			"initializer": null
@@ -17375,7 +17157,7 @@
 		{
 			"name": "LoopLocalClass",
 			"source": "compiler/control-flow/loop-facts.el",
-			"line": 12,
+			"line": 13,
 			"signature": "class LoopLocalClass",
 			"id": null,
 			"initializer": null
@@ -17383,7 +17165,7 @@
 		{
 			"name": "LoopTruthInvariant",
 			"source": "compiler/control-flow/loop-facts.el",
-			"line": 226,
+			"line": 228,
 			"signature": "class LoopTruthInvariant",
 			"id": null,
 			"initializer": null
@@ -22671,7 +22453,7 @@
 		{
 			"name": "RangePatternPlan",
 			"source": "compiler/syntax/loop-syntax.el",
-			"line": 64,
+			"line": 65,
 			"signature": "class RangePatternPlan",
 			"id": null,
 			"initializer": null
@@ -25847,7 +25629,7 @@
 		{
 			"name": "Poly1305",
 			"source": "cryptography/poly1305.el",
-			"line": 27,
+			"line": 26,
 			"signature": "class Poly1305",
 			"id": null,
 			"initializer": null
@@ -26079,7 +25861,7 @@
 		{
 			"name": "PrincipalLimits",
 			"source": "database/admin/security.el",
-			"line": 77,
+			"line": 87,
 			"signature": "class PrincipalLimits",
 			"id": null,
 			"initializer": null
@@ -26087,7 +25869,7 @@
 		{
 			"name": "Principal",
 			"source": "database/admin/security.el",
-			"line": 90,
+			"line": 100,
 			"signature": "class Principal",
 			"id": null,
 			"initializer": null
@@ -26095,7 +25877,7 @@
 		{
 			"name": "RoleEntry",
 			"source": "database/admin/security.el",
-			"line": 100,
+			"line": 110,
 			"signature": "class RoleEntry",
 			"id": null,
 			"initializer": null
@@ -26103,7 +25885,7 @@
 		{
 			"name": "TokenEntry",
 			"source": "database/admin/security.el",
-			"line": 106,
+			"line": 116,
 			"signature": "class TokenEntry",
 			"id": null,
 			"initializer": null
@@ -26111,7 +25893,7 @@
 		{
 			"name": "CallerIdentity",
 			"source": "database/admin/security.el",
-			"line": 120,
+			"line": 130,
 			"signature": "class CallerIdentity",
 			"id": null,
 			"initializer": null
@@ -26119,7 +25901,7 @@
 		{
 			"name": "PrincipalStore",
 			"source": "database/admin/security.el",
-			"line": 136,
+			"line": 146,
 			"signature": "class PrincipalStore",
 			"id": null,
 			"initializer": null
@@ -26127,7 +25909,7 @@
 		{
 			"name": "AuditLog",
 			"source": "database/admin/security.el",
-			"line": 438,
+			"line": 448,
 			"signature": "class AuditLog",
 			"id": null,
 			"initializer": null
@@ -26135,7 +25917,7 @@
 		{
 			"name": "AccessController",
 			"source": "database/admin/security.el",
-			"line": 543,
+			"line": 553,
 			"signature": "class AccessController",
 			"id": null,
 			"initializer": null
@@ -30663,7 +30445,7 @@
 		{
 			"name": "CounterRandomState",
 			"source": "execution/compute/random.el",
-			"line": 140,
+			"line": 138,
 			"signature": "class CounterRandomState",
 			"id": null,
 			"initializer": null
@@ -30671,7 +30453,7 @@
 		{
 			"name": "CounterRandom",
 			"source": "execution/compute/random.el",
-			"line": 163,
+			"line": 161,
 			"signature": "class CounterRandom",
 			"id": null,
 			"initializer": null
@@ -30839,7 +30621,7 @@
 		{
 			"name": "Allocation",
 			"source": "execution/graphics-processors/metal/gpu.el",
-			"line": 32,
+			"line": 31,
 			"signature": "class Allocation",
 			"id": null,
 			"initializer": null
@@ -30847,7 +30629,7 @@
 		{
 			"name": "Plan",
 			"source": "execution/graphics-processors/metal/gpu.el",
-			"line": 47,
+			"line": 46,
 			"signature": "class Plan",
 			"id": null,
 			"initializer": null
@@ -30855,7 +30637,7 @@
 		{
 			"name": "Submission",
 			"source": "execution/graphics-processors/metal/gpu.el",
-			"line": 59,
+			"line": 58,
 			"signature": "class Submission",
 			"id": null,
 			"initializer": null
@@ -30863,7 +30645,7 @@
 		{
 			"name": "CommandQueue",
 			"source": "execution/graphics-processors/metal/gpu.el",
-			"line": 67,
+			"line": 66,
 			"signature": "class CommandQueue",
 			"id": null,
 			"initializer": null
@@ -30871,7 +30653,7 @@
 		{
 			"name": "TimestampRecord",
 			"source": "execution/graphics-processors/metal/gpu.el",
-			"line": 76,
+			"line": 75,
 			"signature": "class TimestampRecord",
 			"id": null,
 			"initializer": null
@@ -30879,7 +30661,7 @@
 		{
 			"name": "GpuExecution",
 			"source": "execution/graphics-processors/metal/gpu.el",
-			"line": 89,
+			"line": 88,
 			"signature": "class GpuExecution extends ExecutionResource",
 			"id": null,
 			"initializer": null
@@ -31447,7 +31229,7 @@
 		{
 			"name": "ComputeCodec",
 			"source": "execution/scalars.el",
-			"line": 30,
+			"line": 29,
 			"signature": "fn ComputeCodec(element: type): type",
 			"id": null,
 			"initializer": null
@@ -32175,7 +31957,7 @@
 		{
 			"name": "JsonWriteError",
 			"source": "formats/json/writer.el",
-			"line": 17,
+			"line": 16,
 			"signature": "class JsonWriteError extends Error",
 			"id": null,
 			"initializer": null
@@ -32183,7 +31965,7 @@
 		{
 			"name": "JsonWriter",
 			"source": "formats/json/writer.el",
-			"line": 21,
+			"line": 20,
 			"signature": "class JsonWriter",
 			"id": null,
 			"initializer": null
@@ -32383,7 +32165,7 @@
 		{
 			"name": "TomlDateTimeKind",
 			"source": "formats/toml/index.el",
-			"line": 17,
+			"line": 16,
 			"signature": "enum TomlDateTimeKind",
 			"id": null,
 			"initializer": null
@@ -32391,7 +32173,7 @@
 		{
 			"name": "Toml",
 			"source": "formats/toml/index.el",
-			"line": 18,
+			"line": 17,
 			"signature": "data Toml",
 			"id": null,
 			"initializer": null
@@ -32399,7 +32181,7 @@
 		{
 			"name": "TomlTable",
 			"source": "formats/toml/index.el",
-			"line": 26,
+			"line": 25,
 			"signature": "let TomlTable: type",
 			"id": null,
 			"initializer": null
@@ -32407,7 +32189,7 @@
 		{
 			"name": "TableNode",
 			"source": "formats/toml/index.el",
-			"line": 33,
+			"line": 32,
 			"signature": "class TableNode",
 			"id": null,
 			"initializer": null
@@ -32415,7 +32197,7 @@
 		{
 			"name": "TomlReader",
 			"source": "formats/toml/index.el",
-			"line": 58,
+			"line": 57,
 			"signature": "class TomlReader extends FormatReader",
 			"id": null,
 			"initializer": null
@@ -32423,7 +32205,7 @@
 		{
 			"name": "TomlWriter",
 			"source": "formats/toml/index.el",
-			"line": 272,
+			"line": 274,
 			"signature": "class TomlWriter",
 			"id": null,
 			"initializer": null
@@ -32503,7 +32285,7 @@
 		{
 			"name": "YamlWriteError",
 			"source": "formats/yaml/writer.el",
-			"line": 16,
+			"line": 15,
 			"signature": "class YamlWriteError extends Error",
 			"id": null,
 			"initializer": null
@@ -32511,7 +32293,7 @@
 		{
 			"name": "YamlWriter",
 			"source": "formats/yaml/writer.el",
-			"line": 20,
+			"line": 19,
 			"signature": "class YamlWriter",
 			"id": null,
 			"initializer": null
@@ -33231,7 +33013,7 @@
 		{
 			"name": "IrExecutionPolicy",
 			"source": "intermediate-representation/abi/execution/contracts.el",
-			"line": 55,
+			"line": 57,
 			"signature": "class IrExecutionPolicy",
 			"id": null,
 			"initializer": null
@@ -33239,7 +33021,7 @@
 		{
 			"name": "IrExecutionToken",
 			"source": "intermediate-representation/abi/execution/contracts.el",
-			"line": 79,
+			"line": 81,
 			"signature": "class IrExecutionToken",
 			"id": null,
 			"initializer": null
@@ -33911,7 +33693,7 @@
 		{
 			"name": "IrAbiFlow",
 			"source": "intermediate-representation/abi/verify.el",
-			"line": 409,
+			"line": 415,
 			"signature": "class IrAbiFlow",
 			"id": null,
 			"initializer": null
@@ -33919,7 +33701,7 @@
 		{
 			"name": "IrAbiVerificationContext",
 			"source": "intermediate-representation/abi/verify.el",
-			"line": 601,
+			"line": 607,
 			"signature": "class IrAbiVerificationContext",
 			"id": null,
 			"initializer": null
@@ -34121,6 +33903,14 @@
 			"source": "intermediate-representation/native/firmware/target.el",
 			"line": 6,
 			"signature": "class IrFreestandingTarget",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "IrMachineFloatBits",
+			"source": "intermediate-representation/native/float.el",
+			"line": 15,
+			"signature": "class IrMachineFloatBits",
 			"id": null,
 			"initializer": null
 		},
@@ -34471,7 +34261,7 @@
 		{
 			"name": "IrSourceTypeSuffix",
 			"source": "intermediate-representation/source-types.el",
-			"line": 44,
+			"line": 37,
 			"signature": "class IrSourceTypeSuffix",
 			"id": null,
 			"initializer": null
@@ -35439,7 +35229,7 @@
 		{
 			"name": "fn",
 			"source": "language/reflection.el",
-			"line": 31,
+			"line": 35,
 			"signature": "class fn reconstruction_class(handle): RawWord",
 			"id": null,
 			"initializer": null
@@ -39125,17 +38915,17 @@
 			"initializer": null
 		},
 		{
-			"name": "BitFloatCodec",
-			"source": "memory/native/bit-float-codec.el",
+			"name": "DitFloatCodec",
+			"source": "memory/native/dit-float-codec.el",
 			"line": 9,
-			"signature": "fn BitFloatCodec(element: type, format): type",
+			"signature": "fn DitFloatCodec(element: type, encoding: ExternalFloatFormat): type",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "NativeCodec",
 			"source": "memory/native/format.el",
-			"line": 54,
+			"line": 47,
 			"signature": "fn NativeCodec(element: type): type",
 			"id": null,
 			"initializer": null
@@ -39333,17 +39123,9 @@
 			"initializer": null
 		},
 		{
-			"name": "AudioRate",
-			"source": "multimedia/audio/macos-output.el",
-			"line": 12,
-			"signature": "let AudioRate: type",
-			"id": null,
-			"initializer": null
-		},
-		{
 			"name": "Int",
 			"source": "multimedia/audio/macos-output.el",
-			"line": 14,
+			"line": 15,
 			"signature": "class Int",
 			"id": null,
 			"initializer": null
@@ -39351,7 +39133,7 @@
 		{
 			"name": "UInt",
 			"source": "multimedia/audio/macos-output.el",
-			"line": 15,
+			"line": 16,
 			"signature": "class UInt",
 			"id": null,
 			"initializer": null
@@ -39359,7 +39141,7 @@
 		{
 			"name": "NativeBool",
 			"source": "multimedia/audio/macos-output.el",
-			"line": 16,
+			"line": 17,
 			"signature": "class NativeBool",
 			"id": null,
 			"initializer": null
@@ -39367,7 +39149,7 @@
 		{
 			"name": "PcmOutput",
 			"source": "multimedia/audio/macos-output.el",
-			"line": 56,
+			"line": 57,
 			"signature": "class PcmOutput",
 			"id": "multimedia/audio/macos-output::PcmOutput",
 			"initializer": null
@@ -39909,14 +39691,6 @@
 			"initializer": null
 		},
 		{
-			"name": "QualityFloat",
-			"source": "multimedia/image/windows/options.el",
-			"line": 9,
-			"signature": "let QualityFloat: type",
-			"id": null,
-			"initializer": null
-		},
-		{
 			"name": "QrBits",
 			"source": "multimedia/qr/bits.el",
 			"line": 13,
@@ -40383,7 +40157,7 @@
 		{
 			"name": "Point",
 			"source": "network/tls/arithmetic.el",
-			"line": 62,
+			"line": 61,
 			"signature": "class Point",
 			"id": null,
 			"initializer": null
@@ -40391,7 +40165,7 @@
 		{
 			"name": "VerificationCurve",
 			"source": "network/tls/arithmetic.el",
-			"line": 68,
+			"line": 67,
 			"signature": "class VerificationCurve",
 			"id": null,
 			"initializer": null
@@ -40927,7 +40701,7 @@
 		{
 			"name": "KVCache",
 			"source": "neural-networks/modules/attention.el",
-			"line": 34,
+			"line": 32,
 			"signature": "fn KVCache(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -40967,7 +40741,7 @@
 		{
 			"name": "AdafactorOptions",
 			"source": "neural-networks/optimizers/adafactor.el",
-			"line": 17,
+			"line": 16,
 			"signature": "class AdafactorOptions",
 			"id": null,
 			"initializer": null
@@ -40975,7 +40749,7 @@
 		{
 			"name": "AdafactorGroup",
 			"source": "neural-networks/optimizers/adafactor.el",
-			"line": 36,
+			"line": 35,
 			"signature": "class AdafactorGroup",
 			"id": null,
 			"initializer": null
@@ -40983,7 +40757,7 @@
 		{
 			"name": "Adafactor",
 			"source": "neural-networks/optimizers/adafactor.el",
-			"line": 48,
+			"line": 47,
 			"signature": "fn Adafactor(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -40991,7 +40765,7 @@
 		{
 			"name": "ParameterGroup",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 21,
+			"line": 20,
 			"signature": "class ParameterGroup",
 			"id": null,
 			"initializer": null
@@ -40999,7 +40773,7 @@
 		{
 			"name": "AdaptiveOptimizer",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 40,
+			"line": 39,
 			"signature": "fn AdaptiveOptimizer(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -41007,7 +40781,7 @@
 		{
 			"name": "AdaptiveOptimizerForwarder",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 297,
+			"line": 296,
 			"signature": "fn AdaptiveOptimizerForwarder(Engine: type, storage: type): type",
 			"id": null,
 			"initializer": null
@@ -41015,7 +40789,7 @@
 		{
 			"name": "Adam",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 311,
+			"line": 310,
 			"signature": "fn Adam(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -41023,7 +40797,7 @@
 		{
 			"name": "RMSprop",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 318,
+			"line": 317,
 			"signature": "fn RMSprop(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -41031,7 +40805,7 @@
 		{
 			"name": "Adagrad",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 325,
+			"line": 324,
 			"signature": "fn Adagrad(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -41039,7 +40813,7 @@
 		{
 			"name": "Momentum",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 332,
+			"line": 331,
 			"signature": "fn Momentum(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -41047,7 +40821,7 @@
 		{
 			"name": "Adadelta",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 343,
+			"line": 342,
 			"signature": "fn Adadelta(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -41055,7 +40829,7 @@
 		{
 			"name": "Adamax",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 352,
+			"line": 351,
 			"signature": "fn Adamax(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -41063,7 +40837,7 @@
 		{
 			"name": "Rprop",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 361,
+			"line": 360,
 			"signature": "fn Rprop(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -41071,7 +40845,7 @@
 		{
 			"name": "NAdam",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 370,
+			"line": 369,
 			"signature": "fn NAdam(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -41079,7 +40853,7 @@
 		{
 			"name": "RAdam",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 379,
+			"line": 378,
 			"signature": "fn RAdam(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -41087,7 +40861,7 @@
 		{
 			"name": "ASGD",
 			"source": "neural-networks/optimizers/index.el",
-			"line": 388,
+			"line": 387,
 			"signature": "fn ASGD(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -41095,7 +40869,7 @@
 		{
 			"name": "LineSearchFailure",
 			"source": "neural-networks/optimizers/lbfgs.el",
-			"line": 12,
+			"line": 10,
 			"signature": "class LineSearchFailure extends Error",
 			"id": null,
 			"initializer": null
@@ -41103,7 +40877,7 @@
 		{
 			"name": "LBFGS",
 			"source": "neural-networks/optimizers/lbfgs.el",
-			"line": 30,
+			"line": 22,
 			"signature": "fn LBFGS(element: type, storage: type = Tensor<element: element>): type",
 			"id": null,
 			"initializer": null
@@ -41159,7 +40933,7 @@
 		{
 			"name": "MultiStepLR",
 			"source": "neural-networks/schedulers/extended.el",
-			"line": 28,
+			"line": 27,
 			"signature": "class MultiStepLR",
 			"id": null,
 			"initializer": null
@@ -41167,7 +40941,7 @@
 		{
 			"name": "ConstantLR",
 			"source": "neural-networks/schedulers/extended.el",
-			"line": 46,
+			"line": 45,
 			"signature": "class ConstantLR",
 			"id": null,
 			"initializer": null
@@ -41175,7 +40949,7 @@
 		{
 			"name": "PolynomialLR",
 			"source": "neural-networks/schedulers/extended.el",
-			"line": 55,
+			"line": 54,
 			"signature": "class PolynomialLR",
 			"id": null,
 			"initializer": null
@@ -41183,7 +40957,7 @@
 		{
 			"name": "LambdaLR",
 			"source": "neural-networks/schedulers/extended.el",
-			"line": 68,
+			"line": 67,
 			"signature": "class LambdaLR",
 			"id": null,
 			"initializer": null
@@ -41191,7 +40965,7 @@
 		{
 			"name": "MultiplicativeLR",
 			"source": "neural-networks/schedulers/extended.el",
-			"line": 74,
+			"line": 73,
 			"signature": "class MultiplicativeLR",
 			"id": null,
 			"initializer": null
@@ -41199,7 +40973,7 @@
 		{
 			"name": "CyclicLR",
 			"source": "neural-networks/schedulers/extended.el",
-			"line": 86,
+			"line": 85,
 			"signature": "class CyclicLR",
 			"id": null,
 			"initializer": null
@@ -41207,7 +40981,7 @@
 		{
 			"name": "OneCycleLR",
 			"source": "neural-networks/schedulers/extended.el",
-			"line": 111,
+			"line": 110,
 			"signature": "class OneCycleLR",
 			"id": null,
 			"initializer": null
@@ -41215,7 +40989,7 @@
 		{
 			"name": "SequentialLR",
 			"source": "neural-networks/schedulers/extended.el",
-			"line": 136,
+			"line": 135,
 			"signature": "class SequentialLR",
 			"id": null,
 			"initializer": null
@@ -41223,7 +40997,7 @@
 		{
 			"name": "ChainedLR",
 			"source": "neural-networks/schedulers/extended.el",
-			"line": 154,
+			"line": 153,
 			"signature": "class ChainedLR",
 			"id": null,
 			"initializer": null
@@ -41231,7 +41005,7 @@
 		{
 			"name": "ReduceLROnPlateau",
 			"source": "neural-networks/schedulers/extended.el",
-			"line": 166,
+			"line": 165,
 			"signature": "class ReduceLROnPlateau",
 			"id": null,
 			"initializer": null
@@ -41535,7 +41309,7 @@
 		{
 			"name": "CausalLanguageModel",
 			"source": "neural-networks/text/decoder.el",
-			"line": 23,
+			"line": 21,
 			"signature": "fn CausalLanguageModel(element: type, storage: type = Tensor<element: element>, parameterBank: type = ParameterModel<element: element, storage: storage>): type",
 			"id": null,
 			"initializer": null
@@ -41591,7 +41365,7 @@
 		{
 			"name": "InvalidGeneration",
 			"source": "neural-networks/text/generation.el",
-			"line": 8,
+			"line": 6,
 			"signature": "class InvalidGeneration",
 			"id": null,
 			"initializer": null
@@ -41599,7 +41373,7 @@
 		{
 			"name": "GenerationOptions",
 			"source": "neural-networks/text/generation.el",
-			"line": 18,
+			"line": 16,
 			"signature": "class GenerationOptions",
 			"id": null,
 			"initializer": null
@@ -41607,7 +41381,7 @@
 		{
 			"name": "GenerationResult",
 			"source": "neural-networks/text/generation.el",
-			"line": 38,
+			"line": 36,
 			"signature": "class GenerationResult",
 			"id": null,
 			"initializer": null
@@ -41615,7 +41389,7 @@
 		{
 			"name": "Candidate",
 			"source": "neural-networks/text/generation.el",
-			"line": 53,
+			"line": 51,
 			"signature": "class Candidate",
 			"id": null,
 			"initializer": null
@@ -41703,7 +41477,7 @@
 		{
 			"name": "InvalidSafeTensor",
 			"source": "neural-networks/text/safetensors.el",
-			"line": 16,
+			"line": 15,
 			"signature": "class InvalidSafeTensor",
 			"id": null,
 			"initializer": null
@@ -41711,7 +41485,7 @@
 		{
 			"name": "SafeTensorLimits",
 			"source": "neural-networks/text/safetensors.el",
-			"line": 20,
+			"line": 19,
 			"signature": "class SafeTensorLimits",
 			"id": null,
 			"initializer": null
@@ -41719,7 +41493,7 @@
 		{
 			"name": "Entry",
 			"source": "neural-networks/text/safetensors.el",
-			"line": 76,
+			"line": 75,
 			"signature": "class Entry",
 			"id": null,
 			"initializer": null
@@ -41727,7 +41501,7 @@
 		{
 			"name": "SafeTensorFile",
 			"source": "neural-networks/text/safetensors.el",
-			"line": 105,
+			"line": 104,
 			"signature": "fn SafeTensorFile(element: type = PrecisionElement(\"binary32\")): type",
 			"id": null,
 			"initializer": null
@@ -41789,59 +41563,75 @@
 			"initializer": null
 		},
 		{
-			"name": "BitFloat",
-			"source": "number/bit-float.el",
-			"line": 17,
-			"signature": "fn BitFloat(sign_bits = 1, fraction_bits = 0, exponent_bits = 0, exponent_bias = 0, min = nil, max = nil, overflow = \"ub\"): type",
+			"name": "ExternalFloatFormat",
+			"source": "number/digit-float/codec.el",
+			"line": 13,
+			"signature": "class ExternalFloatFormat",
 			"id": null,
 			"initializer": null
 		},
 		{
-			"name": "IntegerBits8",
-			"source": "number/bit-integer.el",
-			"line": 19,
-			"signature": "class IntegerBits8",
+			"name": "ExternalFloatCodec",
+			"source": "number/digit-float/codec.el",
+			"line": 80,
+			"signature": "fn ExternalFloatCodec(element: type, format: ExternalFloatFormat): type",
 			"id": null,
 			"initializer": null
 		},
 		{
-			"name": "IntegerBits16",
-			"source": "number/bit-integer.el",
-			"line": 20,
-			"signature": "class IntegerBits16",
+			"name": "DigitFloatLayout",
+			"source": "number/digit-float/quantization.el",
+			"line": 16,
+			"signature": "class DigitFloatLayout",
 			"id": null,
 			"initializer": null
 		},
 		{
-			"name": "IntegerBits32",
-			"source": "number/bit-integer.el",
-			"line": 21,
-			"signature": "class IntegerBits32",
+			"name": "DitFloatKind",
+			"source": "number/digit-float/quantization.el",
+			"line": 83,
+			"signature": "enum DitFloatKind",
 			"id": null,
 			"initializer": null
 		},
 		{
-			"name": "IntegerBits64",
-			"source": "number/bit-integer.el",
-			"line": 22,
-			"signature": "class IntegerBits64",
+			"name": "DigitFloatParts",
+			"source": "number/digit-float/quantization.el",
+			"line": 85,
+			"signature": "class DigitFloatParts",
 			"id": null,
 			"initializer": null
 		},
 		{
-			"name": "integer_payload",
-			"source": "number/bit-integer.el",
-			"line": 28,
-			"signature": "fn integer_payload(width: Integer): type",
+			"name": "DitFloatValue",
+			"source": "number/dit-float.el",
+			"line": 18,
+			"signature": "class DitFloatValue extends Number",
 			"id": null,
 			"initializer": null
 		},
 		{
-			"name": "BitInteger",
-			"source": "number/bit-integer.el",
-			"line": 47,
-			"signature": "fn BitInteger(bits = 0, sign_bits = 0, min = nil, max = nil, overflow = \"ub\"): type",
+			"name": "ditFloatType",
+			"source": "number/dit-float.el",
+			"line": 103,
+			"signature": "fn ditFloatType(radix: Number, signDits, fractionDits, exponentDits, exponentBias, min, max, overflow): type",
 			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DitFloat",
+			"source": "number/dit-float.el",
+			"line": 281,
+			"signature": "fn DitFloat(sign_dits = 1, fraction_dits = 0, exponent_dits = 0, exponent_bias = 0, min = nil, max = nil, overflow = \"ub\"): type",
+			"id": "number/dit-float::DitFloat",
+			"initializer": null
+		},
+		{
+			"name": "DitInt",
+			"source": "number/dit-int.el",
+			"line": 40,
+			"signature": "fn DitInt(digits = 0, signed = f, min = nil, max = nil, overflow = \"ub\"): type",
+			"id": "number/dit-int::DitInt",
 			"initializer": null
 		},
 		{
@@ -41857,54 +41647,6 @@
 			"source": "number/formats.el",
 			"line": 4,
 			"signature": "let U128: type",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "BitFloatBits",
-			"source": "number/ieee754/codec.el",
-			"line": 38,
-			"signature": "fn BitFloatBits(element: type, format): type",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "NumberBase",
-			"source": "number/ieee754/number.el",
-			"line": 14,
-			"signature": "class NumberBase extends Number",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "IeeeBits",
-			"source": "number/ieee754/representation.el",
-			"line": 7,
-			"signature": "class IeeeBits",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "IeeeLayout",
-			"source": "number/ieee754/representation.el",
-			"line": 13,
-			"signature": "class IeeeLayout",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "IeeeValue",
-			"source": "number/ieee754/representation.el",
-			"line": 25,
-			"signature": "class IeeeValue",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "IeeeContext",
-			"source": "number/ieee754/representation.el",
-			"line": 34,
-			"signature": "class IeeeContext",
 			"id": null,
 			"initializer": null
 		},
@@ -42101,6 +41843,14 @@
 			"initializer": null
 		},
 		{
+			"name": "WorkingFloat",
+			"source": "number/working-float.el",
+			"line": 18,
+			"signature": "const WorkingFloat: type",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "AccumulationPolicy",
 			"source": "numerical-computing/accumulation-policy.el",
 			"line": 6,
@@ -42119,7 +41869,7 @@
 		{
 			"name": "Complex",
 			"source": "numerical-computing/complex.el",
-			"line": 6,
+			"line": 5,
 			"signature": "fn Complex(element: type): type",
 			"id": null,
 			"initializer": null
@@ -42127,7 +41877,7 @@
 		{
 			"name": "C64",
 			"source": "numerical-computing/complex.el",
-			"line": 38,
+			"line": 37,
 			"signature": "let C64: type",
 			"id": null,
 			"initializer": null
@@ -42135,7 +41885,7 @@
 		{
 			"name": "Matrix",
 			"source": "numerical-computing/dense.el",
-			"line": 9,
+			"line": 8,
 			"signature": "let Matrix: type",
 			"id": null,
 			"initializer": null
@@ -42151,7 +41901,7 @@
 		{
 			"name": "CachedPlan",
 			"source": "numerical-computing/device-context.el",
-			"line": 67,
+			"line": 65,
 			"signature": "class CachedPlan",
 			"id": null,
 			"initializer": null
@@ -42159,7 +41909,7 @@
 		{
 			"name": "GraphSourceSnapshot",
 			"source": "numerical-computing/device-context.el",
-			"line": 97,
+			"line": 95,
 			"signature": "class GraphSourceSnapshot",
 			"id": null,
 			"initializer": null
@@ -42167,7 +41917,7 @@
 		{
 			"name": "ContextTimestampOwner",
 			"source": "numerical-computing/device-context.el",
-			"line": 106,
+			"line": 104,
 			"signature": "class ContextTimestampOwner",
 			"id": null,
 			"initializer": null
@@ -42175,7 +41925,7 @@
 		{
 			"name": "DeviceContext",
 			"source": "numerical-computing/device-context.el",
-			"line": 132,
+			"line": 130,
 			"signature": "class DeviceContext extends IntegralExecutionProvider",
 			"id": null,
 			"initializer": null
@@ -42183,7 +41933,7 @@
 		{
 			"name": "DeviceGraphArena",
 			"source": "numerical-computing/device-graph-arena.el",
-			"line": 70,
+			"line": 68,
 			"signature": "fn DeviceGraphArena(element: type, Value: type): type",
 			"id": null,
 			"initializer": null
@@ -42191,7 +41941,7 @@
 		{
 			"name": "TensorDevice",
 			"source": "numerical-computing/device-tensor.el",
-			"line": 71,
+			"line": 69,
 			"signature": "fn TensorDevice(element: type, precision: Text = \"\"): type",
 			"id": null,
 			"initializer": null
@@ -42199,7 +41949,7 @@
 		{
 			"name": "DeviceTensor",
 			"source": "numerical-computing/device-value.el",
-			"line": 71,
+			"line": 69,
 			"signature": "fn DeviceTensor(element: type, precision: Text = \"\"): type",
 			"id": null,
 			"initializer": null
@@ -42215,7 +41965,7 @@
 		{
 			"name": "SolveReport",
 			"source": "numerical-computing/diagnostics.el",
-			"line": 13,
+			"line": 12,
 			"signature": "class SolveReport",
 			"id": null,
 			"initializer": null
@@ -42223,7 +41973,7 @@
 		{
 			"name": "InvalidDistribution",
 			"source": "numerical-computing/distributions/index.el",
-			"line": 6,
+			"line": 5,
 			"signature": "class InvalidDistribution",
 			"id": null,
 			"initializer": null
@@ -42231,7 +41981,7 @@
 		{
 			"name": "InvalidRandomSample",
 			"source": "numerical-computing/distributions/index.el",
-			"line": 7,
+			"line": 6,
 			"signature": "class InvalidRandomSample",
 			"id": null,
 			"initializer": null
@@ -42239,7 +41989,7 @@
 		{
 			"name": "Normal",
 			"source": "numerical-computing/distributions/index.el",
-			"line": 14,
+			"line": 13,
 			"signature": "class Normal",
 			"id": null,
 			"initializer": null
@@ -42247,7 +41997,7 @@
 		{
 			"name": "Uniform",
 			"source": "numerical-computing/distributions/index.el",
-			"line": 22,
+			"line": 21,
 			"signature": "class Uniform",
 			"id": null,
 			"initializer": null
@@ -42255,7 +42005,7 @@
 		{
 			"name": "Bernoulli",
 			"source": "numerical-computing/distributions/index.el",
-			"line": 28,
+			"line": 27,
 			"signature": "class Bernoulli",
 			"id": null,
 			"initializer": null
@@ -42263,7 +42013,7 @@
 		{
 			"name": "Exponential",
 			"source": "numerical-computing/distributions/index.el",
-			"line": 34,
+			"line": 33,
 			"signature": "class Exponential",
 			"id": null,
 			"initializer": null
@@ -42271,7 +42021,7 @@
 		{
 			"name": "Categorical",
 			"source": "numerical-computing/distributions/index.el",
-			"line": 40,
+			"line": 39,
 			"signature": "class Categorical",
 			"id": null,
 			"initializer": null
@@ -42367,7 +42117,7 @@
 		{
 			"name": "DeviceFFT",
 			"source": "numerical-computing/fft/device.el",
-			"line": 12,
+			"line": 11,
 			"signature": "fn DeviceFFT(element: type, storage: Text = \"complex64\"): type",
 			"id": null,
 			"initializer": null
@@ -42375,7 +42125,7 @@
 		{
 			"name": "FloatTensorBuffer",
 			"source": "numerical-computing/float-buffer.el",
-			"line": 13,
+			"line": 12,
 			"signature": "fn FloatTensorBuffer(element: type): type",
 			"id": null,
 			"initializer": null
@@ -42399,7 +42149,7 @@
 		{
 			"name": "IntegralTensorDevice",
 			"source": "numerical-computing/integral-device.el",
-			"line": 362,
+			"line": 361,
 			"signature": "class IntegralTensorDevice",
 			"id": null,
 			"initializer": null
@@ -42415,7 +42165,7 @@
 		{
 			"name": "BatchLinearAlgebraError",
 			"source": "numerical-computing/linear-algebra/batched.el",
-			"line": 15,
+			"line": 14,
 			"signature": "class BatchLinearAlgebraError extends Error",
 			"id": null,
 			"initializer": null
@@ -42423,7 +42173,7 @@
 		{
 			"name": "DecompositionNotConverged",
 			"source": "numerical-computing/linear-algebra/decompositions.el",
-			"line": 13,
+			"line": 12,
 			"signature": "class DecompositionNotConverged",
 			"id": null,
 			"initializer": null
@@ -42431,7 +42181,7 @@
 		{
 			"name": "InvalidDecompositionBudget",
 			"source": "numerical-computing/linear-algebra/decompositions.el",
-			"line": 14,
+			"line": 13,
 			"signature": "class InvalidDecompositionBudget",
 			"id": null,
 			"initializer": null
@@ -42439,7 +42189,7 @@
 		{
 			"name": "SymmetricEigenResult",
 			"source": "numerical-computing/linear-algebra/decompositions.el",
-			"line": 15,
+			"line": 14,
 			"signature": "class SymmetricEigenResult",
 			"id": null,
 			"initializer": null
@@ -42447,7 +42197,7 @@
 		{
 			"name": "SvdResult",
 			"source": "numerical-computing/linear-algebra/decompositions.el",
-			"line": 20,
+			"line": 19,
 			"signature": "class SvdResult",
 			"id": null,
 			"initializer": null
@@ -42455,7 +42205,7 @@
 		{
 			"name": "DeviceLinearAlgebra",
 			"source": "numerical-computing/linear-algebra/device.el",
-			"line": 18,
+			"line": 19,
 			"signature": "fn DeviceLinearAlgebra(element: type): type",
 			"id": null,
 			"initializer": null
@@ -42535,15 +42285,23 @@
 		{
 			"name": "NumericsPolicy",
 			"source": "numerical-computing/policy.el",
-			"line": 8,
+			"line": 7,
 			"signature": "class NumericsPolicy",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "PrecisionLayout",
+			"source": "numerical-computing/precision-codec.el",
+			"line": 11,
+			"signature": "class PrecisionLayout",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "PrecisionElement",
 			"source": "numerical-computing/precision-codec.el",
-			"line": 18,
+			"line": 31,
 			"signature": "fn PrecisionElement(name: Text): type",
 			"id": null,
 			"initializer": null
@@ -42551,7 +42309,7 @@
 		{
 			"name": "PrecisionFormat",
 			"source": "numerical-computing/precision-codec.el",
-			"line": 23,
+			"line": 75,
 			"signature": "class PrecisionFormat",
 			"id": null,
 			"initializer": null
@@ -42559,7 +42317,7 @@
 		{
 			"name": "GradientAccumulator",
 			"source": "numerical-computing/precision-codec.el",
-			"line": 71,
+			"line": 106,
 			"signature": "fn GradientAccumulator(storage: type): type",
 			"id": null,
 			"initializer": null
@@ -42615,7 +42373,7 @@
 		{
 			"name": "SpecialFunctionDomain",
 			"source": "numerical-computing/special/index.el",
-			"line": 6,
+			"line": 5,
 			"signature": "class SpecialFunctionDomain",
 			"id": null,
 			"initializer": null
@@ -42639,7 +42397,7 @@
 		{
 			"name": "TensorMathPolicy",
 			"source": "numerical-computing/tensor-math.el",
-			"line": 8,
+			"line": 7,
 			"signature": "class TensorMathPolicy",
 			"id": null,
 			"initializer": null
@@ -42655,7 +42413,7 @@
 		{
 			"name": "Tensor",
 			"source": "numerical-computing/tensor.el",
-			"line": 41,
+			"line": 39,
 			"signature": "fn Tensor(element: type): type",
 			"id": "numerical-computing/tensor::Tensor",
 			"initializer": null
@@ -42663,7 +42421,7 @@
 		{
 			"name": "Matrix",
 			"source": "numerical-computing/tridiagonal.el",
-			"line": 12,
+			"line": 11,
 			"signature": "let Matrix: type",
 			"id": null,
 			"initializer": null
@@ -42671,7 +42429,7 @@
 		{
 			"name": "Band",
 			"source": "numerical-computing/tridiagonal.el",
-			"line": 13,
+			"line": 12,
 			"signature": "let Band: type",
 			"id": null,
 			"initializer": null
@@ -42679,7 +42437,7 @@
 		{
 			"name": "Tridiagonal",
 			"source": "numerical-computing/tridiagonal.el",
-			"line": 15,
+			"line": 14,
 			"signature": "class Tridiagonal",
 			"id": null,
 			"initializer": null
@@ -43575,7 +43333,7 @@
 		{
 			"name": "U8",
 			"source": "platform/embedded/register.el",
-			"line": 13,
+			"line": 11,
 			"signature": "let U8: type",
 			"id": null,
 			"initializer": null
@@ -43583,7 +43341,7 @@
 		{
 			"name": "U16",
 			"source": "platform/embedded/register.el",
-			"line": 14,
+			"line": 12,
 			"signature": "let U16: type",
 			"id": null,
 			"initializer": null
@@ -43591,7 +43349,7 @@
 		{
 			"name": "U32",
 			"source": "platform/embedded/register.el",
-			"line": 15,
+			"line": 13,
 			"signature": "let U32: type",
 			"id": null,
 			"initializer": null
@@ -43599,7 +43357,7 @@
 		{
 			"name": "UnsafeMmioRegion",
 			"source": "platform/embedded/register.el",
-			"line": 25,
+			"line": 22,
 			"signature": "class UnsafeMmioRegion",
 			"id": null,
 			"initializer": null
@@ -43607,7 +43365,7 @@
 		{
 			"name": "core8",
 			"source": "platform/embedded/register.el",
-			"line": 41,
+			"line": 38,
 			"signature": "fn core8(): type",
 			"id": null,
 			"initializer": null
@@ -43615,7 +43373,7 @@
 		{
 			"name": "core16",
 			"source": "platform/embedded/register.el",
-			"line": 72,
+			"line": 69,
 			"signature": "fn core16(): type",
 			"id": null,
 			"initializer": null
@@ -43623,7 +43381,7 @@
 		{
 			"name": "core32",
 			"source": "platform/embedded/register.el",
-			"line": 103,
+			"line": 100,
 			"signature": "fn core32(): type",
 			"id": null,
 			"initializer": null
@@ -43631,7 +43389,7 @@
 		{
 			"name": "read_only_register",
 			"source": "platform/embedded/register.el",
-			"line": 135,
+			"line": 132,
 			"signature": "fn read_only_register(Core: type, valueType: type): type",
 			"id": null,
 			"initializer": null
@@ -43639,7 +43397,7 @@
 		{
 			"name": "write_only_register",
 			"source": "platform/embedded/register.el",
-			"line": 142,
+			"line": 139,
 			"signature": "fn write_only_register(Core: type, valueType: type): type",
 			"id": null,
 			"initializer": null
@@ -43647,7 +43405,7 @@
 		{
 			"name": "read_write_register",
 			"source": "platform/embedded/register.el",
-			"line": 149,
+			"line": 146,
 			"signature": "fn read_write_register(Core: type, valueType: type): type",
 			"id": null,
 			"initializer": null
@@ -43655,7 +43413,7 @@
 		{
 			"name": "write_one_to_clear_register",
 			"source": "platform/embedded/register.el",
-			"line": 157,
+			"line": 154,
 			"signature": "fn write_one_to_clear_register(Core: type, valueType: type): type",
 			"id": null,
 			"initializer": null
@@ -43663,7 +43421,7 @@
 		{
 			"name": "UnsafeReadOnlyRegister8",
 			"source": "platform/embedded/register.el",
-			"line": 165,
+			"line": 162,
 			"signature": "fn UnsafeReadOnlyRegister8(): type",
 			"id": null,
 			"initializer": null
@@ -43671,7 +43429,7 @@
 		{
 			"name": "UnsafeWriteOnlyRegister8",
 			"source": "platform/embedded/register.el",
-			"line": 166,
+			"line": 163,
 			"signature": "fn UnsafeWriteOnlyRegister8(): type",
 			"id": null,
 			"initializer": null
@@ -43679,7 +43437,7 @@
 		{
 			"name": "UnsafeReadWriteRegister8",
 			"source": "platform/embedded/register.el",
-			"line": 167,
+			"line": 164,
 			"signature": "fn UnsafeReadWriteRegister8(): type",
 			"id": null,
 			"initializer": null
@@ -43687,7 +43445,7 @@
 		{
 			"name": "UnsafeWriteOneToClearRegister8",
 			"source": "platform/embedded/register.el",
-			"line": 168,
+			"line": 165,
 			"signature": "fn UnsafeWriteOneToClearRegister8(): type",
 			"id": null,
 			"initializer": null
@@ -43695,7 +43453,7 @@
 		{
 			"name": "UnsafeReadOnlyRegister16",
 			"source": "platform/embedded/register.el",
-			"line": 169,
+			"line": 166,
 			"signature": "fn UnsafeReadOnlyRegister16(): type",
 			"id": null,
 			"initializer": null
@@ -43703,7 +43461,7 @@
 		{
 			"name": "UnsafeWriteOnlyRegister16",
 			"source": "platform/embedded/register.el",
-			"line": 170,
+			"line": 167,
 			"signature": "fn UnsafeWriteOnlyRegister16(): type",
 			"id": null,
 			"initializer": null
@@ -43711,7 +43469,7 @@
 		{
 			"name": "UnsafeReadWriteRegister16",
 			"source": "platform/embedded/register.el",
-			"line": 171,
+			"line": 168,
 			"signature": "fn UnsafeReadWriteRegister16(): type",
 			"id": null,
 			"initializer": null
@@ -43719,7 +43477,7 @@
 		{
 			"name": "UnsafeWriteOneToClearRegister16",
 			"source": "platform/embedded/register.el",
-			"line": 172,
+			"line": 169,
 			"signature": "fn UnsafeWriteOneToClearRegister16(): type",
 			"id": null,
 			"initializer": null
@@ -43727,7 +43485,7 @@
 		{
 			"name": "UnsafeReadOnlyRegister32",
 			"source": "platform/embedded/register.el",
-			"line": 173,
+			"line": 170,
 			"signature": "fn UnsafeReadOnlyRegister32(): type",
 			"id": null,
 			"initializer": null
@@ -43735,7 +43493,7 @@
 		{
 			"name": "UnsafeWriteOnlyRegister32",
 			"source": "platform/embedded/register.el",
-			"line": 174,
+			"line": 171,
 			"signature": "fn UnsafeWriteOnlyRegister32(): type",
 			"id": null,
 			"initializer": null
@@ -43743,7 +43501,7 @@
 		{
 			"name": "UnsafeReadWriteRegister32",
 			"source": "platform/embedded/register.el",
-			"line": 175,
+			"line": 172,
 			"signature": "fn UnsafeReadWriteRegister32(): type",
 			"id": null,
 			"initializer": null
@@ -43751,7 +43509,7 @@
 		{
 			"name": "UnsafeWriteOneToClearRegister32",
 			"source": "platform/embedded/register.el",
-			"line": 176,
+			"line": 173,
 			"signature": "fn UnsafeWriteOneToClearRegister32(): type",
 			"id": null,
 			"initializer": null
@@ -46943,7 +46701,7 @@
 		{
 			"name": "ScalarClass",
 			"source": "units/scalar.el",
-			"line": 6,
+			"line": 5,
 			"signature": "enum ScalarClass",
 			"id": null,
 			"initializer": null
@@ -46951,7 +46709,7 @@
 		{
 			"name": "ScalarAdapter",
 			"source": "units/scalar.el",
-			"line": 27,
+			"line": 21,
 			"signature": "fn ScalarAdapter(element: type): type",
 			"id": null,
 			"initializer": null
@@ -47589,11 +47347,11 @@
 		{
 			"name": "Value",
 			"source": "numerical-computing/tensor.el",
-			"line": 89,
+			"line": 87,
 			"signature": "let Value = @assign(mode: \"copy\") class {",
 			"id": null,
 			"initializer": null,
-			"anchor": "api-70087f43333f7c566f19"
+			"anchor": "api-230feb197d068a60fd3a"
 		}
 	],
 	"type_parameters": [
@@ -47647,11 +47405,11 @@
 		},
 		{
 			"name": "size",
-			"source": "collections/sets/bit-set.el",
-			"line": 63,
-			"signature": "fn BitSet(size: Number): type",
+			"source": "collections/sets/dit-set.el",
+			"line": 72,
+			"signature": "fn DitSet(size: Number): type",
 			"kind": "value",
-			"anchor": "api-09fd2333fe50aa733d41"
+			"anchor": "api-c0d15bc265145c1818ee"
 		},
 		{
 			"name": "element",
@@ -47672,10 +47430,10 @@
 		{
 			"name": "element",
 			"source": "numerical-computing/tensor.el",
-			"line": 41,
+			"line": 39,
 			"signature": "fn Tensor(element: type): type",
 			"kind": "type",
-			"anchor": "api-50bbdcd76206fb0195f1"
+			"anchor": "api-224100946b9a04337618"
 		},
 		{
 			"name": "output",
@@ -47694,7 +47452,7 @@
 			"anchor": "api-e1b1b22430ae1dac04e7"
 		}
 	],
-	"source_digest": "74b3331fd9d087ec5f64cece89a5451ac3182118fdd369e53f96bac101c549d2",
+	"source_digest": "9b736220c69d92dadba1dc158613ad0e647d1df9a63b78c2dae4faea18b7c552",
 	"files": [
 		{
 			"path": "collections/arrays/dynamic.el",
@@ -47749,8 +47507,8 @@
 			"sha256": "c8f8cee4c060c0e09ead56ffe8ffdd2145a7221b6685400ceceec24f75201fcc"
 		},
 		{
-			"path": "collections/sets/bit-set.el",
-			"sha256": "2257d7c46daf2985df21c82e3cad603e2bb60e0ef49480372094889887e97d3c"
+			"path": "collections/sets/dit-set.el",
+			"sha256": "cfefaa1374e6d8d48ebc845ec699add07cb60d9086151be721acc1d88ed35d30"
 		},
 		{
 			"path": "collections/sets/hash-set.el",
@@ -47790,7 +47548,7 @@
 		},
 		{
 			"path": "cryptography/chacha20.el",
-			"sha256": "22efeb4329f3e58ce2fe71dfd058a609c21bc33122240ac131ba67128ed4379a"
+			"sha256": "f510f4bfb858a8734f558a66a7890d8825721358e1feb2a9c7bf1eca8357d4b9"
 		},
 		{
 			"path": "cryptography/hkdf.el",
@@ -47798,11 +47556,11 @@
 		},
 		{
 			"path": "cryptography/hmac.el",
-			"sha256": "b2e3844694038cde49da5f1f8d77da55fa2cb7af7ca3b635cce8d7512c0b9474"
+			"sha256": "1100cba86cdda685a71c1aeb62c7d6a25ab4b32e73635a03d983dcaaff4e2633"
 		},
 		{
 			"path": "cryptography/pbkdf2.el",
-			"sha256": "dcffdf2e4522f497643b9e8599276b61423d1e6c9c50206004f7aefd11e69e5e"
+			"sha256": "8b560aa0752ee7648efb7058062d98e30be77179e898c92d29d2fe460984b706"
 		},
 		{
 			"path": "cryptography/rand.el",
@@ -47810,7 +47568,7 @@
 		},
 		{
 			"path": "cryptography/sha256.el",
-			"sha256": "93092d03334a0be3e0f65cc3212106a6d5f4ddbd0954914243342fd27a484743"
+			"sha256": "5691656a26a09710c718ed94a6f33c8e605954efc751a5cb3fc857c3b71a79a2"
 		},
 		{
 			"path": "errors/assertions.el",
@@ -47854,15 +47612,15 @@
 		},
 		{
 			"path": "formats/json/variants.el",
-			"sha256": "652a6991b0d642990dea058457ab4d98ca8729d4760f1280156cd5add502afee"
+			"sha256": "56548b1a71bb8e3a897e2e67071f7a43e3e46962eca1f5650125733294758b2a"
 		},
 		{
 			"path": "formats/json/writer.el",
-			"sha256": "c6d6198d158c2400f571cbd528686e2d679046bfe2e724b3f63948dc5dd97b4a"
+			"sha256": "36a4091d5e2a97a8988483dfc80d0119ba36e1d56bd691197b50945b86620cc8"
 		},
 		{
 			"path": "formats/toml/index.el",
-			"sha256": "7b60ac0b65ecd3eefb5099441288f314ea21afd506383cae8dac6feabbce7b1c"
+			"sha256": "54298b07d6816b3f331cb62a8c448bf5aab64148b412585e269faf705b0e8e2a"
 		},
 		{
 			"path": "formats/xml/index.el",
@@ -47870,11 +47628,11 @@
 		},
 		{
 			"path": "formats/yaml/index.el",
-			"sha256": "846508b76a2bf25fc0f8a1e527dd0515fcb29f64a5f2f0d177de126bcf4ec433"
+			"sha256": "967591f4d1cca46c19569faceb77bf857a41a5ec6054d9509cd6500b4a4acdf5"
 		},
 		{
 			"path": "formats/yaml/writer.el",
-			"sha256": "feb33a855337086fcdceafa4d286db9d8a453476f0d8b3e4c82cb9c81a91f233"
+			"sha256": "54d06937f80c00678127f12bc6567722f52c077028c8751dbc955624274a6bbb"
 		},
 		{
 			"path": "functions/comparison.el",
@@ -47886,11 +47644,11 @@
 		},
 		{
 			"path": "graphics/plots/index.el",
-			"sha256": "ec80fefe864ee9912141756b6ee71d1c70ea90c2a11d36e8c208ca48c83b31ee"
+			"sha256": "b1dc2a73678b7fca5f58e9d4383b69f23230812dd6ced76a4c724d1230b1f5fe"
 		},
 		{
 			"path": "graphics/plots/scene.el",
-			"sha256": "c6e33f7cb41adf57b9448a155b8f67c1344d88a5b99b10b2459c7d9632943475"
+			"sha256": "924615d6bcd923c0dc73a38087d94b956112b3e2034e08fc27431d895d1f7d27"
 		},
 		{
 			"path": "language/objects.el",
@@ -47942,7 +47700,7 @@
 		},
 		{
 			"path": "mathematics/functions/elementary.el",
-			"sha256": "bd98ce69919c532e6abaa90af7e403a50e97e9720a0a5e86096b596f8092d37a"
+			"sha256": "ab4263ffe59a81a4f97488175c0801c554d5e7ea330f3656ac7d6742559bcd95"
 		},
 		{
 			"path": "memory/allocation/context.el",
@@ -47986,7 +47744,7 @@
 		},
 		{
 			"path": "multimedia/audio/macos-output.el",
-			"sha256": "37e86825efe6a256af7be50f2161167ffb66435c8ad3014e0d6f3b0cbede1973"
+			"sha256": "c5dfca49b4b505dcd8ace295f63ff1e9aca0122c4b781867209f9068b8ca006a"
 		},
 		{
 			"path": "multimedia/audio/music.el",
@@ -48057,12 +47815,24 @@
 			"sha256": "4e81d9577704715e8141983f167f6ed070fcc956495cb3e9d36c2a39aef9f343"
 		},
 		{
+			"path": "number/dit-float.el",
+			"sha256": "13e92f61093ebe8e45fc1e0079da7ba477c6a49460c332ee5bf4fcfe8b78f05b"
+		},
+		{
+			"path": "number/dit-int.el",
+			"sha256": "a1a64797bedac7485db883e18a244507a3835d10c11937fd1f32ec26235ac314"
+		},
+		{
+			"path": "number/dit-operations.el",
+			"sha256": "44d06dff53f1f3328cf4a065895711c03540abb003158f8d45955907ffbf0025"
+		},
+		{
 			"path": "number/native-float.el",
-			"sha256": "f6d6ce9a6a1836df33a62abc60bf9fdde52d76b923b1f88c504b2ad9f7cf3207"
+			"sha256": "0a2c3ecdf80cbc997f5e24a46ec7c5008d6fd131375c6d6b564cf75123e0fcf9"
 		},
 		{
 			"path": "number/number.el",
-			"sha256": "7746c5fd07c582289450af9974d0ed768008672960ecdb8acff895732d967d81"
+			"sha256": "3bf75feade89bcb64b4ef0a1a7a0c198f82acdfcd432f409504d7b4a857af190"
 		},
 		{
 			"path": "numerical-computing/arrays.el",
@@ -48070,7 +47840,7 @@
 		},
 		{
 			"path": "numerical-computing/diagnostics.el",
-			"sha256": "8f3412120c06edcd89fe54b6269dc0d1d79b0bca0c245f1c06b66cedfeffaa18"
+			"sha256": "b243f0ccc8a2811788b9b7c67d47001789344ad33a206c3c7f13f6c7d86bf437"
 		},
 		{
 			"path": "numerical-computing/exact-solve.el",
@@ -48082,11 +47852,11 @@
 		},
 		{
 			"path": "numerical-computing/reductions.el",
-			"sha256": "b46279bbe0844ebe0f4530710c6efddacf7407f27a3ca6e399c82e67c8a691c1"
+			"sha256": "7c87e00cf88d479d70026d1d54e12714c4e343efc101d4084ddcc70bbcca0080"
 		},
 		{
 			"path": "numerical-computing/tensor.el",
-			"sha256": "85ac0867ae588204e0e3bc6f07bc87346675b9ac2c06365d66b66f8d6090a7d7"
+			"sha256": "90943bb556366e7c191a28fc8ad035ef359c6d05b1ad0440ed26fede0e496397"
 		},
 		{
 			"path": "random/bits.el",
@@ -48153,6 +47923,10 @@
 			"sha256": "536559516b3e89426c2bd6e6d7bb885568c4d812e30702d72455b8200a6e98d3"
 		},
 		{
+			"path": "tools/debugger/attachment.el",
+			"sha256": "b09ea2650da9a53efa95f1e042a5a42030d88b48f249bd0dab9508abb09f5c3c"
+		},
+		{
 			"path": "tools/testing/check.el",
 			"sha256": "dc33f37b24085ec78852ba88475b77e9e837c8b2d271152d6a8e9a1937ec66d5"
 		},
@@ -48170,7 +47944,7 @@
 		},
 		{
 			"path": "user-interface/drawing.el",
-			"sha256": "9f8a3281c88902f8f8c78fcab1e32b76aa88ef90af5fb849aff5b1660ab59978"
+			"sha256": "529754709d312e4b7a04fabf892bb1101f9687d1a4832d35891bead1b93bfbb0"
 		},
 		{
 			"path": "user-interface/model.el",
@@ -52229,56 +52003,56 @@
 		},
 		{
 			"kind": "module",
-			"name": "固定位宽集合",
+			"name": "固定宽度目标数位序列",
 			"sections": [
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "提供非负整数的固定宽度位集合及按位运算。"
+					"markdown": "提供按目标基数解释的定宽数位序列及逐位模加、模减。"
 				}
 			],
-			"source": "collections/sets/bit-set.el",
+			"source": "collections/sets/dit-set.el",
 			"line": 1,
-			"id": "collections/sets/bit-set"
+			"id": "collections/sets/dit-set"
 		},
 		{
 			"kind": "api",
-			"name": "BitSet",
+			"name": "DitSet",
 			"sections": [
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "创建 N 位无符号位集合类型；构造值必须是能完整表示在该位宽中的非负整数。"
+					"markdown": "创建 N 位目标基数数位序列；每个数位是 `0..R-1` 的精确整数，R 由目标事实给出。"
 				},
 				{
 					"tag": "param",
-					"value": "size 固定位宽，可为零。",
+					"value": "size 固定数位数，可为零。",
 					"markdown": ""
 				},
 				{
 					"tag": "returns",
-					"value": "可实例化的位集合类型。",
+					"value": "可实例化的数位序列类型。",
 					"markdown": ""
 				},
 				{
 					"tag": "throws",
-					"value": "构造值为负数、非整数、非有限数或超出位宽时抛出 RangeError。",
+					"value": "构造值为负数、非整数、非有限数或超出 N 位数位容量时抛出 RangeError。",
 					"markdown": ""
 				},
 				{
 					"tag": "example",
-					"value": "创建八位标记",
-					"markdown": "```el\nlet flags = BitSet<size: 8>(5)\nconsole.stdout.writeLine(flags.toNumber())\n```",
-					"code": "let flags = BitSet<size: 8>(5)\nconsole.stdout.writeLine(flags.toNumber())\n",
+					"value": "创建八位状态",
+					"markdown": "```el\nlet flags = DitSet<size: 8>(5)\nconsole.stdout.writeLine(flags.toNumber())\n```",
+					"code": "let flags = DitSet<size: 8>(5)\nconsole.stdout.writeLine(flags.toNumber())\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
 			],
-			"source": "collections/sets/bit-set.el",
-			"line": 53,
-			"signature": "export fn BitSet(size: Number): type",
-			"declaration_line": 63,
-			"id": "collections/sets/bit-set::BitSet",
+			"source": "collections/sets/dit-set.el",
+			"line": 62,
+			"signature": "export fn DitSet(size: Number): type",
+			"declaration_line": 72,
+			"id": "collections/sets/dit-set::DitSet",
 			"value_type": null,
 			"owner": null,
 			"return_type": "type",
@@ -52303,34 +52077,34 @@
 		},
 		{
 			"kind": "api",
-			"name": "BitSet.toNumber",
+			"name": "DitSet.toNumber",
 			"sections": [
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "将位集合按无符号整数解释为精确数值。"
+					"markdown": "将数位序列按目标基数解释为精确数值。"
 				},
 				{
 					"tag": "returns",
-					"value": "位集合对应的非负整数。",
+					"value": "数位序列对应的非负整数。",
 					"markdown": ""
 				},
 				{
 					"tag": "example",
-					"value": "读取位集合数值",
-					"markdown": "```el\nlet flags = BitSet<size: 8>(5)\nconsole.stdout.writeLine(flags.toNumber())\n```",
-					"code": "let flags = BitSet<size: 8>(5)\nconsole.stdout.writeLine(flags.toNumber())\n",
+					"value": "读取数位序列数值",
+					"markdown": "```el\nlet flags = DitSet<size: 8>(5)\nconsole.stdout.writeLine(flags.toNumber())\n```",
+					"code": "let flags = DitSet<size: 8>(5)\nconsole.stdout.writeLine(flags.toNumber())\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
 			],
-			"source": "collections/sets/bit-set.el",
-			"line": 81,
+			"source": "collections/sets/dit-set.el",
+			"line": 91,
 			"signature": "fn toNumber(): Number",
-			"declaration_line": 89,
-			"id": "collections/sets/bit-set::BitSet.toNumber",
+			"declaration_line": 99,
+			"id": "collections/sets/dit-set::DitSet.toNumber",
 			"value_type": null,
-			"owner": "BitSet",
+			"owner": "DitSet",
 			"return_type": "Number",
 			"initializer": null,
 			"type_references": {
@@ -52353,12 +52127,12 @@
 		},
 		{
 			"kind": "api",
-			"name": "BitSet.rotateLeft",
+			"name": "DitSet.rotateLeft",
 			"sections": [
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "将位集合循环左移指定位数；移出的高位绕回低位。"
+					"markdown": "将数位序列循环左移指定位数；移出的高位绕回低位。"
 				},
 				{
 					"tag": "param",
@@ -52367,40 +52141,40 @@
 				},
 				{
 					"tag": "returns",
-					"value": "同位宽的新位集合。",
+					"value": "同位宽的新数位序列。",
 					"markdown": ""
 				},
 				{
 					"tag": "example",
-					"value": "循环左移标记",
-					"markdown": "```el\nlet flags = BitSet<size: 8>(129)\nconsole.stdout.writeLine(flags.rotateLeft(1).toNumber())\n```",
-					"code": "let flags = BitSet<size: 8>(129)\nconsole.stdout.writeLine(flags.rotateLeft(1).toNumber())\n",
+					"value": "循环左移",
+					"markdown": "```el\nlet flags = DitSet<size: 8>(129)\nconsole.stdout.writeLine(flags.rotateLeft(1).toNumber())\n```",
+					"code": "let flags = DitSet<size: 8>(129)\nconsole.stdout.writeLine(flags.rotateLeft(1).toNumber())\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
 			],
-			"source": "collections/sets/bit-set.el",
-			"line": 117,
-			"signature": "fn rotateLeft(count: Number): BitSet<size: size>",
-			"declaration_line": 126,
-			"id": "collections/sets/bit-set::BitSet.rotateLeft",
+			"source": "collections/sets/dit-set.el",
+			"line": 132,
+			"signature": "fn rotateLeft(count: Number): DitSet<size: size>",
+			"declaration_line": 141,
+			"id": "collections/sets/dit-set::DitSet.rotateLeft",
 			"value_type": null,
-			"owner": "BitSet",
-			"return_type": "BitSet<size: size>",
+			"owner": "DitSet",
+			"return_type": "DitSet<size: size>",
 			"initializer": null,
 			"type_references": {
 				"return_type": [
 					{
-						"name": "BitSet",
+						"name": "DitSet",
 						"start": 0,
 						"end": 6,
 						"target": {
 							"type": "definition",
-							"source": "collections/sets/bit-set.el",
-							"name": "BitSet",
-							"id": "collections/sets/bit-set::BitSet",
-							"path": "modules/collections/sets/bit-set.md",
-							"fragment": "api-2fd205cada268bede56b"
+							"source": "collections/sets/dit-set.el",
+							"name": "DitSet",
+							"id": "collections/sets/dit-set::DitSet",
+							"path": "modules/collections/sets/dit-set.md",
+							"fragment": "api-6b020efe38e03cdb8638"
 						}
 					},
 					{
@@ -52409,11 +52183,11 @@
 						"end": 17,
 						"target": {
 							"type": "parameter",
-							"source": "collections/sets/bit-set.el",
+							"source": "collections/sets/dit-set.el",
 							"name": "size",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-09fd2333fe50aa733d41",
+							"fragment": "api-c0d15bc265145c1818ee",
 							"parameter_kind": "value"
 						}
 					}
@@ -52422,12 +52196,12 @@
 		},
 		{
 			"kind": "api",
-			"name": "BitSet.rotateRight",
+			"name": "DitSet.rotateRight",
 			"sections": [
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "将位集合循环右移指定位数；移出的低位绕回高位。"
+					"markdown": "将数位序列循环右移指定位数；移出的低位绕回高位。"
 				},
 				{
 					"tag": "param",
@@ -52436,40 +52210,40 @@
 				},
 				{
 					"tag": "returns",
-					"value": "同位宽的新位集合。",
+					"value": "同位宽的新数位序列。",
 					"markdown": ""
 				},
 				{
 					"tag": "example",
-					"value": "循环右移标记",
-					"markdown": "```el\nlet flags = BitSet<size: 8>(129)\nconsole.stdout.writeLine(flags.rotateRight(1).toNumber())\n```",
-					"code": "let flags = BitSet<size: 8>(129)\nconsole.stdout.writeLine(flags.rotateRight(1).toNumber())\n",
+					"value": "循环右移",
+					"markdown": "```el\nlet flags = DitSet<size: 8>(129)\nconsole.stdout.writeLine(flags.rotateRight(1).toNumber())\n```",
+					"code": "let flags = DitSet<size: 8>(129)\nconsole.stdout.writeLine(flags.rotateRight(1).toNumber())\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
 			],
-			"source": "collections/sets/bit-set.el",
-			"line": 134,
-			"signature": "fn rotateRight(count: Number): BitSet<size: size>",
-			"declaration_line": 143,
-			"id": "collections/sets/bit-set::BitSet.rotateRight",
+			"source": "collections/sets/dit-set.el",
+			"line": 149,
+			"signature": "fn rotateRight(count: Number): DitSet<size: size>",
+			"declaration_line": 158,
+			"id": "collections/sets/dit-set::DitSet.rotateRight",
 			"value_type": null,
-			"owner": "BitSet",
-			"return_type": "BitSet<size: size>",
+			"owner": "DitSet",
+			"return_type": "DitSet<size: size>",
 			"initializer": null,
 			"type_references": {
 				"return_type": [
 					{
-						"name": "BitSet",
+						"name": "DitSet",
 						"start": 0,
 						"end": 6,
 						"target": {
 							"type": "definition",
-							"source": "collections/sets/bit-set.el",
-							"name": "BitSet",
-							"id": "collections/sets/bit-set::BitSet",
-							"path": "modules/collections/sets/bit-set.md",
-							"fragment": "api-2fd205cada268bede56b"
+							"source": "collections/sets/dit-set.el",
+							"name": "DitSet",
+							"id": "collections/sets/dit-set::DitSet",
+							"path": "modules/collections/sets/dit-set.md",
+							"fragment": "api-6b020efe38e03cdb8638"
 						}
 					},
 					{
@@ -52478,11 +52252,11 @@
 						"end": 17,
 						"target": {
 							"type": "parameter",
-							"source": "collections/sets/bit-set.el",
+							"source": "collections/sets/dit-set.el",
 							"name": "size",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-09fd2333fe50aa733d41",
+							"fragment": "api-c0d15bc265145c1818ee",
 							"parameter_kind": "value"
 						}
 					}
@@ -59623,9 +59397,9 @@
 				}
 			],
 			"source": "formats/json/variants.el",
-			"line": 217,
+			"line": 221,
 			"signature": "export fn parseOrderedJSONC(source: Text, limits: JsonLimits = JsonLimits()): any",
-			"declaration_line": 224,
+			"declaration_line": 228,
 			"id": "formats/json/variants::parseOrderedJSONC",
 			"value_type": null,
 			"owner": null,
@@ -59668,9 +59442,9 @@
 				}
 			],
 			"source": "formats/json/variants.el",
-			"line": 226,
+			"line": 230,
 			"signature": "export fn parseOrderedJSON5(source: Text, limits: JsonLimits = JsonLimits()): any",
-			"declaration_line": 233,
+			"declaration_line": 237,
 			"id": "formats/json/variants::parseOrderedJSON5",
 			"value_type": null,
 			"owner": null,
@@ -59713,9 +59487,9 @@
 				}
 			],
 			"source": "formats/json/variants.el",
-			"line": 235,
+			"line": 239,
 			"signature": "export fn parseOrderedJSONLines(source: Text, limits: JsonLimits = JsonLimits()): any[]",
-			"declaration_line": 242,
+			"declaration_line": 246,
 			"id": "formats/json/variants::parseOrderedJSONLines",
 			"value_type": null,
 			"owner": null,
@@ -59792,9 +59566,9 @@
 				}
 			],
 			"source": "formats/json/writer.el",
-			"line": 145,
+			"line": 144,
 			"signature": "export fn writeJSON(value: any, limits: JsonLimits = JsonLimits()): Text",
-			"declaration_line": 157,
+			"declaration_line": 156,
 			"id": "formats/json/writer::writeJSON",
 			"value_type": null,
 			"owner": null,
@@ -59871,9 +59645,9 @@
 				}
 			],
 			"source": "formats/toml/index.el",
-			"line": 258,
+			"line": 260,
 			"signature": "export fn parseTOML(source: Text, limits: JsonLimits = JsonLimits()): Toml",
-			"declaration_line": 269,
+			"declaration_line": 271,
 			"id": "formats/toml/index::parseTOML",
 			"value_type": null,
 			"owner": null,
@@ -59936,9 +59710,9 @@
 				}
 			],
 			"source": "formats/toml/index.el",
-			"line": 349,
+			"line": 352,
 			"signature": "export fn writeTOML(value: Toml, limits: JsonLimits = JsonLimits()): Text",
-			"declaration_line": 360,
+			"declaration_line": 363,
 			"id": "formats/toml/index::writeTOML",
 			"value_type": null,
 			"owner": null,
@@ -59981,9 +59755,9 @@
 				}
 			],
 			"source": "formats/toml/index.el",
-			"line": 368,
+			"line": 371,
 			"signature": "export fn parseOrderedTOML(source: Text, limits: JsonLimits = JsonLimits()): Toml",
-			"declaration_line": 375,
+			"declaration_line": 378,
 			"id": "formats/toml/index::parseOrderedTOML",
 			"value_type": null,
 			"owner": null,
@@ -63010,12 +62784,12 @@
 				},
 				{
 					"tag": "param",
-					"value": "epsilon 可选的有限非负最大绝对误差；零仅接受精确结果，省略时使用目标类型合同或 BitFloat 布局。",
+					"value": "epsilon 可选的有限非负最大绝对误差；零仅接受精确结果，省略时使用目标类型合同或 DitFloat 布局。",
 					"markdown": ""
 				},
 				{
 					"tag": "returns",
-					"value": "BitFloat 保留输入类型；显式精度的普通数值返回带该精度的 Number。",
+					"value": "DitFloat 保留输入类型；显式精度的普通数值返回带该精度的 Number。",
 					"markdown": ""
 				},
 				{
@@ -65563,9 +65337,9 @@
 				}
 			],
 			"source": "multimedia/audio/macos-output.el",
-			"line": 45,
+			"line": 46,
 			"signature": "export @assign(mode: \"shared\") class PcmOutput",
-			"declaration_line": 56,
+			"declaration_line": 57,
 			"id": "multimedia/audio/macos-output::PcmOutput",
 			"value_type": null,
 			"owner": null,
@@ -65607,9 +65381,9 @@
 				}
 			],
 			"source": "multimedia/audio/macos-output.el",
-			"line": 99,
+			"line": 100,
 			"signature": "fn enqueue(audio: PcmAudio): Bool",
-			"declaration_line": 108,
+			"declaration_line": 109,
 			"id": "multimedia/audio/macos-output::PcmOutput.enqueue",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -65652,9 +65426,9 @@
 				}
 			],
 			"source": "multimedia/audio/macos-output.el",
-			"line": 135,
+			"line": 136,
 			"signature": "fn finish()",
-			"declaration_line": 142,
+			"declaration_line": 143,
 			"id": "multimedia/audio/macos-output::PcmOutput.finish",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -65686,9 +65460,9 @@
 				}
 			],
 			"source": "multimedia/audio/macos-output.el",
-			"line": 143,
+			"line": 144,
 			"signature": "fn idle(): Bool",
-			"declaration_line": 150,
+			"declaration_line": 151,
 			"id": "multimedia/audio/macos-output::PcmOutput.idle",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -65731,9 +65505,9 @@
 				}
 			],
 			"source": "multimedia/audio/macos-output.el",
-			"line": 159,
+			"line": 160,
 			"signature": "fn clear()",
-			"declaration_line": 165,
+			"declaration_line": 166,
 			"id": "multimedia/audio/macos-output::PcmOutput.clear",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -65760,9 +65534,9 @@
 				}
 			],
 			"source": "multimedia/audio/macos-output.el",
-			"line": 175,
+			"line": 176,
 			"signature": "fn close()",
-			"declaration_line": 181,
+			"declaration_line": 182,
 			"id": "multimedia/audio/macos-output::PcmOutput.close",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -70119,6 +69893,411 @@
 		},
 		{
 			"kind": "api",
+			"name": "DitFloat",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "用目标基数创建软件浮点类型，支持有符号零、无穷和 NaN。`sign_dits: 0` 是不带符号数位的无符号布局。"
+				},
+				{
+					"tag": "param",
+					"value": "sign_dits 符号数位数，0 或 1。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "fraction_dits 尾数域数位数，至少 1；有效精度为它加首位。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "exponent_dits 指数域数位数，至少 2。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "exponent_bias 指数偏置，非负且小于保留的最大保留指数码。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "min 可选的有限值下界。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "max 可选的有限值上界。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "overflow 溢出策略：ub、error、nan 或 wrap。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "按最近偶数舍入并支持次正规数的布局类型。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "无效布局抛 RangeError；越界或策略拒绝走既有的致命诊断路径。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "计算能精确表示的平方根",
+					"markdown": "```el\nlet Small = DitFloat<sign_dits: 1, fraction_dits: 3, exponent_dits: 3, exponent_bias: 3>\nconsole.stdout.writeLine(Small(4).sqrt().toNumber())\n```\n```text\n2\n```",
+					"code": "let Small = DitFloat<sign_dits: 1, fraction_dits: 3, exponent_dits: 3, exponent_bias: 3>\nconsole.stdout.writeLine(Small(4).sqrt().toNumber())\n",
+					"expected_stdout": "2\n",
+					"verification": "not-run"
+				}
+			],
+			"source": "number/dit-float.el",
+			"line": 262,
+			"signature": "export fn DitFloat(sign_dits = 1, fraction_dits = 0, exponent_dits = 0, exponent_bias = 0, min = nil, max = nil, overflow = \"ub\"): type",
+			"declaration_line": 281,
+			"id": "number/dit-float::DitFloat",
+			"value_type": null,
+			"owner": null,
+			"return_type": "type",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "type",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "builtin",
+							"source": null,
+							"name": "type",
+							"id": null,
+							"path": "reference/language/types.md",
+							"fragment": null
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "DitInt",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "创建按目标基数解释的固定数位整数 Number 类型。\n无符号域为 `[0, R^N-1]`；有符号域为 `[-floor(R^N/2), ceil(R^N/2)-1]`，负值以不小于 `ceil(R^N/2)` 的模余数保存。"
+				},
+				{
+					"tag": "param",
+					"value": "digits 固定目标数位数，可为零。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "signed 是否按目标基数补码解释负值。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "min 可选的闭区间下界，必须在表示域内。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "max 可选的闭区间上界，必须在表示域内。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "overflow 运算结果越界策略：ub、error、nan 或 wrap。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "可实例化的固定数位整数类型。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "创建四位无符号目标数位整数",
+					"markdown": "```el\nlet U4 = DitInt(digits: 4, overflow: \"wrap\")\nconsole.stdout.writeLine(U4(15) + 1)\n```",
+					"code": "let U4 = DitInt(digits: 4, overflow: \"wrap\")\nconsole.stdout.writeLine(U4(15) + 1)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "number/dit-int.el",
+			"line": 26,
+			"signature": "export fn DitInt(digits = 0, signed = f, min = nil, max = nil, overflow = \"ub\"): type",
+			"declaration_line": 40,
+			"id": "number/dit-int::DitInt",
+			"value_type": null,
+			"owner": null,
+			"return_type": "type",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "type",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "builtin",
+							"source": null,
+							"name": "type",
+							"id": null,
+							"path": "reference/language/types.md",
+							"fragment": null
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "dit_add_mod",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "每个目标数码独立进行模加，不把进位传给高位。"
+				},
+				{
+					"tag": "param",
+					"value": "left 有限整数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "right 有限整数。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "精确的普通 Number。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "对最低位运算",
+					"markdown": "```el\nconsole.stdout.writeLine(dit_add_mod(0, 1))\n```\n```text\n1\n```",
+					"code": "console.stdout.writeLine(dit_add_mod(0, 1))\n",
+					"expected_stdout": "1\n",
+					"verification": "not-run"
+				}
+			],
+			"source": "number/dit-operations.el",
+			"line": 52,
+			"signature": "export fn dit_add_mod(left: Number, right: Number): Number",
+			"declaration_line": 64,
+			"id": "number/dit-operations::dit_add_mod",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Number",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Number",
+						"start": 0,
+						"end": 6,
+						"target": {
+							"type": "definition",
+							"source": "number/number.el",
+							"name": "Number",
+							"id": "number/number::Number~type",
+							"path": "modules/number/number.md",
+							"fragment": "api-3cc24d3ef702e8652fb4"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "dit_sub_mod",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "每个目标数码独立进行模减，不向高位借位。"
+				},
+				{
+					"tag": "param",
+					"value": "left 有限整数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "right 有限整数。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "精确的普通 Number。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "对最低位运算",
+					"markdown": "```el\nconsole.stdout.writeLine(dit_sub_mod(1, 1))\n```\n```text\n0\n```",
+					"code": "console.stdout.writeLine(dit_sub_mod(1, 1))\n",
+					"expected_stdout": "0\n",
+					"verification": "not-run"
+				}
+			],
+			"source": "number/dit-operations.el",
+			"line": 65,
+			"signature": "export fn dit_sub_mod(left: Number, right: Number): Number",
+			"declaration_line": 77,
+			"id": "number/dit-operations::dit_sub_mod",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Number",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Number",
+						"start": 0,
+						"end": 6,
+						"target": {
+							"type": "definition",
+							"source": "number/number.el",
+							"name": "Number",
+							"id": "number/number::Number~type",
+							"path": "modules/number/number.md",
+							"fragment": "api-3cc24d3ef702e8652fb4"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "dit_min",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "逐位取两个整数目标数码的较小值。"
+				},
+				{
+					"tag": "param",
+					"value": "left 有限整数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "right 有限整数。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "精确的普通 Number。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "对最低位运算",
+					"markdown": "```el\nconsole.stdout.writeLine(dit_min(0, 1))\n```\n```text\n0\n```",
+					"code": "console.stdout.writeLine(dit_min(0, 1))\n",
+					"expected_stdout": "0\n",
+					"verification": "not-run"
+				}
+			],
+			"source": "number/dit-operations.el",
+			"line": 81,
+			"signature": "export fn dit_min(left: Number, right: Number): Number",
+			"declaration_line": 93,
+			"id": "number/dit-operations::dit_min",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Number",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Number",
+						"start": 0,
+						"end": 6,
+						"target": {
+							"type": "definition",
+							"source": "number/number.el",
+							"name": "Number",
+							"id": "number/number::Number~type",
+							"path": "modules/number/number.md",
+							"fragment": "api-3cc24d3ef702e8652fb4"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "dit_max",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "逐位取两个整数目标数码的较大值。"
+				},
+				{
+					"tag": "param",
+					"value": "left 有限整数。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "right 有限整数。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "精确的普通 Number。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "对最低位运算",
+					"markdown": "```el\nconsole.stdout.writeLine(dit_max(0, 1))\n```\n```text\n1\n```",
+					"code": "console.stdout.writeLine(dit_max(0, 1))\n",
+					"expected_stdout": "1\n",
+					"verification": "not-run"
+				}
+			],
+			"source": "number/dit-operations.el",
+			"line": 94,
+			"signature": "export fn dit_max(left: Number, right: Number): Number",
+			"declaration_line": 106,
+			"id": "number/dit-operations::dit_max",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Number",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Number",
+						"start": 0,
+						"end": 6,
+						"target": {
+							"type": "definition",
+							"source": "number/number.el",
+							"name": "Number",
+							"id": "number/number::Number~type",
+							"path": "modules/number/number.md",
+							"fragment": "api-3cc24d3ef702e8652fb4"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
 			"name": "canRepresentExactly",
 			"sections": [
 				{
@@ -70136,9 +70315,9 @@
 				}
 			],
 			"source": "number/native-float.el",
-			"line": 63,
+			"line": 73,
 			"signature": "export fn canRepresentExactly<T: type>(value: NumericRatio): Bool",
-			"declaration_line": 75,
+			"declaration_line": 85,
 			"id": "number/native-float::canRepresentExactly",
 			"value_type": null,
 			"owner": null,
@@ -70169,7 +70348,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "表示精确有理数的数值类型，普通算术在约分后的整数分子和分母上进行。\n它也可表示 unordered 状态；该状态不是 IEEE 浮点近似值。"
+					"markdown": "表示精确有理数的数值类型，普通算术在约分后的整数分子和分母上进行。\n它也可表示 unordered 状态；该状态不是 浮点 浮点近似值。"
 				},
 				{
 					"tag": "example",
@@ -70487,7 +70666,7 @@
 				}
 			],
 			"source": "numerical-computing/diagnostics.el",
-			"line": 10,
+			"line": 9,
 			"id": "numerical-computing/diagnostics"
 		},
 		{
@@ -70529,9 +70708,9 @@
 				}
 			],
 			"source": "numerical-computing/diagnostics.el",
-			"line": 30,
+			"line": 29,
 			"signature": "export fn solveDiagnostic(a: Tensor<element: F64>, b: Tensor<element: F64>, policy: NumericsPolicy = NumericsPolicy()): SolveReport",
-			"declaration_line": 41,
+			"declaration_line": 40,
 			"id": "numerical-computing/diagnostics::solveDiagnostic~dense",
 			"value_type": null,
 			"owner": null,
@@ -70594,9 +70773,9 @@
 				}
 			],
 			"source": "numerical-computing/diagnostics.el",
-			"line": 50,
+			"line": 49,
 			"signature": "export fn leastSquaresDiagnostic(a: Tensor<element: F64>, b: Tensor<element: F64>, policy: NumericsPolicy = NumericsPolicy()): SolveReport",
-			"declaration_line": 61,
+			"declaration_line": 60,
 			"id": "numerical-computing/diagnostics::leastSquaresDiagnostic",
 			"value_type": null,
 			"owner": null,
@@ -70769,7 +70948,7 @@
 				}
 			],
 			"source": "numerical-computing/reductions.el",
-			"line": 11,
+			"line": 10,
 			"id": "numerical-computing/reductions"
 		},
 		{
@@ -70801,9 +70980,9 @@
 				}
 			],
 			"source": "numerical-computing/reductions.el",
-			"line": 31,
+			"line": 30,
 			"signature": "export fn sum(values)",
-			"declaration_line": 39,
+			"declaration_line": 38,
 			"id": "numerical-computing/reductions::sum~all",
 			"value_type": null,
 			"owner": null,
@@ -70850,9 +71029,9 @@
 				}
 			],
 			"source": "numerical-computing/reductions.el",
-			"line": 43,
+			"line": 42,
 			"signature": "export fn sum(values, axis: Number)",
-			"declaration_line": 53,
+			"declaration_line": 52,
 			"id": "numerical-computing/reductions::sum~axis",
 			"value_type": null,
 			"owner": null,
@@ -70894,9 +71073,9 @@
 				}
 			],
 			"source": "numerical-computing/reductions.el",
-			"line": 57,
+			"line": 56,
 			"signature": "export fn mean(values)",
-			"declaration_line": 66,
+			"declaration_line": 65,
 			"id": "numerical-computing/reductions::mean~all",
 			"value_type": null,
 			"owner": null,
@@ -70943,9 +71122,9 @@
 				}
 			],
 			"source": "numerical-computing/reductions.el",
-			"line": 71,
+			"line": 70,
 			"signature": "export fn mean(values, axis: Number)",
-			"declaration_line": 81,
+			"declaration_line": 80,
 			"id": "numerical-computing/reductions::mean~axis",
 			"value_type": null,
 			"owner": null,
@@ -70964,7 +71143,7 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 28,
+			"line": 26,
 			"id": "numerical-computing/tensor"
 		},
 		{
@@ -70996,9 +71175,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 31,
+			"line": 29,
 			"signature": "export fn Tensor(element: type): type",
-			"declaration_line": 41,
+			"declaration_line": 39,
 			"id": "numerical-computing/tensor::Tensor",
 			"value_type": null,
 			"owner": null,
@@ -71046,9 +71225,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 111,
+			"line": 109,
 			"signature": "get rank(): Number",
-			"declaration_line": 118,
+			"declaration_line": 116,
 			"id": "numerical-computing/tensor::Tensor.rank",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71096,9 +71275,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 131,
+			"line": 119,
 			"signature": "get count(): Number",
-			"declaration_line": 138,
+			"declaration_line": 126,
 			"id": "numerical-computing/tensor::Tensor.count",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71156,9 +71335,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 139,
+			"line": 127,
 			"signature": "fn extent(axis: Number): Number",
-			"declaration_line": 148,
+			"declaration_line": 136,
 			"id": "numerical-computing/tensor::Tensor.extent",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71206,9 +71385,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 149,
+			"line": 137,
 			"signature": "fn shape(): Number[]",
-			"declaration_line": 156,
+			"declaration_line": 144,
 			"id": "numerical-computing/tensor::Tensor.shape",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71266,9 +71445,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 157,
+			"line": 145,
 			"signature": "fn flat(index: Number): element",
-			"declaration_line": 166,
+			"declaration_line": 154,
 			"id": "numerical-computing/tensor::Tensor.flat",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71286,7 +71465,7 @@
 							"name": "element",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-50bbdcd76206fb0195f1",
+							"fragment": "api-224100946b9a04337618",
 							"parameter_kind": "type"
 						}
 					}
@@ -71327,9 +71506,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 211,
+			"line": 199,
 			"signature": "@optimize(data: @{ reorder: reorderSelect })\n\t\tfn select(selectors: Selector[]): Value",
-			"declaration_line": 220,
+			"declaration_line": 208,
 			"id": "numerical-computing/tensor::Tensor.select",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71347,7 +71526,7 @@
 							"name": "Value",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-70087f43333f7c566f19"
+							"fragment": "api-230feb197d068a60fd3a"
 						}
 					}
 				]
@@ -71382,9 +71561,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 274,
+			"line": 262,
 			"signature": "@optimize(data: @{ reorder: reorderTranspose })\n\t\tfn transpose(): Value",
-			"declaration_line": 282,
+			"declaration_line": 270,
 			"id": "numerical-computing/tensor::Tensor.transpose",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71402,7 +71581,7 @@
 							"name": "Value",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-70087f43333f7c566f19"
+							"fragment": "api-230feb197d068a60fd3a"
 						}
 					}
 				]
@@ -71432,9 +71611,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 284,
+			"line": 272,
 			"signature": "get T()",
-			"declaration_line": 291,
+			"declaration_line": 279,
 			"id": "numerical-computing/tensor::Tensor.T",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71476,9 +71655,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 327,
+			"line": 315,
 			"signature": "fn matmul(borrow other: Value)",
-			"declaration_line": 336,
+			"declaration_line": 324,
 			"id": "numerical-computing/tensor::Tensor.matmul",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71530,9 +71709,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 404,
+			"line": 392,
 			"signature": "fn slice(axis: Number, start: Number, count: Number): Value",
-			"declaration_line": 415,
+			"declaration_line": 403,
 			"id": "numerical-computing/tensor::Tensor.slice",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71550,7 +71729,7 @@
 							"name": "Value",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-70087f43333f7c566f19"
+							"fragment": "api-230feb197d068a60fd3a"
 						}
 					}
 				]
@@ -71585,9 +71764,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 460,
+			"line": 448,
 			"signature": "fn scalar(): element",
-			"declaration_line": 468,
+			"declaration_line": 456,
 			"id": "numerical-computing/tensor::Tensor.scalar",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71605,7 +71784,7 @@
 							"name": "element",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-50bbdcd76206fb0195f1",
+							"fragment": "api-224100946b9a04337618",
 							"parameter_kind": "type"
 						}
 					}
@@ -71636,9 +71815,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 520,
+			"line": 497,
 			"signature": "fn square(): Value",
-			"declaration_line": 527,
+			"declaration_line": 504,
 			"id": "numerical-computing/tensor::Tensor.square",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71656,7 +71835,7 @@
 							"name": "Value",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-70087f43333f7c566f19"
+							"fragment": "api-230feb197d068a60fd3a"
 						}
 					}
 				]
@@ -71696,9 +71875,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 608,
+			"line": 583,
 			"signature": "operator[](...selectors: Selector)",
-			"declaration_line": 617,
+			"declaration_line": 592,
 			"id": "numerical-computing/tensor::Tensor.operator[]",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71740,9 +71919,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 640,
+			"line": 615,
 			"signature": "operator +(other: Value)",
-			"declaration_line": 649,
+			"declaration_line": 624,
 			"id": "numerical-computing/tensor::Tensor.operator+~tensor",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71779,9 +71958,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 650,
+			"line": 625,
 			"signature": "operator +(other)",
-			"declaration_line": 658,
+			"declaration_line": 633,
 			"id": "numerical-computing/tensor::Tensor.operator+~scalar",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71823,9 +72002,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 662,
+			"line": 637,
 			"signature": "operator *(borrow other: Value)",
-			"declaration_line": 671,
+			"declaration_line": 646,
 			"id": "numerical-computing/tensor::Tensor.operator*~matmul",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71862,9 +72041,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 672,
+			"line": 647,
 			"signature": "operator *(other)",
-			"declaration_line": 680,
+			"declaration_line": 655,
 			"id": "numerical-computing/tensor::Tensor.operator*~scalar",
 			"value_type": null,
 			"owner": "Tensor",
@@ -71906,9 +72085,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 682,
+			"line": 657,
 			"signature": "operator .*(other: Value)",
-			"declaration_line": 691,
+			"declaration_line": 666,
 			"id": "numerical-computing/tensor::Tensor.operator.*~broadcast",
 			"value_type": null,
 			"owner": "Tensor.operator",
@@ -71945,9 +72124,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 692,
+			"line": 667,
 			"signature": "operator .*(other)",
-			"declaration_line": 700,
+			"declaration_line": 675,
 			"id": "numerical-computing/tensor::Tensor.operator.*~scalar",
 			"value_type": null,
 			"owner": "Tensor.operator",
@@ -71984,9 +72163,9 @@
 				}
 			],
 			"source": "numerical-computing/tensor.el",
-			"line": 704,
+			"line": 679,
 			"signature": "operator .^(other)",
-			"declaration_line": 712,
+			"declaration_line": 687,
 			"id": "numerical-computing/tensor::Tensor.operator.^~scalar",
 			"value_type": null,
 			"owner": "Tensor.operator",
@@ -76547,6 +76726,85 @@
 			}
 		},
 		{
+			"kind": "api",
+			"name": "debuggerAttached",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "查询当前这次执行是否处在 EL 的交互式调试会话中；不查询外部调试器。"
+				},
+				{
+					"tag": "returns",
+					"value": "普通运行返回 f；由 el debug 执行时返回 t。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "在 EL 调试会话中启用额外诊断",
+					"markdown": "```el\nif (debuggerAttached()) console.stdout.writeLine(\"EL debugger attached\")\n```",
+					"code": "if (debuggerAttached()) console.stdout.writeLine(\"EL debugger attached\")\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "tools/debugger/attachment.el",
+			"line": 3,
+			"signature": "export fn debuggerAttached(): Bool",
+			"declaration_line": 10,
+			"id": "tools/debugger/attachment::debuggerAttached",
+			"value_type": null,
+			"owner": null,
+			"return_type": "Bool",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Bool",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "language/values.el",
+							"name": "Bool",
+							"id": "language/values::Bool~type",
+							"path": "modules/language/values.md",
+							"fragment": "api-3f0af31783849ef30c6e"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "debuggerPause",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "在当前 EL 调试会话中暂停，保留调用栈和局部值；普通运行什么也不做。"
+				},
+				{
+					"tag": "example",
+					"value": "到达检查点后暂停",
+					"markdown": "```el\ndebuggerPause()\n```",
+					"code": "debuggerPause()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "tools/debugger/attachment.el",
+			"line": 18,
+			"signature": "export fn debuggerPause()",
+			"declaration_line": 24,
+			"id": "tools/debugger/attachment::debuggerPause",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
 			"kind": "module",
 			"name": "测试比较断言",
 			"sections": [
@@ -78757,8 +79015,8 @@
 		}
 	],
 	"coverage": {
-		"source_files": 3950,
-		"documented_files": 123,
-		"documented_apis": 578
+		"source_files": 3947,
+		"documented_files": 127,
+		"documented_apis": 586
 	}
 }

@@ -34,7 +34,7 @@
 </div>
 <div class="el-card" markdown>
 ### [集合与文本](collections.md)
-`Array`、`Map`、`Set`、`BitSet`、惰性 `Sequence` 与 `Text` 的常用操作。
+`Array`、`Map`、`Set`、定宽数位集合 `DitSet`、惰性 `Sequence` 与 `Text` 的常用操作。
 <span class="el-card__meta">12 分钟 · 必读</span>
 </div>
 <div class="el-card" markdown>

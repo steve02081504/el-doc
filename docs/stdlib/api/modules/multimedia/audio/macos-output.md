@@ -14,7 +14,7 @@
 
 ## PcmOutput {#api-07a36f3fcbe4431833df}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:56` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L56)
+源码：`src/stdlib/multimedia/audio/macos-output.el:57` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L57)
 
 拥有单线程有界 PCM16 设备队列；入队时复制音频块，队列满时立即返回假。
 
@@ -39,7 +39,7 @@ let accepted = output.enqueue(audio)
 
 ## PcmOutput.enqueue {#api-f7fc20d16cdc9fcf6a7f}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:108` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L108)
+源码：`src/stdlib/multimedia/audio/macos-output.el:109` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L109)
 
 尝试提交音频块；样本在返回前复制，队列无空槽时不等待并返回假。
 
@@ -63,7 +63,7 @@ if (!output.enqueue(chunk)) sleep(2)
 
 ## PcmOutput.finish {#api-a9232d52a82db940d1c1}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:142` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L142)
+源码：`src/stdlib/multimedia/audio/macos-output.el:143` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L143)
 
 标记不再提交新块；设备继续播放已经提交的音频。
 
@@ -80,7 +80,7 @@ while (!output.idle()) sleep(2)
 
 ## PcmOutput.idle {#api-252297757c2e3d93dbbb}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:150` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L150)
+源码：`src/stdlib/multimedia/audio/macos-output.el:151` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L151)
 
 检查音频队列中的所有缓冲区是否已完成。
 
@@ -100,7 +100,7 @@ while (!output.idle()) sleep(2)
 
 ## PcmOutput.clear {#api-022cec408375d7d0fe85}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:165` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L165)
+源码：`src/stdlib/multimedia/audio/macos-output.el:166` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L166)
 
 清除设备当前排队的音频块。
 
@@ -116,7 +116,7 @@ output.clear()
 
 ## PcmOutput.close {#api-098b06b79bc52eca15af}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:181` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L181)
+源码：`src/stdlib/multimedia/audio/macos-output.el:182` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L182)
 
 停止播放并释放设备队列及原生句柄。
 

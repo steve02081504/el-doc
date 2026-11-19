@@ -3,7 +3,7 @@
 > 一组数、一张键值表、一段文字，看起来是三件事；写起来其实是同一个问题：你要按下标找、按键找，还是只想知道某样东西在不在？
 
 !!! abstract "🎯 读完这页，你能"
-    - 拿到一组值就选对容器：`Array`、`Map`、`Set`、`BitSet` 还是 `Sequence`
+    - 拿到一组值就选对容器：`Array`、`Map`、`Set`、`DitSet` 还是 `Sequence`
     - 用最常用的增删、查找与遍历操作处理数组和映射
     - 分清文本的字符数、字节数与下标，不把中文切坏
     - 写出一段词频统计，把数组变成映射再输出
@@ -19,7 +19,7 @@
 | 按下标存一串会变长的值 | `Array` | `@[1, 2, 3]` |
 | 用键查值 | `Map` | `Map<key: Text, value: Number>()` |
 | 只关心“在不在” | `Set` | `Set<element: Text>()` |
-| 固定宽度的位标记 | `BitSet` | `BitSet<size: 8>(5)` |
+| 固定数量的目标数位 | `DitSet` | `DitSet<size: 8>(5)` |
 | 数据很多但只用前几项 | `Sequence` | `lazy @[...]` |
 | 处理一段文字 | `Text` | `"hello"` |
 
@@ -60,6 +60,8 @@ for (let value in values) {
 ```
 
 数组还提供一组链式操作：`map`、`filter`、`some`、`all`、`indexOf`、`includes`、`join`、`reversed`。
+
+`includes(value)` 查一个元素；`contains(pattern)` 查连续的一段，不是跳着选的子序列，空模式总是匹配。数组与视图在元素比较具有受检语义时使用 KMP；自定义 `==` 仍按原来的下标顺序比较，不预先比较模式中的元素。`Text.contains` 同样查连续文本，并使用同一个 KMP 匹配核心。
 
 想把同一道统计题从手写循环逐步写成组合表达式，可以接着读[从遍历到函数组合](function-composition.md)：从 filter 开始，再用 batch/keep 和 over 提取重复处理。
 
@@ -115,7 +117,7 @@ for (let {key: name, value: score} in scores) {
 
 下标写法 `scores["ada"]` 也能读，但键不存在时抛 `MissingKeyError`，而不是返回 `nil`。需要“缺失可接受”时用 `get` 或 `getOr`。
 
-## Set 去重，BitSet 记位
+## Set 去重，DitSet 保存目标数位
 
 `Set<element: T>` 是去重的元素集合，用 `add`、`has`、`remove`，用 `values()` 取数组。
 
@@ -129,11 +131,11 @@ console.stdout.writeLine("tags: ", tags.count)   // 2
 
 `Set` 还提供 `union`、`intersection`、`difference`、`symmetricDifference`、`isSubsetOf`、`isSupersetOf`、`isDisjointFrom`，这些运算返回新的集合。
 
-`BitSet<size: N>` 是固定宽度的位集合，构造时把非负整数展开成 N 位，支持 `&`、`|`、`^`、`!`、`<<`、`>>` 以及 `rotateLeft`、`rotateRight`。
+`DitSet<size: N>` 把非负整数展开成 N 个目标数位，超出宽度时不截断。同宽 `+`、`-` 分别逐位模加、模减；`dit_min`、`dit_max` 逐位取最小或最大。`<<`、`>>` 补零，`rotateLeft`、`rotateRight` 回绕。没有按位 `&`、`|`、`^`、`!`。
 
 ```el
-let flags = BitSet<size: 8>(5)     // 二进制 00000101
-console.stdout.writeLine("bits: ", flags.toNumber())
+let digits = DitSet<size: 8>(5)
+console.stdout.writeLine("value: ", digits.toNumber())  // value: 5
 ```
 
 ## Text：先数清楚，再切

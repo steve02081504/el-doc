@@ -63,7 +63,7 @@ el formatter --check hazing.el
 ## 这一章的地图
 
 - 从[值与类型](values.md)起步：`Number`、`Text`、`t`/`f`/`nil`、绑定与类型注解。
-- 然后[数值与位类型](numeric-types.md)（精确整数、定宽整数、`BitFloat`、`NativeFloat`、`BitSet`）与[运算符与表达式](operators.md)（优先级、短路逻辑、乘方、空值合并、运算符重载）。
+- 然后[数值与位类型](numeric-types.md)（精确整数、`DitInt`、`DitFloat` 与 `DitSet`）与[运算符与表达式](operators.md)（优先级、短路逻辑、乘方、空值合并、运算符重载）。
 - 再往下是[控制流](control-flow.md)与[函数与闭包](functions.md)：条件、循环、定向返回、闭包捕获。
 - 需要建模、拆文件或处理失败时，读[类与对象](classes.md)、[模块与包](modules.md)、[错误处理与异步](errors-async.md)。
 

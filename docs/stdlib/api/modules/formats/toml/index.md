@@ -12,7 +12,7 @@
 
 ## parseTOML {#api-3d751bf4576089574ccb}
 
-源码：`src/stdlib/formats/toml/index.el:269` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L269)
+源码：`src/stdlib/formats/toml/index.el:271` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L271)
 
 解析 TOML 文档并保留 TOML 值种类，包括日期时间、数组和表。
 
@@ -39,7 +39,7 @@ let settings = parseTOML("port = 8080")
 
 ## writeTOML {#api-385192dc27d78c6eef68}
 
-源码：`src/stdlib/formats/toml/index.el:360` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L360)
+源码：`src/stdlib/formats/toml/index.el:363` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L363)
 
 将 TOML 根表编码为文档，嵌套表使用内联表；数字必须能精确表示。
 
@@ -66,7 +66,7 @@ let text = writeTOML(parseTOML("port = 8080"))
 
 ## parseOrderedTOML {#api-5580b3b042100058a9fa}
 
-源码：`src/stdlib/formats/toml/index.el:375` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L375)
+源码：`src/stdlib/formats/toml/index.el:378` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L378)
 
 解析 TOML 并递归保留每个表的首次插入顺序。
 

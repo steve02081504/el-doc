@@ -6,7 +6,7 @@
 
 ## 数值求解诊断 {#api-fc9691112daee7143abd}
 
-源码：`src/stdlib/numerical-computing/diagnostics.el:10` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/diagnostics.el#L10)
+源码：`src/stdlib/numerical-computing/diagnostics.el:9` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/diagnostics.el#L9)
 
 返回浮点求解结果、残差范数、实际方法与阈值判定信息。
 
@@ -14,7 +14,7 @@
 
 ## solveDiagnostic~dense {#api-e0ab268d3c4c908e5d38}
 
-源码：`src/stdlib/numerical-computing/diagnostics.el:41` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/diagnostics.el#L41)
+源码：`src/stdlib/numerical-computing/diagnostics.el:40` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/diagnostics.el#L40)
 
 用 F64 稠密 LU 求解并返回残差与主元阈值诊断。
 
@@ -41,7 +41,7 @@ let residualMagnitude = report.residualNorm
 
 ## leastSquaresDiagnostic {#api-5db73d0f1734381d6751}
 
-源码：`src/stdlib/numerical-computing/diagnostics.el:61` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/diagnostics.el#L61)
+源码：`src/stdlib/numerical-computing/diagnostics.el:60` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/diagnostics.el#L60)
 
 用 F64 列主元 QR 求最小二乘解并返回残差与秩阈值诊断。
 

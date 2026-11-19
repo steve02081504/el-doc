@@ -18,7 +18,7 @@
 
 ## 张量形状怎么摆：列优先与广播
 
-`Tensor<element: T>` 是普通值类型，`element` 决定每个元素是什么数值。普通训练用 `Number`；需要固定 IEEE 格式时，把 `BitFloat` 派生出的类型作为元素类型，例如 `F32`。
+`Tensor<element: T>` 是普通值类型，`element` 决定每个元素是什么数值。普通训练用 `Number`；需要确定目标数位舍入时，用 `DitFloat` 派生类型作为元素，例如二进制目标上的 `F32`；进入设备前需另行检查设备格式。
 
 ```el
 import { Tensor } from "el:numerical-computing/index.el"
@@ -154,11 +154,11 @@ for (let iteration = 0; iteration < 10; iteration++) {
 模型的 `storage` 类型参数写 `DeviceTensor<element: F32>`，构造时第三个参数用一个转换回调把主机权重上传到会话。
 
 ```el
-import { BitFloat } from "el:number/index.el"
+import { DitFloat } from "el:number/index.el"
 import { Tensor, DeviceTensor, TensorDevice } from "el:numerical-computing/index.el"
 import { Linear, ReLU, Sequential, SGD, valueAndGrad } from "el:neural-networks/index.el"
 
-let F32 = BitFloat<sign_bits: 1, fraction_bits: 23, exponent_bits: 8, exponent_bias: 127>
+let F32 = DitFloat<sign_dits: 1, fraction_dits: 23, exponent_dits: 8, exponent_bias: 127>
 let Host = Tensor<element: F32>
 let Values = DeviceTensor<element: F32>
 let Device = TensorDevice<element: F32>
@@ -205,5 +205,5 @@ for (let iteration = 0; iteration < 10; iteration++) {
 > 网络训练得对不对，不能靠盯损失曲线猜。怎么把这些数字变成可重复的断言？
 
 - 主推进：[测试](testing.md)：`el test`、测试文件布局、断言与失败信息。
-- 想先练手：[数值与位类型](../language/numeric-types.md)：`Number`、`BitFloat` 与设备浮点元素的数值合同。
+- 想先练手：[数值与位类型](../language/numeric-types.md)：`Number`、`DitFloat` 与设备浮点元素的数值合同。
 - 后面会用到：[集合与文本](collections.md)：数组与样本容器的基本操作。

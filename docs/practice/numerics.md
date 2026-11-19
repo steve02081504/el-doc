@@ -182,9 +182,9 @@ F64 路径用不可变的 `NumericsPolicy` 保存容差：默认 eps 是 2^-52�
 
 ```el
 import { plot, linspace, col } from "el:numerical-computing/index.el"
-import { BitFloat } from "el:number/index.el"
+import { DitFloat } from "el:number/index.el"
 
-let F64 = BitFloat<sign_bits: 1, fraction_bits: 52, exponent_bits: 11, exponent_bias: 1023>
+let F64 = DitFloat<sign_dits: 1, fraction_dits: 52, exponent_dits: 11, exponent_bias: 1023>
 let xs = col(linspace<F64>(-1, 1, 101))
 let ys = 2 - 0.5 * xs + 0.25 * xs.^2
 let figure = plot(xs, ys)
