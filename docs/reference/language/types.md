@@ -26,7 +26,7 @@ let maybeText: Text | nil_t = nil
 
 在 `let x: Base = Derived()` 中，能无歧义地适配到 `Base` 的派生值保留 `Derived` 类型。后续可给 `x` 写入其他满足 `Base` 的值。若初值不属于 `Base` 且 `Base` 指定具体类，初始化按显式 `Base(expr)` 处理，shared 类也适用。
 
-### 数值范围如何随写入变化
+### 数值范围如何随写入变化 { #numeric-range-updates }
 
 ```el
 let a: Number = 3
@@ -51,7 +51,7 @@ b = '3'
 !!! note "实现状态"
     数值库会保留并计算值域。两套编译器的 `typeof`、范围重载和受约束更新仍待接通。上表描述语言合同。
 
-### 容器的构造推断
+### 容器的构造推断 { #container-construction-inference }
 
 数组、Map 和 Set 的构造推断由容器库登记。函数内声明在同一函数内求解，模块声明在同一模块内求解，类声明在同一类内求解。证据不足或无法确定唯一类型时，在声明处报错。
 
