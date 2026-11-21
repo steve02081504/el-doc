@@ -47917,7 +47917,7 @@
 			"anchor": "api-e1b1b22430ae1dac04e7"
 		}
 	],
-	"source_digest": "3aa12a13a625a8c8d1f1ff8019b76a8aa9bf9db0e733ff3b57601e652b7b8925",
+	"source_digest": "373341e2805cddc855923ffb0b85e2c18b5ef3ba74e5301499e225dd82e3e770",
 	"files": [
 		{
 			"path": "collections/arrays/dynamic.el",
@@ -48009,7 +48009,7 @@
 		},
 		{
 			"path": "control/retry.el",
-			"sha256": "cfe72b40b12d66d3a1d0a400feea10d116acca0f76e31a2744bc5255db521601"
+			"sha256": "fc0a469b77416ffaa62f38f4f502bb42565589cad949402d35682dbea85dcae2"
 		},
 		{
 			"path": "cryptography/aead.el",
@@ -56086,8 +56086,8 @@
 				{
 					"tag": "example",
 					"value": "读取指定范围内的整行整数",
-					"markdown": "```el\nlet value = until {\n\tconsole.stdin.readLineAs(parsers.integer(min: 80, max: 560))\n} catch (error: ParseError) {\n\tconsole.stderr.writeLine(\"请输入整数\")\n} catch (error: RangeError) {\n\tconsole.stderr.writeLine(\"请输入 80 到 560 之间的整数\")\n}\n```",
-					"code": "let value = until {\n\tconsole.stdin.readLineAs(parsers.integer(min: 80, max: 560))\n} catch (error: ParseError) {\n\tconsole.stderr.writeLine(\"请输入整数\")\n} catch (error: RangeError) {\n\tconsole.stderr.writeLine(\"请输入 80 到 560 之间的整数\")\n}\n",
+					"markdown": "```el\nlet value = until {\n\tconsole.stdin.readLineAs(parsers.integer(min: 80, max: 560))\n} catch (error: RangeError) {\n\tconsole.stderr.writeLine(\"请输入 80 到 560 之间的整数\")\n}\n```",
+					"code": "let value = until {\n\tconsole.stdin.readLineAs(parsers.integer(min: 80, max: 560))\n} catch (error: RangeError) {\n\tconsole.stderr.writeLine(\"请输入 80 到 560 之间的整数\")\n}\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -56095,7 +56095,7 @@
 			"source": "control/retry.el",
 			"line": 18,
 			"signature": "export syntax until",
-			"declaration_line": 32,
+			"declaration_line": 30,
 			"id": "control/retry::until",
 			"value_type": null,
 			"owner": null,

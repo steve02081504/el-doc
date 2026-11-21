@@ -6,7 +6,7 @@
 
 ## until {#api-047fe3a9b4d31df55152}
 
-源码：`src/stdlib/control/retry.el:32` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/control/retry.el#L32)
+源码：`src/stdlib/control/retry.el:30` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/control/retry.el#L30)
 
 执行块直到成功，并返回成功那次的结果。匹配的 catch 执行完后重试；未匹配的异常或处理器抛出的异常向外传播。
 可以省略 catch，此时块只执行一次。
@@ -20,8 +20,6 @@ export syntax until
 ```el
 let value = until {
 	console.stdin.readLineAs(parsers.integer(min: 80, max: 560))
-} catch (error: ParseError) {
-	console.stderr.writeLine("请输入整数")
 } catch (error: RangeError) {
 	console.stderr.writeLine("请输入 80 到 560 之间的整数")
 }

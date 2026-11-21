@@ -52,7 +52,7 @@
 	"modules/concurrency/async.md": "52d8767a5b3613f37a7dcde1e80cb92faacae14e5bce1eb9b6f3b668ffab0352",
 	"modules/concurrency/tasks/parallel.md": "fdc43a50b152db21702a9d916e127d8fe1fadb75752c36ae0a5bcffda7362459",
 	"modules/console/facade.md": "ea46c9c4ea8615537b9d08a8cf644c95228f9d4ae8281a76f27a168a7138612a",
-	"modules/control/retry.md": "de74151f1a300da2b5dea27a892a7758dc43c5a5749ed37d0393ddcab5992139",
+	"modules/control/retry.md": "38a35b1c46563483ed918fa07f13eeb924c02ea548e78b6bd04c2b909ba1fe6b",
 	"modules/cryptography/aead.md": "314518ed026c4b64fb1b726743233339543b2f2118bc029938b23346a9a16e64",
 	"modules/cryptography/chacha20.md": "29197381fda1d5dabdb97b5f2db2ba153613f8e204a3a94749ca9e698e94ef5d",
 	"modules/cryptography/hkdf.md": "25b191485147cb8486d677d6da0e922112abd40eeff97f5ebb4ad2873ed241fb",
@@ -160,5 +160,5 @@
 	"modules/user-interface/sound.md": "845c73c0a8d82043304b073339292aa637ab9426c8bfc9417ddd25b846fb6e22",
 	"modules/user-interface/window.md": "55b31331d01a3c3ecce5924eaef6abb5321a16125760bce350e9955ae2ae0dac",
 	"index.md": "1628b18211daccd6f5f93d310bd432b6b6ef42aa3c34c4d2d1b229ee4b69ea75",
-	"api.json": "397e318a9d76ac7a9ba0c50be02ef0acb1653e61e83b51a65b912b392958e02a"
+	"api.json": "94dc2ca310377d4e4c094758fff21bcaaff68be299da6dd7300e013fe4ce38f3"
 }
