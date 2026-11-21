@@ -98,6 +98,29 @@ spec.loader.exec_module(module)
 		self.assertEqual(self.names("if condition { return value }")["if"].path, "reference/language/control-flow.md")
 		self.assertEqual(self.names('@assign(mode: "copy")')["@assign"].path, "reference/language/assignment-semantics.md")
 
+	def test_for_links_follow_the_syntax_at_each_occurrence(self):
+		code = """for let row in rows {
+	let array = @[@[row, column] for let column in row
+		for let value in column]
+	let lazy = (row /* ] ) */ for let row in rows)
+	consume(##"[( "for let ignored in fake"## for let row in rows)
+}
+fn show(rows) {
+	for (let row in rows) {
+		consume(row)
+		for let item in row consume(item)
+	}
+}
+consume(fn() { for let row in rows consume(row) })
+"""
+		targets = code_targets(code, self.catalog)
+		self.assertEqual(
+			[target.path for offset, (length, target) in targets.items() if code[offset:offset + length] == "for"],
+			["reference/language/" + page + ".md" for page in (
+				"control-flow", "comprehensions", "comprehensions", "comprehensions",
+				"comprehensions", "control-flow", "control-flow", "control-flow")],
+		)
+
 	def test_signature_types_follow_defining_module_not_default_names(self):
 		definition = entry("lookup", source="custom.el")
 		definition.update(signature="fn lookup(): Number | ptr", return_type="Number | ptr", type_references={"return_type": [

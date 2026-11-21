@@ -51,6 +51,9 @@ LANGUAGE = {
 }
 
 
+COMPREHENSION_REFERENCE = "reference/language/comprehensions.md"
+
+
 @dataclass(frozen=True)
 class Target:
 	path: str
@@ -152,6 +155,28 @@ class Catalog:
 		return result
 
 
+def comprehension_offsets(tokens):
+	"""Find `for let` suffixes within an array or parenthesized expression."""
+	delimiters = []
+	closing = {"(": ")", "[": "]", "{": "}"}
+	previous = ("", "", 0, 0)
+	for index, token in enumerate(tokens):
+		kind, value, start, _ = token
+		if kind == "code":
+			if value in closing:
+				array = value == "[" and previous[1] == "@" and previous[3] == start
+				delimiters.append((closing[value], value == "(" or array))
+			elif value in (")", "]", "}"):
+				if delimiters and delimiters[-1][0] == value:
+					delimiters.pop()
+				else:
+					delimiters.clear()
+			elif value == "for" and delimiters and delimiters[-1][1] and previous[1] not in ("(", "[", ",", ";"):
+				if index + 1 < len(tokens) and tokens[index + 1][1] == "let":
+					yield start
+		previous = token
+
+
 def code_targets(code, catalog, source=None):
 	"""Return source offsets for names whose documentation target is known.
 
@@ -159,11 +184,13 @@ def code_targets(code, catalog, source=None):
 	that fragment. This deliberately forgoes some valid links in nested scopes.
 	"""
 	try:
-		opaque = [(start, end) for kind, _, start, end in source_tokens(code) if kind in ("literal", "comment", "doc")]
+		stream = list(source_tokens(code))
+		opaque = [(start, end) for kind, _, start, end in stream if kind in ("literal", "comment", "doc")]
 	except DocumentationError:
 		return {}
 	tokens = [(offset, kind, value) for offset, kind, value in get_lexer_by_name("el").get_tokens_unprocessed(code)
 		if kind not in Comment and kind not in Whitespace and not (kind in Text and value.isspace())]
+	comprehensions = set(comprehension_offsets([token for token in stream if token[0] in ("code", "literal")]))
 	bindings = dict(catalog.defaults)
 	local_types = defaultdict(set)
 	structure = " ".join(value if kind not in String else "STRING" for _, kind, value in tokens)
@@ -252,7 +279,8 @@ def code_targets(code, catalog, source=None):
 		target = None
 		is_introducer = value in ("get", "set", "syntax") and index + 1 < len(tokens) and tokens[index + 1][1] in Name
 		if (kind in Keyword or kind in Name.Decorator or is_introducer) and value in LANGUAGE:
-			target = Target("reference/language/" + LANGUAGE[value] + ".md", label=value)
+			path = COMPREHENSION_REFERENCE if offset in comprehensions else "reference/language/" + LANGUAGE[value] + ".md"
+			target = Target(path, label=value)
 		elif kind in Name or kind in Keyword.Constant:
 			if previous in (".", "?."):
 				target = catalog.member(resolved.get(index - 2), value)
@@ -374,7 +402,8 @@ def on_files(files, config):
 	_destinations = {file.src_uri: file.abs_dest_path for file in files}
 	_used_targets.clear()
 	# Fail the build for stale reference destinations, including handwritten ones.
-	for path in {"reference/language/" + name + ".md" for name in LANGUAGE.values()}:
+	language_paths = {"reference/language/" + name + ".md" for name in LANGUAGE.values()}
+	for path in language_paths | {COMPREHENSION_REFERENCE}:
 		if path not in _files:
 			raise ValueError(f"missing code reference destination: {path}")
 	return files
