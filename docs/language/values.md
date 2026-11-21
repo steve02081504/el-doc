@@ -198,7 +198,7 @@ console.log.value(tail)              // [4]
 ```el
 let numbers = @[1, 2, 3]
 let mixed = @[1, "one"]                 // 元素类型是 Number | Text
-let empty: Number[] = @[]               // 空数组由注解或后续用法提供元素类型
+let empty: Number[] = @[]               // 注解提供空数组的元素类型
 let point = @{ name: "origin", x: 0 }
 let short = @{ numbers }                // 裸标识符缩写：numbers: numbers
 let identity = @(1, 0; 0, 1)            // 逗号分列，分号分行
@@ -209,7 +209,7 @@ console.log.value(identity)
 ```
 
 - 数组是 `shared`：赋值复制引用而不是复制元素；需要独立内容时显式遍历复制。
-- `@[1, "one"]` 的元素类型按元素集合推断成联合类型，后续赋值限制在该集合内。
+- `@[1, "one"]` 可从元素推导联合类型。库登记的上下文推断也可在声明的范围内为无注解构造选择更宽的元素类型。参见[容器的构造推断](../reference/language/types.md#容器的构造推断)。
 - `@{}` 对象字面量定义匿名、封闭、共享的类并创建实例：有身份，声明字段可写，字段集合固定，不能新增或删除字段，也没有方法。需要开放字段或行为时用 `class`。
 - 矩阵字面量 `@(1, 2; 3, 4)` 用逗号分列、分号分行；每行从左到右各求值一次，各行必须等长。
 

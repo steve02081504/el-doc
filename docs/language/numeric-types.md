@@ -18,29 +18,29 @@
 
 `F64`、`U128` 这类名字不是语言内建类型，而是标准库或用户源码里的普通绑定，通常写成某个工厂结果的透明别名；类型身份来自工厂参数，不来自拼写。
 
-??? note "可选 · 深入：类型身份看实参集合，不看书写顺序"
-    类型身份按具名实参集合确定，省略的参数按工厂默认值补齐：`Number<integer: t>`、`Number<integer: t, overflow: "ub">` 与 `Number<overflow: "ub", integer: t>` 是同一个类型（NUM-45、NUM-46）。布局参数则不进入 `Number` 的约束表，含义也不与约束参数复用（NUM-49）。所以“看起来不一样”的两种写法可能同一个类型，“看起来一样”的两种参数却可能不同。
+具名实参顺序不影响类型身份。值域参与类型查询与重载选择，更新策略由目标声明决定。参见[类型](../reference/language/types.md#数值范围如何随写入变化)。
 
 ## 约束是类型的一部分：`Number<...>` 的五个参数
 
 ```el
-let bounded: Number<min: 0, max: 100> = 72
-let whole: Number<integer: t> = 7
-let approximate: Number<epsilon: 0.001> = 1 / 3
+let bounded: Number<min: 0, max: 100, epsilon: 0> = 72
+let whole: Number<min: unbounded, max: unbounded, epsilon: 0, integer: t> = 7
+let approximate: Number<min: unbounded, max: unbounded, epsilon: 0.001> = 1 / 3
 
-let wrapped = Number<min: 0, max: 5, integer: t, overflow: "wrap">(4) + 3
+let wrapped: Number<min: 0, max: 5, epsilon: 0, integer: t, overflow: "wrap"> = 4
+wrapped += 3
 ```
 
-约束写在类型实参里，赋值与每一次运算结果都要满足。`min` 与 `max` 构成闭区间，在构造与赋值时检查：`bounded` 写 72 合法，换成 101 会抛 `RangeError`。
+`min` 与 `max` 构成闭区间。初始化和赋值检查目标约束。给 `bounded` 写入 72 合法，写入 101 越界。
 
 `epsilon` 是该类型运算结果允许的最大绝对误差；`epsilon: 0` 表示要求精确，`sqrt` 一类可能产生无理数的入口会拒绝零误差目标。
 
-??? question "先猜：写了 `Number<epsilon: 0.001>`，`1 / 3` 会被舍入成 `0.333` 吗？"
+??? question "先猜：要求 `epsilon: 0.001`，`1 / 3` 会被舍入成 `0.333` 吗？"
     不会。`epsilon` 是后续运算允许的误差上限，不是小数位数，也不是必须踩的数值网格；值本身仍按精确有理数保存（语言规范第 4 章 NUM-9、NUM-10）。想限制小数位数得自己舍入。
 
 `integer: t` 是独立的整数约束，不能由 `epsilon` 推出来：`whole` 拒绝 1.5，而 `epsilon: 1` 本身不禁止小数。
 
-`overflow` 决定运算结果越界时怎么处理；省略时是 `"ub"`，构造时的初始值越界总是抛 `RangeError`。`"wrap"` 只适用于整数约束与有限区间：
+`overflow` 决定复合赋值和自增、自减写回时如何处理越界。省略时为 `"ub"`。下表描述写回行为：
 
 | 策略 | 越界结果 |
 | --- | --- |
@@ -49,29 +49,25 @@ let wrapped = Number<min: 0, max: 5, integer: t, overflow: "wrap">(4) + 3
 | `"wrap"` | 在区间内按周期环绕 |
 | `"ub"` | 不提供可依赖的恢复行为 |
 
-上面 `4 + 3` 在 `[0, 5]` 上环绕为 1；约束参数同样参与类型身份，`Number<integer: t>` 与省略 `integer` 的 `Number` 不是同一个类型。
+按规范，上面的 `wrapped += 3` 写入 1，单独计算 `4 + 3` 得到 7。
 
-!!! example "动手 30 秒"
-    把 `wrapped` 那行的 `overflow: "wrap"` 改成 `"error"` 再跑一次。这次不是打印 `1`，而是抛 `RangeError`——溢出策略确实参与每一次运算。
+!!! note "实现状态"
+    普通算术已在库源码中改为生成新域。按目标应用写回策略仍待接通。
 
 ## 要纯整数，就别自己取整：`Integer` 与 `UnsignedInteger`
 
-`Integer` 是 `Number<epsilon: 0, integer: t, overflow: "error">` 的透明绑定，`UnsignedInteger` 另外加上 `min: 0`。两者都是无界精确整数，不表示机器字，也不承诺原生整数 ABI。
+`Integer` 是无界精确整数约束，`UnsignedInteger` 另外要求 `min: 0`。需要机器整数或地址偏移时，使用相应的显式原生类型。
 
 ```el
 import { Integer, UnsignedInteger } from "el:number/index.el"
 
 let quotient = Integer(8) / Integer(2)          // 4
-let fraction = Number(Integer(7)) / Number(2)  // 7/2
+let fraction = Integer(7) / Integer(2)          // 7/2
 
-let negative = UnsignedInteger(5) - UnsignedInteger(6)  // RangeError
+let negative = UnsignedInteger(5) - UnsignedInteger(6)  // -1
 ```
 
-`/` 仍是精确除法，不是隐式取整：`Integer(8) / Integer(2)` 整除，结果是 4；`Integer(7) / Integer(2)` 不能由整数接收者容纳，抛 `RangeError`。需要分数时先转成普通 `Number`，如第二行。
-
-无符号类型把负结果视为越界：`UnsignedInteger(5)` 减 `6` 抛 `RangeError`。这两个类型不按机器位宽截断；除零与非整除等操作仍按各自运算合同报错。不要把它们当作机器整数或地址偏移来用。
-
-显式转换同样检查约束：`Integer(UnsignedInteger(5))` 精确保值，`UnsignedInteger(Integer(5))` 检查非负。非整数、NaN 输入抛 `RangeError`；转换到 `UnsignedInteger` 时负数也抛 `RangeError`。转换不截断小数、不取绝对值，也不按模数环绕。
+将结果写回整数目标时才检查整数约束。显式转换 `Integer(fraction)` 或 `UnsignedInteger(negative)` 抛 `RangeError`。
 
 ## 用 DitInt 固定目标数位宽度
 
