@@ -6,7 +6,7 @@
 
 ## DitFloat {#api-3bf2f5b6b8ccdfc86851}
 
-源码：`src/stdlib/number/dit-float.el:281` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/dit-float.el#L281)
+源码：`src/stdlib/number/dit-float.el:288` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/dit-float.el#L288)
 
 用目标基数创建软件浮点类型，支持有符号零、无穷和 NaN。`sign_dits: 0` 是不带符号数位的无符号布局。
 

@@ -31,7 +31,11 @@
 
 ## console
 
-- [console/facade.el](modules/console/facade.md)（35 个 API）
+- [console/facade.el](modules/console/facade.md)（40 个 API）
+
+## control
+
+- [control/retry.el](modules/control/retry.md)（1 个 API）
 
 ## cryptography
 
@@ -162,6 +166,10 @@
 - [random/bits.el](modules/random/bits.md)（2 个 API）
 - [random/index.el](modules/random/index.md)（14 个 API）
 - [random/seed.el](modules/random/seed.md)（2 个 API）
+
+## settings
+
+- [settings/model.el](modules/settings/model.md)（1 个 API）
 
 ## streams
 

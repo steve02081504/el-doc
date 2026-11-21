@@ -173,19 +173,19 @@ let score = scores.get("ada")
 
 ## Map.getOr {#api-9b5fac9ee67f5fe57436}
 
-源码：`src/stdlib/collections/maps/base.el:115` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L115)
+源码：`src/stdlib/collections/maps/base.el:113` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L113)
 
 查询映射中的键；键不存在时返回调用方提供的默认值。
 
 ```el
-fn getOr(lookupKey: key, fallback: value): value
+fn getOr(lookupKey: key, lazy fallback: value): value
 ```
 
 **返回类型**：[`value`](../../../types.md#api-55134cc5930243ac905e)
 
 **参数**：lookupKey 要查询的键。
 
-**参数**：fallback 键缺失时返回的默认值。
+**参数**：fallback 仅在键缺失时求值一次的备用表达式。
 
 **返回值**：已存储的值或默认值。
 
@@ -199,7 +199,7 @@ console.stdout.writeLine(counts.getOr("red", 0))
 
 ## Map.keys {#api-bc2703a8337e9d87c267}
 
-源码：`src/stdlib/collections/maps/base.el:152` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L152)
+源码：`src/stdlib/collections/maps/base.el:147` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L147)
 
 返回当前键组成的数组快照。
 
@@ -221,7 +221,7 @@ console.stdout.writeLine(scores.keys().join(", "))
 
 ## Map.values {#api-10056afaf272a33d1f68}
 
-源码：`src/stdlib/collections/maps/base.el:166` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L166)
+源码：`src/stdlib/collections/maps/base.el:161` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L161)
 
 返回当前值组成的数组快照。
 

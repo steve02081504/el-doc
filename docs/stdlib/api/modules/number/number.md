@@ -8,7 +8,7 @@
 
 ## Number~type {#api-3cc24d3ef702e8652fb4}
 
-源码：`src/stdlib/number/number.el:44` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L44)
+源码：`src/stdlib/number/number.el:45` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L45)
 
 表示精确有理数的数值类型，普通算术在约分后的整数分子和分母上进行。
 它也可表示 unordered 状态；该状态不是 浮点 浮点近似值。
@@ -60,11 +60,11 @@ t
 
 ## Number~constraints {#api-ad6f905ba12a9a7c223e}
 
-源码：`src/stdlib/number/number.el:312` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L312)
+源码：`src/stdlib/number/number.el:341` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L341)
 
 创建带数值域约束的 Number 类型。min/max 可用 unbounded 表示无下界或无上界；epsilon 必须是有限非负值。
 integer 为真时结果必须为整数。overflow 支持 ub、error、nan、wrap；wrap 仅允许有界整数域。
-epsilon 用于算术结果在约束域内的紧凑表示，不把 Number 改成二进制浮点类型。
+epsilon 表示允许的最大绝对误差。普通算术从操作数建立新结果域。
 
 ```el
 export fn Number(min = nil, max = nil, epsilon = nil, integer = f, overflow = "ub"): type
@@ -88,7 +88,7 @@ export fn Number(min = nil, max = nil, epsilon = nil, integer = f, overflow = "u
 
 **失败与异常**：NumberParameterError 实例构造时发现边界倒置、epsilon 不是有限非负值、整数标志无效或策略不支持时。
 
-**失败与异常**：RangeError 初始构造值不符合约束，或 error 策略下的算术结果越界时；nan 策略可将越界算术结果变为 unordered。
+**失败与异常**：RangeError 初始构造值不符合约束。
 
 ### 示例：创建有界整数类型
 

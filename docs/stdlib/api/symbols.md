@@ -53,7 +53,7 @@
 | [Array.reverse](modules/collections/arrays/dynamic.md#api-87bcb7d8c6070a3515c9) | `collections/arrays/dynamic.el` |
 | [Array.shift](modules/collections/arrays/dynamic.md#api-f5ecc5c0a1649295acd5) | `collections/arrays/dynamic.el` |
 | [Array.slice](modules/collections/arrays/dynamic.md#api-798006d6685ff5c33c0b) | `collections/arrays/dynamic.el` |
-| [Array.sliceDynamic](modules/collections/arrays/dynamic.md#api-bd2715c4bb37b48f50de) | `collections/arrays/dynamic.el` |
+| [Array.sliceClamped](modules/collections/arrays/dynamic.md#api-e0a3a8d0e4a021feebae) | `collections/arrays/dynamic.el` |
 | [Array.some](modules/collections/arrays/dynamic.md#api-62d8ef96ddac55a5e4be) | `collections/arrays/dynamic.el` |
 | [Array.sort](modules/collections/arrays/dynamic.md#api-6329d5217c413e7c25f7) | `collections/arrays/dynamic.el` |
 | [Array.take](modules/collections/arrays/dynamic.md#api-c5fa66ab34cdd427c5c8) | `collections/arrays/dynamic.el` |
@@ -125,6 +125,11 @@
 | [ConsoleInputPort](modules/console/facade.md#api-81b920eaf28d6a885747) | `console/facade.el` |
 | [ConsoleInputPort.isTTY](modules/console/facade.md#api-ccb3fadaed7b080568fb) | `console/facade.el` |
 | [ConsoleInputPort.readAs](modules/console/facade.md#api-9e35bff3f1a3cb34dff2) | `console/facade.el` |
+| [ConsoleInputPort.readAs~key](modules/console/facade.md#api-f5d10a20aab0e4d0f5d6) | `console/facade.el` |
+| [ConsoleInputPort.readAs~localized](modules/console/facade.md#api-2be82159c61deced4686) | `console/facade.el` |
+| [ConsoleInputPort.readLineAs](modules/console/facade.md#api-00d315c84b632c0dbea0) | `console/facade.el` |
+| [ConsoleInputPort.readLineAs~key](modules/console/facade.md#api-0da505a7e456a47368b9) | `console/facade.el` |
+| [ConsoleInputPort.readLineAs~localized](modules/console/facade.md#api-40dacde7307346e1fb95) | `console/facade.el` |
 | [ConsoleInputPort.supportsAnsi](modules/console/facade.md#api-2ce95abce8884c0190ff) | `console/facade.el` |
 | [ConsoleLevelPort](modules/console/facade.md#api-82d3368b956700e55610) | `console/facade.el` |
 | [ConsoleLevelPort.channel](modules/console/facade.md#api-2a13aa2e4751d13d3f75) | `console/facade.el` |
@@ -442,6 +447,7 @@
 | [resize_language_storage](modules/memory/allocation/index.md#api-9bc40f7cd2a0908eb370) | `memory/allocation/index.el` |
 | [resolveFrom](modules/filesystem/index.md#api-163ed262fe20828c9ad6) | `filesystem/index.el` |
 | [resolvePath](modules/filesystem/index.md#api-2c3e211bba2a57b4ba86) | `filesystem/index.el` |
+| [resolveSettingsPatch](modules/settings/model.md#api-c80ade34e4e649b1dbff) | `settings/model.el` |
 | [resolveTheme](modules/theme/resolve.md#api-f08855dc7eaf1293eeb0) | `theme/resolve.el` |
 | [resolveUrl](modules/network/url.md#api-e85150a75a8ab3b2c844) | `network/url.el` |
 | [reverse](modules/collections/arrays/operations.md#api-e7e440001fd92e7e7aab) | `collections/arrays/operations.el` |
@@ -564,6 +570,7 @@
 | [try_heap_alloc](modules/memory/allocation/heap.md#api-ed06bd17d4112704658d) | `memory/allocation/heap.el` |
 | [Type](modules/language/proofs.md#api-2c69e2f6858e85964893) | `language/proofs.el` |
 | [unify](modules/logic/goal.md#api-dcdf93cd11ed18b33734) | `logic/goal.el` |
+| [until](modules/control/retry.md#api-047fe3a9b4d31df55152) | `control/retry.el` |
 | [valueAndGrad](modules/neural-networks/model.md#api-74a208b8786c54fae08b) | `neural-networks/model.el` |
 | [variable](modules/logic/term.md#api-c456fe7ff5956d254aa2) | `logic/term.el` |
 | [variable_scope](modules/logic/term.md#api-eca5da0b5d022e6d8dc0) | `logic/term.el` |

@@ -228,13 +228,13 @@ class ZipFile
 
 ## Array · collections/arrays/dynamic.el {#api-02f04934b15030edb96d}
 
-[源码 collections/arrays/dynamic.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L39)
+[源码 collections/arrays/dynamic.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L38)
 
 ```el
 class Array
 ```
 
-[源码 collections/arrays/dynamic.el:129](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L129)
+[源码 collections/arrays/dynamic.el:128](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L128)
 
 ```el
 fn Array(element: type): type
@@ -244,7 +244,7 @@ fn Array(element: type): type
 
 ## ArrayCursor · collections/arrays/dynamic.el {#api-745e67b3b180acb3f95c}
 
-[源码 collections/arrays/dynamic.el:83](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L83)
+[源码 collections/arrays/dynamic.el:82](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L82)
 
 ```el
 fn ArrayCursor(element: type): type
@@ -252,7 +252,7 @@ fn ArrayCursor(element: type): type
 
 ## ArrayLiteralTail · collections/arrays/dynamic.el {#api-8cca1b929908a3728b29}
 
-[源码 collections/arrays/dynamic.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L106)
+[源码 collections/arrays/dynamic.el:105](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L105)
 
 ```el
 fn ArrayLiteralTail(element: type, count = -1): type
@@ -260,7 +260,7 @@ fn ArrayLiteralTail(element: type, count = -1): type
 
 ## ClassicArray · collections/arrays/dynamic.el {#api-257247efc6d9544b6cca}
 
-[源码 collections/arrays/dynamic.el:369](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L369)
+[源码 collections/arrays/dynamic.el:368](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L368)
 
 ```el
 fn ClassicArray(element: type): type
@@ -268,7 +268,7 @@ fn ClassicArray(element: type): type
 
 ## DynamicArray · collections/arrays/dynamic.el {#api-1d30e7929db536315a31}
 
-[源码 collections/arrays/dynamic.el:378](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L378)
+[源码 collections/arrays/dynamic.el:377](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L377)
 
 ```el
 fn DynamicArray(element: type, count = -1): type
@@ -450,6 +450,14 @@ class UnsupportedDomain
 class VaryingDomain
 ```
 
+## StrongComponents · collections/graphs/strong-components.el {#api-3f55de5ff50009df4373}
+
+[源码 collections/graphs/strong-components.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/graphs/strong-components.el#L4)
+
+```el
+class StrongComponents
+```
+
 ## Grid · collections/grids.el {#api-4bd5d51097168c2493df}
 
 [源码 collections/grids.el:37](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/grids.el#L37)
@@ -536,6 +544,38 @@ fn ElementPosition(element: type): type
 
 ```el
 fn ElementRoot(element: type): type
+```
+
+## LinkedNodes · collections/internal/linked-nodes.el {#api-2f99baea8434897d6efa}
+
+[源码 collections/internal/linked-nodes.el:44](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/internal/linked-nodes.el#L44)
+
+```el
+fn LinkedNodes(node: type): type
+```
+
+## NodeRemoval · collections/internal/linked-nodes.el {#api-0876c12a48812dda1fe5}
+
+[源码 collections/internal/linked-nodes.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/internal/linked-nodes.el#L25)
+
+```el
+fn NodeRemoval(node: type): type
+```
+
+## NodeSlot · collections/internal/linked-nodes.el {#api-f4877e64a4f00ef82955}
+
+[源码 collections/internal/linked-nodes.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/internal/linked-nodes.el#L17)
+
+```el
+fn NodeSlot(node: type): type
+```
+
+## LinkedRevision · collections/internal/linked-revision.el {#api-240ddbaac4a692a26f21}
+
+[源码 collections/internal/linked-revision.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/internal/linked-revision.el#L4)
+
+```el
+class LinkedRevision
 ```
 
 ## ContainerSlots · collections/internal/slots.el {#api-85b45efea1fb943182b3}
@@ -684,6 +724,38 @@ class NumericRange
 class NumericStep
 ```
 
+## BidirectionalList · collections/sequences/bidirectional-list.el {#api-bbde569975a31246a51c}
+
+[源码 collections/sequences/bidirectional-list.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/bidirectional-list.el#L68)
+
+```el
+fn BidirectionalList(element: type): type
+```
+
+## BidirectionalListCursor · collections/sequences/bidirectional-list.el {#api-0846b376645163b513e8}
+
+[源码 collections/sequences/bidirectional-list.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/bidirectional-list.el#L23)
+
+```el
+fn BidirectionalListCursor(element: type): type
+```
+
+## BidirectionalListNode · collections/sequences/bidirectional-list.el {#api-515315424117a61b9fa9}
+
+[源码 collections/sequences/bidirectional-list.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/bidirectional-list.el#L10)
+
+```el
+fn BidirectionalListNode(element: type): type
+```
+
+## ListGap · collections/sequences/bidirectional-list.el {#api-c335435b34bd119e1979}
+
+[源码 collections/sequences/bidirectional-list.el:58](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/bidirectional-list.el#L58)
+
+```el
+class ListGap
+```
+
 ## ReadVec · collections/sequences/checked-vector.el {#api-8569fc08929a108d0f76}
 
 [源码 collections/sequences/checked-vector.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/checked-vector.el#L38)
@@ -822,6 +894,30 @@ fn EnumerationCursor(cursor: type, element: type): type
 fn EnumerationEntry(element: type): type
 ```
 
+## ForwardList · collections/sequences/forward-list.el {#api-6bc5a99336522d9e7086}
+
+[源码 collections/sequences/forward-list.el:42](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/forward-list.el#L42)
+
+```el
+fn ForwardList(element: type): type
+```
+
+## ForwardListCursor · collections/sequences/forward-list.el {#api-507af89e776bd4137aad}
+
+[源码 collections/sequences/forward-list.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/forward-list.el#L19)
+
+```el
+fn ForwardListCursor(element: type): type
+```
+
+## ForwardListNode · collections/sequences/forward-list.el {#api-5ffc998d1685de5b3f72}
+
+[源码 collections/sequences/forward-list.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/forward-list.el#L8)
+
+```el
+fn ForwardListNode(element: type): type
+```
+
 ## IterationStep · collections/sequences/iteration-step.el {#api-e4b3e3cc13c7cec14564}
 
 [源码 collections/sequences/iteration-step.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/iteration-step.el#L15)
@@ -876,10 +972,66 @@ fn Set(element: type): type
 
 ## SortedSet · collections/sets/hash-set.el {#api-e6b225de706f31a15947}
 
-[源码 collections/sets/hash-set.el:234](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L234)
+[源码 collections/sets/hash-set.el:226](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sets/hash-set.el#L226)
 
 ```el
 fn SortedSet(element: type): type
+```
+
+## BidirectionalTree · collections/trees/bidirectional-tree.el {#api-4e20064f66f7caedf883}
+
+[源码 collections/trees/bidirectional-tree.el:127](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/trees/bidirectional-tree.el#L127)
+
+```el
+fn BidirectionalTree(element: type): type
+```
+
+## BidirectionalTreeCursor · collections/trees/bidirectional-tree.el {#api-3442a9310892baec8c83}
+
+[源码 collections/trees/bidirectional-tree.el:85](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/trees/bidirectional-tree.el#L85)
+
+```el
+fn BidirectionalTreeCursor(element: type): type
+```
+
+## BidirectionalTreeNode · collections/trees/bidirectional-tree.el {#api-7c77cc4ea0c8daa10266}
+
+[源码 collections/trees/bidirectional-tree.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/trees/bidirectional-tree.el#L47)
+
+```el
+fn BidirectionalTreeNode(element: type): type
+```
+
+## TreeCursorFrame · collections/trees/bidirectional-tree.el {#api-b53d92658039c0ca5398}
+
+[源码 collections/trees/bidirectional-tree.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/trees/bidirectional-tree.el#L15)
+
+```el
+class TreeCursorFrame
+```
+
+## TreeEdge · collections/trees/bidirectional-tree.el {#api-ee4a0aaa2e94ba24cd02}
+
+[源码 collections/trees/bidirectional-tree.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/trees/bidirectional-tree.el#L10)
+
+```el
+class TreeEdge
+```
+
+## TreePending · collections/trees/bidirectional-tree.el {#api-cd7e3c6a0215a3582a43}
+
+[源码 collections/trees/bidirectional-tree.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/trees/bidirectional-tree.el#L35)
+
+```el
+class TreePending
+```
+
+## TreePosition · collections/trees/bidirectional-tree.el {#api-6b077f6f98755d95d4fd}
+
+[源码 collections/trees/bidirectional-tree.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/trees/bidirectional-tree.el#L25)
+
+```el
+class TreePosition
 ```
 
 ## EulerTour · collections/trees/euler-tour.el {#api-cd53273398ddc932fa34}
@@ -888,6 +1040,30 @@ fn SortedSet(element: type): type
 
 ```el
 class EulerTour
+```
+
+## ForwardTree · collections/trees/forward-tree.el {#api-c52d827da1ccfd9b32f7}
+
+[源码 collections/trees/forward-tree.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/trees/forward-tree.el#L47)
+
+```el
+fn ForwardTree(element: type): type
+```
+
+## ForwardTreeCursor · collections/trees/forward-tree.el {#api-7fdd2be5a7ff20d76d26}
+
+[源码 collections/trees/forward-tree.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/trees/forward-tree.el#L20)
+
+```el
+fn ForwardTreeCursor(element: type): type
+```
+
+## ForwardTreeNode · collections/trees/forward-tree.el {#api-86e095dcc57f3d10d2c2}
+
+[源码 collections/trees/forward-tree.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/trees/forward-tree.el#L8)
+
+```el
+fn ForwardTreeNode(element: type): type
 ```
 
 ## TreeLca · collections/trees/lca.el {#api-e28f9d138e7f53b2d548}
@@ -926,7 +1102,7 @@ class ReadFrame
 
 ## CapabilityRequest · compiler/ast.el {#api-0b18b66db27f33fb805a}
 
-[源码 compiler/ast.el:1364](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ast.el#L1364)
+[源码 compiler/ast.el:1363](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ast.el#L1363)
 
 ```el
 class CapabilityRequest
@@ -1174,7 +1350,7 @@ class BindingValueState
 
 ## CacheReader · compiler/cache/cache.el {#api-7d90e7dcadd4efaa220e}
 
-[源码 compiler/cache/cache.el:108](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/cache/cache.el#L108)
+[源码 compiler/cache/cache.el:126](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/cache/cache.el#L126)
 
 ```el
 class CacheReader
@@ -1286,7 +1462,7 @@ class SyntaxCacheUnavailable
 
 ## SyntaxEvidenceBatch · compiler/cache/syntax-cache.el {#api-a5bfea9b62e1c48d9f25}
 
-[源码 compiler/cache/syntax-cache.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/cache/syntax-cache.el#L87)
+[源码 compiler/cache/syntax-cache.el:94](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/cache/syntax-cache.el#L94)
 
 ```el
 class SyntaxEvidenceBatch
@@ -1294,10 +1470,18 @@ class SyntaxEvidenceBatch
 
 ## SyntaxReader · compiler/cache/syntax-cache.el {#api-8dd36ef5bd7ff81cf917}
 
-[源码 compiler/cache/syntax-cache.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/cache/syntax-cache.el#L45)
+[源码 compiler/cache/syntax-cache.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/cache/syntax-cache.el#L51)
 
 ```el
 class SyntaxReader extends CacheReader
+```
+
+## SyntaxTypeHoleOrigin · compiler/cache/syntax-cache.el {#api-e742d4653866be30a84b}
+
+[源码 compiler/cache/syntax-cache.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/cache/syntax-cache.el#L45)
+
+```el
+class SyntaxTypeHoleOrigin
 ```
 
 ## CallSignatureOperand · compiler/calls/call-signature-plan.el {#api-645827146abdaddc5250}
@@ -1334,7 +1518,7 @@ class StaticTypeCallPlan
 
 ## CandidatePlan · compiler/calls/call-state.el {#api-b67f6e5145b2571fbf92}
 
-[源码 compiler/calls/call-state.el:99](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/call-state.el#L99)
+[源码 compiler/calls/call-state.el:98](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/call-state.el#L98)
 
 ```el
 class CandidatePlan
@@ -1342,7 +1526,7 @@ class CandidatePlan
 
 ## DeferredAssignment · compiler/calls/call-state.el {#api-caa26456f7339014913d}
 
-[源码 compiler/calls/call-state.el:107](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/call-state.el#L107)
+[源码 compiler/calls/call-state.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/call-state.el#L106)
 
 ```el
 class DeferredAssignment
@@ -1366,7 +1550,7 @@ class MemorySummary
 
 ## NormalCallEdge · compiler/calls/call-state.el {#api-afecc4ec4c2d5d83a764}
 
-[源码 compiler/calls/call-state.el:128](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/call-state.el#L128)
+[源码 compiler/calls/call-state.el:127](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/call-state.el#L127)
 
 ```el
 class NormalCallEdge
@@ -1398,7 +1582,7 @@ class PreparedReference
 
 ## TerminalCleanupCandidate · compiler/calls/call-state.el {#api-15ab1ef2badd9cf00d7f}
 
-[源码 compiler/calls/call-state.el:134](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/call-state.el#L134)
+[源码 compiler/calls/call-state.el:133](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/call-state.el#L133)
 
 ```el
 class TerminalCleanupCandidate
@@ -1406,7 +1590,7 @@ class TerminalCleanupCandidate
 
 ## ContractEnvironment · compiler/calls/callable-contracts.el {#api-e83880bda34d228f8b70}
 
-[源码 compiler/calls/callable-contracts.el:161](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L161)
+[源码 compiler/calls/callable-contracts.el:162](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L162)
 
 ```el
 class ContractEnvironment
@@ -1414,7 +1598,7 @@ class ContractEnvironment
 
 ## ContractFunction · compiler/calls/callable-contracts.el {#api-102ca6527b72c8f65668}
 
-[源码 compiler/calls/callable-contracts.el:50](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L50)
+[源码 compiler/calls/callable-contracts.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L51)
 
 ```el
 class ContractFunction
@@ -1422,7 +1606,7 @@ class ContractFunction
 
 ## ContractFunctionGroup · compiler/calls/callable-contracts.el {#api-47c001f9598cc55e4f1f}
 
-[源码 compiler/calls/callable-contracts.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L57)
+[源码 compiler/calls/callable-contracts.el:58](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L58)
 
 ```el
 class ContractFunctionGroup
@@ -1430,7 +1614,7 @@ class ContractFunctionGroup
 
 ## ContractState · compiler/calls/callable-contracts.el {#api-e98f097c86a5c7e1f13a}
 
-[源码 compiler/calls/callable-contracts.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L27)
+[源码 compiler/calls/callable-contracts.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L28)
 
 ```el
 class ContractState
@@ -1438,7 +1622,7 @@ class ContractState
 
 ## SelectionOutput · compiler/calls/callable-contracts.el {#api-fcaf7af4b346418a5667}
 
-[源码 compiler/calls/callable-contracts.el:59](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L59)
+[源码 compiler/calls/callable-contracts.el:60](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L60)
 
 ```el
 class SelectionOutput
@@ -1446,7 +1630,7 @@ class SelectionOutput
 
 ## SelectionReaders · compiler/calls/callable-contracts.el {#api-12b58fc002be6a18395a}
 
-[源码 compiler/calls/callable-contracts.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L63)
+[源码 compiler/calls/callable-contracts.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L64)
 
 ```el
 class SelectionReaders
@@ -1454,7 +1638,7 @@ class SelectionReaders
 
 ## SelectionSession · compiler/calls/callable-contracts.el {#api-c773a9ae278eb4d66468}
 
-[源码 compiler/calls/callable-contracts.el:70](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L70)
+[源码 compiler/calls/callable-contracts.el:71](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L71)
 
 ```el
 class SelectionSession
@@ -1462,7 +1646,7 @@ class SelectionSession
 
 ## SelectionUse · compiler/calls/callable-contracts.el {#api-4aeeba709d5afd1fe12f}
 
-[源码 compiler/calls/callable-contracts.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L64)
+[源码 compiler/calls/callable-contracts.el:65](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/callable-contracts.el#L65)
 
 ```el
 class SelectionUse
@@ -1486,7 +1670,7 @@ class CallableSelectionQuery
 
 ## ComparisonSelection · compiler/calls/comparison-overloads.el {#api-7a18a71f6e048dc95859}
 
-[源码 compiler/calls/comparison-overloads.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/comparison-overloads.el#L35)
+[源码 compiler/calls/comparison-overloads.el:37](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/comparison-overloads.el#L37)
 
 ```el
 class ComparisonSelection
@@ -1586,6 +1770,14 @@ enum DynamicWrite
 
 ```el
 class OverloadSourceGroup
+```
+
+## StructuralEqualityProbe · compiler/calls/structural-search-equality.el {#api-7053f55b93bd2892fe81}
+
+[源码 compiler/calls/structural-search-equality.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/calls/structural-search-equality.el#L10)
+
+```el
+class StructuralEqualityProbe
 ```
 
 ## ClosedBinding · compiler/compute/closed-source-values.el {#api-571498a64de07a8f43c8}
@@ -1798,7 +1990,7 @@ class ContextNeedsWalk
 
 ## ContextNeedsAnswer · compiler/context/context-needs-graph.el {#api-92bf9e0aa79d15c6d4e0}
 
-[源码 compiler/context/context-needs-graph.el:50](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L50)
+[源码 compiler/context/context-needs-graph.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L51)
 
 ```el
 class ContextNeedsAnswer
@@ -1806,7 +1998,7 @@ class ContextNeedsAnswer
 
 ## ContextNeedsEdge · compiler/context/context-needs-graph.el {#api-fd886f6c47967c0d25cb}
 
-[源码 compiler/context/context-needs-graph.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L33)
+[源码 compiler/context/context-needs-graph.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L34)
 
 ```el
 class ContextNeedsEdge
@@ -1814,7 +2006,7 @@ class ContextNeedsEdge
 
 ## ContextNeedsGraph · compiler/context/context-needs-graph.el {#api-df694caf86acc376a76e}
 
-[源码 compiler/context/context-needs-graph.el:195](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L195)
+[源码 compiler/context/context-needs-graph.el:173](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L173)
 
 ```el
 class ContextNeedsGraph
@@ -1822,7 +2014,7 @@ class ContextNeedsGraph
 
 ## ContextNeedsRow · compiler/context/context-needs-graph.el {#api-c1c8291b752b18a01cf7}
 
-[源码 compiler/context/context-needs-graph.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L10)
+[源码 compiler/context/context-needs-graph.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L11)
 
 ```el
 class ContextNeedsRow
@@ -1830,7 +2022,7 @@ class ContextNeedsRow
 
 ## ContextNeedsSolution · compiler/context/context-needs-graph.el {#api-94f0890f06984755bd18}
 
-[源码 compiler/context/context-needs-graph.el:116](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L116)
+[源码 compiler/context/context-needs-graph.el:94](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L94)
 
 ```el
 class ContextNeedsSolution
@@ -1838,7 +2030,7 @@ class ContextNeedsSolution
 
 ## NeedsAtom · compiler/context/context-needs-graph.el {#api-ef611556edc3362bf5b6}
 
-[源码 compiler/context/context-needs-graph.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L25)
+[源码 compiler/context/context-needs-graph.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L26)
 
 ```el
 class NeedsAtom
@@ -1846,7 +2038,7 @@ class NeedsAtom
 
 ## NeedsDomain · compiler/context/context-needs-graph.el {#api-c91f2dce91aa8adfac12}
 
-[源码 compiler/context/context-needs-graph.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L9)
+[源码 compiler/context/context-needs-graph.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L10)
 
 ```el
 class NeedsDomain
@@ -1854,7 +2046,7 @@ class NeedsDomain
 
 ## NeedsInput · compiler/context/context-needs-graph.el {#api-a8471ac788da976f9e34}
 
-[源码 compiler/context/context-needs-graph.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L29)
+[源码 compiler/context/context-needs-graph.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L30)
 
 ```el
 class NeedsInput
@@ -1862,7 +2054,7 @@ class NeedsInput
 
 ## NeedsKey · compiler/context/context-needs-graph.el {#api-1cdfc81ba5c5cf0053b1}
 
-[源码 compiler/context/context-needs-graph.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L16)
+[源码 compiler/context/context-needs-graph.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L17)
 
 ```el
 class NeedsKey
@@ -1870,7 +2062,7 @@ class NeedsKey
 
 ## NeedsState · compiler/context/context-needs-graph.el {#api-09bffb8a1fadf06432fb}
 
-[源码 compiler/context/context-needs-graph.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L45)
+[源码 compiler/context/context-needs-graph.el:46](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/context-needs-graph.el#L46)
 
 ```el
 class NeedsState
@@ -2500,9 +2692,17 @@ class CheckedHost
 class CheckedImport extends IrExecutionImport
 ```
 
+## DemandEdge · compiler/contracts/demand-effects.el {#api-486aa5c9b962a8c83270}
+
+[源码 compiler/contracts/demand-effects.el:222](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/demand-effects.el#L222)
+
+```el
+class DemandEdge
+```
+
 ## DemandPropagation · compiler/contracts/demand-effects.el {#api-f6dd27f578710d0d3baf}
 
-[源码 compiler/contracts/demand-effects.el:207](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/demand-effects.el#L207)
+[源码 compiler/contracts/demand-effects.el:230](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/demand-effects.el#L230)
 
 ```el
 class DemandPropagation
@@ -2636,17 +2836,17 @@ class ExceptionProgram
 class ExceptionState
 ```
 
-## FamilyComponent · compiler/contracts/family-graph.el {#api-b30e802539ef1d699efe}
+## FamilyComponent · compiler/contracts/family-graph-state.el {#api-0848d0ef440ec6abdc34}
 
-[源码 compiler/contracts/family-graph.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/family-graph.el#L7)
+[源码 compiler/contracts/family-graph-state.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/family-graph-state.el#L6)
 
 ```el
 class FamilyComponent
 ```
 
-## FamilyGraph · compiler/contracts/family-graph.el {#api-cf5f2c25909296ac2748}
+## FamilyGraph · compiler/contracts/family-graph-state.el {#api-0757d89336b2f600b848}
 
-[源码 compiler/contracts/family-graph.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/family-graph.el#L18)
+[源码 compiler/contracts/family-graph-state.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/family-graph-state.el#L17)
 
 ```el
 class FamilyGraph
@@ -2742,7 +2942,7 @@ class ControlPresenceBinding
 
 ## ExceptionCatchSite · compiler/control-flow/function-state.el {#api-d42ded3af4a7999872fa}
 
-[源码 compiler/control-flow/function-state.el:241](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L241)
+[源码 compiler/control-flow/function-state.el:244](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L244)
 
 ```el
 class ExceptionCatchSite
@@ -2750,7 +2950,7 @@ class ExceptionCatchSite
 
 ## Func · compiler/control-flow/function-state.el {#api-9145cc1a82dfe07961ce}
 
-[源码 compiler/control-flow/function-state.el:255](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L255)
+[源码 compiler/control-flow/function-state.el:258](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L258)
 
 ```el
 class Func
@@ -2758,7 +2958,7 @@ class Func
 
 ## IntegerLiteralFacts · compiler/control-flow/function-state.el {#api-1211a2cd349c617bcf08}
 
-[源码 compiler/control-flow/function-state.el:223](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L223)
+[源码 compiler/control-flow/function-state.el:226](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L226)
 
 ```el
 class IntegerLiteralFacts
@@ -2766,7 +2966,7 @@ class IntegerLiteralFacts
 
 ## QueryLocal · compiler/control-flow/function-state.el {#api-39eda057a7480292ab62}
 
-[源码 compiler/control-flow/function-state.el:203](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L203)
+[源码 compiler/control-flow/function-state.el:206](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L206)
 
 ```el
 class QueryLocal
@@ -2774,7 +2974,7 @@ class QueryLocal
 
 ## RegisterFacts · compiler/control-flow/function-state.el {#api-7b448946868a6b5a260f}
 
-[源码 compiler/control-flow/function-state.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L29)
+[源码 compiler/control-flow/function-state.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L30)
 
 ```el
 class RegisterFacts
@@ -2782,7 +2982,7 @@ class RegisterFacts
 
 ## RequiredBindingValue · compiler/control-flow/function-state.el {#api-c970a4d3782b7aa352c2}
 
-[源码 compiler/control-flow/function-state.el:99](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L99)
+[源码 compiler/control-flow/function-state.el:102](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L102)
 
 ```el
 class RequiredBindingValue
@@ -2790,7 +2990,7 @@ class RequiredBindingValue
 
 ## RequiredIfReceipt · compiler/control-flow/function-state.el {#api-5f7d9d73e9ac0a85aa85}
 
-[源码 compiler/control-flow/function-state.el:73](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L73)
+[源码 compiler/control-flow/function-state.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L76)
 
 ```el
 class RequiredIfReceipt
@@ -2798,7 +2998,7 @@ class RequiredIfReceipt
 
 ## SourceExternUse · compiler/control-flow/function-state.el {#api-c2bac20ea684b75b40d8}
 
-[源码 compiler/control-flow/function-state.el:230](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L230)
+[源码 compiler/control-flow/function-state.el:233](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L233)
 
 ```el
 class SourceExternUse
@@ -2806,7 +3006,7 @@ class SourceExternUse
 
 ## SourceInitializationCodecPlan · compiler/control-flow/function-state.el {#api-7bf9d24b7b7e48df07f9}
 
-[源码 compiler/control-flow/function-state.el:162](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L162)
+[源码 compiler/control-flow/function-state.el:165](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L165)
 
 ```el
 class SourceInitializationCodecPlan
@@ -2814,7 +3014,7 @@ class SourceInitializationCodecPlan
 
 ## SourceInitializationReceipt · compiler/control-flow/function-state.el {#api-4e1c723ea3dafcf3159b}
 
-[源码 compiler/control-flow/function-state.el:127](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L127)
+[源码 compiler/control-flow/function-state.el:130](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L130)
 
 ```el
 class SourceInitializationReceipt
@@ -2822,7 +3022,7 @@ class SourceInitializationReceipt
 
 ## SourceInitializationType · compiler/control-flow/function-state.el {#api-6da977a28725d47c7f03}
 
-[源码 compiler/control-flow/function-state.el:112](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L112)
+[源码 compiler/control-flow/function-state.el:115](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L115)
 
 ```el
 class SourceInitializationType
@@ -2830,7 +3030,7 @@ class SourceInitializationType
 
 ## SourceSelectionPublication · compiler/control-flow/function-state.el {#api-8659ef351180c3a59414}
 
-[源码 compiler/control-flow/function-state.el:179](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L179)
+[源码 compiler/control-flow/function-state.el:182](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/function-state.el#L182)
 
 ```el
 class SourceSelectionPublication
@@ -2926,7 +3126,7 @@ class LoopTruthInvariant
 
 ## NormalCallGraph · compiler/control-flow/normal-exit.el {#api-458934460b7ba65c276a}
 
-[源码 compiler/control-flow/normal-exit.el:252](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/normal-exit.el#L252)
+[源码 compiler/control-flow/normal-exit.el:251](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/normal-exit.el#L251)
 
 ```el
 class NormalCallGraph
@@ -2934,7 +3134,7 @@ class NormalCallGraph
 
 ## NormalCallPredecessor · compiler/control-flow/normal-exit.el {#api-98de108e0d5adc7805bc}
 
-[源码 compiler/control-flow/normal-exit.el:243](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/normal-exit.el#L243)
+[源码 compiler/control-flow/normal-exit.el:242](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/normal-exit.el#L242)
 
 ```el
 class NormalCallPredecessor
@@ -2942,7 +3142,7 @@ class NormalCallPredecessor
 
 ## NormalExitFunction · compiler/control-flow/normal-exit.el {#api-d48c12e67c8a6b5c0741}
 
-[源码 compiler/control-flow/normal-exit.el:153](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/normal-exit.el#L153)
+[源码 compiler/control-flow/normal-exit.el:152](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/normal-exit.el#L152)
 
 ```el
 class NormalExitFunction
@@ -2950,7 +3150,7 @@ class NormalExitFunction
 
 ## NormalExitKey · compiler/control-flow/normal-exit.el {#api-1b812870492f3225bca6}
 
-[源码 compiler/control-flow/normal-exit.el:146](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/normal-exit.el#L146)
+[源码 compiler/control-flow/normal-exit.el:145](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/normal-exit.el#L145)
 
 ```el
 class NormalExitKey
@@ -2958,7 +3158,7 @@ class NormalExitKey
 
 ## NormalExitPrefix · compiler/control-flow/normal-exit.el {#api-a1331230f0b150bce22b}
 
-[源码 compiler/control-flow/normal-exit.el:178](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/normal-exit.el#L178)
+[源码 compiler/control-flow/normal-exit.el:177](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/normal-exit.el#L177)
 
 ```el
 class NormalExitPrefix
@@ -2966,7 +3166,7 @@ class NormalExitPrefix
 
 ## NormalOperationOwners · compiler/control-flow/normal-exit.el {#api-51c042678d60c2a80605}
 
-[源码 compiler/control-flow/normal-exit.el:196](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/normal-exit.el#L196)
+[源码 compiler/control-flow/normal-exit.el:195](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/control-flow/normal-exit.el#L195)
 
 ```el
 class NormalOperationOwners
@@ -3070,7 +3270,7 @@ class DeadScope
 
 ## ConstructionState · compiler/declarations/construction-flow.el {#api-b60734bebabd7bed1a23}
 
-[源码 compiler/declarations/construction-flow.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/declarations/construction-flow.el#L15)
+[源码 compiler/declarations/construction-flow.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/declarations/construction-flow.el#L16)
 
 ```el
 class ConstructionState
@@ -3110,7 +3310,7 @@ class ImplicitConversionPlan
 
 ## ParameterConversionPlan · compiler/declarations/constructor-resolution.el {#api-be18690ace46bf078626}
 
-[源码 compiler/declarations/constructor-resolution.el:212](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/declarations/constructor-resolution.el#L212)
+[源码 compiler/declarations/constructor-resolution.el:215](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/declarations/constructor-resolution.el#L215)
 
 ```el
 class ParameterConversionPlan
@@ -3190,7 +3390,7 @@ class FactoryAnnotationMemo
 
 ## FactoryCopyScope · compiler/declarations/factory/syntax.el {#api-8127299bb0bdeced14ae}
 
-[源码 compiler/declarations/factory/syntax.el:463](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/declarations/factory/syntax.el#L463)
+[源码 compiler/declarations/factory/syntax.el:464](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/declarations/factory/syntax.el#L464)
 
 ```el
 class FactoryCopyScope
@@ -3550,7 +3750,7 @@ class PreparedContext extends SourceInputContext
 
 ## FactoryShapePreparation · compiler/main.el {#api-6ee7b11794c07600851c}
 
-[源码 compiler/main.el:416](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/main.el#L416)
+[源码 compiler/main.el:417](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/main.el#L417)
 
 ```el
 class FactoryShapePreparation
@@ -3630,7 +3830,7 @@ class ImportSourceMap
 
 ## MissingImportDiagnostics · compiler/modules/imports.el {#api-90adef5704c841914e66}
 
-[源码 compiler/modules/imports.el:516](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/modules/imports.el#L516)
+[源码 compiler/modules/imports.el:517](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/modules/imports.el#L517)
 
 ```el
 class MissingImportDiagnostics
@@ -3638,7 +3838,7 @@ class MissingImportDiagnostics
 
 ## StaticImportGraph · compiler/modules/imports.el {#api-e0622347031cf401e6fe}
 
-[源码 compiler/modules/imports.el:583](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/modules/imports.el#L583)
+[源码 compiler/modules/imports.el:584](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/modules/imports.el#L584)
 
 ```el
 class StaticImportGraph
@@ -3918,7 +4118,7 @@ data ReceiverContext
 
 ## CandidateConversionPlan · compiler/ownership/argument-categories.el {#api-266e4b838f74c650cfb0}
 
-[源码 compiler/ownership/argument-categories.el:752](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/argument-categories.el#L752)
+[源码 compiler/ownership/argument-categories.el:796](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/argument-categories.el#L796)
 
 ```el
 class CandidateConversionPlan
@@ -3926,7 +4126,7 @@ class CandidateConversionPlan
 
 ## EvaluatedFamilyPlan · compiler/ownership/argument-categories.el {#api-edaae27450e0cc33202f}
 
-[源码 compiler/ownership/argument-categories.el:794](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/argument-categories.el#L794)
+[源码 compiler/ownership/argument-categories.el:838](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/argument-categories.el#L838)
 
 ```el
 class EvaluatedFamilyPlan
@@ -3934,7 +4134,7 @@ class EvaluatedFamilyPlan
 
 ## ForwardGuard · compiler/ownership/argument-categories.el {#api-3308244bd45ce6676f80}
 
-[源码 compiler/ownership/argument-categories.el:386](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/argument-categories.el#L386)
+[源码 compiler/ownership/argument-categories.el:402](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/argument-categories.el#L402)
 
 ```el
 class ForwardGuard
@@ -3982,7 +4182,7 @@ class LocalValueTransport
 
 ## OwnerAnalysis · compiler/ownership/owner-paths.el {#api-bbd9a3805740ce9002c4}
 
-[源码 compiler/ownership/owner-paths.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L106)
+[源码 compiler/ownership/owner-paths.el:107](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L107)
 
 ```el
 class OwnerAnalysis
@@ -3990,7 +4190,7 @@ class OwnerAnalysis
 
 ## OwnerCallable · compiler/ownership/owner-paths.el {#api-9680d60aa47cec1003c7}
 
-[源码 compiler/ownership/owner-paths.el:60](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L60)
+[源码 compiler/ownership/owner-paths.el:61](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L61)
 
 ```el
 class OwnerCallable
@@ -3998,7 +4198,7 @@ class OwnerCallable
 
 ## OwnerCallables · compiler/ownership/owner-paths.el {#api-dd66de2ef3e09a63ff79}
 
-[源码 compiler/ownership/owner-paths.el:62](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L62)
+[源码 compiler/ownership/owner-paths.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L63)
 
 ```el
 class OwnerCallables
@@ -4006,7 +4206,7 @@ class OwnerCallables
 
 ## OwnerEffect · compiler/ownership/owner-paths.el {#api-7e1578ba41074fbde6a8}
 
-[源码 compiler/ownership/owner-paths.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L40)
+[源码 compiler/ownership/owner-paths.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L41)
 
 ```el
 class OwnerEffect
@@ -4014,7 +4214,7 @@ class OwnerEffect
 
 ## OwnerFrame · compiler/ownership/owner-paths.el {#api-aafa7933eb2f18fd7cfd}
 
-[源码 compiler/ownership/owner-paths.el:91](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L91)
+[源码 compiler/ownership/owner-paths.el:92](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L92)
 
 ```el
 class OwnerFrame
@@ -4022,7 +4222,7 @@ class OwnerFrame
 
 ## OwnerHeapView · compiler/ownership/owner-paths.el {#api-d8a3f6572fa273108821}
 
-[源码 compiler/ownership/owner-paths.el:78](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L78)
+[源码 compiler/ownership/owner-paths.el:79](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L79)
 
 ```el
 class OwnerHeapView
@@ -4030,7 +4230,7 @@ class OwnerHeapView
 
 ## OwnerInvalidation · compiler/ownership/owner-paths.el {#api-7d5be4979834cdc0a62e}
 
-[源码 compiler/ownership/owner-paths.el:85](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L85)
+[源码 compiler/ownership/owner-paths.el:86](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L86)
 
 ```el
 class OwnerInvalidation
@@ -4038,7 +4238,7 @@ class OwnerInvalidation
 
 ## OwnerInvocation · compiler/ownership/owner-paths.el {#api-f00386a7c1acff9ce26d}
 
-[源码 compiler/ownership/owner-paths.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L64)
+[源码 compiler/ownership/owner-paths.el:65](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L65)
 
 ```el
 class OwnerInvocation
@@ -4046,7 +4246,7 @@ class OwnerInvocation
 
 ## OwnerPath · compiler/ownership/owner-paths.el {#api-bee0494cebe750f2c1d9}
 
-[源码 compiler/ownership/owner-paths.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L26)
+[源码 compiler/ownership/owner-paths.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L27)
 
 ```el
 class OwnerPath
@@ -4054,7 +4254,7 @@ class OwnerPath
 
 ## OwnerPaths · compiler/ownership/owner-paths.el {#api-30b3c42243f141198afd}
 
-[源码 compiler/ownership/owner-paths.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L35)
+[源码 compiler/ownership/owner-paths.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L36)
 
 ```el
 class OwnerPaths
@@ -4062,7 +4262,7 @@ class OwnerPaths
 
 ## OwnerReturnSource · compiler/ownership/owner-paths.el {#api-9c6e5ccb1bb05437e7f9}
 
-[源码 compiler/ownership/owner-paths.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L38)
+[源码 compiler/ownership/owner-paths.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L39)
 
 ```el
 class OwnerReturnSource
@@ -4070,7 +4270,7 @@ class OwnerReturnSource
 
 ## OwnerStored · compiler/ownership/owner-paths.el {#api-137b3d6eafcf1cecc97b}
 
-[源码 compiler/ownership/owner-paths.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L76)
+[源码 compiler/ownership/owner-paths.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/owner-paths.el#L77)
 
 ```el
 class OwnerStored
@@ -4158,7 +4358,7 @@ class ReferenceValue
 
 ## UnionCallArm · compiler/ownership/references.el {#api-0e785d323da3b4f14751}
 
-[源码 compiler/ownership/references.el:54](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/references.el#L54)
+[源码 compiler/ownership/references.el:55](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/ownership/references.el#L55)
 
 ```el
 class UnionCallArm
@@ -4374,7 +4574,7 @@ class ConditionReader
 
 ## PreprocessDefinition · compiler/preprocessing/preprocessing-model.el {#api-f2964e8849faa9ed14ef}
 
-[源码 compiler/preprocessing/preprocessing-model.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/preprocessing/preprocessing-model.el#L41)
+[源码 compiler/preprocessing/preprocessing-model.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/preprocessing/preprocessing-model.el#L45)
 
 ```el
 class PreprocessDefinition
@@ -4382,7 +4582,7 @@ class PreprocessDefinition
 
 ## PreprocessEnvironment · compiler/preprocessing/preprocessing-model.el {#api-2c9c27e387229de6179a}
 
-[源码 compiler/preprocessing/preprocessing-model.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/preprocessing/preprocessing-model.el#L64)
+[源码 compiler/preprocessing/preprocessing-model.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/preprocessing/preprocessing-model.el#L68)
 
 ```el
 class PreprocessEnvironment
@@ -4390,15 +4590,15 @@ class PreprocessEnvironment
 
 ## PreprocessFailure · compiler/preprocessing/preprocessing-model.el {#api-410fe00cf8e7a5286401}
 
-[源码 compiler/preprocessing/preprocessing-model.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/preprocessing/preprocessing-model.el#L15)
+[源码 compiler/preprocessing/preprocessing-model.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/preprocessing/preprocessing-model.el#L16)
 
 ```el
-class PreprocessFailure
+class PreprocessFailure extends Error
 ```
 
 ## PreprocessInput · compiler/preprocessing/preprocessing-model.el {#api-818c99f9e5f0cb64f5ba}
 
-[源码 compiler/preprocessing/preprocessing-model.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/preprocessing/preprocessing-model.el#L21)
+[源码 compiler/preprocessing/preprocessing-model.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/preprocessing/preprocessing-model.el#L25)
 
 ```el
 class PreprocessInput
@@ -4406,7 +4606,7 @@ class PreprocessInput
 
 ## PreprocessSite · compiler/preprocessing/preprocessing-model.el {#api-7fd732fd0d1ced749217}
 
-[源码 compiler/preprocessing/preprocessing-model.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/preprocessing/preprocessing-model.el#L4)
+[源码 compiler/preprocessing/preprocessing-model.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/preprocessing/preprocessing-model.el#L5)
 
 ```el
 class PreprocessSite
@@ -4414,7 +4614,7 @@ class PreprocessSite
 
 ## PreprocessSpan · compiler/preprocessing/preprocessing-model.el {#api-e21ffeb6555f67a01af9}
 
-[源码 compiler/preprocessing/preprocessing-model.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/preprocessing/preprocessing-model.el#L31)
+[源码 compiler/preprocessing/preprocessing-model.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/preprocessing/preprocessing-model.el#L35)
 
 ```el
 class PreprocessSpan
@@ -4422,7 +4622,7 @@ class PreprocessSpan
 
 ## PreprocessedSource · compiler/preprocessing/preprocessing-model.el {#api-b7e73ee5c1e91fadd441}
 
-[源码 compiler/preprocessing/preprocessing-model.el:48](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/preprocessing/preprocessing-model.el#L48)
+[源码 compiler/preprocessing/preprocessing-model.el:52](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/preprocessing/preprocessing-model.el#L52)
 
 ```el
 class PreprocessedSource
@@ -6414,7 +6614,7 @@ class RuntimeCallbackEmission
 
 ## FrameBinding · compiler/runtime/runtime-callable-lowering.el {#api-cdffa8d37336d5c4cda4}
 
-[源码 compiler/runtime/runtime-callable-lowering.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/runtime/runtime-callable-lowering.el#L14)
+[源码 compiler/runtime/runtime-callable-lowering.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/runtime/runtime-callable-lowering.el#L15)
 
 ```el
 class FrameBinding
@@ -6422,7 +6622,7 @@ class FrameBinding
 
 ## RuntimeCallableLowering · compiler/runtime/runtime-callable-lowering.el {#api-eab87718c3959ea6a4eb}
 
-[源码 compiler/runtime/runtime-callable-lowering.el:49](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/runtime/runtime-callable-lowering.el#L49)
+[源码 compiler/runtime/runtime-callable-lowering.el:50](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/runtime/runtime-callable-lowering.el#L50)
 
 ```el
 class RuntimeCallableLowering
@@ -6830,7 +7030,7 @@ class RuntimeSharedRuntime
 
 ## RuntimeFunctionSourceInputs · compiler/runtime/runtime-source-inputs.el {#api-5a73d3d1768f655f1449}
 
-[源码 compiler/runtime/runtime-source-inputs.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/runtime/runtime-source-inputs.el#L64)
+[源码 compiler/runtime/runtime-source-inputs.el:65](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/runtime/runtime-source-inputs.el#L65)
 
 ```el
 class RuntimeFunctionSourceInputs
@@ -6838,7 +7038,7 @@ class RuntimeFunctionSourceInputs
 
 ## RuntimeSourceInputs · compiler/runtime/runtime-source-inputs.el {#api-cf326795e66ad909c401}
 
-[源码 compiler/runtime/runtime-source-inputs.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/runtime/runtime-source-inputs.el#L14)
+[源码 compiler/runtime/runtime-source-inputs.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/runtime/runtime-source-inputs.el#L15)
 
 ```el
 class RuntimeSourceInputs
@@ -6846,7 +7046,7 @@ class RuntimeSourceInputs
 
 ## RuntimeSourceRange · compiler/runtime/runtime-source-inputs.el {#api-ce39e9242bf2891505c8}
 
-[源码 compiler/runtime/runtime-source-inputs.el:50](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/runtime/runtime-source-inputs.el#L50)
+[源码 compiler/runtime/runtime-source-inputs.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/runtime/runtime-source-inputs.el#L51)
 
 ```el
 class RuntimeSourceRange
@@ -7270,7 +7470,7 @@ class SourceInputEvidence
 
 ## PreparedInputGrammar · compiler/source/source-input-grammar.el {#api-6effc515ff972d1a7f0d}
 
-[源码 compiler/source/source-input-grammar.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/source/source-input-grammar.el#L43)
+[源码 compiler/source/source-input-grammar.el:44](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/source/source-input-grammar.el#L44)
 
 ```el
 class PreparedInputGrammar
@@ -7278,7 +7478,7 @@ class PreparedInputGrammar
 
 ## PreparedInputSyntax · compiler/source/source-input-grammar.el {#api-448c26ef7b836cbece9b}
 
-[源码 compiler/source/source-input-grammar.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/source/source-input-grammar.el#L29)
+[源码 compiler/source/source-input-grammar.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/source/source-input-grammar.el#L30)
 
 ```el
 class PreparedInputSyntax
@@ -7526,7 +7726,7 @@ class SourceProbe
 
 ## SourceAssemblyEntry · compiler/source/source-prepared-assembly.el {#api-5a89a10c92f71157302f}
 
-[源码 compiler/source/source-prepared-assembly.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/source/source-prepared-assembly.el#L18)
+[源码 compiler/source/source-prepared-assembly.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/source/source-prepared-assembly.el#L19)
 
 ```el
 class SourceAssemblyEntry
@@ -7534,7 +7734,7 @@ class SourceAssemblyEntry
 
 ## SourcePreparedAssembly · compiler/source/source-prepared-assembly.el {#api-bf341fe8c3f1fd1408d9}
 
-[源码 compiler/source/source-prepared-assembly.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/source/source-prepared-assembly.el#L30)
+[源码 compiler/source/source-prepared-assembly.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/source/source-prepared-assembly.el#L31)
 
 ```el
 class SourcePreparedAssembly
@@ -7662,7 +7862,7 @@ class SyntaxPendingAttribute
 
 ## BindingProjectionKind · compiler/syntax/control-payload.el {#api-afe8d08a38b15e86eb5f}
 
-[源码 compiler/syntax/control-payload.el:191](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L191)
+[源码 compiler/syntax/control-payload.el:188](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L188)
 
 ```el
 data BindingProjectionKind
@@ -7670,7 +7870,7 @@ data BindingProjectionKind
 
 ## SyntaxAssignment · compiler/syntax/control-payload.el {#api-a039f7645f5b4ec97a56}
 
-[源码 compiler/syntax/control-payload.el:270](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L270)
+[源码 compiler/syntax/control-payload.el:267](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L267)
 
 ```el
 class SyntaxAssignment
@@ -7678,7 +7878,7 @@ class SyntaxAssignment
 
 ## SyntaxAssignmentKind · compiler/syntax/control-payload.el {#api-7d5c46b698be685d6445}
 
-[源码 compiler/syntax/control-payload.el:262](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L262)
+[源码 compiler/syntax/control-payload.el:259](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L259)
 
 ```el
 data SyntaxAssignmentKind
@@ -7686,7 +7886,7 @@ data SyntaxAssignmentKind
 
 ## SyntaxBindingProjection · compiler/syntax/control-payload.el {#api-14a54da558515aef19de}
 
-[源码 compiler/syntax/control-payload.el:198](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L198)
+[源码 compiler/syntax/control-payload.el:195](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L195)
 
 ```el
 class SyntaxBindingProjection
@@ -7694,7 +7894,7 @@ class SyntaxBindingProjection
 
 ## SyntaxBlock · compiler/syntax/control-payload.el {#api-77129bac3e61c5327737}
 
-[源码 compiler/syntax/control-payload.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L63)
+[源码 compiler/syntax/control-payload.el:60](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L60)
 
 ```el
 class SyntaxBlock
@@ -7702,7 +7902,7 @@ class SyntaxBlock
 
 ## SyntaxBlockKind · compiler/syntax/control-payload.el {#api-6124f732d33e44948419}
 
-[源码 compiler/syntax/control-payload.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L51)
+[源码 compiler/syntax/control-payload.el:48](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L48)
 
 ```el
 data SyntaxBlockKind
@@ -7710,7 +7910,7 @@ data SyntaxBlockKind
 
 ## SyntaxCase · compiler/syntax/control-payload.el {#api-65674dda2e8004a3beff}
 
-[源码 compiler/syntax/control-payload.el:163](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L163)
+[源码 compiler/syntax/control-payload.el:160](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L160)
 
 ```el
 class SyntaxCase
@@ -7718,7 +7918,7 @@ class SyntaxCase
 
 ## SyntaxCaseKind · compiler/syntax/control-payload.el {#api-82577996c9ac957d7ba1}
 
-[源码 compiler/syntax/control-payload.el:159](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L159)
+[源码 compiler/syntax/control-payload.el:156](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L156)
 
 ```el
 data SyntaxCaseKind
@@ -7726,7 +7926,7 @@ data SyntaxCaseKind
 
 ## SyntaxCatch · compiler/syntax/control-payload.el {#api-5f3b374abeb6e6ffacb8}
 
-[源码 compiler/syntax/control-payload.el:177](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L177)
+[源码 compiler/syntax/control-payload.el:174](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L174)
 
 ```el
 class SyntaxCatch
@@ -7734,7 +7934,7 @@ class SyntaxCatch
 
 ## SyntaxCollection · compiler/syntax/control-payload.el {#api-9938d7e80cb3d077eb84}
 
-[源码 compiler/syntax/control-payload.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L106)
+[源码 compiler/syntax/control-payload.el:103](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L103)
 
 ```el
 class SyntaxCollection
@@ -7742,7 +7942,7 @@ class SyntaxCollection
 
 ## SyntaxCollectionKind · compiler/syntax/control-payload.el {#api-05128cf733b8b40053ca}
 
-[源码 compiler/syntax/control-payload.el:101](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L101)
+[源码 compiler/syntax/control-payload.el:98](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L98)
 
 ```el
 data SyntaxCollectionKind
@@ -7750,7 +7950,7 @@ data SyntaxCollectionKind
 
 ## SyntaxDataConstructor · compiler/syntax/control-payload.el {#api-88131cd0d8c0756e167c}
 
-[源码 compiler/syntax/control-payload.el:237](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L237)
+[源码 compiler/syntax/control-payload.el:234](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L234)
 
 ```el
 class SyntaxDataConstructor
@@ -7758,7 +7958,7 @@ class SyntaxDataConstructor
 
 ## SyntaxDataField · compiler/syntax/control-payload.el {#api-9c29f931ae9c1fbc78c6}
 
-[源码 compiler/syntax/control-payload.el:251](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L251)
+[源码 compiler/syntax/control-payload.el:248](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L248)
 
 ```el
 class SyntaxDataField
@@ -7766,7 +7966,7 @@ class SyntaxDataField
 
 ## SyntaxDefinitionReference · compiler/syntax/control-payload.el {#api-af03c7a0dfbdb273cd8b}
 
-[源码 compiler/syntax/control-payload.el:362](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L362)
+[源码 compiler/syntax/control-payload.el:359](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L359)
 
 ```el
 class SyntaxDefinitionReference
@@ -7774,7 +7974,7 @@ class SyntaxDefinitionReference
 
 ## SyntaxMatch · compiler/syntax/control-payload.el {#api-f95d46676dd3fc218e53}
 
-[源码 compiler/syntax/control-payload.el:148](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L148)
+[源码 compiler/syntax/control-payload.el:145](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L145)
 
 ```el
 class SyntaxMatch
@@ -7782,7 +7982,7 @@ class SyntaxMatch
 
 ## SyntaxOptionalChain · compiler/syntax/control-payload.el {#api-24ba648d8e48fd2a1e9d}
 
-[源码 compiler/syntax/control-payload.el:351](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L351)
+[源码 compiler/syntax/control-payload.el:348](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L348)
 
 ```el
 class SyntaxOptionalChain
@@ -7790,7 +7990,7 @@ class SyntaxOptionalChain
 
 ## SyntaxSwitch · compiler/syntax/control-payload.el {#api-2c0b88ae681efd65b9b7}
 
-[源码 compiler/syntax/control-payload.el:136](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L136)
+[源码 compiler/syntax/control-payload.el:133](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L133)
 
 ```el
 class SyntaxSwitch
@@ -7798,7 +7998,7 @@ class SyntaxSwitch
 
 ## SyntaxTransfer · compiler/syntax/control-payload.el {#api-32020704d4540e108b98}
 
-[源码 compiler/syntax/control-payload.el:212](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L212)
+[源码 compiler/syntax/control-payload.el:209](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L209)
 
 ```el
 class SyntaxTransfer
@@ -7806,7 +8006,7 @@ class SyntaxTransfer
 
 ## SyntaxTransferKind · compiler/syntax/control-payload.el {#api-7f2232a21f6515f8c3c3}
 
-[源码 compiler/syntax/control-payload.el:207](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L207)
+[源码 compiler/syntax/control-payload.el:204](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L204)
 
 ```el
 data SyntaxTransferKind
@@ -7814,7 +8014,7 @@ data SyntaxTransferKind
 
 ## SyntaxTypeAlias · compiler/syntax/control-payload.el {#api-d891e165b29911501248}
 
-[源码 compiler/syntax/control-payload.el:118](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L118)
+[源码 compiler/syntax/control-payload.el:115](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L115)
 
 ```el
 class SyntaxTypeAlias
@@ -7822,7 +8022,7 @@ class SyntaxTypeAlias
 
 ## SyntaxTypeForm · compiler/syntax/control-payload.el {#api-07ad00f7a60513acbabc}
 
-[源码 compiler/syntax/control-payload.el:322](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L322)
+[源码 compiler/syntax/control-payload.el:319](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L319)
 
 ```el
 class SyntaxTypeForm
@@ -7830,7 +8030,7 @@ class SyntaxTypeForm
 
 ## SyntaxTypeFormKind · compiler/syntax/control-payload.el {#api-e4581e6a8ae015e25deb}
 
-[源码 compiler/syntax/control-payload.el:316](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L316)
+[源码 compiler/syntax/control-payload.el:313](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L313)
 
 ```el
 data SyntaxTypeFormKind
@@ -7838,7 +8038,7 @@ data SyntaxTypeFormKind
 
 ## SyntaxTypeTest · compiler/syntax/control-payload.el {#api-cf1282aa733128963bb4}
 
-[源码 compiler/syntax/control-payload.el:303](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L303)
+[源码 compiler/syntax/control-payload.el:300](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L300)
 
 ```el
 class SyntaxTypeTest
@@ -7846,7 +8046,7 @@ class SyntaxTypeTest
 
 ## SyntaxValue · compiler/syntax/control-payload.el {#api-fc8727d50690434e9900}
 
-[源码 compiler/syntax/control-payload.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L14)
+[源码 compiler/syntax/control-payload.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/control-payload.el#L13)
 
 ```el
 class SyntaxValue
@@ -8710,7 +8910,7 @@ class SyntaxStatementPolicy
 
 ## SyntaxBinding · compiler/syntax/syntax-bindings.el {#api-3fd855f9689b32142b76}
 
-[源码 compiler/syntax/syntax-bindings.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L9)
+[源码 compiler/syntax/syntax-bindings.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L10)
 
 ```el
 class SyntaxBinding
@@ -8718,7 +8918,7 @@ class SyntaxBinding
 
 ## SyntaxDependency · compiler/syntax/syntax-bindings.el {#api-0b48e747858e1ee204c5}
 
-[源码 compiler/syntax/syntax-bindings.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L21)
+[源码 compiler/syntax/syntax-bindings.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L22)
 
 ```el
 class SyntaxDependency
@@ -8726,7 +8926,7 @@ class SyntaxDependency
 
 ## SyntaxInput · compiler/syntax/syntax-bindings.el {#api-2104c5d75f1d947918f6}
 
-[源码 compiler/syntax/syntax-bindings.el:256](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L256)
+[源码 compiler/syntax/syntax-bindings.el:296](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L296)
 
 ```el
 class SyntaxInput
@@ -8734,7 +8934,7 @@ class SyntaxInput
 
 ## SyntaxPartialShape · compiler/syntax/syntax-bindings.el {#api-dde21ed7aeb5c435fdae}
 
-[源码 compiler/syntax/syntax-bindings.el:159](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L159)
+[源码 compiler/syntax/syntax-bindings.el:194](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L194)
 
 ```el
 class SyntaxPartialShape
@@ -8742,7 +8942,7 @@ class SyntaxPartialShape
 
 ## SyntaxRegistry · compiler/syntax/syntax-bindings.el {#api-5cf8e0931058184772fc}
 
-[源码 compiler/syntax/syntax-bindings.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L27)
+[源码 compiler/syntax/syntax-bindings.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L28)
 
 ```el
 class SyntaxRegistry
@@ -8750,7 +8950,7 @@ class SyntaxRegistry
 
 ## SyntaxShape · compiler/syntax/syntax-bindings.el {#api-f9435801dec072d5e743}
 
-[源码 compiler/syntax/syntax-bindings.el:129](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L129)
+[源码 compiler/syntax/syntax-bindings.el:144](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L144)
 
 ```el
 class SyntaxShape
@@ -8798,7 +8998,7 @@ class SyntaxHost
 
 ## SyntaxImport · compiler/syntax/syntax-host.el {#api-6777b4ee5648f857d6b3}
 
-[源码 compiler/syntax/syntax-host.el:575](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-host.el#L575)
+[源码 compiler/syntax/syntax-host.el:582](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-host.el#L582)
 
 ```el
 class SyntaxImport extends IrExecutionImport
@@ -8838,7 +9038,7 @@ class QuoteBuilder
 
 ## ScopeName · compiler/syntax/syntax-scope.el {#api-d437e85fa7e438dede07}
 
-[源码 compiler/syntax/syntax-scope.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-scope.el#L27)
+[源码 compiler/syntax/syntax-scope.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-scope.el#L28)
 
 ```el
 class ScopeName
@@ -9270,7 +9470,7 @@ class CallableTypeIdentity
 
 ## RegionQueryUnavailable · compiler/types/type-query.el {#api-d7921d03854bc9aed8a2}
 
-[源码 compiler/types/type-query.el:75](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/types/type-query.el#L75)
+[源码 compiler/types/type-query.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/types/type-query.el#L76)
 
 ```el
 class RegionQueryUnavailable
@@ -9306,6 +9506,38 @@ class TypeRef
 
 ```el
 class CanonicalTypeUnion
+```
+
+## CyclicBranch · concurrency/events/cyclic-pattern.el {#api-c98083789e5e0a0a663e}
+
+[源码 concurrency/events/cyclic-pattern.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/events/cyclic-pattern.el#L28)
+
+```el
+fn CyclicBranch(element: type): type
+```
+
+## CyclicEvent · concurrency/events/cyclic-pattern.el {#api-bc37b0e7798a2634f447}
+
+[源码 concurrency/events/cyclic-pattern.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/events/cyclic-pattern.el#L10)
+
+```el
+fn CyclicEvent(element: type): type
+```
+
+## CyclicOccurrence · concurrency/events/cyclic-pattern.el {#api-cd6adf7db18bdc49ebc3}
+
+[源码 concurrency/events/cyclic-pattern.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/events/cyclic-pattern.el#L45)
+
+```el
+fn CyclicOccurrence(element: type): type
+```
+
+## CyclicPattern · concurrency/events/cyclic-pattern.el {#api-dc932840c6a373466571}
+
+[源码 concurrency/events/cyclic-pattern.el:69](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/events/cyclic-pattern.el#L69)
+
+```el
+fn CyclicPattern(element: type): type
 ```
 
 ## EventActivity · concurrency/events/driver.el {#api-db99731d066124d04961}
@@ -9396,6 +9628,30 @@ class EventLoopStateError extends Error
 class ReadyEntry
 ```
 
+## ClockDelay · concurrency/events/synchronous-clock.el {#api-c051e7fc5a1f67af6a03}
+
+[源码 concurrency/events/synchronous-clock.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/events/synchronous-clock.el#L38)
+
+```el
+fn ClockDelay(element: type): type
+```
+
+## ClockHold · concurrency/events/synchronous-clock.el {#api-cf07e6887e14f014a56a}
+
+[源码 concurrency/events/synchronous-clock.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/events/synchronous-clock.el#L23)
+
+```el
+fn ClockHold(element: type): type
+```
+
+## ClockTick · concurrency/events/synchronous-clock.el {#api-5a90813a2f3857fd695c}
+
+[源码 concurrency/events/synchronous-clock.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/events/synchronous-clock.el#L6)
+
+```el
+fn ClockTick(element: type): type
+```
+
 ## EventTasks · concurrency/events/tasks.el {#api-9436b9b08b10a02b7fce}
 
 [源码 concurrency/events/tasks.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/events/tasks.el#L6)
@@ -9422,10 +9678,10 @@ class ContinuationServiceRegistry
 
 ## SuspensionUnavailable · concurrency/internal/execution-errors.el {#api-a1a59058d6f701136f44}
 
-[源码 concurrency/internal/execution-errors.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/internal/execution-errors.el#L4)
+[源码 concurrency/internal/execution-errors.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/internal/execution-errors.el#L5)
 
 ```el
-class SuspensionUnavailable
+class SuspensionUnavailable extends Error
 ```
 
 ## NativeJoinFailure · concurrency/platform/linux/tasks.el {#api-592ca267f3642baa3a65}
@@ -9654,7 +9910,7 @@ class IdleStateError extends Error
 
 ## ActivityLifetime · concurrency/scheduling/runtime.el {#api-0ba51f061e9da1bcc643}
 
-[源码 concurrency/scheduling/runtime.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L56)
+[源码 concurrency/scheduling/runtime.el:58](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L58)
 
 ```el
 enum ActivityLifetime
@@ -9662,7 +9918,7 @@ enum ActivityLifetime
 
 ## ActivityOwner · concurrency/scheduling/runtime.el {#api-0aeed0c5e2867bb52c6f}
 
-[源码 concurrency/scheduling/runtime.el:1068](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L1068)
+[源码 concurrency/scheduling/runtime.el:1107](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L1107)
 
 ```el
 class ActivityOwner
@@ -9670,7 +9926,7 @@ class ActivityOwner
 
 ## ActivityState · concurrency/scheduling/runtime.el {#api-6b510f22c0cf936261b7}
 
-[源码 concurrency/scheduling/runtime.el:163](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L163)
+[源码 concurrency/scheduling/runtime.el:176](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L176)
 
 ```el
 class ActivityState
@@ -9678,7 +9934,7 @@ class ActivityState
 
 ## ActivityWaiter · concurrency/scheduling/runtime.el {#api-94df9bf38b828cc2eec7}
 
-[源码 concurrency/scheduling/runtime.el:154](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L154)
+[源码 concurrency/scheduling/runtime.el:167](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L167)
 
 ```el
 class ActivityWaiter
@@ -9686,7 +9942,7 @@ class ActivityWaiter
 
 ## AsyncRegistrationError · concurrency/scheduling/runtime.el {#api-2b737daaac8bacc1b2fb}
 
-[源码 concurrency/scheduling/runtime.el:52](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L52)
+[源码 concurrency/scheduling/runtime.el:54](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L54)
 
 ```el
 class AsyncRegistrationError extends Error
@@ -9694,7 +9950,7 @@ class AsyncRegistrationError extends Error
 
 ## AsyncStateError · concurrency/scheduling/runtime.el {#api-e0c3d9f164e1777af4ed}
 
-[源码 concurrency/scheduling/runtime.el:49](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L49)
+[源码 concurrency/scheduling/runtime.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L51)
 
 ```el
 class AsyncStateError extends Error
@@ -9702,7 +9958,7 @@ class AsyncStateError extends Error
 
 ## AsyncWorker · concurrency/scheduling/runtime.el {#api-f0a0586fc8f75b58df62}
 
-[源码 concurrency/scheduling/runtime.el:191](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L191)
+[源码 concurrency/scheduling/runtime.el:204](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L204)
 
 ```el
 class AsyncWorker
@@ -9710,15 +9966,23 @@ class AsyncWorker
 
 ## Cancelled · concurrency/scheduling/runtime.el {#api-a293ed1bf692ab3bb735}
 
-[源码 concurrency/scheduling/runtime.el:46](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L46)
+[源码 concurrency/scheduling/runtime.el:48](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L48)
 
 ```el
 class Cancelled extends Error
 ```
 
+## CollectionCleanup · concurrency/scheduling/runtime.el {#api-89388756da80db5f05a8}
+
+[源码 concurrency/scheduling/runtime.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L76)
+
+```el
+class CollectionCleanup extends TaskBody
+```
+
 ## DiagnosticBody · concurrency/scheduling/runtime.el {#api-25a01441c93436de6d45}
 
-[源码 concurrency/scheduling/runtime.el:97](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L97)
+[源码 concurrency/scheduling/runtime.el:110](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L110)
 
 ```el
 class DiagnosticBody extends TaskBody
@@ -9726,7 +9990,7 @@ class DiagnosticBody extends TaskBody
 
 ## ErrorProbe · concurrency/scheduling/runtime.el {#api-f084134cd49df4b17b2c}
 
-[源码 concurrency/scheduling/runtime.el:112](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L112)
+[源码 concurrency/scheduling/runtime.el:125](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L125)
 
 ```el
 class ErrorProbe extends TaskBody
@@ -9734,7 +9998,7 @@ class ErrorProbe extends TaskBody
 
 ## ModuleActivity · concurrency/scheduling/runtime.el {#api-985d55f35231f6001385}
 
-[源码 concurrency/scheduling/runtime.el:172](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L172)
+[源码 concurrency/scheduling/runtime.el:185](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L185)
 
 ```el
 class ModuleActivity
@@ -9742,7 +10006,7 @@ class ModuleActivity
 
 ## PendingDiagnostic · concurrency/scheduling/runtime.el {#api-f4283f286975bf43736a}
 
-[源码 concurrency/scheduling/runtime.el:183](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L183)
+[源码 concurrency/scheduling/runtime.el:196](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L196)
 
 ```el
 class PendingDiagnostic
@@ -9750,7 +10014,7 @@ class PendingDiagnostic
 
 ## ReadyTask · concurrency/scheduling/runtime.el {#api-11258b9277c0c43a8d0a}
 
-[源码 concurrency/scheduling/runtime.el:177](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L177)
+[源码 concurrency/scheduling/runtime.el:190](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L190)
 
 ```el
 class ReadyTask
@@ -9758,7 +10022,7 @@ class ReadyTask
 
 ## Scheduler · concurrency/scheduling/runtime.el {#api-00d1feae1fe9df5c2fb3}
 
-[源码 concurrency/scheduling/runtime.el:1062](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L1062)
+[源码 concurrency/scheduling/runtime.el:1101](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L1101)
 
 ```el
 class Scheduler
@@ -9766,7 +10030,7 @@ class Scheduler
 
 ## SchedulerContinuations · concurrency/scheduling/runtime.el {#api-1df0a0bc9eb8db67849a}
 
-[源码 concurrency/scheduling/runtime.el:239](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L239)
+[源码 concurrency/scheduling/runtime.el:252](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L252)
 
 ```el
 class SchedulerContinuations extends ContinuationService
@@ -9774,7 +10038,7 @@ class SchedulerContinuations extends ContinuationService
 
 ## SchedulerService · concurrency/scheduling/runtime.el {#api-479461488c8dc4967c72}
 
-[源码 concurrency/scheduling/runtime.el:229](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L229)
+[源码 concurrency/scheduling/runtime.el:242](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L242)
 
 ```el
 class SchedulerService extends DeferredWaitState
@@ -9782,7 +10046,7 @@ class SchedulerService extends DeferredWaitState
 
 ## SchedulerState · concurrency/scheduling/runtime.el {#api-1b657a7974d4336aa00c}
 
-[源码 concurrency/scheduling/runtime.el:278](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L278)
+[源码 concurrency/scheduling/runtime.el:291](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L291)
 
 ```el
 class SchedulerState
@@ -9790,7 +10054,7 @@ class SchedulerState
 
 ## TaskBody · concurrency/scheduling/runtime.el {#api-54fce8bb9cedd1ec0b89}
 
-[源码 concurrency/scheduling/runtime.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L64)
+[源码 concurrency/scheduling/runtime.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L66)
 
 ```el
 class TaskBody
@@ -9798,7 +10062,7 @@ class TaskBody
 
 ## TaskHandle · concurrency/scheduling/runtime.el {#api-9275ab46c1d292fa02e5}
 
-[源码 concurrency/scheduling/runtime.el:1168](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L1168)
+[源码 concurrency/scheduling/runtime.el:1207](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L1207)
 
 ```el
 class TaskHandle
@@ -9806,7 +10070,7 @@ class TaskHandle
 
 ## TaskIdentity · concurrency/scheduling/runtime.el {#api-9b6164e1d275ffc31811}
 
-[源码 concurrency/scheduling/runtime.el:1154](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L1154)
+[源码 concurrency/scheduling/runtime.el:1193](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L1193)
 
 ```el
 class TaskIdentity
@@ -9814,7 +10078,7 @@ class TaskIdentity
 
 ## TaskRecord · concurrency/scheduling/runtime.el {#api-8408aee688cc1eebc2fd}
 
-[源码 concurrency/scheduling/runtime.el:118](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L118)
+[源码 concurrency/scheduling/runtime.el:131](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L131)
 
 ```el
 class TaskRecord
@@ -9822,7 +10086,7 @@ class TaskRecord
 
 ## ThreadCleanup · concurrency/scheduling/runtime.el {#api-6edf4a05fa08029d7ec8}
 
-[源码 concurrency/scheduling/runtime.el:74](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L74)
+[源码 concurrency/scheduling/runtime.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/runtime.el#L87)
 
 ```el
 class ThreadCleanup extends TaskBody
@@ -9886,7 +10150,7 @@ class ServiceValue
 
 ## TimerClosed · concurrency/scheduling/timers.el {#api-6e77ff3ccc0f1bdf798c}
 
-[源码 concurrency/scheduling/timers.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L26)
+[源码 concurrency/scheduling/timers.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L27)
 
 ```el
 class TimerClosed
@@ -9894,7 +10158,7 @@ class TimerClosed
 
 ## TimerEntry · concurrency/scheduling/timers.el {#api-3485cf17b8cbad31cbfe}
 
-[源码 concurrency/scheduling/timers.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L33)
+[源码 concurrency/scheduling/timers.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L34)
 
 ```el
 class TimerEntry
@@ -9902,7 +10166,7 @@ class TimerEntry
 
 ## TimerError · concurrency/scheduling/timers.el {#api-a0f3f357bf37f5a89c81}
 
-[源码 concurrency/scheduling/timers.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L25)
+[源码 concurrency/scheduling/timers.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L26)
 
 ```el
 class TimerError extends Error
@@ -9910,7 +10174,7 @@ class TimerError extends Error
 
 ## TimerOutcome · concurrency/scheduling/timers.el {#api-f0a7b9447eae542358e1}
 
-[源码 concurrency/scheduling/timers.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L28)
+[源码 concurrency/scheduling/timers.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L29)
 
 ```el
 class TimerOutcome
@@ -9918,7 +10182,7 @@ class TimerOutcome
 
 ## TimerService · concurrency/scheduling/timers.el {#api-019a1f411d94965aae8e}
 
-[源码 concurrency/scheduling/timers.el:118](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L118)
+[源码 concurrency/scheduling/timers.el:119](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L119)
 
 ```el
 class TimerService
@@ -9926,7 +10190,7 @@ class TimerService
 
 ## TimerState · concurrency/scheduling/timers.el {#api-4d0edfd4c0d4878bce17}
 
-[源码 concurrency/scheduling/timers.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L38)
+[源码 concurrency/scheduling/timers.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L39)
 
 ```el
 class TimerState
@@ -10222,7 +10486,7 @@ class WorkerIndexNode
 
 ## CaptureBuffer · console/captured-output.el {#api-560df165455e0ad742dd}
 
-[源码 console/captured-output.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/console/captured-output.el#L43)
+[源码 console/captured-output.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/console/captured-output.el#L45)
 
 ```el
 class CaptureBuffer extends ConsoleTarget
@@ -10230,7 +10494,7 @@ class CaptureBuffer extends ConsoleTarget
 
 ## CapturedOutput · console/captured-output.el {#api-54dd61df20c765c17565}
 
-[源码 console/captured-output.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/console/captured-output.el#L6)
+[源码 console/captured-output.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/console/captured-output.el#L7)
 
 ```el
 class CapturedOutput
@@ -10246,7 +10510,7 @@ class SnapshotText
 
 ## ConsoleFacade · console/facade.el {#api-b279f598543f0f517e5b}
 
-[源码 console/facade.el:314](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L314)
+[源码 console/facade.el:371](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L371)
 
 ```el
 class ConsoleFacade
@@ -10256,7 +10520,7 @@ class ConsoleFacade
 
 ## ConsoleInputPort · console/facade.el {#api-81b920eaf28d6a885747}
 
-[源码 console/facade.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L30)
+[源码 console/facade.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L31)
 
 ```el
 class ConsoleInputPort
@@ -10266,7 +10530,7 @@ class ConsoleInputPort
 
 ## ConsoleLatePolicy · console/facade.el {#api-873f328b57eaf744569e}
 
-[源码 console/facade.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L76)
+[源码 console/facade.el:133](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L133)
 
 ```el
 enum ConsoleLatePolicy
@@ -10274,7 +10538,7 @@ enum ConsoleLatePolicy
 
 ## ConsoleLevelPort · console/facade.el {#api-82d3368b956700e55610}
 
-[源码 console/facade.el:226](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L226)
+[源码 console/facade.el:283](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L283)
 
 ```el
 class ConsoleLevelPort
@@ -10284,7 +10548,7 @@ class ConsoleLevelPort
 
 ## ConsolePort · console/facade.el {#api-1e5cdfe9e38e075d126d}
 
-[源码 console/facade.el:85](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L85)
+[源码 console/facade.el:142](https://github.com/steve02081504/el/blob/master/src/stdlib/console/facade.el#L142)
 
 ```el
 class ConsolePort
@@ -10526,7 +10790,7 @@ class ConsoleWriteError extends Error
 
 ## NativeTerminalInput · console/platform/posix-input.el {#api-530737db9e439e705456}
 
-[源码 console/platform/posix-input.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/console/platform/posix-input.el#L33)
+[源码 console/platform/posix-input.el:44](https://github.com/steve02081504/el/blob/master/src/stdlib/console/platform/posix-input.el#L44)
 
 ```el
 class NativeTerminalInput
@@ -10534,7 +10798,7 @@ class NativeTerminalInput
 
 ## NativeTerminalInput · console/platform/windows-input.el {#api-94bd713dadb457aa046e}
 
-[源码 console/platform/windows-input.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/console/platform/windows-input.el#L21)
+[源码 console/platform/windows-input.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/console/platform/windows-input.el#L31)
 
 ```el
 class NativeTerminalInput
@@ -10622,7 +10886,7 @@ class ConsoleSyntaxRun
 
 ## ConsoleDelivery · console/target.el {#api-0367830711b8381aca9c}
 
-[源码 console/target.el:108](https://github.com/steve02081504/el/blob/master/src/stdlib/console/target.el#L108)
+[源码 console/target.el:119](https://github.com/steve02081504/el/blob/master/src/stdlib/console/target.el#L119)
 
 ```el
 class ConsoleDelivery
@@ -10630,7 +10894,7 @@ class ConsoleDelivery
 
 ## ConsoleTarget · console/target.el {#api-91b715a17fc6decc29e8}
 
-[源码 console/target.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/console/target.el#L24)
+[源码 console/target.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/console/target.el#L25)
 
 ```el
 class ConsoleTarget
@@ -10638,7 +10902,7 @@ class ConsoleTarget
 
 ## ConsoleTeeError · console/target.el {#api-30ea83f36bfdf650a46e}
 
-[源码 console/target.el:119](https://github.com/steve02081504/el/blob/master/src/stdlib/console/target.el#L119)
+[源码 console/target.el:130](https://github.com/steve02081504/el/blob/master/src/stdlib/console/target.el#L130)
 
 ```el
 class ConsoleTeeError extends Error
@@ -10646,7 +10910,7 @@ class ConsoleTeeError extends Error
 
 ## StreamConsoleTarget · console/target.el {#api-8c4bf5c13892c1f32a35}
 
-[源码 console/target.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/console/target.el#L47)
+[源码 console/target.el:49](https://github.com/steve02081504/el/blob/master/src/stdlib/console/target.el#L49)
 
 ```el
 class StreamConsoleTarget extends ConsoleTarget
@@ -10654,7 +10918,7 @@ class StreamConsoleTarget extends ConsoleTarget
 
 ## TeeConsoleTarget · console/target.el {#api-30af405f8584e38ba84f}
 
-[源码 console/target.el:124](https://github.com/steve02081504/el/blob/master/src/stdlib/console/target.el#L124)
+[源码 console/target.el:135](https://github.com/steve02081504/el/blob/master/src/stdlib/console/target.el#L135)
 
 ```el
 class TeeConsoleTarget extends ConsoleTarget
@@ -10662,7 +10926,7 @@ class TeeConsoleTarget extends ConsoleTarget
 
 ## TerminalInputEditor · console/terminal-input.el {#api-91c2ea69097f0f4249fa}
 
-[源码 console/terminal-input.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/console/terminal-input.el#L22)
+[源码 console/terminal-input.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/console/terminal-input.el#L24)
 
 ```el
 class TerminalInputEditor
@@ -12550,7 +12814,7 @@ class DbRelationBinding
 
 ## DbExternalSorter · database/external-sort.el {#api-d47482fcc515959e3a08}
 
-[源码 database/external-sort.el:218](https://github.com/steve02081504/el/blob/master/src/stdlib/database/external-sort.el#L218)
+[源码 database/external-sort.el:196](https://github.com/steve02081504/el/blob/master/src/stdlib/database/external-sort.el#L196)
 
 ```el
 class DbExternalSorter
@@ -12558,7 +12822,7 @@ class DbExternalSorter
 
 ## DbSortArrayStream · database/external-sort.el {#api-c62899248f0a0dbcab50}
 
-[源码 database/external-sort.el:89](https://github.com/steve02081504/el/blob/master/src/stdlib/database/external-sort.el#L89)
+[源码 database/external-sort.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/database/external-sort.el#L67)
 
 ```el
 class DbSortArrayStream extends @shared DbRowStream
@@ -12566,7 +12830,7 @@ class DbSortArrayStream extends @shared DbRowStream
 
 ## DbSortEntry · database/external-sort.el {#api-cfb255f1c3b51b4376a9}
 
-[源码 database/external-sort.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/database/external-sort.el#L16)
+[源码 database/external-sort.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/database/external-sort.el#L18)
 
 ```el
 class DbSortEntry
@@ -12574,7 +12838,7 @@ class DbSortEntry
 
 ## DbSortMergeStream · database/external-sort.el {#api-a088bfe1b632db1fe15d}
 
-[源码 database/external-sort.el:130](https://github.com/steve02081504/el/blob/master/src/stdlib/database/external-sort.el#L130)
+[源码 database/external-sort.el:108](https://github.com/steve02081504/el/blob/master/src/stdlib/database/external-sort.el#L108)
 
 ```el
 class DbSortMergeStream extends @shared DbRowStream
@@ -13086,7 +13350,7 @@ class DbSetOpStream extends @shared DbRowStream
 
 ## DbWindowStream · database/physical-window.el {#api-5c27293a2446e14afdff}
 
-[源码 database/physical-window.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/database/physical-window.el#L68)
+[源码 database/physical-window.el:49](https://github.com/steve02081504/el/blob/master/src/stdlib/database/physical-window.el#L49)
 
 ```el
 class DbWindowStream extends @shared DbRowStream
@@ -14430,7 +14694,7 @@ class VarintResult
 
 ## ArrayEntryRun · database/storage/compaction.el {#api-090f3919bdafe69f1b6e}
 
-[源码 database/storage/compaction.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/compaction.el#L36)
+[源码 database/storage/compaction.el:37](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/compaction.el#L37)
 
 ```el
 class ArrayEntryRun extends EntryRun
@@ -14438,7 +14702,7 @@ class ArrayEntryRun extends EntryRun
 
 ## CompactionPlan · database/storage/compaction.el {#api-6be01a2971925134aa8c}
 
-[源码 database/storage/compaction.el:222](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/compaction.el#L222)
+[源码 database/storage/compaction.el:213](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/compaction.el#L213)
 
 ```el
 class CompactionPlan
@@ -14446,7 +14710,7 @@ class CompactionPlan
 
 ## CompactionResult · database/storage/compaction.el {#api-d4fe61b539eb3b77489e}
 
-[源码 database/storage/compaction.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/compaction.el#L9)
+[源码 database/storage/compaction.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/compaction.el#L10)
 
 ```el
 class CompactionResult
@@ -14454,7 +14718,7 @@ class CompactionResult
 
 ## EntryRun · database/storage/compaction.el {#api-856e57edec54feedea40}
 
-[源码 database/storage/compaction.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/compaction.el#L25)
+[源码 database/storage/compaction.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/compaction.el#L26)
 
 ```el
 class EntryRun
@@ -14462,7 +14726,7 @@ class EntryRun
 
 ## MergeHeap · database/storage/compaction.el {#api-e853f839d20fef938c2e}
 
-[源码 database/storage/compaction.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/compaction.el#L66)
+[源码 database/storage/compaction.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/compaction.el#L67)
 
 ```el
 class MergeHeap
@@ -14470,7 +14734,7 @@ class MergeHeap
 
 ## RetentionStream · database/storage/compaction.el {#api-d1c92bc0ae98986f92d4}
 
-[源码 database/storage/compaction.el:142](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/compaction.el#L142)
+[源码 database/storage/compaction.el:133](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/compaction.el#L133)
 
 ```el
 class RetentionStream
@@ -14478,7 +14742,7 @@ class RetentionStream
 
 ## SstEntryRun · database/storage/compaction.el {#api-8777406ab1fbb03806e9}
 
-[源码 database/storage/compaction.el:53](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/compaction.el#L53)
+[源码 database/storage/compaction.el:54](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/compaction.el#L54)
 
 ```el
 class SstEntryRun extends EntryRun
@@ -14550,7 +14814,7 @@ class EdbRoot
 
 ## CheckpointInfo · database/storage/engine-support.el {#api-e62ae889fd9cd854290a}
 
-[源码 database/storage/engine-support.el:95](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L95)
+[源码 database/storage/engine-support.el:97](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L97)
 
 ```el
 class CheckpointInfo
@@ -14558,7 +14822,7 @@ class CheckpointInfo
 
 ## OpenTable · database/storage/engine-support.el {#api-948733f9fd3682e940b4}
 
-[源码 database/storage/engine-support.el:135](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L135)
+[源码 database/storage/engine-support.el:137](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L137)
 
 ```el
 class OpenTable
@@ -14566,7 +14830,7 @@ class OpenTable
 
 ## ReclaimBudget · database/storage/engine-support.el {#api-8192e93cdc47e72df21a}
 
-[源码 database/storage/engine-support.el:113](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L113)
+[源码 database/storage/engine-support.el:115](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L115)
 
 ```el
 class ReclaimBudget
@@ -14574,7 +14838,7 @@ class ReclaimBudget
 
 ## ReclaimResult · database/storage/engine-support.el {#api-b0a5431b89124835ea63}
 
-[源码 database/storage/engine-support.el:126](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L126)
+[源码 database/storage/engine-support.el:128](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L128)
 
 ```el
 class ReclaimResult
@@ -14582,7 +14846,7 @@ class ReclaimResult
 
 ## RecoveryStats · database/storage/engine-support.el {#api-cea65fc297a5fcc70634}
 
-[源码 database/storage/engine-support.el:102](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L102)
+[源码 database/storage/engine-support.el:104](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L104)
 
 ```el
 class RecoveryStats
@@ -14590,7 +14854,7 @@ class RecoveryStats
 
 ## SnapshotPin · database/storage/engine-support.el {#api-b94dc598893c9e7484e7}
 
-[源码 database/storage/engine-support.el:155](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L155)
+[源码 database/storage/engine-support.el:157](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L157)
 
 ```el
 class SnapshotPin
@@ -14598,7 +14862,7 @@ class SnapshotPin
 
 ## StorageEntry · database/storage/engine-support.el {#api-6d87b507df71901a4154}
 
-[源码 database/storage/engine-support.el:75](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L75)
+[源码 database/storage/engine-support.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L77)
 
 ```el
 class StorageEntry
@@ -14606,7 +14870,7 @@ class StorageEntry
 
 ## StorageOptions · database/storage/engine-support.el {#api-81edd82a291fd6c97aaa}
 
-[源码 database/storage/engine-support.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L22)
+[源码 database/storage/engine-support.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L24)
 
 ```el
 class StorageOptions
@@ -14614,7 +14878,7 @@ class StorageOptions
 
 ## StorageScanPage · database/storage/engine-support.el {#api-0200e9bf2860bec83521}
 
-[源码 database/storage/engine-support.el:82](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L82)
+[源码 database/storage/engine-support.el:84](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L84)
 
 ```el
 class StorageScanPage
@@ -14622,7 +14886,7 @@ class StorageScanPage
 
 ## StorageValue · database/storage/engine-support.el {#api-541ebfd1ddf788fe6728}
 
-[源码 database/storage/engine-support.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L66)
+[源码 database/storage/engine-support.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L68)
 
 ```el
 class StorageValue
@@ -14630,7 +14894,7 @@ class StorageValue
 
 ## TableOutput · database/storage/engine-support.el {#api-989044723c7191423688}
 
-[源码 database/storage/engine-support.el:303](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L303)
+[源码 database/storage/engine-support.el:290](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L290)
 
 ```el
 class TableOutput
@@ -14734,7 +14998,7 @@ class MaintenanceTicket
 
 ## Manifest · database/storage/manifest.el {#api-cd757c2557d8126b1ba8}
 
-[源码 database/storage/manifest.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/manifest.el#L25)
+[源码 database/storage/manifest.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/manifest.el#L40)
 
 ```el
 class Manifest
@@ -14782,7 +15046,7 @@ class MemVersion
 
 ## StorageNativeInt · database/storage/platform/linux.el {#api-1f26c193bd703923d686}
 
-[源码 database/storage/platform/linux.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/platform/linux.el#L13)
+[源码 database/storage/platform/linux.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/platform/linux.el#L14)
 
 ```el
 class StorageNativeInt
@@ -14790,7 +15054,7 @@ class StorageNativeInt
 
 ## StorageNativeLong · database/storage/platform/linux.el {#api-3be5751863c5b5488f3b}
 
-[源码 database/storage/platform/linux.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/platform/linux.el#L15)
+[源码 database/storage/platform/linux.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/platform/linux.el#L16)
 
 ```el
 class StorageNativeLong
@@ -14798,7 +15062,7 @@ class StorageNativeLong
 
 ## StorageNativeSize · database/storage/platform/linux.el {#api-8a6bdc1bdfc67f588bbc}
 
-[源码 database/storage/platform/linux.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/platform/linux.el#L16)
+[源码 database/storage/platform/linux.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/platform/linux.el#L17)
 
 ```el
 class StorageNativeSize
@@ -14806,7 +15070,7 @@ class StorageNativeSize
 
 ## StorageNativeUnsigned · database/storage/platform/linux.el {#api-4b40c4391d4a179cd9d2}
 
-[源码 database/storage/platform/linux.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/platform/linux.el#L14)
+[源码 database/storage/platform/linux.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/platform/linux.el#L15)
 
 ```el
 class StorageNativeUnsigned
@@ -14814,7 +15078,7 @@ class StorageNativeUnsigned
 
 ## StorageWindowsSigned · database/storage/platform/windows.el {#api-4f8a1e8f8329892fb5ed}
 
-[源码 database/storage/platform/windows.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/platform/windows.el#L14)
+[源码 database/storage/platform/windows.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/platform/windows.el#L15)
 
 ```el
 class StorageWindowsSigned
@@ -14822,7 +15086,7 @@ class StorageWindowsSigned
 
 ## StorageWindowsSize · database/storage/platform/windows.el {#api-86d822eb109b6159cb91}
 
-[源码 database/storage/platform/windows.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/platform/windows.el#L16)
+[源码 database/storage/platform/windows.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/platform/windows.el#L17)
 
 ```el
 class StorageWindowsSize
@@ -14830,7 +15094,7 @@ class StorageWindowsSize
 
 ## StorageWindowsUnsigned · database/storage/platform/windows.el {#api-782e7da10785ece7fec7}
 
-[源码 database/storage/platform/windows.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/platform/windows.el#L15)
+[源码 database/storage/platform/windows.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/platform/windows.el#L16)
 
 ```el
 class StorageWindowsUnsigned
@@ -15294,7 +15558,7 @@ class TransactionEngine
 
 ## FileJournal · database/transaction/file-journal.el {#api-a61ce397c350f3e8d78a}
 
-[源码 database/transaction/file-journal.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/file-journal.el#L21)
+[源码 database/transaction/file-journal.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/file-journal.el#L22)
 
 ```el
 class FileJournal
@@ -15302,7 +15566,7 @@ class FileJournal
 
 ## JournalReplayPage · database/transaction/file-journal.el {#api-422cac37cc6822a7a31a}
 
-[源码 database/transaction/file-journal.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/file-journal.el#L14)
+[源码 database/transaction/file-journal.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/file-journal.el#L15)
 
 ```el
 class JournalReplayPage
@@ -16032,7 +16296,7 @@ class CleanupError extends Error
 
 ## Error · errors/error.el {#api-f8d67201610919a9342d}
 
-[源码 errors/error.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/errors/error.el#L6)
+[源码 errors/error.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/errors/error.el#L8)
 
 ```el
 class Error
@@ -16040,7 +16304,7 @@ class Error
 
 ## StateError · errors/error.el {#api-25ffa202d772fa517e70}
 
-[源码 errors/error.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/errors/error.el#L51)
+[源码 errors/error.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/errors/error.el#L68)
 
 ```el
 class StateError extends Error
@@ -17344,7 +17608,7 @@ class X86Abi
 
 ## CallbackHandle · foreign-functions/callback-handle.el {#api-173454385f532456d98e}
 
-[源码 foreign-functions/callback-handle.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/foreign-functions/callback-handle.el#L8)
+[源码 foreign-functions/callback-handle.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/foreign-functions/callback-handle.el#L9)
 
 ```el
 class CallbackHandle
@@ -17520,7 +17784,7 @@ fn NativeFunction(signature: type): type
 
 ## CallbackOffset · foreign-functions/platform/linux/callbacks.el {#api-aa8011855f42e811d016}
 
-[源码 foreign-functions/platform/linux/callbacks.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/foreign-functions/platform/linux/callbacks.el#L47)
+[源码 foreign-functions/platform/linux/callbacks.el:48](https://github.com/steve02081504/el/blob/master/src/stdlib/foreign-functions/platform/linux/callbacks.el#L48)
 
 ```el
 class CallbackOffset
@@ -17528,7 +17792,7 @@ class CallbackOffset
 
 ## DebugWord · foreign-functions/platform/linux/callbacks.el {#api-508c25116ad8fdcba770}
 
-[源码 foreign-functions/platform/linux/callbacks.el:1](https://github.com/steve02081504/el/blob/master/src/stdlib/foreign-functions/platform/linux/callbacks.el#L1)
+[源码 foreign-functions/platform/linux/callbacks.el:2](https://github.com/steve02081504/el/blob/master/src/stdlib/foreign-functions/platform/linux/callbacks.el#L2)
 
 ```el
 class DebugWord
@@ -17536,7 +17800,7 @@ class DebugWord
 
 ## DebugWord · foreign-functions/platform/windows/callbacks.el {#api-2b326152efacab42b099}
 
-[源码 foreign-functions/platform/windows/callbacks.el:2](https://github.com/steve02081504/el/blob/master/src/stdlib/foreign-functions/platform/windows/callbacks.el#L2)
+[源码 foreign-functions/platform/windows/callbacks.el:3](https://github.com/steve02081504/el/blob/master/src/stdlib/foreign-functions/platform/windows/callbacks.el#L3)
 
 ```el
 class DebugWord
@@ -17742,7 +18006,7 @@ class JsonWriter
 
 ## query_field_type · formats/serialization/capability.el {#api-f681f1e132c989cf4584}
 
-[源码 formats/serialization/capability.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/capability.el#L17)
+[源码 formats/serialization/capability.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/capability.el#L18)
 
 ```el
 fn query_field_type(subject, index: QueryWord): type
@@ -17750,7 +18014,7 @@ fn query_field_type(subject, index: QueryWord): type
 
 ## query_union_member · formats/serialization/capability.el {#api-382dfda52edb14a3b602}
 
-[源码 formats/serialization/capability.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/capability.el#L22)
+[源码 formats/serialization/capability.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/capability.el#L23)
 
 ```el
 fn query_union_member(subject, index: QueryWord): type
@@ -17758,7 +18022,7 @@ fn query_union_member(subject, index: QueryWord): type
 
 ## staticFieldType · formats/serialization/capability.el {#api-06cd67aab89479c5eae1}
 
-[源码 formats/serialization/capability.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/capability.el#L28)
+[源码 formats/serialization/capability.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/capability.el#L29)
 
 ```el
 fn staticFieldType(subject, index: Number): type
@@ -17766,7 +18030,7 @@ fn staticFieldType(subject, index: Number): type
 
 ## staticUnionMember · formats/serialization/capability.el {#api-5845e617ca87c73ab98a}
 
-[源码 formats/serialization/capability.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/capability.el#L35)
+[源码 formats/serialization/capability.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/capability.el#L36)
 
 ```el
 fn staticUnionMember(subject, index: Number): type
@@ -17862,7 +18126,7 @@ class ExternalWriter
 
 ## RestoreStaticEod · formats/serialization/graph.el {#api-d6a79e5a0e43c9697dda}
 
-[源码 formats/serialization/graph.el:828](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/graph.el#L828)
+[源码 formats/serialization/graph.el:835](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/graph.el#L835)
 
 ```el
 fn RestoreStaticEod(expected: type): type
@@ -17870,7 +18134,7 @@ fn RestoreStaticEod(expected: type): type
 
 ## StaticEodByte · formats/serialization/graph.el {#api-89c8cf147e332d1d4bfa}
 
-[源码 formats/serialization/graph.el:809](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/graph.el#L809)
+[源码 formats/serialization/graph.el:816](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/graph.el#L816)
 
 ```el
 class StaticEodByte
@@ -18332,7 +18596,7 @@ class DirectoryBundles extends BundleSource
 
 ## LocaleBundle · i18n/bundles.el {#api-33a21295a9154c0c4f1b}
 
-[源码 i18n/bundles.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/bundles.el#L28)
+[源码 i18n/bundles.el:42](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/bundles.el#L42)
 
 ```el
 class LocaleBundle
@@ -18580,7 +18844,7 @@ class PluralZeroRule
 
 ## FreezeContext · i18n/rendering.el {#api-b6566e732c02a3944f5b}
 
-[源码 i18n/rendering.el:187](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/rendering.el#L187)
+[源码 i18n/rendering.el:191](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/rendering.el#L191)
 
 ```el
 class FreezeContext
@@ -18588,7 +18852,7 @@ class FreezeContext
 
 ## FrozenNode · i18n/rendering.el {#api-e37b9bef64a02fb7176a}
 
-[源码 i18n/rendering.el:118](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/rendering.el#L118)
+[源码 i18n/rendering.el:122](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/rendering.el#L122)
 
 ```el
 class FrozenNode
@@ -18604,7 +18868,7 @@ class ParameterSnapshot
 
 ## Requirements · i18n/rendering.el {#api-2b57f739a854a91b9c5c}
 
-[源码 i18n/rendering.el:71](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/rendering.el#L71)
+[源码 i18n/rendering.el:72](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/rendering.el#L72)
 
 ```el
 class Requirements
@@ -18612,7 +18876,7 @@ class Requirements
 
 ## ComponentSchema · i18n/resources.el {#api-0795a90f9e4747cc0802}
 
-[源码 i18n/resources.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/resources.el#L41)
+[源码 i18n/resources.el:102](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/resources.el#L102)
 
 ```el
 class ComponentSchema
@@ -18620,7 +18884,7 @@ class ComponentSchema
 
 ## ComponentSnapshot · i18n/resources.el {#api-c3818b0f4cc41b7319fa}
 
-[源码 i18n/resources.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/resources.el#L63)
+[源码 i18n/resources.el:119](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/resources.el#L119)
 
 ```el
 class ComponentSnapshot
@@ -18628,18 +18892,34 @@ class ComponentSnapshot
 
 ## FrozenBundle · i18n/resources.el {#api-421379e87b262e986a79}
 
-[源码 i18n/resources.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/resources.el#L13)
+[源码 i18n/resources.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/resources.el#L66)
 
 ```el
 class FrozenBundle
 ```
 
+## FrozenMessage · i18n/resources.el {#api-51b3a140042db629f1b8}
+
+[源码 i18n/resources.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/resources.el#L56)
+
+```el
+class FrozenMessage
+```
+
 ## ResourceSnapshot · i18n/resources.el {#api-d2866d6ec39efc4417ff}
 
-[源码 i18n/resources.el:130](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/resources.el#L130)
+[源码 i18n/resources.el:188](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/resources.el#L188)
 
 ```el
 class ResourceSnapshot
+```
+
+## ResourceTree · i18n/resources.el {#api-ac580e7c9bd50c89e72b}
+
+[源码 i18n/resources.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/i18n/resources.el#L14)
+
+```el
+class ResourceTree
 ```
 
 ## RichText · i18n/rich-text.el {#api-6f4c72178b9a8125dce3}
@@ -18692,7 +18972,7 @@ class IrAbiCallPolicy
 
 ## IrAbiCompositionResult · intermediate-representation/abi/compose.el {#api-be7c908d37b102d35f2d}
 
-[源码 intermediate-representation/abi/compose.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/abi/compose.el#L9)
+[源码 intermediate-representation/abi/compose.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/abi/compose.el#L10)
 
 ```el
 data IrAbiCompositionResult
@@ -20172,7 +20452,7 @@ class WasmPlan
 
 ## WasmPrepared · intermediate-representation/wasm/module.el {#api-78135cf3472bf3c54b74}
 
-[源码 intermediate-representation/wasm/module.el:1020](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/wasm/module.el#L1020)
+[源码 intermediate-representation/wasm/module.el:1005](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/wasm/module.el#L1005)
 
 ```el
 class WasmPrepared
@@ -20180,7 +20460,7 @@ class WasmPrepared
 
 ## InspectionField · language/inspection.el {#api-4d6d2a777f5e226a179d}
 
-[源码 language/inspection.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/language/inspection.el#L40)
+[源码 language/inspection.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/language/inspection.el#L43)
 
 ```el
 class InspectionField
@@ -20188,7 +20468,7 @@ class InspectionField
 
 ## InspectionGraph · language/inspection.el {#api-e8cc96ebe5088756f9be}
 
-[源码 language/inspection.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/language/inspection.el#L77)
+[源码 language/inspection.el:80](https://github.com/steve02081504/el/blob/master/src/stdlib/language/inspection.el#L80)
 
 ```el
 class InspectionGraph
@@ -20196,7 +20476,7 @@ class InspectionGraph
 
 ## InspectionKind · language/inspection.el {#api-d6fff24aedcbe9f81bcf}
 
-[源码 language/inspection.el:37](https://github.com/steve02081504/el/blob/master/src/stdlib/language/inspection.el#L37)
+[源码 language/inspection.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/language/inspection.el#L38)
 
 ```el
 enum InspectionKind
@@ -20204,7 +20484,7 @@ enum InspectionKind
 
 ## InspectionNode · language/inspection.el {#api-366373a0cf6e8df3b0a3}
 
-[源码 language/inspection.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/language/inspection.el#L47)
+[源码 language/inspection.el:50](https://github.com/steve02081504/el/blob/master/src/stdlib/language/inspection.el#L50)
 
 ```el
 class InspectionNode
@@ -20212,15 +20492,15 @@ class InspectionNode
 
 ## InspectionUnavailable · language/inspection.el {#api-69c616701d4eee8426ad}
 
-[源码 language/inspection.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/language/inspection.el#L38)
+[源码 language/inspection.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/language/inspection.el#L39)
 
 ```el
-class InspectionUnavailable
+class InspectionUnavailable extends Error
 ```
 
 ## WorkspaceWord · language/inspection.el {#api-cd6f74c5d92530d18efe}
 
-[源码 language/inspection.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/language/inspection.el#L9)
+[源码 language/inspection.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/language/inspection.el#L10)
 
 ```el
 class WorkspaceWord
@@ -20546,7 +20826,7 @@ class ResourceInitializer
 
 ## ModuleResourceManifest · language/modules/resources.el {#api-973b79387c28d4abc83c}
 
-[源码 language/modules/resources.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/resources.el#L13)
+[源码 language/modules/resources.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/resources.el#L16)
 
 ```el
 class ModuleResourceManifest
@@ -20554,15 +20834,15 @@ class ModuleResourceManifest
 
 ## ModuleResourcesUnavailable · language/modules/resources.el {#api-b313912a2b63a1ddc81f}
 
-[源码 language/modules/resources.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/resources.el#L7)
+[源码 language/modules/resources.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/resources.el#L8)
 
 ```el
-class ModuleResourcesUnavailable
+class ModuleResourcesUnavailable extends Error
 ```
 
 ## SourceModuleResources · language/modules/resources.el {#api-7d170e5d1eaa7d1e574d}
 
-[源码 language/modules/resources.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/resources.el#L31)
+[源码 language/modules/resources.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/resources.el#L34)
 
 ```el
 class SourceModuleResources
@@ -20594,7 +20874,7 @@ class RuntimeSessionHost
 
 ## LeaseToken · language/modules/session/image.el {#api-cd8af2b23edfdae3fb56}
 
-[源码 language/modules/session/image.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/session/image.el#L39)
+[源码 language/modules/session/image.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/session/image.el#L43)
 
 ```el
 class LeaseToken
@@ -20602,7 +20882,7 @@ class LeaseToken
 
 ## RuntimeCodeLease · language/modules/session/image.el {#api-3f3eb6764862dd1e5af0}
 
-[源码 language/modules/session/image.el:200](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/session/image.el#L200)
+[源码 language/modules/session/image.el:204](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/session/image.el#L204)
 
 ```el
 class RuntimeCodeLease
@@ -20610,15 +20890,15 @@ class RuntimeCodeLease
 
 ## RuntimeSessionFailure · language/modules/session/image.el {#api-8ee3edf8d0211b3976bc}
 
-[源码 language/modules/session/image.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/session/image.el#L34)
+[源码 language/modules/session/image.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/session/image.el#L35)
 
 ```el
-class RuntimeSessionFailure
+class RuntimeSessionFailure extends Error
 ```
 
 ## RuntimeSessionImage · language/modules/session/image.el {#api-c2ecde97b87f0253df85}
 
-[源码 language/modules/session/image.el:62](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/session/image.el#L62)
+[源码 language/modules/session/image.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/session/image.el#L66)
 
 ```el
 class RuntimeSessionImage
@@ -20626,7 +20906,7 @@ class RuntimeSessionImage
 
 ## RuntimeSessionState · language/modules/session/image.el {#api-af221efa9d4a8a39572b}
 
-[源码 language/modules/session/image.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/session/image.el#L33)
+[源码 language/modules/session/image.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/language/modules/session/image.el#L34)
 
 ```el
 enum RuntimeSessionState
@@ -20930,7 +21210,7 @@ class OrderedDynamicObject extends DynamicObject
 
 ## Observation · language/observation.el {#api-651bb7db1856b1289a72}
 
-[源码 language/observation.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/language/observation.el#L20)
+[源码 language/observation.el:37](https://github.com/steve02081504/el/blob/master/src/stdlib/language/observation.el#L37)
 
 ```el
 class Observation
@@ -20938,10 +21218,10 @@ class Observation
 
 ## ObservationError · language/observation.el {#api-f42dbb40ef749d6313d3}
 
-[源码 language/observation.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/language/observation.el#L13)
+[源码 language/observation.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/language/observation.el#L20)
 
 ```el
-class ObservationError
+class ObservationError extends Error
 ```
 
 ## Eq · language/proofs.el {#api-d323fe4b5742a94294fc}
@@ -21040,7 +21320,7 @@ class CheckedNode
 
 ## Syntax · language/syntax/index.el {#api-078e759e1d059ecd81f5}
 
-[源码 language/syntax/index.el:256](https://github.com/steve02081504/el/blob/master/src/stdlib/language/syntax/index.el#L256)
+[源码 language/syntax/index.el:260](https://github.com/steve02081504/el/blob/master/src/stdlib/language/syntax/index.el#L260)
 
 ```el
 class Syntax
@@ -21048,7 +21328,7 @@ class Syntax
 
 ## SyntaxBindings · language/syntax/index.el {#api-e97eb68c1e03ebb05b92}
 
-[源码 language/syntax/index.el:228](https://github.com/steve02081504/el/blob/master/src/stdlib/language/syntax/index.el#L228)
+[源码 language/syntax/index.el:231](https://github.com/steve02081504/el/blob/master/src/stdlib/language/syntax/index.el#L231)
 
 ```el
 class SyntaxBindings
@@ -21056,7 +21336,7 @@ class SyntaxBindings
 
 ## SyntaxContext · language/syntax/index.el {#api-c0469f4ebe02cacb80b1}
 
-[源码 language/syntax/index.el:274](https://github.com/steve02081504/el/blob/master/src/stdlib/language/syntax/index.el#L274)
+[源码 language/syntax/index.el:278](https://github.com/steve02081504/el/blob/master/src/stdlib/language/syntax/index.el#L278)
 
 ```el
 class SyntaxContext
@@ -21064,7 +21344,7 @@ class SyntaxContext
 
 ## SyntaxRecord · language/syntax/index.el {#api-f98a7fc8dfb306893098}
 
-[源码 language/syntax/index.el:192](https://github.com/steve02081504/el/blob/master/src/stdlib/language/syntax/index.el#L192)
+[源码 language/syntax/index.el:195](https://github.com/steve02081504/el/blob/master/src/stdlib/language/syntax/index.el#L195)
 
 ```el
 class SyntaxRecord
@@ -21072,7 +21352,7 @@ class SyntaxRecord
 
 ## SyntaxScope · language/syntax/index.el {#api-80f2c7c39586ebda2a0a}
 
-[源码 language/syntax/index.el:237](https://github.com/steve02081504/el/blob/master/src/stdlib/language/syntax/index.el#L237)
+[源码 language/syntax/index.el:240](https://github.com/steve02081504/el/blob/master/src/stdlib/language/syntax/index.el#L240)
 
 ```el
 class SyntaxScope
@@ -21080,7 +21360,7 @@ class SyntaxScope
 
 ## SyntaxSymbol · language/syntax/index.el {#api-1da56499c7f627360bdd}
 
-[源码 language/syntax/index.el:203](https://github.com/steve02081504/el/blob/master/src/stdlib/language/syntax/index.el#L203)
+[源码 language/syntax/index.el:206](https://github.com/steve02081504/el/blob/master/src/stdlib/language/syntax/index.el#L206)
 
 ```el
 class SyntaxSymbol
@@ -21088,7 +21368,7 @@ class SyntaxSymbol
 
 ## UncheckedSyntax · language/syntax/index.el {#api-3628c09626a9be6ba1ba}
 
-[源码 language/syntax/index.el:111](https://github.com/steve02081504/el/blob/master/src/stdlib/language/syntax/index.el#L111)
+[源码 language/syntax/index.el:113](https://github.com/steve02081504/el/blob/master/src/stdlib/language/syntax/index.el#L113)
 
 ```el
 class UncheckedSyntax
@@ -24074,7 +24354,7 @@ data NatTrans<O: Sort(u), H: fn(x: O, y: O): Sort(v), P: Sort(w), K: fn(x: P, y:
 
 ## DomainError · mathematics/functions/context.el {#api-d49f051ec2b25f74ab71}
 
-[源码 mathematics/functions/context.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/context.el#L15)
+[源码 mathematics/functions/context.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/context.el#L16)
 
 ```el
 class DomainError extends Error
@@ -24082,7 +24362,7 @@ class DomainError extends Error
 
 ## Interval · mathematics/functions/context.el {#api-81621389da122a3c87cb}
 
-[源码 mathematics/functions/context.el:52](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/context.el#L52)
+[源码 mathematics/functions/context.el:75](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/context.el#L75)
 
 ```el
 fn Interval(element: type): type
@@ -24090,15 +24370,39 @@ fn Interval(element: type): type
 
 ## PrecisionError · mathematics/functions/context.el {#api-a09c8b850aaa2672c036}
 
-[源码 mathematics/functions/context.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/context.el#L18)
+[源码 mathematics/functions/context.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/context.el#L19)
 
 ```el
 class PrecisionError extends Error
 ```
 
+## PiRefinement · mathematics/functions/pi.el {#api-a9592d2c7bbb5a79c551}
+
+[源码 mathematics/functions/pi.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/pi.el#L76)
+
+```el
+class PiRefinement
+```
+
+## PiRootBracket · mathematics/functions/pi.el {#api-92ab96d61a17dad96ad6}
+
+[源码 mathematics/functions/pi.el:55](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/pi.el#L55)
+
+```el
+class PiRootBracket
+```
+
+## PiSeriesBlock · mathematics/functions/pi.el {#api-dbbc14c13b7742cb0b4b}
+
+[源码 mathematics/functions/pi.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/pi.el#L15)
+
+```el
+class PiSeriesBlock
+```
+
 ## Series · mathematics/functions/series.el {#api-dbf9b4e2614f051eac50}
 
-[源码 mathematics/functions/series.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/series.el#L14)
+[源码 mathematics/functions/series.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/series.el#L16)
 
 ```el
 fn Series(result: type, element: type, targetAccuracy = nil): type
@@ -24650,7 +24954,7 @@ class ReserveBlock
 
 ## AllocationCallbacks · memory/allocation/resources.el {#api-9dd69e5e150d86f50179}
 
-[源码 memory/allocation/resources.el:58](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L58)
+[源码 memory/allocation/resources.el:59](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L59)
 
 ```el
 class AllocationCallbacks
@@ -24658,7 +24962,7 @@ class AllocationCallbacks
 
 ## AllocationObserverCallbacks · memory/allocation/resources.el {#api-44bdcfefaebe2b24c28f}
 
-[源码 memory/allocation/resources.el:102](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L102)
+[源码 memory/allocation/resources.el:103](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L103)
 
 ```el
 class AllocationObserverCallbacks
@@ -24666,7 +24970,7 @@ class AllocationObserverCallbacks
 
 ## AllocationResource · memory/allocation/resources.el {#api-8eba7d4cbf772f8d630b}
 
-[源码 memory/allocation/resources.el:179](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L179)
+[源码 memory/allocation/resources.el:180](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L180)
 
 ```el
 class AllocationResource
@@ -24676,7 +24980,7 @@ class AllocationResource
 
 ## AllocationResourceError · memory/allocation/resources.el {#api-74c8810a150913ec336d}
 
-[源码 memory/allocation/resources.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L51)
+[源码 memory/allocation/resources.el:52](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L52)
 
 ```el
 class AllocationResourceError extends Error
@@ -24686,7 +24990,7 @@ class AllocationResourceError extends Error
 
 ## AllocationSnapshot · memory/allocation/resources.el {#api-2ebb6b2c7191b869a60b}
 
-[源码 memory/allocation/resources.el:144](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L144)
+[源码 memory/allocation/resources.el:145](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L145)
 
 ```el
 class AllocationSnapshot
@@ -24812,6 +25116,14 @@ class Native8
 
 ```el
 class StorageUnit
+```
+
+## EncodedOwner · memory/ownership/encoded-owner.el {#api-79bd50618b6dc9e68b34}
+
+[源码 memory/ownership/encoded-owner.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/ownership/encoded-owner.el#L19)
+
+```el
+fn EncodedOwner(element: type): type
 ```
 
 ## FrozenLease · memory/ownership/frozen-lease.el {#api-8ded20f33c9167e6b322}
@@ -25142,7 +25454,7 @@ class PlatformMicrophone
 
 ## PlatformCamera · multimedia/capture/windows/camera.el {#api-9eb5718d4cd394a516f6}
 
-[源码 multimedia/capture/windows/camera.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/windows/camera.el#L63)
+[源码 multimedia/capture/windows/camera.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/windows/camera.el#L64)
 
 ```el
 class PlatformCamera
@@ -25158,7 +25470,7 @@ class Foundation
 
 ## InputBuffer · multimedia/capture/windows/microphone.el {#api-52a10afe03dc52010523}
 
-[源码 multimedia/capture/windows/microphone.el:52](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/windows/microphone.el#L52)
+[源码 multimedia/capture/windows/microphone.el:53](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/windows/microphone.el#L53)
 
 ```el
 class InputBuffer
@@ -25166,7 +25478,7 @@ class InputBuffer
 
 ## PlatformMicrophone · multimedia/capture/windows/microphone.el {#api-4e06a88bd74e0b4a5bb9}
 
-[源码 multimedia/capture/windows/microphone.el:70](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/windows/microphone.el#L70)
+[源码 multimedia/capture/windows/microphone.el:71](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/windows/microphone.el#L71)
 
 ```el
 class PlatformMicrophone
@@ -27426,7 +27738,7 @@ class ModelWordStreams
 
 ## NumericInt · number/arithmetic.el {#api-185a41c160696f925b31}
 
-[源码 number/arithmetic.el:62](https://github.com/steve02081504/el/blob/master/src/stdlib/number/arithmetic.el#L62)
+[源码 number/arithmetic.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/number/arithmetic.el#L64)
 
 ```el
 class NumericInt
@@ -27434,7 +27746,7 @@ class NumericInt
 
 ## NumericRatio · number/arithmetic.el {#api-5d824c7b2238be4ee74d}
 
-[源码 number/arithmetic.el:669](https://github.com/steve02081504/el/blob/master/src/stdlib/number/arithmetic.el#L669)
+[源码 number/arithmetic.el:871](https://github.com/steve02081504/el/blob/master/src/stdlib/number/arithmetic.el#L871)
 
 ```el
 class NumericRatio
@@ -27480,9 +27792,17 @@ class DigitFloatParts
 enum DitFloatKind
 ```
 
+## InverseSqrtStatus · number/digit-float/quantization.el {#api-1aab13a2b35202445e63}
+
+[源码 number/digit-float/quantization.el:259](https://github.com/steve02081504/el/blob/master/src/stdlib/number/digit-float/quantization.el#L259)
+
+```el
+class InverseSqrtStatus
+```
+
 ## DitFloat · number/dit-float.el {#api-3bf2f5b6b8ccdfc86851}
 
-[源码 number/dit-float.el:281](https://github.com/steve02081504/el/blob/master/src/stdlib/number/dit-float.el#L281)
+[源码 number/dit-float.el:288](https://github.com/steve02081504/el/blob/master/src/stdlib/number/dit-float.el#L288)
 
 ```el
 fn DitFloat(sign_dits = 1, fraction_dits = 0, exponent_dits = 0, exponent_bias = 0, min = nil, max = nil, overflow = "ub"): type
@@ -27492,7 +27812,7 @@ fn DitFloat(sign_dits = 1, fraction_dits = 0, exponent_dits = 0, exponent_bias =
 
 ## DitFloatValue · number/dit-float.el {#api-6542920313161ccaeff7}
 
-[源码 number/dit-float.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/number/dit-float.el#L18)
+[源码 number/dit-float.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/number/dit-float.el#L20)
 
 ```el
 class DitFloatValue extends Number
@@ -27500,7 +27820,7 @@ class DitFloatValue extends Number
 
 ## ditFloatType · number/dit-float.el {#api-da3f4b2e3806f69fe34d}
 
-[源码 number/dit-float.el:103](https://github.com/steve02081504/el/blob/master/src/stdlib/number/dit-float.el#L103)
+[源码 number/dit-float.el:118](https://github.com/steve02081504/el/blob/master/src/stdlib/number/dit-float.el#L118)
 
 ```el
 fn ditFloatType(radix: Number, signDits, fractionDits, exponentDits, exponentBias, min, max, overflow): type
@@ -27550,10 +27870,18 @@ let UnsignedInteger: type
 
 ## NumberParameterError · number/internal/exact.el {#api-af9ba2a30adcf77df558}
 
-[源码 number/internal/exact.el:44](https://github.com/steve02081504/el/blob/master/src/stdlib/number/internal/exact.el#L44)
+[源码 number/internal/exact.el:79](https://github.com/steve02081504/el/blob/master/src/stdlib/number/internal/exact.el#L79)
 
 ```el
 class NumberParameterError extends Error
+```
+
+## TransformBuffer · number/internal/limb-transform.el {#api-c4eb56139508e9ea88f3}
+
+[源码 number/internal/limb-transform.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/number/internal/limb-transform.el#L12)
+
+```el
+class TransformBuffer
 ```
 
 ## NumberState · number/internal/state.el {#api-92459d53394d0a38b1a5}
@@ -27588,7 +27916,7 @@ class NativeFloatCodecUnavailable extends Error
 
 ## BigIntegerValue · number/number.el {#api-4e532962dece588ca7f3}
 
-[源码 number/number.el:165](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L165)
+[源码 number/number.el:188](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L188)
 
 ```el
 class BigIntegerValue extends Number
@@ -27596,7 +27924,7 @@ class BigIntegerValue extends Number
 
 ## BoundedNativeInteger · number/number.el {#api-07c82b53f5f85eb425da}
 
-[源码 number/number.el:268](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L268)
+[源码 number/number.el:298](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L298)
 
 ```el
 fn BoundedNativeInteger(carrier: type, min, max, epsilon, overflow, unsigned: Bool): type
@@ -27604,7 +27932,7 @@ fn BoundedNativeInteger(carrier: type, min, max, epsilon, overflow, unsigned: Bo
 
 ## NativeFractionValue · number/number.el {#api-7634a968696369b0f95d}
 
-[源码 number/number.el:152](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L152)
+[源码 number/number.el:175](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L175)
 
 ```el
 fn NativeFractionValue(carrier: type): type
@@ -27612,7 +27940,7 @@ fn NativeFractionValue(carrier: type): type
 
 ## NativeIntegerValue · number/number.el {#api-6b0ced35941fe6c7f0c1}
 
-[源码 number/number.el:139](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L139)
+[源码 number/number.el:162](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L162)
 
 ```el
 fn NativeIntegerValue(carrier: type): type
@@ -27620,7 +27948,7 @@ fn NativeIntegerValue(carrier: type): type
 
 ## Number · number/number.el {#api-c6e654c3ea9412c954c8}
 
-[源码 number/number.el:65](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L65)
+[源码 number/number.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L66)
 
 ```el
 class Number
@@ -27628,7 +27956,7 @@ class Number
 
 [API 文档](modules/number/number.md#api-3cc24d3ef702e8652fb4)
 
-[源码 number/number.el:312](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L312)
+[源码 number/number.el:341](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L341)
 
 ```el
 fn Number(min = nil, max = nil, epsilon = nil, integer = f, overflow = "ub"): type
@@ -27638,7 +27966,7 @@ fn Number(min = nil, max = nil, epsilon = nil, integer = f, overflow = "ub"): ty
 
 ## RatioValue · number/number.el {#api-47d2611cb941fd4d6f3f}
 
-[源码 number/number.el:173](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L173)
+[源码 number/number.el:196](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L196)
 
 ```el
 class RatioValue extends Number
@@ -27646,7 +27974,7 @@ class RatioValue extends Number
 
 ## StorageSignedLarge · number/number.el {#api-4b4814034490131d70ed}
 
-[源码 number/number.el:137](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L137)
+[源码 number/number.el:160](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L160)
 
 ```el
 class StorageSignedLarge
@@ -27654,7 +27982,7 @@ class StorageSignedLarge
 
 ## StorageSignedMedium · number/number.el {#api-46561ec155626f012873}
 
-[源码 number/number.el:135](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L135)
+[源码 number/number.el:158](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L158)
 
 ```el
 class StorageSignedMedium
@@ -27662,7 +27990,7 @@ class StorageSignedMedium
 
 ## StorageSignedSmall · number/number.el {#api-e0691dce94ca4703b77a}
 
-[源码 number/number.el:133](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L133)
+[源码 number/number.el:156](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L156)
 
 ```el
 class StorageSignedSmall
@@ -27670,7 +27998,7 @@ class StorageSignedSmall
 
 ## StorageUnsignedLarge · number/number.el {#api-e43513bf868f8a7a3375}
 
-[源码 number/number.el:136](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L136)
+[源码 number/number.el:159](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L159)
 
 ```el
 class StorageUnsignedLarge
@@ -27678,7 +28006,7 @@ class StorageUnsignedLarge
 
 ## StorageUnsignedMedium · number/number.el {#api-8653b4bfa53bdf07623e}
 
-[源码 number/number.el:134](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L134)
+[源码 number/number.el:157](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L157)
 
 ```el
 class StorageUnsignedMedium
@@ -27686,7 +28014,7 @@ class StorageUnsignedMedium
 
 ## StorageUnsignedUnit · number/number.el {#api-47f75125e47c747d6fa1}
 
-[源码 number/number.el:132](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L132)
+[源码 number/number.el:155](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L155)
 
 ```el
 class StorageUnsignedUnit
@@ -27702,7 +28030,7 @@ class UnboundedNumberLimit
 
 ## UnorderedValue · number/number.el {#api-9ea3cafeaeaf34093d78}
 
-[源码 number/number.el:181](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L181)
+[源码 number/number.el:204](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L204)
 
 ```el
 class UnorderedValue extends Number
@@ -28528,7 +28856,7 @@ class RandomFileReceipt
 
 ## TemporaryDirectory · operating-system/files/temporary.el {#api-cf48295aae4730615ff4}
 
-[源码 operating-system/files/temporary.el:52](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/temporary.el#L52)
+[源码 operating-system/files/temporary.el:61](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/temporary.el#L61)
 
 ```el
 class TemporaryDirectory
@@ -28536,7 +28864,7 @@ class TemporaryDirectory
 
 ## TemporaryFile · operating-system/files/temporary.el {#api-4a904bbba82e65450f8b}
 
-[源码 operating-system/files/temporary.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/temporary.el#L77)
+[源码 operating-system/files/temporary.el:86](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/temporary.el#L86)
 
 ```el
 class TemporaryFile
@@ -28560,7 +28888,7 @@ class BufferedWriteProgress
 
 ## PathAttributeBits · operating-system/paths/index.el {#api-ace2d5951c48d5266d3d}
 
-[源码 operating-system/paths/index.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/paths/index.el#L7)
+[源码 operating-system/paths/index.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/paths/index.el#L8)
 
 ```el
 class PathAttributeBits
@@ -28608,7 +28936,7 @@ class ProcessSystemError extends Error
 
 ## ControlState · operating-system/processes/control-model.el {#api-c37a0014caca82e8b249}
 
-[源码 operating-system/processes/control-model.el:90](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L90)
+[源码 operating-system/processes/control-model.el:95](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L95)
 
 ```el
 class ControlState
@@ -28616,7 +28944,7 @@ class ControlState
 
 ## ProcessPipelineAction · operating-system/processes/control-model.el {#api-c7d1aa3c8c69465674f9}
 
-[源码 operating-system/processes/control-model.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L6)
+[源码 operating-system/processes/control-model.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L7)
 
 ```el
 enum ProcessPipelineAction
@@ -28624,7 +28952,7 @@ enum ProcessPipelineAction
 
 ## ProcessPipelineControl · operating-system/processes/control-model.el {#api-5acf40048356b07943c1}
 
-[源码 operating-system/processes/control-model.el:111](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L111)
+[源码 operating-system/processes/control-model.el:116](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L116)
 
 ```el
 class ProcessPipelineControl
@@ -28632,7 +28960,7 @@ class ProcessPipelineControl
 
 ## ProcessPipelineControlAdmission · operating-system/processes/control-model.el {#api-b73620f0cd5d3cf6d3c9}
 
-[源码 operating-system/processes/control-model.el:49](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L49)
+[源码 operating-system/processes/control-model.el:54](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L54)
 
 ```el
 class ProcessPipelineControlAdmission
@@ -28640,15 +28968,15 @@ class ProcessPipelineControlAdmission
 
 ## ProcessPipelineControlBusy · operating-system/processes/control-model.el {#api-1718003e948c08ad3e9d}
 
-[源码 operating-system/processes/control-model.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L9)
+[源码 operating-system/processes/control-model.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L12)
 
 ```el
-class ProcessPipelineControlBusy
+class ProcessPipelineControlBusy extends Error
 ```
 
 ## ProcessPipelineControlHooks · operating-system/processes/control-model.el {#api-e59533907aa95de059c2}
 
-[源码 operating-system/processes/control-model.el:52](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L52)
+[源码 operating-system/processes/control-model.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L57)
 
 ```el
 class ProcessPipelineControlHooks
@@ -28656,7 +28984,7 @@ class ProcessPipelineControlHooks
 
 ## ProcessPipelineControlLease · operating-system/processes/control-model.el {#api-ae28732a16dac4a0ea9d}
 
-[源码 operating-system/processes/control-model.el:144](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L144)
+[源码 operating-system/processes/control-model.el:149](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L149)
 
 ```el
 class ProcessPipelineControlLease
@@ -28664,7 +28992,7 @@ class ProcessPipelineControlLease
 
 ## ProcessPipelineControlRequest · operating-system/processes/control-model.el {#api-11cfa774f39c6d1d4c58}
 
-[源码 operating-system/processes/control-model.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L57)
+[源码 operating-system/processes/control-model.el:62](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L62)
 
 ```el
 class ProcessPipelineControlRequest
@@ -28672,7 +29000,7 @@ class ProcessPipelineControlRequest
 
 ## ProcessPipelineControlSnapshot · operating-system/processes/control-model.el {#api-5e761d06695eb5f749cb}
 
-[源码 operating-system/processes/control-model.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L29)
+[源码 operating-system/processes/control-model.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L34)
 
 ```el
 class ProcessPipelineControlSnapshot
@@ -28680,15 +29008,15 @@ class ProcessPipelineControlSnapshot
 
 ## ProcessPipelineControlUnavailable · operating-system/processes/control-model.el {#api-23b3a55546054df71e23}
 
-[源码 operating-system/processes/control-model.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L8)
+[源码 operating-system/processes/control-model.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L9)
 
 ```el
-class ProcessPipelineControlUnavailable
+class ProcessPipelineControlUnavailable extends Error
 ```
 
 ## ProcessPipelineStageSnapshot · operating-system/processes/control-model.el {#api-98ff238e8315dcedbdd8}
 
-[源码 operating-system/processes/control-model.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L23)
+[源码 operating-system/processes/control-model.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L28)
 
 ```el
 class ProcessPipelineStageSnapshot
@@ -28696,7 +29024,7 @@ class ProcessPipelineStageSnapshot
 
 ## ProcessPipelineStageState · operating-system/processes/control-model.el {#api-99c8479f60a44ec1d699}
 
-[源码 operating-system/processes/control-model.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L7)
+[源码 operating-system/processes/control-model.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L8)
 
 ```el
 enum ProcessPipelineStageState
@@ -28704,7 +29032,7 @@ enum ProcessPipelineStageState
 
 ## ProcessPipelineTerminalSnapshot · operating-system/processes/control-model.el {#api-c3610be6da4c06dfa475}
 
-[源码 operating-system/processes/control-model.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L10)
+[源码 operating-system/processes/control-model.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L15)
 
 ```el
 class ProcessPipelineTerminalSnapshot
@@ -28712,10 +29040,10 @@ class ProcessPipelineTerminalSnapshot
 
 ## ProcessExitRejected · operating-system/processes/exit.el {#api-50aff393207c92134307}
 
-[源码 operating-system/processes/exit.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/exit.el#L22)
+[源码 operating-system/processes/exit.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/exit.el#L23)
 
 ```el
-class ProcessExitRejected
+class ProcessExitRejected extends Error
 ```
 
 ## InputBody · operating-system/processes/input-model.el {#api-3d911d06636855200bad}
@@ -28776,10 +29104,10 @@ class ProcessPipelineInputClosed
 
 ## ProcessPipelineInputFailure · operating-system/processes/input-model.el {#api-33e6176de7c29a62d845}
 
-[源码 operating-system/processes/input-model.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/input-model.el#L21)
+[源码 operating-system/processes/input-model.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/input-model.el#L22)
 
 ```el
-class ProcessPipelineInputFailure
+class ProcessPipelineInputFailure extends Error
 ```
 
 ## ProcessPipelineInputReceipt · operating-system/processes/input-model.el {#api-7943d7169085f9585c33}
@@ -28808,7 +29136,7 @@ class NativeCStringVector
 
 ## NativeProcessCommand · operating-system/processes/pipeline-model.el {#api-5592537631f1254bbb2d}
 
-[源码 operating-system/processes/pipeline-model.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/pipeline-model.el#L51)
+[源码 operating-system/processes/pipeline-model.el:52](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/pipeline-model.el#L52)
 
 ```el
 class NativeProcessCommand
@@ -28816,7 +29144,7 @@ class NativeProcessCommand
 
 ## ProcessPipelineInterrupted · operating-system/processes/pipeline-model.el {#api-163545cff642f6db8b76}
 
-[源码 operating-system/processes/pipeline-model.el:100](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/pipeline-model.el#L100)
+[源码 operating-system/processes/pipeline-model.el:101](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/pipeline-model.el#L101)
 
 ```el
 class ProcessPipelineInterrupted
@@ -28824,7 +29152,7 @@ class ProcessPipelineInterrupted
 
 ## ProcessPipelineOutput · operating-system/processes/pipeline-model.el {#api-27830f641983a40b2287}
 
-[源码 operating-system/processes/pipeline-model.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/pipeline-model.el#L15)
+[源码 operating-system/processes/pipeline-model.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/pipeline-model.el#L16)
 
 ```el
 class ProcessPipelineOutput
@@ -28832,15 +29160,15 @@ class ProcessPipelineOutput
 
 ## ProcessPipelineOutputFailure · operating-system/processes/pipeline-model.el {#api-c6760d1636e3bbb9f1c7}
 
-[源码 operating-system/processes/pipeline-model.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/pipeline-model.el#L9)
+[源码 operating-system/processes/pipeline-model.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/pipeline-model.el#L11)
 
 ```el
-class ProcessPipelineOutputFailure
+class ProcessPipelineOutputFailure extends Error
 ```
 
 ## ProcessPipelineRead · operating-system/processes/pipeline-model.el {#api-fa2e27cb8cda6ccb5dc2}
 
-[源码 operating-system/processes/pipeline-model.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/pipeline-model.el#L30)
+[源码 operating-system/processes/pipeline-model.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/pipeline-model.el#L31)
 
 ```el
 class ProcessPipelineRead
@@ -28848,7 +29176,7 @@ class ProcessPipelineRead
 
 ## ProcessPipelineReceipt · operating-system/processes/pipeline-model.el {#api-d39ccc2b5c55b96ce7c4}
 
-[源码 operating-system/processes/pipeline-model.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/pipeline-model.el#L106)
+[源码 operating-system/processes/pipeline-model.el:107](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/pipeline-model.el#L107)
 
 ```el
 class ProcessPipelineReceipt
@@ -28856,7 +29184,7 @@ class ProcessPipelineReceipt
 
 ## ProcessPipelineState · operating-system/processes/pipeline-model.el {#api-4d4e65e893a57fd308d4}
 
-[源码 operating-system/processes/pipeline-model.el:69](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/pipeline-model.el#L69)
+[源码 operating-system/processes/pipeline-model.el:70](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/pipeline-model.el#L70)
 
 ```el
 class ProcessPipelineState
@@ -28864,7 +29192,7 @@ class ProcessPipelineState
 
 ## NativeCallStatus · operating-system/processes/posix-capture.el {#api-740630163991c0608f9d}
 
-[源码 operating-system/processes/posix-capture.el:120](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-capture.el#L120)
+[源码 operating-system/processes/posix-capture.el:122](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-capture.el#L122)
 
 ```el
 class NativeCallStatus
@@ -28872,7 +29200,7 @@ class NativeCallStatus
 
 ## NativeShort · operating-system/processes/posix-capture.el {#api-2c756dc92c993a8f0626}
 
-[源码 operating-system/processes/posix-capture.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-capture.el#L27)
+[源码 operating-system/processes/posix-capture.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-capture.el#L29)
 
 ```el
 class NativeShort
@@ -28880,15 +29208,15 @@ class NativeShort
 
 ## PipelineObservationFailure · operating-system/processes/posix-capture.el {#api-f693935ee23c03e94e60}
 
-[源码 operating-system/processes/posix-capture.el:365](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-capture.el#L365)
+[源码 operating-system/processes/posix-capture.el:367](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-capture.el#L367)
 
 ```el
-class PipelineObservationFailure
+class PipelineObservationFailure extends Error
 ```
 
 ## PosixPipelineChild · operating-system/processes/posix-capture.el {#api-f43db9a71f43af56f537}
 
-[源码 operating-system/processes/posix-capture.el:306](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-capture.el#L306)
+[源码 operating-system/processes/posix-capture.el:308](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-capture.el#L308)
 
 ```el
 class PosixPipelineChild
@@ -28896,15 +29224,15 @@ class PosixPipelineChild
 
 ## PosixGatedObservationFailure · operating-system/processes/posix-gated-model.el {#api-4b29dfdc6f81560e03dc}
 
-[源码 operating-system/processes/posix-gated-model.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-model.el#L5)
+[源码 operating-system/processes/posix-gated-model.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-model.el#L6)
 
 ```el
-class PosixGatedObservationFailure
+class PosixGatedObservationFailure extends Error
 ```
 
 ## PosixGatedStageSnapshot · operating-system/processes/posix-gated-model.el {#api-27b3e638f0217ee40a14}
 
-[源码 operating-system/processes/posix-gated-model.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-model.el#L12)
+[源码 operating-system/processes/posix-gated-model.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-model.el#L15)
 
 ```el
 class PosixGatedStageSnapshot
@@ -28912,7 +29240,7 @@ class PosixGatedStageSnapshot
 
 ## GatedChild · operating-system/processes/posix-gated-spawn.el {#api-4403f7f908bbcb89ca16}
 
-[源码 operating-system/processes/posix-gated-spawn.el:123](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L123)
+[源码 operating-system/processes/posix-gated-spawn.el:126](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L126)
 
 ```el
 class GatedChild
@@ -28920,7 +29248,7 @@ class GatedChild
 
 ## GatedFunctions · operating-system/processes/posix-gated-spawn.el {#api-553690568ebea922b502}
 
-[源码 operating-system/processes/posix-gated-spawn.el:86](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L86)
+[源码 operating-system/processes/posix-gated-spawn.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L87)
 
 ```el
 class GatedFunctions
@@ -28928,15 +29256,15 @@ class GatedFunctions
 
 ## PosixGatedCleanupFailure · operating-system/processes/posix-gated-spawn.el {#api-58986605a68f53001642}
 
-[源码 operating-system/processes/posix-gated-spawn.el:114](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L114)
+[源码 operating-system/processes/posix-gated-spawn.el:115](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L115)
 
 ```el
-class PosixGatedCleanupFailure
+class PosixGatedCleanupFailure extends Error
 ```
 
 ## PosixGatedGroup · operating-system/processes/posix-gated-spawn.el {#api-d2e7d82738802e7384e5}
 
-[源码 operating-system/processes/posix-gated-spawn.el:305](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L305)
+[源码 operating-system/processes/posix-gated-spawn.el:308](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L308)
 
 ```el
 class PosixGatedGroup
@@ -28984,7 +29312,7 @@ enum PosixTerminalRestore
 
 ## WindowsPipelineChild · operating-system/processes/windows-capture.el {#api-64cc860cc53cbe5c45b0}
 
-[源码 operating-system/processes/windows-capture.el:290](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/windows-capture.el#L290)
+[源码 operating-system/processes/windows-capture.el:291](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/windows-capture.el#L291)
 
 ```el
 class WindowsPipelineChild
@@ -29136,7 +29464,7 @@ class LengthBounds
 
 ## BinaryParser · parsing/bytes.el {#api-5d171b0b33de039794a3}
 
-[源码 parsing/bytes.el:59](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/bytes.el#L59)
+[源码 parsing/bytes.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/bytes.el#L66)
 
 ```el
 fn BinaryParser(output: type): type
@@ -29152,7 +29480,7 @@ class ByteInputSession
 
 ## ByteTransaction · parsing/bytes.el {#api-19fe89ab1c27e9baa4cf}
 
-[源码 parsing/bytes.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/bytes.el#L47)
+[源码 parsing/bytes.el:54](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/bytes.el#L54)
 
 ```el
 class ByteTransaction
@@ -29448,7 +29776,7 @@ class AllocationWord
 
 ## DebugWord · platform/linux/libc.el {#api-bd8bf20e770e71c5c79f}
 
-[源码 platform/linux/libc.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/linux/libc.el#L63)
+[源码 platform/linux/libc.el:65](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/linux/libc.el#L65)
 
 ```el
 class DebugWord
@@ -29576,7 +29904,7 @@ class NativeBoolean
 
 ## EndpointBits · platform/numeric-limits.el {#api-d1b880c731d453155cff}
 
-[源码 platform/numeric-limits.el:3](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/numeric-limits.el#L3)
+[源码 platform/numeric-limits.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/numeric-limits.el#L4)
 
 ```el
 class EndpointBits
@@ -29664,7 +29992,7 @@ class NativeRandomFile extends NativeRandomFileSource
 
 ## FileInt · platform/posix/read-file.el {#api-e3fd771428667b0a7f95}
 
-[源码 platform/posix/read-file.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/posix/read-file.el#L12)
+[源码 platform/posix/read-file.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/posix/read-file.el#L13)
 
 ```el
 class FileInt
@@ -30120,10 +30448,10 @@ fn TypedTable(row: type): type
 
 ## EntropyUnavailable · random/errors.el {#api-3ab4ff4e5934055b9701}
 
-[源码 random/errors.el:3](https://github.com/steve02081504/el/blob/master/src/stdlib/random/errors.el#L3)
+[源码 random/errors.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/random/errors.el#L4)
 
 ```el
-class EntropyUnavailable
+class EntropyUnavailable extends Error
 ```
 
 ## Random · random/index.el {#api-b2206be230690600dd8e}
@@ -30584,6 +30912,14 @@ class SettingsChange
 class SettingsConflict extends Error
 ```
 
+## SettingsConstraint · settings/model.el {#api-dca50e086c1b002ecc72}
+
+[源码 settings/model.el:186](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L186)
+
+```el
+class SettingsConstraint
+```
+
 ## SettingsError · settings/model.el {#api-c795ea644c5ff612139b}
 
 [源码 settings/model.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L8)
@@ -30600,6 +30936,14 @@ class SettingsError extends Error
 class SettingsField
 ```
 
+## SettingsFieldRule · settings/model.el {#api-1cbc5e5f6f739cb09d24}
+
+[源码 settings/model.el:196](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L196)
+
+```el
+class SettingsFieldRule
+```
+
 ## SettingsPatch · settings/model.el {#api-16f01e4f88e27e324f6b}
 
 [源码 settings/model.el:135](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L135)
@@ -30614,6 +30958,14 @@ class SettingsPatch
 
 ```el
 class SettingsSnapshot
+```
+
+## SettingsValue · settings/model.el {#api-372be6efcb07daac13d4}
+
+[源码 settings/model.el:166](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L166)
+
+```el
+class SettingsValue
 ```
 
 ## SettingsLoadFailure · settings/source.el {#api-898bed3ba488cd46237d}
@@ -31042,7 +31394,7 @@ let Byte: type
 
 ## ByteBuffer · streams/byte-buffer.el {#api-e8cdd238874e055b2cab}
 
-[源码 streams/byte-buffer.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/byte-buffer.el#L15)
+[源码 streams/byte-buffer.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/streams/byte-buffer.el#L16)
 
 ```el
 class ByteBuffer
@@ -31200,7 +31552,7 @@ class TextLiteral
 
 ## RawTextView · text/internal/raw-view.el {#api-50ea92ecb25b4594bf49}
 
-[源码 text/internal/raw-view.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/raw-view.el#L16)
+[源码 text/internal/raw-view.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/raw-view.el#L17)
 
 ```el
 class RawTextView
@@ -31272,7 +31624,7 @@ class AsciiPatterns
 
 ## CaptureEvent · text/patterns/core.el {#api-10647f0296ebeabd1164}
 
-[源码 text/patterns/core.el:434](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L434)
+[源码 text/patterns/core.el:456](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L456)
 
 ```el
 class CaptureEvent
@@ -31280,7 +31632,7 @@ class CaptureEvent
 
 ## Instruction · text/patterns/core.el {#api-fde8a5fb9bd5503ae561}
 
-[源码 text/patterns/core.el:123](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L123)
+[源码 text/patterns/core.el:135](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L135)
 
 ```el
 class Instruction
@@ -31288,7 +31640,7 @@ class Instruction
 
 ## InstructionKind · text/patterns/core.el {#api-2e2c108fcd72203360ba}
 
-[源码 text/patterns/core.el:120](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L120)
+[源码 text/patterns/core.el:132](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L132)
 
 ```el
 enum InstructionKind
@@ -31304,7 +31656,7 @@ class PatternBudget
 
 ## PatternCapture · text/patterns/core.el {#api-8a41b3d21f84db8eecb1}
 
-[源码 text/patterns/core.el:107](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L107)
+[源码 text/patterns/core.el:119](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L119)
 
 ```el
 class PatternCapture
@@ -31312,7 +31664,7 @@ class PatternCapture
 
 ## PatternInput · text/patterns/core.el {#api-de07c3d8b175462bd5d7}
 
-[源码 text/patterns/core.el:136](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L136)
+[源码 text/patterns/core.el:148](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L148)
 
 ```el
 class PatternInput
@@ -31344,7 +31696,7 @@ class PatternNode
 
 ## PatternProgram · text/patterns/core.el {#api-009419c6695b358953f1}
 
-[源码 text/patterns/core.el:194](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L194)
+[源码 text/patterns/core.el:206](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L206)
 
 ```el
 class PatternProgram
@@ -31352,7 +31704,7 @@ class PatternProgram
 
 ## PatternStreamStatus · text/patterns/core.el {#api-e97a674ab9fed4854d89}
 
-[源码 text/patterns/core.el:187](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L187)
+[源码 text/patterns/core.el:199](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L199)
 
 ```el
 class PatternStreamStatus
@@ -31360,7 +31712,7 @@ class PatternStreamStatus
 
 ## Thread · text/patterns/core.el {#api-38e027326bb52a58ea77}
 
-[源码 text/patterns/core.el:427](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L427)
+[源码 text/patterns/core.el:449](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/core.el#L449)
 
 ```el
 class Thread
@@ -31562,7 +31914,7 @@ class PatternRejected
 
 ## DataTextView · text/text.el {#api-876275f9f62d8f9e5710}
 
-[源码 text/text.el:909](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L909)
+[源码 text/text.el:932](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L932)
 
 ```el
 class DataTextView extends TextView
@@ -31570,7 +31922,7 @@ class DataTextView extends TextView
 
 ## Text · text/text.el {#api-57699486a79aacef58f4}
 
-[源码 text/text.el:183](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L183)
+[源码 text/text.el:185](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L185)
 
 ```el
 class Text extends Array<element: Char>
@@ -31578,7 +31930,7 @@ class Text extends Array<element: Char>
 
 [API 文档](modules/text/text.md#api-6116e54b075df026a90a)
 
-[源码 text/text.el:1004](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1004)
+[源码 text/text.el:1027](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1027)
 
 ```el
 fn Text(bitWidth = 0, size = 0): type
@@ -31588,13 +31940,13 @@ fn Text(bitWidth = 0, size = 0): type
 
 ## TextArea · text/text.el {#api-8d6cce76aa2bfa666f55}
 
-[源码 text/text.el:131](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L131)
+[源码 text/text.el:133](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L133)
 
 ```el
 class TextArea extends Area<element: Char>
 ```
 
-[源码 text/text.el:137](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L137)
+[源码 text/text.el:139](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L139)
 
 ```el
 fn TextArea(bitWidth): type
@@ -31602,7 +31954,7 @@ fn TextArea(bitWidth): type
 
 ## TextBase · text/text.el {#api-b68ff01b78c61022469f}
 
-[源码 text/text.el:932](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L932)
+[源码 text/text.el:955](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L955)
 
 ```el
 let TextBase: type = Text
@@ -31610,7 +31962,7 @@ let TextBase: type = Text
 
 ## TextCursor · text/text.el {#api-75ceb470331839830dc7}
 
-[源码 text/text.el:750](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L750)
+[源码 text/text.el:773](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L773)
 
 ```el
 class TextCursor
@@ -31618,7 +31970,7 @@ class TextCursor
 
 ## TextIndexWriteUpdate · text/text.el {#api-10375fdc7207c5494819}
 
-[源码 text/text.el:1099](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1099)
+[源码 text/text.el:1122](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1122)
 
 ```el
 fn TextIndexWriteUpdate(bitWidth = 0, size = 0, index: type, value: type, index_bitWidth = 0, value_bitWidth = 0): type
@@ -31626,7 +31978,7 @@ fn TextIndexWriteUpdate(bitWidth = 0, size = 0, index: type, value: type, index_
 
 ## TextPushUpdate · text/text.el {#api-9dcddc94fc17f31c7ca8}
 
-[源码 text/text.el:1092](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1092)
+[源码 text/text.el:1115](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1115)
 
 ```el
 fn TextPushUpdate(bitWidth = 0, size = 0, value: type, value_bitWidth = 0): type
@@ -31634,7 +31986,7 @@ fn TextPushUpdate(bitWidth = 0, size = 0, value: type, value_bitWidth = 0): type
 
 ## TextRangeView · text/text.el {#api-ea0b39b574895c30c0b7}
 
-[源码 text/text.el:882](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L882)
+[源码 text/text.el:905](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L905)
 
 ```el
 class TextRangeView extends TextView
@@ -31642,7 +31994,7 @@ class TextRangeView extends TextView
 
 ## TextRangeViewBase · text/text.el {#api-182272bf982bd7ce64f3}
 
-[源码 text/text.el:933](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L933)
+[源码 text/text.el:956](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L956)
 
 ```el
 let TextRangeViewBase: type = TextRangeView
@@ -31650,13 +32002,13 @@ let TextRangeViewBase: type = TextRangeView
 
 ## TextView · text/text.el {#api-5684c75000d17c66817d}
 
-[源码 text/text.el:849](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L849)
+[源码 text/text.el:872](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L872)
 
 ```el
 class TextView
 ```
 
-[源码 text/text.el:955](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L955)
+[源码 text/text.el:978](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L978)
 
 ```el
 fn TextView(bitWidth = 0, size = 0): type
@@ -31666,13 +32018,13 @@ fn TextView(bitWidth = 0, size = 0): type
 
 ## TextViewArea · text/text.el {#api-d678a7c258ec82514bfb}
 
-[源码 text/text.el:150](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L150)
+[源码 text/text.el:152](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L152)
 
 ```el
 class TextViewArea extends ReadArea<element: Char>
 ```
 
-[源码 text/text.el:156](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L156)
+[源码 text/text.el:158](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L158)
 
 ```el
 fn TextViewArea(bitWidth): type
@@ -32250,7 +32602,7 @@ class StyleToken
 
 ## PeakMeasurement · tools/host/linux/peak-memory.el {#api-cabbf7d0a15ee9f2c592}
 
-[源码 tools/host/linux/peak-memory.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/linux/peak-memory.el#L28)
+[源码 tools/host/linux/peak-memory.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/linux/peak-memory.el#L29)
 
 ```el
 class PeakMeasurement
@@ -32258,7 +32610,7 @@ class PeakMeasurement
 
 ## HostProcess · tools/host/linux/process.el {#api-6ed01d5be9c3c3f3ab0e}
 
-[源码 tools/host/linux/process.el:86](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/linux/process.el#L86)
+[源码 tools/host/linux/process.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/linux/process.el#L87)
 
 ```el
 class HostProcess
@@ -32266,7 +32618,7 @@ class HostProcess
 
 ## NativeShort · tools/host/linux/process.el {#api-0526978dfef5dfdd45c7}
 
-[源码 tools/host/linux/process.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/linux/process.el#L19)
+[源码 tools/host/linux/process.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/linux/process.el#L20)
 
 ```el
 class NativeShort
@@ -32274,7 +32626,7 @@ class NativeShort
 
 ## PeakMeasurement · tools/host/peak-memory.el {#api-afe34f9083191fc871ef}
 
-[源码 tools/host/peak-memory.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/peak-memory.el#L16)
+[源码 tools/host/peak-memory.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/peak-memory.el#L17)
 
 ```el
 let PeakMeasurement: type = HostPeakMeasurement
@@ -32314,7 +32666,7 @@ let HostProcess: type = PlatformProcess
 
 ## PeakMeasurement · tools/host/windows/peak-memory.el {#api-e1f9ecb2efb89ae03e93}
 
-[源码 tools/host/windows/peak-memory.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/windows/peak-memory.el#L22)
+[源码 tools/host/windows/peak-memory.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/windows/peak-memory.el#L23)
 
 ```el
 class PeakMeasurement
@@ -33232,28 +33584,12 @@ class VirtualTextList extends Definition
 class WindowCelebration
 ```
 
-## element · collections/arrays/dynamic.el {#api-6ece51202a051f1cd7ff}
+## element · collections/arrays/dynamic.el {#api-bfc7c48fa2dcb1135093}
 
-类型参数，位于 `collections/arrays/dynamic.el:129`。
+类型参数，位于 `collections/arrays/dynamic.el:128`。
 
 ```el
 fn Array(element: type): type
-```
-
-## end · collections/arrays/dynamic.el {#api-31256dbb3793be40370c}
-
-值参数，位于 `collections/arrays/dynamic.el:313`。
-
-```el
-fn slice(start: Number, end: Number): FixedArray<element: element, length: end - start>
-```
-
-## start · collections/arrays/dynamic.el {#api-795f2ef757de33d269c9}
-
-值参数，位于 `collections/arrays/dynamic.el:313`。
-
-```el
-fn slice(start: Number, end: Number): FixedArray<element: element, length: end - start>
 ```
 
 ## value · collections/maps/base.el {#api-55134cc5930243ac905e}

@@ -77,16 +77,16 @@ console.stdout.writeLine(scores.count)
 写入键值；若键已存在则保留原键并替换原值。
 
 ```el
-@discardable override fn set(lookupKey: key, newValue: value): Bool
+@discardable override fn set(lookupKey: key, newValue: value | nil_t): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 **参数**：lookupKey 要写入的键。
 
-**参数**：newValue 要关联的值。
+**参数**：newValue 要关联的值；nil 删除键。
 
-**返回值**：新增键时为真，替换既有键时为假。
+**返回值**：新增键时为真，其他情况为假。
 
 ### 示例：保存分数
 
@@ -97,21 +97,21 @@ scores.set("ada", 98)
 
 ## Map.tryAdd {#api-e277e1770ee904b688d8}
 
-源码：`src/stdlib/collections/maps/hash-map.el:202` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L202)
+源码：`src/stdlib/collections/maps/hash-map.el:203` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L203)
 
 仅当键不存在时插入键值，已有值保持不变。
 
 ```el
-@discardable override fn tryAdd(lookupKey: key, newValue: value): Bool
+@discardable override fn tryAdd(lookupKey: key, newValue: value | nil_t): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
 **参数**：lookupKey 要插入的键。
 
-**参数**：newValue 要关联的值。
+**参数**：newValue 要关联的值；nil 不插入。
 
-**返回值**：插入时为真；键已存在时为假。
+**返回值**：插入时为真，其他情况为假。
 
 ### 示例：重复插入不替换值
 
@@ -130,9 +130,9 @@ console.stdout.writeLine(scores.getOr("ada", 0))
 
 ## Map.getOrInsert {#api-dbfec9db9a187199f071}
 
-源码：`src/stdlib/collections/maps/hash-map.el:227` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L227)
+源码：`src/stdlib/collections/maps/hash-map.el:229` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L229)
 
-返回已有值；键缺失时调用 make 一次，将结果插入并返回。
+返回已有值；键缺失时调用 make 一次并返回结果。
 
 ```el
 override fn getOrInsert(lookupKey: key, make): value
@@ -144,7 +144,7 @@ override fn getOrInsert(lookupKey: key, make): value
 
 **参数**：make 无参数的值生成函数；键存在时不调用。
 
-**返回值**：已有值或新插入的值。
+**返回值**：已有值或 make 的结果；nil 不插入。
 
 **失败与异常**：make 失败时传播其异常，条目不会插入；回调不得重入修改同一映射。
 
@@ -163,7 +163,7 @@ console.stdout.writeLine(counts.getOrInsert("red", () => 9))
 
 ## Map.update {#api-ecbb1ca6393ae8693785}
 
-源码：`src/stdlib/collections/maps/hash-map.el:254` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L254)
+源码：`src/stdlib/collections/maps/hash-map.el:256` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/hash-map.el#L256)
 
 用回调计算并保存新值；键缺失时以 initial 为输入。
 
@@ -179,7 +179,7 @@ console.stdout.writeLine(counts.getOrInsert("red", () => 9))
 
 **参数**：initial 键缺失时传给回调的值。
 
-**返回值**：保存的新值。
+**返回值**：change 的结果；nil 删除键。
 
 **失败与异常**：change 失败时传播其异常，不提交新条目或替换值；回调不得重入修改同一映射。
 
