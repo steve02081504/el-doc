@@ -60,7 +60,7 @@ let totals = sum(@(1, 2; 3, 4), 0)
 
 ## mean~all {#api-1b092a7a4f6058d36233}
 
-源码：`src/stdlib/numerical-computing/reductions.el:65` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/reductions.el#L65)
+源码：`src/stdlib/numerical-computing/reductions.el:66` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/reductions.el#L66)
 
 对张量全部元素求算术平均值。
 
@@ -77,12 +77,13 @@ export fn mean(values)
 ### 示例：计算矩阵平均值
 
 ```el
+import { mean } from "el:numerical-computing/"
 let average = mean(@(1, 2; 3, 4))
 ```
 
 ## mean~axis {#api-f52f0b1491a320de2f06}
 
-源码：`src/stdlib/numerical-computing/reductions.el:80` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/reductions.el#L80)
+源码：`src/stdlib/numerical-computing/reductions.el:82` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/reductions.el#L82)
 
 沿指定轴求算术平均值，并将该轴长度保留为 1。
 
@@ -101,5 +102,6 @@ export fn mean(values, axis: Number)
 ### 示例：沿第 0 轴取均值
 
 ```el
+import { mean } from "el:numerical-computing/"
 let averages = mean(@(1, 2; 3, 4), 0)
 ```

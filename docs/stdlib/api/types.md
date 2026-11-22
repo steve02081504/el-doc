@@ -24222,7 +24222,7 @@ class Renaming
 
 ## SearchCursor · logic/search.el {#api-09b5771e54c5c1923052}
 
-[源码 logic/search.el:898](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L898)
+[源码 logic/search.el:899](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L899)
 
 ```el-signature
 class SearchCursor

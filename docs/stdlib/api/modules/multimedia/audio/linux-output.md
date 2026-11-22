@@ -46,7 +46,7 @@ let accepted = output.enqueue(audio)
 
 ## PcmOutput.enqueue {#api-a4541dd8879f0ac94c1d}
 
-源码：`src/stdlib/multimedia/audio/linux-output.el:92` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L92)
+源码：`src/stdlib/multimedia/audio/linux-output.el:93` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L93)
 
 尝试提交音频块；样本在返回前复制，队列无空槽时不等待并返回假。
 
@@ -65,12 +65,13 @@ fn enqueue(audio: PcmAudio): Bool
 ### 示例：向设备提交音频
 
 ```el
+// @external chunk: PcmAudio
 if (!output.enqueue(chunk)) sleep(2)
 ```
 
 ## PcmOutput.finish {#api-2c4c730664ab8d398430}
 
-源码：`src/stdlib/multimedia/audio/linux-output.el:125` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L125)
+源码：`src/stdlib/multimedia/audio/linux-output.el:126` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L126)
 
 提交 OSS 输出中尚未提交的尾块；不等待设备完成播放。
 
@@ -87,7 +88,7 @@ while (!output.idle()) sleep(2)
 
 ## PcmOutput.idle {#api-9c4aeae8f2aae4510c1b}
 
-源码：`src/stdlib/multimedia/audio/linux-output.el:137` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L137)
+源码：`src/stdlib/multimedia/audio/linux-output.el:138` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L138)
 
 检查设备是否已播放完所有已提交样本。
 
@@ -107,7 +108,7 @@ while (!output.idle()) sleep(2)
 
 ## PcmOutput.clear {#api-a4ef6b8c6e52a3dea8f4}
 
-源码：`src/stdlib/multimedia/audio/linux-output.el:150` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L150)
+源码：`src/stdlib/multimedia/audio/linux-output.el:151` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L151)
 
 清除设备当前排队的音频块。
 
@@ -123,7 +124,7 @@ output.clear()
 
 ## PcmOutput.close {#api-d0948c04bf83f86cfcdb}
 
-源码：`src/stdlib/multimedia/audio/linux-output.el:160` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L160)
+源码：`src/stdlib/multimedia/audio/linux-output.el:161` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L161)
 
 停止播放并释放设备队列及原生句柄。
 

@@ -71,7 +71,7 @@ if (!step.done) consume(step.value)
 
 ## GroundCursor.next {#api-9a2563bdfb8e857f0b0f}
 
-源码：`src/stdlib/logic/search.el:888` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L888)
+源码：`src/stdlib/logic/search.el:889` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L889)
 
 继续搜索并返回下一项地面 Term；耗尽时返回 done 步骤。
 
@@ -85,9 +85,10 @@ fn next(): IterationStep<element: Term>
 
 **失败与异常**：搜索中断或答案含未绑定逻辑变量时抛出错误。
 
-### 示例：迭代一个结果（使用 GroundCursor 示例中的 cursor 和 consume）
+### 示例：迭代一个结果（使用类示例中的 cursor）
 
 ```el
+// @external consume: fn(value: Term): nil_t
 let step = cursor.next()
 if (!step.done) consume(step.value)
 ```

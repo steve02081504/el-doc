@@ -681,19 +681,19 @@
 			"value_type": null
 		},
 		{
-			"name": "array",
-			"id": null,
-			"source": "language/syntax/builders.el",
-			"line": 31,
-			"signature": "export fn array(context: SyntaxContext, values: UncheckedSyntax[]): UncheckedSyntax",
-			"value_type": null
-		},
-		{
 			"name": "Array",
 			"id": "collections/arrays/dynamic::Array",
 			"source": "collections/arrays/dynamic.el",
 			"line": 135,
 			"signature": "export fn Array(element: type): type",
+			"value_type": null
+		},
+		{
+			"name": "array",
+			"id": null,
+			"source": "language/syntax/builders.el",
+			"line": 31,
+			"signature": "export fn array(context: SyntaxContext, values: UncheckedSyntax[]): UncheckedSyntax",
 			"value_type": null
 		},
 		{
@@ -1889,19 +1889,19 @@
 			"value_type": null
 		},
 		{
-			"name": "computeFormat",
-			"id": null,
-			"source": "execution/scalars.el",
-			"line": 18,
-			"signature": "export fn computeFormat(T: type): ComputeFormat",
-			"value_type": null
-		},
-		{
 			"name": "ComputeFormat",
 			"id": null,
 			"source": "execution/format.el",
 			"line": 12,
 			"signature": "export @assign(mode: \"shared\") class ComputeFormat",
+			"value_type": null
+		},
+		{
+			"name": "computeFormat",
+			"id": null,
+			"source": "execution/scalars.el",
+			"line": 18,
+			"signature": "export fn computeFormat(T: type): ComputeFormat",
 			"value_type": null
 		},
 		{
@@ -2097,19 +2097,19 @@
 			"value_type": null
 		},
 		{
-			"name": "ConstructorIdentity",
-			"id": null,
-			"source": "logic/term.el",
-			"line": 8,
-			"signature": "export @assign(mode: \"shared\") class ConstructorIdentity",
-			"value_type": null
-		},
-		{
 			"name": "constructorIdentity",
 			"id": null,
 			"source": "language/metadata.el",
 			"line": 33,
 			"signature": "export fn constructorIdentity(subject, ordinal): ptr",
+			"value_type": null
+		},
+		{
+			"name": "ConstructorIdentity",
+			"id": null,
+			"source": "logic/term.el",
+			"line": 8,
+			"signature": "export @assign(mode: \"shared\") class ConstructorIdentity",
 			"value_type": null
 		},
 		{
@@ -2377,19 +2377,19 @@
 			"value_type": null
 		},
 		{
-			"name": "dbAggregateOutput",
-			"id": null,
-			"source": "database/aggregate.el",
-			"line": 350,
-			"signature": "export fn dbAggregateOutput(name: Text, spec: DbAggregateSpec): DbAggregateOutput",
-			"value_type": null
-		},
-		{
 			"name": "DbAggregateOutput",
 			"id": null,
 			"source": "database/aggregate.el",
 			"line": 287,
 			"signature": "export class DbAggregateOutput",
+			"value_type": null
+		},
+		{
+			"name": "dbAggregateOutput",
+			"id": null,
+			"source": "database/aggregate.el",
+			"line": 350,
+			"signature": "export fn dbAggregateOutput(name: Text, spec: DbAggregateSpec): DbAggregateOutput",
 			"value_type": null
 		},
 		{
@@ -2545,19 +2545,19 @@
 			"value_type": null
 		},
 		{
-			"name": "dbColumn",
-			"id": null,
-			"source": "database/schema.el",
-			"line": 519,
-			"signature": "export fn dbColumn(name: Text, nativeType: type, key: Bool = f, typeName: Text = \"\", keyCapability: DbKey | nil_t = nil, numeric: Bool = f, isBool: Bool = f): DbColumn\nexport fn dbColumn(name: Text, type: DbType, nullable: Bool = f, key: Bool = f): DbColumn",
-			"value_type": null
-		},
-		{
 			"name": "DbColumn",
 			"id": null,
 			"source": "database/schema.el",
 			"line": 200,
 			"signature": "export @assign(mode: \"copy\")\nclass DbColumn",
+			"value_type": null
+		},
+		{
+			"name": "dbColumn",
+			"id": null,
+			"source": "database/schema.el",
+			"line": 519,
+			"signature": "export fn dbColumn(name: Text, nativeType: type, key: Bool = f, typeName: Text = \"\", keyCapability: DbKey | nil_t = nil, numeric: Bool = f, isBool: Bool = f): DbColumn\nexport fn dbColumn(name: Text, type: DbType, nullable: Bool = f, key: Bool = f): DbColumn",
 			"value_type": null
 		},
 		{
@@ -3129,19 +3129,19 @@
 			"value_type": null
 		},
 		{
-			"name": "dbRow",
-			"id": null,
-			"source": "database/schema.el",
-			"line": 536,
-			"signature": "export fn dbRow(schema: DbRelationSchema, values: any[]): DbRow",
-			"value_type": null
-		},
-		{
 			"name": "DbRow",
 			"id": "database/schema::DbRow",
 			"source": "database/schema.el",
 			"line": 432,
 			"signature": "export @assign(mode: \"copy\")\nclass DbRow",
+			"value_type": null
+		},
+		{
+			"name": "dbRow",
+			"id": null,
+			"source": "database/schema.el",
+			"line": 536,
+			"signature": "export fn dbRow(schema: DbRelationSchema, values: any[]): DbRow",
 			"value_type": null
 		},
 		{
@@ -3313,19 +3313,19 @@
 			"value_type": null
 		},
 		{
-			"name": "DbTableId",
-			"id": null,
-			"source": "database/schema.el",
-			"line": 27,
-			"signature": "export @assign(mode: \"copy\")\nclass DbTableId",
-			"value_type": null
-		},
-		{
 			"name": "dbTableId",
 			"id": null,
 			"source": "database/schema.el",
 			"line": 62,
 			"signature": "export fn dbTableId(catalog: Text, id: Number): DbTableId",
+			"value_type": null
+		},
+		{
+			"name": "DbTableId",
+			"id": null,
+			"source": "database/schema.el",
+			"line": 27,
+			"signature": "export @assign(mode: \"copy\")\nclass DbTableId",
 			"value_type": null
 		},
 		{
@@ -3737,19 +3737,19 @@
 			"value_type": null
 		},
 		{
-			"name": "delay",
-			"id": null,
-			"source": "control/deferred-syntax.el",
-			"line": 22,
-			"signature": "export syntax delay",
-			"value_type": null
-		},
-		{
 			"name": "Delay",
 			"id": null,
 			"source": "control/deferred-values.el",
 			"line": 56,
 			"signature": "export fn Delay(element: type): type",
+			"value_type": null
+		},
+		{
+			"name": "delay",
+			"id": null,
+			"source": "control/deferred-syntax.el",
+			"line": 22,
+			"signature": "export syntax delay",
 			"value_type": null
 		},
 		{
@@ -4105,19 +4105,19 @@
 			"value_type": null
 		},
 		{
-			"name": "dynamicObject",
-			"id": null,
-			"source": "language/objects.el",
-			"line": 84,
-			"signature": "export fn dynamicObject(source)",
-			"value_type": null
-		},
-		{
 			"name": "DynamicObject",
 			"id": "language/objects::DynamicObject",
 			"source": "language/objects.el",
 			"line": 69,
 			"signature": "@assign(mode: \"shared\") @dynamic\nexport class DynamicObject",
+			"value_type": null
+		},
+		{
+			"name": "dynamicObject",
+			"id": null,
+			"source": "language/objects.el",
+			"line": 84,
+			"signature": "export fn dynamicObject(source)",
 			"value_type": null
 		},
 		{
@@ -4929,19 +4929,19 @@
 			"value_type": null
 		},
 		{
-			"name": "finiteQuery",
-			"id": null,
-			"source": "queries/index.el",
-			"line": 405,
-			"signature": "export fn finiteQuery(values, copyRow): FiniteQuery",
-			"value_type": null
-		},
-		{
 			"name": "FiniteQuery",
 			"id": null,
 			"source": "queries/index.el",
 			"line": 161,
 			"signature": "export @assign(mode: \"shared\") class FiniteQuery",
+			"value_type": null
+		},
+		{
+			"name": "finiteQuery",
+			"id": null,
+			"source": "queries/index.el",
+			"line": 405,
+			"signature": "export fn finiteQuery(values, copyRow): FiniteQuery",
 			"value_type": null
 		},
 		{
@@ -5705,19 +5705,19 @@
 			"value_type": null
 		},
 		{
-			"name": "ImageCodecSupport",
-			"id": null,
-			"source": "multimedia/image/model.el",
-			"line": 115,
-			"signature": "export @assign(mode: \"copy\") class ImageCodecSupport",
-			"value_type": null
-		},
-		{
 			"name": "imageCodecSupport",
 			"id": null,
 			"source": "multimedia/image/codec.el",
 			"line": 18,
 			"signature": "export fn imageCodecSupport(format: ImageFormat): ImageCodecSupport",
+			"value_type": null
+		},
+		{
+			"name": "ImageCodecSupport",
+			"id": null,
+			"source": "multimedia/image/model.el",
+			"line": 115,
+			"signature": "export @assign(mode: \"copy\") class ImageCodecSupport",
 			"value_type": null
 		},
 		{
@@ -7644,7 +7644,7 @@
 			"name": "normInf",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 136,
+			"line": 138,
 			"signature": "export fn normInf(values): F64",
 			"value_type": null
 		},
@@ -7772,7 +7772,7 @@
 			"name": "numericsAll",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 107,
+			"line": 109,
 			"signature": "export fn all(values): Bool\nexport fn all(values, axis: Number)",
 			"value_type": null
 		},
@@ -7780,7 +7780,7 @@
 			"name": "numericsAny",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 103,
+			"line": 105,
 			"signature": "export fn any(values): Bool\nexport fn any(values, axis: Number)",
 			"value_type": null
 		},
@@ -7788,7 +7788,7 @@
 			"name": "numericsCos",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 151,
+			"line": 153,
 			"signature": "export fn cos(value: F64): F64\nexport fn cos(values: Tensor<element: F64>)",
 			"value_type": null
 		},
@@ -7796,7 +7796,7 @@
 			"name": "numericsExp",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 152,
+			"line": 154,
 			"signature": "export fn exp(value: F64): F64\nexport fn exp(values: Tensor<element: F64>)",
 			"value_type": null
 		},
@@ -7804,7 +7804,7 @@
 			"name": "numericsLog",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 153,
+			"line": 155,
 			"signature": "export fn log(value: F64): F64\nexport fn log(values: Tensor<element: F64>)",
 			"value_type": null
 		},
@@ -7812,7 +7812,7 @@
 			"name": "numericsMax",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 119,
+			"line": 121,
 			"signature": "export fn max(values)\nexport fn max(values, axis: Number)",
 			"value_type": null
 		},
@@ -7820,7 +7820,7 @@
 			"name": "numericsMaxPresent",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 134,
+			"line": 136,
 			"signature": "export fn maxPresent(values)",
 			"value_type": null
 		},
@@ -7828,7 +7828,7 @@
 			"name": "numericsMean",
 			"id": "numerical-computing/reductions::mean~all",
 			"source": "numerical-computing/reductions.el",
-			"line": 65,
+			"line": 66,
 			"signature": "export fn mean(values)",
 			"value_type": null
 		},
@@ -7836,7 +7836,7 @@
 			"name": "numericsMeanPresent",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 135,
+			"line": 137,
 			"signature": "export fn meanPresent(values)",
 			"value_type": null
 		},
@@ -7844,7 +7844,7 @@
 			"name": "numericsMin",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 113,
+			"line": 115,
 			"signature": "export fn min(values)\nexport fn min(values, axis: Number)",
 			"value_type": null
 		},
@@ -7852,7 +7852,7 @@
 			"name": "numericsMinPresent",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 133,
+			"line": 135,
 			"signature": "export fn minPresent(values)",
 			"value_type": null
 		},
@@ -7876,7 +7876,7 @@
 			"name": "numericsSin",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 150,
+			"line": 152,
 			"signature": "export fn sin(value: F64): F64\nexport fn sin(values: Tensor<element: F64>)",
 			"value_type": null
 		},
@@ -7892,7 +7892,7 @@
 			"name": "numericsSqrt",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 148,
+			"line": 150,
 			"signature": "export fn sqrt(value: F64): F64\nexport fn sqrt(value: C64): C64\nexport fn sqrt(values: Tensor<element: F64>)\nexport fn sqrt(values: Tensor<element: C64>)",
 			"value_type": null
 		},
@@ -8201,19 +8201,19 @@
 			"value_type": null
 		},
 		{
-			"name": "orderedDynamicObject",
-			"id": null,
-			"source": "language/objects.el",
-			"line": 78,
-			"signature": "export fn orderedDynamicObject(source)",
-			"value_type": null
-		},
-		{
 			"name": "OrderedDynamicObject",
 			"id": null,
 			"source": "language/objects.el",
 			"line": 74,
 			"signature": "export class OrderedDynamicObject extends DynamicObject",
+			"value_type": null
+		},
+		{
+			"name": "orderedDynamicObject",
+			"id": null,
+			"source": "language/objects.el",
+			"line": 78,
+			"signature": "export fn orderedDynamicObject(source)",
 			"value_type": null
 		},
 		{
@@ -8481,19 +8481,19 @@
 			"value_type": null
 		},
 		{
-			"name": "Parser",
-			"id": null,
-			"source": "compiler/parser/state.el",
-			"line": 39,
-			"signature": "export class Parser",
-			"value_type": null
-		},
-		{
 			"name": "parser",
 			"id": null,
 			"source": "text/patterns/syntax.el",
 			"line": 302,
 			"signature": "export syntax parser",
+			"value_type": null
+		},
+		{
+			"name": "Parser",
+			"id": null,
+			"source": "compiler/parser/state.el",
+			"line": 39,
+			"signature": "export class Parser",
 			"value_type": null
 		},
 		{
@@ -8577,19 +8577,19 @@
 			"value_type": null
 		},
 		{
-			"name": "Pattern",
-			"id": null,
-			"source": "text/patterns/value.el",
-			"line": 32,
-			"signature": "export fn Pattern(output: type = Text): type",
-			"value_type": null
-		},
-		{
 			"name": "pattern",
 			"id": null,
 			"source": "text/patterns/syntax.el",
 			"line": 307,
 			"signature": "export syntax pattern",
+			"value_type": null
+		},
+		{
+			"name": "Pattern",
+			"id": null,
+			"source": "text/patterns/value.el",
+			"line": 32,
+			"signature": "export fn Pattern(output: type = Text): type",
 			"value_type": null
 		},
 		{
@@ -8972,7 +8972,7 @@
 			"name": "prod",
 			"id": null,
 			"source": "numerical-computing/reductions.el",
-			"line": 84,
+			"line": 86,
 			"signature": "export fn prod(values)\nexport fn prod(values, axis: Number)",
 			"value_type": null
 		},
@@ -10705,19 +10705,19 @@
 			"value_type": null
 		},
 		{
-			"name": "ruleSet",
-			"id": null,
-			"source": "control/rules/syntax.el",
-			"line": 201,
-			"signature": "export syntax ruleSet",
-			"value_type": null
-		},
-		{
 			"name": "RuleSet",
 			"id": null,
 			"source": "control/rules/index.el",
 			"line": 55,
 			"signature": "export class RuleSet",
+			"value_type": null
+		},
+		{
+			"name": "ruleSet",
+			"id": null,
+			"source": "control/rules/syntax.el",
+			"line": 201,
+			"signature": "export syntax ruleSet",
 			"value_type": null
 		},
 		{
@@ -10866,19 +10866,19 @@
 			"value_type": null
 		},
 		{
-			"name": "Scope",
-			"id": null,
-			"source": "compiler/bindings/binding-model.el",
-			"line": 202,
-			"signature": "export class Scope",
-			"value_type": null
-		},
-		{
 			"name": "scope",
 			"id": "logic/goal::scope",
 			"source": "logic/goal.el",
 			"line": 95,
 			"signature": "export fn scope(goal: Goal): Goal",
+			"value_type": null
+		},
+		{
+			"name": "Scope",
+			"id": null,
+			"source": "compiler/bindings/binding-model.el",
+			"line": 202,
+			"signature": "export class Scope",
 			"value_type": null
 		},
 		{
@@ -10965,7 +10965,7 @@
 			"name": "SearchCursor",
 			"id": null,
 			"source": "logic/search.el",
-			"line": 898,
+			"line": 899,
 			"signature": "export @assign(mode: \"shared\") class SearchCursor",
 			"value_type": null
 		},
@@ -12178,19 +12178,19 @@
 			"value_type": null
 		},
 		{
-			"name": "time",
-			"id": null,
-			"source": "time/measure.el",
-			"line": 17,
-			"signature": "export syntax time",
-			"value_type": null
-		},
-		{
 			"name": "Time",
 			"id": null,
 			"source": "time/instant.el",
 			"line": 44,
 			"signature": "export class Time extends TextOperand",
+			"value_type": null
+		},
+		{
+			"name": "time",
+			"id": null,
+			"source": "time/measure.el",
+			"line": 17,
+			"signature": "export syntax time",
 			"value_type": null
 		},
 		{
@@ -12994,19 +12994,19 @@
 			"value_type": null
 		},
 		{
-			"name": "view",
-			"id": null,
-			"source": "numerical-computing/view.el",
-			"line": 156,
-			"signature": "export fn view(borrow source)",
-			"value_type": null
-		},
-		{
 			"name": "View",
 			"id": null,
 			"source": "user-interface/view.el",
 			"line": 84,
 			"signature": "export class View",
+			"value_type": null
+		},
+		{
+			"name": "view",
+			"id": null,
+			"source": "numerical-computing/view.el",
+			"line": 156,
+			"signature": "export fn view(borrow source)",
 			"value_type": null
 		},
 		{
@@ -79239,7 +79239,7 @@
 			"SearchCursor": {
 				"id": null,
 				"source": "logic/search.el",
-				"line": 898,
+				"line": 899,
 				"value_type": null
 			},
 			"SearchInterrupted": {
@@ -83487,7 +83487,7 @@
 			"normInf": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 136,
+				"line": 138,
 				"value_type": null
 			},
 			"normal": {
@@ -83553,67 +83553,67 @@
 			"numericsAll": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 107,
+				"line": 109,
 				"value_type": null
 			},
 			"numericsAny": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 103,
+				"line": 105,
 				"value_type": null
 			},
 			"numericsCos": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 151,
+				"line": 153,
 				"value_type": null
 			},
 			"numericsExp": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 152,
+				"line": 154,
 				"value_type": null
 			},
 			"numericsLog": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 153,
+				"line": 155,
 				"value_type": null
 			},
 			"numericsMax": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 119,
+				"line": 121,
 				"value_type": null
 			},
 			"numericsMaxPresent": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 134,
+				"line": 136,
 				"value_type": null
 			},
 			"numericsMean": {
 				"id": "numerical-computing/reductions::mean~all",
 				"source": "numerical-computing/reductions.el",
-				"line": 65,
+				"line": 66,
 				"value_type": null
 			},
 			"numericsMeanPresent": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 135,
+				"line": 137,
 				"value_type": null
 			},
 			"numericsMin": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 113,
+				"line": 115,
 				"value_type": null
 			},
 			"numericsMinPresent": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 133,
+				"line": 135,
 				"value_type": null
 			},
 			"numericsPi": {
@@ -83625,7 +83625,7 @@
 			"numericsSin": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 150,
+				"line": 152,
 				"value_type": null
 			},
 			"numericsSolve": {
@@ -83637,7 +83637,7 @@
 			"numericsSqrt": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 148,
+				"line": 150,
 				"value_type": null
 			},
 			"numericsSum": {
@@ -84189,7 +84189,7 @@
 			"prod": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 84,
+				"line": 86,
 				"value_type": null
 			},
 			"produceValue": {
@@ -96310,7 +96310,7 @@
 			"SearchCursor": {
 				"id": null,
 				"source": "logic/search.el",
-				"line": 898,
+				"line": 899,
 				"value_type": null
 			},
 			"SearchInterrupted": {
@@ -97340,7 +97340,7 @@
 			"SearchCursor": {
 				"id": null,
 				"source": "logic/search.el",
-				"line": 898,
+				"line": 899,
 				"value_type": null
 			},
 			"SearchOptimization": {
@@ -175806,13 +175806,13 @@
 			"all": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 107,
+				"line": 109,
 				"value_type": null
 			},
 			"any": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 103,
+				"line": 105,
 				"value_type": null
 			},
 			"batchedCholesky": {
@@ -175902,7 +175902,7 @@
 			"cos": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 151,
+				"line": 153,
 				"value_type": null
 			},
 			"cos64": {
@@ -175956,7 +175956,7 @@
 			"exp": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 152,
+				"line": 154,
 				"value_type": null
 			},
 			"exp64": {
@@ -176058,7 +176058,7 @@
 			"log": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 153,
+				"line": 155,
 				"value_type": null
 			},
 			"log64": {
@@ -176106,37 +176106,37 @@
 			"max": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 119,
+				"line": 121,
 				"value_type": null
 			},
 			"maxPresent": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 134,
+				"line": 136,
 				"value_type": null
 			},
 			"mean": {
 				"id": "numerical-computing/reductions::mean~all",
 				"source": "numerical-computing/reductions.el",
-				"line": 65,
+				"line": 66,
 				"value_type": null
 			},
 			"meanPresent": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 135,
+				"line": 137,
 				"value_type": null
 			},
 			"min": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 113,
+				"line": 115,
 				"value_type": null
 			},
 			"minPresent": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 133,
+				"line": 135,
 				"value_type": null
 			},
 			"nan64": {
@@ -176148,7 +176148,7 @@
 			"normInf": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 136,
+				"line": 138,
 				"value_type": null
 			},
 			"ones": {
@@ -176208,7 +176208,7 @@
 			"prod": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 84,
+				"line": 86,
 				"value_type": null
 			},
 			"quantize": {
@@ -176268,7 +176268,7 @@
 			"sin": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 150,
+				"line": 152,
 				"value_type": null
 			},
 			"sin64": {
@@ -176298,7 +176298,7 @@
 			"sqrt": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 148,
+				"line": 150,
 				"value_type": null
 			},
 			"sqrt64": {
@@ -177058,91 +177058,91 @@
 			"all": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 107,
+				"line": 109,
 				"value_type": null
 			},
 			"any": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 103,
+				"line": 105,
 				"value_type": null
 			},
 			"cos": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 151,
+				"line": 153,
 				"value_type": null
 			},
 			"exp": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 152,
+				"line": 154,
 				"value_type": null
 			},
 			"log": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 153,
+				"line": 155,
 				"value_type": null
 			},
 			"max": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 119,
+				"line": 121,
 				"value_type": null
 			},
 			"maxPresent": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 134,
+				"line": 136,
 				"value_type": null
 			},
 			"mean": {
 				"id": "numerical-computing/reductions::mean~all",
 				"source": "numerical-computing/reductions.el",
-				"line": 65,
+				"line": 66,
 				"value_type": null
 			},
 			"meanPresent": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 135,
+				"line": 137,
 				"value_type": null
 			},
 			"min": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 113,
+				"line": 115,
 				"value_type": null
 			},
 			"minPresent": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 133,
+				"line": 135,
 				"value_type": null
 			},
 			"normInf": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 136,
+				"line": 138,
 				"value_type": null
 			},
 			"prod": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 84,
+				"line": 86,
 				"value_type": null
 			},
 			"sin": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 150,
+				"line": 152,
 				"value_type": null
 			},
 			"sqrt": {
 				"id": null,
 				"source": "numerical-computing/reductions.el",
-				"line": 148,
+				"line": 150,
 				"value_type": null
 			},
 			"sum": {
@@ -224683,7 +224683,7 @@
 		{
 			"name": "SearchCursor",
 			"source": "logic/search.el",
-			"line": 898,
+			"line": 899,
 			"signature": "class SearchCursor",
 			"id": null,
 			"initializer": null
@@ -236951,7 +236951,7 @@
 			"anchor": "api-df976d47c60f3dbf87f5"
 		}
 	],
-	"source_digest": "b488d81fd1b08c6fdedf119a7bdf5fe7b34e8d633f4a3599846b7c9da0a4e3cd",
+	"source_digest": "ae017526b150d11c4e6d062bd0505342d373436ef36641157490fdc8582a428c",
 	"files": [
 		{
 			"path": "collections/arrays/dynamic.el",
@@ -237331,7 +237331,7 @@
 		},
 		{
 			"path": "logic/search.el",
-			"sha256": "390c54e2a50d513b85e2ba490aa2c43038a205fa7a0e71389eaf462d368dc5a7"
+			"sha256": "e6b4151fcf9de1bc4e89d10b8cdd0c4cd09ec41fbdbfd7a0ee5ba17e9b66c3c0"
 		},
 		{
 			"path": "logic/surface.el",
@@ -237419,11 +237419,11 @@
 		},
 		{
 			"path": "multimedia/audio/linux-output.el",
-			"sha256": "4c9b9dac268d76419cc010f9f51d8a74f22bd695ef787e6a7eff5fc9a9ba214d"
+			"sha256": "3faa2cf6453c63b1330be4a32f55fc2ba95793ed000bc4cfbeec639d719130d5"
 		},
 		{
 			"path": "multimedia/audio/macos-output.el",
-			"sha256": "4e3e9b23550619d018a0878743dfba6f9d4ebae63f5b9ef12d39adb1765f7491"
+			"sha256": "f4644a828b742be58619e809a0e89ac1b5468f90c8fedf450691272e2a52bc9d"
 		},
 		{
 			"path": "multimedia/audio/music.el",
@@ -237435,7 +237435,7 @@
 		},
 		{
 			"path": "multimedia/audio/windows-output.el",
-			"sha256": "ea8eba236e398e741e32efef6013bfc7ced93a8fcb24e585eaedaf7b871d2775"
+			"sha256": "040d9378dedcba8f419e6f854daeb050189f6b12847e88498c48527b5324efe3"
 		},
 		{
 			"path": "multimedia/capture/binary.el",
@@ -237607,7 +237607,7 @@
 		},
 		{
 			"path": "numerical-computing/reductions.el",
-			"sha256": "7c87e00cf88d479d70026d1d54e12714c4e343efc101d4084ddcc70bbcca0080"
+			"sha256": "0abc5d77c6e616f68d771cbc7192fd6454da614f955b0b43e906d1925b4cc2c2"
 		},
 		{
 			"path": "numerical-computing/tensor.el",
@@ -256034,9 +256034,9 @@
 				},
 				{
 					"tag": "example",
-					"value": "迭代一个结果（使用 GroundCursor 示例中的 cursor 和 consume）",
-					"markdown": "```el\nlet step = cursor.next()\nif (!step.done) consume(step.value)\n```",
-					"code": "let step = cursor.next()\nif (!step.done) consume(step.value)\n",
+					"value": "迭代一个结果（使用类示例中的 cursor）",
+					"markdown": "```el\n// @external consume: fn(value: Term): nil_t\nlet step = cursor.next()\nif (!step.done) consume(step.value)\n```",
+					"code": "// @external consume: fn(value: Term): nil_t\nlet step = cursor.next()\nif (!step.done) consume(step.value)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -256044,7 +256044,7 @@
 			"source": "logic/search.el",
 			"line": 879,
 			"signature": "fn next(): IterationStep<element: Term>",
-			"declaration_line": 888,
+			"declaration_line": 889,
 			"id": "logic/search::GroundCursor.next",
 			"value_type": null,
 			"owner": "GroundCursor",
@@ -259510,8 +259510,8 @@
 				{
 					"tag": "example",
 					"value": "向设备提交音频",
-					"markdown": "```el\nif (!output.enqueue(chunk)) sleep(2)\n```",
-					"code": "if (!output.enqueue(chunk)) sleep(2)\n",
+					"markdown": "```el\n// @external chunk: PcmAudio\nif (!output.enqueue(chunk)) sleep(2)\n```",
+					"code": "// @external chunk: PcmAudio\nif (!output.enqueue(chunk)) sleep(2)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -259519,7 +259519,7 @@
 			"source": "multimedia/audio/linux-output.el",
 			"line": 83,
 			"signature": "fn enqueue(audio: PcmAudio): Bool",
-			"declaration_line": 92,
+			"declaration_line": 93,
 			"id": "multimedia/audio/linux-output::PcmOutput.enqueue",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -259562,9 +259562,9 @@
 				}
 			],
 			"source": "multimedia/audio/linux-output.el",
-			"line": 118,
+			"line": 119,
 			"signature": "fn finish()",
-			"declaration_line": 125,
+			"declaration_line": 126,
 			"id": "multimedia/audio/linux-output::PcmOutput.finish",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -259596,9 +259596,9 @@
 				}
 			],
 			"source": "multimedia/audio/linux-output.el",
-			"line": 130,
+			"line": 131,
 			"signature": "fn idle(): Bool",
-			"declaration_line": 137,
+			"declaration_line": 138,
 			"id": "multimedia/audio/linux-output::PcmOutput.idle",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -259641,9 +259641,9 @@
 				}
 			],
 			"source": "multimedia/audio/linux-output.el",
-			"line": 144,
+			"line": 145,
 			"signature": "fn clear()",
-			"declaration_line": 150,
+			"declaration_line": 151,
 			"id": "multimedia/audio/linux-output::PcmOutput.clear",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -259670,9 +259670,9 @@
 				}
 			],
 			"source": "multimedia/audio/linux-output.el",
-			"line": 154,
+			"line": 155,
 			"signature": "fn close()",
-			"declaration_line": 160,
+			"declaration_line": 161,
 			"id": "multimedia/audio/linux-output::PcmOutput.close",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -259770,8 +259770,8 @@
 				{
 					"tag": "example",
 					"value": "向设备提交音频",
-					"markdown": "```el\nif (!output.enqueue(chunk)) sleep(2)\n```",
-					"code": "if (!output.enqueue(chunk)) sleep(2)\n",
+					"markdown": "```el\n// @external chunk: PcmAudio\nif (!output.enqueue(chunk)) sleep(2)\n```",
+					"code": "// @external chunk: PcmAudio\nif (!output.enqueue(chunk)) sleep(2)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -259779,7 +259779,7 @@
 			"source": "multimedia/audio/macos-output.el",
 			"line": 103,
 			"signature": "fn enqueue(audio: PcmAudio): Bool",
-			"declaration_line": 112,
+			"declaration_line": 113,
 			"id": "multimedia/audio/macos-output::PcmOutput.enqueue",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -259822,9 +259822,9 @@
 				}
 			],
 			"source": "multimedia/audio/macos-output.el",
-			"line": 139,
+			"line": 140,
 			"signature": "fn finish()",
-			"declaration_line": 146,
+			"declaration_line": 147,
 			"id": "multimedia/audio/macos-output::PcmOutput.finish",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -259856,9 +259856,9 @@
 				}
 			],
 			"source": "multimedia/audio/macos-output.el",
-			"line": 147,
+			"line": 148,
 			"signature": "fn idle(): Bool",
-			"declaration_line": 154,
+			"declaration_line": 155,
 			"id": "multimedia/audio/macos-output::PcmOutput.idle",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -259901,9 +259901,9 @@
 				}
 			],
 			"source": "multimedia/audio/macos-output.el",
-			"line": 163,
+			"line": 164,
 			"signature": "fn clear()",
-			"declaration_line": 169,
+			"declaration_line": 170,
 			"id": "multimedia/audio/macos-output::PcmOutput.clear",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -259930,9 +259930,9 @@
 				}
 			],
 			"source": "multimedia/audio/macos-output.el",
-			"line": 179,
+			"line": 180,
 			"signature": "fn close()",
-			"declaration_line": 185,
+			"declaration_line": 186,
 			"id": "multimedia/audio/macos-output::PcmOutput.close",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -260641,8 +260641,8 @@
 				{
 					"tag": "example",
 					"value": "向设备提交音频",
-					"markdown": "```el\nif (!output.enqueue(chunk)) sleep(2)\n```",
-					"code": "if (!output.enqueue(chunk)) sleep(2)\n",
+					"markdown": "```el\n// @external chunk: PcmAudio\nif (!output.enqueue(chunk)) sleep(2)\n```",
+					"code": "// @external chunk: PcmAudio\nif (!output.enqueue(chunk)) sleep(2)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -260650,7 +260650,7 @@
 			"source": "multimedia/audio/windows-output.el",
 			"line": 92,
 			"signature": "fn enqueue(audio: PcmAudio): Bool",
-			"declaration_line": 101,
+			"declaration_line": 102,
 			"id": "multimedia/audio/windows-output::PcmOutput.enqueue",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -260693,9 +260693,9 @@
 				}
 			],
 			"source": "multimedia/audio/windows-output.el",
-			"line": 115,
+			"line": 116,
 			"signature": "fn finish()",
-			"declaration_line": 122,
+			"declaration_line": 123,
 			"id": "multimedia/audio/windows-output::PcmOutput.finish",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -260727,9 +260727,9 @@
 				}
 			],
 			"source": "multimedia/audio/windows-output.el",
-			"line": 123,
+			"line": 124,
 			"signature": "fn idle(): Bool",
-			"declaration_line": 130,
+			"declaration_line": 131,
 			"id": "multimedia/audio/windows-output::PcmOutput.idle",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -260772,9 +260772,9 @@
 				}
 			],
 			"source": "multimedia/audio/windows-output.el",
-			"line": 135,
+			"line": 136,
 			"signature": "fn clear()",
-			"declaration_line": 141,
+			"declaration_line": 142,
 			"id": "multimedia/audio/windows-output::PcmOutput.clear",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -260801,9 +260801,9 @@
 				}
 			],
 			"source": "multimedia/audio/windows-output.el",
-			"line": 146,
+			"line": 147,
 			"signature": "fn close()",
-			"declaration_line": 152,
+			"declaration_line": 153,
 			"id": "multimedia/audio/windows-output::PcmOutput.close",
 			"value_type": null,
 			"owner": "PcmOutput",
@@ -267421,8 +267421,8 @@
 				{
 					"tag": "example",
 					"value": "计算矩阵平均值",
-					"markdown": "```el\nlet average = mean(@(1, 2; 3, 4))\n```",
-					"code": "let average = mean(@(1, 2; 3, 4))\n",
+					"markdown": "```el\nimport { mean } from \"el:numerical-computing/\"\nlet average = mean(@(1, 2; 3, 4))\n```",
+					"code": "import { mean } from \"el:numerical-computing/\"\nlet average = mean(@(1, 2; 3, 4))\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -267430,7 +267430,7 @@
 			"source": "numerical-computing/reductions.el",
 			"line": 56,
 			"signature": "export fn mean(values)",
-			"declaration_line": 65,
+			"declaration_line": 66,
 			"id": "numerical-computing/reductions::mean~all",
 			"value_type": null,
 			"owner": null,
@@ -267470,16 +267470,16 @@
 				{
 					"tag": "example",
 					"value": "沿第 0 轴取均值",
-					"markdown": "```el\nlet averages = mean(@(1, 2; 3, 4), 0)\n```",
-					"code": "let averages = mean(@(1, 2; 3, 4), 0)\n",
+					"markdown": "```el\nimport { mean } from \"el:numerical-computing/\"\nlet averages = mean(@(1, 2; 3, 4), 0)\n```",
+					"code": "import { mean } from \"el:numerical-computing/\"\nlet averages = mean(@(1, 2; 3, 4), 0)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
 			],
 			"source": "numerical-computing/reductions.el",
-			"line": 70,
+			"line": 71,
 			"signature": "export fn mean(values, axis: Number)",
-			"declaration_line": 80,
+			"declaration_line": 82,
 			"id": "numerical-computing/reductions::mean~axis",
 			"value_type": null,
 			"owner": null,

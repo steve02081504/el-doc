@@ -46,7 +46,7 @@ let accepted = output.enqueue(audio)
 
 ## PcmOutput.enqueue {#api-5372746934d5b8e5c997}
 
-源码：`src/stdlib/multimedia/audio/windows-output.el:101` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L101)
+源码：`src/stdlib/multimedia/audio/windows-output.el:102` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L102)
 
 尝试提交音频块；样本在返回前复制，队列无空槽时不等待并返回假。
 
@@ -65,12 +65,13 @@ fn enqueue(audio: PcmAudio): Bool
 ### 示例：向设备提交音频
 
 ```el
+// @external chunk: PcmAudio
 if (!output.enqueue(chunk)) sleep(2)
 ```
 
 ## PcmOutput.finish {#api-df13597f5e16ed137856}
 
-源码：`src/stdlib/multimedia/audio/windows-output.el:122` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L122)
+源码：`src/stdlib/multimedia/audio/windows-output.el:123` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L123)
 
 兼容其他平台的结束调用；Windows waveOut 队列无需额外提交尾块。
 
@@ -87,7 +88,7 @@ while (!output.idle()) sleep(2)
 
 ## PcmOutput.idle {#api-70c6bd7ef71832546cf8}
 
-源码：`src/stdlib/multimedia/audio/windows-output.el:130` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L130)
+源码：`src/stdlib/multimedia/audio/windows-output.el:131` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L131)
 
 检查设备队列是否已完成所有已提交块。
 
@@ -107,7 +108,7 @@ while (!output.idle()) sleep(2)
 
 ## PcmOutput.clear {#api-573c3b322bc864f723be}
 
-源码：`src/stdlib/multimedia/audio/windows-output.el:141` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L141)
+源码：`src/stdlib/multimedia/audio/windows-output.el:142` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L142)
 
 清除设备当前排队的音频块。
 
@@ -123,7 +124,7 @@ output.clear()
 
 ## PcmOutput.close {#api-5ea91df086c9987b32dd}
 
-源码：`src/stdlib/multimedia/audio/windows-output.el:152` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L152)
+源码：`src/stdlib/multimedia/audio/windows-output.el:153` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L153)
 
 停止播放并释放设备队列及原生句柄。
 

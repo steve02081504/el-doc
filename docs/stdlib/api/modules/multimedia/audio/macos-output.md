@@ -46,7 +46,7 @@ let accepted = output.enqueue(audio)
 
 ## PcmOutput.enqueue {#api-f7fc20d16cdc9fcf6a7f}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:112` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L112)
+源码：`src/stdlib/multimedia/audio/macos-output.el:113` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L113)
 
 尝试提交音频块；样本在返回前复制，队列无空槽时不等待并返回假。
 
@@ -65,12 +65,13 @@ fn enqueue(audio: PcmAudio): Bool
 ### 示例：向设备提交音频
 
 ```el
+// @external chunk: PcmAudio
 if (!output.enqueue(chunk)) sleep(2)
 ```
 
 ## PcmOutput.finish {#api-a9232d52a82db940d1c1}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:146` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L146)
+源码：`src/stdlib/multimedia/audio/macos-output.el:147` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L147)
 
 标记不再提交新块；设备继续播放已经提交的音频。
 
@@ -87,7 +88,7 @@ while (!output.idle()) sleep(2)
 
 ## PcmOutput.idle {#api-252297757c2e3d93dbbb}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:154` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L154)
+源码：`src/stdlib/multimedia/audio/macos-output.el:155` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L155)
 
 检查音频队列中的所有缓冲区是否已完成。
 
@@ -107,7 +108,7 @@ while (!output.idle()) sleep(2)
 
 ## PcmOutput.clear {#api-022cec408375d7d0fe85}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:169` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L169)
+源码：`src/stdlib/multimedia/audio/macos-output.el:170` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L170)
 
 清除设备当前排队的音频块。
 
@@ -123,7 +124,7 @@ output.clear()
 
 ## PcmOutput.close {#api-098b06b79bc52eca15af}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:185` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L185)
+源码：`src/stdlib/multimedia/audio/macos-output.el:186` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L186)
 
 停止播放并释放设备队列及原生句柄。
 
