@@ -16,7 +16,7 @@
 
 命题的 sort；命题类型中的证明由证明内核检查，不作为普通运行时数据使用。
 
-```el
+```el-fragment
 export @builtin:qeth:proof:prop class Prop
 ```
 
@@ -32,7 +32,7 @@ let proposition: Prop = Eq(Nat, zero, zero)
 
 表示给定 universe 层级的类型 sort。
 
-```el
+```el-fragment
 export @builtin:qeth:proof:type fn Type(level): type
 ```
 
@@ -50,7 +50,7 @@ let naturalType: type = Type(0)
 
 构造载体类型上两个项相等的命题；载体参数明确指定被比较项的类型。
 
-```el
+```el-fragment
 export @builtin:qeth:proof:eq fn Eq(carrier: type, left, right): type
 ```
 
@@ -76,7 +76,7 @@ let same: type = Eq(Nat, zero, zero)
 
 为定义上相等的两端构造反身性证据；内核会检查载体与项的一致性。
 
-```el
+```el-fragment
 export @builtin:qeth:proof:refl fn refl(carrier: type, value)
 ```
 

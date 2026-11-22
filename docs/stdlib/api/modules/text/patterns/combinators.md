@@ -16,7 +16,7 @@
 
 根据成对的 Unicode 标量起止值构造字符集合模式。
 
-```el
+```el-fragment
 export fn scalarSet(ranges: Number[], negate: Bool = f): Pattern<output: Char>
 ```
 
@@ -41,7 +41,7 @@ let printable = scalarSet(@[32, 33, 35, 91, 93, 1114111])
 
 构造匹配给定文本中任一字符的模式。
 
-```el
+```el-fragment
 export fn chars(text: Text): Pattern<output: Char>
 ```
 
@@ -64,7 +64,7 @@ let hexLetter = chars("abcdefABCDEF")
 
 构造匹配首尾字符标量值之间任一字符的模式，端点包含在内。
 
-```el
+```el-fragment
 export fn range(first: Text, last: Text): Pattern<output: Char>
 ```
 
@@ -89,7 +89,7 @@ let lower = range("a", "z")
 
 按顺序匹配多个文本片段或模式，并合并为一个文本结果。
 
-```el
+```el-fragment
 export fn sequence(...elements): Pattern<output: Text>
 ```
 
@@ -112,7 +112,7 @@ let escapedQuote = sequence("\\", chars("\""))
 
 从同一起点按顺序尝试候选模式，匹配第一个成功的候选。
 
-```el
+```el-fragment
 export fn anyOf(first, ...rest): Pattern<output: Text>
 ```
 
@@ -137,7 +137,7 @@ let escape = anyOf(sequence("\\", chars("nrt")), sequence("\\", chars("\\\"")))
 
 重复匹配一个文本或模式，并可指定最少与最多次数。
 
-```el
+```el-fragment
 export fn many(element, min: Number = 0, max: Number = -1, greedy: Bool = t)
 ```
 
@@ -164,7 +164,7 @@ let spaces = many(chars(" "))
 
 构造恰好重复指定次数的模式。
 
-```el
+```el-fragment
 export fn exactly(count: Number, element)
 ```
 
@@ -187,7 +187,7 @@ let fourDigits = exactly(4, range("0", "9"))
 
 将模式设为可选，匹配零次或一次。
 
-```el
+```el-fragment
 export fn optional(element)
 ```
 

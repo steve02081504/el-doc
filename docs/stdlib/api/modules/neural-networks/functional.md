@@ -16,7 +16,7 @@
 
 沿指定轴将输入转换为和为 1 的指数归一化值。
 
-```el
+```el-fragment
 export fn softmax(value, axis: Number = 1, policy: TensorMathPolicy = TensorMathPolicy())
 ```
 
@@ -41,7 +41,7 @@ let probabilities = softmax(logits, axis: 1)
 
 沿指定轴计算数值稳定的对数 softmax。
 
-```el
+```el-fragment
 export fn logSoftmax(value, axis: Number = 1, policy: TensorMathPolicy = TensorMathPolicy())
 ```
 
@@ -65,7 +65,7 @@ let logProbabilities = logSoftmax(logits, axis: 1)
 
 计算稠密目标权重与 logits 对应的交叉熵，并对非类别轴样本取均值。
 
-```el
+```el-fragment
 export fn crossEntropy(logits, targets, axis: Number = 1, policy: TensorMathPolicy = TensorMathPolicy())
 ```
 
@@ -94,7 +94,7 @@ let loss = crossEntropy(logits, targets)
 
 将类别编号数组转换为每行一个类别权重为 1 的稠密二维张量。
 
-```el
+```el-fragment
 export fn oneHot(element: type, labels: Number[], classes: Number)
 ```
 

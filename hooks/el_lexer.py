@@ -42,7 +42,7 @@ _EL_CODE_RULES = [
         r"\b(let|const)(\s+)([A-Za-z_\u0080-\uffff][\w]*)",
         bygroups(Keyword.Declaration, Text, Name.Variable),
     ),
-    (r"\b(let|const)\b", Keyword.Declaration),
+    (r"\b(fn|class|interface|let|const)\b", Keyword.Declaration),
     (
         r"\b(import|export)(\s+)(extern|from|lazy)\b",
         bygroups(Keyword.Namespace, Whitespace, Keyword.Namespace),
@@ -56,7 +56,7 @@ _EL_CODE_RULES = [
         r"return|throw|try|catch|finally|new|delete|is|isnot|take|ref|"
         r"rvalue|virtual|override|implicit|super|constructor|destructor|"
         r"operator|static|public|data|match|prove|calc|use|extends|"
-        r"implements|enum|typeof|discard)\b",
+        r"implements|enum|typeof|discard|unsafe|goto|init|borrow)\b",
         Keyword,
     ),
     (r"\b(t|f|nil|true|false|any)\b", Keyword.Constant),
@@ -82,7 +82,7 @@ _COMMENT_RULES = [
 
 class ELLexer(RegexLexer):
     name = "EL"
-    aliases = ["el", "els", "evil", "eol"]
+    aliases = ["el", "els", "evil", "el-fragment", "el-signature", "eol"]
     filenames = ["*.el", "*.els", "*.eol", "*.eod"]
     mimetypes = ["text/x-el"]
 

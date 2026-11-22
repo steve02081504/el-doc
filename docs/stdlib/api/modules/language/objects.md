@@ -4,13 +4,19 @@
 
 [库分类](../../categories/language.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 对象字段操作 {#api-4e15335b9f2ff6675736}
+
+源码：`src/stdlib/language/objects.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/objects.el#L1)
+
+提供自身字段枚举、读写、赋值及动态对象快照。
+
 ## ownKeyCount {#api-7f663edadbdc0b343c1b}
 
-源码：`src/stdlib/language/objects.el:18` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/objects.el#L18)
+源码：`src/stdlib/language/objects.el:20` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/objects.el#L20)
 
 返回自身字段数量，不先创建键数组，供有界枚举预留工作空间。
 
-```el
+```el-fragment
 export fn ownKeyCount(value): Number
 ```
 

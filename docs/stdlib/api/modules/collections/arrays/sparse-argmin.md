@@ -16,7 +16,7 @@
 
 从固定数值数组建立区间 argmin 稀疏表。
 
-```el
+```el-fragment
 export fn range_argmin_sparse_table(values: Number[]): RangeArgminSparseTable
 ```
 

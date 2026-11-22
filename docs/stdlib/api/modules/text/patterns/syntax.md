@@ -16,7 +16,7 @@
 
 声明可组合的解析语法，支持空白跳过、token、递归 rule 与起始规则。
 
-```el
+```el-fragment
 export syntax grammar
 ```
 

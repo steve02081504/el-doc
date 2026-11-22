@@ -16,7 +16,7 @@
 
 返回不大于输入值的最大整数，并保留输入数值类型。
 
-```el
+```el-fragment
 export fn floor(value)
 ```
 

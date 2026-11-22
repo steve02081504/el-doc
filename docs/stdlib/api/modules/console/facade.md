@@ -53,7 +53,7 @@
 
 控制台输入端口；通过当前目标查询能力并使用解析器读取输入。
 
-```el
+```el-fragment
 @assign(mode: "shared") class ConsoleInputPort
 ```
 
@@ -69,7 +69,7 @@ let input = console.stdin
 
 当前输入端是否为终端。
 
-```el
+```el-fragment
 get isTTY(): Bool
 ```
 
@@ -87,7 +87,7 @@ let terminal = console.stdin.isTTY
 
 当前输入端是否支持 ANSI。
 
-```el
+```el-fragment
 get supportsAnsi(): Bool
 ```
 
@@ -105,7 +105,7 @@ let ansi = console.stdin.supportsAnsi
 
 使用解析器从当前目标的输入会话读取并返回解析结果。
 
-```el
+```el-fragment
 fn readAs(parser)
 ```
 
@@ -128,7 +128,7 @@ let value = console.stdin.readAs(decimal(min: unbounded, max: unbounded, epsilon
 
 使用当前 ConsoleFacade 的 i18n 服务显示提示并读取。同一终端上的积压输入会在显示前清理。
 
-```el
+```el-fragment
 fn readAs(parser, key: Text, parameters = @{})
 ```
 
@@ -150,7 +150,7 @@ let value = console.stdin.readAs(parsers.integer(), "app.enterNumber", parameter
 
 显示已选本地化内容并读取。
 
-```el
+```el-fragment
 fn readAs(parser, prompt: LocalizedMessage | LocalizedContent)
 ```
 
@@ -170,7 +170,7 @@ let value = console.stdin.readAs(parsers.integer(), prompt)
 
 消费一行输入，再用解析器匹配整行。换行符不传给解析器。
 
-```el
+```el-fragment
 fn readLineAs(parser)
 ```
 
@@ -190,7 +190,7 @@ let value = console.stdin.readLineAs(parsers.integer(min: 80, max: 560))
 
 用 i18n 键显示提示，再读取并解析整行。
 
-```el
+```el-fragment
 fn readLineAs(parser, key: Text, parameters = @{})
 ```
 
@@ -212,7 +212,7 @@ let value = console.stdin.readLineAs(parsers.integer(), "app.enterNumber", param
 
 显示已选本地化内容，再读取并解析整行。
 
-```el
+```el-fragment
 fn readLineAs(parser, prompt: LocalizedMessage | LocalizedContent)
 ```
 
@@ -232,7 +232,7 @@ let value = console.stdin.readLineAs(parsers.integer(), prompt)
 
 控制台逻辑输出端口；每次操作解析当前目标。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class ConsolePort
 ```
 
@@ -248,7 +248,7 @@ let output = console.stdout
 
 此端口的逻辑通道。
 
-```el
+```el-fragment
 get channel(): ConsoleChannel
 ```
 
@@ -266,7 +266,7 @@ let channel = console.stdout.channel
 
 当前目标对应输出端是否为终端。
 
-```el
+```el-fragment
 get isTTY(): Bool
 ```
 
@@ -284,7 +284,7 @@ let terminal = console.stdout.isTTY
 
 当前目标对应输出端是否支持 ANSI。
 
-```el
+```el-fragment
 get supportsAnsi(): Bool
 ```
 
@@ -302,7 +302,7 @@ let ansi = console.stdout.supportsAnsi
 
 将已确定的文本直接写到对应通道，不调用任意值的文本转换。
 
-```el
+```el-fragment
 @discardable fn writeText(text: Text): Number
 ```
 
@@ -324,7 +324,7 @@ console.stdout.writeText("already text")
 
 将参数依次转换为文本写到对应通道，不追加换行或分隔符。
 
-```el
+```el-fragment
 @discardable fn write(...values): Number
 ```
 
@@ -346,7 +346,7 @@ console.stdout.write("ready")
 
 将参数依次转换为文本并写到对应通道，最后追加一个 LF。
 
-```el
+```el-fragment
 @discardable fn writeLine(...values): Number
 ```
 
@@ -368,7 +368,7 @@ console.stdout.writeLine("count: ", 3)
 
 将字节缓冲原样写到对应通道，不进行文本编码。
 
-```el
+```el-fragment
 @discardable fn writeBytes(bytes: Buffer): Number
 ```
 
@@ -391,7 +391,7 @@ console.stdout.writeBytes(bufferFromBytes(@[72, 105]))
 
 将值作为数据记录发送到对应通道，不转换成文本或结构化展示记录。
 
-```el
+```el-fragment
 fn emit(value): nil_t
 ```
 
@@ -413,7 +413,7 @@ console.stdout.emit(@{ status: "ready" })
 
 在临时控制台目标中执行回调，并返回回调结果与捕获的输出记录。
 
-```el
+```el-fragment
 export fn capture(work, latePolicy: ConsoleLatePolicy = ConsoleLatePolicy.Forward, maxRecords: Number | nil_t = nil)
 ```
 
@@ -441,7 +441,7 @@ console.stdout.writeLine(captured.output.records.count)
 
 可调用的等级端口，发送本地化消息或结构化展示记录。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class ConsoleLevelPort
 ```
 
@@ -457,7 +457,7 @@ console.info.value(@{ count: 3 })
 
 此端口的日志等级。
 
-```el
+```el-fragment
 get level(): ConsoleLevel
 ```
 
@@ -475,7 +475,7 @@ let level = console.info.level
 
 此端口的默认通道。
 
-```el
+```el-fragment
 get channel(): ConsoleChannel
 ```
 
@@ -493,7 +493,7 @@ let channel = console.info.channel
 
 查询此端口的等级是否被当前筛选器和纯上下文规则允许。
 
-```el
+```el-fragment
 fn enabled(): Bool
 ```
 
@@ -513,7 +513,7 @@ let active = console.info.enabled()
 
 发送本地化消息 key 或已构造的本地化内容，并附带参数对象。
 
-```el
+```el-fragment
 operator()(message: Text | LocalizedMessage | LocalizedContent, parameters = @{}): nil_t
 ```
 
@@ -537,7 +537,7 @@ console.info("task.done", @{ count: 3 })
 
 将已有安全快照作为指定等级的结构化展示记录发送。
 
-```el
+```el-fragment
 fn value(snapshot: ConsoleValueSnapshot, channel: ConsoleChannel = this.#channel): nil_t
 ```
 
@@ -561,7 +561,7 @@ console.info.value(consoleSnapshot(@{ count: 3 }))
 
 获取值的安全快照并作为结构化展示记录发送，不调用 getter、转换或迭代器。
 
-```el
+```el-fragment
 fn value(borrow value, channel: ConsoleChannel = this.#channel): nil_t
 ```
 
@@ -585,7 +585,7 @@ console.info.value(@{ count: 3, names: @["Ada", "Grace"] })
 
 控制台入口，提供输入、输出端口、等级端口和捕获操作。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class ConsoleFacade
 ```
 
@@ -601,7 +601,7 @@ console.stdout.writeLine("ready")
 
 输入端口。
 
-```el
+```el-fragment
 get stdin(): ConsoleInputPort
 ```
 
@@ -619,7 +619,7 @@ let input = console.stdin
 
 标准输出逻辑端口；每次操作使用当前控制台目标。
 
-```el
+```el-fragment
 get stdout(): ConsolePort
 ```
 
@@ -640,7 +640,7 @@ ready
 
 标准错误逻辑端口；每次操作使用当前控制台目标。
 
-```el
+```el-fragment
 get stderr(): ConsolePort
 ```
 
@@ -659,7 +659,7 @@ console.stderr.writeLine("failed")
 
 日志等级端口，用于本地化消息或结构化展示。
 
-```el
+```el-fragment
 get log(): ConsoleLevelPort
 ```
 
@@ -677,7 +677,7 @@ console.log("cache.hit", @{ key: "index" })
 
 信息等级端口；直接调用时第一个参数是本地化消息 key。
 
-```el
+```el-fragment
 get info(): ConsoleLevelPort
 ```
 
@@ -695,7 +695,7 @@ console.info("task.done", @{ count: 3 })
 
 警告等级端口。
 
-```el
+```el-fragment
 get warning(): ConsoleLevelPort
 ```
 
@@ -713,7 +713,7 @@ console.warning("cache.stale", @{})
 
 错误等级端口。
 
-```el
+```el-fragment
 get error(): ConsoleLevelPort
 ```
 
@@ -731,7 +731,7 @@ console.error("http.failed", @{ status: 500 })
 
 致命错误等级端口。
 
-```el
+```el-fragment
 get fatal(): ConsoleLevelPort
 ```
 
@@ -749,7 +749,7 @@ console.fatal("app.unrecoverable", @{})
 
 调试等级端口。
 
-```el
+```el-fragment
 get debug(): ConsoleLevelPort
 ```
 
@@ -767,7 +767,7 @@ console.debug("cache.miss", @{ key: "index" })
 
 跟踪等级端口。
 
-```el
+```el-fragment
 get trace(): ConsoleLevelPort
 ```
 
@@ -785,7 +785,7 @@ console.trace("request.start", @{ path: "/" })
 
 查询指定等级是否被此 facade 的筛选器和纯上下文规则允许。
 
-```el
+```el-fragment
 fn enabled(level: ConsoleLevel): Bool
 ```
 
@@ -808,7 +808,7 @@ let active = console.enabled(ConsoleLevel.Info)
 
 在临时控制台目标中执行回调，返回结果和捕获的记录。
 
-```el
+```el-fragment
 fn capture(work, latePolicy: ConsoleLatePolicy = ConsoleLatePolicy.Forward, maxRecords: Number | nil_t = nil)
 ```
 
@@ -835,7 +835,7 @@ console.stdout.write(captured.output.text())
 
 默认控制台对象，类型为 ConsoleFacade；标准库入口通过 prelude 提供此绑定。
 
-```el
+```el-fragment
 export const console = ConsoleFacade()
 ```
 

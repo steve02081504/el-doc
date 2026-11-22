@@ -26,7 +26,7 @@
 
 压力服务处于无效状态时抛出的错误。
 
-```el
+```el-fragment
 export @assign(mode: "copy") class MemoryPressureStateError extends Error
 ```
 
@@ -44,7 +44,7 @@ pressure.close()
 
 回收回调的共享注册句柄；close 或析构取消注册。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class ReclaimRegistration
 ```
 
@@ -64,7 +64,7 @@ pressure.close()
 
 取消注册；重复调用无操作。
 
-```el
+```el-fragment
 fn close()
 ```
 
@@ -84,7 +84,7 @@ pressure.close()
 
 显式构造的压力服务；可安装进程回调、保留储备并登记回收器，使用后调用 close。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class MemoryPressure
 ```
 
@@ -103,7 +103,7 @@ pressure.close()
 
 安装进程压力回调；已关闭、正在关闭、已安装或安装失败时抛出 MemoryPressureStateError。
 
-```el
+```el-fragment
 fn install()
 ```
 
@@ -122,7 +122,7 @@ pressure.close()
 
 注册接收请求字节数并返回是否取得进展的回调；保留返回的注册句柄以维持注册。回调异常记录在 last_failure。
 
-```el
+```el-fragment
 fn register_reclaimer(callback: fn(bytes: AllocationSize): Bool): ReclaimRegistration
 ```
 
@@ -144,7 +144,7 @@ pressure.close()
 
 查询储备是否需要且可以尝试补充。
 
-```el
+```el-fragment
 fn needs_refill(): Bool
 ```
 
@@ -165,7 +165,7 @@ pressure.close()
 
 尝试补充一个储备块；成功返回 t，无法补充时返回 f。
 
-```el
+```el-fragment
 fn refill(): Bool
 ```
 
@@ -186,7 +186,7 @@ pressure.close()
 
 释放至多一个储备块并依次调用当前登记的回收器；任一操作有进展时返回 t。回调异常记录在 last_failure。
 
-```el
+```el-fragment
 fn reclaim(bytes: AllocationSize): Bool
 ```
 
@@ -208,7 +208,7 @@ pressure.close()
 
 卸载进程回调、等待进行中的回收或补充并释放储备和注册；重复调用无操作。在自身回收回调中调用会抛出 MemoryPressureStateError。
 
-```el
+```el-fragment
 fn close()
 ```
 

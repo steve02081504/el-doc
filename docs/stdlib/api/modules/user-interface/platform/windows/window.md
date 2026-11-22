@@ -24,7 +24,7 @@
 
 由窗口拥有的定时器句柄；取消会停止后续回调并释放回调捕获。
 
-```el
+```el-fragment
 export class WindowTimer
 ```
 
@@ -41,7 +41,7 @@ timer.cancel()
 
 停止定时器并释放其回调；重复调用不会产生额外副作用。
 
-```el
+```el-fragment
 fn cancel()
 ```
 
@@ -59,7 +59,7 @@ timer.cancel()
 
 表示一个原生窗口及其界面视图、输入状态、绘制主题和窗口级资源。
 
-```el
+```el-fragment
 export class Window
 ```
 
@@ -76,7 +76,7 @@ runWindow(window)
 
 读取或替换窗口的绘制主题；赋值后立即刷新绘制。
 
-```el
+```el-fragment
 get theme(): PaintTheme
 ```
 
@@ -94,7 +94,7 @@ window.theme = darkPaintTheme()
 
 设置窗口级方向键处理器；没有元素焦点时接收方向键按下事件。
 
-```el
+```el-fragment
 fn onArrow(action)
 ```
 
@@ -112,7 +112,7 @@ window.onArrow((dx, dy) => moveSelection(dx, dy))
 
 注册窗口级近似定时器，窗口关闭时自动取消。
 
-```el
+```el-fragment
 @discardable fn every(milliseconds: Number, action): WindowTimer
 ```
 
@@ -138,7 +138,7 @@ discard(window.every(1000, tick => label.text = "更新"))
 
 按精确 id 获取当前呈现中的元素句柄。
 
-```el
+```el-fragment
 fn getById(id: Text): ElementHandle
 ```
 
@@ -163,7 +163,7 @@ label.text = "就绪"
 
 运行单个窗口的事件循环，并在退出时关闭窗口。
 
-```el
+```el-fragment
 export fn runWindow(window: Window)
 ```
 
@@ -181,7 +181,7 @@ runWindow(window)
 
 在同一事件循环中运行多个窗口；循环退出时关闭列表中的窗口。
 
-```el
+```el-fragment
 export fn runWindows(windows: Window[])
 ```
 

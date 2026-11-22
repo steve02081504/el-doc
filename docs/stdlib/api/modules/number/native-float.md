@@ -4,13 +4,19 @@
 
 [库分类](../../categories/number.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 原生浮点精确转换 {#api-35683a510551172d0839}
+
+源码：`src/stdlib/number/native-float.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/native-float.el#L1)
+
+基于目标浮点编解码描述检查精确可表示性，并在可用时转换精确有理数与原生浮点位模式；不支持目标编码时通过专用错误报告。
+
 ## canRepresentExactly {#api-4ba6311e8edff7e59788}
 
-源码：`src/stdlib/number/native-float.el:85` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/native-float.el#L85)
+源码：`src/stdlib/number/native-float.el:87` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/native-float.el#L87)
 
 判断目标原生浮点类型能否无舍入地表达该有限有理数；目标没有可用的数值编解码器时报 NativeFloatCodecUnavailable。
 
-```el
+```el-fragment
 export fn canRepresentExactly<T: type>(value: NumericRatio): Bool
 ```
 

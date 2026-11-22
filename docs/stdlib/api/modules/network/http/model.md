@@ -41,7 +41,7 @@
 
 表示一个经校验的 HTTP 请求或响应头名称和值。
 
-```el
+```el-fragment
 export class HttpHeader
 ```
 
@@ -64,7 +64,7 @@ let header = HttpHeader("Content-Type", "application/json")
 
 创建并校验一条 HTTP 头。
 
-```el
+```el-fragment
 constructor(name: Text, value: Text)
 ```
 
@@ -86,7 +86,7 @@ let header = HttpHeader("Accept", "application/json")
 
 配置 HTTP 请求方法、头、请求体、资源上限与 TLS 行为。
 
-```el
+```el-fragment
 export class HttpOptions
 ```
 
@@ -103,7 +103,7 @@ let options = HttpOptions(@{ timeout: 5000 })
 
 请求使用的 HTTP 方法，默认是 GET。
 
-```el
+```el-fragment
 let method: Text
 ```
 
@@ -121,7 +121,7 @@ let options = HttpOptions(@{ method: "POST" })
 
 要发送的请求头数组。
 
-```el
+```el-fragment
 let headers: HttpHeader[]
 ```
 
@@ -139,7 +139,7 @@ let options = HttpOptions(@{ headers: @[HttpHeader("Accept", "application/json")
 
 要发送的请求体字节；GET 与 HEAD 不接受非空请求体。
 
-```el
+```el-fragment
 let body: Number[]
 ```
 
@@ -157,7 +157,7 @@ let options = HttpOptions(@{ method: "POST", body: @[65, 66] })
 
 请求超时毫秒数，默认 30000，必须为正数。
 
-```el
+```el-fragment
 let timeout: Number
 ```
 
@@ -175,7 +175,7 @@ let options = HttpOptions(@{ timeout: 5000 })
 
 请求或响应消息体字节上限；nil 表示不设显式上限。
 
-```el
+```el-fragment
 let maximumBodyBytes: Number | nil_t
 ```
 
@@ -193,7 +193,7 @@ let options = HttpOptions(@{ maximumBodyBytes: 1048576 })
 
 请求与响应头的最大字节数。
 
-```el
+```el-fragment
 let maximumHeaderBytes: Number | nil_t
 ```
 
@@ -211,7 +211,7 @@ let options = HttpOptions(@{ maximumHeaderBytes: 16384 })
 
 允许跟随的最大重定向次数。
 
-```el
+```el-fragment
 let maximumRedirects: Number | nil_t
 ```
 
@@ -229,7 +229,7 @@ let options = HttpOptions(@{ maximumRedirects: 0 })
 
 请求是否绕过可复用的缓存响应。
 
-```el
+```el-fragment
 let forceRefresh: Bool
 ```
 
@@ -247,7 +247,7 @@ let options = HttpOptions(@{ forceRefresh: t })
 
 HTTPS 请求使用的 TLS 配置。
 
-```el
+```el-fragment
 let tls: TlsOptions
 ```
 
@@ -265,7 +265,7 @@ let options = HttpOptions(@{ tls: TlsOptions() })
 
 用字段对象覆盖默认请求配置，并在创建时校验字段范围和组合。
 
-```el
+```el-fragment
 constructor(changes = @{})
 ```
 
@@ -285,7 +285,7 @@ let options = HttpOptions(@{ timeout: 5000, maximumRedirects: 3 })
 
 保存 HTTP 状态码、响应头、响应体和最终 URL，并提供常用解码操作。
 
-```el
+```el-fragment
 export class HttpResponse
 ```
 
@@ -302,7 +302,7 @@ console.stdout.writeLine(response.status, " ", response.ok)
 
 HTTP 状态码。
 
-```el
+```el-fragment
 let status: Number
 ```
 
@@ -320,7 +320,7 @@ console.stdout.writeLine(response.status)
 
 响应头列表。
 
-```el
+```el-fragment
 let headers: HttpHeader[]
 ```
 
@@ -338,7 +338,7 @@ console.stdout.writeLine(response.headers.count)
 
 响应体的原始字节。
 
-```el
+```el-fragment
 let body: Number[]
 ```
 
@@ -356,7 +356,7 @@ console.stdout.writeLine(response.body.count)
 
 请求跟随重定向后的最终 URL。
 
-```el
+```el-fragment
 let url: Text
 ```
 
@@ -374,7 +374,7 @@ console.stdout.writeLine(response.url)
 
 判断状态码是否位于 200 到 299 的成功范围。
 
-```el
+```el-fragment
 get ok(): Bool
 ```
 
@@ -394,7 +394,7 @@ if (response.ok) console.stdout.writeLine("success")
 
 将响应体按 UTF-8 解码为文本；拒绝未解码的非 identity 内容编码。
 
-```el
+```el-fragment
 fn text(): Text
 ```
 
@@ -416,7 +416,7 @@ console.stdout.writeLine(response.text())
 
 将响应文本解析为 JSON 值。
 
-```el
+```el-fragment
 fn json(limits: JsonLimits = JsonLimits()): any
 ```
 
@@ -440,7 +440,7 @@ let configuration = response.json()
 
 使用指定格式对象解码响应体。
 
-```el
+```el-fragment
 fn as(format)
 ```
 
@@ -462,7 +462,7 @@ let config = response.as(formats.JSON)
 
 按大小写无关的名称查找首个响应头。
 
-```el
+```el-fragment
 fn header(name: Text): Text | nil_t
 ```
 
@@ -484,7 +484,7 @@ let contentType = response.header("Content-Type")
 
 表示 HTTP 响应状态不成功；异常保留原始响应供调用方检查。
 
-```el
+```el-fragment
 export class HttpStatusError extends Error
 ```
 
@@ -501,7 +501,7 @@ catch (error: HttpStatusError) { console.stderr.writeLine(error.response.status)
 
 引发状态错误的完整 HTTP 响应。
 
-```el
+```el-fragment
 let response: HttpResponse
 ```
 
@@ -519,7 +519,7 @@ console.stderr.writeLine(error.response.status)
 
 将不成功的 HTTP 响应封装为状态异常。
 
-```el
+```el-fragment
 constructor(response: HttpResponse)
 ```
 

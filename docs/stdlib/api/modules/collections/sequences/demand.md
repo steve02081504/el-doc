@@ -21,31 +21,13 @@
 
 提供按需迭代、变换、筛选、切片及物化消费的序列接口。
 
-## Sequence {#api-f1b57111a81f88477e0f}
-
-源码：`src/stdlib/collections/sequences/demand.el:76` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L76)
-
-表示可重新打开迭代器的惰性元素序列；每次迭代按需计算元素。
-
-```el
-export @assign(mode: "shared") class Sequence
-```
-
-### 示例：映射并筛选惰性值
-
-```el
-let numbers = lazy @[1, 2, 3, 4]
-let result = numbers.map(value => value * 2).filter(value => value > 4).collect()
-console.stdout.writeLine(result.join(", "))
-```
-
 ## Sequence.consume {#api-45dc347b6a31d11d535a}
 
-源码：`src/stdlib/collections/sequences/demand.el:92` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L92)
+源码：`src/stdlib/collections/sequences/demand.el:109` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L109)
 
 完整迭代并丢弃所有元素，以触发序列中的按需计算与清理。
 
-```el
+```el-fragment
 fn consume()
 ```
 
@@ -58,15 +40,15 @@ numbers.consume()
 
 ## Sequence.drop {#api-20db4321c06f72ac55a5}
 
-源码：`src/stdlib/collections/sequences/demand.el:102` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L102)
+源码：`src/stdlib/collections/sequences/demand.el:139` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L139)
 
 返回跳过前 count 个元素后的惰性序列。
 
-```el
-fn drop(count: Number): Sequence
+```el-fragment
+fn drop(count: Number): SequenceOf<element: element>
 ```
 
-**返回类型**：[`Sequence`](demand.md#api-f1b57111a81f88477e0f)
+**返回类型**：[`SequenceOf`](../../../types.md#api-ead95aa0e7e52bcd6fe4)<element: [`element`](../../../types.md#api-779a90b9782df6eb2424)>
 
 **参数**：count 要跳过的非负整数个数。
 
@@ -80,15 +62,15 @@ console.stdout.writeLine(lazy @[1, 2, 3].drop(2).collect().join(", "))
 
 ## Sequence.take {#api-b415cd6c8b485fb55cfc}
 
-源码：`src/stdlib/collections/sequences/demand.el:117` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L117)
+源码：`src/stdlib/collections/sequences/demand.el:151` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L151)
 
 返回最多取前 count 个元素的惰性序列；后续元素不会被求值。
 
-```el
-fn take(count: Number): Sequence
+```el-fragment
+fn take(count: Number): SequenceOf<element: element>
 ```
 
-**返回类型**：[`Sequence`](demand.md#api-f1b57111a81f88477e0f)
+**返回类型**：[`SequenceOf`](../../../types.md#api-ead95aa0e7e52bcd6fe4)<element: [`element`](../../../types.md#api-779a90b9782df6eb2424)>
 
 **参数**：count 要取的非负整数个数。
 
@@ -102,15 +84,15 @@ console.stdout.writeLine(lazy @[1, 2, 3].take(2).collect().join(", "))
 
 ## Sequence.slice {#api-1a13690071622bccebd0}
 
-源码：`src/stdlib/collections/sequences/demand.el:133` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L133)
+源码：`src/stdlib/collections/sequences/demand.el:164` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L164)
 
 返回指定区间的惰性序列；省略 end 时延伸到序列末尾。
 
-```el
-fn slice(start: Number, end: Number | nil_t = nil): Sequence
+```el-fragment
+fn slice(start: Number, end: Number | nil_t = nil): SequenceOf<element: element>
 ```
 
-**返回类型**：[`Sequence`](demand.md#api-f1b57111a81f88477e0f)
+**返回类型**：[`SequenceOf`](../../../types.md#api-ead95aa0e7e52bcd6fe4)<element: [`element`](../../../types.md#api-779a90b9782df6eb2424)>
 
 **参数**：start 起始非负整数下标。
 
@@ -126,15 +108,13 @@ console.stdout.writeLine(lazy @[1, 2, 3, 4].slice(1, 3).collect().join(", "))
 
 ## Sequence.map {#api-a9dd3fbd45fbdbc235ae}
 
-源码：`src/stdlib/collections/sequences/demand.el:156` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L156)
+源码：`src/stdlib/collections/sequences/demand.el:187` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L187)
 
 按需对每个元素应用转换函数，返回新的惰性序列。
 
-```el
-fn map(transform): Sequence
+```el-fragment
+fn map(transform)
 ```
-
-**返回类型**：[`Sequence`](demand.md#api-f1b57111a81f88477e0f)
 
 **参数**：transform 将元素转换为新值的函数。
 
@@ -148,15 +128,15 @@ console.stdout.writeLine(lazy @[1, 2].map(value => value * 2).collect().join(", 
 
 ## Sequence.filter {#api-779750da0080921fdd71}
 
-源码：`src/stdlib/collections/sequences/demand.el:167` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L167)
+源码：`src/stdlib/collections/sequences/demand.el:206` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L206)
 
 按需保留谓词为真的元素。
 
-```el
-fn filter(predicate): Sequence
+```el-fragment
+fn filter(predicate): SequenceOf<element: element>
 ```
 
-**返回类型**：[`Sequence`](demand.md#api-f1b57111a81f88477e0f)
+**返回类型**：[`SequenceOf`](../../../types.md#api-ead95aa0e7e52bcd6fe4)<element: [`element`](../../../types.md#api-779a90b9782df6eb2424)>
 
 **参数**：predicate 接收元素并返回布尔值的函数。
 
@@ -170,15 +150,15 @@ console.stdout.writeLine(lazy @[-1, 2, 3].filter(value => value > 0).collect().j
 
 ## Sequence.collect {#api-12bd7b94b2871a2ffb6c}
 
-源码：`src/stdlib/collections/sequences/demand.el:178` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L178)
+源码：`src/stdlib/collections/sequences/demand.el:226` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L226)
 
 迭代至序列结束，并将产生的元素收集到数组。
 
-```el
-fn collect(): any[]
+```el-fragment
+fn collect(): element[]
 ```
 
-**返回类型**：[`any`](../../../../../reference/language/types.md)[]
+**返回类型**：[`element`](../../../types.md#api-779a90b9782df6eb2424)[]
 
 **返回值**：按迭代顺序排列的数组。
 
@@ -191,11 +171,11 @@ console.stdout.writeLine(values.count)
 
 ## Sequence.sum {#api-f18006015ef6f920209d}
 
-源码：`src/stdlib/collections/sequences/demand.el:187` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L187)
+源码：`src/stdlib/collections/sequences/demand.el:235` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L235)
 
 按序累加所有元素，初始累加值由调用方指定。
 
-```el
+```el-fragment
 fn sum(initial)
 ```
 
@@ -207,4 +187,24 @@ fn sum(initial)
 
 ```el
 console.stdout.writeLine(lazy @[1, 2, 3].sum(0))
+```
+
+## Sequence {#api-f1b57111a81f88477e0f}
+
+源码：`src/stdlib/collections/sequences/demand.el:247` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/sequences/demand.el#L247)
+
+表示可重新打开迭代器的惰性元素序列；每次迭代按需计算元素。
+
+```el-fragment
+export let Sequence: type
+```
+
+**类型**：[`type`](../../../../../reference/language/types.md)
+
+### 示例：映射并筛选惰性值
+
+```el
+let numbers = lazy @[1, 2, 3, 4]
+let result = numbers.map(value => value * 2).filter(value => value > 4).collect()
+console.stdout.writeLine(result.join(", "))
 ```

@@ -23,7 +23,7 @@
 
 管理短提示音使用的非等待播放队列；队列饱和时拒绝新提示音。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class MusicPlayer
 ```
 
@@ -41,7 +41,7 @@ player.close()
 
 将一段公式音频作为短提示音提交到非等待队列。
 
-```el
+```el-fragment
 fn formula(sample, milliseconds: Number = 80, gain: Number = 0.12): Bool
 ```
 
@@ -67,7 +67,7 @@ let accepted = player.formula(seconds => sin(seconds * 880 * 6.283185307179586),
 
 将三角波音调作为短提示音提交到非等待队列。
 
-```el
+```el-fragment
 fn play(frequency: Number, milliseconds: Number = 80, gain: Number = 0.12): Bool
 ```
 
@@ -93,7 +93,7 @@ let accepted = player.play(660, 70)
 
 清除当前排队的提示音，但保留播放器供后续复用。
 
-```el
+```el-fragment
 fn stop()
 ```
 
@@ -109,7 +109,7 @@ player.stop()
 
 关闭底层设备并释放资源；重复调用安全。
 
-```el
+```el-fragment
 fn close()
 ```
 
@@ -125,7 +125,7 @@ player.close()
 
 在独立任务中播放三角波音调，持续时间以毫秒计，频率以 Hz 计。
 
-```el
+```el-fragment
 export fn playPitch(frequency: Number, milliseconds: Number = 80, gain: Number = 0.12)
 ```
 
@@ -151,7 +151,7 @@ let task = playPitch(440, 250, 0.1)
 
 在独立任务中按公式逐样本合成音频，并以有界块队列提交给设备。
 
-```el
+```el-fragment
 export fn playFormula(sample, milliseconds: Number = 80, gain: Number = 0.12)
 ```
 

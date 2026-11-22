@@ -16,7 +16,7 @@
 
 将数组形状的代码块转为惰性 Sequence；元素表达式在迭代请求时才求值。
 
-```el
+```el-fragment
 export syntax lazy
 ```
 

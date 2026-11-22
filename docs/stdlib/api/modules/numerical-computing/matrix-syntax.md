@@ -16,7 +16,7 @@
 
 以类型名和花括号行列表构造指定元素类型的二维张量。
 
-```el
+```el-fragment
 export syntax matrix
 ```
 

@@ -16,7 +16,7 @@
 
 配置编译夹具的入口、目标、构建模式与超时。
 
-```el
+```el-fragment
 export class FixtureOptions
 ```
 
@@ -33,7 +33,7 @@ let options = FixtureOptions("fixtures/valid.el", mode: "debug")
 
 在当前测试服务中编译夹具入口，并返回编译结果供 check.compiles 或 check.diagnostic 检查。
 
-```el
+```el-fragment
 export fn compileFixture(entry: Text, options: FixtureOptions = FixtureOptions(entry))
 ```
 

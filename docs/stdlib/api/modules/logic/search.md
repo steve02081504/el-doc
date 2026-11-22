@@ -20,7 +20,7 @@
 
 持有已准备的不可变规则快照及查询，可创建答案游标或地面答案游标。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class PreparedSearch
 ```
 
@@ -37,7 +37,7 @@ let step = cursor.next()
 
 将 PreparedSearch 的答案按需转换为必须无逻辑变量的地面 Term。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class GroundSearch
 ```
 
@@ -54,7 +54,7 @@ let step = cursor.next()
 
 按需返回 GroundSearch 的地面项结果；完成时返回 done 标记。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class GroundCursor
 ```
 
@@ -71,7 +71,7 @@ if (!step.done) consume(step.value)
 
 继续搜索并返回下一项地面 Term；耗尽时返回 done 步骤。
 
-```el
+```el-fragment
 fn next(): IterationStep<element: Term>
 ```
 

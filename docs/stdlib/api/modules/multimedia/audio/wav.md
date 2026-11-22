@@ -16,7 +16,7 @@
 
 以增量方式写入经典 RIFF/WAVE PCM16 文件；追加失败后写入器不可继续使用。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class WavWriter
 ```
 
@@ -39,7 +39,7 @@ writer.close()
 
 将一段 PCM 音频写入 WAV 文件。
 
-```el
+```el-fragment
 export fn writeWav(path: Path, audio: PcmAudio)
 ```
 
@@ -60,7 +60,7 @@ writeWav(Path("tone.wav"), audio)
 
 将 PCM 音频编码为包含 RIFF/WAVE 头部的字节数组。
 
-```el
+```el-fragment
 export fn encodeWav(audio: PcmAudio): Number[]
 ```
 
@@ -84,7 +84,7 @@ let bytes = encodeWav(audio)
 
 从内存中的字节数组解析经典整数 PCM 或 IEEE 浮点 WAV，输出 PCM16 样本。
 
-```el
+```el-fragment
 export fn decodeWav(bytes: Number[]): PcmAudio
 ```
 
@@ -108,7 +108,7 @@ let audio = decodeWav(bytes)
 
 从文件读取并解析经典整数 PCM 或 IEEE 浮点 WAV，拒绝带额外尾随数据的文件。
 
-```el
+```el-fragment
 export fn readWav(path: Path): PcmAudio
 ```
 

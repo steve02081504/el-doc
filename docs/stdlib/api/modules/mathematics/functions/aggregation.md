@@ -16,7 +16,7 @@
 
 从左到右累加所有输入；单个输入原样返回，零输入返回 Number 的零。
 
-```el
+```el-fragment
 export fn sum(...values)
 ```
 

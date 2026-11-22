@@ -4,13 +4,19 @@
 
 [库分类](../../categories/numerical-computing.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 精确线性求解 {#api-0443720891bbd1231eb3}
+
+源码：`src/stdlib/numerical-computing/exact-solve.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/exact-solve.el#L1)
+
+使用精确 Number 算术通过消元求解方阵线性系统，接受多列右端项，并对形状不匹配、非有限输入和奇异系统分别报错。
+
 ## solve {#api-6f0056070dbd04cf6e3a}
 
-源码：`src/stdlib/numerical-computing/exact-solve.el:21` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/exact-solve.el#L21)
+源码：`src/stdlib/numerical-computing/exact-solve.el:23` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/exact-solve.el#L23)
 
 用精确 Number 消元求解方阵系统 A X = B；不使用浮点主元阈值。
 
-```el
+```el-fragment
 export fn solve(borrow input: Matrix, borrow right: Matrix): Matrix
 ```
 

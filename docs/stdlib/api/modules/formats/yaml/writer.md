@@ -17,7 +17,7 @@
 将公开数据对象、数组和标量编码为可由 parseYAML 读取的 YAML 流式文档。
 数值必须能在解析器的数值词素范围内精确表示；共享对象按树展开。
 
-```el
+```el-fragment
 export fn writeYAML(value: any, limits: JsonLimits = JsonLimits()): Text
 ```
 

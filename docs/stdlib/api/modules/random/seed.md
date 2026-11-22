@@ -16,7 +16,7 @@
 
 从当前平台的系统熵来源取得随机种子。
 
-```el
+```el-fragment
 export fn generateSeed(): Number
 ```
 
@@ -38,7 +38,7 @@ let seed = generateSeed()
 
 优先取得系统随机种子；熵不可用时使用当前墙上时间纳秒构造种子。
 
-```el
+```el-fragment
 export fn automaticSeed(): Number
 ```
 

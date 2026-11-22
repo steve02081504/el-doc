@@ -23,7 +23,7 @@
 
 持有由不可变数据快照生成的绘图场景。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class Figure
 ```
 
@@ -42,7 +42,7 @@ figure.saveAs(formats.SVG, "curve.svg")
 
 可直接配置标题、坐标轴标签、图例、缩放范围的绘图场景对象。
 
-```el
+```el-fragment
 let axis: Axis
 ```
 
@@ -60,7 +60,7 @@ figure.axis.title = "二次曲线"
 
 将当前坐标场景渲染为 SVG 文本；不打开窗口。
 
-```el
+```el-fragment
 fn image(width: Number = 900, height: Number = 600): Text
 ```
 
@@ -84,7 +84,7 @@ let svg = figure.image(640, 480)
 
 使用选定的编解码器渲染并写出图表，支持无头环境。
 
-```el
+```el-fragment
 fn saveAs(codec, path, options = @{})
 ```
 
@@ -107,7 +107,7 @@ figure.saveAs(formats.SVG, "curve.svg")
 
 在可用的桌面显示环境中打开图表窗口并阻塞到窗口关闭。
 
-```el
+```el-fragment
 fn show()
 ```
 
@@ -125,7 +125,7 @@ figure.show()
 
 管理多个非阻塞图表窗口，并提供集中轮询、运行与关闭生命周期。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class PlotHost
 ```
 
@@ -143,7 +143,7 @@ host.run()
 
 从 F64 张量创建折线图；x 的行数须与 y 的行数相同，y 的每一列对应一条线。
 
-```el
+```el-fragment
 export fn plot(x: Tensor<element: F64>, y: Tensor<element: F64>): Figure
 ```
 

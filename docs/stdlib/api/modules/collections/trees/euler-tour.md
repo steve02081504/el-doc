@@ -16,7 +16,7 @@
 
 从根键和直接子键遍历构建 Euler 游走。
 
-```el
+```el-fragment
 export fn euler_tour(nodeCount: Number, root: Number, childrenOf: fn(key: Number): Number[]): EulerTour
 ```
 

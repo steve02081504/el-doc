@@ -16,7 +16,7 @@
 
 根据基础 URL 解析绝对或相对引用，并规范化相对路径中的点段。
 
-```el
+```el-fragment
 export fn resolveUrl(base: NetworkUrl, location: Text): NetworkUrl
 ```
 

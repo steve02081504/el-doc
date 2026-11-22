@@ -18,7 +18,7 @@
 
 将一维张量重塑为只有一行的二维张量。
 
-```el
+```el-fragment
 export fn row(values)
 ```
 
@@ -42,7 +42,7 @@ let values = row(vector)
 
 将一维张量重塑为只有一列的二维张量。
 
-```el
+```el-fragment
 export fn col(values)
 ```
 
@@ -64,7 +64,7 @@ let values = col(vector)
 
 在首尾端点之间生成指定数量的等间距元素。
 
-```el
+```el-fragment
 export fn linspace(element: type, first, last, count: Number)
 ```
 
@@ -90,7 +90,7 @@ let points = linspace<element: Number>(0, 1, 5)
 
 按张量的列优先逻辑顺序展平为一维张量。
 
-```el
+```el-fragment
 export fn columnMajor(source)
 ```
 

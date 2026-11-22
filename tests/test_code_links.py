@@ -28,7 +28,10 @@ def catalog():
 		{"name": "console", "id": "console/facade::console", "source": "console/facade.el"},
 		{"name": "Number", "id": None, "source": "numerics/number.el", "value_type": None},
 		{"name": "unknown", "id": None, "source": None}],
-		"exports": {"console/index": {"console": "console/facade::console", "capture": "console/facade::capture"}}})
+		"exports": {
+			"console/facade": {"console": {"id": "console/facade::console"}},
+			"console/index": {"console": {"id": "console/facade::console"},
+				"capture": {"id": "console/facade::capture"}, "silent": {"id": None, "source": "console/facade.el", "line": 10}}}})
 
 
 class CodeLinkTests(unittest.TestCase):
@@ -50,6 +53,25 @@ spec.loader.exec_module(module)
 
 	def names(self, code):
 		return {code[offset:offset + length]: target for offset, (length, target) in code_targets(code, self.catalog).items()}
+
+	def test_highlighting_reports_missing_and_undocumented_exports(self):
+		code = ('import { absent, silent as quiet } from "el:console/"\n'
+			'import /.*/ as outputs from "el:console/"\n'
+			'console.stdout.writeLine(missing)\nNumber\noutputs.silent\n'
+			'let local = 1\nlocal\nquiet\noutputs.capture')
+		problems = []
+		targets = code_targets(code, self.catalog, report=lambda offset, message: problems.append((offset, message)))
+		self.assertEqual([code[offset:].split()[0].strip(",)") for offset, _ in problems],
+			["absent", "silent", "missing", "Number", "silent"])
+		self.assertIn("is not exported", problems[0][1])
+		self.assertIn("has no API documentation (console/facade.el:10)", problems[1][1])
+		self.assertIn("outputs.capture".split(".")[1], {target.label for _, target in targets.values()})
+
+	def test_highlighting_reports_unbalanced_syntax(self):
+		problems = []
+		code_targets('console.stdout.writeLine("ignored )"', self.catalog,
+			report=lambda _, message: problems.append(message))
+		self.assertEqual(problems, ["missing ')' ".rstrip()])
 
 	def test_member_chain_uses_declared_types(self):
 		targets = self.names('console.stdout.writeLine("hello")')

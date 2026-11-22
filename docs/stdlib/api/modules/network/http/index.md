@@ -16,7 +16,7 @@
 
 发送 HTTP 请求并返回状态、响应头与响应体。
 
-```el
+```el-fragment
 export fn request(url: Text, options: HttpOptions = HttpOptions()): HttpResponse
 ```
 
@@ -44,7 +44,7 @@ console.stdout.writeLine(response.status)
 
 请求 URL，并用指定格式解码成功响应体。
 
-```el
+```el-fragment
 export fn fetchAs(format, url: Text, options: HttpOptions = HttpOptions())
 ```
 

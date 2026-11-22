@@ -16,7 +16,7 @@
 
 借用 owner，在其原始分配绑定中执行 body 并返回结果；结束或异常时恢复调用前的绑定。owner 必须在调用期间保持有效。
 
-```el
+```el-fragment
 export fn with_allocation_owner(borrow owner, body)
 ```
 

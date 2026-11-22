@@ -16,7 +16,7 @@
 
 提供窗口绘制所需的背景、文字、按钮、选区和字体等颜色与度量；与 Definition.theme 的 Theme 类型不同。
 
-```el
+```el-fragment
 export class PaintTheme
 ```
 
@@ -34,7 +34,7 @@ window.theme = paint
 
 创建一份深色窗口绘制主题。
 
-```el
+```el-fragment
 export fn darkPaintTheme(): PaintTheme
 ```
 

@@ -21,7 +21,7 @@
 
 声明整数 PCM16 音频的采样率和声道数，并提供每帧字节数。
 
-```el
+```el-fragment
 export @assign(mode: "copy") class AudioFormat
 ```
 
@@ -43,7 +43,7 @@ let format = AudioFormat(48000, 2)
 
 拥有交错有符号 PCM16 小端样本的共享缓冲区，可按帧和声道读取或写入。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class PcmAudio
 ```
 
@@ -68,7 +68,7 @@ audio.setSample(0, 0, 12000)
 
 读取指定帧和声道的有符号 PCM16 整数样本。
 
-```el
+```el-fragment
 fn sample(frame: Number, channel: Number = 0): Number
 ```
 
@@ -92,7 +92,7 @@ let value = audio.sample(0)
 
 设置指定帧和声道的有符号 PCM16 整数样本。
 
-```el
+```el-fragment
 fn setSample(frame: Number, channel: Number, value: Number)
 ```
 

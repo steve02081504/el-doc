@@ -16,7 +16,7 @@
 
 从相邻差严格为 ±1 的数值数组建立区间 argmin 索引。
 
-```el
+```el-fragment
 export fn plus_minus_rmq(values: Number[]): PlusMinusRmq
 ```
 

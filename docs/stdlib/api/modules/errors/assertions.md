@@ -20,7 +20,7 @@
 
 表示 assert 条件失败的异常，并保留调用方提供的失败原因。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class AssertionError extends Error
 ```
 
@@ -37,7 +37,7 @@ catch (error: AssertionError) { console.stderr.writeLine(error.reason) }
 
 断言失败时提供的说明文本。
 
-```el
+```el-fragment
 let reason: Text
 ```
 
@@ -55,7 +55,7 @@ console.stderr.writeLine(error.reason)
 
 检查条件为真；条件为假时以给定原因抛出 AssertionError。
 
-```el
+```el-fragment
 export @pure fn assert(condition: Bool, reason: Text): Bool
 ```
 

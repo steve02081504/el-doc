@@ -39,7 +39,7 @@
 
 创建指定元素类型的张量类型；实例由形状和按列优先排列的元素构成。
 
-```el
+```el-fragment
 export fn Tensor(element: type): type
 ```
 
@@ -63,7 +63,7 @@ let matrix = Dense(@[2, 2], @[1, 2, 3, 4])
 
 返回张量的轴数；标量张量的 rank 为 0。
 
-```el
+```el-fragment
 get rank(): Number
 ```
 
@@ -83,7 +83,7 @@ let dimensions = tensor.rank
 
 返回张量包含的逻辑元素数。
 
-```el
+```el-fragment
 get count(): Number
 ```
 
@@ -103,7 +103,7 @@ let elements = tensor.count
 
 返回指定轴的长度。
 
-```el
+```el-fragment
 fn extent(axis: Number): Number
 ```
 
@@ -127,7 +127,7 @@ let columns = matrix.extent(1)
 
 返回描述各轴长度的独立数组快照。
 
-```el
+```el-fragment
 fn shape(): Number[]
 ```
 
@@ -147,7 +147,7 @@ let dimensions = tensor.shape()
 
 按列优先线性索引读取一个元素。
 
-```el
+```el-fragment
 fn flat(index: Number): element
 ```
 
@@ -171,7 +171,7 @@ let first = tensor.flat(0)
 
 按每个轴的标量或选择器抽取张量；标量选择会移除对应结果轴，范围选择保留该轴。
 
-```el
+```el-fragment
 @optimize(data: @{ reorder: reorderSelect })
 		fn select(selectors: Selector[]): Value
 ```
@@ -196,7 +196,7 @@ let selected = matrix.select(@[1, 0..3])
 
 交换 rank-2 张量的两个轴并返回转置值。
 
-```el
+```el-fragment
 @optimize(data: @{ reorder: reorderTranspose })
 		fn transpose(): Value
 ```
@@ -219,7 +219,7 @@ let transposed = matrix.transpose()
 
 返回二维张量的转置；等价于调用 transpose()。
 
-```el
+```el-fragment
 get T()
 ```
 
@@ -237,7 +237,7 @@ let transposed = matrix.T
 
 执行张量矩阵乘法，包含批次轴时按广播后的批次形状计算。
 
-```el
+```el-fragment
 fn matmul(borrow other: Value)
 ```
 
@@ -259,7 +259,7 @@ let result = coefficients.matmul(vector)
 
 沿指定轴从 start 开始截取 count 个连续元素，其他轴保持不变。
 
-```el
+```el-fragment
 fn slice(axis: Number, start: Number, count: Number): Value
 ```
 
@@ -287,7 +287,7 @@ let leading = matrix.slice(1, 0, 2)
 
 读取 rank-zero 张量唯一的标量元素。
 
-```el
+```el-fragment
 fn scalar(): element
 ```
 
@@ -309,7 +309,7 @@ let lossValue = loss.scalar()
 
 对张量逐元素平方。
 
-```el
+```el-fragment
 fn square(): Value
 ```
 
@@ -329,7 +329,7 @@ let squared = error.square()
 
 用方括号按轴索引张量；标量下标移除对应轴，范围和冒号选择保留轴。
 
-```el
+```el-fragment
 operator[](...selectors: Selector)
 ```
 
@@ -353,7 +353,7 @@ let selected = matrix[1, 0..3]
 
 对两个张量逐元素相加，形状按轴对齐的广播规则兼容。
 
-```el
+```el-fragment
 operator +(other: Value)
 ```
 
@@ -375,7 +375,7 @@ let shifted = batch + bias
 
 将标量加到张量每个元素上，不改变张量形状。
 
-```el
+```el-fragment
 operator +(other)
 ```
 
@@ -397,7 +397,7 @@ let shifted = matrix + 1
 
 两侧均为张量时执行矩阵乘法，而不是逐元素乘法。
 
-```el
+```el-fragment
 operator *(borrow other: Value)
 ```
 
@@ -419,7 +419,7 @@ let result = coefficients * vector
 
 将标量乘到张量每个元素上，不执行矩阵乘法。
 
-```el
+```el-fragment
 operator *(other)
 ```
 
@@ -441,7 +441,7 @@ let doubled = matrix * 2
 
 按广播规则逐元素相乘；与矩阵乘法运算符 * 区分。
 
-```el
+```el-fragment
 operator .*(other: Value)
 ```
 
@@ -463,7 +463,7 @@ let squares = values .* values
 
 将标量乘到张量每个元素上，保持逐元素运算写法。
 
-```el
+```el-fragment
 operator .*(other)
 ```
 
@@ -485,7 +485,7 @@ let scaled = matrix .* 2
 
 对张量每个元素分别计算指定标量指数的幂。
 
-```el
+```el-fragment
 operator .^(other)
 ```
 

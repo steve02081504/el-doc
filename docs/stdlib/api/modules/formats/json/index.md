@@ -16,7 +16,7 @@
 
 将完整严格 JSON 文本解析为 EL 值，并应用输入字节数与解析资源限制。
 
-```el
+```el-fragment
 export fn parseJSON(source: Text, limits: JsonLimits = JsonLimits()): any
 ```
 
@@ -43,7 +43,7 @@ let config = parseJSON("{\"name\":\"EL\"}")
 
 从 JSON 对象中按名称读取成员。
 
-```el
+```el-fragment
 export fn jsonField(value: any, key: Text): any
 ```
 
@@ -71,7 +71,7 @@ console.stdout.writeLine(name)
 
 解析 JSON 并递归保留映射键的首次插入顺序；重复键覆盖不移动位置。
 
-```el
+```el-fragment
 export fn parseOrderedJSON(source: Text, limits: JsonLimits = JsonLimits()): any
 ```
 

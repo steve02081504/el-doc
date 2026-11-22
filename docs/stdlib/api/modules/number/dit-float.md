@@ -4,13 +4,19 @@
 
 [库分类](../../categories/number.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 目标数位软件浮点 {#api-1db106c9d45fbfa4fea0}
+
+源码：`src/stdlib/number/dit-float.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/dit-float.el#L1)
+
+按目标基数实现具有 IEEE 风格特殊值的浮点类型，包括有符号零、无穷、NaN、次正规数、舍入、平方根及编码投影。
+
 ## DitFloat {#api-3bf2f5b6b8ccdfc86851}
 
-源码：`src/stdlib/number/dit-float.el:288` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/dit-float.el#L288)
+源码：`src/stdlib/number/dit-float.el:285` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/dit-float.el#L285)
 
 用目标基数创建软件浮点类型，支持有符号零、无穷和 NaN。`sign_dits: 0` 是不带符号数位的无符号布局。
 
-```el
+```el-fragment
 export fn DitFloat(sign_dits = 1, fraction_dits = 0, exponent_dits = 0, exponent_bias = 0, min = nil, max = nil, overflow = "ub"): type
 ```
 

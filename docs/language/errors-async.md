@@ -216,21 +216,19 @@ fn settingsFrom(source: Text) {
 	return try {
 		parseJSON(source)
 	} catch {
-		Json.Object(@[])
+		DynamicObject()
 	}
 }
 
 fn nameFrom(source: Text) {
 	let config = settingsFrom(source)
 	let value = try { jsonField(config, "name") } catch { return "anonymous" }
-	match value {
-		Json.String(text) => { return text }
-		_ => { return "anonymous" }
-	}
+	if (value is Text) return value
+	return "anonymous"
 }
 ```
 
-`settingsFrom` 的返回值是 `Json`，`catch` 块的最后一条语句是回退值。`nameFrom` 里的 `jsonField` 在成员缺失时抛 `ParseError`，`catch` 直接 `return`，于是整个函数提前结束，不再执行后面的 `match`。
+`settingsFrom` 解析失败时返回空的动态对象。`nameFrom` 用 `jsonField` 取成员，取值失败或成员不是 `Text` 时返回 `"anonymous"`。
 
 ## 带走这三样
 

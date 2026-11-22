@@ -24,7 +24,7 @@
 
 可配置图表线条、标题、坐标标签及图例，并维护当前缩放范围。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class Axis
 ```
 
@@ -41,7 +41,7 @@ figure.axis.legend = @["估计值"]
 
 绘图标题。
 
-```el
+```el-fragment
 let title: Text
 ```
 
@@ -59,7 +59,7 @@ figure.axis.title = "趋势"
 
 横坐标轴标签。
 
-```el
+```el-fragment
 let xLabel: Text
 ```
 
@@ -77,7 +77,7 @@ figure.axis.xLabel = "时间"
 
 每条线对应的图例文本；若非空，数量必须与线条数一致。
 
-```el
+```el-fragment
 let legend: Text[]
 ```
 
@@ -95,7 +95,7 @@ figure.axis.legend = @["预测"]
 
 以当前视图中心缩放横纵坐标范围。
 
-```el
+```el-fragment
 fn zoom(factor: Number)
 ```
 
@@ -115,7 +115,7 @@ figure.axis.zoom(2)
 
 清除显式缩放范围，使范围重新按数据自动计算。
 
-```el
+```el-fragment
 fn reset()
 ```
 

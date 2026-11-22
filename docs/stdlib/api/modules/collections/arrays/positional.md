@@ -16,7 +16,7 @@
 
 创建固定长度、只读的数组；已知下标或下标范围的读取保留对应位置的类型联合。
 
-```el
+```el-fragment
 export syntax positionalArray
 ```
 

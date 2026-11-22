@@ -29,7 +29,7 @@
 
 创建文本格式对象，按需解码文本，并可选提供反向编码器。
 
-```el
+```el-fragment
 export fn TextFormat(output: type, input: type = output): type
 ```
 
@@ -55,7 +55,7 @@ let jsonFormat = TextFormat<output: any>((source: Text, limits: JsonLimits) => p
 
 返回按 UTF-8 读取和写入原样文本的格式对象。
 
-```el
+```el-fragment
 get Text()
 ```
 
@@ -73,7 +73,7 @@ writeFileAs(formats.Text, "file:./copy.txt", "already text")
 
 返回严格 JSON 格式对象；支持 JSON 解码与编码。
 
-```el
+```el-fragment
 get JSON()
 ```
 
@@ -91,7 +91,7 @@ let config = readFileAs(formats.JSON, "file:./config.json")
 
 返回 YAML 文本读写格式；编码输出流式集合，不保留注释或排版。
 
-```el
+```el-fragment
 get YAML()
 ```
 
@@ -109,7 +109,7 @@ let config = readFileAs(formats.YAML, "file:./config.yaml")
 
 返回保留 TOML 值类型的读写格式，写入根值须为 Toml.Table。
 
-```el
+```el-fragment
 get TOML()
 ```
 
@@ -128,7 +128,7 @@ writeFileAs(formats.TOML, "file:./config.toml", value)
 
 返回 XmlDocument 文档读写格式。
 
-```el
+```el-fragment
 get XML()
 ```
 
@@ -147,7 +147,7 @@ writeFileAs(formats.XML, "file:./message.xml", value)
 
 返回 CSV 表格读写格式，单元格使用文本，编码使用 CRLF 记录结束。
 
-```el
+```el-fragment
 get CSV()
 ```
 
@@ -165,7 +165,7 @@ let rows = readFileAs(formats.CSV, "file:./table.csv")
 
 返回制表符分隔文本读写格式；单元格使用文本。
 
-```el
+```el-fragment
 get TSV()
 ```
 
@@ -183,7 +183,7 @@ writeFileAs(formats.TSV, "file:./table.tsv", @[@["name", "role"], @["Ada", "engi
 
 返回轻量 INI 方言的文本读写格式；编码拒绝无法无损表示的名称、值和嵌套结构。
 
-```el
+```el-fragment
 get INI()
 ```
 
@@ -209,7 +209,7 @@ writeFileAs(formats.INI, "file:./config.ini", @{ name: "demo", server: @{ port: 
 
 返回自包含 EOL 文本读写格式；节点、深度和整数限制用于解码，字节上限也在编码完成后检查。
 
-```el
+```el-fragment
 get EOL()
 ```
 
@@ -227,7 +227,7 @@ writeFileAs(formats.EOL, "file:./value.eol", @[1, 2, 3])
 
 返回自包含 EOD 二进制读写格式；节点、深度和整数限制用于解码，字节上限也在编码完成后检查。
 
-```el
+```el-fragment
 get EOD()
 ```
 
@@ -245,7 +245,7 @@ writeFileAs(formats.EOD, "file:./value.eod", @[1, 2, 3])
 
 标准格式对象集合，提供 Text、JSON、YAML、CSV 等格式值。
 
-```el
+```el-fragment
 export const formats = Formats()
 ```
 

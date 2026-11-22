@@ -16,7 +16,7 @@
 
 搜索因预算耗尽或主动取消而中断时抛出的信息对象。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class SearchInterrupted
 ```
 

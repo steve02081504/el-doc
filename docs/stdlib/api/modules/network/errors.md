@@ -22,7 +22,7 @@
 
 表示网络连接、协议或平台网络操作失败。
 
-```el
+```el-fragment
 export class NetworkError extends Error
 ```
 
@@ -39,7 +39,7 @@ catch (error: NetworkError) { console.stderr.writeLine(error.operation, ": ", er
 
 发生失败的网络操作名称。
 
-```el
+```el-fragment
 let operation: Text
 ```
 
@@ -57,7 +57,7 @@ console.stderr.writeLine(error.operation)
 
 描述失败原因的文本。
 
-```el
+```el-fragment
 let detail: Text
 ```
 
@@ -75,7 +75,7 @@ console.stderr.writeLine(error.detail)
 
 平台提供的可选错误代码；无特定代码时为 0。
 
-```el
+```el-fragment
 let code: Number
 ```
 

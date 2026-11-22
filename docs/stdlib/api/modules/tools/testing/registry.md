@@ -20,7 +20,7 @@
 
 为具有稳定名称的行逐条注册测试用例。
 
-```el
+```el-fragment
 fn each(name: Text, rows, body, options: TestOptions = TestOptions())
 ```
 
@@ -49,7 +49,7 @@ test.each("double", @[
 
 注册一个测试用例；用例主体在测试执行阶段调用，可选择接收 TestContext。
 
-```el
+```el-fragment
 export lazy let test = TestRegistrar()
 ```
 

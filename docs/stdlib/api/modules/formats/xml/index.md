@@ -16,7 +16,7 @@
 
 解析受限的 XML 文档，保留元素、文本、CDATA、注释和处理指令节点。
 
-```el
+```el-fragment
 export fn parseXML(source: Text, limits: JsonLimits = JsonLimits()): XmlDocument
 ```
 
@@ -43,7 +43,7 @@ let document = parseXML("<message>hello</message>")
 
 将 XML 文档编码为 XML 1.0 文本，并验证节点、声明和文档结构。
 
-```el
+```el-fragment
 export fn writeXML(value: XmlDocument, limits: JsonLimits = JsonLimits()): Text
 ```
 

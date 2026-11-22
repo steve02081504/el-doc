@@ -16,7 +16,7 @@
 
 对可计数序列的元素应用变换，并按输入顺序收集结果。
 
-```el
+```el-fragment
 export fn parallel_map(values, transform, limit: Number = 0, minimum: Number = 32)
 ```
 
@@ -47,7 +47,7 @@ let squares = parallel_map(@[1, 2, 3], value => value * value, 2, 1)
 
 递归拆分问题，求解叶节点，并按子问题顺序合并两个结果。
 
-```el
+```el-fragment
 export fn parallel_divide(problem, is_leaf, solve, split, merge, limit: Number = 0)
 ```
 

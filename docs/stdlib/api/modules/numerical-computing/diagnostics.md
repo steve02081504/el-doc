@@ -18,7 +18,7 @@
 
 用 F64 稠密 LU 求解并返回残差与主元阈值诊断。
 
-```el
+```el-fragment
 export fn solveDiagnostic(a: Tensor<element: F64>, b: Tensor<element: F64>, policy: NumericsPolicy = NumericsPolicy()): SolveReport
 ```
 
@@ -45,7 +45,7 @@ let residualMagnitude = report.residualNorm
 
 用 F64 列主元 QR 求最小二乘解并返回残差与秩阈值诊断。
 
-```el
+```el-fragment
 export fn leastSquaresDiagnostic(a: Tensor<element: F64>, b: Tensor<element: F64>, policy: NumericsPolicy = NumericsPolicy()): SolveReport
 ```
 

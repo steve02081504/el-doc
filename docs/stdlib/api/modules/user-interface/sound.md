@@ -25,7 +25,7 @@
 
 播放界面提示音并可管理循环音效；通常由窗口作用域持有并在窗口关闭时释放。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class SoundPlayer
 ```
 
@@ -43,7 +43,7 @@ sound.close()
 
 尝试将命名提示音加入短音效队列，不等待播放完成。
 
-```el
+```el-fragment
 fn cue(name: Text, value: Number = 0, maximum: Number = 1): Bool
 ```
 
@@ -71,7 +71,7 @@ let accepted = sound.cue("increase")
 
 设置循环引擎声的速度，并在需要时启动循环音效。
 
-```el
+```el-fragment
 fn engine(speed: Number)
 ```
 
@@ -91,7 +91,7 @@ sound.engine(0.6)
 
 尝试播放提示音，并将捕获设备错误转换为未接受状态。
 
-```el
+```el-fragment
 fn tryCue(name: Text, value: Number = 0, maximum: Number = 1): Bool
 ```
 
@@ -109,7 +109,7 @@ let accepted = sound.tryCue("celebrate")
 
 启动指定的循环音效；当前支持 engine，并通过窗口定时器重复播放。
 
-```el
+```el-fragment
 fn loop(name: Text = "engine")
 ```
 
@@ -128,7 +128,7 @@ sound.stop()
 
 取消循环定时器并清除播放器中排队的声音。
 
-```el
+```el-fragment
 fn stop()
 ```
 
@@ -144,7 +144,7 @@ sound.stop()
 
 停止循环播放并释放底层音频设备。
 
-```el
+```el-fragment
 fn close()
 ```
 

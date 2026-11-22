@@ -16,7 +16,7 @@
 
 配置 JSON 文本的最大字节数、解析限制和重复键策略。
 
-```el
+```el-fragment
 export class JsonLimits
 ```
 

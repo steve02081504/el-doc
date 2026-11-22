@@ -150,6 +150,8 @@
 | [constant](modules/text/patterns/parser.md#api-e3e533cb002f8125c11d) | `text/patterns/parser.el` |
 | [copyFile](modules/filesystem/index.md#api-3600e50270be961b4bb9) | `filesystem/index.el` |
 | [crossEntropy](modules/neural-networks/functional.md#api-6cc740068d672b42626f) | `neural-networks/functional.el` |
+| [CsvRowWriter](modules/formats/delimited-text/index.md#api-ed8b9a1c196cad0dc6d6) | `formats/delimited-text/index.el` |
+| [CsvRowWriter.writeBatch](modules/formats/delimited-text/index.md#api-7e1dbba9af5c9b6c1b6b) | `formats/delimited-text/index.el` |
 | [currentDirectory](modules/filesystem/index.md#api-74f08b3b759d683d084e) | `filesystem/index.el` |
 | [darkPaintTheme](modules/user-interface/drawing.md#api-507fa392da014efe2281) | `user-interface/drawing.el` |
 | [DataLoader](modules/neural-networks/data/index.md#api-e8831068236aaaf353d3) | `neural-networks/data/index.el` |
@@ -336,6 +338,7 @@
 | [offsetText](modules/time/calendar.md#api-77dcea13bebddbd7baf5) | `time/calendar.el` |
 | [on](modules/user-interface/model.md#api-bec5c16251ba4e97600c) | `user-interface/model.el` |
 | [oneHot](modules/neural-networks/functional.md#api-956d05922bbc9c543e7d) | `neural-networks/functional.el` |
+| [openCSVWriter](modules/formats/delimited-text/index.md#api-6bc989c7af5ed7660d74) | `formats/delimited-text/index.el` |
 | [openFileReader](modules/filesystem/index.md#api-c23461742bf817d5cab2) | `filesystem/index.el` |
 | [openFileWriter](modules/filesystem/index.md#api-941828b08ea8e39ace73) | `filesystem/index.el` |
 | [openInputFile](modules/streams/input-file.md#api-3457cba5be48dc94b859) | `streams/input-file.el` |

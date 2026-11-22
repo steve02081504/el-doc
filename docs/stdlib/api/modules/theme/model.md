@@ -16,7 +16,7 @@
 
 从动态字段集合构造并校验显式主题角色值；只接受已知颜色或度量角色。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class ThemeValues
 ```
 
@@ -36,7 +36,7 @@ let values = ThemeValues(@{base100: 0x191B20; primary: 0x80A7F0})
 
 向主题计算回调提供外部环境值以及可选的父级解析主题。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class ThemeContext
 ```
 
@@ -52,7 +52,7 @@ let context = ThemeContext()
 
 表示显式角色值或按 ThemeContext 计算角色值的主题；计算结果在解析时校验。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class Theme
 ```
 

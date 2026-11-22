@@ -4,13 +4,19 @@
 
 [库分类](../../categories/logic.md) · [模块索引](../../modules.md) · [符号索引](../../symbols.md)
 
+## 证明冲突报告 {#api-924813e70a7ee31f073b}
+
+源码：`src/stdlib/logic/proof-conflict.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/proof-conflict.el#L1)
+
+对命题的正反证据分别进行证明核检查，并报告各自的依赖。
+
 ## checkProofConflict {#api-ec7f2befb75a09d9dd76}
 
-源码：`src/stdlib/logic/proof-conflict.el:66` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/proof-conflict.el#L66)
+源码：`src/stdlib/logic/proof-conflict.el:68` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/proof-conflict.el#L68)
 
 对传入的正反证据做核检查并分别报告依赖。不自动搜索，也不把搜不到证据当成反证。
 
-```el
+```el-fragment
 export fn checkProofConflict(kernel: KernelEnvironment, proposition: ProofTerm, falseFamily: Text, support: ProofTerm, refutation: ProofTerm, context: ProofTerm[] = @[], universes: Text[] = @[], constraints: SortConstraint[] = @[], budget: ProofBudget = ProofBudget()): ProofConflictReport
 ```
 

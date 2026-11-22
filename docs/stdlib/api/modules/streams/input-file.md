@@ -16,7 +16,7 @@
 
 打开原生文件作为顺序输入流。
 
-```el
+```el-fragment
 export fn openInputFile(path: Path, lock: Bool | nil_t = nil, protection: FileReadProtection = FileReadProtection(lock is t_t)): NativeInputFile
 ```
 
@@ -47,7 +47,7 @@ input.close()
 
 尝试打开原生输入文件；仅在平台报告文件缺失时返回 nil。
 
-```el
+```el-fragment
 export fn openOptionalInputFile(path: Path): NativeInputFile | nil_t
 ```
 

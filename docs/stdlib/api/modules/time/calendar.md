@@ -16,7 +16,7 @@
 
 按公历 400 年规则判断指定年份是否为闰年。
 
-```el
+```el-fragment
 export fn leapYear(year: Number): Bool
 ```
 
@@ -40,7 +40,7 @@ leapYear(2000)
 
 返回该年月的天数；二月按闰年规则处理。
 
-```el
+```el-fragment
 export fn monthDays(year: Number, month: Number): Number
 ```
 
@@ -68,7 +68,7 @@ monthDays(2024, 2)
 
 将公历年月日换算为自 1970-01-01 起的日数。
 
-```el
+```el-fragment
 export fn epochDay(year: Number, month: Number, day: Number): Number
 ```
 
@@ -98,7 +98,7 @@ epochDay(1970, 1, 2)
 
 返回 Unix 秒数对应 UTC 日期所在的公历年份。
 
-```el
+```el-fragment
 export fn yearAtSeconds(seconds: Number): Number
 ```
 
@@ -124,7 +124,7 @@ yearAtSeconds(0)
 
 把 Unix 纳秒和偏移量分解为公历字段。
 
-```el
+```el-fragment
 export fn calendarAt(nanoseconds: Number, offset: TimeDiff = TimeDiff()): CalendarTime
 ```
 
@@ -152,7 +152,7 @@ calendarAt(0).year
 
 将偏移量格式化为带符号的时区偏移文本。
 
-```el
+```el-fragment
 export fn offsetText(offset: TimeDiff): Text
 ```
 

@@ -16,7 +16,7 @@
 
 要求两个逻辑项统一，并将所得绑定传递给后续目标。
 
-```el
+```el-fragment
 export fn unify(left: Term, right: Term): Goal
 ```
 
@@ -40,7 +40,7 @@ let goal = unify(variable(0), atom("Ada"))
 
 延迟检查两个逻辑项不可相等的约束。
 
-```el
+```el-fragment
 export fn dif(left: Term, right: Term): Goal
 ```
 
@@ -64,7 +64,7 @@ let goal = dif(variable(0), atom("Ada"))
 
 调用由构造子项表示的关系。
 
-```el
+```el-fragment
 export fn call(term: Term): Goal
 ```
 
@@ -86,7 +86,7 @@ let goal = call(compound("person", @[variable(0)]))
 
 按顺序执行一组目标，并在目标间传递逻辑绑定。
 
-```el
+```el-fragment
 export fn all(goals: Goal[]): Goal
 ```
 
@@ -108,7 +108,7 @@ let goal = all(@[call(compound("person", @[x])), dif(x, atom("Ada"))])
 
 构造一组可选逻辑分支；各分支独立枚举答案。
 
-```el
+```el-fragment
 export fn choice(goals: Goal[]): Goal
 ```
 

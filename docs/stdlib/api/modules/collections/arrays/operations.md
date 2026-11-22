@@ -16,7 +16,7 @@
 
 按迭代顺序检查元素，存在满足谓词的元素时立即返回真。
 
-```el
+```el-fragment
 @optimize(using: optimize_array, data: @{ stage: "some", receiver: "argument" })
 export fn some(values, predicate = value => value): Bool
 ```
@@ -43,7 +43,7 @@ some(@[1, 3, 4], value => value % 2 == 0)
 
 判断序列中是否有元素满足谓词。
 
-```el
+```el-fragment
 @optimize(using: optimize_array, data: @{ stage: "some", receiver: "argument" })
 export fn any(values, predicate = value => value): Bool
 ```
@@ -79,7 +79,7 @@ let result = any(a == b for let a in ..2 for let b in ..2) // t
 
 判断序列中没有元素满足谓词。
 
-```el
+```el-fragment
 @optimize(using: optimize_array, data: @{ stage: "none", receiver: "argument" })
 export fn none(values, predicate = value => value): Bool
 ```
@@ -106,7 +106,7 @@ none(@[1, 2, 3], value => value < 0)
 
 判断所有元素是否满足谓词；遇到首个不满足项时停止。
 
-```el
+```el-fragment
 @optimize(using: optimize_array, data: @{ stage: "all", receiver: "argument" })
 export fn all(values, predicate = value => value): Bool
 ```
@@ -142,7 +142,7 @@ let result = all(a == b for let a in ..2 for let b in ..2) // f
 
 判断序列中的每个元素是否满足谓词，与 all 使用相同规则。
 
-```el
+```el-fragment
 @optimize(using: optimize_array, data: @{ stage: "all", receiver: "argument" })
 export fn every(values, predicate = value => value): Bool
 ```
@@ -169,7 +169,7 @@ every(@["oak", "elm"], word => word.count == 3)
 
 依次把两个序列的元素复制到新数组。
 
-```el
+```el-fragment
 export fn concat(left, right)
 ```
 
@@ -193,7 +193,7 @@ concat(@[1, 2], @[3])
 
 判断序列是否包含与给定值相等的元素。
 
-```el
+```el-fragment
 export fn includes(values, value): Bool
 ```
 
@@ -221,7 +221,7 @@ includes(@["red", "blue"], "blue")
 
 将变换函数应用于每个元素，并按原顺序收集结果。
 
-```el
+```el-fragment
 @optimize(using: optimize_array, data: @{ stage: "map", receiver: "argument" })
 export fn map(values, transform)
 ```
@@ -246,7 +246,7 @@ map(@[1, 2], value => value + 1)
 
 非空序列从首项开始按顺序归约；空序列调用 empty，单项序列不调用 combine。
 
-```el
+```el-fragment
 export fn reduceOr(values, combine, empty)
 ```
 
@@ -273,7 +273,7 @@ reduceOr(@[1, 2, 3], (sum, value) => sum + value, () => 0)
 
 保留满足谓词的元素，并保持其相对顺序。
 
-```el
+```el-fragment
 @optimize(using: optimize_array, data: @{ stage: "filter", receiver: "argument" })
 export fn filter(values, predicate)
 ```
@@ -298,7 +298,7 @@ filter(@[1, 2, 3], value => value % 2 == 1)
 
 跳过指定数量的前置元素并复制剩余元素。
 
-```el
+```el-fragment
 @optimize(using: optimize_array, data: @{ stage: "drop", receiver: "argument", prepare: normalize_count })
 export fn drop(values, count)
 ```
@@ -323,7 +323,7 @@ drop(@[1, 2, 3], 1)
 
 复制序列开头至多指定数量的元素。
 
-```el
+```el-fragment
 @optimize(using: optimize_array, data: @{ stage: "take", receiver: "argument", prepare: normalize_count })
 export fn take(values, count)
 ```
@@ -348,7 +348,7 @@ take(@[1, 2, 3], 2)
 
 按迭代顺序对每个元素调用回调。
 
-```el
+```el-fragment
 @optimize(using: optimize_array, data: @{ stage: "each", receiver: "argument" })
 export fn each(values, callback): nil_t
 ```
@@ -375,7 +375,7 @@ each(@[1, 2], value => value)
 
 返回首个与目标值相等的元素下标；未找到时返回 -1。
 
-```el
+```el-fragment
 export fn index_of(values, wanted): Number
 ```
 
@@ -401,7 +401,7 @@ index_of(@[4, 7, 9], 7)
 
 返回首个满足谓词的值；没有匹配项时返回 nil。
 
-```el
+```el-fragment
 @optimize(using: optimize_array, data: @{ stage: "find", receiver: "argument" })
 export fn find(values, predicate)
 ```
@@ -426,7 +426,7 @@ find(@[2, 4, 5], value => value % 2 == 1)
 
 查找满足谓词的元素；若不存在则创建、追加并返回新元素。
 
-```el
+```el-fragment
 export fn find_or_add(values, predicate, create)
 ```
 
@@ -453,7 +453,7 @@ find_or_add(values, value => value == 2, () => 2)
 
 对输入副本排序并返回排序结果，输入保持不变。
 
-```el
+```el-fragment
 @optimize(using: optimize_sort, data: @{ receiver: "argument", independent: t, copy: copy_sort_input, pass: insertion_pass, tail: insertion_tail, ascending: ascending, merge: merge_sort, adaptive: adaptive_number_sort, insertion: insertion_sort, bucket: bounded_number_sort })
 export fn sort(values, less = (left, right) => left < right, strategy = stable_memory_sort)
 ```
@@ -480,7 +480,7 @@ sort(@[3, 1, 2])
 
 按相反顺序复制序列元素到新数组，不改写来源。
 
-```el
+```el-fragment
 export fn reverse(values)
 ```
 

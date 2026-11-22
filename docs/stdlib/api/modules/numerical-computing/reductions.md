@@ -18,7 +18,7 @@
 
 对张量的全部元素求和；空张量返回加法单位元 0。
 
-```el
+```el-fragment
 export fn sum(values)
 ```
 
@@ -38,7 +38,7 @@ let total = sum(@(1, 2; 3, 4))
 
 沿指定轴求和，并将该轴长度保留为 1。
 
-```el
+```el-fragment
 export fn sum(values, axis: Number)
 ```
 
@@ -64,7 +64,7 @@ let totals = sum(@(1, 2; 3, 4), 0)
 
 对张量全部元素求算术平均值。
 
-```el
+```el-fragment
 export fn mean(values)
 ```
 
@@ -86,7 +86,7 @@ let average = mean(@(1, 2; 3, 4))
 
 沿指定轴求算术平均值，并将该轴长度保留为 1。
 
-```el
+```el-fragment
 export fn mean(values, axis: Number)
 ```
 

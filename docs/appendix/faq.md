@@ -173,7 +173,9 @@ writeTextFile("copy.txt", text)
 ```el
 import { fetchAs, formats } from "el:network/index.el"
 
-let config = try { fetchAs(formats.JSON, url) } catch { Json.Null }
+fn fetchConfig(url: Text) {
+	return try { fetchAs(formats.JSON, url) } catch { nil }
+}
 ```
 
 详见 [文件与网络](../stdlib/files-network.md)。

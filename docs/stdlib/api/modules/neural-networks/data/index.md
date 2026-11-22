@@ -24,7 +24,7 @@
 
 创建按 Sampler 索引批次读取 Dataset 的数据加载器类型。
 
-```el
+```el-fragment
 export fn DataLoader(sample: type): type
 ```
 
@@ -52,7 +52,7 @@ let firstBatch = loader.next()
 
 指示是否还有满足 dropLast 设置的数据可组成下一批。
 
-```el
+```el-fragment
 get hasNext(): Bool
 ```
 
@@ -72,7 +72,7 @@ while (loader.hasNext) consume(loader.next())
 
 返回可用于恢复当前采样进度的状态快照。
 
-```el
+```el-fragment
 fn save(): SamplerState
 ```
 
@@ -92,7 +92,7 @@ let state = loader.save()
 
 将加载器游标恢复到兼容的采样状态。
 
-```el
+```el-fragment
 fn restore(state: SamplerState)
 ```
 
@@ -114,7 +114,7 @@ loader.restore(state)
 
 读取下一批样本，先交给 collate 整理；整理成功后才前进采样游标。
 
-```el
+```el-fragment
 fn next(collate)
 ```
 
@@ -136,7 +136,7 @@ let batch = loader.next(samples => samples)
 
 读取下一批样本并直接返回样本数组，不执行自定义整理。
 
-```el
+```el-fragment
 fn next(): sample[]
 ```
 

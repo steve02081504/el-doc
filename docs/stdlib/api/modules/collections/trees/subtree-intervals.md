@@ -16,7 +16,7 @@
 
 从根键和直接子键遍历构建子树区间索引。
 
-```el
+```el-fragment
 export fn subtree_intervals(count: Number, root: Number, childrenOf: fn(key: Number): Number[]): SubtreeIntervalIndex
 ```
 
@@ -46,7 +46,7 @@ console.stdout.writeLine(index.contains(0, 2))
 
 直接构建调用方拥有的稠密子树区间表，不经索引包装和数组复制。
 
-```el
+```el-fragment
 export fn subtree_interval_bounds(count: Number, root: Number, childrenOf: fn(key: Number): Number[]): Number[]
 ```
 

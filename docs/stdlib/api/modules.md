@@ -60,7 +60,7 @@
 
 ## formats
 
-- [formats/delimited-text/index.el](modules/formats/delimited-text/index.md)（5 个 API）
+- [formats/delimited-text/index.el](modules/formats/delimited-text/index.md)（8 个 API）
 - [formats/index.el](modules/formats/index.md)（12 个 API）
 - [formats/ini/index.el](modules/formats/ini/index.md)（3 个 API）
 - [formats/internal/writer.el](modules/formats/internal/writer.md)（1 个 API）

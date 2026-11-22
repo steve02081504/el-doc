@@ -16,7 +16,7 @@
 
 解析 application/x-www-form-urlencoded 格式的字段序列。
 
-```el
+```el-fragment
 export fn parseForm(source: Text): FormField[]
 ```
 

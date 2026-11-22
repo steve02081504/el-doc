@@ -28,7 +28,7 @@
 
 使用值相等语义比较实际值与期望值，失败时报告两侧快照。
 
-```el
+```el-fragment
 fn equal(borrow actual, borrow expected)
 ```
 
@@ -50,7 +50,7 @@ check.equal(2 + 2, 4)
 
 使用身份相等比较两个值，而不比较其内容。
 
-```el
+```el-fragment
 fn same(borrow actual, borrow expected)
 ```
 
@@ -73,7 +73,7 @@ check.same(value, value)
 
 按显式绝对与相对容差比较两个数值。
 
-```el
+```el-fragment
 fn near(actual: Number, expected: Number, absolute: Number, relative: Number)
 ```
 
@@ -99,7 +99,7 @@ check.near(0.1 + 0.2, 0.3, absolute: 0.000001, relative: 0)
 
 断言回调抛出指定类型的异常，并返回捕获到的异常值。
 
-```el
+```el-fragment
 fn throws(expected: type, body)
 ```
 
@@ -123,7 +123,7 @@ check.throws(MissingKeyError, () => scores["missing"])
 
 按位置逐项比较两个有限序列，并报告长度或首个不同元素。
 
-```el
+```el-fragment
 fn items(borrow actual, borrow expected)
 ```
 
@@ -145,7 +145,7 @@ check.items(@[1, 2], @[1, 2])
 
 执行一组比较并聚合其中的比较失败，结束后一次报告。
 
-```el
+```el-fragment
 fn collect(body)
 ```
 
@@ -168,7 +168,7 @@ check.collect(() => {
 
 将编码后的值按当前测试上下文中的键记录为快照。
 
-```el
+```el-fragment
 fn snapshot(borrow value, key: Text, encode = defaultSnapshot)
 ```
 
@@ -192,7 +192,7 @@ check.snapshot(@{ status: "ready" }, key: "response")
 
 断言编译结果成功并生成产物。
 
-```el
+```el-fragment
 fn compiles(borrow result)
 ```
 
@@ -212,7 +212,7 @@ check.compiles(compileFixture("valid.el"))
 
 断言编译失败并包含指定阶段、诊断码与源码位置。
 
-```el
+```el-fragment
 fn diagnostic(borrow result, phase: Text, code: Text, source: Text = "", line: Number = 0, column: Number = 0, marker: Text = "")
 ```
 
@@ -244,7 +244,7 @@ check.diagnostic(result, phase: "check", code: "EL.ACCESS.PRIVATE", marker: "den
 
 提供比较断言入口；失败时抛出带结构化差异信息的 TestFailure。
 
-```el
+```el-fragment
 export lazy let check = Checks()
 ```
 

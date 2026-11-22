@@ -16,7 +16,7 @@
 
 选择本地时间映射到多个或零个时间点时的处理策略。
 
-```el
+```el-fragment
 export enum TimeResolution
 ```
 
@@ -34,7 +34,7 @@ TimeResolution.Earlier
 
 选择按日历月移动时目标月份没有原日期的处理策略。
 
-```el
+```el-fragment
 export enum MonthOverflow
 ```
 

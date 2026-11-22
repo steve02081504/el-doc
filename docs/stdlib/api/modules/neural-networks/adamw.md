@@ -20,7 +20,7 @@
 
 创建指定元素与存储类型的 AdamW 优化器类型。
 
-```el
+```el-fragment
 export fn AdamW(element: type, storage: type = Tensor<element: element>): type
 ```
 
@@ -46,7 +46,7 @@ let optimizer = Optimizer(rate: .001, weightDecay: .01)
 
 按 AdamW 更新规则应用梯度，并维护此优化器身份对应的参数矩状态。
 
-```el
+```el-fragment
 fn update(model, gradient)
 ```
 

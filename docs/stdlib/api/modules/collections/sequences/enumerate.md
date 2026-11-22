@@ -16,7 +16,7 @@
 
 惰性包装迭代源，为每个产出元素配上从零开始的下标。
 
-```el
+```el-fragment
 export fn enumerate(source)
 ```
 

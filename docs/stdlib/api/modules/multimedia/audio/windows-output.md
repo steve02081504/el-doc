@@ -12,13 +12,19 @@
 - [PcmOutput.clear](#api-573c3b322bc864f723be)
 - [PcmOutput.close](#api-5ea91df086c9987b32dd)
 
+## Windows PCM 输出 {#api-99ee945486afd6c1d555}
+
+源码：`src/stdlib/multimedia/audio/windows-output.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L1)
+
+通过 waveOut 提供有界 PCM16 输出队列。
+
 ## PcmOutput {#api-3405bba76a30486bbb83}
 
-源码：`src/stdlib/multimedia/audio/windows-output.el:54` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L54)
+源码：`src/stdlib/multimedia/audio/windows-output.el:56` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L56)
 
 拥有单线程有界 PCM16 设备队列；入队时复制音频块，队列满时立即返回假。
 
-```el
+```el-fragment
 export @assign(mode: "shared") class PcmOutput
 ```
 
@@ -39,11 +45,11 @@ let accepted = output.enqueue(audio)
 
 ## PcmOutput.enqueue {#api-5372746934d5b8e5c997}
 
-源码：`src/stdlib/multimedia/audio/windows-output.el:98` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L98)
+源码：`src/stdlib/multimedia/audio/windows-output.el:100` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L100)
 
 尝试提交音频块；样本在返回前复制，队列无空槽时不等待并返回假。
 
-```el
+```el-fragment
 fn enqueue(audio: PcmAudio): Bool
 ```
 
@@ -63,11 +69,11 @@ if (!output.enqueue(chunk)) sleep(2)
 
 ## PcmOutput.finish {#api-df13597f5e16ed137856}
 
-源码：`src/stdlib/multimedia/audio/windows-output.el:119` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L119)
+源码：`src/stdlib/multimedia/audio/windows-output.el:121` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L121)
 
 兼容其他平台的结束调用；Windows waveOut 队列无需额外提交尾块。
 
-```el
+```el-fragment
 fn finish()
 ```
 
@@ -80,11 +86,11 @@ while (!output.idle()) sleep(2)
 
 ## PcmOutput.idle {#api-70c6bd7ef71832546cf8}
 
-源码：`src/stdlib/multimedia/audio/windows-output.el:127` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L127)
+源码：`src/stdlib/multimedia/audio/windows-output.el:129` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L129)
 
 检查设备队列是否已完成所有已提交块。
 
-```el
+```el-fragment
 fn idle(): Bool
 ```
 
@@ -100,11 +106,11 @@ while (!output.idle()) sleep(2)
 
 ## PcmOutput.clear {#api-573c3b322bc864f723be}
 
-源码：`src/stdlib/multimedia/audio/windows-output.el:138` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L138)
+源码：`src/stdlib/multimedia/audio/windows-output.el:140` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L140)
 
 清除设备当前排队的音频块。
 
-```el
+```el-fragment
 fn clear()
 ```
 
@@ -116,11 +122,11 @@ output.clear()
 
 ## PcmOutput.close {#api-5ea91df086c9987b32dd}
 
-源码：`src/stdlib/multimedia/audio/windows-output.el:149` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L149)
+源码：`src/stdlib/multimedia/audio/windows-output.el:151` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L151)
 
 停止播放并释放设备队列及原生句柄。
 
-```el
+```el-fragment
 fn close()
 ```
 

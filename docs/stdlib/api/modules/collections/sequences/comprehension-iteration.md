@@ -17,7 +17,7 @@
 
 构造只产出一个值的惰性可迭代对象。
 
-```el
+```el-fragment
 export fn singleton(producer)
 ```
 
@@ -45,7 +45,7 @@ let result = values.collect() // @[7]；calls 为 1。
 
 按需检查条件，条件成立时才打开下游来源。
 
-```el
+```el-fragment
 export fn guarded(conditionFactory, outputFactory)
 ```
 
@@ -74,7 +74,7 @@ let result = values.collect() // @[]；opened 仍为 0。
 
 按来源顺序为每个元素打开一个下游可迭代值，并依次产出其全部元素。
 
-```el
+```el-fragment
 export fn flatMap(sourceFactory, expand)
 ```
 

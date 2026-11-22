@@ -190,21 +190,19 @@ let options = HttpOptions(@{
 
 网络层的失败分两类：连接、DNS、超时、重定向失败抛 `NetworkError`；HTTP 状态不在成功范围时 `fetchAs` 抛 `HttpStatusError`，它的 `response` 字段保留完整响应以便读取状态码与响应头。超时不是重试，超时后请求就失败了。
 
-## JSON 取到成员后，先 match 一次
+## JSON 取到成员后，检查值的类型
 
-`parseJSON(source, limits = JsonLimits())` 把文本解析成 `Json` 值，失败时抛 `ParseError`；`jsonField(value, key)` 按成员名取值。
+`parseJSON(source, limits = JsonLimits())` 把文本解析成对应的 EL 值，失败时抛 `ParseError`；`jsonField(value, key)` 按成员名取值。
 
 ```el
 let config = parseJSON(readTextFile("file:./config.json"))
 let name = jsonField(config, "name")
 
-match name {
-	Json.String(text) => { console.stdout.writeLine("name: ", text) }
-	_ => { console.stdout.writeLine("name 不是字符串") }
-}
+if (name is Text) console.stdout.writeLine("name: ", name)
+else console.stdout.writeLine("name 不是字符串")
 ```
 
-`Json` 是一个数据声明，成员是 `Json.Null`、`Json.Boolean(value)`、`Json.String(value)`、`Json.Numeric(value)`、`Json.Array(items)`、`Json.Object(fields)`。所以取到成员后通常要 `match` 一次，把“它到底是字符串还是数字”写清楚。`JsonLimits` 控制输入字节上限与解析预算，默认字节上限是 16 MiB。
+JSON 的 `null` 解析为 `nil`，布尔值解析为 `t` 或 `f`，字符串和数值分别解析为 `Text` 和 `Number`，数组和对象解析为对应的 EL 容器。读取对象成员后，可以用 `is` 检查值的类型。`JsonLimits` 控制输入字节上限与解析预算，默认字节上限是 16 MiB。
 
 ## 完整例子：读写配置文件
 
@@ -220,10 +218,8 @@ fn loadName() {
 	let config = try { parseJSON(source) } catch { return "anonymous" }
 	let value = try { jsonField(config, "name") } catch { return "anonymous" }
 
-	match value {
-		Json.String(text) => { return text }
-		_ => { return "anonymous" }
-	}
+	if (value is Text) return value
+	return "anonymous"
 }
 ```
 
@@ -247,10 +243,8 @@ import { formats } from "el:formats/"
 fn fetchName(url: Text) {
 	let config = fetchAs(formats.JSON, url, HttpOptions(@{ timeout: 5000 }))
 	let value = jsonField(config, "name")
-	match value {
-		Json.String(text) => { return text }
-		_ => { throw StateError("响应里没有 name 字符串") }
-	}
+	if (value is Text) return value
+	throw StateError("响应里没有 name 字符串")
 }
 
 try {

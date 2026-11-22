@@ -21,7 +21,7 @@
 
 从当前位置读取至多指定数量的原始字节。
 
-```el
+```el-fragment
 fn read(maximumBytes: Number): Number[]
 ```
 
@@ -47,7 +47,7 @@ reader.close()
 
 关闭读取器并结束其底层资源使用。
 
-```el
+```el-fragment
 fn close(): nil_t
 ```
 

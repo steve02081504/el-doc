@@ -16,7 +16,7 @@
 
 batch 块中的局部语法 `keep(...)` 按条件保留当前元素；条件为假时丢弃该元素。
 
-```el
+```el-fragment
 syntax keepElement
 ```
 
@@ -39,7 +39,7 @@ console.stdout.writeLine(selected.join(", "))
 
 将块内使用的变化数组绑定映射到对应元素，并收集逐元素求值结果。
 
-```el
+```el-fragment
 export syntax batch
 ```
 

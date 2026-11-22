@@ -21,7 +21,7 @@
 
 描述节点的流向、间距、尺寸约束、权重、换行与滚动溢出策略；属性变更会发布变化通知。
 
-```el
+```el-fragment
 @assign(mode: "shared")
 export class LayoutStyle
 ```
@@ -40,7 +40,7 @@ style.gap = 8
 
 一个可观察的界面定义节点，保存元素种类、文本、标识、样式、主题、监听器和子边。
 
-```el
+```el-fragment
 @assign(mode: "shared")
 export class Definition
 ```
@@ -59,7 +59,7 @@ title.enabled = t
 
 可选的局部语义 Theme，按当前出现位置参与父子主题解析。
 
-```el
+```el-fragment
 let theme: Theme | nil_t
 ```
 
@@ -77,7 +77,7 @@ root.theme = Theme(@{primary: 0x80A7F0})
 
 用一个 Unicode 标量替代每个绘制的文本标量。设置后，输入框跳过热字符串匹配。
 
-```el
+```el-fragment
 get textMask(): Text | nil_t
 ```
 
@@ -96,7 +96,7 @@ password.textMask = "•"
 
 一次 GUI 输入事件的可变传播状态与载荷；监听器可停止传播或阻止默认处理。
 
-```el
+```el-fragment
 @assign(mode: "shared")
 export class GuiEvent
 ```
@@ -113,7 +113,7 @@ on(button, "click", event => event.preventDefault())
 
 为定义节点注册指定类型的事件监听器，可选择在捕获阶段运行。
 
-```el
+```el-fragment
 export fn on(element: Definition, kind: Text, action, capture: Bool = f)
 ```
 
@@ -137,7 +137,7 @@ on(button, "click", event => status.text = "已点击")
 
 创建 `column`、`row`、`label`、`button` 或 `input` 定义；未知种类会抛出错误。
 
-```el
+```el-fragment
 export fn element(kind: Text, text: Text = "", id: Text = ""): Definition
 ```
 
@@ -165,7 +165,7 @@ let save = element("button", "保存", "save")
 
 将目标定义作为带键子边追加到父节点，并发布父节点变化。
 
-```el
+```el-fragment
 export fn appendChild(parent: Definition, key: Text, target: Definition)
 ```
 
@@ -190,7 +190,7 @@ appendChild(root, "heading", element("label", "设置"))
 
 按子边键移除第一个匹配项；未找到时不修改模型。
 
-```el
+```el-fragment
 export fn removeChild(parent: Definition, key: Text): Bool
 ```
 
@@ -214,7 +214,7 @@ let removed = removeChild(root, "hint")
 
 将已有子边移动到指定的最终索引；这是重排，不会创建新的边。
 
-```el
+```el-fragment
 export fn moveChild(parent: Definition, key: Text, destination: Number)
 ```
 

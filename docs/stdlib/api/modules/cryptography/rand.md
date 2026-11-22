@@ -16,7 +16,7 @@
 
 从操作系统随机源读取指定数量的密码学随机字节。
 
-```el
+```el-fragment
 export fn secure_random_bytes(count: Number): Number[]
 ```
 
@@ -41,7 +41,7 @@ let nonce = secure_random_bytes(12)
 
 读取密码学随机字节并返回小写十六进制编码。
 
-```el
+```el-fragment
 export fn secure_random_hex(count: Number): Text
 ```
 

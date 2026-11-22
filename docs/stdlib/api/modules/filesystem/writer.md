@@ -17,11 +17,11 @@
 
 ## FileWriter.write {#api-60eb68cfed70401fd999}
 
-源码：`src/stdlib/filesystem/writer.el:135` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L135)
+源码：`src/stdlib/filesystem/writer.el:139` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L139)
 
 将字节数组快照写入目标位置并返回写入回执。
 
-```el
+```el-fragment
 fn write(bytes: Number[]): WriteReceipt
 ```
 
@@ -43,11 +43,11 @@ writer.close()
 
 ## FileWriter.close {#api-95af169891a6620e73da}
 
-源码：`src/stdlib/filesystem/writer.el:173` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L173)
+源码：`src/stdlib/filesystem/writer.el:209` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L209)
 
 完成写入器并关闭底层资源。
 
-```el
+```el-fragment
 fn close(): nil_t
 ```
 

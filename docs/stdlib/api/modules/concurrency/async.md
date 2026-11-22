@@ -16,7 +16,7 @@
 
 将代码块作为异步回调交给 spawn 执行，并立即返回 Promise。
 
-```el
+```el-fragment
 export syntax async
 ```
 
@@ -36,7 +36,7 @@ let count = await(second)
 
 读取 Promise 的结果；宏只完成 Promise.get() 调用，不自动把普通函数变成异步函数。
 
-```el
+```el-fragment
 export syntax await
 ```
 

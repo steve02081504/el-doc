@@ -20,7 +20,7 @@
 
 创建随机梯度下降优化器；更新时按学习率应用模型梯度。
 
-```el
+```el-fragment
 export @assign(mode: "copy") class SGD
 ```
 
@@ -42,7 +42,7 @@ optimizer.update(model, step.grad)
 
 按已配置学习率把梯度应用到模型参数。
 
-```el
+```el-fragment
 fn update(model, gradient)
 ```
 

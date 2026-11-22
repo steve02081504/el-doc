@@ -29,7 +29,7 @@
 
 表示输入未匹配解析器时的诊断，包含失败偏移、合并后的期望项和规则上下文。
 
-```el
+```el-fragment
 @assign(mode: "copy")
 export class ParseError extends Error
 ```
@@ -48,7 +48,7 @@ catch (error) { if (error is ParseError) console.stderr.writeLine(error.offset) 
 
 输入中第一个没有成功解析的位置，以 Unicode 标量下标计。
 
-```el
+```el-fragment
 let offset: Number
 ```
 
@@ -66,7 +66,7 @@ console.stderr.writeLine(error.offset)
 
 在失败位置可接受的预期项列表。
 
-```el
+```el-fragment
 let expected: Text[]
 ```
 
@@ -84,7 +84,7 @@ console.stderr.writeLine(error.expected.join(", "))
 
 失败时处于活动状态的解析规则上下文栈。
 
-```el
+```el-fragment
 let contexts: Text[]
 ```
 
@@ -102,7 +102,7 @@ console.stderr.writeLine(error.contexts.join("/"))
 
 指示前缀解析是否成功。
 
-```el
+```el-fragment
 let matched: Bool
 ```
 
@@ -120,7 +120,7 @@ console.stdout.writeLine(reply.matched)
 
 成功解析后第一个未消费位置的标量下标。
 
-```el
+```el-fragment
 let end: Number
 ```
 
@@ -138,7 +138,7 @@ console.stdout.writeLine(reply.end)
 
 未匹配时保存的 ParseError。
 
-```el
+```el-fragment
 let error: ParseError
 ```
 
@@ -156,7 +156,7 @@ console.stderr.writeLine(reply.error.offset)
 
 返回成功解析得到的语义值；失败时抛出保存的 ParseError。
 
-```el
+```el-fragment
 fn value(): output
 ```
 
@@ -178,7 +178,7 @@ if (reply.matched) console.stdout.writeLine(reply.value())
 
 将模式包装值转换为解析器；解析器自身调用时也返回自身。
 
-```el
+```el-fragment
 fn asParser()
 ```
 
@@ -196,7 +196,7 @@ let value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse
 
 从输入起点解析完整文本；输入有剩余或无法匹配时抛出 ParseError。
 
-```el
+```el-fragment
 fn parse(source: Text, limits: PatternLimits = PatternLimits()): output
 ```
 
@@ -224,7 +224,7 @@ console.stdout.writeLine(value)
 
 从指定偏移尝试解析输入前缀，不要求消费完整文本，并以 ParseReply 返回匹配状态。
 
-```el
+```el-fragment
 fn parsePrefix(source: Text, from: Number = 0, limits: PatternLimits = PatternLimits()): ParseReply<output: output>
 ```
 
@@ -252,7 +252,7 @@ console.stdout.writeLine(reply.matched, " ", reply.end)
 
 从当前位置依次尝试解析器或文本候选，返回首个成功分支的结果。
 
-```el
+```el-fragment
 export fn firstOf(first, ...rest)
 ```
 
@@ -275,7 +275,7 @@ let literalParser = firstOf(constant("null", f), constant("true", t))
 
 匹配完整的固定文本，并将指定值作为解析结果。
 
-```el
+```el-fragment
 export fn constant(text: Text, value)
 ```
 
@@ -298,7 +298,7 @@ let trueParser = constant("true", t)
 
 解析左值、分隔符与右值，并返回包含两侧结果的配对值。
 
-```el
+```el-fragment
 export fn pair(left, separator, right)
 ```
 
@@ -323,7 +323,7 @@ let member = pair("name", ":", "EL")
 
 解析由括号包围、以分隔符隔开的元素序列；默认拒绝尾随分隔符。
 
-```el
+```el-fragment
 export fn list(open, element, close, separator = ",", allowTrailing: Bool = f)
 ```
 

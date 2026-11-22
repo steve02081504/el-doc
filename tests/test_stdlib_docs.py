@@ -124,8 +124,16 @@ class GenerationTests(unittest.TestCase):
 		self.root = Path(self.temporary.name)
 		self.stdlib = self.root / "src/stdlib"
 		self.stdlib.mkdir(parents=True)
-		(self.stdlib / "math.el").write_text(DOCUMENT, encoding="utf-8")
+		self.write_document("math.el", DOCUMENT, encoding="utf-8")
 		self.output = self.root / "docs"
+
+	def write_document(self, name, source, encoding="utf-8"):
+		(self.stdlib / name).write_text(source.rstrip() + "\n\n//! @module Sample\n//! Sample utilities.\n", encoding=encoding)
+
+	def test_documented_members_require_module_documentation(self):
+		(self.stdlib / "math.el").write_text(DOCUMENT, encoding="utf-8")
+		with self.assertRaisesRegex(DocumentationError, r"math.el:1: .*//! @module"):
+			collect(self.root)
 
 	def test_environment_alias_cycles_and_source_link(self):
 		(self.stdlib / "index.el").write_text('export lazy import { increment as count } from "file:./bridge.el"\nexport import { mystery } from "file:./missing.el"\nexport import { cycle } from "file:./cycle.el"\n')
@@ -151,7 +159,7 @@ class GenerationTests(unittest.TestCase):
 
 	def test_environment_keeps_same_module_overload_families(self):
 		(self.stdlib / "index.el").write_text('export lazy import { increment, Widget } from "file:./math.el"\n')
-		(self.stdlib / "math.el").write_text(DOCUMENT + '\nexport fn increment(value: Text): Text => value\nexport class Widget {}\nexport fn Widget(): type {}\n')
+		self.write_document("math.el", DOCUMENT + '\nexport fn increment(value: Text): Text => value\nexport class Widget {}\nexport fn Widget(): type {}\n')
 		items = {item["name"]: item for item in collect(self.root)["environment"]}
 		self.assertEqual(items["increment"]["id"], "math::increment")
 		self.assertEqual(items["Widget"]["source"], "math.el")
@@ -181,15 +189,15 @@ class GenerationTests(unittest.TestCase):
 		(self.stdlib / "public").mkdir()
 		(self.stdlib / "public/index.el").write_text('export { increment as count } from "file:../math.el"\nexport import { unknown } from "file:../missing.el"\n')
 		model = collect(self.root)
-		self.assertEqual(model["exports"]["public/index"]["count"], "math::increment")
-		self.assertEqual(model["exports"]["math"]["increment"], "math::increment")
+		self.assertEqual(model["exports"]["public/index"]["count"]["id"], "math::increment")
+		self.assertEqual(model["exports"]["math"]["increment"]["id"], "math::increment")
 		self.assertNotIn("increment", model["exports"]["public/index"])
-		self.assertNotIn("unknown", model["exports"]["public/index"])
+		self.assertIsNone(model["exports"]["public/index"]["unknown"]["id"])
 
 	def test_overload_family_anchor_and_member_overview(self):
 		one = DOCUMENT.replace("@api increment", "@api Widget.increment~one")
 		two = DOCUMENT.replace("@api increment", "@api Widget.increment~two")
-		(self.stdlib / "math.el").write_text(one + two)
+		self.write_document("math.el", one + two)
 		model = collect(self.root)
 		page = render(model)["modules/math.md"]
 		from stdlib_docs import anchor
@@ -201,13 +209,13 @@ class GenerationTests(unittest.TestCase):
 		doc = DOCUMENT.replace("@api increment", "@api Widget").replace("export fn increment(value: Number): Number => value + 1", "export class Widget {}")
 		value = DOCUMENT.replace("@api increment", "@api thing").replace("export fn increment(value: Number): Number => value + 1", "export const thing = Widget()")
 		member = DOCUMENT.replace("@api increment", "@api Widget.child").replace("export fn increment(value: Number): Number => value + 1", "get child(): Widget { return this }")
-		(self.stdlib / "math.el").write_text(doc + value + member, encoding="utf-8")
+		self.write_document("math.el", doc + value + member, encoding="utf-8")
 		model = collect(self.root)
 		page = render(model)["modules/math.md"]
 		self.assertIn("export const thing = Widget()", page)
 		self.assertIn("**类型**：[`Widget`](math.md#api-", page)
 		self.assertIn("**返回类型**：[`Widget`](math.md#api-", page)
-		(self.stdlib / "other.el").write_text(doc, encoding="utf-8")
+		self.write_document("other.el", doc)
 		page = render(collect(self.root))["modules/math.md"]
 		self.assertIn("**类型**：[`Widget`](math.md#api-", page)
 
@@ -217,7 +225,7 @@ class GenerationTests(unittest.TestCase):
 		(self.stdlib / "types.el").write_text('export class Original {}\nexport let Bool: type = t_t | f_t\nexport fn Bool(value): Bool { return value }\nexport @builtin:jahu:xata class t_t {}\nexport @builtin:jahu:netra class f_t {}\n')
 		(self.stdlib / "other.el").write_text('export class Original {}\n')
 		doc = DOCUMENT.replace("export fn increment(value: Number): Number => value + 1", "export fn increment(value: ptr): Alias<element: Bool>[] | type | any | ptr { return value }")
-		(self.stdlib / "math.el").write_text('import { Alias } from "file:./public/index.el"\nimport { Bool } from "file:./types.el"\n' + doc)
+		self.write_document("math.el", 'import { Alias } from "file:./public/index.el"\nimport { Bool } from "file:./types.el"\n' + doc)
 		model = collect(self.root)
 		entry = next(e for e in model["entries"] if e["id"] == "math::increment")
 		refs = {x["name"]: x["target"] for x in entry["type_references"]["return_type"]}
@@ -238,7 +246,7 @@ class GenerationTests(unittest.TestCase):
 
 	def test_lexical_factory_and_value_parameters_and_local_alias(self):
 		doc = DOCUMENT.replace("@api increment", "@api Box.item").replace("export fn increment(value: Number): Number => value + 1", "fn item(start: Number, end: Number): Entry<element: element, size: end - start> { return value }")
-		(self.stdlib / "math.el").write_text('export fn Box(element: type): type {\n let Entry: type = element\n class BoxValue {\n' + doc + '}\n}\n')
+		self.write_document("math.el", 'export fn Box(element: type): type {\n let Entry: type = element\n class BoxValue {\n' + doc + '}\n}\n')
 		model = collect(self.root)
 		entry = next(e for e in model["entries"] if e["name"] == "Box.item")
 		refs = {ref["name"]: ref["target"] for ref in entry["type_references"]["return_type"]}
@@ -252,7 +260,7 @@ class GenerationTests(unittest.TestCase):
 	def test_multiline_export_attributes_resolve_imported_type(self):
 		(self.stdlib / "types.el").write_text('export @assign(mode: "copy")\n@defaults(options: @{})\nclass Reader {}\n')
 		doc = DOCUMENT.replace("export fn increment(value: Number): Number => value + 1", "export fn increment(): Reader { return value }")
-		(self.stdlib / "math.el").write_text('import { Reader } from "file:./types.el"\n' + doc)
+		self.write_document("math.el", 'import { Reader } from "file:./types.el"\n' + doc)
 		entry = next(e for e in collect(self.root)["entries"] if e["name"] == "increment")
 		self.assertEqual(entry["type_references"]["return_type"][0]["target"]["source"], "types.el")
 
@@ -262,7 +270,7 @@ class GenerationTests(unittest.TestCase):
 		(self.stdlib / "fast.el").write_text("export class Word {}\n")
 		(self.stdlib / "slow.el").write_text("export class Other {}\n")
 		doc = DOCUMENT.replace("export fn increment(value: Number): Number => value + 1", "export fn increment(): Alias { return value }")
-		(self.stdlib / "math.el").write_text('import { W as Alias } from "file:./choice.el"\n' + doc)
+		self.write_document("math.el", 'import { W as Alias } from "file:./choice.el"\n' + doc)
 		model = collect(self.root)
 		entry = next(e for e in model["entries"] if e["name"] == "increment")
 		target = entry["type_references"]["return_type"][0]["target"]
@@ -313,17 +321,16 @@ class GenerationTests(unittest.TestCase):
 			write_pages(self.output, {})
 
 	def test_duplicates_and_unresolved_references(self):
-		path = self.stdlib / "math.el"
-		path.write_text(DOCUMENT + DOCUMENT)
+		self.write_document("math.el", DOCUMENT + DOCUMENT)
 		with self.assertRaisesRegex(DocumentationError, "duplicate"):
 			collect(self.root)
-		path.write_text(DOCUMENT.replace("/// @param", "/// @see missing::symbol\n/// @param"))
+		self.write_document("math.el", DOCUMENT.replace("/// @param", "/// @see missing::symbol\n/// @param"))
 		with self.assertRaisesRegex(DocumentationError, "unknown @see"):
 			collect(self.root)
 
 	def test_cross_module_reference_and_overload(self):
 		(self.stdlib / "nested").mkdir()
-		(self.stdlib / "nested/other.el").write_text(DOCUMENT.replace("@api increment", "@api increment~number").replace("/// @param", "/// @see math::increment\n/// @param"))
+		self.write_document("nested/other.el", DOCUMENT.replace("@api increment", "@api increment~number").replace("/// @param", "/// @see math::increment\n/// @param"))
 		model = collect(self.root)
 		self.assertEqual(model["coverage"]["documented_apis"], 2)
 		page = render(model)["modules/nested/other.md"]
@@ -338,7 +345,7 @@ class GenerationTests(unittest.TestCase):
 
 	def test_reference_leads_with_description_and_folds_long_attributes(self):
 		attribute = '@policy(data: @{\n' + '\n'.join(f'\tfield{i}: {i},' for i in range(8)) + '\n})\n'
-		(self.stdlib / "math.el").write_text(DOCUMENT.replace("export fn", attribute + '@bounded(time: "O(1)")\nexport fn'))
+		self.write_document("math.el", DOCUMENT.replace("export fn", attribute + '@bounded(time: "O(1)")\nexport fn'))
 		page = render(collect(self.root))["modules/math.md"]
 		self.assertLess(page.index("Add one."), page.index("```el"))
 		visible = page[page.index("```el"):page.index("??? note")]
@@ -348,7 +355,7 @@ class GenerationTests(unittest.TestCase):
 
 	def test_reference_indexes_link_to_exact_symbol_and_group(self):
 		(self.stdlib / "nested").mkdir()
-		(self.stdlib / "nested/other.el").write_text(DOCUMENT.replace("@api increment", "@api increment~number"))
+		self.write_document("nested/other.el", DOCUMENT.replace("@api increment", "@api increment~number"))
 		pages = render(collect(self.root))
 		self.assertIn("[root](categories/root.md)", pages["index.md"])
 		self.assertIn("[nested](categories/nested.md)", pages["index.md"])

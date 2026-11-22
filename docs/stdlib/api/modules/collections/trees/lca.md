@@ -16,7 +16,7 @@
 
 从稳定整数键树建立 LCA 索引；默认使用 ±1 RMQ。
 
-```el
+```el-fragment
 export fn build(nodeCount: Number, root: Number, childrenOf: fn(key: Number): Number[], rmq: (fn(values: Number[]): fn(lo: Number, hi: Number): Number) | nil_t = nil): TreeLca
 ```
 

@@ -1,9 +1,6 @@
-"""Link highlighted EL names to source-generated reference entries.
+"""Check and link highlighted EL names using the source-generated API catalog."""
 
-This is a conservative documentation lookup, not a compiler name resolver.
-Local declarations suppress automatic links; unknown receiver types stay plain.
-"""
-
+from bisect import bisect_right
 from collections import defaultdict
 from dataclasses import dataclass
 import hashlib
@@ -19,7 +16,7 @@ from types import SimpleNamespace
 from urllib.parse import unquote, urlsplit
 
 from pygments.lexers import get_lexer_by_name
-from pygments.token import Comment, Keyword, Name, String, Text, Whitespace
+from pygments.token import Comment, Keyword, Name, Number, String, Text, Whitespace
 
 _source_spec = importlib.util.spec_from_file_location("el_doc_source", Path(__file__).resolve().parents[1] / "scripts/stdlib_docs.py")
 _source_docs = importlib.util.module_from_spec(_source_spec)
@@ -66,7 +63,14 @@ class Catalog:
 	def __init__(self, model):
 		self.entries = {entry["id"]: entry for entry in model["entries"] if entry["kind"] == "api"}
 		self.names = defaultdict(list)
-		self.modules = defaultdict(dict)
+		self.modules = model.get("exports", {})
+		self.library_exports = {}
+		for module in self.modules.values():
+			for name, binding in module.items():
+				previous = self.library_exports.get(name)
+				if previous is None or not (previous.get("id") or previous.get("documented")):
+					self.library_exports[name] = binding
+		self.environment = {binding["name"]: binding for binding in model.get("environment", [])}
 		self.defaults = {}
 		self.signature_types = {}
 		for entry in self.entries.values():
@@ -79,26 +83,16 @@ class Catalog:
 				concise = _source_docs.readable_signature(display)
 				if concise != display:
 					self.signature_types.setdefault(concise, []).append(entry)
-		for entry in self.entries.values():
-			name = entry["name"].split("~")[0]
-			if "." not in name:
-				self.modules[entry["source"].removesuffix(".el")][name] = self.named(name, entry["source"])
-		for binding in model.get("environment", []):
-			entry = self.entries.get(binding.get("id"))
-			target = self.named(entry["name"].split("~")[0], entry["source"]) if entry else None
-			if target is None and binding.get("source"):
-				target = self.named(binding["name"], binding["source"])
-			if target is None:
-				target = Target("stdlib/api/environment.md", anchor(binding["name"]), binding["name"], binding.get("value_type"))
-			self.defaults[binding["name"]] = target
-			# A documented original binding can also be imported from its source.
-			if binding.get("source"):
-				self.modules[binding["source"].removesuffix(".el")].setdefault(binding["name"], target)
-		for module, bindings in model.get("exports", {}).items():
-			for name, identity in bindings.items():
-				entry = self.entries.get(identity)
-				if entry:
-					self.modules[module][name] = self.named(entry["name"].split("~")[0], entry["source"])
+		for name, binding in self.environment.items():
+			target = self.binding_target(binding)
+			self.defaults[name] = target or Target(
+				"stdlib/api/environment.md", anchor(name), name, binding.get("value_type"))
+
+	def binding_target(self, binding):
+		entry = self.entries.get(binding.get("id"))
+		if entry:
+			return self.named(entry["name"].split("~")[0], entry["source"])
+		return None
 
 	def named(self, name, source=None):
 		entries = [entry for entry in self.names.get(name, []) if source is None or entry["source"] == source]
@@ -114,14 +108,13 @@ class Catalog:
 			return self.named(receiver.value_type + "." + name)
 		return None
 
-	def imported(self, uri, name):
-		if not uri.startswith("el:"):
-			return None
-		module = uri[3:]
-		module = (module + "index" if module.endswith("/") else module).removesuffix(".el")
-		if module in ("", "index"):
-			return self.defaults.get(name)
-		return self.modules.get(module, {}).get(name)
+	def module(self, uri):
+		module = uri.removeprefix("el:").removesuffix(".el")
+		if not module or module == "index":
+			return self.environment
+		if module.endswith("/"):
+			return self.modules.get(module + "index", {})
+		return self.modules.get(module, self.modules.get(module + "/index", {}))
 
 	def type_targets(self, code, source=None):
 		"""Use declaration-context references only for an exact generated signature."""
@@ -177,7 +170,162 @@ def comprehension_offsets(tokens):
 		previous = token
 
 
-def code_targets(code, catalog, source=None):
+BUILTIN_NAMES = {"type", "any", "ptr", "this", "super", "it"}
+
+
+def export_problem(binding, name, context):
+	if binding is None:
+		return f"{name!r} is not exported by {context}"
+	if not (binding.get("id") or binding.get("documented")):
+		location = f" ({binding['source']}:{binding['line']})" if binding.get("source") and binding.get("line") is not None else ""
+		return f"{name!r} is exported by {context} but has no API documentation{location}"
+	return None
+
+
+def check_delimiters(stream, report):
+	closing = {"(": ")", "[": "]", "{": "}"}
+	stack = []
+	for kind, value, start, _ in stream:
+		if kind != "code":
+			continue
+		if value in closing:
+			stack.append((closing[value], start))
+		elif value in closing.values():
+			if not stack or value != stack[-1][0]:
+				report(start, f"unexpected {value!r}")
+				return
+			stack.pop()
+	if stack:
+		expected, start = stack[-1]
+		report(start, f"missing {expected!r}")
+
+
+@dataclass(frozen=True)
+class Import:
+	start: int
+	end: int
+	uri: str | None
+	names: tuple = ()
+	pattern: str | None = None
+	namespace: str | None = None
+
+
+def code_imports(stream):
+	code = [token for token in stream if token[0] in ("code", "literal")]
+	for index, (_, value, _, end) in enumerate(code):
+		if value not in ("import", "export") or index + 1 >= len(code):
+			continue
+		position = index + 1
+		kind, prefix, start, _ = code[position]
+		names = []
+		pattern = namespace = None
+		if prefix == "{":
+			position += 1
+			while position < len(code) and code[position][1].isidentifier():
+				_, name, offset, _ = code[position]
+				position += 1
+				alias = name
+				if position + 1 < len(code) and code[position][1] == "as":
+					alias = code[position + 1][1]
+					position += 2
+				names.append((name, alias, offset))
+				if position >= len(code) or code[position][1] != ",":
+					break
+				position += 1
+			if position >= len(code) or code[position][1] != "}":
+				continue
+			position += 1
+		elif kind == "literal" and prefix.startswith("/"):
+			pattern = prefix[1:-1]
+			position += 1
+			if position + 1 < len(code) and code[position][1] == "as":
+				namespace = code[position + 1][1]
+				position += 2
+		else:
+			continue
+		if position + 1 >= len(code) or code[position][1] != "from":
+			continue
+		kind, path, _, end = code[position + 1]
+		uri = path[1:-1] if kind == "literal" and path.startswith(('"', "'")) else None
+		yield Import(start, end, uri, tuple(names), pattern, namespace)
+
+
+
+BINDING_MODIFIERS = {"ref", "borrow", "rvalue", "take"}
+
+
+def paired_tokens(tokens):
+	closing = {"(": ")", "[": "]", "{": "}", "@{": "}", "@[": "]", "@(": ")"}
+	stack = []
+	pairs = {}
+	for index, (_, _, value) in enumerate(tokens):
+		if value in closing:
+			stack.append((closing[value], index))
+		elif stack and value == stack[-1][0]:
+			_, opening = stack.pop()
+			pairs[opening] = index
+			pairs[index] = opening
+	return pairs
+
+
+def binding_indices(tokens, pairs, start, end, *, object_pattern=False):
+	"""Yield parameter or destructuring positions, skipping default expressions."""
+	index = start
+	while index < end:
+		while index < end and tokens[index][2] in BINDING_MODIFIERS | {"..", ".", ",", ";"}:
+			index += 1
+		if index >= end:
+			break
+		if tokens[index][1] in Name or tokens[index][1] in Keyword.Constant:
+			if object_pattern and index + 1 < end and tokens[index + 1][2] == ":":
+				index += 2
+			else:
+				yield index
+		if index in pairs and tokens[index][2] in ("{", "["):
+			stop = pairs[index]
+			yield from binding_indices(tokens, pairs, index + 1, stop, object_pattern=tokens[index][2] == "{")
+			index = stop + 1
+		elif object_pattern and index < end and tokens[index - 1][2] == ":" and tokens[index][1] in Name:
+			yield index
+		while index < end and tokens[index][2] not in (",", ";"):
+			index = pairs.get(index, index) + 1 if pairs.get(index, index) >= index else index + 1
+
+
+def local_declarations(code, tokens, ignored):
+	pairs = paired_tokens(tokens)
+	for index, (offset, kind, value) in enumerate(tokens):
+		if offset in ignored or index + 1 >= len(tokens):
+			continue
+		following = tokens[index + 1][2]
+		if value in ("let", "const", "fn", "class", "interface", "enum", "data", "get", "set", "syntax", "extern") and tokens[index + 1][1] in Name:
+			type_name = None
+			if value in ("let", "const") and index + 4 < len(tokens) and tokens[index + 2][2] == ":" and tokens[index + 4][2] == "=":
+				type_name = tokens[index + 3][2]
+			yield index + 1, type_name
+		if value in ("let", "const") and following in ("[", "{") and index + 1 in pairs:
+			for parameter in binding_indices(tokens, pairs, index + 2, pairs[index + 1], object_pattern=following == "{"):
+				yield parameter, None
+		if value in ("fn", "constructor", "init", "catch", "operator", "extern", "get", "set"):
+			position = index + 1
+			while position < len(tokens) and "\n" not in code[offset:tokens[position][0]] and tokens[position][2] not in ("(", "{", "=", ";"):
+				position += 1
+			if position in pairs and tokens[position][2] == "(":
+				for parameter in binding_indices(tokens, pairs, position + 1, pairs[position]):
+					yield parameter, None
+		if value in ("goto", "break", "continue") and tokens[index + 1][1] in Name:
+			if "\n" not in code[offset:tokens[index + 1][0]]:
+				yield index + 1, None
+		if value == "=>" and index:
+			previous = index - 1
+			if tokens[previous][1] in Name:
+				yield previous, None
+			elif previous in pairs and tokens[previous][2] == ")":
+				for parameter in binding_indices(tokens, pairs, pairs[previous] + 1, previous):
+					yield parameter, None
+
+
+
+def code_targets(code, catalog, source=None, *, report=None, fragment=False):
 	"""Return source offsets for names whose documentation target is known.
 
 	Bindings declared anywhere in a fragment suppress default lookup throughout
@@ -186,93 +334,84 @@ def code_targets(code, catalog, source=None):
 	try:
 		stream = list(source_tokens(code))
 		opaque = [(start, end) for kind, _, start, end in stream if kind in ("literal", "comment", "doc")]
-	except DocumentationError:
+	except DocumentationError as error:
+		if report:
+			report(0, str(error))
 		return {}
+	opaque_starts = [start for start, _ in opaque]
+
+	def is_opaque(offset):
+		index = bisect_right(opaque_starts, offset) - 1
+		return index >= 0 and offset < opaque[index][1]
+
+	if report and not fragment:
+		check_delimiters(stream, report)
 	tokens = [(offset, kind, value) for offset, kind, value in get_lexer_by_name("el").get_tokens_unprocessed(code)
 		if kind not in Comment and kind not in Whitespace and not (kind in Text and value.isspace())]
 	comprehensions = set(comprehension_offsets([token for token in stream if token[0] in ("code", "literal")]))
 	bindings = dict(catalog.defaults)
 	local_types = defaultdict(set)
 	structure = " ".join(value if kind not in String else "STRING" for _, kind, value in tokens)
-	if re.search(r"@(module|runtime)\s*\([^)]*\bprelude\s*:\s*f\b", structure):
+	prelude = not re.search(r"@(module|runtime)\s*\([^)]*\bprelude\s*:\s*f\b", structure)
+	if not prelude:
 		bindings.clear()
-	imports = set()
+	imported_bindings = {}
+	namespaces = {}
+	external_patterns = []
 	declarations = set()
-	parameter_depth = 0
-	parameter_mode = False
-	for index, (_, kind, value) in enumerate(tokens):
-		if value == "import":
-			end = next((position for position in range(index + 1, len(tokens)) if tokens[position][2] == "from"), None)
-			if end is None or end + 1 >= len(tokens) or tokens[end + 1][1] not in String:
-				continue
-			uri = tokens[end + 1][2][1:-1]
-			names = tokens[index + 1:end]
-			if not any(item[2] == "{" for item in names):
-				# Namespace and pattern imports need compiler export information.
-				for position, (_, token_kind, token_value) in enumerate(names):
-					if token_value == "as" and position + 1 < len(names):
-						bindings[names[position + 1][2]] = None
-				continue
-			position = 0
-			while position < len(names):
-				offset, token_kind, original = names[position]
-				if token_kind in Name:
-					alias = original
-					if position + 2 < len(names) and names[position + 1][2] == "as":
-						alias = names[position + 2][2]
-						imports.add(names[position + 2][0])
-						position += 2
-					bindings[alias] = catalog.imported(uri, original)
-					local_types[alias].add(None)
-					imports.add(offset)
-				position += 1
-		if value in ("let", "const", "fn", "class", "interface", "enum", "get", "set", "syntax") and index + 1 < len(tokens):
-			next_offset, next_kind, next_value = tokens[index + 1]
-			if next_kind in Name:
-				bindings[next_value] = None
-				declarations.add(next_offset)
-				type_name = None
-				if value in ("let", "const") and index + 4 < len(tokens) and tokens[index + 2][2] == ":" and tokens[index + 4][2] == "=":
-					type_name = tokens[index + 3][2]
-				local_types[next_value].add(type_name)
-		# Suppress parameter names (including lambdas) rather than guess scopes.
-		if value == "fn":
-			parameter_mode = True
-		elif parameter_mode and value == "(":
-			parameter_depth += 1
-		elif parameter_mode and value == ")":
-			parameter_depth -= 1
-			if parameter_depth == 0:
-				parameter_mode = False
-		elif parameter_mode and parameter_depth == 1 and kind in Name:
-			previous = tokens[index - 1][2] if index else ""
-			if previous in ("(", ",", "ref", "borrow", "rvalue", "take"):
-				bindings[value] = None
-				local_types[value].add(None)
-				declarations.add(tokens[index][0])
-	# An arrow's bare identifier or parenthesized parameters can shadow defaults.
-	for index, (_, _, value) in enumerate(tokens):
-		if value != "=>" or index == 0:
+	ignored = set()
+	for specification in code_imports(stream):
+		for offset, _, _ in tokens:
+			if offset >= specification.end:
+				break
+			if offset >= specification.start:
+				ignored.add(offset)
+		uri = specification.uri
+		module = catalog.module(uri) if uri and uri.startswith("el:") else None
+		for name, alias, offset in specification.names:
+			binding = module.get(name) if module is not None else None
+			bindings[alias] = catalog.binding_target(binding) if binding else None
+			if report and module is not None:
+				problem = export_problem(binding, name, uri)
+				if problem:
+					report(offset, problem)
+		if specification.pattern is None:
 			continue
-		position = index - 1
-		if tokens[position][1] in Name:
-			bindings[tokens[position][2]] = None
-			local_types[tokens[position][2]].add(None)
-			declarations.add(tokens[position][0])
-		elif tokens[position][2] == ")":
-			depth = 1
-			while position > 0 and depth:
-				position -= 1
-				depth += (tokens[position][2] == ")") - (tokens[position][2] == "(")
-			for current in range(position + 1, index - 1):
-				if tokens[current][1] in Name and tokens[current - 1][2] in ("(", ",", "ref", "borrow", "take", "rvalue"):
-					bindings[tokens[current][2]] = None
-					local_types[tokens[current][2]].add(None)
-					declarations.add(tokens[current][0])
+		try:
+			selector = re.compile(specification.pattern)
+		except re.error:
+			# EL regex syntax can differ from the Python pattern subset.
+			if specification.namespace:
+				bindings[specification.namespace] = None
+			continue
+		if specification.namespace:
+			bindings[specification.namespace] = None
+			if module is not None:
+				namespaces[specification.namespace] = (uri, module, selector)
+		elif module is not None:
+			for name, binding in module.items():
+				if selector.search(name):
+					bindings[name] = catalog.binding_target(binding)
+					imported_bindings[name] = (uri, binding)
+		else:
+			external_patterns.append(selector)
+	ignored.update(offset for offset, _, _ in tokens if is_opaque(offset))
+	for directive in re.finditer(r"(?m)^[ \t]*#[^\n]*", code):
+		if is_opaque(directive.start()):
+			continue
+		ignored.update(offset for offset, _, _ in tokens if directive.start() <= offset < directive.end())
+		definition = re.match(r"[ \t]*#define\s+(\w+)", directive[0])
+		if definition:
+			bindings[definition[1]] = None
+	for position, type_name in local_declarations(code, tokens, ignored):
+		offset, _, name = tokens[position]
+		bindings[name] = None
+		declarations.add(offset)
+		local_types[name].add(type_name)
 	result = {}
 	resolved = {}
 	for index, (offset, kind, value) in enumerate(tokens):
-		if offset in declarations or any(start <= offset < end for start, end in opaque):
+		if offset in declarations or offset in ignored:
 			continue
 		previous = tokens[index - 1][2] if index else ""
 		following = tokens[index + 1][2] if index + 1 < len(tokens) else ""
@@ -281,13 +420,38 @@ def code_targets(code, catalog, source=None):
 		if (kind in Keyword or kind in Name.Decorator or is_introducer) and value in LANGUAGE:
 			path = COMPREHENSION_REFERENCE if offset in comprehensions else "reference/language/" + LANGUAGE[value] + ".md"
 			target = Target(path, label=value)
-		elif kind in Name or kind in Keyword.Constant:
+		elif (kind in Name and kind not in Name.Decorator) or kind in Keyword.Constant:
 			if previous in (".", "?."):
-				target = catalog.member(resolved.get(index - 2), value)
+				receiver = tokens[index - 2][2] if index >= 2 else None
+				if receiver in namespaces and receiver not in local_types:
+					uri, module, selector = namespaces[receiver]
+					binding = module.get(value) if selector.search(value) else None
+					target = catalog.binding_target(binding) if binding else None
+					problem = export_problem(binding, value, uri)
+					if report and problem:
+						report(offset, problem)
+				else:
+					target = catalog.member(resolved.get(index - 2), value)
+			elif index and tokens[index - 1][1] in Number and tokens[index - 1][0] + len(previous) == offset:
+				continue  # The spelling may be a quantity literal.
 			elif following != ":" or previous in ("let", "const"):
 				target = bindings.get(value)
-				if target is None and len(local_types.get(value, ())) == 1:
-					target = Target("", value_type=next(iter(local_types[value])))
+				if value in local_types:
+					if target is None and len(local_types[value]) == 1:
+						target = Target("", value_type=next(iter(local_types[value])))
+				elif report and value not in BUILTIN_NAMES:
+					if value in imported_bindings:
+						uri, binding = imported_bindings[value]
+						problem = export_problem(binding, value, uri)
+					elif prelude and value in catalog.environment and target is catalog.defaults[value]:
+						problem = export_problem(catalog.environment[value], value, "the standard library prelude")
+					elif value not in bindings and not any(selector.search(value) for selector in external_patterns):
+						binding = catalog.library_exports.get(value)
+						problem = export_problem(binding, value, "the standard library") if binding is not None or not fragment else None
+					else:
+						problem = None
+					if problem:
+						report(offset, problem)
 		resolved[index] = target
 		if target and target.path:
 			result[offset] = (len(value), target)
@@ -300,12 +464,14 @@ def code_targets(code, catalog, source=None):
 
 
 class CodeLinker(HTMLParser):
-	def __init__(self, html, catalog, url_for, source=None):
+	def __init__(self, html, catalog, url_for, source=None, report=None):
 		super().__init__(convert_charrefs=False)
 		self.html = html
 		self.catalog = catalog
 		self.url_for = url_for
 		self.source = source
+		self.report = report
+		self.block = 0
 		self.lines = [0]
 		self.lines.extend(match.end() for match in re.finditer("\n", html))
 		self.stack = []
@@ -319,12 +485,14 @@ class CodeLinker(HTMLParser):
 
 	def handle_starttag(self, tag, attrs):
 		classes = dict(attrs).get("class", "").split()
-		is_el = any(value in ("language-el", "language-els", "language-evil") for value in classes)
-		active = is_el or bool(self.stack and self.stack[-1][1])
+		language = next((value for value in classes if value in
+			("language-el", "language-els", "language-evil", "language-el-fragment", "language-el-signature")), None)
+		active = language or (self.stack[-1][1] if self.stack else None)
 		if tag not in ("br", "hr", "img", "input", "meta", "link", "wbr", "source"):
 			self.stack.append((tag, active))
 		if tag == "code" and active:
-			self.code = {"text": "", "parts": [], "linked": False, "link_depth": 0}
+			self.block += 1
+			self.code = {"text": "", "parts": [], "linked": False, "link_depth": 0, "language": active}
 		elif self.code is not None and tag == "a":
 			self.code["link_depth"] += 1
 
@@ -335,8 +503,7 @@ class CodeLinker(HTMLParser):
 		if tag == "a" and self.code is not None:
 			self.code["link_depth"] -= 1
 		if tag == "code" and self.code is not None:
-			if not self.code["linked"]:
-				self.link_block()
+			self.link_block()
 			self.code = None
 		for index in range(len(self.stack) - 1, -1, -1):
 			if self.stack[index][0] == tag:
@@ -362,7 +529,17 @@ class CodeLinker(HTMLParser):
 		self.part(raw, unescape(raw))
 
 	def link_block(self):
-		targets = code_targets(self.code["text"], self.catalog, self.source)
+		def report(offset, message):
+			code = self.code["text"]
+			line = code.count("\n", 0, offset) + 1
+			column = offset - code.rfind("\n", 0, offset)
+			self.report(f"EL block {self.block}:{line}:{column}: {message}")
+
+		targets = code_targets(self.code["text"], self.catalog, self.source,
+			report=report if self.report and self.code["language"] != "language-el-signature" else None,
+			fragment=self.code["language"] == "language-el-fragment")
+		if self.code["linked"]:
+			return
 		for start, raw_start, raw, decoded in self.code["parts"]:
 			pieces = []
 			cursor = 0
@@ -397,6 +574,7 @@ _used_targets = set()
 def on_files(files, config):
 	global _catalog, _files, _destinations
 	model = json.loads((Path(config["docs_dir"]) / "stdlib/api/api.json").read_text(encoding="utf-8"))
+	_source_docs.validate_module_docs(model["entries"])
 	_catalog = Catalog(model)
 	_files = {file.src_uri: file.url for file in files}
 	_destinations = {file.src_uri: file.abs_dest_path for file in files}
@@ -409,7 +587,7 @@ def on_files(files, config):
 	return files
 
 
-def on_page_content(html, page, config, files):
+def on_page_content(html, page, config, files, *, diagnostics=None):
 	def url_for(target):
 		_used_targets.add(target)
 		target_url = _files[target.path]
@@ -420,7 +598,12 @@ def on_page_content(html, page, config, files):
 		return url + ("#" + target.fragment if target.fragment else "")
 	uri = getattr(getattr(page, "file", None), "src_uri", "")
 	source = uri.removeprefix("stdlib/api/modules/").removesuffix(".md") + ".el" if uri.startswith("stdlib/api/modules/") else None
-	return CodeLinker(html, _catalog, url_for, source).render()
+	problems = [] if diagnostics is None else diagnostics
+	result = CodeLinker(html, _catalog, url_for, source,
+		lambda message: problems.append(f"{uri}: {message}")).render()
+	if diagnostics is None and problems:
+		raise DocumentationError("\n".join(problems))
+	return result
 
 
 class FragmentIndex(HTMLParser):
@@ -498,12 +681,15 @@ def link_site(site_dir, docs_dir, *, use_directory_urls=True):
 	config = {"site_dir": str(site_dir), "docs_dir": str(docs_dir)}
 	on_files(files, config)
 	changed = 0
+	diagnostics = []
 	for file in files:
 		path = Path(file.abs_dest_path)
 		original = path.read_text(encoding="utf-8")
-		linked = on_page_content(original, SimpleNamespace(url=file.url, file=file), config, files)
+		linked = on_page_content(original, SimpleNamespace(url=file.url, file=file), config, files, diagnostics=diagnostics)
 		if linked != original:
 			_source_docs.atomic_write(path, linked)
 			changed += 1
+	if diagnostics:
+		raise DocumentationError("\n".join(diagnostics))
 	on_post_build(config)
 	return {"linked_pages": changed, "validated_links": validate_site(site_dir)}
