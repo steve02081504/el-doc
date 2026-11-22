@@ -30,6 +30,7 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
+    - navigation.tabs
     - navigation.sections
     - navigation.indexes
     - navigation.top
@@ -102,88 +103,112 @@ extra_javascript:
   - assets/learning.js
 
 nav:
-  - 参考首页: index.md
-  - 语言参考:
-      - 总览: reference/language/index.md
-      - 词法与字面量: reference/language/lexical.md
-      - 声明与绑定: reference/language/declarations.md
-      - 解构绑定: reference/language/destructuring.md
-      - 类型: reference/language/types.md
-      - 泛型与约束: reference/language/generics.md
-      - 左值、右值与亡值: reference/language/value-categories.md
-      - 赋值、复制与共享: reference/language/assignment-semantics.md
-      - 复制消除: reference/language/copy-elision.md
-      - 类型转换: reference/language/conversions.md
-      - 表达式与运算符: reference/language/expressions.md
-      - 推导式与惰性生成式: reference/language/comprehensions.md
-      - 控制流: reference/language/control-flow.md
-      - 函数: reference/language/functions.md
-      - 重载解析: reference/language/overload-resolution.md
-      - 类与生命周期: reference/language/classes.md
-      - 借用与清理: reference/language/lifetimes.md
-      - 激进生命周期与析构时机: reference/language/aggressive-lifetimes.md
-      - 模块与导入: reference/language/modules.md
-      - 文件预处理: reference/language/preprocessing.md
-      - 异常与并发: reference/language/execution.md
-      - 宏与元编程: reference/language/metaprogramming.md
-      - 外部接口与 ABI: reference/language/foreign.md
-      - EIR 与底层源码块: reference/language/eir.md
-  - 标准库参考: stdlib/api/index.md
-  - 工具链参考:
-      - 命令与构建: toolchain.md
-      - 规范与实现边界: appendix/implementation-status.md
-  - 教程与指南:
-      - 教程入口: tutorials/index.md
-      - 学习地图: roadmap.md
-      - 起步:
-          - 第一个程序: getting-started.md
-          - 零基础路线:
-              - 从零开始: beginner/index.md
-              - 零花钱还剩多少: beginner/budget.md
-              - 钱够不够买: beginner/decisions.md
-              - 把阅读记录加起来: beginner/lists.md
-              - 重复的计算只写一次: beginner/functions.md
-              - 文具采购小助手: beginner/shopping.md
-          - 15 分钟速览: tour.md
-      - 语言:
-          - 语言总览: language/index.md
-          - 读语言之前: language/before-you-start.md
-          - 值与类型: language/values.md
-          - 数值与位类型: language/numeric-types.md
-          - 运算符与表达式: language/operators.md
-          - 为什么 EL 没有异或: language/why-no-xor.md
-          - 控制流: language/control-flow.md
-          - 函数与闭包: language/functions.md
-          - 生命周期与析构: language/lifetimes.md
-          - 类与对象: language/classes.md
-          - 内存布局与 GC 钩子: language/memory-layout.md
-          - 模块与包: language/modules.md
-          - 文件预处理: language/preprocessing.md
-          - Shell 语法: language/shell.md
-          - 错误处理与异步: language/errors-async.md
-          - 性能与底层优化: language/performance.md
-          - 外部接口与 ABI: language/foreign.md
-      - 标准库:
-          - 标准库总览: stdlib/index.md
-          - Console 与日志: stdlib/console.md
-          - 集合与文本: stdlib/collections.md
-          - 用推导式列出组合: stdlib/comprehensions.md
-          - 从遍历到函数组合: stdlib/function-composition.md
-          - 文件与网络: stdlib/files-network.md
-          - 图形界面: stdlib/gui.md
-          - 声音与音频: stdlib/audio.md
-          - 神经网络: stdlib/neural-networks.md
-          - 分配器与内存跟踪: stdlib/allocators.md
-          - 测试: stdlib/testing.md
-      - 实战:
+  - 首页: index.md
+  - 整体参考:
+      - 语言参考:
+          - 总览: reference/language/index.md
+          - 语法、声明与表达式:
+            - 词法与字面量: reference/language/lexical.md
+            - 声明与绑定: reference/language/declarations.md
+            - 解构绑定: reference/language/destructuring.md
+            - 表达式与运算符: reference/language/expressions.md
+            - 推导式与惰性生成式: reference/language/comprehensions.md
+            - 控制流: reference/language/control-flow.md
+          - 类型、绑定与资源:
+            - 类型: reference/language/types.md
+            - 泛型与约束: reference/language/generics.md
+            - 左值、右值与亡值: reference/language/value-categories.md
+            - 赋值、复制与共享: reference/language/assignment-semantics.md
+            - 复制消除: reference/language/copy-elision.md
+            - 类型转换: reference/language/conversions.md
+            - 类与生命周期: reference/language/classes.md
+            - 借用与清理: reference/language/lifetimes.md
+            - 激进生命周期与析构时机: reference/language/aggressive-lifetimes.md
+          - 函数与模块:
+            - 函数: reference/language/functions.md
+            - 重载解析: reference/language/overload-resolution.md
+            - 模块与导入: reference/language/modules.md
+            - 文件预处理: reference/language/preprocessing.md
+          - 执行、扩展与底层:
+            - 异常与并发: reference/language/execution.md
+            - 宏与元编程: reference/language/metaprogramming.md
+            - 外部接口与 ABI: reference/language/foreign.md
+            - EIR 与底层源码块: reference/language/eir.md
+      - 标准库 API: stdlib/api/index.md
+      - 工具链与实现:
+          - 命令与构建: toolchain.md
+          - 规范与实现边界: appendix/implementation-status.md
+  - 分领域速成手册:
+      - 选择路线: tutorials/index.md
+      - 第一次写程序:
+          - 从零开始: beginner/index.md
+          - 安装与第一个程序: getting-started.md
+          - 零花钱还剩多少: beginner/budget.md
+          - 钱够不够买: beginner/decisions.md
+          - 把阅读记录加起来: beginner/lists.md
+          - 重复的计算只写一次: beginner/functions.md
+          - 文具采购小助手: beginner/shopping.md
+      - 桌面脚本与宏:
+          - 定时按键、识图补药与登录: practice/desktop-macros.md
           - 命令行工具: practice/cli-tool.md
-          - 图形程序: practice/gui-app.md
-      - 多范式:
-          - 手写 JSON 解析器: practice/json-parser.md
-          - 规则式下棋机器人: practice/logic-game.md
-          - 定理证明: practice/proofs.md
+      - 办公与科研数据:
+          - Excel 分类导出 CSV: practice/workbook-to-csv.md
+          - 流式读取实验数据: practice/experiment-table.md
           - 矩阵与数值脚本: practice/numerics.md
-      - 附录:
+      - 游戏开发:
+          - 2D · 第一个乒乓球场: practice/paddle-game.md
+          - 2D · 计分、菜单与存档: practice/paddle-game-full.md
+          - 3D · 三维瞄准练习器: practice/aim-trainer.md
+      - 形式化证明:
+          - 自然数与归纳证明: practice/proofs.md
+      - 计算机竞赛:
+          - 斐波那契、圆周率与大文件排序: practice/contest.md
+      - 规则式专家系统:
+          - 井字棋: practice/logic-game.md
+          - 国际象棋: practice/chess.md
+      - 神经网络训练:
+          - 文本数据集与语言模型: practice/train-text-model.md
+          - 随机场景与步态训练: practice/train-walker.md
+      - 前端开发:
+          - 第一个 GUI 应用: practice/gui-app.md
+          - 联动的控制台与展示窗口: practice/shared-frontend.md
+      - 后端开发:
+          - HTTP 服务、账户与热更新: practice/backend.md
+          - 手写 JSON 解析器: practice/json-parser.md
+      - 补习与速览:
+          - 15 分钟速览: tour.md
+          - 学习地图: roadmap.md
+          - 语言指南:
+              - 语言总览: language/index.md
+              - 读语言之前: language/before-you-start.md
+              - 值与类型: language/values.md
+              - 数值与位类型: language/numeric-types.md
+              - 运算符与表达式: language/operators.md
+              - 为什么 EL 没有异或: language/why-no-xor.md
+              - 控制流: language/control-flow.md
+              - 函数与闭包: language/functions.md
+              - 生命周期与析构: language/lifetimes.md
+              - 类与对象: language/classes.md
+              - 内存布局与 GC 钩子: language/memory-layout.md
+              - 模块与包: language/modules.md
+              - 文件预处理: language/preprocessing.md
+              - Shell 语法: language/shell.md
+              - 错误处理与异步: language/errors-async.md
+              - 性能与底层优化: language/performance.md
+              - 外部接口与 ABI: language/foreign.md
+          - 标准库指南:
+              - 标准库总览: stdlib/index.md
+              - Console 与日志: stdlib/console.md
+              - 集合与文本: stdlib/collections.md
+              - 用推导式列出组合: stdlib/comprehensions.md
+              - 从遍历到函数组合: stdlib/function-composition.md
+              - 文件与网络: stdlib/files-network.md
+              - 图形界面: stdlib/gui.md
+              - 声音与音频: stdlib/audio.md
+              - 神经网络: stdlib/neural-networks.md
+              - 分配器与内存跟踪: stdlib/allocators.md
+              - 测试: stdlib/testing.md
           - 从其他语言过来: appendix/coming-from.md
           - 常见问题: appendix/faq.md
-  - 文档编写: stdlib/documentation-comments.md
+  - 文档维护:
+      - 文档注释与生成: stdlib/documentation-comments.md

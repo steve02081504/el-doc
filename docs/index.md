@@ -4,7 +4,7 @@
 <p class="el-hero__lead">EL 是一门面向整个应用的通用语言：脚本、原生程序、服务、标签式 GUI 与数据库查询共用一套语法、类型和运行时。同一套界面代码既能打开系统窗口，也能编译成单文件网页，双击就在浏览器里跑起来。</p>
 <div class="el-hero__actions">
 <a class="md-button md-button--primary" href="reference/language/">查语言参考</a>
-<a class="md-button" href="getting-started/">3 分钟跑起来</a>
+<a class="md-button" href="tutorials/">选一本速成手册</a>
 <a class="md-button" href="stdlib/api/">查标准库 API</a>
 </div>
 <div class="el-hero__code" markdown>
@@ -68,4 +68,4 @@ API 条目包含源码签名、参数、返回值、失败条件和示例，并�
 
 ## 学习 EL
 
-[教程与指南](tutorials/index.md)收录零基础课程、语言讲解、标准库入门和实战项目。第一次接触编程可从[第一个程序](getting-started.md)开始；有经验的读者可读[15 分钟速览](tour.md)。
+[分领域速成手册](tutorials/index.md)按任务组织，从第一次写程序到桌面宏、数据处理、游戏、证明、竞赛、专家系统、神经网络和前后端开发。

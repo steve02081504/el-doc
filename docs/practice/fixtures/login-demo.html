@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<title>EL 本机登录练习 271</title>
+<main>
+	<h1>EL 本机登录练习</h1>
+	<p>教学账号 <code>demo</code>，教学密码 <code>practice-only</code>。表单在本页检查输入。</p>
+	<form id="login">
+		<p><label>账号 <input name="account" required autofocus autocomplete="off"></label></p>
+		<p><label>密码 <input name="password" type="password" required autocomplete="off"></label></p>
+		<button>登录</button>
+	</form>
+	<p id="result" role="status"></p>
+</main>
+<script>
+	document.getElementById("login").addEventListener("submit", (event) => {
+		event.preventDefault()
+		const fields = new FormData(event.currentTarget)
+		const accepted = fields.get("account") === "demo" && fields.get("password") === "practice-only"
+		document.getElementById("result").textContent = accepted ? "练习登录成功" : "账号或密码不匹配"
+	})
+</script>
+</html>

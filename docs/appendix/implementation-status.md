@@ -52,7 +52,7 @@
 | Console 输出 | 文字走 `console.stdout.write`／`writeLine`，结构化值走等级对象的 `.value(...)` |
 | 项目配置与 CLI | `el run ENTRY`、`el build ENTRY` 是最稳的入口；项目文件字段按规范介绍 |
 | GUI | 按规范与 `user-interface` 源码的真实导出写；示例优先使用已核实的元素 API |
-| 数据库、证明、跨目标产物 | 教程只做概念介绍，不展开未稳定的细节 |
+| 数据库、证明、跨目标产物 | [后端](../practice/backend.md)和[定理证明](../practice/proofs.md)提供独立示例。游戏和 GUI 的浏览器发布依赖目标工具与呈现宿主，详见对应项目 |
 
 ## 为什么这里没有未完成清单
 
