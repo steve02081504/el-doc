@@ -118,7 +118,7 @@ fn readAs(parser)
 ### 示例：使用示例
 
 ```el
-import { decimal } from "el:parsing/oi.el"
+import { decimal } from "el:parsing/tokens.el"
 let value = console.stdin.readAs(decimal(min: unbounded, max: unbounded, epsilon: 0))
 ```
 

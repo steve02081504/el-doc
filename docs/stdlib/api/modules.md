@@ -43,6 +43,7 @@
 - [cryptography/chacha20.el](modules/cryptography/chacha20.md)（1 个 API）
 - [cryptography/hkdf.el](modules/cryptography/hkdf.md)（1 个 API）
 - [cryptography/hmac.el](modules/cryptography/hmac.md)（2 个 API）
+- [cryptography/one-time-passwords.el](modules/cryptography/one-time-passwords.md)（0 个 API）
 - [cryptography/pbkdf2.el](modules/cryptography/pbkdf2.md)（2 个 API）
 - [cryptography/rand.el](modules/cryptography/rand.md)（2 个 API）
 - [cryptography/sha256.el](modules/cryptography/sha256.md)（2 个 API）
@@ -182,7 +183,7 @@
 - [text/patterns/parser.el](modules/text/patterns/parser.md)（15 个 API）
 - [text/patterns/syntax.el](modules/text/patterns/syntax.md)（1 个 API）
 - [text/resources.el](modules/text/resources.md)（0 个 API）
-- [text/text.el](modules/text/text.md)（16 个 API）
+- [text/text.el](modules/text/text.md)（15 个 API）
 
 ## theme
 
@@ -207,7 +208,7 @@
 ## user-interface
 
 - [user-interface/drawing.el](modules/user-interface/drawing.md)（2 个 API）
-- [user-interface/model.el](modules/user-interface/model.md)（9 个 API）
+- [user-interface/model.el](modules/user-interface/model.md)（10 个 API）
 - [user-interface/platform/windows/window.el](modules/user-interface/platform/windows/window.md)（9 个 API）
 - [user-interface/sound.el](modules/user-interface/sound.md)（7 个 API）
 - [user-interface/window.el](modules/user-interface/window.md)（5 个 API）

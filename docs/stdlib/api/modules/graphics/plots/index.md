@@ -8,20 +8,20 @@
 
 - [Figure.axis](#api-a0ab54cd34a79111132b)
 - [Figure.image](#api-05f4dfef014a883b90ed)
-- [Figure.save](#api-4c3befca40a6315cb486)
+- [Figure.saveAs](#api-5827c21545f7afe86a52)
 - [Figure.show](#api-f8da8e4d08474a501002)
 
 ## 数值绘图 {#api-0072837f4ccf6b725f73}
 
 源码：`src/stdlib/graphics/plots/index.el:9` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L9)
 
-将浮点张量转换为线图场景，支持导出 SVG、保存文件或在图形环境中打开窗口。
+将浮点张量转换为线图场景，支持多格式导出和桌面窗口。
 
 ## Figure {#api-daf4fb6b08acdf355a69}
 
-源码：`src/stdlib/graphics/plots/index.el:28` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L28)
+源码：`src/stdlib/graphics/plots/index.el:30` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L30)
 
-持有不可变数据快照生成的绘图坐标场景，可导出 SVG、保存文件或显示窗口。
+持有由不可变数据快照生成的绘图场景。
 
 ```el
 export @assign(mode: "shared") class Figure
@@ -30,14 +30,15 @@ export @assign(mode: "shared") class Figure
 ### 示例：绘制并保存一张曲线图
 
 ```el
+import { formats } from "el:formats/"
 let figure = plot(xs, ys)
 let svg = figure.image(640, 480)
-figure.save("curve.svg")
+figure.saveAs(formats.SVG, "curve.svg")
 ```
 
 ## Figure.axis {#api-a0ab54cd34a79111132b}
 
-源码：`src/stdlib/graphics/plots/index.el:35` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L35)
+源码：`src/stdlib/graphics/plots/index.el:37` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L37)
 
 可直接配置标题、坐标轴标签、图例、缩放范围的绘图场景对象。
 
@@ -55,7 +56,7 @@ figure.axis.title = "二次曲线"
 
 ## Figure.image {#api-05f4dfef014a883b90ed}
 
-源码：`src/stdlib/graphics/plots/index.el:46` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L46)
+源码：`src/stdlib/graphics/plots/index.el:48` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L48)
 
 将当前坐标场景渲染为 SVG 文本；不打开窗口。
 
@@ -77,31 +78,32 @@ fn image(width: Number = 900, height: Number = 600): Text
 let svg = figure.image(640, 480)
 ```
 
-## Figure.save {#api-4c3befca40a6315cb486}
+## Figure.saveAs {#api-5827c21545f7afe86a52}
 
-源码：`src/stdlib/graphics/plots/index.el:56` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L56)
+源码：`src/stdlib/graphics/plots/index.el:59` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L59)
 
-将渲染后的 SVG 文本写入指定文件；不打开窗口。
+使用选定的编解码器渲染并写出图表，支持无头环境。
 
 ```el
-fn save(path: Text, width: Number = 900, height: Number = 600)
+fn saveAs(codec, path, options = @{})
 ```
 
-**参数**：path SVG 目标文件路径。
+**参数**：codec 格式对象，例如 formats.SVG 或 formats.PNG。
 
-**参数**：width SVG 画布宽度，默认 900。
+**参数**：path 目标文件路径。
 
-**参数**：height SVG 画布高度，默认 600。
+**参数**：options 可省略的配置对象，含画布尺寸、字体和格式特有选项。
 
 ### 示例：保存默认尺寸 SVG
 
 ```el
-figure.save("curve.svg")
+import { formats } from "el:formats/"
+figure.saveAs(formats.SVG, "curve.svg")
 ```
 
 ## Figure.show {#api-f8da8e4d08474a501002}
 
-源码：`src/stdlib/graphics/plots/index.el:64` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L64)
+源码：`src/stdlib/graphics/plots/index.el:67` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L67)
 
 在可用的桌面显示环境中打开图表窗口并阻塞到窗口关闭。
 
@@ -119,7 +121,7 @@ figure.show()
 
 ## PlotHost {#api-5f295492cd4341ff9541}
 
-源码：`src/stdlib/graphics/plots/index.el:91` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L91)
+源码：`src/stdlib/graphics/plots/index.el:94` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L94)
 
 管理多个非阻塞图表窗口，并提供集中轮询、运行与关闭生命周期。
 
@@ -137,7 +139,7 @@ host.run()
 
 ## plot {#api-99a112e21dc6a727ab6d}
 
-源码：`src/stdlib/graphics/plots/index.el:129` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L129)
+源码：`src/stdlib/graphics/plots/index.el:132` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L132)
 
 从 F64 张量创建折线图；x 的行数须与 y 的行数相同，y 的每一列对应一条线。
 

@@ -4,7 +4,7 @@
 
 [结构化文档数据](api.json)
 
-已标注文档的文件：129 / 3973；API 条目：593。此比例不是公开 API 覆盖率。
+已标注文档的文件：130 / 4139；API 条目：593。此比例不是公开 API 覆盖率。
 
 [按模块查找](modules.md) · [按符号查找](symbols.md) · [默认环境](environment.md) · [类型定义](types.md)
 
@@ -16,7 +16,7 @@
 | [concurrency](categories/concurrency.md) | 2 | 4 |
 | [console](categories/console.md) | 1 | 40 |
 | [control](categories/control.md) | 1 | 1 |
-| [cryptography](categories/cryptography.md) | 7 | 12 |
+| [cryptography](categories/cryptography.md) | 8 | 12 |
 | [errors](categories/errors.md) | 1 | 3 |
 | [filesystem](categories/filesystem.md) | 3 | 26 |
 | [formats](categories/formats.md) | 12 | 37 |
@@ -34,8 +34,8 @@
 | [random](categories/random.md) | 3 | 18 |
 | [settings](categories/settings.md) | 1 | 1 |
 | [streams](categories/streams.md) | 1 | 2 |
-| [text](categories/text.md) | 6 | 41 |
+| [text](categories/text.md) | 6 | 40 |
 | [theme](categories/theme.md) | 2 | 4 |
 | [time](categories/time.md) | 4 | 15 |
 | [tools](categories/tools.md) | 5 | 16 |
-| [user-interface](categories/user-interface.md) | 5 | 32 |
+| [user-interface](categories/user-interface.md) | 5 | 33 |

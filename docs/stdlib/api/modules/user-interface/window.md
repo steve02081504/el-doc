@@ -12,7 +12,7 @@
 
 ## installWindowThemes {#api-9b300e6c002e44fe8077}
 
-源码：`src/stdlib/user-interface/window.el:50` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L50)
+源码：`src/stdlib/user-interface/window.el:51` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L51)
 
 将主题加载与刷新生命周期绑定到窗口；窗口关闭时刷新控制器随 View 释放。
 
@@ -45,7 +45,7 @@ runWindow(window)
 
 ## showWindow~definition {#api-7620d642b498e399181d}
 
-源码：`src/stdlib/user-interface/window.el:114` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L114)
+源码：`src/stdlib/user-interface/window.el:115` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L115)
 
 根据界面定义创建并显示原生窗口，安装默认主题刷新。
 
@@ -74,7 +74,7 @@ runWindow(window)
 
 ## showWindow~data {#api-e81851aac339b39d7c75}
 
-源码：`src/stdlib/user-interface/window.el:130` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L130)
+源码：`src/stdlib/user-interface/window.el:131` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L131)
 
 将网格或受支持的数据源包装为数据视图后创建原生窗口。
 
@@ -101,7 +101,7 @@ runWindow(window)
 
 ## showWindow~description {#api-a2854832980685a2c064}
 
-源码：`src/stdlib/user-interface/window.el:148` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L148)
+源码：`src/stdlib/user-interface/window.el:149` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L149)
 
 将受限的界面描述文本解析为对象图，再创建原生窗口。
 
@@ -130,7 +130,7 @@ runWindow(window)
 
 ## showWindow~description-data {#api-a2a3a0d3094ea4e44215}
 
-源码：`src/stdlib/user-interface/window.el:165` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L165)
+源码：`src/stdlib/user-interface/window.el:166` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L166)
 
 将描述文本解析为对象图，并把数据源作为描述中的显式绑定。
 

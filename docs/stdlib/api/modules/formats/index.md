@@ -25,7 +25,7 @@
 
 ## TextFormat {#api-c603856b0e561e7ac3e8}
 
-源码：`src/stdlib/formats/index.el:45` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L45)
+源码：`src/stdlib/formats/index.el:49` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L49)
 
 创建文本格式对象，按需解码文本，并可选提供反向编码器。
 
@@ -51,7 +51,7 @@ let jsonFormat = TextFormat<output: any>((source: Text, limits: JsonLimits) => p
 
 ## Formats.Text {#api-f86695e611fe3e71fa9d}
 
-源码：`src/stdlib/formats/index.el:131` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L131)
+源码：`src/stdlib/formats/index.el:135` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L135)
 
 返回按 UTF-8 读取和写入原样文本的格式对象。
 
@@ -69,7 +69,7 @@ writeFileAs(formats.Text, "file:./copy.txt", "already text")
 
 ## Formats.JSON {#api-82a6375e413cd8e3c5b0}
 
-源码：`src/stdlib/formats/index.el:141` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L141)
+源码：`src/stdlib/formats/index.el:145` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L145)
 
 返回严格 JSON 格式对象；支持 JSON 解码与编码。
 
@@ -87,7 +87,7 @@ let config = readFileAs(formats.JSON, "file:./config.json")
 
 ## Formats.YAML {#api-b651a1c802ea9634a3bd}
 
-源码：`src/stdlib/formats/index.el:157` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L157)
+源码：`src/stdlib/formats/index.el:161` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L161)
 
 返回 YAML 文本读写格式；编码输出流式集合，不保留注释或排版。
 
@@ -105,7 +105,7 @@ let config = readFileAs(formats.YAML, "file:./config.yaml")
 
 ## Formats.TOML {#api-164a5d9b563b6f25f9d5}
 
-源码：`src/stdlib/formats/index.el:168` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L168)
+源码：`src/stdlib/formats/index.el:172` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L172)
 
 返回保留 TOML 值类型的读写格式，写入根值须为 Toml.Table。
 
@@ -124,7 +124,7 @@ writeFileAs(formats.TOML, "file:./config.toml", value)
 
 ## Formats.XML {#api-628fee3513a3531d0e12}
 
-源码：`src/stdlib/formats/index.el:179` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L179)
+源码：`src/stdlib/formats/index.el:183` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L183)
 
 返回 XmlDocument 文档读写格式。
 
@@ -143,7 +143,7 @@ writeFileAs(formats.XML, "file:./message.xml", value)
 
 ## Formats.CSV {#api-1489e37be5f3818f494f}
 
-源码：`src/stdlib/formats/index.el:188` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L188)
+源码：`src/stdlib/formats/index.el:192` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L192)
 
 返回 CSV 表格读写格式，单元格使用文本，编码使用 CRLF 记录结束。
 
@@ -161,7 +161,7 @@ let rows = readFileAs(formats.CSV, "file:./table.csv")
 
 ## Formats.TSV {#api-318f5a03d7a4da9c00e9}
 
-源码：`src/stdlib/formats/index.el:197` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L197)
+源码：`src/stdlib/formats/index.el:201` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L201)
 
 返回制表符分隔文本读写格式；单元格使用文本。
 
@@ -179,7 +179,7 @@ writeFileAs(formats.TSV, "file:./table.tsv", @[@["name", "role"], @["Ada", "engi
 
 ## Formats.INI {#api-b61644417a01eaaa15ee}
 
-源码：`src/stdlib/formats/index.el:212` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L212)
+源码：`src/stdlib/formats/index.el:216` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L216)
 
 返回轻量 INI 方言的文本读写格式；编码拒绝无法无损表示的名称、值和嵌套结构。
 
@@ -205,7 +205,7 @@ writeFileAs(formats.INI, "file:./config.ini", @{ name: "demo", server: @{ port: 
 
 ## Formats.EOL {#api-88f51cd42742b14a0df6}
 
-源码：`src/stdlib/formats/index.el:222` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L222)
+源码：`src/stdlib/formats/index.el:226` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L226)
 
 返回自包含 EOL 文本读写格式；节点、深度和整数限制用于解码，字节上限也在编码完成后检查。
 
@@ -223,7 +223,7 @@ writeFileAs(formats.EOL, "file:./value.eol", @[1, 2, 3])
 
 ## Formats.EOD {#api-9ebcb5f224a4de1a6115}
 
-源码：`src/stdlib/formats/index.el:231` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L231)
+源码：`src/stdlib/formats/index.el:235` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L235)
 
 返回自包含 EOD 二进制读写格式；节点、深度和整数限制用于解码，字节上限也在编码完成后检查。
 
@@ -241,7 +241,7 @@ writeFileAs(formats.EOD, "file:./value.eod", @[1, 2, 3])
 
 ## formats {#api-a357aae7f29cecb69598}
 
-源码：`src/stdlib/formats/index.el:245` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L245)
+源码：`src/stdlib/formats/index.el:255` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L255)
 
 标准格式对象集合，提供 Text、JSON、YAML、CSV 等格式值。
 

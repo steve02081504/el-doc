@@ -4,10 +4,10 @@
 
 !!! abstract "🎯 做完这个项目，你能"
     - 从 XLSX 工作表读取文本和数字单元格
-    - 按分数分类，并把结果写入新的 CSV 文件
+    - 用 `query` 按分数分类，并把结果写入新的 CSV 文件
     - 核对边界分数和输出行数
 
-    <span class="el-chip">⏱ 约 40 分钟</span> <span class="el-chip">用到的知识：变量、循环、条件与函数</span>
+    <span class="el-chip">⏱ 约 40 分钟</span> <span class="el-chip">用到的知识：数组、条件与函数</span>
 
 ## 目标与边界
 
@@ -22,16 +22,17 @@
 程序把大于等于 60 分的记录标记为“达标”，其余标记为“需补充”，并写入同目录下的 `classified.csv`。原始 XLSX 不会被修改。再次运行会覆盖已有的 `classified.csv`，请不要把自己的数据放在这个输出文件里。
 
 !!! note "实现状态"
-    下方代码的接口和写法已按当前源码静态核对，尚未经过 EL 编译和运行验证。需要可运行且包含 `el:documents/`、`el:formats/delimited-text/` 与 `el:filesystem/` 的 EL 工具链；如果工具链尚未准备好，先看[工具准备](../getting-started.md)。
+    示例需要支持数组来源的 `el:queries/` 以及工作簿和 CSV 标准库。示例尚未经过 EL 编译和运行验证。工具链的获取方式见[工具准备](../getting-started.md)。
 
 ## 第一步：准备文件和完整程序
 
 在工作目录里新建 `classify.el`，把下面整段代码复制进去。运行命令的当前目录也要是这个工作目录：相对路径 `scores.xlsx` 和 `classified.csv` 都从这里解析。
 
 ```el
-import { readWorkbook, CellValue } from "el:documents/"
+import { readWorkbook, CellValue, Worksheet } from "el:documents/"
 import { writeCSV } from "el:formats/delimited-text/"
 import { writeTextFile } from "el:filesystem/"
+import { query } from "el:queries/"
 
 fn textCell(value: CellValue): Text {
 	return match value {
@@ -52,18 +53,19 @@ if (book.sheets.count == 0) throw "工作簿没有工作表"
 let sheet = book.sheets[0]
 if (sheet.name != "成绩") throw "第一张工作表必须叫成绩"
 
-let rows: Text[][] = @[@["姓名", "分数", "分类"]]
-for (let cell in sheet.cells) {
-	if (cell.column == 1 & cell.row > 1) {
-		let name = textCell(cell.value)
-		let score = numberCell(sheet.get(cell.row, 2))
-		let category = if (score >= 60) "达标" else "需补充"
-		rows.push(@[name, Text(score), category])
-	}
+let classify = query(input: Worksheet) {
+	from cell in input.cells
+	where cell.column == 1 & cell.row > 1
+	let name = $(textCell)(cell.value)
+	let score = $(numberCell)(input.get(cell.row, 2))
+	let category = if (score >= 60) "达标" else "需补充"
+	select @[name, Text(score), category]
 }
 
+let classified = classify.bind(@{ input: sheet })()
+let rows: Text[][] = @[@["姓名", "分数", "分类"], ...classified]
 discard(writeTextFile("classified.csv", writeCSV(rows)))
-console.stdout.writeLine("已写入 classified.csv，数据行数：", rows.count - 1)
+console.stdout.writeLine("已写入 classified.csv，数据行数：", classified.count)
 ```
 
 在这个目录打开终端，运行：
@@ -95,9 +97,11 @@ el run classify.el
 
 `readWorkbook` 打开 XLSX，`book.sheets[0]` 取第一张工作表。数组下标从零开始，工作表的行号和列号则从一开始：姓名在第 1 列，分数在第 2 列。
 
-工作表只保存实际存在的单元格。循环找到第 1 列中表头之后的每个单元格，再用同一行的第 2 列取分数。这个规则适合本例：每条记录都有姓名，姓名所在列没有额外说明。若某行姓名为空，循环不会把那行当成记录；处理自己的表之前，先确认这个假设。
+`from` 指定要查的单元格，`where` 只保留姓名列中位于表头之下的单元格。两条 `let` 分别取姓名和同一行的分数，`select` 生成一条 CSV 记录。工作表缺少姓名单元格的行会被略过。
 
-`textCell` 和 `numberCell` 检查单元格的值类型。分数缺失或是文本时，程序会报错，而不是悄悄把它当成零。`writeCSV` 负责给包含逗号、引号或换行的内容正确加引号；`writeTextFile` 把结果写成 UTF-8 文本。
+`query(input: Worksheet)` 定义一个可传入工作表的查询。调用 `.bind(@{ input: sheet })` 填入本次的工作表，末尾的 `()` 收集结果。`$(textCell)` 和 `$(numberCell)` 引用查询外定义的函数。分数缺失或类型错误时，`numberCell` 会报错。
+
+`writeCSV` 给包含逗号、引号或换行的字段加引号，`writeTextFile` 把结果写成 UTF-8。
 
 ??? question "先猜：60 分属于哪一类？"
     属于“达标”。条件 `score >= 60` 包含等于 60 的情况，59 则不满足条件。
@@ -116,6 +120,28 @@ el run classify.el
 
     **打开的 CSV 中文乱码。** 用表格软件的导入功能选择 UTF-8 编码，不要直接假设系统默认编码。
 
+## 直接在 CSV 中查找需补充的学生
+
+生成 `classified.csv` 后，把下面的完整程序保存为 `follow-up.el`，运行 `el run follow-up.el`。CSV 的每个字段都是文本，第一条记录也是普通数据。本例生成的表头第三列是“分类”，因此检查第三列是否等于“需补充”即可。
+
+```el
+import { readTextFile } from "el:filesystem/"
+import { parseCSV } from "el:formats/delimited-text/"
+import { query } from "el:queries/"
+
+let names = query {
+	from row in $(parseCSV(readTextFile("classified.csv")))
+	where row[2] == "需补充"
+	select row[0]
+}()
+
+console.stdout.writeLine(names.join("、"))
+```
+
+```text
+小周
+```
+
 ## 完整文件清单
 
 ```text
@@ -125,7 +151,7 @@ el run classify.el
   classified.csv    运行后生成
 ```
 
-当前 `readWorkbook` 和 `writeCSV` 使用整表／整份文本接口；本程序还会在内存里保存输出行。大文件不能据此认为能以固定内存处理：请先用小数据验证，关注可用内存，并等待流式工作簿读取能力经过实际验收后再用于大规模数据。
+这两个程序会在内存中保存输入和查询结果。处理大 CSV 时，可以按批读取、查询和写出，见下一篇。
 
 ## 改成你自己的
 
@@ -139,6 +165,6 @@ el run classify.el
 - 判断条件决定分类，边界值要单独检查。
 - CSV 编码交给 `writeCSV`，原始 XLSX 与输出文件分开保存。
 
-## 下一站：[分批读取实验数据](experiment-table.md)
+## 下一站：[分批筛选并导出实验数据](experiment-table.md)
 
-对已经是 CSV 的大文件，改用按记录读取和逐批预览。
+让同一个查询依次处理每批 CSV 记录。

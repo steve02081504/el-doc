@@ -243,8 +243,8 @@
 		{
 			"name": "address_unit_bits",
 			"id": null,
-			"source": "platform/target.el",
-			"line": 44,
+			"source": "platform/target-units.el",
+			"line": 11,
 			"signature": "export fn address_unit_bits(): Integer",
 			"value_type": null
 		},
@@ -500,7 +500,7 @@
 			"name": "appendChild",
 			"id": "user-interface/model::appendChild",
 			"source": "user-interface/model.el",
-			"line": 202,
+			"line": 223,
 			"signature": "export fn appendChild(parent: Definition, key: Text, target: Definition)",
 			"value_type": null
 		},
@@ -540,7 +540,7 @@
 			"name": "architecture_name",
 			"id": null,
 			"source": "platform/target.el",
-			"line": 55,
+			"line": 48,
 			"signature": "export fn architecture_name(): RawTextView",
 			"value_type": null
 		},
@@ -684,7 +684,7 @@
 			"name": "Array",
 			"id": "collections/arrays/dynamic::Array",
 			"source": "collections/arrays/dynamic.el",
-			"line": 128,
+			"line": 135,
 			"signature": "export fn Array(element: type): type",
 			"value_type": null
 		},
@@ -716,7 +716,7 @@
 			"name": "arrayLiteral",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 62,
+			"line": 64,
 			"signature": "export @builtin:khaz:literal:array fn arrayLiteral()",
 			"value_type": null
 		},
@@ -1075,8 +1075,8 @@
 		{
 			"name": "bit_radix",
 			"id": null,
-			"source": "platform/target.el",
-			"line": 40,
+			"source": "platform/target-units.el",
+			"line": 7,
 			"signature": "export fn bit_radix(): Integer",
 			"value_type": null
 		},
@@ -1100,7 +1100,7 @@
 			"name": "blocking",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 33,
+			"line": 35,
 			"signature": "export @builtin:khaz:attribute:foreign:blocking fn blocking()",
 			"value_type": null
 		},
@@ -1108,7 +1108,7 @@
 			"name": "blockingBridge",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 47,
+			"line": 49,
 			"signature": "export @builtin:fass:provider:blocking:call fn blockingBridge()",
 			"value_type": null
 		},
@@ -1164,7 +1164,7 @@
 			"name": "bounded",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 30,
+			"line": 32,
 			"signature": "export @builtin:khaz:attribute:bounded fn bounded()",
 			"value_type": null
 		},
@@ -1220,7 +1220,7 @@
 			"name": "BufferFormat",
 			"id": null,
 			"source": "formats/index.el",
-			"line": 99,
+			"line": 103,
 			"signature": "export @assign(mode: \"copy\") class BufferFormat",
 			"value_type": null
 		},
@@ -1356,7 +1356,7 @@
 			"name": "callbackSafe",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 40,
+			"line": 42,
 			"signature": "export @builtin:khaz:attribute:callback:control fn callbackSafe()",
 			"value_type": null
 		},
@@ -1588,7 +1588,7 @@
 			"name": "ClassicArray",
 			"id": null,
 			"source": "collections/arrays/dynamic.el",
-			"line": 368,
+			"line": 377,
 			"signature": "export fn ClassicArray(element: type): type",
 			"value_type": null
 		},
@@ -1604,7 +1604,7 @@
 			"name": "classLayoutProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 52,
+			"line": 54,
 			"signature": "export @builtin:khaz:provider:class:layout fn classLayoutProvider()",
 			"value_type": null
 		},
@@ -1836,7 +1836,7 @@
 			"name": "Compiler",
 			"id": null,
 			"source": "compiler/context/compiler-session.el",
-			"line": 44,
+			"line": 77,
 			"signature": "export class Compiler",
 			"value_type": null
 		},
@@ -2060,7 +2060,7 @@
 			"name": "constructorCount",
 			"id": null,
 			"source": "language/metadata.el",
-			"line": 19,
+			"line": 31,
 			"signature": "export fn constructorCount(subject): QueryWord",
 			"value_type": null
 		},
@@ -2068,7 +2068,7 @@
 			"name": "constructorFieldCount",
 			"id": null,
 			"source": "language/metadata.el",
-			"line": 22,
+			"line": 34,
 			"signature": "export fn constructorFieldCount(subject, ordinal): QueryWord",
 			"value_type": null
 		},
@@ -2076,7 +2076,7 @@
 			"name": "constructorFieldName",
 			"id": null,
 			"source": "language/metadata.el",
-			"line": 23,
+			"line": 35,
 			"signature": "export fn constructorFieldName(subject, ordinal, field): Text",
 			"value_type": null
 		},
@@ -2084,7 +2084,7 @@
 			"name": "constructorFieldType",
 			"id": null,
 			"source": "language/metadata.el",
-			"line": 24,
+			"line": 36,
 			"signature": "export fn constructorFieldType(subject, ordinal, field): type",
 			"value_type": null
 		},
@@ -2100,7 +2100,7 @@
 			"name": "constructorIdentity",
 			"id": null,
 			"source": "language/metadata.el",
-			"line": 21,
+			"line": 33,
 			"signature": "export fn constructorIdentity(subject, ordinal): ptr",
 			"value_type": null
 		},
@@ -2108,7 +2108,7 @@
 			"name": "constructorName",
 			"id": null,
 			"source": "language/metadata.el",
-			"line": 20,
+			"line": 32,
 			"signature": "export fn constructorName(subject, ordinal): Text",
 			"value_type": null
 		},
@@ -3516,7 +3516,7 @@
 			"name": "decimal_text",
 			"id": null,
 			"source": "number/rational-text.el",
-			"line": 171,
+			"line": 170,
 			"signature": "export fn format_decimal(value: NumericRatio): Text",
 			"value_type": null
 		},
@@ -3676,7 +3676,7 @@
 			"name": "defaultClassLayoutProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 53,
+			"line": 55,
 			"signature": "export @builtin:khaz:provider:class:layout:default fn defaultClassLayoutProvider()",
 			"value_type": null
 		},
@@ -3708,7 +3708,7 @@
 			"name": "deferredWaitProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 48,
+			"line": 50,
 			"signature": "export @builtin:fass:provider:deferred:wait fn deferredWaitProvider()",
 			"value_type": null
 		},
@@ -3716,7 +3716,7 @@
 			"name": "Definition",
 			"id": "user-interface/model::Definition",
 			"source": "user-interface/model.el",
-			"line": 78,
+			"line": 79,
 			"signature": "@assign(mode: \"shared\")\nexport class Definition",
 			"value_type": null
 		},
@@ -3772,7 +3772,7 @@
 			"name": "delayProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 46,
+			"line": 48,
 			"signature": "export @builtin:fass:provider:delay fn delayProvider()",
 			"value_type": null
 		},
@@ -3780,7 +3780,7 @@
 			"name": "demand",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 32,
+			"line": 34,
 			"signature": "export @builtin:khaz:attribute:control:summary fn demand()",
 			"value_type": null
 		},
@@ -3916,7 +3916,7 @@
 			"name": "dispatch",
 			"id": null,
 			"source": "user-interface/input.el",
-			"line": 26,
+			"line": 27,
 			"signature": "export fn dispatch(frame: LayoutFrame, event: GuiEvent)",
 			"value_type": null
 		},
@@ -4092,7 +4092,7 @@
 			"name": "DynamicArray",
 			"id": null,
 			"source": "collections/arrays/dynamic.el",
-			"line": 377,
+			"line": 386,
 			"signature": "export fn DynamicArray(element: type, count = -1): type",
 			"value_type": null
 		},
@@ -4132,7 +4132,7 @@
 			"name": "Edge",
 			"id": null,
 			"source": "user-interface/model.el",
-			"line": 185,
+			"line": 206,
 			"signature": "export class Edge",
 			"value_type": null
 		},
@@ -4172,7 +4172,7 @@
 			"name": "element",
 			"id": "user-interface/model::element",
 			"source": "user-interface/model.el",
-			"line": 175,
+			"line": 196,
 			"signature": "export fn element(kind: Text, text: Text = \"\", id: Text = \"\"): Definition",
 			"value_type": null
 		},
@@ -4188,7 +4188,7 @@
 			"name": "elementType",
 			"id": null,
 			"source": "language/metadata.el",
-			"line": 29,
+			"line": 41,
 			"signature": "export fn elementType(subject): type",
 			"value_type": null
 		},
@@ -4372,7 +4372,7 @@
 			"name": "environment_kind",
 			"id": null,
 			"source": "platform/target.el",
-			"line": 71,
+			"line": 64,
 			"signature": "export fn environment_kind(): TargetEnvironment",
 			"value_type": null
 		},
@@ -4380,7 +4380,7 @@
 			"name": "environment_name",
 			"id": null,
 			"source": "platform/target.el",
-			"line": 60,
+			"line": 53,
 			"signature": "export fn environment_name(): RawTextView",
 			"value_type": null
 		},
@@ -4412,7 +4412,7 @@
 			"name": "EodFormat",
 			"id": null,
 			"source": "formats/index.el",
-			"line": 87,
+			"line": 91,
 			"signature": "export @assign(mode: \"copy\") class EodFormat",
 			"value_type": null
 		},
@@ -4428,7 +4428,7 @@
 			"name": "EolFormat",
 			"id": null,
 			"source": "formats/index.el",
-			"line": 70,
+			"line": 74,
 			"signature": "export @assign(mode: \"copy\") class EolFormat",
 			"value_type": null
 		},
@@ -4684,7 +4684,7 @@
 			"name": "exit",
 			"id": null,
 			"source": "operating-system/processes/exit.el",
-			"line": 32,
+			"line": 33,
 			"signature": "export fn exit(code: Number): Never",
 			"value_type": null
 		},
@@ -4772,7 +4772,7 @@
 			"name": "familyGateProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 49,
+			"line": 51,
 			"signature": "export @builtin:fass:provider:family:gate fn familyGateProvider()",
 			"value_type": null
 		},
@@ -4804,7 +4804,7 @@
 			"name": "Figure",
 			"id": "graphics/plots/index::Figure",
 			"source": "graphics/plots/index.el",
-			"line": 28,
+			"line": 30,
 			"signature": "export @assign(mode: \"shared\") class Figure",
 			"value_type": null
 		},
@@ -4812,7 +4812,7 @@
 			"name": "FigureHandle",
 			"id": null,
 			"source": "graphics/plots/index.el",
-			"line": 72,
+			"line": 75,
 			"signature": "export @assign(mode: \"shared\") class FigureHandle",
 			"value_type": null
 		},
@@ -5044,7 +5044,7 @@
 			"name": "foreignAbiProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 51,
+			"line": 53,
 			"signature": "export @builtin:vyrh:provider:foreign:abi fn foreignAbiProvider()",
 			"value_type": null
 		},
@@ -5052,7 +5052,7 @@
 			"name": "foreignControlSafe",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 42,
+			"line": 44,
 			"signature": "export @builtin:khaz:attribute:foreign:control fn foreignControlSafe()",
 			"value_type": null
 		},
@@ -5164,7 +5164,7 @@
 			"name": "formats",
 			"id": "formats/index::formats",
 			"source": "formats/index.el",
-			"line": 245,
+			"line": 255,
 			"signature": "export const formats",
 			"value_type": "Formats"
 		},
@@ -5252,7 +5252,7 @@
 			"name": "functionPlan",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 59,
+			"line": 61,
 			"signature": "export @builtin:khaz:specialization:function:plan fn functionPlan()",
 			"value_type": null
 		},
@@ -5412,7 +5412,7 @@
 			"name": "GuiEvent",
 			"id": "user-interface/model::GuiEvent",
 			"source": "user-interface/model.el",
-			"line": 117,
+			"line": 137,
 			"signature": "@assign(mode: \"shared\")\nexport class GuiEvent",
 			"value_type": null
 		},
@@ -5924,7 +5924,7 @@
 			"name": "InputState",
 			"id": null,
 			"source": "user-interface/input.el",
-			"line": 64,
+			"line": 65,
 			"signature": "export class InputState",
 			"value_type": null
 		},
@@ -6180,7 +6180,7 @@
 			"name": "ir_abi_verify",
 			"id": null,
 			"source": "intermediate-representation/abi/verify.el",
-			"line": 591,
+			"line": 606,
 			"signature": "export fn ir_abi_verify(m: IrAbiModule): Text",
 			"value_type": null
 		},
@@ -6484,7 +6484,7 @@
 			"name": "LayoutStyle",
 			"id": "user-interface/model::LayoutStyle",
 			"source": "user-interface/model.el",
-			"line": 21,
+			"line": 22,
 			"signature": "@assign(mode: \"shared\")\nexport class LayoutStyle",
 			"value_type": null
 		},
@@ -6660,7 +6660,7 @@
 			"name": "Listener",
 			"id": null,
 			"source": "user-interface/model.el",
-			"line": 142,
+			"line": 163,
 			"signature": "export class Listener",
 			"value_type": null
 		},
@@ -6988,7 +6988,7 @@
 			"name": "matrixLiteral",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 63,
+			"line": 65,
 			"signature": "export @builtin:khaz:literal:matrix fn matrixLiteral()",
 			"value_type": null
 		},
@@ -7324,7 +7324,7 @@
 			"name": "moveChild",
 			"id": "user-interface/model::moveChild",
 			"source": "user-interface/model.el",
-			"line": 241,
+			"line": 262,
 			"signature": "export fn moveChild(parent: Definition, key: Text, destination: Number)",
 			"value_type": null
 		},
@@ -7676,7 +7676,7 @@
 			"name": "Number",
 			"id": null,
 			"source": "number/number.el",
-			"line": 66,
+			"line": 67,
 			"signature": "export class Number\nexport fn Number(): Number\nexport fn Number(value: Integer): Number\nexport fn Number(value: UnsignedInteger): Number\nexport fn Number(value: Number): Number\nexport fn Number(value: NumericInt): Number\nexport fn Number(value: NumericRatio): Number\nexport fn Number(value): Number\nexport fn Number(value: NumericRatio, domain: NumberDomain): Number\nexport fn Number(min = nil, max = nil, epsilon = nil, integer = f, overflow = \"ub\"): type",
 			"value_type": null
 		},
@@ -7708,7 +7708,7 @@
 			"name": "numberLiteral",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 60,
+			"line": 62,
 			"signature": "export @builtin:khaz:literal:number fn numberLiteral()",
 			"value_type": null
 		},
@@ -7940,7 +7940,7 @@
 			"name": "on",
 			"id": "user-interface/model::on",
 			"source": "user-interface/model.el",
-			"line": 160,
+			"line": 181,
 			"signature": "export fn on(element: Definition, kind: Text, action, capture: Bool = f)",
 			"value_type": null
 		},
@@ -8100,7 +8100,7 @@
 			"name": "optimize",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 29,
+			"line": 31,
 			"signature": "export @builtin:khaz:attribute:optimize fn optimize()",
 			"value_type": null
 		},
@@ -8300,7 +8300,7 @@
 			"name": "parse_integer",
 			"id": null,
 			"source": "number/integer-text.el",
-			"line": 112,
+			"line": 72,
 			"signature": "export fn parse_integer(text: Text): NumericInt\nexport fn parse_integer(text: Text, base: Integer): NumericInt",
 			"value_type": null
 		},
@@ -8356,7 +8356,7 @@
 			"name": "parseCSV",
 			"id": "formats/delimited-text/index::parseCSV",
 			"source": "formats/delimited-text/index.el",
-			"line": 61,
+			"line": 63,
 			"signature": "export fn parseCSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]",
 			"value_type": null
 		},
@@ -8380,7 +8380,7 @@
 			"name": "parseINI",
 			"id": "formats/ini/index::parseINI",
 			"source": "formats/ini/index.el",
-			"line": 34,
+			"line": 26,
 			"signature": "export fn parseINI(source: Text, limits: JsonLimits = JsonLimits()): any",
 			"value_type": null
 		},
@@ -8420,7 +8420,7 @@
 			"name": "parseOrderedINI",
 			"id": "formats/ini/index::parseOrderedINI",
 			"source": "formats/ini/index.el",
-			"line": 147,
+			"line": 137,
 			"signature": "export fn parseOrderedINI(source: Text, limits: JsonLimits = JsonLimits()): any",
 			"value_type": null
 		},
@@ -8516,7 +8516,7 @@
 			"name": "parseTSV",
 			"id": "formats/delimited-text/index::parseTSV",
 			"source": "formats/delimited-text/index.el",
-			"line": 73,
+			"line": 75,
 			"signature": "export fn parseTSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]",
 			"value_type": null
 		},
@@ -8748,7 +8748,7 @@
 			"name": "plot",
 			"id": "graphics/plots/index::plot",
 			"source": "graphics/plots/index.el",
-			"line": 129,
+			"line": 132,
 			"signature": "export fn plot(x: Tensor<element: F64>, y: Tensor<element: F64>): Figure",
 			"value_type": null
 		},
@@ -8764,7 +8764,7 @@
 			"name": "PlotHost",
 			"id": "graphics/plots/index::PlotHost",
 			"source": "graphics/plots/index.el",
-			"line": 91,
+			"line": 94,
 			"signature": "export @assign(mode: \"shared\") class PlotHost",
 			"value_type": null
 		},
@@ -9148,7 +9148,7 @@
 			"name": "quantityLiteral",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 64,
+			"line": 66,
 			"signature": "export @builtin:khaz:literal:quantity fn quantityLiteral()",
 			"value_type": null
 		},
@@ -9436,7 +9436,7 @@
 			"name": "quotedLiteral",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 65,
+			"line": 67,
 			"signature": "export @builtin:khaz:literal:quoted fn quotedLiteral()",
 			"value_type": null
 		},
@@ -10340,7 +10340,7 @@
 			"name": "removeChild",
 			"id": "user-interface/model::removeChild",
 			"source": "user-interface/model.el",
-			"line": 219,
+			"line": 240,
 			"signature": "export fn removeChild(parent: Definition, key: Text): Bool",
 			"value_type": null
 		},
@@ -10476,7 +10476,7 @@
 			"name": "requires",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 31,
+			"line": 33,
 			"signature": "export @builtin:khaz:attribute:requires fn requires()",
 			"value_type": null
 		},
@@ -11212,7 +11212,7 @@
 			"name": "showWindow",
 			"id": null,
 			"source": "user-interface/window.el",
-			"line": 114,
+			"line": 115,
 			"signature": "export fn showWindow(definition: Definition, title: Text = \"EL\", width: Number = 480, height: Number = 360)\nexport fn showWindow(source, title: Text = \"EL\", width: Number = 480, height: Number = 360)\nexport fn showWindow(description: Text, title: Text = \"EL\", width: Number = 480, height: Number = 360)\nexport fn showWindow(description: Text, source, width: Number = 480, height: Number = 360)",
 			"value_type": null
 		},
@@ -11268,7 +11268,7 @@
 			"name": "sleep",
 			"id": null,
 			"source": "concurrency/scheduling/timers.el",
-			"line": 135,
+			"line": 142,
 			"signature": "export fn sleep(milliseconds: Number)\nexport fn sleep(duration: TimeDiff)",
 			"value_type": null
 		},
@@ -11476,7 +11476,7 @@
 			"name": "staticDecodeProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 58,
+			"line": 60,
 			"signature": "export @builtin:khaz:provider:static:decode fn staticDecodeProvider()",
 			"value_type": null
 		},
@@ -11484,7 +11484,7 @@
 			"name": "staticEncodeProvider",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 54,
+			"line": 56,
 			"signature": "export @builtin:khaz:provider:static:encode fn staticEncodeProvider()",
 			"value_type": null
 		},
@@ -11572,7 +11572,7 @@
 			"name": "stringLiteral",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 61,
+			"line": 63,
 			"signature": "export @builtin:khaz:literal:string fn stringLiteral()",
 			"value_type": null
 		},
@@ -11796,7 +11796,7 @@
 			"name": "system_api_kind",
 			"id": null,
 			"source": "platform/target.el",
-			"line": 65,
+			"line": 58,
 			"signature": "export fn system_api_kind(): TargetSystem",
 			"value_type": null
 		},
@@ -11804,7 +11804,7 @@
 			"name": "system_kind",
 			"id": null,
 			"source": "platform/target.el",
-			"line": 29,
+			"line": 30,
 			"signature": "export fn system_kind(): TargetSystem",
 			"value_type": null
 		},
@@ -11812,7 +11812,7 @@
 			"name": "system_name",
 			"id": null,
 			"source": "platform/target.el",
-			"line": 10,
+			"line": 11,
 			"signature": "export fn system_name(): RawTextView",
 			"value_type": null
 		},
@@ -11884,7 +11884,7 @@
 			"name": "TargetEnvironment",
 			"id": null,
 			"source": "platform/target.el",
-			"line": 70,
+			"line": 63,
 			"signature": "export enum TargetEnvironment",
 			"value_type": null
 		},
@@ -11900,7 +11900,7 @@
 			"name": "TargetSystem",
 			"id": null,
 			"source": "platform/target.el",
-			"line": 27,
+			"line": 28,
 			"signature": "export enum TargetSystem",
 			"value_type": null
 		},
@@ -12052,7 +12052,7 @@
 			"name": "Text",
 			"id": null,
 			"source": "text/text.el",
-			"line": 185,
+			"line": 186,
 			"signature": "export class Text extends Array<element: Char>\nexport fn Text(bitWidth = 0, size = 0): type",
 			"value_type": null
 		},
@@ -12060,7 +12060,7 @@
 			"name": "text",
 			"id": null,
 			"source": "number/integer-text.el",
-			"line": 173,
+			"line": 141,
 			"signature": "export fn text(value: NumericInt, base: Integer): Text\nexport fn text(value: NumericInt): Text\nexport fn text(value: NumericRatio): Text",
 			"value_type": null
 		},
@@ -12084,7 +12084,7 @@
 			"name": "TextFormat",
 			"id": "formats/index::TextFormat",
 			"source": "formats/index.el",
-			"line": 45,
+			"line": 49,
 			"signature": "export fn TextFormat(output: type, input: type = output): type",
 			"value_type": null
 		},
@@ -12092,7 +12092,7 @@
 			"name": "TextView",
 			"id": null,
 			"source": "text/text.el",
-			"line": 872,
+			"line": 891,
 			"signature": "export class TextView\nexport fn TextView(bitWidth = 0, size = 0): type",
 			"value_type": null
 		},
@@ -12188,7 +12188,7 @@
 			"name": "TimerClosed",
 			"id": null,
 			"source": "concurrency/scheduling/timers.el",
-			"line": 27,
+			"line": 34,
 			"signature": "export @assign(mode: \"copy\") class TimerClosed",
 			"value_type": null
 		},
@@ -12196,7 +12196,7 @@
 			"name": "TimerError",
 			"id": null,
 			"source": "concurrency/scheduling/timers.el",
-			"line": 26,
+			"line": 33,
 			"signature": "export @assign(mode: \"copy\") class TimerError extends Error",
 			"value_type": null
 		},
@@ -12852,7 +12852,7 @@
 			"name": "unionCount",
 			"id": null,
 			"source": "language/metadata.el",
-			"line": 25,
+			"line": 37,
 			"signature": "export fn unionCount(subject): QueryWord",
 			"value_type": null
 		},
@@ -12860,7 +12860,7 @@
 			"name": "unionMember",
 			"id": null,
 			"source": "language/metadata.el",
-			"line": 26,
+			"line": 38,
 			"signature": "export fn unionMember(subject, index): type",
 			"value_type": null
 		},
@@ -12948,7 +12948,7 @@
 			"name": "value_record",
 			"id": null,
 			"source": "language/contracts.el",
-			"line": 37,
+			"line": 39,
 			"signature": "export @builtin:khaz:attribute:compose fn value_record()",
 			"value_type": null
 		},
@@ -14622,7 +14622,7 @@
 		{
 			"name": "Array",
 			"source": "collections/arrays/dynamic.el",
-			"line": 38,
+			"line": 45,
 			"signature": "class Array",
 			"id": null,
 			"initializer": null
@@ -14630,7 +14630,7 @@
 		{
 			"name": "ArrayCursor",
 			"source": "collections/arrays/dynamic.el",
-			"line": 82,
+			"line": 89,
 			"signature": "fn ArrayCursor(element: type): type",
 			"id": null,
 			"initializer": null
@@ -14638,7 +14638,7 @@
 		{
 			"name": "ArrayLiteralTail",
 			"source": "collections/arrays/dynamic.el",
-			"line": 105,
+			"line": 112,
 			"signature": "fn ArrayLiteralTail(element: type, count = -1): type",
 			"id": null,
 			"initializer": null
@@ -14646,7 +14646,7 @@
 		{
 			"name": "Array",
 			"source": "collections/arrays/dynamic.el",
-			"line": 128,
+			"line": 135,
 			"signature": "fn Array(element: type): type",
 			"id": "collections/arrays/dynamic::Array",
 			"initializer": null
@@ -14654,7 +14654,7 @@
 		{
 			"name": "ClassicArray",
 			"source": "collections/arrays/dynamic.el",
-			"line": 368,
+			"line": 377,
 			"signature": "fn ClassicArray(element: type): type",
 			"id": null,
 			"initializer": null
@@ -14662,7 +14662,7 @@
 		{
 			"name": "DynamicArray",
 			"source": "collections/arrays/dynamic.el",
-			"line": 377,
+			"line": 386,
 			"signature": "fn DynamicArray(element: type, count = -1): type",
 			"id": null,
 			"initializer": null
@@ -14790,7 +14790,7 @@
 		{
 			"name": "StoredArray",
 			"source": "collections/arrays/storage/stored-array.el",
-			"line": 15,
+			"line": 16,
 			"signature": "fn StoredArray(element: type, codecType: type): type",
 			"id": null,
 			"initializer": null
@@ -16340,9 +16340,25 @@
 			"initializer": null
 		},
 		{
+			"name": "RuntimeImportSignature",
+			"source": "compiler/context/compiler-session.el",
+			"line": 45,
+			"signature": "class RuntimeImportSignature",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "RuntimeImportIndex",
+			"source": "compiler/context/compiler-session.el",
+			"line": 60,
+			"signature": "class RuntimeImportIndex",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "Compiler",
 			"source": "compiler/context/compiler-session.el",
-			"line": 44,
+			"line": 77,
 			"signature": "class Compiler",
 			"id": null,
 			"initializer": null
@@ -17012,17 +17028,17 @@
 			"initializer": null
 		},
 		{
-			"name": "StaticShapeValidImport",
+			"name": "StaticShapeImport",
 			"source": "compiler/contracts/capability-policy.el",
-			"line": 52,
-			"signature": "class StaticShapeValidImport extends IrExecutionImport",
+			"line": 57,
+			"signature": "class StaticShapeImport extends IrExecutionImport",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "StaticEodObserver",
 			"source": "compiler/contracts/capability-policy.el",
-			"line": 64,
+			"line": 92,
 			"signature": "class StaticEodObserver extends IrExecutionObserver",
 			"id": null,
 			"initializer": null
@@ -17030,7 +17046,7 @@
 		{
 			"name": "CapabilityPolicy",
 			"source": "compiler/contracts/capability-policy.el",
-			"line": 94,
+			"line": 122,
 			"signature": "class CapabilityPolicy extends IrExecutionSessionPolicy",
 			"id": null,
 			"initializer": null
@@ -17070,7 +17086,7 @@
 		{
 			"name": "DemandEdge",
 			"source": "compiler/contracts/demand-effects.el",
-			"line": 222,
+			"line": 223,
 			"signature": "class DemandEdge",
 			"id": null,
 			"initializer": null
@@ -17078,7 +17094,7 @@
 		{
 			"name": "DemandPropagation",
 			"source": "compiler/contracts/demand-effects.el",
-			"line": 230,
+			"line": 231,
 			"signature": "class DemandPropagation",
 			"id": null,
 			"initializer": null
@@ -17702,7 +17718,7 @@
 		{
 			"name": "FactoryRewriteScope",
 			"source": "compiler/declarations/factories.el",
-			"line": 955,
+			"line": 979,
 			"signature": "class FactoryRewriteScope",
 			"id": null,
 			"initializer": null
@@ -18246,7 +18262,7 @@
 		{
 			"name": "MutationValues",
 			"source": "compiler/modules/module-mutation-proof.el",
-			"line": 27,
+			"line": 29,
 			"signature": "class MutationValues",
 			"id": null,
 			"initializer": null
@@ -18254,7 +18270,7 @@
 		{
 			"name": "MutationVertex",
 			"source": "compiler/modules/module-mutation-proof.el",
-			"line": 38,
+			"line": 39,
 			"signature": "class MutationVertex",
 			"id": null,
 			"initializer": null
@@ -18262,7 +18278,7 @@
 		{
 			"name": "MutationScope",
 			"source": "compiler/modules/module-mutation-proof.el",
-			"line": 47,
+			"line": 50,
 			"signature": "class MutationScope",
 			"id": null,
 			"initializer": null
@@ -18270,7 +18286,7 @@
 		{
 			"name": "ModuleMutationProof",
 			"source": "compiler/modules/module-mutation-proof.el",
-			"line": 57,
+			"line": 60,
 			"signature": "class ModuleMutationProof",
 			"id": null,
 			"initializer": null
@@ -23286,7 +23302,7 @@
 		{
 			"name": "SyntaxBinding",
 			"source": "compiler/syntax/syntax-bindings.el",
-			"line": 10,
+			"line": 9,
 			"signature": "class SyntaxBinding",
 			"id": null,
 			"initializer": null
@@ -23294,7 +23310,7 @@
 		{
 			"name": "SyntaxDependency",
 			"source": "compiler/syntax/syntax-bindings.el",
-			"line": 22,
+			"line": 21,
 			"signature": "class SyntaxDependency",
 			"id": null,
 			"initializer": null
@@ -23302,15 +23318,23 @@
 		{
 			"name": "SyntaxRegistry",
 			"source": "compiler/syntax/syntax-bindings.el",
-			"line": 28,
+			"line": 27,
 			"signature": "class SyntaxRegistry",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "SyntaxSpan",
+			"source": "compiler/syntax/syntax-bindings.el",
+			"line": 145,
+			"signature": "class SyntaxSpan",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "SyntaxShape",
 			"source": "compiler/syntax/syntax-bindings.el",
-			"line": 144,
+			"line": 156,
 			"signature": "class SyntaxShape",
 			"id": null,
 			"initializer": null
@@ -23318,7 +23342,7 @@
 		{
 			"name": "SyntaxPartialShape",
 			"source": "compiler/syntax/syntax-bindings.el",
-			"line": 194,
+			"line": 229,
 			"signature": "class SyntaxPartialShape",
 			"id": null,
 			"initializer": null
@@ -23326,7 +23350,7 @@
 		{
 			"name": "SyntaxInput",
 			"source": "compiler/syntax/syntax-bindings.el",
-			"line": 296,
+			"line": 325,
 			"signature": "class SyntaxInput",
 			"id": null,
 			"initializer": null
@@ -23630,7 +23654,7 @@
 		{
 			"name": "AliasGraphMemo",
 			"source": "compiler/types/aliases.el",
-			"line": 199,
+			"line": 218,
 			"signature": "class AliasGraphMemo",
 			"id": null,
 			"initializer": null
@@ -24526,7 +24550,7 @@
 		{
 			"name": "TimerError",
 			"source": "concurrency/scheduling/timers.el",
-			"line": 26,
+			"line": 33,
 			"signature": "class TimerError extends Error",
 			"id": null,
 			"initializer": null
@@ -24534,7 +24558,7 @@
 		{
 			"name": "TimerClosed",
 			"source": "concurrency/scheduling/timers.el",
-			"line": 27,
+			"line": 34,
 			"signature": "class TimerClosed",
 			"id": null,
 			"initializer": null
@@ -24542,7 +24566,7 @@
 		{
 			"name": "TimerOutcome",
 			"source": "concurrency/scheduling/timers.el",
-			"line": 29,
+			"line": 36,
 			"signature": "class TimerOutcome",
 			"id": null,
 			"initializer": null
@@ -24550,7 +24574,7 @@
 		{
 			"name": "TimerEntry",
 			"source": "concurrency/scheduling/timers.el",
-			"line": 34,
+			"line": 41,
 			"signature": "class TimerEntry",
 			"id": null,
 			"initializer": null
@@ -24558,7 +24582,7 @@
 		{
 			"name": "TimerState",
 			"source": "concurrency/scheduling/timers.el",
-			"line": 39,
+			"line": 46,
 			"signature": "class TimerState",
 			"id": null,
 			"initializer": null
@@ -24566,7 +24590,7 @@
 		{
 			"name": "TimerService",
 			"source": "concurrency/scheduling/timers.el",
-			"line": 119,
+			"line": 126,
 			"signature": "class TimerService",
 			"id": null,
 			"initializer": null
@@ -24614,7 +24638,7 @@
 		{
 			"name": "NativeMutex",
 			"source": "concurrency/synchronization/owned-mutex.el",
-			"line": 11,
+			"line": 12,
 			"signature": "class NativeMutex",
 			"id": null,
 			"initializer": null
@@ -30556,6 +30580,1462 @@
 			"initializer": null
 		},
 		{
+			"name": "HotkeyBinding",
+			"source": "desktop-automation/bindings.el",
+			"line": 8,
+			"signature": "class HotkeyBinding",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "HotkeyBindings",
+			"source": "desktop-automation/bindings.el",
+			"line": 28,
+			"signature": "class HotkeyBindings",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "HotkeySubscription",
+			"source": "desktop-automation/bindings.el",
+			"line": 40,
+			"signature": "class HotkeySubscription",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopFileDialogMode",
+			"source": "desktop-automation/dialog-model.el",
+			"line": 1,
+			"signature": "enum DesktopFileDialogMode",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopDialogStatus",
+			"source": "desktop-automation/dialog.el",
+			"line": 8,
+			"signature": "enum DesktopDialogStatus",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopDialogChoice",
+			"source": "desktop-automation/dialog.el",
+			"line": 10,
+			"signature": "class DesktopDialogChoice",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopTextResponse",
+			"source": "desktop-automation/dialog.el",
+			"line": 20,
+			"signature": "class DesktopTextResponse",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopCoordinateUnit",
+			"source": "desktop-automation/display-model.el",
+			"line": 4,
+			"signature": "enum DesktopCoordinateUnit",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopDisplay",
+			"source": "desktop-automation/display-model.el",
+			"line": 6,
+			"signature": "class DesktopDisplay",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopCheckState",
+			"source": "desktop-automation/element-model.el",
+			"line": 5,
+			"signature": "enum DesktopCheckState",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopElementCoordinates",
+			"source": "desktop-automation/element-model.el",
+			"line": 6,
+			"signature": "enum DesktopElementCoordinates",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopElement",
+			"source": "desktop-automation/element-model.el",
+			"line": 21,
+			"signature": "class DesktopElement",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "ElementSelector",
+			"source": "desktop-automation/element-selector.el",
+			"line": 10,
+			"signature": "class ElementSelector",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopRect",
+			"source": "desktop-automation/geometry.el",
+			"line": 4,
+			"signature": "class DesktopRect",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "HotstringNormalization",
+			"source": "desktop-automation/hotstrings.el",
+			"line": 9,
+			"signature": "enum HotstringNormalization",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "CommittedTextEvent",
+			"source": "desktop-automation/hotstrings.el",
+			"line": 15,
+			"signature": "class CommittedTextEvent",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "HotstringRule",
+			"source": "desktop-automation/hotstrings.el",
+			"line": 30,
+			"signature": "class HotstringRule",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "HotstringMatch",
+			"source": "desktop-automation/hotstrings.el",
+			"line": 56,
+			"signature": "class HotstringMatch",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "MouseButton",
+			"source": "desktop-automation/input-backend.el",
+			"line": 5,
+			"signature": "enum MouseButton",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopPoint",
+			"source": "desktop-automation/input-backend.el",
+			"line": 7,
+			"signature": "class DesktopPoint",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "InputBackend",
+			"source": "desktop-automation/input-backend.el",
+			"line": 16,
+			"signature": "class InputBackend",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopInput",
+			"source": "desktop-automation/input.el",
+			"line": 38,
+			"signature": "class DesktopInput",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopKeyRuleNotice",
+			"source": "desktop-automation/key-rule-notices.el",
+			"line": 5,
+			"signature": "class DesktopKeyRuleNotice",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "KeyRuleNoticeQueue",
+			"source": "desktop-automation/key-rule-notices.el",
+			"line": 19,
+			"signature": "class KeyRuleNoticeQueue",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopKeyPhase",
+			"source": "desktop-automation/key-rules.el",
+			"line": 8,
+			"signature": "enum DesktopKeyPhase",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopKeyOrigin",
+			"source": "desktop-automation/key-rules.el",
+			"line": 9,
+			"signature": "enum DesktopKeyOrigin",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopKeyDisposition",
+			"source": "desktop-automation/key-rules.el",
+			"line": 10,
+			"signature": "enum DesktopKeyDisposition",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopKeyFocus",
+			"source": "desktop-automation/key-rules.el",
+			"line": 12,
+			"signature": "class DesktopKeyFocus",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopKeyInput",
+			"source": "desktop-automation/key-rules.el",
+			"line": 25,
+			"signature": "class DesktopKeyInput",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopKeyRule",
+			"source": "desktop-automation/key-rules.el",
+			"line": 63,
+			"signature": "class DesktopKeyRule",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopKeyDecision",
+			"source": "desktop-automation/key-rules.el",
+			"line": 124,
+			"signature": "class DesktopKeyDecision",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopKeyRules",
+			"source": "desktop-automation/key-rules.el",
+			"line": 136,
+			"signature": "class DesktopKeyRules",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopKeyReplayFrame",
+			"source": "desktop-automation/key-rules.el",
+			"line": 190,
+			"signature": "class DesktopKeyReplayFrame",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopKey",
+			"source": "desktop-automation/keys.el",
+			"line": 4,
+			"signature": "class DesktopKey",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "KeyChord",
+			"source": "desktop-automation/keys.el",
+			"line": 78,
+			"signature": "class KeyChord",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopFailure",
+			"source": "desktop-automation/model.el",
+			"line": 4,
+			"signature": "enum DesktopFailure",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopError",
+			"source": "desktop-automation/model.el",
+			"line": 6,
+			"signature": "class DesktopError extends Error",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "AccessibilityTextRange",
+			"source": "desktop-automation/platform/linux-accessibility.el",
+			"line": 47,
+			"signature": "class AccessibilityTextRange",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "AccessibilityConnection",
+			"source": "desktop-automation/platform/linux-accessibility.el",
+			"line": 94,
+			"signature": "class AccessibilityConnection",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "AccessibilityElement",
+			"source": "desktop-automation/platform/linux-accessibility.el",
+			"line": 140,
+			"signature": "class AccessibilityElement extends DesktopElement",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "AccessibleDesktopWindow",
+			"source": "desktop-automation/platform/linux-accessibility.el",
+			"line": 475,
+			"signature": "class AccessibleDesktopWindow extends DesktopWindow",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopHotkeys",
+			"source": "desktop-automation/platform/linux-hotkeys.el",
+			"line": 7,
+			"signature": "class DesktopHotkeys",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "LinuxNotification",
+			"source": "desktop-automation/platform/linux-notification.el",
+			"line": 18,
+			"signature": "class LinuxNotification",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "LinuxShortcutKind",
+			"source": "desktop-automation/platform/linux-shortcut.el",
+			"line": 11,
+			"signature": "enum LinuxShortcutKind",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "LinuxDesktopShortcut",
+			"source": "desktop-automation/platform/linux-shortcut.el",
+			"line": 13,
+			"signature": "class LinuxDesktopShortcut",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopEntryFile",
+			"source": "desktop-automation/platform/linux-shortcut.el",
+			"line": 114,
+			"signature": "class DesktopEntryFile",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "TrayMethod",
+			"source": "desktop-automation/platform/linux-tray.el",
+			"line": 18,
+			"signature": "class TrayMethod",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "LinuxMenuLayout",
+			"source": "desktop-automation/platform/linux-tray.el",
+			"line": 137,
+			"signature": "class LinuxMenuLayout",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "LinuxTrayMenu",
+			"source": "desktop-automation/platform/linux-tray.el",
+			"line": 158,
+			"signature": "class LinuxTrayMenu",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "LinuxVolumeInformation",
+			"source": "desktop-automation/platform/linux-volumes.el",
+			"line": 16,
+			"signature": "class LinuxVolumeInformation",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "MacClipboardRepresentation",
+			"source": "desktop-automation/platform/macos-clipboard.el",
+			"line": 45,
+			"signature": "class MacClipboardRepresentation",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "MacClipboardItem",
+			"source": "desktop-automation/platform/macos-clipboard.el",
+			"line": 54,
+			"signature": "class MacClipboardItem",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "MacClipboardSnapshot",
+			"source": "desktop-automation/platform/macos-clipboard.el",
+			"line": 62,
+			"signature": "class MacClipboardSnapshot",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "HotkeyMailbox",
+			"source": "desktop-automation/platform/macos-hotkeys.el",
+			"line": 53,
+			"signature": "class HotkeyMailbox",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopHotkeys",
+			"source": "desktop-automation/platform/macos-hotkeys.el",
+			"line": 100,
+			"signature": "class DesktopHotkeys",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "QuartzBool",
+			"source": "desktop-automation/platform/macos-input.el",
+			"line": 13,
+			"signature": "class QuartzBool",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "QuartzKey",
+			"source": "desktop-automation/platform/macos-input.el",
+			"line": 14,
+			"signature": "class QuartzKey",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "MacosInput",
+			"source": "desktop-automation/platform/macos-input.el",
+			"line": 74,
+			"signature": "class MacosInput extends InputBackend",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "QuartzBool",
+			"source": "desktop-automation/platform/macos-key-rules.el",
+			"line": 18,
+			"signature": "class QuartzBool",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "QuartzKey",
+			"source": "desktop-automation/platform/macos-key-rules.el",
+			"line": 19,
+			"signature": "class QuartzKey",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "EventBits",
+			"source": "desktop-automation/platform/macos-key-rules.el",
+			"line": 20,
+			"signature": "class EventBits",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "MacosKeyRuleSubscription",
+			"source": "desktop-automation/platform/macos-key-rules.el",
+			"line": 54,
+			"signature": "class MacosKeyRuleSubscription",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "MacNotification",
+			"source": "desktop-automation/platform/macos-notification.el",
+			"line": 19,
+			"signature": "class MacNotification",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "AEReturnId",
+			"source": "desktop-automation/platform/macos-power.el",
+			"line": 9,
+			"signature": "class AEReturnId",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "OSErr",
+			"source": "desktop-automation/platform/macos-power.el",
+			"line": 10,
+			"signature": "class OSErr",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "QuartzBool",
+			"source": "desktop-automation/platform/macos-remap.el",
+			"line": 11,
+			"signature": "class QuartzBool",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "QuartzKey",
+			"source": "desktop-automation/platform/macos-remap.el",
+			"line": 12,
+			"signature": "class QuartzKey",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "EventMask",
+			"source": "desktop-automation/platform/macos-remap.el",
+			"line": 13,
+			"signature": "class EventMask",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "MacosKeyRemap",
+			"source": "desktop-automation/platform/macos-remap.el",
+			"line": 39,
+			"signature": "class MacosKeyRemap",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DarwinFileMode",
+			"source": "desktop-automation/platform/macos-shortcut.el",
+			"line": 46,
+			"signature": "class DarwinFileMode",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "MacFinderAlias",
+			"source": "desktop-automation/platform/macos-shortcut.el",
+			"line": 50,
+			"signature": "class MacFinderAlias",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "FileURL",
+			"source": "desktop-automation/platform/macos-shortcut.el",
+			"line": 68,
+			"signature": "class FileURL",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "MacCommandLauncher",
+			"source": "desktop-automation/platform/macos-shortcut.el",
+			"line": 245,
+			"signature": "class MacCommandLauncher",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "CoreAudioBoolean",
+			"source": "desktop-automation/platform/macos-sound.el",
+			"line": 12,
+			"signature": "class CoreAudioBoolean",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "CoreFoundationIndex",
+			"source": "desktop-automation/platform/macos-sound.el",
+			"line": 13,
+			"signature": "class CoreFoundationIndex",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "CoreFoundationEncoding",
+			"source": "desktop-automation/platform/macos-sound.el",
+			"line": 14,
+			"signature": "class CoreFoundationEncoding",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopTooltip",
+			"source": "desktop-automation/platform/macos-tooltip.el",
+			"line": 35,
+			"signature": "class DesktopTooltip",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "TrayTarget",
+			"source": "desktop-automation/platform/macos-tray.el",
+			"line": 17,
+			"signature": "class TrayTarget",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "MacTrayMenu",
+			"source": "desktop-automation/platform/macos-tray.el",
+			"line": 114,
+			"signature": "class MacTrayMenu",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "MacVolumeInformation",
+			"source": "desktop-automation/platform/macos-volumes.el",
+			"line": 43,
+			"signature": "class MacVolumeInformation",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "MacDesktopElement",
+			"source": "desktop-automation/platform/macos-window.el",
+			"line": 158,
+			"signature": "class MacDesktopElement extends DesktopElement",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "MacDesktopWindow",
+			"source": "desktop-automation/platform/macos-window.el",
+			"line": 451,
+			"signature": "class MacDesktopWindow extends DesktopWindow",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "PortalConnection",
+			"source": "desktop-automation/platform/portal.el",
+			"line": 290,
+			"signature": "class PortalConnection",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "ClipboardTransfer",
+			"source": "desktop-automation/platform/wayland-clipboard.el",
+			"line": 41,
+			"signature": "class ClipboardTransfer",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WaylandClipboard",
+			"source": "desktop-automation/platform/wayland-clipboard.el",
+			"line": 71,
+			"signature": "class WaylandClipboard",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WaylandGlobal",
+			"source": "desktop-automation/platform/wayland-connection.el",
+			"line": 61,
+			"signature": "class WaylandGlobal",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "Listener",
+			"source": "desktop-automation/platform/wayland-connection.el",
+			"line": 72,
+			"signature": "class Listener",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WaylandHotkeys",
+			"source": "desktop-automation/platform/wayland-hotkeys.el",
+			"line": 32,
+			"signature": "class WaylandHotkeys",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "IdleSeat",
+			"source": "desktop-automation/platform/wayland-idle.el",
+			"line": 11,
+			"signature": "class IdleSeat",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WaylandPointerStream",
+			"source": "desktop-automation/platform/wayland-input.el",
+			"line": 13,
+			"signature": "class WaylandPointerStream",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WaylandInput",
+			"source": "desktop-automation/platform/wayland-input.el",
+			"line": 63,
+			"signature": "class WaylandInput extends InputBackend",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WaylandScreenInput",
+			"source": "desktop-automation/platform/wayland-input.el",
+			"line": 237,
+			"signature": "class WaylandScreenInput",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "Output",
+			"source": "desktop-automation/platform/wayland-monitors.el",
+			"line": 10,
+			"signature": "class Output",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WaylandWindowSnapshot",
+			"source": "desktop-automation/platform/wayland-windows.el",
+			"line": 13,
+			"signature": "class WaylandWindowSnapshot extends DesktopWindow",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowState",
+			"source": "desktop-automation/platform/wayland-windows.el",
+			"line": 54,
+			"signature": "class WindowState",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowProtocol",
+			"source": "desktop-automation/platform/wayland-windows.el",
+			"line": 111,
+			"signature": "enum WindowProtocol",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowBatch",
+			"source": "desktop-automation/platform/wayland-windows.el",
+			"line": 113,
+			"signature": "class WindowBatch",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowAction",
+			"source": "desktop-automation/platform/wayland-windows.el",
+			"line": 338,
+			"signature": "enum WindowAction",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowControlScope",
+			"source": "desktop-automation/platform/wayland-windows.el",
+			"line": 340,
+			"signature": "class WindowControlScope",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "ControlledWaylandWindow",
+			"source": "desktop-automation/platform/wayland-windows.el",
+			"line": 371,
+			"signature": "class ControlledWaylandWindow extends DesktopWindow",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "VariantWord",
+			"source": "desktop-automation/platform/windows-automation.el",
+			"line": 17,
+			"signature": "class VariantWord",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsComArgument",
+			"source": "desktop-automation/platform/windows-automation.el",
+			"line": 50,
+			"signature": "enum WindowsComArgument",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsComType",
+			"source": "desktop-automation/platform/windows-automation.el",
+			"line": 51,
+			"signature": "enum WindowsComType",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsComRef",
+			"source": "desktop-automation/platform/windows-automation.el",
+			"line": 56,
+			"signature": "class WindowsComRef",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsComArray",
+			"source": "desktop-automation/platform/windows-automation.el",
+			"line": 69,
+			"signature": "class WindowsComArray",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "ComReferenceStorage",
+			"source": "desktop-automation/platform/windows-automation.el",
+			"line": 99,
+			"signature": "class ComReferenceStorage",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "AutomationApartment",
+			"source": "desktop-automation/platform/windows-automation.el",
+			"line": 191,
+			"signature": "class AutomationApartment",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsComObject",
+			"source": "desktop-automation/platform/windows-automation.el",
+			"line": 256,
+			"signature": "class WindowsComObject",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsClipboardMaterialization",
+			"source": "desktop-automation/platform/windows-clipboard.el",
+			"line": 78,
+			"signature": "enum WindowsClipboardMaterialization",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsClipboardEntry",
+			"source": "desktop-automation/platform/windows-clipboard.el",
+			"line": 84,
+			"signature": "class WindowsClipboardEntry",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsTemporaryClipboard",
+			"source": "desktop-automation/platform/windows-clipboard.el",
+			"line": 249,
+			"signature": "class WindowsTemporaryClipboard",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "HotkeySpec",
+			"source": "desktop-automation/platform/windows-hotkeys.el",
+			"line": 16,
+			"signature": "class HotkeySpec",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopHotkeys",
+			"source": "desktop-automation/platform/windows-hotkeys.el",
+			"line": 34,
+			"signature": "class DesktopHotkeys",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsInput",
+			"source": "desktop-automation/platform/windows-input.el",
+			"line": 56,
+			"signature": "class WindowsInput extends InputBackend",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsKeyRuleSubscription",
+			"source": "desktop-automation/platform/windows-key-rules.el",
+			"line": 37,
+			"signature": "class WindowsKeyRuleSubscription",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsMessageReceiver",
+			"source": "desktop-automation/platform/windows-message-receiver.el",
+			"line": 14,
+			"signature": "class WindowsMessageReceiver",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsNotification",
+			"source": "desktop-automation/platform/windows-notification.el",
+			"line": 32,
+			"signature": "class WindowsNotification",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsProcessPriority",
+			"source": "desktop-automation/platform/windows-process.el",
+			"line": 149,
+			"signature": "enum WindowsProcessPriority",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsRegistryError",
+			"source": "desktop-automation/platform/windows-registry.el",
+			"line": 26,
+			"signature": "class WindowsRegistryError extends Error",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsRegistryRoot",
+			"source": "desktop-automation/platform/windows-registry.el",
+			"line": 35,
+			"signature": "enum WindowsRegistryRoot",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsRegistryView",
+			"source": "desktop-automation/platform/windows-registry.el",
+			"line": 36,
+			"signature": "enum WindowsRegistryView",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsRegistryValue",
+			"source": "desktop-automation/platform/windows-registry.el",
+			"line": 59,
+			"signature": "class WindowsRegistryValue",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsRegistryKey",
+			"source": "desktop-automation/platform/windows-registry.el",
+			"line": 90,
+			"signature": "class WindowsRegistryKey",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsKeyRemap",
+			"source": "desktop-automation/platform/windows-remap.el",
+			"line": 42,
+			"signature": "class WindowsKeyRemap",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsShortcut",
+			"source": "desktop-automation/platform/windows-shortcut.el",
+			"line": 23,
+			"signature": "class WindowsShortcut",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "VariantType",
+			"source": "desktop-automation/platform/windows-sound.el",
+			"line": 12,
+			"signature": "class VariantType",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "TooltipWindowState",
+			"source": "desktop-automation/platform/windows-tooltip.el",
+			"line": 63,
+			"signature": "class TooltipWindowState",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopTooltip",
+			"source": "desktop-automation/platform/windows-tooltip.el",
+			"line": 67,
+			"signature": "class DesktopTooltip",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "TrayEvents",
+			"source": "desktop-automation/platform/windows-tray.el",
+			"line": 34,
+			"signature": "class TrayEvents",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsTrayMenu",
+			"source": "desktop-automation/platform/windows-tray.el",
+			"line": 99,
+			"signature": "class WindowsTrayMenu",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsWindowTransparency",
+			"source": "desktop-automation/platform/windows-window.el",
+			"line": 75,
+			"signature": "class WindowsWindowTransparency",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsEditSelection",
+			"source": "desktop-automation/platform/windows-window.el",
+			"line": 105,
+			"signature": "class WindowsEditSelection",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsEditPosition",
+			"source": "desktop-automation/platform/windows-window.el",
+			"line": 115,
+			"signature": "class WindowsEditPosition",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowOwner",
+			"source": "desktop-automation/platform/windows-window.el",
+			"line": 136,
+			"signature": "class WindowOwner",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsDesktopWindow",
+			"source": "desktop-automation/platform/windows-window.el",
+			"line": 154,
+			"signature": "class WindowsDesktopWindow extends DesktopWindow",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsDesktopElement",
+			"source": "desktop-automation/platform/windows-window.el",
+			"line": 519,
+			"signature": "class WindowsDesktopElement extends DesktopElement",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsMouseButtonMessage",
+			"source": "desktop-automation/platform/windows-window.el",
+			"line": 856,
+			"signature": "class WindowsMouseButtonMessage",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsControlHit",
+			"source": "desktop-automation/platform/windows-window.el",
+			"line": 879,
+			"signature": "class WindowsControlHit",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsControlClickPhase",
+			"source": "desktop-automation/platform/windows-window.el",
+			"line": 889,
+			"signature": "enum WindowsControlClickPhase",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsEditControl",
+			"source": "desktop-automation/platform/windows-window.el",
+			"line": 1012,
+			"signature": "class WindowsEditControl",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsIndexedControlKind",
+			"source": "desktop-automation/platform/windows-window.el",
+			"line": 1081,
+			"signature": "enum WindowsIndexedControlKind",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsIndexedControl",
+			"source": "desktop-automation/platform/windows-window.el",
+			"line": 1083,
+			"signature": "class WindowsIndexedControl",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "SelectionTransfer",
+			"source": "desktop-automation/platform/x11-clipboard-owner.el",
+			"line": 41,
+			"signature": "class SelectionTransfer",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "X11ClipboardTextOwner",
+			"source": "desktop-automation/platform/x11-clipboard-owner.el",
+			"line": 47,
+			"signature": "class X11ClipboardTextOwner",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "XByte",
+			"source": "desktop-automation/platform/x11-display.el",
+			"line": 7,
+			"signature": "class XByte",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "XModifierMask",
+			"source": "desktop-automation/platform/x11-hotkeys.el",
+			"line": 14,
+			"signature": "class XModifierMask",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "HotkeySpec",
+			"source": "desktop-automation/platform/x11-hotkeys.el",
+			"line": 52,
+			"signature": "class HotkeySpec",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopHotkeys",
+			"source": "desktop-automation/platform/x11-hotkeys.el",
+			"line": 58,
+			"signature": "class DesktopHotkeys",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "X11Input",
+			"source": "desktop-automation/platform/x11-input.el",
+			"line": 27,
+			"signature": "class X11Input extends InputBackend",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "XCoordinate",
+			"source": "desktop-automation/platform/x11-screen.el",
+			"line": 13,
+			"signature": "class XCoordinate",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "XExtent",
+			"source": "desktop-automation/platform/x11-screen.el",
+			"line": 14,
+			"signature": "class XExtent",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "XImageKind",
+			"source": "desktop-automation/platform/x11-screen.el",
+			"line": 15,
+			"signature": "class XImageKind",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "ChannelBits",
+			"source": "desktop-automation/platform/x11-screen.el",
+			"line": 31,
+			"signature": "class ChannelBits",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "PixmapFormat",
+			"source": "desktop-automation/platform/x11-screen.el",
+			"line": 47,
+			"signature": "class PixmapFormat",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopTooltip",
+			"source": "desktop-automation/platform/x11-tooltip.el",
+			"line": 41,
+			"signature": "class DesktopTooltip",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "XCoordinate",
+			"source": "desktop-automation/platform/x11-window.el",
+			"line": 19,
+			"signature": "class XCoordinate",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "X11WindowIdentity",
+			"source": "desktop-automation/platform/x11-window.el",
+			"line": 64,
+			"signature": "class X11WindowIdentity",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "X11Windows",
+			"source": "desktop-automation/platform/x11-window.el",
+			"line": 68,
+			"signature": "class X11Windows",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "X11DesktopWindow",
+			"source": "desktop-automation/platform/x11-window.el",
+			"line": 390,
+			"signature": "class X11DesktopWindow extends DesktopWindow",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "X11DesktopElement",
+			"source": "desktop-automation/platform/x11-window.el",
+			"line": 558,
+			"signature": "class X11DesktopElement extends DesktopElement",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopPointerTarget",
+			"source": "desktop-automation/pointer-target.el",
+			"line": 6,
+			"signature": "class DesktopPointerTarget",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopReplayKeys",
+			"source": "desktop-automation/replay.el",
+			"line": 15,
+			"signature": "class DesktopReplayKeys",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopReplayPointerKind",
+			"source": "desktop-automation/replay.el",
+			"line": 25,
+			"signature": "enum DesktopReplayPointerKind",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopReplayPointer",
+			"source": "desktop-automation/replay.el",
+			"line": 33,
+			"signature": "class DesktopReplayPointer",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopReplayScroll",
+			"source": "desktop-automation/replay.el",
+			"line": 56,
+			"signature": "class DesktopReplayScroll",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopReplayStep",
+			"source": "desktop-automation/replay.el",
+			"line": 73,
+			"signature": "class DesktopReplayStep",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopFrame",
+			"source": "desktop-automation/screen.el",
+			"line": 27,
+			"signature": "class DesktopFrame",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopSoundDevice",
+			"source": "desktop-automation/sound-model.el",
+			"line": 3,
+			"signature": "class DesktopSoundDevice",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopSystemSound",
+			"source": "desktop-automation/system-sound.el",
+			"line": 4,
+			"signature": "enum DesktopSystemSound",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopTextMode",
+			"source": "desktop-automation/text-match.el",
+			"line": 4,
+			"signature": "enum DesktopTextMode",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopTextMatch",
+			"source": "desktop-automation/text-match.el",
+			"line": 6,
+			"signature": "class DesktopTextMatch",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopTrayItem",
+			"source": "desktop-automation/tray-model.el",
+			"line": 5,
+			"signature": "class DesktopTrayItem",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "TrayMenuNode",
+			"source": "desktop-automation/tray-model.el",
+			"line": 30,
+			"signature": "class TrayMenuNode",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "TrayLevel",
+			"source": "desktop-automation/tray-model.el",
+			"line": 44,
+			"signature": "class TrayLevel",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "ImageMatch",
+			"source": "desktop-automation/vision.el",
+			"line": 13,
+			"signature": "class ImageMatch",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "ScreenPixel",
+			"source": "desktop-automation/vision.el",
+			"line": 53,
+			"signature": "class ScreenPixel",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowGroupRule",
+			"source": "desktop-automation/window-group.el",
+			"line": 10,
+			"signature": "class WindowGroupRule",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopWindowGroup",
+			"source": "desktop-automation/window-group.el",
+			"line": 65,
+			"signature": "class DesktopWindowGroup",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopWindowMinimization",
+			"source": "desktop-automation/window-minimization.el",
+			"line": 22,
+			"signature": "class DesktopWindowMinimization",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopWindowOrder",
+			"source": "desktop-automation/window-model.el",
+			"line": 8,
+			"signature": "enum DesktopWindowOrder",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "DesktopWindow",
+			"source": "desktop-automation/window-model.el",
+			"line": 11,
+			"signature": "class DesktopWindow",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowSelector",
+			"source": "desktop-automation/window-selector.el",
+			"line": 12,
+			"signature": "class WindowSelector",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "DocumentParagraph",
 			"source": "documents/document.el",
 			"line": 6,
@@ -32260,9 +33740,49 @@
 			"initializer": null
 		},
 		{
+			"name": "CsvReadError",
+			"source": "formats/delimited-text/stream.el",
+			"line": 10,
+			"signature": "class CsvReadError extends Error",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "CsvRowBatch",
+			"source": "formats/delimited-text/stream.el",
+			"line": 22,
+			"signature": "class CsvRowBatch",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "CsvRowReader",
+			"source": "formats/delimited-text/stream.el",
+			"line": 29,
+			"signature": "class CsvRowReader",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "EmptyEncodeOptions",
+			"source": "formats/file-codec.el",
+			"line": 3,
+			"signature": "class EmptyEncodeOptions",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "FileCodec",
+			"source": "formats/file-codec.el",
+			"line": 5,
+			"signature": "fn FileCodec(value: type, options: type): type",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "TextFormat",
 			"source": "formats/index.el",
-			"line": 45,
+			"line": 49,
 			"signature": "fn TextFormat(output: type, input: type = output): type",
 			"id": "formats/index::TextFormat",
 			"initializer": null
@@ -32270,7 +33790,7 @@
 		{
 			"name": "EolFormat",
 			"source": "formats/index.el",
-			"line": 70,
+			"line": 74,
 			"signature": "class EolFormat",
 			"id": null,
 			"initializer": null
@@ -32278,7 +33798,7 @@
 		{
 			"name": "EodFormat",
 			"source": "formats/index.el",
-			"line": 87,
+			"line": 91,
 			"signature": "class EodFormat",
 			"id": null,
 			"initializer": null
@@ -32286,7 +33806,7 @@
 		{
 			"name": "BufferFormat",
 			"source": "formats/index.el",
-			"line": 99,
+			"line": 103,
 			"signature": "class BufferFormat",
 			"id": null,
 			"initializer": null
@@ -32294,7 +33814,7 @@
 		{
 			"name": "Formats",
 			"source": "formats/index.el",
-			"line": 122,
+			"line": 126,
 			"signature": "class Formats",
 			"id": null,
 			"initializer": null
@@ -32360,38 +33880,6 @@
 			"source": "formats/json/writer.el",
 			"line": 20,
 			"signature": "class JsonWriter",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "query_field_type",
-			"source": "formats/serialization/capability.el",
-			"line": 18,
-			"signature": "fn query_field_type(subject, index: QueryWord): type",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "query_union_member",
-			"source": "formats/serialization/capability.el",
-			"line": 23,
-			"signature": "fn query_union_member(subject, index: QueryWord): type",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "staticFieldType",
-			"source": "formats/serialization/capability.el",
-			"line": 29,
-			"signature": "fn staticFieldType(subject, index: Number): type",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "staticUnionMember",
-			"source": "formats/serialization/capability.el",
-			"line": 36,
-			"signature": "fn staticUnionMember(subject, index: Number): type",
 			"id": null,
 			"initializer": null
 		},
@@ -32692,6 +34180,38 @@
 			"initializer": null
 		},
 		{
+			"name": "Vec3",
+			"source": "game/geometry-3d.el",
+			"line": 4,
+			"signature": "class Vec3",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "Rotation",
+			"source": "game/geometry-3d.el",
+			"line": 40,
+			"signature": "class Rotation",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "Pose",
+			"source": "game/geometry-3d.el",
+			"line": 70,
+			"signature": "class Pose",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "Ray",
+			"source": "game/geometry-3d.el",
+			"line": 85,
+			"signature": "class Ray",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "LinearColor",
 			"source": "graphics/color.el",
 			"line": 7,
@@ -32708,9 +34228,41 @@
 			"initializer": null
 		},
 		{
+			"name": "Representation",
+			"source": "graphics/plots/export.el",
+			"line": 51,
+			"signature": "fn Representation(value: type): type",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "PlotFont",
+			"source": "graphics/plots/font.el",
+			"line": 13,
+			"signature": "class PlotFont",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "PlotGlyph",
+			"source": "graphics/plots/font.el",
+			"line": 23,
+			"signature": "class PlotGlyph",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "PlotFontRun",
+			"source": "graphics/plots/font.el",
+			"line": 33,
+			"signature": "class PlotFontRun",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "Figure",
 			"source": "graphics/plots/index.el",
-			"line": 28,
+			"line": 30,
 			"signature": "class Figure",
 			"id": "graphics/plots/index::Figure",
 			"initializer": null
@@ -32718,7 +34270,7 @@
 		{
 			"name": "FigureHandle",
 			"source": "graphics/plots/index.el",
-			"line": 72,
+			"line": 75,
 			"signature": "class FigureHandle",
 			"id": null,
 			"initializer": null
@@ -32726,7 +34278,7 @@
 		{
 			"name": "PlotHost",
 			"source": "graphics/plots/index.el",
-			"line": 91,
+			"line": 94,
 			"signature": "class PlotHost",
 			"id": "graphics/plots/index::PlotHost",
 			"initializer": null
@@ -32836,6 +34388,14 @@
 			"initializer": null
 		},
 		{
+			"name": "SampleBounds",
+			"source": "graphics/raster/renderer.el",
+			"line": 31,
+			"signature": "class SampleBounds",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "Point",
 			"source": "graphics/vector/evg.el",
 			"line": 8,
@@ -32904,6 +34464,46 @@
 			"source": "graphics/vector/geometry.el",
 			"line": 5,
 			"signature": "class Contour",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "SvgDocument",
+			"source": "graphics/vector/svg.el",
+			"line": 25,
+			"signature": "class SvgDocument",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "Table",
+			"source": "graphics/vector/true-type.el",
+			"line": 13,
+			"signature": "class Table",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "OutlinePoint",
+			"source": "graphics/vector/true-type.el",
+			"line": 22,
+			"signature": "class OutlinePoint",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "TrueTypeGlyph",
+			"source": "graphics/vector/true-type.el",
+			"line": 27,
+			"signature": "class TrueTypeGlyph",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "TrueTypeFace",
+			"source": "graphics/vector/true-type.el",
+			"line": 56,
+			"signature": "class TrueTypeFace",
 			"id": null,
 			"initializer": null
 		},
@@ -34110,7 +35710,7 @@
 		{
 			"name": "IrAbiVerificationContext",
 			"source": "intermediate-representation/abi/verify.el",
-			"line": 607,
+			"line": 622,
 			"signature": "class IrAbiVerificationContext",
 			"id": null,
 			"initializer": null
@@ -34998,15 +36598,23 @@
 		{
 			"name": "query_type_argument",
 			"source": "language/metadata.el",
-			"line": 8,
+			"line": 9,
 			"signature": "fn query_type_argument(subject, name: QueryView): type",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "query_field_type",
+			"source": "language/metadata.el",
+			"line": 13,
+			"signature": "fn query_field_type(subject, index: QueryWord): type",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "query_constructor_field_type",
 			"source": "language/metadata.el",
-			"line": 15,
+			"line": 21,
 			"signature": "fn query_constructor_field_type(subject, ordinal: QueryWord, field: QueryWord): type",
 			"id": null,
 			"initializer": null
@@ -35014,15 +36622,23 @@
 		{
 			"name": "query_union_member",
 			"source": "language/metadata.el",
-			"line": 17,
+			"line": 23,
 			"signature": "fn query_union_member(subject, index: QueryWord): type",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "staticFieldType",
+			"source": "language/metadata.el",
+			"line": 28,
+			"signature": "fn staticFieldType(subject, index): type",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "constructorFieldType",
 			"source": "language/metadata.el",
-			"line": 24,
+			"line": 36,
 			"signature": "fn constructorFieldType(subject, ordinal, field): type",
 			"id": null,
 			"initializer": null
@@ -35030,7 +36646,7 @@
 		{
 			"name": "unionMember",
 			"source": "language/metadata.el",
-			"line": 26,
+			"line": 38,
 			"signature": "fn unionMember(subject, index): type",
 			"id": null,
 			"initializer": null
@@ -35038,7 +36654,7 @@
 		{
 			"name": "elementType",
 			"source": "language/metadata.el",
-			"line": 29,
+			"line": 41,
 			"signature": "fn elementType(subject): type",
 			"id": null,
 			"initializer": null
@@ -39598,7 +41214,7 @@
 		{
 			"name": "MusicPlayer",
 			"source": "multimedia/audio/music.el",
-			"line": 47,
+			"line": 73,
 			"signature": "class MusicPlayer",
 			"id": "multimedia/audio/music::MusicPlayer",
 			"initializer": null
@@ -39614,9 +41230,17 @@
 		{
 			"name": "WavWriter",
 			"source": "multimedia/audio/wav.el",
-			"line": 36,
+			"line": 40,
 			"signature": "class WavWriter",
 			"id": "multimedia/audio/wav::WavWriter",
+			"initializer": null
+		},
+		{
+			"name": "WavLayout",
+			"source": "multimedia/audio/wav.el",
+			"line": 109,
+			"signature": "class WavLayout",
+			"id": null,
 			"initializer": null
 		},
 		{
@@ -40126,7 +41750,7 @@
 		{
 			"name": "ComScope",
 			"source": "multimedia/image/windows/com.el",
-			"line": 96,
+			"line": 99,
 			"signature": "class ComScope",
 			"id": null,
 			"initializer": null
@@ -42118,7 +43742,7 @@
 		{
 			"name": "NumberParameterError",
 			"source": "number/internal/exact.el",
-			"line": 79,
+			"line": 73,
 			"signature": "class NumberParameterError extends Error",
 			"id": null,
 			"initializer": null
@@ -42158,7 +43782,7 @@
 		{
 			"name": "Number",
 			"source": "number/number.el",
-			"line": 66,
+			"line": 67,
 			"signature": "class Number",
 			"id": "number/number::Number~type",
 			"initializer": null
@@ -42166,7 +43790,7 @@
 		{
 			"name": "StorageUnsignedUnit",
 			"source": "number/number.el",
-			"line": 155,
+			"line": 156,
 			"signature": "class StorageUnsignedUnit",
 			"id": null,
 			"initializer": null
@@ -42174,7 +43798,7 @@
 		{
 			"name": "StorageSignedSmall",
 			"source": "number/number.el",
-			"line": 156,
+			"line": 157,
 			"signature": "class StorageSignedSmall",
 			"id": null,
 			"initializer": null
@@ -42182,7 +43806,7 @@
 		{
 			"name": "StorageUnsignedMedium",
 			"source": "number/number.el",
-			"line": 157,
+			"line": 158,
 			"signature": "class StorageUnsignedMedium",
 			"id": null,
 			"initializer": null
@@ -42190,7 +43814,7 @@
 		{
 			"name": "StorageSignedMedium",
 			"source": "number/number.el",
-			"line": 158,
+			"line": 159,
 			"signature": "class StorageSignedMedium",
 			"id": null,
 			"initializer": null
@@ -42198,7 +43822,7 @@
 		{
 			"name": "StorageUnsignedLarge",
 			"source": "number/number.el",
-			"line": 159,
+			"line": 160,
 			"signature": "class StorageUnsignedLarge",
 			"id": null,
 			"initializer": null
@@ -42206,7 +43830,7 @@
 		{
 			"name": "StorageSignedLarge",
 			"source": "number/number.el",
-			"line": 160,
+			"line": 161,
 			"signature": "class StorageSignedLarge",
 			"id": null,
 			"initializer": null
@@ -42214,7 +43838,7 @@
 		{
 			"name": "NativeIntegerValue",
 			"source": "number/number.el",
-			"line": 162,
+			"line": 163,
 			"signature": "fn NativeIntegerValue(carrier: type): type",
 			"id": null,
 			"initializer": null
@@ -42222,7 +43846,7 @@
 		{
 			"name": "NativeFractionValue",
 			"source": "number/number.el",
-			"line": 175,
+			"line": 176,
 			"signature": "fn NativeFractionValue(carrier: type): type",
 			"id": null,
 			"initializer": null
@@ -42230,7 +43854,7 @@
 		{
 			"name": "BigIntegerValue",
 			"source": "number/number.el",
-			"line": 188,
+			"line": 189,
 			"signature": "class BigIntegerValue extends Number",
 			"id": null,
 			"initializer": null
@@ -42238,7 +43862,7 @@
 		{
 			"name": "RatioValue",
 			"source": "number/number.el",
-			"line": 196,
+			"line": 197,
 			"signature": "class RatioValue extends Number",
 			"id": null,
 			"initializer": null
@@ -42246,7 +43870,7 @@
 		{
 			"name": "UnorderedValue",
 			"source": "number/number.el",
-			"line": 204,
+			"line": 205,
 			"signature": "class UnorderedValue extends Number",
 			"id": null,
 			"initializer": null
@@ -42254,17 +43878,49 @@
 		{
 			"name": "BoundedNativeInteger",
 			"source": "number/number.el",
-			"line": 298,
+			"line": 304,
 			"signature": "fn BoundedNativeInteger(carrier: type, min, max, epsilon, overflow, unsigned: Bool): type",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "PartialNumber",
+			"source": "number/number.el",
+			"line": 336,
+			"signature": "fn PartialNumber(minimum, maximum, epsilon, integer: Bool): type",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "Number",
 			"source": "number/number.el",
-			"line": 341,
+			"line": 390,
 			"signature": "fn Number(min = nil, max = nil, epsilon = nil, integer = f, overflow = \"ub\"): type",
 			"id": "number/number::Number~constraints",
+			"initializer": null
+		},
+		{
+			"name": "NumericTextValue",
+			"source": "number/numeric-text-format.el",
+			"line": 11,
+			"signature": "data NumericTextValue",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "NumericTextDigits",
+			"source": "number/numeric-text-format.el",
+			"line": 18,
+			"signature": "class NumericTextDigits",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "NumericTextFormat",
+			"source": "number/numeric-text-format.el",
+			"line": 25,
+			"signature": "class NumericTextFormat",
+			"id": null,
 			"initializer": null
 		},
 		{
@@ -42750,7 +44406,7 @@
 		{
 			"name": "PrecisionLayout",
 			"source": "numerical-computing/precision-codec.el",
-			"line": 11,
+			"line": 10,
 			"signature": "class PrecisionLayout",
 			"id": null,
 			"initializer": null
@@ -42758,7 +44414,7 @@
 		{
 			"name": "PrecisionElement",
 			"source": "numerical-computing/precision-codec.el",
-			"line": 31,
+			"line": 30,
 			"signature": "fn PrecisionElement(name: Text): type",
 			"id": null,
 			"initializer": null
@@ -42766,7 +44422,7 @@
 		{
 			"name": "PrecisionFormat",
 			"source": "numerical-computing/precision-codec.el",
-			"line": 75,
+			"line": 74,
 			"signature": "class PrecisionFormat",
 			"id": null,
 			"initializer": null
@@ -42774,7 +44430,7 @@
 		{
 			"name": "GradientAccumulator",
 			"source": "numerical-computing/precision-codec.el",
-			"line": 106,
+			"line": 87,
 			"signature": "fn GradientAccumulator(storage: type): type",
 			"id": null,
 			"initializer": null
@@ -42972,10 +44628,10 @@
 			"initializer": null
 		},
 		{
-			"name": "FileEditLease",
-			"source": "operating-system/files/edit.el",
-			"line": 31,
-			"signature": "class FileEditLease",
+			"name": "FileLockLease",
+			"source": "operating-system/files/lock-lease.el",
+			"line": 16,
+			"signature": "class FileLockLease",
 			"id": null,
 			"initializer": null
 		},
@@ -43088,6 +44744,54 @@
 			"source": "operating-system/files/temporary.el",
 			"line": 86,
 			"signature": "class TemporaryFile",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "VolumeSpace",
+			"source": "operating-system/files/volume-space.el",
+			"line": 12,
+			"signature": "class VolumeSpace",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsRemovalDevice",
+			"source": "operating-system/files/windows-device-removal.el",
+			"line": 26,
+			"signature": "class WindowsRemovalDevice",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsDeviceRemovalResult",
+			"source": "operating-system/files/windows-device-removal.el",
+			"line": 32,
+			"signature": "class WindowsDeviceRemovalResult",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsDriveKind",
+			"source": "operating-system/files/windows-volume.el",
+			"line": 22,
+			"signature": "enum WindowsDriveKind",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsVolumeStatus",
+			"source": "operating-system/files/windows-volume.el",
+			"line": 23,
+			"signature": "enum WindowsVolumeStatus",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "WindowsVolumeInformation",
+			"source": "operating-system/files/windows-volume.el",
+			"line": 25,
+			"signature": "class WindowsVolumeInformation",
 			"id": null,
 			"initializer": null
 		},
@@ -43709,56 +45413,56 @@
 		},
 		{
 			"name": "UntilEnd",
-			"source": "parsing/oi.el",
-			"line": 59,
+			"source": "parsing/sequences.el",
+			"line": 29,
 			"signature": "fn UntilEnd(element: type, parserType: type): type",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "FoldUntilEnd",
-			"source": "parsing/oi.el",
-			"line": 78,
+			"source": "parsing/sequences.el",
+			"line": 48,
 			"signature": "fn FoldUntilEnd(element: type, accumulator: type, parserType: type): type",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "FixedCount",
-			"source": "parsing/oi.el",
-			"line": 114,
+			"source": "parsing/sequences.el",
+			"line": 84,
 			"signature": "fn FixedCount(element: type, parserType: type): type",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "LengthPrefixed",
-			"source": "parsing/oi.el",
-			"line": 141,
+			"source": "parsing/sequences.el",
+			"line": 112,
 			"signature": "fn LengthPrefixed(element: type, parserType: type, lengthParserType: type): type",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "Matrix",
-			"source": "parsing/oi.el",
-			"line": 161,
+			"source": "parsing/sequences.el",
+			"line": 132,
 			"signature": "fn Matrix(element: type, parserType: type): type",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "UntilSentinel",
-			"source": "parsing/oi.el",
-			"line": 187,
+			"source": "parsing/sequences.el",
+			"line": 160,
 			"signature": "fn UntilSentinel(element: type, parserType: type): type",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "LinesUntilEnd",
-			"source": "parsing/oi.el",
-			"line": 214,
+			"source": "parsing/sequences.el",
+			"line": 187,
 			"signature": "class LinesUntilEnd",
 			"id": null,
 			"initializer": null
@@ -44228,9 +45932,17 @@
 			"initializer": null
 		},
 		{
+			"name": "DescriptorIndex",
+			"source": "platform/target.el",
+			"line": 7,
+			"signature": "class DescriptorIndex",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "ExecutionProfile",
 			"source": "platform/target.el",
-			"line": 18,
+			"line": 19,
 			"signature": "enum ExecutionProfile",
 			"id": null,
 			"initializer": null
@@ -44238,7 +45950,7 @@
 		{
 			"name": "TargetSystem",
 			"source": "platform/target.el",
-			"line": 27,
+			"line": 28,
 			"signature": "enum TargetSystem",
 			"id": null,
 			"initializer": null
@@ -44246,7 +45958,7 @@
 		{
 			"name": "TargetEnvironment",
 			"source": "platform/target.el",
-			"line": 70,
+			"line": 63,
 			"signature": "enum TargetEnvironment",
 			"id": null,
 			"initializer": null
@@ -45702,23 +47414,15 @@
 		{
 			"name": "TextData",
 			"source": "text/internal/data.el",
-			"line": 20,
+			"line": 22,
 			"signature": "class TextData",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "TextHashIndex",
-			"source": "text/internal/data.el",
-			"line": 58,
-			"signature": "class TextHashIndex",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "TextEmpty",
 			"source": "text/internal/data.el",
-			"line": 88,
+			"line": 60,
 			"signature": "class TextEmpty extends TextData",
 			"id": null,
 			"initializer": null
@@ -45726,7 +47430,7 @@
 		{
 			"name": "TextOwned",
 			"source": "text/internal/data.el",
-			"line": 98,
+			"line": 70,
 			"signature": "class TextOwned extends TextData",
 			"id": null,
 			"initializer": null
@@ -45734,7 +47438,7 @@
 		{
 			"name": "TextSlice",
 			"source": "text/internal/data.el",
-			"line": 154,
+			"line": 123,
 			"signature": "class TextSlice extends TextData",
 			"id": null,
 			"initializer": null
@@ -45742,7 +47446,7 @@
 		{
 			"name": "TextConcat",
 			"source": "text/internal/data.el",
-			"line": 186,
+			"line": 155,
 			"signature": "class TextConcat extends TextData",
 			"id": null,
 			"initializer": null
@@ -45750,7 +47454,7 @@
 		{
 			"name": "TextRepeat",
 			"source": "text/internal/data.el",
-			"line": 225,
+			"line": 194,
 			"signature": "class TextRepeat extends TextData",
 			"id": null,
 			"initializer": null
@@ -45758,7 +47462,7 @@
 		{
 			"name": "TextSplice",
 			"source": "text/internal/data.el",
-			"line": 266,
+			"line": 235,
 			"signature": "class TextSplice extends TextData",
 			"id": null,
 			"initializer": null
@@ -45772,18 +47476,18 @@
 			"initializer": null
 		},
 		{
-			"name": "RawTextView",
-			"source": "text/internal/raw-view.el",
-			"line": 17,
-			"signature": "class RawTextView",
+			"name": "fn",
+			"source": "text/internal/raw-view-operations.el",
+			"line": 41,
+			"signature": "data fn view_data(view: RawTextView): ptr",
 			"id": null,
 			"initializer": null
 		},
 		{
-			"name": "fn",
+			"name": "RawTextView",
 			"source": "text/internal/raw-view.el",
-			"line": 43,
-			"signature": "data fn view_data(view: RawTextView): ptr",
+			"line": 4,
+			"signature": "class RawTextView",
 			"id": null,
 			"initializer": null
 		},
@@ -45806,7 +47510,7 @@
 		{
 			"name": "CanonicalNormalizer",
 			"source": "text/normalization.el",
-			"line": 38,
+			"line": 49,
 			"signature": "class CanonicalNormalizer",
 			"id": null,
 			"initializer": null
@@ -46166,7 +47870,7 @@
 		{
 			"name": "Text",
 			"source": "text/text.el",
-			"line": 185,
+			"line": 186,
 			"signature": "class Text extends Array<element: Char>",
 			"id": "text/text::Text~type",
 			"initializer": null
@@ -46174,7 +47878,7 @@
 		{
 			"name": "TextCursor",
 			"source": "text/text.el",
-			"line": 773,
+			"line": 779,
 			"signature": "class TextCursor",
 			"id": null,
 			"initializer": null
@@ -46182,7 +47886,7 @@
 		{
 			"name": "TextView",
 			"source": "text/text.el",
-			"line": 872,
+			"line": 891,
 			"signature": "class TextView",
 			"id": null,
 			"initializer": null
@@ -46190,7 +47894,7 @@
 		{
 			"name": "TextRangeView",
 			"source": "text/text.el",
-			"line": 905,
+			"line": 924,
 			"signature": "class TextRangeView extends TextView",
 			"id": null,
 			"initializer": null
@@ -46198,7 +47902,7 @@
 		{
 			"name": "DataTextView",
 			"source": "text/text.el",
-			"line": 932,
+			"line": 954,
 			"signature": "class DataTextView extends TextView",
 			"id": null,
 			"initializer": null
@@ -46206,7 +47910,7 @@
 		{
 			"name": "TextBase",
 			"source": "text/text.el",
-			"line": 955,
+			"line": 977,
 			"signature": "let TextBase: type",
 			"id": null,
 			"initializer": "Text"
@@ -46214,7 +47918,7 @@
 		{
 			"name": "TextRangeViewBase",
 			"source": "text/text.el",
-			"line": 956,
+			"line": 978,
 			"signature": "let TextRangeViewBase: type",
 			"id": null,
 			"initializer": "TextRangeView"
@@ -46222,7 +47926,7 @@
 		{
 			"name": "TextView",
 			"source": "text/text.el",
-			"line": 978,
+			"line": 1000,
 			"signature": "fn TextView(bitWidth = 0, size = 0): type",
 			"id": "text/text::TextView~constraints",
 			"initializer": null
@@ -46230,7 +47934,7 @@
 		{
 			"name": "Text",
 			"source": "text/text.el",
-			"line": 1027,
+			"line": 1049,
 			"signature": "fn Text(bitWidth = 0, size = 0): type",
 			"id": "text/text::Text~constraints",
 			"initializer": null
@@ -46238,7 +47942,7 @@
 		{
 			"name": "TextPushUpdate",
 			"source": "text/text.el",
-			"line": 1115,
+			"line": 1137,
 			"signature": "fn TextPushUpdate(bitWidth = 0, size = 0, value: type, value_bitWidth = 0): type",
 			"id": null,
 			"initializer": null
@@ -46246,7 +47950,7 @@
 		{
 			"name": "TextIndexWriteUpdate",
 			"source": "text/text.el",
-			"line": 1122,
+			"line": 1144,
 			"signature": "fn TextIndexWriteUpdate(bitWidth = 0, size = 0, index: type, value: type, index_bitWidth = 0, value_bitWidth = 0): type",
 			"id": null,
 			"initializer": null
@@ -47390,7 +49094,7 @@
 		{
 			"name": "KeyGesture",
 			"source": "user-interface/input.el",
-			"line": 8,
+			"line": 9,
 			"signature": "class KeyGesture",
 			"id": null,
 			"initializer": null
@@ -47398,7 +49102,7 @@
 		{
 			"name": "InputState",
 			"source": "user-interface/input.el",
-			"line": 64,
+			"line": 65,
 			"signature": "class InputState",
 			"id": null,
 			"initializer": null
@@ -47430,7 +49134,7 @@
 		{
 			"name": "TextStyleSpan",
 			"source": "user-interface/model.el",
-			"line": 6,
+			"line": 7,
 			"signature": "class TextStyleSpan",
 			"id": null,
 			"initializer": null
@@ -47438,7 +49142,7 @@
 		{
 			"name": "LayoutStyle",
 			"source": "user-interface/model.el",
-			"line": 22,
+			"line": 23,
 			"signature": "class LayoutStyle",
 			"id": "user-interface/model::LayoutStyle",
 			"initializer": null
@@ -47446,7 +49150,7 @@
 		{
 			"name": "Definition",
 			"source": "user-interface/model.el",
-			"line": 79,
+			"line": 80,
 			"signature": "class Definition",
 			"id": "user-interface/model::Definition",
 			"initializer": null
@@ -47454,7 +49158,7 @@
 		{
 			"name": "GuiEvent",
 			"source": "user-interface/model.el",
-			"line": 118,
+			"line": 138,
 			"signature": "class GuiEvent",
 			"id": "user-interface/model::GuiEvent",
 			"initializer": null
@@ -47462,7 +49166,7 @@
 		{
 			"name": "Listener",
 			"source": "user-interface/model.el",
-			"line": 142,
+			"line": 163,
 			"signature": "class Listener",
 			"id": null,
 			"initializer": null
@@ -47470,7 +49174,7 @@
 		{
 			"name": "Edge",
 			"source": "user-interface/model.el",
-			"line": 185,
+			"line": 206,
 			"signature": "class Edge",
 			"id": null,
 			"initializer": null
@@ -47510,7 +49214,7 @@
 		{
 			"name": "WindowTimer",
 			"source": "user-interface/platform/linux/window.el",
-			"line": 57,
+			"line": 59,
 			"signature": "class WindowTimer",
 			"id": null,
 			"initializer": null
@@ -47518,7 +49222,7 @@
 		{
 			"name": "Window",
 			"source": "user-interface/platform/linux/window.el",
-			"line": 78,
+			"line": 80,
 			"signature": "class Window",
 			"id": null,
 			"initializer": null
@@ -47574,7 +49278,7 @@
 		{
 			"name": "WindowTimer",
 			"source": "user-interface/platform/macos/window.el",
-			"line": 27,
+			"line": 31,
 			"signature": "class WindowTimer",
 			"id": null,
 			"initializer": null
@@ -47582,7 +49286,7 @@
 		{
 			"name": "Window",
 			"source": "user-interface/platform/macos/window.el",
-			"line": 44,
+			"line": 48,
 			"signature": "class Window",
 			"id": null,
 			"initializer": null
@@ -47670,7 +49374,7 @@
 		{
 			"name": "DirtyFrame",
 			"source": "user-interface/platform/windows/window.el",
-			"line": 32,
+			"line": 35,
 			"signature": "class DirtyFrame",
 			"id": null,
 			"initializer": null
@@ -47678,7 +49382,7 @@
 		{
 			"name": "WindowTimer",
 			"source": "user-interface/platform/windows/window.el",
-			"line": 170,
+			"line": 173,
 			"signature": "class WindowTimer",
 			"id": "user-interface/platform/windows/window::WindowTimer",
 			"initializer": null
@@ -47686,7 +49390,7 @@
 		{
 			"name": "Window",
 			"source": "user-interface/platform/windows/window.el",
-			"line": 215,
+			"line": 218,
 			"signature": "class Window",
 			"id": "user-interface/platform/windows/window::Window",
 			"initializer": null
@@ -47839,10 +49543,10 @@
 		{
 			"name": "element",
 			"source": "collections/arrays/dynamic.el",
-			"line": 128,
+			"line": 135,
 			"signature": "fn Array(element: type): type",
 			"kind": "type",
-			"anchor": "api-bfc7c48fa2dcb1135093"
+			"anchor": "api-d9bee8f512c5a46cf1e1"
 		},
 		{
 			"name": "value",
@@ -47917,11 +49621,11 @@
 			"anchor": "api-e1b1b22430ae1dac04e7"
 		}
 	],
-	"source_digest": "373341e2805cddc855923ffb0b85e2c18b5ef3ba74e5301499e225dd82e3e770",
+	"source_digest": "8d3bcc77f999a64f7813334356c477e70b4a1d205e48556f0d51ab27c4406038",
 	"files": [
 		{
 			"path": "collections/arrays/dynamic.el",
-			"sha256": "07ba810cf853cbb6e24797ebd5ddc168500c66a5775a332796f010b81615e9ce"
+			"sha256": "20d1ce94e10847970751a8780a60fe9ba131b1d594e7c4358991d9005a225e55"
 		},
 		{
 			"path": "collections/arrays/lazy.el",
@@ -47937,7 +49641,7 @@
 		},
 		{
 			"path": "collections/arrays/positional.el",
-			"sha256": "21ba35cbcb3abcc0a1d3c8ed3d33c60420badd45fd1103040639745a6b192f61"
+			"sha256": "0bcd4af2552891f988f111ca881036c9338c60a4de65e05033870f2fde516dc1"
 		},
 		{
 			"path": "collections/arrays/sparse-argmin.el",
@@ -48005,7 +49709,7 @@
 		},
 		{
 			"path": "console/facade.el",
-			"sha256": "6abaccfc6041d03191506d405e2475ea2e234d26b53f68b21ebc53b55c6cd409"
+			"sha256": "00ce3749fcfa263dd99dc9c627c3223ce2a19b10bf579b897f89c2a66a03ff22"
 		},
 		{
 			"path": "control/retry.el",
@@ -48026,6 +49730,10 @@
 		{
 			"path": "cryptography/hmac.el",
 			"sha256": "1100cba86cdda685a71c1aeb62c7d6a25ab4b32e73635a03d983dcaaff4e2633"
+		},
+		{
+			"path": "cryptography/one-time-passwords.el",
+			"sha256": "302422c3aab8018c0833ad44e0afd6d6a8820de4529023b1118382c2e2e03e80"
 		},
 		{
 			"path": "cryptography/pbkdf2.el",
@@ -48057,15 +49765,15 @@
 		},
 		{
 			"path": "formats/delimited-text/index.el",
-			"sha256": "34890023ddcffa402466cc020c564f2cfdf7db4dd97aab8765441f5f02bca072"
+			"sha256": "689d20e962b3feef75f4c8c742f15977749e8004f7edc0edf70995c91fc64c07"
 		},
 		{
 			"path": "formats/index.el",
-			"sha256": "1703974c37324e8646d0861967fddd7007151c7f7578798ce5be2d8863f4fc42"
+			"sha256": "c3327a0b1b862747727d871887ce11c3f376a3ea8886e38282e3877ec882ff39"
 		},
 		{
 			"path": "formats/ini/index.el",
-			"sha256": "7810a00a87b5fec554705a0011451b2025549aacab7e5c197018bea1ddf3ee7a"
+			"sha256": "84f4fdbd6b33b636838fc01887ef0d7bc58a5679e76e04ec43aaa111617b122e"
 		},
 		{
 			"path": "formats/internal/writer.el",
@@ -48113,11 +49821,11 @@
 		},
 		{
 			"path": "graphics/plots/index.el",
-			"sha256": "b1dc2a73678b7fca5f58e9d4383b69f23230812dd6ced76a4c724d1230b1f5fe"
+			"sha256": "d5eb437fcb39354f65a5398ef7b52e2263afa6e6c95965892390d1404f56a478"
 		},
 		{
 			"path": "graphics/plots/scene.el",
-			"sha256": "521d7e568eed8098117e485a43f9b5b7f43c1c3a08a72110f7a8bf465ad8e42f"
+			"sha256": "8054e005435f8fe810dfd695664b962665b78245af67b79cab180be01d4339dc"
 		},
 		{
 			"path": "language/objects.el",
@@ -48217,11 +49925,11 @@
 		},
 		{
 			"path": "multimedia/audio/music.el",
-			"sha256": "d6578e9cdb8b7624dd19a74df1f7efd5428922eb30f544128d66f46e92a185b4"
+			"sha256": "49038d404d7d740df8276392d773a736352f843454dbd5deb7a332cc8c814159"
 		},
 		{
 			"path": "multimedia/audio/wav.el",
-			"sha256": "a0827ecd4633028ef614504b0b95c2d5475a598c5f30c78fa7eb9d8214563a77"
+			"sha256": "6efee7c32a552f8180c4d75a07ebad88879a8072e2f40660a2a02eef27707f59"
 		},
 		{
 			"path": "multimedia/audio/windows-output.el",
@@ -48245,7 +49953,7 @@
 		},
 		{
 			"path": "network/parsers.el",
-			"sha256": "0df2a5f2b6b9e3025d7478dba5375bd8e85ab8b4ce77f2eca8f61892bca6c4bf"
+			"sha256": "2a359f9d78078d1d446ba4a0c602b6578fecd30b81e0bfe694fca235ae988de0"
 		},
 		{
 			"path": "network/sockets.el",
@@ -48301,7 +50009,7 @@
 		},
 		{
 			"path": "number/number.el",
-			"sha256": "0201d320db7a3de6f2aa22de3d832981f07fed4254197cb34aa8d6168a4db5d9"
+			"sha256": "1cb36c7dd254282f0e1c4135c3e58534c2e6ddecce2f9192a80d4f2c52d0b0d4"
 		},
 		{
 			"path": "numerical-computing/arrays.el",
@@ -48369,7 +50077,7 @@
 		},
 		{
 			"path": "text/text.el",
-			"sha256": "f69ab8e80ec0874c2f6991ede479e3a233571aadf90775246bc096080f86d670"
+			"sha256": "e472c7d91a5bef504f3ebc4ca6c439d48243613e17897f090c945d9a24f7aeda"
 		},
 		{
 			"path": "theme/model.el",
@@ -48417,15 +50125,15 @@
 		},
 		{
 			"path": "user-interface/drawing.el",
-			"sha256": "529754709d312e4b7a04fabf892bb1101f9687d1a4832d35891bead1b93bfbb0"
+			"sha256": "1e725c339a41c72c5be7c52ecb3830850307d6090de1900bf3118f79075a7a79"
 		},
 		{
 			"path": "user-interface/model.el",
-			"sha256": "ecb838f41d15cb6f5aa26454655aaae9fa30efb207959e355346b18ab77d2b60"
+			"sha256": "e1255c8e9b0634df5518b0c330639f10d40647336d77211681bde007c8cab3e1"
 		},
 		{
 			"path": "user-interface/platform/windows/window.el",
-			"sha256": "980ff19358908cdb2561c64355306ee11d3dce52bbfa6c27f96803734eb76359"
+			"sha256": "68648393994c160984c79bfa25534b9df49a0b2322bdc228d89d8f2f230b09c1"
 		},
 		{
 			"path": "user-interface/sound.el",
@@ -48433,7 +50141,7 @@
 		},
 		{
 			"path": "user-interface/window.el",
-			"sha256": "02ea3f89dd680b6fa28c453bb3f3791cd46718f8d5d5bdf1770d215aa0038707"
+			"sha256": "8623878b1fd51c4a71963db4787b8ae197194bb987538cba96ff0a60730de9c4"
 		}
 	],
 	"entries": [
@@ -48470,9 +50178,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 39,
+			"line": 46,
 			"signature": "virtual fn compact()",
-			"declaration_line": 47,
+			"declaration_line": 54,
 			"id": "collections/arrays/dynamic::Array.compact",
 			"value_type": null,
 			"owner": "Array",
@@ -48491,7 +50199,7 @@
 				},
 				{
 					"tag": "returns",
-					"value": "数组长度，以 NativeSignedInteger 表示。",
+					"value": "数组长度，以精确的非负 Number 表示。",
 					"markdown": ""
 				},
 				{
@@ -48504,27 +50212,27 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 48,
-			"signature": "virtual get count(): Integer",
-			"declaration_line": 55,
+			"line": 55,
+			"signature": "virtual get count(): Number",
+			"declaration_line": 62,
 			"id": "collections/arrays/dynamic::Array.count",
 			"value_type": null,
 			"owner": "Array",
-			"return_type": "Integer",
+			"return_type": "Number",
 			"initializer": null,
 			"type_references": {
 				"return_type": [
 					{
-						"name": "Integer",
+						"name": "Number",
 						"start": 0,
-						"end": 7,
+						"end": 6,
 						"target": {
 							"type": "definition",
-							"source": "platform/machine/integer.el",
-							"name": "NativeSignedInteger",
-							"id": null,
-							"path": "types.md",
-							"fragment": "api-45690472287900730a5f"
+							"source": "number/number.el",
+							"name": "Number",
+							"id": "number/number::Number~type",
+							"path": "modules/number/number.md",
+							"fragment": "api-3cc24d3ef702e8652fb4"
 						}
 					}
 				]
@@ -48559,9 +50267,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 69,
+			"line": 76,
 			"signature": "@discardable virtual fn unshift(value: any): Array",
-			"declaration_line": 79,
+			"declaration_line": 86,
 			"id": "collections/arrays/dynamic::Array.unshift",
 			"value_type": null,
 			"owner": "Array",
@@ -48614,9 +50322,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 118,
+			"line": 125,
 			"signature": "export fn Array(element: type): type",
-			"declaration_line": 128,
+			"declaration_line": 135,
 			"id": "collections/arrays/dynamic::Array",
 			"value_type": null,
 			"owner": null,
@@ -48669,9 +50377,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 157,
+			"line": 166,
 			"signature": "@discardable virtual fn push(value: element): Array",
-			"declaration_line": 167,
+			"declaration_line": 176,
 			"id": "collections/arrays/dynamic::Array.push",
 			"value_type": null,
 			"owner": "Array",
@@ -48724,9 +50432,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 168,
+			"line": 177,
 			"signature": "@discardable virtual fn pop(): element",
-			"declaration_line": 178,
+			"declaration_line": 187,
 			"id": "collections/arrays/dynamic::Array.pop",
 			"value_type": null,
 			"owner": "Array",
@@ -48744,7 +50452,7 @@
 							"name": "element",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-bfc7c48fa2dcb1135093",
+							"fragment": "api-d9bee8f512c5a46cf1e1",
 							"parameter_kind": "type"
 						}
 					}
@@ -48780,9 +50488,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 180,
+			"line": 189,
 			"signature": "@discardable virtual fn shift(): element",
-			"declaration_line": 190,
+			"declaration_line": 199,
 			"id": "collections/arrays/dynamic::Array.shift",
 			"value_type": null,
 			"owner": "Array",
@@ -48800,7 +50508,7 @@
 							"name": "element",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-bfc7c48fa2dcb1135093",
+							"fragment": "api-d9bee8f512c5a46cf1e1",
 							"parameter_kind": "type"
 						}
 					}
@@ -48826,9 +50534,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 191,
+			"line": 200,
 			"signature": "virtual fn clear(): nil_t",
-			"declaration_line": 203,
+			"declaration_line": 212,
 			"id": "collections/arrays/dynamic::Array.clear",
 			"value_type": null,
 			"owner": "Array",
@@ -48881,9 +50589,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 207,
+			"line": 216,
 			"signature": "fn some(predicate): Bool",
-			"declaration_line": 215,
+			"declaration_line": 224,
 			"id": "collections/arrays/dynamic::Array.some",
 			"value_type": null,
 			"owner": "Array",
@@ -48936,9 +50644,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 221,
+			"line": 230,
 			"signature": "fn all(predicate): Bool",
-			"declaration_line": 229,
+			"declaration_line": 238,
 			"id": "collections/arrays/dynamic::Array.all",
 			"value_type": null,
 			"owner": "Array",
@@ -48991,9 +50699,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 233,
+			"line": 242,
 			"signature": "fn filter(predicate)",
-			"declaration_line": 243,
+			"declaration_line": 252,
 			"id": "collections/arrays/dynamic::Array.filter",
 			"value_type": null,
 			"owner": "Array",
@@ -49030,9 +50738,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 246,
+			"line": 255,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"drop\", receiver: \"member\", prepare: normalize_count })\n\t\tfn drop(count)",
-			"declaration_line": 254,
+			"declaration_line": 263,
 			"id": "collections/arrays/dynamic::Array.drop",
 			"value_type": null,
 			"owner": "Array",
@@ -49069,9 +50777,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 256,
+			"line": 265,
 			"signature": "@optimize(using: optimize_array, data: @{ stage: \"take\", receiver: \"member\", prepare: normalize_count })\n\t\tfn take(count)",
-			"declaration_line": 264,
+			"declaration_line": 273,
 			"id": "collections/arrays/dynamic::Array.take",
 			"value_type": null,
 			"owner": "Array",
@@ -49108,9 +50816,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 268,
+			"line": 277,
 			"signature": "fn indexOf(value: element): Number",
-			"declaration_line": 276,
+			"declaration_line": 285,
 			"id": "collections/arrays/dynamic::Array.indexOf",
 			"value_type": null,
 			"owner": "Array",
@@ -49168,9 +50876,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 282,
+			"line": 291,
 			"signature": "fn sort(less = (left, right) => left < right, strategy = stable_memory_sort)",
-			"declaration_line": 292,
+			"declaration_line": 301,
 			"id": "collections/arrays/dynamic::Array.sort",
 			"value_type": null,
 			"owner": "Array",
@@ -49202,9 +50910,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 293,
+			"line": 302,
 			"signature": "fn reverse()",
-			"declaration_line": 301,
+			"declaration_line": 310,
 			"id": "collections/arrays/dynamic::Array.reverse",
 			"value_type": null,
 			"owner": "Array",
@@ -49246,9 +50954,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 302,
+			"line": 311,
 			"signature": "fn slice(start: Number, end: Number)",
-			"declaration_line": 312,
+			"declaration_line": 321,
 			"id": "collections/arrays/dynamic::Array.slice",
 			"value_type": null,
 			"owner": "Array",
@@ -49290,9 +50998,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 313,
+			"line": 322,
 			"signature": "fn sliceClamped(start: Number, end: Number): Array<element: element>",
-			"declaration_line": 323,
+			"declaration_line": 332,
 			"id": "collections/arrays/dynamic::Array.sliceClamped",
 			"value_type": null,
 			"owner": "Array",
@@ -49323,7 +51031,7 @@
 							"name": "element",
 							"id": null,
 							"path": "types.md",
-							"fragment": "api-bfc7c48fa2dcb1135093",
+							"fragment": "api-d9bee8f512c5a46cf1e1",
 							"parameter_kind": "type"
 						}
 					}
@@ -49359,9 +51067,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 325,
+			"line": 334,
 			"signature": "fn join(separator: Text = Text()): Text",
-			"declaration_line": 334,
+			"declaration_line": 343,
 			"id": "collections/arrays/dynamic::Array.join",
 			"value_type": null,
 			"owner": "Array",
@@ -49414,9 +51122,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 337,
+			"line": 346,
 			"signature": "fn map(transform)",
-			"declaration_line": 346,
+			"declaration_line": 355,
 			"id": "collections/arrays/dynamic::Array.map",
 			"value_type": null,
 			"owner": "Array",
@@ -49453,9 +51161,9 @@
 				}
 			],
 			"source": "collections/arrays/dynamic.el",
-			"line": 352,
+			"line": 361,
 			"signature": "fn includes(value: element): Bool",
-			"declaration_line": 360,
+			"declaration_line": 369,
 			"id": "collections/arrays/dynamic::Array.includes",
 			"value_type": null,
 			"owner": "Array",
@@ -54388,8 +56096,8 @@
 				{
 					"tag": "example",
 					"value": "使用示例",
-					"markdown": "```el\nimport { decimal } from \"el:parsing/oi.el\"\nlet value = console.stdin.readAs(decimal(min: unbounded, max: unbounded, epsilon: 0))\n```",
-					"code": "import { decimal } from \"el:parsing/oi.el\"\nlet value = console.stdin.readAs(decimal(min: unbounded, max: unbounded, epsilon: 0))\n",
+					"markdown": "```el\nimport { decimal } from \"el:parsing/tokens.el\"\nlet value = console.stdin.readAs(decimal(min: unbounded, max: unbounded, epsilon: 0))\n```",
+					"code": "import { decimal } from \"el:parsing/tokens.el\"\nlet value = console.stdin.readAs(decimal(min: unbounded, max: unbounded, epsilon: 0))\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -56598,6 +58306,20 @@
 					}
 				]
 			}
+		},
+		{
+			"kind": "module",
+			"name": "一次性密码",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "使用显式计数器或时间生成和验证 HOTP 与 TOTP。"
+				}
+			],
+			"source": "cryptography/one-time-passwords.el",
+			"line": 1,
+			"id": "cryptography/one-time-passwords"
 		},
 		{
 			"kind": "module",
@@ -58869,9 +60591,9 @@
 				}
 			],
 			"source": "formats/delimited-text/index.el",
-			"line": 50,
+			"line": 52,
 			"signature": "export fn parseCSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]",
-			"declaration_line": 61,
+			"declaration_line": 63,
 			"id": "formats/delimited-text/index::parseCSV",
 			"value_type": null,
 			"owner": null,
@@ -58934,9 +60656,9 @@
 				}
 			],
 			"source": "formats/delimited-text/index.el",
-			"line": 62,
+			"line": 64,
 			"signature": "export fn parseTSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]",
-			"declaration_line": 73,
+			"declaration_line": 75,
 			"id": "formats/delimited-text/index::parseTSV",
 			"value_type": null,
 			"owner": null,
@@ -59004,9 +60726,9 @@
 				}
 			],
 			"source": "formats/delimited-text/index.el",
-			"line": 77,
+			"line": 79,
 			"signature": "export fn writeDelimited(rows: Text[][], delimiter: Text = \",\", limits: JsonLimits = JsonLimits()): Text",
-			"declaration_line": 89,
+			"declaration_line": 91,
 			"id": "formats/delimited-text/index::writeDelimited",
 			"value_type": null,
 			"owner": null,
@@ -59069,9 +60791,9 @@
 				}
 			],
 			"source": "formats/delimited-text/index.el",
-			"line": 122,
+			"line": 125,
 			"signature": "export fn writeCSV(rows: Text[][], limits: JsonLimits = JsonLimits()): Text",
-			"declaration_line": 133,
+			"declaration_line": 136,
 			"id": "formats/delimited-text/index::writeCSV",
 			"value_type": null,
 			"owner": null,
@@ -59134,9 +60856,9 @@
 				}
 			],
 			"source": "formats/delimited-text/index.el",
-			"line": 135,
+			"line": 138,
 			"signature": "export fn writeTSV(rows: Text[][], limits: JsonLimits = JsonLimits()): Text",
-			"declaration_line": 146,
+			"declaration_line": 149,
 			"id": "formats/delimited-text/index::writeTSV",
 			"value_type": null,
 			"owner": null,
@@ -59208,9 +60930,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 34,
+			"line": 38,
 			"signature": "export fn TextFormat(output: type, input: type = output): type",
-			"declaration_line": 45,
+			"declaration_line": 49,
 			"id": "formats/index::TextFormat",
 			"value_type": null,
 			"owner": null,
@@ -59253,9 +60975,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 123,
+			"line": 127,
 			"signature": "get Text()",
-			"declaration_line": 131,
+			"declaration_line": 135,
 			"id": "formats/index::Formats.Text",
 			"value_type": null,
 			"owner": "Formats",
@@ -59282,9 +61004,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 133,
+			"line": 137,
 			"signature": "get JSON()",
-			"declaration_line": 141,
+			"declaration_line": 145,
 			"id": "formats/index::Formats.JSON",
 			"value_type": null,
 			"owner": "Formats",
@@ -59311,9 +61033,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 149,
+			"line": 153,
 			"signature": "get YAML()",
-			"declaration_line": 157,
+			"declaration_line": 161,
 			"id": "formats/index::Formats.YAML",
 			"value_type": null,
 			"owner": "Formats",
@@ -59340,9 +61062,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 159,
+			"line": 163,
 			"signature": "get TOML()",
-			"declaration_line": 168,
+			"declaration_line": 172,
 			"id": "formats/index::Formats.TOML",
 			"value_type": null,
 			"owner": "Formats",
@@ -59369,9 +61091,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 170,
+			"line": 174,
 			"signature": "get XML()",
-			"declaration_line": 179,
+			"declaration_line": 183,
 			"id": "formats/index::Formats.XML",
 			"value_type": null,
 			"owner": "Formats",
@@ -59398,9 +61120,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 180,
+			"line": 184,
 			"signature": "get CSV()",
-			"declaration_line": 188,
+			"declaration_line": 192,
 			"id": "formats/index::Formats.CSV",
 			"value_type": null,
 			"owner": "Formats",
@@ -59427,9 +61149,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 189,
+			"line": 193,
 			"signature": "get TSV()",
-			"declaration_line": 197,
+			"declaration_line": 201,
 			"id": "formats/index::Formats.TSV",
 			"value_type": null,
 			"owner": "Formats",
@@ -59464,9 +61186,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 198,
+			"line": 202,
 			"signature": "get INI()",
-			"declaration_line": 212,
+			"declaration_line": 216,
 			"id": "formats/index::Formats.INI",
 			"value_type": null,
 			"owner": "Formats",
@@ -59493,9 +61215,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 214,
+			"line": 218,
 			"signature": "get EOL()",
-			"declaration_line": 222,
+			"declaration_line": 226,
 			"id": "formats/index::Formats.EOL",
 			"value_type": null,
 			"owner": "Formats",
@@ -59522,9 +61244,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 223,
+			"line": 227,
 			"signature": "get EOD()",
-			"declaration_line": 231,
+			"declaration_line": 235,
 			"id": "formats/index::Formats.EOD",
 			"value_type": null,
 			"owner": "Formats",
@@ -59551,9 +61273,9 @@
 				}
 			],
 			"source": "formats/index.el",
-			"line": 237,
+			"line": 247,
 			"signature": "export const formats",
-			"declaration_line": 245,
+			"declaration_line": 255,
 			"id": "formats/index::formats",
 			"value_type": "Formats",
 			"owner": null,
@@ -59630,9 +61352,9 @@
 				}
 			],
 			"source": "formats/ini/index.el",
-			"line": 21,
+			"line": 13,
 			"signature": "export fn parseINI(source: Text, limits: JsonLimits = JsonLimits()): any",
-			"declaration_line": 34,
+			"declaration_line": 26,
 			"id": "formats/ini/index::parseINI",
 			"value_type": null,
 			"owner": null,
@@ -59695,9 +61417,9 @@
 				}
 			],
 			"source": "formats/ini/index.el",
-			"line": 104,
+			"line": 94,
 			"signature": "export fn writeINI(value: any, limits: JsonLimits = JsonLimits()): Text",
-			"declaration_line": 116,
+			"declaration_line": 106,
 			"id": "formats/ini/index::writeINI",
 			"value_type": null,
 			"owner": null,
@@ -59740,9 +61462,9 @@
 				}
 			],
 			"source": "formats/ini/index.el",
-			"line": 140,
+			"line": 130,
 			"signature": "export fn parseOrderedINI(source: Text, limits: JsonLimits = JsonLimits()): any",
-			"declaration_line": 147,
+			"declaration_line": 137,
 			"id": "formats/ini/index::parseOrderedINI",
 			"value_type": null,
 			"owner": null,
@@ -61195,7 +62917,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "将浮点张量转换为线图场景，支持导出 SVG、保存文件或在图形环境中打开窗口。"
+					"markdown": "将浮点张量转换为线图场景，支持多格式导出和桌面窗口。"
 				}
 			],
 			"source": "graphics/plots/index.el",
@@ -61209,21 +62931,21 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "持有不可变数据快照生成的绘图坐标场景，可导出 SVG、保存文件或显示窗口。"
+					"markdown": "持有由不可变数据快照生成的绘图场景。"
 				},
 				{
 					"tag": "example",
 					"value": "绘制并保存一张曲线图",
-					"markdown": "```el\nlet figure = plot(xs, ys)\nlet svg = figure.image(640, 480)\nfigure.save(\"curve.svg\")\n```",
-					"code": "let figure = plot(xs, ys)\nlet svg = figure.image(640, 480)\nfigure.save(\"curve.svg\")\n",
+					"markdown": "```el\nimport { formats } from \"el:formats/\"\nlet figure = plot(xs, ys)\nlet svg = figure.image(640, 480)\nfigure.saveAs(formats.SVG, \"curve.svg\")\n```",
+					"code": "import { formats } from \"el:formats/\"\nlet figure = plot(xs, ys)\nlet svg = figure.image(640, 480)\nfigure.saveAs(formats.SVG, \"curve.svg\")\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
 			],
 			"source": "graphics/plots/index.el",
-			"line": 20,
+			"line": 21,
 			"signature": "export @assign(mode: \"shared\") class Figure",
-			"declaration_line": 28,
+			"declaration_line": 30,
 			"id": "graphics/plots/index::Figure",
 			"value_type": null,
 			"owner": null,
@@ -61250,9 +62972,9 @@
 				}
 			],
 			"source": "graphics/plots/index.el",
-			"line": 29,
+			"line": 31,
 			"signature": "let axis: Axis",
-			"declaration_line": 35,
+			"declaration_line": 37,
 			"id": "graphics/plots/index::Figure.axis",
 			"value_type": "Axis",
 			"owner": "Figure",
@@ -61310,9 +63032,9 @@
 				}
 			],
 			"source": "graphics/plots/index.el",
-			"line": 37,
+			"line": 39,
 			"signature": "fn image(width: Number = 900, height: Number = 600): Text",
-			"declaration_line": 46,
+			"declaration_line": 48,
 			"id": "graphics/plots/index::Figure.image",
 			"value_type": null,
 			"owner": "Figure",
@@ -61338,42 +63060,42 @@
 		},
 		{
 			"kind": "api",
-			"name": "Figure.save",
+			"name": "Figure.saveAs",
 			"sections": [
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "将渲染后的 SVG 文本写入指定文件；不打开窗口。"
+					"markdown": "使用选定的编解码器渲染并写出图表，支持无头环境。"
 				},
 				{
 					"tag": "param",
-					"value": "path SVG 目标文件路径。",
+					"value": "codec 格式对象，例如 formats.SVG 或 formats.PNG。",
 					"markdown": ""
 				},
 				{
 					"tag": "param",
-					"value": "width SVG 画布宽度，默认 900。",
+					"value": "path 目标文件路径。",
 					"markdown": ""
 				},
 				{
 					"tag": "param",
-					"value": "height SVG 画布高度，默认 600。",
+					"value": "options 可省略的配置对象，含画布尺寸、字体和格式特有选项。",
 					"markdown": ""
 				},
 				{
 					"tag": "example",
 					"value": "保存默认尺寸 SVG",
-					"markdown": "```el\nfigure.save(\"curve.svg\")\n```",
-					"code": "figure.save(\"curve.svg\")\n",
+					"markdown": "```el\nimport { formats } from \"el:formats/\"\nfigure.saveAs(formats.SVG, \"curve.svg\")\n```",
+					"code": "import { formats } from \"el:formats/\"\nfigure.saveAs(formats.SVG, \"curve.svg\")\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
 			],
 			"source": "graphics/plots/index.el",
-			"line": 47,
-			"signature": "fn save(path: Text, width: Number = 900, height: Number = 600)",
-			"declaration_line": 56,
-			"id": "graphics/plots/index::Figure.save",
+			"line": 49,
+			"signature": "fn saveAs(codec, path, options = @{})",
+			"declaration_line": 59,
+			"id": "graphics/plots/index::Figure.saveAs",
 			"value_type": null,
 			"owner": "Figure",
 			"return_type": null,
@@ -61404,9 +63126,9 @@
 				}
 			],
 			"source": "graphics/plots/index.el",
-			"line": 57,
+			"line": 60,
 			"signature": "fn show()",
-			"declaration_line": 64,
+			"declaration_line": 67,
 			"id": "graphics/plots/index::Figure.show",
 			"value_type": null,
 			"owner": "Figure",
@@ -61433,9 +63155,9 @@
 				}
 			],
 			"source": "graphics/plots/index.el",
-			"line": 83,
+			"line": 86,
 			"signature": "export @assign(mode: \"shared\") class PlotHost",
-			"declaration_line": 91,
+			"declaration_line": 94,
 			"id": "graphics/plots/index::PlotHost",
 			"value_type": null,
 			"owner": null,
@@ -61482,9 +63204,9 @@
 				}
 			],
 			"source": "graphics/plots/index.el",
-			"line": 118,
+			"line": 121,
 			"signature": "export fn plot(x: Tensor<element: F64>, y: Tensor<element: F64>): Figure",
-			"declaration_line": 129,
+			"declaration_line": 132,
 			"id": "graphics/plots/index::plot",
 			"value_type": null,
 			"owner": null,
@@ -66226,9 +67948,9 @@
 				}
 			],
 			"source": "multimedia/audio/music.el",
-			"line": 39,
+			"line": 65,
 			"signature": "export @assign(mode: \"shared\") class MusicPlayer",
-			"declaration_line": 47,
+			"declaration_line": 73,
 			"id": "multimedia/audio/music::MusicPlayer",
 			"value_type": null,
 			"owner": null,
@@ -66275,9 +67997,9 @@
 				}
 			],
 			"source": "multimedia/audio/music.el",
-			"line": 51,
+			"line": 77,
 			"signature": "fn formula(sample, milliseconds: Number = 80, gain: Number = 0.12): Bool",
-			"declaration_line": 61,
+			"declaration_line": 87,
 			"id": "multimedia/audio/music::MusicPlayer.formula",
 			"value_type": null,
 			"owner": "MusicPlayer",
@@ -66340,9 +68062,9 @@
 				}
 			],
 			"source": "multimedia/audio/music.el",
-			"line": 73,
+			"line": 99,
 			"signature": "fn play(frequency: Number, milliseconds: Number = 80, gain: Number = 0.12): Bool",
-			"declaration_line": 83,
+			"declaration_line": 109,
 			"id": "multimedia/audio/music::MusicPlayer.play",
 			"value_type": null,
 			"owner": "MusicPlayer",
@@ -66385,9 +68107,9 @@
 				}
 			],
 			"source": "multimedia/audio/music.el",
-			"line": 87,
+			"line": 113,
 			"signature": "fn stop()",
-			"declaration_line": 93,
+			"declaration_line": 119,
 			"id": "multimedia/audio/music::MusicPlayer.stop",
 			"value_type": null,
 			"owner": "MusicPlayer",
@@ -66414,9 +68136,9 @@
 				}
 			],
 			"source": "multimedia/audio/music.el",
-			"line": 94,
+			"line": 120,
 			"signature": "fn close()",
-			"declaration_line": 100,
+			"declaration_line": 126,
 			"id": "multimedia/audio/music::MusicPlayer.close",
 			"value_type": null,
 			"owner": "MusicPlayer",
@@ -66468,9 +68190,9 @@
 				}
 			],
 			"source": "multimedia/audio/music.el",
-			"line": 110,
+			"line": 136,
 			"signature": "export fn playPitch(frequency: Number, milliseconds: Number = 80, gain: Number = 0.12)",
-			"declaration_line": 121,
+			"declaration_line": 147,
 			"id": "multimedia/audio/music::playPitch",
 			"value_type": null,
 			"owner": null,
@@ -66522,9 +68244,9 @@
 				}
 			],
 			"source": "multimedia/audio/music.el",
-			"line": 125,
+			"line": 151,
 			"signature": "export fn playFormula(sample, milliseconds: Number = 80, gain: Number = 0.12)",
-			"declaration_line": 136,
+			"declaration_line": 162,
 			"id": "multimedia/audio/music::playFormula",
 			"value_type": null,
 			"owner": null,
@@ -66539,11 +68261,11 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "读写经典 RIFF/WAVE 中的整数 PCM16；流式写入适合较大的音频，解码会执行大小与格式限制检查。"
+					"markdown": "读取经典 RIFF/WAVE 中的整数 PCM 与 IEEE 浮点音频，写出 PCM16 WAV。"
 				}
 			],
 			"source": "multimedia/audio/wav.el",
-			"line": 10,
+			"line": 14,
 			"id": "multimedia/audio/wav"
 		},
 		{
@@ -66575,9 +68297,9 @@
 				}
 			],
 			"source": "multimedia/audio/wav.el",
-			"line": 25,
+			"line": 29,
 			"signature": "export @assign(mode: \"shared\") class WavWriter",
-			"declaration_line": 36,
+			"declaration_line": 40,
 			"id": "multimedia/audio/wav::WavWriter",
 			"value_type": null,
 			"owner": null,
@@ -66614,9 +68336,9 @@
 				}
 			],
 			"source": "multimedia/audio/wav.el",
-			"line": 73,
+			"line": 77,
 			"signature": "export fn writeWav(path: Path, audio: PcmAudio)",
-			"declaration_line": 82,
+			"declaration_line": 86,
 			"id": "multimedia/audio/wav::writeWav",
 			"value_type": null,
 			"owner": null,
@@ -66658,9 +68380,9 @@
 				}
 			],
 			"source": "multimedia/audio/wav.el",
-			"line": 87,
+			"line": 91,
 			"signature": "export fn encodeWav(audio: PcmAudio): Number[]",
-			"declaration_line": 96,
+			"declaration_line": 100,
 			"id": "multimedia/audio/wav::encodeWav",
 			"value_type": null,
 			"owner": null,
@@ -66691,7 +68413,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "从内存中的字节数组解析经典 PCM16 WAV。"
+					"markdown": "从内存中的字节数组解析经典整数 PCM 或 IEEE 浮点 WAV，输出 PCM16 样本。"
 				},
 				{
 					"tag": "param",
@@ -66718,9 +68440,9 @@
 				}
 			],
 			"source": "multimedia/audio/wav.el",
-			"line": 135,
+			"line": 216,
 			"signature": "export fn decodeWav(bytes: Number[]): PcmAudio",
-			"declaration_line": 144,
+			"declaration_line": 225,
 			"id": "multimedia/audio/wav::decodeWav",
 			"value_type": null,
 			"owner": null,
@@ -66751,7 +68473,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "从文件读取并解析经典 PCM16 WAV，拒绝带额外尾随数据的文件。"
+					"markdown": "从文件读取并解析经典整数 PCM 或 IEEE 浮点 WAV，拒绝带额外尾随数据的文件。"
 				},
 				{
 					"tag": "param",
@@ -66778,9 +68500,9 @@
 				}
 			],
 			"source": "multimedia/audio/wav.el",
-			"line": 151,
+			"line": 232,
 			"signature": "export fn readWav(path: Path): PcmAudio",
-			"declaration_line": 161,
+			"declaration_line": 242,
 			"id": "multimedia/audio/wav::readWav",
 			"value_type": null,
 			"owner": null,
@@ -71009,9 +72731,9 @@
 				}
 			],
 			"source": "number/number.el",
-			"line": 33,
+			"line": 34,
 			"signature": "@numericRepresentation(format: @{ kind: \"rational\", domain: \"tracked\" })\n@optimize(using: optimize_number, data: @{ model: \"rational\", domain: \"tracked\", zero: Number(Integer(0)) }, proof: @{\n\trelation: NumberPolicy, rules: NumberPolicy,\n\ttrusted: \"registered exact numerical evaluation policy; native types, effects and resources remain checked\",\n\treify: @{\n\t\tzero: PolicyIndex.zero, succ: PolicyIndex.succ, atom: PolicyExpression.atom,\n\t\ttextEmpty: PolicyText.empty, textCons: PolicyText.cons, number: PolicyExpression.number, string: PolicyExpression.string,\n\t\tadd: PolicyExpression.add, sub: PolicyExpression.sub, mul: PolicyExpression.mul, div: PolicyExpression.div, mod: PolicyExpression.mod, neg: PolicyExpression.neg,\n\t\tcompareEqual: PolicyExpression.compareEqual, ifexpression: PolicyExpression.condition,\n\t\tcalls: @[\n\t\t\t@{ target: Number, arity: 1, model: PolicyExpression.convert },\n\t\t\t@{ target: Number, arity: 0, model: PolicyExpression.zero },\n\t\t\t@{ target: Integer, arity: 1, model: PolicyExpression.convert },\n\t\t\t@{ target: Integer, arity: 0, model: PolicyExpression.zero },\n\t\t\t@{ target: NumericRatio, arity: 1, model: PolicyExpression.convert },\n\t\t\t@{ target: NumericRatio, arity: 0, model: PolicyExpression.zero },\n\t\t\t@{ target: NumericRatio, arity: 2, model: PolicyExpression.ratio }\n\t\t]\n\t}\n})\n@assign(mode: \"copy\")\nexport class Number",
-			"declaration_line": 45,
+			"declaration_line": 46,
 			"id": "number/number::Number~type",
 			"value_type": null,
 			"owner": null,
@@ -71030,17 +72752,17 @@
 				},
 				{
 					"tag": "param",
-					"value": "min 下界，或 unbounded；必须提供。",
+					"value": "min 下界，或 unbounded。",
 					"markdown": ""
 				},
 				{
 					"tag": "param",
-					"value": "max 上界，或 unbounded；必须提供且不小于 min。",
+					"value": "max 上界，或 unbounded；提供时不得小于 min。",
 					"markdown": ""
 				},
 				{
 					"tag": "param",
-					"value": "epsilon 有限非负精确数值；必须提供。",
+					"value": "epsilon 有限非负精确数值。",
 					"markdown": ""
 				},
 				{
@@ -71060,7 +72782,7 @@
 				},
 				{
 					"tag": "note",
-					"value": "min、max 或 epsilon 缺失，以及 epsilon 为 unbounded 时，当前入口使用 die_with 报告并终止程序，不是可捕获异常。其余参数校验在生成类型的实例构造时进行。",
+					"value": "文本输入须提供完整的 min、max、epsilon。值域判定只检查已提供的约束。",
 					"markdown": ""
 				},
 				{
@@ -71083,9 +72805,9 @@
 				}
 			],
 			"source": "number/number.el",
-			"line": 318,
-			"signature": "export fn Number(min = nil, max = nil, epsilon = nil, integer = f, overflow = \"ub\"): type",
-			"declaration_line": 341,
+			"line": 366,
+			"signature": "@typeFlags(parameters: @[\"integer\"])\nexport fn Number(min = nil, max = nil, epsilon = nil, integer = f, overflow = \"ub\"): type",
+			"declaration_line": 389,
 			"id": "number/number::Number~constraints",
 			"value_type": null,
 			"owner": null,
@@ -75441,7 +77163,7 @@
 				{
 					"tag": "description",
 					"value": "",
-					"markdown": "拥有 Unicode 标量序列的可变文本值；按值复制，UTF-8 字节数由 byte_count 单独提供。\n裸文本视图装载时会复制其标量。切片与拼接可共享不可变 rope 节点，但得到独立 Text 值。"
+					"markdown": "拥有 Unicode 标量序列的可变文本值；按值复制，UTF-8 字节数由 byte_count 单独提供。\n裸文本视图装载时会复制其标量。切片与拼接可共享不可变 rope 节点，但得到独立 Text 值。\n`.count` 返回以 Unicode 标量计的长度，`.byte_count` 返回 UTF-8 编码字节数。"
 				},
 				{
 					"tag": "example",
@@ -75455,7 +77177,7 @@
 			"source": "text/text.el",
 			"line": 171,
 			"signature": "@pure\n@assign(mode: \"copy\")\nexport class Text extends Array<element: Char>",
-			"declaration_line": 183,
+			"declaration_line": 184,
 			"id": "text/text::Text~type",
 			"value_type": null,
 			"owner": null,
@@ -75497,9 +77219,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 225,
+			"line": 226,
 			"signature": "fn replaceAll(pattern, replacement): Text",
-			"declaration_line": 235,
+			"declaration_line": 236,
 			"id": "text/text::Text.replaceAll",
 			"value_type": null,
 			"owner": "Text",
@@ -75552,9 +77274,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 243,
+			"line": 244,
 			"signature": "fn split(pattern): Text[]",
-			"declaration_line": 252,
+			"declaration_line": 253,
 			"id": "text/text::Text.split",
 			"value_type": null,
 			"owner": "Text",
@@ -75597,9 +77319,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 411,
+			"line": 412,
 			"signature": "override fn compact()",
-			"declaration_line": 418,
+			"declaration_line": 419,
 			"id": "text/text::Text.compact",
 			"value_type": null,
 			"owner": "Text",
@@ -75631,60 +77353,10 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 424,
+			"line": 425,
 			"signature": "get byte_count(): Integer",
-			"declaration_line": 432,
+			"declaration_line": 433,
 			"id": "text/text::Text.byte_count",
-			"value_type": null,
-			"owner": "Text",
-			"return_type": "Integer",
-			"initializer": null,
-			"type_references": {
-				"return_type": [
-					{
-						"name": "Integer",
-						"start": 0,
-						"end": 7,
-						"target": {
-							"type": "definition",
-							"source": "platform/machine/integer.el",
-							"name": "NativeSignedInteger",
-							"id": null,
-							"path": "types.md",
-							"fragment": "api-45690472287900730a5f"
-						}
-					}
-				]
-			}
-		},
-		{
-			"kind": "api",
-			"name": "Text.count",
-			"sections": [
-				{
-					"tag": "description",
-					"value": "",
-					"markdown": "返回文本中的 Unicode 标量数量。"
-				},
-				{
-					"tag": "returns",
-					"value": "标量数；UTF-8 编码字节数请读取 byte_count。",
-					"markdown": ""
-				},
-				{
-					"tag": "example",
-					"value": "读取文本长度",
-					"markdown": "```el\nconsole.stdout.writeLine(\"你好\".count)\n```",
-					"code": "console.stdout.writeLine(\"你好\".count)\n",
-					"expected_stdout": null,
-					"verification": "not-run"
-				}
-			],
-			"source": "text/text.el",
-			"line": 444,
-			"signature": "override get count(): Integer",
-			"declaration_line": 451,
-			"id": "text/text::Text.count",
 			"value_type": null,
 			"owner": "Text",
 			"return_type": "Integer",
@@ -75736,9 +77408,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 503,
+			"line": 498,
 			"signature": "fn startsWith(prefix: Text): Bool",
-			"declaration_line": 511,
+			"declaration_line": 506,
 			"id": "text/text::Text.startsWith",
 			"value_type": null,
 			"owner": "Text",
@@ -75791,9 +77463,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 514,
+			"line": 510,
 			"signature": "fn endsWith(suffix: Text): Bool",
-			"declaration_line": 522,
+			"declaration_line": 518,
 			"id": "text/text::Text.endsWith",
 			"value_type": null,
 			"owner": "Text",
@@ -75846,9 +77518,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 525,
+			"line": 523,
 			"signature": "fn indexOf(needle: Text, start: Number = 0): Number | nil_t",
-			"declaration_line": 534,
+			"declaration_line": 532,
 			"id": "text/text::Text.indexOf",
 			"value_type": null,
 			"owner": "Text",
@@ -75914,9 +77586,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 569,
+			"line": 567,
 			"signature": "fn contains(needle: Text): Bool",
-			"declaration_line": 577,
+			"declaration_line": 575,
 			"id": "text/text::Text.contains",
 			"value_type": null,
 			"owner": "Text",
@@ -75969,9 +77641,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 580,
+			"line": 585,
 			"signature": "fn trimEndChars(characters: Text): Text",
-			"declaration_line": 594,
+			"declaration_line": 599,
 			"id": "text/text::Text.trimEndChars",
 			"value_type": null,
 			"owner": "Text",
@@ -76029,9 +77701,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 621,
+			"line": 627,
 			"signature": "virtual fn character(index: Number): Char",
-			"declaration_line": 631,
+			"declaration_line": 637,
 			"id": "text/text::Text.character",
 			"value_type": null,
 			"owner": "Text",
@@ -76094,9 +77766,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 674,
+			"line": 680,
 			"signature": "virtual fn slice(start: Number, to: Number): Text",
-			"declaration_line": 684,
+			"declaration_line": 690,
 			"id": "text/text::Text.slice",
 			"value_type": null,
 			"owner": "Text",
@@ -76154,9 +77826,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 807,
+			"line": 813,
 			"signature": "export fn text_scalar(value: Integer): Text",
-			"declaration_line": 820,
+			"declaration_line": 826,
 			"id": "text/text::text_scalar",
 			"value_type": null,
 			"owner": null,
@@ -76219,9 +77891,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 960,
+			"line": 982,
 			"signature": "export fn TextView(bitWidth = 0, size = 0): type",
-			"declaration_line": 978,
+			"declaration_line": 1000,
 			"id": "text/text::TextView~constraints",
 			"value_type": null,
 			"owner": null,
@@ -76284,9 +77956,9 @@
 				}
 			],
 			"source": "text/text.el",
-			"line": 1010,
+			"line": 1032,
 			"signature": "export fn Text(bitWidth = 0, size = 0): type",
-			"declaration_line": 1027,
+			"declaration_line": 1049,
 			"id": "text/text::Text~constraints",
 			"value_type": null,
 			"owner": null,
@@ -78311,7 +79983,7 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 10,
+			"line": 11,
 			"id": "user-interface/model"
 		},
 		{
@@ -78333,9 +80005,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 13,
+			"line": 14,
 			"signature": "@assign(mode: \"shared\")\nexport class LayoutStyle",
-			"declaration_line": 21,
+			"declaration_line": 22,
 			"id": "user-interface/model::LayoutStyle",
 			"value_type": null,
 			"owner": null,
@@ -78362,9 +80034,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 70,
+			"line": 71,
 			"signature": "@assign(mode: \"shared\")\nexport class Definition",
-			"declaration_line": 78,
+			"declaration_line": 79,
 			"id": "user-interface/model::Definition",
 			"value_type": null,
 			"owner": null,
@@ -78391,9 +80063,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 82,
+			"line": 83,
 			"signature": "let theme: Theme | nil_t",
-			"declaration_line": 88,
+			"declaration_line": 89,
 			"id": "user-interface/model::Definition.theme",
 			"value_type": "Theme | nil_t",
 			"owner": "Definition",
@@ -78432,6 +80104,64 @@
 		},
 		{
 			"kind": "api",
+			"name": "Definition.textMask",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "用一个 Unicode 标量替代每个绘制的文本标量。设置后，输入框跳过热字符串匹配。"
+				},
+				{
+					"tag": "example",
+					"value": "掩蔽输入框的显示文本",
+					"markdown": "```el\nlet password = element(\"input\")\npassword.textMask = \"•\"\n```",
+					"code": "let password = element(\"input\")\npassword.textMask = \"•\"\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "user-interface/model.el",
+			"line": 110,
+			"signature": "get textMask(): Text | nil_t",
+			"declaration_line": 117,
+			"id": "user-interface/model::Definition.textMask",
+			"value_type": null,
+			"owner": "Definition",
+			"return_type": "Text | nil_t",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Text",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "text/text.el",
+							"name": "Text",
+							"id": "text/text::Text~type",
+							"path": "modules/text/text.md",
+							"fragment": "api-6116e54b075df026a90a"
+						}
+					},
+					{
+						"name": "nil_t",
+						"start": 7,
+						"end": 12,
+						"target": {
+							"type": "definition",
+							"source": "language/values.el",
+							"name": "nil_t",
+							"id": "language/values::nil_t",
+							"path": "modules/language/values.md",
+							"fragment": "api-86357ad50ef0535f6333"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
 			"name": "GuiEvent",
 			"sections": [
 				{
@@ -78449,9 +80179,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 111,
+			"line": 131,
 			"signature": "@assign(mode: \"shared\")\nexport class GuiEvent",
-			"declaration_line": 117,
+			"declaration_line": 137,
 			"id": "user-interface/model::GuiEvent",
 			"value_type": null,
 			"owner": null,
@@ -78498,9 +80228,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 150,
+			"line": 171,
 			"signature": "export fn on(element: Definition, kind: Text, action, capture: Bool = f)",
-			"declaration_line": 160,
+			"declaration_line": 181,
 			"id": "user-interface/model::on",
 			"value_type": null,
 			"owner": null,
@@ -78552,9 +80282,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 164,
+			"line": 185,
 			"signature": "export fn element(kind: Text, text: Text = \"\", id: Text = \"\"): Definition",
-			"declaration_line": 175,
+			"declaration_line": 196,
 			"id": "user-interface/model::element",
 			"value_type": null,
 			"owner": null,
@@ -78617,9 +80347,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 191,
+			"line": 212,
 			"signature": "export fn appendChild(parent: Definition, key: Text, target: Definition)",
-			"declaration_line": 202,
+			"declaration_line": 223,
 			"id": "user-interface/model::appendChild",
 			"value_type": null,
 			"owner": null,
@@ -78661,9 +80391,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 210,
+			"line": 231,
 			"signature": "export fn removeChild(parent: Definition, key: Text): Bool",
-			"declaration_line": 219,
+			"declaration_line": 240,
 			"id": "user-interface/model::removeChild",
 			"value_type": null,
 			"owner": null,
@@ -78726,9 +80456,9 @@
 				}
 			],
 			"source": "user-interface/model.el",
-			"line": 231,
+			"line": 252,
 			"signature": "export fn moveChild(parent: Definition, key: Text, destination: Number)",
-			"declaration_line": 241,
+			"declaration_line": 262,
 			"id": "user-interface/model::moveChild",
 			"value_type": null,
 			"owner": null,
@@ -78769,9 +80499,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 163,
+			"line": 166,
 			"signature": "export class WindowTimer",
-			"declaration_line": 170,
+			"declaration_line": 173,
 			"id": "user-interface/platform/windows/window::WindowTimer",
 			"value_type": null,
 			"owner": null,
@@ -78803,9 +80533,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 182,
+			"line": 185,
 			"signature": "fn cancel()",
-			"declaration_line": 189,
+			"declaration_line": 192,
 			"id": "user-interface/platform/windows/window::WindowTimer.cancel",
 			"value_type": null,
 			"owner": "WindowTimer",
@@ -78832,9 +80562,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 208,
+			"line": 211,
 			"signature": "export class Window",
-			"declaration_line": 215,
+			"declaration_line": 218,
 			"id": "user-interface/platform/windows/window::Window",
 			"value_type": null,
 			"owner": null,
@@ -78861,9 +80591,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 250,
+			"line": 253,
 			"signature": "get theme(): PaintTheme",
-			"declaration_line": 256,
+			"declaration_line": 259,
 			"id": "user-interface/platform/windows/window::Window.theme",
 			"value_type": null,
 			"owner": "Window",
@@ -78911,9 +80641,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 592,
+			"line": 595,
 			"signature": "fn onArrow(action)",
-			"declaration_line": 599,
+			"declaration_line": 602,
 			"id": "user-interface/platform/windows/window::Window.onArrow",
 			"value_type": null,
 			"owner": "Window",
@@ -78960,9 +80690,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 605,
+			"line": 608,
 			"signature": "@discardable fn every(milliseconds: Number, action): WindowTimer",
-			"declaration_line": 615,
+			"declaration_line": 618,
 			"id": "user-interface/platform/windows/window::Window.every",
 			"value_type": null,
 			"owner": "Window",
@@ -79020,9 +80750,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 635,
+			"line": 638,
 			"signature": "fn getById(id: Text): ElementHandle",
-			"declaration_line": 645,
+			"declaration_line": 648,
 			"id": "user-interface/platform/windows/window::Window.getById",
 			"value_type": null,
 			"owner": "Window",
@@ -79070,9 +80800,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 717,
+			"line": 746,
 			"signature": "export fn runWindow(window: Window)",
-			"declaration_line": 724,
+			"declaration_line": 753,
 			"id": "user-interface/platform/windows/window::runWindow",
 			"value_type": null,
 			"owner": null,
@@ -79104,9 +80834,9 @@
 				}
 			],
 			"source": "user-interface/platform/windows/window.el",
-			"line": 740,
+			"line": 770,
 			"signature": "export fn runWindows(windows: Window[])",
-			"declaration_line": 747,
+			"declaration_line": 777,
 			"id": "user-interface/platform/windows/window::runWindows",
 			"value_type": null,
 			"owner": null,
@@ -79471,9 +81201,9 @@
 				}
 			],
 			"source": "user-interface/window.el",
-			"line": 36,
+			"line": 37,
 			"signature": "export fn installWindowThemes(window, root: Definition, environment = nil, loader: (fn(any): Theme) | nil_t = nil, loaderRevision: (fn(): Number) | nil_t = nil, prepare: (fn(Bool): nil_t) | nil_t = nil)",
-			"declaration_line": 50,
+			"declaration_line": 51,
 			"id": "user-interface/window::installWindowThemes",
 			"value_type": null,
 			"owner": null,
@@ -79530,9 +81260,9 @@
 				}
 			],
 			"source": "user-interface/window.el",
-			"line": 101,
+			"line": 102,
 			"signature": "export fn showWindow(definition: Definition, title: Text = \"EL\", width: Number = 480, height: Number = 360)",
-			"declaration_line": 114,
+			"declaration_line": 115,
 			"id": "user-interface/window::showWindow~definition",
 			"value_type": null,
 			"owner": null,
@@ -79584,9 +81314,9 @@
 				}
 			],
 			"source": "user-interface/window.el",
-			"line": 118,
+			"line": 119,
 			"signature": "export fn showWindow(source, title: Text = \"EL\", width: Number = 480, height: Number = 360)",
-			"declaration_line": 130,
+			"declaration_line": 131,
 			"id": "user-interface/window::showWindow~data",
 			"value_type": null,
 			"owner": null,
@@ -79643,9 +81373,9 @@
 				}
 			],
 			"source": "user-interface/window.el",
-			"line": 135,
+			"line": 136,
 			"signature": "export fn showWindow(description: Text, title: Text = \"EL\", width: Number = 480, height: Number = 360)",
-			"declaration_line": 148,
+			"declaration_line": 149,
 			"id": "user-interface/window::showWindow~description",
 			"value_type": null,
 			"owner": null,
@@ -79697,9 +81427,9 @@
 				}
 			],
 			"source": "user-interface/window.el",
-			"line": 153,
+			"line": 154,
 			"signature": "export fn showWindow(description: Text, source, width: Number = 480, height: Number = 360)",
-			"declaration_line": 165,
+			"declaration_line": 166,
 			"id": "user-interface/window::showWindow~description-data",
 			"value_type": null,
 			"owner": null,
@@ -79709,8 +81439,8 @@
 		}
 	],
 	"coverage": {
-		"source_files": 3973,
-		"documented_files": 129,
+		"source_files": 4139,
+		"documented_files": 130,
 		"documented_apis": 593
 	}
 }

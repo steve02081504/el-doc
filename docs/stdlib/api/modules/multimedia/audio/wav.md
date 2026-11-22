@@ -6,13 +6,13 @@
 
 ## WAV 音频文件 {#api-6c6898f38da97ddd876e}
 
-源码：`src/stdlib/multimedia/audio/wav.el:10` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L10)
+源码：`src/stdlib/multimedia/audio/wav.el:14` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L14)
 
-读写经典 RIFF/WAVE 中的整数 PCM16；流式写入适合较大的音频，解码会执行大小与格式限制检查。
+读取经典 RIFF/WAVE 中的整数 PCM 与 IEEE 浮点音频，写出 PCM16 WAV。
 
 ## WavWriter {#api-fccc5e339fd9a3fa8554}
 
-源码：`src/stdlib/multimedia/audio/wav.el:36` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L36)
+源码：`src/stdlib/multimedia/audio/wav.el:40` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L40)
 
 以增量方式写入经典 RIFF/WAVE PCM16 文件；追加失败后写入器不可继续使用。
 
@@ -35,7 +35,7 @@ writer.close()
 
 ## writeWav {#api-8708e42303b382c64743}
 
-源码：`src/stdlib/multimedia/audio/wav.el:82` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L82)
+源码：`src/stdlib/multimedia/audio/wav.el:86` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L86)
 
 将一段 PCM 音频写入 WAV 文件。
 
@@ -56,7 +56,7 @@ writeWav(Path("tone.wav"), audio)
 
 ## encodeWav {#api-90612d8b808b86560049}
 
-源码：`src/stdlib/multimedia/audio/wav.el:96` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L96)
+源码：`src/stdlib/multimedia/audio/wav.el:100` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L100)
 
 将 PCM 音频编码为包含 RIFF/WAVE 头部的字节数组。
 
@@ -80,9 +80,9 @@ let bytes = encodeWav(audio)
 
 ## decodeWav {#api-3ec25c2a0a628a314475}
 
-源码：`src/stdlib/multimedia/audio/wav.el:144` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L144)
+源码：`src/stdlib/multimedia/audio/wav.el:225` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L225)
 
-从内存中的字节数组解析经典 PCM16 WAV。
+从内存中的字节数组解析经典整数 PCM 或 IEEE 浮点 WAV，输出 PCM16 样本。
 
 ```el
 export fn decodeWav(bytes: Number[]): PcmAudio
@@ -104,9 +104,9 @@ let audio = decodeWav(bytes)
 
 ## readWav {#api-f9e2d41c929d9370ea5e}
 
-源码：`src/stdlib/multimedia/audio/wav.el:161` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L161)
+源码：`src/stdlib/multimedia/audio/wav.el:242` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L242)
 
-从文件读取并解析经典 PCM16 WAV，拒绝带额外尾随数据的文件。
+从文件读取并解析经典整数 PCM 或 IEEE 浮点 WAV，拒绝带额外尾随数据的文件。
 
 ```el
 export fn readWav(path: Path): PcmAudio

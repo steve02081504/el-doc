@@ -7,16 +7,17 @@
 ## 成员总览
 
 - [Definition.theme](#api-5faf0a2c3aefbf7d59fd)
+- [Definition.textMask](#api-b3f8e6d993e4cc443109)
 
 ## 界面对象模型 {#api-df995c8f898cdfd44f5d}
 
-源码：`src/stdlib/user-interface/model.el:10` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L10)
+源码：`src/stdlib/user-interface/model.el:11` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L11)
 
 以 Definition 与带键 Edge 组成可复用的界面对象图；布局、事件与绘制阶段读取这份模型。
 
 ## LayoutStyle {#api-531edebc70e3c82ee7a8}
 
-源码：`src/stdlib/user-interface/model.el:21` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L21)
+源码：`src/stdlib/user-interface/model.el:22` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L22)
 
 描述节点的流向、间距、尺寸约束、权重、换行与滚动溢出策略；属性变更会发布变化通知。
 
@@ -35,7 +36,7 @@ style.gap = 8
 
 ## Definition {#api-92b8f0fb1d93b4e22dc2}
 
-源码：`src/stdlib/user-interface/model.el:78` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L78)
+源码：`src/stdlib/user-interface/model.el:79` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L79)
 
 一个可观察的界面定义节点，保存元素种类、文本、标识、样式、主题、监听器和子边。
 
@@ -54,7 +55,7 @@ title.enabled = t
 
 ## Definition.theme {#api-5faf0a2c3aefbf7d59fd}
 
-源码：`src/stdlib/user-interface/model.el:88` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L88)
+源码：`src/stdlib/user-interface/model.el:89` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L89)
 
 可选的局部语义 Theme，按当前出现位置参与父子主题解析。
 
@@ -70,9 +71,28 @@ let theme: Theme | nil_t
 root.theme = Theme(@{primary: 0x80A7F0})
 ```
 
-## GuiEvent {#api-d0161616ebcc781b1631}
+## Definition.textMask {#api-b3f8e6d993e4cc443109}
 
 源码：`src/stdlib/user-interface/model.el:117` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L117)
+
+用一个 Unicode 标量替代每个绘制的文本标量。设置后，输入框跳过热字符串匹配。
+
+```el
+get textMask(): Text | nil_t
+```
+
+**返回类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a) | [`nil_t`](../language/values.md#api-86357ad50ef0535f6333)
+
+### 示例：掩蔽输入框的显示文本
+
+```el
+let password = element("input")
+password.textMask = "•"
+```
+
+## GuiEvent {#api-d0161616ebcc781b1631}
+
+源码：`src/stdlib/user-interface/model.el:137` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L137)
 
 一次 GUI 输入事件的可变传播状态与载荷；监听器可停止传播或阻止默认处理。
 
@@ -89,7 +109,7 @@ on(button, "click", event => event.preventDefault())
 
 ## on {#api-bec5c16251ba4e97600c}
 
-源码：`src/stdlib/user-interface/model.el:160` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L160)
+源码：`src/stdlib/user-interface/model.el:181` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L181)
 
 为定义节点注册指定类型的事件监听器，可选择在捕获阶段运行。
 
@@ -113,7 +133,7 @@ on(button, "click", event => status.text = "已点击")
 
 ## element {#api-8fd177f7546412758246}
 
-源码：`src/stdlib/user-interface/model.el:175` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L175)
+源码：`src/stdlib/user-interface/model.el:196` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L196)
 
 创建 `column`、`row`、`label`、`button` 或 `input` 定义；未知种类会抛出错误。
 
@@ -141,7 +161,7 @@ let save = element("button", "保存", "save")
 
 ## appendChild {#api-cdf7dba1323f03ef85c8}
 
-源码：`src/stdlib/user-interface/model.el:202` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L202)
+源码：`src/stdlib/user-interface/model.el:223` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L223)
 
 将目标定义作为带键子边追加到父节点，并发布父节点变化。
 
@@ -166,7 +186,7 @@ appendChild(root, "heading", element("label", "设置"))
 
 ## removeChild {#api-89c99015e38050658540}
 
-源码：`src/stdlib/user-interface/model.el:219` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L219)
+源码：`src/stdlib/user-interface/model.el:240` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L240)
 
 按子边键移除第一个匹配项；未找到时不修改模型。
 
@@ -190,7 +210,7 @@ let removed = removeChild(root, "hint")
 
 ## moveChild {#api-0a122f09a5627320ce81}
 
-源码：`src/stdlib/user-interface/model.el:241` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L241)
+源码：`src/stdlib/user-interface/model.el:262` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L262)
 
 将已有子边移动到指定的最终索引；这是重排，不会创建新的边。
 

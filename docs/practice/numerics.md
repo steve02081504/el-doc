@@ -163,13 +163,13 @@ try {
 
 第一个例子里两行成比例，消元到第二列时找不到非零主元，抛 `NumericallySingular`；第二个例子里 `wide` 是 2 行 3 列，不是方阵，检查形状时就抛 `ShapeError`。`solve` 失败后不会悄悄改成最小二乘，需要拟合时显式调用 `leastSquares`。
 
-`leastSquares` 处理 m×n 的最小二乘：要求 m ≥ n、A 满列数值秩，右端项行数等于 m、多个右端项按列排列；m < n 抛 `ShapeError`，列主元低于阈值抛 `RankDeficient`。它面向 `F64` 稠密矩阵，用列主元 Householder QR，每轮重算剩余列的稳定范数，把反射直接作用到右端项，不构造正规方程，也不先求逆。
+`leastSquares` 处理 m×n 的最小二乘：要求 m ≥ n、A 满列数值秩，右端项行数等于 m、多个右端项按列排列；m < n 抛 `ShapeError`，列主元低于阈值抛 `RankDeficient`。它面向 `WorkingFloat` 稠密矩阵，用列主元 Householder QR，每轮重算剩余列的稳定范数，把反射直接作用到右端项，不构造正规方程，也不先求逆。
 
-F64 路径用不可变的 `NumericsPolicy` 保存容差：默认 eps 是 2^-52，rtol 是 max(m, n) × eps，atol 是 0；构造时校验 0 ≤ rtol < 1、atol 非负，否则抛 `InvalidNumericsPolicy`。LU 用原矩阵最大绝对值作 scale，QR 用首个主元范数作 scale，主元或列范数不大于阈值就报告失败。
+`WorkingFloat` 路径用不可变的 `NumericsPolicy` 保存容差：默认 eps 是目标的 `workingFloatEpsilon`（二进制目标为 2^-52），rtol 是 max(m, n) × eps，atol 是 0；构造时校验 0 ≤ rtol < 1、atol 非负，否则抛 `InvalidNumericsPolicy`。LU 用原矩阵最大绝对值作 scale，QR 用首个主元范数作 scale，主元或列范数不大于阈值就报告失败。
 
 这些阈值是公开启发式，不是数学证明：`NumericallySingular` 与 `RankDeficient` 只说明算法在当前策略下拒绝继续，不证明数学秩、不估计条件数、不给前向误差保证。精确路径的“找不到非零主元”与浮点路径的“低于容差”是两种语义，结论不要混用。
 
-要观察 F64 求解过程时，`solveDiagnostic` 与 `leastSquaresDiagnostic` 返回 `SolveReport`：实际方法、容差与阈值、成功判定，以及重算的 `b - a * x` 及其无穷范数；它们仍用同一套算法与策略，不额外证明条件数或前向误差。
+要观察浮点求解过程时，`solveDiagnostic` 与 `leastSquaresDiagnostic` 返回 `SolveReport`：实际方法、容差与阈值、成功判定，以及重算的 `b - a * x` 及其无穷范数；它们仍用同一套算法与策略，不额外证明条件数或前向误差。
 
 !!! success "检查点"
     - [ ] 成比例的两行抛 `NumericallySingular`，非方阵抛 `ShapeError`
@@ -178,21 +178,21 @@ F64 路径用不可变的 `NumericsPolicy` 保存容差：默认 eps 是 2^-52�
 
 ## 第六步：画一张图
 
-`plot(x, Y)` 把输入数据拷贝成不可变快照，返回 `Figure` 场景对象；`Y` 的每一列画一条线，`x` 的长度必须等于 `Y` 的行数；如果设置了图例，标签数必须等于线数。当前入口接受 `F64` 元素的 `Tensor`，所以先给出本地的 `F64` 布局，再用 `linspace` 生成样本。
+`plot(x, Y)` 把输入数据拷贝成不可变快照，返回 `Figure` 场景对象；`Y` 的每一列画一条线，`x` 的长度必须等于 `Y` 的行数；如果设置了图例，标签数必须等于线数。用 `linspace` 生成样本时，将元素类型显式设为绘图库使用的 `WorkingFloat`。
 
 ```el
 import { plot, linspace, col } from "el:numerical-computing/index.el"
-import { DitFloat } from "el:number/index.el"
+import { WorkingFloat } from "el:number/working-float.el"
+import { formats } from "el:formats/"
 
-let F64 = DitFloat<sign_dits: 1, fraction_dits: 52, exponent_dits: 11, exponent_bias: 1023>
-let xs = col(linspace<F64>(-1, 1, 101))
+let xs = col(linspace<element: WorkingFloat>(-1, 1, 101))
 let ys = 2 - 0.5 * xs + 0.25 * xs.^2
 let figure = plot(xs, ys)
 let svg = figure.image(640, 480)
-figure.save("curve.svg")
+figure.saveAs(formats.SVG, "curve.svg", @{ width: 640, height: 480 })
 ```
 
-`figure.image(640, 480)` 返回一段 SVG 文本，`figure.save(path)` 把同一张图写入文件；这两个入口都不打开窗口。`figure.axis` 是场景对象，标题与图例可以随后设置；`image` 与 `save` 的尺寸参数都可省略，默认是 900×600。`figure.show()` 才持有窗口并阻塞到关闭，这一页不展开 GUI 后端。
+`figure.image(640, 480)` 返回 SVG 文本。`figure.saveAs(codec, path, options)` 把图写入文件，由第一个参数选择格式，例如 `formats.SVG` 或 `formats.PNG`。两种导出方式都可在无窗口环境中使用，省略尺寸时默认 900×600。可通过 `figure.axis` 设置标题与图例，或用 `figure.show()` 打开窗口并等待关闭。
 
 !!! success "检查点"
     - [ ] `curve.svg` 生成成功，用浏览器能打开
@@ -241,20 +241,20 @@ console.stdout.writeLine("residual: ", residual[0, 0], ", ", residual[1, 0])
 
 1. **换一组方程。** 把系数改成 3×3，右端项换成三列，验证每列残差都为零。验收：三组解各自满足自己的方程，且没有小数误差。
 2. **给脚本加一层输入。** 从命令行参数读系数（文本转 `Number`），构造矩阵后求解；参数个数不对就打印用法。验收：换一组数字不改代码就能跑，形状错误时给出明确报错。
-3. **把精确解与浮点解并排。** 用 `F64` 布局重做同一个方程组，比较两条路径的残差；再用 `solveDiagnostic` 打印残差无穷范数。验收：能说出两条路径各自的判定依据，不把浮点阈值当成数学秩的证明。
+3. **把精确解与浮点解并排。** 用 `WorkingFloat` 重做同一个方程组，比较两条路径的残差；再用 `solveDiagnostic` 打印残差无穷范数。验收：能说出两条路径各自的判定依据，不把浮点阈值当成数学秩的证明。
 
 ## 卡住了？
 
 - **现象：`solve` 报 `ShapeError`，但矩阵看上去是方的。** 右端项 `@(9, 8)` 是一行两列。检查：`b` 的行数必须等于 `a` 的行数。
 - **现象：切片结果的维度比预期少一维。** 标量下标会删掉对应的轴。检查：想保留轴就用 `:` 或范围。
 - **现象：`.*` 报形状不匹配。** 广播只按轴规则扩展，不按数值。检查：两侧轴长要么相等，要么一侧为 1。
-- **现象：`NumericallySingular` 出现但你确信矩阵可逆。** 精确路径只找非零主元，浮点路径按阈值拒绝。检查：换 `F64` 与 `solveDiagnostic` 看实际主元与阈值，别混用两者结论。
+- **现象：`NumericallySingular` 出现但你确信矩阵可逆。** 精确路径只找非零主元，浮点路径按阈值拒绝。检查：换用 `WorkingFloat`，用 `solveDiagnostic` 看实际主元与阈值，别混用两者结论。
 
 ## 带走这三样
 
 - 方程组先写成 `a * x = b`，再用 `solve`；`b - a * x` 是随手可写的验收。
 - 形状由下标与广播规则决定：标量删轴、范围留轴、短 shape 末尾补 1。
-- 精确 `Number` 与 `F64` 是两条路径：一条找非零主元，一条按容差判定，结论不能互相替代。
+- 精确 `Number` 与 `WorkingFloat` 是两条路径：一条找非零主元，一条按容差判定，结论不能互相替代。
 
 ## 下一站：[从其他语言过来](../appendix/coming-from.md)
 

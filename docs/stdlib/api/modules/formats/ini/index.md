@@ -12,7 +12,7 @@
 
 ## parseINI {#api-e4172fc09fb95d53c347}
 
-源码：`src/stdlib/formats/ini/index.el:34` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/ini/index.el#L34)
+源码：`src/stdlib/formats/ini/index.el:26` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/ini/index.el#L26)
 
 解析轻量 INI 方言，生成嵌套动态对象，键和值均保持文本。
 节名和键区分大小写；键值以 `=` 或 `:` 分隔，`;` 或 `#` 开头的整行是注释。
@@ -41,7 +41,7 @@ let settings = parseINI("[server]\nport=8080")
 
 ## writeINI {#api-d2152ba4c73076d311c6}
 
-源码：`src/stdlib/formats/ini/index.el:116` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/ini/index.el#L116)
+源码：`src/stdlib/formats/ini/index.el:106` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/ini/index.el#L106)
 
 将根对象的文本字段和一层节对象编码为轻量 INI；根键先于各节输出。
 不保留原注释或排版；不转换非文本值，不静默去除空白或换行。
@@ -69,7 +69,7 @@ let text = writeINI(parseINI("name=demo\n[server]\nport=8080\n"))
 
 ## parseOrderedINI {#api-8a94a4fc0dc91dbafc21}
 
-源码：`src/stdlib/formats/ini/index.el:147` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/ini/index.el#L147)
+源码：`src/stdlib/formats/ini/index.el:137` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/ini/index.el#L137)
 
 解析 INI 并递归保留映射键的首次插入顺序；重复键覆盖不移动位置。
 

@@ -12,7 +12,7 @@
 
 ## parseCSV {#api-a8e5bd5c6af9392c0c0c}
 
-源码：`src/stdlib/formats/delimited-text/index.el:61` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L61)
+源码：`src/stdlib/formats/delimited-text/index.el:63` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L63)
 
 按 RFC 4180 引号规则解析逗号分隔文本；单元格保持为文本，不推断表头或类型。
 
@@ -39,7 +39,7 @@ let rows = parseCSV("name,role\nAda,engineer")
 
 ## parseTSV {#api-6b18fbbb8111d0a23c0e}
 
-源码：`src/stdlib/formats/delimited-text/index.el:73` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L73)
+源码：`src/stdlib/formats/delimited-text/index.el:75` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L75)
 
 按制表符分隔规则解析文本，单元格内容以文本形式保留。
 
@@ -66,7 +66,7 @@ let rows = parseTSV("name\trole\nAda\tengineer")
 
 ## writeDelimited {#api-c6f0fe52fab397d738da}
 
-源码：`src/stdlib/formats/delimited-text/index.el:89` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L89)
+源码：`src/stdlib/formats/delimited-text/index.el:91` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L91)
 
 编码文本行数组；含分隔符、引号或换行的单元格加引号，内部引号双写。
 
@@ -95,7 +95,7 @@ let text = writeDelimited(@[@["name", "role"], @["Ada", "engineer"]], ";")
 
 ## writeCSV {#api-6923a298b8fb07b04435}
 
-源码：`src/stdlib/formats/delimited-text/index.el:133` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L133)
+源码：`src/stdlib/formats/delimited-text/index.el:136` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L136)
 
 将文本单元格二维数组编码为 RFC 4180 风格 CSV，不添加表头或推断类型。
 
@@ -122,7 +122,7 @@ let text = writeCSV(@[@["name", "role"], @["Ada", "engineer"]])
 
 ## writeTSV {#api-26c2444ceca591f8fbee}
 
-源码：`src/stdlib/formats/delimited-text/index.el:146` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L146)
+源码：`src/stdlib/formats/delimited-text/index.el:149` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L149)
 
 将文本单元格二维数组编码为制表符分隔文本，使用与 CSV 相同的引号规则。
 

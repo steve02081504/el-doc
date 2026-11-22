@@ -7,7 +7,22 @@
 ## 控制头绑定
 
 - `if let x = expression { ... }` 或 `if const x = expression { ... }`：只求值一次。结果不是 `nil` 时执行真分支并绑定 `x`；`f`、零和空文本仍是已有值。绑定在 `else` 与 `if` 之后不可见。
+- `if (let x = initializer; condition) { ... } else { ... }`：先初始化一次，再判断条件。也可用 `const`，或用头部顶层换行替代分号。绑定在条件和两个分支中都可见，在整个 `if` 结束时清理。
 - `switch let x = expression { case ... => ... }` 或 `switch const x = expression { case ... => ... }`：只求值一次，`x` 在各 `case` 检查和分支（包括 `default`）内可见。`nil` 也按普通 selector 匹配。 当前 ELC 的编译期条件导入不接受具名 selector。
+
+以下写法先计算一次剩余库存，再用比较结果选分支。两个分支都能读取 `remaining`。
+
+```el
+let available = 3
+let requested = 5
+if (const remaining = available - requested; remaining >= 0) {
+	console.stdout.writeLine("剩余 ", remaining)
+} else {
+	console.stdout.writeLine("缺少 ", -remaining)
+}
+```
+
+输出为 `缺少 2`。
 
 ## 循环
 

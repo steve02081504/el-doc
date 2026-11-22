@@ -228,13 +228,13 @@ class ZipFile
 
 ## Array · collections/arrays/dynamic.el {#api-02f04934b15030edb96d}
 
-[源码 collections/arrays/dynamic.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L38)
+[源码 collections/arrays/dynamic.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L45)
 
 ```el
 class Array
 ```
 
-[源码 collections/arrays/dynamic.el:128](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L128)
+[源码 collections/arrays/dynamic.el:135](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L135)
 
 ```el
 fn Array(element: type): type
@@ -244,7 +244,7 @@ fn Array(element: type): type
 
 ## ArrayCursor · collections/arrays/dynamic.el {#api-745e67b3b180acb3f95c}
 
-[源码 collections/arrays/dynamic.el:82](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L82)
+[源码 collections/arrays/dynamic.el:89](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L89)
 
 ```el
 fn ArrayCursor(element: type): type
@@ -252,7 +252,7 @@ fn ArrayCursor(element: type): type
 
 ## ArrayLiteralTail · collections/arrays/dynamic.el {#api-8cca1b929908a3728b29}
 
-[源码 collections/arrays/dynamic.el:105](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L105)
+[源码 collections/arrays/dynamic.el:112](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L112)
 
 ```el
 fn ArrayLiteralTail(element: type, count = -1): type
@@ -260,7 +260,7 @@ fn ArrayLiteralTail(element: type, count = -1): type
 
 ## ClassicArray · collections/arrays/dynamic.el {#api-257247efc6d9544b6cca}
 
-[源码 collections/arrays/dynamic.el:368](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L368)
+[源码 collections/arrays/dynamic.el:377](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L377)
 
 ```el
 fn ClassicArray(element: type): type
@@ -268,7 +268,7 @@ fn ClassicArray(element: type): type
 
 ## DynamicArray · collections/arrays/dynamic.el {#api-1d30e7929db536315a31}
 
-[源码 collections/arrays/dynamic.el:377](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L377)
+[源码 collections/arrays/dynamic.el:386](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L386)
 
 ```el
 fn DynamicArray(element: type, count = -1): type
@@ -396,7 +396,7 @@ fn PagedRecords(element: type, codecType: type): type
 
 ## StoredArray · collections/arrays/storage/stored-array.el {#api-6d63fbbe8cef49c446fd}
 
-[源码 collections/arrays/storage/stored-array.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/storage/stored-array.el#L15)
+[源码 collections/arrays/storage/stored-array.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/storage/stored-array.el#L16)
 
 ```el
 fn StoredArray(element: type, codecType: type): type
@@ -1966,10 +1966,26 @@ class ConstantRead
 
 ## Compiler · compiler/context/compiler-session.el {#api-0cd91638596151a11a5c}
 
-[源码 compiler/context/compiler-session.el:44](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/compiler-session.el#L44)
+[源码 compiler/context/compiler-session.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/compiler-session.el#L77)
 
 ```el
 class Compiler
+```
+
+## RuntimeImportIndex · compiler/context/compiler-session.el {#api-c3d651b72e647d76baa4}
+
+[源码 compiler/context/compiler-session.el:60](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/compiler-session.el#L60)
+
+```el
+class RuntimeImportIndex
+```
+
+## RuntimeImportSignature · compiler/context/compiler-session.el {#api-2f5d486e0a08d0f36ae8}
+
+[源码 compiler/context/compiler-session.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/compiler-session.el#L45)
+
+```el
+class RuntimeImportSignature
 ```
 
 ## ContextOperationSnapshot · compiler/context/context-error-snapshots.el {#api-6377b312434c1a9931fe}
@@ -2638,7 +2654,7 @@ class CapabilityImport extends IrExecutionImport
 
 ## CapabilityPolicy · compiler/contracts/capability-policy.el {#api-d7f6f0b0ec32f3f3413b}
 
-[源码 compiler/contracts/capability-policy.el:94](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/capability-policy.el#L94)
+[源码 compiler/contracts/capability-policy.el:122](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/capability-policy.el#L122)
 
 ```el
 class CapabilityPolicy extends IrExecutionSessionPolicy
@@ -2646,18 +2662,18 @@ class CapabilityPolicy extends IrExecutionSessionPolicy
 
 ## StaticEodObserver · compiler/contracts/capability-policy.el {#api-e513fb090d3ad93451aa}
 
-[源码 compiler/contracts/capability-policy.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/capability-policy.el#L64)
+[源码 compiler/contracts/capability-policy.el:92](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/capability-policy.el#L92)
 
 ```el
 class StaticEodObserver extends IrExecutionObserver
 ```
 
-## StaticShapeValidImport · compiler/contracts/capability-policy.el {#api-3326d2bb81947ce5e9b9}
+## StaticShapeImport · compiler/contracts/capability-policy.el {#api-a0833ab72bf1f44c464e}
 
-[源码 compiler/contracts/capability-policy.el:52](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/capability-policy.el#L52)
+[源码 compiler/contracts/capability-policy.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/capability-policy.el#L57)
 
 ```el
-class StaticShapeValidImport extends IrExecutionImport
+class StaticShapeImport extends IrExecutionImport
 ```
 
 ## SourceDataBatchEntry · compiler/contracts/capability-session.el {#api-330a717125a83f069609}
@@ -2694,7 +2710,7 @@ class CheckedImport extends IrExecutionImport
 
 ## DemandEdge · compiler/contracts/demand-effects.el {#api-486aa5c9b962a8c83270}
 
-[源码 compiler/contracts/demand-effects.el:222](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/demand-effects.el#L222)
+[源码 compiler/contracts/demand-effects.el:223](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/demand-effects.el#L223)
 
 ```el
 class DemandEdge
@@ -2702,7 +2718,7 @@ class DemandEdge
 
 ## DemandPropagation · compiler/contracts/demand-effects.el {#api-f6dd27f578710d0d3baf}
 
-[源码 compiler/contracts/demand-effects.el:230](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/demand-effects.el#L230)
+[源码 compiler/contracts/demand-effects.el:231](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/contracts/demand-effects.el#L231)
 
 ```el
 class DemandPropagation
@@ -3326,7 +3342,7 @@ class UnpublishedValueFunctions
 
 ## FactoryRewriteScope · compiler/declarations/factories.el {#api-62db284453e28c3b0c4a}
 
-[源码 compiler/declarations/factories.el:955](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/declarations/factories.el#L955)
+[源码 compiler/declarations/factories.el:979](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/declarations/factories.el#L979)
 
 ```el
 class FactoryRewriteScope
@@ -3870,7 +3886,7 @@ class ModuleExportSegment
 
 ## ModuleMutationProof · compiler/modules/module-mutation-proof.el {#api-224c13347ad6949c093e}
 
-[源码 compiler/modules/module-mutation-proof.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/modules/module-mutation-proof.el#L57)
+[源码 compiler/modules/module-mutation-proof.el:60](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/modules/module-mutation-proof.el#L60)
 
 ```el
 class ModuleMutationProof
@@ -3878,7 +3894,7 @@ class ModuleMutationProof
 
 ## MutationScope · compiler/modules/module-mutation-proof.el {#api-c678904be54911d513d3}
 
-[源码 compiler/modules/module-mutation-proof.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/modules/module-mutation-proof.el#L47)
+[源码 compiler/modules/module-mutation-proof.el:50](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/modules/module-mutation-proof.el#L50)
 
 ```el
 class MutationScope
@@ -3886,7 +3902,7 @@ class MutationScope
 
 ## MutationValues · compiler/modules/module-mutation-proof.el {#api-aa008a48174c89761eb4}
 
-[源码 compiler/modules/module-mutation-proof.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/modules/module-mutation-proof.el#L27)
+[源码 compiler/modules/module-mutation-proof.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/modules/module-mutation-proof.el#L29)
 
 ```el
 class MutationValues
@@ -3894,7 +3910,7 @@ class MutationValues
 
 ## MutationVertex · compiler/modules/module-mutation-proof.el {#api-4586a743dfe373d8eefd}
 
-[源码 compiler/modules/module-mutation-proof.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/modules/module-mutation-proof.el#L38)
+[源码 compiler/modules/module-mutation-proof.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/modules/module-mutation-proof.el#L39)
 
 ```el
 class MutationVertex
@@ -8910,7 +8926,7 @@ class SyntaxStatementPolicy
 
 ## SyntaxBinding · compiler/syntax/syntax-bindings.el {#api-3fd855f9689b32142b76}
 
-[源码 compiler/syntax/syntax-bindings.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L10)
+[源码 compiler/syntax/syntax-bindings.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L9)
 
 ```el
 class SyntaxBinding
@@ -8918,7 +8934,7 @@ class SyntaxBinding
 
 ## SyntaxDependency · compiler/syntax/syntax-bindings.el {#api-0b48e747858e1ee204c5}
 
-[源码 compiler/syntax/syntax-bindings.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L22)
+[源码 compiler/syntax/syntax-bindings.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L21)
 
 ```el
 class SyntaxDependency
@@ -8926,7 +8942,7 @@ class SyntaxDependency
 
 ## SyntaxInput · compiler/syntax/syntax-bindings.el {#api-2104c5d75f1d947918f6}
 
-[源码 compiler/syntax/syntax-bindings.el:296](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L296)
+[源码 compiler/syntax/syntax-bindings.el:325](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L325)
 
 ```el
 class SyntaxInput
@@ -8934,7 +8950,7 @@ class SyntaxInput
 
 ## SyntaxPartialShape · compiler/syntax/syntax-bindings.el {#api-dde21ed7aeb5c435fdae}
 
-[源码 compiler/syntax/syntax-bindings.el:194](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L194)
+[源码 compiler/syntax/syntax-bindings.el:229](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L229)
 
 ```el
 class SyntaxPartialShape
@@ -8942,7 +8958,7 @@ class SyntaxPartialShape
 
 ## SyntaxRegistry · compiler/syntax/syntax-bindings.el {#api-5cf8e0931058184772fc}
 
-[源码 compiler/syntax/syntax-bindings.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L28)
+[源码 compiler/syntax/syntax-bindings.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L27)
 
 ```el
 class SyntaxRegistry
@@ -8950,10 +8966,18 @@ class SyntaxRegistry
 
 ## SyntaxShape · compiler/syntax/syntax-bindings.el {#api-f9435801dec072d5e743}
 
-[源码 compiler/syntax/syntax-bindings.el:144](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L144)
+[源码 compiler/syntax/syntax-bindings.el:156](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L156)
 
 ```el
 class SyntaxShape
+```
+
+## SyntaxSpan · compiler/syntax/syntax-bindings.el {#api-7c918b1837e6d9fa9cc3}
+
+[源码 compiler/syntax/syntax-bindings.el:145](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/syntax/syntax-bindings.el#L145)
+
+```el
+class SyntaxSpan
 ```
 
 ## SyntaxDemand · compiler/syntax/syntax-demand.el {#api-433c5c279a0b5a0a54e2}
@@ -9254,7 +9278,7 @@ class ViewConsumer
 
 ## AliasGraphMemo · compiler/types/aliases.el {#api-5650af932899a793f6b6}
 
-[源码 compiler/types/aliases.el:199](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/types/aliases.el#L199)
+[源码 compiler/types/aliases.el:218](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/types/aliases.el#L218)
 
 ```el
 class AliasGraphMemo
@@ -10150,7 +10174,7 @@ class ServiceValue
 
 ## TimerClosed · concurrency/scheduling/timers.el {#api-6e77ff3ccc0f1bdf798c}
 
-[源码 concurrency/scheduling/timers.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L27)
+[源码 concurrency/scheduling/timers.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L34)
 
 ```el
 class TimerClosed
@@ -10158,7 +10182,7 @@ class TimerClosed
 
 ## TimerEntry · concurrency/scheduling/timers.el {#api-3485cf17b8cbad31cbfe}
 
-[源码 concurrency/scheduling/timers.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L34)
+[源码 concurrency/scheduling/timers.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L41)
 
 ```el
 class TimerEntry
@@ -10166,7 +10190,7 @@ class TimerEntry
 
 ## TimerError · concurrency/scheduling/timers.el {#api-a0f3f357bf37f5a89c81}
 
-[源码 concurrency/scheduling/timers.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L26)
+[源码 concurrency/scheduling/timers.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L33)
 
 ```el
 class TimerError extends Error
@@ -10174,7 +10198,7 @@ class TimerError extends Error
 
 ## TimerOutcome · concurrency/scheduling/timers.el {#api-f0a7b9447eae542358e1}
 
-[源码 concurrency/scheduling/timers.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L29)
+[源码 concurrency/scheduling/timers.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L36)
 
 ```el
 class TimerOutcome
@@ -10182,7 +10206,7 @@ class TimerOutcome
 
 ## TimerService · concurrency/scheduling/timers.el {#api-019a1f411d94965aae8e}
 
-[源码 concurrency/scheduling/timers.el:119](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L119)
+[源码 concurrency/scheduling/timers.el:126](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L126)
 
 ```el
 class TimerService
@@ -10190,7 +10214,7 @@ class TimerService
 
 ## TimerState · concurrency/scheduling/timers.el {#api-4d0edfd4c0d4878bce17}
 
-[源码 concurrency/scheduling/timers.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L39)
+[源码 concurrency/scheduling/timers.el:46](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L46)
 
 ```el
 class TimerState
@@ -10238,7 +10262,7 @@ class LockTicket
 
 ## NativeMutex · concurrency/synchronization/owned-mutex.el {#api-48af3382e57625e815a5}
 
-[源码 concurrency/synchronization/owned-mutex.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/synchronization/owned-mutex.el#L11)
+[源码 concurrency/synchronization/owned-mutex.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/synchronization/owned-mutex.el#L12)
 
 ```el
 class NativeMutex
@@ -16188,6 +16212,1462 @@ class DbKey
 class DbKeyTuple
 ```
 
+## HotkeyBinding · desktop-automation/bindings.el {#api-9fa2e6dfeeda56534f46}
+
+[源码 desktop-automation/bindings.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/bindings.el#L8)
+
+```el
+class HotkeyBinding
+```
+
+## HotkeyBindings · desktop-automation/bindings.el {#api-8fa6ffc0ce572b206961}
+
+[源码 desktop-automation/bindings.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/bindings.el#L28)
+
+```el
+class HotkeyBindings
+```
+
+## HotkeySubscription · desktop-automation/bindings.el {#api-8bed157f5962dcf9c29d}
+
+[源码 desktop-automation/bindings.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/bindings.el#L40)
+
+```el
+class HotkeySubscription
+```
+
+## DesktopFileDialogMode · desktop-automation/dialog-model.el {#api-0cea57697e4efa0049ab}
+
+[源码 desktop-automation/dialog-model.el:1](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/dialog-model.el#L1)
+
+```el
+enum DesktopFileDialogMode
+```
+
+## DesktopDialogChoice · desktop-automation/dialog.el {#api-41c753c9945466d5b8e6}
+
+[源码 desktop-automation/dialog.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/dialog.el#L10)
+
+```el
+class DesktopDialogChoice
+```
+
+## DesktopDialogStatus · desktop-automation/dialog.el {#api-c0eaeafbb7ede4e78f32}
+
+[源码 desktop-automation/dialog.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/dialog.el#L8)
+
+```el
+enum DesktopDialogStatus
+```
+
+## DesktopTextResponse · desktop-automation/dialog.el {#api-4e1ccbabbc6ad09eb09e}
+
+[源码 desktop-automation/dialog.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/dialog.el#L20)
+
+```el
+class DesktopTextResponse
+```
+
+## DesktopCoordinateUnit · desktop-automation/display-model.el {#api-bf90ea3475ffadcc079a}
+
+[源码 desktop-automation/display-model.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/display-model.el#L4)
+
+```el
+enum DesktopCoordinateUnit
+```
+
+## DesktopDisplay · desktop-automation/display-model.el {#api-29107971196de38f4974}
+
+[源码 desktop-automation/display-model.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/display-model.el#L6)
+
+```el
+class DesktopDisplay
+```
+
+## DesktopCheckState · desktop-automation/element-model.el {#api-be03ad2e72ab6834d6f7}
+
+[源码 desktop-automation/element-model.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/element-model.el#L5)
+
+```el
+enum DesktopCheckState
+```
+
+## DesktopElement · desktop-automation/element-model.el {#api-05cdd392693f663f6623}
+
+[源码 desktop-automation/element-model.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/element-model.el#L21)
+
+```el
+class DesktopElement
+```
+
+## DesktopElementCoordinates · desktop-automation/element-model.el {#api-e098efc49027bec07981}
+
+[源码 desktop-automation/element-model.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/element-model.el#L6)
+
+```el
+enum DesktopElementCoordinates
+```
+
+## ElementSelector · desktop-automation/element-selector.el {#api-7ff2b5f64b1217d020a7}
+
+[源码 desktop-automation/element-selector.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/element-selector.el#L10)
+
+```el
+class ElementSelector
+```
+
+## DesktopRect · desktop-automation/geometry.el {#api-28b7a170ba38890dbd50}
+
+[源码 desktop-automation/geometry.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/geometry.el#L4)
+
+```el
+class DesktopRect
+```
+
+## CommittedTextEvent · desktop-automation/hotstrings.el {#api-5ac477d3b9c9f1719ad5}
+
+[源码 desktop-automation/hotstrings.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/hotstrings.el#L15)
+
+```el
+class CommittedTextEvent
+```
+
+## HotstringMatch · desktop-automation/hotstrings.el {#api-17321adc0e3e2ca41e26}
+
+[源码 desktop-automation/hotstrings.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/hotstrings.el#L56)
+
+```el
+class HotstringMatch
+```
+
+## HotstringNormalization · desktop-automation/hotstrings.el {#api-9ef1867ff9f03bfa62cf}
+
+[源码 desktop-automation/hotstrings.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/hotstrings.el#L9)
+
+```el
+enum HotstringNormalization
+```
+
+## HotstringRule · desktop-automation/hotstrings.el {#api-32b4a4b5006029b89f91}
+
+[源码 desktop-automation/hotstrings.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/hotstrings.el#L30)
+
+```el
+class HotstringRule
+```
+
+## DesktopPoint · desktop-automation/input-backend.el {#api-e3f56505abb1e96b961e}
+
+[源码 desktop-automation/input-backend.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/input-backend.el#L7)
+
+```el
+class DesktopPoint
+```
+
+## InputBackend · desktop-automation/input-backend.el {#api-0d5aa996ef9589f93690}
+
+[源码 desktop-automation/input-backend.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/input-backend.el#L16)
+
+```el
+class InputBackend
+```
+
+## MouseButton · desktop-automation/input-backend.el {#api-8eb8f4fe774aebc0fe04}
+
+[源码 desktop-automation/input-backend.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/input-backend.el#L5)
+
+```el
+enum MouseButton
+```
+
+## DesktopInput · desktop-automation/input.el {#api-568554f4935ccab451b7}
+
+[源码 desktop-automation/input.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/input.el#L38)
+
+```el
+class DesktopInput
+```
+
+## DesktopKeyRuleNotice · desktop-automation/key-rule-notices.el {#api-722e3c060739359a7dbe}
+
+[源码 desktop-automation/key-rule-notices.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/key-rule-notices.el#L5)
+
+```el
+class DesktopKeyRuleNotice
+```
+
+## KeyRuleNoticeQueue · desktop-automation/key-rule-notices.el {#api-683dd3dbd7ac74d4d31d}
+
+[源码 desktop-automation/key-rule-notices.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/key-rule-notices.el#L19)
+
+```el
+class KeyRuleNoticeQueue
+```
+
+## DesktopKeyDecision · desktop-automation/key-rules.el {#api-329c32857969ee8127d4}
+
+[源码 desktop-automation/key-rules.el:124](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/key-rules.el#L124)
+
+```el
+class DesktopKeyDecision
+```
+
+## DesktopKeyDisposition · desktop-automation/key-rules.el {#api-be6db2fc7b283a08a966}
+
+[源码 desktop-automation/key-rules.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/key-rules.el#L10)
+
+```el
+enum DesktopKeyDisposition
+```
+
+## DesktopKeyFocus · desktop-automation/key-rules.el {#api-28e6016605473edd5a31}
+
+[源码 desktop-automation/key-rules.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/key-rules.el#L12)
+
+```el
+class DesktopKeyFocus
+```
+
+## DesktopKeyInput · desktop-automation/key-rules.el {#api-521730730eeac1cf5401}
+
+[源码 desktop-automation/key-rules.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/key-rules.el#L25)
+
+```el
+class DesktopKeyInput
+```
+
+## DesktopKeyOrigin · desktop-automation/key-rules.el {#api-4b351a98475f68007a01}
+
+[源码 desktop-automation/key-rules.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/key-rules.el#L9)
+
+```el
+enum DesktopKeyOrigin
+```
+
+## DesktopKeyPhase · desktop-automation/key-rules.el {#api-af1cb7403a21a5d35353}
+
+[源码 desktop-automation/key-rules.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/key-rules.el#L8)
+
+```el
+enum DesktopKeyPhase
+```
+
+## DesktopKeyReplayFrame · desktop-automation/key-rules.el {#api-6e832d9d1b8a3d3864d2}
+
+[源码 desktop-automation/key-rules.el:190](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/key-rules.el#L190)
+
+```el
+class DesktopKeyReplayFrame
+```
+
+## DesktopKeyRule · desktop-automation/key-rules.el {#api-a894fe2420484cca51a5}
+
+[源码 desktop-automation/key-rules.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/key-rules.el#L63)
+
+```el
+class DesktopKeyRule
+```
+
+## DesktopKeyRules · desktop-automation/key-rules.el {#api-4b8be9e1dc2e51fd8ed0}
+
+[源码 desktop-automation/key-rules.el:136](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/key-rules.el#L136)
+
+```el
+class DesktopKeyRules
+```
+
+## DesktopKey · desktop-automation/keys.el {#api-3f09166b1efceb16327e}
+
+[源码 desktop-automation/keys.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/keys.el#L4)
+
+```el
+class DesktopKey
+```
+
+## KeyChord · desktop-automation/keys.el {#api-c9079c55449da69cbaa2}
+
+[源码 desktop-automation/keys.el:78](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/keys.el#L78)
+
+```el
+class KeyChord
+```
+
+## DesktopError · desktop-automation/model.el {#api-c126c132b46a922c03d7}
+
+[源码 desktop-automation/model.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/model.el#L6)
+
+```el
+class DesktopError extends Error
+```
+
+## DesktopFailure · desktop-automation/model.el {#api-53f0128ba9fdf238be0d}
+
+[源码 desktop-automation/model.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/model.el#L4)
+
+```el
+enum DesktopFailure
+```
+
+## AccessibilityConnection · desktop-automation/platform/linux-accessibility.el {#api-2884a44a0e6d51e403c6}
+
+[源码 desktop-automation/platform/linux-accessibility.el:94](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/linux-accessibility.el#L94)
+
+```el
+class AccessibilityConnection
+```
+
+## AccessibilityElement · desktop-automation/platform/linux-accessibility.el {#api-b97f17d7488838082780}
+
+[源码 desktop-automation/platform/linux-accessibility.el:140](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/linux-accessibility.el#L140)
+
+```el
+class AccessibilityElement extends DesktopElement
+```
+
+## AccessibilityTextRange · desktop-automation/platform/linux-accessibility.el {#api-860e0ec35577f7a7fbc6}
+
+[源码 desktop-automation/platform/linux-accessibility.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/linux-accessibility.el#L47)
+
+```el
+class AccessibilityTextRange
+```
+
+## AccessibleDesktopWindow · desktop-automation/platform/linux-accessibility.el {#api-718517bb18534519968c}
+
+[源码 desktop-automation/platform/linux-accessibility.el:475](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/linux-accessibility.el#L475)
+
+```el
+class AccessibleDesktopWindow extends DesktopWindow
+```
+
+## DesktopHotkeys · desktop-automation/platform/linux-hotkeys.el {#api-4d9795a3af136930c52f}
+
+[源码 desktop-automation/platform/linux-hotkeys.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/linux-hotkeys.el#L7)
+
+```el
+class DesktopHotkeys
+```
+
+## LinuxNotification · desktop-automation/platform/linux-notification.el {#api-6d88135e211965f5b867}
+
+[源码 desktop-automation/platform/linux-notification.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/linux-notification.el#L18)
+
+```el
+class LinuxNotification
+```
+
+## DesktopEntryFile · desktop-automation/platform/linux-shortcut.el {#api-27f0e13e7f9dd0904b27}
+
+[源码 desktop-automation/platform/linux-shortcut.el:114](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/linux-shortcut.el#L114)
+
+```el
+class DesktopEntryFile
+```
+
+## LinuxDesktopShortcut · desktop-automation/platform/linux-shortcut.el {#api-e3336649b31cba725b69}
+
+[源码 desktop-automation/platform/linux-shortcut.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/linux-shortcut.el#L13)
+
+```el
+class LinuxDesktopShortcut
+```
+
+## LinuxShortcutKind · desktop-automation/platform/linux-shortcut.el {#api-3081006cfd7358679cf8}
+
+[源码 desktop-automation/platform/linux-shortcut.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/linux-shortcut.el#L11)
+
+```el
+enum LinuxShortcutKind
+```
+
+## LinuxMenuLayout · desktop-automation/platform/linux-tray.el {#api-e81c1535a0e2c690da36}
+
+[源码 desktop-automation/platform/linux-tray.el:137](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/linux-tray.el#L137)
+
+```el
+class LinuxMenuLayout
+```
+
+## LinuxTrayMenu · desktop-automation/platform/linux-tray.el {#api-903f10d74ad8f7f6eb37}
+
+[源码 desktop-automation/platform/linux-tray.el:158](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/linux-tray.el#L158)
+
+```el
+class LinuxTrayMenu
+```
+
+## TrayMethod · desktop-automation/platform/linux-tray.el {#api-85fdbdbef2fdba58ea15}
+
+[源码 desktop-automation/platform/linux-tray.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/linux-tray.el#L18)
+
+```el
+class TrayMethod
+```
+
+## LinuxVolumeInformation · desktop-automation/platform/linux-volumes.el {#api-3e83752ca82fe94b0c03}
+
+[源码 desktop-automation/platform/linux-volumes.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/linux-volumes.el#L16)
+
+```el
+class LinuxVolumeInformation
+```
+
+## MacClipboardItem · desktop-automation/platform/macos-clipboard.el {#api-4f721fb17727112b100c}
+
+[源码 desktop-automation/platform/macos-clipboard.el:54](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-clipboard.el#L54)
+
+```el
+class MacClipboardItem
+```
+
+## MacClipboardRepresentation · desktop-automation/platform/macos-clipboard.el {#api-6d5db54ad22517ee8831}
+
+[源码 desktop-automation/platform/macos-clipboard.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-clipboard.el#L45)
+
+```el
+class MacClipboardRepresentation
+```
+
+## MacClipboardSnapshot · desktop-automation/platform/macos-clipboard.el {#api-de38c607330b94ad68d6}
+
+[源码 desktop-automation/platform/macos-clipboard.el:62](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-clipboard.el#L62)
+
+```el
+class MacClipboardSnapshot
+```
+
+## DesktopHotkeys · desktop-automation/platform/macos-hotkeys.el {#api-89cfa3f828dddda0aaf2}
+
+[源码 desktop-automation/platform/macos-hotkeys.el:100](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-hotkeys.el#L100)
+
+```el
+class DesktopHotkeys
+```
+
+## HotkeyMailbox · desktop-automation/platform/macos-hotkeys.el {#api-cbd8cfe9699dbd3cd5b3}
+
+[源码 desktop-automation/platform/macos-hotkeys.el:53](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-hotkeys.el#L53)
+
+```el
+class HotkeyMailbox
+```
+
+## MacosInput · desktop-automation/platform/macos-input.el {#api-f8b6265b9ddb2ef863cc}
+
+[源码 desktop-automation/platform/macos-input.el:74](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-input.el#L74)
+
+```el
+class MacosInput extends InputBackend
+```
+
+## QuartzBool · desktop-automation/platform/macos-input.el {#api-a784bb9179cae4faa94d}
+
+[源码 desktop-automation/platform/macos-input.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-input.el#L13)
+
+```el
+class QuartzBool
+```
+
+## QuartzKey · desktop-automation/platform/macos-input.el {#api-22d0cb29cef777055974}
+
+[源码 desktop-automation/platform/macos-input.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-input.el#L14)
+
+```el
+class QuartzKey
+```
+
+## EventBits · desktop-automation/platform/macos-key-rules.el {#api-79815cf0b4419a209ea6}
+
+[源码 desktop-automation/platform/macos-key-rules.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-key-rules.el#L20)
+
+```el
+class EventBits
+```
+
+## MacosKeyRuleSubscription · desktop-automation/platform/macos-key-rules.el {#api-54f49824b61c43eecfed}
+
+[源码 desktop-automation/platform/macos-key-rules.el:54](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-key-rules.el#L54)
+
+```el
+class MacosKeyRuleSubscription
+```
+
+## QuartzBool · desktop-automation/platform/macos-key-rules.el {#api-3baf6a04d68a98dcbc78}
+
+[源码 desktop-automation/platform/macos-key-rules.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-key-rules.el#L18)
+
+```el
+class QuartzBool
+```
+
+## QuartzKey · desktop-automation/platform/macos-key-rules.el {#api-0e18a7393a54ccd30e7c}
+
+[源码 desktop-automation/platform/macos-key-rules.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-key-rules.el#L19)
+
+```el
+class QuartzKey
+```
+
+## MacNotification · desktop-automation/platform/macos-notification.el {#api-c098a8bea590178cc584}
+
+[源码 desktop-automation/platform/macos-notification.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-notification.el#L19)
+
+```el
+class MacNotification
+```
+
+## AEReturnId · desktop-automation/platform/macos-power.el {#api-7e863a880cbefe2b7a79}
+
+[源码 desktop-automation/platform/macos-power.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-power.el#L9)
+
+```el
+class AEReturnId
+```
+
+## OSErr · desktop-automation/platform/macos-power.el {#api-d688b391ec166b905e15}
+
+[源码 desktop-automation/platform/macos-power.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-power.el#L10)
+
+```el
+class OSErr
+```
+
+## EventMask · desktop-automation/platform/macos-remap.el {#api-8900fc1cfea6dc05f1e3}
+
+[源码 desktop-automation/platform/macos-remap.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-remap.el#L13)
+
+```el
+class EventMask
+```
+
+## MacosKeyRemap · desktop-automation/platform/macos-remap.el {#api-b5b7f01f83d8739ce468}
+
+[源码 desktop-automation/platform/macos-remap.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-remap.el#L39)
+
+```el
+class MacosKeyRemap
+```
+
+## QuartzBool · desktop-automation/platform/macos-remap.el {#api-845fc89b84123c0e9f82}
+
+[源码 desktop-automation/platform/macos-remap.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-remap.el#L11)
+
+```el
+class QuartzBool
+```
+
+## QuartzKey · desktop-automation/platform/macos-remap.el {#api-b561175f0203f076f5f1}
+
+[源码 desktop-automation/platform/macos-remap.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-remap.el#L12)
+
+```el
+class QuartzKey
+```
+
+## DarwinFileMode · desktop-automation/platform/macos-shortcut.el {#api-7e0f46719422c376087e}
+
+[源码 desktop-automation/platform/macos-shortcut.el:46](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-shortcut.el#L46)
+
+```el
+class DarwinFileMode
+```
+
+## FileURL · desktop-automation/platform/macos-shortcut.el {#api-06dfe7702fbe1b56bccd}
+
+[源码 desktop-automation/platform/macos-shortcut.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-shortcut.el#L68)
+
+```el
+class FileURL
+```
+
+## MacCommandLauncher · desktop-automation/platform/macos-shortcut.el {#api-fa0ac45e9efcbede0bab}
+
+[源码 desktop-automation/platform/macos-shortcut.el:245](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-shortcut.el#L245)
+
+```el
+class MacCommandLauncher
+```
+
+## MacFinderAlias · desktop-automation/platform/macos-shortcut.el {#api-5699205eb195072d4d63}
+
+[源码 desktop-automation/platform/macos-shortcut.el:50](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-shortcut.el#L50)
+
+```el
+class MacFinderAlias
+```
+
+## CoreAudioBoolean · desktop-automation/platform/macos-sound.el {#api-0cb4a8fcad93b2b06689}
+
+[源码 desktop-automation/platform/macos-sound.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-sound.el#L12)
+
+```el
+class CoreAudioBoolean
+```
+
+## CoreFoundationEncoding · desktop-automation/platform/macos-sound.el {#api-7c988e783d92d1fadd1e}
+
+[源码 desktop-automation/platform/macos-sound.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-sound.el#L14)
+
+```el
+class CoreFoundationEncoding
+```
+
+## CoreFoundationIndex · desktop-automation/platform/macos-sound.el {#api-a8cfc349b708d374e975}
+
+[源码 desktop-automation/platform/macos-sound.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-sound.el#L13)
+
+```el
+class CoreFoundationIndex
+```
+
+## DesktopTooltip · desktop-automation/platform/macos-tooltip.el {#api-47d155aea38a3963a238}
+
+[源码 desktop-automation/platform/macos-tooltip.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-tooltip.el#L35)
+
+```el
+class DesktopTooltip
+```
+
+## MacTrayMenu · desktop-automation/platform/macos-tray.el {#api-eabcd223d3f0bcecb2b5}
+
+[源码 desktop-automation/platform/macos-tray.el:114](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-tray.el#L114)
+
+```el
+class MacTrayMenu
+```
+
+## TrayTarget · desktop-automation/platform/macos-tray.el {#api-937fd1465ae03b760c58}
+
+[源码 desktop-automation/platform/macos-tray.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-tray.el#L17)
+
+```el
+class TrayTarget
+```
+
+## MacVolumeInformation · desktop-automation/platform/macos-volumes.el {#api-56fa8f9149a7354dc1d0}
+
+[源码 desktop-automation/platform/macos-volumes.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-volumes.el#L43)
+
+```el
+class MacVolumeInformation
+```
+
+## MacDesktopElement · desktop-automation/platform/macos-window.el {#api-658e3cf1adf291326ace}
+
+[源码 desktop-automation/platform/macos-window.el:158](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-window.el#L158)
+
+```el
+class MacDesktopElement extends DesktopElement
+```
+
+## MacDesktopWindow · desktop-automation/platform/macos-window.el {#api-a6446ffcb8ffc4adce83}
+
+[源码 desktop-automation/platform/macos-window.el:451](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/macos-window.el#L451)
+
+```el
+class MacDesktopWindow extends DesktopWindow
+```
+
+## PortalConnection · desktop-automation/platform/portal.el {#api-a46e2489e65a80f10a6c}
+
+[源码 desktop-automation/platform/portal.el:290](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/portal.el#L290)
+
+```el
+class PortalConnection
+```
+
+## ClipboardTransfer · desktop-automation/platform/wayland-clipboard.el {#api-75b6295e02d9c75fc4eb}
+
+[源码 desktop-automation/platform/wayland-clipboard.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-clipboard.el#L41)
+
+```el
+class ClipboardTransfer
+```
+
+## WaylandClipboard · desktop-automation/platform/wayland-clipboard.el {#api-ced6946cc35915ce8d86}
+
+[源码 desktop-automation/platform/wayland-clipboard.el:71](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-clipboard.el#L71)
+
+```el
+class WaylandClipboard
+```
+
+## Listener · desktop-automation/platform/wayland-connection.el {#api-beaba0324c9e873c1300}
+
+[源码 desktop-automation/platform/wayland-connection.el:72](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-connection.el#L72)
+
+```el
+class Listener
+```
+
+## WaylandGlobal · desktop-automation/platform/wayland-connection.el {#api-977bf0d147d693ce4823}
+
+[源码 desktop-automation/platform/wayland-connection.el:61](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-connection.el#L61)
+
+```el
+class WaylandGlobal
+```
+
+## WaylandHotkeys · desktop-automation/platform/wayland-hotkeys.el {#api-01970bce104c26e34af9}
+
+[源码 desktop-automation/platform/wayland-hotkeys.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-hotkeys.el#L32)
+
+```el
+class WaylandHotkeys
+```
+
+## IdleSeat · desktop-automation/platform/wayland-idle.el {#api-f164473719d5b8ac44dd}
+
+[源码 desktop-automation/platform/wayland-idle.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-idle.el#L11)
+
+```el
+class IdleSeat
+```
+
+## WaylandInput · desktop-automation/platform/wayland-input.el {#api-5e64aa1baf4b4afdac66}
+
+[源码 desktop-automation/platform/wayland-input.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-input.el#L63)
+
+```el
+class WaylandInput extends InputBackend
+```
+
+## WaylandPointerStream · desktop-automation/platform/wayland-input.el {#api-08e6d926399e16a630eb}
+
+[源码 desktop-automation/platform/wayland-input.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-input.el#L13)
+
+```el
+class WaylandPointerStream
+```
+
+## WaylandScreenInput · desktop-automation/platform/wayland-input.el {#api-6203dfd6ee3871c9c3c5}
+
+[源码 desktop-automation/platform/wayland-input.el:237](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-input.el#L237)
+
+```el
+class WaylandScreenInput
+```
+
+## Output · desktop-automation/platform/wayland-monitors.el {#api-8be9b74ca1a9a8d35ff8}
+
+[源码 desktop-automation/platform/wayland-monitors.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-monitors.el#L10)
+
+```el
+class Output
+```
+
+## ControlledWaylandWindow · desktop-automation/platform/wayland-windows.el {#api-1bf3daef2857014917dd}
+
+[源码 desktop-automation/platform/wayland-windows.el:371](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-windows.el#L371)
+
+```el
+class ControlledWaylandWindow extends DesktopWindow
+```
+
+## WaylandWindowSnapshot · desktop-automation/platform/wayland-windows.el {#api-93a5594ebffc4be536cd}
+
+[源码 desktop-automation/platform/wayland-windows.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-windows.el#L13)
+
+```el
+class WaylandWindowSnapshot extends DesktopWindow
+```
+
+## WindowAction · desktop-automation/platform/wayland-windows.el {#api-fdeb95c917b709a010eb}
+
+[源码 desktop-automation/platform/wayland-windows.el:338](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-windows.el#L338)
+
+```el
+enum WindowAction
+```
+
+## WindowBatch · desktop-automation/platform/wayland-windows.el {#api-656c8c0b782b20c38d85}
+
+[源码 desktop-automation/platform/wayland-windows.el:113](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-windows.el#L113)
+
+```el
+class WindowBatch
+```
+
+## WindowControlScope · desktop-automation/platform/wayland-windows.el {#api-14304bb848374a36c8b0}
+
+[源码 desktop-automation/platform/wayland-windows.el:340](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-windows.el#L340)
+
+```el
+class WindowControlScope
+```
+
+## WindowProtocol · desktop-automation/platform/wayland-windows.el {#api-610bf7e251843060e241}
+
+[源码 desktop-automation/platform/wayland-windows.el:111](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-windows.el#L111)
+
+```el
+enum WindowProtocol
+```
+
+## WindowState · desktop-automation/platform/wayland-windows.el {#api-628b8cf55bef7d18c658}
+
+[源码 desktop-automation/platform/wayland-windows.el:54](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/wayland-windows.el#L54)
+
+```el
+class WindowState
+```
+
+## AutomationApartment · desktop-automation/platform/windows-automation.el {#api-f199465aafa5a2e098dd}
+
+[源码 desktop-automation/platform/windows-automation.el:191](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-automation.el#L191)
+
+```el
+class AutomationApartment
+```
+
+## ComReferenceStorage · desktop-automation/platform/windows-automation.el {#api-7f346b9df4b08f65aac7}
+
+[源码 desktop-automation/platform/windows-automation.el:99](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-automation.el#L99)
+
+```el
+class ComReferenceStorage
+```
+
+## VariantWord · desktop-automation/platform/windows-automation.el {#api-bf0a28898bb7099b0ce1}
+
+[源码 desktop-automation/platform/windows-automation.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-automation.el#L17)
+
+```el
+class VariantWord
+```
+
+## WindowsComArgument · desktop-automation/platform/windows-automation.el {#api-35bd4227a4f565c0e383}
+
+[源码 desktop-automation/platform/windows-automation.el:50](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-automation.el#L50)
+
+```el
+enum WindowsComArgument
+```
+
+## WindowsComArray · desktop-automation/platform/windows-automation.el {#api-052bc46bc29a76e35e95}
+
+[源码 desktop-automation/platform/windows-automation.el:69](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-automation.el#L69)
+
+```el
+class WindowsComArray
+```
+
+## WindowsComObject · desktop-automation/platform/windows-automation.el {#api-8a8d85726f79733132c4}
+
+[源码 desktop-automation/platform/windows-automation.el:256](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-automation.el#L256)
+
+```el
+class WindowsComObject
+```
+
+## WindowsComRef · desktop-automation/platform/windows-automation.el {#api-c6c4b658dcd3f9b356d6}
+
+[源码 desktop-automation/platform/windows-automation.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-automation.el#L56)
+
+```el
+class WindowsComRef
+```
+
+## WindowsComType · desktop-automation/platform/windows-automation.el {#api-9c53bed53c01c1e3fbb3}
+
+[源码 desktop-automation/platform/windows-automation.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-automation.el#L51)
+
+```el
+enum WindowsComType
+```
+
+## WindowsClipboardEntry · desktop-automation/platform/windows-clipboard.el {#api-58e5ab84754e115d722d}
+
+[源码 desktop-automation/platform/windows-clipboard.el:84](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-clipboard.el#L84)
+
+```el
+class WindowsClipboardEntry
+```
+
+## WindowsClipboardMaterialization · desktop-automation/platform/windows-clipboard.el {#api-fa132d2991d70ae5e10b}
+
+[源码 desktop-automation/platform/windows-clipboard.el:78](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-clipboard.el#L78)
+
+```el
+enum WindowsClipboardMaterialization
+```
+
+## WindowsTemporaryClipboard · desktop-automation/platform/windows-clipboard.el {#api-261a3c36f1cd444dc3af}
+
+[源码 desktop-automation/platform/windows-clipboard.el:249](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-clipboard.el#L249)
+
+```el
+class WindowsTemporaryClipboard
+```
+
+## DesktopHotkeys · desktop-automation/platform/windows-hotkeys.el {#api-5469afdf075e82f0f30d}
+
+[源码 desktop-automation/platform/windows-hotkeys.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-hotkeys.el#L34)
+
+```el
+class DesktopHotkeys
+```
+
+## HotkeySpec · desktop-automation/platform/windows-hotkeys.el {#api-1ddf5e7248f34b4ac672}
+
+[源码 desktop-automation/platform/windows-hotkeys.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-hotkeys.el#L16)
+
+```el
+class HotkeySpec
+```
+
+## WindowsInput · desktop-automation/platform/windows-input.el {#api-25ec77d03eaa5bca8894}
+
+[源码 desktop-automation/platform/windows-input.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-input.el#L56)
+
+```el
+class WindowsInput extends InputBackend
+```
+
+## WindowsKeyRuleSubscription · desktop-automation/platform/windows-key-rules.el {#api-07b86bcfd5301f8ba51c}
+
+[源码 desktop-automation/platform/windows-key-rules.el:37](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-key-rules.el#L37)
+
+```el
+class WindowsKeyRuleSubscription
+```
+
+## WindowsMessageReceiver · desktop-automation/platform/windows-message-receiver.el {#api-71d5b06b970b7f579e2b}
+
+[源码 desktop-automation/platform/windows-message-receiver.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-message-receiver.el#L14)
+
+```el
+class WindowsMessageReceiver
+```
+
+## WindowsNotification · desktop-automation/platform/windows-notification.el {#api-5a3089e201e6dceea381}
+
+[源码 desktop-automation/platform/windows-notification.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-notification.el#L32)
+
+```el
+class WindowsNotification
+```
+
+## WindowsProcessPriority · desktop-automation/platform/windows-process.el {#api-8f410f343095a1a127d7}
+
+[源码 desktop-automation/platform/windows-process.el:149](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-process.el#L149)
+
+```el
+enum WindowsProcessPriority
+```
+
+## WindowsRegistryError · desktop-automation/platform/windows-registry.el {#api-14993058243e9d9c4fb5}
+
+[源码 desktop-automation/platform/windows-registry.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-registry.el#L26)
+
+```el
+class WindowsRegistryError extends Error
+```
+
+## WindowsRegistryKey · desktop-automation/platform/windows-registry.el {#api-465191f20d2774013848}
+
+[源码 desktop-automation/platform/windows-registry.el:90](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-registry.el#L90)
+
+```el
+class WindowsRegistryKey
+```
+
+## WindowsRegistryRoot · desktop-automation/platform/windows-registry.el {#api-a334b0f64663fbb0f80b}
+
+[源码 desktop-automation/platform/windows-registry.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-registry.el#L35)
+
+```el
+enum WindowsRegistryRoot
+```
+
+## WindowsRegistryValue · desktop-automation/platform/windows-registry.el {#api-4581168df6106029e8a7}
+
+[源码 desktop-automation/platform/windows-registry.el:59](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-registry.el#L59)
+
+```el
+class WindowsRegistryValue
+```
+
+## WindowsRegistryView · desktop-automation/platform/windows-registry.el {#api-c0e31239ece21d2ff60f}
+
+[源码 desktop-automation/platform/windows-registry.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-registry.el#L36)
+
+```el
+enum WindowsRegistryView
+```
+
+## WindowsKeyRemap · desktop-automation/platform/windows-remap.el {#api-cc8b48cf1564a51420b7}
+
+[源码 desktop-automation/platform/windows-remap.el:42](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-remap.el#L42)
+
+```el
+class WindowsKeyRemap
+```
+
+## WindowsShortcut · desktop-automation/platform/windows-shortcut.el {#api-282534ad937a171e7ab9}
+
+[源码 desktop-automation/platform/windows-shortcut.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-shortcut.el#L23)
+
+```el
+class WindowsShortcut
+```
+
+## VariantType · desktop-automation/platform/windows-sound.el {#api-bc1580985cac08501edb}
+
+[源码 desktop-automation/platform/windows-sound.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-sound.el#L12)
+
+```el
+class VariantType
+```
+
+## DesktopTooltip · desktop-automation/platform/windows-tooltip.el {#api-70a9e4c2387f577d59f3}
+
+[源码 desktop-automation/platform/windows-tooltip.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-tooltip.el#L67)
+
+```el
+class DesktopTooltip
+```
+
+## TooltipWindowState · desktop-automation/platform/windows-tooltip.el {#api-0d2ec5a954ca5441f681}
+
+[源码 desktop-automation/platform/windows-tooltip.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-tooltip.el#L63)
+
+```el
+class TooltipWindowState
+```
+
+## TrayEvents · desktop-automation/platform/windows-tray.el {#api-05c80c5667dfc4b57ed4}
+
+[源码 desktop-automation/platform/windows-tray.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-tray.el#L34)
+
+```el
+class TrayEvents
+```
+
+## WindowsTrayMenu · desktop-automation/platform/windows-tray.el {#api-edec45f03aaa2f5145cc}
+
+[源码 desktop-automation/platform/windows-tray.el:99](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-tray.el#L99)
+
+```el
+class WindowsTrayMenu
+```
+
+## WindowOwner · desktop-automation/platform/windows-window.el {#api-73711b86ef0bf2de2ccf}
+
+[源码 desktop-automation/platform/windows-window.el:136](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-window.el#L136)
+
+```el
+class WindowOwner
+```
+
+## WindowsControlClickPhase · desktop-automation/platform/windows-window.el {#api-909174b0c98232fe6556}
+
+[源码 desktop-automation/platform/windows-window.el:889](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-window.el#L889)
+
+```el
+enum WindowsControlClickPhase
+```
+
+## WindowsControlHit · desktop-automation/platform/windows-window.el {#api-2f0648fdbba193490ba4}
+
+[源码 desktop-automation/platform/windows-window.el:879](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-window.el#L879)
+
+```el
+class WindowsControlHit
+```
+
+## WindowsDesktopElement · desktop-automation/platform/windows-window.el {#api-c4365f94252654619393}
+
+[源码 desktop-automation/platform/windows-window.el:519](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-window.el#L519)
+
+```el
+class WindowsDesktopElement extends DesktopElement
+```
+
+## WindowsDesktopWindow · desktop-automation/platform/windows-window.el {#api-63fa4decc8d8ed24d683}
+
+[源码 desktop-automation/platform/windows-window.el:154](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-window.el#L154)
+
+```el
+class WindowsDesktopWindow extends DesktopWindow
+```
+
+## WindowsEditControl · desktop-automation/platform/windows-window.el {#api-26cad574ad5fc35c7f52}
+
+[源码 desktop-automation/platform/windows-window.el:1012](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-window.el#L1012)
+
+```el
+class WindowsEditControl
+```
+
+## WindowsEditPosition · desktop-automation/platform/windows-window.el {#api-5b3f11c2eb73daa83b28}
+
+[源码 desktop-automation/platform/windows-window.el:115](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-window.el#L115)
+
+```el
+class WindowsEditPosition
+```
+
+## WindowsEditSelection · desktop-automation/platform/windows-window.el {#api-70302d6cd44a1a81eab9}
+
+[源码 desktop-automation/platform/windows-window.el:105](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-window.el#L105)
+
+```el
+class WindowsEditSelection
+```
+
+## WindowsIndexedControl · desktop-automation/platform/windows-window.el {#api-686386e54a79157591ce}
+
+[源码 desktop-automation/platform/windows-window.el:1083](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-window.el#L1083)
+
+```el
+class WindowsIndexedControl
+```
+
+## WindowsIndexedControlKind · desktop-automation/platform/windows-window.el {#api-3e1de3a7652c9da4b6c8}
+
+[源码 desktop-automation/platform/windows-window.el:1081](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-window.el#L1081)
+
+```el
+enum WindowsIndexedControlKind
+```
+
+## WindowsMouseButtonMessage · desktop-automation/platform/windows-window.el {#api-f1e056ebcfe188111028}
+
+[源码 desktop-automation/platform/windows-window.el:856](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-window.el#L856)
+
+```el
+class WindowsMouseButtonMessage
+```
+
+## WindowsWindowTransparency · desktop-automation/platform/windows-window.el {#api-8127d28586dc3c8fcca0}
+
+[源码 desktop-automation/platform/windows-window.el:75](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/windows-window.el#L75)
+
+```el
+class WindowsWindowTransparency
+```
+
+## SelectionTransfer · desktop-automation/platform/x11-clipboard-owner.el {#api-5af0025b9f602ba71946}
+
+[源码 desktop-automation/platform/x11-clipboard-owner.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-clipboard-owner.el#L41)
+
+```el
+class SelectionTransfer
+```
+
+## X11ClipboardTextOwner · desktop-automation/platform/x11-clipboard-owner.el {#api-7a3f3ce2351cd1be54da}
+
+[源码 desktop-automation/platform/x11-clipboard-owner.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-clipboard-owner.el#L47)
+
+```el
+class X11ClipboardTextOwner
+```
+
+## XByte · desktop-automation/platform/x11-display.el {#api-6bfbe77eb3a1bb03745e}
+
+[源码 desktop-automation/platform/x11-display.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-display.el#L7)
+
+```el
+class XByte
+```
+
+## DesktopHotkeys · desktop-automation/platform/x11-hotkeys.el {#api-c3983245347321202a5d}
+
+[源码 desktop-automation/platform/x11-hotkeys.el:58](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-hotkeys.el#L58)
+
+```el
+class DesktopHotkeys
+```
+
+## HotkeySpec · desktop-automation/platform/x11-hotkeys.el {#api-5d3bc607a354e90294c9}
+
+[源码 desktop-automation/platform/x11-hotkeys.el:52](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-hotkeys.el#L52)
+
+```el
+class HotkeySpec
+```
+
+## XModifierMask · desktop-automation/platform/x11-hotkeys.el {#api-151e09eeb043bf5716de}
+
+[源码 desktop-automation/platform/x11-hotkeys.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-hotkeys.el#L14)
+
+```el
+class XModifierMask
+```
+
+## X11Input · desktop-automation/platform/x11-input.el {#api-243363f2526cab8f9c16}
+
+[源码 desktop-automation/platform/x11-input.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-input.el#L27)
+
+```el
+class X11Input extends InputBackend
+```
+
+## ChannelBits · desktop-automation/platform/x11-screen.el {#api-0f31f9d6807d29ac844f}
+
+[源码 desktop-automation/platform/x11-screen.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-screen.el#L31)
+
+```el
+class ChannelBits
+```
+
+## PixmapFormat · desktop-automation/platform/x11-screen.el {#api-a6345f5055d151f382d1}
+
+[源码 desktop-automation/platform/x11-screen.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-screen.el#L47)
+
+```el
+class PixmapFormat
+```
+
+## XCoordinate · desktop-automation/platform/x11-screen.el {#api-85314ef3e129cc287c5f}
+
+[源码 desktop-automation/platform/x11-screen.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-screen.el#L13)
+
+```el
+class XCoordinate
+```
+
+## XExtent · desktop-automation/platform/x11-screen.el {#api-2dcf5bce7af64355b9ba}
+
+[源码 desktop-automation/platform/x11-screen.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-screen.el#L14)
+
+```el
+class XExtent
+```
+
+## XImageKind · desktop-automation/platform/x11-screen.el {#api-eadfb10c073d40917436}
+
+[源码 desktop-automation/platform/x11-screen.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-screen.el#L15)
+
+```el
+class XImageKind
+```
+
+## DesktopTooltip · desktop-automation/platform/x11-tooltip.el {#api-18a6cd2321dcc6744318}
+
+[源码 desktop-automation/platform/x11-tooltip.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-tooltip.el#L41)
+
+```el
+class DesktopTooltip
+```
+
+## X11DesktopElement · desktop-automation/platform/x11-window.el {#api-a5fe4494155a60bfbe8f}
+
+[源码 desktop-automation/platform/x11-window.el:558](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-window.el#L558)
+
+```el
+class X11DesktopElement extends DesktopElement
+```
+
+## X11DesktopWindow · desktop-automation/platform/x11-window.el {#api-b936227e96c951e2600c}
+
+[源码 desktop-automation/platform/x11-window.el:390](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-window.el#L390)
+
+```el
+class X11DesktopWindow extends DesktopWindow
+```
+
+## X11WindowIdentity · desktop-automation/platform/x11-window.el {#api-829003089d7faeae1c59}
+
+[源码 desktop-automation/platform/x11-window.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-window.el#L64)
+
+```el
+class X11WindowIdentity
+```
+
+## X11Windows · desktop-automation/platform/x11-window.el {#api-193864596fa427db93f3}
+
+[源码 desktop-automation/platform/x11-window.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-window.el#L68)
+
+```el
+class X11Windows
+```
+
+## XCoordinate · desktop-automation/platform/x11-window.el {#api-1e86e74c20c2f39c801c}
+
+[源码 desktop-automation/platform/x11-window.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/platform/x11-window.el#L19)
+
+```el
+class XCoordinate
+```
+
+## DesktopPointerTarget · desktop-automation/pointer-target.el {#api-33d3459ff7f82b8cf740}
+
+[源码 desktop-automation/pointer-target.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/pointer-target.el#L6)
+
+```el
+class DesktopPointerTarget
+```
+
+## DesktopReplayKeys · desktop-automation/replay.el {#api-63be5133f039a0c9611b}
+
+[源码 desktop-automation/replay.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/replay.el#L15)
+
+```el
+class DesktopReplayKeys
+```
+
+## DesktopReplayPointer · desktop-automation/replay.el {#api-9420be52bc01c4f3d5ab}
+
+[源码 desktop-automation/replay.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/replay.el#L33)
+
+```el
+class DesktopReplayPointer
+```
+
+## DesktopReplayPointerKind · desktop-automation/replay.el {#api-a99d1e1b8b14391a72d7}
+
+[源码 desktop-automation/replay.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/replay.el#L25)
+
+```el
+enum DesktopReplayPointerKind
+```
+
+## DesktopReplayScroll · desktop-automation/replay.el {#api-0a1d8e3853a7af3cd206}
+
+[源码 desktop-automation/replay.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/replay.el#L56)
+
+```el
+class DesktopReplayScroll
+```
+
+## DesktopReplayStep · desktop-automation/replay.el {#api-1f84ca8a35eb73e45eda}
+
+[源码 desktop-automation/replay.el:73](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/replay.el#L73)
+
+```el
+class DesktopReplayStep
+```
+
+## DesktopFrame · desktop-automation/screen.el {#api-74641b15dbfd0bd37b0f}
+
+[源码 desktop-automation/screen.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/screen.el#L27)
+
+```el
+class DesktopFrame
+```
+
+## DesktopSoundDevice · desktop-automation/sound-model.el {#api-6a9aec4e281423921e0d}
+
+[源码 desktop-automation/sound-model.el:3](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/sound-model.el#L3)
+
+```el
+class DesktopSoundDevice
+```
+
+## DesktopSystemSound · desktop-automation/system-sound.el {#api-e5479fda005dac9174a7}
+
+[源码 desktop-automation/system-sound.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/system-sound.el#L4)
+
+```el
+enum DesktopSystemSound
+```
+
+## DesktopTextMatch · desktop-automation/text-match.el {#api-fe2facf317ab6ced099f}
+
+[源码 desktop-automation/text-match.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/text-match.el#L6)
+
+```el
+class DesktopTextMatch
+```
+
+## DesktopTextMode · desktop-automation/text-match.el {#api-ac2424060216790bfd27}
+
+[源码 desktop-automation/text-match.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/text-match.el#L4)
+
+```el
+enum DesktopTextMode
+```
+
+## DesktopTrayItem · desktop-automation/tray-model.el {#api-2d71369eab868bd2f5dc}
+
+[源码 desktop-automation/tray-model.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/tray-model.el#L5)
+
+```el
+class DesktopTrayItem
+```
+
+## TrayLevel · desktop-automation/tray-model.el {#api-9193a9a7c36f86937405}
+
+[源码 desktop-automation/tray-model.el:44](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/tray-model.el#L44)
+
+```el
+class TrayLevel
+```
+
+## TrayMenuNode · desktop-automation/tray-model.el {#api-f479bc336f958c9435b1}
+
+[源码 desktop-automation/tray-model.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/tray-model.el#L30)
+
+```el
+class TrayMenuNode
+```
+
+## ImageMatch · desktop-automation/vision.el {#api-8792f72d8d24a586c69f}
+
+[源码 desktop-automation/vision.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/vision.el#L13)
+
+```el
+class ImageMatch
+```
+
+## ScreenPixel · desktop-automation/vision.el {#api-f5326652bd97bfe22d03}
+
+[源码 desktop-automation/vision.el:53](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/vision.el#L53)
+
+```el
+class ScreenPixel
+```
+
+## DesktopWindowGroup · desktop-automation/window-group.el {#api-7aecaccefb793c6df3f2}
+
+[源码 desktop-automation/window-group.el:65](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/window-group.el#L65)
+
+```el
+class DesktopWindowGroup
+```
+
+## WindowGroupRule · desktop-automation/window-group.el {#api-de30e7e1adce17c32445}
+
+[源码 desktop-automation/window-group.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/window-group.el#L10)
+
+```el
+class WindowGroupRule
+```
+
+## DesktopWindowMinimization · desktop-automation/window-minimization.el {#api-5090b93d7b5926351cbb}
+
+[源码 desktop-automation/window-minimization.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/window-minimization.el#L22)
+
+```el
+class DesktopWindowMinimization
+```
+
+## DesktopWindow · desktop-automation/window-model.el {#api-b8c3f4d8bfbaa26f61f4}
+
+[源码 desktop-automation/window-model.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/window-model.el#L11)
+
+```el
+class DesktopWindow
+```
+
+## DesktopWindowOrder · desktop-automation/window-model.el {#api-707bb01bcf2addde63c7}
+
+[源码 desktop-automation/window-model.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/window-model.el#L8)
+
+```el
+enum DesktopWindowOrder
+```
+
+## WindowSelector · desktop-automation/window-selector.el {#api-6647b3c427285c6b8da9}
+
+[源码 desktop-automation/window-selector.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/window-selector.el#L12)
+
+```el
+class WindowSelector
+```
+
 ## DocumentParagraph · documents/document.el {#api-0511446b058b14e2d2b9}
 
 [源码 documents/document.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/document.el#L6)
@@ -17894,9 +19374,49 @@ enum AbiTarget
 class TargetFacts
 ```
 
+## CsvReadError · formats/delimited-text/stream.el {#api-17dde26f21ce364800da}
+
+[源码 formats/delimited-text/stream.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/stream.el#L10)
+
+```el
+class CsvReadError extends Error
+```
+
+## CsvRowBatch · formats/delimited-text/stream.el {#api-1b09d9c5227762bd78c8}
+
+[源码 formats/delimited-text/stream.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/stream.el#L22)
+
+```el
+class CsvRowBatch
+```
+
+## CsvRowReader · formats/delimited-text/stream.el {#api-d1a32b0db6f02835cc7e}
+
+[源码 formats/delimited-text/stream.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/stream.el#L29)
+
+```el
+class CsvRowReader
+```
+
+## EmptyEncodeOptions · formats/file-codec.el {#api-b651bfb5cc1a69cb9ad6}
+
+[源码 formats/file-codec.el:3](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/file-codec.el#L3)
+
+```el
+class EmptyEncodeOptions
+```
+
+## FileCodec · formats/file-codec.el {#api-f112c6142c76d99c7886}
+
+[源码 formats/file-codec.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/file-codec.el#L5)
+
+```el
+fn FileCodec(value: type, options: type): type
+```
+
 ## BufferFormat · formats/index.el {#api-4b10152d04d71ddc756e}
 
-[源码 formats/index.el:99](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L99)
+[源码 formats/index.el:103](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L103)
 
 ```el
 class BufferFormat
@@ -17904,7 +19424,7 @@ class BufferFormat
 
 ## EodFormat · formats/index.el {#api-ca9eddf9d85bd918e571}
 
-[源码 formats/index.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L87)
+[源码 formats/index.el:91](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L91)
 
 ```el
 class EodFormat
@@ -17912,7 +19432,7 @@ class EodFormat
 
 ## EolFormat · formats/index.el {#api-7a5e0b123494d48b661f}
 
-[源码 formats/index.el:70](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L70)
+[源码 formats/index.el:74](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L74)
 
 ```el
 class EolFormat
@@ -17920,7 +19440,7 @@ class EolFormat
 
 ## Formats · formats/index.el {#api-6768ac9ca087f5de0440}
 
-[源码 formats/index.el:122](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L122)
+[源码 formats/index.el:126](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L126)
 
 ```el
 class Formats
@@ -17928,7 +19448,7 @@ class Formats
 
 ## TextFormat · formats/index.el {#api-c603856b0e561e7ac3e8}
 
-[源码 formats/index.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L45)
+[源码 formats/index.el:49](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L49)
 
 ```el
 fn TextFormat(output: type, input: type = output): type
@@ -18002,38 +19522,6 @@ class JsonWriteError extends Error
 
 ```el
 class JsonWriter
-```
-
-## query_field_type · formats/serialization/capability.el {#api-f681f1e132c989cf4584}
-
-[源码 formats/serialization/capability.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/capability.el#L18)
-
-```el
-fn query_field_type(subject, index: QueryWord): type
-```
-
-## query_union_member · formats/serialization/capability.el {#api-382dfda52edb14a3b602}
-
-[源码 formats/serialization/capability.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/capability.el#L23)
-
-```el
-fn query_union_member(subject, index: QueryWord): type
-```
-
-## staticFieldType · formats/serialization/capability.el {#api-06cd67aab89479c5eae1}
-
-[源码 formats/serialization/capability.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/capability.el#L29)
-
-```el
-fn staticFieldType(subject, index: Number): type
-```
-
-## staticUnionMember · formats/serialization/capability.el {#api-5845e617ca87c73ab98a}
-
-[源码 formats/serialization/capability.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/capability.el#L36)
-
-```el
-fn staticUnionMember(subject, index: Number): type
 ```
 
 ## CodeDescriptor · formats/serialization/code-descriptor.el {#api-770f71ebf795b009bf1f}
@@ -18332,6 +19820,38 @@ class YamlWriteError extends Error
 class YamlWriter
 ```
 
+## Pose · game/geometry-3d.el {#api-eb5bcee154da09e0a13a}
+
+[源码 game/geometry-3d.el:70](https://github.com/steve02081504/el/blob/master/src/stdlib/game/geometry-3d.el#L70)
+
+```el
+class Pose
+```
+
+## Ray · game/geometry-3d.el {#api-e4b1fff82bc09b6b9e5d}
+
+[源码 game/geometry-3d.el:85](https://github.com/steve02081504/el/blob/master/src/stdlib/game/geometry-3d.el#L85)
+
+```el
+class Ray
+```
+
+## Rotation · game/geometry-3d.el {#api-1aec5f9ef54dd1da4110}
+
+[源码 game/geometry-3d.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/game/geometry-3d.el#L40)
+
+```el
+class Rotation
+```
+
+## Vec3 · game/geometry-3d.el {#api-c2b766897515d547b014}
+
+[源码 game/geometry-3d.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/game/geometry-3d.el#L4)
+
+```el
+class Vec3
+```
+
 ## LinearColor · graphics/color.el {#api-dde21a7439d65bc0647e}
 
 [源码 graphics/color.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/color.el#L7)
@@ -18348,9 +19868,41 @@ class LinearColor
 class NativeBuffers
 ```
 
+## Representation · graphics/plots/export.el {#api-cd506a0ef561bcfb71c9}
+
+[源码 graphics/plots/export.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/export.el#L51)
+
+```el
+fn Representation(value: type): type
+```
+
+## PlotFont · graphics/plots/font.el {#api-74d8685d683489e27de6}
+
+[源码 graphics/plots/font.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/font.el#L13)
+
+```el
+class PlotFont
+```
+
+## PlotFontRun · graphics/plots/font.el {#api-e0cc285c92f0557d2ff0}
+
+[源码 graphics/plots/font.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/font.el#L33)
+
+```el
+class PlotFontRun
+```
+
+## PlotGlyph · graphics/plots/font.el {#api-59acc361dbe77a63e125}
+
+[源码 graphics/plots/font.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/font.el#L23)
+
+```el
+class PlotGlyph
+```
+
 ## Figure · graphics/plots/index.el {#api-daf4fb6b08acdf355a69}
 
-[源码 graphics/plots/index.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L28)
+[源码 graphics/plots/index.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L30)
 
 ```el
 class Figure
@@ -18360,7 +19912,7 @@ class Figure
 
 ## FigureHandle · graphics/plots/index.el {#api-8eac1a7cc4ac101de036}
 
-[源码 graphics/plots/index.el:72](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L72)
+[源码 graphics/plots/index.el:75](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L75)
 
 ```el
 class FigureHandle
@@ -18368,7 +19920,7 @@ class FigureHandle
 
 ## PlotHost · graphics/plots/index.el {#api-5f295492cd4341ff9541}
 
-[源码 graphics/plots/index.el:91](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L91)
+[源码 graphics/plots/index.el:94](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L94)
 
 ```el
 class PlotHost
@@ -18482,6 +20034,14 @@ class RasterClip
 class RasterSurface
 ```
 
+## SampleBounds · graphics/raster/renderer.el {#api-40bbc824b9d90dba6594}
+
+[源码 graphics/raster/renderer.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/raster/renderer.el#L31)
+
+```el
+class SampleBounds
+```
+
 ## Brush · graphics/vector/evg.el {#api-8fb340118955452e6edb}
 
 [源码 graphics/vector/evg.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L34)
@@ -18552,6 +20112,46 @@ class ViewBox
 
 ```el
 class Contour
+```
+
+## SvgDocument · graphics/vector/svg.el {#api-708bac10160c0ced62d1}
+
+[源码 graphics/vector/svg.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/svg.el#L25)
+
+```el
+class SvgDocument
+```
+
+## OutlinePoint · graphics/vector/true-type.el {#api-8113f8eadc05e0ee968d}
+
+[源码 graphics/vector/true-type.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/true-type.el#L22)
+
+```el
+class OutlinePoint
+```
+
+## Table · graphics/vector/true-type.el {#api-82c3855817807144fa20}
+
+[源码 graphics/vector/true-type.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/true-type.el#L13)
+
+```el
+class Table
+```
+
+## TrueTypeFace · graphics/vector/true-type.el {#api-66d13e32cb7f458d1867}
+
+[源码 graphics/vector/true-type.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/true-type.el#L56)
+
+```el
+class TrueTypeFace
+```
+
+## TrueTypeGlyph · graphics/vector/true-type.el {#api-dfbbbcc4fc124b1a6f11}
+
+[源码 graphics/vector/true-type.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/true-type.el#L27)
+
+```el
+class TrueTypeGlyph
 ```
 
 ## BundleEncoding · i18n/bundle-files.el {#api-ff8e80e8285dc1ff21e8}
@@ -19756,7 +21356,7 @@ class IrAbiNames
 
 ## IrAbiVerificationContext · intermediate-representation/abi/verify.el {#api-3c0b1f8b05ced9759958}
 
-[源码 intermediate-representation/abi/verify.el:607](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/abi/verify.el#L607)
+[源码 intermediate-representation/abi/verify.el:622](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/abi/verify.el#L622)
 
 ```el
 class IrAbiVerificationContext
@@ -20642,7 +22242,7 @@ fn ReadArea(element: type): type
 
 ## constructorFieldType · language/metadata.el {#api-7f46640a8ac1003d9238}
 
-[源码 language/metadata.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/language/metadata.el#L24)
+[源码 language/metadata.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/language/metadata.el#L36)
 
 ```el
 fn constructorFieldType(subject, ordinal, field): type
@@ -20650,7 +22250,7 @@ fn constructorFieldType(subject, ordinal, field): type
 
 ## elementType · language/metadata.el {#api-116739e164b368e834c1}
 
-[源码 language/metadata.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/language/metadata.el#L29)
+[源码 language/metadata.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/language/metadata.el#L41)
 
 ```el
 fn elementType(subject): type
@@ -20658,15 +22258,23 @@ fn elementType(subject): type
 
 ## query_constructor_field_type · language/metadata.el {#api-1ce5f879f89c5ea81add}
 
-[源码 language/metadata.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/language/metadata.el#L15)
+[源码 language/metadata.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/language/metadata.el#L21)
 
 ```el
 fn query_constructor_field_type(subject, ordinal: QueryWord, field: QueryWord): type
 ```
 
+## query_field_type · language/metadata.el {#api-3d70b4b925380881c626}
+
+[源码 language/metadata.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/language/metadata.el#L13)
+
+```el
+fn query_field_type(subject, index: QueryWord): type
+```
+
 ## query_type_argument · language/metadata.el {#api-41fb5c71c5dafe8fb455}
 
-[源码 language/metadata.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/language/metadata.el#L8)
+[源码 language/metadata.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/language/metadata.el#L9)
 
 ```el
 fn query_type_argument(subject, name: QueryView): type
@@ -20674,15 +22282,23 @@ fn query_type_argument(subject, name: QueryView): type
 
 ## query_union_member · language/metadata.el {#api-a06af42ea1143623af4f}
 
-[源码 language/metadata.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/language/metadata.el#L17)
+[源码 language/metadata.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/language/metadata.el#L23)
 
 ```el
 fn query_union_member(subject, index: QueryWord): type
 ```
 
+## staticFieldType · language/metadata.el {#api-d2c936ad93660b04bba0}
+
+[源码 language/metadata.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/language/metadata.el#L28)
+
+```el
+fn staticFieldType(subject, index): type
+```
+
 ## unionMember · language/metadata.el {#api-5d7fcff436318f441de9}
 
-[源码 language/metadata.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/language/metadata.el#L26)
+[源码 language/metadata.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/language/metadata.el#L38)
 
 ```el
 fn unionMember(subject, index): type
@@ -25292,7 +26908,7 @@ class UInt
 
 ## MusicPlayer · multimedia/audio/music.el {#api-dd93e8dfc04fdbadfcb9}
 
-[源码 multimedia/audio/music.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L47)
+[源码 multimedia/audio/music.el:73](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L73)
 
 ```el
 class MusicPlayer
@@ -25308,9 +26924,17 @@ class MusicPlayer
 class PcmOutput
 ```
 
+## WavLayout · multimedia/audio/wav.el {#api-cb61429c2c7cbc897449}
+
+[源码 multimedia/audio/wav.el:109](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L109)
+
+```el
+class WavLayout
+```
+
 ## WavWriter · multimedia/audio/wav.el {#api-fccc5e339fd9a3fa8554}
 
-[源码 multimedia/audio/wav.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L36)
+[源码 multimedia/audio/wav.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L40)
 
 ```el
 class WavWriter
@@ -25822,7 +27446,7 @@ class ComArgument
 
 ## ComScope · multimedia/image/windows/com.el {#api-fa5736aa08c4903d48fb}
 
-[源码 multimedia/image/windows/com.el:96](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/windows/com.el#L96)
+[源码 multimedia/image/windows/com.el:99](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/windows/com.el#L99)
 
 ```el
 class ComScope
@@ -27870,7 +29494,7 @@ let UnsignedInteger: type
 
 ## NumberParameterError · number/internal/exact.el {#api-af9ba2a30adcf77df558}
 
-[源码 number/internal/exact.el:79](https://github.com/steve02081504/el/blob/master/src/stdlib/number/internal/exact.el#L79)
+[源码 number/internal/exact.el:73](https://github.com/steve02081504/el/blob/master/src/stdlib/number/internal/exact.el#L73)
 
 ```el
 class NumberParameterError extends Error
@@ -27916,7 +29540,7 @@ class NativeFloatCodecUnavailable extends Error
 
 ## BigIntegerValue · number/number.el {#api-4e532962dece588ca7f3}
 
-[源码 number/number.el:188](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L188)
+[源码 number/number.el:189](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L189)
 
 ```el
 class BigIntegerValue extends Number
@@ -27924,7 +29548,7 @@ class BigIntegerValue extends Number
 
 ## BoundedNativeInteger · number/number.el {#api-07c82b53f5f85eb425da}
 
-[源码 number/number.el:298](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L298)
+[源码 number/number.el:304](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L304)
 
 ```el
 fn BoundedNativeInteger(carrier: type, min, max, epsilon, overflow, unsigned: Bool): type
@@ -27932,7 +29556,7 @@ fn BoundedNativeInteger(carrier: type, min, max, epsilon, overflow, unsigned: Bo
 
 ## NativeFractionValue · number/number.el {#api-7634a968696369b0f95d}
 
-[源码 number/number.el:175](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L175)
+[源码 number/number.el:176](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L176)
 
 ```el
 fn NativeFractionValue(carrier: type): type
@@ -27940,7 +29564,7 @@ fn NativeFractionValue(carrier: type): type
 
 ## NativeIntegerValue · number/number.el {#api-6b0ced35941fe6c7f0c1}
 
-[源码 number/number.el:162](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L162)
+[源码 number/number.el:163](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L163)
 
 ```el
 fn NativeIntegerValue(carrier: type): type
@@ -27948,7 +29572,7 @@ fn NativeIntegerValue(carrier: type): type
 
 ## Number · number/number.el {#api-c6e654c3ea9412c954c8}
 
-[源码 number/number.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L66)
+[源码 number/number.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L67)
 
 ```el
 class Number
@@ -27956,7 +29580,7 @@ class Number
 
 [API 文档](modules/number/number.md#api-3cc24d3ef702e8652fb4)
 
-[源码 number/number.el:341](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L341)
+[源码 number/number.el:390](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L390)
 
 ```el
 fn Number(min = nil, max = nil, epsilon = nil, integer = f, overflow = "ub"): type
@@ -27964,9 +29588,17 @@ fn Number(min = nil, max = nil, epsilon = nil, integer = f, overflow = "ub"): ty
 
 [API 文档](modules/number/number.md#api-ad6f905ba12a9a7c223e)
 
+## PartialNumber · number/number.el {#api-d859e628eab6f8f85a6c}
+
+[源码 number/number.el:336](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L336)
+
+```el
+fn PartialNumber(minimum, maximum, epsilon, integer: Bool): type
+```
+
 ## RatioValue · number/number.el {#api-47d2611cb941fd4d6f3f}
 
-[源码 number/number.el:196](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L196)
+[源码 number/number.el:197](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L197)
 
 ```el
 class RatioValue extends Number
@@ -27974,7 +29606,7 @@ class RatioValue extends Number
 
 ## StorageSignedLarge · number/number.el {#api-4b4814034490131d70ed}
 
-[源码 number/number.el:160](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L160)
+[源码 number/number.el:161](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L161)
 
 ```el
 class StorageSignedLarge
@@ -27982,7 +29614,7 @@ class StorageSignedLarge
 
 ## StorageSignedMedium · number/number.el {#api-46561ec155626f012873}
 
-[源码 number/number.el:158](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L158)
+[源码 number/number.el:159](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L159)
 
 ```el
 class StorageSignedMedium
@@ -27990,7 +29622,7 @@ class StorageSignedMedium
 
 ## StorageSignedSmall · number/number.el {#api-e0691dce94ca4703b77a}
 
-[源码 number/number.el:156](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L156)
+[源码 number/number.el:157](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L157)
 
 ```el
 class StorageSignedSmall
@@ -27998,7 +29630,7 @@ class StorageSignedSmall
 
 ## StorageUnsignedLarge · number/number.el {#api-e43513bf868f8a7a3375}
 
-[源码 number/number.el:159](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L159)
+[源码 number/number.el:160](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L160)
 
 ```el
 class StorageUnsignedLarge
@@ -28006,7 +29638,7 @@ class StorageUnsignedLarge
 
 ## StorageUnsignedMedium · number/number.el {#api-8653b4bfa53bdf07623e}
 
-[源码 number/number.el:157](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L157)
+[源码 number/number.el:158](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L158)
 
 ```el
 class StorageUnsignedMedium
@@ -28014,7 +29646,7 @@ class StorageUnsignedMedium
 
 ## StorageUnsignedUnit · number/number.el {#api-47f75125e47c747d6fa1}
 
-[源码 number/number.el:155](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L155)
+[源码 number/number.el:156](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L156)
 
 ```el
 class StorageUnsignedUnit
@@ -28030,10 +29662,34 @@ class UnboundedNumberLimit
 
 ## UnorderedValue · number/number.el {#api-9ea3cafeaeaf34093d78}
 
-[源码 number/number.el:204](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L204)
+[源码 number/number.el:205](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L205)
 
 ```el
 class UnorderedValue extends Number
+```
+
+## NumericTextDigits · number/numeric-text-format.el {#api-928923590d6e7dfd0eff}
+
+[源码 number/numeric-text-format.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/number/numeric-text-format.el#L18)
+
+```el
+class NumericTextDigits
+```
+
+## NumericTextFormat · number/numeric-text-format.el {#api-77f043b565210f3d225a}
+
+[源码 number/numeric-text-format.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/number/numeric-text-format.el#L25)
+
+```el
+class NumericTextFormat
+```
+
+## NumericTextValue · number/numeric-text-format.el {#api-5e5f534303a12c41a6e9}
+
+[源码 number/numeric-text-format.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/number/numeric-text-format.el#L11)
+
+```el
+data NumericTextValue
 ```
 
 ## NumberParseError · number/parse-error.el {#api-5b7dae9e8947c9c02365}
@@ -28518,7 +30174,7 @@ class NumericsPolicy
 
 ## GradientAccumulator · numerical-computing/precision-codec.el {#api-4a254007c1e601368cb2}
 
-[源码 numerical-computing/precision-codec.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/precision-codec.el#L106)
+[源码 numerical-computing/precision-codec.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/precision-codec.el#L87)
 
 ```el
 fn GradientAccumulator(storage: type): type
@@ -28526,7 +30182,7 @@ fn GradientAccumulator(storage: type): type
 
 ## PrecisionElement · numerical-computing/precision-codec.el {#api-acf75e0d3a4736450526}
 
-[源码 numerical-computing/precision-codec.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/precision-codec.el#L31)
+[源码 numerical-computing/precision-codec.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/precision-codec.el#L30)
 
 ```el
 fn PrecisionElement(name: Text): type
@@ -28534,7 +30190,7 @@ fn PrecisionElement(name: Text): type
 
 ## PrecisionFormat · numerical-computing/precision-codec.el {#api-31006bf390ec92b24125}
 
-[源码 numerical-computing/precision-codec.el:75](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/precision-codec.el#L75)
+[源码 numerical-computing/precision-codec.el:74](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/precision-codec.el#L74)
 
 ```el
 class PrecisionFormat
@@ -28542,7 +30198,7 @@ class PrecisionFormat
 
 ## PrecisionLayout · numerical-computing/precision-codec.el {#api-c02ef2e15dd0fbe544c7}
 
-[源码 numerical-computing/precision-codec.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/precision-codec.el#L11)
+[源码 numerical-computing/precision-codec.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/precision-codec.el#L10)
 
 ```el
 class PrecisionLayout
@@ -28750,12 +30406,12 @@ class NativeFileCloseReceiptUsed
 enum NativeFileCloseState
 ```
 
-## FileEditLease · operating-system/files/edit.el {#api-d105ab897284e2e7e461}
+## FileLockLease · operating-system/files/lock-lease.el {#api-20d8756a2161e6a91600}
 
-[源码 operating-system/files/edit.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/edit.el#L31)
+[源码 operating-system/files/lock-lease.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/lock-lease.el#L16)
 
 ```el
-class FileEditLease
+class FileLockLease
 ```
 
 ## NativeFileOpenError · operating-system/files/open-receipt.el {#api-79ac56fd74cc1a1dd01b}
@@ -28868,6 +30524,54 @@ class TemporaryDirectory
 
 ```el
 class TemporaryFile
+```
+
+## VolumeSpace · operating-system/files/volume-space.el {#api-92124978e0efd0dc97fe}
+
+[源码 operating-system/files/volume-space.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/volume-space.el#L12)
+
+```el
+class VolumeSpace
+```
+
+## WindowsDeviceRemovalResult · operating-system/files/windows-device-removal.el {#api-52c70b70492b9435abf1}
+
+[源码 operating-system/files/windows-device-removal.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/windows-device-removal.el#L32)
+
+```el
+class WindowsDeviceRemovalResult
+```
+
+## WindowsRemovalDevice · operating-system/files/windows-device-removal.el {#api-c3ebc0699b1e741a55cd}
+
+[源码 operating-system/files/windows-device-removal.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/windows-device-removal.el#L26)
+
+```el
+class WindowsRemovalDevice
+```
+
+## WindowsDriveKind · operating-system/files/windows-volume.el {#api-15980454256dfc3f0a96}
+
+[源码 operating-system/files/windows-volume.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/windows-volume.el#L22)
+
+```el
+enum WindowsDriveKind
+```
+
+## WindowsVolumeInformation · operating-system/files/windows-volume.el {#api-44848b2ec33d3d4c51c2}
+
+[源码 operating-system/files/windows-volume.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/windows-volume.el#L25)
+
+```el
+class WindowsVolumeInformation
+```
+
+## WindowsVolumeStatus · operating-system/files/windows-volume.el {#api-84da661243a52949b65a}
+
+[源码 operating-system/files/windows-volume.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/windows-volume.el#L23)
+
+```el
+enum WindowsVolumeStatus
 ```
 
 ## BufferedWriteAttempt · operating-system/files/write-progress.el {#api-6d5bf02e35a876f7c40f}
@@ -29486,57 +31190,57 @@ class ByteInputSession
 class ByteTransaction
 ```
 
-## FixedCount · parsing/oi.el {#api-a0ff2878fd69eeade2c1}
+## FixedCount · parsing/sequences.el {#api-d1d74b2c411de3e6c8a9}
 
-[源码 parsing/oi.el:114](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/oi.el#L114)
+[源码 parsing/sequences.el:84](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/sequences.el#L84)
 
 ```el
 fn FixedCount(element: type, parserType: type): type
 ```
 
-## FoldUntilEnd · parsing/oi.el {#api-680eaf5f72df0320dc2d}
+## FoldUntilEnd · parsing/sequences.el {#api-1fb40567b1c53ddcadb5}
 
-[源码 parsing/oi.el:78](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/oi.el#L78)
+[源码 parsing/sequences.el:48](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/sequences.el#L48)
 
 ```el
 fn FoldUntilEnd(element: type, accumulator: type, parserType: type): type
 ```
 
-## LengthPrefixed · parsing/oi.el {#api-ee6d1fd68cfaee1b18e3}
+## LengthPrefixed · parsing/sequences.el {#api-9be61f9329b0f5573cee}
 
-[源码 parsing/oi.el:141](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/oi.el#L141)
+[源码 parsing/sequences.el:112](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/sequences.el#L112)
 
 ```el
 fn LengthPrefixed(element: type, parserType: type, lengthParserType: type): type
 ```
 
-## LinesUntilEnd · parsing/oi.el {#api-0c85cb05c400b6256198}
+## LinesUntilEnd · parsing/sequences.el {#api-d03f1990bd7d6b526c0d}
 
-[源码 parsing/oi.el:214](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/oi.el#L214)
+[源码 parsing/sequences.el:187](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/sequences.el#L187)
 
 ```el
 class LinesUntilEnd
 ```
 
-## Matrix · parsing/oi.el {#api-2db9984f37d2033c2c44}
+## Matrix · parsing/sequences.el {#api-a593138495fad805dc04}
 
-[源码 parsing/oi.el:161](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/oi.el#L161)
+[源码 parsing/sequences.el:132](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/sequences.el#L132)
 
 ```el
 fn Matrix(element: type, parserType: type): type
 ```
 
-## UntilEnd · parsing/oi.el {#api-cdddb83954d33b1b0f84}
+## UntilEnd · parsing/sequences.el {#api-279548703bf8725ef580}
 
-[源码 parsing/oi.el:59](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/oi.el#L59)
+[源码 parsing/sequences.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/sequences.el#L29)
 
 ```el
 fn UntilEnd(element: type, parserType: type): type
 ```
 
-## UntilSentinel · parsing/oi.el {#api-c4bfb7b549b183f086ea}
+## UntilSentinel · parsing/sequences.el {#api-cc80dcedb3e60f6b9c39}
 
-[源码 parsing/oi.el:187](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/oi.el#L187)
+[源码 parsing/sequences.el:160](https://github.com/steve02081504/el/blob/master/src/stdlib/parsing/sequences.el#L160)
 
 ```el
 fn UntilSentinel(element: type, parserType: type): type
@@ -30006,9 +31710,17 @@ class FileInt
 fn SourceFormat(T: type): type
 ```
 
+## DescriptorIndex · platform/target.el {#api-3a1622eb8eaf3b8920ac}
+
+[源码 platform/target.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/target.el#L7)
+
+```el
+class DescriptorIndex
+```
+
 ## ExecutionProfile · platform/target.el {#api-050fff5f48d95b604953}
 
-[源码 platform/target.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/target.el#L18)
+[源码 platform/target.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/target.el#L19)
 
 ```el
 enum ExecutionProfile
@@ -30016,7 +31728,7 @@ enum ExecutionProfile
 
 ## TargetEnvironment · platform/target.el {#api-5f5d7b56e141bff94d2c}
 
-[源码 platform/target.el:70](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/target.el#L70)
+[源码 platform/target.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/target.el#L63)
 
 ```el
 enum TargetEnvironment
@@ -30024,7 +31736,7 @@ enum TargetEnvironment
 
 ## TargetSystem · platform/target.el {#api-6f63f63c51d9731d6db4}
 
-[源码 platform/target.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/target.el#L27)
+[源码 platform/target.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/target.el#L28)
 
 ```el
 enum TargetSystem
@@ -31480,7 +33192,7 @@ class TextOperand
 
 ## TextConcat · text/internal/data.el {#api-60a6997417bb6f60bbbb}
 
-[源码 text/internal/data.el:186](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L186)
+[源码 text/internal/data.el:155](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L155)
 
 ```el
 class TextConcat extends TextData
@@ -31488,7 +33200,7 @@ class TextConcat extends TextData
 
 ## TextData · text/internal/data.el {#api-dbb6c81439f15973d168}
 
-[源码 text/internal/data.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L20)
+[源码 text/internal/data.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L22)
 
 ```el
 class TextData
@@ -31496,23 +33208,15 @@ class TextData
 
 ## TextEmpty · text/internal/data.el {#api-d4063d6e73118b500016}
 
-[源码 text/internal/data.el:88](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L88)
+[源码 text/internal/data.el:60](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L60)
 
 ```el
 class TextEmpty extends TextData
 ```
 
-## TextHashIndex · text/internal/data.el {#api-be8e57d6fc0fc571f410}
-
-[源码 text/internal/data.el:58](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L58)
-
-```el
-class TextHashIndex
-```
-
 ## TextOwned · text/internal/data.el {#api-b6ec28d5a6ed15c0a470}
 
-[源码 text/internal/data.el:98](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L98)
+[源码 text/internal/data.el:70](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L70)
 
 ```el
 class TextOwned extends TextData
@@ -31520,7 +33224,7 @@ class TextOwned extends TextData
 
 ## TextRepeat · text/internal/data.el {#api-ad20f8ccd73a43f153f8}
 
-[源码 text/internal/data.el:225](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L225)
+[源码 text/internal/data.el:194](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L194)
 
 ```el
 class TextRepeat extends TextData
@@ -31528,7 +33232,7 @@ class TextRepeat extends TextData
 
 ## TextSlice · text/internal/data.el {#api-8e0fe8c0862d6754fa03}
 
-[源码 text/internal/data.el:154](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L154)
+[源码 text/internal/data.el:123](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L123)
 
 ```el
 class TextSlice extends TextData
@@ -31536,7 +33240,7 @@ class TextSlice extends TextData
 
 ## TextSplice · text/internal/data.el {#api-1582a3860b643607fc26}
 
-[源码 text/internal/data.el:266](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L266)
+[源码 text/internal/data.el:235](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/data.el#L235)
 
 ```el
 class TextSplice extends TextData
@@ -31550,20 +33254,20 @@ class TextSplice extends TextData
 class TextLiteral
 ```
 
-## RawTextView · text/internal/raw-view.el {#api-50ea92ecb25b4594bf49}
+## fn · text/internal/raw-view-operations.el {#api-b9f6d83b684895f62abd}
 
-[源码 text/internal/raw-view.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/raw-view.el#L17)
-
-```el
-class RawTextView
-```
-
-## fn · text/internal/raw-view.el {#api-4ddfb1c76b2d927d13e7}
-
-[源码 text/internal/raw-view.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/raw-view.el#L43)
+[源码 text/internal/raw-view-operations.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/raw-view-operations.el#L41)
 
 ```el
 data fn view_data(view: RawTextView): ptr
+```
+
+## RawTextView · text/internal/raw-view.el {#api-50ea92ecb25b4594bf49}
+
+[源码 text/internal/raw-view.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/text/internal/raw-view.el#L4)
+
+```el
+class RawTextView
 ```
 
 ## TextViewLiteral · text/internal/view-literal.el {#api-3ab4f3f486763620989e}
@@ -31576,7 +33280,7 @@ class TextViewLiteral
 
 ## CanonicalNormalizer · text/normalization.el {#api-0e6c10108f0bc2b4f9db}
 
-[源码 text/normalization.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/text/normalization.el#L38)
+[源码 text/normalization.el:49](https://github.com/steve02081504/el/blob/master/src/stdlib/text/normalization.el#L49)
 
 ```el
 class CanonicalNormalizer
@@ -31914,7 +33618,7 @@ class PatternRejected
 
 ## DataTextView · text/text.el {#api-876275f9f62d8f9e5710}
 
-[源码 text/text.el:932](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L932)
+[源码 text/text.el:954](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L954)
 
 ```el
 class DataTextView extends TextView
@@ -31922,7 +33626,7 @@ class DataTextView extends TextView
 
 ## Text · text/text.el {#api-57699486a79aacef58f4}
 
-[源码 text/text.el:185](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L185)
+[源码 text/text.el:186](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L186)
 
 ```el
 class Text extends Array<element: Char>
@@ -31930,7 +33634,7 @@ class Text extends Array<element: Char>
 
 [API 文档](modules/text/text.md#api-6116e54b075df026a90a)
 
-[源码 text/text.el:1027](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1027)
+[源码 text/text.el:1049](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1049)
 
 ```el
 fn Text(bitWidth = 0, size = 0): type
@@ -31954,7 +33658,7 @@ fn TextArea(bitWidth): type
 
 ## TextBase · text/text.el {#api-b68ff01b78c61022469f}
 
-[源码 text/text.el:955](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L955)
+[源码 text/text.el:977](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L977)
 
 ```el
 let TextBase: type = Text
@@ -31962,7 +33666,7 @@ let TextBase: type = Text
 
 ## TextCursor · text/text.el {#api-75ceb470331839830dc7}
 
-[源码 text/text.el:773](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L773)
+[源码 text/text.el:779](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L779)
 
 ```el
 class TextCursor
@@ -31970,7 +33674,7 @@ class TextCursor
 
 ## TextIndexWriteUpdate · text/text.el {#api-10375fdc7207c5494819}
 
-[源码 text/text.el:1122](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1122)
+[源码 text/text.el:1144](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1144)
 
 ```el
 fn TextIndexWriteUpdate(bitWidth = 0, size = 0, index: type, value: type, index_bitWidth = 0, value_bitWidth = 0): type
@@ -31978,7 +33682,7 @@ fn TextIndexWriteUpdate(bitWidth = 0, size = 0, index: type, value: type, index_
 
 ## TextPushUpdate · text/text.el {#api-9dcddc94fc17f31c7ca8}
 
-[源码 text/text.el:1115](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1115)
+[源码 text/text.el:1137](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1137)
 
 ```el
 fn TextPushUpdate(bitWidth = 0, size = 0, value: type, value_bitWidth = 0): type
@@ -31986,7 +33690,7 @@ fn TextPushUpdate(bitWidth = 0, size = 0, value: type, value_bitWidth = 0): type
 
 ## TextRangeView · text/text.el {#api-ea0b39b574895c30c0b7}
 
-[源码 text/text.el:905](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L905)
+[源码 text/text.el:924](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L924)
 
 ```el
 class TextRangeView extends TextView
@@ -31994,7 +33698,7 @@ class TextRangeView extends TextView
 
 ## TextRangeViewBase · text/text.el {#api-182272bf982bd7ce64f3}
 
-[源码 text/text.el:956](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L956)
+[源码 text/text.el:978](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L978)
 
 ```el
 let TextRangeViewBase: type = TextRangeView
@@ -32002,13 +33706,13 @@ let TextRangeViewBase: type = TextRangeView
 
 ## TextView · text/text.el {#api-5684c75000d17c66817d}
 
-[源码 text/text.el:872](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L872)
+[源码 text/text.el:891](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L891)
 
 ```el
 class TextView
 ```
 
-[源码 text/text.el:978](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L978)
+[源码 text/text.el:1000](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1000)
 
 ```el
 fn TextView(bitWidth = 0, size = 0): type
@@ -33182,7 +34886,7 @@ class Icon extends Definition
 
 ## InputState · user-interface/input.el {#api-6a40b4b13af0aa6f9ff2}
 
-[源码 user-interface/input.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/input.el#L64)
+[源码 user-interface/input.el:65](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/input.el#L65)
 
 ```el
 class InputState
@@ -33190,7 +34894,7 @@ class InputState
 
 ## KeyGesture · user-interface/input.el {#api-b1fb24a8956c1559a675}
 
-[源码 user-interface/input.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/input.el#L8)
+[源码 user-interface/input.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/input.el#L9)
 
 ```el
 class KeyGesture
@@ -33222,7 +34926,7 @@ class ScrollRange
 
 ## Definition · user-interface/model.el {#api-92b8f0fb1d93b4e22dc2}
 
-[源码 user-interface/model.el:79](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L79)
+[源码 user-interface/model.el:80](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L80)
 
 ```el
 class Definition
@@ -33232,7 +34936,7 @@ class Definition
 
 ## Edge · user-interface/model.el {#api-911cca92b98415bc5fe8}
 
-[源码 user-interface/model.el:185](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L185)
+[源码 user-interface/model.el:206](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L206)
 
 ```el
 class Edge
@@ -33240,7 +34944,7 @@ class Edge
 
 ## GuiEvent · user-interface/model.el {#api-d0161616ebcc781b1631}
 
-[源码 user-interface/model.el:118](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L118)
+[源码 user-interface/model.el:138](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L138)
 
 ```el
 class GuiEvent
@@ -33250,7 +34954,7 @@ class GuiEvent
 
 ## LayoutStyle · user-interface/model.el {#api-531edebc70e3c82ee7a8}
 
-[源码 user-interface/model.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L22)
+[源码 user-interface/model.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L23)
 
 ```el
 class LayoutStyle
@@ -33260,7 +34964,7 @@ class LayoutStyle
 
 ## Listener · user-interface/model.el {#api-1ac2ca2adb0eae1c06c5}
 
-[源码 user-interface/model.el:142](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L142)
+[源码 user-interface/model.el:163](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L163)
 
 ```el
 class Listener
@@ -33268,7 +34972,7 @@ class Listener
 
 ## TextStyleSpan · user-interface/model.el {#api-0d8a97b4f71af4fb947a}
 
-[源码 user-interface/model.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L6)
+[源码 user-interface/model.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L7)
 
 ```el
 class TextStyleSpan
@@ -33308,7 +35012,7 @@ class WindowDescription
 
 ## Window · user-interface/platform/linux/window.el {#api-80b7e7edb0f0f12ef13b}
 
-[源码 user-interface/platform/linux/window.el:78](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/linux/window.el#L78)
+[源码 user-interface/platform/linux/window.el:80](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/linux/window.el#L80)
 
 ```el
 class Window
@@ -33316,7 +35020,7 @@ class Window
 
 ## WindowTimer · user-interface/platform/linux/window.el {#api-e6b822dcbf317e66de49}
 
-[源码 user-interface/platform/linux/window.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/linux/window.el#L57)
+[源码 user-interface/platform/linux/window.el:59](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/linux/window.el#L59)
 
 ```el
 class WindowTimer
@@ -33372,7 +35076,7 @@ class CInt
 
 ## Window · user-interface/platform/macos/window.el {#api-5f7e9873d6fc959954fd}
 
-[源码 user-interface/platform/macos/window.el:44](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/macos/window.el#L44)
+[源码 user-interface/platform/macos/window.el:48](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/macos/window.el#L48)
 
 ```el
 class Window
@@ -33380,7 +35084,7 @@ class Window
 
 ## WindowTimer · user-interface/platform/macos/window.el {#api-78a620a9dee465f80796}
 
-[源码 user-interface/platform/macos/window.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/macos/window.el#L27)
+[源码 user-interface/platform/macos/window.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/macos/window.el#L31)
 
 ```el
 class WindowTimer
@@ -33468,7 +35172,7 @@ class WindowContext
 
 ## DirtyFrame · user-interface/platform/windows/window.el {#api-b3da05a8205af9b7a726}
 
-[源码 user-interface/platform/windows/window.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L32)
+[源码 user-interface/platform/windows/window.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L35)
 
 ```el
 class DirtyFrame
@@ -33476,7 +35180,7 @@ class DirtyFrame
 
 ## Window · user-interface/platform/windows/window.el {#api-9dc34e68c5ad778621d4}
 
-[源码 user-interface/platform/windows/window.el:215](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L215)
+[源码 user-interface/platform/windows/window.el:218](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L218)
 
 ```el
 class Window
@@ -33486,7 +35190,7 @@ class Window
 
 ## WindowTimer · user-interface/platform/windows/window.el {#api-9b651467460e89936d5f}
 
-[源码 user-interface/platform/windows/window.el:170](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L170)
+[源码 user-interface/platform/windows/window.el:173](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L173)
 
 ```el
 class WindowTimer
@@ -33584,9 +35288,9 @@ class VirtualTextList extends Definition
 class WindowCelebration
 ```
 
-## element · collections/arrays/dynamic.el {#api-bfc7c48fa2dcb1135093}
+## element · collections/arrays/dynamic.el {#api-d9bee8f512c5a46cf1e1}
 
-类型参数，位于 `collections/arrays/dynamic.el:128`。
+类型参数，位于 `collections/arrays/dynamic.el:135`。
 
 ```el
 fn Array(element: type): type

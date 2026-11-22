@@ -163,6 +163,7 @@
 | [decimalDigits](modules/time/units.md#api-5eb68fec95e1642e33bd) | `time/units.el` |
 | [decodeWav](modules/multimedia/audio/wav.md#api-3ec25c2a0a628a314475) | `multimedia/audio/wav.el` |
 | [Definition](modules/user-interface/model.md#api-92b8f0fb1d93b4e22dc2) | `user-interface/model.el` |
+| [Definition.textMask](modules/user-interface/model.md#api-b3f8e6d993e4cc443109) | `user-interface/model.el` |
 | [Definition.theme](modules/user-interface/model.md#api-5faf0a2c3aefbf7d59fd) | `user-interface/model.el` |
 | [dif](modules/logic/goal.md#api-c04632f30e82c884636e) | `logic/goal.el` |
 | [directoryNames](modules/filesystem/index.md#api-2e6df4d53b39fb02da5d) | `filesystem/index.el` |
@@ -194,7 +195,7 @@
 | [Figure](modules/graphics/plots/index.md#api-daf4fb6b08acdf355a69) | `graphics/plots/index.el` |
 | [Figure.axis](modules/graphics/plots/index.md#api-a0ab54cd34a79111132b) | `graphics/plots/index.el` |
 | [Figure.image](modules/graphics/plots/index.md#api-05f4dfef014a883b90ed) | `graphics/plots/index.el` |
-| [Figure.save](modules/graphics/plots/index.md#api-4c3befca40a6315cb486) | `graphics/plots/index.el` |
+| [Figure.saveAs](modules/graphics/plots/index.md#api-5827c21545f7afe86a52) | `graphics/plots/index.el` |
 | [Figure.show](modules/graphics/plots/index.md#api-f8da8e4d08474a501002) | `graphics/plots/index.el` |
 | [fileName](modules/filesystem/index.md#api-0ed89f254561e8445dfb) | `filesystem/index.el` |
 | [FileReader.close](modules/filesystem/reader.md#api-226f1d4ed93e75e92625) | `filesystem/reader.el` |
@@ -547,7 +548,6 @@
 | [Text.character](modules/text/text.md#api-72c219d2c7971b4efd7e) | `text/text.el` |
 | [Text.compact](modules/text/text.md#api-f186aaf724ad8de13d29) | `text/text.el` |
 | [Text.contains](modules/text/text.md#api-60a702a27df0fb3b6913) | `text/text.el` |
-| [Text.count](modules/text/text.md#api-19e144cbe3af4ec540f3) | `text/text.el` |
 | [Text.endsWith](modules/text/text.md#api-a0002f7421f94384e4e1) | `text/text.el` |
 | [Text.indexOf](modules/text/text.md#api-c4985f768195ddc70afb) | `text/text.el` |
 | [Text.replaceAll](modules/text/text.md#api-29663683ec276c29c64c) | `text/text.el` |

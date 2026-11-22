@@ -3,7 +3,7 @@
 > 题目要求输出圆周率的第 20 个小数位。把一个近似值打印得更长，能保证最后一位正确吗？
 
 !!! abstract "🎯 做完这个项目，你能"
-    - 用两个变量计算第 `n` 个斐波那契数
+    - 用惰性序列生成斐波那契数列的前 `n` 项
     - 用上下界确认圆周率的一位小数
     - 实现前缀和、广搜、并查集、贪心和有限值域文件排序
 
@@ -12,30 +12,50 @@
 !!! note "实现状态"
     本页按现有精确数值和数学库源码编写，代码尚未用 EL 工具链运行。大文件示例采用有限值域计数排序，小样本和 4 GiB 输入均待 EL 运行验收。
 
-## 第 1 题：只记住相邻两项
+## 第 1 题：用数列本身定义斐波那契数列
 
-约定第 0 项为 0，第 1 项为 1。把程序存为 `fib.el`，运行 `el run fib.el`，预期输出 `55`。
+前两项是 0 和 1，之后每一项都是前两项之和。把程序存为 `fib.el`，运行 `el run fib.el`，就能取出前 10 项。
 
 ```el
-fn fibonacci(index: Number): Number {
-	if (index < 0 | index % 1 != 0) throw "Expected a nonnegative integer"
-	let current = 0
-	let next = 1
-	for (let step = 0; step < index; step++) {
-		let afterNext = current + next
-		current = next
-		next = afterNext
-	}
-	return current
+fn addPair(pair: SequencePair): Number {
+	let left = pair.left
+	let right = pair.right
+	if (left is Number & right is Number) return left + right
+	throw "Expected two numbers"
 }
 
-console.stdout.writeLine(fibonacci(10))
+let fibs = lazy(self) @[0, 1, ...zip(self, self.slice(1)).map(addPair)]
+console.stdout.writeLine(fibs.take(10).collect().join(", "))
 ```
 
-循环进入第 `step` 步时，`current` 是第 `step` 项，`next` 是它的后一项。结束时 `step` 已走到目标。程序做 `n` 次大整数加法，整数随项数增长。
+```text
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+```
+
+`lazy(self)` 让数列可以按需生成，并用 `self` 引用自己。`self.slice(1)` 跳过开头的 0，`zip` 把两列对齐，依次配出 `(0, 1)`、`(1, 1)`、`(1, 2)`。通用的 `zip` 可以配对任意元素，所以 `addPair` 先确认两个值都是数字，再把它们相加。`...` 把这些和接在 0 和 1 后面。
+
+`take(10)` 只请求前 10 项，`collect()` 把这 10 项收集成数组。生成这段前缀时，数列会保留已经算出的项，供后续配对复用。
 
 !!! example "动手 30 秒"
-    依次输入 0、1、2，检查三次输出是否为 0、1、1。再输入 100，预期是 `354224848179261915075`。
+    把 `take(10)` 改成 `take(2)`，输出应为 `0, 1`。再改成 `take(11)`，末尾应多出一个 `55`。
+
+??? example "展开对照：C 风格的 for 循环"
+    把下面的程序另存为 `fib-loop.el`，运行 `el run fib-loop.el`，会输出同样的前 10 项。
+
+    ```el
+    let values: Number[] = @[]
+    let current = 0
+    let next = 1
+    for (let step = 0; step < 10; step++) {
+        values.push(current)
+        let afterNext = current + next
+        current = next
+        next = afterNext
+    }
+    console.stdout.writeLine(values.join(", "))
+    ```
+
+    每轮先把 `current` 存进结果数组，再把这对相邻项往前推一步。递推只需要 `current` 和 `next`，结果数组用来集中打印。
 
 ## 第 2 题：让两个界给出同一个数字
 
