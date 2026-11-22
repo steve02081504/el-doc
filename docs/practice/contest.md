@@ -17,7 +17,7 @@
 前两项是 0 和 1，之后每一项都是前两项之和。把程序存为 `fib.el`，运行 `el run fib.el`，就能取出前 10 项。
 
 ```el
-let fibs = lazy(self) @[0, 1, ...zip(self, self.slice(1)).map => sum(...it) ]
+let fibs = lazy(self) @[0, 1, ...zip(self, self.slice(1)).map => sum(...it)]
 console.stdout.writeLine(fibs.take(10).collect().join(", "))
 ```
 
