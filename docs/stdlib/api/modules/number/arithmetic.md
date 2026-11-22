@@ -48,9 +48,33 @@ export fn add(left: NumericInt, right: NumericInt): NumericInt
 let sum = add(NumericInt(2), NumericInt(3))
 ```
 
+## pow {#api-0b03a198b48f8e46a3fc}
+
+源码：`src/stdlib/number/arithmetic.el:723` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/arithmetic.el#L723)
+
+对精确整数或有理数执行整数指数幂；负指数只适用于非零有理数。
+
+```el-signature
+export fn pow(base: NumericInt, exponent: Integer): NumericInt
+```
+
+**返回类型**：[`NumericInt`](arithmetic.md#api-185a41c160696f925b31)
+
+**参数**：base 整数或有理数底数。
+
+**参数**：exponent 整数指数。
+
+**返回值**：精确幂值；有理数底数的负指数返回其倒数幂。
+
+### 示例：计算整数的三次幂
+
+```el
+let cube = pow(NumericInt(2), 3)
+```
+
 ## NumericRatio {#api-5d824c7b2238be4ee74d}
 
-源码：`src/stdlib/number/arithmetic.el:896` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/arithmetic.el#L896)
+源码：`src/stdlib/number/arithmetic.el:905` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/arithmetic.el#L905)
 
 表示规范化的任意精度有理数，分母不得为零。
 
@@ -70,7 +94,7 @@ console.stdout.writeLine(sum)
 
 ## add~ratio {#api-4e965155c389d4df4882}
 
-源码：`src/stdlib/number/arithmetic.el:982` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/arithmetic.el#L982)
+源码：`src/stdlib/number/arithmetic.el:991` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/arithmetic.el#L991)
 
 计算两个精确有理数的和。
 

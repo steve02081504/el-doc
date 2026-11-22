@@ -20,7 +20,7 @@
 
 ## PcmOutput {#api-9f5da8fa68d02b9e4158}
 
-源码：`src/stdlib/multimedia/audio/linux-output.el:49` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L49)
+源码：`src/stdlib/multimedia/audio/linux-output.el:50` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L50)
 
 拥有单线程有界 PCM16 设备队列；入队时复制音频块，队列满时立即返回假。
 
@@ -39,6 +39,7 @@ export @assign(mode: "shared") class PcmOutput
 ### 示例：创建播放器并提交一块（需调用方提供对象或绑定）
 
 ```el
+// @external audio: PcmAudio
 let output = PcmOutput(audio.format, 4, 1024)
 let accepted = output.enqueue(audio)
 ```
@@ -64,7 +65,6 @@ fn enqueue(audio: PcmAudio): Bool
 ### 示例：向设备提交音频
 
 ```el
-// @external output, chunk
 if (!output.enqueue(chunk)) sleep(2)
 ```
 
@@ -87,7 +87,7 @@ while (!output.idle()) sleep(2)
 
 ## PcmOutput.idle {#api-9c4aeae8f2aae4510c1b}
 
-源码：`src/stdlib/multimedia/audio/linux-output.el:138` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L138)
+源码：`src/stdlib/multimedia/audio/linux-output.el:137` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L137)
 
 检查设备是否已播放完所有已提交样本。
 
@@ -102,13 +102,12 @@ fn idle(): Bool
 ### 示例：等待输出排空
 
 ```el
-// @external output
 while (!output.idle()) sleep(2)
 ```
 
 ## PcmOutput.clear {#api-a4ef6b8c6e52a3dea8f4}
 
-源码：`src/stdlib/multimedia/audio/linux-output.el:151` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L151)
+源码：`src/stdlib/multimedia/audio/linux-output.el:150` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L150)
 
 清除设备当前排队的音频块。
 
@@ -124,7 +123,7 @@ output.clear()
 
 ## PcmOutput.close {#api-d0948c04bf83f86cfcdb}
 
-源码：`src/stdlib/multimedia/audio/linux-output.el:162` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L162)
+源码：`src/stdlib/multimedia/audio/linux-output.el:160` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L160)
 
 停止播放并释放设备队列及原生句柄。
 
@@ -135,6 +134,5 @@ fn close()
 ### 示例：关闭音频输出
 
 ```el
-// @external output
 output.close()
 ```

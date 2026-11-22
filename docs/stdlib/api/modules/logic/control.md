@@ -23,7 +23,7 @@ export @assign(mode: "shared") class SearchInterrupted
 ### 示例：捕获受限搜索中断（cursor 是已有的搜索游标）
 
 ```el
-// @external cursor
+// @external cursor: SearchCursor
 try { discard(cursor.next()) }
 catch (error) { if (error is SearchInterrupted) console.stdout.writeLine(error.reason) }
 ```

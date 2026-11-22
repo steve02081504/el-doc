@@ -39,8 +39,8 @@ export fn generateText(model, tokenizer, prompt: Text, readHost, options: Genera
 ### 示例：生成需要宿主读取回调的模型上下文
 
 ```el
-// @external model, tokenizer, readHost
-// 调用上下文需提供 model、tokenizer，以及按模型存储布局读取末位置 logits 的 readHost 回调。
-let result = generateText(model, tokenizer, "你好", readHost)
+// @external languageModel: CausalLanguageModel<element: WorkingFloat>, tokenizer: BytePairTokenizer, readHost: fn(Tensor<element: WorkingFloat>): Tensor<element: WorkingFloat>
+// 调用上下文需提供 languageModel、tokenizer，以及按模型存储布局读取末位置 logits 的 readHost 回调。
+let result = generateText(languageModel, tokenizer, "你好", readHost)
 ```
 示例为调用上下文片段，不代表可独立运行；示例未运行验证。

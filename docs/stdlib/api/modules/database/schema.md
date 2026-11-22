@@ -68,6 +68,6 @@ class DbRow
 ### 示例：由模式和两个值创建行（schema 是已有的行模式）
 
 ```el
-// @external schema
+// @external schema: DbRelationSchema
 let row = DbRow(schema, @[1, "Ada"])
 ```

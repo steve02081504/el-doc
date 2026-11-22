@@ -27,13 +27,13 @@
 export @assign(mode: "shared") class MusicPlayer
 ```
 
-### 示例：播放提示音并显式释放
+### 示例：播放提示音
 
 ```el
 let player = MusicPlayer()
 let accepted = player.play(440)
-player.close()
 ```
+使用完成后调用 `player.close()` 释放设备。
 
 ## MusicPlayer.formula {#api-baf68ca88eb889649eb3}
 
@@ -63,7 +63,7 @@ let accepted = player.formula(seconds => sin(seconds * 880 * 6.283185307179586),
 
 ## MusicPlayer.play {#api-acd751dc2f58267cd866}
 
-源码：`src/stdlib/multimedia/audio/music.el:110` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L110)
+源码：`src/stdlib/multimedia/audio/music.el:109` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L109)
 
 将三角波音调作为短提示音提交到非等待队列。
 
@@ -84,13 +84,12 @@ fn play(frequency: Number, milliseconds: Number = 80, gain: Number = 0.12): Bool
 ### 示例：播放提示音
 
 ```el
-// @external player
 let accepted = player.play(660, 70)
 ```
 
 ## MusicPlayer.stop {#api-878b318a6d2c1a57a85e}
 
-源码：`src/stdlib/multimedia/audio/music.el:120` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L120)
+源码：`src/stdlib/multimedia/audio/music.el:119` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L119)
 
 清除当前排队的提示音，但保留播放器供后续复用。
 
@@ -106,7 +105,7 @@ player.stop()
 
 ## MusicPlayer.close {#api-74a7a57af495951c63ea}
 
-源码：`src/stdlib/multimedia/audio/music.el:128` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L128)
+源码：`src/stdlib/multimedia/audio/music.el:126` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L126)
 
 关闭底层设备并释放资源；重复调用安全。
 
@@ -117,13 +116,12 @@ fn close()
 ### 示例：释放提示音播放器
 
 ```el
-// @external player
 player.close()
 ```
 
 ## playPitch {#api-14ec176406410644f42a}
 
-源码：`src/stdlib/multimedia/audio/music.el:149` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L149)
+源码：`src/stdlib/multimedia/audio/music.el:147` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L147)
 
 在独立任务中播放三角波音调，持续时间以毫秒计，频率以 Hz 计。
 
@@ -149,7 +147,7 @@ let task = playPitch(440, 250, 0.1)
 
 ## playFormula {#api-dd17e7a0384ee0e866a0}
 
-源码：`src/stdlib/multimedia/audio/music.el:164` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L164)
+源码：`src/stdlib/multimedia/audio/music.el:162` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L162)
 
 在独立任务中按公式逐样本合成音频，并以有界块队列提交给设备。
 

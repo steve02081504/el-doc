@@ -25,6 +25,6 @@ export fn text_bytes(text: Text): Number[]
 ### 示例：使用示例
 
 ```el
-import { text_bytes } from "el:text/byte-array"
+import { text_bytes } from "el:text/byte-array.el"
 let bytes = text_bytes("hello")
 ```

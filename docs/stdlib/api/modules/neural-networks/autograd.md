@@ -20,7 +20,7 @@
 
 ## Autograd {#api-fe9b9dee2c2f03ef38d0}
 
-源码：`src/stdlib/neural-networks/autograd.el:38` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L38)
+源码：`src/stdlib/neural-networks/autograd.el:39` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L39)
 
 创建指定元素和存储类型的自动微分 tape 类型。
 
@@ -41,12 +41,13 @@ export fn Autograd(element: type, storage: type = Tensor<element: element>): typ
 ```el
 let Tape = Autograd<element: Number>
 let tape = Tape()
+let input = Tensor<element: Number>(@[2], @[1, 2])
 ```
 示例展示接口用法；未运行验证。
 
 ## Autograd.square {#api-c7cdb29630ea7e9ca4c3}
 
-源码：`src/stdlib/neural-networks/autograd.el:334` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L334)
+源码：`src/stdlib/neural-networks/autograd.el:336` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L336)
 
 对跟踪张量逐元素平方，并在 tape 上记录乘法节点。
 
@@ -59,12 +60,13 @@ fn square()
 ### 示例：对跟踪值逐元素平方
 
 ```el
+let x = tape.variable(input)
 let squared = x.square()
 ```
 
 ## Autograd.sum {#api-4c5a860a89bb4e088fe1}
 
-源码：`src/stdlib/neural-networks/autograd.el:343` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L343)
+源码：`src/stdlib/neural-networks/autograd.el:346` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L346)
 
 将跟踪张量所有元素相加，返回可继续参与求导的 rank-zero 值。
 
@@ -77,12 +79,13 @@ fn sum()
 ### 示例：对平方值求和形成损失
 
 ```el
+let x = tape.variable(input)
 let loss = x.square().sum()
 ```
 
 ## Autograd.mean {#api-31175d2b66a5ce9e4d5f}
 
-源码：`src/stdlib/neural-networks/autograd.el:351` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L351)
+源码：`src/stdlib/neural-networks/autograd.el:356` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L356)
 
 对跟踪张量所有元素求平均并在 tape 上记录归约。
 
@@ -95,12 +98,14 @@ fn mean()
 ### 示例：对误差张量取平均
 
 ```el
+let prediction = tape.variable(input)
+let target = tape.constant(input)
 let loss = (prediction - target).square().mean()
 ```
 
 ## Autograd.variable {#api-ab3276f9117e60133442}
 
-源码：`src/stdlib/neural-networks/autograd.el:446` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L446)
+源码：`src/stdlib/neural-networks/autograd.el:451` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L451)
 
 将输入张量注册为需要对其求导的叶变量。
 
@@ -108,7 +113,7 @@ let loss = (prediction - target).square().mean()
 fn variable(value: Dense): Tracked
 ```
 
-**返回类型**：[`Tracked`](../../types.md#api-6501c19f8e6f0cba0f0d)
+**返回类型**：[`Tracked`](../../types.md#api-77be24bce4c73abdde3c)
 
 **参数**：value 作为叶节点的张量值。
 
@@ -122,7 +127,7 @@ let x = tape.variable(input)
 
 ## Autograd.valueAndGrad {#api-2c37c8b473d37f9243b7}
 
-源码：`src/stdlib/neural-networks/autograd.el:734` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L734)
+源码：`src/stdlib/neural-networks/autograd.el:740` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L740)
 
 对 rank-zero 跟踪损失反向传播，返回损失值及各变量梯度。
 
@@ -130,7 +135,7 @@ let x = tape.variable(input)
 fn valueAndGrad(loss: Tracked, variables: Tracked[]): Result
 ```
 
-**返回类型**：[`Result`](../../types.md#api-219def6e1e48ab59942f)
+**返回类型**：[`Result`](../../types.md#api-1cb2e490f173cf7c45ee)
 
 **参数**：loss tape 上的 rank-zero 损失。
 
@@ -143,5 +148,6 @@ fn valueAndGrad(loss: Tracked, variables: Tracked[]): Result
 ### 示例：计算输入平方和的梯度
 
 ```el
+let x = tape.variable(input)
 let step = tape.valueAndGrad(x.square().sum(), @[x])
 ```

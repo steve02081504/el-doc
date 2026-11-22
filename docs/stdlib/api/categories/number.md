@@ -6,7 +6,7 @@
 
 | 模块 | 接口 |
 | --- | --- |
-| [number/arithmetic.el](../modules/number/arithmetic.md) | [NumericInt](../modules/number/arithmetic.md#api-185a41c160696f925b31)、[add~integer](../modules/number/arithmetic.md#api-2722253a063082140483)、[NumericRatio](../modules/number/arithmetic.md#api-5d824c7b2238be4ee74d)、[add~ratio](../modules/number/arithmetic.md#api-4e965155c389d4df4882) |
+| [number/arithmetic.el](../modules/number/arithmetic.md) | [NumericInt](../modules/number/arithmetic.md#api-185a41c160696f925b31)、[add~integer](../modules/number/arithmetic.md#api-2722253a063082140483)、[pow](../modules/number/arithmetic.md#api-0b03a198b48f8e46a3fc)、[NumericRatio](../modules/number/arithmetic.md#api-5d824c7b2238be4ee74d)、[add~ratio](../modules/number/arithmetic.md#api-4e965155c389d4df4882) |
 | [number/dit-float.el](../modules/number/dit-float.md) | [DitFloat](../modules/number/dit-float.md#api-3bf2f5b6b8ccdfc86851) |
 | [number/dit-int.el](../modules/number/dit-int.md) | [DitInt](../modules/number/dit-int.md#api-f257d1fae552cc435b0b) |
 | [number/dit-operations.el](../modules/number/dit-operations.md) | [dit_add_mod](../modules/number/dit-operations.md#api-d0505a59ece12ababdb0)、[dit_sub_mod](../modules/number/dit-operations.md#api-463e78a922d32514490c)、[dit_min](../modules/number/dit-operations.md#api-adba7312cea79def5989)、[dit_max](../modules/number/dit-operations.md#api-ef7ccd1de40f01781213) |

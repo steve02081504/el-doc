@@ -28,3 +28,20 @@ export fn ownKeyCount(value): Number
 import { ownKeyCount } from "el:language/objects.el"
 console.stdout.writeLine(ownKeyCount(@{ name: "EL", version: "1" }))
 ```
+
+## DynamicObject {#api-e3d29af11f62e4970b53}
+
+源码：`src/stdlib/language/objects.el:69` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/language/objects.el#L69)
+
+可在运行时添加动态字段的开放存储对象。
+
+```el-signature
+@assign(mode: "shared") @dynamic
+export class DynamicObject
+```
+
+### 示例：创建对象
+
+```el
+let object = DynamicObject()
+```

@@ -16,7 +16,7 @@
 
 ## TestRegistrar.each {#api-e087607adc055d5b5e61}
 
-源码：`src/stdlib/tools/testing/registry.el:88` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/registry.el#L88)
+源码：`src/stdlib/tools/testing/registry.el:89` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/registry.el#L89)
 
 为具有稳定名称的行逐条注册测试用例。
 
@@ -37,15 +37,16 @@ fn each(name: Text, rows, body, options: TestOptions = TestOptions())
 ### 示例：表驱动测试（需调用方提供对象或绑定）
 
 ```el
+// @external doubleValue: fn(Number): Number
 test.each("double", @[
 	@{ name: "one", input: 1, expected: 2 },
 	@{ name: "two", input: 2, expected: 4 }
-], row => check.equal(double(row.input), row.expected))
+], row => check.equal(doubleValue(row.input), row.expected))
 ```
 
 ## test {#api-4c6c984c48f4dee1a8af}
 
-源码：`src/stdlib/tools/testing/registry.el:109` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/registry.el#L109)
+源码：`src/stdlib/tools/testing/registry.el:110` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/registry.el#L110)
 
 注册一个测试用例；用例主体在测试执行阶段调用，可选择接收 TestContext。
 

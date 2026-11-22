@@ -20,7 +20,7 @@
 
 ## WindowTimer {#api-9b651467460e89936d5f}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:173` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L173)
+源码：`src/stdlib/user-interface/platform/windows/window.el:174` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L174)
 
 由窗口拥有的定时器句柄；取消会停止后续回调并释放回调捕获。
 
@@ -28,12 +28,13 @@
 export class WindowTimer
 ```
 
-### 示例：取消一个窗口定时器（需调用方提供对象或绑定）
+### 示例：创建一个窗口定时器（需调用方提供窗口和回调）
 
 ```el
+// @external window: Window, updateClock: fn(): nil_t
 let timer = window.every(1000, tick => updateClock())
-timer.cancel()
 ```
+不再需要时调用 `timer.cancel()` 停止定时器。
 
 ## WindowTimer.cancel {#api-8629377d5cfbe5cd888b}
 
@@ -50,7 +51,6 @@ fn cancel()
 ### 示例：停止定时器
 
 ```el
-// @external timer
 timer.cancel()
 ```
 
@@ -64,12 +64,12 @@ timer.cancel()
 export class Window
 ```
 
-### 示例：创建并运行窗口
+### 示例：创建窗口
 
 ```el
-let window = showWindow(element("label", "你好"))
-runWindow(window)
+let window = showWindow(element("label", "你好", "status"))
 ```
+配置完成后调用 `runWindow(window)` 运行事件循环并关闭窗口。
 
 ## Window.theme {#api-e300f3030755d4c6f210}
 
@@ -104,13 +104,13 @@ fn onArrow(action)
 ### 示例：注册方向键处理
 
 ```el
-// @external window, moveSelection
+// @external moveSelection: fn(Number, Number): nil_t
 window.onArrow((dx, dy) => moveSelection(dx, dy))
 ```
 
 ## Window.every {#api-397c3dde87e61de92229}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:620` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L620)
+源码：`src/stdlib/user-interface/platform/windows/window.el:621` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L621)
 
 注册窗口级近似定时器，窗口关闭时自动取消。
 
@@ -131,6 +131,7 @@ window.onArrow((dx, dy) => moveSelection(dx, dy))
 ### 示例：每秒更新标签（需调用方提供对象或绑定）
 
 ```el
+let label = window.getById("status")
 discard(window.every(1000, tick => label.text = "更新"))
 ```
 
@@ -155,14 +156,13 @@ fn getById(id: Text): ElementHandle
 ### 示例：更新已挂载标签
 
 ```el
-// @external window
 let label = window.getById("status")
 label.text = "就绪"
 ```
 
 ## runWindow {#api-5a35178b26a593b8361d}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:756` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L756)
+源码：`src/stdlib/user-interface/platform/windows/window.el:757` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L757)
 
 运行单个窗口的事件循环，并在退出时关闭窗口。
 
@@ -175,12 +175,13 @@ export fn runWindow(window: Window)
 ### 示例：运行窗口直到关闭（需调用方提供对象或绑定）
 
 ```el
+// @external window: Window
 runWindow(window)
 ```
 
 ## runWindows {#api-d58299be18ae530eb594}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:781` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L781)
+源码：`src/stdlib/user-interface/platform/windows/window.el:782` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L782)
 
 在同一事件循环中运行多个窗口；循环退出时关闭列表中的窗口。
 
@@ -193,6 +194,6 @@ export fn runWindows(windows: Window[])
 ### 示例：同时运行两个窗口
 
 ```el
-// @external firstWindow, secondWindow
+// @external firstWindow: Window, secondWindow: Window
 runWindows(@[firstWindow, secondWindow])
 ```

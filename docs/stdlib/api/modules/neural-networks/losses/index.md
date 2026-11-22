@@ -12,7 +12,7 @@
 
 ## reduceLoss {#api-a63260eef4f189bf2f49}
 
-源码：`src/stdlib/neural-networks/losses/index.el:20` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/losses/index.el#L20)
+源码：`src/stdlib/neural-networks/losses/index.el:21` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/losses/index.el#L21)
 
 按 none、sum 或 mean 规则归约损失张量。
 
@@ -31,12 +31,13 @@ export fn reduceLoss(loss, reduction: Text = "mean")
 ### 示例：对逐元素损失求和
 
 ```el
+// @external loss: Tensor<element: Number>
 let total = reduceLoss(loss, "sum")
 ```
 
 ## maeLoss {#api-cc55a668339edc941395}
 
-源码：`src/stdlib/neural-networks/losses/index.el:37` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/losses/index.el#L37)
+源码：`src/stdlib/neural-networks/losses/index.el:39` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/losses/index.el#L39)
 
 计算输入与目标的逐元素绝对误差，并按 reduction 归约。
 
@@ -57,12 +58,13 @@ export fn maeLoss(input, target, reduction: Text = "mean")
 ### 示例：计算平均绝对误差
 
 ```el
+// @external prediction: Tensor<element: Number>, target: Tensor<element: Number>
 let loss = maeLoss(prediction, target)
 ```
 
 ## huberLoss {#api-86753a5a07c600430493}
 
-源码：`src/stdlib/neural-networks/losses/index.el:54` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/losses/index.el#L54)
+源码：`src/stdlib/neural-networks/losses/index.el:57` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/losses/index.el#L57)
 
 计算阈值 delta 内为二次、超出部分为线性的 Huber 损失。
 
@@ -85,5 +87,6 @@ export fn huberLoss(input, target, delta: Number = 1, reduction: Text = "mean")
 ### 示例：计算 Huber 损失
 
 ```el
+// @external prediction: Tensor<element: Number>, target: Tensor<element: Number>
 let loss = huberLoss(prediction, target, delta: 1.5)
 ```

@@ -74,7 +74,7 @@ runWindow(window)
 
 ## showWindow~data {#api-e81851aac339b39d7c75}
 
-源码：`src/stdlib/user-interface/window.el:131` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L131)
+源码：`src/stdlib/user-interface/window.el:132` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L132)
 
 将网格或受支持的数据源包装为数据视图后创建原生窗口。
 
@@ -95,13 +95,14 @@ export fn showWindow(source, title: Text = "EL", width: Number = 480, height: Nu
 ### 示例：显示网格数据（需调用方提供对象或绑定）
 
 ```el
+// @external rows: Tensor<element: Number>
 let window = showWindow(rows, "数据")
 runWindow(window)
 ```
 
 ## showWindow~description {#api-a2854832980685a2c064}
 
-源码：`src/stdlib/user-interface/window.el:149` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L149)
+源码：`src/stdlib/user-interface/window.el:150` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L150)
 
 将受限的界面描述文本解析为对象图，再创建原生窗口。
 
@@ -130,7 +131,7 @@ runWindow(window)
 
 ## showWindow~description-data {#api-a2a3a0d3094ea4e44215}
 
-源码：`src/stdlib/user-interface/window.el:166` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L166)
+源码：`src/stdlib/user-interface/window.el:168` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/window.el#L168)
 
 将描述文本解析为对象图，并把数据源作为描述中的显式绑定。
 
@@ -151,6 +152,7 @@ export fn showWindow(description: Text, source, width: Number = 480, height: Num
 ### 示例：在描述窗口中绑定数据（需调用方提供对象或绑定）
 
 ```el
+// @external rows: Tensor<element: Number>
 let window = showWindow("column { grid: $0 }", rows)
 runWindow(window)
 ```

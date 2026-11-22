@@ -12,7 +12,7 @@
 
 ## HttpWireReader {#api-5856ea17e3ac530bb530}
 
-源码：`src/stdlib/network/http/wire.el:32` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/wire.el#L32)
+源码：`src/stdlib/network/http/wire.el:33` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/wire.el#L33)
 
 管理 HTTP 连接的缓冲字节读取和单次操作超时期限。
 
@@ -29,5 +29,6 @@ export class HttpWireReader
 ### 示例：为连接创建线读取器（需调用方提供对象或绑定）
 
 ```el
+// @external connection: ByteConnection
 let reader = HttpWireReader(connection, 30000)
 ```

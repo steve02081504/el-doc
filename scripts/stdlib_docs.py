@@ -773,49 +773,306 @@ def extract(source, path):
 	return entries
 
 
+
 def documented_value_types(entries):
 	candidates = {}
 	for entry in entries:
-		value_type = entry.get("value_type") or entry.get("return_type")
-		if value_type:
-			candidates.setdefault(entry["name"].split("~")[0], set()).add(value_type)
-	return {name: next(iter(types)) for name, types in candidates.items() if len(types) == 1}
+		name = entry["name"].split("~")[0]
+		if entry.get("value_type"):
+			candidates.setdefault(name, set()).add(entry["value_type"])
+		elif re.search(r"\b(fn|operator|get)\b", entry.get("signature", "")):
+			if not re.search(r"\bget\s+\w+", entry["signature"]):
+				name += "()"
+			candidates.setdefault(name, set()).add(entry.get("return_type"))
+	return {name: next(iter(types)) for name, types in candidates.items() if len(types) == 1 and None not in types}
+
+def after_group(values, start, opening, closing):
+	depth = 0
+	for index in range(start, len(values)):
+		depth += (values[index] == opening) - (values[index] == closing)
+		if depth == 0:
+			return index + 1
+	return len(values)
 
 
-def declares_instance(example, owner, known_types=None):
-	"""Recognize a local construction or an initialized owner-typed binding."""
-	code = [(kind, value) for kind, value, _, _ in tokens(example) if kind in ("code", "literal")]
-	values = [value if kind == "code" else "" for kind, value in code]
-	known_types = known_types or {}
-	for index in range(len(values) - 3):
-		keyword, name, separator, instance_type = values[index:index + 4]
-		if keyword not in ("let", "const") or not name.isidentifier():
+def nominal_type(spelling):
+	if not spelling:
+		return None
+	values = [value for kind, value, _, _ in tokens(spelling) if kind != "space"]
+	if values and values[0].isidentifier():
+		if len(values) == 1 or values[1] == "<" and values[-1] == ">" and after_group(values, 1, "<", ">") == len(values):
+			return values[0]
+	return None
+
+
+def type_tokens(source):
+	return [(kind, value, start, end) for kind, value, start, end in tokens(source) if kind in ("code", "literal")]
+
+
+def expression_steps(stream, values, start, known, constructors):
+	"""Yield each receiver type and the first token after its expression."""
+	kind, value, _, _ = stream[start]
+	position = start + 1
+	literal_start = start
+	if value == "lazy":
+		literal_start = position
+		if position < len(values) and values[position] == "(":
+			literal_start = after_group(values, position, "(", ")")
+	if kind == "literal" and value.lstrip("#").startswith('"'):
+		name, result = None, "Text"
+	elif values[literal_start:literal_start + 2] == ["@", "["]:
+		name, result = None, "Sequence" if value == "lazy" else "Array"
+		position = after_group(values, literal_start + 1, "[", "]")
+	elif values[start:start + 2] == ["@", "("]:
+		name, result = None, "Tensor"
+		position = after_group(values, position, "(", ")")
+	elif kind == "code" and value.isidentifier():
+		name, result = value, None
+	else:
+		return
+	while True:
+		if name is not None:
+			arguments = position
+			if arguments < len(values) and values[arguments] == "<":
+				arguments = after_group(values, arguments, "<", ">")
+			if arguments < len(values) and values[arguments] == "(":
+				if callable_type := known.get(name):
+					yield callable_type, arguments
+				result = known.get(name + "()")
+				if name in constructors and (result is None or result == "type" and arguments != position):
+					result = name
+				position = after_group(values, arguments, "(", ")")
+			else:
+				result = known.get(name)
+		yield result, position
+		receiver = nominal_type(result)
+		if not receiver or position + 1 >= len(values) or values[position] != "." or not values[position + 1].isidentifier():
+			break
+		name = receiver + "." + values[position + 1]
+		position += 2
+
+
+def simple_function_returns(source, stream, values, known, constructors, *, top_level=False):
+	"""Infer nominal results from single-return or expression-bodied functions."""
+	functions = {}
+	annotations = {}
+	depth = 0
+	for index, token in enumerate(values[:-3]):
+		depth += (token == "{") - (token == "}")
+		if top_level and depth:
 			continue
-		position = index + 4
-		if separator == "=" and name != instance_type:
-			known_type = known_types.get(instance_type)
-			while known_type and position + 1 < len(values) and values[position] == ".":
-				known_type = known_types.get(known_type + "." + values[position + 1])
-				position += 2
-			if known_type == owner:
-				return True
-			position = index + 4
-		if instance_type != owner:
+		if token != "fn" or not values[index + 1].isidentifier() or values[index + 2] != "(":
 			continue
-		if position < len(values) and values[position] == "<":
-			depth = 1
-			position += 1
-			while position < len(values) and depth:
-				depth += (values[position] == "<") - (values[position] == ">")
+		name = values[index + 1] + "()"
+		body = after_group(values, index + 2, "(", ")")
+		if body >= len(values):
+			continue
+		if values[body] == ":":
+			end = body + 2
+			if end < len(values) and values[end] == "<":
+				end = after_group(values, end, "<", ">")
+			if end < len(values) and values[body + 1].isidentifier() and values[end] in ("{", "="):
+				annotations.setdefault(name, []).append(source[stream[body + 1][2]:stream[end - 1][3]])
+			else:
+				annotations.setdefault(name, []).append(None)
+		elif values[body:body + 2] == ["=", ">"]:
+			functions.setdefault(name, []).append((body + 2, None))
+		elif values[body:body + 2] == ["{", "return"]:
+			functions.setdefault(name, []).append((body + 2, after_group(values, body, "{", "}") - 1))
+		else:
+			functions.setdefault(name, []).append((None, None))
+	results = {name: types[0] for name, types in annotations.items() if name not in functions and types[0] and len(set(types)) == 1}
+	while True:
+		visible = (known | results)
+		for name in functions.keys() - results.keys():
+			visible.pop(name, None)
+		resolved = {}
+		for name, bodies in functions.items():
+			if name in results:
+				continue
+			returns = set(annotations.get(name, ()))
+			for start, closing in bodies:
+				result = None
+				if start is not None and start < len(values):
+					for result, end in expression_steps(stream, values, start, visible, constructors):
+						pass
+					if result and end < len(values):
+						if closing is not None and end < closing and values[end] == ";":
+							end += 1
+						if closing is not None and end != closing:
+							result = None
+						elif closing is None and values[end] not in (";", "}") and "\n" not in source[stream[end - 1][3]:stream[end][2]]:
+							result = None
+				returns.add(result)
+			if len(returns) == 1 and None not in returns:
+				resolved[name] = returns.pop()
+		if not resolved:
+			return results
+		results.update(resolved)
+
+
+def annotated_members(source, stream, values):
+	positions = {token[2]: index for index, token in enumerate(stream)}
+	code = type_tokens(source)
+	results = {}
+	for start, token in enumerate(values[:-2]):
+		if token not in ("class", "interface") or not values[start + 1].isidentifier():
+			continue
+		name = values[start + 1]
+		opening = start + 2
+		while opening < len(values) and values[opening] not in ("{", "}", ";", "="):
+			opening += 1
+		if opening == len(values) or values[opening] != "{":
+			continue
+		end = after_group(values, opening, "{", "}") - 1
+		position = opening + 1
+		while position < end:
+			kind = values[position]
+			if kind in ("fn", "get", "let", "const") and values[position + 1].isidentifier():
+				member = name + "." + values[position + 1]
+				if kind == "fn":
+					member += "()"
+				try:
+					sig, line = signature(source, stream, positions[code[position][2]])
+				except DocumentationError:
+					pass
+				else:
+					metadata = declaration_metadata(sig, source, line, member)
+					results.setdefault(member, set()).add(metadata["return_type"] or metadata["value_type"])
+			if kind in ("(", "[", "{"):
+				position = after_group(values, position, kind, {"(": ")", "[": "]", "{": "}"}[kind])
+			else:
 				position += 1
-		if position < len(values) and (separator, values[position]) in (("=", "("), (":", "=")):
-			return True
+	return {member: types.pop() for member, types in results.items() if len(types) == 1 and None not in types}
+
+def infer_documented_returns(stdlib, entries, types):
+	by_source = {}
+	for entry in entries:
+		if entry["kind"] == "api":
+			by_source.setdefault(entry["source"], []).append(entry)
+	constructors = {}
+	for definition in types:
+		constructors.setdefault(definition["source"], set()).add(definition["name"])
+	module_returns = {}
+	for path, declarations in by_source.items():
+		candidates = [entry for entry in declarations if not entry.get("owner") and not entry.get("return_type")
+			and re.search(r"\bfn\s+" + re.escape(entry["name"].split("~")[0]) + r"\s*\(", entry["signature"])]
+		if not candidates and not any(entry.get("owner") for entry in declarations):
+			continue
+		source = (stdlib / path).read_text(encoding="utf-8-sig")
+		stream = type_tokens(source)
+		values = [value if kind == "code" else "" for kind, value, _, _ in stream]
+		results = simple_function_returns(source, stream, values,
+			documented_value_types(declarations), constructors.get(path, set()), top_level=True)
+		members = annotated_members(source, list(tokens(source)), values)
+		if results or members:
+			module_returns[path] = members | results
+		for entry in candidates:
+			value = results.get(entry["name"].split("~")[0] + "()")
+			if value:
+				entry["return_type"] = value
+	return module_returns
+
+
+def declares_instance(example, owner, known_types=None, member=None, constructors=()):
+	"""Recognize local bindings and direct receiver expressions."""
+	stream = type_tokens(example)
+	values = [value if kind == "code" else "" for kind, value, _, _ in stream]
+	constructors = set(constructors) | {owner}
+	external_types = {}
+	for kind, text, _, _ in tokens(example):
+		if kind not in ("comment", "doc") or not (marker := EXTERNAL_DIRECTIVE.match(text)):
+			continue
+		try:
+			external_types.update(external_declarations(marker[1]))
+		except DocumentationError:
+			continue  # The highlighter reports the malformed declaration.
+	external_receivers = {name for name, value_type in external_types.items() if nominal_type(value_type) == owner}
+	constructors.difference_update(external_types)
+	known = {name: value for name, value in (known_types or {}).items() if name not in external_receivers}
+	known.update((name, value_type) for name, value_type in external_types.items() if name not in external_receivers)
+	known.update(simple_function_returns(example, stream, values, known, constructors))
+	if any(nominal_type(value_type) == owner for _, _, value_type in inferred_bindings(example, stream, values, known, constructors)):
+		return True
+	for index, (_, value, _, _) in enumerate(stream):
+		position = index + 1
+		if value in ("let", "const") and position + 2 < len(values) and values[position].isidentifier():
+			_, separator, instance_type = values[position:position + 3]
+			if separator == ":" and instance_type == owner:
+				equal = position + 3
+				if equal < len(values) and values[equal] == "<":
+					equal = after_group(values, equal, "<", ">")
+				if equal + 1 < len(values) and values[equal] == "=" and values[equal + 1] not in external_receivers | {"nil"}:
+					return True
+		for result, end in expression_steps(stream, values, index, known, constructors):
+			receiver = nominal_type(result)
+			if receiver != owner and (receiver, owner) != ("Array", "DynamicArray"):
+				continue
+			if member and values[end:end + 2] == [".", member]:
+				return True
+			if member == "operator" and values[end:end + 1] == ["("]:
+				return True
+			if member == "constructor" and value == owner and values[end - 1:end] == [")"]:
+				return True
+
 	return False
 
 
-def validate_member_examples(entries, types):
+def inferred_bindings(source, stream, values, known, constructors):
+	visible = dict(known)
+	for index, value in enumerate(values[:-3]):
+		if value not in ("let", "const") or values[index + 2] != "=" or not values[index + 1].isidentifier():
+			continue
+		name, start = values[index + 1], index + 3
+		visible.pop(name, None)
+		visible.pop(name + "()", None)
+		result = None
+		if values[start] in constructors and values[start + 1:start + 2] == ["<"]:
+			end = after_group(values, start + 1, "<", ">")
+			if values[end - 1:end] == [">"] and values[end:end + 1] != ["("]:
+				result = "type"
+		if result is None:
+			for result, end in expression_steps(stream, values, start, visible, constructors):
+				pass
+		if not result:
+			continue
+		if end < len(values) and values[end] not in (";", "}"):
+			if "\n" not in source[stream[end - 1][3]:stream[end][2]] or values[end] in ('+', '-', '*', '/', '%', '^', '&', '|', '.', '?'):
+				continue
+		if result == "type" and values[start] in constructors:
+			visible[name + "()"] = values[start]
+		else:
+			visible[name] = result
+		yield stream[index + 1][2], name, result
+
+
+def class_example_setups(entries):
+	"""Use the first owner example in the same source module as member setup."""
+	setups = {}
+	for entry in entries:
+		if entry["kind"] != "api" or entry.get("owner"):
+			continue
+		name = entry["name"].split("~")[0]
+		declaration = entry.get("signature", "")
+		nominal = re.search(r"\b(?:class|interface|enum|data)\s+" + re.escape(name) + r"\b", declaration)
+		if not nominal and entry.get("value_type") != "type" and entry.get("return_type") != "type":
+			continue
+		for section in entry.get("sections", ()):
+			if section["tag"] == "example":
+				setups.setdefault((entry["source"], name), section["code"])
+				break
+	return setups
+
+
+def validate_member_examples(entries, types, module_returns=None):
 	owners = {definition["name"] for definition in types}
 	known_types = documented_value_types(entries)
+	module_returns = module_returns or {}
+	module_entries = {}
+	for entry in entries:
+		module_entries.setdefault(entry["source"], []).append(entry)
+	module_hints = {path: documented_value_types(items) for path, items in module_entries.items()}
+	setups = class_example_setups(entries)
 	issues = []
 	for entry in entries:
 		owner = entry.get("owner")
@@ -824,9 +1081,12 @@ def validate_member_examples(entries, types):
 		declaration = entry["signature"]
 		if re.search(r"\bstatic\b", declaration) or not re.search(r"\b(fn|get|set|operator|constructor)\b", declaration):
 			continue
+		member = entry["name"].split("~")[0].rsplit(".", 1)[-1]
+		setup = setups.get((entry["source"], owner), "")
+		hints = known_types | module_hints[entry["source"]] | module_returns.get(entry["source"], {})
 		for section in entry["sections"]:
-			if section["tag"] == "example" and not declares_instance(section["code"], owner, known_types):
-				issues.append(f"{entry['source']}:{entry['line']}: {entry['name']} example {section['value']!r} must declare a local {owner} instance")
+			if section["tag"] == "example" and not declares_instance(setup + "\n" + section["code"], owner, hints, member, owners):
+				issues.append(f"{entry['source']}:{entry['line']}: {entry['name']} example {section['value']!r} must use a local {owner} instance")
 	if issues:
 		raise DocumentationError("\n".join(issues))
 
@@ -868,9 +1128,10 @@ def collect(root):
 	digest = hashlib.sha256(json.dumps(files, ensure_ascii=False, separators=(",", ":")).encode()).hexdigest()
 	environment, exports = prelude_environment(stdlib, entries)
 	types = type_index(stdlib, entries)
-	validate_member_examples(entries, types)
+	module_returns = infer_documented_returns(stdlib, entries, types)
+	validate_member_examples(entries, types, module_returns)
 	parameters = lexical_type_scopes(stdlib, entries, types)
-	return {"environment": environment, "exports": exports, "types": types, "type_parameters": parameters, "source_digest": digest, "files": [file for file in files if file['path'] in documented], "entries": entries, "coverage": {"source_files": len(files), "documented_files": len(documented), "documented_apis": sum(entry['kind'] == 'api' for entry in entries)}}
+	return {"environment": environment, "exports": exports, "types": types, "module_return_types": module_returns, "type_parameters": parameters, "source_digest": digest, "files": [file for file in files if file['path'] in documented], "entries": entries, "coverage": {"source_files": len(files), "documented_files": len(documented), "documented_apis": sum(entry['kind'] == 'api' for entry in entries)}}
 
 
 def anchor(identity):

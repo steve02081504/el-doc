@@ -55,6 +55,6 @@ export class DbTableDefinition
 ### 示例：定义带主键的表（column 是已有的列定义）
 
 ```el
-// @external column
+// @external column: DbColumnDefinition
 let table = DbTableDefinition("people", @[column], @["name"])
 ```

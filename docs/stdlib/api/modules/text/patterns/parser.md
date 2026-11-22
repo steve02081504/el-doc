@@ -34,12 +34,12 @@
 export class ParseError extends Error
 ```
 
-### 示例：捕获 JSON 解析错误（需调用方提供对象或绑定）
+### 示例：查看解析错误的失败偏移
 
 ```el
 import { ParseError } from "el:text/patterns/index.el"
-try { json.parse("true false") }
-catch (error) { if (error is ParseError) console.stderr.writeLine(error.offset) }
+let failure = ParseError(5, @["value"])
+console.stderr.writeLine(failure.offset)
 ```
 
 ## ParseError.offset {#api-6dd7855dda76480009da}
@@ -57,13 +57,13 @@ let offset: Number
 ### 示例：显示失败偏移
 
 ```el
-// @external error
+// @external error: ParseError
 console.stderr.writeLine(error.offset)
 ```
 
 ## ParseError.expected {#api-2b3956bc77cb8ed6d897}
 
-源码：`src/stdlib/text/patterns/parser.el:35` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L35)
+源码：`src/stdlib/text/patterns/parser.el:36` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L36)
 
 在失败位置可接受的预期项列表。
 
@@ -76,12 +76,13 @@ let expected: Text[]
 ### 示例：显示预期项（需调用方提供对象或绑定）
 
 ```el
+// @external error: ParseError
 console.stderr.writeLine(error.expected.join(", "))
 ```
 
 ## ParseError.contexts {#api-2d3bebc3de2f96ffe6a8}
 
-源码：`src/stdlib/text/patterns/parser.el:43` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L43)
+源码：`src/stdlib/text/patterns/parser.el:44` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L44)
 
 失败时处于活动状态的解析规则上下文栈。
 
@@ -94,13 +95,37 @@ let contexts: Text[]
 ### 示例：显示解析上下文
 
 ```el
-// @external error
+// @external error: ParseError
 console.stderr.writeLine(error.contexts.join("/"))
+```
+
+## ParseReply {#api-97a3a0dc8d534b09c3e7}
+
+源码：`src/stdlib/text/patterns/parser.el:103` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L103)
+
+根据语义输出类型构造解析结果类型；每个结果保存匹配状态、结束偏移或解析错误。
+
+```el-signature
+export fn ParseReply(output: type): type
+```
+
+**返回类型**：[`type`](../../../../../reference/language/types.md)
+
+**参数**：output 解析成功时产生的语义值类型。
+
+**返回值**：可表示成功结果或携带 ParseError 的失败结果类型。
+
+### 示例：构造成功结果类型并保存匹配值
+
+```el
+let Reply = ParseReply(Number)
+let reply = Reply(2, () => 72)
+console.stdout.writeLine(reply.matched, " ", reply.end)
 ```
 
 ## ParseReply.matched {#api-eed8f57e3bc622e71c4d}
 
-源码：`src/stdlib/text/patterns/parser.el:100` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L100)
+源码：`src/stdlib/text/patterns/parser.el:112` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L112)
 
 指示前缀解析是否成功。
 
@@ -113,12 +138,13 @@ let matched: Bool
 ### 示例：检查前缀是否匹配（需调用方提供对象或绑定）
 
 ```el
+// @external reply: ParseReply<output: Number>
 console.stdout.writeLine(reply.matched)
 ```
 
 ## ParseReply.end {#api-aa042bd0e5020bde8f9a}
 
-源码：`src/stdlib/text/patterns/parser.el:109` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L109)
+源码：`src/stdlib/text/patterns/parser.el:121` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L121)
 
 成功解析后第一个未消费位置的标量下标。
 
@@ -131,13 +157,13 @@ let end: Number
 ### 示例：查看消费偏移
 
 ```el
-// @external reply
+// @external reply: ParseReply<output: Number>
 console.stdout.writeLine(reply.end)
 ```
 
 ## ParseReply.error {#api-c04ba9afd567cf3d838f}
 
-源码：`src/stdlib/text/patterns/parser.el:117` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L117)
+源码：`src/stdlib/text/patterns/parser.el:130` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L130)
 
 未匹配时保存的 ParseError。
 
@@ -150,12 +176,13 @@ let error: ParseError
 ### 示例：查看失败偏移（需调用方提供对象或绑定）
 
 ```el
+// @external reply: ParseReply<output: Number>
 console.stderr.writeLine(reply.error.offset)
 ```
 
 ## ParseReply.value {#api-51d18d3ab11cb736b67e}
 
-源码：`src/stdlib/text/patterns/parser.el:149` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L149)
+源码：`src/stdlib/text/patterns/parser.el:162` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L162)
 
 返回成功解析得到的语义值；失败时抛出保存的 ParseError。
 
@@ -163,7 +190,7 @@ console.stderr.writeLine(reply.error.offset)
 fn value(): output
 ```
 
-**返回类型**：[`output`](../../../types.md#api-14ead6504f5bee2a3866)
+**返回类型**：[`output`](../../../types.md#api-d0a2a8f4c1260d3b7433)
 
 **返回值**：解析器产生的值。
 
@@ -172,13 +199,37 @@ fn value(): output
 ### 示例：读取成功结果
 
 ```el
-// @external reply
+// @external reply: ParseReply<output: Number>
 if (reply.matched) console.stdout.writeLine(reply.value())
+```
+
+## Parser {#api-93c73ae8c76ebc48d097}
+
+源码：`src/stdlib/text/patterns/parser.el:211` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L211)
+
+根据语义输出类型构造解析器类型。解析器保存从输入上下文与起点读取 ParseReply 的函数。
+
+```el-signature
+export fn Parser(output: type): type
+```
+
+**返回类型**：[`type`](../../../../../reference/language/types.md)
+
+**参数**：output 解析成功时产生的语义值类型。
+
+**返回值**：可封装解析函数并提供完整解析、前缀解析和预览操作的解析器类型。
+
+### 示例：将整数模式包装成有类型的解析器
+
+```el
+import { Parser, integer } from "el:text/patterns/index.el"
+let parser: Parser<output: Number<min: unbounded, max: unbounded, epsilon: 0, integer: t>> = integer(min: unbounded, max: unbounded, epsilon: 0).asParser()
+let value = parser.parse("72")
 ```
 
 ## Parser.asParser {#api-d229b8c3837af00d72d9}
 
-源码：`src/stdlib/text/patterns/parser.el:220` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L220)
+源码：`src/stdlib/text/patterns/parser.el:243` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L243)
 
 将模式包装值转换为解析器；解析器自身调用时也返回自身。
 
@@ -196,7 +247,7 @@ let value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse
 
 ## Parser.parse {#api-d313f1ac56d1be2399e2}
 
-源码：`src/stdlib/text/patterns/parser.el:254` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L254)
+源码：`src/stdlib/text/patterns/parser.el:277` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L277)
 
 从输入起点解析完整文本；输入有剩余或无法匹配时抛出 ParseError。
 
@@ -204,7 +255,7 @@ let value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse
 fn parse(source: Text, limits: PatternLimits = PatternLimits()): output
 ```
 
-**返回类型**：[`output`](../../../types.md#api-9996609a930a7464f8cd)
+**返回类型**：[`output`](../../../types.md#api-df976d47c60f3dbf87f5)
 
 **参数**：source 待解析文本。
 
@@ -224,7 +275,7 @@ console.stdout.writeLine(value)
 
 ## Parser.parsePrefix {#api-7aff463fca2745d8ab80}
 
-源码：`src/stdlib/text/patterns/parser.el:274` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L274)
+源码：`src/stdlib/text/patterns/parser.el:297` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L297)
 
 从指定偏移尝试解析输入前缀，不要求消费完整文本，并以 ParseReply 返回匹配状态。
 
@@ -232,7 +283,7 @@ console.stdout.writeLine(value)
 fn parsePrefix(source: Text, from: Number = 0, limits: PatternLimits = PatternLimits()): ParseReply<output: output>
 ```
 
-**返回类型**：[`ParseReply`](../../../types.md#api-97a3a0dc8d534b09c3e7)<output: [`output`](../../../types.md#api-9996609a930a7464f8cd)>
+**返回类型**：[`ParseReply`](parser.md#api-97a3a0dc8d534b09c3e7)<output: [`output`](../../../types.md#api-df976d47c60f3dbf87f5)>
 
 **参数**：source 待解析文本。
 
@@ -252,7 +303,7 @@ console.stdout.writeLine(reply.matched, " ", reply.end)
 
 ## firstOf {#api-f45406a31ca93535cd3d}
 
-源码：`src/stdlib/text/patterns/parser.el:600` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L600)
+源码：`src/stdlib/text/patterns/parser.el:623` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L623)
 
 从当前位置依次尝试解析器或文本候选，返回首个成功分支的结果。
 
@@ -275,7 +326,7 @@ let literalParser = firstOf(constant("null", f), constant("true", t))
 
 ## constant {#api-e3e533cb002f8125c11d}
 
-源码：`src/stdlib/text/patterns/parser.el:641` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L641)
+源码：`src/stdlib/text/patterns/parser.el:664` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L664)
 
 匹配完整的固定文本，并将指定值作为解析结果。
 
@@ -298,7 +349,7 @@ let trueParser = constant("true", t)
 
 ## pair {#api-cd138cf7450ba86c77a7}
 
-源码：`src/stdlib/text/patterns/parser.el:662` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L662)
+源码：`src/stdlib/text/patterns/parser.el:685` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L685)
 
 解析左值、分隔符与右值，并返回包含两侧结果的配对值。
 
@@ -323,7 +374,7 @@ let member = pair("name", ":", "EL")
 
 ## list {#api-71fc4d87dd834fa519c1}
 
-源码：`src/stdlib/text/patterns/parser.el:749` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L749)
+源码：`src/stdlib/text/patterns/parser.el:772` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L772)
 
 解析由括号包围、以分隔符隔开的元素序列；默认拒绝尾随分隔符。
 

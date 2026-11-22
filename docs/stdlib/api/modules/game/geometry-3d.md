@@ -25,7 +25,7 @@ export @assign(mode: "copy") class Vec3
 ### 示例：使用示例
 
 ```el
-import { Vec3 } from "el:game/geometry-3d"
+import { Vec3 } from "el:game/geometry-3d.el"
 let vector = Vec3(1, 2, 3)
 let squaredLength = vector.dot(vector)
 ```
@@ -45,7 +45,7 @@ export @assign(mode: "copy") class Rotation
 ### 示例：使用示例
 
 ```el
-import { Rotation, Vec3 } from "el:game/geometry-3d"
+import { Rotation, Vec3 } from "el:game/geometry-3d.el"
 let rotation = Rotation(0, 0, 0, 1)
 let point = rotation.rotate(Vec3(1, 2, 3))
 ```
@@ -63,7 +63,7 @@ export @assign(mode: "copy") class Pose
 ### 示例：使用示例
 
 ```el
-import { Pose, Vec3 } from "el:game/geometry-3d"
+import { Pose, Vec3 } from "el:game/geometry-3d.el"
 let pose = Pose(Vec3(1, 0, 0))
 let worldPoint = pose.transform(Vec3(2, 0, 0))
 ```
@@ -83,6 +83,6 @@ export @assign(mode: "copy") class Ray
 ### 示例：使用示例
 
 ```el
-import { Ray, Vec3 } from "el:game/geometry-3d"
+import { Ray, Vec3 } from "el:game/geometry-3d.el"
 let ray = Ray(Vec3(0, 0, 0), Vec3(0, 0, 1))
 ```

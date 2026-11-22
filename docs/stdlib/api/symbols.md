@@ -181,6 +181,7 @@
 | [DataLoader.next~samples](modules/neural-networks/data/index.md#api-4232412f3e2beb1e4a64) | `neural-networks/data/index.el` |
 | [DataLoader.restore](modules/neural-networks/data/index.md#api-45d2fb6c47561221639f) | `neural-networks/data/index.el` |
 | [DataLoader.save](modules/neural-networks/data/index.md#api-e9c87836c8629fb1669a) | `neural-networks/data/index.el` |
+| [Dataset](modules/neural-networks/data/index.md#api-3357d451b8096d9150b6) | `neural-networks/data/index.el` |
 | [dataView](modules/user-interface/grid-view.md#api-f2ebc0934aca73231ec0) | `user-interface/grid-view.el` |
 | [DbColumnDefinition](modules/database/table.md#api-4c3e6ac827cdd538a56e) | `database/table.el` |
 | [DbEngineOptions](modules/database/engine.md#api-a519c385d5e1dcf7f447) | `database/engine.el` |
@@ -191,6 +192,7 @@
 | [debug_mode](modules/platform/build.md#api-6627dfa1f08b2c8d69e4) | `platform/build.el` |
 | [debuggerAttached](modules/tools/debugger/attachment.md#api-bc0ad4d86df37ca429c9) | `tools/debugger/attachment.el` |
 | [debuggerPause](modules/tools/debugger/attachment.md#api-7398874336422e919732) | `tools/debugger/attachment.el` |
+| [decimal](modules/parsing/tokens.md#api-5f3b4e076722a4edc4ee) | `parsing/tokens.el` |
 | [decimalDigits](modules/time/units.md#api-5eb68fec95e1642e33bd) | `time/units.el` |
 | [DecoderConfig](modules/neural-networks/text/config.md#api-421a6ec1d0a5c1f04046) | `neural-networks/text/config.el` |
 | [decodeWav](modules/multimedia/audio/wav.md#api-3ec25c2a0a628a314475) | `multimedia/audio/wav.el` |
@@ -215,6 +217,7 @@
 | [DitSet.rotateRight](modules/collections/sets/dit-set.md#api-5e7bb9d8fb8dbd3d8cfa) | `collections/sets/dit-set.el` |
 | [DitSet.toNumber](modules/collections/sets/dit-set.md#api-282ea6306ccd98aa7377) | `collections/sets/dit-set.el` |
 | [drop](modules/collections/arrays/operations.md#api-6f4f6cc4e32930aa04c8) | `collections/arrays/operations.el` |
+| [DynamicObject](modules/language/objects.md#api-e3d29af11f62e4970b53) | `language/objects.el` |
 | [each](modules/collections/arrays/operations.md#api-abd0044e05f4d936ba48) | `collections/arrays/operations.el` |
 | [element](modules/user-interface/model.md#api-8fd177f7546412758246) | `user-interface/model.el` |
 | [encodeUtf8](modules/network/bytes.md#api-c49ddb5bb423584fbb6a) | `network/bytes.el` |
@@ -326,6 +329,7 @@
 | [jsonField](modules/formats/json/index.md#api-aa387b2b22b62084db00) | `formats/json/index.el` |
 | [JsonLimits](modules/formats/json/limits.md#api-0b8ce6a01434f6c89e99) | `formats/json/limits.el` |
 | [keepElement](modules/collections/batch/syntax.md#api-c5174b75e0d42f4f9356) | `collections/batch/syntax.el` |
+| [KernelEnvironment](modules/compiler/proof/kernel.md#api-8e328cd33d4187104a5b) | `compiler/proof/kernel.el` |
 | [LanguageModelPackage](modules/neural-networks/text/package.md#api-a8856762f284ccee6452) | `neural-networks/text/package.el` |
 | [LanguageModelWindows](modules/neural-networks/text/data.md#api-0a1a45f6971031715620) | `neural-networks/text/data.el` |
 | [LayoutContext](modules/language/layout/index.md#api-fee883c2b432dd442f03) | `language/layout/index.el` |
@@ -379,6 +383,7 @@
 | [MemoryPressure.register_reclaimer](modules/memory/allocation/pressure.md#api-d793fcf9bb26d2c0a1b1) | `memory/allocation/pressure.el` |
 | [MemoryPressureStateError](modules/memory/allocation/pressure.md#api-37be22995aa184e8d4db) | `memory/allocation/pressure.el` |
 | [min](modules/mathematics/functions/discrete.md#api-f3ff61e2646083d63650) | `mathematics/functions/discrete.el` |
+| [MissingKeyError](modules/collections/maps/base.md#api-b0a35b2cd112904cedbc) | `collections/maps/base.el` |
 | [monthDays](modules/time/calendar.md#api-e4a535b45fe088abf757) | `time/calendar.el` |
 | [MonthOverflow](modules/time/instant.md#api-759d477c1154e5461c89) | `time/instant.el` |
 | [moveChild](modules/user-interface/model.md#api-0a122f09a5627320ce81) | `user-interface/model.el` |
@@ -387,7 +392,12 @@
 | [MusicPlayer.formula](modules/multimedia/audio/music.md#api-baf68ca88eb889649eb3) | `multimedia/audio/music.el` |
 | [MusicPlayer.play](modules/multimedia/audio/music.md#api-acd751dc2f58267cd866) | `multimedia/audio/music.el` |
 | [MusicPlayer.stop](modules/multimedia/audio/music.md#api-878b318a6d2c1a57a85e) | `multimedia/audio/music.el` |
+| [Nat](modules/mathematics/arithmetic/natural.md#api-458aaf661a17a47f63c0) | `mathematics/arithmetic/natural.el` |
 | [native](modules/execution/plans/policy.md#api-ead5f19b82668f54a168) | `execution/plans/policy.el` |
+| [native_allocate](modules/platform/linux/allocation.md#api-722954afa51ff8e2ee59) | `platform/linux/allocation.el` |
+| [native_release](modules/platform/linux/allocation.md#api-8e0e19c5a2fad7e5e438) | `platform/linux/allocation.el` |
+| [NativeFloatExponent5](modules/platform/machine/float-codec.md#api-f145036e3b661f9b51a3) | `platform/machine/float-codec.el` |
+| [NativeInt](modules/platform/linux/libc.md#api-5fc2beb1be963b400238) | `platform/linux/libc.el` |
 | [NativeSignedInteger](modules/platform/machine/integer.md#api-45690472287900730a5f) | `platform/machine/integer.el` |
 | [NativeSignedWord](modules/runtime/native-types.md#api-b33b987a810fb17f83e0) | `runtime/native-types.el` |
 | [NativeStorageSize](modules/runtime/native-types.md#api-56e936010cbf9fb04ba1) | `runtime/native-types.el` |
@@ -410,6 +420,7 @@
 | [offsetText](modules/time/calendar.md#api-77dcea13bebddbd7baf5) | `time/calendar.el` |
 | [on](modules/user-interface/model.md#api-bec5c16251ba4e97600c) | `user-interface/model.el` |
 | [oneHot](modules/neural-networks/functional.md#api-956d05922bbc9c543e7d) | `neural-networks/functional.el` |
+| [ones](modules/numerical-computing/arrays.md#api-24bc34d3ad4af842ed3e) | `numerical-computing/arrays.el` |
 | [openCSVRows](modules/formats/delimited-text/stream.md#api-6f7101cca85917c43295) | `formats/delimited-text/stream.el` |
 | [openCSVWriter](modules/formats/delimited-text/index.md#api-6bc989c7af5ed7660d74) | `formats/delimited-text/index.el` |
 | [openDatabase](modules/database/engine.md#api-e5ea93b339773da61f63) | `database/engine.el` |
@@ -446,9 +457,11 @@
 | [parseOrderedJSONLines](modules/formats/json/variants.md#api-504082fee10734d04334) | `formats/json/variants.el` |
 | [parseOrderedTOML](modules/formats/toml/index.md#api-5580b3b042100058a9fa) | `formats/toml/index.el` |
 | [parseOrderedYAML](modules/formats/yaml/index.md#api-bd520a15ef20f49b9075) | `formats/yaml/index.el` |
+| [Parser](modules/text/patterns/parser.md#api-93c73ae8c76ebc48d097) | `text/patterns/parser.el` |
 | [Parser.asParser](modules/text/patterns/parser.md#api-d229b8c3837af00d72d9) | `text/patterns/parser.el` |
 | [Parser.parse](modules/text/patterns/parser.md#api-d313f1ac56d1be2399e2) | `text/patterns/parser.el` |
 | [Parser.parsePrefix](modules/text/patterns/parser.md#api-7aff463fca2745d8ab80) | `text/patterns/parser.el` |
+| [ParseReply](modules/text/patterns/parser.md#api-97a3a0dc8d534b09c3e7) | `text/patterns/parser.el` |
 | [ParseReply.end](modules/text/patterns/parser.md#api-aa042bd0e5020bde8f9a) | `text/patterns/parser.el` |
 | [ParseReply.error](modules/text/patterns/parser.md#api-c04ba9afd567cf3d838f) | `text/patterns/parser.el` |
 | [ParseReply.matched](modules/text/patterns/parser.md#api-eed8f57e3bc622e71c4d) | `text/patterns/parser.el` |
@@ -459,6 +472,7 @@
 | [parseTSV](modules/formats/delimited-text/index.md#api-6b18fbbb8111d0a23c0e) | `formats/delimited-text/index.el` |
 | [parseXML](modules/formats/xml/index.md#api-73adee4c1adc13b296b2) | `formats/xml/index.el` |
 | [parseYAML](modules/formats/yaml/index.md#api-9cc1ddf8a8c4fb2a80f8) | `formats/yaml/index.el` |
+| [Path](modules/filesystem/model.md#api-01450bc86834bd922aa5) | `filesystem/model.el` |
 | [Path](modules/operating-system/paths/path.md#api-c0394889c4c86e2384bc) | `operating-system/paths/path.el` |
 | [pbkdf2_sha1](modules/cryptography/pbkdf2.md#api-d020f6a2cb3f95fd05e0) | `cryptography/pbkdf2.el` |
 | [pbkdf2_sha256](modules/cryptography/pbkdf2.md#api-652e43357d7e243dfb59) | `cryptography/pbkdf2.el` |
@@ -494,10 +508,17 @@
 | [positionalArray](modules/collections/arrays/positional.md#api-6bb9e0f6b72f22340b48) | `collections/arrays/positional.el` |
 | [positiveRemainder](modules/time/units.md#api-5e84633337d1771b191b) | `time/units.el` |
 | [pow](modules/mathematics/functions/elementary.md#api-fa68c880d86864b1595c) | `mathematics/functions/elementary.el` |
+| [pow](modules/number/arithmetic.md#api-0b03a198b48f8e46a3fc) | `number/arithmetic.el` |
 | [PreparedSearch](modules/logic/search.md#api-903be40199787b3f4b1f) | `logic/search.el` |
 | [PressureGeneration](modules/memory/allocation/observation.md#api-c6a2c947c022768dfb89) | `memory/allocation/observation.el` |
+| [proof_constant](modules/compiler/proof/term.md#api-cd0dce69eb7ed98f96cd) | `compiler/proof/term.el` |
+| [proof_pi](modules/compiler/proof/term.md#api-b37052d536b90ae3014d) | `compiler/proof/term.el` |
+| [proof_sort](modules/compiler/proof/term.md#api-667d64d582cac9f0f2ce) | `compiler/proof/term.el` |
+| [ProofBudget](modules/compiler/proof/work.md#api-294098eebbd742684492) | `compiler/proof/work.el` |
 | [Prop](modules/language/proofs.md#api-a376131941dc82f3eb3f) | `language/proofs.el` |
 | [publishTextFile](modules/filesystem/index.md#api-5e0d1c25737dcede0786) | `filesystem/index.el` |
+| [put](modules/multimedia/capture/binary.md#api-63ad5caf77920fa2e7b1) | `multimedia/capture/binary.el` |
+| [query](modules/database/source-syntax.md#api-703451589618b8e34ad1) | `database/source-syntax.el` |
 | [query](modules/queries/source-syntax.md#api-284dc65ab75a83659889) | `queries/source-syntax.el` |
 | [rand](modules/random/index.md#api-0e70a2dfa7186c77e160) | `random/index.el` |
 | [Random](modules/random/index.md#api-b2206be230690600dd8e) | `random/index.el` |
@@ -555,6 +576,7 @@
 | [runWindow](modules/user-interface/platform/macos/window.md#api-53fcc931b59bf0bc7698) | `user-interface/platform/macos/window.el` |
 | [runWindow](modules/user-interface/platform/windows/window.md#api-5a35178b26a593b8361d) | `user-interface/platform/windows/window.el` |
 | [runWindows](modules/user-interface/platform/windows/window.md#api-d58299be18ae530eb594) | `user-interface/platform/windows/window.el` |
+| [Sampler](modules/neural-networks/data/index.md#api-4b5c3036774cf3474e52) | `neural-networks/data/index.el` |
 | [scalar_load](modules/memory/storage/raw.md#api-434a60afcb17b8b68d9c) | `memory/storage/raw.el` |
 | [scalar_store](modules/memory/storage/raw.md#api-fd0e9c100c89857ad579) | `memory/storage/raw.el` |
 | [scalarSet](modules/text/patterns/combinators.md#api-6e8d4cb55ce806bebd5d) | `text/patterns/combinators.el` |
@@ -566,6 +588,7 @@
 | [secure_random_bytes](modules/cryptography/rand.md#api-419282ad372a03627bc4) | `cryptography/rand.el` |
 | [secure_random_hex](modules/cryptography/rand.md#api-c454f904317622bce76d) | `cryptography/rand.el` |
 | [seed_bits](modules/random/bits.md#api-26c100bd4eb558e472c0) | `random/bits.el` |
+| [selectDesktopWindows](modules/desktop-automation/window-selector.md#api-6e7d2ef1321480dba3a1) | `desktop-automation/window-selector.el` |
 | [Sequence](modules/collections/sequences/demand.md#api-f1b57111a81f88477e0f) | `collections/sequences/demand.el` |
 | [sequence](modules/text/patterns/combinators.md#api-dd83ce8439cbe4fa0868) | `text/patterns/combinators.el` |
 | [Sequence.collect](modules/collections/sequences/demand.md#api-12bd7b94b2871a2ffb6c) | `collections/sequences/demand.el` |
@@ -576,6 +599,7 @@
 | [Sequence.slice](modules/collections/sequences/demand.md#api-1a13690071622bccebd0) | `collections/sequences/demand.el` |
 | [Sequence.sum](modules/collections/sequences/demand.md#api-f18006015ef6f920209d) | `collections/sequences/demand.el` |
 | [Sequence.take](modules/collections/sequences/demand.md#api-b415cd6c8b485fb55cfc) | `collections/sequences/demand.el` |
+| [Sequential](modules/control/selection/policies.md#api-c22f8460d04e3408b529) | `control/selection/policies.el` |
 | [Sequential](modules/neural-networks/model.md#api-3de3a8b723127e06dd74) | `neural-networks/model.el` |
 | [Sequential.forward](modules/neural-networks/model.md#api-daa36f8828e242c94dc1) | `neural-networks/model.el` |
 | [Set](modules/collections/sets/hash-set.md#api-d0e70967a499a59ddcdc) | `collections/sets/hash-set.el` |
@@ -591,6 +615,7 @@
 | [Set.symmetricDifference](modules/collections/sets/hash-set.md#api-84114d3fe59c80193055) | `collections/sets/hash-set.el` |
 | [Set.union](modules/collections/sets/hash-set.md#api-6fc99da40e2de7ac073d) | `collections/sets/hash-set.el` |
 | [Set.values](modules/collections/sets/hash-set.md#api-08e9c0e43ab2da7101aa) | `collections/sets/hash-set.el` |
+| [SettingsSnapshot](modules/settings/model.md#api-b465752ff21c274428e5) | `settings/model.el` |
 | [SGD](modules/neural-networks/optimizer.md#api-6d3c31621381d78a2d47) | `neural-networks/optimizer.el` |
 | [SGD.update](modules/neural-networks/optimizer.md#api-fda9885666e0c1fb1e9b) | `neural-networks/optimizer.el` |
 | [sha256_digest](modules/cryptography/sha256.md#api-8e0b6ba8fd37e211e167) | `cryptography/sha256.el` |
@@ -690,6 +715,8 @@
 | [tree_node_key](modules/collections/trees/tree-traversal.md#api-448ba0c99e25940c7132) | `collections/trees/tree-traversal.el` |
 | [try_heap_alloc](modules/memory/allocation/heap.md#api-ed06bd17d4112704658d) | `memory/allocation/heap.el` |
 | [Type](modules/language/proofs.md#api-2c69e2f6858e85964893) | `language/proofs.el` |
+| [U32](modules/platform/embedded/register.md#api-7426cc317fee3bd30c57) | `platform/embedded/register.el` |
+| [U8](modules/platform/embedded/register.md#api-86e8d3e236ed444e4ebc) | `platform/embedded/register.el` |
 | [unbounded](modules/number/number.md#api-db75efcb59f6dbd40ec8) | `number/number.el` |
 | [unchanged](modules/optimization/context.md#api-ca19d040014517ecd1ed) | `optimization/context.el` |
 | [UncheckedSyntax](modules/language/syntax/index.md#api-3628c09626a9be6ba1ba) | `language/syntax/index.el` |

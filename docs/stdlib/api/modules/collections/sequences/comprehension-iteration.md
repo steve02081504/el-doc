@@ -21,6 +21,8 @@
 export fn singleton(producer)
 ```
 
+**返回类型**：Singleton
+
 **参数**：producer 无参数工厂；每个游标的首次 next 才调用一次。
 
 **返回值**：元素类型来自工厂返回类型的可重开对象；collect() 将元素收集为数组。
@@ -48,6 +50,8 @@ let result = values.collect() // @[7]；calls 为 1。
 ```el-signature
 export fn guarded(conditionFactory, outputFactory)
 ```
+
+**返回类型**：Guarded
 
 **参数**：conditionFactory 无参数条件工厂；每个游标首次 next 时调用一次。
 
@@ -77,6 +81,8 @@ let result = values.collect() // @[]；opened 仍为 0。
 ```el-signature
 export fn flatMap(sourceFactory, expand)
 ```
+
+**返回类型**：FlatMapped
 
 **参数**：sourceFactory 无参数可迭代来源工厂；每个游标首次 next 时调用一次。
 

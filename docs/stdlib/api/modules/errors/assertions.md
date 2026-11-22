@@ -24,7 +24,7 @@
 export @assign(mode: "shared") class AssertionError extends Error
 ```
 
-### 示例：捕获断言错误（error 是已有的 AssertionError）
+### 示例：捕获断言错误
 
 ```el
 try { assert(f, "value required") }
@@ -43,10 +43,10 @@ let reason: Text
 
 **类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
 
-### 示例：输出断言原因（error 是已有的 AssertionError）
+### 示例：输出断言原因
 
 ```el
-// @external error
+let error = AssertionError("values must not be empty")
 console.stderr.writeLine(error.reason)
 ```
 
@@ -70,10 +70,10 @@ export @pure fn assert(condition: Bool, reason: Text): Bool
 
 **失败与异常**：condition 为假时抛 AssertionError。
 
-### 示例：检查集合不为空（values 是已有的集合）
+### 示例：检查集合不为空
 
 ```el
-// @external values
+let values = @[1, 2]
 import { assert } from "el:tools/testing/index.el"
 assert(values.count > 0, "values must not be empty")
 ```

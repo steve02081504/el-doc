@@ -23,9 +23,26 @@
 
 定义映射条目、缺失键错误及映射操作的基础接口；具体存储由实现提供。
 
+## MissingKeyError {#api-b0a35b2cd112904cedbc}
+
+源码：`src/stdlib/collections/maps/base.el:11` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L11)
+
+映射中缺少所需键时抛出的错误。
+
+```el-signature
+@assign(mode: "copy")
+export class MissingKeyError extends Error
+```
+
+### 示例：创建缺失键错误
+
+```el
+let error = MissingKeyError()
+```
+
 ## Map.count {#api-0c7a0f184281a95f6821}
 
-源码：`src/stdlib/collections/maps/base.el:33` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L33)
+源码：`src/stdlib/collections/maps/base.el:39` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L39)
 
 返回当前映射中的键值对数量。
 
@@ -47,7 +64,7 @@ console.stdout.writeLine(scores.count)
 
 ## Map.remove {#api-86c98fb1130f62b84401}
 
-源码：`src/stdlib/collections/maps/base.el:46` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L46)
+源码：`src/stdlib/collections/maps/base.el:52` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L52)
 
 删除给定键对应的条目。
 
@@ -71,7 +88,7 @@ scores.remove("ada")
 
 ## Map.compact {#api-216207f74418a0afe4f3}
 
-源码：`src/stdlib/collections/maps/base.el:55` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L55)
+源码：`src/stdlib/collections/maps/base.el:61` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L61)
 
 释放预留容量及删除留下的空槽，保持现有键值及顺序合同。
 
@@ -89,7 +106,7 @@ scores.compact()
 
 ## Map.clear {#api-7c378e1cc018ee51ecee}
 
-源码：`src/stdlib/collections/maps/base.el:64` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L64)
+源码：`src/stdlib/collections/maps/base.el:70` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L70)
 
 删除映射中的全部条目。
 
@@ -107,7 +124,7 @@ scores.clear()
 
 ## Map.entries {#api-37209e2cfdae04240843}
 
-源码：`src/stdlib/collections/maps/base.el:77` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L77)
+源码：`src/stdlib/collections/maps/base.el:83` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L83)
 
 返回当前键值对组成的数组快照；直接遍历映射也使用此快照。
 条目的 key 和 value 是只读属性；使用 set 更新映射，不会修改已有快照中的条目。
@@ -117,7 +134,7 @@ scores.clear()
 virtual fn entries(): Entry[]
 ```
 
-**返回类型**：[`Entry`](../../../types.md#api-85b47ec304f9ce7dae46)[]
+**返回类型**：[`Entry`](../../../types.md#api-ff8d239acd9e962a9706)[]
 
 **返回值**：每项包含 key 与 value 的条目数组。
 
@@ -132,7 +149,7 @@ for (let {key: name, value: score} in scores) console.stdout.writeLine(name, " =
 
 ## Map.has {#api-d0a46e913af4f7a66ee6}
 
-源码：`src/stdlib/collections/maps/base.el:91` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L91)
+源码：`src/stdlib/collections/maps/base.el:97` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L97)
 
 判断映射是否含有给定键，不读取或修改对应值。
 
@@ -156,7 +173,7 @@ console.stdout.writeLine(users.has("ada"))
 
 ## Map.get {#api-52852aadc467c16e4d8a}
 
-源码：`src/stdlib/collections/maps/base.el:101` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L101)
+源码：`src/stdlib/collections/maps/base.el:107` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L107)
 
 查询键对应的值；键不存在时返回 nil。
 
@@ -164,7 +181,7 @@ console.stdout.writeLine(users.has("ada"))
 fn get(lookupKey: key): value | nil_t
 ```
 
-**返回类型**：[`value`](../../../types.md#api-39520d8c37c7afda41be) | [`nil_t`](../../language/values.md#api-86357ad50ef0535f6333)
+**返回类型**：[`value`](../../../types.md#api-cdd9fdb454b664951f56) | [`nil_t`](../../language/values.md#api-86357ad50ef0535f6333)
 
 **参数**：lookupKey 要查询的键。
 
@@ -179,7 +196,7 @@ let score = scores.get("ada")
 
 ## Map.getOr {#api-9b5fac9ee67f5fe57436}
 
-源码：`src/stdlib/collections/maps/base.el:115` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L115)
+源码：`src/stdlib/collections/maps/base.el:121` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L121)
 
 查询映射中的键；键不存在时返回调用方提供的默认值。
 
@@ -187,7 +204,7 @@ let score = scores.get("ada")
 fn getOr(lookupKey: key, lazy fallback: value): value
 ```
 
-**返回类型**：[`value`](../../../types.md#api-39520d8c37c7afda41be)
+**返回类型**：[`value`](../../../types.md#api-cdd9fdb454b664951f56)
 
 **参数**：lookupKey 要查询的键。
 
@@ -205,7 +222,7 @@ console.stdout.writeLine(counts.getOr("red", 0))
 
 ## Map.keys {#api-bc2703a8337e9d87c267}
 
-源码：`src/stdlib/collections/maps/base.el:149` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L149)
+源码：`src/stdlib/collections/maps/base.el:155` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L155)
 
 返回当前键组成的数组快照。
 
@@ -213,7 +230,7 @@ console.stdout.writeLine(counts.getOr("red", 0))
 fn keys(): key[]
 ```
 
-**返回类型**：[`key`](../../../types.md#api-111d280eeeb372a54fb3)[]
+**返回类型**：[`key`](../../../types.md#api-a3444c673145a833055f)[]
 
 **返回值**：键数组。
 
@@ -227,7 +244,7 @@ console.stdout.writeLine(scores.keys().join(", "))
 
 ## Map.values {#api-10056afaf272a33d1f68}
 
-源码：`src/stdlib/collections/maps/base.el:163` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L163)
+源码：`src/stdlib/collections/maps/base.el:169` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L169)
 
 返回当前值组成的数组快照。
 
@@ -235,7 +252,7 @@ console.stdout.writeLine(scores.keys().join(", "))
 fn values(): value[]
 ```
 
-**返回类型**：[`value`](../../../types.md#api-39520d8c37c7afda41be)[]
+**返回类型**：[`value`](../../../types.md#api-cdd9fdb454b664951f56)[]
 
 **返回值**：值数组。
 

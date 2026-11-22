@@ -64,7 +64,7 @@ let layer = ReLU()
 
 ## Sequential {#api-3de3a8b723127e06dd74}
 
-源码：`src/stdlib/neural-networks/model.el:147` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L147)
+源码：`src/stdlib/neural-networks/model.el:148` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L148)
 
 创建按顺序应用层列表的模型类型，可选择元素类型和参数存储类型。
 
@@ -83,6 +83,7 @@ export fn Sequential(element: type, storage: type = Tensor<element: element>): t
 ### 示例：构造一个两层主机模型
 
 ```el
+import { Sequential, Linear, ReLU } from "el:neural-networks/model.el"
 let Network = Sequential<element: Number>
 let model = Network(@[Linear(2, 4), ReLU(), Linear(4, 1)], seed: 1)
 ```
@@ -90,7 +91,7 @@ let model = Network(@[Linear(2, 4), ReLU(), Linear(4, 1)], seed: 1)
 
 ## Sequential.forward {#api-daa36f8828e242c94dc1}
 
-源码：`src/stdlib/neural-networks/model.el:418` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L418)
+源码：`src/stdlib/neural-networks/model.el:420` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L420)
 
 依次执行模型中的各层并返回前向结果；Linear 使用权重转置与偏置，ReLU 对负值置零。
 
@@ -98,7 +99,7 @@ let model = Network(@[Linear(2, 4), ReLU(), Linear(4, 1)], seed: 1)
 fn forward(input: Values): Values
 ```
 
-**返回类型**：[`Values`](../../types.md#api-c0b0b3479fb3a5e71dee)
+**返回类型**：[`Values`](../../types.md#api-9e63fa98172bded718e6)
 
 **参数**：input 形状符合首层输入特征数的张量。
 
@@ -109,12 +110,13 @@ fn forward(input: Values): Values
 ### 示例：对批次输入执行前向计算
 
 ```el
+// @external input: Tensor<element: Number>
 let prediction = model.forward(input)
 ```
 
 ## valueAndGrad {#api-74a208b8786c54fae08b}
 
-源码：`src/stdlib/neural-networks/model.el:610` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L610)
+源码：`src/stdlib/neural-networks/model.el:613` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L613)
 
 对模型闭包返回的标量损失求值并计算模型参数梯度。
 
@@ -133,6 +135,7 @@ export fn valueAndGrad(model, function)
 ### 示例：对模型损失计算梯度
 
 ```el
+// @external model: Sequential<element: Number>, input: Tensor<element: Number>, optimizer: SGD
 let step = valueAndGrad(model, current => current(input).square().mean())
 optimizer.update(model, step.grad)
 ```

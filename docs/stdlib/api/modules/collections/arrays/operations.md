@@ -173,6 +173,8 @@ every(@["oak", "elm"], word => word.count == 3)
 export fn concat(left, right)
 ```
 
+**返回类型**：Array
+
 **参数**：left 结果前段的序列。
 
 **参数**：right 接在前段之后的序列。

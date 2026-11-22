@@ -20,11 +20,11 @@
 export @builtin:qeth:proof:prop class Prop
 ```
 
-### 示例：声明一个命题值（Nat 与 zero 由调用方提供）
+### 示例：声明一个命题值
 
 ```el
-// @external Nat, zero
-let proposition: Prop = Eq(Nat, zero, zero)
+import { Nat } from "el:mathematics/arithmetic/natural.el"
+let proposition: Prop = Eq(Nat, Nat.zero(), Nat.zero())
 ```
 
 ## Type {#api-2c69e2f6858e85964893}
@@ -66,11 +66,11 @@ export @builtin:qeth:proof:eq fn Eq(carrier: type, left, right): type
 
 **返回值**：一个 Prop 命题类型。
 
-### 示例：写出 Nat 上的反身等式（Nat 与 zero 由调用方提供）
+### 示例：写出 Nat 上的反身等式
 
 ```el
-// @external Nat, zero
-let same: type = Eq(Nat, zero, zero)
+import { Nat } from "el:mathematics/arithmetic/natural.el"
+let same: type = Eq(Nat, Nat.zero(), Nat.zero())
 ```
 
 ## refl {#api-216f2c238f4488e3dbb6}
@@ -87,9 +87,9 @@ export @builtin:qeth:proof:refl fn refl(carrier: type, value)
 
 **参数**：value 同时作为等式两端的项。
 
-### 示例：证明零与自身相等（Nat 与 zero 由调用方提供）
+### 示例：证明零与自身相等
 
 ```el
-// @external Nat, zero
-fn zeroEqZero(): Eq(Nat, zero, zero) => prove { refl }
+import { Nat } from "el:mathematics/arithmetic/natural.el"
+fn zeroEqZero(): Eq(Nat, Nat.zero(), Nat.zero()) => prove { refl }
 ```

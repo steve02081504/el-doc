@@ -20,6 +20,8 @@
 export fn enumerate(source)
 ```
 
+**返回类型**：Enumerated
+
 **参数**：source 可迭代值；每次创建迭代器时从下标零开始。
 
 ### 示例：遍历并附加下标

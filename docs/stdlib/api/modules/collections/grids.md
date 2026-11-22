@@ -27,7 +27,7 @@ export fn Grid(element: type): type
 ### 示例：使用示例
 
 ```el
-import { Grid } from "el:collections/grids"
+import { Grid } from "el:collections/grids.el"
 let NumberGrid = Grid(Number)
 let grid = NumberGrid(2, 3, 0)
 grid[1, 2] = 7

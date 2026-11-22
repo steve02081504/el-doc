@@ -12,7 +12,7 @@
 - [collections/arrays/sparse-argmin.el](modules/collections/arrays/sparse-argmin.md)（1 个 API）
 - [collections/batch/syntax.el](modules/collections/batch/syntax.md)（2 个 API）
 - [collections/grids.el](modules/collections/grids.md)（1 个 API）
-- [collections/maps/base.el](modules/collections/maps/base.md)（10 个 API）
+- [collections/maps/base.el](modules/collections/maps/base.md)（11 个 API）
 - [collections/maps/hash-map.el](modules/collections/maps/hash-map.md)（6 个 API）
 - [collections/sequences/comprehension-iteration.el](modules/collections/sequences/comprehension-iteration.md)（3 个 API）
 - [collections/sequences/comprehension.el](modules/collections/sequences/comprehension.md)（1 个 API）
@@ -25,6 +25,12 @@
 - [collections/trees/lca.el](modules/collections/trees/lca.md)（1 个 API）
 - [collections/trees/subtree-intervals.el](modules/collections/trees/subtree-intervals.md)（2 个 API）
 - [collections/trees/tree-traversal.el](modules/collections/trees/tree-traversal.md)（4 个 API）
+
+## compiler
+
+- [compiler/proof/kernel.el](modules/compiler/proof/kernel.md)（1 个 API）
+- [compiler/proof/term.el](modules/compiler/proof/term.md)（3 个 API）
+- [compiler/proof/work.el](modules/compiler/proof/work.md)（1 个 API）
 
 ## concurrency
 
@@ -43,6 +49,7 @@
 ## control
 
 - [control/retry.el](modules/control/retry.md)（1 个 API）
+- [control/selection/policies.el](modules/control/selection/policies.md)（1 个 API）
 
 ## cryptography
 
@@ -60,6 +67,7 @@
 
 - [database/engine.el](modules/database/engine.md)（2 个 API）
 - [database/schema.el](modules/database/schema.md)（3 个 API）
+- [database/source-syntax.el](modules/database/source-syntax.md)（1 个 API）
 - [database/table.el](modules/database/table.md)（2 个 API）
 - [database/typed-aggregate.el](modules/database/typed-aggregate.md)（1 个 API）
 
@@ -71,7 +79,7 @@
 - [desktop-automation/screen.el](modules/desktop-automation/screen.md)（1 个 API）
 - [desktop-automation/text-match.el](modules/desktop-automation/text-match.md)（2 个 API）
 - [desktop-automation/vision.el](modules/desktop-automation/vision.md)（1 个 API）
-- [desktop-automation/window-selector.el](modules/desktop-automation/window-selector.md)（2 个 API）
+- [desktop-automation/window-selector.el](modules/desktop-automation/window-selector.md)（3 个 API）
 
 ## documents
 
@@ -90,6 +98,7 @@
 ## filesystem
 
 - [filesystem/index.el](modules/filesystem/index.md)（23 个 API）
+- [filesystem/model.el](modules/filesystem/model.md)（1 个 API）
 - [filesystem/reader.el](modules/filesystem/reader.md)（2 个 API）
 - [filesystem/writer.el](modules/filesystem/writer.md)（2 个 API）
 
@@ -133,7 +142,7 @@
 
 - [language/contracts.el](modules/language/contracts.md)（2 个 API）
 - [language/layout/index.el](modules/language/layout/index.md)（6 个 API）
-- [language/objects.el](modules/language/objects.md)（1 个 API）
+- [language/objects.el](modules/language/objects.md)（2 个 API）
 - [language/proofs.el](modules/language/proofs.md)（4 个 API）
 - [language/syntax/index.el](modules/language/syntax/index.md)（1 个 API）
 - [language/values.el](modules/language/values.md)（8 个 API）
@@ -151,6 +160,7 @@
 
 ## mathematics
 
+- [mathematics/arithmetic/natural.el](modules/mathematics/arithmetic/natural.md)（1 个 API）
 - [mathematics/functions/aggregation.el](modules/mathematics/functions/aggregation.md)（1 个 API）
 - [mathematics/functions/discrete.el](modules/mathematics/functions/discrete.md)（3 个 API）
 - [mathematics/functions/elementary.el](modules/mathematics/functions/elementary.md)（6 个 API）
@@ -178,6 +188,7 @@
 - [multimedia/audio/music.el](modules/multimedia/audio/music.md)（7 个 API）
 - [multimedia/audio/wav.el](modules/multimedia/audio/wav.md)（5 个 API）
 - [multimedia/audio/windows-output.el](modules/multimedia/audio/windows-output.md)（6 个 API）
+- [multimedia/capture/binary.el](modules/multimedia/capture/binary.md)（1 个 API）
 - [multimedia/capture/model.el](modules/multimedia/capture/model.md)（4 个 API）
 
 ## network
@@ -196,7 +207,7 @@
 
 - [neural-networks/adamw.el](modules/neural-networks/adamw.md)（2 个 API）
 - [neural-networks/autograd.el](modules/neural-networks/autograd.md)（6 个 API）
-- [neural-networks/data/index.el](modules/neural-networks/data/index.md)（6 个 API）
+- [neural-networks/data/index.el](modules/neural-networks/data/index.md)（8 个 API）
 - [neural-networks/functional.el](modules/neural-networks/functional.md)（4 个 API）
 - [neural-networks/index.el](modules/neural-networks/index.md)（0 个 API）
 - [neural-networks/losses/index.el](modules/neural-networks/losses/index.md)（3 个 API）
@@ -212,7 +223,7 @@
 
 ## number
 
-- [number/arithmetic.el](modules/number/arithmetic.md)（4 个 API）
+- [number/arithmetic.el](modules/number/arithmetic.md)（5 个 API）
 - [number/dit-float.el](modules/number/dit-float.md)（1 个 API）
 - [number/dit-int.el](modules/number/dit-int.md)（1 个 API）
 - [number/dit-operations.el](modules/number/dit-operations.md)（4 个 API）
@@ -224,7 +235,7 @@
 
 ## numerical-computing
 
-- [numerical-computing/arrays.el](modules/numerical-computing/arrays.md)（5 个 API）
+- [numerical-computing/arrays.el](modules/numerical-computing/arrays.md)（6 个 API）
 - [numerical-computing/device-tensor.el](modules/numerical-computing/device-tensor.md)（1 个 API）
 - [numerical-computing/device-value.el](modules/numerical-computing/device-value.md)（1 个 API）
 - [numerical-computing/diagnostics.el](modules/numerical-computing/diagnostics.md)（2 个 API）
@@ -245,9 +256,17 @@
 
 - [optimization/context.el](modules/optimization/context.md)（3 个 API）
 
+## parsing
+
+- [parsing/tokens.el](modules/parsing/tokens.md)（1 个 API）
+
 ## platform
 
 - [platform/build.el](modules/platform/build.md)（1 个 API）
+- [platform/embedded/register.el](modules/platform/embedded/register.md)（2 个 API）
+- [platform/linux/allocation.el](modules/platform/linux/allocation.md)（2 个 API）
+- [platform/linux/libc.el](modules/platform/linux/libc.md)（1 个 API）
+- [platform/machine/float-codec.el](modules/platform/machine/float-codec.md)（1 个 API）
 - [platform/machine/integer.el](modules/platform/machine/integer.md)（1 个 API）
 
 ## queries
@@ -266,7 +285,7 @@
 
 ## settings
 
-- [settings/model.el](modules/settings/model.md)（1 个 API）
+- [settings/model.el](modules/settings/model.md)（2 个 API）
 
 ## shell
 
@@ -285,7 +304,7 @@
 - [text/operations.el](modules/text/operations.md)（1 个 API）
 - [text/patterns/combinators.el](modules/text/patterns/combinators.md)（8 个 API）
 - [text/patterns/lexical.el](modules/text/patterns/lexical.md)（1 个 API）
-- [text/patterns/parser.el](modules/text/patterns/parser.md)（15 个 API）
+- [text/patterns/parser.el](modules/text/patterns/parser.md)（17 个 API）
 - [text/patterns/parsers.el](modules/text/patterns/parsers.md)（1 个 API）
 - [text/patterns/syntax.el](modules/text/patterns/syntax.md)（1 个 API）
 - [text/resources.el](modules/text/resources.md)（0 个 API）

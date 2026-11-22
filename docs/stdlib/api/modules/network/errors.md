@@ -35,7 +35,7 @@ catch (error: NetworkError) { console.stderr.writeLine(error.operation, ": ", er
 
 ## NetworkError.operation {#api-53e0c3fc1ec8e63196e5}
 
-源码：`src/stdlib/network/errors.el:23` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/errors.el#L23)
+源码：`src/stdlib/network/errors.el:24` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/errors.el#L24)
 
 发生失败的网络操作名称。
 
@@ -48,12 +48,13 @@ let operation: Text
 ### 示例：输出错误操作（需调用方提供对象或绑定）
 
 ```el
+// @external error: NetworkError
 console.stderr.writeLine(error.operation)
 ```
 
 ## NetworkError.detail {#api-bba6955c6787070c5b63}
 
-源码：`src/stdlib/network/errors.el:31` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/errors.el#L31)
+源码：`src/stdlib/network/errors.el:32` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/errors.el#L32)
 
 描述失败原因的文本。
 
@@ -66,13 +67,13 @@ let detail: Text
 ### 示例：输出错误原因
 
 ```el
-// @external error
+// @external error: NetworkError
 console.stderr.writeLine(error.detail)
 ```
 
 ## NetworkError.code {#api-0daf359682bcfc8d6e85}
 
-源码：`src/stdlib/network/errors.el:38` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/errors.el#L38)
+源码：`src/stdlib/network/errors.el:40` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/errors.el#L40)
 
 平台提供的可选错误代码；无特定代码时为 0。
 
@@ -85,5 +86,6 @@ let code: Number
 ### 示例：查看平台错误码（需调用方提供对象或绑定）
 
 ```el
+// @external error: NetworkError
 console.stderr.writeLine(error.code)
 ```

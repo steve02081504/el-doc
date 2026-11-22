@@ -64,7 +64,7 @@ audio.setSample(0, 0, 12000)
 
 ## PcmAudio.sample {#api-8a550e9ca9ac7d948cde}
 
-源码：`src/stdlib/multimedia/capture/model.el:162` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L162)
+源码：`src/stdlib/multimedia/capture/model.el:161` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L161)
 
 读取指定帧和声道的有符号 PCM16 整数样本。
 
@@ -83,13 +83,12 @@ fn sample(frame: Number, channel: Number = 0): Number
 ### 示例：读取第一个样本
 
 ```el
-// @external audio
 let value = audio.sample(0)
 ```
 
 ## PcmAudio.setSample {#api-5d599038539e68d30f37}
 
-源码：`src/stdlib/multimedia/capture/model.el:181` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L181)
+源码：`src/stdlib/multimedia/capture/model.el:180` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L180)
 
 设置指定帧和声道的有符号 PCM16 整数样本。
 

@@ -13,7 +13,7 @@
 
 ## imagePixel {#api-4cfd93a25ea49815c4a5}
 
-源码：`src/stdlib/desktop-automation/vision.el:167` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/vision.el#L167)
+源码：`src/stdlib/desktop-automation/vision.el:168` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/vision.el#L168)
 
 读取图像中指定整数坐标的 RGBA 像素；越界或非整数坐标会因范围校验失败。
 
@@ -34,5 +34,6 @@ export fn imagePixel(image: RgbaImage, x: Number, y: Number): ScreenPixel
 ### 示例：读取图像左上角像素
 
 ```el
+// @external image: RgbaImage
 let pixel = imagePixel(image, 0, 0)
 ```

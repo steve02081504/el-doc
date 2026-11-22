@@ -16,7 +16,7 @@
 
 ## SGD {#api-6d3c31621381d78a2d47}
 
-源码：`src/stdlib/neural-networks/optimizer.el:17` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizer.el#L17)
+源码：`src/stdlib/neural-networks/optimizer.el:16` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizer.el#L16)
 
 创建随机梯度下降优化器；更新时按学习率应用模型梯度。
 
@@ -32,13 +32,12 @@ export @assign(mode: "copy") class SGD
 
 ```el
 let optimizer = SGD(rate: .01)
-optimizer.update(model, step.grad)
 ```
 示例展示接口用法；未运行验证。
 
 ## SGD.update {#api-fda9885666e0c1fb1e9b}
 
-源码：`src/stdlib/neural-networks/optimizer.el:39` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizer.el#L39)
+源码：`src/stdlib/neural-networks/optimizer.el:40` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizer.el#L40)
 
 按已配置学习率把梯度应用到模型参数。
 
@@ -55,5 +54,7 @@ fn update(model, gradient)
 ### 示例：应用一次模型梯度
 
 ```el
-optimizer.update(model, step.grad)
+// @external model: Sequential<element: Number>, input: Tensor<element: Number>
+let updateStep = valueAndGrad(model, current => current(input).square().mean())
+optimizer.update(model, updateStep.grad)
 ```

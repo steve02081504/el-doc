@@ -12,7 +12,7 @@
 
 ## softmax {#api-b4b475e208e3fc45c7a0}
 
-源码：`src/stdlib/neural-networks/functional.el:21` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/functional.el#L21)
+源码：`src/stdlib/neural-networks/functional.el:22` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/functional.el#L22)
 
 沿指定轴将输入转换为和为 1 的指数归一化值。
 
@@ -31,13 +31,14 @@ export fn softmax(value, axis: Number = 1, policy: TensorMathPolicy = TensorMath
 ### 示例：沿类别轴计算概率
 
 ```el
+// @external logits: Tensor<element: Number>
 let probabilities = softmax(logits, axis: 1)
 ```
 示例展示接口用法；未运行验证。
 
 ## logSoftmax {#api-1764884006cd0be44f7e}
 
-源码：`src/stdlib/neural-networks/functional.el:32` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/functional.el#L32)
+源码：`src/stdlib/neural-networks/functional.el:34` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/functional.el#L34)
 
 沿指定轴计算数值稳定的对数 softmax。
 
@@ -56,12 +57,13 @@ export fn logSoftmax(value, axis: Number = 1, policy: TensorMathPolicy = TensorM
 ### 示例：计算对数概率
 
 ```el
+// @external logits: Tensor<element: Number>
 let logProbabilities = logSoftmax(logits, axis: 1)
 ```
 
 ## crossEntropy {#api-6cc740068d672b42626f}
 
-源码：`src/stdlib/neural-networks/functional.el:48` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/functional.el#L48)
+源码：`src/stdlib/neural-networks/functional.el:51` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/functional.el#L51)
 
 计算稠密目标权重与 logits 对应的交叉熵，并对非类别轴样本取均值。
 
@@ -84,13 +86,14 @@ export fn crossEntropy(logits, targets, axis: Number = 1, policy: TensorMathPoli
 ### 示例：从 logits 与稠密目标计算损失
 
 ```el
+// @external logits: Tensor<element: Number>, targets: Tensor<element: Number>
 let loss = crossEntropy(logits, targets)
 ```
 示例展示接口用法；未运行验证。
 
 ## oneHot {#api-956d05922bbc9c543e7d}
 
-源码：`src/stdlib/neural-networks/functional.el:64` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/functional.el#L64)
+源码：`src/stdlib/neural-networks/functional.el:67` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/functional.el#L67)
 
 将类别编号数组转换为每行一个类别权重为 1 的稠密二维张量。
 

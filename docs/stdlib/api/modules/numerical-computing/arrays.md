@@ -10,11 +10,33 @@
 
 提供常用张量初始化、行列向量、采样点和列优先展开函数。
 
+## ones {#api-24bc34d3ad4af842ed3e}
+
+源码：`src/stdlib/numerical-computing/arrays.el:23` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L23)
+
+创建形状指定且所有元素均为 1 的张量。
+
+```el-signature
+export fn ones(element: type, shape: Number[])
+```
+
+**参数**：element 张量元素类型，须能从数值 1 构造。
+
+**参数**：shape 各轴长度；空数组表示标量张量。
+
+**返回值**：由独立连续存储支持的张量。
+
+### 示例：创建一个 2×2 的全一张量
+
+```el
+let values = ones<element: Number>(@[2, 2])
+```
+
 <span id="api-b98ba9e759d7eef8e401"></span>
 
 ## row~construct {#api-5c1c5315cba24f3b9d0c}
 
-源码：`src/stdlib/numerical-computing/arrays.el:28` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L28)
+源码：`src/stdlib/numerical-computing/arrays.el:37` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L37)
 
 将输入值转换为指定元素类型，并构造成单行二维张量。
 
@@ -36,7 +58,7 @@ let values = row<element: Number>(@[2, 3])
 
 ## row~reshape {#api-9eb863b8b4a108974ea1}
 
-源码：`src/stdlib/numerical-computing/arrays.el:39` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L39)
+源码：`src/stdlib/numerical-computing/arrays.el:49` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L49)
 
 将一维张量重塑为只有一行的二维张量。
 
@@ -53,14 +75,15 @@ export fn row(values)
 ### 示例：将向量转为行向量（需调用方提供对象或绑定）
 
 ```el
-let values = row(vector)
+// @external sourceVector: Tensor<element: Number>
+let values = row(sourceVector)
 ```
 
 <span id="api-583fcaa3af9e70e0647b"></span>
 
 ## col~reshape {#api-cc7a5482094f12f275cb}
 
-源码：`src/stdlib/numerical-computing/arrays.el:50` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L50)
+源码：`src/stdlib/numerical-computing/arrays.el:60` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L60)
 
 将一维张量重塑为只有一列的二维张量。
 
@@ -77,13 +100,13 @@ export fn col(values)
 ### 示例：将向量转为列向量
 
 ```el
-// @external vector
-let values = col(vector)
+// @external columnInput: Tensor<element: Number>
+let values = col(columnInput)
 ```
 
 ## linspace {#api-fca937978fc3c8b3c9c5}
 
-源码：`src/stdlib/numerical-computing/arrays.el:62` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L62)
+源码：`src/stdlib/numerical-computing/arrays.el:72` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L72)
 
 在首尾端点之间生成指定数量的等间距元素。
 
@@ -109,7 +132,7 @@ let points = linspace<element: Number>(0, 1, 5)
 
 ## columnMajor {#api-56f1a6c6f3a062e45618}
 
-源码：`src/stdlib/numerical-computing/arrays.el:96` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L96)
+源码：`src/stdlib/numerical-computing/arrays.el:106` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L106)
 
 按张量的列优先逻辑顺序展平为一维张量。
 

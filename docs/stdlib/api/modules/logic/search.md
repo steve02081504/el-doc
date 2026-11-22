@@ -27,7 +27,7 @@ export @assign(mode: "shared") class PreparedSearch
 ### 示例：创建地面答案游标（plan 是已有的搜索计划）
 
 ```el
-// @external plan
+// @external plan: PreparedSearch
 let cursor = plan.ground().iterator()
 let step = cursor.next()
 ```
@@ -45,14 +45,14 @@ export @assign(mode: "shared") class GroundSearch
 ### 示例：枚举地面结果（plan 是已有的搜索计划）
 
 ```el
-// @external plan
+// @external plan: PreparedSearch
 let cursor = plan.ground().iterator()
 let step = cursor.next()
 ```
 
 ## GroundCursor {#api-5942ab836ae0713bf70d}
 
-源码：`src/stdlib/logic/search.el:862` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L862)
+源码：`src/stdlib/logic/search.el:863` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L863)
 
 按需返回 GroundSearch 的地面项结果；完成时返回 done 标记。
 
@@ -60,10 +60,11 @@ let step = cursor.next()
 export @assign(mode: "shared") class GroundCursor
 ```
 
-### 示例：逐个读取地面结果（cursor 是已有的游标，consume 是调用方的处理函数）
+### 示例：逐个读取地面结果（plan 是已有的搜索计划，consume 是调用方的处理函数）
 
 ```el
-// @external cursor, consume
+// @external plan: PreparedSearch, consume: fn(value: Term): nil_t
+let cursor = plan.ground().iterator()
 let step = cursor.next()
 if (!step.done) consume(step.value)
 ```
@@ -84,10 +85,9 @@ fn next(): IterationStep<element: Term>
 
 **失败与异常**：搜索中断或答案含未绑定逻辑变量时抛出错误。
 
-### 示例：迭代一个结果（cursor 是已有的游标，consume 是调用方的处理函数）
+### 示例：迭代一个结果（使用 GroundCursor 示例中的 cursor 和 consume）
 
 ```el
-// @external cursor, consume
 let step = cursor.next()
 if (!step.done) consume(step.value)
 ```

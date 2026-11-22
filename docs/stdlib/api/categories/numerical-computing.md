@@ -6,7 +6,7 @@
 
 | 模块 | 接口 |
 | --- | --- |
-| [numerical-computing/arrays.el](../modules/numerical-computing/arrays.md) | [row~construct](../modules/numerical-computing/arrays.md#api-5c1c5315cba24f3b9d0c)、[row~reshape](../modules/numerical-computing/arrays.md#api-9eb863b8b4a108974ea1)、[col~reshape](../modules/numerical-computing/arrays.md#api-cc7a5482094f12f275cb)、[linspace](../modules/numerical-computing/arrays.md#api-fca937978fc3c8b3c9c5)、[columnMajor](../modules/numerical-computing/arrays.md#api-56f1a6c6f3a062e45618) |
+| [numerical-computing/arrays.el](../modules/numerical-computing/arrays.md) | [ones](../modules/numerical-computing/arrays.md#api-24bc34d3ad4af842ed3e)、[row~construct](../modules/numerical-computing/arrays.md#api-5c1c5315cba24f3b9d0c)、[row~reshape](../modules/numerical-computing/arrays.md#api-9eb863b8b4a108974ea1)、[col~reshape](../modules/numerical-computing/arrays.md#api-cc7a5482094f12f275cb)、[linspace](../modules/numerical-computing/arrays.md#api-fca937978fc3c8b3c9c5)、[columnMajor](../modules/numerical-computing/arrays.md#api-56f1a6c6f3a062e45618) |
 | [numerical-computing/device-tensor.el](../modules/numerical-computing/device-tensor.md) | [TensorDevice](../modules/numerical-computing/device-tensor.md#api-6352f607871fe7944c1e) |
 | [numerical-computing/device-value.el](../modules/numerical-computing/device-value.md) | [DeviceTensor](../modules/numerical-computing/device-value.md#api-572c72917d65007ba8a7) |
 | [numerical-computing/diagnostics.el](../modules/numerical-computing/diagnostics.md) | [solveDiagnostic~dense](../modules/numerical-computing/diagnostics.md#api-e0ab268d3c4c908e5d38)、[leastSquaresDiagnostic](../modules/numerical-computing/diagnostics.md#api-5db73d0f1734381d6751) |

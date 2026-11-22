@@ -42,7 +42,7 @@ let optimizer = Optimizer(rate: .001, weightDecay: .01)
 
 ## AdamW.update {#api-221135265f4603f4a498}
 
-源码：`src/stdlib/neural-networks/adamw.el:105` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/adamw.el#L105)
+源码：`src/stdlib/neural-networks/adamw.el:107` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/adamw.el#L107)
 
 按 AdamW 更新规则应用梯度，并维护此优化器身份对应的参数矩状态。
 
@@ -59,5 +59,7 @@ fn update(model, gradient)
 ### 示例：应用一次 AdamW 更新
 
 ```el
-optimizer.update(model, step.grad)
+// @external model: Sequential<element: Number>, input: Tensor<element: Number>
+let updateStep = valueAndGrad(model, current => current(input).square().mean())
+optimizer.update(model, updateStep.grad)
 ```

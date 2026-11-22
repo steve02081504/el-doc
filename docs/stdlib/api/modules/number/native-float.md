@@ -26,7 +26,7 @@ export fn canRepresentExactly<T: type>(value: NumericRatio): Bool
 
 ```el
 import { NativeFloatExponent5 } from "el:platform/machine/float-codec.el"
-import { NumericRatio } from "el:number/arithmetic.el"
+import { NumericRatio } from "el:number/index.el"
 let exact = canRepresentExactly<NativeFloatExponent5>(NumericRatio(1, 2))
 console.stdout.writeLine(if (exact) "exact" else "rounded")
 ```

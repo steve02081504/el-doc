@@ -604,9 +604,9 @@ fn SlotBranch(element: type): type
 fn SlotPage(element: type): type
 ```
 
-## Entry · collections/maps/base.el {#api-85b47ec304f9ce7dae46}
+## Entry · collections/maps/base.el {#api-ff8d239acd9e962a9706}
 
-[源码 collections/maps/base.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L22)
+[源码 collections/maps/base.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L28)
 
 ```el-signature
 let Entry: type = MapEntry<key: key, value: value>
@@ -614,7 +614,7 @@ let Entry: type = MapEntry<key: key, value: value>
 
 ## MapBase · collections/maps/base.el {#api-13e78e7ed955f61444e8}
 
-[源码 collections/maps/base.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L21)
+[源码 collections/maps/base.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L27)
 
 ```el-signature
 fn MapBase(key: type, value: type): type
@@ -622,7 +622,7 @@ fn MapBase(key: type, value: type): type
 
 ## MapEntry · collections/maps/base.el {#api-94a436d7865632e8a65c}
 
-[源码 collections/maps/base.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L11)
+[源码 collections/maps/base.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L17)
 
 ```el-signature
 fn MapEntry(key: type, value: type): type
@@ -630,11 +630,13 @@ fn MapEntry(key: type, value: type): type
 
 ## MissingKeyError · collections/maps/base.el {#api-b0a35b2cd112904cedbc}
 
-[源码 collections/maps/base.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L6)
+[源码 collections/maps/base.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/maps/base.el#L12)
 
 ```el-signature
 class MissingKeyError extends Error
 ```
+
+[API 文档](modules/collections/maps/base.md#api-b0a35b2cd112904cedbc)
 
 ## HashedEntry · collections/maps/hash-map.el {#api-2e6dd90d5080c5360e34}
 
@@ -5104,11 +5106,13 @@ class KernelUniverse
 
 ## KernelEnvironment · compiler/proof/kernel.el {#api-8e328cd33d4187104a5b}
 
-[源码 compiler/proof/kernel.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/proof/kernel.el#L38)
+[源码 compiler/proof/kernel.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/proof/kernel.el#L47)
 
 ```el-signature
 class KernelEnvironment
 ```
+
+[API 文档](modules/compiler/proof/kernel.md#api-8e328cd33d4187104a5b)
 
 ## ModuleBindings · compiler/proof/module-session.el {#api-ed7c52c846c62611dd98}
 
@@ -6440,7 +6444,7 @@ class SyntaxModelLocal
 
 ## ProofTerm · compiler/proof/term.el {#api-0bc5b5a33724ea9be521}
 
-[源码 compiler/proof/term.el:58](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/proof/term.el#L58)
+[源码 compiler/proof/term.el:60](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/proof/term.el#L60)
 
 ```el-signature
 class ProofTerm
@@ -6448,7 +6452,7 @@ class ProofTerm
 
 ## ProofTransformFrame · compiler/proof/term.el {#api-e1b687d1624d74b3dc52}
 
-[源码 compiler/proof/term.el:336](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/proof/term.el#L336)
+[源码 compiler/proof/term.el:359](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/proof/term.el#L359)
 
 ```el-signature
 class ProofTransformFrame
@@ -6528,15 +6532,17 @@ class ProofValueRewrite
 
 ## ProofBudget · compiler/proof/work.el {#api-294098eebbd742684492}
 
-[源码 compiler/proof/work.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/proof/work.el#L23)
+[源码 compiler/proof/work.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/proof/work.el#L32)
 
 ```el-signature
 class ProofBudget
 ```
 
+[API 文档](modules/compiler/proof/work.md#api-294098eebbd742684492)
+
 ## ProofCancellation · compiler/proof/work.el {#api-e8f528c6bcd96dcb87dc}
 
-[源码 compiler/proof/work.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/proof/work.el#L15)
+[源码 compiler/proof/work.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/proof/work.el#L17)
 
 ```el-signature
 class ProofCancellation
@@ -6544,7 +6550,7 @@ class ProofCancellation
 
 ## ProofKernelError · compiler/proof/work.el {#api-ebeb4aa43af9b8e40ad9}
 
-[源码 compiler/proof/work.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/proof/work.el#L6)
+[源码 compiler/proof/work.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/proof/work.el#L8)
 
 ```el-signature
 class ProofKernelError extends Error
@@ -11522,7 +11528,7 @@ class SelectionFacade
 
 ## SelectionDecision · control/selection/policies.el {#api-ad9d6b8028694bf90a78}
 
-[源码 control/selection/policies.el:53](https://github.com/steve02081504/el/blob/master/src/stdlib/control/selection/policies.el#L53)
+[源码 control/selection/policies.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/control/selection/policies.el#L63)
 
 ```el-signature
 class SelectionDecision
@@ -11530,7 +11536,7 @@ class SelectionDecision
 
 ## SelectionHistory · control/selection/policies.el {#api-de56d5a4424bcdac2520}
 
-[源码 control/selection/policies.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/control/selection/policies.el#L24)
+[源码 control/selection/policies.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/control/selection/policies.el#L34)
 
 ```el-signature
 class SelectionHistory
@@ -11538,7 +11544,7 @@ class SelectionHistory
 
 ## SelectionPolicy · control/selection/policies.el {#api-a58fbe48b453b90147b6}
 
-[源码 control/selection/policies.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/control/selection/policies.el#L8)
+[源码 control/selection/policies.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/control/selection/policies.el#L11)
 
 ```el-signature
 enum SelectionPolicy
@@ -14558,7 +14564,7 @@ class DbQueryProbe
 
 ## DbEmitScope · database/source-syntax.el {#api-4ebc9b1016349953bfaf}
 
-[源码 database/source-syntax.el:105](https://github.com/steve02081504/el/blob/master/src/stdlib/database/source-syntax.el#L105)
+[源码 database/source-syntax.el:108](https://github.com/steve02081504/el/blob/master/src/stdlib/database/source-syntax.el#L108)
 
 ```el-signature
 class DbEmitScope
@@ -14566,7 +14572,7 @@ class DbEmitScope
 
 ## DbExprParser · database/source-syntax.el {#api-aabbde9007a92b3928d7}
 
-[源码 database/source-syntax.el:137](https://github.com/steve02081504/el/blob/master/src/stdlib/database/source-syntax.el#L137)
+[源码 database/source-syntax.el:140](https://github.com/steve02081504/el/blob/master/src/stdlib/database/source-syntax.el#L140)
 
 ```el-signature
 class DbExprParser
@@ -14574,7 +14580,7 @@ class DbExprParser
 
 ## DbLoweredExpr · database/source-syntax.el {#api-cc5ae7813e3f5e38acdd}
 
-[源码 database/source-syntax.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/database/source-syntax.el#L36)
+[源码 database/source-syntax.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/database/source-syntax.el#L39)
 
 ```el-signature
 class DbLoweredExpr
@@ -14582,7 +14588,7 @@ class DbLoweredExpr
 
 ## DbOpenedSource · database/source-syntax.el {#api-5dc3ed301f03252eb0e4}
 
-[源码 database/source-syntax.el:302](https://github.com/steve02081504/el/blob/master/src/stdlib/database/source-syntax.el#L302)
+[源码 database/source-syntax.el:305](https://github.com/steve02081504/el/blob/master/src/stdlib/database/source-syntax.el#L305)
 
 ```el-signature
 class DbOpenedSource
@@ -14590,7 +14596,7 @@ class DbOpenedSource
 
 ## DbQueryEmitter · database/source-syntax.el {#api-b31e0753a84064addadd}
 
-[源码 database/source-syntax.el:308](https://github.com/steve02081504/el/blob/master/src/stdlib/database/source-syntax.el#L308)
+[源码 database/source-syntax.el:311](https://github.com/steve02081504/el/blob/master/src/stdlib/database/source-syntax.el#L311)
 
 ```el-signature
 class DbQueryEmitter
@@ -14598,7 +14604,7 @@ class DbQueryEmitter
 
 ## DbScopeBinding · database/source-syntax.el {#api-f062f8a9e526435b86ab}
 
-[源码 database/source-syntax.el:73](https://github.com/steve02081504/el/blob/master/src/stdlib/database/source-syntax.el#L73)
+[源码 database/source-syntax.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/database/source-syntax.el#L76)
 
 ```el-signature
 class DbScopeBinding
@@ -14606,7 +14612,7 @@ class DbScopeBinding
 
 ## DbScopeField · database/source-syntax.el {#api-b98bc66ebf205b673233}
 
-[源码 database/source-syntax.el:50](https://github.com/steve02081504/el/blob/master/src/stdlib/database/source-syntax.el#L50)
+[源码 database/source-syntax.el:53](https://github.com/steve02081504/el/blob/master/src/stdlib/database/source-syntax.el#L53)
 
 ```el-signature
 class DbScopeField
@@ -18832,7 +18838,7 @@ class HttpFileReaderSource extends FileReaderSource
 
 ## FileSystemContext · filesystem/model.el {#api-c9a84e452371f1003179}
 
-[源码 filesystem/model.el:208](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L208)
+[源码 filesystem/model.el:218](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L218)
 
 ```el-signature
 class FileSystemContext
@@ -18840,7 +18846,7 @@ class FileSystemContext
 
 ## FileSystemError · filesystem/model.el {#api-f107c055c9e6e7597652}
 
-[源码 filesystem/model.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L12)
+[源码 filesystem/model.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L15)
 
 ```el-signature
 class FileSystemError extends Error
@@ -18848,7 +18854,7 @@ class FileSystemError extends Error
 
 ## Location · filesystem/model.el {#api-547a9b261b17d994f444}
 
-[源码 filesystem/model.el:114](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L114)
+[源码 filesystem/model.el:124](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L124)
 
 ```el-signature
 class Location extends TextOperand
@@ -18856,15 +18862,17 @@ class Location extends TextOperand
 
 ## Path · filesystem/model.el {#api-01450bc86834bd922aa5}
 
-[源码 filesystem/model.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L106)
+[源码 filesystem/model.el:116](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L116)
 
 ```el-signature
 class Path extends TextOperand
 ```
 
+[API 文档](modules/filesystem/model.md#api-01450bc86834bd922aa5)
+
 ## ProviderRegistration · filesystem/model.el {#api-1377928886dbe891a307}
 
-[源码 filesystem/model.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L68)
+[源码 filesystem/model.el:71](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L71)
 
 ```el-signature
 class ProviderRegistration
@@ -19982,7 +19990,7 @@ class Figure
 
 ## FigureHandle · graphics/plots/index.el {#api-8eac1a7cc4ac101de036}
 
-[源码 graphics/plots/index.el:80](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L80)
+[源码 graphics/plots/index.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L76)
 
 ```el-signature
 class FigureHandle
@@ -19990,7 +19998,7 @@ class FigureHandle
 
 ## PlotHost · graphics/plots/index.el {#api-5f295492cd4341ff9541}
 
-[源码 graphics/plots/index.el:100](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L100)
+[源码 graphics/plots/index.el:96](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L96)
 
 ```el-signature
 class PlotHost
@@ -22886,15 +22894,17 @@ class ToolSourceScan
 
 ## DynamicObject · language/objects.el {#api-e3d29af11f62e4970b53}
 
-[源码 language/objects.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/language/objects.el#L64)
+[源码 language/objects.el:70](https://github.com/steve02081504/el/blob/master/src/stdlib/language/objects.el#L70)
 
 ```el-signature
 class DynamicObject
 ```
 
+[API 文档](modules/language/objects.md#api-e3d29af11f62e4970b53)
+
 ## OrderedDynamicObject · language/objects.el {#api-d7ad915933d282ecc938}
 
-[源码 language/objects.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/language/objects.el#L68)
+[源码 language/objects.el:74](https://github.com/steve02081504/el/blob/master/src/stdlib/language/objects.el#L74)
 
 ```el-signature
 class OrderedDynamicObject extends DynamicObject
@@ -24158,7 +24168,7 @@ class FairBranchJob extends SearchJob
 
 ## GroundCursor · logic/search.el {#api-5942ab836ae0713bf70d}
 
-[源码 logic/search.el:862](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L862)
+[源码 logic/search.el:863](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L863)
 
 ```el-signature
 class GroundCursor
@@ -25826,11 +25836,13 @@ data Integer: Type(0)
 
 ## Nat · mathematics/arithmetic/natural.el {#api-458aaf661a17a47f63c0}
 
-[源码 mathematics/arithmetic/natural.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/arithmetic/natural.el#L4)
+[源码 mathematics/arithmetic/natural.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/arithmetic/natural.el#L15)
 
 ```el-signature
 data Nat: Type(0)
 ```
+
+[API 文档](modules/mathematics/arithmetic/natural.md#api-458aaf661a17a47f63c0)
 
 ## IntegerFraction · mathematics/arithmetic/rational-fraction.el {#api-efec3e5d15fa7495a759}
 
@@ -26910,7 +26922,7 @@ class ScratchSize
 
 ## PcmOutput · multimedia/audio/linux-output.el {#api-9f5da8fa68d02b9e4158}
 
-[源码 multimedia/audio/linux-output.el:49](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L49)
+[源码 multimedia/audio/linux-output.el:50](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L50)
 
 ```el-signature
 class PcmOutput
@@ -26936,7 +26948,7 @@ class NativeBool
 
 ## PcmOutput · multimedia/audio/macos-output.el {#api-07a36f3fcbe4431833df}
 
-[源码 multimedia/audio/macos-output.el:59](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L59)
+[源码 multimedia/audio/macos-output.el:60](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L60)
 
 ```el-signature
 class PcmOutput
@@ -26972,7 +26984,7 @@ class PcmOutput
 
 ## WavLayout · multimedia/audio/wav.el {#api-cb61429c2c7cbc897449}
 
-[源码 multimedia/audio/wav.el:110](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L110)
+[源码 multimedia/audio/wav.el:112](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L112)
 
 ```el-signature
 class WavLayout
@@ -26980,7 +26992,7 @@ class WavLayout
 
 ## WavWriter · multimedia/audio/wav.el {#api-fccc5e339fd9a3fa8554}
 
-[源码 multimedia/audio/wav.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L40)
+[源码 multimedia/audio/wav.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L41)
 
 ```el-signature
 class WavWriter
@@ -26998,7 +27010,7 @@ class OutputSlot
 
 ## PcmOutput · multimedia/audio/windows-output.el {#api-3405bba76a30486bbb83}
 
-[源码 multimedia/audio/windows-output.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L56)
+[源码 multimedia/audio/windows-output.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/windows-output.el#L57)
 
 ```el-signature
 class PcmOutput
@@ -27092,7 +27104,7 @@ class PcmAudio
 
 ## VideoFrame · multimedia/capture/model.el {#api-44b10585fc20d6c09162}
 
-[源码 multimedia/capture/model.el:199](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L199)
+[源码 multimedia/capture/model.el:198](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L198)
 
 ```el-signature
 class VideoFrame
@@ -27772,7 +27784,7 @@ class HttpResponse
 
 ## HttpStatusError · network/http/model.el {#api-b0c306dbfe7c9ba3158d}
 
-[源码 network/http/model.el:293](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L293)
+[源码 network/http/model.el:298](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L298)
 
 ```el-signature
 class HttpStatusError extends Error
@@ -27798,7 +27810,7 @@ class HttpRangeUnsupported
 
 ## HttpWireReader · network/http/wire.el {#api-5856ea17e3ac530bb530}
 
-[源码 network/http/wire.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/wire.el#L32)
+[源码 network/http/wire.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/wire.el#L33)
 
 ```el-signature
 class HttpWireReader
@@ -27808,7 +27820,7 @@ class HttpWireReader
 
 ## WireHttpBody · network/http/wire.el {#api-aa140ae15090225667f4}
 
-[源码 network/http/wire.el:195](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/wire.el#L195)
+[源码 network/http/wire.el:196](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/wire.el#L196)
 
 ```el-signature
 class WireHttpBody extends HttpBodySource
@@ -28182,7 +28194,7 @@ fn LoRAState(element: type, storage: type = Tensor<element: element>): type
 
 ## Autograd · neural-networks/autograd.el {#api-fe9b9dee2c2f03ef38d0}
 
-[源码 neural-networks/autograd.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L38)
+[源码 neural-networks/autograd.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L39)
 
 ```el-signature
 fn Autograd(element: type, storage: type = Tensor<element: element>): type
@@ -28198,17 +28210,17 @@ fn Autograd(element: type, storage: type = Tensor<element: element>): type
 class DifferentiationError extends Error
 ```
 
-## Result · neural-networks/autograd.el {#api-219def6e1e48ab59942f}
+## Result · neural-networks/autograd.el {#api-1cb2e490f173cf7c45ee}
 
-[源码 neural-networks/autograd.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L45)
+[源码 neural-networks/autograd.el:46](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L46)
 
 ```el-signature
 let Result = @assign(mode: "copy") class {
 ```
 
-## Tracked · neural-networks/autograd.el {#api-6501c19f8e6f0cba0f0d}
+## Tracked · neural-networks/autograd.el {#api-77be24bce4c73abdde3c}
 
-[源码 neural-networks/autograd.el:160](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L160)
+[源码 neural-networks/autograd.el:161](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/autograd.el#L161)
 
 ```el-signature
 let Tracked = @assign(mode: "shared") class {
@@ -28240,7 +28252,7 @@ fn DataByteBudget(sample: type): type
 
 ## DataLoader · neural-networks/data/index.el {#api-e8831068236aaaf353d3}
 
-[源码 neural-networks/data/index.el:115](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L115)
+[源码 neural-networks/data/index.el:140](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L140)
 
 ```el-signature
 fn DataLoader(sample: type): type
@@ -28250,11 +28262,13 @@ fn DataLoader(sample: type): type
 
 ## Dataset · neural-networks/data/index.el {#api-3357d451b8096d9150b6}
 
-[源码 neural-networks/data/index.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L26)
+[源码 neural-networks/data/index.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L36)
 
 ```el-signature
 fn Dataset(sample: type): type
 ```
+
+[API 文档](modules/neural-networks/data/index.md#api-3357d451b8096d9150b6)
 
 ## InvalidDataState · neural-networks/data/index.el {#api-d3cbae0d024cfc120ead}
 
@@ -28266,15 +28280,17 @@ class InvalidDataState
 
 ## Sampler · neural-networks/data/index.el {#api-4b5c3036774cf3474e52}
 
-[源码 neural-networks/data/index.el:55](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L55)
+[源码 neural-networks/data/index.el:80](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L80)
 
 ```el-signature
 class Sampler
 ```
 
+[API 文档](modules/neural-networks/data/index.md#api-4b5c3036774cf3474e52)
+
 ## SamplerState · neural-networks/data/index.el {#api-807b03f6837422f1581d}
 
-[源码 neural-networks/data/index.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L36)
+[源码 neural-networks/data/index.el:46](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/data/index.el#L46)
 
 ```el-signature
 class SamplerState
@@ -28538,7 +28554,7 @@ class OptimizerSlot
 
 ## Sequential · neural-networks/model.el {#api-3de3a8b723127e06dd74}
 
-[源码 neural-networks/model.el:147](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L147)
+[源码 neural-networks/model.el:148](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L148)
 
 ```el-signature
 fn Sequential(element: type, storage: type = Tensor<element: element>): type
@@ -28554,9 +28570,9 @@ fn Sequential(element: type, storage: type = Tensor<element: element>): type
 class StaleGradient
 ```
 
-## Values · neural-networks/model.el {#api-c0b0b3479fb3a5e71dee}
+## Values · neural-networks/model.el {#api-9e63fa98172bded718e6}
 
-[源码 neural-networks/model.el:149](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L149)
+[源码 neural-networks/model.el:150](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/model.el#L150)
 
 ```el-signature
 let Values = storage
@@ -28596,7 +28612,7 @@ class OperandProvider
 
 ## SGD · neural-networks/optimizer.el {#api-6d3c31621381d78a2d47}
 
-[源码 neural-networks/optimizer.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizer.el#L17)
+[源码 neural-networks/optimizer.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/optimizer.el#L16)
 
 ```el-signature
 class SGD
@@ -29434,7 +29450,7 @@ class NumericInt
 
 ## NumericRatio · number/arithmetic.el {#api-5d824c7b2238be4ee74d}
 
-[源码 number/arithmetic.el:896](https://github.com/steve02081504/el/blob/master/src/stdlib/number/arithmetic.el#L896)
+[源码 number/arithmetic.el:905](https://github.com/steve02081504/el/blob/master/src/stdlib/number/arithmetic.el#L905)
 
 ```el-signature
 class NumericRatio
@@ -31358,7 +31374,7 @@ class Rotor2D
 
 ## U16 · platform/embedded/register.el {#api-c3603dd10e097df5ab34}
 
-[源码 platform/embedded/register.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L12)
+[源码 platform/embedded/register.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L20)
 
 ```el-signature
 let U16: type
@@ -31366,23 +31382,27 @@ let U16: type
 
 ## U32 · platform/embedded/register.el {#api-7426cc317fee3bd30c57}
 
-[源码 platform/embedded/register.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L13)
+[源码 platform/embedded/register.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L27)
 
 ```el-signature
 let U32: type
 ```
 
+[API 文档](modules/platform/embedded/register.md#api-7426cc317fee3bd30c57)
+
 ## U8 · platform/embedded/register.el {#api-86e8d3e236ed444e4ebc}
 
-[源码 platform/embedded/register.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L11)
+[源码 platform/embedded/register.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L19)
 
 ```el-signature
 let U8: type
 ```
 
+[API 文档](modules/platform/embedded/register.md#api-86e8d3e236ed444e4ebc)
+
 ## UnsafeMmioRegion · platform/embedded/register.el {#api-a240639e226b26cb7875}
 
-[源码 platform/embedded/register.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L22)
+[源码 platform/embedded/register.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L36)
 
 ```el-signature
 class UnsafeMmioRegion
@@ -31390,7 +31410,7 @@ class UnsafeMmioRegion
 
 ## UnsafeReadOnlyRegister16 · platform/embedded/register.el {#api-5fa4a6bbe8f0eb0a5702}
 
-[源码 platform/embedded/register.el:166](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L166)
+[源码 platform/embedded/register.el:180](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L180)
 
 ```el-signature
 fn UnsafeReadOnlyRegister16(): type
@@ -31398,7 +31418,7 @@ fn UnsafeReadOnlyRegister16(): type
 
 ## UnsafeReadOnlyRegister32 · platform/embedded/register.el {#api-f0251182c24322a2c746}
 
-[源码 platform/embedded/register.el:170](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L170)
+[源码 platform/embedded/register.el:184](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L184)
 
 ```el-signature
 fn UnsafeReadOnlyRegister32(): type
@@ -31406,7 +31426,7 @@ fn UnsafeReadOnlyRegister32(): type
 
 ## UnsafeReadOnlyRegister8 · platform/embedded/register.el {#api-dab38553e30d4feb897e}
 
-[源码 platform/embedded/register.el:162](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L162)
+[源码 platform/embedded/register.el:176](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L176)
 
 ```el-signature
 fn UnsafeReadOnlyRegister8(): type
@@ -31414,7 +31434,7 @@ fn UnsafeReadOnlyRegister8(): type
 
 ## UnsafeReadWriteRegister16 · platform/embedded/register.el {#api-56386557a333d4d5940f}
 
-[源码 platform/embedded/register.el:168](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L168)
+[源码 platform/embedded/register.el:182](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L182)
 
 ```el-signature
 fn UnsafeReadWriteRegister16(): type
@@ -31422,7 +31442,7 @@ fn UnsafeReadWriteRegister16(): type
 
 ## UnsafeReadWriteRegister32 · platform/embedded/register.el {#api-845acdcf62de3246dd61}
 
-[源码 platform/embedded/register.el:172](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L172)
+[源码 platform/embedded/register.el:186](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L186)
 
 ```el-signature
 fn UnsafeReadWriteRegister32(): type
@@ -31430,7 +31450,7 @@ fn UnsafeReadWriteRegister32(): type
 
 ## UnsafeReadWriteRegister8 · platform/embedded/register.el {#api-68df22c8464900037dbe}
 
-[源码 platform/embedded/register.el:164](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L164)
+[源码 platform/embedded/register.el:178](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L178)
 
 ```el-signature
 fn UnsafeReadWriteRegister8(): type
@@ -31438,7 +31458,7 @@ fn UnsafeReadWriteRegister8(): type
 
 ## UnsafeWriteOneToClearRegister16 · platform/embedded/register.el {#api-b77f48634bf56e755aef}
 
-[源码 platform/embedded/register.el:169](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L169)
+[源码 platform/embedded/register.el:183](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L183)
 
 ```el-signature
 fn UnsafeWriteOneToClearRegister16(): type
@@ -31446,7 +31466,7 @@ fn UnsafeWriteOneToClearRegister16(): type
 
 ## UnsafeWriteOneToClearRegister32 · platform/embedded/register.el {#api-af96353a468fcfa65703}
 
-[源码 platform/embedded/register.el:173](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L173)
+[源码 platform/embedded/register.el:187](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L187)
 
 ```el-signature
 fn UnsafeWriteOneToClearRegister32(): type
@@ -31454,7 +31474,7 @@ fn UnsafeWriteOneToClearRegister32(): type
 
 ## UnsafeWriteOneToClearRegister8 · platform/embedded/register.el {#api-c78ff80ebe4c1d96de3c}
 
-[源码 platform/embedded/register.el:165](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L165)
+[源码 platform/embedded/register.el:179](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L179)
 
 ```el-signature
 fn UnsafeWriteOneToClearRegister8(): type
@@ -31462,7 +31482,7 @@ fn UnsafeWriteOneToClearRegister8(): type
 
 ## UnsafeWriteOnlyRegister16 · platform/embedded/register.el {#api-d5736a8df04d286efe8c}
 
-[源码 platform/embedded/register.el:167](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L167)
+[源码 platform/embedded/register.el:181](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L181)
 
 ```el-signature
 fn UnsafeWriteOnlyRegister16(): type
@@ -31470,7 +31490,7 @@ fn UnsafeWriteOnlyRegister16(): type
 
 ## UnsafeWriteOnlyRegister32 · platform/embedded/register.el {#api-70638fba5045b4eed3e5}
 
-[源码 platform/embedded/register.el:171](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L171)
+[源码 platform/embedded/register.el:185](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L185)
 
 ```el-signature
 fn UnsafeWriteOnlyRegister32(): type
@@ -31478,7 +31498,7 @@ fn UnsafeWriteOnlyRegister32(): type
 
 ## UnsafeWriteOnlyRegister8 · platform/embedded/register.el {#api-b80fda60fd8cb68ad0bd}
 
-[源码 platform/embedded/register.el:163](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L163)
+[源码 platform/embedded/register.el:177](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L177)
 
 ```el-signature
 fn UnsafeWriteOnlyRegister8(): type
@@ -31486,7 +31506,7 @@ fn UnsafeWriteOnlyRegister8(): type
 
 ## core16 · platform/embedded/register.el {#api-2f4a8db15c7adbcb4545}
 
-[源码 platform/embedded/register.el:69](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L69)
+[源码 platform/embedded/register.el:83](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L83)
 
 ```el-signature
 fn core16(): type
@@ -31494,7 +31514,7 @@ fn core16(): type
 
 ## core32 · platform/embedded/register.el {#api-e19d4f35d0d2d09b0a4f}
 
-[源码 platform/embedded/register.el:100](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L100)
+[源码 platform/embedded/register.el:114](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L114)
 
 ```el-signature
 fn core32(): type
@@ -31502,7 +31522,7 @@ fn core32(): type
 
 ## core8 · platform/embedded/register.el {#api-0cdcc96f84c2e8681c7f}
 
-[源码 platform/embedded/register.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L38)
+[源码 platform/embedded/register.el:52](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L52)
 
 ```el-signature
 fn core8(): type
@@ -31510,7 +31530,7 @@ fn core8(): type
 
 ## read_only_register · platform/embedded/register.el {#api-8352281c60b25dfba6ab}
 
-[源码 platform/embedded/register.el:132](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L132)
+[源码 platform/embedded/register.el:146](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L146)
 
 ```el-signature
 fn read_only_register(Core: type, valueType: type): type
@@ -31518,7 +31538,7 @@ fn read_only_register(Core: type, valueType: type): type
 
 ## read_write_register · platform/embedded/register.el {#api-cf81ad30d62e20b878a8}
 
-[源码 platform/embedded/register.el:146](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L146)
+[源码 platform/embedded/register.el:160](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L160)
 
 ```el-signature
 fn read_write_register(Core: type, valueType: type): type
@@ -31526,7 +31546,7 @@ fn read_write_register(Core: type, valueType: type): type
 
 ## write_one_to_clear_register · platform/embedded/register.el {#api-fc246d473db8ddd2decf}
 
-[源码 platform/embedded/register.el:154](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L154)
+[源码 platform/embedded/register.el:168](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L168)
 
 ```el-signature
 fn write_one_to_clear_register(Core: type, valueType: type): type
@@ -31534,7 +31554,7 @@ fn write_one_to_clear_register(Core: type, valueType: type): type
 
 ## write_only_register · platform/embedded/register.el {#api-3dd4c6bb7a6cdeaa41be}
 
-[源码 platform/embedded/register.el:139](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L139)
+[源码 platform/embedded/register.el:153](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/embedded/register.el#L153)
 
 ```el-signature
 fn write_only_register(Core: type, valueType: type): type
@@ -31558,7 +31578,7 @@ class IntegerStorageFacts
 
 ## AllocationWord · platform/linux/allocation.el {#api-dbec82f9ed1d57eff5bd}
 
-[源码 platform/linux/allocation.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/linux/allocation.el#L6)
+[源码 platform/linux/allocation.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/linux/allocation.el#L8)
 
 ```el-signature
 class AllocationWord
@@ -31566,7 +31586,7 @@ class AllocationWord
 
 ## DebugWord · platform/linux/libc.el {#api-bd8bf20e770e71c5c79f}
 
-[源码 platform/linux/libc.el:65](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/linux/libc.el#L65)
+[源码 platform/linux/libc.el:73](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/linux/libc.el#L73)
 
 ```el-signature
 class DebugWord
@@ -31574,15 +31594,17 @@ class DebugWord
 
 ## NativeInt · platform/linux/libc.el {#api-5fc2beb1be963b400238}
 
-[源码 platform/linux/libc.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/linux/libc.el#L6)
+[源码 platform/linux/libc.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/linux/libc.el#L14)
 
 ```el-signature
 class NativeInt
 ```
 
+[API 文档](modules/platform/linux/libc.md#api-5fc2beb1be963b400238)
+
 ## NativeLong · platform/linux/libc.el {#api-600594c1224d94166070}
 
-[源码 platform/linux/libc.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/linux/libc.el#L8)
+[源码 platform/linux/libc.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/linux/libc.el#L16)
 
 ```el-signature
 class NativeLong
@@ -31590,7 +31612,7 @@ class NativeLong
 
 ## NativeSize · platform/linux/libc.el {#api-e56f23087ab8fbece394}
 
-[源码 platform/linux/libc.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/linux/libc.el#L9)
+[源码 platform/linux/libc.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/linux/libc.el#L17)
 
 ```el-signature
 class NativeSize
@@ -31598,7 +31620,7 @@ class NativeSize
 
 ## NativeUnsigned · platform/linux/libc.el {#api-9af2b93ece274d4ca770}
 
-[源码 platform/linux/libc.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/linux/libc.el#L7)
+[源码 platform/linux/libc.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/linux/libc.el#L15)
 
 ```el-signature
 class NativeUnsigned
@@ -31606,15 +31628,17 @@ class NativeUnsigned
 
 ## NativeFloatExponent5 · platform/machine/float-codec.el {#api-f145036e3b661f9b51a3}
 
-[源码 platform/machine/float-codec.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/machine/float-codec.el#L5)
+[源码 platform/machine/float-codec.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/machine/float-codec.el#L13)
 
 ```el-signature
 class NativeFloatExponent5
 ```
 
+[API 文档](modules/platform/machine/float-codec.md#api-f145036e3b661f9b51a3)
+
 ## NativeFloatExponent6 · platform/machine/float-codec.el {#api-5a1a64e75acc3fec489f}
 
-[源码 platform/machine/float-codec.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/machine/float-codec.el#L6)
+[源码 platform/machine/float-codec.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/machine/float-codec.el#L14)
 
 ```el-signature
 class NativeFloatExponent6
@@ -32702,7 +32726,7 @@ class NativeDword
 
 ## SettingsChange · settings/model.el {#api-0f18b990004eaa61e5c1}
 
-[源码 settings/model.el:99](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L99)
+[源码 settings/model.el:105](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L105)
 
 ```el-signature
 class SettingsChange
@@ -32718,7 +32742,7 @@ class SettingsConflict extends Error
 
 ## SettingsConstraint · settings/model.el {#api-dca50e086c1b002ecc72}
 
-[源码 settings/model.el:188](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L188)
+[源码 settings/model.el:194](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L194)
 
 ```el-signature
 class SettingsConstraint
@@ -32742,7 +32766,7 @@ class SettingsField
 
 ## SettingsFieldRule · settings/model.el {#api-1cbc5e5f6f739cb09d24}
 
-[源码 settings/model.el:198](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L198)
+[源码 settings/model.el:204](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L204)
 
 ```el-signature
 class SettingsFieldRule
@@ -32750,7 +32774,7 @@ class SettingsFieldRule
 
 ## SettingsPatch · settings/model.el {#api-16f01e4f88e27e324f6b}
 
-[源码 settings/model.el:137](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L137)
+[源码 settings/model.el:143](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L143)
 
 ```el-signature
 class SettingsPatch
@@ -32758,15 +32782,17 @@ class SettingsPatch
 
 ## SettingsSnapshot · settings/model.el {#api-b465752ff21c274428e5}
 
-[源码 settings/model.el:70](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L70)
+[源码 settings/model.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L76)
 
 ```el-signature
 class SettingsSnapshot
 ```
 
+[API 文档](modules/settings/model.md#api-b465752ff21c274428e5)
+
 ## SettingsValue · settings/model.el {#api-372be6efcb07daac13d4}
 
-[源码 settings/model.el:168](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L168)
+[源码 settings/model.el:174](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L174)
 
 ```el-signature
 class SettingsValue
@@ -33562,7 +33588,7 @@ enum QuotedTextFormat
 
 ## ParseAnnotation · text/patterns/parser.el {#api-76136d967936c5f5708a}
 
-[源码 text/patterns/parser.el:53](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L53)
+[源码 text/patterns/parser.el:54](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L54)
 
 ```el-signature
 class ParseAnnotation
@@ -33570,7 +33596,7 @@ class ParseAnnotation
 
 ## ParseContext · text/patterns/parser.el {#api-40c1fdfb7be59a4f3864}
 
-[源码 text/patterns/parser.el:71](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L71)
+[源码 text/patterns/parser.el:72](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L72)
 
 ```el-signature
 class ParseContext
@@ -33588,7 +33614,7 @@ class ParseError extends Error
 
 ## ParsePreview · text/patterns/parser.el {#api-4deede003217fd23ad99}
 
-[源码 text/patterns/parser.el:173](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L173)
+[源码 text/patterns/parser.el:186](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L186)
 
 ```el-signature
 class ParsePreview
@@ -33596,23 +33622,27 @@ class ParsePreview
 
 ## ParseReply · text/patterns/parser.el {#api-97a3a0dc8d534b09c3e7}
 
-[源码 text/patterns/parser.el:92](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L92)
+[源码 text/patterns/parser.el:103](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L103)
 
 ```el-signature
 fn ParseReply(output: type): type
 ```
 
+[API 文档](modules/text/patterns/parser.md#api-97a3a0dc8d534b09c3e7)
+
 ## Parser · text/patterns/parser.el {#api-93c73ae8c76ebc48d097}
 
-[源码 text/patterns/parser.el:188](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L188)
+[源码 text/patterns/parser.el:211](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L211)
 
 ```el-signature
 fn Parser(output: type): type
 ```
 
+[API 文档](modules/text/patterns/parser.md#api-93c73ae8c76ebc48d097)
+
 ## ParserPair · text/patterns/parser.el {#api-ae55b006261f018cd9f4}
 
-[源码 text/patterns/parser.el:643](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L643)
+[源码 text/patterns/parser.el:666](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L666)
 
 ```el-signature
 fn ParserPair(first: type, second: type): type
@@ -33620,7 +33650,7 @@ fn ParserPair(first: type, second: type): type
 
 ## Rule · text/patterns/parser.el {#api-d3042059a0d721b36e04}
 
-[源码 text/patterns/parser.el:758](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L758)
+[源码 text/patterns/parser.el:781](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L781)
 
 ```el-signature
 fn Rule(output: type): type
@@ -34912,7 +34942,7 @@ class WindowChrome
 
 ## PaintCommand · user-interface/drawing.el {#api-9da7036dd8bc45c5a0d0}
 
-[源码 user-interface/drawing.el:127](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/drawing.el#L127)
+[源码 user-interface/drawing.el:128](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/drawing.el#L128)
 
 ```el-signature
 class PaintCommand
@@ -34920,7 +34950,7 @@ class PaintCommand
 
 ## PaintTheme · user-interface/drawing.el {#api-4be1353cf98b66267dcf}
 
-[源码 user-interface/drawing.el:37](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/drawing.el#L37)
+[源码 user-interface/drawing.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/drawing.el#L38)
 
 ```el-signature
 class PaintTheme
@@ -35036,7 +35066,7 @@ class Definition
 
 ## Edge · user-interface/model.el {#api-911cca92b98415bc5fe8}
 
-[源码 user-interface/model.el:207](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L207)
+[源码 user-interface/model.el:208](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L208)
 
 ```el-signature
 class Edge
@@ -35044,7 +35074,7 @@ class Edge
 
 ## GuiEvent · user-interface/model.el {#api-d0161616ebcc781b1631}
 
-[源码 user-interface/model.el:138](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L138)
+[源码 user-interface/model.el:139](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L139)
 
 ```el-signature
 class GuiEvent
@@ -35064,7 +35094,7 @@ class LayoutStyle
 
 ## Listener · user-interface/model.el {#api-1ac2ca2adb0eae1c06c5}
 
-[源码 user-interface/model.el:163](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L163)
+[源码 user-interface/model.el:164](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L164)
 
 ```el-signature
 class Listener
@@ -35290,7 +35320,7 @@ class Window
 
 ## WindowTimer · user-interface/platform/windows/window.el {#api-9b651467460e89936d5f}
 
-[源码 user-interface/platform/windows/window.el:173](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L173)
+[源码 user-interface/platform/windows/window.el:174](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L174)
 
 ```el-signature
 class WindowTimer
@@ -35308,7 +35338,7 @@ class RotatingDataView extends Definition
 
 ## SoundPlayer · user-interface/sound.el {#api-7444e7a247962761e044}
 
-[源码 user-interface/sound.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L17)
+[源码 user-interface/sound.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L18)
 
 ```el-signature
 class SoundPlayer
@@ -35396,17 +35426,17 @@ class WindowCelebration
 fn Array(element: type): type
 ```
 
-## value · collections/maps/base.el {#api-39520d8c37c7afda41be}
+## value · collections/maps/base.el {#api-cdd9fdb454b664951f56}
 
-类型参数，位于 `collections/maps/base.el:21`。
+类型参数，位于 `collections/maps/base.el:27`。
 
 ```el-signature
 fn MapBase(key: type, value: type): type
 ```
 
-## key · collections/maps/base.el {#api-111d280eeeb372a54fb3}
+## key · collections/maps/base.el {#api-a3444c673145a833055f}
 
-类型参数，位于 `collections/maps/base.el:21`。
+类型参数，位于 `collections/maps/base.el:27`。
 
 ```el-signature
 fn MapBase(key: type, value: type): type
@@ -35444,9 +35474,9 @@ fn DitSet(size: Number): type
 fn Set(element: type): type
 ```
 
-## sample · neural-networks/data/index.el {#api-3ca7635f2367bc2f45d8}
+## sample · neural-networks/data/index.el {#api-1cf8247e11d20756443f}
 
-类型参数，位于 `neural-networks/data/index.el:115`。
+类型参数，位于 `neural-networks/data/index.el:140`。
 
 ```el-signature
 fn DataLoader(sample: type): type
@@ -35460,17 +35490,17 @@ fn DataLoader(sample: type): type
 fn Tensor(element: type): type
 ```
 
-## output · text/patterns/parser.el {#api-14ead6504f5bee2a3866}
+## output · text/patterns/parser.el {#api-d0a2a8f4c1260d3b7433}
 
-类型参数，位于 `text/patterns/parser.el:92`。
+类型参数，位于 `text/patterns/parser.el:103`。
 
 ```el-signature
 fn ParseReply(output: type): type
 ```
 
-## output · text/patterns/parser.el {#api-9996609a930a7464f8cd}
+## output · text/patterns/parser.el {#api-df976d47c60f3dbf87f5}
 
-类型参数，位于 `text/patterns/parser.el:188`。
+类型参数，位于 `text/patterns/parser.el:211`。
 
 ```el-signature
 fn Parser(output: type): type

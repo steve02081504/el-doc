@@ -99,7 +99,7 @@ export fn all(goals: Goal[]): Goal
 ### 示例：合并两个条件（x 是已有的逻辑变量）
 
 ```el
-// @external x
+// @external x: Term
 let goal = all(@[call(compound("person", @[x])), dif(x, atom("Ada"))])
 ```
 

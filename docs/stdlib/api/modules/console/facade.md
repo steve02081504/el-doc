@@ -161,7 +161,7 @@ fn readAs(parser, prompt: LocalizedMessage | LocalizedContent)
 ### 示例：使用已选择的本地化提示（prompt 是调用方提供的提示文本）
 
 ```el
-// @external prompt
+// @external prompt: LocalizedMessage | LocalizedContent
 let value = console.stdin.readAs(parsers.integer(), prompt)
 ```
 
@@ -224,7 +224,7 @@ fn readLineAs(parser, prompt: LocalizedMessage | LocalizedContent)
 ### 示例：使用已选择的本地化提示（prompt 是调用方提供的提示文本）
 
 ```el
-// @external prompt
+// @external prompt: LocalizedMessage | LocalizedContent
 let value = console.stdin.readLineAs(parsers.integer(), prompt)
 ```
 

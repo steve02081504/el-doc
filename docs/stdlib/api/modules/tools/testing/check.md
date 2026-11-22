@@ -95,7 +95,7 @@ check.near(0.1 + 0.2, 0.3, absolute: 0.000001, relative: 0)
 
 ## Checks.throws {#api-8db3d707f3691300a2a5}
 
-源码：`src/stdlib/tools/testing/check.el:68` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L68)
+源码：`src/stdlib/tools/testing/check.el:69` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L69)
 
 断言回调抛出指定类型的异常，并返回捕获到的异常值。
 
@@ -114,12 +114,13 @@ fn throws(expected: type, body)
 ### 示例：检查缺失键错误（需调用方提供对象或绑定）
 
 ```el
+// @external scores: Map<key: Text, value: Number>
 check.throws(MissingKeyError, () => scores["missing"])
 ```
 
 ## Checks.items {#api-e911952584eb01963356}
 
-源码：`src/stdlib/tools/testing/check.el:87` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L87)
+源码：`src/stdlib/tools/testing/check.el:88` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L88)
 
 按位置逐项比较两个有限序列，并报告长度或首个不同元素。
 
@@ -141,7 +142,7 @@ check.items(@[1, 2], @[1, 2])
 
 ## Checks.collect {#api-80bbd1f2ffdd433e943e}
 
-源码：`src/stdlib/tools/testing/check.el:104` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L104)
+源码：`src/stdlib/tools/testing/check.el:105` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L105)
 
 执行一组比较并聚合其中的比较失败，结束后一次报告。
 
@@ -164,7 +165,7 @@ check.collect(() => {
 
 ## Checks.snapshot {#api-a2dedfe1b1939a02b3e0}
 
-源码：`src/stdlib/tools/testing/check.el:122` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L122)
+源码：`src/stdlib/tools/testing/check.el:123` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L123)
 
 将编码后的值按当前测试上下文中的键记录为快照。
 
@@ -188,7 +189,7 @@ check.snapshot(@{ status: "ready" }, key: "response")
 
 ## Checks.compiles {#api-2e049b79fd2a4c6c9dcb}
 
-源码：`src/stdlib/tools/testing/check.el:135` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L135)
+源码：`src/stdlib/tools/testing/check.el:136` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L136)
 
 断言编译结果成功并生成产物。
 
@@ -208,7 +209,7 @@ check.compiles(compileFixture("valid.el"))
 
 ## Checks.diagnostic {#api-ca64dd756b7a7d68a372}
 
-源码：`src/stdlib/tools/testing/check.el:153` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L153)
+源码：`src/stdlib/tools/testing/check.el:154` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L154)
 
 断言编译失败并包含指定阶段、诊断码与源码位置。
 
@@ -235,13 +236,13 @@ fn diagnostic(borrow result, phase: Text, code: Text, source: Text = "", line: N
 ### 示例：检查私有访问诊断
 
 ```el
-// @external result
+let result = compileFixture("fixtures/private.el")
 check.diagnostic(result, phase: "check", code: "EL.ACCESS.PRIVATE", marker: "denied")
 ```
 
 ## check {#api-b55c78812b9aee65b8c4}
 
-源码：`src/stdlib/tools/testing/check.el:174` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L174)
+源码：`src/stdlib/tools/testing/check.el:175` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L175)
 
 提供比较断言入口；失败时抛出带结构化差异信息的 TestFailure。
 

@@ -5,7 +5,7 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from stdlib_docs import DocumentationError, collect, extract, render, write_pages
+from stdlib_docs import DocumentationError, collect, declares_instance, extract, render, write_pages
 
 
 DOCUMENT = '''/// @api increment
@@ -147,11 +147,75 @@ class GenerationTests(unittest.TestCase):
 		owner = "export class Window {\n"
 		make_class = lambda doc: owner + "".join("\t" + line for line in doc.splitlines(keepends=True)) + "}\n"
 		self.write_document("math.el", make_class(bad))
-		with self.assertRaisesRegex(DocumentationError, r"Window\.every .*must declare a local Window instance"):
+		with self.assertRaisesRegex(DocumentationError, r"Window\.every .*must use a local Window instance"):
 			collect(self.root)
 		good = bad.replace("// @external window: Window", "let window = Window()")
 		self.write_document("math.el", make_class(good))
 		self.assertEqual(collect(self.root)["coverage"]["documented_apis"], 1)
+
+	def test_inline_receivers_count_as_instances(self):
+		self.assertTrue(declares_instance('console.stdout.writeLine(@[10, 20, 30].count)', "Array", member="count"))
+		self.assertTrue(declares_instance('lazy @[1, 2, 3].take(2)', "Sequence", member="take"))
+		self.assertTrue(declares_instance('let matrix = @(1, 2; 3, 4)\nmatrix.transpose()', "Tensor", member="transpose"))
+		self.assertTrue(declares_instance('"report.txt".endsWith(".txt")', "Text", member="endsWith"))
+		self.assertTrue(declares_instance('Random(72).shuffle(values)', "Random", member="shuffle"))
+		self.assertTrue(declares_instance('let scores = Map<key: Text, value: Number>()', "Map", {"Map()": "type"}))
+		self.assertFalse(declares_instance('"window".count', "Window", member="count"))
+		self.assertFalse(declares_instance('// @external window: Window\nwindow.every(1000, tick => nil)', "Window", member="every"))
+		self.assertFalse(declares_instance('// @external window: Window\nlet local: Window = window\nlocal.every()', "Window", member="every"))
+
+	def test_callable_members_can_use_the_documented_inline_receiver(self):
+		hints = {"console": "ConsoleFacade", "ConsoleFacade.info": "ConsoleLevelPort"}
+		self.assertTrue(declares_instance('console.info("task.done")', "ConsoleLevelPort", hints, "operator"))
+
+	def test_member_inherits_class_example_with_inferred_factory_result(self):
+		owner = DOCUMENT.replace("@api increment", "@api Window")
+		owner = owner.replace("console.stdout.writeLine(increment(2))", "let setupWindow = openWindow()")
+		owner = owner[:owner.index("export fn")]
+		factory = DOCUMENT.replace("@api increment", "@api openWindow")
+		factory = factory.replace("export fn increment(value: Number): Number => value + 1", "export fn openWindow() => createWindow()")
+		member = DOCUMENT.replace("@api increment", "@api Window.every")
+		member = member.replace("console.stdout.writeLine(increment(2))", "setupWindow.every()")
+		member = member.replace("export fn increment(value: Number): Number => value + 1", "fn every() {}")
+		indented = "".join("\t" + line for line in member.splitlines(keepends=True))
+		self.write_document("math.el", owner + "export class Window {\n" + indented + "}\n"
+			+ factory + "fn createWindow() { return Window() }\n")
+		model = collect(self.root)
+		entry = next(entry for entry in model["entries"] if entry["name"] == "openWindow")
+		self.assertEqual(entry["return_type"], "Window")
+
+	def test_example_uses_local_export_return_and_specialized_constructor(self):
+		owner = DOCUMENT.replace("@api increment", "@api Window")
+		owner = owner[:owner.index("export fn")].replace("console.stdout.writeLine(increment(2))", "let setupWindow = showWindow()")
+		member = DOCUMENT.replace("@api increment", "@api Window.every")
+		member = member.replace("console.stdout.writeLine(increment(2))", "setupWindow.every()")
+		member = member.replace("export fn increment(value: Number): Number => value + 1", "fn every() {}")
+		indented = "".join("\t" + line for line in member.splitlines(keepends=True))
+		self.write_document("math.el", owner + "export class Window {\n" + indented
+			+ "}\nexport fn showWindow(): Window { return Window() }\n")
+		self.assertEqual(collect(self.root)["coverage"]["documented_apis"], 2)
+		self.assertTrue(declares_instance('let Dense = Tensor<element: Number>\nlet matrix = Dense(@[2, 2], @[1, 2, 3, 4])', "Tensor"))
+
+	def test_example_infers_receiver_through_annotated_member_chain(self):
+		owner = DOCUMENT.replace("@api increment", "@api Window")
+		owner = owner[:owner.index("export fn")].replace("console.stdout.writeLine(increment(2))",
+			"// @external factory: Builder\n/// let window = factory.prepare().open()")
+		member = DOCUMENT.replace("@api increment", "@api Window.every")
+		member = member.replace("console.stdout.writeLine(increment(2))", "window.every()")
+		member = member.replace("export fn increment(value: Number): Number => value + 1", "fn every() {}")
+		indented = "".join("\t" + line for line in member.splitlines(keepends=True))
+		self.write_document("math.el", owner + "export class Window {\n" + indented
+			+ "}\nclass Builder { fn prepare(): Prepared {} }\nclass Prepared { fn open(): Window {} }\n")
+		self.assertEqual(collect(self.root)["coverage"]["documented_apis"], 2)
+		self.write_document("math.el", owner.replace("// @external factory: Builder", "let factory = Builder()")
+			+ "export class Window {\n" + indented
+			+ "}\nclass Builder { fn prepare(): Prepared {} }\nclass Prepared { fn open(): Window {} }\n")
+		self.assertEqual(collect(self.root)["coverage"]["documented_apis"], 2)
+
+	def test_local_factory_inference_does_not_treat_the_function_itself_as_an_instance(self):
+		setup = "fn makeWindow() => Window()\n"
+		self.assertTrue(declares_instance(setup + "makeWindow().every()", "Window", member="every"))
+		self.assertFalse(declares_instance(setup + "let callback = makeWindow\ncallback.every()", "Window", member="every"))
 
 	def test_environment_alias_cycles_and_source_link(self):
 		(self.stdlib / "index.el").write_text('export lazy import { increment as count } from "file:./bridge.el"\nexport import { mystery } from "file:./missing.el"\nexport import { cycle } from "file:./cycle.el"\n')

@@ -31,9 +31,35 @@ let selector = WindowSelector(title: WindowTextMatch("编辑器", WindowTextMode
 let matches = selectDesktopWindows(selector)
 ```
 
+## selectDesktopWindows {#api-6e7d2ef1321480dba3a1}
+
+源码：`src/stdlib/desktop-automation/window-selector.el:169` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/window-selector.el#L169)
+
+按选择条件筛选窗口；已失效的窗口会被忽略。
+
+```el-signature
+export fn selectDesktopWindows(selector: WindowSelector, windows: DesktopWindow[] = listDesktopWindows()): DesktopWindow[]
+```
+
+**返回类型**：[`DesktopWindow`](../../types.md#api-b8c3f4d8bfbaa26f61f4)[]
+
+**参数**：selector 窗口选择条件。
+
+**参数**：windows 待筛选窗口，默认枚举当前桌面窗口。
+
+**返回值**：匹配的窗口数组。
+
+**失败与异常**：无法确定匹配所需的窗口属性时抛出 DesktopError。
+
+### 示例：筛选桌面窗口
+
+```el
+let matches = selectDesktopWindows(WindowSelector())
+```
+
 ## findActiveDesktopWindow {#api-e8eccc1eedc881c42d08}
 
-源码：`src/stdlib/desktop-automation/window-selector.el:186` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/window-selector.el#L186)
+源码：`src/stdlib/desktop-automation/window-selector.el:196` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/desktop-automation/window-selector.el#L196)
 
 检查当前活动窗口是否符合选择器；若窗口已消失或不匹配则返回 `nil`。选择器显式要求 `active: f` 属于无效输入。
 

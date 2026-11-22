@@ -68,7 +68,7 @@ let theme: Theme | nil_t
 ### 示例：为根节点设置主色（需调用方提供对象或绑定）
 
 ```el
-root.theme = Theme(@{primary: 0x80A7F0})
+title.theme = Theme(@{primary: 0x80A7F0})
 ```
 
 ## Definition.textMask {#api-b3f8e6d993e4cc443109}
@@ -92,7 +92,7 @@ password.textMask = "•"
 
 ## GuiEvent {#api-d0161616ebcc781b1631}
 
-源码：`src/stdlib/user-interface/model.el:137` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L137)
+源码：`src/stdlib/user-interface/model.el:138` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L138)
 
 一次 GUI 输入事件的可变传播状态与载荷；监听器可停止传播或阻止默认处理。
 
@@ -104,12 +104,13 @@ export class GuiEvent
 ### 示例：在监听器中阻止默认行为（需调用方提供对象或绑定）
 
 ```el
+// @external button: Definition
 on(button, "click", event => event.preventDefault())
 ```
 
 ## on {#api-bec5c16251ba4e97600c}
 
-源码：`src/stdlib/user-interface/model.el:182` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L182)
+源码：`src/stdlib/user-interface/model.el:183` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L183)
 
 为定义节点注册指定类型的事件监听器，可选择在捕获阶段运行。
 
@@ -128,13 +129,13 @@ export fn on(element: Definition, kind: Text, action, capture: Bool = f)
 ### 示例：注册按钮点击处理
 
 ```el
-// @external button, status
+// @external button: Definition, status: Definition
 on(button, "click", event => status.text = "已点击")
 ```
 
 ## element {#api-8fd177f7546412758246}
 
-源码：`src/stdlib/user-interface/model.el:197` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L197)
+源码：`src/stdlib/user-interface/model.el:198` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L198)
 
 创建 `column`、`row`、`label`、`button` 或 `input` 定义；未知种类会抛出错误。
 
@@ -162,7 +163,7 @@ let save = element("button", "保存", "save")
 
 ## appendChild {#api-cdf7dba1323f03ef85c8}
 
-源码：`src/stdlib/user-interface/model.el:224` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L224)
+源码：`src/stdlib/user-interface/model.el:225` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L225)
 
 将目标定义作为带键子边追加到父节点，并发布父节点变化。
 
@@ -187,7 +188,7 @@ appendChild(root, "heading", element("label", "设置"))
 
 ## removeChild {#api-89c99015e38050658540}
 
-源码：`src/stdlib/user-interface/model.el:241` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L241)
+源码：`src/stdlib/user-interface/model.el:243` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L243)
 
 按子边键移除第一个匹配项；未找到时不修改模型。
 
@@ -206,12 +207,13 @@ export fn removeChild(parent: Definition, key: Text): Bool
 ### 示例：移除可选说明行（需调用方提供对象或绑定）
 
 ```el
+// @external root: Definition
 let removed = removeChild(root, "hint")
 ```
 
 ## moveChild {#api-0a122f09a5627320ce81}
 
-源码：`src/stdlib/user-interface/model.el:264` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L264)
+源码：`src/stdlib/user-interface/model.el:266` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L266)
 
 将已有子边移动到指定的最终索引；这是重排，不会创建新的边。
 
@@ -230,6 +232,6 @@ export fn moveChild(parent: Definition, key: Text, destination: Number)
 ### 示例：将第二项移到首位
 
 ```el
-// @external root
+// @external root: Definition
 moveChild(root, "second", 0)
 ```

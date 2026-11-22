@@ -6,4 +6,4 @@
 
 | 模块 | 接口 |
 | --- | --- |
-| [settings/model.el](../modules/settings/model.md) | [resolveSettingsPatch](../modules/settings/model.md#api-c80ade34e4e649b1dbff) |
+| [settings/model.el](../modules/settings/model.md) | [SettingsSnapshot](../modules/settings/model.md#api-b465752ff21c274428e5)、[resolveSettingsPatch](../modules/settings/model.md#api-c80ade34e4e649b1dbff) |

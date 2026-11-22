@@ -133,7 +133,7 @@ let circle = pi(Scalar)
 
 ## pow {#api-fa68c880d86864b1595c}
 
-源码：`src/stdlib/mathematics/functions/elementary.el:279` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L279)
+源码：`src/stdlib/mathematics/functions/elementary.el:280` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/elementary.el#L280)
 
 计算底数的实数幂；省略 exponent 时计算平方。
 
@@ -150,5 +150,6 @@ export fn pow(base, exponent = Number(2))
 ### 示例：计算三次方
 
 ```el
+import { pow } from "el:mathematics/functions/elementary.el"
 let cube = pow(2, 3)
 ```

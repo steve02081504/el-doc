@@ -298,7 +298,7 @@ console.stdout.writeLine(response.status, " ", response.ok)
 
 ## HttpResponse.status {#api-94a7ee2eb19c23484254}
 
-源码：`src/stdlib/network/http/model.el:201` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L201)
+源码：`src/stdlib/network/http/model.el:202` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L202)
 
 HTTP 状态码。
 
@@ -311,12 +311,13 @@ let status: Number
 ### 示例：检查状态码（需调用方提供对象或绑定）
 
 ```el
+// @external response: HttpResponse
 console.stdout.writeLine(response.status)
 ```
 
 ## HttpResponse.headers {#api-13457e67b9172ccbf05d}
 
-源码：`src/stdlib/network/http/model.el:209` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L209)
+源码：`src/stdlib/network/http/model.el:210` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L210)
 
 响应头列表。
 
@@ -329,13 +330,13 @@ let headers: HttpHeader[]
 ### 示例：检查响应头数
 
 ```el
-// @external response
+// @external response: HttpResponse
 console.stdout.writeLine(response.headers.count)
 ```
 
 ## HttpResponse.body {#api-c6cdd2d8c232982199d4}
 
-源码：`src/stdlib/network/http/model.el:216` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L216)
+源码：`src/stdlib/network/http/model.el:218` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L218)
 
 响应体的原始字节。
 
@@ -348,12 +349,13 @@ let body: Number[]
 ### 示例：检查响应体字节数（需调用方提供对象或绑定）
 
 ```el
+// @external response: HttpResponse
 console.stdout.writeLine(response.body.count)
 ```
 
 ## HttpResponse.url {#api-c72aa9a6acb07d01133a}
 
-源码：`src/stdlib/network/http/model.el:224` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L224)
+源码：`src/stdlib/network/http/model.el:226` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L226)
 
 请求跟随重定向后的最终 URL。
 
@@ -366,13 +368,13 @@ let url: Text
 ### 示例：查看最终 URL
 
 ```el
-// @external response
+// @external response: HttpResponse
 console.stdout.writeLine(response.url)
 ```
 
 ## HttpResponse.ok {#api-833651302d6ba4264de8}
 
-源码：`src/stdlib/network/http/model.el:233` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L233)
+源码：`src/stdlib/network/http/model.el:236` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L236)
 
 判断状态码是否位于 200 到 299 的成功范围。
 
@@ -387,12 +389,13 @@ get ok(): Bool
 ### 示例：判断响应是否成功（需调用方提供对象或绑定）
 
 ```el
+// @external response: HttpResponse
 if (response.ok) console.stdout.writeLine("success")
 ```
 
 ## HttpResponse.text {#api-6cda717c77ed293047df}
 
-源码：`src/stdlib/network/http/model.el:243` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L243)
+源码：`src/stdlib/network/http/model.el:246` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L246)
 
 将响应体按 UTF-8 解码为文本；拒绝未解码的非 identity 内容编码。
 
@@ -409,13 +412,13 @@ fn text(): Text
 ### 示例：读取文本响应
 
 ```el
-// @external response
+// @external response: HttpResponse
 console.stdout.writeLine(response.text())
 ```
 
 ## HttpResponse.json {#api-fd727a1f0f4a5400e858}
 
-源码：`src/stdlib/network/http/model.el:257` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L257)
+源码：`src/stdlib/network/http/model.el:261` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L261)
 
 将响应文本解析为 JSON 值。
 
@@ -434,12 +437,13 @@ fn json(limits: JsonLimits = JsonLimits()): any
 ### 示例：解码 JSON 响应（需调用方提供对象或绑定）
 
 ```el
+// @external response: HttpResponse
 let configuration = response.json()
 ```
 
 ## HttpResponse.as {#api-babd6c7262ef7ec82f76}
 
-源码：`src/stdlib/network/http/model.el:268` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L268)
+源码：`src/stdlib/network/http/model.el:272` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L272)
 
 使用指定格式对象解码响应体。
 
@@ -456,13 +460,13 @@ fn as(format)
 ### 示例：使用 JSON 格式解码
 
 ```el
-// @external response
+// @external response: HttpResponse
 let config = response.as(formats.JSON)
 ```
 
 ## HttpResponse.header {#api-af4458df84318ed403f0}
 
-源码：`src/stdlib/network/http/model.el:281` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L281)
+源码：`src/stdlib/network/http/model.el:286` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L286)
 
 按大小写无关的名称查找首个响应头。
 
@@ -479,12 +483,13 @@ fn header(name: Text): Text | nil_t
 ### 示例：读取内容类型（需调用方提供对象或绑定）
 
 ```el
+// @external response: HttpResponse
 let contentType = response.header("Content-Type")
 ```
 
 ## HttpStatusError {#api-b0c306dbfe7c9ba3158d}
 
-源码：`src/stdlib/network/http/model.el:293` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L293)
+源码：`src/stdlib/network/http/model.el:298` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L298)
 
 表示 HTTP 响应状态不成功；异常保留原始响应供调用方检查。
 
@@ -495,14 +500,14 @@ export class HttpStatusError extends Error
 ### 示例：捕获并检查错误响应
 
 ```el
-// @external url
+// @external url: Text
 try { fetchAs(formats.JSON, url) }
 catch (error: HttpStatusError) { console.stderr.writeLine(error.response.status) }
 ```
 
 ## HttpStatusError.response {#api-84ea870701b770626b47}
 
-源码：`src/stdlib/network/http/model.el:300` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L300)
+源码：`src/stdlib/network/http/model.el:306` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L306)
 
 引发状态错误的完整 HTTP 响应。
 
@@ -515,12 +520,13 @@ let response: HttpResponse
 ### 示例：查看错误状态（需调用方提供对象或绑定）
 
 ```el
+// @external error: HttpStatusError
 console.stderr.writeLine(error.response.status)
 ```
 
 ## HttpStatusError.constructor {#api-8cd621216a6f8df9a3be}
 
-源码：`src/stdlib/network/http/model.el:309` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L309)
+源码：`src/stdlib/network/http/model.el:315` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L315)
 
 将不成功的 HTTP 响应封装为状态异常。
 
@@ -533,6 +539,6 @@ constructor(response: HttpResponse)
 ### 示例：手动将错误状态转成异常
 
 ```el
-// @external response
+// @external response: HttpResponse
 if (!response.ok) throw HttpStatusError(response)
 ```

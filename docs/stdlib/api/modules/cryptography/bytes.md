@@ -25,7 +25,7 @@ export fn append_u32le(target: Number[], value: Number)
 ### 示例：使用示例
 
 ```el
-import { append_u32le } from "el:cryptography/bytes"
+import { append_u32le } from "el:cryptography/bytes.el"
 let bytes: Number[] = @[]
 append_u32le(bytes, 258)
 ```
@@ -47,7 +47,7 @@ export fn read_u32le(source: Number[], at: Number): Number
 ### 示例：使用示例
 
 ```el
-import { read_u32le } from "el:cryptography/bytes"
+import { read_u32le } from "el:cryptography/bytes.el"
 let value = read_u32le(@[2, 1, 0, 0], 0)
 ```
 
@@ -68,7 +68,7 @@ export fn hex_of(bytes: Number[]): Text
 ### 示例：使用示例
 
 ```el
-import { hex_of } from "el:cryptography/bytes"
+import { hex_of } from "el:cryptography/bytes.el"
 let encoded = hex_of(@[0, 255])
 ```
 
@@ -89,7 +89,7 @@ export fn hex_bytes(text: Text): Number[]
 ### 示例：使用示例
 
 ```el
-import { hex_bytes } from "el:cryptography/bytes"
+import { hex_bytes } from "el:cryptography/bytes.el"
 let bytes = hex_bytes("00ff")
 ```
 
@@ -110,6 +110,6 @@ export fn constant_time_equal(left: Number[], right: Number[]): Bool
 ### 示例：使用示例
 
 ```el
-import { constant_time_equal } from "el:cryptography/bytes"
+import { constant_time_equal } from "el:cryptography/bytes.el"
 let equal = constant_time_equal(@[1, 2], @[1, 2])
 ```

@@ -29,6 +29,6 @@ export fn count(rows: any): Number
 ### 示例：统计记录数（rows 是已有的行集合）
 
 ```el
-// @external rows
+let rows = @[1, 2, 3]
 let total = count(rows)
 ```

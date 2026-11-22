@@ -59,6 +59,10 @@ class Target:
 	value_type: str | None = None
 
 
+def example_key(code):
+	return "\n".join(line.strip() for line in code.strip().splitlines())
+
+
 class Catalog:
 	def __init__(self, model):
 		self.entries = {entry["id"]: entry for entry in model["entries"] if entry["kind"] == "api"}
@@ -73,8 +77,23 @@ class Catalog:
 		self.environment = {binding["name"]: binding for binding in model.get("environment", [])}
 		self.defaults = {}
 		self.signature_types = {}
+		self.value_hints = _source_docs.documented_value_types(self.entries.values())
+		module_entries = defaultdict(list)
 		for entry in self.entries.values():
-			self.names[entry["name"].split("~")[0]].append(entry)
+			module_entries[entry["source"]].append(entry)
+		self.module_hints = {path: _source_docs.documented_value_types(items) for path, items in module_entries.items()}
+		for path, returns in model.get("module_return_types", {}).items():
+			self.module_hints.setdefault(path, {}).update(returns)
+		self.constructors = {definition["name"] for definition in model.get("types", ())}
+		self.example_setups = defaultdict(set)
+		setups = _source_docs.class_example_setups(self.entries.values())
+		for entry in self.entries.values():
+			name = entry["name"].split("~")[0]
+			self.names[name].append(entry)
+			for section in entry.get("sections", ()):
+				if section["tag"] == "example":
+					setup = setups.get((entry["source"], entry.get("owner")), "")
+					self.example_setups[(entry["source"], example_key(section["code"]))].add(setup)
 			if "signature" in entry:
 				display = entry["signature"]
 				if entry.get("initializer") is not None:
@@ -100,12 +119,14 @@ class Catalog:
 			return None
 		entry = entries[0]
 		identity = entry["id"].split("~")[0] if len(entries) > 1 else entry["id"]
+		types = {entry.get("value_type") or entry.get("return_type") for entry in entries}
+		value_type = types.pop() if len(types) == 1 else None
 		return Target("stdlib/api/modules/" + entry["source"].removesuffix(".el") + ".md",
-			anchor(identity), name, entry.get("value_type") or entry.get("return_type"))
+			anchor(identity), name, value_type)
 
 	def member(self, receiver, name):
-		if receiver and receiver.value_type:
-			return self.named(receiver.value_type + "." + name)
+		if receiver and (owner := _source_docs.nominal_type(receiver.value_type)):
+			return self.named(owner + "." + name)
 		return None
 
 	def module(self, uri):
@@ -116,6 +137,10 @@ class Catalog:
 		path = posixpath.normpath(path)
 		module = posixpath.join(path, "index") if directory else path.removesuffix(".el")
 		return self.modules.get(module)
+
+	def example_setup(self, source, code):
+		setups = self.example_setups.get((source, example_key(code)), ())
+		return next(iter(setups)) if len(setups) == 1 else ""
 
 	def type_targets(self, code, source=None):
 		"""Use declaration-context references only for an exact generated signature."""
@@ -486,7 +511,7 @@ def external_names(stream, catalog, report):
 	return names
 
 
-def code_targets(code, catalog, source=None, *, report=None):
+def code_targets(code, catalog, source=None, *, report=None, setup=""):
 	"""Return source offsets for names whose documentation target is known.
 
 	Bindings declared anywhere in a fragment suppress default lookup throughout
@@ -505,6 +530,27 @@ def code_targets(code, catalog, source=None, *, report=None):
 		index = bisect_right(opaque_starts, offset) - 1
 		return index >= 0 and offset < opaque[index][1]
 
+	if setup:
+		header_end = next((start for kind, _, start, _ in stream if kind in ("code", "literal")), len(code))
+		# The setup's own external declarations belong to its separately checked example.
+		prefix = "\n".join(line for line in setup.splitlines() if not _source_docs.EXTERNAL_DIRECTIVE.match(line.lstrip()))
+		insertion = "\n" + prefix + "\n"
+		resume = header_end + len(insertion)
+
+		def member_offset(offset):
+			if offset < header_end:
+				return offset
+			return offset - len(insertion) if offset >= resume else None
+
+		def member_report(offset, message):
+			position = member_offset(offset)
+			if position is not None:
+				report(position, message)
+
+		combined = code[:header_end] + insertion + code[header_end:]
+		targets = code_targets(combined, catalog, source, report=member_report if report else None)
+		return {position: target for offset, target in targets.items() if (position := member_offset(offset)) is not None}
+
 	if report:
 		check_delimiters(stream, report)
 	tokens = [(offset, kind, value) for offset, kind, value in get_lexer_by_name("el").get_tokens_unprocessed(code)
@@ -521,6 +567,7 @@ def code_targets(code, catalog, source=None, *, report=None):
 	namespaces = {}
 	external_patterns = []
 	declarations = set()
+	declaration_counts = defaultdict(int)
 	ignored = set()
 	for specification in code_imports(stream):
 		for offset, _, _ in tokens:
@@ -572,6 +619,8 @@ def code_targets(code, catalog, source=None, *, report=None):
 	for position, type_name in local_declarations(code, tokens, ignored, pairs):
 		offset, _, name = tokens[position]
 		bindings[name] = None
+		if offset not in declarations:
+			declaration_counts[name] += 1
 		declarations.add(offset)
 		local_types[name].add(type_name)
 	for position, declaration in embedded_words(tokens, pairs, local_types):
@@ -580,6 +629,28 @@ def code_targets(code, catalog, source=None, *, report=None):
 		if declaration:
 			bindings[name] = None
 			local_types[name].add(None)
+	type_stream = [token for token in stream if token[0] in ("code", "literal")]
+	type_values = [value if kind == "code" else "" for kind, value, _, _ in type_stream]
+	hints = {name: value for name, value in catalog.value_hints.items() if "." in name}
+	for name, target in bindings.items():
+		if target is None:
+			continue
+		if return_type := catalog.value_hints.get(target.label + "()"):
+			hints[name + "()"] = return_type
+		elif target.value_type:
+			hints[name] = target.value_type
+	for name, value_type in catalog.module_hints.get(source, {}).items():
+		binding = name.removesuffix("()")
+		if "." in name or binding not in bindings or binding in catalog.defaults and bindings[binding] is catalog.defaults[binding]:
+			hints[name] = value_type
+
+	constructors = {name for name in catalog.constructors if bindings.get(name) is not None}
+	constructors.update(type_values[index + 1] for index, value in enumerate(type_values[:-1]) if value == "class")
+	local_returns = _source_docs.simple_function_returns(code, type_stream, type_values, hints, constructors)
+	for offset, name, value_type in _source_docs.inferred_bindings(code, type_stream, type_values, hints | local_returns, constructors):
+		if offset in declarations and declaration_counts[name] == 1 and local_types[name] == {None}:
+			local_types[name] = {value_type}
+
 	result = {}
 	resolved = {}
 	for index, (offset, kind, value) in enumerate(tokens):
@@ -587,6 +658,12 @@ def code_targets(code, catalog, source=None, *, report=None):
 			continue
 		previous = tokens[index - 1][2] if index else ""
 		following = tokens[index + 1][2] if index + 1 < len(tokens) else ""
+		if value == ")" and index in pairs:
+			opening = pairs[index]
+			if opening and tokens[opening][2] == "(":
+				callee = resolved.get(opening - 1)
+				if callee and callee.value_type:
+					resolved[index] = callee
 		if report and value in ("&&", "||"):
 			report(offset, f"{value!r} is not an EL operator; use {value[0]!r}")
 		if report and value in ("let", "const") and following == "=":
@@ -619,7 +696,8 @@ def code_targets(code, catalog, source=None, *, report=None):
 				target = bindings.get(value)
 				if value in local_types:
 					if target is None and len(local_types[value]) == 1:
-						target = Target("", value_type=next(iter(local_types[value])))
+						value_type = local_returns.get(value + "()") if following == "(" else None
+						target = Target("", value_type=value_type or next(iter(local_types[value])))
 				elif report and value not in BUILTIN_NAMES:
 					if value in imported_bindings:
 						uri, binding = imported_bindings[value]
@@ -633,7 +711,13 @@ def code_targets(code, catalog, source=None, *, report=None):
 						problem = None
 					if problem:
 						report(offset, problem)
-		resolved[index] = target
+				if following == "(" and value not in local_types and (return_type := hints.get(value + "()")):
+					if target is None:
+						target = Target("", value_type=return_type)
+					elif target.value_type != return_type:
+						target = Target(target.path, target.fragment, target.label, return_type)
+		if target:
+			resolved[index] = target
 		if target and target.path:
 			result[offset] = (len(value), target)
 	for offset, (length, target) in catalog.type_targets(code, source).items():
@@ -716,7 +800,9 @@ class CodeLinker(HTMLParser):
 			column = offset - code.rfind("\n", 0, offset)
 			self.report(f"EL block {self.block}:{line}:{column}: {message}")
 
-		targets = code_targets(self.code["text"], self.catalog, self.source,
+		code = self.code["text"]
+		setup = self.catalog.example_setup(self.source, code) if self.source else ""
+		targets = code_targets(code, self.catalog, self.source, setup=setup,
 			report=report if self.report and self.code["language"] != "language-el-signature" else None)
 		if self.code["linked"]:
 			return
@@ -755,7 +841,7 @@ def on_files(files, config):
 	global _catalog, _files, _destinations
 	model = json.loads((Path(config["docs_dir"]) / "stdlib/api/api.json").read_text(encoding="utf-8"))
 	_source_docs.validate_module_docs(model["entries"])
-	_source_docs.validate_member_examples(model["entries"], model.get("types", []))
+	_source_docs.validate_member_examples(model["entries"], model.get("types", []), model.get("module_return_types"))
 	_catalog = Catalog(model)
 	_files = {file.src_uri: file.url for file in files}
 	_destinations = {file.src_uri: file.abs_dest_path for file in files}

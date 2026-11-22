@@ -10,9 +10,25 @@
 
 提供不可变设置快照、字段候选和约束模型；按字段路径合并候选值并生成可检测并发冲突的补丁，数据以无代码纯数据形式处理。
 
+## SettingsSnapshot {#api-b465752ff21c274428e5}
+
+源码：`src/stdlib/settings/model.el:76` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L76)
+
+不可变设置文档快照；可从文本解析，或以无文档的空快照开始。
+
+```el-signature
+export @assign(mode: "shared") class SettingsSnapshot
+```
+
+### 示例：创建一个无文档快照
+
+```el
+let snapshot = SettingsSnapshot()
+```
+
 ## resolveSettingsPatch {#api-c80ade34e4e649b1dbff}
 
-源码：`src/stdlib/settings/model.el:261` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L261)
+源码：`src/stdlib/settings/model.el:267` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/settings/model.el#L267)
 
 先合并带来源的字段候选，再验证完整候选快照并生成补丁。基线中的已有值视为低于显式候选的取值；仅缺失字段采用默认值。
 

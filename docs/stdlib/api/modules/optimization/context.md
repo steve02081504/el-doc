@@ -45,7 +45,7 @@ let context = OptimizationContext()
 
 ## unchanged {#api-ca19d040014517ecd1ed}
 
-源码：`src/stdlib/optimization/context.el:77` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/optimization/context.el#L77)
+源码：`src/stdlib/optimization/context.el:78` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/optimization/context.el#L78)
 
 返回优化输入中的原表达式，作为不改写输入的优化器实现。
 
@@ -64,5 +64,6 @@ export fn unchanged(input: OptimizationInput, context: OptimizationContext): Unc
 ### 示例：保留输入表达式（需调用方提供对象或绑定）
 
 ```el
+// @external input: OptimizationInput, context: OptimizationContext
 let result = unchanged(input, context)
 ```

@@ -12,7 +12,7 @@
 
 ## dataView {#api-f2ebc0934aca73231ec0}
 
-源码：`src/stdlib/user-interface/grid-view.el:68` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/grid-view.el#L68)
+源码：`src/stdlib/user-interface/grid-view.el:69` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/grid-view.el#L69)
 
 将二维数据源包装为网格视图，并把每个单元转换为 DataCell。
 
@@ -29,5 +29,6 @@ export fn dataView(source): DataView
 ### 示例：从二维数据源创建视图（需调用方提供对象或绑定）
 
 ```el
+// @external source: Tensor<element: Number>
 let view = dataView(source)
 ```

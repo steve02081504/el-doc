@@ -12,7 +12,7 @@
 
 ## PaintTheme {#api-4be1353cf98b66267dcf}
 
-源码：`src/stdlib/user-interface/drawing.el:37` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/drawing.el#L37)
+源码：`src/stdlib/user-interface/drawing.el:38` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/drawing.el#L38)
 
 提供窗口绘制所需的背景、文字、按钮、选区和字体等颜色与度量；与 Definition.theme 的 Theme 类型不同。
 
@@ -23,6 +23,7 @@ export class PaintTheme
 ### 示例：修改窗口绘制背景色（需调用方提供对象或绑定）
 
 ```el
+// @external window: Window
 let paint = darkPaintTheme()
 paint.background = 0x20242B
 window.theme = paint
@@ -30,7 +31,7 @@ window.theme = paint
 
 ## darkPaintTheme {#api-507fa392da014efe2281}
 
-源码：`src/stdlib/user-interface/drawing.el:118` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/drawing.el#L118)
+源码：`src/stdlib/user-interface/drawing.el:119` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/drawing.el#L119)
 
 创建一份深色窗口绘制主题。
 
@@ -45,6 +46,6 @@ export fn darkPaintTheme(): PaintTheme
 ### 示例：设置窗口绘制主题
 
 ```el
-// @external window
+// @external window: Window
 window.theme = darkPaintTheme()
 ```

@@ -137,6 +137,32 @@ spec.loader.exec_module(module)
 		code_targets(code, self.catalog, report=lambda _, message: problems.append(message))
 		self.assertEqual(problems, ["'missing' is not exported by the standard library"])
 
+	def test_factory_results_link_on_direct_calls_and_local_bindings(self):
+		definition = entry("makePort", return_type="ConsolePort")
+		definition["signature"] = "export fn makePort()"
+		method = entry("ConsolePort.writeLine")
+		model = {"entries": [definition, method], "environment": [{"name": "makePort", "id": definition["id"]}]}
+		code = 'fn setup() => makePort()\nlet output = setup()\nsetup().writeLine("first")\noutput.writeLine("second")'
+		links = code_targets(code, Catalog(model))
+		self.assertEqual([code[start:start + size] for start, (size, target) in links.items() if target.label.endswith(".writeLine")],
+			["writeLine", "writeLine"])
+
+	def test_member_setup_is_scoped_to_the_class_documentation(self):
+		owner = entry("Window", source="window.el")
+		owner.update(signature="export class Window", sections=[{"tag": "example", "code": "let demoWindow = Window()\n"}])
+		method = entry("Window.every", source="window.el")
+		method.update(owner="Window", signature="fn every()", sections=[{"tag": "example", "code": "demoWindow.every()\nunused\n"}])
+		model = {"entries": [owner, method], "types": [{"name": "Window"}], "environment": [{"name": "Window", "id": owner["id"]}]}
+		html = '<pre class="language-el"><code>demoWindow.every()\nunused\n</code></pre>'
+		problems = []
+		result = CodeLinker(html, Catalog(model), lambda target: target.path, "window.el", problems.append).render()
+		self.assertIn('>every</a>', result)
+		self.assertNotIn('let demoWindow', result)
+		self.assertEqual(problems, ["EL block 1:2:1: 'unused' is not exported by the standard library"])
+		problems = []
+		CodeLinker(html, Catalog(model), lambda _: "", "other.el", problems.append)
+		self.assertIn("'demoWindow' is not exported", problems[0])
+
 	def test_member_chain_uses_declared_types(self):
 		targets = self.names('console.stdout.writeLine("hello")')
 		self.assertEqual(set(targets), {"console", "stdout", "writeLine"})

@@ -21,7 +21,7 @@
 
 ## SoundPlayer {#api-7444e7a247962761e044}
 
-源码：`src/stdlib/user-interface/sound.el:17` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L17)
+源码：`src/stdlib/user-interface/sound.el:18` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L18)
 
 播放界面提示音并可管理循环音效；通常由窗口作用域持有并在窗口关闭时释放。
 
@@ -29,13 +29,14 @@
 export @assign(mode: "shared") class SoundPlayer
 ```
 
-### 示例：播放一个提示音并关闭播放器（需调用方提供对象或绑定）
+### 示例：播放一个提示音（需调用方提供窗口）
 
 ```el
+// @external window: Window
 let sound = SoundPlayer(window)
 discard(sound.cue("increase"))
-sound.close()
 ```
+使用完成后调用 `sound.close()` 释放设备。
 
 ## SoundPlayer.cue {#api-a832a21f3fe936cbb93d}
 
@@ -62,7 +63,6 @@ fn cue(name: Text, value: Number = 0, maximum: Number = 1): Bool
 ### 示例：播放增加提示音
 
 ```el
-// @external sound
 let accepted = sound.cue("increase")
 ```
 
@@ -88,7 +88,7 @@ sound.engine(0.6)
 
 ## SoundPlayer.tryCue {#api-bdf8aa6e71523e364ba2}
 
-源码：`src/stdlib/user-interface/sound.el:75` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L75)
+源码：`src/stdlib/user-interface/sound.el:74` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L74)
 
 尝试播放提示音，并将捕获设备错误转换为未接受状态。
 
@@ -101,13 +101,12 @@ fn tryCue(name: Text, value: Number = 0, maximum: Number = 1): Bool
 ### 示例：容错地请求提示音
 
 ```el
-// @external sound
 let accepted = sound.tryCue("celebrate")
 ```
 
 ## SoundPlayer.loop {#api-12729f274be6bb28fd2c}
 
-源码：`src/stdlib/user-interface/sound.el:87` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L87)
+源码：`src/stdlib/user-interface/sound.el:86` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L86)
 
 启动指定的循环音效；当前支持 engine，并通过窗口定时器重复播放。
 
@@ -126,7 +125,7 @@ sound.stop()
 
 ## SoundPlayer.stop {#api-38b098ba7017124aed8a}
 
-源码：`src/stdlib/user-interface/sound.el:100` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L100)
+源码：`src/stdlib/user-interface/sound.el:98` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L98)
 
 取消循环定时器并清除播放器中排队的声音。
 
@@ -137,13 +136,12 @@ fn stop()
 ### 示例：停止提示音
 
 ```el
-// @external sound
 sound.stop()
 ```
 
 ## SoundPlayer.close {#api-27a2cdf8d9f4095bd7b5}
 
-源码：`src/stdlib/user-interface/sound.el:111` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L111)
+源码：`src/stdlib/user-interface/sound.el:109` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/sound.el#L109)
 
 停止循环播放并释放底层音频设备。
 

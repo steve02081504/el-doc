@@ -12,7 +12,7 @@
 
 ## runWindow {#api-53fcc931b59bf0bc7698}
 
-源码：`src/stdlib/user-interface/platform/macos/window.el:411` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/macos/window.el#L411)
+源码：`src/stdlib/user-interface/platform/macos/window.el:412` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/macos/window.el#L412)
 
 运行单个窗口的事件循环，并在退出时关闭窗口。
 
@@ -23,5 +23,6 @@ export fn runWindow(window: Window)
 ### 示例：用法（需调用方提供对象或绑定）
 
 ```el
+// @external window: Window
 runWindow(window)
 ```

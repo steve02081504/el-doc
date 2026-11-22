@@ -28,17 +28,17 @@
 export @assign(mode: "shared") class Axis
 ```
 
-### 示例：设置标题和图例（figure 是已有的 Figure）
+### 示例：设置标题和图例
 
 ```el
-// @external figure
-figure.axis.title = "二次曲线"
-figure.axis.legend = @["估计值"]
+let axis = Axis()
+axis.title = "二次曲线"
+axis.legend = @["估计值"]
 ```
 
 ## Axis.title {#api-a4d4797ed3404ce71849}
 
-源码：`src/stdlib/graphics/plots/scene.el:63` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L63)
+源码：`src/stdlib/graphics/plots/scene.el:62` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L62)
 
 绘图标题。
 
@@ -48,16 +48,15 @@ let title: Text
 
 **类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
 
-### 示例：设置绘图标题（figure 是已有的 Figure）
+### 示例：设置绘图标题
 
 ```el
-// @external figure
-figure.axis.title = "趋势"
+axis.title = "趋势"
 ```
 
 ## Axis.xLabel {#api-f10c0642fe5d004d0498}
 
-源码：`src/stdlib/graphics/plots/scene.el:71` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L71)
+源码：`src/stdlib/graphics/plots/scene.el:69` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L69)
 
 横坐标轴标签。
 
@@ -67,16 +66,15 @@ let xLabel: Text
 
 **类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)
 
-### 示例：标注横轴（figure 是已有的 Figure）
+### 示例：标注横轴
 
 ```el
-// @external figure
-figure.axis.xLabel = "时间"
+axis.xLabel = "时间"
 ```
 
 ## Axis.legend {#api-f02143990b2a187771a6}
 
-源码：`src/stdlib/graphics/plots/scene.el:79` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L79)
+源码：`src/stdlib/graphics/plots/scene.el:76` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L76)
 
 每条线对应的图例文本；若非空，数量必须与线条数一致。
 
@@ -86,16 +84,15 @@ let legend: Text[]
 
 **类型**：[`Text`](../../text/text.md#api-6116e54b075df026a90a)[]
 
-### 示例：设置一条线的图例（figure 是已有的 Figure）
+### 示例：设置一条线的图例
 
 ```el
-// @external figure
-figure.axis.legend = @["预测"]
+axis.legend = @["预测"]
 ```
 
 ## Axis.zoom {#api-18baa6ba4368d91ece80}
 
-源码：`src/stdlib/graphics/plots/scene.el:105` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L105)
+源码：`src/stdlib/graphics/plots/scene.el:101` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L101)
 
 以当前视图中心缩放横纵坐标范围。
 
@@ -107,16 +104,15 @@ fn zoom(factor: Number)
 
 **失败与异常**：缩放倍数无效时抛出 ShapeError。
 
-### 示例：放大两倍（figure 是已有的 Figure）
+### 示例：放大两倍
 
 ```el
-// @external figure
-figure.axis.zoom(2)
+axis.zoom(2)
 ```
 
 ## Axis.reset {#api-ff466b801a4f53e1e402}
 
-源码：`src/stdlib/graphics/plots/scene.el:118` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L118)
+源码：`src/stdlib/graphics/plots/scene.el:113` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/scene.el#L113)
 
 清除显式缩放范围，使范围重新按数据自动计算。
 
@@ -124,9 +120,8 @@ figure.axis.zoom(2)
 fn reset()
 ```
 
-### 示例：重置图表范围（figure 是已有的 Figure）
+### 示例：重置图表范围
 
 ```el
-// @external figure
-figure.axis.reset()
+axis.reset()
 ```

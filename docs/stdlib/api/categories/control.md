@@ -7,3 +7,4 @@
 | 模块 | 接口 |
 | --- | --- |
 | [control/retry.el](../modules/control/retry.md) | [until](../modules/control/retry.md#api-047fe3a9b4d31df55152) |
+| [control/selection/policies.el](../modules/control/selection/policies.md) | [Sequential](../modules/control/selection/policies.md#api-c22f8460d04e3408b529) |

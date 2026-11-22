@@ -30,7 +30,7 @@ export @assign(mode: "shared") class Figure
 ### 示例：绘制并保存一张曲线图（xs 和 ys 是已有的 F64 张量）
 
 ```el
-// @external xs, ys
+// @external xs: Tensor<element: F64>, ys: Tensor<element: F64>
 import { formats } from "el:formats/"
 let figure = plot(xs, ys)
 let svg = figure.image(640, 480)
@@ -39,7 +39,7 @@ figure.saveAs(formats.SVG, "curve.svg")
 
 ## Figure.axis {#api-a0ab54cd34a79111132b}
 
-源码：`src/stdlib/graphics/plots/index.el:39` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L39)
+源码：`src/stdlib/graphics/plots/index.el:38` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L38)
 
 可直接配置标题、坐标轴标签、图例、缩放范围的绘图场景对象。
 
@@ -52,13 +52,12 @@ let axis: Axis
 ### 示例：设置图标题（figure 是已有的 Figure）
 
 ```el
-// @external figure
 figure.axis.title = "二次曲线"
 ```
 
 ## Figure.image {#api-05f4dfef014a883b90ed}
 
-源码：`src/stdlib/graphics/plots/index.el:51` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L51)
+源码：`src/stdlib/graphics/plots/index.el:49` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L49)
 
 将当前坐标场景渲染为 SVG 文本；不打开窗口。
 
@@ -77,13 +76,12 @@ fn image(width: Number = 900, height: Number = 600): Text
 ### 示例：导出 SVG 字符串（figure 是已有的 Figure）
 
 ```el
-// @external figure
 let svg = figure.image(640, 480)
 ```
 
 ## Figure.saveAs {#api-5827c21545f7afe86a52}
 
-源码：`src/stdlib/graphics/plots/index.el:63` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L63)
+源码：`src/stdlib/graphics/plots/index.el:60` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L60)
 
 使用选定的编解码器渲染并写出图表，支持无头环境。
 
@@ -100,14 +98,13 @@ fn saveAs(codec, path, options = @{})
 ### 示例：保存默认尺寸 SVG（figure 是已有的 Figure）
 
 ```el
-// @external figure
 import { formats } from "el:formats/"
 figure.saveAs(formats.SVG, "curve.svg")
 ```
 
 ## Figure.show {#api-f8da8e4d08474a501002}
 
-源码：`src/stdlib/graphics/plots/index.el:72` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L72)
+源码：`src/stdlib/graphics/plots/index.el:68` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L68)
 
 在可用的桌面显示环境中打开图表窗口并阻塞到窗口关闭。
 
@@ -120,13 +117,12 @@ fn show()
 ### 示例：打开交互式图表（figure 是已有的 Figure）
 
 ```el
-// @external figure
 figure.show()
 ```
 
 ## PlotHost {#api-5f295492cd4341ff9541}
 
-源码：`src/stdlib/graphics/plots/index.el:100` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L100)
+源码：`src/stdlib/graphics/plots/index.el:96` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L96)
 
 管理多个非阻塞图表窗口，并提供集中轮询、运行与关闭生命周期。
 
@@ -137,7 +133,7 @@ export @assign(mode: "shared") class PlotHost
 ### 示例：在宿主中运行创建的图表（figure 是已有的 Figure）
 
 ```el
-// @external figure
+// @external figure: Figure
 let host = PlotHost()
 discard(figure.showOwned(host))
 host.run()
@@ -145,7 +141,7 @@ host.run()
 
 ## plot {#api-99a112e21dc6a727ab6d}
 
-源码：`src/stdlib/graphics/plots/index.el:139` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L139)
+源码：`src/stdlib/graphics/plots/index.el:135` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/index.el#L135)
 
 从 F64 张量创建折线图；x 的行数须与 y 的行数相同，y 的每一列对应一条线。
 
@@ -166,7 +162,7 @@ export fn plot(x: Tensor<element: F64>, y: Tensor<element: F64>): Figure
 ### 示例：绘制一条曲线并导出 SVG（xs 和 ys 是已有的 F64 张量）
 
 ```el
-// @external xs, ys
+// @external xs: Tensor<element: F64>, ys: Tensor<element: F64>
 let figure = plot(xs, ys)
 let svg = figure.image(640, 480)
 ```
