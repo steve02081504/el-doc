@@ -17,14 +17,7 @@
 前两项是 0 和 1，之后每一项都是前两项之和。把程序存为 `fib.el`，运行 `el run fib.el`，就能取出前 10 项。
 
 ```el
-fn addPair(pair: SequencePair): Number {
-	let left = pair.left
-	let right = pair.right
-	if (left is Number & right is Number) return left + right
-	throw "Expected two numbers"
-}
-
-let fibs = lazy(self) @[0, 1, ...zip(self, self.slice(1)).map(addPair)]
+let fibs = lazy(self) @[0, 1, ...zip(self, self.slice(1)).map => sum(...it) ]
 console.stdout.writeLine(fibs.take(10).collect().join(", "))
 ```
 
@@ -32,21 +25,21 @@ console.stdout.writeLine(fibs.take(10).collect().join(", "))
 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
 ```
 
-`lazy(self)` 让数列可以按需生成，并用 `self` 引用自己。`self.slice(1)` 跳过开头的 0，`zip` 把两列对齐，依次配出 `(0, 1)`、`(1, 1)`、`(1, 2)`。通用的 `zip` 可以配对任意元素，所以 `addPair` 先确认两个值都是数字，再把它们相加。`...` 把这些和接在 0 和 1 后面。
+`lazy(self)` 让数列可以按需生成，并用 `self` 引用自己。`self.slice(1)` 跳过开头的 0，`zip` 把两列对齐，依次配出 `(0, 1)`、`(1, 1)`、`(1, 2)`。`map` 每次收到的配对就是 `it`，`sum(...it)` 把配对展开成两个实参再相加。数组里的 `...` 把这些和接在 0 和 1 后面。
 
 `take(10)` 只请求前 10 项，`collect()` 把这 10 项收集成数组。生成这段前缀时，数列会保留已经算出的项，供后续配对复用。
 
 !!! example "动手 30 秒"
     把 `take(10)` 改成 `take(2)`，输出应为 `0, 1`。再改成 `take(11)`，末尾应多出一个 `55`。
 
-??? example "展开对照：C 风格的 for 循环"
+??? example "展开对照：用 for 循环更新相邻两项"
     把下面的程序另存为 `fib-loop.el`，运行 `el run fib-loop.el`，会输出同样的前 10 项。
 
     ```el
     let values: Number[] = @[]
     let current = 0
     let next = 1
-    for (let step = 0; step < 10; step++) {
+    for ..10 {
         values.push(current)
         let afterNext = current + next
         current = next
@@ -55,7 +48,7 @@ console.stdout.writeLine(fibs.take(10).collect().join(", "))
     console.stdout.writeLine(values.join(", "))
     ```
 
-    每轮先把 `current` 存进结果数组，再把这对相邻项往前推一步。递推只需要 `current` 和 `next`，结果数组用来集中打印。
+    `..10` 从 0 数到 9，循环体用不到下标，可以省略 `let i in`。每轮先把 `current` 存进结果数组，再用 `current` 和 `next` 算出下一对相邻项。
 
 ## 第 2 题：让两个界给出同一个数字
 
