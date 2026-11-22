@@ -30,7 +30,7 @@ console.stdout.writeLine(status)   // 继续阅读
 - 没有 `else` 且条件为假时，结果是 `nil`：
 
 ```el
-// @external pagesRead, totalPages
+// @external pagesRead: Number, totalPages: Number
 let reminder = if (pagesRead >= totalPages) { "请在周五前归还" }
 console.log.value(reminder)   // nil：尚未读完，这次没有生成归还提醒
 ```
@@ -38,7 +38,7 @@ console.log.value(reminder)   // nil：尚未读完，这次没有生成归还�
 - 条件不需要外层括号，圆括号只用于表达式分组：
 
 ```el
-// @external pagesRead, totalPages
+// @external pagesRead: Number, totalPages: Number
 if pagesRead >= totalPages {
 	console.stdout.writeLine("请带上这本书")
 }

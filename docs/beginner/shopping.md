@@ -45,7 +45,7 @@ console.stdout.writeLine(costs[1])
 保留函数和 `let costs = ...`，删除两行临时输出，换成下面这段：
 
 ```el
-// @external costs
+// @external costs: Number[]
 let total = 0
 let itemNumber = 1
 

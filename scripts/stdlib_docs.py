@@ -74,6 +74,38 @@ def tokens(source):
 		position = end
 
 
+EXTERNAL_DIRECTIVE = re.compile(r"//[ \t]+@external\b(.*)")
+
+
+def external_declarations(specification):
+	"""Parse the comma-separated names and their EL type expressions."""
+	parts = []
+	start = 0
+	stack = []
+	closers = {"(": ")", "[": "]", "{": "}", "<": ">"}
+	for kind, value, offset, end in tokens(specification):
+		if kind != "code":
+			continue
+		if value == "," and not stack:
+			parts.append(specification[start:offset])
+			start = end
+		elif value in closers:
+			stack.append(closers[value])
+		elif stack and value == stack[-1]:
+			stack.pop()
+	if stack:
+		raise DocumentationError("unbalanced type in // @external")
+	parts.append(specification[start:])
+	result = []
+	for part in parts:
+		name, colon, expression = part.partition(":")
+		name, expression = name.strip(), expression.strip()
+		if not colon or not name.isidentifier() or not expression:
+			raise DocumentationError("each external needs a type, for example // @external sample: Number")
+		result.append((name, expression))
+	return result
+
+
 def quoted_end(source, start):
 	quote = source[start]
 	position = start + 1
@@ -210,6 +242,40 @@ def declaration_metadata(sig, source, declaration_line, name):
 	return {"value_type": value_type, "owner": owner, "return_type": return_type}
 
 
+def external_export_names(code, start):
+	"""Read the local names of an explicit export import extern declaration."""
+	group = code[start][1] == "{"
+	position = start + group
+	stack = []
+	names = []
+	name = None
+	alias = False
+	closers = {"(": ")", "[": "]", "{": "}", "<": ">"}
+	for kind, token, _, _ in code[position:]:
+		if not stack and kind == "code":
+			if token in (",", "}", "from"):
+				if name:
+					names.append(name)
+				name = None
+				alias = False
+				if token != "," or not group:
+					break
+			elif token == "as":
+				alias = True
+			elif token.isidentifier() and (name is None or alias):
+				name = token
+				alias = False
+		if kind != "code":
+			if name is None and not stack:
+				name = ""  # A quoted foreign name requires a local alias.
+			continue
+		if token in closers:
+			stack.append(closers[token])
+		elif stack and token == stack[-1]:
+			stack.pop()
+	return names
+
+
 def prelude_environment(stdlib, entries):
 	"""Follow explicit file re-export name lists without evaluating modules."""
 	by_identity = {}
@@ -222,7 +288,10 @@ def prelude_environment(stdlib, entries):
 	real_root = stdlib.resolve()
 
 	def resolve_uri(path, uri):
-		target = posixpath.normpath(posixpath.join(posixpath.dirname(path), uri[5:]))
+		if uri.startswith("el:"):
+			target = posixpath.normpath(uri[3:].lstrip("/"))
+		else:
+			target = posixpath.normpath(posixpath.join(posixpath.dirname(path), uri[5:]))
 		if not (stdlib / target).resolve().is_relative_to(real_root):
 			return '../__outside_stdlib__'
 		if (stdlib / target).is_dir():
@@ -238,10 +307,9 @@ def prelude_environment(stdlib, entries):
 			return cache[path]
 		text = file.read_text(encoding="utf-8-sig").replace("\r\n", "\n")
 		stream = list(tokens(text))
-		if any(kind == "code" and token == "#" and not text[text.rfind("\n", 0, start) + 1:start].strip() for kind, token, start, _ in stream):
-			cache[path] = ({}, {})
-			return cache[path]
-		# Only top-level code participates; literals and comments are never parsed as exports.
+		preprocessed = any(kind == "code" and token == "#" and not text[text.rfind("\n", 0, start) + 1:start].strip()
+			for kind, token, start, _ in stream)
+		# Explicit names are visible to the collision check even when a branch is target-dependent.
 		code = [(k, t, start, end) for k, t, start, end in stream if k not in ("space", "comment", "doc")]
 		stream_positions = {token[2]: i for i, token in enumerate(stream)}
 		exports, declarations = {}, {}
@@ -249,14 +317,19 @@ def prelude_environment(stdlib, entries):
 			if kind != "code":
 				continue
 			if token == "export":
-				match = re.match(r'export\s+(?:(?:lazy\s+)?import\s*)?\{([^{}]*)\}\s*from\s*"(file:[^"\n]+)"', text[start:])
+				is_foreign = [item[1] for item in code[i + 1:i + 3]] == ["import", "extern"]
+				if is_foreign and i + 3 < len(code):
+					for name in external_export_names(code, i + 3):
+						declarations.setdefault(name, [])
+					continue
+				match = re.match(r'export\s+(?:(?:lazy\s+)?import\s*)?\{([^{}]*)\}\s*from\s*"((?:file|el):[^"\n]*)"', text[start:])
 				if match:
 					target = resolve_uri(path, match[2])
 					for item in match[1].split(','):
 						part = re.fullmatch(r'\s*(\w+)(?:\s+as\s+(\w+))?\s*', item)
 						if part:
 							exports.setdefault(part[2] or part[1], []).append((target, part[1]))
-				elif selector := re.match(r'export\s+(?:import\s+)?/((?:\\.|[^/\n])*)/\s+from\s+"(file:[^"\n]+)"', text[start:]):
+				elif selector := re.match(r'export\s+(?:import\s+)?/((?:\\.|[^/\n])*)/\s+from\s+"((?:file|el):[^"\n]*)"', text[start:]):
 					target = resolve_uri(path, selector[2])
 					try:
 						patterns.setdefault(path, []).append((target, re.compile(selector[1])))
@@ -264,15 +337,18 @@ def prelude_environment(stdlib, entries):
 						pass
 				else:
 					# Skip attributes, then capture a straightforward exported declaration.
-					match = re.match(r'export\s+(?:lazy\s+)?(?:@\w+(?::\w+)*(?:\([^\n]*?\))?\s+)*(?:fn|class|interface|let|const|syntax|enum|data)\s+(\w+)', text[start:])
+					match = re.match(r'export\s+(?:(?:lazy|extern)\s+)?(?:@\w+(?::\w+)*(?:\([^\n]*?\))?\s+)*(?:fn|class|interface|let|const|syntax|enum|data)\s+(\w+)', text[start:])
 					if match:
 						name = match[1]
+						items = declarations.setdefault(name, [])
+						if preprocessed:
+							continue
 						try:
 							sig, line = signature(text, stream, stream_positions[start])
 						except DocumentationError:
 							continue
 						metadata = declaration_metadata(sig, text, line, name)
-						declarations.setdefault(name, []).append((line, sig, metadata["value_type"]))
+						items.append((line, sig, metadata["value_type"]))
 		cache[path] = exports, declarations
 		return exports, declarations
 	paths = [file.relative_to(stdlib).as_posix() for file in sorted(stdlib.rglob("*.el"))]
@@ -662,10 +738,15 @@ def extract(source, path):
 			index += 1
 			continue
 		line = source.count("\n", 0, start) + 1
+		indent = source[source.rfind("\n", 0, start) + 1:start]
 		marker = text[:3]
 		lines = [text[3:].removeprefix(" ")]
 		index += 1
 		while index + 1 < len(stream) and stream[index][0] == "space" and stream[index][1].count("\n") == 1 and stream[index + 1][0] == "doc" and stream[index + 1][1].startswith(marker):
+			continuation = stream[index + 1][2]
+			prefix = source[source.rfind("\n", 0, continuation) + 1:continuation]
+			if prefix != indent:
+				raise DocumentationError(f"{path}:{line + len(lines)}: {marker} indentation must match the documentation block")
 			lines.append(stream[index + 1][1][3:].removeprefix(" "))
 			index += 2
 		try:
@@ -675,6 +756,9 @@ def extract(source, path):
 			entry.update(source=path, line=line)
 			if entry["kind"] == "api":
 				entry["signature"], entry["declaration_line"] = signature(source, stream, index)
+				declaration = stream[index + (stream[index][0] == "space")][2]
+				if source[source.rfind("\n", 0, declaration) + 1:declaration] != indent:
+					raise DocumentationError("/// indentation must match its declaration")
 				declared = re.search(r"\b(?:fn|class|interface|let|const|get|set|syntax|enum|data)\s+(\w+)", entry["signature"])
 				if declared and declared[1] != entry["name"].split("~")[0].split(".")[-1]:
 					raise DocumentationError("@api name does not match the following declaration")
@@ -687,6 +771,64 @@ def extract(source, path):
 		except DocumentationError as error:
 			raise DocumentationError(f"{path}:{line}: {error}") from error
 	return entries
+
+
+def documented_value_types(entries):
+	candidates = {}
+	for entry in entries:
+		value_type = entry.get("value_type") or entry.get("return_type")
+		if value_type:
+			candidates.setdefault(entry["name"].split("~")[0], set()).add(value_type)
+	return {name: next(iter(types)) for name, types in candidates.items() if len(types) == 1}
+
+
+def declares_instance(example, owner, known_types=None):
+	"""Recognize a local construction or an initialized owner-typed binding."""
+	code = [(kind, value) for kind, value, _, _ in tokens(example) if kind in ("code", "literal")]
+	values = [value if kind == "code" else "" for kind, value in code]
+	known_types = known_types or {}
+	for index in range(len(values) - 3):
+		keyword, name, separator, instance_type = values[index:index + 4]
+		if keyword not in ("let", "const") or not name.isidentifier():
+			continue
+		position = index + 4
+		if separator == "=" and name != instance_type:
+			known_type = known_types.get(instance_type)
+			while known_type and position + 1 < len(values) and values[position] == ".":
+				known_type = known_types.get(known_type + "." + values[position + 1])
+				position += 2
+			if known_type == owner:
+				return True
+			position = index + 4
+		if instance_type != owner:
+			continue
+		if position < len(values) and values[position] == "<":
+			depth = 1
+			position += 1
+			while position < len(values) and depth:
+				depth += (values[position] == "<") - (values[position] == ">")
+				position += 1
+		if position < len(values) and (separator, values[position]) in (("=", "("), (":", "=")):
+			return True
+	return False
+
+
+def validate_member_examples(entries, types):
+	owners = {definition["name"] for definition in types}
+	known_types = documented_value_types(entries)
+	issues = []
+	for entry in entries:
+		owner = entry.get("owner")
+		if owner not in owners:
+			continue
+		declaration = entry["signature"]
+		if re.search(r"\bstatic\b", declaration) or not re.search(r"\b(fn|get|set|operator|constructor)\b", declaration):
+			continue
+		for section in entry["sections"]:
+			if section["tag"] == "example" and not declares_instance(section["code"], owner, known_types):
+				issues.append(f"{entry['source']}:{entry['line']}: {entry['name']} example {section['value']!r} must declare a local {owner} instance")
+	if issues:
+		raise DocumentationError("\n".join(issues))
 
 
 def validate_module_docs(entries):
@@ -726,6 +868,7 @@ def collect(root):
 	digest = hashlib.sha256(json.dumps(files, ensure_ascii=False, separators=(",", ":")).encode()).hexdigest()
 	environment, exports = prelude_environment(stdlib, entries)
 	types = type_index(stdlib, entries)
+	validate_member_examples(entries, types)
 	parameters = lexical_type_scopes(stdlib, entries, types)
 	return {"environment": environment, "exports": exports, "types": types, "type_parameters": parameters, "source_digest": digest, "files": [file for file in files if file['path'] in documented], "entries": entries, "coverage": {"source_files": len(files), "documented_files": len(documented), "documented_apis": sum(entry['kind'] == 'api' for entry in entries)}}
 

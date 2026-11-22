@@ -81,7 +81,7 @@ fn maximumCount(a) {
 `batch` 是标准库宏。它把块内用到的外部数组绑定投影到对应元素，让普通表达式逐元素执行；这里块内的 `a` 表示当前元素。
 
 ```el
-// @external keep
+// @external keep: fn(Number): Bool
 fn maximumCount(a) {
 	return max(
 		(batch { keep(a > 0) }).count,
@@ -100,7 +100,7 @@ fn maximumCount(a) {
 keep 条件同时涉及两个不同的展开绑定时，不会猜该返回哪一个；条件通过时它的正常值是 `nil`。需要输出哪个值，就显式写在后面。例如下面是一个独立的过滤片段：
 
 ```el
-// @external keep
+// @external keep: fn(Number): Bool
 let a = @[1, 5, 3]
 let b = @[2, 4, 3]
 let selected = batch {
@@ -116,7 +116,7 @@ let selected = batch {
 两条分支的共同部分是“根据某种比较过滤，然后取长度”；真正不同的只有比较方向。可以把比较函数传进去：
 
 ```el
-// @external keep
+// @external keep: fn(Number): Bool
 fn maximumCount(a) {
 	let countBy = fn(compare) => (batch {
 		keep(compare(a, 0))
@@ -159,14 +159,14 @@ over(merge, transform)(left, right)
 所以前一版函数的最后一行可以改成：
 
 ```el
-// @external countBy
+// @external countBy: fn(fn(Number): Bool, Number[]): Number
 return over(max, countBy)(greater, less)
 ```
 
 这行代码中，两个输入是比较函数，变换是过滤并计数，合并是取较大值。把只用一次的 `countBy` 放回调用处，就得到完整版本：
 
 ```el
-// @external keep
+// @external keep: fn(Number): Bool
 fn maximumCount(a) {
 	return over(max, fn(compare) => (batch {
 		keep(compare(a, 0))
@@ -177,7 +177,7 @@ fn maximumCount(a) {
 最后，把匿名函数参数改用 `it`，省略这里不需要的括号：
 
 ```el
-// @external keep
+// @external keep: fn(Number): Bool
 fn maximumCount(a) {
 	return over(max, => batch {
 		keep(it(a, 0))

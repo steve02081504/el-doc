@@ -32,7 +32,7 @@ fn double(value: UnsignedInteger): UnsignedInteger {
 语句形式可以写回已声明的普通可写绑定：
 
 ```el
-// @external value
+// @external value: UnsignedInteger
 let result: UnsignedInteger
 eir (in:source=value; out:result) {
 	result = copy source

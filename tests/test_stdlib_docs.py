@@ -95,6 +95,12 @@ class ExtractionTests(unittest.TestCase):
 			with self.subTest(source=source), self.assertRaisesRegex(DocumentationError, "math.el:1:"):
 				extract(source, "math.el")
 
+	def test_rejects_misaligned_doc_comment_inside_an_example(self):
+		source = "class Window {\n" + "".join("\t" + line for line in DOCUMENT.splitlines(keepends=True)) + "}\n"
+		source = source.replace("\t/// console.stdout", "/// // @external window: Window\n\t/// console.stdout")
+		with self.assertRaisesRegex(DocumentationError, r"window.el:8: /// indentation"):
+			extract(source, "window.el")
+
 	def test_preprocessing_is_rejected(self):
 		with self.assertRaisesRegex(DocumentationError, "preprocessed"):
 			extract("#if FLAG\n" + DOCUMENT + "#endif\n", "math.el")
@@ -134,6 +140,18 @@ class GenerationTests(unittest.TestCase):
 		(self.stdlib / "math.el").write_text(DOCUMENT, encoding="utf-8")
 		with self.assertRaisesRegex(DocumentationError, r"math.el:1: .*//! @module"):
 			collect(self.root)
+
+	def test_member_example_requires_its_own_instance(self):
+		source = DOCUMENT.replace("@api increment", "@api Window.every").replace("export fn increment(value: Number): Number => value + 1", "fn every() {}")
+		bad = source.replace("console.stdout.writeLine(increment(2))", "// @external window: Window\n/// window.every()")
+		owner = "export class Window {\n"
+		make_class = lambda doc: owner + "".join("\t" + line for line in doc.splitlines(keepends=True)) + "}\n"
+		self.write_document("math.el", make_class(bad))
+		with self.assertRaisesRegex(DocumentationError, r"Window\.every .*must declare a local Window instance"):
+			collect(self.root)
+		good = bad.replace("// @external window: Window", "let window = Window()")
+		self.write_document("math.el", make_class(good))
+		self.assertEqual(collect(self.root)["coverage"]["documented_apis"], 1)
 
 	def test_environment_alias_cycles_and_source_link(self):
 		(self.stdlib / "index.el").write_text('export lazy import { increment as count } from "file:./bridge.el"\nexport import { mystery } from "file:./missing.el"\nexport import { cycle } from "file:./cycle.el"\n')
@@ -203,6 +221,12 @@ class GenerationTests(unittest.TestCase):
 		self.assertEqual(bindings["answer"]["source"], "math.el")
 		self.assertIsNone(bindings["answer"]["id"])
 
+	def test_explicit_names_are_indexed_without_choosing_a_platform(self):
+		(self.stdlib / "platform.el").write_text('#if FLAG\nexport const location = 1\n#endif\nexport import extern {\n  "odd$label"(value: ptr): ptr as nativeLabel,\n  regular(): ptr\n} from "library"\n', encoding="utf-8")
+		bindings = collect(self.root)["exports"]["platform"]
+		self.assertEqual(set(bindings), {"location", "nativeLabel", "regular"})
+		self.assertTrue(all(binding["id"] is None for binding in bindings.values()))
+
 	def test_overload_family_anchor_and_member_overview(self):
 		one = DOCUMENT.replace("@api increment", "@api Widget.increment~one")
 		two = DOCUMENT.replace("@api increment", "@api Widget.increment~two")
@@ -218,6 +242,7 @@ class GenerationTests(unittest.TestCase):
 		doc = DOCUMENT.replace("@api increment", "@api Widget").replace("export fn increment(value: Number): Number => value + 1", "export class Widget {}")
 		value = DOCUMENT.replace("@api increment", "@api thing").replace("export fn increment(value: Number): Number => value + 1", "export const thing = Widget()")
 		member = DOCUMENT.replace("@api increment", "@api Widget.child").replace("export fn increment(value: Number): Number => value + 1", "get child(): Widget { return this }")
+		member = member.replace("console.stdout.writeLine(increment(2))", "let widget = Widget()\n/// widget.child")
 		self.write_document("math.el", doc + value + member, encoding="utf-8")
 		model = collect(self.root)
 		page = render(model)["modules/math.md"]
@@ -255,6 +280,7 @@ class GenerationTests(unittest.TestCase):
 
 	def test_lexical_factory_and_value_parameters_and_local_alias(self):
 		doc = DOCUMENT.replace("@api increment", "@api Box.item").replace("export fn increment(value: Number): Number => value + 1", "fn item(start: Number, end: Number): Entry<element: element, size: end - start> { return value }")
+		doc = doc.replace("console.stdout.writeLine(increment(2))", "let box = Box<element: type>()\n/// box.item(0, 1)")
 		self.write_document("math.el", 'export fn Box(element: type): type {\n let Entry: type = element\n class BoxValue {\n' + doc + '}\n}\n')
 		model = collect(self.root)
 		entry = next(e for e in model["entries"] if e["name"] == "Box.item")

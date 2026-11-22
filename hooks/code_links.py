@@ -382,6 +382,11 @@ def embedded_words(tokens, pairs, local_names):
 	"""Recognize the syntax and binding boundaries of built-in and library blocks."""
 	dialects = {"shell", "eir", "prove", "calc", "grammar", "rules", "search", "query", "rowQuery", "batch"}
 	for index, (_, _, value) in enumerate(tokens[:-1]):
+		if value == "@bounded" and index + 1 in pairs and tokens[index + 1][2] == "(":
+			for position in range(index + 2, pairs[index + 1]):
+				if tokens[position][2] == "O" and position + 1 in pairs and tokens[position + 1][2] == "(":
+					for term in range(position, pairs[position + 1] + 1):
+						yield term, False
 		if value not in dialects or value in local_names:
 			continue
 		opening = index + 1
@@ -448,9 +453,10 @@ def embedded_words(tokens, pairs, local_names):
 					yield position + 1, True
 
 
+
 def external_names(stream, catalog, report):
-	"""Read leading // @external name, name comments on one highlighted block."""
-	names = set()
+	"""Read typed external bindings from the leading comments of this block."""
+	names = {}
 	header = True
 	for kind, value, start, _ in stream:
 		if kind == "space":
@@ -458,22 +464,25 @@ def external_names(stream, catalog, report):
 		if kind not in ("comment", "doc"):
 			header = False
 			continue
-		marker = re.match(r"//[ \t]+@external\b(.*)", value)
+		marker = _source_docs.EXTERNAL_DIRECTIVE.match(value)
 		if not marker:
 			continue
-		declared = [name.strip() for name in marker[1].split(",")]
-		if not header or not all(name.isidentifier() for name in declared):
+		try:
+			if not header:
+				raise DocumentationError("use a leading // @external comment")
+			declared = _source_docs.external_declarations(marker[1])
+		except DocumentationError as error:
 			if report:
-				report(start, "use a leading // @external comment with a comma-separated list of identifiers")
+				report(start, str(error))
 			continue
-		for name in declared:
+		for name, value_type in declared:
 			binding = catalog.library_exports.get(name) or catalog.environment.get(name)
 			if binding is not None:
 				if report:
 					location = f" ({binding['source']}:{binding['line']})" if binding.get("source") and binding.get("line") else ""
 					report(start, f"external name {name!r} conflicts with a standard library export{location}")
 				continue
-			names.add(name)
+			names[name] = Target("", value_type=value_type) if value_type.isidentifier() else None
 	return names
 
 
@@ -507,7 +516,7 @@ def code_targets(code, catalog, source=None, *, report=None):
 	prelude = not re.search(r"@(module|runtime)\s*\([^)]*\bprelude\s*:\s*f\b", structure)
 	if not prelude:
 		bindings.clear()
-	bindings.update(dict.fromkeys(external_names(stream, catalog, report)))
+	bindings.update(external_names(stream, catalog, report))
 	imported_bindings = {}
 	namespaces = {}
 	external_patterns = []
@@ -746,6 +755,7 @@ def on_files(files, config):
 	global _catalog, _files, _destinations
 	model = json.loads((Path(config["docs_dir"]) / "stdlib/api/api.json").read_text(encoding="utf-8"))
 	_source_docs.validate_module_docs(model["entries"])
+	_source_docs.validate_member_examples(model["entries"], model.get("types", []))
 	_catalog = Catalog(model)
 	_files = {file.src_uri: file.url for file in files}
 	_destinations = {file.src_uri: file.abs_dest_path for file in files}

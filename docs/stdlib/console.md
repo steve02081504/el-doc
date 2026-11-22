@@ -118,7 +118,7 @@ console.info.value(@{ count: 3 }, stdoutChannel)
 - 给 `.value` 传 `stdoutChannel` 会跳过 stdout 文本的捕获投影，记录仍是 Display 类型。
 
 ```el
-// @external rows, key, elapsed
+// @external rows: Number, key: Text, elapsed: Number
 // 业务数据：进 stdout，能被管道和重定向拿到
 console.stdout.writeLine("rows: ", rows.count)
 

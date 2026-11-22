@@ -14,13 +14,13 @@
 原生库来源必须非空，非 `"runtime"` 来源必须逐个给出签名；不能从导出表或符号名字推断参数、返回值或位宽。`as` 只改变本地绑定名。无法写成 EL 标识符的符号可用文本字面量，此时必须指定本地别名：
 
 ```el
-// @external NativeInt
+// @external NativeStatResult: type
 import extern {
-	"stat$INODE64"(path: ptr, result: ptr): NativeInt as native_stat
+	"stat$INODE64"(path: ptr, result: ptr): NativeStatResult as native_stat
 } from "/usr/lib/libSystem.B.dylib"
 ```
 
-这是声明形状示例，`NativeInt` 须另行定义为符合真实原生签名的类型；它不证明该库在当前目标存在。省略返回类型表示没有 C 结果，`: void` 也只表示无结果。
+这是声明形状示例，`NativeStatResult` 须另行定义为符合真实原生签名的类型；它不证明该库在当前目标存在。省略返回类型表示没有 C 结果，`: void` 也只表示无结果。
 
 ## 原生类型与布局
 

@@ -51,7 +51,7 @@ let first = values.shift()  // 取走开头
 切片时注意两个名字：`slice` 返回长度由区间决定的定长切片，`sliceDynamic` 返回变长数组副本。遍历用 `for in`，省略变量时用 `it` 指代当前元素：
 
 ```el
-// @external values
+// @external values: Number[]
 let window = values.slice(1, 3)        // 定长切片：长度由区间决定
 let copy = values.sliceDynamic(1, 3)   // 变长数组副本
 
@@ -69,7 +69,7 @@ for (let value in values) {
 需要枚举多份数据的全部组合时，读[用推导式列出组合](comprehensions.md)：用顺序绑定生成结果，再选择数组收集或按需消费；该页单独标注新语法的实现与验证边界。
 
 ```el
-// @external values
+// @external values: Number[]
 let doubled = values.map(value => value * 2)
 let big = values.filter(value => value > 20)
 let text = values.join(", ")
@@ -100,7 +100,7 @@ console.stdout.writeLine("has grace: ", scores.has("grace"))
 - `keys()`、`values()`、`entries()` 取快照数组，`for in` 遍历条目。
 
 ```el
-// @external scores
+// @external scores: Map<key: Text, value: Number>
 for (let {key, value} in scores) {
 	console.stdout.writeLine(key, " = ", value)
 }
@@ -111,7 +111,7 @@ for (let {key, value} in scores) {
 需要换成业务名称时，使用[对象解构](../reference/language/destructuring.md)的重命名写法：
 
 ```el
-// @external scores
+// @external scores: Map<key: Text, value: Number>
 for (let {key: name, value: score} in scores) {
 	console.stdout.writeLine(name, ": ", score)
 }

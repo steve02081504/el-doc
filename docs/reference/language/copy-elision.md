@@ -12,20 +12,20 @@
 
 ## 直接交付是什么意思
 
-以下是语义片段，`Point` 使用[赋值、复制与共享](assignment-semantics.md)中声明的 copy 类：
+以下是语义片段，`CopyPoint` 使用[赋值、复制与共享](assignment-semantics.md)中声明的 copy 类：
 
 ```el
-// @external Point
-let point = Point()
+// @external CopyPoint: type
+let point = CopyPoint()
 ```
 
-新构造的 `Point` 直接成为 `point` 持有的结果，不需要先做一个中间对象、再复制一份给 `point`。同一具体类型的按值传参、返回以及嵌套返回和转发也遵循直接交付规则。实际对象仍按最终拥有者的生命周期清理；构造失败时，已完成的部分仍需清理。
+新构造的 `CopyPoint` 直接成为 `point` 持有的结果，不需要先做一个中间对象、再复制一份给 `point`。同一具体类型的按值传参、返回以及嵌套返回和转发也遵循直接交付规则。实际对象仍按最终拥有者的生命周期清理；构造失败时，已完成的部分仍需清理。
 
 ## 必要的独立值仍然独立
 
 ```el
-// @external Point
-let original = Point()
+// @external CopyPoint: type
+let original = CopyPoint()
 let other = original
 original.x = 1
 other.x = 2

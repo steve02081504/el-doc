@@ -13,7 +13,7 @@
 
 ```el
 @assign(mode: "copy")
-class Point {
+class PlanarPoint {
 	let x: Number = 0
 	let y: Number = 0
 
@@ -27,7 +27,7 @@ class Point {
 	fn describe(): Text => `(${Text(x)}, ${Text(y)})`
 }
 
-let p = Point(3, 4)
+let p = PlanarPoint(3, 4)
 
 console.stdout.writeLine(p.squaredLength())   // 25
 console.stdout.writeLine(p.describe())        // (3, 4)
@@ -36,7 +36,7 @@ console.stdout.writeLine(p.describe())        // (3, 4)
 - ==每个具名类都必须在声明前写 `@assign(mode: "copy")` 或 `@assign(mode: "shared")`==，明确普通赋值是复制还是共享；没有默认值，缺了会被拒绝。
 - 字段用 `let` 或 `const` 在类体里声明；`init this` 执行尚未初始化字段的声明初值，构造器随后给字段赋值。字段在构造时赋值之后类型固定，只有显式声明为 `any` 的字段例外；固定类型不表示固定值，同类型的后续赋值仍然允许。
 - 每条正常构造出口都必须能证明所有字段已初始化；构造器里的裸 `return` 是提前完成构造，不允许返回替代值。
-- 实例用 `Point(3, 4)` 创建，不用 `new`。方法声明与普通函数相同；读字段、调用同类方法时可以省略 `this.`，参数或局部变量与字段同名时会给出定位警告，显式写 `this.x` 消歧。
+- 实例用 `PlanarPoint(3, 4)` 创建，不用 `new`。方法声明与普通函数相同；读字段、调用同类方法时可以省略 `this.`，参数或局部变量与字段同名时会给出定位警告，显式写 `this.x` 消歧。
 
 ## copy 与 shared：赋值后是一个对象还是两个
 
@@ -44,8 +44,8 @@ console.stdout.writeLine(p.describe())        // (3, 4)
     看类的 `@assign` 模式。`copy` 不会，`shared` 会——赋值是复制还是共享由类声明决定，而不是由变量的写法决定。
 
 ```el
-// @external Point
-let a = Point(1, 2)
+// @external PlanarPoint: type
+let a = PlanarPoint(1, 2)
 let b = a
 b.x = 9
 
@@ -82,7 +82,7 @@ console.stdout.writeLine(c1.value())   // 1：shared，两个名字指向同一�
 - 两种模式同样作用于普通参数传递与返回值；显式 `take` 仍按接管协议处理。
 
 !!! example "动手 30 秒"
-    把 `Point` 的 `@assign(mode: "copy")` 改成 `"shared"`，再跑上面 `let b = a; b.x = 9` 的片段。看到 `a.x` 输出 `9` 而不是 `1`，就说明赋值从复制变成了共享。
+    把 `PlanarPoint` 的 `@assign(mode: "copy")` 改成 `"shared"`，再跑上面 `let b = a; b.x = 9` 的片段。看到 `a.x` 输出 `9` 而不是 `1`，就说明赋值从复制变成了共享。
 
 ## 私有成员以 `#` 开头
 
@@ -214,8 +214,8 @@ console.log.value(removed)             // t
 ## 类实例与对象字面量差在哪
 
 ```el
-// @external Point
-let p = Point(1, 2)                    // 具名类实例
+// @external PlanarPoint: type
+let p = PlanarPoint(1, 2)                    // 具名类实例
 let o = @{ name: "Ada", age: 36 }      // 匿名对象字面量
 
 let q = o
@@ -225,7 +225,7 @@ console.stdout.writeLine(o.age)        // 37：字面量默认 shared
 // o.city = "London"                   // 编译错误：闭合对象没有这个字段
 ```
 
-- `Point(1, 2)` 是声明的类实例，拥有类的方法、继承关系与显式配置的 `@assign` 模式。
+- `PlanarPoint(1, 2)` 是声明的类实例，拥有类的方法、继承关系与显式配置的 `@assign` 模式。
 - `@{ name: "Ada" }` 创建匿名、封闭类的实例：默认 shared，有可观察身份，声明字段可写，但没有方法、没有继承，字段集合固定不能增删。
 - 字面量内重复键是编译错误；裸标识符字段 `@{ name }` 等价于 `name: name`。
 - 需要开放键表时使用 `@dynamic` 类，或标准库函数 `dynamicObject(source)` 创建动态对象的浅快照。

@@ -156,7 +156,7 @@ console.stdout.writeLine(counter())   // 2
 ## 把 lambda 传给集合算法
 
 ```el
-// @external square
+// @external square: fn(Number): Number
 let numbers = @[1, 2, 3, 4]
 let squared = numbers.map(value => value * value)
 let evens = numbers.filter(value => value % 2 == 0)
@@ -174,18 +174,18 @@ console.log.value(numbers.map(square))         // 具名可调用值同样可以
 普通 `return` 只结束当前函数；`return 值 from 目标` 能越过当前 lambda、回调或局部函数，结束一个词法上在外围的具名函数。目标按词法作用域解析，不是运行时搜索最近的同名函数。
 
 ```el
-fn invoke(callback) {
+fn invokeCallback(callback) {
 	callback()
 }
 
 fn finish() {
-	invoke(fn() {
+	invokeCallback(fn() {
 		return from finish
 	})
 }
 
 fn finishExplicitly() {
-	invoke(fn() {
+	invokeCallback(fn() {
 		return nil from finishExplicitly
 	})
 }
@@ -222,10 +222,10 @@ fn outer() {
 `inner` 里的定向返回结束 `middle`，`middle` 再把值交给 `outer`；目标写 `outer` 就结束 `outer`。同名遮蔽按声明身份处理：
 
 ```el
-// @external invoke
+// @external invokeCallback: fn(fn())
 fn shadow() {
 	fn shadow() {
-		invoke(fn() { return 8 from shadow })   // 目标是内层 shadow 的这次调用
+		invokeCallback(fn() { return 8 from shadow })   // 目标是内层 shadow 的这次调用
 		return 0
 	}
 	return shadow()
@@ -239,7 +239,7 @@ fn shadow() {
 返回类型推断包含所有 `return ... from 目标` 的返回值，不只是普通 `return`；`findName` 因此能从 `name` 推断出返回 `Text`。定向返回本身不产生可读取的值，类型是 `Never`，能放在表达式位置或分支里，不会给类型合流制造假的 `nil` 分支：
 
 ```el
-// @external performWork
+// @external performWork: fn()
 fn requireReady(ready: Bool) {
 	if (!ready) return from requireReady
 	performWork()
@@ -256,11 +256,11 @@ fn requireReady(ready: Bool) {
 - 没有有效目标属于运行时 UB。ELC 只检查词法名字、类别、唯一性与返回类型；目标是否还活着、是否在允许返回链上，由 ELF 执行时证明，证明不了就报 error，而不是把良构程序判成编译失败。
 
 ```el
-// @external invoke
+// @external invokeCallback: fn(fn())
 import { sleep } from "el:concurrency/"
 
 fn load(): Text {
-	invoke(fn() {
+	invokeCallback(fn() {
 		sleep(1)                    // 普通挂起后目标仍然有效
 		return "ready" from load
 	})

@@ -44,7 +44,7 @@
 下面的调用形状展示变量与字面量的差别；`select` 表示分别提供这些参数模式的重载函数族。
 
 ```el
-// @external select
+// @external select: fn(Number, Number): Number
 let count = 1
 select(count)  // 可写左值：ref 候选优先于普通值候选
 select(2)      // 右值：rvalue 候选优先于普通值候选
@@ -61,7 +61,7 @@ select(2)      // 右值：rvalue 候选优先于普通值候选
 例如，下面只展示具名参数的绑定顺序，`format` 的参数名应以其实际声明为准：
 
 ```el
-// @external format
+// @external format: fn(Number, Number): Text
 format(1, right: 2)
 ```
 

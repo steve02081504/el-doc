@@ -53,7 +53,7 @@ fn requirePort(value: Number) {
 `throw` 不产生可读取的结果（内部是 never 流），所以它常出现在分支或提前返回的位置。需要按条件抛错时，用 `if` 把控制流写清楚：
 
 ```el
-// @external candidate
+// @external candidate: DynamicObject | nil_t
 let config = if (candidate is nil_t) {
 	throw StateError("missing config")
 } else {
@@ -64,7 +64,7 @@ let config = if (candidate is nil_t) {
 `try { ... }` 的值是 try 块最后执行语句的值；某个 `catch` 接住异常时，值就是那个 catch 块最后执行语句的值。`finally` 一定会执行，但它的普通结果会被丢弃。没有 `catch` 接住的异常继续向外传播。
 
 ```el
-// @external requirePort
+// @external requirePort: fn(Number): Number
 let port = try { requirePort(0) } catch (error: RangeError) { 8080 }
 ```
 
@@ -79,9 +79,9 @@ let port = try { requirePort(0) } catch (error: RangeError) { 8080 }
 多个 `catch` 按从上到下的顺序匹配，第一个匹配的处理，后面的不再执行。带类型的 `catch` 要写在前面，不带类型（或类型为 `any`）的 `catch` 必须是最后一个。类型匹配走子类关系：`catch (e: Error)` 会接住 `Error` 本身及其子类。
 
 ```el
-// @external load
+// @external loadSettings: fn(): DynamicObject
 try {
-	load()
+	loadSettings()
 } catch (error: StateError) {
 	console.error.value(error)
 } catch {
@@ -96,7 +96,7 @@ try {
 `assert(condition, reason)` 是 prelude 提供的普通函数，条件为假时抛 `AssertionError`，原因就是第二个参数；条件为真时返回真值。它同时为后续代码建立缩窄。
 
 ```el
-// @external requirePort
+// @external requirePort: fn(Number): Number
 let port = requirePort(8080)
 assert(port > 0, "端口必须为正")
 ```

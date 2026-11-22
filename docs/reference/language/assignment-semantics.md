@@ -17,7 +17,7 @@
 
 ```el
 @assign(mode: "copy")
-class Point {
+class CopyPoint {
 	let x = 0
 }
 
@@ -27,7 +27,7 @@ class Settings {
 }
 ```
 
-普通传递 `Point` 时，必要的复制产生独立对象；普通传递 `Settings` 时，得到同一对象的另一个共享引用。默认复制逐字段遵守各字段自己的复制或共享协议，所以 copy 并不自动意味着递归深复制。实际可省略的中间复制见[复制消除](copy-elision.md)。
+普通传递 `CopyPoint` 时，必要的复制产生独立对象；普通传递 `Settings` 时，得到同一对象的另一个共享引用。默认复制逐字段遵守各字段自己的复制或共享协议，所以 copy 并不自动意味着递归深复制。实际可省略的中间复制见[复制消除](copy-elision.md)。
 
 默认环境已经提供 `assign`，上例可以直接使用该属性，不需要每次定义类都写一条导入。
 

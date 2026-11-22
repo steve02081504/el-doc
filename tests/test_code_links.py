@@ -81,19 +81,31 @@ spec.loader.exec_module(module)
 
 	def test_external_names_are_explicit_and_block_local(self):
 		blocks = [
-			'<pre class="language-el"><code>// @external Nat, zero\nfn make(): Nat =&gt; zero\nunknown</code></pre>',
-			'<pre class="language-el"><code>Nat\n// @external Nat\nzero</code></pre>',
+			'<pre class="language-el"><code>// @external SampleNat: type, sampleZero: SampleNat\nfn make(): SampleNat =&gt; sampleZero\nunknown</code></pre>',
+			'<pre class="language-el"><code>SampleNat\n// @external SampleNat: type\nsampleZero</code></pre>',
 		]
 		problems = []
 		CodeLinker("".join(blocks), self.catalog, lambda _: "", report=problems.append)
 		self.assertEqual(len(problems), 4)
 		self.assertIn("'unknown' is exported", problems[0])
 		self.assertIn("leading // @external", problems[1])
-		self.assertIn("'Nat' is not exported", problems[2])
-		self.assertIn("'zero' is not exported", problems[3])
+		self.assertIn("'SampleNat' is not exported", problems[2])
+		self.assertIn("'sampleZero' is not exported", problems[3])
+
+	def test_external_diagnostic_requires_types(self):
+		code = '// @external window, label\nwindow.every(1000, tick => label.text = "tick")'
+		problems = []
+		code_targets(code, self.catalog, report=lambda _, message: problems.append(message))
+		self.assertIn("each external needs a type", problems[0])
+
+	def test_external_types_can_contain_commas(self):
+		code = '// @external dataset: Map<key: Text, value: Number>, formatRow: fn(Text, Number): Text\nformatRow(dataset, 1)'
+		problems = []
+		code_targets(code, self.catalog, report=lambda _, message: problems.append(message))
+		self.assertEqual(problems, [])
 
 	def test_externals_cannot_mask_exports_even_outside_the_prelude(self):
-		code = '// @external silent, capture, Number\nlet value = 1'
+		code = '// @external silent: Text, capture: Text, Number: type\nlet value = 1'
 		problems = []
 		code_targets(code, self.catalog, report=lambda _, message: problems.append(message))
 		self.assertEqual(problems, [
@@ -103,7 +115,7 @@ spec.loader.exec_module(module)
 		])
 
 	def test_external_name_does_not_hide_unsupported_stdlib_import(self):
-		code = '// @external missing\nimport { missing } from "el:console/"\nmissing()'
+		code = '// @external missing: Number\nimport { missing } from "el:console/"\nmissing()'
 		problems = []
 		code_targets(code, self.catalog, report=lambda _, message: problems.append(message))
 		self.assertEqual(problems, ["'missing' is not exported by el:console/"])
@@ -120,7 +132,7 @@ spec.loader.exec_module(module)
 		self.assertEqual(problems, ["'let' requires a binding before '='", "'&&' is not an EL operator; use '&'"])
 
 	def test_embedded_rules_check_names_in_el_splices(self):
-		code = "// @external rules\nlet table = rules {\n relation edge(source, target) from $(missing)\n}"
+		code = "// @external rules: type\nlet table = rules {\n relation edge(source, target) from $(missing)\n}"
 		problems = []
 		code_targets(code, self.catalog, report=lambda _, message: problems.append(message))
 		self.assertEqual(problems, ["'missing' is not exported by the standard library"])

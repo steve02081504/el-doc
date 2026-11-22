@@ -9,11 +9,11 @@
 
 ## 类型表达式
 
-类型注解写作 `name: Type`。类型语法包括函数类型、泛型实参、联合类型、元组与类型查询。泛型实参通常必须写出形参名；仅当实参列表恰有一个参数且声明的首个形参是类型参数时，允许省略名称，例如 `Array<Point>`。
+类型注解写作 `name: Type`。类型语法包括函数类型、泛型实参、联合类型、元组与类型查询。泛型实参通常必须写出形参名；仅当实参列表恰有一个参数且声明的首个形参是类型参数时，允许省略名称，例如 `Array<ExamplePoint>`。
 
 ```el
-// @external origin, Point
-let point: Point = origin
+// @external origin: ExamplePoint, ExamplePoint: type
+let point: ExamplePoint = origin
 let maybeText: Text | nil_t = nil
 ```
 
