@@ -16,11 +16,11 @@
 
 根据成对的 Unicode 标量起止值构造字符集合模式。
 
-```el-fragment
+```el-signature
 export fn scalarSet(ranges: Number[], negate: Bool = f): Pattern<output: Char>
 ```
 
-**返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Char`](../../../types.md#api-3166547d46e101216338)>
+**返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Char`](../character.md#api-f77d02dfef333b10f57f)>
 
 **参数**：ranges 按起止顺序排列的闭区间端点。
 
@@ -41,11 +41,11 @@ let printable = scalarSet(@[32, 33, 35, 91, 93, 1114111])
 
 构造匹配给定文本中任一字符的模式。
 
-```el-fragment
+```el-signature
 export fn chars(text: Text): Pattern<output: Char>
 ```
 
-**返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Char`](../../../types.md#api-3166547d46e101216338)>
+**返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Char`](../character.md#api-f77d02dfef333b10f57f)>
 
 **参数**：text 候选字符集合。
 
@@ -64,11 +64,11 @@ let hexLetter = chars("abcdefABCDEF")
 
 构造匹配首尾字符标量值之间任一字符的模式，端点包含在内。
 
-```el-fragment
+```el-signature
 export fn range(first: Text, last: Text): Pattern<output: Char>
 ```
 
-**返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Char`](../../../types.md#api-3166547d46e101216338)>
+**返回类型**：[`Pattern`](../../../types.md#api-bd89f1e74ac0a63ed21c)<output: [`Char`](../character.md#api-f77d02dfef333b10f57f)>
 
 **参数**：first 区间首字符。
 
@@ -89,7 +89,7 @@ let lower = range("a", "z")
 
 按顺序匹配多个文本片段或模式，并合并为一个文本结果。
 
-```el-fragment
+```el-signature
 export fn sequence(...elements): Pattern<output: Text>
 ```
 
@@ -112,7 +112,7 @@ let escapedQuote = sequence("\\", chars("\""))
 
 从同一起点按顺序尝试候选模式，匹配第一个成功的候选。
 
-```el-fragment
+```el-signature
 export fn anyOf(first, ...rest): Pattern<output: Text>
 ```
 
@@ -137,7 +137,7 @@ let escape = anyOf(sequence("\\", chars("nrt")), sequence("\\", chars("\\\"")))
 
 重复匹配一个文本或模式，并可指定最少与最多次数。
 
-```el-fragment
+```el-signature
 export fn many(element, min: Number = 0, max: Number = -1, greedy: Bool = t)
 ```
 
@@ -164,7 +164,7 @@ let spaces = many(chars(" "))
 
 构造恰好重复指定次数的模式。
 
-```el-fragment
+```el-signature
 export fn exactly(count: Number, element)
 ```
 
@@ -187,7 +187,7 @@ let fourDigits = exactly(4, range("0", "9"))
 
 将模式设为可选，匹配零次或一次。
 
-```el-fragment
+```el-signature
 export fn optional(element)
 ```
 

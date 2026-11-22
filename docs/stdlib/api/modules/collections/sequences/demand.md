@@ -27,7 +27,7 @@
 
 完整迭代并丢弃所有元素，以触发序列中的按需计算与清理。
 
-```el-fragment
+```el-signature
 fn consume()
 ```
 
@@ -44,7 +44,7 @@ numbers.consume()
 
 返回跳过前 count 个元素后的惰性序列。
 
-```el-fragment
+```el-signature
 fn drop(count: Number): SequenceOf<element: element>
 ```
 
@@ -66,7 +66,7 @@ console.stdout.writeLine(lazy @[1, 2, 3].drop(2).collect().join(", "))
 
 返回最多取前 count 个元素的惰性序列；后续元素不会被求值。
 
-```el-fragment
+```el-signature
 fn take(count: Number): SequenceOf<element: element>
 ```
 
@@ -88,7 +88,7 @@ console.stdout.writeLine(lazy @[1, 2, 3].take(2).collect().join(", "))
 
 返回指定区间的惰性序列；省略 end 时延伸到序列末尾。
 
-```el-fragment
+```el-signature
 fn slice(start: Number, end: Number | nil_t = nil): SequenceOf<element: element>
 ```
 
@@ -112,7 +112,7 @@ console.stdout.writeLine(lazy @[1, 2, 3, 4].slice(1, 3).collect().join(", "))
 
 按需对每个元素应用转换函数，返回新的惰性序列。
 
-```el-fragment
+```el-signature
 fn map(transform)
 ```
 
@@ -132,7 +132,7 @@ console.stdout.writeLine(lazy @[1, 2].map(value => value * 2).collect().join(", 
 
 按需保留谓词为真的元素。
 
-```el-fragment
+```el-signature
 fn filter(predicate): SequenceOf<element: element>
 ```
 
@@ -154,7 +154,7 @@ console.stdout.writeLine(lazy @[-1, 2, 3].filter(value => value > 0).collect().j
 
 迭代至序列结束，并将产生的元素收集到数组。
 
-```el-fragment
+```el-signature
 fn collect(): element[]
 ```
 
@@ -175,7 +175,7 @@ console.stdout.writeLine(values.count)
 
 按序累加所有元素，初始累加值由调用方指定。
 
-```el-fragment
+```el-signature
 fn sum(initial)
 ```
 
@@ -195,7 +195,7 @@ console.stdout.writeLine(lazy @[1, 2, 3].sum(0))
 
 表示可重新打开迭代器的惰性元素序列；每次迭代按需计算元素。
 
-```el-fragment
+```el-signature
 export let Sequence: type
 ```
 

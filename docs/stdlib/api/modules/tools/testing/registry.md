@@ -20,7 +20,7 @@
 
 为具有稳定名称的行逐条注册测试用例。
 
-```el-fragment
+```el-signature
 fn each(name: Text, rows, body, options: TestOptions = TestOptions())
 ```
 
@@ -34,7 +34,7 @@ fn each(name: Text, rows, body, options: TestOptions = TestOptions())
 
 **失败与异常**：行没有名称或注册冲突时抛 TestConfigurationError。
 
-### 示例：表驱动测试
+### 示例：表驱动测试（需调用方提供对象或绑定）
 
 ```el
 test.each("double", @[
@@ -49,7 +49,7 @@ test.each("double", @[
 
 注册一个测试用例；用例主体在测试执行阶段调用，可选择接收 TestContext。
 
-```el-fragment
+```el-signature
 export lazy let test = TestRegistrar()
 ```
 

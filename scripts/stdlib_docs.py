@@ -303,7 +303,7 @@ def prelude_environment(stdlib, entries):
 			sig = entry["signature"] if entry else "\n".join(item[1] for item in local)
 			value_types = {item[2] for item in local}
 			value_type = next(iter(value_types)) if len(value_types) == 1 else None
-			candidates.append((entry["id"] if entry else None, path, line, sig, value_type))
+			candidates.append((entry["id"] if entry else None, path, line, sig, value_type, entry is not None))
 		for target, original in exports.get(name, []):
 			resolved = resolve(target, original, seen | {(path, name)})
 			if resolved is not None:
@@ -311,7 +311,7 @@ def prelude_environment(stdlib, entries):
 		unique = list(dict.fromkeys(candidates))
 		if len(unique) == 1:
 			return unique[0]
-		documented = [candidate for candidate in unique if candidate[0]]
+		documented = [candidate for candidate in unique if candidate[-1]]
 		if len(documented) == 1:
 			return documented[0]
 		if documented:
@@ -322,9 +322,9 @@ def prelude_environment(stdlib, entries):
 		resolved = resolve(path, name, set())
 		if not resolved:
 			return {"id": None, "source": None, "line": None, "signature": None, "value_type": None}
-		identity, source, line, signature_text, value_type, *documented = resolved
+		identity, source, line, signature_text, value_type, documented = resolved
 		item = {"id": identity, "source": source, "line": line, "signature": signature_text, "value_type": value_type}
-		if documented:
+		if documented and identity is None:
 			item["documented"] = True
 		return item
 	exports, declarations = module("index.el")
@@ -635,9 +635,8 @@ def parse_comment(lines):
 		section["markdown"] = "\n".join(section.pop("lines")).strip()
 		if section["tag"] == "example":
 			blocks = re.findall(r"^```([^\n]*)\n(.*?)^```[ \t]*$", section["markdown"], re.M | re.S)
-			languages = [language for language, _ in blocks]
-			if languages[:1] not in (["el"], ["el-fragment"]) or languages[1:] not in ([], ["text"]):
-				raise DocumentationError("@example requires one el or el-fragment fence and an optional text expected-output fence")
+			if [language for language, _ in blocks] not in (["el"], ["el", "text"]):
+				raise DocumentationError("@example requires one ```el block and an optional ```text expected-output block")
 			section.update(code=blocks[0][1], expected_stdout=blocks[1][1] if len(blocks) == 2 else None, verification="not-run")
 	if not sections[0]["markdown"]:
 		raise DocumentationError("a description is required")

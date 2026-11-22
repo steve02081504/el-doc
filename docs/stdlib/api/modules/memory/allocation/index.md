@@ -16,7 +16,7 @@
 
 通过当前资源分配语言存储，零大小实际请求至少一个字节。
 
-```el-fragment
+```el-signature
 @builtin:vome:allocator
 @builtin:vome:effect:alloc(family: @[ProcessStorageFamily])
 export fn allocate_language_storage(size: AllocationSize, alignment: AllocationSize): ptr
@@ -53,7 +53,7 @@ if (block != null_pointer()) {
 
 按分配时的原始来源释放语言存储。
 
-```el-fragment
+```el-signature
 @builtin:vome:deallocator
 @builtin:vome:effect:free(family: @[ProcessStorageFamily])
 export fn release_language_storage(pointer: ptr, size: AllocationSize, alignment: AllocationSize)
@@ -88,7 +88,7 @@ if (block != null_pointer()) {
 
 调整存储大小；新大小为零时实际请求至少一个字节。失败时原块仍归调用者，成功时改用返回指针。
 
-```el-fragment
+```el-signature
 @builtin:vome:reallocator
 @builtin:vome:effect:realloc(family: @[ProcessStorageFamily])
 export fn resize_language_storage(pointer: ptr, old_size: AllocationSize, new_size: AllocationSize, alignment: AllocationSize): ptr
@@ -129,7 +129,7 @@ if (block != null_pointer()) {
 
 绕过用户资源链从基础资源分配，保留来源释放和调试登记。
 
-```el-fragment
+```el-signature
 @builtin:vome:effect:alloc(family: @[ProcessStorageFamily])
 export fn allocate_language_base_storage(size: AllocationSize, alignment: AllocationSize): ptr
 ```

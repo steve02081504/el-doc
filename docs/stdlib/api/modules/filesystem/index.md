@@ -16,7 +16,7 @@
 
 将路径或 provider 引用解析为当前文件系统上下文中的逻辑位置。
 
-```el-fragment
+```el-signature
 export fn resolvePath(reference): Location
 ```
 
@@ -41,7 +41,7 @@ let config = resolvePath("file:./config.json")
 
 返回当前逻辑文件系统上下文的位置。
 
-```el-fragment
+```el-signature
 export fn currentDirectory(): Location
 ```
 
@@ -62,7 +62,7 @@ console.stdout.writeLine(currentDirectory().identifier)
 
 先解析基准位置，再以该位置为上下文解析另一个引用。
 
-```el-fragment
+```el-signature
 export fn resolveFrom(base, reference): Location
 ```
 
@@ -87,7 +87,7 @@ let resource = resolveFrom("file:./config", "assets/logo.png")
 
 返回给定位置的末级名称。
 
-```el-fragment
+```el-signature
 export fn fileName(reference): Text
 ```
 
@@ -110,7 +110,7 @@ console.stdout.writeLine(fileName("file:./config.json"))
 
 为逻辑位置打开顺序读取器；需要随机访问时使用 openRandomFileReader。
 
-```el-fragment
+```el-signature
 export fn openFileReader(reference, lock: Bool | nil_t = nil): FileReader
 ```
 
@@ -139,7 +139,7 @@ reader.close()
 
 打开支持随机访问的文件读取器。
 
-```el-fragment
+```el-signature
 export fn openRandomFileReader(reference, lock: Bool | nil_t = nil): FileReader
 ```
 
@@ -168,7 +168,7 @@ reader.close()
 
 为逻辑位置打开文件写入器。
 
-```el-fragment
+```el-signature
 export fn openFileWriter(reference): FileWriter
 ```
 
@@ -195,7 +195,7 @@ writer.close()
 
 读取文件原始字节，可选地设置读取上限。
 
-```el-fragment
+```el-signature
 export fn readFileBytes(reference, maximumBytes: Number | nil_t = nil): Number[]
 ```
 
@@ -223,7 +223,7 @@ console.stdout.writeLine(bytes.count)
 
 读取文件原始字节；目标不存在时返回 nil。
 
-```el-fragment
+```el-signature
 export fn readFileBytesIfPresent(reference, maximumBytes: Number | nil_t = nil): Number[] | nil_t
 ```
 
@@ -250,7 +250,7 @@ let bytes = readFileBytesIfPresent("file:./optional.bin")
 
 读取并解码文本文件；目标不存在时返回 nil。
 
-```el-fragment
+```el-signature
 export fn readTextFileIfPresent(reference, maximumBytes: Number | nil_t = nil): Text | nil_t
 ```
 
@@ -278,7 +278,7 @@ if (text is nil_t) console.stdout.writeLine("missing")
 
 将字节数组原样写入文件。
 
-```el-fragment
+```el-signature
 export fn writeFileBytes(reference, bytes: Number[]): Number
 ```
 
@@ -305,7 +305,7 @@ writeFileBytes("file:./message.bin", @[72, 105])
 
 将文件内容读入拥有其底层存储的 FileBuffer，可设置字节上限。
 
-```el-fragment
+```el-signature
 export fn readFileBuffer(reference, maximumBytes: Number | nil_t = nil): FileBuffer
 ```
 
@@ -334,7 +334,7 @@ buffer.close()
 
 读取文件字节并使用指定格式解码。
 
-```el-fragment
+```el-signature
 export fn readFileAs(format, reference, lock: Bool | nil_t = nil)
 ```
 
@@ -362,7 +362,7 @@ let config = readFileAs(formats.JSON, "file:./config.json")
 
 使用指定格式编码值并将结果写入文件。
 
-```el-fragment
+```el-signature
 export fn writeFileAs(format, reference, value): Number
 ```
 
@@ -392,7 +392,7 @@ writeFileAs(formats.Text, "file:./copy.txt", "already text")
 
 读取文件并按 UTF-8 解码为文本。
 
-```el-fragment
+```el-signature
 export fn readTextFile(reference, maximumBytes: Number | nil_t = nil): Text
 ```
 
@@ -420,7 +420,7 @@ console.stdout.writeLine(configuration.count)
 
 将文本编码为 UTF-8 并写入文件。
 
-```el-fragment
+```el-signature
 export fn writeTextFile(reference, value: Text): Number
 ```
 
@@ -447,7 +447,7 @@ writeTextFile("settings.json", "{}")
 
 列出逻辑目录中的名称。
 
-```el-fragment
+```el-signature
 export fn directoryNames(reference): Text[]
 ```
 
@@ -472,7 +472,7 @@ for (let name in directoryNames("file:./config")) console.stdout.writeLine(name)
 
 判断逻辑位置是否为目录。
 
-```el-fragment
+```el-signature
 export fn isDirectory(reference): Bool
 ```
 
@@ -495,7 +495,7 @@ console.stdout.writeLine(isDirectory(resolvePath("file:./config.json").parent))
 
 创建指定目录及其尚不存在的父目录。
 
-```el-fragment
+```el-signature
 export fn makeDirectories(reference): nil_t
 ```
 
@@ -518,7 +518,7 @@ makeDirectories("file:./output/reports")
 
 删除指定文件。
 
-```el-fragment
+```el-signature
 export fn removeFile(reference): nil_t
 ```
 
@@ -541,7 +541,7 @@ removeFile("file:./temporary.txt")
 
 将源文件原子替换到目标位置。
 
-```el-fragment
+```el-signature
 export fn replaceFile(source, target): nil_t
 ```
 
@@ -566,7 +566,7 @@ replaceFile("file:./report.tmp", "file:./report.txt")
 
 将源文件内容复制到目标位置。
 
-```el-fragment
+```el-signature
 export fn copyFile(source, target): Number
 ```
 
@@ -586,4 +586,23 @@ export fn copyFile(source, target): Number
 import { copyFile } from "el:filesystem/"
 let copied = copyFile("file:./source.txt", "file:./copy.txt")
 console.stdout.writeLine(copied)
+```
+
+## publishTextFile {#api-5e0d1c25737dcede0786}
+
+源码：`src/stdlib/filesystem/index.el:368` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L368)
+
+将文本编码为 UTF-8 写入临时位置，再以原子替换发布到目标，返回写入数量。两位置须不同且属于同一 provider；失败时临时写入不回滚。
+
+```el-signature
+export fn publishTextFile(target, temporary, value: Text): Number
+```
+
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
+
+### 示例：用法
+
+```el
+import { publishTextFile } from "el:filesystem/index.el"
+fn publish(target, temporary) { return publishTextFile(target, temporary, "hello") }
 ```

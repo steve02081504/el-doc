@@ -18,7 +18,7 @@
 
 用 F64 稠密 LU 求解并返回残差与主元阈值诊断。
 
-```el-fragment
+```el-signature
 export fn solveDiagnostic(a: Tensor<element: F64>, b: Tensor<element: F64>, policy: NumericsPolicy = NumericsPolicy()): SolveReport
 ```
 
@@ -32,7 +32,7 @@ export fn solveDiagnostic(a: Tensor<element: F64>, b: Tensor<element: F64>, poli
 
 **返回值**：含解、重算残差、残差无穷范数、方法与阈值的报告。
 
-### 示例：读取诊断报告中的残差范数
+### 示例：读取诊断报告中的残差范数（需调用方提供对象或绑定）
 
 ```el
 let report = solveDiagnostic(a, b)
@@ -41,11 +41,11 @@ let residualMagnitude = report.residualNorm
 
 ## leastSquaresDiagnostic {#api-5db73d0f1734381d6751}
 
-源码：`src/stdlib/numerical-computing/diagnostics.el:60` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/diagnostics.el#L60)
+源码：`src/stdlib/numerical-computing/diagnostics.el:61` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/diagnostics.el#L61)
 
 用 F64 列主元 QR 求最小二乘解并返回残差与秩阈值诊断。
 
-```el-fragment
+```el-signature
 export fn leastSquaresDiagnostic(a: Tensor<element: F64>, b: Tensor<element: F64>, policy: NumericsPolicy = NumericsPolicy()): SolveReport
 ```
 
@@ -62,6 +62,7 @@ export fn leastSquaresDiagnostic(a: Tensor<element: F64>, b: Tensor<element: F64
 ### 示例：查看最小二乘残差
 
 ```el
+// @external a, b
 let report = leastSquaresDiagnostic(a, b)
 let residualMagnitude = report.residualNorm
 ```

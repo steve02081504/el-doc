@@ -236,7 +236,7 @@ export fn chooseMove(board: Tensor<element: Number>, mark: Number,
 
 ### `game.el`
 
-```el-fragment
+```el
 import { assign } from "el:language/contracts.el"
 import { Tensor } from "el:numerical-computing/"
 import { SearchInterrupted } from "el:logic/"
@@ -365,7 +365,7 @@ export @assign(mode: "shared") class Game {
 
 ### `view.el`
 
-```el-fragment
+```el
 import { assign } from "el:language/contracts.el"
 import { Definition, GuiEvent, element, appendChild, on } from "el:user-interface/model.el"
 import { WeakShared } from "el:memory/ownership/weak-shared.el"

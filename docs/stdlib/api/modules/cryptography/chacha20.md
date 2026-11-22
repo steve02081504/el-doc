@@ -16,7 +16,7 @@
 
 将 ChaCha20 密钥流与输入字节异或，得到同长度输出。
 
-```el-fragment
+```el-signature
 export fn chacha20_xor(key: Number[], nonce: Number[], initial_counter: Number, input: Number[]): Number[]
 ```
 

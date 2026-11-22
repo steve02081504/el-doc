@@ -29,12 +29,12 @@
 
 表示输入未匹配解析器时的诊断，包含失败偏移、合并后的期望项和规则上下文。
 
-```el-fragment
+```el-signature
 @assign(mode: "copy")
 export class ParseError extends Error
 ```
 
-### 示例：捕获 JSON 解析错误
+### 示例：捕获 JSON 解析错误（需调用方提供对象或绑定）
 
 ```el
 import { ParseError } from "el:text/patterns/index.el"
@@ -44,11 +44,11 @@ catch (error) { if (error is ParseError) console.stderr.writeLine(error.offset) 
 
 ## ParseError.offset {#api-6dd7855dda76480009da}
 
-源码：`src/stdlib/text/patterns/parser.el:27` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L27)
+源码：`src/stdlib/text/patterns/parser.el:28` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L28)
 
 输入中第一个没有成功解析的位置，以 Unicode 标量下标计。
 
-```el-fragment
+```el-signature
 let offset: Number
 ```
 
@@ -57,22 +57,23 @@ let offset: Number
 ### 示例：显示失败偏移
 
 ```el
+// @external error
 console.stderr.writeLine(error.offset)
 ```
 
 ## ParseError.expected {#api-2b3956bc77cb8ed6d897}
 
-源码：`src/stdlib/text/patterns/parser.el:34` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L34)
+源码：`src/stdlib/text/patterns/parser.el:35` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L35)
 
 在失败位置可接受的预期项列表。
 
-```el-fragment
+```el-signature
 let expected: Text[]
 ```
 
 **类型**：[`Text`](../text.md#api-6116e54b075df026a90a)[]
 
-### 示例：显示预期项
+### 示例：显示预期项（需调用方提供对象或绑定）
 
 ```el
 console.stderr.writeLine(error.expected.join(", "))
@@ -80,11 +81,11 @@ console.stderr.writeLine(error.expected.join(", "))
 
 ## ParseError.contexts {#api-2d3bebc3de2f96ffe6a8}
 
-源码：`src/stdlib/text/patterns/parser.el:41` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L41)
+源码：`src/stdlib/text/patterns/parser.el:43` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L43)
 
 失败时处于活动状态的解析规则上下文栈。
 
-```el-fragment
+```el-signature
 let contexts: Text[]
 ```
 
@@ -93,22 +94,23 @@ let contexts: Text[]
 ### 示例：显示解析上下文
 
 ```el
+// @external error
 console.stderr.writeLine(error.contexts.join("/"))
 ```
 
 ## ParseReply.matched {#api-eed8f57e3bc622e71c4d}
 
-源码：`src/stdlib/text/patterns/parser.el:98` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L98)
+源码：`src/stdlib/text/patterns/parser.el:100` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L100)
 
 指示前缀解析是否成功。
 
-```el-fragment
+```el-signature
 let matched: Bool
 ```
 
 **类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
-### 示例：检查前缀是否匹配
+### 示例：检查前缀是否匹配（需调用方提供对象或绑定）
 
 ```el
 console.stdout.writeLine(reply.matched)
@@ -116,11 +118,11 @@ console.stdout.writeLine(reply.matched)
 
 ## ParseReply.end {#api-aa042bd0e5020bde8f9a}
 
-源码：`src/stdlib/text/patterns/parser.el:106` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L106)
+源码：`src/stdlib/text/patterns/parser.el:109` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L109)
 
 成功解析后第一个未消费位置的标量下标。
 
-```el-fragment
+```el-signature
 let end: Number
 ```
 
@@ -129,22 +131,23 @@ let end: Number
 ### 示例：查看消费偏移
 
 ```el
+// @external reply
 console.stdout.writeLine(reply.end)
 ```
 
 ## ParseReply.error {#api-c04ba9afd567cf3d838f}
 
-源码：`src/stdlib/text/patterns/parser.el:114` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L114)
+源码：`src/stdlib/text/patterns/parser.el:117` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L117)
 
 未匹配时保存的 ParseError。
 
-```el-fragment
+```el-signature
 let error: ParseError
 ```
 
 **类型**：[`ParseError`](parser.md#api-134641b6a74ac9dc39ed)
 
-### 示例：查看失败偏移
+### 示例：查看失败偏移（需调用方提供对象或绑定）
 
 ```el
 console.stderr.writeLine(reply.error.offset)
@@ -152,15 +155,15 @@ console.stderr.writeLine(reply.error.offset)
 
 ## ParseReply.value {#api-51d18d3ab11cb736b67e}
 
-源码：`src/stdlib/text/patterns/parser.el:145` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L145)
+源码：`src/stdlib/text/patterns/parser.el:149` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L149)
 
 返回成功解析得到的语义值；失败时抛出保存的 ParseError。
 
-```el-fragment
+```el-signature
 fn value(): output
 ```
 
-**返回类型**：[`output`](../../../types.md#api-1838af8aafa47f26bba3)
+**返回类型**：[`output`](../../../types.md#api-14ead6504f5bee2a3866)
 
 **返回值**：解析器产生的值。
 
@@ -169,16 +172,17 @@ fn value(): output
 ### 示例：读取成功结果
 
 ```el
+// @external reply
 if (reply.matched) console.stdout.writeLine(reply.value())
 ```
 
 ## Parser.asParser {#api-d229b8c3837af00d72d9}
 
-源码：`src/stdlib/text/patterns/parser.el:216` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L216)
+源码：`src/stdlib/text/patterns/parser.el:220` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L220)
 
 将模式包装值转换为解析器；解析器自身调用时也返回自身。
 
-```el-fragment
+```el-signature
 fn asParser()
 ```
 
@@ -192,15 +196,15 @@ let value = integer(min: unbounded, max: unbounded, epsilon: 0).asParser().parse
 
 ## Parser.parse {#api-d313f1ac56d1be2399e2}
 
-源码：`src/stdlib/text/patterns/parser.el:250` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L250)
+源码：`src/stdlib/text/patterns/parser.el:254` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L254)
 
 从输入起点解析完整文本；输入有剩余或无法匹配时抛出 ParseError。
 
-```el-fragment
+```el-signature
 fn parse(source: Text, limits: PatternLimits = PatternLimits()): output
 ```
 
-**返回类型**：[`output`](../../../types.md#api-e1b1b22430ae1dac04e7)
+**返回类型**：[`output`](../../../types.md#api-9996609a930a7464f8cd)
 
 **参数**：source 待解析文本。
 
@@ -220,15 +224,15 @@ console.stdout.writeLine(value)
 
 ## Parser.parsePrefix {#api-7aff463fca2745d8ab80}
 
-源码：`src/stdlib/text/patterns/parser.el:270` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L270)
+源码：`src/stdlib/text/patterns/parser.el:274` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L274)
 
 从指定偏移尝试解析输入前缀，不要求消费完整文本，并以 ParseReply 返回匹配状态。
 
-```el-fragment
+```el-signature
 fn parsePrefix(source: Text, from: Number = 0, limits: PatternLimits = PatternLimits()): ParseReply<output: output>
 ```
 
-**返回类型**：[`ParseReply`](../../../types.md#api-97a3a0dc8d534b09c3e7)<output: [`output`](../../../types.md#api-e1b1b22430ae1dac04e7)>
+**返回类型**：[`ParseReply`](../../../types.md#api-97a3a0dc8d534b09c3e7)<output: [`output`](../../../types.md#api-9996609a930a7464f8cd)>
 
 **参数**：source 待解析文本。
 
@@ -248,11 +252,11 @@ console.stdout.writeLine(reply.matched, " ", reply.end)
 
 ## firstOf {#api-f45406a31ca93535cd3d}
 
-源码：`src/stdlib/text/patterns/parser.el:596` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L596)
+源码：`src/stdlib/text/patterns/parser.el:600` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L600)
 
 从当前位置依次尝试解析器或文本候选，返回首个成功分支的结果。
 
-```el-fragment
+```el-signature
 export fn firstOf(first, ...rest)
 ```
 
@@ -271,11 +275,11 @@ let literalParser = firstOf(constant("null", f), constant("true", t))
 
 ## constant {#api-e3e533cb002f8125c11d}
 
-源码：`src/stdlib/text/patterns/parser.el:637` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L637)
+源码：`src/stdlib/text/patterns/parser.el:641` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L641)
 
 匹配完整的固定文本，并将指定值作为解析结果。
 
-```el-fragment
+```el-signature
 export fn constant(text: Text, value)
 ```
 
@@ -294,11 +298,11 @@ let trueParser = constant("true", t)
 
 ## pair {#api-cd138cf7450ba86c77a7}
 
-源码：`src/stdlib/text/patterns/parser.el:658` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L658)
+源码：`src/stdlib/text/patterns/parser.el:662` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L662)
 
 解析左值、分隔符与右值，并返回包含两侧结果的配对值。
 
-```el-fragment
+```el-signature
 export fn pair(left, separator, right)
 ```
 
@@ -319,11 +323,11 @@ let member = pair("name", ":", "EL")
 
 ## list {#api-71fc4d87dd834fa519c1}
 
-源码：`src/stdlib/text/patterns/parser.el:745` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L745)
+源码：`src/stdlib/text/patterns/parser.el:749` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/text/patterns/parser.el#L749)
 
 解析由括号包围、以分隔符隔开的元素序列；默认拒绝尾随分隔符。
 
-```el-fragment
+```el-signature
 export fn list(open, element, close, separator = ",", allowTrailing: Bool = f)
 ```
 

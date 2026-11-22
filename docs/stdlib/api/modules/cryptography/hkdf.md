@@ -16,7 +16,7 @@
 
 依次执行 HKDF-SHA256 的 Extract 与 Expand。
 
-```el-fragment
+```el-signature
 export fn hkdf_sha256(ikm: Number[], salt: Number[] | nil_t = nil, info: Number[] | nil_t = nil, length: Number = 32): Number[]
 ```
 

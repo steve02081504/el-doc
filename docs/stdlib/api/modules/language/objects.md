@@ -16,7 +16,7 @@
 
 返回自身字段数量，不先创建键数组，供有界枚举预留工作空间。
 
-```el-fragment
+```el-signature
 export fn ownKeyCount(value): Number
 ```
 

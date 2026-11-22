@@ -20,11 +20,11 @@
 
 表示 assert 条件失败的异常，并保留调用方提供的失败原因。
 
-```el-fragment
+```el-signature
 export @assign(mode: "shared") class AssertionError extends Error
 ```
 
-### 示例：捕获断言错误
+### 示例：捕获断言错误（error 是已有的 AssertionError）
 
 ```el
 try { assert(f, "value required") }
@@ -33,29 +33,30 @@ catch (error: AssertionError) { console.stderr.writeLine(error.reason) }
 
 ## AssertionError.reason {#api-870d60eb5f4f1d987a9e}
 
-源码：`src/stdlib/errors/assertions.el:19` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/errors/assertions.el#L19)
+源码：`src/stdlib/errors/assertions.el:20` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/errors/assertions.el#L20)
 
 断言失败时提供的说明文本。
 
-```el-fragment
+```el-signature
 let reason: Text
 ```
 
 **类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
 
-### 示例：输出断言原因
+### 示例：输出断言原因（error 是已有的 AssertionError）
 
 ```el
+// @external error
 console.stderr.writeLine(error.reason)
 ```
 
 ## assert {#api-e12e696f440288d77038}
 
-源码：`src/stdlib/errors/assertions.el:34` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/errors/assertions.el#L34)
+源码：`src/stdlib/errors/assertions.el:36` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/errors/assertions.el#L36)
 
 检查条件为真；条件为假时以给定原因抛出 AssertionError。
 
-```el-fragment
+```el-signature
 export @pure fn assert(condition: Bool, reason: Text): Bool
 ```
 
@@ -69,9 +70,10 @@ export @pure fn assert(condition: Bool, reason: Text): Bool
 
 **失败与异常**：condition 为假时抛 AssertionError。
 
-### 示例：检查集合不为空
+### 示例：检查集合不为空（values 是已有的集合）
 
 ```el
+// @external values
 import { assert } from "el:tools/testing/index.el"
 assert(values.count > 0, "values must not be empty")
 ```

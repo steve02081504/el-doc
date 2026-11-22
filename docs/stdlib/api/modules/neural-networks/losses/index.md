@@ -16,7 +16,7 @@
 
 按 none、sum 或 mean 规则归约损失张量。
 
-```el-fragment
+```el-signature
 export fn reduceLoss(loss, reduction: Text = "mean")
 ```
 
@@ -40,7 +40,7 @@ let total = reduceLoss(loss, "sum")
 
 计算输入与目标的逐元素绝对误差，并按 reduction 归约。
 
-```el-fragment
+```el-signature
 export fn maeLoss(input, target, reduction: Text = "mean")
 ```
 
@@ -66,7 +66,7 @@ let loss = maeLoss(prediction, target)
 
 计算阈值 delta 内为二次、超出部分为线性的 Huber 损失。
 
-```el-fragment
+```el-signature
 export fn huberLoss(input, target, delta: Number = 1, reduction: Text = "mean")
 ```
 

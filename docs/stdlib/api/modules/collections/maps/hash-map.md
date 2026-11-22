@@ -24,7 +24,7 @@
 
 创建以键和值类型参数化的哈希映射类型。
 
-```el-fragment
+```el-signature
 export fn Map(key: type, value: type): type
 ```
 
@@ -50,7 +50,7 @@ console.stdout.writeLine(scores.getOr("ada", 0))
 
 为至少指定数量的条目预留容量，不改变已有键值。
 
-```el-fragment
+```el-signature
 fn reserve(expected: Number)
 ```
 
@@ -76,7 +76,7 @@ console.stdout.writeLine(scores.count)
 
 写入键值；若键已存在则保留原键并替换原值。
 
-```el-fragment
+```el-signature
 @discardable override fn set(lookupKey: key, newValue: value | nil_t): Bool
 ```
 
@@ -101,7 +101,7 @@ scores.set("ada", 98)
 
 仅当键不存在时插入键值，已有值保持不变。
 
-```el-fragment
+```el-signature
 @discardable override fn tryAdd(lookupKey: key, newValue: value | nil_t): Bool
 ```
 
@@ -134,7 +134,7 @@ console.stdout.writeLine(scores.getOr("ada", 0))
 
 返回已有值；键缺失时调用 make 一次并返回结果。
 
-```el-fragment
+```el-signature
 override fn getOrInsert(lookupKey: key, make): value
 ```
 
@@ -167,7 +167,7 @@ console.stdout.writeLine(counts.getOrInsert("red", () => 9))
 
 用回调计算并保存新值；键缺失时以 initial 为输入。
 
-```el-fragment
+```el-signature
 @discardable override fn update(lookupKey: key, change, initial: value): value
 ```
 

@@ -17,7 +17,7 @@
 以 for let 子句枚举来源，用 if 子句筛选，并产出最前面的投影表达式。
 后续来源和条件可以引用前序绑定，投影可以引用全部绑定；绑定只在本推导式内可见。
 
-```el-fragment
+```el-signature
 export syntax for
 ```
 

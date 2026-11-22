@@ -16,7 +16,7 @@
 
 将文本编码为十进制标量长度、冒号和原文组成的定帧。
 
-```el-fragment
+```el-signature
 export fn frame(text: Text): Text
 ```
 

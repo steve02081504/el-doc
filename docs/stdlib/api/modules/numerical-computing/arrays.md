@@ -12,13 +12,35 @@
 
 <span id="api-b98ba9e759d7eef8e401"></span>
 
+## row~construct {#api-5c1c5315cba24f3b9d0c}
+
+源码：`src/stdlib/numerical-computing/arrays.el:28` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L28)
+
+将输入值转换为指定元素类型，并构造成单行二维张量。
+
+```el-signature
+export fn row(element: type, values)
+```
+
+**参数**：element 输出张量的元素类型。
+
+**参数**：values 按顺序转换并放入行中的值。
+
+**返回值**：形状为 [1, values.count] 的张量。
+
+### 示例：从两个数构造一行
+
+```el
+let values = row<element: Number>(@[2, 3])
+```
+
 ## row~reshape {#api-9eb863b8b4a108974ea1}
 
-源码：`src/stdlib/numerical-computing/arrays.el:30` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L30)
+源码：`src/stdlib/numerical-computing/arrays.el:39` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L39)
 
 将一维张量重塑为只有一行的二维张量。
 
-```el-fragment
+```el-signature
 export fn row(values)
 ```
 
@@ -28,7 +50,7 @@ export fn row(values)
 
 **失败与异常**：ShapeError 当输入不是 rank 1 时抛出。
 
-### 示例：将向量转为行向量
+### 示例：将向量转为行向量（需调用方提供对象或绑定）
 
 ```el
 let values = row(vector)
@@ -38,11 +60,11 @@ let values = row(vector)
 
 ## col~reshape {#api-cc7a5482094f12f275cb}
 
-源码：`src/stdlib/numerical-computing/arrays.el:40` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L40)
+源码：`src/stdlib/numerical-computing/arrays.el:50` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L50)
 
 将一维张量重塑为只有一列的二维张量。
 
-```el-fragment
+```el-signature
 export fn col(values)
 ```
 
@@ -55,16 +77,17 @@ export fn col(values)
 ### 示例：将向量转为列向量
 
 ```el
+// @external vector
 let values = col(vector)
 ```
 
 ## linspace {#api-fca937978fc3c8b3c9c5}
 
-源码：`src/stdlib/numerical-computing/arrays.el:52` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L52)
+源码：`src/stdlib/numerical-computing/arrays.el:62` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L62)
 
 在首尾端点之间生成指定数量的等间距元素。
 
-```el-fragment
+```el-signature
 export fn linspace(element: type, first, last, count: Number)
 ```
 
@@ -86,11 +109,11 @@ let points = linspace<element: Number>(0, 1, 5)
 
 ## columnMajor {#api-56f1a6c6f3a062e45618}
 
-源码：`src/stdlib/numerical-computing/arrays.el:86` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L86)
+源码：`src/stdlib/numerical-computing/arrays.el:96` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/arrays.el#L96)
 
 按张量的列优先逻辑顺序展平为一维张量。
 
-```el-fragment
+```el-signature
 export fn columnMajor(source)
 ```
 

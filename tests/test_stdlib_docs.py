@@ -194,6 +194,15 @@ class GenerationTests(unittest.TestCase):
 		self.assertNotIn("increment", model["exports"]["public/index"])
 		self.assertIsNone(model["exports"]["public/index"]["unknown"]["id"])
 
+	def test_directory_reexports_keep_documented_and_undocumented_names(self):
+		(self.stdlib / "public").mkdir()
+		(self.stdlib / "public/index.el").write_text('export /.*/ from "file:../math.el"\n', encoding="utf-8")
+		self.write_document("math.el", DOCUMENT + "\nexport lazy let answer = 42")
+		bindings = collect(self.root)["exports"]["public/index"]
+		self.assertEqual(bindings["increment"]["id"], "math::increment")
+		self.assertEqual(bindings["answer"]["source"], "math.el")
+		self.assertIsNone(bindings["answer"]["id"])
+
 	def test_overload_family_anchor_and_member_overview(self):
 		one = DOCUMENT.replace("@api increment", "@api Widget.increment~one")
 		two = DOCUMENT.replace("@api increment", "@api Widget.increment~two")

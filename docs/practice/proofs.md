@@ -40,7 +40,8 @@ fn add(n: Nat, m: Nat): Nat {
 ```
 
 ??? note "可选 · 深入：同一套 data 还能声明索引族"
-    ```el-fragment
+    ```el
+    // @external succ, Nat, zero
     data Le: Nat -> Nat -> Prop {
     	z(n: Nat): Le(zero, n)
     	s(a: Nat, b: Nat, p: Le(a, b)): Le(succ(a), succ(b))
@@ -70,7 +71,8 @@ addComm : Πa b. Eq(Nat, add(a, b), add(b, a))
 
 先证最直接的一条：
 
-```el-fragment
+```el
+// @external zero, Nat, add
 fn zeroAdd(n: Nat): Eq(Nat, add(zero, n), n) => prove { refl }
 ```
 
@@ -85,7 +87,8 @@ fn zeroAdd(n: Nat): Eq(Nat, add(zero, n), n) => prove { refl }
 ??? question "先猜：`induction n` 之后，两个分支各自还剩什么要证？"
     zero 分支剩 `Eq(Nat, add(zero, zero), zero)`，succ 分支剩 `Eq(Nat, add(succ(k), zero), succ(k))`，而且上下文里多了归纳假设 `Eq(Nat, add(k, zero), k)`。`refl` 只关得掉第一个。
 
-```el-fragment
+```el
+// @external zero, Nat, add
 fn addZero(n: Nat): Eq(Nat, add(n, zero), n) => prove {
 	induction n
 	all { simp [add] }
@@ -112,7 +115,8 @@ fn addSucc(a: Nat, b: Nat): Eq(Nat, add(a, succ(b)), succ(add(a, b))) => prove {
 
 `addComm` 先证前两条，再对 `a` 归纳并泛化 `b`，因为归纳假设要对任意 `b` 成立。
 
-```el-fragment
+```el
+// @external addZero, addSucc, Nat, add
 fn addComm(a: Nat, b: Nat): Eq(Nat, add(a, b), add(b, a)) => prove {
 	induction a generalizing b
 	case Nat.zero b { simp [add, addZero] }
@@ -126,7 +130,8 @@ zero 分支的目标是 `Eq(Nat, add(zero, b), add(b, zero))`：`simp [add, addZ
 
 同一段推理也可以写成显式的 `calc`，读起来更接近手算：
 
-```el-fragment
+```el
+// @external zeroAdd, addZero, addSucc, zero, Nat, add
 fn addCommByCalc(a: Nat, b: Nat): Eq(Nat, add(a, b), add(b, a)) => prove {
 	induction a generalizing b
 	case Nat.zero b {
@@ -150,7 +155,8 @@ zero 分支的 `calc` 从左边出发：链的第一步用 `zeroAdd(b)` 得到 `
 
 ## 第五步：定向改写用 `rewrite`，直接给项用 `exact`
 
-```el-fragment
+```el
+// @external addSucc, addZero, zero, Nat, succ, add
 fn addOne(n: Nat): Eq(Nat, add(n, succ(zero)), succ(n)) => prove {
 	rewrite [addSucc(n, zero), addZero(n)]
 	refl
@@ -173,7 +179,8 @@ fn succEqAddOne(n: Nat): Eq(Nat, succ(n), add(n, succ(zero))) => prove {
 
 ## 第六步：洞与承认都不是证明
 
-```el-fragment
+```el
+// @external Nat, add
 fn addCommSketch(a: Nat, b: Nat): Eq(Nat, add(a, b), add(b, a)) => prove {
 	exact ?commutativity
 }
@@ -183,7 +190,8 @@ fn addCommSketch(a: Nat, b: Nat): Eq(Nat, add(a, b), add(b, a)) => prove {
 
 含洞声明不进已检查环境、不导出接口，也不能用于转换、优化、代码生成或证明别的定理；编译含未完成声明的模块必须失败。可以存编辑器草稿，但没有让洞通过的构建开关，草稿不是定理。
 
-```el-fragment
+```el
+// @external Nat, add
 fn addCommAdmitted(a: Nat, b: Nat): Eq(Nat, add(a, b), add(b, a)) => prove {
 	admit "先承认，后面再补"
 }

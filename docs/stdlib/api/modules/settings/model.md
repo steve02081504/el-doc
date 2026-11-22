@@ -16,13 +16,13 @@
 
 先合并带来源的字段候选，再验证完整候选快照并生成补丁。基线中的已有值视为低于显式候选的取值；仅缺失字段采用默认值。
 
-```el-fragment
+```el-signature
 export fn resolveSettingsPatch(base: SettingsSnapshot, rules: SettingsFieldRule[], values: SettingsValue[], defaults: SettingsValue[]): SettingsPatch
 ```
 
 **返回类型**：[`SettingsPatch`](../../types.md#api-16f01e4f88e27e324f6b)
 
-### 示例：对空快照解析无字段补丁
+### 示例：对空快照解析无字段补丁（需调用方提供对象或绑定）
 
 ```el
 let patch = resolveSettingsPatch(SettingsSnapshot(), @[], @[], @[])

@@ -17,7 +17,7 @@
 二元调用返回 `left > right` 的结果；零个或一个输入返回 t。
 更多输入按从左到右的相邻对比较，遇到失败即停止。
 
-```el-fragment
+```el-signature
 export fn greater(...values)
 ```
 
@@ -45,7 +45,7 @@ let result = greater(3, 2)
 二元调用返回 `left < right` 的结果；零个或一个输入返回 t。
 更多输入按从左到右的相邻对比较，遇到失败即停止。
 
-```el-fragment
+```el-signature
 export fn less(...values)
 ```
 
@@ -73,7 +73,7 @@ let result = less(3, 2)
 二元调用返回 `left >= right` 的结果；零个或一个输入返回 t。
 更多输入按从左到右的相邻对比较，遇到失败即停止。
 
-```el-fragment
+```el-signature
 export fn greaterEqual(...values)
 ```
 
@@ -101,7 +101,7 @@ let result = greaterEqual(3, 2)
 二元调用返回 `left <= right` 的结果；零个或一个输入返回 t。
 更多输入按从左到右的相邻对比较，遇到失败即停止。
 
-```el-fragment
+```el-signature
 export fn lessEqual(...values)
 ```
 
@@ -129,7 +129,7 @@ let result = lessEqual(3, 2)
 二元调用返回 `left == right` 的结果；零个或一个输入返回 t。
 更多输入按从左到右的相邻对比较，遇到失败即停止。
 
-```el-fragment
+```el-signature
 export fn equal(...values)
 ```
 
@@ -157,7 +157,7 @@ let result = equal(3, 2)
 二元调用返回 `left != right` 的结果；零个或一个输入返回 t。
 更多输入检查所有位置对均满足 !=，按后项顺序依次与此前各项比较，遇到失败即停止。
 
-```el-fragment
+```el-signature
 export fn notEqual(...values)
 ```
 

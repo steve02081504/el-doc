@@ -16,7 +16,7 @@
 
 表示值无法无损编码为所选文本格式，或输出超过字节限制。
 
-```el-fragment
+```el-signature
 export @assign(mode: "copy") class FormatWriteError extends Error
 ```
 

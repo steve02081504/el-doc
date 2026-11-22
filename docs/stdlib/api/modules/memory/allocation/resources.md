@@ -33,7 +33,7 @@
 
 创建资源、运行作用域或采集快照失败时使用的错误。
 
-```el-fragment
+```el-signature
 export @assign(mode: "copy") class AllocationResourceError extends Error
 ```
 
@@ -51,7 +51,7 @@ tracker.run(fn() { return 1 })
 
 同一时刻的资源统计：存活分配数和字节、累计分配与释放次数、累计字节、存活峰值、物理字节、未完整观察次数及参与者数。计数使用目标原生表示。
 
-```el-fragment
+```el-signature
 export @assign(mode: "copy") class AllocationSnapshot
 ```
 
@@ -70,7 +70,7 @@ let snapshot = tracker.snapshot()
 
 共享的分配资源句柄；复制句柄共享状态。作用域及其后代的分配可在 run 返回后继续计入。
 
-```el-fragment
+```el-signature
 export @assign(mode: "shared") class AllocationResource
 ```
 
@@ -88,7 +88,7 @@ tracker.run(fn() { return 1 })
 
 将资源与当前资源及观察器组合后执行 body，返回其结果，并在正常返回或异常时恢复原上下文。
 
-```el-fragment
+```el-signature
 fn run(body)
 ```
 
@@ -112,7 +112,7 @@ tracker.run(fn() { return 1 })
 
 取得一致时刻的统计快照；各独立计数方法分别读取，不能保证属于同一时刻。
 
-```el-fragment
+```el-signature
 fn snapshot(): AllocationSnapshot
 ```
 
@@ -135,11 +135,11 @@ let snapshot = tracker.snapshot()
 
 读取当前存活的分配数；计数使用目标原生表示。
 
-```el-fragment
+```el-signature
 fn live_allocations(): RuntimeWord
 ```
 
-**返回类型**：[`RuntimeWord`](../../../types.md#api-b33b987a810fb17f83e0)
+**返回类型**：[`RuntimeWord`](../../runtime/native-types.md#api-b33b987a810fb17f83e0)
 
 ### 示例：读取统计
 
@@ -155,11 +155,11 @@ let value = tracker.live_allocations()
 
 读取当前存活的逻辑字节数；计数使用目标原生表示。
 
-```el-fragment
+```el-signature
 fn live_bytes(): NativeStorageSize
 ```
 
-**返回类型**：[`NativeStorageSize`](../../../types.md#api-56e936010cbf9fb04ba1)
+**返回类型**：[`NativeStorageSize`](../../runtime/native-types.md#api-56e936010cbf9fb04ba1)
 
 ### 示例：读取统计
 
@@ -175,11 +175,11 @@ let value = tracker.live_bytes()
 
 读取累计分配次数；计数使用目标原生表示。
 
-```el-fragment
+```el-signature
 fn allocations(): RuntimeWord
 ```
 
-**返回类型**：[`RuntimeWord`](../../../types.md#api-b33b987a810fb17f83e0)
+**返回类型**：[`RuntimeWord`](../../runtime/native-types.md#api-b33b987a810fb17f83e0)
 
 ### 示例：读取统计
 
@@ -195,11 +195,11 @@ let value = tracker.allocations()
 
 读取累计释放次数；计数使用目标原生表示。
 
-```el-fragment
+```el-signature
 fn releases(): RuntimeWord
 ```
 
-**返回类型**：[`RuntimeWord`](../../../types.md#api-b33b987a810fb17f83e0)
+**返回类型**：[`RuntimeWord`](../../runtime/native-types.md#api-b33b987a810fb17f83e0)
 
 ### 示例：读取统计
 
@@ -215,11 +215,11 @@ let value = tracker.releases()
 
 读取累计分配的逻辑字节数；计数使用目标原生表示。
 
-```el-fragment
+```el-signature
 fn cumulative_bytes(): NativeStorageSize
 ```
 
-**返回类型**：[`NativeStorageSize`](../../../types.md#api-56e936010cbf9fb04ba1)
+**返回类型**：[`NativeStorageSize`](../../runtime/native-types.md#api-56e936010cbf9fb04ba1)
 
 ### 示例：读取统计
 
@@ -235,11 +235,11 @@ let value = tracker.cumulative_bytes()
 
 读取存活逻辑字节数的峰值；计数使用目标原生表示。
 
-```el-fragment
+```el-signature
 fn peak_live_bytes(): NativeStorageSize
 ```
 
-**返回类型**：[`NativeStorageSize`](../../../types.md#api-56e936010cbf9fb04ba1)
+**返回类型**：[`NativeStorageSize`](../../runtime/native-types.md#api-56e936010cbf9fb04ba1)
 
 ### 示例：读取统计
 
@@ -255,11 +255,11 @@ let value = tracker.peak_live_bytes()
 
 读取未完整交付的观察事件数；计数使用目标原生表示。
 
-```el-fragment
+```el-signature
 fn incomplete_observations(): RuntimeWord
 ```
 
-**返回类型**：[`RuntimeWord`](../../../types.md#api-b33b987a810fb17f83e0)
+**返回类型**：[`RuntimeWord`](../../runtime/native-types.md#api-b33b987a810fb17f83e0)
 
 ### 示例：读取统计
 
@@ -275,11 +275,11 @@ let value = tracker.incomplete_observations()
 
 读取当前参与者数；计数使用目标原生表示。
 
-```el-fragment
+```el-signature
 fn participants(): RuntimeWord
 ```
 
-**返回类型**：[`RuntimeWord`](../../../types.md#api-b33b987a810fb17f83e0)
+**返回类型**：[`RuntimeWord`](../../runtime/native-types.md#api-b33b987a810fb17f83e0)
 
 ### 示例：读取统计
 
@@ -295,11 +295,11 @@ let value = tracker.participants()
 
 读取本资源拥有的 arena slab 物理字节数，包含头部和未用容量；计数使用目标原生表示。
 
-```el-fragment
+```el-signature
 fn physical_bytes(): NativeStorageSize
 ```
 
-**返回类型**：[`NativeStorageSize`](../../../types.md#api-56e936010cbf9fb04ba1)
+**返回类型**：[`NativeStorageSize`](../../runtime/native-types.md#api-56e936010cbf9fb04ba1)
 
 ### 示例：读取统计
 
@@ -315,7 +315,7 @@ let value = tracker.physical_bytes()
 
 立即检查并报告存活分配；子任务或返回值仍可能持有分配。
 
-```el-fragment
+```el-signature
 fn check_empty(): Bool
 ```
 
@@ -336,11 +336,11 @@ let empty = tracker.check_empty()
 
 参与者空闲时检查并报告：返回 0 表示延期，1 表示为空，2 表示报告了非空快照。
 
-```el-fragment
+```el-signature
 fn check_when_idle(): Integer
 ```
 
-**返回类型**：[`Integer`](../../../types.md#api-45690472287900730a5f)
+**返回类型**：[`Integer`](../../platform/machine/integer.md#api-45690472287900730a5f)
 
 **失败与异常**：无法安排检查时抛出 AllocationResourceError。
 
@@ -359,7 +359,7 @@ let result = tracker.check_when_idle()
 
 重置 arena；tracker 或仍有后代存活分配时返回 f。成功后释放 arena 所持的块。
 
-```el-fragment
+```el-signature
 fn reset(): Bool
 ```
 
@@ -380,7 +380,7 @@ let reset = arena.reset()
 
 创建统计资源；check_on_drop 为真时析构时立即检查是否为空。
 
-```el-fragment
+```el-signature
 export fn allocation_tracker(check_on_drop: Bool = f): AllocationResource
 ```
 
@@ -404,7 +404,7 @@ tracker.run(fn() { return 1 })
 
 创建 arena；省略 upstream 时使用基础堆，显式 upstream 须为自定义终端分配资源，不能是 arena 或观察器。
 
-```el-fragment
+```el-signature
 export fn allocation_arena(upstream: AllocationResource | nil_t = nil): AllocationResource
 ```
 
@@ -428,7 +428,7 @@ arena.run(fn() { return 1 })
 
 创建自定义终端分配资源。回调同步执行、可能并发，不能重新进入分配引擎或抛异常；回调抛异常会触发陷阱。
 
-```el-fragment
+```el-signature
 @callbackSafe(parameter: "allocate") @callbackSafe(parameter: "release")
 export fn allocation_resource(allocate: @sync fn(size: NativeStorageSize, alignment: NativeStorageSize): ptr, release: @sync fn(pointer: ptr, size: NativeStorageSize, alignment: NativeStorageSize): RuntimeWord, code_owner): AllocationResource
 ```
@@ -473,7 +473,7 @@ resource.run(fn() { let values = @[1, 2, 3]; return values.count })
 
 在新 tracker 中运行 body 并返回结果；check_empty 选择结束时检查，final 选择参与者空闲后检查。返回值和仍运行的子任务可能保留分配。
 
-```el-fragment
+```el-signature
 export fn with_allocation_tracking(body, check_empty: Bool = f, final: Bool = f)
 ```
 
@@ -498,7 +498,7 @@ let result = with_allocation_tracking(fn() { return 1 })
 
 创建观察资源。事件 1、2 是逻辑分配和释放，3、4 是成功和失败的调整大小，5、6 是物理 slab 分配和释放；成功调整也产生底层分配和释放事件。
 
-```el-fragment
+```el-signature
 @callbackSafe(parameter: "observe")
 export fn allocation_observer(observe: @sync fn(event: RuntimeWord, identity: RuntimeWord, address: NativeStorageSize, size: NativeStorageSize, alignment: NativeStorageSize, backing_identity: RuntimeWord): RuntimeWord, code_owner): AllocationResource
 ```

@@ -6,8 +6,11 @@
 
 | 模块 | 接口 |
 | --- | --- |
-| [numerical-computing/arrays.el](../modules/numerical-computing/arrays.md) | [row~reshape](../modules/numerical-computing/arrays.md#api-9eb863b8b4a108974ea1)、[col~reshape](../modules/numerical-computing/arrays.md#api-cc7a5482094f12f275cb)、[linspace](../modules/numerical-computing/arrays.md#api-fca937978fc3c8b3c9c5)、[columnMajor](../modules/numerical-computing/arrays.md#api-56f1a6c6f3a062e45618) |
+| [numerical-computing/arrays.el](../modules/numerical-computing/arrays.md) | [row~construct](../modules/numerical-computing/arrays.md#api-5c1c5315cba24f3b9d0c)、[row~reshape](../modules/numerical-computing/arrays.md#api-9eb863b8b4a108974ea1)、[col~reshape](../modules/numerical-computing/arrays.md#api-cc7a5482094f12f275cb)、[linspace](../modules/numerical-computing/arrays.md#api-fca937978fc3c8b3c9c5)、[columnMajor](../modules/numerical-computing/arrays.md#api-56f1a6c6f3a062e45618) |
+| [numerical-computing/device-tensor.el](../modules/numerical-computing/device-tensor.md) | [TensorDevice](../modules/numerical-computing/device-tensor.md#api-6352f607871fe7944c1e) |
+| [numerical-computing/device-value.el](../modules/numerical-computing/device-value.md) | [DeviceTensor](../modules/numerical-computing/device-value.md#api-572c72917d65007ba8a7) |
 | [numerical-computing/diagnostics.el](../modules/numerical-computing/diagnostics.md) | [solveDiagnostic~dense](../modules/numerical-computing/diagnostics.md#api-e0ab268d3c4c908e5d38)、[leastSquaresDiagnostic](../modules/numerical-computing/diagnostics.md#api-5db73d0f1734381d6751) |
+| [numerical-computing/errors.el](../modules/numerical-computing/errors.md) | [ShapeError](../modules/numerical-computing/errors.md#api-bd68270a10229244e32a)、[NumericallySingular](../modules/numerical-computing/errors.md#api-99d3f54ceeeb870fa5cb) |
 | [numerical-computing/exact-solve.el](../modules/numerical-computing/exact-solve.md) | [solve](../modules/numerical-computing/exact-solve.md#api-6f0056070dbd04cf6e3a) |
 | [numerical-computing/matrix-syntax.el](../modules/numerical-computing/matrix-syntax.md) | [matrix](../modules/numerical-computing/matrix-syntax.md#api-68271cb36d88cd6a7f40) |
 | [numerical-computing/reductions.el](../modules/numerical-computing/reductions.md) | [sum~all](../modules/numerical-computing/reductions.md#api-d58fd8966d5de0726a4a)、[sum~axis](../modules/numerical-computing/reductions.md#api-da20ccaa7740d44e7fec)、[mean~all](../modules/numerical-computing/reductions.md#api-1b092a7a4f6058d36233)、[mean~axis](../modules/numerical-computing/reductions.md#api-f52f0b1491a320de2f06) |

@@ -141,7 +141,8 @@ tests {
 
 同一段逻辑要覆盖多组输入时用 `test.each`。每一行必须有稳定的 `name`，它会进入用例 ID 和报告：
 
-```el-fragment
+```el
+// @external double
 test.each("翻倍", @[
 	@{ name: "zero", input: 0, expected: 0 },
 	@{ name: "positive", input: 36, expected: 72 }

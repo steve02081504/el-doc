@@ -55,7 +55,8 @@ class JsonMember {
 
 `firstOf` 按参数顺序尝试，`constant` 匹配一段固定文本并返回给定的 `Json` 值。
 
-```el-fragment
+```el
+// @external Json
 import { firstOf, constant } from "el:text/patterns/index.el"
 
 let literalParser = firstOf(
@@ -129,7 +130,8 @@ let escape = anyOf(short, scalar, sequence(high, low))
 
 生成值交给 `decodeJsonText`：按同一张转义表拼接结果，`\u` 分支算出标量，高代理项再合并紧随的低代理项。模式已经排除了孤立代理项，解码器不再重复校验。
 
-```el-fragment
+```el
+// @external plain, escape
 fn decodeJsonText(raw: Text) {
 	let result = ""
 	let at = 1
@@ -184,7 +186,8 @@ let jsonString = sequence("\"", many(anyOf(plain, escape)), "\"").map(decodeJson
 
 数组和对象会把值递归地套回自己，所以这一步换成 `grammar`：递归规则 `rule value: Json` 必须先声明结果类型，`grammar` 才能为它放一个可前向引用的占位符。`skip` 只处理空白，`token` 在连续输入上识别字符串和数字；`list` 与 `pair` 负责逗号分隔和键值对。
 
-```el-fragment
+```el
+// @external jsonString, jsonNumber, Json, literalParser, JsonMember
 import { grammar, list, pair } from "el:text/patterns/index.el"
 
 let json = grammar {
@@ -213,7 +216,8 @@ let json = grammar {
 
 词法层的失败在 token 起点变成未匹配，结构层的失败可能发生在更后面；`parse` 在边界把最终失败变成 `ParseError`，它带 `offset`、`expected` 与 `contexts`。内部失配不会抛异常，只有 `parse` 或 `p(text)` 这种边界才把未匹配变成异常。
 
-```el-fragment
+```el
+// @external json
 import { ParseError } from "el:text/patterns/index.el"
 
 try {
@@ -244,7 +248,8 @@ try {
 
 ??? example "可选：手写递归下降对照"
 
-    ```el-fragment
+    ```el
+    // @external Json, jsonString, jsonNumber, JsonMember
     @assign(mode: "shared")
     class JsonReader {
     	let source: Text

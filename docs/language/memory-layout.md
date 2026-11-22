@@ -55,6 +55,7 @@ console.stdout.writeLine("size: ", Number(bytes(CompactRecord)), " align: ", Num
 `layouts(@["field", ...], options)` 接受完整的直接字段清单，按清单顺序排字段，再把剩余基类区域追加在后面；名字未知、重复或遗漏都诊断。选项 `align` 指定最低整体对齐，`size` 指定精确载荷大小（不得小于自然结果，且必须是 `align` 的整数倍），`fixed` 按字段名指定固定偏移；未知选项、固定偏移冲突或与顺序冲突都会诊断。
 
 ```el
+// @external U8, U64, bytes, alignment
 @layout(using: layouts(@["tag", "payload"], @{ align: 64, fixed: @{ payload: 16 } }))
 @assign(mode: "shared")
 class Header {
@@ -76,6 +77,7 @@ console.stdout.writeLine("size: ", Number(bytes(Header)), " align: ", Number(ali
     区域是本次请求独有的身份句柄，`place` 必须使用当前输入拿到的区域；拿拷贝的数值身份或内容相等的新对象冒充会被验证器当成外来区域拒绝。
 
     ```el
+    // @external U8, U32, U64, bytes, alignment
     fn wide(input: LayoutInput, context: LayoutContext): LayoutPlan {
     	let plan = context.plan(input)
     	plan.place(input.field("tag"), at: 0)
@@ -110,6 +112,7 @@ packed 布局有两个硬限制：全部区域都必须是本层直接字段（�
 
 ??? note "可选 · 深入：packed 示例与实现状态"
     ```el
+    // @external U8, U64, bytes, alignment
     @layout(using: layouts(@["tag", "timestamp"], @{ pack: 1 }))
     @assign(mode: "shared")
     class PackedHeader {

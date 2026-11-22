@@ -4,7 +4,7 @@
 
 [结构化文档数据](api.json)
 
-已标注文档的文件：130 / 4133；API 条目：596。此比例不是公开 API 覆盖率。
+已标注文档的文件：206 / 4134；API 条目：723。此比例不是公开 API 覆盖率。
 
 [按模块查找](modules.md) · [按符号查找](symbols.md) · [默认环境](environment.md) · [类型定义](types.md)
 
@@ -12,30 +12,42 @@
 
 | 库 | 已标注模块 | API 条目 |
 | --- | ---: | ---: |
-| [collections](categories/collections.md) | 19 | 100 |
-| [concurrency](categories/concurrency.md) | 2 | 4 |
-| [console](categories/console.md) | 1 | 40 |
+| [collections](categories/collections.md) | 21 | 101 |
+| [concurrency](categories/concurrency.md) | 4 | 8 |
+| [console](categories/console.md) | 4 | 44 |
 | [control](categories/control.md) | 1 | 1 |
-| [cryptography](categories/cryptography.md) | 8 | 12 |
-| [errors](categories/errors.md) | 1 | 3 |
-| [filesystem](categories/filesystem.md) | 3 | 26 |
-| [formats](categories/formats.md) | 12 | 40 |
+| [cryptography](categories/cryptography.md) | 9 | 17 |
+| [database](categories/database.md) | 4 | 8 |
+| [desktop-automation](categories/desktop-automation.md) | 7 | 9 |
+| [documents](categories/documents.md) | 1 | 3 |
+| [errors](categories/errors.md) | 3 | 6 |
+| [execution](categories/execution.md) | 1 | 4 |
+| [filesystem](categories/filesystem.md) | 3 | 27 |
+| [foreign-functions](categories/foreign-functions.md) | 3 | 6 |
+| [formats](categories/formats.md) | 13 | 41 |
 | [functions](categories/functions.md) | 2 | 7 |
+| [game](categories/game.md) | 1 | 4 |
 | [graphics](categories/graphics.md) | 2 | 13 |
-| [language](categories/language.md) | 3 | 13 |
-| [logic](categories/logic.md) | 7 | 19 |
-| [mathematics](categories/mathematics.md) | 3 | 8 |
-| [memory](categories/memory.md) | 8 | 42 |
+| [language](categories/language.md) | 6 | 22 |
+| [logic](categories/logic.md) | 8 | 21 |
+| [mathematics](categories/mathematics.md) | 4 | 11 |
+| [memory](categories/memory.md) | 11 | 49 |
 | [multimedia](categories/multimedia.md) | 7 | 34 |
-| [network](categories/network.md) | 6 | 35 |
-| [neural-networks](categories/neural-networks.md) | 7 | 28 |
-| [number](categories/number.md) | 5 | 9 |
-| [numerical-computing](categories/numerical-computing.md) | 6 | 33 |
+| [network](categories/network.md) | 9 | 40 |
+| [neural-networks](categories/neural-networks.md) | 15 | 35 |
+| [number](categories/number.md) | 9 | 19 |
+| [numerical-computing](categories/numerical-computing.md) | 9 | 38 |
+| [operating-system](categories/operating-system.md) | 4 | 4 |
+| [optimization](categories/optimization.md) | 1 | 3 |
+| [platform](categories/platform.md) | 2 | 2 |
+| [queries](categories/queries.md) | 1 | 1 |
 | [random](categories/random.md) | 3 | 18 |
+| [runtime](categories/runtime.md) | 1 | 2 |
 | [settings](categories/settings.md) | 1 | 1 |
-| [streams](categories/streams.md) | 1 | 2 |
-| [text](categories/text.md) | 6 | 40 |
+| [shell](categories/shell.md) | 2 | 2 |
+| [streams](categories/streams.md) | 2 | 3 |
+| [text](categories/text.md) | 10 | 45 |
 | [theme](categories/theme.md) | 2 | 4 |
-| [time](categories/time.md) | 4 | 15 |
-| [tools](categories/tools.md) | 5 | 16 |
-| [user-interface](categories/user-interface.md) | 5 | 33 |
+| [time](categories/time.md) | 5 | 16 |
+| [tools](categories/tools.md) | 7 | 18 |
+| [user-interface](categories/user-interface.md) | 8 | 36 |

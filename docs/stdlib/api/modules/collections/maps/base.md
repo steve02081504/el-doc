@@ -29,7 +29,7 @@
 
 返回当前映射中的键值对数量。
 
-```el-fragment
+```el-signature
 virtual get count(): Number
 ```
 
@@ -51,7 +51,7 @@ console.stdout.writeLine(scores.count)
 
 删除给定键对应的条目。
 
-```el-fragment
+```el-signature
 @discardable virtual fn remove(lookupKey: key): Bool
 ```
 
@@ -75,7 +75,7 @@ scores.remove("ada")
 
 释放预留容量及删除留下的空槽，保持现有键值及顺序合同。
 
-```el-fragment
+```el-signature
 virtual fn compact()
 ```
 
@@ -93,7 +93,7 @@ scores.compact()
 
 删除映射中的全部条目。
 
-```el-fragment
+```el-signature
 virtual fn clear()
 ```
 
@@ -113,7 +113,7 @@ scores.clear()
 条目的 key 和 value 是只读属性；使用 set 更新映射，不会修改已有快照中的条目。
 快照不保证深复制键或值。
 
-```el-fragment
+```el-signature
 virtual fn entries(): Entry[]
 ```
 
@@ -136,7 +136,7 @@ for (let {key: name, value: score} in scores) console.stdout.writeLine(name, " =
 
 判断映射是否含有给定键，不读取或修改对应值。
 
-```el-fragment
+```el-signature
 fn has(lookupKey: key): Bool
 ```
 
@@ -160,7 +160,7 @@ console.stdout.writeLine(users.has("ada"))
 
 查询键对应的值；键不存在时返回 nil。
 
-```el-fragment
+```el-signature
 fn get(lookupKey: key): value | nil_t
 ```
 
@@ -183,7 +183,7 @@ let score = scores.get("ada")
 
 查询映射中的键；键不存在时返回调用方提供的默认值。
 
-```el-fragment
+```el-signature
 fn getOr(lookupKey: key, lazy fallback: value): value
 ```
 
@@ -209,7 +209,7 @@ console.stdout.writeLine(counts.getOr("red", 0))
 
 返回当前键组成的数组快照。
 
-```el-fragment
+```el-signature
 fn keys(): key[]
 ```
 
@@ -231,7 +231,7 @@ console.stdout.writeLine(scores.keys().join(", "))
 
 返回当前值组成的数组快照。
 
-```el-fragment
+```el-signature
 fn values(): value[]
 ```
 

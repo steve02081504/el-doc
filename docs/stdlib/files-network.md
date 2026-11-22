@@ -51,13 +51,13 @@ if (missing is nil_t) {
 文件 API 接受三类引用：相对引用（`file:./config.json` 或直接 `./config.json`，以逻辑 cwd 为基准）、`file:` 绝对引用，以及其它 provider 的引用（如 `https://...`）。引用只在解析时才与当前上下文结合，`Location` 保存 provider 身份和规范位置。
 
 ```el
-import { currentDirectory, resolvePath, parentPath, fileName, isDirectory } from "el:filesystem/"
+import { currentDirectory, resolvePath, fileName, isDirectory } from "el:filesystem/"
 
 console.stdout.writeLine("cwd: ", currentDirectory().identifier)
 
 let config = resolvePath("file:./config.json")
 console.stdout.writeLine("name: ", fileName(config))
-console.stdout.writeLine("dir: ", isDirectory(parentPath(config)))
+console.stdout.writeLine("dir: ", isDirectory(config.parent))
 ```
 
 常用的位置操作还有 `directoryNames(reference)` 列目录、`makeDirectories(reference)` 建目录、`removeFile(reference)` 删文件、`copyFile(source, target)` 复制、`replaceFile(source, target)` 原子替换。Web 端的 `https:` 位置能读，但不代表能列目录或写入；缺少所请求能力时返回明确错误。

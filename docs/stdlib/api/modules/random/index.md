@@ -31,7 +31,7 @@
 
 创建独立的可播种伪随机数流；复制实例会复制当前生成状态。
 
-```el-fragment
+```el-signature
 @assign(mode: "copy")
 export class Random
 ```
@@ -57,7 +57,7 @@ let value = random.between(1, 6)
 
 返回构造或最近一次 reseed 使用的原始种子。
 
-```el-fragment
+```el-signature
 get seed(): Number
 ```
 
@@ -77,7 +77,7 @@ let seed = Random(72).seed
 
 将生成器状态重置为指定种子对应的初始状态。
 
-```el-fragment
+```el-signature
 fn reseed(seed: Number)
 ```
 
@@ -96,7 +96,7 @@ random.reseed(72)
 
 从随机流生成一个 8、16 或 32 位无符号字值。
 
-```el-fragment
+```el-signature
 @optimize(data: @{ sortingScalar: "finiteInteger" })
 	fn nextWord(width: Number): Number
 ```
@@ -121,7 +121,7 @@ let word = Random(72).nextWord(16)
 
 从随机流取得指定数量的随机位，并按高位优先累积为 Number。
 
-```el-fragment
+```el-signature
 fn nextBits(bitCount: Number): Number
 ```
 
@@ -145,7 +145,7 @@ let bits = Random(72).nextBits(8)
 
 在两个整数端点之间均匀抽取整数，端点均包含且次序可互换。
 
-```el-fragment
+```el-signature
 fn between(minimum: Number, maximum: Number): Number
 ```
 
@@ -171,7 +171,7 @@ let die = Random(72).between(1, 6)
 
 在两个整数端点之间抽取整数，包含较小端点但排除较大端点。
 
-```el-fragment
+```el-signature
 @optimize(data: @{ sortingScalar: "finiteInteger", lengthRange: @{ firstArgument: 0, secondArgument: 1 } })
 	fn betweenExclusive(minimum: Number, maximum: Number): Number
 ```
@@ -198,7 +198,7 @@ let index = Random(72).betweenExclusive(0, 6)
 
 在二进制网格上抽取 [0, 1) 内的数；inclusive 为真时包含 1。
 
-```el-fragment
+```el-signature
 fn unit(bitCount: Number = Number(53), inclusive: Bool = f): Number
 ```
 
@@ -224,7 +224,7 @@ let sample = Random(72).unit()
 
 在两个有限实数端点之间按指定二进制网格精度抽样。
 
-```el-fragment
+```el-signature
 fn realBetween(minimum: Number, maximum: Number, bitCount: Number = Number(53), inclusive: Bool = f): Number
 ```
 
@@ -254,7 +254,7 @@ let sample = Random(72).realBetween(-1, 1)
 
 从随机流抽取一个布尔值。
 
-```el-fragment
+```el-signature
 fn boolean(): Bool
 ```
 
@@ -274,7 +274,7 @@ let heads = Random(72).boolean()
 
 从非空、可按整数索引读取的集合中均匀选择一个元素。
 
-```el-fragment
+```el-signature
 fn pick(values)
 ```
 
@@ -296,7 +296,7 @@ let choice = Random(72).pick(@["red", "blue"])
 
 生成指定长度、每项取值 0 到 255 的随机字节数组。
 
-```el-fragment
+```el-signature
 @optimize(data: @{ sortingResult: @{ fresh: t, element: "finiteInteger", minimum: 0, maximum: 255, lengthArgument: 0 } })
 	fn bytes(count: Number): Array<element: Number>
 ```
@@ -321,7 +321,7 @@ let data = Random(72).bytes(4)
 
 原地随机打乱可读写、支持 count 和整数索引的集合。
 
-```el-fragment
+```el-signature
 fn shuffle(values)
 ```
 
@@ -342,7 +342,7 @@ Random(72).shuffle(values)
 
 共享的线程安全随机数流；各调用按同一状态序列消耗随机值。
 
-```el-fragment
+```el-signature
 export lazy let rand: SharedRandom = SharedRandom()
 ```
 

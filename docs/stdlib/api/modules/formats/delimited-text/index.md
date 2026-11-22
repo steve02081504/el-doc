@@ -20,7 +20,7 @@
 
 按 RFC 4180 引号规则解析逗号分隔文本；单元格保持为文本，不推断表头或类型。
 
-```el-fragment
+```el-signature
 export fn parseCSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]
 ```
 
@@ -47,7 +47,7 @@ let rows = parseCSV("name,role\nAda,engineer")
 
 按制表符分隔规则解析文本，单元格内容以文本形式保留。
 
-```el-fragment
+```el-signature
 export fn parseTSV(source: Text, limits: JsonLimits = JsonLimits()): Text[][]
 ```
 
@@ -74,7 +74,7 @@ let rows = parseTSV("name\trole\nAda\tengineer")
 
 编码文本行数组；含分隔符、引号或换行的单元格加引号，内部引号双写。
 
-```el-fragment
+```el-signature
 export fn writeDelimited(rows: Text[][], delimiter: Text = ",", limits: JsonLimits = JsonLimits()): Text
 ```
 
@@ -103,7 +103,7 @@ let text = writeDelimited(@[@["name", "role"], @["Ada", "engineer"]], ";")
 
 将文本单元格二维数组编码为 RFC 4180 风格 CSV，不添加表头或推断类型。
 
-```el-fragment
+```el-signature
 export fn writeCSV(rows: Text[][], limits: JsonLimits = JsonLimits()): Text
 ```
 
@@ -130,7 +130,7 @@ let text = writeCSV(@[@["name", "role"], @["Ada", "engineer"]])
 
 将文本单元格二维数组编码为制表符分隔文本，使用与 CSV 相同的引号规则。
 
-```el-fragment
+```el-signature
 export fn writeTSV(rows: Text[][], limits: JsonLimits = JsonLimits()): Text
 ```
 
@@ -153,17 +153,18 @@ let text = writeTSV(@[@["name", "role"], @["Ada", "engineer"]])
 
 ## CsvRowWriter {#api-ed8b9a1c196cad0dc6d6}
 
-源码：`src/stdlib/formats/delimited-text/index.el:163` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L163)
+源码：`src/stdlib/formats/delimited-text/index.el:164` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L164)
 
 持有一个 CSV 输出流。每次写入按 UTF-8 追加一批完整的 CRLF 记录。
 
-```el-fragment
+```el-signature
 export @assign(mode: "shared") class CsvRowWriter
 ```
 
 ### 示例：逐批写入一条 CSV 记录
 
 ```el
+import { openCSVWriter } from "el:formats/delimited-text/index.el"
 let writer = openCSVWriter("output.csv")
 writer.writeBatch(@[@["name", "Ada"]])
 writer.close()
@@ -171,11 +172,11 @@ writer.close()
 
 ## CsvRowWriter.writeBatch {#api-7e1dbba9af5c9b6c1b6b}
 
-源码：`src/stdlib/formats/delimited-text/index.el:177` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L177)
+源码：`src/stdlib/formats/delimited-text/index.el:179` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L179)
 
 编码并写出一批记录。编码限制按批应用，批内编码成功后才开始写入。
 
-```el-fragment
+```el-signature
 fn writeBatch(rows: Text[][], limits: JsonLimits = JsonLimits()): nil_t
 ```
 
@@ -190,6 +191,7 @@ fn writeBatch(rows: Text[][], limits: JsonLimits = JsonLimits()): nil_t
 ### 示例：写入一批 CSV 记录
 
 ```el
+import { openCSVWriter } from "el:formats/delimited-text/index.el"
 let writer = openCSVWriter("output.csv")
 writer.writeBatch(@[@["name", "Ada"]])
 writer.close()
@@ -197,11 +199,11 @@ writer.close()
 
 ## openCSVWriter {#api-6bc989c7af5ed7660d74}
 
-源码：`src/stdlib/formats/delimited-text/index.el:192` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L192)
+源码：`src/stdlib/formats/delimited-text/index.el:195` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L195)
 
 创建或截断目标文件并打开 UTF-8 CSV 写入器。调用方应在完成后关闭。
 
-```el-fragment
+```el-signature
 export fn openCSVWriter(reference): CsvRowWriter
 ```
 
@@ -214,6 +216,7 @@ export fn openCSVWriter(reference): CsvRowWriter
 ### 示例：打开 CSV 文件并关闭写入器
 
 ```el
+import { openCSVWriter } from "el:formats/delimited-text/index.el"
 let writer = openCSVWriter("output.csv")
 writer.close()
 ```

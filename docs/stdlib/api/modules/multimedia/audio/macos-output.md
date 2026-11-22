@@ -24,7 +24,7 @@
 
 拥有单线程有界 PCM16 设备队列；入队时复制音频块，队列满时立即返回假。
 
-```el-fragment
+```el-signature
 export @assign(mode: "shared") class PcmOutput
 ```
 
@@ -36,7 +36,7 @@ export @assign(mode: "shared") class PcmOutput
 
 **失败与异常**：设备不可用、参数无效或原生初始化失败时抛出 CaptureError。
 
-### 示例：创建播放器并提交一块
+### 示例：创建播放器并提交一块（需调用方提供对象或绑定）
 
 ```el
 let output = PcmOutput(audio.format, 4, 1024)
@@ -45,11 +45,11 @@ let accepted = output.enqueue(audio)
 
 ## PcmOutput.enqueue {#api-f7fc20d16cdc9fcf6a7f}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:111` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L111)
+源码：`src/stdlib/multimedia/audio/macos-output.el:112` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L112)
 
 尝试提交音频块；样本在返回前复制，队列无空槽时不等待并返回假。
 
-```el-fragment
+```el-signature
 fn enqueue(audio: PcmAudio): Bool
 ```
 
@@ -64,20 +64,21 @@ fn enqueue(audio: PcmAudio): Bool
 ### 示例：向设备提交音频
 
 ```el
+// @external output, chunk
 if (!output.enqueue(chunk)) sleep(2)
 ```
 
 ## PcmOutput.finish {#api-a9232d52a82db940d1c1}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:145` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L145)
+源码：`src/stdlib/multimedia/audio/macos-output.el:146` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L146)
 
 标记不再提交新块；设备继续播放已经提交的音频。
 
-```el-fragment
+```el-signature
 fn finish()
 ```
 
-### 示例：提交完成后等待设备空闲
+### 示例：提交完成后等待设备空闲（需调用方提供对象或绑定）
 
 ```el
 output.finish()
@@ -86,11 +87,11 @@ while (!output.idle()) sleep(2)
 
 ## PcmOutput.idle {#api-252297757c2e3d93dbbb}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:153` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L153)
+源码：`src/stdlib/multimedia/audio/macos-output.el:155` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L155)
 
 检查音频队列中的所有缓冲区是否已完成。
 
-```el-fragment
+```el-signature
 fn idle(): Bool
 ```
 
@@ -101,20 +102,21 @@ fn idle(): Bool
 ### 示例：等待输出排空
 
 ```el
+// @external output
 while (!output.idle()) sleep(2)
 ```
 
 ## PcmOutput.clear {#api-022cec408375d7d0fe85}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:168` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L168)
+源码：`src/stdlib/multimedia/audio/macos-output.el:170` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L170)
 
 清除设备当前排队的音频块。
 
-```el-fragment
+```el-signature
 fn clear()
 ```
 
-### 示例：停止待播音频
+### 示例：停止待播音频（需调用方提供对象或绑定）
 
 ```el
 output.clear()
@@ -122,16 +124,17 @@ output.clear()
 
 ## PcmOutput.close {#api-098b06b79bc52eca15af}
 
-源码：`src/stdlib/multimedia/audio/macos-output.el:184` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L184)
+源码：`src/stdlib/multimedia/audio/macos-output.el:187` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/macos-output.el#L187)
 
 停止播放并释放设备队列及原生句柄。
 
-```el-fragment
+```el-signature
 fn close()
 ```
 
 ### 示例：关闭音频输出
 
 ```el
+// @external output
 output.close()
 ```

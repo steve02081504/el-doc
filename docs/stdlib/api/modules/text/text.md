@@ -34,7 +34,7 @@
 裸文本视图装载时会复制其标量。切片与拼接可共享不可变 rope 节点，但得到独立 Text 值。
 `.count` 返回以 Unicode 标量计的长度，`.byte_count` 返回 UTF-8 编码字节数。
 
-```el-fragment
+```el-signature
 @pure
 @assign(mode: "copy")
 export class Text extends Array<element: Char>
@@ -57,7 +57,7 @@ console.stdout.writeLine(text.count, " ", text.byte_count)
 
 将文本中所有匹配项替换为指定内容，并返回新文本。
 
-```el-fragment
+```el-signature
 fn replaceAll(pattern, replacement): Text
 ```
 
@@ -82,7 +82,7 @@ console.stdout.writeLine(renamed)
 
 按文本分隔符或文本模式拆分内容，返回各段组成的数组。
 
-```el-fragment
+```el-signature
 fn split(pattern): Text[]
 ```
 
@@ -105,7 +105,7 @@ console.stdout.writeLine(parts.join(" | "))
 
 展平当前 rope，释放本值对多余片段及编码缓存的持有，保持字符宽度。
 
-```el-fragment
+```el-signature
 override fn compact()
 ```
 
@@ -122,11 +122,11 @@ text.compact()
 
 返回文本编码为 UTF-8 后占用的字节数。
 
-```el-fragment
+```el-signature
 get byte_count(): Integer
 ```
 
-**返回类型**：[`Integer`](../../types.md#api-45690472287900730a5f)
+**返回类型**：[`Integer`](../platform/machine/integer.md#api-45690472287900730a5f)
 
 **返回值**：UTF-8 字节数；这与 Unicode 标量数量不同。
 
@@ -143,7 +143,7 @@ console.stdout.writeLine(text.count, " ", text.byte_count)
 
 判断文本是否以给定前缀开头。
 
-```el-fragment
+```el-signature
 fn startsWith(prefix: Text): Bool
 ```
 
@@ -165,7 +165,7 @@ console.stdout.writeLine("reports/2026".startsWith("reports"))
 
 判断文本是否以给定后缀结尾。
 
-```el-fragment
+```el-signature
 fn endsWith(suffix: Text): Bool
 ```
 
@@ -187,7 +187,7 @@ console.stdout.writeLine("summary.txt".endsWith(".txt"))
 
 查找子串，返回首个匹配的标量下标，未找到为 nil。
 
-```el-fragment
+```el-signature
 fn indexOf(needle: Text, start: Number = 0): Number | nil_t
 ```
 
@@ -210,7 +210,7 @@ console.stdout.writeLine(text.indexOf("one", 1) ?? -1)
 
 判断文本是否包含给定子串。
 
-```el-fragment
+```el-signature
 fn contains(needle: Text): Bool
 ```
 
@@ -232,7 +232,7 @@ console.stdout.writeLine("reports/2026".contains("2026"))
 
 从末尾移除属于给定字符集合的连续标量，返回文本值，不修改接收者。
 
-```el-fragment
+```el-signature
 fn trimEndChars(characters: Text): Text
 ```
 
@@ -260,11 +260,11 @@ abc
 
 读取指定 Unicode 标量下标处的字符。
 
-```el-fragment
+```el-signature
 virtual fn character(index: Number): Char
 ```
 
-**返回类型**：[`Char`](../../types.md#api-3166547d46e101216338)
+**返回类型**：[`Char`](character.md#api-f77d02dfef333b10f57f)
 
 **参数**：index 从零开始的标量下标。
 
@@ -285,7 +285,7 @@ console.stdout.writeLine(first)
 
 返回指定左闭右开标量下标区间的文本。
 
-```el-fragment
+```el-signature
 virtual fn slice(start: Number, to: Number): Text
 ```
 
@@ -311,7 +311,7 @@ console.stdout.writeLine("reports/2026".slice(0, 7))
 
 将 Unicode 标量值转换为只含该标量的文本；拒绝代理项和超出 Unicode 范围的值。
 
-```el-fragment
+```el-signature
 export fn text_scalar(value: Integer): Text
 ```
 
@@ -342,7 +342,7 @@ console.stdout.writeLine(text_scalar(20013))
 创建只读 TextView 类型；可将元素统一宽度 bitWidth 和标量数量 size 固定为正值。
 0 表示该维度不固定。固定宽度要求来源宽度相同，固定长度要求请求的视图长度相同。
 
-```el-fragment
+```el-signature
 export fn TextView(bitWidth = 0, size = 0): type
 ```
 
@@ -376,7 +376,7 @@ console.stdout.writeLine(view.count())
 创建受约束的 Text 类型。bitWidth 固定统一元素宽度，size 固定 Unicode 标量数量；0 表示不固定。
 固定宽度构造和写入会检查字符声明宽度及标量值，固定长度文本不能改变长度。
 
-```el-fragment
+```el-signature
 export fn Text(bitWidth = 0, size = 0): type
 ```
 

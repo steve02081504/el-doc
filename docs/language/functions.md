@@ -155,7 +155,8 @@ console.stdout.writeLine(counter())   // 2
 
 ## 把 lambda 传给集合算法
 
-```el-fragment
+```el
+// @external square
 let numbers = @[1, 2, 3, 4]
 let squared = numbers.map(value => value * value)
 let evens = numbers.filter(value => value % 2 == 0)
@@ -220,7 +221,8 @@ fn outer() {
 
 `inner` 里的定向返回结束 `middle`，`middle` 再把值交给 `outer`；目标写 `outer` 就结束 `outer`。同名遮蔽按声明身份处理：
 
-```el-fragment
+```el
+// @external invoke
 fn shadow() {
 	fn shadow() {
 		invoke(fn() { return 8 from shadow })   // 目标是内层 shadow 的这次调用
@@ -236,7 +238,8 @@ fn shadow() {
 
 返回类型推断包含所有 `return ... from 目标` 的返回值，不只是普通 `return`；`findName` 因此能从 `name` 推断出返回 `Text`。定向返回本身不产生可读取的值，类型是 `Never`，能放在表达式位置或分支里，不会给类型合流制造假的 `nil` 分支：
 
-```el-fragment
+```el
+// @external performWork
 fn requireReady(ready: Bool) {
 	if (!ready) return from requireReady
 	performWork()
@@ -252,7 +255,8 @@ fn requireReady(ready: Bool) {
 - 目标已退出或已开始不可逆退出清理（Exiting）就不再接受新的返回；闭包能保住值，不能恢复已退出的 activation。
 - 没有有效目标属于运行时 UB。ELC 只检查词法名字、类别、唯一性与返回类型；目标是否还活着、是否在允许返回链上，由 ELF 执行时证明，证明不了就报 error，而不是把良构程序判成编译失败。
 
-```el-fragment
+```el
+// @external invoke
 import { sleep } from "el:concurrency/"
 
 fn load(): Text {

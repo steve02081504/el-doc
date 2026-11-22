@@ -16,7 +16,7 @@
 
 用精确 Number 消元求解方阵系统 A X = B；不使用浮点主元阈值。
 
-```el-fragment
+```el-signature
 export fn solve(borrow input: Matrix, borrow right: Matrix): Matrix
 ```
 

@@ -16,7 +16,7 @@
 
 树索引遍历的输入契约失败；子树区间与 Euler 游走共享此错误。
 
-```el-fragment
+```el-signature
 @assign(mode: "copy")
 export class SubtreeIntervalError extends Error
 ```
@@ -34,7 +34,7 @@ throw error
 
 校验并返回树索引的节点键上界。
 
-```el-fragment
+```el-signature
 export fn tree_node_count(count: Number): Number
 ```
 
@@ -57,7 +57,7 @@ console.stdout.writeLine(tree_node_count(3))
 
 校验并返回 [0, count) 内的稳定整数节点键。
 
-```el-fragment
+```el-signature
 export fn tree_node_key(key: Number, count: Number): Number
 ```
 
@@ -81,7 +81,7 @@ console.stdout.writeLine(tree_node_key(2, 3))
 用迭代事件栈遍历根可达的稳定整数键树；进入和退出各报告一次。
 事件顺序保证先报告父节点的进入、再报告其子节点事件，最后报告父节点的退出。
 
-```el-fragment
+```el-signature
 export fn tree_dfs_events(count: Number, root: Number, childrenOf: fn(key: Number): Number[], visit: fn(key: Number, parent: Number, entering: Bool): nil_t): Number
 ```
 

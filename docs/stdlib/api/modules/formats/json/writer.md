@@ -16,7 +16,7 @@
 
 将 EL 值编码为严格 JSON 文本，并按给定限制控制递归与输出规模。
 
-```el-fragment
+```el-signature
 export fn writeJSON(value: any, limits: JsonLimits = JsonLimits()): Text
 ```
 

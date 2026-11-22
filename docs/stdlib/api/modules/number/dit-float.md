@@ -16,7 +16,7 @@
 
 用目标基数创建软件浮点类型，支持有符号零、无穷和 NaN。`sign_dits: 0` 是不带符号数位的无符号布局。
 
-```el-fragment
+```el-signature
 export fn DitFloat(sign_dits = 1, fraction_dits = 0, exponent_dits = 0, exponent_bias = 0, min = nil, max = nil, overflow = "ub"): type
 ```
 

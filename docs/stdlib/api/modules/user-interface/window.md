@@ -16,7 +16,7 @@
 
 将主题加载与刷新生命周期绑定到窗口；窗口关闭时刷新控制器随 View 释放。
 
-```el-fragment
+```el-signature
 export fn installWindowThemes(window, root: Definition, environment = nil, loader: (fn(any): Theme) | nil_t = nil, loaderRevision: (fn(): Number) | nil_t = nil, prepare: (fn(Bool): nil_t) | nil_t = nil)
 ```
 
@@ -49,7 +49,7 @@ runWindow(window)
 
 根据界面定义创建并显示原生窗口，安装默认主题刷新。
 
-```el-fragment
+```el-signature
 export fn showWindow(definition: Definition, title: Text = "EL", width: Number = 480, height: Number = 360)
 ```
 
@@ -78,7 +78,7 @@ runWindow(window)
 
 将网格或受支持的数据源包装为数据视图后创建原生窗口。
 
-```el-fragment
+```el-signature
 export fn showWindow(source, title: Text = "EL", width: Number = 480, height: Number = 360)
 ```
 
@@ -92,7 +92,7 @@ export fn showWindow(source, title: Text = "EL", width: Number = 480, height: Nu
 
 **返回值**：新建窗口句柄。
 
-### 示例：显示网格数据
+### 示例：显示网格数据（需调用方提供对象或绑定）
 
 ```el
 let window = showWindow(rows, "数据")
@@ -105,7 +105,7 @@ runWindow(window)
 
 将受限的界面描述文本解析为对象图，再创建原生窗口。
 
-```el-fragment
+```el-signature
 export fn showWindow(description: Text, title: Text = "EL", width: Number = 480, height: Number = 360)
 ```
 
@@ -134,7 +134,7 @@ runWindow(window)
 
 将描述文本解析为对象图，并把数据源作为描述中的显式绑定。
 
-```el-fragment
+```el-signature
 export fn showWindow(description: Text, source, width: Number = 480, height: Number = 360)
 ```
 
@@ -148,7 +148,7 @@ export fn showWindow(description: Text, source, width: Number = 480, height: Num
 
 **返回值**：新建窗口句柄。
 
-### 示例：在描述窗口中绑定数据
+### 示例：在描述窗口中绑定数据（需调用方提供对象或绑定）
 
 ```el
 let window = showWindow("column { grid: $0 }", rows)

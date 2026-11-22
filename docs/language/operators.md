@@ -232,7 +232,8 @@ console.log.value(-sum == Vec2(-4, -2))     // t
 
 同名的类外声明把左操作数写成普通参数：
 
-```el-fragment
+```el
+// @external Vec2
 operator +(lhs: Vec2, rhs: Number): Vec2 {
 	return Vec2(lhs.x + rhs, lhs.y)
 }

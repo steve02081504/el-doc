@@ -21,7 +21,7 @@
 
 描述节点的流向、间距、尺寸约束、权重、换行与滚动溢出策略；属性变更会发布变化通知。
 
-```el-fragment
+```el-signature
 @assign(mode: "shared")
 export class LayoutStyle
 ```
@@ -40,7 +40,7 @@ style.gap = 8
 
 一个可观察的界面定义节点，保存元素种类、文本、标识、样式、主题、监听器和子边。
 
-```el-fragment
+```el-signature
 @assign(mode: "shared")
 export class Definition
 ```
@@ -59,13 +59,13 @@ title.enabled = t
 
 可选的局部语义 Theme，按当前出现位置参与父子主题解析。
 
-```el-fragment
+```el-signature
 let theme: Theme | nil_t
 ```
 
 **类型**：[`Theme`](../theme/model.md#api-2f8f76e6db4068dfe678) | [`nil_t`](../language/values.md#api-86357ad50ef0535f6333)
 
-### 示例：为根节点设置主色
+### 示例：为根节点设置主色（需调用方提供对象或绑定）
 
 ```el
 root.theme = Theme(@{primary: 0x80A7F0})
@@ -77,7 +77,7 @@ root.theme = Theme(@{primary: 0x80A7F0})
 
 用一个 Unicode 标量替代每个绘制的文本标量。设置后，输入框跳过热字符串匹配。
 
-```el-fragment
+```el-signature
 get textMask(): Text | nil_t
 ```
 
@@ -96,12 +96,12 @@ password.textMask = "•"
 
 一次 GUI 输入事件的可变传播状态与载荷；监听器可停止传播或阻止默认处理。
 
-```el-fragment
+```el-signature
 @assign(mode: "shared")
 export class GuiEvent
 ```
 
-### 示例：在监听器中阻止默认行为
+### 示例：在监听器中阻止默认行为（需调用方提供对象或绑定）
 
 ```el
 on(button, "click", event => event.preventDefault())
@@ -109,11 +109,11 @@ on(button, "click", event => event.preventDefault())
 
 ## on {#api-bec5c16251ba4e97600c}
 
-源码：`src/stdlib/user-interface/model.el:181` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L181)
+源码：`src/stdlib/user-interface/model.el:182` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L182)
 
 为定义节点注册指定类型的事件监听器，可选择在捕获阶段运行。
 
-```el-fragment
+```el-signature
 export fn on(element: Definition, kind: Text, action, capture: Bool = f)
 ```
 
@@ -128,16 +128,17 @@ export fn on(element: Definition, kind: Text, action, capture: Bool = f)
 ### 示例：注册按钮点击处理
 
 ```el
+// @external button, status
 on(button, "click", event => status.text = "已点击")
 ```
 
 ## element {#api-8fd177f7546412758246}
 
-源码：`src/stdlib/user-interface/model.el:196` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L196)
+源码：`src/stdlib/user-interface/model.el:197` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L197)
 
 创建 `column`、`row`、`label`、`button` 或 `input` 定义；未知种类会抛出错误。
 
-```el-fragment
+```el-signature
 export fn element(kind: Text, text: Text = "", id: Text = ""): Definition
 ```
 
@@ -161,11 +162,11 @@ let save = element("button", "保存", "save")
 
 ## appendChild {#api-cdf7dba1323f03ef85c8}
 
-源码：`src/stdlib/user-interface/model.el:223` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L223)
+源码：`src/stdlib/user-interface/model.el:224` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L224)
 
 将目标定义作为带键子边追加到父节点，并发布父节点变化。
 
-```el-fragment
+```el-signature
 export fn appendChild(parent: Definition, key: Text, target: Definition)
 ```
 
@@ -186,11 +187,11 @@ appendChild(root, "heading", element("label", "设置"))
 
 ## removeChild {#api-89c99015e38050658540}
 
-源码：`src/stdlib/user-interface/model.el:240` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L240)
+源码：`src/stdlib/user-interface/model.el:241` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L241)
 
 按子边键移除第一个匹配项；未找到时不修改模型。
 
-```el-fragment
+```el-signature
 export fn removeChild(parent: Definition, key: Text): Bool
 ```
 
@@ -202,7 +203,7 @@ export fn removeChild(parent: Definition, key: Text): Bool
 
 **返回值**：找到并移除时为真，否则为假。
 
-### 示例：移除可选说明行
+### 示例：移除可选说明行（需调用方提供对象或绑定）
 
 ```el
 let removed = removeChild(root, "hint")
@@ -210,11 +211,11 @@ let removed = removeChild(root, "hint")
 
 ## moveChild {#api-0a122f09a5627320ce81}
 
-源码：`src/stdlib/user-interface/model.el:262` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L262)
+源码：`src/stdlib/user-interface/model.el:264` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/model.el#L264)
 
 将已有子边移动到指定的最终索引；这是重排，不会创建新的边。
 
-```el-fragment
+```el-signature
 export fn moveChild(parent: Definition, key: Text, destination: Number)
 ```
 
@@ -229,5 +230,6 @@ export fn moveChild(parent: Definition, key: Text, destination: Number)
 ### 示例：将第二项移到首位
 
 ```el
+// @external root
 moveChild(root, "second", 0)
 ```

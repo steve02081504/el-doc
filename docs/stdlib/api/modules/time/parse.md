@@ -16,7 +16,7 @@
 
 解析时间文本并返回字段、偏移和解析状态。
 
-```el-fragment
+```el-signature
 export fn parseTime(source: Text, standard: Bool): ParsedTime
 ```
 

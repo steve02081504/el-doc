@@ -16,7 +16,7 @@
 
 判断目标原生浮点类型能否无舍入地表达该有限有理数；目标没有可用的数值编解码器时报 NativeFloatCodecUnavailable。
 
-```el-fragment
+```el-signature
 export fn canRepresentExactly<T: type>(value: NumericRatio): Bool
 ```
 

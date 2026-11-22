@@ -24,11 +24,11 @@
 
 由窗口拥有的定时器句柄；取消会停止后续回调并释放回调捕获。
 
-```el-fragment
+```el-signature
 export class WindowTimer
 ```
 
-### 示例：取消一个窗口定时器
+### 示例：取消一个窗口定时器（需调用方提供对象或绑定）
 
 ```el
 let timer = window.every(1000, tick => updateClock())
@@ -37,11 +37,11 @@ timer.cancel()
 
 ## WindowTimer.cancel {#api-8629377d5cfbe5cd888b}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:192` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L192)
+源码：`src/stdlib/user-interface/platform/windows/window.el:193` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L193)
 
 停止定时器并释放其回调；重复调用不会产生额外副作用。
 
-```el-fragment
+```el-signature
 fn cancel()
 ```
 
@@ -50,16 +50,17 @@ fn cancel()
 ### 示例：停止定时器
 
 ```el
+// @external timer
 timer.cancel()
 ```
 
 ## Window {#api-9dc34e68c5ad778621d4}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:218` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L218)
+源码：`src/stdlib/user-interface/platform/windows/window.el:219` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L219)
 
 表示一个原生窗口及其界面视图、输入状态、绘制主题和窗口级资源。
 
-```el-fragment
+```el-signature
 export class Window
 ```
 
@@ -72,17 +73,17 @@ runWindow(window)
 
 ## Window.theme {#api-e300f3030755d4c6f210}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:259` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L259)
+源码：`src/stdlib/user-interface/platform/windows/window.el:260` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L260)
 
 读取或替换窗口的绘制主题；赋值后立即刷新绘制。
 
-```el-fragment
+```el-signature
 get theme(): PaintTheme
 ```
 
 **返回类型**：[`PaintTheme`](../../drawing.md#api-4be1353cf98b66267dcf)
 
-### 示例：设置深色绘制主题
+### 示例：设置深色绘制主题（需调用方提供对象或绑定）
 
 ```el
 window.theme = darkPaintTheme()
@@ -90,11 +91,11 @@ window.theme = darkPaintTheme()
 
 ## Window.onArrow {#api-0d5ac5569f84380b00ef}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:602` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L602)
+源码：`src/stdlib/user-interface/platform/windows/window.el:604` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L604)
 
 设置窗口级方向键处理器；没有元素焦点时接收方向键按下事件。
 
-```el-fragment
+```el-signature
 fn onArrow(action)
 ```
 
@@ -103,16 +104,17 @@ fn onArrow(action)
 ### 示例：注册方向键处理
 
 ```el
+// @external window, moveSelection
 window.onArrow((dx, dy) => moveSelection(dx, dy))
 ```
 
 ## Window.every {#api-397c3dde87e61de92229}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:618` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L618)
+源码：`src/stdlib/user-interface/platform/windows/window.el:620` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L620)
 
 注册窗口级近似定时器，窗口关闭时自动取消。
 
-```el-fragment
+```el-signature
 @discardable fn every(milliseconds: Number, action): WindowTimer
 ```
 
@@ -126,7 +128,7 @@ window.onArrow((dx, dy) => moveSelection(dx, dy))
 
 **失败与异常**：间隔无效、窗口关闭或原生定时器创建失败时抛出错误。
 
-### 示例：每秒更新标签
+### 示例：每秒更新标签（需调用方提供对象或绑定）
 
 ```el
 discard(window.every(1000, tick => label.text = "更新"))
@@ -134,11 +136,11 @@ discard(window.every(1000, tick => label.text = "更新"))
 
 ## Window.getById {#api-10abbed4e4f712c61c10}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:648` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L648)
+源码：`src/stdlib/user-interface/platform/windows/window.el:651` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L651)
 
 按精确 id 获取当前呈现中的元素句柄。
 
-```el-fragment
+```el-signature
 fn getById(id: Text): ElementHandle
 ```
 
@@ -153,23 +155,24 @@ fn getById(id: Text): ElementHandle
 ### 示例：更新已挂载标签
 
 ```el
+// @external window
 let label = window.getById("status")
 label.text = "就绪"
 ```
 
 ## runWindow {#api-5a35178b26a593b8361d}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:753` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L753)
+源码：`src/stdlib/user-interface/platform/windows/window.el:756` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L756)
 
 运行单个窗口的事件循环，并在退出时关闭窗口。
 
-```el-fragment
+```el-signature
 export fn runWindow(window: Window)
 ```
 
 **参数**：window 要运行的窗口。
 
-### 示例：运行窗口直到关闭
+### 示例：运行窗口直到关闭（需调用方提供对象或绑定）
 
 ```el
 runWindow(window)
@@ -177,11 +180,11 @@ runWindow(window)
 
 ## runWindows {#api-d58299be18ae530eb594}
 
-源码：`src/stdlib/user-interface/platform/windows/window.el:777` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L777)
+源码：`src/stdlib/user-interface/platform/windows/window.el:781` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/platform/windows/window.el#L781)
 
 在同一事件循环中运行多个窗口；循环退出时关闭列表中的窗口。
 
-```el-fragment
+```el-signature
 export fn runWindows(windows: Window[])
 ```
 
@@ -190,5 +193,6 @@ export fn runWindows(windows: Window[])
 ### 示例：同时运行两个窗口
 
 ```el
+// @external firstWindow, secondWindow
 runWindows(@[firstWindow, secondWindow])
 ```

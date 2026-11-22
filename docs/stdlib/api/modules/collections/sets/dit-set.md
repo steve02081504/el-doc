@@ -22,7 +22,7 @@
 
 创建 N 位目标基数数位序列；每个数位是 `0..R-1` 的精确整数，R 由目标事实给出。
 
-```el-fragment
+```el-signature
 export fn DitSet(size: Number): type
 ```
 
@@ -47,7 +47,7 @@ console.stdout.writeLine(flags.toNumber())
 
 将数位序列按目标基数解释为精确数值。
 
-```el-fragment
+```el-signature
 fn toNumber(): Number
 ```
 
@@ -68,7 +68,7 @@ console.stdout.writeLine(flags.toNumber())
 
 将数位序列循环左移指定位数；移出的高位绕回低位。
 
-```el-fragment
+```el-signature
 fn rotateLeft(count: Number): DitSet<size: size>
 ```
 
@@ -91,7 +91,7 @@ console.stdout.writeLine(flags.rotateLeft(1).toNumber())
 
 将数位序列循环右移指定位数；移出的低位绕回高位。
 
-```el-fragment
+```el-signature
 fn rotateRight(count: Number): DitSet<size: size>
 ```
 

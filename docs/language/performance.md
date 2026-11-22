@@ -70,7 +70,8 @@ fn sumOfSquares(values: Number[]) {
 
 `@bounded(time: O(...), memory: O(...), sizes: {...})` 声明最坏情况预算，可覆盖函数、方法、构造器、extern 签名和 lambda。时间按最坏情况总工作量计，空间按本次调用新增的峰值存活存储计；省略的维度按 `O(n)` 检查：
 
-```el-fragment
+```el
+// @external O, n
 @bounded(time: O(n), memory: O(1))
 fn maximum(values: Number[]) {
 	let best = values[0]
@@ -172,7 +173,8 @@ console.stdout.writeLine(total.toHost().flat(0))
 ??? note "可选 · 深入：GPU 的传输、内存与融合细节"
     批量或需要重叠的传输用 `fromHostAsync`：它返回一个单消费者上传对象，`event` 可等待，`wait()` 阻塞，`take()` 等待完成并接管设备缓冲；取出之后关闭上传不再影响这个张量。
 
-    ```el-fragment
+    ```el
+    // @external device, Host, F32
     let upload = device.fromHostAsync(Host(@[2], @[F32(1), F32(2)]))
     let resident = upload.take()
     console.stdout.writeLine(resident.toHost().flat(0))
@@ -180,7 +182,8 @@ console.stdout.writeLine(total.toHost().flat(0))
 
     内存用量按 EL 会话显式持有的原生缓冲容量统计，不是整卡显存或进程内存：
 
-    ```el-fragment
+    ```el
+    // @external device
     device.resetMemoryPeaks()
     let usage = device.memoryUsage()
     console.stdout.writeLine(usage.allocatedBytes)
@@ -191,7 +194,8 @@ console.stdout.writeLine(total.toHost().flat(0))
 
     队列数量用 `queueCount` 查，`selectQueue(index)` 选队列，`recordEvent()` 与 `dependOn(event)` 表达跨队列依赖。设备时钟区间由 `beginTimestamp()` 返回，区间用 `end()` 收尾、用 `milliseconds()` 读取。张量本身的逐元素链可以用融合计划合并，减少中间值：
 
-    ```el-fragment
+    ```el
+    // @external total
     let plan = total.fusionPlan(inputCount: 1)
     plan.output(plan.relu(plan.binary("mul", plan.input(0), plan.input(0))))
     let fused = total.fuse(plan)
@@ -201,7 +205,8 @@ console.stdout.writeLine(total.toHost().flat(0))
 
     存储精度的片段沿用上面的 `F32`、`Host` 与 `device`：
 
-    ```el-fragment
+    ```el
+    // @external F32, Host
     let half = TensorDevice<element: F32, precision: "binary16">()
     let packed = half.fromHost(Host(@[3], @[F32(1), F32(-2), F32(3)]))
     console.stdout.writeLine(packed.storageBits)    // 16

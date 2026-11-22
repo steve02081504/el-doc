@@ -16,7 +16,7 @@
 
 每个目标数码独立进行模加，不把进位传给高位。
 
-```el-fragment
+```el-signature
 export fn dit_add_mod(left: Number, right: Number): Number
 ```
 
@@ -43,7 +43,7 @@ console.stdout.writeLine(dit_add_mod(0, 1))
 
 每个目标数码独立进行模减，不向高位借位。
 
-```el-fragment
+```el-signature
 export fn dit_sub_mod(left: Number, right: Number): Number
 ```
 
@@ -70,7 +70,7 @@ console.stdout.writeLine(dit_sub_mod(1, 1))
 
 逐位取两个整数目标数码的较小值。
 
-```el-fragment
+```el-signature
 export fn dit_min(left: Number, right: Number): Number
 ```
 
@@ -97,7 +97,7 @@ console.stdout.writeLine(dit_min(0, 1))
 
 逐位取两个整数目标数码的较大值。
 
-```el-fragment
+```el-signature
 export fn dit_max(left: Number, right: Number): Number
 ```
 

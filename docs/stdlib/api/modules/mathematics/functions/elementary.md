@@ -16,7 +16,7 @@
 
 计算非负输入的平方根近似值。
 
-```el-fragment
+```el-signature
 @pure
 export fn sqrt(value, epsilon = nil)
 ```
@@ -44,7 +44,7 @@ let root = sqrt(9, 0.001)
 
 计算自然指数函数的近似值。
 
-```el-fragment
+```el-signature
 @pure
 export fn exp(value)
 ```
@@ -65,7 +65,7 @@ let growth = exp(1)
 
 计算自然对数近似值。
 
-```el-fragment
+```el-signature
 @pure
 export fn log(value)
 ```
@@ -88,7 +88,7 @@ let logarithm = log(2)
 
 计算以弧度表示的正弦近似值。
 
-```el-fragment
+```el-signature
 @pure
 @optimize(data: @{ operation: "sin" })
 export fn sin(value)
@@ -112,7 +112,7 @@ let sample = sin(1.5707963267948966)
 
 按指定 Number 类型的精度合同构造圆周率近似值。
 
-```el-fragment
+```el-signature
 @pure
 @optimize(data: @{ operation: "pi" })
 export fn pi(Result: type)
@@ -137,7 +137,7 @@ let circle = pi(Scalar)
 
 计算底数的实数幂；省略 exponent 时计算平方。
 
-```el-fragment
+```el-signature
 export fn pow(base, exponent = Number(2))
 ```
 

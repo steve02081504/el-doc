@@ -31,7 +31,7 @@
 
 创建按元素去重的哈希集合类型。
 
-```el-fragment
+```el-signature
 export fn Set(element: type): type
 ```
 
@@ -55,7 +55,7 @@ console.stdout.writeLine(tags.has("el"))
 
 返回集合中不同元素的数量。
 
-```el-fragment
+```el-signature
 get count(): Number
 ```
 
@@ -78,7 +78,7 @@ console.stdout.writeLine(tags.count)
 
 判断集合中是否已有给定元素。
 
-```el-fragment
+```el-signature
 fn has(value: element): Bool
 ```
 
@@ -102,7 +102,7 @@ console.stdout.writeLine(tags.has("el"))
 
 将元素加入集合；集合已有该元素时不产生重复项。
 
-```el-fragment
+```el-signature
 @discardable fn add(value: element): Bool
 ```
 
@@ -127,7 +127,7 @@ console.stdout.writeLine(tags.count)
 
 从集合中删除给定元素（如果存在）。
 
-```el-fragment
+```el-signature
 @discardable fn remove(value: element): Bool
 ```
 
@@ -151,7 +151,7 @@ tags.remove("el")
 
 返回集合中元素组成的数组快照。
 
-```el-fragment
+```el-signature
 fn values(): element[]
 ```
 
@@ -173,7 +173,7 @@ console.stdout.writeLine(tags.values().join(", "))
 
 返回包含当前集合和另一个集合全部元素的新集合。
 
-```el-fragment
+```el-signature
 fn union(other): Set<element: element>
 ```
 
@@ -199,7 +199,7 @@ console.stdout.writeLine(allTags.union(more).count)
 
 返回仅包含同时存在于两个集合中的元素的新集合。
 
-```el-fragment
+```el-signature
 fn intersection(other): Set<element: element>
 ```
 
@@ -224,7 +224,7 @@ let common = first.intersection(second)
 
 返回存在于当前集合但不在另一个集合中的元素。
 
-```el-fragment
+```el-signature
 fn difference(other): Set<element: element>
 ```
 
@@ -249,7 +249,7 @@ let remaining = all.difference(done)
 
 返回只出现在其中一个集合中的元素。
 
-```el-fragment
+```el-signature
 fn symmetricDifference(other): Set<element: element>
 ```
 
@@ -274,7 +274,7 @@ let changed = before.symmetricDifference(after)
 
 判断当前集合是否为另一个集合的子集。
 
-```el-fragment
+```el-signature
 fn isSubsetOf(other): Bool
 ```
 
@@ -299,7 +299,7 @@ console.stdout.writeLine(required.isSubsetOf(granted))
 
 判断当前集合是否包含另一个集合的全部元素。
 
-```el-fragment
+```el-signature
 fn isSupersetOf(other): Bool
 ```
 
@@ -324,7 +324,7 @@ console.stdout.writeLine(granted.isSupersetOf(required))
 
 判断两个集合是否没有共同元素。
 
-```el-fragment
+```el-signature
 fn isDisjointFrom(other): Bool
 ```
 

@@ -7,6 +7,7 @@
 | 模块 | 接口 |
 | --- | --- |
 | [cryptography/aead.el](../modules/cryptography/aead.md) | [chacha20_poly1305_encrypt](../modules/cryptography/aead.md#api-08ed02675294d0f1cc7d)、[chacha20_poly1305_decrypt](../modules/cryptography/aead.md#api-12a7d04f1b0e750acedd) |
+| [cryptography/bytes.el](../modules/cryptography/bytes.md) | [append_u32le](../modules/cryptography/bytes.md#api-62c62e0594b0769368fd)、[read_u32le](../modules/cryptography/bytes.md#api-af807339462b26e6a4b9)、[hex_of](../modules/cryptography/bytes.md#api-44c4d8572ee965483683)、[hex_bytes](../modules/cryptography/bytes.md#api-aa9c1315980ca9917228)、[constant_time_equal](../modules/cryptography/bytes.md#api-8d93c2aef9939ebe4a96) |
 | [cryptography/chacha20.el](../modules/cryptography/chacha20.md) | [chacha20_xor](../modules/cryptography/chacha20.md#api-bc7a25de7cb7e0682650) |
 | [cryptography/hkdf.el](../modules/cryptography/hkdf.md) | [hkdf_sha256](../modules/cryptography/hkdf.md#api-7c67285c72766cec637c) |
 | [cryptography/hmac.el](../modules/cryptography/hmac.md) | [hmac_sha256](../modules/cryptography/hmac.md#api-da94cb9868cf324a8d93)、[hmac_verify](../modules/cryptography/hmac.md#api-f40a87cdd333f18b2bac) |

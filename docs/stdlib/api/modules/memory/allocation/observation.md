@@ -16,7 +16,7 @@
 
 只用于相等比较的进程观察令牌，不拥有资源；计数按目标 native.word 的无符号值域回绕，完整回绕前须轮询才能区分变化。
 
-```el-fragment
+```el-signature
 export @builtin:vome:unsigned:integer(format: "native.word") class PressureGeneration
 ```
 
@@ -33,7 +33,7 @@ let generation = allocationPressureGeneration()
 
 读取当前压力令牌；新的消费者应先保存初值，之后在自身同步下比较，历史压力不会重放。令牌反映安全压力分派尝试，不表示释放字节或可用内存。
 
-```el-fragment
+```el-signature
 export fn allocationPressureGeneration(): PressureGeneration
 ```
 

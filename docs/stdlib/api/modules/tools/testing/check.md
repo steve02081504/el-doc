@@ -28,7 +28,7 @@
 
 使用值相等语义比较实际值与期望值，失败时报告两侧快照。
 
-```el-fragment
+```el-signature
 fn equal(borrow actual, borrow expected)
 ```
 
@@ -50,7 +50,7 @@ check.equal(2 + 2, 4)
 
 使用身份相等比较两个值，而不比较其内容。
 
-```el-fragment
+```el-signature
 fn same(borrow actual, borrow expected)
 ```
 
@@ -73,7 +73,7 @@ check.same(value, value)
 
 按显式绝对与相对容差比较两个数值。
 
-```el-fragment
+```el-signature
 fn near(actual: Number, expected: Number, absolute: Number, relative: Number)
 ```
 
@@ -99,7 +99,7 @@ check.near(0.1 + 0.2, 0.3, absolute: 0.000001, relative: 0)
 
 断言回调抛出指定类型的异常，并返回捕获到的异常值。
 
-```el-fragment
+```el-signature
 fn throws(expected: type, body)
 ```
 
@@ -111,7 +111,7 @@ fn throws(expected: type, body)
 
 **失败与异常**：回调未抛异常或抛出其他类型时抛出 TestFailure。
 
-### 示例：检查缺失键错误
+### 示例：检查缺失键错误（需调用方提供对象或绑定）
 
 ```el
 check.throws(MissingKeyError, () => scores["missing"])
@@ -123,7 +123,7 @@ check.throws(MissingKeyError, () => scores["missing"])
 
 按位置逐项比较两个有限序列，并报告长度或首个不同元素。
 
-```el-fragment
+```el-signature
 fn items(borrow actual, borrow expected)
 ```
 
@@ -145,7 +145,7 @@ check.items(@[1, 2], @[1, 2])
 
 执行一组比较并聚合其中的比较失败，结束后一次报告。
 
-```el-fragment
+```el-signature
 fn collect(body)
 ```
 
@@ -168,7 +168,7 @@ check.collect(() => {
 
 将编码后的值按当前测试上下文中的键记录为快照。
 
-```el-fragment
+```el-signature
 fn snapshot(borrow value, key: Text, encode = defaultSnapshot)
 ```
 
@@ -192,7 +192,7 @@ check.snapshot(@{ status: "ready" }, key: "response")
 
 断言编译结果成功并生成产物。
 
-```el-fragment
+```el-signature
 fn compiles(borrow result)
 ```
 
@@ -200,7 +200,7 @@ fn compiles(borrow result)
 
 **失败与异常**：编译失败或没有产物时抛 TestFailure。
 
-### 示例：检查源码可编译
+### 示例：检查源码可编译（需调用方提供对象或绑定）
 
 ```el
 check.compiles(compileFixture("valid.el"))
@@ -208,11 +208,11 @@ check.compiles(compileFixture("valid.el"))
 
 ## Checks.diagnostic {#api-ca64dd756b7a7d68a372}
 
-源码：`src/stdlib/tools/testing/check.el:152` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L152)
+源码：`src/stdlib/tools/testing/check.el:153` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L153)
 
 断言编译失败并包含指定阶段、诊断码与源码位置。
 
-```el-fragment
+```el-signature
 fn diagnostic(borrow result, phase: Text, code: Text, source: Text = "", line: Number = 0, column: Number = 0, marker: Text = "")
 ```
 
@@ -235,16 +235,17 @@ fn diagnostic(borrow result, phase: Text, code: Text, source: Text = "", line: N
 ### 示例：检查私有访问诊断
 
 ```el
+// @external result
 check.diagnostic(result, phase: "check", code: "EL.ACCESS.PRIVATE", marker: "denied")
 ```
 
 ## check {#api-b55c78812b9aee65b8c4}
 
-源码：`src/stdlib/tools/testing/check.el:173` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L173)
+源码：`src/stdlib/tools/testing/check.el:174` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/testing/check.el#L174)
 
 提供比较断言入口；失败时抛出带结构化差异信息的 TestFailure。
 
-```el-fragment
+```el-signature
 export lazy let check = Checks()
 ```
 

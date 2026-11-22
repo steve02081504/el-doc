@@ -40,7 +40,7 @@
 释放可回收的预留存储，保留元素及顺序；可能使物理元素引用失效。
 计算数组、定长数组和借用视图没有可释放的预留容量。
 
-```el-fragment
+```el-signature
 virtual fn compact()
 ```
 
@@ -57,7 +57,7 @@ values.compact()
 
 返回数组中当前元素数量。
 
-```el-fragment
+```el-signature
 virtual get count(): Number
 ```
 
@@ -77,7 +77,7 @@ console.stdout.writeLine(@[10, 20, 30].count)
 
 将元素插入数组开头，并返回数组。
 
-```el-fragment
+```el-signature
 @discardable virtual fn unshift(value: any): Array
 ```
 
@@ -101,7 +101,7 @@ console.stdout.writeLine(values[0])
 
 创建带元素类型的可变长数组类型，实例支持索引读写、增删和常用遍历操作。
 
-```el-fragment
+```el-signature
 export fn Array(element: type): type
 ```
 
@@ -125,7 +125,7 @@ console.stdout.writeLine(values.count)
 
 将一个元素追加到数组末尾，并返回数组以便继续链式操作。
 
-```el-fragment
+```el-signature
 @discardable virtual fn push(value: element): Array
 ```
 
@@ -149,7 +149,7 @@ console.stdout.writeLine(values[1])
 
 移除并返回数组末尾元素。
 
-```el-fragment
+```el-signature
 @discardable virtual fn pop(): element
 ```
 
@@ -173,7 +173,7 @@ console.stdout.writeLine(last)
 
 移除并返回数组首元素。
 
-```el-fragment
+```el-signature
 @discardable virtual fn shift(): element
 ```
 
@@ -197,7 +197,7 @@ console.stdout.writeLine(first)
 
 原地移除全部元素；空数组调用后仍为空。
 
-```el-fragment
+```el-signature
 virtual fn clear(): nil_t
 ```
 
@@ -221,7 +221,7 @@ console.stdout.writeLine(values.count)
 
 判断是否至少有一个元素满足谓词；找到首个匹配项后即停止遍历。
 
-```el-fragment
+```el-signature
 fn some(predicate): Bool
 ```
 
@@ -243,7 +243,7 @@ console.stdout.writeLine(@[1, 30, 2].some(value => value > 20))
 
 判断所有元素是否都满足谓词；遇到首个不匹配项后即停止遍历。
 
-```el-fragment
+```el-signature
 fn all(predicate): Bool
 ```
 
@@ -265,7 +265,7 @@ console.stdout.writeLine(@[1, 2, 3].all(value => value > 0))
 
 保留谓词返回真的元素，并按原有顺序组成新数组。
 
-```el-fragment
+```el-signature
 fn filter(predicate)
 ```
 
@@ -287,7 +287,7 @@ console.stdout.writeLine(large.join(", "))
 
 返回跳过开头指定数量元素后的数组。
 
-```el-fragment
+```el-signature
 @optimize(using: optimize_array, data: @{ stage: "drop", receiver: "member", prepare: normalize_count })
 		fn drop(count)
 ```
@@ -308,7 +308,7 @@ console.stdout.writeLine(@[1, 2, 3].drop(1).join(", "))
 
 返回开头指定数量的元素组成的新数组。
 
-```el-fragment
+```el-signature
 @optimize(using: optimize_array, data: @{ stage: "take", receiver: "member", prepare: normalize_count })
 		fn take(count)
 ```
@@ -329,7 +329,7 @@ console.stdout.writeLine(@[1, 2, 3].take(2).join(", "))
 
 查找与给定值相等的第一个元素位置。
 
-```el-fragment
+```el-signature
 fn indexOf(value: element): Number
 ```
 
@@ -351,7 +351,7 @@ console.stdout.writeLine(@[10, 20, 30].indexOf(20))
 
 按比较函数排序并返回新数组，保留原数组不变。
 
-```el-fragment
+```el-signature
 fn sort(less = (left, right) => left < right, strategy = stable_memory_sort)
 ```
 
@@ -374,7 +374,7 @@ console.stdout.writeLine(sorted.join(", "))
 
 返回元素顺序相反的新数组，不改变原数组。
 
-```el-fragment
+```el-signature
 fn reverse()
 ```
 
@@ -393,7 +393,7 @@ console.stdout.writeLine(values.reverse().join(", "))
 
 严格复制指定的左闭右开区间。
 
-```el-fragment
+```el-signature
 fn slice(start: Number, end: Number)
 ```
 
@@ -416,7 +416,7 @@ console.stdout.writeLine(middle[0], middle[1])
 
 将整数端点夹到有效下标范围，再复制左闭右开区间。反向区间返回空数组。
 
-```el-fragment
+```el-signature
 fn sliceClamped(start: Number, end: Number): Array<element: element>
 ```
 
@@ -441,7 +441,7 @@ console.stdout.writeLine(copy.join(", "))
 
 将元素依次转换为文本并用分隔文本连接。
 
-```el-fragment
+```el-signature
 fn join(separator: Text = Text()): Text
 ```
 
@@ -464,7 +464,7 @@ console.stdout.writeLine(words.join(", "))
 
 按原顺序对每个元素调用转换函数，并返回转换结果数组。
 
-```el-fragment
+```el-signature
 fn map(transform)
 ```
 
@@ -485,7 +485,7 @@ console.stdout.writeLine(doubled.join(", "))
 
 判断数组是否含有与给定值相等的元素。
 
-```el-fragment
+```el-signature
 fn includes(value: element): Bool
 ```
 

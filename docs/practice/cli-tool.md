@@ -111,6 +111,7 @@ Windows PowerShell 用 `$LASTEXITCODE` 查看上一条命令的退出码。
 文本读取用 `el:filesystem/index.el` 的 `readTextFile(reference)`，返回解码后的 `Text`；可选的第二个参数是最大字节数，超过上限抛错而不是截断。相对路径按当前工作目录解析，需要显式确认时用 `currentDirectory()`。
 
 ```el
+// @external path
 import { readTextFile } from "el:filesystem/index.el"
 
 let source = ""
@@ -181,7 +182,8 @@ fn countWords(text: Text) {
 
 ## 第五步：把结果、诊断和退出码分开
 
-```el-fragment
+```el
+// @external countLines, source, countWords
 console.stdout.writeLine("lines: ", countLines(source), "  words: ", countWords(source))
 ```
 
@@ -230,7 +232,7 @@ console.stdout.writeLine(Text(result))
 
 `shell { ... }` 直接返回 `ShellResult`：块本身就是输出、退出码与状态的收集边界。`Text(result)` 是受检的文本投影，只取标准输出，不混入 stderr；没有明确文本目标时，结果仍是 `ShellResult`。
 
-```el-fragment
+```el
 let branch: Text = shell { git branch --show-current }
 let diff = shell { git diff --quiet }
 if (diff.exitCode != 0) console.stdout.writeLine("working tree has changes")

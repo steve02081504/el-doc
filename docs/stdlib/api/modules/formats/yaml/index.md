@@ -16,7 +16,7 @@
 
 将受支持的单个 YAML 文档解析为动态对象、数组及标量值。
 
-```el-fragment
+```el-signature
 export fn parseYAML(source: Text, limits: JsonLimits = JsonLimits()): any
 ```
 
@@ -43,7 +43,7 @@ let settings = parseYAML("name: Ada")
 
 解析 YAML 并递归保留映射键的首次插入顺序；重复键覆盖不移动位置。
 
-```el-fragment
+```el-signature
 export fn parseOrderedYAML(source: Text, limits: JsonLimits = JsonLimits()): any
 ```
 

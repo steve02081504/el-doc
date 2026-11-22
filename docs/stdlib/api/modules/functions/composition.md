@@ -18,7 +18,7 @@
 
 transform 按输入顺序执行，每个输入只变换一次，全部成功后才调用 merge。创建组合函数时不调用这两个函数。
 
-```el-fragment
+```el-signature
 export fn over(merge, transform)
 ```
 

@@ -39,7 +39,7 @@
 
 创建指定元素类型的张量类型；实例由形状和按列优先排列的元素构成。
 
-```el-fragment
+```el-signature
 export fn Tensor(element: type): type
 ```
 
@@ -63,7 +63,7 @@ let matrix = Dense(@[2, 2], @[1, 2, 3, 4])
 
 返回张量的轴数；标量张量的 rank 为 0。
 
-```el-fragment
+```el-signature
 get rank(): Number
 ```
 
@@ -71,7 +71,7 @@ get rank(): Number
 
 **返回值**：形状数组中的维度数。
 
-### 示例：查询张量阶数
+### 示例：查询张量阶数（需调用方提供对象或绑定）
 
 ```el
 let dimensions = tensor.rank
@@ -79,11 +79,11 @@ let dimensions = tensor.rank
 
 ## Tensor.count {#api-8f71ce2d0b728ce22cc4}
 
-源码：`src/stdlib/numerical-computing/tensor.el:126` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L126)
+源码：`src/stdlib/numerical-computing/tensor.el:127` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L127)
 
 返回张量包含的逻辑元素数。
 
-```el-fragment
+```el-signature
 get count(): Number
 ```
 
@@ -94,16 +94,17 @@ get count(): Number
 ### 示例：查询张量元素总数
 
 ```el
+// @external tensor
 let elements = tensor.count
 ```
 
 ## Tensor.extent {#api-38b5b9e81e2498a3e6bb}
 
-源码：`src/stdlib/numerical-computing/tensor.el:136` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L136)
+源码：`src/stdlib/numerical-computing/tensor.el:137` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L137)
 
 返回指定轴的长度。
 
-```el-fragment
+```el-signature
 fn extent(axis: Number): Number
 ```
 
@@ -123,11 +124,11 @@ let columns = matrix.extent(1)
 
 ## Tensor.shape {#api-8a47192a9a127d6b6d2b}
 
-源码：`src/stdlib/numerical-computing/tensor.el:144` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L144)
+源码：`src/stdlib/numerical-computing/tensor.el:145` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L145)
 
 返回描述各轴长度的独立数组快照。
 
-```el-fragment
+```el-signature
 fn shape(): Number[]
 ```
 
@@ -135,7 +136,7 @@ fn shape(): Number[]
 
 **返回值**：按轴编号排列的长度数组。
 
-### 示例：读取张量形状
+### 示例：读取张量形状（需调用方提供对象或绑定）
 
 ```el
 let dimensions = tensor.shape()
@@ -143,11 +144,11 @@ let dimensions = tensor.shape()
 
 ## Tensor.flat {#api-825767ce76fe7eef8efd}
 
-源码：`src/stdlib/numerical-computing/tensor.el:154` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L154)
+源码：`src/stdlib/numerical-computing/tensor.el:156` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L156)
 
 按列优先线性索引读取一个元素。
 
-```el-fragment
+```el-signature
 fn flat(index: Number): element
 ```
 
@@ -162,16 +163,17 @@ fn flat(index: Number): element
 ### 示例：读取展平后的首个元素
 
 ```el
+// @external tensor
 let first = tensor.flat(0)
 ```
 
 ## Tensor.select {#api-d8dd2e62324729c9b49e}
 
-源码：`src/stdlib/numerical-computing/tensor.el:208` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L208)
+源码：`src/stdlib/numerical-computing/tensor.el:210` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L210)
 
 按每个轴的标量或选择器抽取张量；标量选择会移除对应结果轴，范围选择保留该轴。
 
-```el-fragment
+```el-signature
 @optimize(data: @{ reorder: reorderSelect })
 		fn select(selectors: Selector[]): Value
 ```
@@ -192,11 +194,11 @@ let selected = matrix.select(@[1, 0..3])
 
 ## Tensor.transpose {#api-7e4fb4ba61b8777c2bf6}
 
-源码：`src/stdlib/numerical-computing/tensor.el:270` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L270)
+源码：`src/stdlib/numerical-computing/tensor.el:272` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L272)
 
 交换 rank-2 张量的两个轴并返回转置值。
 
-```el-fragment
+```el-signature
 @optimize(data: @{ reorder: reorderTranspose })
 		fn transpose(): Value
 ```
@@ -215,11 +217,11 @@ let transposed = matrix.transpose()
 
 ## Tensor.T {#api-fbb3a0168dd46111c500}
 
-源码：`src/stdlib/numerical-computing/tensor.el:279` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L279)
+源码：`src/stdlib/numerical-computing/tensor.el:281` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L281)
 
 返回二维张量的转置；等价于调用 transpose()。
 
-```el-fragment
+```el-signature
 get T()
 ```
 
@@ -233,11 +235,11 @@ let transposed = matrix.T
 
 ## Tensor.matmul {#api-0cc7fa30cddda72138c2}
 
-源码：`src/stdlib/numerical-computing/tensor.el:324` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L324)
+源码：`src/stdlib/numerical-computing/tensor.el:326` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L326)
 
 执行张量矩阵乘法，包含批次轴时按广播后的批次形状计算。
 
-```el-fragment
+```el-signature
 fn matmul(borrow other: Value)
 ```
 
@@ -247,7 +249,7 @@ fn matmul(borrow other: Value)
 
 **失败与异常**：ShapeError 当两个操作数的矩阵维度不匹配时抛出。
 
-### 示例：将系数矩阵乘以列向量
+### 示例：将系数矩阵乘以列向量（需调用方提供对象或绑定）
 
 ```el
 let result = coefficients.matmul(vector)
@@ -255,11 +257,11 @@ let result = coefficients.matmul(vector)
 
 ## Tensor.slice {#api-9144b6f4fe4ac3b11647}
 
-源码：`src/stdlib/numerical-computing/tensor.el:403` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L403)
+源码：`src/stdlib/numerical-computing/tensor.el:405` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L405)
 
 沿指定轴从 start 开始截取 count 个连续元素，其他轴保持不变。
 
-```el-fragment
+```el-signature
 fn slice(axis: Number, start: Number, count: Number): Value
 ```
 
@@ -283,11 +285,11 @@ let leading = matrix.slice(1, 0, 2)
 
 ## Tensor.scalar {#api-b1378abafa0ef3b02d23}
 
-源码：`src/stdlib/numerical-computing/tensor.el:456` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L456)
+源码：`src/stdlib/numerical-computing/tensor.el:458` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L458)
 
 读取 rank-zero 张量唯一的标量元素。
 
-```el-fragment
+```el-signature
 fn scalar(): element
 ```
 
@@ -297,7 +299,7 @@ fn scalar(): element
 
 **失败与异常**：ShapeError 当张量 rank 不为 0 时抛出。
 
-### 示例：读取已归约的损失值
+### 示例：读取已归约的损失值（需调用方提供对象或绑定）
 
 ```el
 let lossValue = loss.scalar()
@@ -305,11 +307,11 @@ let lossValue = loss.scalar()
 
 ## Tensor.square {#api-3199e5962816d7efaa4d}
 
-源码：`src/stdlib/numerical-computing/tensor.el:504` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L504)
+源码：`src/stdlib/numerical-computing/tensor.el:507` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L507)
 
 对张量逐元素平方。
 
-```el-fragment
+```el-signature
 fn square(): Value
 ```
 
@@ -320,16 +322,17 @@ fn square(): Value
 ### 示例：将误差张量逐元素平方
 
 ```el
+// @external error
 let squared = error.square()
 ```
 
 ## Tensor.operator[] {#api-5fecdaf1aca28b5f3863}
 
-源码：`src/stdlib/numerical-computing/tensor.el:592` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L592)
+源码：`src/stdlib/numerical-computing/tensor.el:595` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L595)
 
 用方括号按轴索引张量；标量下标移除对应轴，范围和冒号选择保留轴。
 
-```el-fragment
+```el-signature
 operator[](...selectors: Selector)
 ```
 
@@ -349,11 +352,11 @@ let selected = matrix[1, 0..3]
 
 ## Tensor.operator+~tensor {#api-51f9006e889164679433}
 
-源码：`src/stdlib/numerical-computing/tensor.el:624` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L624)
+源码：`src/stdlib/numerical-computing/tensor.el:627` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L627)
 
 对两个张量逐元素相加，形状按轴对齐的广播规则兼容。
 
-```el-fragment
+```el-signature
 operator +(other: Value)
 ```
 
@@ -363,7 +366,7 @@ operator +(other: Value)
 
 **失败与异常**：ShapeError 当形状不可广播时抛出。
 
-### 示例：将偏置广播加到批次张量
+### 示例：将偏置广播加到批次张量（需调用方提供对象或绑定）
 
 ```el
 let shifted = batch + bias
@@ -371,11 +374,11 @@ let shifted = batch + bias
 
 ## Tensor.operator+~scalar {#api-011941fe7f27cae1385a}
 
-源码：`src/stdlib/numerical-computing/tensor.el:633` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L633)
+源码：`src/stdlib/numerical-computing/tensor.el:636` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L636)
 
 将标量加到张量每个元素上，不改变张量形状。
 
-```el-fragment
+```el-signature
 operator +(other)
 ```
 
@@ -393,11 +396,11 @@ let shifted = matrix + 1
 
 ## Tensor.operator*~matmul {#api-86ecd494e284cf6ea6d2}
 
-源码：`src/stdlib/numerical-computing/tensor.el:646` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L646)
+源码：`src/stdlib/numerical-computing/tensor.el:649` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L649)
 
 两侧均为张量时执行矩阵乘法，而不是逐元素乘法。
 
-```el-fragment
+```el-signature
 operator *(borrow other: Value)
 ```
 
@@ -407,7 +410,7 @@ operator *(borrow other: Value)
 
 **失败与异常**：ShapeError 当矩阵维度不匹配时抛出。
 
-### 示例：矩阵向量乘法
+### 示例：矩阵向量乘法（需调用方提供对象或绑定）
 
 ```el
 let result = coefficients * vector
@@ -415,11 +418,11 @@ let result = coefficients * vector
 
 ## Tensor.operator*~scalar {#api-f516ec5297f69640fe7b}
 
-源码：`src/stdlib/numerical-computing/tensor.el:655` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L655)
+源码：`src/stdlib/numerical-computing/tensor.el:658` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L658)
 
 将标量乘到张量每个元素上，不执行矩阵乘法。
 
-```el-fragment
+```el-signature
 operator *(other)
 ```
 
@@ -437,11 +440,11 @@ let doubled = matrix * 2
 
 ## Tensor.operator.*~broadcast {#api-7c07d1978993329814a0}
 
-源码：`src/stdlib/numerical-computing/tensor.el:666` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L666)
+源码：`src/stdlib/numerical-computing/tensor.el:669` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L669)
 
 按广播规则逐元素相乘；与矩阵乘法运算符 * 区分。
 
-```el-fragment
+```el-signature
 operator .*(other: Value)
 ```
 
@@ -451,7 +454,7 @@ operator .*(other: Value)
 
 **失败与异常**：ShapeError 当形状不可广播时抛出。
 
-### 示例：计算逐元素平方
+### 示例：计算逐元素平方（需调用方提供对象或绑定）
 
 ```el
 let squares = values .* values
@@ -459,11 +462,11 @@ let squares = values .* values
 
 ## Tensor.operator.*~scalar {#api-b9b6c6c9e508dff7f537}
 
-源码：`src/stdlib/numerical-computing/tensor.el:675` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L675)
+源码：`src/stdlib/numerical-computing/tensor.el:678` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L678)
 
 将标量乘到张量每个元素上，保持逐元素运算写法。
 
-```el-fragment
+```el-signature
 operator .*(other)
 ```
 
@@ -481,11 +484,11 @@ let scaled = matrix .* 2
 
 ## Tensor.operator.^~scalar {#api-14a097654827e65155e7}
 
-源码：`src/stdlib/numerical-computing/tensor.el:687` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L687)
+源码：`src/stdlib/numerical-computing/tensor.el:690` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor.el#L690)
 
 对张量每个元素分别计算指定标量指数的幂。
 
-```el-fragment
+```el-signature
 operator .^(other)
 ```
 

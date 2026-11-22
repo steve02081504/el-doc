@@ -16,7 +16,7 @@
 
 查询当前这次执行是否处在 EL 的交互式调试会话中；不查询外部调试器。
 
-```el-fragment
+```el-signature
 export fn debuggerAttached(): Bool
 ```
 
@@ -36,7 +36,7 @@ if (debuggerAttached()) console.stdout.writeLine("EL debugger attached")
 
 在当前 EL 调试会话中暂停，保留调用栈和局部值；普通运行什么也不做。
 
-```el-fragment
+```el-signature
 export fn debuggerPause()
 ```
 

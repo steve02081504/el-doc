@@ -16,7 +16,7 @@
 
 尝试从平台堆分配，不主动触发压力回收。
 
-```el-fragment
+```el-signature
 export fn try_heap_alloc(bytes: Number): ptr
 ```
 
@@ -46,7 +46,7 @@ if (block != null_pointer()) {
 
 从平台堆分配；首次失败后请求压力回收并重试一次。
 
-```el-fragment
+```el-signature
 export fn heap_alloc(bytes: Number): ptr
 ```
 
@@ -75,7 +75,7 @@ finally { heap_free(block) }
 
 释放由平台堆分配入口取得的块。
 
-```el-fragment
+```el-signature
 export fn heap_free(block: ptr): Number
 ```
 

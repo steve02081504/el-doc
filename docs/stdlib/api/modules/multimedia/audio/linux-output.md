@@ -24,7 +24,7 @@
 
 拥有单线程有界 PCM16 设备队列；入队时复制音频块，队列满时立即返回假。
 
-```el-fragment
+```el-signature
 export @assign(mode: "shared") class PcmOutput
 ```
 
@@ -36,7 +36,7 @@ export @assign(mode: "shared") class PcmOutput
 
 **失败与异常**：设备不可用、参数无效或原生初始化失败时抛出 CaptureError。
 
-### 示例：创建播放器并提交一块
+### 示例：创建播放器并提交一块（需调用方提供对象或绑定）
 
 ```el
 let output = PcmOutput(audio.format, 4, 1024)
@@ -45,11 +45,11 @@ let accepted = output.enqueue(audio)
 
 ## PcmOutput.enqueue {#api-a4541dd8879f0ac94c1d}
 
-源码：`src/stdlib/multimedia/audio/linux-output.el:91` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L91)
+源码：`src/stdlib/multimedia/audio/linux-output.el:92` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L92)
 
 尝试提交音频块；样本在返回前复制，队列无空槽时不等待并返回假。
 
-```el-fragment
+```el-signature
 fn enqueue(audio: PcmAudio): Bool
 ```
 
@@ -64,20 +64,21 @@ fn enqueue(audio: PcmAudio): Bool
 ### 示例：向设备提交音频
 
 ```el
+// @external output, chunk
 if (!output.enqueue(chunk)) sleep(2)
 ```
 
 ## PcmOutput.finish {#api-2c4c730664ab8d398430}
 
-源码：`src/stdlib/multimedia/audio/linux-output.el:124` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L124)
+源码：`src/stdlib/multimedia/audio/linux-output.el:125` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L125)
 
 提交 OSS 输出中尚未提交的尾块；不等待设备完成播放。
 
-```el-fragment
+```el-signature
 fn finish()
 ```
 
-### 示例：提交尾块后轮询完成状态
+### 示例：提交尾块后轮询完成状态（需调用方提供对象或绑定）
 
 ```el
 output.finish()
@@ -86,11 +87,11 @@ while (!output.idle()) sleep(2)
 
 ## PcmOutput.idle {#api-9c4aeae8f2aae4510c1b}
 
-源码：`src/stdlib/multimedia/audio/linux-output.el:136` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L136)
+源码：`src/stdlib/multimedia/audio/linux-output.el:138` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L138)
 
 检查设备是否已播放完所有已提交样本。
 
-```el-fragment
+```el-signature
 fn idle(): Bool
 ```
 
@@ -101,20 +102,21 @@ fn idle(): Bool
 ### 示例：等待输出排空
 
 ```el
+// @external output
 while (!output.idle()) sleep(2)
 ```
 
 ## PcmOutput.clear {#api-a4ef6b8c6e52a3dea8f4}
 
-源码：`src/stdlib/multimedia/audio/linux-output.el:149` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L149)
+源码：`src/stdlib/multimedia/audio/linux-output.el:151` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L151)
 
 清除设备当前排队的音频块。
 
-```el-fragment
+```el-signature
 fn clear()
 ```
 
-### 示例：停止待播音频
+### 示例：停止待播音频（需调用方提供对象或绑定）
 
 ```el
 output.clear()
@@ -122,16 +124,17 @@ output.clear()
 
 ## PcmOutput.close {#api-d0948c04bf83f86cfcdb}
 
-源码：`src/stdlib/multimedia/audio/linux-output.el:159` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L159)
+源码：`src/stdlib/multimedia/audio/linux-output.el:162` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L162)
 
 停止播放并释放设备队列及原生句柄。
 
-```el-fragment
+```el-signature
 fn close()
 ```
 
 ### 示例：关闭音频输出
 
 ```el
+// @external output
 output.close()
 ```

@@ -16,7 +16,7 @@
 
 使用 ChaCha20-Poly1305 加密并认证明文及关联数据。
 
-```el-fragment
+```el-signature
 export fn chacha20_poly1305_encrypt(key: Number[], nonce: Number[], associated_data: Number[], plaintext: Number[]): Number[]
 ```
 
@@ -49,7 +49,7 @@ let sealed = chacha20_poly1305_encrypt(key, nonce, @[], @[72, 105])
 
 验证 ChaCha20-Poly1305 标签后解密密文。
 
-```el-fragment
+```el-signature
 export fn chacha20_poly1305_decrypt(key: Number[], nonce: Number[], associated_data: Number[], sealed: Number[]): Number[]
 ```
 

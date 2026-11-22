@@ -16,7 +16,7 @@
 
 要求数值为有限整数并返回该值。
 
-```el-fragment
+```el-signature
 export fn whole(value: Number): Number
 ```
 
@@ -42,7 +42,7 @@ whole(12)
 
 当 divisor 为正数时，计算向负无穷取整的商。
 
-```el-fragment
+```el-signature
 export fn floorDivide(value: Number, divisor: Number): Number
 ```
 
@@ -70,7 +70,7 @@ floorDivide(-7, 3)
 
 使用向下取整商计算余数；当 divisor 为正时，结果为非负余数。
 
-```el-fragment
+```el-signature
 export fn positiveRemainder(value: Number, divisor: Number): Number
 ```
 
@@ -98,7 +98,7 @@ positiveRemainder(-7, 3)
 
 把数值转为文本，并在左侧补零至至少指定宽度。
 
-```el-fragment
+```el-signature
 export fn decimalDigits(value: Number, width: Number): Text
 ```
 
@@ -124,7 +124,7 @@ decimalDigits(7, 3)
 
 将纳秒小数部分格式化为可选的小数点后缀，并去掉末尾零。
 
-```el-fragment
+```el-signature
 export fn fractionalSecond(nanoseconds: Number): Text
 ```
 
@@ -150,7 +150,7 @@ fractionalSecond(120000000)
 
 将纳秒数格式化为秒文本，保留负号并省略无意义的末尾小数零。
 
-```el-fragment
+```el-signature
 export fn secondsText(nanoseconds: Number): Text
 ```
 

@@ -18,7 +18,7 @@
 节名和键区分大小写；键值以 `=` 或 `:` 分隔，`;` 或 `#` 开头的整行是注释。
 值按字面文本读取，不转换数字或布尔值，也不解析行内注释；重复节合并，重复键以最后一个值为准。
 
-```el-fragment
+```el-signature
 export fn parseINI(source: Text, limits: JsonLimits = JsonLimits()): any
 ```
 
@@ -46,7 +46,7 @@ let settings = parseINI("[server]\nport=8080")
 将根对象的文本字段和一层节对象编码为轻量 INI；根键先于各节输出。
 不保留原注释或排版；不转换非文本值，不静默去除空白或换行。
 
-```el-fragment
+```el-signature
 export fn writeINI(value: any, limits: JsonLimits = JsonLimits()): Text
 ```
 
@@ -73,7 +73,7 @@ let text = writeINI(parseINI("name=demo\n[server]\nport=8080\n"))
 
 解析 INI 并递归保留映射键的首次插入顺序；重复键覆盖不移动位置。
 
-```el-fragment
+```el-signature
 export fn parseOrderedINI(source: Text, limits: JsonLimits = JsonLimits()): any
 ```
 

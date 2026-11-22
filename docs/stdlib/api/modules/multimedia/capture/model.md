@@ -21,7 +21,7 @@
 
 声明整数 PCM16 音频的采样率和声道数，并提供每帧字节数。
 
-```el-fragment
+```el-signature
 export @assign(mode: "copy") class AudioFormat
 ```
 
@@ -43,7 +43,7 @@ let format = AudioFormat(48000, 2)
 
 拥有交错有符号 PCM16 小端样本的共享缓冲区，可按帧和声道读取或写入。
 
-```el-fragment
+```el-signature
 export @assign(mode: "shared") class PcmAudio
 ```
 
@@ -55,7 +55,7 @@ export @assign(mode: "shared") class PcmAudio
 
 **失败与异常**：帧数、时间戳或缓冲区状态无效时抛出 CaptureError。
 
-### 示例：写入一个单声道样本
+### 示例：写入一个单声道样本（需调用方提供对象或绑定）
 
 ```el
 let audio = PcmAudio(1, AudioFormat(24000, 1))
@@ -64,11 +64,11 @@ audio.setSample(0, 0, 12000)
 
 ## PcmAudio.sample {#api-8a550e9ca9ac7d948cde}
 
-源码：`src/stdlib/multimedia/capture/model.el:161` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L161)
+源码：`src/stdlib/multimedia/capture/model.el:162` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L162)
 
 读取指定帧和声道的有符号 PCM16 整数样本。
 
-```el-fragment
+```el-signature
 fn sample(frame: Number, channel: Number = 0): Number
 ```
 
@@ -83,16 +83,17 @@ fn sample(frame: Number, channel: Number = 0): Number
 ### 示例：读取第一个样本
 
 ```el
+// @external audio
 let value = audio.sample(0)
 ```
 
 ## PcmAudio.setSample {#api-5d599038539e68d30f37}
 
-源码：`src/stdlib/multimedia/capture/model.el:180` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L180)
+源码：`src/stdlib/multimedia/capture/model.el:181` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L181)
 
 设置指定帧和声道的有符号 PCM16 整数样本。
 
-```el-fragment
+```el-signature
 fn setSample(frame: Number, channel: Number, value: Number)
 ```
 
@@ -104,7 +105,7 @@ fn setSample(frame: Number, channel: Number, value: Number)
 
 **失败与异常**：帧、声道或样本值越界，以及缓冲区已关闭时抛出错误。
 
-### 示例：将第一个样本设为静音
+### 示例：将第一个样本设为静音（需调用方提供对象或绑定）
 
 ```el
 audio.setSample(0, 0, 0)

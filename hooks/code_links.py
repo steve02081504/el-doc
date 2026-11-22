@@ -307,8 +307,20 @@ def local_declarations(code, tokens, ignored, pairs):
 				type_name = tokens[index + 3][2]
 			yield index + 1, type_name
 		if value in ("let", "const") and following in ("[", "{") and index + 1 in pairs:
-			for parameter in binding_indices(tokens, pairs, index + 2, pairs[index + 1], object_pattern=following == "{"):
-				yield parameter, None
+			end = pairs[index + 1]
+			pattern = following == "[" or end + 1 < len(tokens) and tokens[end + 1][2] in ("=", "in")
+			if pattern:
+				for parameter in binding_indices(tokens, pairs, index + 2, end, object_pattern=following == "{"):
+					yield parameter, None
+			else:
+				position = index + 2
+				while position < end:
+					if tokens[position][1] in Name and tokens[position + 1][2] in ("=", ":"):
+						if position == index + 2 or tokens[position - 1][2] == ";" or "\n" in code[tokens[position - 1][0]:tokens[position][0]]:
+							yield position, None
+					position = max(position, pairs.get(position, position)) + 1
+		if value == "lazy" and following == "(" and pairs.get(index + 1) == index + 3 and tokens[index + 2][1] in Name:
+			yield index + 2, None
 		if value in ("fn", "constructor", "init", "catch", "operator", "extern", "get", "set"):
 			position = index + 1
 			while position < len(tokens) and "\n" not in code[offset:tokens[position][0]] and tokens[position][2] not in ("(", "{", "=", ";"):
@@ -333,8 +345,11 @@ def local_declarations(code, tokens, ignored, pairs):
 				yield index + 1, None
 		if value == "=>" and index:
 			previous = index - 1
-			if tokens[previous][1] in Name and previous and tokens[previous - 1][2] == ":":
-				previous -= 2
+			annotation_end = previous
+			while annotation_end > 0 and tokens[annotation_end][2] in ("]", "?"):
+				annotation_end = pairs.get(annotation_end, annotation_end) - 1
+			if tokens[annotation_end][1] in Name and annotation_end and tokens[annotation_end - 1][2] == ":":
+				previous = annotation_end - 2
 			if previous in pairs and tokens[previous][2] == ")":
 				for parameter in binding_indices(tokens, pairs, pairs[previous] + 1, previous):
 					yield parameter, None
@@ -349,13 +364,91 @@ def local_declarations(code, tokens, ignored, pairs):
 						if tokens[current][1] in Name and (current == opening + 1 or tokens[current - 1][2] in (";", ",")
 								or "\n" in code[tokens[current - 1][0]:tokens[current][0]]):
 							yield current, None
+							if current + 1 in pairs and tokens[current + 1][2] == "(":
+								for parameter in binding_indices(tokens, pairs, current + 2, pairs[current + 1]):
+									yield parameter, None
 						current = max(current, pairs.get(current, current)) + 1
 					break
 				if tokens[opening][2] in (";", "}"):
 					break
 
 
-def external_names(stream, report):
+PROOF_WORDS = {"admit", "all", "by", "exact", "generalizing", "induction", "refl", "reverse", "rewrite", "simp"}
+GRAMMAR_WORDS = {"rule", "skip", "start", "token"}
+
+
+
+def embedded_words(tokens, pairs, local_names):
+	"""Recognize the syntax and binding boundaries of built-in and library blocks."""
+	dialects = {"shell", "eir", "prove", "calc", "grammar", "rules", "search", "query", "rowQuery", "batch"}
+	for index, (_, _, value) in enumerate(tokens[:-1]):
+		if value not in dialects or value in local_names:
+			continue
+		opening = index + 1
+		if opening in pairs and tokens[opening][2] == "(":
+			end = pairs[opening]
+			if value in ("query", "rowQuery"):
+				for parameter in binding_indices(tokens, pairs, opening + 1, end):
+					yield parameter, True
+			if value == "eir":
+				for position in range(opening + 1, end):
+					if tokens[position][1] in Name and tokens[position + 1][2] == "=":
+						yield position, False
+			opening = end + 1
+			if value == "eir" and opening < len(tokens) and tokens[opening][2] == ":":
+				opening += 1
+				while opening < len(tokens) and tokens[opening][2] not in ("{", ";", "}"):
+					opening += 1
+		if opening not in pairs or tokens[opening][2] != "{":
+			continue
+		body = range(opening + 1, pairs[opening])
+		if value in ("shell", "eir"):
+			for position in body:
+				yield position, False
+		elif value in ("rules", "search"):
+			position = body.start
+			while position < body.stop:
+				word = tokens[position][2]
+				if word == "$" and position + 1 in pairs and tokens[position + 1][2] == "(":
+					position = pairs[position + 1] + 1
+					continue
+				if position == body.start or tokens[position - 1][2] != "as":
+					yield position, False
+				position += 1
+		elif value == "batch":
+			for position in body:
+				if tokens[position][2] == "keep" and tokens[position + 1][2] == "(":
+					yield position, False
+		elif value in ("query", "rowQuery"):
+			for position in body:
+				if tokens[position][2] in ("where", "select", "orderBy", "groupBy"):
+					yield position, False
+				if tokens[position][2] == "from" and position + 2 in body and tokens[position + 2][2] == "in":
+					yield position + 1, True
+		elif value in ("prove", "calc"):
+			for position in body:
+				word = tokens[position][2]
+				if word in PROOF_WORDS or tokens[position - 1][2] == "?":
+					yield position, False
+				if word != "case":
+					continue
+				binder = position + 2
+				while binder + 1 in body and tokens[binder][2] == ".":
+					binder += 2
+				while binder in body and tokens[binder][2] != "{":
+					if tokens[binder][1] in Name:
+						yield binder, True
+					binder += 1
+		elif value == "grammar":
+			for position in body:
+				word = tokens[position][2]
+				if word in GRAMMAR_WORDS:
+					yield position, False
+				if word in ("rule", "token") and position + 1 in body and tokens[position + 1][1] in Name:
+					yield position + 1, True
+
+
+def external_names(stream, catalog, report):
 	"""Read leading // @external name, name comments on one highlighted block."""
 	names = set()
 	header = True
@@ -373,11 +466,18 @@ def external_names(stream, report):
 			if report:
 				report(start, "use a leading // @external comment with a comma-separated list of identifiers")
 			continue
-		names.update(declared)
+		for name in declared:
+			binding = catalog.library_exports.get(name) or catalog.environment.get(name)
+			if binding is not None:
+				if report:
+					location = f" ({binding['source']}:{binding['line']})" if binding.get("source") and binding.get("line") else ""
+					report(start, f"external name {name!r} conflicts with a standard library export{location}")
+				continue
+			names.add(name)
 	return names
 
 
-def code_targets(code, catalog, source=None, *, report=None, fragment=False):
+def code_targets(code, catalog, source=None, *, report=None):
 	"""Return source offsets for names whose documentation target is known.
 
 	Bindings declared anywhere in a fragment suppress default lookup throughout
@@ -396,7 +496,7 @@ def code_targets(code, catalog, source=None, *, report=None, fragment=False):
 		index = bisect_right(opaque_starts, offset) - 1
 		return index >= 0 and offset < opaque[index][1]
 
-	if report and not fragment:
+	if report:
 		check_delimiters(stream, report)
 	tokens = [(offset, kind, value) for offset, kind, value in get_lexer_by_name("el").get_tokens_unprocessed(code)
 		if kind not in Comment and kind not in Whitespace and not (kind in Text and value.isspace())]
@@ -407,7 +507,7 @@ def code_targets(code, catalog, source=None, *, report=None, fragment=False):
 	prelude = not re.search(r"@(module|runtime)\s*\([^)]*\bprelude\s*:\s*f\b", structure)
 	if not prelude:
 		bindings.clear()
-	bindings.update(dict.fromkeys(external_names(stream, report)))
+	bindings.update(dict.fromkeys(external_names(stream, catalog, report)))
 	imported_bindings = {}
 	namespaces = {}
 	external_patterns = []
@@ -465,11 +565,12 @@ def code_targets(code, catalog, source=None, *, report=None, fragment=False):
 		bindings[name] = None
 		declarations.add(offset)
 		local_types[name].add(type_name)
-	for index, (offset, _, value) in enumerate(tokens[:-1]):
-		if offset in ignored or value not in ("shell", "eir") or value in local_types:
-			continue
-		if tokens[index + 1][2] == "{" and index + 1 in pairs:
-			ignored.update(token[0] for token in tokens[index + 2:pairs[index + 1]])
+	for position, declaration in embedded_words(tokens, pairs, local_types):
+		offset, _, name = tokens[position]
+		ignored.add(offset)
+		if declaration:
+			bindings[name] = None
+			local_types[name].add(None)
 	result = {}
 	resolved = {}
 	for index, (offset, kind, value) in enumerate(tokens):
@@ -477,6 +578,10 @@ def code_targets(code, catalog, source=None, *, report=None, fragment=False):
 			continue
 		previous = tokens[index - 1][2] if index else ""
 		following = tokens[index + 1][2] if index + 1 < len(tokens) else ""
+		if report and value in ("&&", "||"):
+			report(offset, f"{value!r} is not an EL operator; use {value[0]!r}")
+		if report and value in ("let", "const") and following == "=":
+			report(offset, f"{value!r} requires a binding before '='")
 		target = None
 		is_introducer = value in ("get", "set", "syntax") and index + 1 < len(tokens) and tokens[index + 1][1] in Name
 		if (kind in Keyword or kind in Name.Decorator or is_introducer) and value in LANGUAGE:
@@ -514,7 +619,7 @@ def code_targets(code, catalog, source=None, *, report=None, fragment=False):
 						problem = export_problem(catalog.environment[value], value, "the standard library prelude")
 					elif value not in bindings and not any(selector.search(value) for selector in external_patterns):
 						binding = catalog.library_exports.get(value)
-						problem = export_problem(binding, value, "the standard library") if binding is not None or not fragment else None
+						problem = export_problem(binding, value, "the standard library")
 					else:
 						problem = None
 					if problem:
@@ -553,7 +658,7 @@ class CodeLinker(HTMLParser):
 	def handle_starttag(self, tag, attrs):
 		classes = dict(attrs).get("class", "").split()
 		language = next((value for value in classes if value in
-			("language-el", "language-els", "language-evil", "language-el-fragment", "language-el-signature")), None)
+			("language-el", "language-els", "language-evil", "language-el-signature")), None)
 		active = language or (self.stack[-1][1] if self.stack else None)
 		if tag not in ("br", "hr", "img", "input", "meta", "link", "wbr", "source"):
 			self.stack.append((tag, active))
@@ -603,8 +708,7 @@ class CodeLinker(HTMLParser):
 			self.report(f"EL block {self.block}:{line}:{column}: {message}")
 
 		targets = code_targets(self.code["text"], self.catalog, self.source,
-			report=report if self.report and self.code["language"] != "language-el-signature" else None,
-			fragment=self.code["language"] == "language-el-fragment")
+			report=report if self.report and self.code["language"] != "language-el-signature" else None)
 		if self.code["linked"]:
 			return
 		for start, raw_start, raw, decoded in self.code["parts"]:

@@ -17,11 +17,11 @@
 
 ## FileWriter.write {#api-60eb68cfed70401fd999}
 
-源码：`src/stdlib/filesystem/writer.el:139` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L139)
+源码：`src/stdlib/filesystem/writer.el:140` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L140)
 
 将字节数组快照写入目标位置并返回写入回执。
 
-```el-fragment
+```el-signature
 fn write(bytes: Number[]): WriteReceipt
 ```
 
@@ -36,6 +36,7 @@ fn write(bytes: Number[]): WriteReceipt
 ### 示例：写出二进制内容
 
 ```el
+import { openFileWriter } from "el:filesystem/"
 let writer = openFileWriter("file:./output.bin")
 let receipt = writer.write(@[72, 105])
 writer.close()
@@ -43,11 +44,11 @@ writer.close()
 
 ## FileWriter.close {#api-95af169891a6620e73da}
 
-源码：`src/stdlib/filesystem/writer.el:209` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L209)
+源码：`src/stdlib/filesystem/writer.el:211` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L211)
 
 完成写入器并关闭底层资源。
 
-```el-fragment
+```el-signature
 fn close(): nil_t
 ```
 
@@ -58,6 +59,7 @@ fn close(): nil_t
 ### 示例：关闭写入器
 
 ```el
+import { openFileWriter } from "el:filesystem/"
 let writer = openFileWriter("file:./output.bin")
 writer.close()
 ```

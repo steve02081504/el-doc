@@ -16,7 +16,7 @@
 
 逻辑搜索使用的项；变量以索引和作用域身份区分，复合项保存构造子及字段。
 
-```el-fragment
+```el-signature
 export @assign(mode: "shared") class Term
 ```
 
@@ -32,7 +32,7 @@ let person = compound("person", @[atom("Ada")])
 
 创建一份独立的逻辑变量作用域，使不同作用域中的同索引变量互不相同。
 
-```el-fragment
+```el-signature
 export fn variable_scope(): VariableScope
 ```
 
@@ -53,7 +53,7 @@ let x = variable(0, scope)
 
 创建指定索引的逻辑变量，可显式提供作用域以避免变量身份冲突。
 
-```el-fragment
+```el-signature
 export fn variable(index: Number, scope: VariableScope | nil_t = nil): Term
 ```
 
@@ -79,7 +79,7 @@ let x = variable(0, variable_scope())
 
 创建由文本符号标识的零元逻辑项。
 
-```el-fragment
+```el-signature
 export fn atom(symbol: Text): Term
 ```
 
@@ -101,7 +101,7 @@ let ada = atom("Ada")
 
 创建带文本符号及有序字段的复合逻辑项。
 
-```el-fragment
+```el-signature
 export fn compound(symbol: Text, fields: Term[]): Term
 ```
 

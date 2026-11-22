@@ -22,7 +22,7 @@
 
 表示网络连接、协议或平台网络操作失败。
 
-```el-fragment
+```el-signature
 export class NetworkError extends Error
 ```
 
@@ -39,13 +39,13 @@ catch (error: NetworkError) { console.stderr.writeLine(error.operation, ": ", er
 
 发生失败的网络操作名称。
 
-```el-fragment
+```el-signature
 let operation: Text
 ```
 
 **类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
 
-### 示例：输出错误操作
+### 示例：输出错误操作（需调用方提供对象或绑定）
 
 ```el
 console.stderr.writeLine(error.operation)
@@ -53,11 +53,11 @@ console.stderr.writeLine(error.operation)
 
 ## NetworkError.detail {#api-bba6955c6787070c5b63}
 
-源码：`src/stdlib/network/errors.el:30` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/errors.el#L30)
+源码：`src/stdlib/network/errors.el:31` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/errors.el#L31)
 
 描述失败原因的文本。
 
-```el-fragment
+```el-signature
 let detail: Text
 ```
 
@@ -66,22 +66,23 @@ let detail: Text
 ### 示例：输出错误原因
 
 ```el
+// @external error
 console.stderr.writeLine(error.detail)
 ```
 
 ## NetworkError.code {#api-0daf359682bcfc8d6e85}
 
-源码：`src/stdlib/network/errors.el:37` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/errors.el#L37)
+源码：`src/stdlib/network/errors.el:38` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/errors.el#L38)
 
 平台提供的可选错误代码；无特定代码时为 0。
 
-```el-fragment
+```el-signature
 let code: Number
 ```
 
 **类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
-### 示例：查看平台错误码
+### 示例：查看平台错误码（需调用方提供对象或绑定）
 
 ```el
 console.stderr.writeLine(error.code)

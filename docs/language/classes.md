@@ -43,7 +43,8 @@ console.stdout.writeLine(p.describe())        // (3, 4)
 ??? question "先猜：`let b = a` 之后改 `b.x`，`a.x` 会跟着变吗？"
     看类的 `@assign` 模式。`copy` 不会，`shared` 会——赋值是复制还是共享由类声明决定，而不是由变量的写法决定。
 
-```el-fragment
+```el
+// @external Point
 let a = Point(1, 2)
 let b = a
 b.x = 9
@@ -212,7 +213,8 @@ console.log.value(removed)             // t
 
 ## 类实例与对象字面量差在哪
 
-```el-fragment
+```el
+// @external Point
 let p = Point(1, 2)                    // 具名类实例
 let o = @{ name: "Ada", age: 36 }      // 匿名对象字面量
 

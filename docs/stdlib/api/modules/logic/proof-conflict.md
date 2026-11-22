@@ -16,7 +16,7 @@
 
 对传入的正反证据做核检查并分别报告依赖。不自动搜索，也不把搜不到证据当成反证。
 
-```el-fragment
+```el-signature
 export fn checkProofConflict(kernel: KernelEnvironment, proposition: ProofTerm, falseFamily: Text, support: ProofTerm, refutation: ProofTerm, context: ProofTerm[] = @[], universes: Text[] = @[], constraints: SortConstraint[] = @[], budget: ProofBudget = ProofBudget()): ProofConflictReport
 ```
 

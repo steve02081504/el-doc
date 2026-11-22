@@ -16,7 +16,7 @@
 
 声明关系与规则的逻辑程序语法；关系体支持事实、规则、入口及逻辑目标。
 
-```el-fragment
+```el-signature
 export syntax rules
 ```
 
@@ -32,7 +32,7 @@ let people = rules { relation person(name) from @[@["Ada"]] }
 
 在逻辑程序中声明查询目标，并生成可枚举答案的搜索值。
 
-```el-fragment
+```el-signature
 export syntax search
 ```
 

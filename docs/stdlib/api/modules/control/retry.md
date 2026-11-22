@@ -17,7 +17,7 @@
 执行块直到成功，并返回成功那次的结果。匹配的 catch 执行完后重试；未匹配的异常或处理器抛出的异常向外传播。
 可以省略 catch，此时块只执行一次。
 
-```el-fragment
+```el-signature
 export syntax until
 ```
 

@@ -41,7 +41,7 @@
 
 表示一个经校验的 HTTP 请求或响应头名称和值。
 
-```el-fragment
+```el-signature
 export class HttpHeader
 ```
 
@@ -64,7 +64,7 @@ let header = HttpHeader("Content-Type", "application/json")
 
 创建并校验一条 HTTP 头。
 
-```el-fragment
+```el-signature
 constructor(name: Text, value: Text)
 ```
 
@@ -86,7 +86,7 @@ let header = HttpHeader("Accept", "application/json")
 
 配置 HTTP 请求方法、头、请求体、资源上限与 TLS 行为。
 
-```el-fragment
+```el-signature
 export class HttpOptions
 ```
 
@@ -103,7 +103,7 @@ let options = HttpOptions(@{ timeout: 5000 })
 
 请求使用的 HTTP 方法，默认是 GET。
 
-```el-fragment
+```el-signature
 let method: Text
 ```
 
@@ -121,7 +121,7 @@ let options = HttpOptions(@{ method: "POST" })
 
 要发送的请求头数组。
 
-```el-fragment
+```el-signature
 let headers: HttpHeader[]
 ```
 
@@ -139,7 +139,7 @@ let options = HttpOptions(@{ headers: @[HttpHeader("Accept", "application/json")
 
 要发送的请求体字节；GET 与 HEAD 不接受非空请求体。
 
-```el-fragment
+```el-signature
 let body: Number[]
 ```
 
@@ -157,7 +157,7 @@ let options = HttpOptions(@{ method: "POST", body: @[65, 66] })
 
 请求超时毫秒数，默认 30000，必须为正数。
 
-```el-fragment
+```el-signature
 let timeout: Number
 ```
 
@@ -175,7 +175,7 @@ let options = HttpOptions(@{ timeout: 5000 })
 
 请求或响应消息体字节上限；nil 表示不设显式上限。
 
-```el-fragment
+```el-signature
 let maximumBodyBytes: Number | nil_t
 ```
 
@@ -193,7 +193,7 @@ let options = HttpOptions(@{ maximumBodyBytes: 1048576 })
 
 请求与响应头的最大字节数。
 
-```el-fragment
+```el-signature
 let maximumHeaderBytes: Number | nil_t
 ```
 
@@ -211,7 +211,7 @@ let options = HttpOptions(@{ maximumHeaderBytes: 16384 })
 
 允许跟随的最大重定向次数。
 
-```el-fragment
+```el-signature
 let maximumRedirects: Number | nil_t
 ```
 
@@ -229,7 +229,7 @@ let options = HttpOptions(@{ maximumRedirects: 0 })
 
 请求是否绕过可复用的缓存响应。
 
-```el-fragment
+```el-signature
 let forceRefresh: Bool
 ```
 
@@ -247,11 +247,11 @@ let options = HttpOptions(@{ forceRefresh: t })
 
 HTTPS 请求使用的 TLS 配置。
 
-```el-fragment
+```el-signature
 let tls: TlsOptions
 ```
 
-**类型**：[`TlsOptions`](../../../types.md#api-d66684475437485e3301)
+**类型**：[`TlsOptions`](../tls/options.md#api-d66684475437485e3301)
 
 ### 示例：使用默认 TLS 配置
 
@@ -265,7 +265,7 @@ let options = HttpOptions(@{ tls: TlsOptions() })
 
 用字段对象覆盖默认请求配置，并在创建时校验字段范围和组合。
 
-```el-fragment
+```el-signature
 constructor(changes = @{})
 ```
 
@@ -285,7 +285,7 @@ let options = HttpOptions(@{ timeout: 5000, maximumRedirects: 3 })
 
 保存 HTTP 状态码、响应头、响应体和最终 URL，并提供常用解码操作。
 
-```el-fragment
+```el-signature
 export class HttpResponse
 ```
 
@@ -302,13 +302,13 @@ console.stdout.writeLine(response.status, " ", response.ok)
 
 HTTP 状态码。
 
-```el-fragment
+```el-signature
 let status: Number
 ```
 
 **类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
 
-### 示例：检查状态码
+### 示例：检查状态码（需调用方提供对象或绑定）
 
 ```el
 console.stdout.writeLine(response.status)
@@ -316,11 +316,11 @@ console.stdout.writeLine(response.status)
 
 ## HttpResponse.headers {#api-13457e67b9172ccbf05d}
 
-源码：`src/stdlib/network/http/model.el:208` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L208)
+源码：`src/stdlib/network/http/model.el:209` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L209)
 
 响应头列表。
 
-```el-fragment
+```el-signature
 let headers: HttpHeader[]
 ```
 
@@ -329,22 +329,23 @@ let headers: HttpHeader[]
 ### 示例：检查响应头数
 
 ```el
+// @external response
 console.stdout.writeLine(response.headers.count)
 ```
 
 ## HttpResponse.body {#api-c6cdd2d8c232982199d4}
 
-源码：`src/stdlib/network/http/model.el:215` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L215)
+源码：`src/stdlib/network/http/model.el:216` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L216)
 
 响应体的原始字节。
 
-```el-fragment
+```el-signature
 let body: Number[]
 ```
 
 **类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)[]
 
-### 示例：检查响应体字节数
+### 示例：检查响应体字节数（需调用方提供对象或绑定）
 
 ```el
 console.stdout.writeLine(response.body.count)
@@ -352,11 +353,11 @@ console.stdout.writeLine(response.body.count)
 
 ## HttpResponse.url {#api-c72aa9a6acb07d01133a}
 
-源码：`src/stdlib/network/http/model.el:222` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L222)
+源码：`src/stdlib/network/http/model.el:224` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L224)
 
 请求跟随重定向后的最终 URL。
 
-```el-fragment
+```el-signature
 let url: Text
 ```
 
@@ -365,16 +366,17 @@ let url: Text
 ### 示例：查看最终 URL
 
 ```el
+// @external response
 console.stdout.writeLine(response.url)
 ```
 
 ## HttpResponse.ok {#api-833651302d6ba4264de8}
 
-源码：`src/stdlib/network/http/model.el:231` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L231)
+源码：`src/stdlib/network/http/model.el:233` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L233)
 
 判断状态码是否位于 200 到 299 的成功范围。
 
-```el-fragment
+```el-signature
 get ok(): Bool
 ```
 
@@ -382,7 +384,7 @@ get ok(): Bool
 
 **返回值**：成功范围内为真。
 
-### 示例：判断响应是否成功
+### 示例：判断响应是否成功（需调用方提供对象或绑定）
 
 ```el
 if (response.ok) console.stdout.writeLine("success")
@@ -390,11 +392,11 @@ if (response.ok) console.stdout.writeLine("success")
 
 ## HttpResponse.text {#api-6cda717c77ed293047df}
 
-源码：`src/stdlib/network/http/model.el:240` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L240)
+源码：`src/stdlib/network/http/model.el:243` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L243)
 
 将响应体按 UTF-8 解码为文本；拒绝未解码的非 identity 内容编码。
 
-```el-fragment
+```el-signature
 fn text(): Text
 ```
 
@@ -407,16 +409,17 @@ fn text(): Text
 ### 示例：读取文本响应
 
 ```el
+// @external response
 console.stdout.writeLine(response.text())
 ```
 
 ## HttpResponse.json {#api-fd727a1f0f4a5400e858}
 
-源码：`src/stdlib/network/http/model.el:254` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L254)
+源码：`src/stdlib/network/http/model.el:257` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L257)
 
 将响应文本解析为 JSON 值。
 
-```el-fragment
+```el-signature
 fn json(limits: JsonLimits = JsonLimits()): any
 ```
 
@@ -428,7 +431,7 @@ fn json(limits: JsonLimits = JsonLimits()): any
 
 **失败与异常**：内容编码、UTF-8 或 JSON 解析失败时抛出异常。
 
-### 示例：解码 JSON 响应
+### 示例：解码 JSON 响应（需调用方提供对象或绑定）
 
 ```el
 let configuration = response.json()
@@ -436,11 +439,11 @@ let configuration = response.json()
 
 ## HttpResponse.as {#api-babd6c7262ef7ec82f76}
 
-源码：`src/stdlib/network/http/model.el:264` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L264)
+源码：`src/stdlib/network/http/model.el:268` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L268)
 
 使用指定格式对象解码响应体。
 
-```el-fragment
+```el-signature
 fn as(format)
 ```
 
@@ -453,16 +456,17 @@ fn as(format)
 ### 示例：使用 JSON 格式解码
 
 ```el
+// @external response
 let config = response.as(formats.JSON)
 ```
 
 ## HttpResponse.header {#api-af4458df84318ed403f0}
 
-源码：`src/stdlib/network/http/model.el:277` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L277)
+源码：`src/stdlib/network/http/model.el:281` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L281)
 
 按大小写无关的名称查找首个响应头。
 
-```el-fragment
+```el-signature
 fn header(name: Text): Text | nil_t
 ```
 
@@ -472,7 +476,7 @@ fn header(name: Text): Text | nil_t
 
 **返回值**：响应头值；不存在时返回 nil。
 
-### 示例：读取内容类型
+### 示例：读取内容类型（需调用方提供对象或绑定）
 
 ```el
 let contentType = response.header("Content-Type")
@@ -480,34 +484,35 @@ let contentType = response.header("Content-Type")
 
 ## HttpStatusError {#api-b0c306dbfe7c9ba3158d}
 
-源码：`src/stdlib/network/http/model.el:288` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L288)
+源码：`src/stdlib/network/http/model.el:293` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L293)
 
 表示 HTTP 响应状态不成功；异常保留原始响应供调用方检查。
 
-```el-fragment
+```el-signature
 export class HttpStatusError extends Error
 ```
 
 ### 示例：捕获并检查错误响应
 
 ```el
+// @external url
 try { fetchAs(formats.JSON, url) }
 catch (error: HttpStatusError) { console.stderr.writeLine(error.response.status) }
 ```
 
 ## HttpStatusError.response {#api-84ea870701b770626b47}
 
-源码：`src/stdlib/network/http/model.el:295` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L295)
+源码：`src/stdlib/network/http/model.el:300` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L300)
 
 引发状态错误的完整 HTTP 响应。
 
-```el-fragment
+```el-signature
 let response: HttpResponse
 ```
 
 **类型**：[`HttpResponse`](model.md#api-e49096dfd951764c068f)
 
-### 示例：查看错误状态
+### 示例：查看错误状态（需调用方提供对象或绑定）
 
 ```el
 console.stderr.writeLine(error.response.status)
@@ -515,11 +520,11 @@ console.stderr.writeLine(error.response.status)
 
 ## HttpStatusError.constructor {#api-8cd621216a6f8df9a3be}
 
-源码：`src/stdlib/network/http/model.el:303` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L303)
+源码：`src/stdlib/network/http/model.el:309` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L309)
 
 将不成功的 HTTP 响应封装为状态异常。
 
-```el-fragment
+```el-signature
 constructor(response: HttpResponse)
 ```
 
@@ -528,5 +533,6 @@ constructor(response: HttpResponse)
 ### 示例：手动将错误状态转成异常
 
 ```el
+// @external response
 if (!response.ok) throw HttpStatusError(response)
 ```

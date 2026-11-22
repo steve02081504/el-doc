@@ -16,7 +16,7 @@
 
 真值 t 的类型，带 xata 条件属性；在条件中选择真分支。
 
-```el-fragment
+```el-signature
 @infer(type: f_t | t_t)
 export @builtin:jahu:xata class t_t
 ```
@@ -33,7 +33,7 @@ let confirmed: t_t = t
 
 假值 f 的类型，带 netra 条件属性；在条件中选择假分支。
 
-```el-fragment
+```el-signature
 @infer(type: f_t | t_t)
 export @builtin:jahu:netra class f_t
 ```
@@ -50,7 +50,7 @@ let rejected: f_t = f
 
 缺失值 nil 的类型，带 lohk 条件属性；与假值的 f_t 是不同类型。
 
-```el-fragment
+```el-signature
 @discardable
 export @builtin:jahu:lohk class nil_t
 ```
@@ -67,7 +67,7 @@ let missing: nil_t = nil
 
 标准环境提供的真值绑定，类型为 t_t；它是普通源码值，不是关键字。
 
-```el-fragment
+```el-signature
 export let t: t_t = t_t()
 ```
 
@@ -88,7 +88,7 @@ yes
 
 标准环境提供的假值绑定，类型为 f_t；它不表示缺失结果。
 
-```el-fragment
+```el-signature
 export let f: f_t = f_t()
 ```
 
@@ -110,7 +110,7 @@ no
 
 标准环境提供的缺失值绑定，类型为 nil_t；它与假值 f 不同。
 
-```el-fragment
+```el-signature
 export let nil: nil_t = nil_t()
 ```
 
@@ -130,7 +130,7 @@ fn finish(): nil_t { return nil }
 
 布尔类型别名，定义就是 t_t | f_t；Bool 的值已经属于该联合，不需要再转换成联合类型。
 
-```el-fragment
+```el-signature
 export let Bool: type = t_t | f_t
 ```
 
@@ -157,7 +157,7 @@ let rejected: Bool = f
 
 按输入的条件行为返回 t 或 f；同名的 Bool 类型本身是 t_t | f_t 的别名。
 
-```el-fragment
+```el-signature
 export fn Bool(value = f): Bool
 ```
 

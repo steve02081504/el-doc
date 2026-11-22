@@ -16,7 +16,7 @@
 
 使用 PBKDF2-HMAC-SHA1 从密码和盐派生密钥字节。
 
-```el-fragment
+```el-signature
 export fn pbkdf2_sha1(password: Number[], salt: Number[], iterations: Number, count: Number): Number[]
 ```
 
@@ -47,7 +47,7 @@ let derived = pbkdf2_sha1(@[112, 97, 115, 115], @[1, 2, 3, 4], 1000, 32)
 
 使用 PBKDF2-HMAC-SHA256 从密码和盐派生密钥字节。
 
-```el-fragment
+```el-signature
 export fn pbkdf2_sha256(password: Number[], salt: Number[], iterations: Number, count: Number): Number[]
 ```
 

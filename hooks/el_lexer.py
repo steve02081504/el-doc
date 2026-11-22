@@ -35,11 +35,11 @@ _EL_CODE_RULES = [
     (r"@[\[({]", Punctuation),
     (r"@[A-Za-z_\u0080-\uffff][\w:]*", Name.Decorator),
     (
-        r"\b(fn|class|interface)(\s+)([A-Za-z_\u0080-\uffff][\w]*)",
+        r"\b(fn|class|interface)(\s+)(#?[A-Za-z_\u0080-\uffff][\w]*)",
         bygroups(Keyword.Declaration, Text, Name.Function),
     ),
     (
-        r"\b(let|const)(\s+)([A-Za-z_\u0080-\uffff][\w]*)",
+        r"\b(let|const)(\s+)(#?[A-Za-z_\u0080-\uffff][\w]*)",
         bygroups(Keyword.Declaration, Text, Name.Variable),
     ),
     (r"\b(fn|class|interface|let|const)\b", Keyword.Declaration),
@@ -56,7 +56,7 @@ _EL_CODE_RULES = [
         r"return|throw|try|catch|finally|new|delete|is|isnot|take|ref|"
         r"rvalue|virtual|override|implicit|super|constructor|destructor|"
         r"operator|static|public|data|match|prove|calc|use|extends|"
-        r"implements|enum|typeof|discard|unsafe|goto|init|borrow)\b",
+        r"implements|enum|typeof|discard|unsafe|goto|init|borrow|forward)\b",
         Keyword,
     ),
     (r"\b(t|f|nil|true|false|any)\b", Keyword.Constant),
@@ -66,7 +66,7 @@ _EL_CODE_RULES = [
         Number,
     ),
     (r"\b[A-Z][A-Za-z0-9_]*\b", Name.Class),
-    (r"[A-Za-z_\u0080-\uffff][\w]*", Name),
+    (r"#?[A-Za-z_\u0080-\uffff][\w]*", Name),
     (r"===|!==|<=>|\.\.\||\.\.|=>|==|!=|<=|>=|<<|>>|&&|\|\||\+\+|--|"
      r"\?\?=|\?\?|\?\.|\+=|-=|\*=|/=|%=|&=|\|=|\^=|\*\.|\.\*|\./|\.\^|"
      r"[-+*/%^&|!<>=?.:]", Operator),
@@ -82,7 +82,7 @@ _COMMENT_RULES = [
 
 class ELLexer(RegexLexer):
     name = "EL"
-    aliases = ["el", "els", "evil", "el-fragment", "el-signature", "eol"]
+    aliases = ["el", "els", "evil", "el-signature", "eol"]
     filenames = ["*.el", "*.els", "*.eol", "*.eod"]
     mimetypes = ["text/x-el"]
 

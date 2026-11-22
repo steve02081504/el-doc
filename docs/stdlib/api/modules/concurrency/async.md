@@ -16,7 +16,7 @@
 
 将代码块作为异步回调交给 spawn 执行，并立即返回 Promise。
 
-```el-fragment
+```el-signature
 export syntax async
 ```
 
@@ -24,8 +24,8 @@ export syntax async
 
 ```el
 import { async, await } from "el:concurrency/"
-let first = async { return loadText() }
-let second = async { return loadCount() }
+let first = async { return "ready" }
+let second = async { return 3 }
 let text = await(first)
 let count = await(second)
 ```
@@ -36,7 +36,7 @@ let count = await(second)
 
 读取 Promise 的结果；宏只完成 Promise.get() 调用，不自动把普通函数变成异步函数。
 
-```el-fragment
+```el-signature
 export syntax await
 ```
 

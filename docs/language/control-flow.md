@@ -29,14 +29,16 @@ console.stdout.writeLine(status)   // 继续阅读
 - 每个分支是一个块，块的值就是它最后执行语句的值；`if` 的值取被选中分支的值。
 - 没有 `else` 且条件为假时，结果是 `nil`：
 
-```el-fragment
+```el
+// @external pagesRead, totalPages
 let reminder = if (pagesRead >= totalPages) { "请在周五前归还" }
 console.log.value(reminder)   // nil：尚未读完，这次没有生成归还提醒
 ```
 
 - 条件不需要外层括号，圆括号只用于表达式分组：
 
-```el-fragment
+```el
+// @external pagesRead, totalPages
 if pagesRead >= totalPages {
 	console.stdout.writeLine("请带上这本书")
 }

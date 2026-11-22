@@ -17,7 +17,7 @@
 创建按目标基数解释的固定数位整数 Number 类型。
 无符号域为 `[0, R^N-1]`；有符号域为 `[-floor(R^N/2), ceil(R^N/2)-1]`，负值以不小于 `ceil(R^N/2)` 的模余数保存。
 
-```el-fragment
+```el-signature
 export fn DitInt(digits = 0, signed = f, min = nil, max = nil, overflow = "ub"): type
 ```
 

@@ -16,7 +16,7 @@
 
 解析 JSONC 并递归保留映射键的首次插入顺序；重复键覆盖不移动位置。
 
-```el-fragment
+```el-signature
 export fn parseOrderedJSONC(source: Text, limits: JsonLimits = JsonLimits()): any
 ```
 
@@ -35,7 +35,7 @@ let parsed = parseOrderedJSONC("{\"first\":1,/* keep order */\"second\":2}")
 
 解析 JSON5 并递归保留映射键的首次插入顺序；重复键覆盖不移动位置。
 
-```el-fragment
+```el-signature
 export fn parseOrderedJSON5(source: Text, limits: JsonLimits = JsonLimits()): any
 ```
 
@@ -54,7 +54,7 @@ let parsed = parseOrderedJSON5("{first:1,second:2,}")
 
 解析 JSONLines 并递归保留映射键的首次插入顺序；重复键覆盖不移动位置。
 
-```el-fragment
+```el-signature
 export fn parseOrderedJSONLines(source: Text, limits: JsonLimits = JsonLimits()): any[]
 ```
 

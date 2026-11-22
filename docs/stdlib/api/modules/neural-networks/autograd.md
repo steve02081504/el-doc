@@ -24,7 +24,7 @@
 
 创建指定元素和存储类型的自动微分 tape 类型。
 
-```el-fragment
+```el-signature
 export fn Autograd(element: type, storage: type = Tensor<element: element>): type
 ```
 
@@ -50,7 +50,7 @@ let tape = Tape()
 
 对跟踪张量逐元素平方，并在 tape 上记录乘法节点。
 
-```el-fragment
+```el-signature
 fn square()
 ```
 
@@ -68,7 +68,7 @@ let squared = x.square()
 
 将跟踪张量所有元素相加，返回可继续参与求导的 rank-zero 值。
 
-```el-fragment
+```el-signature
 fn sum()
 ```
 
@@ -86,7 +86,7 @@ let loss = x.square().sum()
 
 对跟踪张量所有元素求平均并在 tape 上记录归约。
 
-```el-fragment
+```el-signature
 fn mean()
 ```
 
@@ -104,7 +104,7 @@ let loss = (prediction - target).square().mean()
 
 将输入张量注册为需要对其求导的叶变量。
 
-```el-fragment
+```el-signature
 fn variable(value: Dense): Tracked
 ```
 
@@ -126,7 +126,7 @@ let x = tape.variable(input)
 
 对 rank-zero 跟踪损失反向传播，返回损失值及各变量梯度。
 
-```el-fragment
+```el-signature
 fn valueAndGrad(loss: Tracked, variables: Tracked[]): Result
 ```
 

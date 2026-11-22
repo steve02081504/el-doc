@@ -16,11 +16,11 @@
 
 声明可组合的解析语法，支持空白跳过、token、递归 rule 与起始规则。
 
-```el-fragment
+```el-signature
 export syntax grammar
 ```
 
-### 示例：定义整数起始规则
+### 示例：定义整数起始规则（需调用方提供对象或绑定）
 
 ```el
 import { grammar, many, range } from "el:text/patterns/index.el"

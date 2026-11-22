@@ -16,11 +16,11 @@
 
 提供窗口绘制所需的背景、文字、按钮、选区和字体等颜色与度量；与 Definition.theme 的 Theme 类型不同。
 
-```el-fragment
+```el-signature
 export class PaintTheme
 ```
 
-### 示例：修改窗口绘制背景色
+### 示例：修改窗口绘制背景色（需调用方提供对象或绑定）
 
 ```el
 let paint = darkPaintTheme()
@@ -30,11 +30,11 @@ window.theme = paint
 
 ## darkPaintTheme {#api-507fa392da014efe2281}
 
-源码：`src/stdlib/user-interface/drawing.el:117` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/drawing.el#L117)
+源码：`src/stdlib/user-interface/drawing.el:118` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/user-interface/drawing.el#L118)
 
 创建一份深色窗口绘制主题。
 
-```el-fragment
+```el-signature
 export fn darkPaintTheme(): PaintTheme
 ```
 
@@ -45,5 +45,6 @@ export fn darkPaintTheme(): PaintTheme
 ### 示例：设置窗口绘制主题
 
 ```el
+// @external window
 window.theme = darkPaintTheme()
 ```

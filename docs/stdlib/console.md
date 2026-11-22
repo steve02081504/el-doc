@@ -90,7 +90,7 @@ console.error("http.failed", @{ status: 500 })
 ```el
 console.log.value(@{ language: "EL", version: 1 })
 console.info.value(@{ count: 3, names: @["Ada", "Grace"] })
-console.error.value(error)
+console.error.value(StateError("missing configuration"))
 ```
 
 - `value` 可以是对象字面量、数组、错误值、类实例，展示时按字段和元素展开。
@@ -117,7 +117,8 @@ console.info.value(@{ count: 3 }, stdoutChannel)
 - 宿主可以按等级筛选，筛选发生在记录生成之前：被筛掉的等级不会构造消息、模板或快照。所以用 `trace` / `debug` 承担业务输出不可靠，它们可能默认不启用。
 - 给 `.value` 传 `stdoutChannel` 会跳过 stdout 文本的捕获投影，记录仍是 Display 类型。
 
-```el-fragment
+```el
+// @external rows, key, elapsed
 // 业务数据：进 stdout，能被管道和重定向拿到
 console.stdout.writeLine("rows: ", rows.count)
 

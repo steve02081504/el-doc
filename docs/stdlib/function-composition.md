@@ -18,7 +18,7 @@
 
 将下面的完整程序保存为 `maximum-count.el`。准备好配套 EL 工具后，可用 `el run maximum-count.el` 运行；如果当前工具还不支持后面的宏写法，先阅读其逐步展开的含义。
 
-```el-fragment
+```el
 fn maximumCount(a) {
 	let positives = 0
 	let negatives = 0
@@ -48,7 +48,7 @@ console.stdout.writeLine(maximumCount(@[-3, -1, 0, 2, 4, 7]))
 
 `filter` 接收一个判断函数，返回满足条件的元素组成的新数组；读取它的长度，就得到了数量。
 
-```el-fragment
+```el
 fn maximumCount(a) {
 	let positives = a.filter(value => value > 0).count
 	let negatives = a.filter(value => value < 0).count
@@ -60,7 +60,7 @@ fn maximumCount(a) {
 
 如果这两个中间名字没有提供额外信息，也可以直接写：
 
-```el-fragment
+```el
 fn maximumCount(a) {
 	return max(
 		a.filter(=> it > 0).count,
@@ -80,7 +80,8 @@ fn maximumCount(a) {
 
 `batch` 是标准库宏。它把块内用到的外部数组绑定投影到对应元素，让普通表达式逐元素执行；这里块内的 `a` 表示当前元素。
 
-```el-fragment
+```el
+// @external keep
 fn maximumCount(a) {
 	return max(
 		(batch { keep(a > 0) }).count,
@@ -98,7 +99,8 @@ fn maximumCount(a) {
 
 keep 条件同时涉及两个不同的展开绑定时，不会猜该返回哪一个；条件通过时它的正常值是 `nil`。需要输出哪个值，就显式写在后面。例如下面是一个独立的过滤片段：
 
-```el-fragment
+```el
+// @external keep
 let a = @[1, 5, 3]
 let b = @[2, 4, 3]
 let selected = batch {
@@ -113,7 +115,8 @@ let selected = batch {
 
 两条分支的共同部分是“根据某种比较过滤，然后取长度”；真正不同的只有比较方向。可以把比较函数传进去：
 
-```el-fragment
+```el
+// @external keep
 fn maximumCount(a) {
 	let countBy = fn(compare) => (batch {
 		keep(compare(a, 0))
@@ -155,13 +158,15 @@ over(merge, transform)(left, right)
 
 所以前一版函数的最后一行可以改成：
 
-```el-fragment
+```el
+// @external countBy
 return over(max, countBy)(greater, less)
 ```
 
 这行代码中，两个输入是比较函数，变换是过滤并计数，合并是取较大值。把只用一次的 `countBy` 放回调用处，就得到完整版本：
 
-```el-fragment
+```el
+// @external keep
 fn maximumCount(a) {
 	return over(max, fn(compare) => (batch {
 		keep(compare(a, 0))
@@ -171,7 +176,8 @@ fn maximumCount(a) {
 
 最后，把匿名函数参数改用 `it`，省略这里不需要的括号：
 
-```el-fragment
+```el
+// @external keep
 fn maximumCount(a) {
 	return over(max, => batch {
 		keep(it(a, 0))

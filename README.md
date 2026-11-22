@@ -57,7 +57,7 @@ python scripts/build_site.py build
 
 `hooks/el_lexer.py` 注册 EL 代码高亮；`hooks/random_pages.py` 与 `docs/assets/random-page.js` 提供随机页面；`docs/assets/learning.js` 提供本机阅读记录与进度组件，教程可按需使用。样式位于 `docs/stylesheets/extra.css`。
 
-`hooks/code_links.py` 使用生成的声明模型，把 EL 代码块中的标准环境名字、可确定的导入和成员链接到参考条目，关键词链接到语言参考。构建结束时检查链接页面和锚点；局部遮盖与未知接收者不按同名猜测。
+`hooks/code_links.py` 使用生成的声明模型，把 EL 代码块中的标准环境名字、可确定的导入和成员链接到参考条目，关键词链接到语言参考。构建时报告缺少导出或 API 注释的名字，并检查生成链接的页面和锚点。需要上文绑定的示例使用 `// @external` 声明外部名称。
 
 `hooks/virtual_content.py` 在构建后拆分超过 120 项的章节目录、平面表格和列表；`docs/assets/virtual-content.js` 按阅读位置加载每批 40 项，并释放远离视口的内容。旧锚点仍可跳转，页内搜索查询完整条目索引；浏览器自带查找与打印请使用页面上的“完整页面”入口。嵌套列表保留层级，不拆分。
 

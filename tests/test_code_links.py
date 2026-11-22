@@ -81,7 +81,7 @@ spec.loader.exec_module(module)
 
 	def test_external_names_are_explicit_and_block_local(self):
 		blocks = [
-			'<pre class="language-el"><code>// @external Nat, zero, Number\nfn make(): Nat =&gt; zero\nNumber\nunknown</code></pre>',
+			'<pre class="language-el"><code>// @external Nat, zero\nfn make(): Nat =&gt; zero\nunknown</code></pre>',
 			'<pre class="language-el"><code>Nat\n// @external Nat\nzero</code></pre>',
 		]
 		problems = []
@@ -91,6 +91,16 @@ spec.loader.exec_module(module)
 		self.assertIn("leading // @external", problems[1])
 		self.assertIn("'Nat' is not exported", problems[2])
 		self.assertIn("'zero' is not exported", problems[3])
+
+	def test_externals_cannot_mask_exports_even_outside_the_prelude(self):
+		code = '// @external silent, capture, Number\nlet value = 1'
+		problems = []
+		code_targets(code, self.catalog, report=lambda _, message: problems.append(message))
+		self.assertEqual(problems, [
+			"external name 'silent' conflicts with a standard library export (console/facade.el:10)",
+			"external name 'capture' conflicts with a standard library export",
+			"external name 'Number' conflicts with a standard library export",
+		])
 
 	def test_external_name_does_not_hide_unsupported_stdlib_import(self):
 		code = '// @external missing\nimport { missing } from "el:console/"\nmissing()'
@@ -103,6 +113,17 @@ spec.loader.exec_module(module)
 		code_targets('console.stdout.writeLine("ignored )"', self.catalog,
 			report=lambda _, message: problems.append(message))
 		self.assertEqual(problems, ["missing ')'"])
+
+	def test_highlighting_reports_invalid_binding_and_operator(self):
+		problems = []
+		code_targets('let = 1\n1 && 2', self.catalog, report=lambda _, message: problems.append(message))
+		self.assertEqual(problems, ["'let' requires a binding before '='", "'&&' is not an EL operator; use '&'"])
+
+	def test_embedded_rules_check_names_in_el_splices(self):
+		code = "// @external rules\nlet table = rules {\n relation edge(source, target) from $(missing)\n}"
+		problems = []
+		code_targets(code, self.catalog, report=lambda _, message: problems.append(message))
+		self.assertEqual(problems, ["'missing' is not exported by the standard library"])
 
 	def test_member_chain_uses_declared_types(self):
 		targets = self.names('console.stdout.writeLine("hello")')

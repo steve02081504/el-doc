@@ -16,7 +16,7 @@
 
 要求两个逻辑项统一，并将所得绑定传递给后续目标。
 
-```el-fragment
+```el-signature
 export fn unify(left: Term, right: Term): Goal
 ```
 
@@ -40,7 +40,7 @@ let goal = unify(variable(0), atom("Ada"))
 
 延迟检查两个逻辑项不可相等的约束。
 
-```el-fragment
+```el-signature
 export fn dif(left: Term, right: Term): Goal
 ```
 
@@ -64,7 +64,7 @@ let goal = dif(variable(0), atom("Ada"))
 
 调用由构造子项表示的关系。
 
-```el-fragment
+```el-signature
 export fn call(term: Term): Goal
 ```
 
@@ -82,11 +82,11 @@ let goal = call(compound("person", @[variable(0)]))
 
 ## all {#api-064c6979924b05a1874a}
 
-源码：`src/stdlib/logic/goal.el:73` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/goal.el#L73)
+源码：`src/stdlib/logic/goal.el:74` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/goal.el#L74)
 
 按顺序执行一组目标，并在目标间传递逻辑绑定。
 
-```el-fragment
+```el-signature
 export fn all(goals: Goal[]): Goal
 ```
 
@@ -96,19 +96,20 @@ export fn all(goals: Goal[]): Goal
 
 **返回值**：合取 Goal。
 
-### 示例：合并两个条件
+### 示例：合并两个条件（x 是已有的逻辑变量）
 
 ```el
+// @external x
 let goal = all(@[call(compound("person", @[x])), dif(x, atom("Ada"))])
 ```
 
 ## choice {#api-6e9cf1260ffb06318a44}
 
-源码：`src/stdlib/logic/goal.el:82` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/goal.el#L82)
+源码：`src/stdlib/logic/goal.el:83` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/goal.el#L83)
 
 构造一组可选逻辑分支；各分支独立枚举答案。
 
-```el-fragment
+```el-signature
 export fn choice(goals: Goal[]): Goal
 ```
 
@@ -122,4 +123,26 @@ export fn choice(goals: Goal[]): Goal
 
 ```el
 let goal = choice(@[call(atom("ready")), call(atom("waiting"))])
+```
+
+## scope {#api-7172aaca103c45ba56a1}
+
+源码：`src/stdlib/logic/goal.el:95` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/goal.el#L95)
+
+为单个子目标建立词法逻辑作用域。
+
+```el-signature
+export fn scope(goal: Goal): Goal
+```
+
+**返回类型**：[`Goal`](../../types.md#api-8930273b0777ef965836)
+
+**参数**：goal 作用域内执行的目标。
+
+**返回值**：包含该目标的 scope Goal。
+
+### 示例：包裹一个关系调用
+
+```el
+let scoped = scope(call(atom("ready")))
 ```

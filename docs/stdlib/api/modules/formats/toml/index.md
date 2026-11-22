@@ -16,7 +16,7 @@
 
 解析 TOML 文档并保留 TOML 值种类，包括日期时间、数组和表。
 
-```el-fragment
+```el-signature
 export fn parseTOML(source: Text, limits: JsonLimits = JsonLimits()): Toml
 ```
 
@@ -43,7 +43,7 @@ let settings = parseTOML("port = 8080")
 
 将 TOML 根表编码为文档，嵌套表使用内联表；数字必须能精确表示。
 
-```el-fragment
+```el-signature
 export fn writeTOML(value: Toml, limits: JsonLimits = JsonLimits()): Text
 ```
 
@@ -70,7 +70,7 @@ let text = writeTOML(parseTOML("port = 8080"))
 
 解析 TOML 并递归保留每个表的首次插入顺序。
 
-```el-fragment
+```el-signature
 export fn parseOrderedTOML(source: Text, limits: JsonLimits = JsonLimits()): Toml
 ```
 
