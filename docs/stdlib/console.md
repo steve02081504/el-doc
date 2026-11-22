@@ -117,7 +117,7 @@ console.info.value(@{ count: 3 }, stdoutChannel)
 - 宿主可以按等级筛选，筛选发生在记录生成之前：被筛掉的等级不会构造消息、模板或快照。所以用 `trace` / `debug` 承担业务输出不可靠，它们可能默认不启用。
 - 给 `.value` 传 `stdoutChannel` 会跳过 stdout 文本的捕获投影，记录仍是 Display 类型。
 
-```el
+```el-fragment
 // 业务数据：进 stdout，能被管道和重定向拿到
 console.stdout.writeLine("rows: ", rows.count)
 

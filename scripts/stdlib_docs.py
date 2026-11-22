@@ -219,24 +219,23 @@ def prelude_environment(stdlib, entries):
 			by_identity.setdefault((entry["source"], name), entry)
 	cache = {}
 	patterns = {}
+	real_root = stdlib.resolve()
 
 	def resolve_uri(path, uri):
 		target = posixpath.normpath(posixpath.join(posixpath.dirname(path), uri[5:]))
-		if not (stdlib / target).resolve().is_relative_to(stdlib.resolve()):
+		if not (stdlib / target).resolve().is_relative_to(real_root):
 			return '../__outside_stdlib__'
-		if not target.endswith('.el'):
-			if (stdlib / (target + '.el')).is_file():
-				target += '.el'
-			elif (stdlib / target / 'index.el').is_file():
-				target += '/index.el'
+		if (stdlib / target).is_dir():
+			target = posixpath.join(target, 'index.el')
 		return target
 
 	def module(path):
 		if path in cache:
 			return cache[path]
 		file = stdlib / path
-		if not file.is_file() or not file.resolve().is_relative_to(stdlib.resolve()):
-			return {}, {}
+		if not file.is_file() or not file.resolve().is_relative_to(real_root):
+			cache[path] = ({}, {})
+			return cache[path]
 		text = file.read_text(encoding="utf-8-sig").replace("\r\n", "\n")
 		stream = list(tokens(text))
 		if any(kind == "code" and token == "#" and not text[text.rfind("\n", 0, start) + 1:start].strip() for kind, token, start, _ in stream):

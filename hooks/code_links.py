@@ -109,12 +109,13 @@ class Catalog:
 		return None
 
 	def module(self, uri):
-		module = uri.removeprefix("el:").removesuffix(".el")
-		if not module or module == "index":
+		path = uri.removeprefix("el:")
+		if not path or path in ("/", "index.el"):
 			return self.environment
-		if module.endswith("/"):
-			return self.modules.get(module + "index", {})
-		return self.modules.get(module, self.modules.get(module + "/index", {}))
+		directory = path.endswith("/") or not path.endswith(".el")
+		path = posixpath.normpath(path)
+		module = posixpath.join(path, "index") if directory else path.removesuffix(".el")
+		return self.modules.get(module)
 
 	def type_targets(self, code, source=None):
 		"""Use declaration-context references only for an exact generated signature."""
@@ -170,7 +171,9 @@ def comprehension_offsets(tokens):
 		previous = token
 
 
-BUILTIN_NAMES = {"type", "any", "ptr", "this", "super", "it"}
+BUILTIN_NAMES = {"type", "any", "ptr", "this", "super", "it", "void",
+	"__BUILTIN_FILEPATH__", "__BUILTIN_LINENUMBER__", "__BUILTIN_LINE_CONTENT__",
+	"__BUILTIN_FILE_CONTENT__", "__BUILTIN_FUNCTION_INFO__", "eir"}
 
 
 def export_problem(binding, name, context):
@@ -254,11 +257,13 @@ def code_imports(stream):
 BINDING_MODIFIERS = {"ref", "borrow", "rvalue", "take"}
 
 
-def paired_tokens(tokens):
+def paired_tokens(tokens, ignored):
 	closing = {"(": ")", "[": "]", "{": "}", "@{": "}", "@[": "]", "@(": ")"}
 	stack = []
 	pairs = {}
-	for index, (_, _, value) in enumerate(tokens):
+	for index, (offset, _, value) in enumerate(tokens):
+		if offset in ignored:
+			continue
 		if value in closing:
 			stack.append((closing[value], index))
 		elif stack and value == stack[-1][0]:
@@ -288,11 +293,10 @@ def binding_indices(tokens, pairs, start, end, *, object_pattern=False):
 		elif object_pattern and index < end and tokens[index - 1][2] == ":" and tokens[index][1] in Name:
 			yield index
 		while index < end and tokens[index][2] not in (",", ";"):
-			index = pairs.get(index, index) + 1 if pairs.get(index, index) >= index else index + 1
+			index = max(index, pairs.get(index, index)) + 1
 
 
-def local_declarations(code, tokens, ignored):
-	pairs = paired_tokens(tokens)
+def local_declarations(code, tokens, ignored, pairs):
 	for index, (offset, kind, value) in enumerate(tokens):
 		if offset in ignored or index + 1 >= len(tokens):
 			continue
@@ -312,17 +316,65 @@ def local_declarations(code, tokens, ignored):
 			if position in pairs and tokens[position][2] == "(":
 				for parameter in binding_indices(tokens, pairs, position + 1, pairs[position]):
 					yield parameter, None
+		if value == "extern" and index and tokens[index - 1][2] == "import":
+			start = index + (2 if following == "{" else 1)
+			end = pairs.get(index + 1, len(tokens)) if following == "{" else len(tokens)
+			for current in range(start, end):
+				if tokens[current][2] == "from":
+					break
+				if tokens[current][2] == "as" and current + 1 < end:
+					yield current + 1, None
+				if tokens[current][1] in Name and current + 1 in pairs and tokens[current + 1][2] == "(":
+					yield current, None
+					for parameter in binding_indices(tokens, pairs, current + 2, pairs[current + 1]):
+						yield parameter, None
 		if value in ("goto", "break", "continue") and tokens[index + 1][1] in Name:
 			if "\n" not in code[offset:tokens[index + 1][0]]:
 				yield index + 1, None
 		if value == "=>" and index:
 			previous = index - 1
-			if tokens[previous][1] in Name:
-				yield previous, None
-			elif previous in pairs and tokens[previous][2] == ")":
+			if tokens[previous][1] in Name and previous and tokens[previous - 1][2] == ":":
+				previous -= 2
+			if previous in pairs and tokens[previous][2] == ")":
 				for parameter in binding_indices(tokens, pairs, pairs[previous] + 1, previous):
 					yield parameter, None
+			elif previous == index - 1 and tokens[previous][1] in Name:
+				yield previous, None
+		if value in ("data", "enum"):
+			for opening in range(index + 2, len(tokens)):
+				if tokens[opening][2] == "{" and opening in pairs:
+					end = pairs[opening]
+					current = opening + 1
+					while current < end:
+						if tokens[current][1] in Name and (current == opening + 1 or tokens[current - 1][2] in (";", ",")
+								or "\n" in code[tokens[current - 1][0]:tokens[current][0]]):
+							yield current, None
+						current = max(current, pairs.get(current, current)) + 1
+					break
+				if tokens[opening][2] in (";", "}"):
+					break
 
+
+def external_names(stream, report):
+	"""Read leading // @external name, name comments on one highlighted block."""
+	names = set()
+	header = True
+	for kind, value, start, _ in stream:
+		if kind == "space":
+			continue
+		if kind not in ("comment", "doc"):
+			header = False
+			continue
+		marker = re.match(r"//[ \t]+@external\b(.*)", value)
+		if not marker:
+			continue
+		declared = [name.strip() for name in marker[1].split(",")]
+		if not header or not all(name.isidentifier() for name in declared):
+			if report:
+				report(start, "use a leading // @external comment with a comma-separated list of identifiers")
+			continue
+		names.update(declared)
+	return names
 
 
 def code_targets(code, catalog, source=None, *, report=None, fragment=False):
@@ -355,6 +407,7 @@ def code_targets(code, catalog, source=None, *, report=None, fragment=False):
 	prelude = not re.search(r"@(module|runtime)\s*\([^)]*\bprelude\s*:\s*f\b", structure)
 	if not prelude:
 		bindings.clear()
+	bindings.update(dict.fromkeys(external_names(stream, report)))
 	imported_bindings = {}
 	namespaces = {}
 	external_patterns = []
@@ -367,7 +420,10 @@ def code_targets(code, catalog, source=None, *, report=None, fragment=False):
 			if offset >= specification.start:
 				ignored.add(offset)
 		uri = specification.uri
-		module = catalog.module(uri) if uri and uri.startswith("el:") else None
+		standard_module = uri and uri.startswith("el:")
+		module = catalog.module(uri) if standard_module else None
+		if report and standard_module and module is None:
+			report(specification.start, f"standard library module {uri!r} does not exist in the API catalog")
 		for name, alias, offset in specification.names:
 			binding = module.get(name) if module is not None else None
 			bindings[alias] = catalog.binding_target(binding) if binding else None
@@ -403,11 +459,17 @@ def code_targets(code, catalog, source=None, *, report=None, fragment=False):
 		definition = re.match(r"[ \t]*#define\s+(\w+)", directive[0])
 		if definition:
 			bindings[definition[1]] = None
-	for position, type_name in local_declarations(code, tokens, ignored):
+	pairs = paired_tokens(tokens, ignored)
+	for position, type_name in local_declarations(code, tokens, ignored, pairs):
 		offset, _, name = tokens[position]
 		bindings[name] = None
 		declarations.add(offset)
 		local_types[name].add(type_name)
+	for index, (offset, _, value) in enumerate(tokens[:-1]):
+		if offset in ignored or value not in ("shell", "eir") or value in local_types:
+			continue
+		if tokens[index + 1][2] == "{" and index + 1 in pairs:
+			ignored.update(token[0] for token in tokens[index + 2:pairs[index + 1]])
 	result = {}
 	resolved = {}
 	for index, (offset, kind, value) in enumerate(tokens):
@@ -421,6 +483,11 @@ def code_targets(code, catalog, source=None, *, report=None, fragment=False):
 			path = COMPREHENSION_REFERENCE if offset in comprehensions else "reference/language/" + LANGUAGE[value] + ".md"
 			target = Target(path, label=value)
 		elif (kind in Name and kind not in Name.Decorator) or kind in Keyword.Constant:
+			if value in ("noescape", "noescape_when_void") and index >= 2 and previous == "<" and tokens[index - 2][2] == "ptr":
+				continue
+			if following == "-" and code[offset + len(value):].startswith("-"):
+				if re.match(r"-\w+:\s*[\"']", code[offset + len(value):]):
+					continue
 			if previous in (".", "?."):
 				receiver = tokens[index - 2][2] if index >= 2 else None
 				if receiver in namespaces and receiver not in local_types:

@@ -34,7 +34,7 @@ for (let tile in tiles) console.stdout.writeLine(tile.x, ", ", tile.y, ", ", til
 
 观察八行坐标的最后一列从 0 递增到 7。需要复现实验时，用下方种子入口替换 `Random()`：
 
-```el
+```el-fragment
 let tiles = terrain(Random(17))
 ```
 

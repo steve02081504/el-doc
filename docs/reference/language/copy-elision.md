@@ -14,7 +14,7 @@
 
 以下是语义片段，`Point` 使用[赋值、复制与共享](assignment-semantics.md)中声明的 copy 类：
 
-```el
+```el-fragment
 let point = Point()
 ```
 
@@ -22,7 +22,7 @@ let point = Point()
 
 ## 必要的独立值仍然独立
 
-```el
+```el-fragment
 let original = Point()
 let other = original
 original.x = 1

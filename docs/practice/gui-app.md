@@ -152,7 +152,7 @@ el run src/main.el
 
 在 `buildCounterView` 的 `return root` 之前追加控件、更新函数与两个点击处理器：
 
-```el
+```el-fragment
 	let controls = element("row")
 	controls.style.gap = 8
 	let increase = element("button", "+1", "increase")
@@ -184,7 +184,7 @@ el run src/main.el
 
 再加一个清零按钮，把 `update` 换成这一版：
 
-```el
+```el-fragment
 	let reset = element("button", "清零", "reset")
 	appendChild(controls, "reset", reset)
 	let update = fn() {
@@ -208,14 +208,14 @@ el run src/main.el
 
 先给界面加一行时钟，放在 `display` 之后、`controls` 之前：
 
-```el
+```el-fragment
 	let clock = element("label", "运行 0 秒", "clock")
 	appendChild(root, "clock", clock)
 ```
 
 再在入口里按 id 取句柄、挂定时器：
 
-```el
+```el-fragment
 let clock = window.getById("clock")
 let seconds = 0
 discard(window.every(1000, (tick) => {

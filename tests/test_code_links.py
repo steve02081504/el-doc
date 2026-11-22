@@ -65,13 +65,44 @@ spec.loader.exec_module(module)
 			["absent", "silent", "missing", "Number", "silent"])
 		self.assertIn("is not exported", problems[0][1])
 		self.assertIn("has no API documentation (console/facade.el:10)", problems[1][1])
-		self.assertIn("outputs.capture".split(".")[1], {target.label for _, target in targets.values()})
+		self.assertIn("capture", {target.label for _, target in targets.values()})
+
+	def test_directory_import_requires_a_real_directory_entry(self):
+		for uri in ("el:console/", "el:console", "el:console/index.el"):
+			with self.subTest(uri=uri):
+				problems = []
+				code_targets(f'import {{ capture }} from "{uri}"', self.catalog,
+					report=lambda _, message: problems.append(message))
+				self.assertEqual(problems, [])
+		problems = []
+		code_targets('import { console } from "el:console/facade/"', self.catalog,
+			report=lambda _, message: problems.append(message))
+		self.assertEqual(problems, ["standard library module 'el:console/facade/' does not exist in the API catalog"])
+
+	def test_external_names_are_explicit_and_block_local(self):
+		blocks = [
+			'<pre class="language-el"><code>// @external Nat, zero, Number\nfn make(): Nat =&gt; zero\nNumber\nunknown</code></pre>',
+			'<pre class="language-el"><code>Nat\n// @external Nat\nzero</code></pre>',
+		]
+		problems = []
+		CodeLinker("".join(blocks), self.catalog, lambda _: "", report=problems.append)
+		self.assertEqual(len(problems), 4)
+		self.assertIn("'unknown' is exported", problems[0])
+		self.assertIn("leading // @external", problems[1])
+		self.assertIn("'Nat' is not exported", problems[2])
+		self.assertIn("'zero' is not exported", problems[3])
+
+	def test_external_name_does_not_hide_unsupported_stdlib_import(self):
+		code = '// @external missing\nimport { missing } from "el:console/"\nmissing()'
+		problems = []
+		code_targets(code, self.catalog, report=lambda _, message: problems.append(message))
+		self.assertEqual(problems, ["'missing' is not exported by el:console/"])
 
 	def test_highlighting_reports_unbalanced_syntax(self):
 		problems = []
 		code_targets('console.stdout.writeLine("ignored )"', self.catalog,
 			report=lambda _, message: problems.append(message))
-		self.assertEqual(problems, ["missing ')' ".rstrip()])
+		self.assertEqual(problems, ["missing ')'"])
 
 	def test_member_chain_uses_declared_types(self):
 		targets = self.names('console.stdout.writeLine("hello")')

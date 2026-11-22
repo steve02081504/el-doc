@@ -48,6 +48,7 @@ if (ready & healthy) {
 也没有三目运算符，条件取值统一用 `if` 表达式：
 
 ```el
+let ready = t
 let label = if (ready) { "on" } else { "off" }
 console.stdout.writeLine(label)   // on
 ```
@@ -231,7 +232,7 @@ console.log.value(-sum == Vec2(-4, -2))     // t
 
 同名的类外声明把左操作数写成普通参数：
 
-```el
+```el-fragment
 operator +(lhs: Vec2, rhs: Number): Vec2 {
 	return Vec2(lhs.x + rhs, lhs.y)
 }

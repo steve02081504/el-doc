@@ -181,7 +181,7 @@ fn countWords(text: Text) {
 
 ## 第五步：把结果、诊断和退出码分开
 
-```el
+```el-fragment
 console.stdout.writeLine("lines: ", countLines(source), "  words: ", countWords(source))
 ```
 
@@ -230,7 +230,7 @@ console.stdout.writeLine(Text(result))
 
 `shell { ... }` 直接返回 `ShellResult`：块本身就是输出、退出码与状态的收集边界。`Text(result)` 是受检的文本投影，只取标准输出，不混入 stderr；没有明确文本目标时，结果仍是 `ShellResult`。
 
-```el
+```el-fragment
 let branch: Text = shell { git branch --show-current }
 let diff = shell { git diff --quiet }
 if (diff.exitCode != 0) console.stdout.writeLine("working tree has changes")
