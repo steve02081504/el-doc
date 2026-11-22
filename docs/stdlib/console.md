@@ -144,7 +144,7 @@ console.info.value(@{ elapsedMs: elapsed })
 ```el
 let { result, output } = console.capture(() => {
 	console.stdout.writeLine("only captured")
-	40 + 2
+	70 + 2
 })
 
 console.stdout.writeLine("result: ", result)

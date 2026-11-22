@@ -150,7 +150,7 @@ result: 0
 
 ```el
 let first = async {
-	return 40 + 2
+	return 70 + 2
 }
 let second = async {
 	return 8
@@ -160,7 +160,7 @@ console.stdout.writeLine("sum: ", await(first) + await(second))
 ```
 
 ```text
-sum: 50
+sum: 80
 ```
 
 `async { ... }` 和 `await(p)` 是标准库宏，不是关键字：`async` 建立真实 callback 并立刻 `spawn`，返回 `Promise`；`await` 只生成一次 `.get()`。也可以直接用 `spawn(fn() { ... })` 启动任务、用 `.get()` 等待。多个任务、取消和并发集合在[错误处理与异步](language/errors-async.md)里展开。
