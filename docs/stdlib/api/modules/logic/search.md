@@ -35,7 +35,7 @@ let step = cursor.next()
 
 ## GroundSearch {#api-7a238a9cc648b83300d3}
 
-源码：`src/stdlib/logic/search.el:844` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L844)
+源码：`src/stdlib/logic/search.el:841` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L841)
 
 将 PreparedSearch 的答案按需转换为必须无逻辑变量的地面 Term。
 
@@ -53,7 +53,7 @@ let step = cursor.next()
 
 ## GroundCursor {#api-5942ab836ae0713bf70d}
 
-源码：`src/stdlib/logic/search.el:863` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L863)
+源码：`src/stdlib/logic/search.el:860` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L860)
 
 按需返回 GroundSearch 的地面项结果；完成时返回 done 标记。
 
@@ -72,7 +72,7 @@ if (!step.done) consume(step.value)
 
 ## GroundCursor.next {#api-9a2563bdfb8e857f0b0f}
 
-源码：`src/stdlib/logic/search.el:889` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L889)
+源码：`src/stdlib/logic/search.el:886` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L886)
 
 继续搜索并返回下一项地面 Term；耗尽时返回 done 步骤。
 
@@ -96,7 +96,7 @@ if (!step.done) consume(step.value)
 
 ## SearchCursor {#api-09b5771e54c5c1923052}
 
-源码：`src/stdlib/logic/search.el:906` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L906)
+源码：`src/stdlib/logic/search.el:903` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L903)
 
 逐项推进逻辑搜索的游标。提前停止读取时，可用 `close()` 释放搜索会话。
 
@@ -113,7 +113,7 @@ let cursor = plan.iterator()
 
 ## SearchCursor.next {#api-d6a4b9be8fcbef392bec}
 
-源码：`src/stdlib/logic/search.el:969` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L969)
+源码：`src/stdlib/logic/search.el:966` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L966)
 
 推进搜索并返回下一项结果。没有下一项时返回 `done`。推进期间发生的搜索中断会向调用者传播。
 

@@ -141,6 +141,28 @@ spec.loader.exec_module(module)
 				self.assertEqual([offset for offset, (_, target) in targets.items() if target.label == reason["name"]],
 					[code.index("reason")])
 
+	def test_typed_catch_members_follow_each_handlers_annotation(self):
+		first = entry("FirstError", source="errors.el")
+		second = entry("SecondError", source="errors.el")
+		first_reason = entry("FirstError.reason", source="errors.el")
+		second_reason = entry("SecondError.reason", source="errors.el")
+		catalog = Catalog({"entries": [first, second, first_reason, second_reason],
+			"environment": [{"name": second["name"], "id": second["id"]}],
+			"exports": {"errors": {"FirstError": {"id": first["id"]}}}})
+		code = (
+			'import { FirstError as NamedError } from "el:errors.el"\n'
+			'try { error.reason }\n'
+			'catch (error: NamedError) { error.reason }\n'
+			'catch (error: SecondError) { error.reason }\n'
+			'catch (error) { error.reason }\n'
+			'finally { error.reason }\n'
+			'error.reason')
+		targets = code_targets(code, catalog)
+		self.assertEqual(
+			{offset: target.label for offset, (_, target) in targets.items() if target.label.endswith(".reason")},
+			{code.index("reason", code.index("catch")): first_reason["name"],
+				code.index("reason", code.index("catch (error: SecondError)")): second_reason["name"]})
+
 	def test_externals_cannot_mask_exports_even_outside_the_prelude(self):
 		code = '// @external silent: Text, capture: Text, Number: type\nlet value = 1'
 		problems = []

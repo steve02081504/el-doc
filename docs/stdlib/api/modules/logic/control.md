@@ -16,7 +16,7 @@
 
 ## SearchInterrupted {#api-f2eed514e7ad72951f31}
 
-源码：`src/stdlib/logic/control.el:71` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/control.el#L71)
+源码：`src/stdlib/logic/control.el:70` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/control.el#L70)
 
 搜索因预算耗尽或主动取消而中断时抛出的信息对象。
 
@@ -29,15 +29,14 @@ export @assign(mode: "shared") class SearchInterrupted
 ```el
 // @external cursor: SearchCursor
 try { discard(cursor.next()) }
-catch (error) {
-	if (error is SearchInterrupted) console.stdout.writeLine(error.reason)
-	else throw error
+catch (error: SearchInterrupted) {
+	console.stdout.writeLine(error.reason)
 }
 ```
 
 ## SearchInterrupted.reason {#api-a5e27f42e41e0a798bf0}
 
-源码：`src/stdlib/logic/control.el:81` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/control.el#L81)
+源码：`src/stdlib/logic/control.el:80` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/control.el#L80)
 
 返回搜索中断的原因。搜索预算耗尽时为 `"limited"`，主动取消时为 `"cancelled"`。
 

@@ -668,7 +668,7 @@
 			"name": "ArgumentShapeAnalysis",
 			"id": null,
 			"source": "logic/shape-analysis.el",
-			"line": 628,
+			"line": 625,
 			"signature": "export @assign(mode: \"shared\") class ArgumentShapeAnalysis",
 			"value_type": null
 		},
@@ -3652,7 +3652,7 @@
 			"name": "decodeTar",
 			"id": null,
 			"source": "archives/tar.el",
-			"line": 224,
+			"line": 221,
 			"signature": "export fn decodeTar(bytes: Number[], options: ArchiveOptions = ArchiveOptions()): ArchiveEntry[]",
 			"value_type": null
 		},
@@ -4308,7 +4308,7 @@
 			"name": "encodeTar",
 			"id": null,
 			"source": "archives/tar.el",
-			"line": 140,
+			"line": 137,
 			"signature": "export fn encodeTar(entries: ArchiveEntry[], options: ArchiveOptions = ArchiveOptions()): Number[]",
 			"value_type": null
 		},
@@ -5396,7 +5396,7 @@
 			"name": "GroundCursor",
 			"id": "logic/search::GroundCursor",
 			"source": "logic/search.el",
-			"line": 863,
+			"line": 860,
 			"signature": "export @assign(mode: \"shared\") class GroundCursor",
 			"value_type": null
 		},
@@ -5404,7 +5404,7 @@
 			"name": "GroundSearch",
 			"id": "logic/search::GroundSearch",
 			"source": "logic/search.el",
-			"line": 844,
+			"line": 841,
 			"signature": "export @assign(mode: \"shared\") class GroundSearch",
 			"value_type": null
 		},
@@ -7228,7 +7228,7 @@
 			"name": "ModeAnalysis",
 			"id": null,
 			"source": "logic/analysis.el",
-			"line": 1452,
+			"line": 1449,
 			"signature": "export @assign(mode: \"shared\") class ModeAnalysis",
 			"value_type": null
 		},
@@ -8404,7 +8404,7 @@
 			"name": "parseJSON5",
 			"id": null,
 			"source": "formats/json/variants.el",
-			"line": 162,
+			"line": 159,
 			"signature": "export fn parseJSON5(source: Text, limits: JsonLimits = JsonLimits()): any",
 			"value_type": null
 		},
@@ -8412,7 +8412,7 @@
 			"name": "parseJSONC",
 			"id": null,
 			"source": "formats/json/variants.el",
-			"line": 168,
+			"line": 165,
 			"signature": "export fn parseJSONC(source: Text, limits: JsonLimits = JsonLimits()): any",
 			"value_type": null
 		},
@@ -8420,7 +8420,7 @@
 			"name": "parseJSONLines",
 			"id": null,
 			"source": "formats/json/variants.el",
-			"line": 210,
+			"line": 207,
 			"signature": "export fn parseJSONLines(source: Text, limits: JsonLimits = JsonLimits()): any[]",
 			"value_type": null
 		},
@@ -8444,7 +8444,7 @@
 			"name": "parseOrderedJSON5",
 			"id": "formats/json/variants::parseOrderedJSON5",
 			"source": "formats/json/variants.el",
-			"line": 239,
+			"line": 236,
 			"signature": "export fn parseOrderedJSON5(source: Text, limits: JsonLimits = JsonLimits()): any",
 			"value_type": null
 		},
@@ -8452,7 +8452,7 @@
 			"name": "parseOrderedJSONC",
 			"id": "formats/json/variants::parseOrderedJSONC",
 			"source": "formats/json/variants.el",
-			"line": 230,
+			"line": 227,
 			"signature": "export fn parseOrderedJSONC(source: Text, limits: JsonLimits = JsonLimits()): any",
 			"value_type": null
 		},
@@ -8460,7 +8460,7 @@
 			"name": "parseOrderedJSONLines",
 			"id": "formats/json/variants::parseOrderedJSONLines",
 			"source": "formats/json/variants.el",
-			"line": 248,
+			"line": 245,
 			"signature": "export fn parseOrderedJSONLines(source: Text, limits: JsonLimits = JsonLimits()): any[]",
 			"value_type": null
 		},
@@ -10949,7 +10949,7 @@
 			"name": "SearchBudget",
 			"id": null,
 			"source": "logic/control.el",
-			"line": 85,
+			"line": 84,
 			"signature": "export @assign(mode: \"shared\") class SearchBudget",
 			"value_type": null
 		},
@@ -10965,7 +10965,7 @@
 			"name": "SearchCursor",
 			"id": "logic/search::SearchCursor",
 			"source": "logic/search.el",
-			"line": 906,
+			"line": 903,
 			"signature": "export @assign(mode: \"shared\") class SearchCursor",
 			"value_type": null
 		},
@@ -10973,7 +10973,7 @@
 			"name": "SearchInterrupted",
 			"id": "logic/control::SearchInterrupted",
 			"source": "logic/control.el",
-			"line": 71,
+			"line": 70,
 			"signature": "export @assign(mode: \"shared\") class SearchInterrupted",
 			"value_type": null
 		},
@@ -10989,7 +10989,7 @@
 			"name": "SearchOptimization",
 			"id": null,
 			"source": "logic/search.el",
-			"line": 781,
+			"line": 780,
 			"signature": "export @assign(mode: \"shared\") class SearchOptimization",
 			"value_type": null
 		},
@@ -13651,7 +13651,7 @@
 			"decodeTar": {
 				"id": null,
 				"source": "archives/tar.el",
-				"line": 224,
+				"line": 221,
 				"value_type": null
 			},
 			"decodeZip": {
@@ -13717,7 +13717,7 @@
 			"encodeTar": {
 				"id": null,
 				"source": "archives/tar.el",
-				"line": 140,
+				"line": 137,
 				"value_type": null
 			},
 			"encodeZip": {
@@ -13949,13 +13949,13 @@
 			"decodeTar": {
 				"id": null,
 				"source": "archives/tar.el",
-				"line": 224,
+				"line": 221,
 				"value_type": null
 			},
 			"encodeTar": {
 				"id": null,
 				"source": "archives/tar.el",
-				"line": 140,
+				"line": 137,
 				"value_type": null
 			}
 		},
@@ -34679,19 +34679,19 @@
 			"rewrite_current_source_region": {
 				"id": null,
 				"source": "compiler/optimization/source-optimizer.el",
-				"line": 139,
+				"line": 136,
 				"value_type": null
 			},
 			"rewrite_source_expression": {
 				"id": null,
 				"source": "compiler/optimization/source-optimizer.el",
-				"line": 106,
+				"line": 103,
 				"value_type": null
 			},
 			"rewrite_source_region": {
 				"id": null,
 				"source": "compiler/optimization/source-optimizer.el",
-				"line": 126,
+				"line": 123,
 				"value_type": null
 			}
 		},
@@ -42239,7 +42239,7 @@
 			"elaborate_source_calc": {
 				"id": null,
 				"source": "compiler/proof/source-tactics.el",
-				"line": 548,
+				"line": 547,
 				"value_type": null
 			},
 			"elaborate_source_proof": {
@@ -73733,19 +73733,19 @@
 			"parseJSON5": {
 				"id": null,
 				"source": "formats/json/variants.el",
-				"line": 162,
+				"line": 159,
 				"value_type": null
 			},
 			"parseJSONC": {
 				"id": null,
 				"source": "formats/json/variants.el",
-				"line": 168,
+				"line": 165,
 				"value_type": null
 			},
 			"parseJSONLines": {
 				"id": null,
 				"source": "formats/json/variants.el",
-				"line": 210,
+				"line": 207,
 				"value_type": null
 			},
 			"parseOrderedINI": {
@@ -73763,19 +73763,19 @@
 			"parseOrderedJSON5": {
 				"id": "formats/json/variants::parseOrderedJSON5",
 				"source": "formats/json/variants.el",
-				"line": 239,
+				"line": 236,
 				"value_type": null
 			},
 			"parseOrderedJSONC": {
 				"id": "formats/json/variants::parseOrderedJSONC",
 				"source": "formats/json/variants.el",
-				"line": 230,
+				"line": 227,
 				"value_type": null
 			},
 			"parseOrderedJSONLines": {
 				"id": "formats/json/variants::parseOrderedJSONLines",
 				"source": "formats/json/variants.el",
-				"line": 248,
+				"line": 245,
 				"value_type": null
 			},
 			"parseOrderedTOML": {
@@ -74099,37 +74099,37 @@
 			"parseJSON5": {
 				"id": null,
 				"source": "formats/json/variants.el",
-				"line": 162,
+				"line": 159,
 				"value_type": null
 			},
 			"parseJSONC": {
 				"id": null,
 				"source": "formats/json/variants.el",
-				"line": 168,
+				"line": 165,
 				"value_type": null
 			},
 			"parseJSONLines": {
 				"id": null,
 				"source": "formats/json/variants.el",
-				"line": 210,
+				"line": 207,
 				"value_type": null
 			},
 			"parseOrderedJSON5": {
 				"id": "formats/json/variants::parseOrderedJSON5",
 				"source": "formats/json/variants.el",
-				"line": 239,
+				"line": 236,
 				"value_type": null
 			},
 			"parseOrderedJSONC": {
 				"id": "formats/json/variants::parseOrderedJSONC",
 				"source": "formats/json/variants.el",
-				"line": 230,
+				"line": 227,
 				"value_type": null
 			},
 			"parseOrderedJSONLines": {
 				"id": "formats/json/variants::parseOrderedJSONLines",
 				"source": "formats/json/variants.el",
-				"line": 248,
+				"line": 245,
 				"value_type": null
 			},
 			"specialNumber": {
@@ -76623,7 +76623,7 @@
 			"ArgumentShapeAnalysis": {
 				"id": null,
 				"source": "logic/shape-analysis.el",
-				"line": 628,
+				"line": 625,
 				"value_type": null
 			},
 			"ArgumentShapeSummary": {
@@ -77997,13 +77997,13 @@
 			"GroundCursor": {
 				"id": "logic/search::GroundCursor",
 				"source": "logic/search.el",
-				"line": 863,
+				"line": 860,
 				"value_type": null
 			},
 			"GroundSearch": {
 				"id": "logic/search::GroundSearch",
 				"source": "logic/search.el",
-				"line": 844,
+				"line": 841,
 				"value_type": null
 			},
 			"GuiEvent": {
@@ -78453,7 +78453,7 @@
 			"ModeAnalysis": {
 				"id": null,
 				"source": "logic/analysis.el",
-				"line": 1452,
+				"line": 1449,
 				"value_type": null
 			},
 			"ModeRequirement": {
@@ -79263,7 +79263,7 @@
 			"SearchBudget": {
 				"id": null,
 				"source": "logic/control.el",
-				"line": 85,
+				"line": 84,
 				"value_type": null
 			},
 			"SearchCandidate": {
@@ -79275,13 +79275,13 @@
 			"SearchCursor": {
 				"id": "logic/search::SearchCursor",
 				"source": "logic/search.el",
-				"line": 906,
+				"line": 903,
 				"value_type": null
 			},
 			"SearchInterrupted": {
 				"id": "logic/control::SearchInterrupted",
 				"source": "logic/control.el",
-				"line": 71,
+				"line": 70,
 				"value_type": null
 			},
 			"SearchObjective": {
@@ -79293,7 +79293,7 @@
 			"SearchOptimization": {
 				"id": null,
 				"source": "logic/search.el",
-				"line": 781,
+				"line": 780,
 				"value_type": null
 			},
 			"SearchPriority": {
@@ -81627,7 +81627,7 @@
 			"decodeTar": {
 				"id": null,
 				"source": "archives/tar.el",
-				"line": 224,
+				"line": 221,
 				"value_type": null
 			},
 			"decodeTextContent": {
@@ -81969,7 +81969,7 @@
 			"encodeTar": {
 				"id": null,
 				"source": "archives/tar.el",
-				"line": 140,
+				"line": 137,
 				"value_type": null
 			},
 			"encodeZip": {
@@ -83901,19 +83901,19 @@
 			"parseJSON5": {
 				"id": null,
 				"source": "formats/json/variants.el",
-				"line": 162,
+				"line": 159,
 				"value_type": null
 			},
 			"parseJSONC": {
 				"id": null,
 				"source": "formats/json/variants.el",
-				"line": 168,
+				"line": 165,
 				"value_type": null
 			},
 			"parseJSONLines": {
 				"id": null,
 				"source": "formats/json/variants.el",
-				"line": 210,
+				"line": 207,
 				"value_type": null
 			},
 			"parseOrderedINI": {
@@ -83931,19 +83931,19 @@
 			"parseOrderedJSON5": {
 				"id": "formats/json/variants::parseOrderedJSON5",
 				"source": "formats/json/variants.el",
-				"line": 239,
+				"line": 236,
 				"value_type": null
 			},
 			"parseOrderedJSONC": {
 				"id": "formats/json/variants::parseOrderedJSONC",
 				"source": "formats/json/variants.el",
-				"line": 230,
+				"line": 227,
 				"value_type": null
 			},
 			"parseOrderedJSONLines": {
 				"id": "formats/json/variants::parseOrderedJSONLines",
 				"source": "formats/json/variants.el",
-				"line": 248,
+				"line": 245,
 				"value_type": null
 			},
 			"parseOrderedTOML": {
@@ -95002,7 +95002,7 @@
 			"ModeAnalysis": {
 				"id": null,
 				"source": "logic/analysis.el",
-				"line": 1452,
+				"line": 1449,
 				"value_type": null
 			},
 			"ModeRequirement": {
@@ -95562,13 +95562,13 @@
 			"SearchBudget": {
 				"id": null,
 				"source": "logic/control.el",
-				"line": 85,
+				"line": 84,
 				"value_type": null
 			},
 			"SearchInterrupted": {
 				"id": "logic/control::SearchInterrupted",
 				"source": "logic/control.el",
-				"line": 71,
+				"line": 70,
 				"value_type": null
 			},
 			"SearchSemantics": {
@@ -96066,7 +96066,7 @@
 			"ArgumentShapeAnalysis": {
 				"id": null,
 				"source": "logic/shape-analysis.el",
-				"line": 628,
+				"line": 625,
 				"value_type": null
 			},
 			"ArgumentShapeSummary": {
@@ -96180,13 +96180,13 @@
 			"GroundCursor": {
 				"id": "logic/search::GroundCursor",
 				"source": "logic/search.el",
-				"line": 863,
+				"line": 860,
 				"value_type": null
 			},
 			"GroundSearch": {
 				"id": "logic/search::GroundSearch",
 				"source": "logic/search.el",
-				"line": 844,
+				"line": 841,
 				"value_type": null
 			},
 			"IncrementalProgram": {
@@ -96252,7 +96252,7 @@
 			"ModeAnalysis": {
 				"id": null,
 				"source": "logic/analysis.el",
-				"line": 1452,
+				"line": 1449,
 				"value_type": null
 			},
 			"ModeRequirement": {
@@ -96360,7 +96360,7 @@
 			"SearchBudget": {
 				"id": null,
 				"source": "logic/control.el",
-				"line": 85,
+				"line": 84,
 				"value_type": null
 			},
 			"SearchCandidate": {
@@ -96372,13 +96372,13 @@
 			"SearchCursor": {
 				"id": "logic/search::SearchCursor",
 				"source": "logic/search.el",
-				"line": 906,
+				"line": 903,
 				"value_type": null
 			},
 			"SearchInterrupted": {
 				"id": "logic/control::SearchInterrupted",
 				"source": "logic/control.el",
-				"line": 71,
+				"line": 70,
 				"value_type": null
 			},
 			"SearchObjective": {
@@ -96390,7 +96390,7 @@
 			"SearchOptimization": {
 				"id": null,
 				"source": "logic/search.el",
-				"line": 781,
+				"line": 780,
 				"value_type": null
 			},
 			"SearchPriority": {
@@ -97372,13 +97372,13 @@
 			"GroundCursor": {
 				"id": "logic/search::GroundCursor",
 				"source": "logic/search.el",
-				"line": 863,
+				"line": 860,
 				"value_type": null
 			},
 			"GroundSearch": {
 				"id": "logic/search::GroundSearch",
 				"source": "logic/search.el",
-				"line": 844,
+				"line": 841,
 				"value_type": null
 			},
 			"OptimalityCertificate": {
@@ -97402,13 +97402,13 @@
 			"SearchCursor": {
 				"id": "logic/search::SearchCursor",
 				"source": "logic/search.el",
-				"line": 906,
+				"line": 903,
 				"value_type": null
 			},
 			"SearchOptimization": {
 				"id": null,
 				"source": "logic/search.el",
-				"line": 781,
+				"line": 780,
 				"value_type": null
 			},
 			"SearchSnapshot": {
@@ -97494,7 +97494,7 @@
 			"ArgumentShapeAnalysis": {
 				"id": null,
 				"source": "logic/shape-analysis.el",
-				"line": 628,
+				"line": 625,
 				"value_type": null
 			},
 			"ArgumentShapeSummary": {
@@ -110970,7 +110970,7 @@
 			"solveWithSteps": {
 				"id": null,
 				"source": "mathematics/algebra/symbolic/solving-relations.el",
-				"line": 100,
+				"line": 95,
 				"value_type": null
 			}
 		},
@@ -194774,7 +194774,7 @@
 			"loadSharedTheme": {
 				"id": null,
 				"source": "theme/shared-settings.el",
-				"line": 177,
+				"line": 179,
 				"value_type": null
 			},
 			"mixColors": {
@@ -194798,7 +194798,7 @@
 			"refreshSharedThemeSettings": {
 				"id": null,
 				"source": "theme/shared-settings.el",
-				"line": 174,
+				"line": 176,
 				"value_type": null
 			},
 			"refreshThemeEnvironment": {
@@ -194834,7 +194834,7 @@
 			"saveSharedThemeSettings": {
 				"id": null,
 				"source": "theme/shared-settings.el",
-				"line": 176,
+				"line": 178,
 				"value_type": null
 			},
 			"sharedThemeLocation": {
@@ -194846,7 +194846,7 @@
 			"sharedThemeSettingsSnapshot": {
 				"id": null,
 				"source": "theme/shared-settings.el",
-				"line": 175,
+				"line": 177,
 				"value_type": null
 			},
 			"systemAppearance": {
@@ -194986,19 +194986,19 @@
 			"loadSharedTheme": {
 				"id": null,
 				"source": "theme/shared-settings.el",
-				"line": 177,
+				"line": 179,
 				"value_type": null
 			},
 			"refreshSharedThemeSettings": {
 				"id": null,
 				"source": "theme/shared-settings.el",
-				"line": 174,
+				"line": 176,
 				"value_type": null
 			},
 			"saveSharedThemeSettings": {
 				"id": null,
 				"source": "theme/shared-settings.el",
-				"line": 176,
+				"line": 178,
 				"value_type": null
 			},
 			"sharedThemeLocation": {
@@ -195010,13 +195010,13 @@
 			"sharedThemeRevision": {
 				"id": null,
 				"source": "theme/shared-settings.el",
-				"line": 173,
+				"line": 175,
 				"value_type": null
 			},
 			"sharedThemeSettingsSnapshot": {
 				"id": null,
 				"source": "theme/shared-settings.el",
-				"line": 175,
+				"line": 177,
 				"value_type": null
 			},
 			"themeSettingsPatch": {
@@ -200831,7 +200831,7 @@
 		{
 			"name": "Pax",
 			"source": "archives/tar.el",
-			"line": 182,
+			"line": 179,
 			"signature": "class Pax",
 			"id": null,
 			"initializer": null
@@ -223823,7 +223823,7 @@
 		{
 			"name": "ModeAnalysis",
 			"source": "logic/analysis.el",
-			"line": 1452,
+			"line": 1449,
 			"signature": "class ModeAnalysis",
 			"id": null,
 			"initializer": null
@@ -223903,7 +223903,7 @@
 		{
 			"name": "SearchInterrupted",
 			"source": "logic/control.el",
-			"line": 71,
+			"line": 70,
 			"signature": "class SearchInterrupted",
 			"id": "logic/control::SearchInterrupted",
 			"initializer": null
@@ -223911,7 +223911,7 @@
 		{
 			"name": "SearchBudget",
 			"source": "logic/control.el",
-			"line": 85,
+			"line": 84,
 			"signature": "class SearchBudget",
 			"id": null,
 			"initializer": null
@@ -224759,7 +224759,7 @@
 		{
 			"name": "SearchOptimization",
 			"source": "logic/search.el",
-			"line": 781,
+			"line": 780,
 			"signature": "class SearchOptimization",
 			"id": null,
 			"initializer": null
@@ -224767,7 +224767,7 @@
 		{
 			"name": "GroundSearch",
 			"source": "logic/search.el",
-			"line": 844,
+			"line": 841,
 			"signature": "class GroundSearch",
 			"id": "logic/search::GroundSearch",
 			"initializer": null
@@ -224775,7 +224775,7 @@
 		{
 			"name": "GroundCursor",
 			"source": "logic/search.el",
-			"line": 863,
+			"line": 860,
 			"signature": "class GroundCursor",
 			"id": "logic/search::GroundCursor",
 			"initializer": null
@@ -224783,7 +224783,7 @@
 		{
 			"name": "SearchCursor",
 			"source": "logic/search.el",
-			"line": 906,
+			"line": 903,
 			"signature": "class SearchCursor",
 			"id": "logic/search::SearchCursor",
 			"initializer": null
@@ -224879,7 +224879,7 @@
 		{
 			"name": "ArgumentShapeAnalysis",
 			"source": "logic/shape-analysis.el",
-			"line": 628,
+			"line": 625,
 			"signature": "class ArgumentShapeAnalysis",
 			"id": null,
 			"initializer": null
@@ -237066,7 +237066,7 @@
 			"anchor": "api-df976d47c60f3dbf87f5"
 		}
 	],
-	"source_digest": "4e1682ebe7d3c5c9461f42e91e1511f78ee961a8047770175135c26b7c6337a6",
+	"source_digest": "4d3de33c83904213dbd6b449b54228f3c4909ac64f003f26a7449dfdfcc43060",
 	"files": [
 		{
 			"path": "collections/arrays/dynamic.el",
@@ -237366,7 +237366,7 @@
 		},
 		{
 			"path": "formats/json/variants.el",
-			"sha256": "a85ecda9d6dc22711deffb8c4b00e9522fc280d8c9386bef98699f180342ac5b"
+			"sha256": "ef1862ecfad6ac7ea48ebdfe55d7a451c5936d2be46e255c2713fabed7e57ef9"
 		},
 		{
 			"path": "formats/json/writer.el",
@@ -237438,7 +237438,7 @@
 		},
 		{
 			"path": "logic/control.el",
-			"sha256": "934b5420a3d39535dd1d2cf6fada4b885dae289cf19d019bd88ee3263c73f034"
+			"sha256": "c17128958d232bb475c7f64c244962749a992982de484d24573d28832df0255c"
 		},
 		{
 			"path": "logic/goal.el",
@@ -237450,7 +237450,7 @@
 		},
 		{
 			"path": "logic/search.el",
-			"sha256": "a5e6d16b943bbd64807e291d7834300e1fafe90aacbe6118a2a8265b58305443"
+			"sha256": "50b27affd7c48265c5e32ba564f0065729ef19323b7d33187e5a048fd44ecbf1"
 		},
 		{
 			"path": "logic/surface.el",
@@ -237898,7 +237898,7 @@
 		},
 		{
 			"path": "tools/testing/check.el",
-			"sha256": "c74715bf4118f83fe90c2e6e3fe66cb55ac652bf5d16384788a70c309f610c4b"
+			"sha256": "f801f29747190d791058fbddc1cea3107c06d5d91893843cb11c586cd77e4f26"
 		},
 		{
 			"path": "tools/testing/compiler.el",
@@ -252702,9 +252702,9 @@
 				}
 			],
 			"source": "formats/json/variants.el",
-			"line": 223,
+			"line": 220,
 			"signature": "export fn parseOrderedJSONC(source: Text, limits: JsonLimits = JsonLimits()): any",
-			"declaration_line": 230,
+			"declaration_line": 227,
 			"id": "formats/json/variants::parseOrderedJSONC",
 			"value_type": null,
 			"owner": null,
@@ -252747,9 +252747,9 @@
 				}
 			],
 			"source": "formats/json/variants.el",
-			"line": 232,
+			"line": 229,
 			"signature": "export fn parseOrderedJSON5(source: Text, limits: JsonLimits = JsonLimits()): any",
-			"declaration_line": 239,
+			"declaration_line": 236,
 			"id": "formats/json/variants::parseOrderedJSON5",
 			"value_type": null,
 			"owner": null,
@@ -252792,9 +252792,9 @@
 				}
 			],
 			"source": "formats/json/variants.el",
-			"line": 241,
+			"line": 238,
 			"signature": "export fn parseOrderedJSONLines(source: Text, limits: JsonLimits = JsonLimits()): any[]",
-			"declaration_line": 248,
+			"declaration_line": 245,
 			"id": "formats/json/variants::parseOrderedJSONLines",
 			"value_type": null,
 			"owner": null,
@@ -255644,8 +255644,8 @@
 				{
 					"tag": "example",
 					"value": "捕获受限搜索中断",
-					"markdown": "```el\n// @external cursor: SearchCursor\ntry { discard(cursor.next()) }\ncatch (error) {\n\tif (error is SearchInterrupted) console.stdout.writeLine(error.reason)\n\telse throw error\n}\n```",
-					"code": "// @external cursor: SearchCursor\ntry { discard(cursor.next()) }\ncatch (error) {\n\tif (error is SearchInterrupted) console.stdout.writeLine(error.reason)\n\telse throw error\n}\n",
+					"markdown": "```el\n// @external cursor: SearchCursor\ntry { discard(cursor.next()) }\ncatch (error: SearchInterrupted) {\n\tconsole.stdout.writeLine(error.reason)\n}\n```",
+					"code": "// @external cursor: SearchCursor\ntry { discard(cursor.next()) }\ncatch (error: SearchInterrupted) {\n\tconsole.stdout.writeLine(error.reason)\n}\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -255653,7 +255653,7 @@
 			"source": "logic/control.el",
 			"line": 60,
 			"signature": "export @assign(mode: \"shared\") class SearchInterrupted",
-			"declaration_line": 71,
+			"declaration_line": 70,
 			"id": "logic/control::SearchInterrupted",
 			"value_type": null,
 			"owner": null,
@@ -255680,9 +255680,9 @@
 				}
 			],
 			"source": "logic/control.el",
-			"line": 74,
+			"line": 73,
 			"signature": "get reason(): Text",
-			"declaration_line": 81,
+			"declaration_line": 80,
 			"id": "logic/control::SearchInterrupted.reason",
 			"value_type": null,
 			"owner": "SearchInterrupted",
@@ -256181,9 +256181,9 @@
 				}
 			],
 			"source": "logic/search.el",
-			"line": 836,
+			"line": 833,
 			"signature": "export @assign(mode: \"shared\") class GroundSearch",
-			"declaration_line": 844,
+			"declaration_line": 841,
 			"id": "logic/search::GroundSearch",
 			"value_type": null,
 			"owner": null,
@@ -256210,9 +256210,9 @@
 				}
 			],
 			"source": "logic/search.el",
-			"line": 854,
+			"line": 851,
 			"signature": "export @assign(mode: \"shared\") class GroundCursor",
-			"declaration_line": 863,
+			"declaration_line": 860,
 			"id": "logic/search::GroundCursor",
 			"value_type": null,
 			"owner": null,
@@ -256249,9 +256249,9 @@
 				}
 			],
 			"source": "logic/search.el",
-			"line": 879,
+			"line": 876,
 			"signature": "fn next(): IterationStep<element: Term>",
-			"declaration_line": 889,
+			"declaration_line": 886,
 			"id": "logic/search::GroundCursor.next",
 			"value_type": null,
 			"owner": "GroundCursor",
@@ -256307,9 +256307,9 @@
 				}
 			],
 			"source": "logic/search.el",
-			"line": 899,
+			"line": 896,
 			"signature": "export @assign(mode: \"shared\") class SearchCursor",
-			"declaration_line": 906,
+			"declaration_line": 903,
 			"id": "logic/search::SearchCursor",
 			"value_type": null,
 			"owner": null,
@@ -256336,9 +256336,9 @@
 				}
 			],
 			"source": "logic/search.el",
-			"line": 962,
+			"line": 959,
 			"signature": "fn next(): IterationStep<element: Answer>",
-			"declaration_line": 969,
+			"declaration_line": 966,
 			"id": "logic/search::SearchCursor.next",
 			"value_type": null,
 			"owner": "SearchCursor",

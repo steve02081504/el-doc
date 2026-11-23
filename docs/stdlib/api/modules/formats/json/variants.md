@@ -12,7 +12,7 @@
 
 ## parseOrderedJSONC {#api-6b7cc691bb029a8d80d1}
 
-源码：`src/stdlib/formats/json/variants.el:230` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/variants.el#L230)
+源码：`src/stdlib/formats/json/variants.el:227` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/variants.el#L227)
 
 解析 JSONC 并递归保留映射键的首次插入顺序；重复键覆盖不移动位置。
 
@@ -31,7 +31,7 @@ let parsed = parseOrderedJSONC("{\"first\":1,/* keep order */\"second\":2}")
 
 ## parseOrderedJSON5 {#api-8f168af352cd23c13804}
 
-源码：`src/stdlib/formats/json/variants.el:239` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/variants.el#L239)
+源码：`src/stdlib/formats/json/variants.el:236` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/variants.el#L236)
 
 解析 JSON5 并递归保留映射键的首次插入顺序；重复键覆盖不移动位置。
 
@@ -50,7 +50,7 @@ let parsed = parseOrderedJSON5("{first:1,second:2,}")
 
 ## parseOrderedJSONLines {#api-504082fee10734d04334}
 
-源码：`src/stdlib/formats/json/variants.el:248` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/variants.el#L248)
+源码：`src/stdlib/formats/json/variants.el:245` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/variants.el#L245)
 
 解析 JSONLines 并递归保留映射键的首次插入顺序；重复键覆盖不移动位置。
 

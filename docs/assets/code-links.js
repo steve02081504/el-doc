@@ -3,6 +3,7 @@
 
   const site = new URL("../", document.currentScript.src);
   const selector = ".md-content__inner a[href]:not(.headerlink)";
+  const familyAnchor = "span[id^='api-']:empty";
   const previews = new Map();
   const root = document.documentElement;
   const popup = document.createElement("div");
@@ -39,9 +40,16 @@
         summary: excerpt(row.cells[2].textContent.trim(), 240),
       };
     }
+    if (heading.matches(familyAnchor)) {
+      const anchor = heading.closest("p") || heading;
+      if (!anchor.textContent.trim() && anchor.nextElementSibling?.matches("h2")) {
+        heading = anchor.nextElementSibling;
+      }
+    }
     const title = Array.from(heading.childNodes)
       .filter(node => !node.classList?.contains("headerlink"))
       .map(node => node.textContent).join("").trim();
+    if (!title) return null;
     let summary = "";
     let signature = "";
     const pageHeading = heading.matches("h1");
@@ -69,21 +77,29 @@
     return response;
   }
 
+  async function fetchPage(url) {
+    return new DOMParser().parseFromString(await (await fetchContent(url)).text(), "text/html");
+  }
+
   async function readPreview(url, symbol) {
     const target = url.hash ? "#" + CSS.escape(decodeURIComponent(url.hash.slice(1))) : "h1";
     url.hash = "";
     const current = new URL(location.href);
     current.hash = "";
-    const page = url.href === current.href ? document :
-      new DOMParser().parseFromString(await (await fetchContent(url)).text(), "text/html");
-    const heading = page.querySelector(".md-content__inner")?.querySelector(target);
-    const chunk = heading?.matches("span") && heading.parentElement.closest(".el-virtual-chunk[data-content]");
-    if (!chunk || heading.parentElement !== chunk) return extract(heading, symbol);
-
-    const response = await fetchContent(new URL(chunk.dataset.content, url));
-    const template = document.createElement("template");
-    template.innerHTML = (await response.json()).join("");
-    return extract(template.content.querySelector(target), symbol);
+    const page = url.href === current.href ? document : await fetchPage(url);
+    let heading = page.querySelector(".md-content__inner")?.querySelector(target);
+    const chunk = heading?.closest(".el-virtual-chunk[data-content]");
+    if (chunk && heading.parentElement === chunk && heading.matches("span")) {
+      const response = await fetchContent(new URL(chunk.dataset.content, url));
+      const template = document.createElement("template");
+      template.innerHTML = (await response.json()).join("");
+      heading = template.content.querySelector(target);
+    }
+    const preview = extract(heading, symbol);
+    if (preview || !chunk || !heading?.matches(familyAnchor)) return preview;
+    // A batch can end between an overload-family anchor and its first heading.
+    const full = await fetchPage(new URL("full.html", url));
+    return extract(full.querySelector(".md-content__inner")?.querySelector(target), symbol);
   }
 
   function load(link) {

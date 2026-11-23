@@ -575,6 +575,35 @@ def guarded_receivers(code, tokens, pairs, declaration_counts):
 	return guards
 
 
+def typed_catch_receivers(code, tokens, pairs, declarations, ignored):
+	"""Associate direct references to a typed catch binding with its annotation."""
+	receivers = {}
+	for index, (offset, kind, spelling) in enumerate(tokens):
+		if spelling != "catch" or kind not in Keyword or offset in ignored:
+			continue
+		close = pairs.get(index + 1)
+		if close is None or close < index + 5 or close + 1 >= len(tokens):
+			continue
+		body = close + 1
+		parameter = index + 2
+		annotation = index + 4
+		if (tokens[index + 1][2] != "(" or tokens[parameter][1] not in Name or tokens[index + 3][2] != ":"
+				or tokens[body][2] != "{" or body not in pairs):
+			continue
+		if not _source_docs.nominal_type(code[tokens[annotation][0]:tokens[close][0]]):
+			continue
+		name = tokens[parameter][2]
+		for position in range(body + 1, pairs[body]):
+			receiver_offset, receiver_kind, value = tokens[position]
+			if value != name or receiver_kind not in Name or receiver_offset in ignored:
+				continue
+			if receiver_offset in declarations:
+				break
+			if tokens[position + 1][2] in (".", "?.") and tokens[position - 1][2] not in (".", "?."):
+				receivers[position] = annotation
+	return receivers
+
+
 def code_targets(code, catalog, source=None, *, report=None, setup=""):
 	"""Return source offsets for names whose documentation target is known.
 
@@ -717,6 +746,7 @@ def code_targets(code, catalog, source=None, *, report=None, setup=""):
 			local_types[name] = {value_type}
 
 	guards = guarded_receivers(code, tokens, pairs, declaration_counts)
+	catch_receivers = typed_catch_receivers(code, tokens, pairs, declarations, ignored)
 	resolved = {}
 	for index, (offset, kind, value) in enumerate(tokens):
 		if offset in declarations or offset in ignored:
@@ -783,10 +813,12 @@ def code_targets(code, catalog, source=None, *, report=None, setup=""):
 						target = Target(target.path, target.fragment, target.label, return_type)
 		if target:
 			resolved[index] = target
-		if index in guards:
-			guard = resolved.get(guards[index])
-			if guard and guard.path and guard.label in catalog.names:
-				resolved[index] = Target("", value_type=guard.label)
+		if index in guards or index in catch_receivers:
+			for annotation in (guards.get(index), catch_receivers.get(index)):
+				receiver_type = resolved.get(annotation)
+				if receiver_type and receiver_type.path and receiver_type.label in catalog.names:
+					resolved[index] = Target("", value_type=receiver_type.label)
+					break
 		if target and target.path:
 			result[offset] = (len(value), target)
 	for offset, (length, target) in catalog.type_targets(code, source).items():

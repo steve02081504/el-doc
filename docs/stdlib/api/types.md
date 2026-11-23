@@ -196,7 +196,7 @@ class Streams
 
 ## Pax · archives/tar.el {#api-d98642c3861bb4845923}
 
-[源码 archives/tar.el:182](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/tar.el#L182)
+[源码 archives/tar.el:179](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/tar.el#L179)
 
 ```el-signature
 class Pax
@@ -23230,7 +23230,7 @@ class GoalOutcome
 
 ## ModeAnalysis · logic/analysis.el {#api-d1d524d14c6207b756a9}
 
-[源码 logic/analysis.el:1452](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/analysis.el#L1452)
+[源码 logic/analysis.el:1449](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/analysis.el#L1449)
 
 ```el-signature
 class ModeAnalysis
@@ -23374,7 +23374,7 @@ class ConstraintUnsupported
 
 ## SearchBudget · logic/control.el {#api-9a84d79f33efa04ddcfd}
 
-[源码 logic/control.el:85](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/control.el#L85)
+[源码 logic/control.el:84](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/control.el#L84)
 
 ```el-signature
 class SearchBudget
@@ -23382,7 +23382,7 @@ class SearchBudget
 
 ## SearchInterrupted · logic/control.el {#api-f2eed514e7ad72951f31}
 
-[源码 logic/control.el:71](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/control.el#L71)
+[源码 logic/control.el:70](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/control.el#L70)
 
 ```el-signature
 class SearchInterrupted
@@ -24176,7 +24176,7 @@ class FairBranchJob extends SearchJob
 
 ## GroundCursor · logic/search.el {#api-5942ab836ae0713bf70d}
 
-[源码 logic/search.el:863](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L863)
+[源码 logic/search.el:860](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L860)
 
 ```el-signature
 class GroundCursor
@@ -24186,7 +24186,7 @@ class GroundCursor
 
 ## GroundSearch · logic/search.el {#api-7a238a9cc648b83300d3}
 
-[源码 logic/search.el:844](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L844)
+[源码 logic/search.el:841](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L841)
 
 ```el-signature
 class GroundSearch
@@ -24230,7 +24230,7 @@ class Renaming
 
 ## SearchCursor · logic/search.el {#api-09b5771e54c5c1923052}
 
-[源码 logic/search.el:906](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L906)
+[源码 logic/search.el:903](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L903)
 
 ```el-signature
 class SearchCursor
@@ -24240,7 +24240,7 @@ class SearchCursor
 
 ## SearchOptimization · logic/search.el {#api-c245724ab4b69623599c}
 
-[源码 logic/search.el:781](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L781)
+[源码 logic/search.el:780](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L780)
 
 ```el-signature
 class SearchOptimization
@@ -24296,7 +24296,7 @@ class ArgumentShape
 
 ## ArgumentShapeAnalysis · logic/shape-analysis.el {#api-afac1dbc45d2849ce577}
 
-[源码 logic/shape-analysis.el:628](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/shape-analysis.el#L628)
+[源码 logic/shape-analysis.el:625](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/shape-analysis.el#L625)
 
 ```el-signature
 class ArgumentShapeAnalysis
