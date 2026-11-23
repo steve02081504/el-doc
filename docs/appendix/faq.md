@@ -74,9 +74,10 @@ console.stdout.writeLine(2 ^ 10)
 `try` 是表达式，值是正常完成的 try 块或实际处理了异常的 catch 块的末尾语句结果，空块得到 `nil`。`catch (error)` 的括号绑定异常对象，也可以省略绑定只处理异常；`finally` 的结果被丢弃，但清理照常执行。
 
 ```el
-import { readTextFile } from "el:filesystem/index.el"
+import { readFileAs } from "el:filesystem/index.el"
+import { formats } from "el:formats/"
 
-let text = try { readTextFile("config.el") } catch { "" }
+let text = try { readFileAs(formats.Text, "config.el") } catch { "" }
 ```
 
 详见 [错误处理与异步](../language/errors-async.md)。
@@ -155,13 +156,14 @@ el build --release src/main.el
 
 ### 怎么读文件？
 
-用 `el:filesystem/index.el` 的 `readTextFile(path)`，返回解码后的 `Text`；可选第二个参数限制最大字节数，超限抛错而不是截断。文件不存在、无权限或不是合法 UTF-8 都会抛异常，用 `try`／`catch` 处理。写文件用同模块的 `writeTextFile(path, value)`。
+用 `el:filesystem/index.el` 的 `readFileAs(formats.Text, path)`，返回解码后的 `Text`；可选的 `maximumBytes` 参数限制最大字节数，超限抛错而不是截断。文件不存在、无权限或不是合法 UTF-8 都会抛异常，用 `try`／`catch` 处理。写文件用同模块的 `writeFileAs(formats.Text, path, value)`。
 
 ```el
-import { readTextFile, writeTextFile } from "el:filesystem/index.el"
+import { readFileAs, writeFileAs } from "el:filesystem/index.el"
+import { formats } from "el:formats/"
 
-let text = try { readTextFile("notes.txt") } catch { "" }
-writeTextFile("copy.txt", text)
+let text = try { readFileAs(formats.Text, "notes.txt") } catch { "" }
+writeFileAs(formats.Text, "copy.txt", text)
 ```
 
 详见 [文件与网络](../stdlib/files-network.md)。

@@ -5,7 +5,7 @@
 !!! abstract "🎯 做完这个项目，你能"
     - 从空目录建出 `package.eol` 与 `src/main.el`，用 `el run` 跑出第一行输出
     - 用 `command_arguments()` 读参数，数量不对就以 2 退出
-    - 用 `readTextFile` 读文件，读不到就把错误写进 stderr 并以 1 退出
+    - 用 `readFileAs` 读文件，读不到就把错误写进 stderr 并以 1 退出
 
     <span class="el-chip">⏱ 约 40 分钟</span> <span class="el-chip">用到的知识：[Console](../stdlib/console.md)、[文件与网络](../stdlib/files-network.md)、错误处理</span>
 
@@ -108,14 +108,15 @@ Windows PowerShell 用 `$LASTEXITCODE` 查看上一条命令的退出码。
 
 ## 第三步：文件读不到，就以 1 退出
 
-文本读取用 `el:filesystem/index.el` 的 `readTextFile(reference)`，返回解码后的 `Text`；可选的第二个参数是最大字节数，超过上限抛错而不是截断。相对路径按当前工作目录解析，需要显式确认时用 `currentDirectory()`。
+文本读取用 `el:filesystem/index.el` 的 `readFileAs(formats.Text, reference)`，返回解码后的 `Text`；可用 `maximumBytes` 指定最大字节数，超过上限抛错而不是截断。相对路径按当前工作目录解析，需要显式确认时用 `currentDirectory()`。
 
 ```el
 // @external path: Text
-import { readTextFile } from "el:filesystem/index.el"
+import { readFileAs } from "el:filesystem/index.el"
+import { formats } from "el:formats/"
 
 let source = ""
-try { source = readTextFile(path) }
+try { source = readFileAs(formats.Text, path) }
 catch (error) {
 	console.error.value(error)
 	exit(1)
@@ -256,7 +257,8 @@ if (diff.exitCode != 0) console.stdout.writeLine("working tree has changes")
 
 ```el
 import { command_arguments } from "el:operating-system/arguments/index.el"
-import { readTextFile } from "el:filesystem/index.el"
+import { readFileAs } from "el:filesystem/index.el"
+import { formats } from "el:formats/"
 import { exit } from "el:operating-system/processes/index.el"
 
 fn countLines(text: Text) {
@@ -283,7 +285,7 @@ if (Number(argv.count) != 2) {
 }
 let path = argv[1]
 let source = ""
-try { source = readTextFile(path) }
+try { source = readFileAs(formats.Text, path) }
 catch (error) {
 	console.error.value(error)
 	exit(1)

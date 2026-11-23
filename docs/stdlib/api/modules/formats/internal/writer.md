@@ -23,7 +23,7 @@ export @assign(mode: "copy") class FormatWriteError extends Error
 ### 示例：捕获格式写入错误
 
 ```el
-import { FormatWriteError, writeINI } from "el:formats/"
-try { discard(writeINI(@{ value: "two\nlines" })) }
+import { FormatWriteError, formats, serializeAs } from "el:formats/"
+try { discard(serializeAs(formats.INI, @{ value: "two\nlines" })) }
 catch (error: FormatWriteError) { console.error.value(error) }
 ```

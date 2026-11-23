@@ -12,7 +12,7 @@
 
 ## Path {#api-01450bc86834bd922aa5}
 
-源码：`src/stdlib/filesystem/model.el:116` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L116)
+源码：`src/stdlib/filesystem/model.el:119` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L119)
 
 保存传给文件系统的引用文本。相对引用在解析时使用所选上下文。
 

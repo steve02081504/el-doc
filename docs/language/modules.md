@@ -39,7 +39,7 @@ export let version = 1
 
 ```el
 // 1. 具名导入，b 在本模块叫 c
-import { readTextFile, writeTextFile as write } from "el:filesystem/"
+import { readFileAs, writeFileAs as write } from "el:filesystem/"
 
 // 2. 正则导入：把名字匹配 /^parse/ 的导出全部绑定到当前作用域
 import /^parse/ from "file:./formats.el"
@@ -75,7 +75,7 @@ export /.*/ from "file:./internal.el"
 
 ## 预导入（prelude）：不用写 import 的默认名字
 
-每个模块默认导入标准库的 prelude，不需要逐个写 `import`。当前源码的默认入口是 `src/stdlib/index.el`，可见基础值 `t`、`f`、`nil`，文本与集合类型、`console`，以及 `typeof`、`assert`、`formats`、`spawn`、`parseJSON`、`readFileAs` 等名字。这是当前聚合入口的导出情况，不是语言永久保证的默认名字清单；规范 SRC-18 要求默认集合限于基础能力及其实际依赖，大型便利入口应显式导入。模块需要某个具体 API 时，写出显式导入可以明确依赖，接口以[标准库参考](../stdlib/api/index.md)与真实源码为准。
+每个模块默认导入标准库的 prelude，不需要逐个写 `import`。当前源码的默认入口是 `src/stdlib/index.el`，可见基础值 `t`、`f`、`nil`，文本与集合类型、`console`，以及 `typeof`、`assert`、`formats`、`spawn`、`parseAs`、`readFileAs` 等名字。这是当前聚合入口的导出情况，不是语言永久保证的默认名字清单；规范 SRC-18 要求默认集合限于基础能力及其实际依赖，大型便利入口应显式导入。模块需要某个具体 API 时，写出显式导入可以明确依赖，接口以[标准库参考](../stdlib/api/index.md)与真实源码为准。
 
 prelude 是普通模块，显式导入和本模块自己的声明优先，可以遮盖同名 prelude 绑定；未被遮盖的 prelude 名字同样是只读导入绑定。要关掉当前模块的默认导入，写模块属性 `@module(prelude: f)`；关掉之后 `t`、`f`、`nil` 和常用类型都需要显式导入或自行定义，否则在用到的地方报编译错误。
 

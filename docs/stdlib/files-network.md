@@ -5,38 +5,42 @@
 !!! abstract "🎯 读完这页，你能"
     - 用一行读入文本、一行写出文本，并在文件不存在时给出默认值
     - 分清逻辑路径与系统路径，知道 `file:` 和 `https:` 引用各自能做什么
-    - 用 `parseJSON` 解析配置，并处理“不是字符串”这类成员类型问题
+    - 读取 JSON 配置，并处理“不是字符串”这类成员类型问题
     - 发起 HTTP 请求，判断该检查 `response.ok` 还是该捕获异常
 
     <span class="el-chip">⏱ 约 12 分钟</span> <span class="el-chip">前置：[集合与文本](collections.md)</span>
 
-## 最小入口：读一行、写一行
+## 读取和写入 UTF-8 文本
 
 ```el
-import { readTextFile, writeTextFile, readTextFileIfPresent } from "el:filesystem/"
+import { readFileAs, writeFileAs } from "el:filesystem/"
+import { formats } from "el:formats/"
 
-let text = readTextFile("file:./notes.txt")
-writeTextFile("file:./copy.txt", text + "\n")
+let text = readFileAs(formats.Text, "file:./notes.txt")
+writeFileAs(formats.Text, "file:./copy.txt", text + "\n")
 ```
 
-常用的 `readTextFile`、`writeTextFile` 等入口 prelude 已经提供，写出来是为了说清它们来自 `el:filesystem/`；显式导入与 prelude 的同一声明不冲突，也不会重复初始化。`readTextFileIfPresent` 这类变体需要显式导入。
+可以从 prelude 直接使用 `readFileAs`、`writeFileAs` 和 `formats`。这里显式导入，便于查找它们所属的模块。
 
 !!! example "动手 30 秒"
-    把 `notes.txt` 换成不存在的文件名再跑一次。`readTextFile` 会抛异常，而 `readTextFileIfPresent` 返回 `nil`；看到“没有这个文件”就说明分支生效。
+    把 `notes.txt` 换成不存在的文件名再跑一次，观察读取抛出的异常。
 
 ## 读文本还是读字节
 
-- `readTextFile(reference, maximumBytes = nil)` 读入整个文件并按 UTF-8 解码成 `Text`；
-- `writeTextFile(reference, value)` 把 `Text` 按 UTF-8 写入，返回写入的字节数；
-- `readFileBytes(reference, maximumBytes = nil)` 返回 `Number[]`，每个元素是一个字节；
-- `writeFileBytes(reference, bytes)` 写入字节数组，返回写入的字节数；
-- `readTextFileIfPresent(reference, maximumBytes = nil)` 与 `readFileBytesIfPresent(...)` 在文件不存在时返回 `nil`，而不是抛错。
+- `readFileAs(formats.Text, reference, maximumBytes: limit)` 在可选的字节上限内读取整个文件，并按 UTF-8 解码成 `Text`；
+- `writeFileAs(formats.Text, reference, value)` 把 `Text` 按 UTF-8 写入，返回写入的字节数；
+- `readFileAs(formats.Buffer, reference, maximumBytes: limit)` 在可选的字节上限内读取整个文件，返回 `Buffer`；
+- `writeFileAs(formats.Buffer, reference, buffer)` 写入缓冲区并返回字节数。用 `bufferFromBytes(bytes)` 把数值字节数组转为缓冲区。
+- 字节层的 `Location.readOptionalBytes()` 在实际打开确认目标缺失时返回 `nil`。文件存在时交付原始字节，空文件返回空数组。
 
 ```el
-let bytes = readFileBytes("file:./logo.png")
-console.stdout.writeLine("size: ", bytes.size, " bytes")
+import { readFileAs, resolvePath } from "el:filesystem/"
+import { formats } from "el:formats/"
 
-let missing = readTextFileIfPresent("file:./absent.txt")
+let buffer = readFileAs(formats.Buffer, "file:./logo.png")
+console.stdout.writeLine("size: ", buffer.count, " bytes")
+
+let missing = resolvePath("file:./absent.txt").readOptionalBytes()
 if (missing is nil_t) {
 	console.stdout.writeLine("没有这个文件，按默认值处理")
 }
@@ -60,7 +64,25 @@ console.stdout.writeLine("name: ", fileName(config))
 console.stdout.writeLine("dir: ", isDirectory(config.parent))
 ```
 
-常用的位置操作还有 `directoryNames(reference)` 列目录、`makeDirectories(reference)` 建目录、`removeFile(reference)` 删文件、`copyFile(source, target)` 复制、`replaceFile(source, target)` 原子替换。Web 端的 `https:` 位置能读，但不代表能列目录或写入；缺少所请求能力时返回明确错误。
+常用的位置操作还有 `directoryNames(reference)` 列目录、`makeDirectories(reference)` 建目录、`removeFile(reference)` 删文件、`copyFile(source, target)` 复制、`moveFile(source, target)` 在同一 provider 内移动并替换目标。Web 端的 `https:` 位置能读，但不代表能列目录或写入；缺少所请求能力时返回明确错误。
+
+## 条件写入与格式
+
+`exists(path)` 单独调用时查询位置当前是否存在。条件块只有一条普通 `writeFileAs` 调用，且两处使用同一局部路径绑定时，标准库策略把条件交给写入打开。文件在实际打开时缺失就跳过，打开后沿同一文件句柄写入。这个入口要求 provider 支持条件写入，整文件原子发布用 `publishFileAs`。
+
+```el
+import { exists, writeFileAs } from "el:filesystem/"
+import { formats } from "el:formats/"
+
+let path = "file:./notes.txt"
+if (exists(path)) { discard(writeFileAs(formats.Text, path, "updated")) }
+```
+
+## 按字节位置修改文件
+
+`reader.position` 是顺序读取已交付的字节数。定位读保持这个位置，文本字符数也不能代替 UTF-8 字节偏移。确定要操作的原始字节和偏移后，对解析出的 `Location` 调用 `writeBytesAt(offset, bytes)` 覆盖，`insertBytes(offset, bytes)` 插入并后移旧后缀，或调用 `appendBytes(bytes)` 在文件尾追加。需要以整文件为单位原子发布时，使用 `publishFileAs`。
+
+直接把完整的新内容交给 `writeFileAs`。provider 支持安全比较时会跳过未变区间，并在只有新增尾部时只写尾部。Linux 的 `PrivateRandomFileSystem` 在实际文件支持范围插入时，可以为对齐的中段新增保留旧后缀的块映射。显式导入 `el:operating-system/files/` 的同名函数可以直写原生路径。
 
 ## 用格式读写：把字节转换交给格式对象
 
@@ -74,7 +96,9 @@ let json = readFileAs(formats.JSON, "file:./config.json")
 writeFileAs(formats.Text, "file:./copy.txt", "already text")
 ```
 
-`writeFileAs` 需要所选格式提供编码器。`formats.Text` 的编码就是原样输出文本；`formats.JSON` 通过 `writeJSON` 编码支持的 JSON 值。自定义 `TextFormat` 如果没有提供编码器，调用它的 `encode` 会明确报“这个文本格式没有编码器”。
+`writeFileAs` 需要所选格式提供编码器。用 `publishFileAs(formats.Text, path, value)` 可以先写入并关闭暂存文件，再原子替换目标。省略 `temporary` 时，file provider 在目标旁独占创建暂存文件。目标为 `a.exe` 时，自动暂存名为 `a.exe.<随机串>.tmp`。显式名称必须以 `.tmp` 结尾，发生碰撞时在 `.tmp` 前加入随机段重试。`formats.Text` 的编码就是原样输出文本；`formats.JSON` 编码支持的 JSON 值。自定义 `TextFormat` 如果没有提供编码器，调用它的 `encode` 会明确报“这个文本格式没有编码器”。
+
+`el:formats/serialization/io.el` 提供文件读写简写。EOL 用 `scanFile(path)` 和 `printFile(path, value)`，EOD 用 `readFile(path)` 和 `writeFile(path, value)`。
 
 | 格式对象 | 写入值 | 编码约定 |
 | --- | --- | --- |
@@ -102,10 +126,10 @@ writeFileAs(formats.Text, "file:./copy.txt", "already text")
 下面是一个完整的内存解析示例；`jsonField` 也可以读取 INI 返回的动态对象成员：
 
 ```el
-import { parseINI } from "el:formats/ini/"
+import { formats, parseAs } from "el:formats/"
 import { jsonField } from "el:formats/json/"
 
-let config = parseINI("name=demo\n[server]\nport=8080\n")
+let config = parseAs(formats.INI, "name=demo\n[server]\nport=8080\n")
 let server = jsonField(config, "server")
 console.stdout.writeLine(jsonField(config, "name"))
 console.stdout.writeLine(jsonField(server, "port"))
@@ -135,7 +159,7 @@ let config = readFileAs(formats.INI, "file:./config.ini")
 - 重复键使用最后一个值，重复节合并；标量键与节名冲突会报错。
 - 值按字面文本保留，不处理引号、转义、插值或多行值。
 
-`parseINI` 的第二个参数可传 `JsonLimits`，限制输入字节数与解析资源。语法错误或资源超限会抛异常。使用 `writeINI(value)` 可得到文本；也可以直接写入文件：
+可通过 `INIFormat(limits)` 构造带输入字节和解析预算的格式对象。语法错误或资源超限会抛异常。内存编码用 `serializeAs(formats.INI, value)`，写入文件用 `writeFileAs`。
 
 ```el
 import { writeFileAs } from "el:filesystem/"
@@ -192,30 +216,32 @@ let options = HttpOptions(@{
 
 ## JSON 取到成员后，检查值的类型
 
-`parseJSON(source, limits = JsonLimits())` 把文本解析成对应的 EL 值，失败时抛 `ParseError`；`jsonField(value, key)` 按成员名取值。
+`readFileAs` 使用 `formats.JSON` 读取并解析文件。JSON 格式错误会抛出 `ParseError`。用 `jsonField(value, key)` 按成员名取值。
 
 ```el
-let config = parseJSON(readTextFile("file:./config.json"))
+let config = readFileAs(formats.JSON, "file:./config.json")
 let name = jsonField(config, "name")
 
 if (name is Text) console.stdout.writeLine("name: ", name)
 else console.stdout.writeLine("name 不是字符串")
 ```
 
-JSON 的 `null` 解析为 `nil`，布尔值解析为 `t` 或 `f`，字符串和数值分别解析为 `Text` 和 `Number`，数组和对象解析为对应的 EL 容器。读取对象成员后，可以用 `is` 检查值的类型。`JsonLimits` 控制输入字节上限与解析预算，默认字节上限是 16 MiB。
+JSON 的 `null` 解析为 `nil`，布尔值解析为 `t` 或 `f`，字符串和数值分别解析为 `Text` 和 `Number`，数组和对象解析为对应的 EL 容器。读取对象成员后，可以用 `is` 检查值的类型。可以用 `maximumBytes` 限制文件读取字节数。
 
 ## 完整例子：读写配置文件
 
 读配置时把“文件不存在”“JSON 损坏”“成员缺失”都当成可回退的情况：
 
 ```el
-import { readTextFileIfPresent } from "el:filesystem/"
+import { resolvePath } from "el:filesystem/"
+import { formats, parseAs } from "el:formats/"
+import { jsonField } from "el:formats/json/"
 
 fn loadName() {
-	let source = readTextFileIfPresent("file:./config.json")
+	let source = resolvePath("file:./config.json").readOptionalBytes()
 	if (source is nil_t) return "anonymous"
 
-	let config = try { parseJSON(source) } catch { return "anonymous" }
+	let config = try { parseAs(formats.JSON, source) } catch { return "anonymous" }
 	let value = try { jsonField(config, "name") } catch { return "anonymous" }
 
 	if (value is Text) return value
@@ -271,7 +297,7 @@ try {
 
 ## 带走这三样
 
-- 读文本用 `readTextFile`，读字节用 `readFileBytes`；想允许缺失用 `...IfPresent`，其余情况让异常抛出来。
+- 用 `formats.Text` 或 `formats.Buffer` 指定 `As` 读写的格式。文件可以缺失时先调用 `Location.readOptionalBytes`，再解码已有内容。
 - 路径是逻辑位置，`file:` 和 `https:` 是不同 provider；引用在解析时才和当前上下文结合。
 - HTTP 错误状态不抛异常，`request` 要看 `response.ok`；`fetchAs` 把“请求 + 检查 + 解码”合成一步。
 

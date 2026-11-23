@@ -34,6 +34,14 @@ class Bits
 class Huffman
 ```
 
+## ArchiveFileFormat · archives/files.el {#api-fe05d3024eb2ea5ec4a4}
+
+[源码 archives/files.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/files.el#L6)
+
+```el-signature
+class ArchiveFileFormat
+```
+
 ## LengthModel · archives/lzma.el {#api-74c0cda6ceaf4aee301c}
 
 [源码 archives/lzma.el:116](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/lzma.el#L116)
@@ -17730,7 +17738,7 @@ class WordDocument
 
 ## DocumentFormat · documents/formats.el {#api-7ced5ba5ae653d552d2c}
 
-[源码 documents/formats.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/formats.el#L23)
+[源码 documents/formats.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/formats.el#L24)
 
 ```el-signature
 class DocumentFormat
@@ -17746,7 +17754,7 @@ class WorkbookFormat
 
 ## OfficeFormat · documents/package.el {#api-9b72698003f28512ed1c}
 
-[源码 documents/package.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L11)
+[源码 documents/package.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L12)
 
 ```el-signature
 enum OfficeFormat
@@ -17754,15 +17762,23 @@ enum OfficeFormat
 
 ## OfficePackage · documents/package.el {#api-7fca6822013b6b181832}
 
-[源码 documents/package.el:37](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L37)
+[源码 documents/package.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L38)
 
 ```el-signature
 class OfficePackage
 ```
 
+## OfficePackageFileFormat · documents/package.el {#api-68dad8c15250ce6c8f6e}
+
+[源码 documents/package.el:111](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L111)
+
+```el-signature
+class OfficePackageFileFormat
+```
+
 ## CellValue · documents/workbook.el {#api-57d8ceae315b6bd851bf}
 
-[源码 documents/workbook.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/workbook.el#L22)
+[源码 documents/workbook.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/workbook.el#L23)
 
 ```el-signature
 data CellValue
@@ -17772,7 +17788,7 @@ data CellValue
 
 ## SpreadsheetCell · documents/workbook.el {#api-ba9e7f92791242c10802}
 
-[源码 documents/workbook.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/workbook.el#L30)
+[源码 documents/workbook.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/workbook.el#L31)
 
 ```el-signature
 class SpreadsheetCell
@@ -17780,7 +17796,7 @@ class SpreadsheetCell
 
 ## Workbook · documents/workbook.el {#api-1c744dd545a81af88249}
 
-[源码 documents/workbook.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/workbook.el#L64)
+[源码 documents/workbook.el:65](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/workbook.el#L65)
 
 ```el-signature
 class Workbook
@@ -17788,7 +17804,7 @@ class Workbook
 
 ## Worksheet · documents/workbook.el {#api-b2648c721d49c3944436}
 
-[源码 documents/workbook.el:50](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/workbook.el#L50)
+[源码 documents/workbook.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/workbook.el#L51)
 
 ```el-signature
 class Worksheet
@@ -17798,7 +17814,7 @@ class Worksheet
 
 ## OfficeElement · documents/xml.el {#api-eaab2ebc1e0e41af9b3e}
 
-[源码 documents/xml.el:65](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/xml.el#L65)
+[源码 documents/xml.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/xml.el#L66)
 
 ```el-signature
 class OfficeElement
@@ -18662,7 +18678,7 @@ class ExecutionUse
 
 ## HttpComputeEndpoint · execution/remote/index.el {#api-7ea689093bbeaedf9118}
 
-[源码 execution/remote/index.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/remote/index.el#L34)
+[源码 execution/remote/index.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/remote/index.el#L35)
 
 ```el-signature
 class HttpComputeEndpoint extends ExecutionEndpoint
@@ -18804,9 +18820,17 @@ fn ComputeCodec(element: type): type
 class FileBuffer
 ```
 
+## FileOperationResolution · filesystem/context.el {#api-8df36a77c4101b8d1458}
+
+[源码 filesystem/context.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/context.el#L10)
+
+```el-signature
+class FileOperationResolution
+```
+
 ## FileProvider · filesystem/file-provider.el {#api-413d6623b616d720d945}
 
-[源码 filesystem/file-provider.el:172](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/file-provider.el#L172)
+[源码 filesystem/file-provider.el:174](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/file-provider.el#L174)
 
 ```el-signature
 class FileProvider
@@ -18838,7 +18862,7 @@ class HttpFileReaderSource extends FileReaderSource
 
 ## FileSystemContext · filesystem/model.el {#api-c9a84e452371f1003179}
 
-[源码 filesystem/model.el:218](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L218)
+[源码 filesystem/model.el:256](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L256)
 
 ```el-signature
 class FileSystemContext
@@ -18854,7 +18878,7 @@ class FileSystemError extends Error
 
 ## Location · filesystem/model.el {#api-547a9b261b17d994f444}
 
-[源码 filesystem/model.el:124](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L124)
+[源码 filesystem/model.el:127](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L127)
 
 ```el-signature
 class Location extends TextOperand
@@ -18862,7 +18886,7 @@ class Location extends TextOperand
 
 ## Path · filesystem/model.el {#api-01450bc86834bd922aa5}
 
-[源码 filesystem/model.el:116](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L116)
+[源码 filesystem/model.el:119](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L119)
 
 ```el-signature
 class Path extends TextOperand
@@ -18893,6 +18917,16 @@ class NativeFileReaderSource extends FileReaderSource
 ```el-signature
 class NativeFileWriterSource extends FileWriterSource
 ```
+
+## PrivateRandomFileSystem · filesystem/random-file.el {#api-e1f95c660f660a0447cc}
+
+[源码 filesystem/random-file.el:44](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/random-file.el#L44)
+
+```el-signature
+class PrivateRandomFileSystem
+```
+
+[API 文档](modules/filesystem/random-file.md#api-e1f95c660f660a0447cc)
 
 ## FileReadProtection · filesystem/read-protection.el {#api-34ba4ce559b153eb6e48}
 
@@ -19436,7 +19470,7 @@ class TargetFacts
 
 ## CsvRowWriter · formats/delimited-text/index.el {#api-ed8b9a1c196cad0dc6d6}
 
-[源码 formats/delimited-text/index.el:164](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L164)
+[源码 formats/delimited-text/index.el:109](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/index.el#L109)
 
 ```el-signature
 class CsvRowWriter
@@ -19486,7 +19520,7 @@ fn FileCodec(value: type, options: type): type
 
 ## BufferFormat · formats/index.el {#api-4b10152d04d71ddc756e}
 
-[源码 formats/index.el:103](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L103)
+[源码 formats/index.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L67)
 
 ```el-signature
 class BufferFormat
@@ -19494,7 +19528,7 @@ class BufferFormat
 
 ## EodFormat · formats/index.el {#api-ca9eddf9d85bd918e571}
 
-[源码 formats/index.el:91](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L91)
+[源码 formats/index.el:55](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L55)
 
 ```el-signature
 class EodFormat
@@ -19502,7 +19536,7 @@ class EodFormat
 
 ## EolFormat · formats/index.el {#api-7a5e0b123494d48b661f}
 
-[源码 formats/index.el:74](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L74)
+[源码 formats/index.el:37](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L37)
 
 ```el-signature
 class EolFormat
@@ -19510,21 +19544,11 @@ class EolFormat
 
 ## Formats · formats/index.el {#api-6768ac9ca087f5de0440}
 
-[源码 formats/index.el:126](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L126)
+[源码 formats/index.el:91](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L91)
 
 ```el-signature
 class Formats
 ```
-
-## TextFormat · formats/index.el {#api-c603856b0e561e7ac3e8}
-
-[源码 formats/index.el:49](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L49)
-
-```el-signature
-fn TextFormat(output: type, input: type = output): type
-```
-
-[API 文档](modules/formats/index.md#api-c603856b0e561e7ac3e8)
 
 ## FormatReader · formats/internal/reader.el {#api-6294acf3e2019c5687f5}
 
@@ -19554,7 +19578,7 @@ class FormatWriter
 
 ## JsonReader · formats/json/index.el {#api-8498e0f8ba5ec2e5c3a3}
 
-[源码 formats/json/index.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/index.el#L15)
+[源码 formats/json/index.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/index.el#L17)
 
 ```el-signature
 class JsonReader extends FormatReader
@@ -19572,7 +19596,7 @@ class JsonLimits
 
 ## Json5Reader · formats/json/variants.el {#api-fd653ede3aa7f71e65ae}
 
-[源码 formats/json/variants.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/variants.el#L38)
+[源码 formats/json/variants.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/json/variants.el#L40)
 
 ```el-signature
 class Json5Reader extends FormatReader
@@ -19732,10 +19756,18 @@ class SerializedNode
 
 ## PlainData · formats/serialization/plain-data.el {#api-9ac535a688e3a0104437}
 
-[源码 formats/serialization/plain-data.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/plain-data.el#L9)
+[源码 formats/serialization/plain-data.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/plain-data.el#L10)
 
 ```el-signature
 class PlainData
+```
+
+## PlainEolFormat · formats/serialization/plain-data.el {#api-82f6256de1dd1a482b8c}
+
+[源码 formats/serialization/plain-data.el:97](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/plain-data.el#L97)
+
+```el-signature
+class PlainEolFormat
 ```
 
 ## RestoreStaticGraph · formats/serialization/static-graph.el {#api-5c52e9c989bb4916c8f8}
@@ -19754,9 +19786,19 @@ fn RestoreStaticGraph(expected: type): type
 class SerializationVariants
 ```
 
+## TextFormat · formats/text-format.el {#api-5d821ca4f8d541863abb}
+
+[源码 formats/text-format.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/text-format.el#L22)
+
+```el-signature
+fn TextFormat(output: type, input: type = output): type
+```
+
+[API 文档](modules/formats/text-format.md#api-5d821ca4f8d541863abb)
+
 ## TableNode · formats/toml/index.el {#api-6309c1fff2582c55bd14}
 
-[源码 formats/toml/index.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L32)
+[源码 formats/toml/index.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L33)
 
 ```el-signature
 class TableNode
@@ -19764,7 +19806,7 @@ class TableNode
 
 ## Toml · formats/toml/index.el {#api-1ded7c60633c334bf6e6}
 
-[源码 formats/toml/index.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L17)
+[源码 formats/toml/index.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L18)
 
 ```el-signature
 data Toml
@@ -19772,7 +19814,7 @@ data Toml
 
 ## TomlDateTimeKind · formats/toml/index.el {#api-c42202ead8ee9aa3b6d2}
 
-[源码 formats/toml/index.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L16)
+[源码 formats/toml/index.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L17)
 
 ```el-signature
 enum TomlDateTimeKind
@@ -19780,7 +19822,7 @@ enum TomlDateTimeKind
 
 ## TomlReader · formats/toml/index.el {#api-5d0e10c31c574bc04c2b}
 
-[源码 formats/toml/index.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L57)
+[源码 formats/toml/index.el:58](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L58)
 
 ```el-signature
 class TomlReader extends FormatReader
@@ -19788,7 +19830,7 @@ class TomlReader extends FormatReader
 
 ## TomlTable · formats/toml/index.el {#api-71916e3b57f51262635b}
 
-[源码 formats/toml/index.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L25)
+[源码 formats/toml/index.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L26)
 
 ```el-signature
 let TomlTable: type
@@ -19796,7 +19838,7 @@ let TomlTable: type
 
 ## TomlWriter · formats/toml/index.el {#api-9d9e6decdb9376881c65}
 
-[源码 formats/toml/index.el:274](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L274)
+[源码 formats/toml/index.el:264](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/toml/index.el#L264)
 
 ```el-signature
 class TomlWriter
@@ -19804,7 +19846,7 @@ class TomlWriter
 
 ## XmlAttribute · formats/xml/index.el {#api-acb12bd0f1efdbf23f22}
 
-[源码 formats/xml/index.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L9)
+[源码 formats/xml/index.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L10)
 
 ```el-signature
 class XmlAttribute
@@ -19812,7 +19854,7 @@ class XmlAttribute
 
 ## XmlDocument · formats/xml/index.el {#api-a9b268230a0106556c55}
 
-[源码 formats/xml/index.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L21)
+[源码 formats/xml/index.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L22)
 
 ```el-signature
 class XmlDocument
@@ -19820,7 +19862,7 @@ class XmlDocument
 
 ## XmlNode · formats/xml/index.el {#api-3e2ce6d18298299dc5cc}
 
-[源码 formats/xml/index.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L14)
+[源码 formats/xml/index.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L15)
 
 ```el-signature
 data XmlNode
@@ -19828,7 +19870,7 @@ data XmlNode
 
 ## XmlReader · formats/xml/index.el {#api-6b90d922a3864eeb0f0e}
 
-[源码 formats/xml/index.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L38)
+[源码 formats/xml/index.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L39)
 
 ```el-signature
 class XmlReader extends FormatReader
@@ -19836,7 +19878,7 @@ class XmlReader extends FormatReader
 
 ## XmlWriter · formats/xml/index.el {#api-b1e1daafea9d6c2e430d}
 
-[源码 formats/xml/index.el:181](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L181)
+[源码 formats/xml/index.el:171](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/xml/index.el#L171)
 
 ```el-signature
 class XmlWriter
@@ -19844,7 +19886,7 @@ class XmlWriter
 
 ## YamlFlow · formats/yaml/index.el {#api-c273d9c235cfec89910d}
 
-[源码 formats/yaml/index.el:94](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L94)
+[源码 formats/yaml/index.el:96](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L96)
 
 ```el-signature
 class YamlFlow extends FormatReader
@@ -19852,7 +19894,7 @@ class YamlFlow extends FormatReader
 
 ## YamlLine · formats/yaml/index.el {#api-c8647f4f16b4ad29236b}
 
-[源码 formats/yaml/index.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L20)
+[源码 formats/yaml/index.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L22)
 
 ```el-signature
 class YamlLine
@@ -19860,7 +19902,7 @@ class YamlLine
 
 ## YamlReader · formats/yaml/index.el {#api-8ffd3f96fbbad872fcf7}
 
-[源码 formats/yaml/index.el:193](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L193)
+[源码 formats/yaml/index.el:195](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L195)
 
 ```el-signature
 class YamlReader
@@ -19868,7 +19910,7 @@ class YamlReader
 
 ## YamlState · formats/yaml/index.el {#api-03dfe90ddcfb8f435bd4}
 
-[源码 formats/yaml/index.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L29)
+[源码 formats/yaml/index.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/yaml/index.el#L31)
 
 ```el-signature
 class YamlState
@@ -20194,7 +20236,7 @@ class Contour
 
 ## SvgDocument · graphics/vector/svg.el {#api-708bac10160c0ced62d1}
 
-[源码 graphics/vector/svg.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/svg.el#L25)
+[源码 graphics/vector/svg.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/svg.el#L26)
 
 ```el-signature
 class SvgDocument
@@ -27764,7 +27806,7 @@ class CacheState
 
 ## HttpHeader · network/http/model.el {#api-de461259064c77488732}
 
-[源码 network/http/model.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L34)
+[源码 network/http/model.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L33)
 
 ```el-signature
 class HttpHeader
@@ -27774,7 +27816,7 @@ class HttpHeader
 
 ## HttpOptions · network/http/model.el {#api-5047f246ebfdff685043}
 
-[源码 network/http/model.el:71](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L71)
+[源码 network/http/model.el:70](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L70)
 
 ```el-signature
 class HttpOptions
@@ -27784,7 +27826,7 @@ class HttpOptions
 
 ## HttpResponse · network/http/model.el {#api-e49096dfd951764c068f}
 
-[源码 network/http/model.el:194](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L194)
+[源码 network/http/model.el:193](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L193)
 
 ```el-signature
 class HttpResponse
@@ -27794,7 +27836,7 @@ class HttpResponse
 
 ## HttpStatusError · network/http/model.el {#api-b0c306dbfe7c9ba3158d}
 
-[源码 network/http/model.el:298](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L298)
+[源码 network/http/model.el:286](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/model.el#L286)
 
 ```el-signature
 class HttpStatusError extends Error
@@ -27846,7 +27888,7 @@ class SocketResult
 
 ## FormField · network/parsers.el {#api-f973a41aa0f5893b7825}
 
-[源码 network/parsers.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/network/parsers.el#L11)
+[源码 network/parsers.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/network/parsers.el#L14)
 
 ```el-signature
 class FormField
@@ -28146,7 +28188,7 @@ class WebSocket
 
 ## WebSocketMessage · network/websocket/message.el {#api-b668f5ac4e3a6d9f7224}
 
-[源码 network/websocket/message.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/network/websocket/message.el#L7)
+[源码 network/websocket/message.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/network/websocket/message.el#L6)
 
 ```el-signature
 class WebSocketMessage
@@ -28188,7 +28230,7 @@ fn FrozenLoRAParameters(element: type, storage: type = Tensor<element: element>)
 
 ## LoRAConfig · neural-networks/adapters/lora.el {#api-0ed63f3d68a4b836e1ba}
 
-[源码 neural-networks/adapters/lora.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/adapters/lora.el#L14)
+[源码 neural-networks/adapters/lora.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/adapters/lora.el#L15)
 
 ```el-signature
 class LoRAConfig
@@ -28196,7 +28238,7 @@ class LoRAConfig
 
 ## LoRAState · neural-networks/adapters/lora.el {#api-42a19ed48c432a9b5ab9}
 
-[源码 neural-networks/adapters/lora.el:100](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/adapters/lora.el#L100)
+[源码 neural-networks/adapters/lora.el:101](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/adapters/lora.el#L101)
 
 ```el-signature
 fn LoRAState(element: type, storage: type = Tensor<element: element>): type
@@ -28992,7 +29034,7 @@ class CheckpointWriteAttempt
 
 ## NamedCounterRandom · neural-networks/state/index.el {#api-f0ff2a50a3975e0b12bc}
 
-[源码 neural-networks/state/index.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/index.el#L20)
+[源码 neural-networks/state/index.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/index.el#L21)
 
 ```el-signature
 class NamedCounterRandom
@@ -29000,7 +29042,7 @@ class NamedCounterRandom
 
 ## TrainingCheckpoint · neural-networks/state/index.el {#api-48e420d349eef300dd1e}
 
-[源码 neural-networks/state/index.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/index.el#L67)
+[源码 neural-networks/state/index.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/index.el#L68)
 
 ```el-signature
 fn TrainingCheckpoint(element: type, storage: type = Tensor<element: element>): type
@@ -29008,7 +29050,7 @@ fn TrainingCheckpoint(element: type, storage: type = Tensor<element: element>): 
 
 ## TrainingRandom · neural-networks/state/index.el {#api-07a20dc01ca5790236ea}
 
-[源码 neural-networks/state/index.el:55](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/index.el#L55)
+[源码 neural-networks/state/index.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/index.el#L56)
 
 ```el-signature
 class TrainingRandom
@@ -29112,7 +29154,7 @@ class InvalidChatTemplate
 
 ## Block · neural-networks/text/chat-template.el {#api-95adf424f5b0b9084fde}
 
-[源码 neural-networks/text/chat-template.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/chat-template.el#L31)
+[源码 neural-networks/text/chat-template.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/chat-template.el#L32)
 
 ```el-signature
 class Block
@@ -29120,7 +29162,7 @@ class Block
 
 ## ChatMessage · neural-networks/text/chat-template.el {#api-050913c291cb94a2010e}
 
-[源码 neural-networks/text/chat-template.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/chat-template.el#L14)
+[源码 neural-networks/text/chat-template.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/chat-template.el#L15)
 
 ```el-signature
 class ChatMessage
@@ -29128,7 +29170,7 @@ class ChatMessage
 
 ## ChatOutput · neural-networks/text/chat-template.el {#api-2e8cd673fbe10683340a}
 
-[源码 neural-networks/text/chat-template.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/chat-template.el#L38)
+[源码 neural-networks/text/chat-template.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/chat-template.el#L39)
 
 ```el-signature
 class ChatOutput
@@ -29136,7 +29178,7 @@ class ChatOutput
 
 ## ChatTemplate · neural-networks/text/chat-template.el {#api-0a07e5523fab80946f7c}
 
-[源码 neural-networks/text/chat-template.el:78](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/chat-template.el#L78)
+[源码 neural-networks/text/chat-template.el:79](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/chat-template.el#L79)
 
 ```el-signature
 class ChatTemplate
@@ -29144,7 +29186,7 @@ class ChatTemplate
 
 ## Instruction · neural-networks/text/chat-template.el {#api-c85f833ac82c2a1147ba}
 
-[源码 neural-networks/text/chat-template.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/chat-template.el#L23)
+[源码 neural-networks/text/chat-template.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/chat-template.el#L24)
 
 ```el-signature
 class Instruction
@@ -29304,7 +29346,7 @@ fn InferenceLanguageModelPackage(element: type, storage: type = Tensor<element: 
 
 ## InvalidLlama · neural-networks/text/llama.el {#api-9a80db261ee952cc635f}
 
-[源码 neural-networks/text/llama.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/llama.el#L17)
+[源码 neural-networks/text/llama.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/llama.el#L18)
 
 ```el-signature
 class InvalidLlama
@@ -29312,7 +29354,7 @@ class InvalidLlama
 
 ## LlamaLoader · neural-networks/text/llama.el {#api-7e70ca6168a24b17f6bd}
 
-[源码 neural-networks/text/llama.el:148](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/llama.el#L148)
+[源码 neural-networks/text/llama.el:154](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/llama.el#L154)
 
 ```el-signature
 fn LlamaLoader(element: type, storage: type = Tensor<element: element>, parameterBank: type = ParameterModel<element: element, storage: storage>): type
@@ -29330,7 +29372,7 @@ fn LanguageModelPackage(element: type, storage: type = Tensor<element: element>)
 
 ## EncodedSpan · neural-networks/text/public-tokenizer.el {#api-2076aa86746094c27299}
 
-[源码 neural-networks/text/public-tokenizer.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/public-tokenizer.el#L31)
+[源码 neural-networks/text/public-tokenizer.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/public-tokenizer.el#L33)
 
 ```el-signature
 class EncodedSpan
@@ -29338,7 +29380,7 @@ class EncodedSpan
 
 ## PublicBytePairTokenizer · neural-networks/text/public-tokenizer.el {#api-008f40c79afd33547322}
 
-[源码 neural-networks/text/public-tokenizer.el:115](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/public-tokenizer.el#L115)
+[源码 neural-networks/text/public-tokenizer.el:117](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/public-tokenizer.el#L117)
 
 ```el-signature
 class PublicBytePairTokenizer
@@ -29346,7 +29388,7 @@ class PublicBytePairTokenizer
 
 ## InvalidSafeTensorIndex · neural-networks/text/safetensors-index.el {#api-9f924cca13db0e15012b}
 
-[源码 neural-networks/text/safetensors-index.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L8)
+[源码 neural-networks/text/safetensors-index.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L10)
 
 ```el-signature
 class InvalidSafeTensorIndex
@@ -29354,7 +29396,7 @@ class InvalidSafeTensorIndex
 
 ## SafeTensorIndex · neural-networks/text/safetensors-index.el {#api-45d2ec21e335be1ea6a0}
 
-[源码 neural-networks/text/safetensors-index.el:84](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L84)
+[源码 neural-networks/text/safetensors-index.el:86](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L86)
 
 ```el-signature
 class SafeTensorIndex
@@ -29362,7 +29404,7 @@ class SafeTensorIndex
 
 ## SafeTensorIndexLimits · neural-networks/text/safetensors-index.el {#api-48800a79994546960ef6}
 
-[源码 neural-networks/text/safetensors-index.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L15)
+[源码 neural-networks/text/safetensors-index.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L17)
 
 ```el-signature
 class SafeTensorIndexLimits
@@ -29370,7 +29412,7 @@ class SafeTensorIndexLimits
 
 ## Work · neural-networks/text/safetensors-index.el {#api-37268d79fac035a82a7d}
 
-[源码 neural-networks/text/safetensors-index.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L28)
+[源码 neural-networks/text/safetensors-index.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L30)
 
 ```el-signature
 class Work
@@ -29378,7 +29420,7 @@ class Work
 
 ## Entry · neural-networks/text/safetensors.el {#api-fc7c7975efd5ef430e81}
 
-[源码 neural-networks/text/safetensors.el:75](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L75)
+[源码 neural-networks/text/safetensors.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L76)
 
 ```el-signature
 class Entry
@@ -29386,7 +29428,7 @@ class Entry
 
 ## InvalidSafeTensor · neural-networks/text/safetensors.el {#api-e1e7db720b69a6b0ac1f}
 
-[源码 neural-networks/text/safetensors.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L15)
+[源码 neural-networks/text/safetensors.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L16)
 
 ```el-signature
 class InvalidSafeTensor
@@ -29394,7 +29436,7 @@ class InvalidSafeTensor
 
 ## SafeTensorFile · neural-networks/text/safetensors.el {#api-1c2140f448b284699a74}
 
-[源码 neural-networks/text/safetensors.el:104](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L104)
+[源码 neural-networks/text/safetensors.el:105](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L105)
 
 ```el-signature
 fn SafeTensorFile(element: type = PrecisionElement("binary32")): type
@@ -29402,7 +29444,7 @@ fn SafeTensorFile(element: type = PrecisionElement("binary32")): type
 
 ## SafeTensorLimits · neural-networks/text/safetensors.el {#api-e902551d5fffe0b057b5}
 
-[源码 neural-networks/text/safetensors.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L19)
+[源码 neural-networks/text/safetensors.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L20)
 
 ```el-signature
 class SafeTensorLimits
@@ -29410,7 +29452,7 @@ class SafeTensorLimits
 
 ## BytePairTokenizer · neural-networks/text/tokenizer.el {#api-acac142151ea6ed42b61}
 
-[源码 neural-networks/text/tokenizer.el:59](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/tokenizer.el#L59)
+[源码 neural-networks/text/tokenizer.el:62](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/tokenizer.el#L62)
 
 ```el-signature
 class BytePairTokenizer
@@ -29418,7 +29460,7 @@ class BytePairTokenizer
 
 ## InvalidTextTokens · neural-networks/text/tokenizer.el {#api-9e697269f6efc1f2623d}
 
-[源码 neural-networks/text/tokenizer.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/tokenizer.el#L15)
+[源码 neural-networks/text/tokenizer.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/tokenizer.el#L18)
 
 ```el-signature
 class InvalidTextTokens
@@ -29426,7 +29468,7 @@ class InvalidTextTokens
 
 ## TextTokenLimits · neural-networks/text/tokenizer.el {#api-56350bd7da2f2d703f65}
 
-[源码 neural-networks/text/tokenizer.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/tokenizer.el#L20)
+[源码 neural-networks/text/tokenizer.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/tokenizer.el#L23)
 
 ```el-signature
 class TextTokenLimits
@@ -30570,7 +30612,7 @@ enum FilePublicationState
 
 ## RandomTemporaryFile · operating-system/files/random-file.el {#api-5f900d7a744f1fb1daf6}
 
-[源码 operating-system/files/random-file.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/random-file.el#L40)
+[源码 operating-system/files/random-file.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/random-file.el#L43)
 
 ```el-signature
 class RandomTemporaryFile
@@ -31778,7 +31820,7 @@ class SignalInt
 
 ## FileInt · platform/posix/random-file.el {#api-bcd2f1dd2c714f21977c}
 
-[源码 platform/posix/random-file.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/posix/random-file.el#L18)
+[源码 platform/posix/random-file.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/posix/random-file.el#L28)
 
 ```el-signature
 class FileInt
@@ -31786,7 +31828,7 @@ class FileInt
 
 ## FileMode · platform/posix/random-file.el {#api-13ee72159729be9d230f}
 
-[源码 platform/posix/random-file.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/posix/random-file.el#L19)
+[源码 platform/posix/random-file.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/posix/random-file.el#L29)
 
 ```el-signature
 class FileMode
@@ -31794,7 +31836,7 @@ class FileMode
 
 ## FileOffset · platform/posix/random-file.el {#api-78c356d5cdaca36490fb}
 
-[源码 platform/posix/random-file.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/posix/random-file.el#L20)
+[源码 platform/posix/random-file.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/posix/random-file.el#L30)
 
 ```el-signature
 class FileOffset
@@ -31802,7 +31844,7 @@ class FileOffset
 
 ## FileSize · platform/posix/random-file.el {#api-29ee6d6706b82d4fb1e3}
 
-[源码 platform/posix/random-file.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/posix/random-file.el#L21)
+[源码 platform/posix/random-file.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/posix/random-file.el#L31)
 
 ```el-signature
 class FileSize
@@ -31810,7 +31852,7 @@ class FileSize
 
 ## NativeRandomFile · platform/posix/random-file.el {#api-5e8931f80c700a872234}
 
-[源码 platform/posix/random-file.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/posix/random-file.el#L39)
+[源码 platform/posix/random-file.el:49](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/posix/random-file.el#L49)
 
 ```el-signature
 class NativeRandomFile extends NativeRandomFileSource
@@ -34390,7 +34432,7 @@ class ScanResult
 
 ## FormatState · tools/formatter/state.el {#api-84a52d01bf148d65e29c}
 
-[源码 tools/formatter/state.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/formatter/state.el#L35)
+[源码 tools/formatter/state.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/formatter/state.el#L36)
 
 ```el-signature
 class FormatState
@@ -34398,7 +34440,7 @@ class FormatState
 
 ## StateEntry · tools/formatter/state.el {#api-fea73d5f6bfa63aad931}
 
-[源码 tools/formatter/state.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/formatter/state.el#L28)
+[源码 tools/formatter/state.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/formatter/state.el#L29)
 
 ```el-signature
 class StateEntry

@@ -6,6 +6,7 @@
 
 ## 成员总览
 
+- [FileReader.position](#api-340aedfb9eaf3818fb08)
 - [FileReader.read](#api-de5485f845b68f2bcf8a)
 - [FileReader.close](#api-226f1d4ed93e75e92625)
 
@@ -15,9 +16,30 @@
 
 提供顺序及可选随机访问的逻辑位置读取器。
 
+## FileReader.position {#api-340aedfb9eaf3818fb08}
+
+源码：`src/stdlib/filesystem/reader.el:125` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L125)
+
+从打开位置开始，顺序读取已经交付的字节数。定位读取、EOF 与底层预取都不推进它。
+
+```el-signature
+get position(): Number
+```
+
+**返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
+
+### 示例：读取文件头后保存下一字节偏移
+
+```el
+let reader = openFileReader("file:./data.bin")
+let header = reader.read(16)
+let offset = reader.position
+reader.close()
+```
+
 ## FileReader.read {#api-de5485f845b68f2bcf8a}
 
-源码：`src/stdlib/filesystem/reader.el:143` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L143)
+源码：`src/stdlib/filesystem/reader.el:154` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L154)
 
 从当前位置读取至多指定数量的原始字节。
 
@@ -43,7 +65,7 @@ reader.close()
 
 ## FileReader.close {#api-226f1d4ed93e75e92625}
 
-源码：`src/stdlib/filesystem/reader.el:201` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L201)
+源码：`src/stdlib/filesystem/reader.el:212` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L212)
 
 关闭读取器并结束其底层资源使用。
 

@@ -4,7 +4,7 @@
 
 [结构化文档数据](api.json)
 
-已标注文档的文件：220 / 4135；API 条目：754。此比例不是公开 API 覆盖率。
+已标注文档的文件：224 / 4138；API 条目：735。此比例不是公开 API 覆盖率。
 
 [按模块查找](modules.md) · [按符号查找](symbols.md) · [默认环境](environment.md) · [类型定义](types.md)
 
@@ -23,9 +23,9 @@
 | [documents](categories/documents.md) | 1 | 3 |
 | [errors](categories/errors.md) | 3 | 6 |
 | [execution](categories/execution.md) | 1 | 4 |
-| [filesystem](categories/filesystem.md) | 4 | 28 |
+| [filesystem](categories/filesystem.md) | 5 | 26 |
 | [foreign-functions](categories/foreign-functions.md) | 3 | 6 |
-| [formats](categories/formats.md) | 13 | 41 |
+| [formats](categories/formats.md) | 16 | 26 |
 | [functions](categories/functions.md) | 2 | 7 |
 | [game](categories/game.md) | 1 | 4 |
 | [graphics](categories/graphics.md) | 2 | 13 |
@@ -34,7 +34,7 @@
 | [mathematics](categories/mathematics.md) | 5 | 12 |
 | [memory](categories/memory.md) | 11 | 49 |
 | [multimedia](categories/multimedia.md) | 8 | 35 |
-| [network](categories/network.md) | 9 | 40 |
+| [network](categories/network.md) | 9 | 38 |
 | [neural-networks](categories/neural-networks.md) | 15 | 37 |
 | [number](categories/number.md) | 9 | 20 |
 | [numerical-computing](categories/numerical-computing.md) | 9 | 39 |

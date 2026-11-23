@@ -146,9 +146,9 @@ let flags: Text[] = @["--oneline", "-n", "3"]
 
 例如 `shell { 21 | double | label }` 先把 `21` 注入 `double`，再把结果注入 `label`。
 
-没有 POSIX 重定向语法：`<`、`>`、`>>`、`2>`、`|&` 都不是 shell 语法，前三个在普通 EL 里是运算符。文件输出用文件 API，例如 `writeTextFile("status.txt", Text(result))`（来自 `el:filesystem/index.el`），不要写 `>`。
+没有 POSIX 重定向语法：`<`、`>`、`>>`、`2>`、`|&` 都不是 shell 语法，前三个在普通 EL 里是运算符。文件输出用文件 API，例如 `writeFileAs(formats.Text, "status.txt", Text(result))`（来自 `el:filesystem/index.el`），不要写 `>`。
 
-把文件内容接到外部命令的 stdin，同样要先读成 `Text`（如 `readTextFile`）交给 `utf8Input`，或读成字节再显式构造 `Buffer` 交给 `bytesInput`，然后通过管道交给外部阶段。
+把文件内容接到外部命令的 stdin，同样要先读成 `Text`（如 `readFileAs`）交给 `utf8Input`，或读成字节再显式构造 `Buffer` 交给 `bytesInput`，然后通过管道交给外部阶段。
 
 ## `ShellResult`：退出码不是异常
 
@@ -170,7 +170,7 @@ let flags: Text[] = @["--oneline", "-n", "3"]
 - 文本投影只在明确要求时发生。输出不完整时 `Text(result)` 默认拒绝；传 `t` 给 `result.text(t)` 时不再要求完整，只投影已保存的部分。
 
 !!! warning "常见坑：命令失败不会自己抛"
-    运行 `shell { git log -n 1 }` 却得到空文本、程序也没报错——很可能是 `git` 退出码非零，输出被收进了 `ShellResult`。读 `result.status` 或 `result.exitCode`，不要等异常。另外，`>` 在 EL 里是运算符，写文件要用 `writeTextFile`。
+    运行 `shell { git log -n 1 }` 却得到空文本、程序也没报错——很可能是 `git` 退出码非零，输出被收进了 `ShellResult`。读 `result.status` 或 `result.exitCode`，不要等异常。另外，`>` 在 EL 里是运算符，写文件要用 `writeFileAs`。
 
 需要接管失败策略、切换会话或启动后台作业时，再展开下面这一节。
 

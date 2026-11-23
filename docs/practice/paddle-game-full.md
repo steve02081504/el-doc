@@ -20,8 +20,8 @@
 import { Grid } from "el:collections/grids.el"
 import { showWindow, runWindow, element, appendChild, dataView, on, GuiEvent } from "el:user-interface/"
 import { Theme } from "el:theme/"
-import { parseCSV, writeCSV } from "el:formats/delimited-text/"
-import { readTextFileIfPresent, publishTextFile } from "el:filesystem/"
+import { resolvePath, publishFileAs } from "el:filesystem/"
+import { formats, parseAs } from "el:formats/"
 import { parse_integer } from "el:number/"
 
 let board = Grid<element: any>(16, 10, @{color: "black"})
@@ -52,17 +52,17 @@ fn applyTheme() {
 }
 
 fn saveProfile(nextCoins: Number, owned: Bool, selected: Bool) {
-	let text = writeCSV(@[@["1", Text(nextCoins), if (owned) "yes" else "no", if (selected) "yes" else "no"]])
-	discard(publishTextFile("profile.csv", "profile.csv.tmp", text))
+	let rows = @[@["1", Text(nextCoins), if (owned) "yes" else "no", if (selected) "yes" else "no"]]
+	discard(publishFileAs(formats.CSV, "profile.csv", rows))
 	coins = nextCoins
 	rainbowOwned = owned
 	rainbow = selected
 	applyTheme()
 }
 
-let saved = readTextFileIfPresent("profile.csv", 1024)
-if (saved is Text) {
-	let rows = parseCSV(saved)
+let saved = resolvePath("profile.csv").readOptionalBytes(1024)
+if (saved isnot nil_t) {
+	let rows = parseAs(formats.CSV, saved)
 	if (rows.count != 1) throw "存档应只有一行"
 	let fields = rows[0]
 	if (fields.count != 4) throw "存档应有四列"

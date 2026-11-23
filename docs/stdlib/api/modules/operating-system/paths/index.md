@@ -12,7 +12,7 @@
 
 ## make_directories {#api-e01bd63582a195d4241c}
 
-源码：`src/stdlib/operating-system/paths/index.el:38` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/paths/index.el#L38)
+源码：`src/stdlib/operating-system/paths/index.el:39` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/paths/index.el#L39)
 
 请求创建路径及其父目录并返回原路径；实际操作使用当前平台实现。
 

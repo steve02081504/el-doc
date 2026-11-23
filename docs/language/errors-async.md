@@ -28,8 +28,8 @@
 
 ```el
 fn readBoth(first: Text, second: Text) {
-	let a = readTextFile(first)
-	let b = readTextFile(second)
+	let a = readFileAs(formats.Text, first)
+	let b = readFileAs(formats.Text, second)
 	return a + b
 }
 ```
@@ -145,8 +145,8 @@ try {
 
 ```el
 fn readPair() {
-	let first = spawn(() => readTextFile("file:./a.txt"))
-	let second = spawn(() => readTextFile("file:./b.txt"))
+	let first = spawn(() => readFileAs(formats.Text, "file:./a.txt"))
+	let second = spawn(() => readFileAs(formats.Text, "file:./b.txt"))
 	return first.get() + second.get()
 }
 ```
@@ -156,8 +156,8 @@ fn readPair() {
 多个任务的结果可以用 `all`、`any`、`race` 组合，它们返回新的 Promise：
 
 ```el
-let first = spawn(() => readTextFile("file:./a.txt"))
-let second = spawn(() => readTextFile("file:./b.txt"))
+let first = spawn(() => readFileAs(formats.Text, "file:./a.txt"))
+let second = spawn(() => readFileAs(formats.Text, "file:./b.txt"))
 let pages = all(@[first, second]).get()
 console.stdout.writeLine("loaded ", pages.count, " files")
 ```
@@ -176,7 +176,7 @@ import { async, await } from "el:concurrency/"
 
 ```el
 let load = async {
-	return readTextFile("file:./data.txt")
+	return readFileAs(formats.Text, "file:./data.txt")
 }
 
 let text = await(load)
@@ -187,10 +187,10 @@ console.stdout.writeLine(text.count)
 
 ```el
 let first = async {
-	return readTextFile("file:./a.txt")
+	return readFileAs(formats.Text, "file:./a.txt")
 }
 let second = async {
-	return readTextFile("file:./b.txt")
+	return readFileAs(formats.Text, "file:./b.txt")
 }
 
 let a = await(first)
@@ -213,12 +213,14 @@ console.stdout.writeLine(a + b)
 
 ## 完整例子：解析失败回退
 
-`parseJSON` 失败时抛 `ParseError`；`try` 表达式可以直接把“解析失败就退回空对象”写成一个值。
+用 `parseAs(formats.JSON, source)` 读取失败时抛 `ParseError`；`try` 表达式可以直接把“解析失败就退回空对象”写成一个值。
 
 ```el
+import { formats, parseAs } from "el:formats/"
+
 fn settingsFrom(source: Text) {
 	return try {
-		parseJSON(source)
+		parseAs(formats.JSON, source)
 	} catch {
 		DynamicObject()
 	}

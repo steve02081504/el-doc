@@ -206,12 +206,13 @@ try {
 先用小样本验证。把下面的程序存成 `sample.el`，运行它生成输入：
 
 ```el
-import { writeFileBytes } from "el:filesystem/"
+import { writeFileAs } from "el:filesystem/"
+import { formats, bufferFromBytes } from "el:formats/"
 import { append_u32le } from "el:cryptography/"
 
 let bytes: Number[] = @[]
 for (let value in @[7, 0, 65535, 7, 2]) append_u32le(bytes, value)
-discard(writeFileBytes("input.bin", bytes))
+discard(writeFileAs(formats.Buffer, "input.bin", bufferFromBytes(bytes)))
 ```
 
 排序后按相同编码读回，应是 `0, 2, 7, 7, 65535`，共 20 字节。把读取块大小从 65,536 改为 3，输出应一致。输入末尾追加一字节，程序应报告不完整记录。在 4 GiB 输入上执行前准备同等大小的输出空间，并用独立的流式检查确认长度、单调性和各值频次。这是教学实现，逐条数组操作的吞吐量需要实测。值域过大时改用分块排序与多路归并，每次归并只保留各输入块的当前头部。
