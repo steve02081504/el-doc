@@ -1,7 +1,8 @@
 (function () {
   "use strict";
 
-  const selector = ".el-code-link";
+  const site = new URL("../", document.currentScript.src);
+  const selector = ".md-content__inner a[href]:not(.headerlink)";
   const previews = new Map();
   const root = document.documentElement;
   const popup = document.createElement("div");
@@ -15,11 +16,20 @@
   let showTimer;
   let hideTimer;
 
+  function previewLink(element) {
+    const link = element.closest(selector);
+    if (!link || link.hasAttribute("download") || link.closest("pre") && !link.matches(".el-code-link")) return null;
+    const url = new URL(link.href);
+    if (url.origin !== site.origin || !url.pathname.startsWith(site.pathname)) return null;
+    if (!url.pathname.endsWith("/") && !url.pathname.endsWith(".html")) return null;
+    return link;
+  }
+
   function excerpt(text, length) {
     return text.length > length ? text.slice(0, length).trimEnd() + "…" : text;
   }
 
-  function extract(heading) {
+  function extract(heading, symbol) {
     if (!heading) return null;
     const row = heading.closest("tr");
     if (row && row.cells.length >= 3) {
@@ -34,14 +44,21 @@
       .map(node => node.textContent).join("").trim();
     let summary = "";
     let signature = "";
+    const pageHeading = heading.matches("h1");
     for (let section = heading.nextElementSibling; section; section = section.nextElementSibling) {
-      if (/^H[1-6]$/.test(section.tagName)) break;
+      if (!pageHeading && /^H[1-6]$/.test(section.tagName)) break;
       if (!summary && section.matches("p")) {
         const text = section.textContent.trim();
-        if (!text.startsWith("源码：")) summary = excerpt(text, 240);
+        if (!/^源码[： ]/.test(text)) summary = excerpt(text, 240);
+      }
+      if (!summary && pageHeading && section.matches("table")) {
+        const match = Array.from(section.querySelectorAll("tbody code")).find(code =>
+          code.textContent.match(/@?[\p{L}_][\p{L}\p{N}_]*/gu)?.includes(symbol));
+        if (match) summary = excerpt(Array.from(match.closest("tr").cells)
+          .map(cell => cell.textContent.trim()).join("　"), 240);
       }
       if (!signature && section.matches(".language-el-signature")) signature = excerpt(section.textContent.trim(), 240);
-      if (summary && signature) break;
+      if (summary && (signature || pageHeading)) break;
     }
     return { title, summary, signature };
   }
@@ -52,7 +69,7 @@
     return response;
   }
 
-  async function readPreview(url) {
+  async function readPreview(url, symbol) {
     const target = url.hash ? "#" + CSS.escape(decodeURIComponent(url.hash.slice(1))) : "h1";
     url.hash = "";
     const current = new URL(location.href);
@@ -61,19 +78,20 @@
       new DOMParser().parseFromString(await (await fetchContent(url)).text(), "text/html");
     const heading = page.querySelector(".md-content__inner")?.querySelector(target);
     const chunk = heading?.matches("span") && heading.parentElement.closest(".el-virtual-chunk[data-content]");
-    if (!chunk || heading.parentElement !== chunk) return extract(heading);
+    if (!chunk || heading.parentElement !== chunk) return extract(heading, symbol);
 
     const response = await fetchContent(new URL(chunk.dataset.content, url));
     const template = document.createElement("template");
     template.innerHTML = (await response.json()).join("");
-    return extract(template.content.querySelector(target));
+    return extract(template.content.querySelector(target), symbol);
   }
 
   function load(link) {
     const url = new URL(link.href);
-    const key = url.href;
+    const symbol = link.textContent.trim();
+    const key = JSON.stringify([url.href, url.hash ? "" : symbol]);
     if (!previews.has(key)) {
-      previews.set(key, readPreview(url).catch(() => {
+      previews.set(key, readPreview(url, symbol).catch(() => {
         previews.delete(key);
         return null;
       }));
@@ -84,7 +102,12 @@
   function close() {
     clearTimeout(showTimer);
     clearTimeout(hideTimer);
-    active?.removeAttribute("aria-describedby");
+    if (active) {
+      const describedBy = (active.getAttribute("aria-describedby") || "").split(/\s+/);
+      const otherDescriptions = describedBy.filter(id => id && id !== popup.id).join(" ");
+      if (otherDescriptions) active.setAttribute("aria-describedby", otherDescriptions);
+      else active.removeAttribute("aria-describedby");
+    }
     active = null;
     popup.hidden = true;
   }
@@ -126,7 +149,8 @@
         summary.textContent = preview.summary;
         popup.append(summary);
       }
-      link.setAttribute("aria-describedby", popup.id);
+      const describedBy = link.getAttribute("aria-describedby");
+      link.setAttribute("aria-describedby", describedBy ? describedBy + " " + popup.id : popup.id);
       popup.hidden = false;
       place();
     }, 240);
@@ -134,7 +158,7 @@
 
   document.addEventListener("pointerover", event => {
     if (event.pointerType === "touch") return;
-    const link = event.target.closest(selector);
+    const link = previewLink(event.target);
     if (link) open(link);
     if (popup.contains(event.target)) clearTimeout(hideTimer);
   });
@@ -145,7 +169,8 @@
     if (document.activeElement !== active) hideTimer = setTimeout(close, 120);
   });
   document.addEventListener("focusin", event => {
-    if (event.target.matches(selector)) open(event.target);
+    const link = previewLink(event.target);
+    if (link) open(link);
   });
   document.addEventListener("focusout", event => {
     if (event.target === active) close();

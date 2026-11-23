@@ -42,7 +42,7 @@
 	"categories/user-interface.md": "9369e99e7db4e1b1e43356bab9505490c71950aea61be71c089608345050deb3",
 	"modules.md": "8481c8d54dfec892213b176d185a5da278e0c7120a5ea23be13c34e76669cc93",
 	"symbols.md": "77946178d898fefa0a918f5bcc9ffdd001768e9ef51393e0f391c44d6232a8a5",
-	"environment.md": "21109684d9961daf1e793ebe932c57ba5517cb86dcf1efab9ba62a04d50bc5e0",
+	"environment.md": "934a79709ab3920031cea5ca3595a5b0048d4208f850bcfc86d0b3a6ded60f6a",
 	"types.md": "2d87cc90380119ef7cf1f4255792d3ba01f507367cef9056fc55422127c0a675",
 	"modules/collections/arrays/dynamic.md": "34e24743084d7f4e035dfa612cfe2bbfbb5cecdc2052e675bf15ba76875fc165",
 	"modules/collections/arrays/lazy.md": "7c70e6ef962867c7221df56abbd9eb6bf4210740004df64b44b6806852f67c8c",
@@ -91,7 +91,7 @@
 	"modules/database/schema.md": "23e4b117615b919f7f0c950387deb5c3c9c7213bbd802fe2f27a52286273c991",
 	"modules/database/source-syntax.md": "b18ef36995fcb285d5ca3847dd3e8d3d60cf572deb70e476f027fbdb8289f485",
 	"modules/database/table.md": "e7beba3c32f5dd92c85ec8061911110a341a6dc03ed21311084bf1ddd4d156bf",
-	"modules/database/typed-aggregate.md": "3d487ab1af2bdffd5630d5a761d552915b7d68178787943c38b818134eaeee97",
+	"modules/database/typed-aggregate.md": "d4ac43761ad6552be1bc6f4928ec1db549c9f1b6a0c535864d77014ebd33b985",
 	"modules/desktop-automation/input-backend.md": "4556a588c0b0ec6fdcde252f129b2554eebbeff9e345185a9f9c7d5cd7af30f7",
 	"modules/desktop-automation/input.md": "e0bcb6f08fd2862156e2eff103313f2d1e5e834f77b49498003fa545103f4b9b",
 	"modules/desktop-automation/launch.md": "4c23592aae105f424739d79bbafb3667f974c6a74a9ba1213811a53fadc24eeb",
@@ -139,7 +139,7 @@
 	"modules/logic/control.md": "b4c6f9dd9dd3340659215e3cdb4594c54eb9c5738a68c5873a278bba30c533b7",
 	"modules/logic/goal.md": "24b3600024feb9b43933f4edbe2899a32ff6866d75da85b00f02d69ebea60479",
 	"modules/logic/proof-conflict.md": "6303cdad1ec6fc865bd49978955e043ef9bf86578d920af38bd5946bfedbc445",
-	"modules/logic/search.md": "eb0402a89f43d447d6db753473a1069fa841e7d9ba0ff0e8b5255024c8c31478",
+	"modules/logic/search.md": "ee3de4f517a84939234a6ce9b8d114599dfd253a3f3fdcda0bd8605736ca1a78",
 	"modules/logic/surface.md": "fdf18b90759410411a3f66b63e0878510902158a96cee91dd9a4cd78f80e7c89",
 	"modules/logic/table.md": "2ab7fbad4e13ac1777e545bc5757bd10fe7d060007d80b8c0160ab8908aee402",
 	"modules/logic/term.md": "5a4b4afa66e72a48cbbc81e76f9af4a5ded1a673bb1bd6f4d4a9fe92100f6aff",
@@ -265,5 +265,5 @@
 	"modules/user-interface/sound.md": "b7f031d5903235b015156acc29984eec4a41d3e040eee134a74c5eb04193304e",
 	"modules/user-interface/window.md": "be5e041996bd7101efec894fcf0c8beb170be2dfec5c36bd2ece046fe84eb031",
 	"index.md": "6405a2b85881165c54030b3a78383d80c236bcfc89b06190d3b8626ad0d7a830",
-	"api.json": "efd6bd9d4c89531e4990e34c2a44a13f6b9937f652008f5467a7fb25f4f2237c"
+	"api.json": "5ce28fd6c2293c29e96504ade16a03f175e988d14e9066cd6bfb7c58c6f16514"
 }

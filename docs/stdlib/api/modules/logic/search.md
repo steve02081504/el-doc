@@ -113,7 +113,7 @@ let cursor = plan.iterator()
 
 ## SearchCursor.next {#api-d6a4b9be8fcbef392bec}
 
-源码：`src/stdlib/logic/search.el:968` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L968)
+源码：`src/stdlib/logic/search.el:969` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L969)
 
 推进搜索并返回下一项结果。没有下一项时返回 `done`。推进期间发生的搜索中断会向调用者传播。
 
@@ -126,5 +126,6 @@ fn next(): IterationStep<element: Answer>
 ### 示例：读取一个搜索结果
 
 ```el
-let step = cursor.next()
+// @external searchCursor: SearchCursor
+let step = searchCursor.next()
 ```

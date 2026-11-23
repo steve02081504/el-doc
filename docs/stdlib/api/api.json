@@ -681,19 +681,19 @@
 			"value_type": null
 		},
 		{
-			"name": "array",
-			"id": null,
-			"source": "language/syntax/builders.el",
-			"line": 31,
-			"signature": "export fn array(context: SyntaxContext, values: UncheckedSyntax[]): UncheckedSyntax",
-			"value_type": null
-		},
-		{
 			"name": "Array",
 			"id": "collections/arrays/dynamic::Array",
 			"source": "collections/arrays/dynamic.el",
 			"line": 135,
 			"signature": "export fn Array(element: type): type",
+			"value_type": null
+		},
+		{
+			"name": "array",
+			"id": null,
+			"source": "language/syntax/builders.el",
+			"line": 31,
+			"signature": "export fn array(context: SyntaxContext, values: UncheckedSyntax[]): UncheckedSyntax",
 			"value_type": null
 		},
 		{
@@ -1889,19 +1889,19 @@
 			"value_type": null
 		},
 		{
-			"name": "computeFormat",
-			"id": null,
-			"source": "execution/scalars.el",
-			"line": 18,
-			"signature": "export fn computeFormat(T: type): ComputeFormat",
-			"value_type": null
-		},
-		{
 			"name": "ComputeFormat",
 			"id": null,
 			"source": "execution/format.el",
 			"line": 12,
 			"signature": "export @assign(mode: \"shared\") class ComputeFormat",
+			"value_type": null
+		},
+		{
+			"name": "computeFormat",
+			"id": null,
+			"source": "execution/scalars.el",
+			"line": 18,
+			"signature": "export fn computeFormat(T: type): ComputeFormat",
 			"value_type": null
 		},
 		{
@@ -2545,19 +2545,19 @@
 			"value_type": null
 		},
 		{
-			"name": "dbColumn",
-			"id": null,
-			"source": "database/schema.el",
-			"line": 519,
-			"signature": "export fn dbColumn(name: Text, nativeType: type, key: Bool = f, typeName: Text = \"\", keyCapability: DbKey | nil_t = nil, numeric: Bool = f, isBool: Bool = f): DbColumn\nexport fn dbColumn(name: Text, type: DbType, nullable: Bool = f, key: Bool = f): DbColumn",
-			"value_type": null
-		},
-		{
 			"name": "DbColumn",
 			"id": null,
 			"source": "database/schema.el",
 			"line": 200,
 			"signature": "export @assign(mode: \"copy\")\nclass DbColumn",
+			"value_type": null
+		},
+		{
+			"name": "dbColumn",
+			"id": null,
+			"source": "database/schema.el",
+			"line": 519,
+			"signature": "export fn dbColumn(name: Text, nativeType: type, key: Bool = f, typeName: Text = \"\", keyCapability: DbKey | nil_t = nil, numeric: Bool = f, isBool: Bool = f): DbColumn\nexport fn dbColumn(name: Text, type: DbType, nullable: Bool = f, key: Bool = f): DbColumn",
 			"value_type": null
 		},
 		{
@@ -2689,19 +2689,19 @@
 			"value_type": null
 		},
 		{
-			"name": "dbFieldId",
-			"id": null,
-			"source": "database/schema.el",
-			"line": 63,
-			"signature": "export fn dbFieldId(table: DbTableId, id: Number): DbFieldId",
-			"value_type": null
-		},
-		{
 			"name": "DbFieldId",
 			"id": null,
 			"source": "database/schema.el",
 			"line": 45,
 			"signature": "export @assign(mode: \"copy\")\nclass DbFieldId",
+			"value_type": null
+		},
+		{
+			"name": "dbFieldId",
+			"id": null,
+			"source": "database/schema.el",
+			"line": 63,
+			"signature": "export fn dbFieldId(table: DbTableId, id: Number): DbFieldId",
 			"value_type": null
 		},
 		{
@@ -2745,19 +2745,19 @@
 			"value_type": null
 		},
 		{
-			"name": "dbKey",
-			"id": null,
-			"source": "database/value.el",
-			"line": 73,
-			"signature": "export fn dbKey(name: Text, hash: fn(any): Number, equal: fn(any, any): Bool, compare: fn(any, any): Number, effect: Text = DbEffectPure): DbKey",
-			"value_type": null
-		},
-		{
 			"name": "DbKey",
 			"id": null,
 			"source": "database/value.el",
 			"line": 28,
 			"signature": "export class DbKey",
+			"value_type": null
+		},
+		{
+			"name": "dbKey",
+			"id": null,
+			"source": "database/value.el",
+			"line": 73,
+			"signature": "export fn dbKey(name: Text, hash: fn(any): Number, equal: fn(any, any): Bool, compare: fn(any, any): Number, effect: Text = DbEffectPure): DbKey",
 			"value_type": null
 		},
 		{
@@ -3129,19 +3129,19 @@
 			"value_type": null
 		},
 		{
-			"name": "dbRow",
-			"id": null,
-			"source": "database/schema.el",
-			"line": 536,
-			"signature": "export fn dbRow(schema: DbRelationSchema, values: any[]): DbRow",
-			"value_type": null
-		},
-		{
 			"name": "DbRow",
 			"id": "database/schema::DbRow",
 			"source": "database/schema.el",
 			"line": 432,
 			"signature": "export @assign(mode: \"copy\")\nclass DbRow",
+			"value_type": null
+		},
+		{
+			"name": "dbRow",
+			"id": null,
+			"source": "database/schema.el",
+			"line": 536,
+			"signature": "export fn dbRow(schema: DbRelationSchema, values: any[]): DbRow",
 			"value_type": null
 		},
 		{
@@ -3225,19 +3225,19 @@
 			"value_type": null
 		},
 		{
-			"name": "dbSourceIdentity",
-			"id": null,
-			"source": "database/source-identity.el",
-			"line": 75,
-			"signature": "export fn dbSourceIdentity(provider: DbRelationProvider): DbSourceIdentity | nil_t",
-			"value_type": null
-		},
-		{
 			"name": "DbSourceIdentity",
 			"id": null,
 			"source": "database/source-identity.el",
 			"line": 8,
 			"signature": "export class DbSourceIdentity",
+			"value_type": null
+		},
+		{
+			"name": "dbSourceIdentity",
+			"id": null,
+			"source": "database/source-identity.el",
+			"line": 75,
+			"signature": "export fn dbSourceIdentity(provider: DbRelationProvider): DbSourceIdentity | nil_t",
 			"value_type": null
 		},
 		{
@@ -3297,14 +3297,6 @@
 			"value_type": null
 		},
 		{
-			"name": "dbTableDefinition",
-			"id": null,
-			"source": "database/table.el",
-			"line": 263,
-			"signature": "export fn dbTableDefinition(name: Text, columns: DbColumnDefinition[], primary: Text[]): DbTableDefinition",
-			"value_type": null
-		},
-		{
 			"name": "DbTableDefinition",
 			"id": "database/table::DbTableDefinition",
 			"source": "database/table.el",
@@ -3313,11 +3305,11 @@
 			"value_type": null
 		},
 		{
-			"name": "dbTableId",
+			"name": "dbTableDefinition",
 			"id": null,
-			"source": "database/schema.el",
-			"line": 62,
-			"signature": "export fn dbTableId(catalog: Text, id: Number): DbTableId",
+			"source": "database/table.el",
+			"line": 263,
+			"signature": "export fn dbTableDefinition(name: Text, columns: DbColumnDefinition[], primary: Text[]): DbTableDefinition",
 			"value_type": null
 		},
 		{
@@ -3326,6 +3318,14 @@
 			"source": "database/schema.el",
 			"line": 27,
 			"signature": "export @assign(mode: \"copy\")\nclass DbTableId",
+			"value_type": null
+		},
+		{
+			"name": "dbTableId",
+			"id": null,
+			"source": "database/schema.el",
+			"line": 62,
+			"signature": "export fn dbTableId(catalog: Text, id: Number): DbTableId",
 			"value_type": null
 		},
 		{
@@ -3737,19 +3737,19 @@
 			"value_type": null
 		},
 		{
-			"name": "delay",
-			"id": null,
-			"source": "control/deferred-syntax.el",
-			"line": 22,
-			"signature": "export syntax delay",
-			"value_type": null
-		},
-		{
 			"name": "Delay",
 			"id": null,
 			"source": "control/deferred-values.el",
 			"line": 56,
 			"signature": "export fn Delay(element: type): type",
+			"value_type": null
+		},
+		{
+			"name": "delay",
+			"id": null,
+			"source": "control/deferred-syntax.el",
+			"line": 22,
+			"signature": "export syntax delay",
 			"value_type": null
 		},
 		{
@@ -4929,19 +4929,19 @@
 			"value_type": null
 		},
 		{
-			"name": "finiteQuery",
-			"id": null,
-			"source": "queries/index.el",
-			"line": 405,
-			"signature": "export fn finiteQuery(values, copyRow): FiniteQuery",
-			"value_type": null
-		},
-		{
 			"name": "FiniteQuery",
 			"id": null,
 			"source": "queries/index.el",
 			"line": 161,
 			"signature": "export @assign(mode: \"shared\") class FiniteQuery",
+			"value_type": null
+		},
+		{
+			"name": "finiteQuery",
+			"id": null,
+			"source": "queries/index.el",
+			"line": 405,
+			"signature": "export fn finiteQuery(values, copyRow): FiniteQuery",
 			"value_type": null
 		},
 		{
@@ -5961,20 +5961,20 @@
 			"value_type": null
 		},
 		{
-			"name": "integer",
-			"id": "text/patterns/lexical::integer",
-			"source": "text/patterns/lexical.el",
-			"line": 22,
-			"signature": "export fn integer(min, max, epsilon)",
-			"value_type": null
-		},
-		{
 			"name": "Integer",
 			"id": "number/integer::Integer",
 			"source": "number/integer.el",
 			"line": 17,
 			"signature": "export let Integer: type",
 			"value_type": "type"
+		},
+		{
+			"name": "integer",
+			"id": "text/patterns/lexical::integer",
+			"source": "text/patterns/lexical.el",
+			"line": 22,
+			"signature": "export fn integer(min, max, epsilon)",
+			"value_type": null
 		},
 		{
 			"name": "integer_log",
@@ -6585,19 +6585,19 @@
 			"value_type": null
 		},
 		{
-			"name": "line",
-			"id": null,
-			"source": "text/patterns/lexical.el",
-			"line": 27,
-			"signature": "export fn line(): Pattern<output: Text>",
-			"value_type": null
-		},
-		{
 			"name": "Line",
 			"id": null,
 			"source": "graphics/plots/scene.el",
 			"line": 32,
 			"signature": "export @assign(mode: \"shared\") class Line",
+			"value_type": null
+		},
+		{
+			"name": "line",
+			"id": null,
+			"source": "text/patterns/lexical.el",
+			"line": 27,
+			"signature": "export fn line(): Pattern<output: Text>",
 			"value_type": null
 		},
 		{
@@ -6993,19 +6993,19 @@
 			"value_type": null
 		},
 		{
-			"name": "matrixLiteral",
-			"id": null,
-			"source": "language/contracts.el",
-			"line": 83,
-			"signature": "export @builtin:khaz:literal:matrix fn matrixLiteral()",
-			"value_type": null
-		},
-		{
 			"name": "MatrixLiteral",
 			"id": null,
 			"source": "numerical-computing/matrix-literal.el",
 			"line": 7,
 			"signature": "export class MatrixLiteral",
+			"value_type": null
+		},
+		{
+			"name": "matrixLiteral",
+			"id": null,
+			"source": "language/contracts.el",
+			"line": 83,
+			"signature": "export @builtin:khaz:literal:matrix fn matrixLiteral()",
 			"value_type": null
 		},
 		{
@@ -7545,19 +7545,19 @@
 			"value_type": null
 		},
 		{
-			"name": "never",
-			"id": null,
-			"source": "language/values.el",
-			"line": 65,
-			"signature": "export let never: type",
-			"value_type": "type"
-		},
-		{
 			"name": "Never",
 			"id": null,
 			"source": "language/values.el",
 			"line": 64,
 			"signature": "export let Never: type",
+			"value_type": "type"
+		},
+		{
+			"name": "never",
+			"id": null,
+			"source": "language/values.el",
+			"line": 65,
+			"signature": "export let never: type",
 			"value_type": "type"
 		},
 		{
@@ -7961,19 +7961,19 @@
 			"value_type": null
 		},
 		{
-			"name": "onceDelay",
-			"id": null,
-			"source": "control/deferred-syntax.el",
-			"line": 30,
-			"signature": "export syntax onceDelay",
-			"value_type": null
-		},
-		{
 			"name": "OnceDelay",
 			"id": null,
 			"source": "control/deferred-values.el",
 			"line": 157,
 			"signature": "export fn OnceDelay(element: type): type",
+			"value_type": null
+		},
+		{
+			"name": "onceDelay",
+			"id": null,
+			"source": "control/deferred-syntax.el",
+			"line": 30,
+			"signature": "export syntax onceDelay",
 			"value_type": null
 		},
 		{
@@ -8185,20 +8185,20 @@
 			"value_type": null
 		},
 		{
-			"name": "ordered",
-			"id": "execution/plans/policy::ordered",
-			"source": "execution/plans/policy.el",
-			"line": 19,
-			"signature": "export fn ordered(policies: ExecutionPolicy[]): ExecutionPolicy",
-			"value_type": null
-		},
-		{
 			"name": "Ordered",
 			"id": null,
 			"source": "logic/control.el",
 			"line": 23,
 			"signature": "export const Ordered",
 			"value_type": "SearchSemantics"
+		},
+		{
+			"name": "ordered",
+			"id": "execution/plans/policy::ordered",
+			"source": "execution/plans/policy.el",
+			"line": 19,
+			"signature": "export fn ordered(policies: ExecutionPolicy[]): ExecutionPolicy",
+			"value_type": null
 		},
 		{
 			"name": "OrderedDynamicObject",
@@ -8481,19 +8481,19 @@
 			"value_type": null
 		},
 		{
-			"name": "parser",
-			"id": null,
-			"source": "text/patterns/syntax.el",
-			"line": 302,
-			"signature": "export syntax parser",
-			"value_type": null
-		},
-		{
 			"name": "Parser",
 			"id": null,
 			"source": "compiler/parser/state.el",
 			"line": 39,
 			"signature": "export class Parser",
+			"value_type": null
+		},
+		{
+			"name": "parser",
+			"id": null,
+			"source": "text/patterns/syntax.el",
+			"line": 302,
+			"signature": "export syntax parser",
 			"value_type": null
 		},
 		{
@@ -8577,19 +8577,19 @@
 			"value_type": null
 		},
 		{
-			"name": "pattern",
-			"id": null,
-			"source": "text/patterns/syntax.el",
-			"line": 307,
-			"signature": "export syntax pattern",
-			"value_type": null
-		},
-		{
 			"name": "Pattern",
 			"id": null,
 			"source": "text/patterns/value.el",
 			"line": 32,
 			"signature": "export fn Pattern(output: type = Text): type",
+			"value_type": null
+		},
+		{
+			"name": "pattern",
+			"id": null,
+			"source": "text/patterns/syntax.el",
+			"line": 307,
+			"signature": "export syntax pattern",
 			"value_type": null
 		},
 		{
@@ -8713,19 +8713,19 @@
 			"value_type": "type"
 		},
 		{
-			"name": "pi",
-			"id": "mathematics/functions/elementary::pi",
-			"source": "mathematics/functions/elementary.el",
-			"line": 252,
-			"signature": "@pure\n@optimize(data: @{ operation: \"pi\" })\nexport fn pi(Result: type)",
-			"value_type": null
-		},
-		{
 			"name": "Pi",
 			"id": null,
 			"source": "language/proofs.el",
 			"line": 26,
 			"signature": "export @builtin:qeth:proof:pi fn Pi(domain: type, family): type",
+			"value_type": null
+		},
+		{
+			"name": "pi",
+			"id": "mathematics/functions/elementary::pi",
+			"source": "mathematics/functions/elementary.el",
+			"line": 252,
+			"signature": "@pure\n@optimize(data: @{ operation: \"pi\" })\nexport fn pi(Result: type)",
 			"value_type": null
 		},
 		{
@@ -8833,19 +8833,19 @@
 			"value_type": null
 		},
 		{
-			"name": "positionalArray",
-			"id": "collections/arrays/positional::positionalArray",
-			"source": "collections/arrays/positional.el",
-			"line": 64,
-			"signature": "export syntax positionalArray",
-			"value_type": null
-		},
-		{
 			"name": "PositionalArray",
 			"id": null,
 			"source": "collections/arrays/positional.el",
 			"line": 22,
 			"signature": "export fn PositionalArray(element: type, storage: type, length = 0): type",
+			"value_type": null
+		},
+		{
+			"name": "positionalArray",
+			"id": "collections/arrays/positional::positionalArray",
+			"source": "collections/arrays/positional.el",
+			"line": 64,
+			"signature": "export syntax positionalArray",
 			"value_type": null
 		},
 		{
@@ -11074,20 +11074,20 @@
 			"value_type": null
 		},
 		{
-			"name": "sequence",
-			"id": "text/patterns/combinators::sequence",
-			"source": "text/patterns/combinators.el",
-			"line": 88,
-			"signature": "export fn sequence(...elements): Pattern<output: Text>",
-			"value_type": null
-		},
-		{
 			"name": "Sequence",
 			"id": "collections/sequences/demand::Sequence",
 			"source": "collections/sequences/demand.el",
 			"line": 247,
 			"signature": "export let Sequence: type",
 			"value_type": "type"
+		},
+		{
+			"name": "sequence",
+			"id": "text/patterns/combinators::sequence",
+			"source": "text/patterns/combinators.el",
+			"line": 88,
+			"signature": "export fn sequence(...elements): Pattern<output: Text>",
+			"value_type": null
 		},
 		{
 			"name": "SequenceCursor",
@@ -12066,19 +12066,19 @@
 			"value_type": null
 		},
 		{
-			"name": "text",
-			"id": null,
-			"source": "number/integer-text.el",
-			"line": 158,
-			"signature": "export fn text(value: NumericInt, base: Integer): Text\nexport fn text(value: NumericInt): Text\nexport fn text(value: NumericRatio): Text",
-			"value_type": null
-		},
-		{
 			"name": "Text",
 			"id": "text/text::Text~type",
 			"source": "text/text.el",
 			"line": 184,
 			"signature": "@pure\n@assign(mode: \"copy\")\nexport class Text extends Array<element: Char>",
+			"value_type": null
+		},
+		{
+			"name": "text",
+			"id": null,
+			"source": "number/integer-text.el",
+			"line": 158,
+			"signature": "export fn text(value: NumericInt, base: Integer): Text\nexport fn text(value: NumericInt): Text\nexport fn text(value: NumericRatio): Text",
 			"value_type": null
 		},
 		{
@@ -12994,19 +12994,19 @@
 			"value_type": null
 		},
 		{
-			"name": "view",
-			"id": null,
-			"source": "numerical-computing/view.el",
-			"line": 156,
-			"signature": "export fn view(borrow source)",
-			"value_type": null
-		},
-		{
 			"name": "View",
 			"id": null,
 			"source": "user-interface/view.el",
 			"line": 84,
 			"signature": "export class View",
+			"value_type": null
+		},
+		{
+			"name": "view",
+			"id": null,
+			"source": "numerical-computing/view.el",
+			"line": 156,
+			"signature": "export fn view(borrow source)",
 			"value_type": null
 		},
 		{
@@ -237066,7 +237066,7 @@
 			"anchor": "api-df976d47c60f3dbf87f5"
 		}
 	],
-	"source_digest": "4c17da0bacd59aa4d3ef9fd69d283898087cfab870fd6de124e7ddbc04afaae0",
+	"source_digest": "4e1682ebe7d3c5c9461f42e91e1511f78ee961a8047770175135c26b7c6337a6",
 	"files": [
 		{
 			"path": "collections/arrays/dynamic.el",
@@ -237258,7 +237258,7 @@
 		},
 		{
 			"path": "database/typed-aggregate.el",
-			"sha256": "68a5b70d15df911ddcf352ef897a1da6096f9aa675cf36b69280b4aa5145485f"
+			"sha256": "eae541b8e04cdcf52dbdcf020a2ed7e21e8859fc199011d0ecfbd128b2ee4942"
 		},
 		{
 			"path": "desktop-automation/input-backend.el",
@@ -237450,7 +237450,7 @@
 		},
 		{
 			"path": "logic/search.el",
-			"sha256": "8000dbeefdd815c605ccbabd29deed988583bff03d1e0131c9e9281ce1bb1ef5"
+			"sha256": "a5e6d16b943bbd64807e291d7834300e1fafe90aacbe6118a2a8265b58305443"
 		},
 		{
 			"path": "logic/surface.el",
@@ -248092,7 +248092,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "统计记录数（rows 是已有的行集合）",
+					"value": "统计记录数",
 					"markdown": "```el\nlet rows = @[1, 2, 3]\nlet total = count(rows)\n```",
 					"code": "let rows = @[1, 2, 3]\nlet total = count(rows)\n",
 					"expected_stdout": null,
@@ -256329,8 +256329,8 @@
 				{
 					"tag": "example",
 					"value": "读取一个搜索结果",
-					"markdown": "```el\nlet step = cursor.next()\n```",
-					"code": "let step = cursor.next()\n",
+					"markdown": "```el\n// @external searchCursor: SearchCursor\nlet step = searchCursor.next()\n```",
+					"code": "// @external searchCursor: SearchCursor\nlet step = searchCursor.next()\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -256338,7 +256338,7 @@
 			"source": "logic/search.el",
 			"line": 962,
 			"signature": "fn next(): IterationStep<element: Answer>",
-			"declaration_line": 968,
+			"declaration_line": 969,
 			"id": "logic/search::SearchCursor.next",
 			"value_type": null,
 			"owner": "SearchCursor",

@@ -406,7 +406,7 @@ def prelude_environment(stdlib, entries):
 		return item
 	exports, declarations = module("index.el")
 	result = [{"name": name, **binding("index.el", name)}
-		for name in sorted(set(exports) | set(declarations), key=str.casefold)]
+		for name in sorted(set(exports) | set(declarations), key=lambda name: (name.casefold(), name))]
 	public_exports = {}
 	for path in paths:
 		reexports, declarations = module(path)

@@ -134,7 +134,7 @@ spec.loader.exec_module(module)
 		error = entry("SearchInterrupted", source="logic/control.el")
 		reason = entry("SearchInterrupted.reason", source=error["source"])
 		catalog = Catalog({"entries": [error, reason], "environment": [{"name": error["name"], "id": error["id"]}]})
-		for body in ("discard(error.reason)", "{ discard(error.reason) }"):
+		for body in ("discard(error.reason)", "{ discard(error.reason); error = other; discard(error.reason) }"):
 			with self.subTest(body=body):
 				code = f"try {{ run() }} catch (error) {{ if (error is SearchInterrupted) {body} else discard(error.reason)\nerror.reason }}"
 				targets = code_targets(code, catalog)

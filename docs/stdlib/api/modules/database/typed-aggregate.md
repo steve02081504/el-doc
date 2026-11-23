@@ -26,7 +26,7 @@ export fn count(rows: any): Number
 
 **返回值**：行集合的行数。
 
-### 示例：统计记录数（rows 是已有的行集合）
+### 示例：统计记录数
 
 ```el
 let rows = @[1, 2, 3]

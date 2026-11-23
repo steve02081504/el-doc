@@ -239,6 +239,12 @@ class GenerationTests(unittest.TestCase):
 		self.assertEqual(item["source"], "truth.el")
 		self.assertIn("class Truth", item["signature"])
 
+	def test_environment_sorts_casefold_ties_by_exact_name(self):
+		(self.stdlib / "index.el").write_text(
+			"export const beta = 1\nexport const Beta = 2\nexport const alpha = 3\nexport const Alpha = 4\n")
+		self.assertEqual([item["name"] for item in collect(self.root)["environment"]],
+			["Alpha", "alpha", "Beta", "beta"])
+
 	def test_environment_keeps_same_module_overload_families(self):
 		(self.stdlib / "index.el").write_text('export lazy import { increment, Widget } from "file:./math.el"\n')
 		self.write_document("math.el", DOCUMENT + '\nexport fn increment(value: Text): Text => value\nexport class Widget {}\nexport fn Widget(): type {}\n')
