@@ -111,7 +111,7 @@ fn throws(expected: type, body)
 
 **失败与异常**：回调未抛异常或抛出其他类型时抛出 TestFailure。
 
-### 示例：检查缺失键错误（需调用方提供对象或绑定）
+### 示例：检查缺失键错误
 
 ```el
 // @external scores: Map<key: Text, value: Number>

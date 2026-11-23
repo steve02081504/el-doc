@@ -6,13 +6,13 @@
 
 ## 格式化器词法扫描 {#api-b37144e092daada0aa82}
 
-源码：`src/stdlib/tools/formatter/scan.el:6` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/formatter/scan.el#L6)
+源码：`src/stdlib/tools/formatter/scan.el:7` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/formatter/scan.el#L7)
 
 扫描源码并收集格式化所需的词法事实与属性诊断。
 
 ## scan {#api-e0817f615a6c850f7872}
 
-源码：`src/stdlib/tools/formatter/scan.el:311` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/formatter/scan.el#L311)
+源码：`src/stdlib/tools/formatter/scan.el:312` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/formatter/scan.el#L312)
 
 单遍扫描源码，收集可省略分号、缩进信息及 ELF 属性问题。
 

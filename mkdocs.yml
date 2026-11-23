@@ -98,6 +98,7 @@ extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
+  - assets/code-links.js
   - assets/virtual-content.js
   - assets/random-page.js
   - assets/learning.js

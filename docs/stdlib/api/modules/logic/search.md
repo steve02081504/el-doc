@@ -7,6 +7,7 @@
 ## 成员总览
 
 - [GroundCursor.next](#api-9a2563bdfb8e857f0b0f)
+- [SearchCursor.next](#api-d6a4b9be8fcbef392bec)
 
 ## 逻辑搜索计划与游标 {#api-9d1814bb150c9a4284a6}
 
@@ -24,7 +25,7 @@
 export @assign(mode: "shared") class PreparedSearch
 ```
 
-### 示例：创建地面答案游标（plan 是已有的搜索计划）
+### 示例：创建地面答案游标
 
 ```el
 // @external plan: PreparedSearch
@@ -42,7 +43,7 @@ let step = cursor.next()
 export @assign(mode: "shared") class GroundSearch
 ```
 
-### 示例：枚举地面结果（plan 是已有的搜索计划）
+### 示例：枚举地面结果
 
 ```el
 // @external plan: PreparedSearch
@@ -60,7 +61,7 @@ let step = cursor.next()
 export @assign(mode: "shared") class GroundCursor
 ```
 
-### 示例：逐个读取地面结果（plan 是已有的搜索计划，consume 是调用方的处理函数）
+### 示例：逐个读取地面结果
 
 ```el
 // @external plan: PreparedSearch, consume: fn(value: Term): nil_t
@@ -91,4 +92,39 @@ fn next(): IterationStep<element: Term>
 // @external consume: fn(value: Term): nil_t
 let step = cursor.next()
 if (!step.done) consume(step.value)
+```
+
+## SearchCursor {#api-09b5771e54c5c1923052}
+
+源码：`src/stdlib/logic/search.el:906` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L906)
+
+逐项推进逻辑搜索的游标。提前停止读取时，可用 `close()` 释放搜索会话。
+
+```el-signature
+export @assign(mode: "shared") class SearchCursor
+```
+
+### 示例：从搜索计划打开游标
+
+```el
+// @external plan: PreparedSearch
+let cursor = plan.iterator()
+```
+
+## SearchCursor.next {#api-d6a4b9be8fcbef392bec}
+
+源码：`src/stdlib/logic/search.el:968` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/logic/search.el#L968)
+
+推进搜索并返回下一项结果。没有下一项时返回 `done`。推进期间发生的搜索中断会向调用者传播。
+
+```el-signature
+fn next(): IterationStep<element: Answer>
+```
+
+**返回类型**：[`IterationStep`](../../types.md#api-e4b3e3cc13c7cec14564)<element: [`Answer`](../../types.md#api-4e552bfbd023969638c0)>
+
+### 示例：读取一个搜索结果
+
+```el
+let step = cursor.next()
 ```

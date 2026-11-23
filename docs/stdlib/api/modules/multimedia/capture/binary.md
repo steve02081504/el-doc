@@ -28,7 +28,7 @@ export fn put(data: ptr, at: Number, value: Number, width: Number)
 
 **参数**：width 写入字节数。
 
-### 示例：写入一个四字节值（需调用方提供对象或绑定）
+### 示例：写入一个四字节值
 
 ```el
 // @external data: ptr

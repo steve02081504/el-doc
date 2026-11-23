@@ -145,14 +145,15 @@
 - [language/objects.el](modules/language/objects.md)（2 个 API）
 - [language/proofs.el](modules/language/proofs.md)（4 个 API）
 - [language/syntax/index.el](modules/language/syntax/index.md)（1 个 API）
+- [language/value-operations.el](modules/language/value-operations.md)（1 个 API）
 - [language/values.el](modules/language/values.md)（8 个 API）
 
 ## logic
 
-- [logic/control.el](modules/logic/control.md)（1 个 API）
+- [logic/control.el](modules/logic/control.md)（2 个 API）
 - [logic/goal.el](modules/logic/goal.md)（6 个 API）
 - [logic/proof-conflict.el](modules/logic/proof-conflict.md)（1 个 API）
-- [logic/search.el](modules/logic/search.md)（4 个 API）
+- [logic/search.el](modules/logic/search.md)（6 个 API）
 - [logic/surface.el](modules/logic/surface.md)（2 个 API）
 - [logic/table.el](modules/logic/table.md)（1 个 API）
 - [logic/term.el](modules/logic/term.md)（5 个 API）

@@ -681,19 +681,19 @@
 			"value_type": null
 		},
 		{
-			"name": "Array",
-			"id": "collections/arrays/dynamic::Array",
-			"source": "collections/arrays/dynamic.el",
-			"line": 135,
-			"signature": "export fn Array(element: type): type",
-			"value_type": null
-		},
-		{
 			"name": "array",
 			"id": null,
 			"source": "language/syntax/builders.el",
 			"line": 31,
 			"signature": "export fn array(context: SyntaxContext, values: UncheckedSyntax[]): UncheckedSyntax",
+			"value_type": null
+		},
+		{
+			"name": "Array",
+			"id": "collections/arrays/dynamic::Array",
+			"source": "collections/arrays/dynamic.el",
+			"line": 135,
+			"signature": "export fn Array(element: type): type",
 			"value_type": null
 		},
 		{
@@ -1796,7 +1796,7 @@
 			"name": "CompilationFailure",
 			"id": null,
 			"source": "compiler/operations.el",
-			"line": 107,
+			"line": 108,
 			"signature": "export class CompilationFailure",
 			"value_type": null
 		},
@@ -1804,7 +1804,7 @@
 			"name": "CompilationOperation",
 			"id": null,
 			"source": "compiler/operations.el",
-			"line": 55,
+			"line": 56,
 			"signature": "export enum CompilationOperation",
 			"value_type": null
 		},
@@ -1812,7 +1812,7 @@
 			"name": "CompilationOptions",
 			"id": null,
 			"source": "compiler/operations.el",
-			"line": 59,
+			"line": 60,
 			"signature": "export class CompilationOptions",
 			"value_type": null
 		},
@@ -1820,7 +1820,7 @@
 			"name": "compile_file",
 			"id": null,
 			"source": "compiler/operations.el",
-			"line": 527,
+			"line": 533,
 			"signature": "export fn compile_file(options: CompilationOptions)",
 			"value_type": null
 		},
@@ -1829,7 +1829,7 @@
 			"id": null,
 			"source": "compiler/main.el",
 			"line": 516,
-			"signature": "export fn compile_source(c: Compiler, prelude_path: Text, source: Text, source_tokens: Token[] | nil_t = nil)",
+			"signature": "export fn compile_source(c: Compiler, prelude_path: Text, source: Text, source_tokens: Token[] | nil_t = nil, program_entry: Bool = f)",
 			"value_type": null
 		},
 		{
@@ -1889,19 +1889,19 @@
 			"value_type": null
 		},
 		{
-			"name": "ComputeFormat",
-			"id": null,
-			"source": "execution/format.el",
-			"line": 12,
-			"signature": "export @assign(mode: \"shared\") class ComputeFormat",
-			"value_type": null
-		},
-		{
 			"name": "computeFormat",
 			"id": null,
 			"source": "execution/scalars.el",
 			"line": 18,
 			"signature": "export fn computeFormat(T: type): ComputeFormat",
+			"value_type": null
+		},
+		{
+			"name": "ComputeFormat",
+			"id": null,
+			"source": "execution/format.el",
+			"line": 12,
+			"signature": "export @assign(mode: \"shared\") class ComputeFormat",
 			"value_type": null
 		},
 		{
@@ -2097,19 +2097,19 @@
 			"value_type": null
 		},
 		{
-			"name": "constructorIdentity",
-			"id": null,
-			"source": "language/metadata.el",
-			"line": 33,
-			"signature": "export fn constructorIdentity(subject, ordinal): ptr",
-			"value_type": null
-		},
-		{
 			"name": "ConstructorIdentity",
 			"id": null,
 			"source": "logic/term.el",
 			"line": 8,
 			"signature": "export @assign(mode: \"shared\") class ConstructorIdentity",
+			"value_type": null
+		},
+		{
+			"name": "constructorIdentity",
+			"id": null,
+			"source": "language/metadata.el",
+			"line": 33,
+			"signature": "export fn constructorIdentity(subject, ordinal): ptr",
 			"value_type": null
 		},
 		{
@@ -2545,19 +2545,19 @@
 			"value_type": null
 		},
 		{
-			"name": "DbColumn",
-			"id": null,
-			"source": "database/schema.el",
-			"line": 200,
-			"signature": "export @assign(mode: \"copy\")\nclass DbColumn",
-			"value_type": null
-		},
-		{
 			"name": "dbColumn",
 			"id": null,
 			"source": "database/schema.el",
 			"line": 519,
 			"signature": "export fn dbColumn(name: Text, nativeType: type, key: Bool = f, typeName: Text = \"\", keyCapability: DbKey | nil_t = nil, numeric: Bool = f, isBool: Bool = f): DbColumn\nexport fn dbColumn(name: Text, type: DbType, nullable: Bool = f, key: Bool = f): DbColumn",
+			"value_type": null
+		},
+		{
+			"name": "DbColumn",
+			"id": null,
+			"source": "database/schema.el",
+			"line": 200,
+			"signature": "export @assign(mode: \"copy\")\nclass DbColumn",
 			"value_type": null
 		},
 		{
@@ -2745,19 +2745,19 @@
 			"value_type": null
 		},
 		{
-			"name": "DbKey",
-			"id": null,
-			"source": "database/value.el",
-			"line": 28,
-			"signature": "export class DbKey",
-			"value_type": null
-		},
-		{
 			"name": "dbKey",
 			"id": null,
 			"source": "database/value.el",
 			"line": 73,
 			"signature": "export fn dbKey(name: Text, hash: fn(any): Number, equal: fn(any, any): Bool, compare: fn(any, any): Number, effect: Text = DbEffectPure): DbKey",
+			"value_type": null
+		},
+		{
+			"name": "DbKey",
+			"id": null,
+			"source": "database/value.el",
+			"line": 28,
+			"signature": "export class DbKey",
 			"value_type": null
 		},
 		{
@@ -3129,19 +3129,19 @@
 			"value_type": null
 		},
 		{
-			"name": "DbRow",
-			"id": "database/schema::DbRow",
-			"source": "database/schema.el",
-			"line": 432,
-			"signature": "export @assign(mode: \"copy\")\nclass DbRow",
-			"value_type": null
-		},
-		{
 			"name": "dbRow",
 			"id": null,
 			"source": "database/schema.el",
 			"line": 536,
 			"signature": "export fn dbRow(schema: DbRelationSchema, values: any[]): DbRow",
+			"value_type": null
+		},
+		{
+			"name": "DbRow",
+			"id": "database/schema::DbRow",
+			"source": "database/schema.el",
+			"line": 432,
+			"signature": "export @assign(mode: \"copy\")\nclass DbRow",
 			"value_type": null
 		},
 		{
@@ -3225,19 +3225,19 @@
 			"value_type": null
 		},
 		{
-			"name": "DbSourceIdentity",
-			"id": null,
-			"source": "database/source-identity.el",
-			"line": 8,
-			"signature": "export class DbSourceIdentity",
-			"value_type": null
-		},
-		{
 			"name": "dbSourceIdentity",
 			"id": null,
 			"source": "database/source-identity.el",
 			"line": 75,
 			"signature": "export fn dbSourceIdentity(provider: DbRelationProvider): DbSourceIdentity | nil_t",
+			"value_type": null
+		},
+		{
+			"name": "DbSourceIdentity",
+			"id": null,
+			"source": "database/source-identity.el",
+			"line": 8,
+			"signature": "export class DbSourceIdentity",
 			"value_type": null
 		},
 		{
@@ -3737,19 +3737,19 @@
 			"value_type": null
 		},
 		{
-			"name": "Delay",
-			"id": null,
-			"source": "control/deferred-values.el",
-			"line": 56,
-			"signature": "export fn Delay(element: type): type",
-			"value_type": null
-		},
-		{
 			"name": "delay",
 			"id": null,
 			"source": "control/deferred-syntax.el",
 			"line": 22,
 			"signature": "export syntax delay",
+			"value_type": null
+		},
+		{
+			"name": "Delay",
+			"id": null,
+			"source": "control/deferred-values.el",
+			"line": 56,
+			"signature": "export fn Delay(element: type): type",
 			"value_type": null
 		},
 		{
@@ -3906,9 +3906,9 @@
 		},
 		{
 			"name": "discard",
-			"id": null,
+			"id": "language/value-operations::discard",
 			"source": "language/value-operations.el",
-			"line": 10,
+			"line": 20,
 			"signature": "export fn discard(value)",
 			"value_type": null
 		},
@@ -4929,19 +4929,19 @@
 			"value_type": null
 		},
 		{
-			"name": "FiniteQuery",
-			"id": null,
-			"source": "queries/index.el",
-			"line": 161,
-			"signature": "export @assign(mode: \"shared\") class FiniteQuery",
-			"value_type": null
-		},
-		{
 			"name": "finiteQuery",
 			"id": null,
 			"source": "queries/index.el",
 			"line": 405,
 			"signature": "export fn finiteQuery(values, copyRow): FiniteQuery",
+			"value_type": null
+		},
+		{
+			"name": "FiniteQuery",
+			"id": null,
+			"source": "queries/index.el",
+			"line": 161,
+			"signature": "export @assign(mode: \"shared\") class FiniteQuery",
 			"value_type": null
 		},
 		{
@@ -5084,7 +5084,7 @@
 			"name": "format_paths",
 			"id": null,
 			"source": "tools/formatter/operations.el",
-			"line": 231,
+			"line": 244,
 			"signature": "export fn format_paths(options: FormatOptions): Number",
 			"value_type": null
 		},
@@ -5132,7 +5132,7 @@
 			"name": "FormatDependencies",
 			"id": null,
 			"source": "tools/formatter/dependencies.el",
-			"line": 14,
+			"line": 15,
 			"signature": "export @assign(mode: \"shared\") class FormatDependencies",
 			"value_type": null
 		},
@@ -5156,7 +5156,7 @@
 			"name": "FormatOptions",
 			"id": null,
 			"source": "tools/formatter/operations.el",
-			"line": 26,
+			"line": 29,
 			"signature": "export class FormatOptions",
 			"value_type": null
 		},
@@ -5705,19 +5705,19 @@
 			"value_type": null
 		},
 		{
-			"name": "imageCodecSupport",
-			"id": null,
-			"source": "multimedia/image/codec.el",
-			"line": 18,
-			"signature": "export fn imageCodecSupport(format: ImageFormat): ImageCodecSupport",
-			"value_type": null
-		},
-		{
 			"name": "ImageCodecSupport",
 			"id": null,
 			"source": "multimedia/image/model.el",
 			"line": 115,
 			"signature": "export @assign(mode: \"copy\") class ImageCodecSupport",
+			"value_type": null
+		},
+		{
+			"name": "imageCodecSupport",
+			"id": null,
+			"source": "multimedia/image/codec.el",
+			"line": 18,
+			"signature": "export fn imageCodecSupport(format: ImageFormat): ImageCodecSupport",
 			"value_type": null
 		},
 		{
@@ -5804,9 +5804,9 @@
 			"name": "import",
 			"id": null,
 			"source": "language/modules/loader.el",
-			"line": 315,
-			"signature": "export fn import(source: Text, origin: Text = \"\")",
-			"value_type": null
+			"line": 320,
+			"signature": "export const import",
+			"value_type": "ImportFacade"
 		},
 		{
 			"name": "includes",
@@ -5961,20 +5961,20 @@
 			"value_type": null
 		},
 		{
-			"name": "Integer",
-			"id": "number/integer::Integer",
-			"source": "number/integer.el",
-			"line": 17,
-			"signature": "export let Integer: type",
-			"value_type": "type"
-		},
-		{
 			"name": "integer",
 			"id": "text/patterns/lexical::integer",
 			"source": "text/patterns/lexical.el",
 			"line": 22,
 			"signature": "export fn integer(min, max, epsilon)",
 			"value_type": null
+		},
+		{
+			"name": "Integer",
+			"id": "number/integer::Integer",
+			"source": "number/integer.el",
+			"line": 17,
+			"signature": "export let Integer: type",
+			"value_type": "type"
 		},
 		{
 			"name": "integer_log",
@@ -6188,7 +6188,7 @@
 			"name": "ir_abi_verify",
 			"id": null,
 			"source": "intermediate-representation/abi/verify.el",
-			"line": 606,
+			"line": 611,
 			"signature": "export fn ir_abi_verify(m: IrAbiModule): Text",
 			"value_type": null
 		},
@@ -6556,8 +6556,8 @@
 			"name": "lex",
 			"id": null,
 			"source": "compiler/parser/lexer.el",
-			"line": 573,
-			"signature": "export fn lex(lx: Lexer)",
+			"line": 574,
+			"signature": "export fn lex(lx: Lexer, file_start: Bool = t)",
 			"value_type": null
 		},
 		{
@@ -6993,19 +6993,19 @@
 			"value_type": null
 		},
 		{
-			"name": "MatrixLiteral",
-			"id": null,
-			"source": "numerical-computing/matrix-literal.el",
-			"line": 7,
-			"signature": "export class MatrixLiteral",
-			"value_type": null
-		},
-		{
 			"name": "matrixLiteral",
 			"id": null,
 			"source": "language/contracts.el",
 			"line": 83,
 			"signature": "export @builtin:khaz:literal:matrix fn matrixLiteral()",
+			"value_type": null
+		},
+		{
+			"name": "MatrixLiteral",
+			"id": null,
+			"source": "numerical-computing/matrix-literal.el",
+			"line": 7,
+			"signature": "export class MatrixLiteral",
 			"value_type": null
 		},
 		{
@@ -7545,19 +7545,19 @@
 			"value_type": null
 		},
 		{
-			"name": "Never",
-			"id": null,
-			"source": "language/values.el",
-			"line": 64,
-			"signature": "export let Never: type",
-			"value_type": "type"
-		},
-		{
 			"name": "never",
 			"id": null,
 			"source": "language/values.el",
 			"line": 65,
 			"signature": "export let never: type",
+			"value_type": "type"
+		},
+		{
+			"name": "Never",
+			"id": null,
+			"source": "language/values.el",
+			"line": 64,
+			"signature": "export let Never: type",
 			"value_type": "type"
 		},
 		{
@@ -7961,19 +7961,19 @@
 			"value_type": null
 		},
 		{
-			"name": "OnceDelay",
-			"id": null,
-			"source": "control/deferred-values.el",
-			"line": 157,
-			"signature": "export fn OnceDelay(element: type): type",
-			"value_type": null
-		},
-		{
 			"name": "onceDelay",
 			"id": null,
 			"source": "control/deferred-syntax.el",
 			"line": 30,
 			"signature": "export syntax onceDelay",
+			"value_type": null
+		},
+		{
+			"name": "OnceDelay",
+			"id": null,
+			"source": "control/deferred-values.el",
+			"line": 157,
+			"signature": "export fn OnceDelay(element: type): type",
 			"value_type": null
 		},
 		{
@@ -8185,20 +8185,20 @@
 			"value_type": null
 		},
 		{
-			"name": "Ordered",
-			"id": null,
-			"source": "logic/control.el",
-			"line": 23,
-			"signature": "export const Ordered",
-			"value_type": "SearchSemantics"
-		},
-		{
 			"name": "ordered",
 			"id": "execution/plans/policy::ordered",
 			"source": "execution/plans/policy.el",
 			"line": 19,
 			"signature": "export fn ordered(policies: ExecutionPolicy[]): ExecutionPolicy",
 			"value_type": null
+		},
+		{
+			"name": "Ordered",
+			"id": null,
+			"source": "logic/control.el",
+			"line": 23,
+			"signature": "export const Ordered",
+			"value_type": "SearchSemantics"
 		},
 		{
 			"name": "OrderedDynamicObject",
@@ -8324,7 +8324,7 @@
 			"name": "parse_program",
 			"id": null,
 			"source": "compiler/parser/parser.el",
-			"line": 1027,
+			"line": 1028,
 			"signature": "export fn parse_program(c: Compiler, p: Parser): Node",
 			"value_type": null
 		},
@@ -8340,7 +8340,7 @@
 			"name": "parse_statement",
 			"id": null,
 			"source": "compiler/parser/parser.el",
-			"line": 716,
+			"line": 717,
 			"signature": "export fn parse_statement(c: Compiler, p: Parser, at_module_level: Bool = f, class_member: Bool = f): Node",
 			"value_type": null
 		},
@@ -10332,7 +10332,7 @@
 			"name": "RemovableSemicolon",
 			"id": null,
 			"source": "tools/formatter/scan.el",
-			"line": 16,
+			"line": 17,
 			"signature": "export class RemovableSemicolon",
 			"value_type": null
 		},
@@ -10380,7 +10380,7 @@
 			"name": "repair_style",
 			"id": null,
 			"source": "tools/formatter/style.el",
-			"line": 1336,
+			"line": 1339,
 			"signature": "export fn repair_style(text: Text, issues: StyleIssue[]): Text",
 			"value_type": null
 		},
@@ -10781,7 +10781,7 @@
 			"name": "rvalue",
 			"id": null,
 			"source": "language/value-operations.el",
-			"line": 8,
+			"line": 11,
 			"signature": "export fn rvalue(take value)",
 			"value_type": null
 		},
@@ -10837,7 +10837,7 @@
 			"name": "scan",
 			"id": "tools/formatter/scan::scan",
 			"source": "tools/formatter/scan.el",
-			"line": 311,
+			"line": 312,
 			"signature": "export fn scan(text: Text): ScanResult",
 			"value_type": null
 		},
@@ -10845,7 +10845,7 @@
 			"name": "scan_style",
 			"id": null,
 			"source": "tools/formatter/style.el",
-			"line": 323,
+			"line": 326,
 			"signature": "export fn scan_style(text: Text, literal_proof: Bool): StyleIssue[]",
 			"value_type": null
 		},
@@ -10853,7 +10853,7 @@
 			"name": "ScanResult",
 			"id": null,
 			"source": "tools/formatter/scan.el",
-			"line": 37,
+			"line": 38,
 			"signature": "export class ScanResult",
 			"value_type": null
 		},
@@ -10866,19 +10866,19 @@
 			"value_type": null
 		},
 		{
-			"name": "scope",
-			"id": "logic/goal::scope",
-			"source": "logic/goal.el",
-			"line": 95,
-			"signature": "export fn scope(goal: Goal): Goal",
-			"value_type": null
-		},
-		{
 			"name": "Scope",
 			"id": null,
 			"source": "compiler/bindings/binding-model.el",
 			"line": 202,
 			"signature": "export class Scope",
+			"value_type": null
+		},
+		{
+			"name": "scope",
+			"id": "logic/goal::scope",
+			"source": "logic/goal.el",
+			"line": 95,
+			"signature": "export fn scope(goal: Goal): Goal",
 			"value_type": null
 		},
 		{
@@ -10949,7 +10949,7 @@
 			"name": "SearchBudget",
 			"id": null,
 			"source": "logic/control.el",
-			"line": 75,
+			"line": 85,
 			"signature": "export @assign(mode: \"shared\") class SearchBudget",
 			"value_type": null
 		},
@@ -10963,9 +10963,9 @@
 		},
 		{
 			"name": "SearchCursor",
-			"id": null,
+			"id": "logic/search::SearchCursor",
 			"source": "logic/search.el",
-			"line": 899,
+			"line": 906,
 			"signature": "export @assign(mode: \"shared\") class SearchCursor",
 			"value_type": null
 		},
@@ -10973,7 +10973,7 @@
 			"name": "SearchInterrupted",
 			"id": "logic/control::SearchInterrupted",
 			"source": "logic/control.el",
-			"line": 68,
+			"line": 71,
 			"signature": "export @assign(mode: \"shared\") class SearchInterrupted",
 			"value_type": null
 		},
@@ -11074,20 +11074,20 @@
 			"value_type": null
 		},
 		{
-			"name": "Sequence",
-			"id": "collections/sequences/demand::Sequence",
-			"source": "collections/sequences/demand.el",
-			"line": 247,
-			"signature": "export let Sequence: type",
-			"value_type": "type"
-		},
-		{
 			"name": "sequence",
 			"id": "text/patterns/combinators::sequence",
 			"source": "text/patterns/combinators.el",
 			"line": 88,
 			"signature": "export fn sequence(...elements): Pattern<output: Text>",
 			"value_type": null
+		},
+		{
+			"name": "Sequence",
+			"id": "collections/sequences/demand::Sequence",
+			"source": "collections/sequences/demand.el",
+			"line": 247,
+			"signature": "export let Sequence: type",
+			"value_type": "type"
 		},
 		{
 			"name": "SequenceCursor",
@@ -11613,7 +11613,7 @@
 			"name": "StyleIssue",
 			"id": null,
 			"source": "tools/formatter/style.el",
-			"line": 10,
+			"line": 11,
 			"signature": "export class StyleIssue",
 			"value_type": null
 		},
@@ -11733,7 +11733,7 @@
 			"name": "swap",
 			"id": null,
 			"source": "language/value-operations.el",
-			"line": 15,
+			"line": 25,
 			"signature": "export fn swap(ref first, ref second)\nexport fn swap(ref target, rvalue replacement)\nexport fn swap(rvalue replacement, ref target)\nexport fn swap(first: Area, second: Area)\nexport fn swap(ref target, position: Area)\nexport fn swap(position: Area, ref target)\nexport fn swap(position: Area, rvalue replacement)\nexport fn swap(rvalue replacement, position: Area)",
 			"value_type": null
 		},
@@ -12461,7 +12461,7 @@
 			"name": "tool_source_digest",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 611,
+			"line": 612,
 			"signature": "export fn tool_source_digest(text: Text): Text",
 			"value_type": null
 		},
@@ -12469,7 +12469,7 @@
 			"name": "tool_source_graph",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 821,
+			"line": 823,
 			"signature": "export fn tool_source_graph(entry: Text, configuration: SourceMap | nil_t = nil, acquisition: SourceAcquisitionState = SourceAcquisitionState(), target: Text = \"\"): ToolSourceGraph",
 			"value_type": null
 		},
@@ -12477,7 +12477,7 @@
 			"name": "tool_source_is_cycle_edge",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 987,
+			"line": 989,
 			"signature": "export fn tool_source_is_cycle_edge(graph: ToolSourceGraph, owner: Text, path: Text): Bool",
 			"value_type": null
 		},
@@ -12485,7 +12485,7 @@
 			"name": "tool_source_module",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 671,
+			"line": 672,
 			"signature": "export fn tool_source_module(graph: ToolSourceGraph, path: Text): ToolSourceModule | nil_t",
 			"value_type": null
 		},
@@ -12493,7 +12493,7 @@
 			"name": "tool_source_prelude_identity",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 940,
+			"line": 942,
 			"signature": "export fn tool_source_prelude_identity(prelude: Text, consumer: ToolSourceGraph | nil_t = nil): Text",
 			"value_type": null
 		},
@@ -12501,7 +12501,7 @@
 			"name": "tool_source_resolve",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 698,
+			"line": 699,
 			"signature": "export fn tool_source_resolve(module_path: Text, specifier: Text, configuration: SourceMap | nil_t = nil, acquisition: SourceAcquisitionState = SourceAcquisitionState()): Text",
 			"value_type": null
 		},
@@ -12509,7 +12509,7 @@
 			"name": "tool_source_scan",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 543,
+			"line": 544,
 			"signature": "export fn tool_source_scan(original: Text, target: Text = \"\"): ToolSourceScan",
 			"value_type": null
 		},
@@ -12517,7 +12517,7 @@
 			"name": "tool_source_verify",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 901,
+			"line": 903,
 			"signature": "export fn tool_source_verify(graph: ToolSourceGraph): Text",
 			"value_type": null
 		},
@@ -12565,7 +12565,7 @@
 			"name": "ToolSourceGraph",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 642,
+			"line": 643,
 			"signature": "export class ToolSourceGraph",
 			"value_type": null
 		},
@@ -12573,7 +12573,7 @@
 			"name": "ToolSourceModule",
 			"id": null,
 			"source": "language/modules/source/source.el",
-			"line": 616,
+			"line": 617,
 			"signature": "export class ToolSourceModule",
 			"value_type": null
 		},
@@ -12642,19 +12642,19 @@
 			"value_type": null
 		},
 		{
-			"name": "tridiagonal",
-			"id": null,
-			"source": "numerical-computing/tridiagonal.el",
-			"line": 72,
-			"signature": "export fn tridiagonal(element: type, n: Number, lower, diagonal, upper): Tridiagonal",
-			"value_type": null
-		},
-		{
 			"name": "Tridiagonal",
 			"id": null,
 			"source": "numerical-computing/tridiagonal.el",
 			"line": 14,
 			"signature": "export @assign(mode: \"copy\") class Tridiagonal",
+			"value_type": null
+		},
+		{
+			"name": "tridiagonal",
+			"id": null,
+			"source": "numerical-computing/tridiagonal.el",
+			"line": 72,
+			"signature": "export fn tridiagonal(element: type, n: Number, lower, diagonal, upper): Tridiagonal",
 			"value_type": null
 		},
 		{
@@ -12893,7 +12893,7 @@
 			"name": "unload_import",
 			"id": null,
 			"source": "language/modules/loader.el",
-			"line": 316,
+			"line": 321,
 			"signature": "export fn unload_import(exports)",
 			"value_type": null
 		},
@@ -12994,19 +12994,19 @@
 			"value_type": null
 		},
 		{
-			"name": "View",
-			"id": null,
-			"source": "user-interface/view.el",
-			"line": 84,
-			"signature": "export class View",
-			"value_type": null
-		},
-		{
 			"name": "view",
 			"id": null,
 			"source": "numerical-computing/view.el",
 			"line": 156,
 			"signature": "export fn view(borrow source)",
+			"value_type": null
+		},
+		{
+			"name": "View",
+			"id": null,
+			"source": "user-interface/view.el",
+			"line": 84,
+			"signature": "export class View",
 			"value_type": null
 		},
 		{
@@ -20415,7 +20415,7 @@
 			"copy_token": {
 				"id": null,
 				"source": "compiler/parser/token.el",
-				"line": 28,
+				"line": 38,
 				"value_type": null
 			},
 			"data_index_parameters": {
@@ -21909,13 +21909,13 @@
 			"parse_attributed_expression": {
 				"id": null,
 				"source": "compiler/attributes/attributes.el",
-				"line": 889,
+				"line": 894,
 				"value_type": null
 			},
 			"parse_decorated_declaration": {
 				"id": null,
 				"source": "compiler/attributes/attributes.el",
-				"line": 857,
+				"line": 862,
 				"value_type": null
 			},
 			"read_attribute": {
@@ -21933,7 +21933,7 @@
 			"written_attribute": {
 				"id": null,
 				"source": "compiler/attributes/attributes.el",
-				"line": 901,
+				"line": 906,
 				"value_type": null
 			}
 		},
@@ -22603,25 +22603,25 @@
 			"ConditionCache": {
 				"id": null,
 				"source": "compiler/cache/condition-cache.el",
-				"line": 20,
+				"line": 21,
 				"value_type": null
 			},
 			"condition_cache_begin": {
 				"id": null,
 				"source": "compiler/cache/condition-cache.el",
-				"line": 32,
+				"line": 33,
 				"value_type": null
 			},
 			"condition_cache_load": {
 				"id": null,
 				"source": "compiler/cache/condition-cache.el",
-				"line": 74,
+				"line": 75,
 				"value_type": null
 			},
 			"condition_cache_store": {
 				"id": null,
 				"source": "compiler/cache/condition-cache.el",
-				"line": 118,
+				"line": 120,
 				"value_type": null
 			}
 		},
@@ -28763,7 +28763,7 @@
 			"declare_declarations": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 570,
+				"line": 571,
 				"value_type": null
 			},
 			"register_class": {
@@ -28775,19 +28775,19 @@
 			"ris_arity": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 717,
+				"line": 718,
 				"value_type": null
 			},
 			"ris_runtime_kind": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 704,
+				"line": 705,
 				"value_type": null
 			},
 			"validate_ris_function": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 738,
+				"line": 739,
 				"value_type": null
 			}
 		},
@@ -29065,7 +29065,7 @@
 			"declare_declarations": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 570,
+				"line": 571,
 				"value_type": null
 			},
 			"declare_extern": {
@@ -29239,13 +29239,13 @@
 			"ris_arity": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 717,
+				"line": 718,
 				"value_type": null
 			},
 			"ris_runtime_kind": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 704,
+				"line": 705,
 				"value_type": null
 			},
 			"same_function_contract": {
@@ -29269,7 +29269,7 @@
 			"validate_ris_function": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 738,
+				"line": 739,
 				"value_type": null
 			},
 			"word_class": {
@@ -29959,7 +29959,7 @@
 			"register_enum": {
 				"id": null,
 				"source": "compiler/declarations/member-lookup.el",
-				"line": 312,
+				"line": 302,
 				"value_type": null
 			},
 			"same_function_contract": {
@@ -30383,7 +30383,7 @@
 			"compiler_module_abi_views": {
 				"id": null,
 				"source": "compiler/eir/abi-views.el",
-				"line": 105,
+				"line": 104,
 				"value_type": null
 			}
 		},
@@ -31057,7 +31057,7 @@
 			"member_from": {
 				"id": null,
 				"source": "compiler/expressions/member.el",
-				"line": 103,
+				"line": 104,
 				"value_type": null
 			},
 			"moves_owned_value": {
@@ -31087,7 +31087,7 @@
 			"optional_member_from": {
 				"id": null,
 				"source": "compiler/expressions/member.el",
-				"line": 108,
+				"line": 109,
 				"value_type": null
 			},
 			"position_parameter_class": {
@@ -31135,13 +31135,13 @@
 			"store_member": {
 				"id": null,
 				"source": "compiler/expressions/member.el",
-				"line": 230,
+				"line": 237,
 				"value_type": null
 			},
 			"store_member_on": {
 				"id": null,
 				"source": "compiler/expressions/member.el",
-				"line": 272,
+				"line": 279,
 				"value_type": null
 			},
 			"store_value": {
@@ -31165,7 +31165,7 @@
 			"validate_member_assignment_target": {
 				"id": null,
 				"source": "compiler/expressions/member.el",
-				"line": 240,
+				"line": 247,
 				"value_type": null
 			},
 			"value_allocator": {
@@ -31205,37 +31205,37 @@
 			"lower_member": {
 				"id": null,
 				"source": "compiler/expressions/member.el",
-				"line": 36,
+				"line": 37,
 				"value_type": null
 			},
 			"member_from": {
 				"id": null,
 				"source": "compiler/expressions/member.el",
-				"line": 103,
+				"line": 104,
 				"value_type": null
 			},
 			"optional_member_from": {
 				"id": null,
 				"source": "compiler/expressions/member.el",
-				"line": 108,
+				"line": 109,
 				"value_type": null
 			},
 			"store_member": {
 				"id": null,
 				"source": "compiler/expressions/member.el",
-				"line": 230,
+				"line": 237,
 				"value_type": null
 			},
 			"store_member_on": {
 				"id": null,
 				"source": "compiler/expressions/member.el",
-				"line": 272,
+				"line": 279,
 				"value_type": null
 			},
 			"validate_member_assignment_target": {
 				"id": null,
 				"source": "compiler/expressions/member.el",
-				"line": 240,
+				"line": 247,
 				"value_type": null
 			}
 		},
@@ -31627,25 +31627,25 @@
 			"CompilationFailure": {
 				"id": null,
 				"source": "compiler/operations.el",
-				"line": 107,
+				"line": 108,
 				"value_type": null
 			},
 			"CompilationOperation": {
 				"id": null,
 				"source": "compiler/operations.el",
-				"line": 55,
+				"line": 56,
 				"value_type": null
 			},
 			"CompilationOptions": {
 				"id": null,
 				"source": "compiler/operations.el",
-				"line": 59,
+				"line": 60,
 				"value_type": null
 			},
 			"CompilationOutput": {
 				"id": null,
 				"source": "compiler/operations.el",
-				"line": 56,
+				"line": 57,
 				"value_type": null
 			},
 			"Compiler": {
@@ -31723,7 +31723,7 @@
 			"compile_file": {
 				"id": null,
 				"source": "compiler/operations.el",
-				"line": 527,
+				"line": 533,
 				"value_type": null
 			},
 			"compile_source": {
@@ -31741,7 +31741,7 @@
 			"lex": {
 				"id": null,
 				"source": "compiler/parser/lexer.el",
-				"line": 573,
+				"line": 574,
 				"value_type": null
 			},
 			"parse_expression": {
@@ -31753,13 +31753,13 @@
 			"parse_program": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 1027,
+				"line": 1028,
 				"value_type": null
 			},
 			"parse_statement": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 716,
+				"line": 717,
 				"value_type": null
 			},
 			"parse_text": {
@@ -31889,25 +31889,25 @@
 			"DependencyReceipt": {
 				"id": null,
 				"source": "compiler/inputs/dependency-manifest.el",
-				"line": 16,
+				"line": 20,
 				"value_type": null
 			},
 			"parse_dependency_receipt": {
 				"id": null,
 				"source": "compiler/inputs/dependency-manifest.el",
-				"line": 55,
+				"line": 66,
 				"value_type": null
 			},
 			"read_dependency_receipt": {
 				"id": null,
 				"source": "compiler/inputs/dependency-manifest.el",
-				"line": 80,
+				"line": 94,
 				"value_type": null
 			},
 			"verify_dependency_receipt": {
 				"id": null,
 				"source": "compiler/inputs/dependency-manifest.el",
-				"line": 33,
+				"line": 37,
 				"value_type": null
 			}
 		},
@@ -32037,13 +32037,13 @@
 			"compile_parsed_source": {
 				"id": null,
 				"source": "compiler/main.el",
-				"line": 537,
+				"line": 538,
 				"value_type": null
 			},
 			"compile_receiver_source": {
 				"id": null,
 				"source": "compiler/main.el",
-				"line": 549,
+				"line": 550,
 				"value_type": null
 			},
 			"compile_source": {
@@ -32055,7 +32055,7 @@
 			"is_ris_annotation": {
 				"id": null,
 				"source": "compiler/main.el",
-				"line": 851,
+				"line": 854,
 				"value_type": null
 			},
 			"literal_provider_declaration": {
@@ -32073,13 +32073,13 @@
 			"lower_registered_runtime": {
 				"id": null,
 				"source": "compiler/main.el",
-				"line": 647,
+				"line": 650,
 				"value_type": null
 			},
 			"lower_registered_runtime_with_scopes": {
 				"id": null,
 				"source": "compiler/main.el",
-				"line": 654,
+				"line": 657,
 				"value_type": null
 			},
 			"module_imports_declaration": {
@@ -32109,7 +32109,7 @@
 			"prepare_compiler_declarations": {
 				"id": null,
 				"source": "compiler/main.el",
-				"line": 711,
+				"line": 714,
 				"value_type": null
 			},
 			"prepare_late_factory_shapes": {
@@ -32127,19 +32127,19 @@
 			"prepare_registered_runtime": {
 				"id": null,
 				"source": "compiler/main.el",
-				"line": 633,
+				"line": 636,
 				"value_type": null
 			},
 			"prepare_registered_source": {
 				"id": null,
 				"source": "compiler/main.el",
-				"line": 599,
+				"line": 602,
 				"value_type": null
 			},
 			"prepare_text_source_root": {
 				"id": null,
 				"source": "compiler/main.el",
-				"line": 560,
+				"line": 561,
 				"value_type": null
 			},
 			"provider_factory": {
@@ -33108,6 +33108,12 @@
 				"line": 13,
 				"value_type": null
 			},
+			"is_main_module": {
+				"id": null,
+				"source": "compiler/modules/module-switches.el",
+				"line": 19,
+				"value_type": null
+			},
 			"module_gc_enabled": {
 				"id": null,
 				"source": "compiler/modules/module-switches.el",
@@ -33117,7 +33123,7 @@
 			"node_module_origin": {
 				"id": null,
 				"source": "compiler/modules/module-switches.el",
-				"line": 19,
+				"line": 23,
 				"value_type": null
 			}
 		},
@@ -34607,31 +34613,31 @@
 			"CompilationFailure": {
 				"id": null,
 				"source": "compiler/operations.el",
-				"line": 107,
+				"line": 108,
 				"value_type": null
 			},
 			"CompilationOperation": {
 				"id": null,
 				"source": "compiler/operations.el",
-				"line": 55,
+				"line": 56,
 				"value_type": null
 			},
 			"CompilationOptions": {
 				"id": null,
 				"source": "compiler/operations.el",
-				"line": 59,
+				"line": 60,
 				"value_type": null
 			},
 			"CompilationOutput": {
 				"id": null,
 				"source": "compiler/operations.el",
-				"line": 56,
+				"line": 57,
 				"value_type": null
 			},
 			"compile_file": {
 				"id": null,
 				"source": "compiler/operations.el",
-				"line": 527,
+				"line": 533,
 				"value_type": null
 			}
 		},
@@ -35557,61 +35563,61 @@
 			"check_reference_value": {
 				"id": null,
 				"source": "compiler/ownership/reference-flow-values.el",
-				"line": 61,
+				"line": 32,
 				"value_type": null
 			},
 			"guard_reference_value": {
 				"id": null,
 				"source": "compiler/ownership/reference-flow-values.el",
-				"line": 78,
+				"line": 49,
 				"value_type": null
 			},
 			"inline_eir_reference_results": {
 				"id": null,
 				"source": "compiler/ownership/reference-flow-values.el",
-				"line": 25,
+				"line": 258,
 				"value_type": null
 			},
 			"invalidate_reference": {
 				"id": null,
 				"source": "compiler/ownership/reference-flow-values.el",
-				"line": 184,
+				"line": 155,
 				"value_type": null
 			},
 			"project_reference": {
 				"id": null,
 				"source": "compiler/ownership/reference-flow-values.el",
-				"line": 101,
+				"line": 72,
 				"value_type": null
 			},
 			"reference_expression": {
 				"id": null,
 				"source": "compiler/ownership/reference-flow-values.el",
-				"line": 470,
+				"line": 449,
 				"value_type": null
 			},
 			"report_reference_flow": {
 				"id": null,
 				"source": "compiler/ownership/reference-flow-values.el",
-				"line": 54,
+				"line": 25,
 				"value_type": null
 			},
 			"snapshot_reference_exception": {
 				"id": null,
 				"source": "compiler/ownership/reference-flow-values.el",
-				"line": 208,
+				"line": 179,
 				"value_type": null
 			},
 			"substitute_call_value": {
 				"id": null,
 				"source": "compiler/ownership/reference-flow-values.el",
-				"line": 308,
+				"line": 287,
 				"value_type": null
 			},
 			"substitute_reference_value": {
 				"id": null,
 				"source": "compiler/ownership/reference-flow-values.el",
-				"line": 145,
+				"line": 116,
 				"value_type": null
 			}
 		},
@@ -36415,7 +36421,7 @@
 			"record_vome_call": {
 				"id": null,
 				"source": "compiler/ownership/temporary.el",
-				"line": 839,
+				"line": 843,
 				"value_type": null
 			},
 			"validate_vome_function": {
@@ -36439,7 +36445,7 @@
 			"vome_demote": {
 				"id": null,
 				"source": "compiler/ownership/temporary.el",
-				"line": 882,
+				"line": 886,
 				"value_type": null
 			},
 			"vome_layout_query": {
@@ -36451,7 +36457,7 @@
 			"vome_reuse_rejection": {
 				"id": null,
 				"source": "compiler/ownership/temporary.el",
-				"line": 802,
+				"line": 806,
 				"value_type": null
 			}
 		},
@@ -36701,31 +36707,31 @@
 			"digit_started_binding_name": {
 				"id": null,
 				"source": "compiler/parser/lexer.el",
-				"line": 115,
+				"line": 116,
 				"value_type": null
 			},
 			"digit_value": {
 				"id": null,
 				"source": "compiler/parser/lexer.el",
-				"line": 24,
+				"line": 25,
 				"value_type": null
 			},
 			"lex": {
 				"id": null,
 				"source": "compiler/parser/lexer.el",
-				"line": 573,
+				"line": 574,
 				"value_type": null
 			},
 			"numeric_adjacency_split": {
 				"id": null,
 				"source": "compiler/parser/lexer.el",
-				"line": 63,
+				"line": 64,
 				"value_type": null
 			},
 			"splittable_adjacency_suffix": {
 				"id": null,
 				"source": "compiler/parser/lexer.el",
-				"line": 122,
+				"line": 123,
 				"value_type": null
 			}
 		},
@@ -36761,85 +36767,85 @@
 			"apply_callable_declaration_suffix": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 518,
+				"line": 519,
 				"value_type": null
 			},
 			"at_parameter_mode": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 358,
+				"line": 359,
 				"value_type": null
 			},
 			"at_text": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 78,
+				"line": 79,
 				"value_type": null
 			},
 			"eat": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 84,
+				"line": 85,
 				"value_type": null
 			},
 			"enter_return_function": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 232,
+				"line": 233,
 				"value_type": null
 			},
 			"fail_expected": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 118,
+				"line": 119,
 				"value_type": null
 			},
 			"fail_node": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 90,
+				"line": 91,
 				"value_type": null
 			},
 			"fail_token": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 104,
+				"line": 105,
 				"value_type": null
 			},
 			"fn_expression_ahead": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 199,
+				"line": 200,
 				"value_type": null
 			},
 			"hide_syntax_declaration": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 1049,
+				"line": 1050,
 				"value_type": null
 			},
 			"hide_syntax_name": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 1042,
+				"line": 1043,
 				"value_type": null
 			},
 			"is_eof": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 69,
+				"line": 70,
 				"value_type": null
 			},
 			"leave_return_function": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 236,
+				"line": 237,
 				"value_type": null
 			},
 			"need": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 124,
+				"line": 125,
 				"value_type": null
 			},
 			"node_of": {
@@ -36851,19 +36857,19 @@
 			"parse_accessor": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 490,
+				"line": 491,
 				"value_type": null
 			},
 			"parse_binding": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 1067,
+				"line": 1068,
 				"value_type": null
 			},
 			"parse_block": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 329,
+				"line": 330,
 				"value_type": null
 			},
 			"parse_expression": {
@@ -36875,37 +36881,37 @@
 			"parse_function": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 471,
+				"line": 472,
 				"value_type": null
 			},
 			"parse_function_expression": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 595,
+				"line": 596,
 				"value_type": null
 			},
 			"parse_function_tail": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 562,
+				"line": 563,
 				"value_type": null
 			},
 			"parse_loop_transfer": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 262,
+				"line": 263,
 				"value_type": null
 			},
 			"parse_operator": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 617,
+				"line": 618,
 				"value_type": null
 			},
 			"parse_params": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 366,
+				"line": 367,
 				"value_type": null
 			},
 			"parse_postfix": {
@@ -36917,61 +36923,61 @@
 			"parse_program": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 1027,
+				"line": 1028,
 				"value_type": null
 			},
 			"parse_result_type": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 434,
+				"line": 435,
 				"value_type": null
 			},
 			"parse_return": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 283,
+				"line": 284,
 				"value_type": null
 			},
 			"parse_statement": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 716,
+				"line": 717,
 				"value_type": null
 			},
 			"parse_throw": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 253,
+				"line": 254,
 				"value_type": null
 			},
 			"peek": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 67,
+				"line": 68,
 				"value_type": null
 			},
 			"read_callable_declaration_suffix": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 512,
+				"line": 513,
 				"value_type": null
 			},
 			"reject_readonly_parameter_spelling": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 362,
+				"line": 363,
 				"value_type": null
 			},
 			"skip": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 71,
+				"line": 72,
 				"value_type": null
 			},
 			"template_token": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 76,
+				"line": 77,
 				"value_type": null
 			}
 		},
@@ -37005,7 +37011,19 @@
 			"copy_token": {
 				"id": null,
 				"source": "compiler/parser/token.el",
+				"line": 38,
+				"value_type": null
+			},
+			"import_expression_at": {
+				"id": null,
+				"source": "compiler/parser/token.el",
 				"line": 28,
+				"value_type": null
+			},
+			"import_expression_suffix": {
+				"id": null,
+				"source": "compiler/parser/token.el",
+				"line": 34,
 				"value_type": null
 			}
 		},
@@ -37243,7 +37261,7 @@
 			"preprocess_file": {
 				"id": null,
 				"source": "compiler/preprocessing/preprocessing.el",
-				"line": 188,
+				"line": 194,
 				"value_type": null
 			}
 		},
@@ -38583,7 +38601,7 @@
 			"proof_instantiate": {
 				"id": null,
 				"source": "compiler/proof/term.el",
-				"line": 445,
+				"line": 446,
 				"value_type": null
 			},
 			"proof_instantiate_universe": {
@@ -38739,7 +38757,7 @@
 			"proof_rename": {
 				"id": null,
 				"source": "compiler/proof/term.el",
-				"line": 423,
+				"line": 424,
 				"value_type": null
 			},
 			"proof_scope_identity": {
@@ -38751,7 +38769,7 @@
 			"proof_shift": {
 				"id": null,
 				"source": "compiler/proof/term.el",
-				"line": 402,
+				"line": 403,
 				"value_type": null
 			},
 			"proof_sort": {
@@ -38781,7 +38799,7 @@
 			"proof_substitute": {
 				"id": null,
 				"source": "compiler/proof/term.el",
-				"line": 439,
+				"line": 440,
 				"value_type": null
 			},
 			"proof_substitute_context": {
@@ -40023,7 +40041,7 @@
 			"proof_instantiate": {
 				"id": null,
 				"source": "compiler/proof/term.el",
-				"line": 445,
+				"line": 446,
 				"value_type": null
 			},
 			"proof_instantiate_universe": {
@@ -40179,7 +40197,7 @@
 			"proof_rename": {
 				"id": null,
 				"source": "compiler/proof/term.el",
-				"line": 423,
+				"line": 424,
 				"value_type": null
 			},
 			"proof_scope_identity": {
@@ -40191,7 +40209,7 @@
 			"proof_shift": {
 				"id": null,
 				"source": "compiler/proof/term.el",
-				"line": 402,
+				"line": 403,
 				"value_type": null
 			},
 			"proof_sort": {
@@ -40221,7 +40239,7 @@
 			"proof_substitute": {
 				"id": null,
 				"source": "compiler/proof/term.el",
-				"line": 439,
+				"line": 440,
 				"value_type": null
 			},
 			"proof_substitute_context": {
@@ -42385,7 +42403,7 @@
 			"NativeSyntaxModel": {
 				"id": null,
 				"source": "compiler/proof/syntax-model.el",
-				"line": 32,
+				"line": 33,
 				"value_type": null
 			}
 		},
@@ -42465,7 +42483,7 @@
 			"proof_instantiate": {
 				"id": null,
 				"source": "compiler/proof/term.el",
-				"line": 445,
+				"line": 446,
 				"value_type": null
 			},
 			"proof_instantiate_universe": {
@@ -42561,13 +42579,13 @@
 			"proof_rename": {
 				"id": null,
 				"source": "compiler/proof/term.el",
-				"line": 423,
+				"line": 424,
 				"value_type": null
 			},
 			"proof_shift": {
 				"id": null,
 				"source": "compiler/proof/term.el",
-				"line": 402,
+				"line": 403,
 				"value_type": null
 			},
 			"proof_sort": {
@@ -42603,7 +42621,7 @@
 			"proof_substitute": {
 				"id": null,
 				"source": "compiler/proof/term.el",
-				"line": 439,
+				"line": 440,
 				"value_type": null
 			},
 			"proof_term_equal": {
@@ -42615,7 +42633,7 @@
 			"proof_transform": {
 				"id": null,
 				"source": "compiler/proof/term.el",
-				"line": 369,
+				"line": 370,
 				"value_type": null
 			},
 			"proof_universe_instance": {
@@ -42917,25 +42935,25 @@
 			"builtin_execution_role": {
 				"id": null,
 				"source": "compiler/registry/builtins.el",
-				"line": 487,
+				"line": 488,
 				"value_type": null
 			},
 			"builtin_identity": {
 				"id": null,
 				"source": "compiler/registry/builtins.el",
-				"line": 473,
+				"line": 474,
 				"value_type": null
 			},
 			"builtin_literal_role": {
 				"id": null,
 				"source": "compiler/registry/builtins.el",
-				"line": 505,
+				"line": 506,
 				"value_type": null
 			},
 			"builtin_parameter_shape": {
 				"id": null,
 				"source": "compiler/registry/builtins.el",
-				"line": 480,
+				"line": 481,
 				"value_type": null
 			}
 		},
@@ -44329,7 +44347,7 @@
 			"compile_source_abi_component": {
 				"id": null,
 				"source": "compiler/runtime/source-components.el",
-				"line": 210,
+				"line": 215,
 				"value_type": null
 			},
 			"source_abi_audit_add": {
@@ -44341,7 +44359,7 @@
 			"source_abi_audit_finish": {
 				"id": null,
 				"source": "compiler/runtime/source-components.el",
-				"line": 63,
+				"line": 62,
 				"value_type": null
 			},
 			"source_abi_audit_pending": {
@@ -44353,7 +44371,7 @@
 			"source_abi_check_existing": {
 				"id": null,
 				"source": "compiler/runtime/source-components.el",
-				"line": 202,
+				"line": 207,
 				"value_type": null
 			}
 		},
@@ -44375,7 +44393,7 @@
 			"source_projection_call_policy": {
 				"id": null,
 				"source": "compiler/runtime/source-projection.el",
-				"line": 79,
+				"line": 78,
 				"value_type": null
 			},
 			"source_projection_optimize": {
@@ -44389,373 +44407,373 @@
 			"source_runtime_abort_transport_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 838,
+				"line": 840,
 				"value_type": null
 			},
 			"source_runtime_allocation_sites_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 471,
+				"line": 473,
 				"value_type": null
 			},
 			"source_runtime_arena_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 643,
+				"line": 645,
 				"value_type": null
 			},
 			"source_runtime_argument_buffer_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 630,
+				"line": 632,
 				"value_type": null
 			},
 			"source_runtime_async_services_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 511,
+				"line": 513,
 				"value_type": null
 			},
 			"source_runtime_cleanup_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 537,
+				"line": 539,
 				"value_type": null
 			},
 			"source_runtime_components": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 80,
+				"line": 82,
 				"value_type": null
 			},
 			"source_runtime_context_checks_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 589,
+				"line": 591,
 				"value_type": null
 			},
 			"source_runtime_context_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 583,
+				"line": 585,
 				"value_type": null
 			},
 			"source_runtime_continuation_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 496,
+				"line": 498,
 				"value_type": null
 			},
 			"source_runtime_cycle_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 528,
+				"line": 530,
 				"value_type": null
 			},
 			"source_runtime_debug_census_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 454,
+				"line": 456,
 				"value_type": null
 			},
 			"source_runtime_deferred_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 543,
+				"line": 545,
 				"value_type": null
 			},
 			"source_runtime_descriptor_publication_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 692,
+				"line": 694,
 				"value_type": null
 			},
 			"source_runtime_diagnostic_output_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 424,
+				"line": 426,
 				"value_type": null
 			},
 			"source_runtime_disabled_components": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 682,
+				"line": 684,
 				"value_type": null
 			},
 			"source_runtime_domain_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 660,
+				"line": 662,
 				"value_type": null
 			},
 			"source_runtime_dynamic_index_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 561,
+				"line": 563,
 				"value_type": null
 			},
 			"source_runtime_family_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 556,
+				"line": 558,
 				"value_type": null
 			},
 			"source_runtime_handlers_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 570,
+				"line": 572,
 				"value_type": null
 			},
 			"source_runtime_library_components": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 810,
+				"line": 812,
 				"value_type": null
 			},
 			"source_runtime_library_conditions_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 67,
+				"line": 69,
 				"value_type": null
 			},
 			"source_runtime_native_free_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 609,
+				"line": 611,
 				"value_type": null
 			},
 			"source_runtime_native_image_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 791,
+				"line": 793,
 				"value_type": null
 			},
 			"source_runtime_native_mapping_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 797,
+				"line": 799,
 				"value_type": null
 			},
 			"source_runtime_native_pair_receipts_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 420,
+				"line": 422,
 				"value_type": null
 			},
 			"source_runtime_native_terminal_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 802,
+				"line": 804,
 				"value_type": null
 			},
 			"source_runtime_nominal_match_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 698,
+				"line": 700,
 				"value_type": null
 			},
 			"source_runtime_nominal_metadata_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 712,
+				"line": 714,
 				"value_type": null
 			},
 			"source_runtime_nominal_publication_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 716,
+				"line": 718,
 				"value_type": null
 			},
 			"source_runtime_prepaid_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 666,
+				"line": 668,
 				"value_type": null
 			},
 			"source_runtime_pressure_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 622,
+				"line": 624,
 				"value_type": null
 			},
 			"source_runtime_process_cleanups_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 505,
+				"line": 507,
 				"value_type": null
 			},
 			"source_runtime_process_entry_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 852,
+				"line": 854,
 				"value_type": null
 			},
 			"source_runtime_process_entry_symbol": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 845,
+				"line": 847,
 				"value_type": null
 			},
 			"source_runtime_publication_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 533,
+				"line": 535,
 				"value_type": null
 			},
 			"source_runtime_quota_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 648,
+				"line": 650,
 				"value_type": null
 			},
 			"source_runtime_reference_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 577,
+				"line": 579,
 				"value_type": null
 			},
 			"source_runtime_registry_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 769,
+				"line": 771,
 				"value_type": null
 			},
 			"source_runtime_registry_dispatch_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 730,
+				"line": 732,
 				"value_type": null
 			},
 			"source_runtime_reservation_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 654,
+				"line": 656,
 				"value_type": null
 			},
 			"source_runtime_root_providers_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 613,
+				"line": 615,
 				"value_type": null
 			},
 			"source_runtime_session_binding_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 831,
+				"line": 833,
 				"value_type": null
 			},
 			"source_runtime_session_bootstrap_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 890,
+				"line": 892,
 				"value_type": null
 			},
 			"source_runtime_session_owner_policy_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 897,
+				"line": 899,
 				"value_type": null
 			},
 			"source_runtime_session_target_close_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 874,
+				"line": 876,
 				"value_type": null
 			},
 			"source_runtime_session_target_consume_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 868,
+				"line": 870,
 				"value_type": null
 			},
 			"source_runtime_session_target_entry_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 882,
+				"line": 884,
 				"value_type": null
 			},
 			"source_runtime_session_target_result_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 862,
+				"line": 864,
 				"value_type": null
 			},
 			"source_runtime_shape_budget_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 744,
+				"line": 746,
 				"value_type": null
 			},
 			"source_runtime_shape_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 739,
+				"line": 741,
 				"value_type": null
 			},
 			"source_runtime_shape_contract_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 704,
+				"line": 706,
 				"value_type": null
 			},
 			"source_runtime_shape_fields_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 756,
+				"line": 758,
 				"value_type": null
 			},
 			"source_runtime_shape_publication_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 723,
+				"line": 725,
 				"value_type": null
 			},
 			"source_runtime_shape_query_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 909,
+				"line": 911,
 				"value_type": null
 			},
 			"source_runtime_shape_relations_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 749,
+				"line": 751,
 				"value_type": null
 			},
 			"source_runtime_shape_storage_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 784,
+				"line": 786,
 				"value_type": null
 			},
 			"source_runtime_slab_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 518,
+				"line": 520,
 				"value_type": null
 			},
 			"source_runtime_trace_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 523,
+				"line": 525,
 				"value_type": null
 			},
 			"source_runtime_waits_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 550,
+				"line": 552,
 				"value_type": null
 			},
 			"source_runtime_weak_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 603,
+				"line": 605,
 				"value_type": null
 			},
 			"source_runtime_workspace_component": {
 				"id": null,
 				"source": "compiler/runtime/source-runtime.el",
-				"line": 638,
+				"line": 640,
 				"value_type": null
 			}
 		},
@@ -44869,85 +44887,91 @@
 			"acquire_source": {
 				"id": null,
 				"source": "compiler/source/source-acquisition.el",
-				"line": 195,
+				"line": 196,
 				"value_type": null
 			},
 			"acquisition_for": {
 				"id": null,
 				"source": "compiler/source/source-acquisition.el",
-				"line": 20,
+				"line": 21,
 				"value_type": null
 			},
 			"acquisition_key": {
 				"id": null,
 				"source": "compiler/source/source-acquisition.el",
-				"line": 36,
+				"line": 37,
 				"value_type": null
 			},
 			"discover_source_directory": {
 				"id": null,
 				"source": "compiler/source/source-acquisition.el",
-				"line": 149,
+				"line": 150,
 				"value_type": null
 			},
 			"read_source_acquisition": {
 				"id": null,
 				"source": "compiler/source/source-acquisition.el",
-				"line": 204,
+				"line": 205,
+				"value_type": null
+			},
+			"read_source_snapshot": {
+				"id": null,
+				"source": "compiler/source/source-acquisition.el",
+				"line": 213,
 				"value_type": null
 			},
 			"resolve_raw_source_acquisition": {
 				"id": null,
 				"source": "compiler/source/source-acquisition.el",
-				"line": 102,
+				"line": 103,
 				"value_type": null
 			},
 			"resolve_source_acquisition": {
 				"id": null,
 				"source": "compiler/source/source-acquisition.el",
-				"line": 98,
+				"line": 99,
 				"value_type": null
 			},
 			"snapshot_source_acquisition": {
 				"id": null,
 				"source": "compiler/source/source-acquisition.el",
-				"line": 28,
+				"line": 29,
 				"value_type": null
 			},
 			"source_directories_changed": {
 				"id": null,
 				"source": "compiler/source/source-acquisition.el",
-				"line": 163,
+				"line": 164,
 				"value_type": null
 			},
 			"source_directory_identity": {
 				"id": null,
 				"source": "compiler/source/source-acquisition.el",
-				"line": 138,
+				"line": 139,
 				"value_type": null
 			},
 			"source_has_stable_native_provider": {
 				"id": null,
 				"source": "compiler/source/source-acquisition.el",
-				"line": 41,
+				"line": 42,
 				"value_type": null
 			},
 			"source_location": {
 				"id": null,
 				"source": "compiler/source/source-acquisition.el",
-				"line": 45,
+				"line": 46,
 				"value_type": null
 			},
 			"source_module_location": {
 				"id": null,
 				"source": "compiler/source/source-acquisition.el",
-				"line": 55,
+				"line": 56,
 				"value_type": null
 			},
 			"source_snapshot_changed": {
 				"id": null,
 				"source": "compiler/source/source-acquisition.el",
-				"line": 180,
+				"line": 181,
 				"value_type": null
 			}
 		},
@@ -48723,25 +48747,25 @@
 			"SyntaxSurface": {
 				"id": null,
 				"source": "compiler/syntax/syntax-surface.el",
-				"line": 15,
+				"line": 16,
 				"value_type": null
 			},
 			"SyntaxSurfaceEntry": {
 				"id": null,
 				"source": "compiler/syntax/syntax-surface.el",
-				"line": 7,
+				"line": 8,
 				"value_type": null
 			},
 			"read_syntax_surface": {
 				"id": null,
 				"source": "compiler/syntax/syntax-surface.el",
-				"line": 62,
+				"line": 63,
 				"value_type": null
 			},
 			"syntax_surface_analysis_runs": {
 				"id": null,
 				"source": "compiler/syntax/syntax-surface.el",
-				"line": 60,
+				"line": 61,
 				"value_type": null
 			}
 		},
@@ -72145,25 +72169,37 @@
 			"nativeContiguousFileBuffer": {
 				"id": null,
 				"source": "filesystem/native-reader.el",
-				"line": 176,
+				"line": 183,
 				"value_type": null
 			},
 			"nativeFileBufferWith": {
 				"id": null,
 				"source": "filesystem/native-reader.el",
-				"line": 161,
+				"line": 163,
 				"value_type": null
 			},
 			"nativeFileReader": {
 				"id": null,
 				"source": "filesystem/native-reader.el",
-				"line": 156,
+				"line": 158,
 				"value_type": null
 			},
 			"nativeFileReaderWith": {
 				"id": null,
 				"source": "filesystem/native-reader.el",
-				"line": 152,
+				"line": 154,
+				"value_type": null
+			},
+			"nativeFileSnapshotBuffer": {
+				"id": null,
+				"source": "filesystem/native-reader.el",
+				"line": 187,
+				"value_type": null
+			},
+			"nativeFileSnapshotText": {
+				"id": null,
+				"source": "filesystem/native-reader.el",
+				"line": 192,
 				"value_type": null
 			}
 		},
@@ -76935,19 +76971,19 @@
 			"CompilationFailure": {
 				"id": null,
 				"source": "compiler/operations.el",
-				"line": 107,
+				"line": 108,
 				"value_type": null
 			},
 			"CompilationOperation": {
 				"id": null,
 				"source": "compiler/operations.el",
-				"line": 55,
+				"line": 56,
 				"value_type": null
 			},
 			"CompilationOptions": {
 				"id": null,
 				"source": "compiler/operations.el",
-				"line": 59,
+				"line": 60,
 				"value_type": null
 			},
 			"CompileError": {
@@ -77883,7 +77919,7 @@
 			"FormatDependencies": {
 				"id": null,
 				"source": "tools/formatter/dependencies.el",
-				"line": 14,
+				"line": 15,
 				"value_type": null
 			},
 			"FormatFailure": {
@@ -77901,7 +77937,7 @@
 			"FormatOptions": {
 				"id": null,
 				"source": "tools/formatter/operations.el",
-				"line": 26,
+				"line": 29,
 				"value_type": null
 			},
 			"FormatProblem": {
@@ -79089,7 +79125,7 @@
 			"RemovableSemicolon": {
 				"id": null,
 				"source": "tools/formatter/scan.el",
-				"line": 16,
+				"line": 17,
 				"value_type": null
 			},
 			"RequestToken": {
@@ -79203,7 +79239,7 @@
 			"ScanResult": {
 				"id": null,
 				"source": "tools/formatter/scan.el",
-				"line": 37,
+				"line": 38,
 				"value_type": null
 			},
 			"SchedulingContext": {
@@ -79227,7 +79263,7 @@
 			"SearchBudget": {
 				"id": null,
 				"source": "logic/control.el",
-				"line": 75,
+				"line": 85,
 				"value_type": null
 			},
 			"SearchCandidate": {
@@ -79237,15 +79273,15 @@
 				"value_type": null
 			},
 			"SearchCursor": {
-				"id": null,
+				"id": "logic/search::SearchCursor",
 				"source": "logic/search.el",
-				"line": 899,
+				"line": 906,
 				"value_type": null
 			},
 			"SearchInterrupted": {
 				"id": "logic/control::SearchInterrupted",
 				"source": "logic/control.el",
-				"line": 68,
+				"line": 71,
 				"value_type": null
 			},
 			"SearchObjective": {
@@ -79431,7 +79467,7 @@
 			"StyleIssue": {
 				"id": null,
 				"source": "tools/formatter/style.el",
-				"line": 10,
+				"line": 11,
 				"value_type": null
 			},
 			"Subscription": {
@@ -79779,13 +79815,13 @@
 			"ToolSourceGraph": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 642,
+				"line": 643,
 				"value_type": null
 			},
 			"ToolSourceModule": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 616,
+				"line": 617,
 				"value_type": null
 			},
 			"ToolSourceScan": {
@@ -80763,7 +80799,7 @@
 			"compile_file": {
 				"id": null,
 				"source": "compiler/operations.el",
-				"line": 527,
+				"line": 533,
 				"value_type": null
 			},
 			"compile_source": {
@@ -81733,9 +81769,9 @@
 				"value_type": null
 			},
 			"discard": {
-				"id": null,
+				"id": "language/value-operations::discard",
 				"source": "language/value-operations.el",
-				"line": 10,
+				"line": 20,
 				"value_type": null
 			},
 			"discardable": {
@@ -82281,7 +82317,7 @@
 			"format_paths": {
 				"id": null,
 				"source": "tools/formatter/operations.el",
-				"line": 231,
+				"line": 244,
 				"value_type": null
 			},
 			"format_redundancy_result": {
@@ -82623,8 +82659,8 @@
 			"import": {
 				"id": null,
 				"source": "language/modules/loader.el",
-				"line": 315,
-				"value_type": null
+				"line": 320,
+				"value_type": "ImportFacade"
 			},
 			"inDeclarationOrder": {
 				"id": null,
@@ -82845,7 +82881,7 @@
 			"ir_abi_verify": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 606,
+				"line": 611,
 				"value_type": null
 			},
 			"ir_target_name": {
@@ -82983,7 +83019,7 @@
 			"lex": {
 				"id": null,
 				"source": "compiler/parser/lexer.el",
-				"line": 573,
+				"line": 574,
 				"value_type": null
 			},
 			"library_symbol": {
@@ -83973,7 +84009,7 @@
 			"parse_program": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 1027,
+				"line": 1028,
 				"value_type": null
 			},
 			"parse_ratio": {
@@ -83985,7 +84021,7 @@
 			"parse_statement": {
 				"id": null,
 				"source": "compiler/parser/parser.el",
-				"line": 716,
+				"line": 717,
 				"value_type": null
 			},
 			"parse_text": {
@@ -85041,7 +85077,7 @@
 			"repair_style": {
 				"id": null,
 				"source": "tools/formatter/style.el",
-				"line": 1336,
+				"line": 1339,
 				"value_type": null
 			},
 			"repeat": {
@@ -85234,7 +85270,7 @@
 			"rvalue": {
 				"id": null,
 				"source": "language/value-operations.el",
-				"line": 8,
+				"line": 11,
 				"value_type": null
 			},
 			"sampleTick": {
@@ -85276,13 +85312,13 @@
 			"scan": {
 				"id": "tools/formatter/scan::scan",
 				"source": "tools/formatter/scan.el",
-				"line": 311,
+				"line": 312,
 				"value_type": null
 			},
 			"scan_style": {
 				"id": null,
 				"source": "tools/formatter/style.el",
-				"line": 323,
+				"line": 326,
 				"value_type": null
 			},
 			"scope": {
@@ -85690,7 +85726,7 @@
 			"swap": {
 				"id": null,
 				"source": "language/value-operations.el",
-				"line": 15,
+				"line": 25,
 				"value_type": null
 			},
 			"symmetric_difference": {
@@ -85948,49 +85984,49 @@
 			"tool_source_digest": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 611,
+				"line": 612,
 				"value_type": null
 			},
 			"tool_source_graph": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 821,
+				"line": 823,
 				"value_type": null
 			},
 			"tool_source_is_cycle_edge": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 987,
+				"line": 989,
 				"value_type": null
 			},
 			"tool_source_module": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 671,
+				"line": 672,
 				"value_type": null
 			},
 			"tool_source_prelude_identity": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 940,
+				"line": 942,
 				"value_type": null
 			},
 			"tool_source_resolve": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 698,
+				"line": 699,
 				"value_type": null
 			},
 			"tool_source_scan": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 543,
+				"line": 544,
 				"value_type": null
 			},
 			"tool_source_verify": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 901,
+				"line": 903,
 				"value_type": null
 			},
 			"trailing_zeros": {
@@ -86092,7 +86128,7 @@
 			"unload_import": {
 				"id": null,
 				"source": "language/modules/loader.el",
-				"line": 316,
+				"line": 321,
 				"value_type": null
 			},
 			"unsafe_analyze": {
@@ -88796,7 +88832,7 @@
 			"scalar_constant": {
 				"id": null,
 				"source": "intermediate-representation/abi/scalar-optimization/constants.el",
-				"line": 66,
+				"line": 67,
 				"value_type": null
 			},
 			"scalar_equal_constants": {
@@ -88808,13 +88844,13 @@
 			"scalar_mask_excludes": {
 				"id": null,
 				"source": "intermediate-representation/abi/scalar-optimization/constants.el",
-				"line": 107,
+				"line": 112,
 				"value_type": null
 			},
 			"scalar_mask_range": {
 				"id": null,
 				"source": "intermediate-representation/abi/scalar-optimization/constants.el",
-				"line": 113,
+				"line": 118,
 				"value_type": null
 			}
 		},
@@ -88846,7 +88882,7 @@
 			"scalar_sccp": {
 				"id": null,
 				"source": "intermediate-representation/abi/scalar-optimization/sccp.el",
-				"line": 50,
+				"line": 51,
 				"value_type": null
 			}
 		},
@@ -89014,49 +89050,55 @@
 			"IrAbiVerificationContext": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 622,
+				"line": 627,
 				"value_type": null
 			},
 			"ir_abi_atomic_contract": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 175,
+				"line": 180,
 				"value_type": null
 			},
 			"ir_abi_fields": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 86,
+				"line": 91,
+				"value_type": null
+			},
+			"ir_abi_function_names": {
+				"id": null,
+				"source": "intermediate-representation/abi/verify.el",
+				"line": 50,
 				"value_type": null
 			},
 			"ir_abi_integer": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 67,
+				"line": 72,
 				"value_type": null
 			},
 			"ir_abi_integer_kind": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 63,
+				"line": 68,
 				"value_type": null
 			},
 			"ir_abi_integer_operation_signedness_problem": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 131,
+				"line": 136,
 				"value_type": null
 			},
 			"ir_abi_mmio_contract": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 137,
+				"line": 142,
 				"value_type": null
 			},
 			"ir_abi_name": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 50,
+				"line": 55,
 				"value_type": null
 			},
 			"ir_abi_name_insert": {
@@ -89080,37 +89122,37 @@
 			"ir_abi_term": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 124,
+				"line": 129,
 				"value_type": null
 			},
 			"ir_abi_type": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 113,
+				"line": 118,
 				"value_type": null
 			},
 			"ir_abi_verification_context": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 630,
+				"line": 635,
 				"value_type": null
 			},
 			"ir_abi_verification_extend": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 644,
+				"line": 649,
 				"value_type": null
 			},
 			"ir_abi_verify": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 606,
+				"line": 611,
 				"value_type": null
 			},
 			"ir_abi_verify_body_with_context": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 695,
+				"line": 700,
 				"value_type": null
 			}
 		},
@@ -89640,7 +89682,7 @@
 			"ir_abi_verify": {
 				"id": null,
 				"source": "intermediate-representation/abi/verify.el",
-				"line": 606,
+				"line": 611,
 				"value_type": null
 			},
 			"ir_field_query_resolve": {
@@ -92766,8 +92808,8 @@
 			"import": {
 				"id": null,
 				"source": "language/modules/loader.el",
-				"line": 315,
-				"value_type": null
+				"line": 320,
+				"value_type": "ImportFacade"
 			},
 			"install_module_loader": {
 				"id": null,
@@ -92778,7 +92820,7 @@
 			"unload_import": {
 				"id": null,
 				"source": "language/modules/loader.el",
-				"line": 316,
+				"line": 321,
 				"value_type": null
 			}
 		},
@@ -93790,13 +93832,13 @@
 			"ToolSourceGraph": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 642,
+				"line": 643,
 				"value_type": null
 			},
 			"ToolSourceModule": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 616,
+				"line": 617,
 				"value_type": null
 			},
 			"ToolSourceScan": {
@@ -93928,49 +93970,49 @@
 			"tool_source_digest": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 611,
+				"line": 612,
 				"value_type": null
 			},
 			"tool_source_graph": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 821,
+				"line": 823,
 				"value_type": null
 			},
 			"tool_source_is_cycle_edge": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 987,
+				"line": 989,
 				"value_type": null
 			},
 			"tool_source_module": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 671,
+				"line": 672,
 				"value_type": null
 			},
 			"tool_source_prelude_identity": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 940,
+				"line": 942,
 				"value_type": null
 			},
 			"tool_source_resolve": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 698,
+				"line": 699,
 				"value_type": null
 			},
 			"tool_source_scan": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 543,
+				"line": 544,
 				"value_type": null
 			},
 			"tool_source_verify": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 901,
+				"line": 903,
 				"value_type": null
 			}
 		},
@@ -93978,13 +94020,13 @@
 			"ToolSourceGraph": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 642,
+				"line": 643,
 				"value_type": null
 			},
 			"ToolSourceModule": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 616,
+				"line": 617,
 				"value_type": null
 			},
 			"ToolSourceScan": {
@@ -93996,67 +94038,67 @@
 			"tool_source_collect_warnings": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 980,
+				"line": 982,
 				"value_type": null
 			},
 			"tool_source_digest": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 611,
+				"line": 612,
 				"value_type": null
 			},
 			"tool_source_graph": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 821,
+				"line": 823,
 				"value_type": null
 			},
 			"tool_source_graph_target": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 898,
+				"line": 900,
 				"value_type": null
 			},
 			"tool_source_is_cycle_edge": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 987,
+				"line": 989,
 				"value_type": null
 			},
 			"tool_source_module": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 671,
+				"line": 672,
 				"value_type": null
 			},
 			"tool_source_module_verify": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 923,
+				"line": 925,
 				"value_type": null
 			},
 			"tool_source_prelude_identity": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 940,
+				"line": 942,
 				"value_type": null
 			},
 			"tool_source_resolve": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 698,
+				"line": 699,
 				"value_type": null
 			},
 			"tool_source_scan": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 543,
+				"line": 544,
 				"value_type": null
 			},
 			"tool_source_verify": {
 				"id": null,
 				"source": "language/modules/source/source.el",
-				"line": 901,
+				"line": 903,
 				"value_type": null
 			}
 		},
@@ -94664,6 +94706,26 @@
 				"value_type": null
 			}
 		},
+		"language/shebang": {
+			"shebang_at": {
+				"id": null,
+				"source": "language/shebang.el",
+				"line": 2,
+				"value_type": null
+			},
+			"shebang_end": {
+				"id": null,
+				"source": "language/shebang.el",
+				"line": 10,
+				"value_type": null
+			},
+			"source_start": {
+				"id": null,
+				"source": "language/shebang.el",
+				"line": 6,
+				"value_type": null
+			}
+		},
 		"language/static-query": {
 			"pure": {
 				"id": null,
@@ -94862,21 +94924,21 @@
 		},
 		"language/value-operations": {
 			"discard": {
-				"id": null,
+				"id": "language/value-operations::discard",
 				"source": "language/value-operations.el",
-				"line": 10,
+				"line": 20,
 				"value_type": null
 			},
 			"rvalue": {
 				"id": null,
 				"source": "language/value-operations.el",
-				"line": 8,
+				"line": 11,
 				"value_type": null
 			},
 			"swap": {
 				"id": null,
 				"source": "language/value-operations.el",
-				"line": 15,
+				"line": 25,
 				"value_type": null
 			}
 		},
@@ -95500,13 +95562,13 @@
 			"SearchBudget": {
 				"id": null,
 				"source": "logic/control.el",
-				"line": 75,
+				"line": 85,
 				"value_type": null
 			},
 			"SearchInterrupted": {
 				"id": "logic/control::SearchInterrupted",
 				"source": "logic/control.el",
-				"line": 68,
+				"line": 71,
 				"value_type": null
 			},
 			"SearchSemantics": {
@@ -96298,7 +96360,7 @@
 			"SearchBudget": {
 				"id": null,
 				"source": "logic/control.el",
-				"line": 75,
+				"line": 85,
 				"value_type": null
 			},
 			"SearchCandidate": {
@@ -96308,15 +96370,15 @@
 				"value_type": null
 			},
 			"SearchCursor": {
-				"id": null,
+				"id": "logic/search::SearchCursor",
 				"source": "logic/search.el",
-				"line": 899,
+				"line": 906,
 				"value_type": null
 			},
 			"SearchInterrupted": {
 				"id": "logic/control::SearchInterrupted",
 				"source": "logic/control.el",
-				"line": 68,
+				"line": 71,
 				"value_type": null
 			},
 			"SearchObjective": {
@@ -97338,9 +97400,9 @@
 				"value_type": null
 			},
 			"SearchCursor": {
-				"id": null,
+				"id": "logic/search::SearchCursor",
 				"source": "logic/search.el",
-				"line": 899,
+				"line": 906,
 				"value_type": null
 			},
 			"SearchOptimization": {
@@ -180518,181 +180580,193 @@
 			"clock_gettime": {
 				"id": null,
 				"source": "platform/linux/libc.el",
-				"line": 134,
+				"line": 138,
 				"value_type": null
 			},
 			"closedir": {
 				"id": null,
 				"source": "platform/linux/libc.el",
-				"line": 125,
+				"line": 129,
 				"value_type": null
 			},
 			"dup": {
 				"id": null,
 				"source": "platform/linux/libc.el",
-				"line": 114,
+				"line": 117,
 				"value_type": null
 			},
 			"exit": {
 				"id": null,
 				"source": "platform/linux/libc.el",
-				"line": 130,
+				"line": 134,
 				"value_type": null
 			},
 			"exit_code": {
 				"id": null,
 				"source": "platform/linux/libc.el",
-				"line": 132,
+				"line": 136,
 				"value_type": null
 			},
 			"fclose": {
 				"id": null,
 				"source": "platform/linux/libc.el",
-				"line": 106,
+				"line": 108,
 				"value_type": null
 			},
 			"fdopen": {
 				"id": null,
 				"source": "platform/linux/libc.el",
-				"line": 113,
-				"value_type": null
-			},
-			"ferror": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 109,
-				"value_type": null
-			},
-			"fflush": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 110,
-				"value_type": null
-			},
-			"fopen": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 105,
-				"value_type": null
-			},
-			"fread": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 107,
-				"value_type": null
-			},
-			"free": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 98,
-				"value_type": null
-			},
-			"fseek": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 111,
-				"value_type": null
-			},
-			"ftell": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 112,
-				"value_type": null
-			},
-			"fwrite": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 108,
-				"value_type": null
-			},
-			"getcwd": {
-				"id": null,
-				"source": "platform/linux/libc.el",
 				"line": 116,
 				"value_type": null
 			},
-			"getenv": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 128,
-				"value_type": null
-			},
-			"getpid": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 133,
-				"value_type": null
-			},
-			"lstat_status": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 121,
-				"value_type": null
-			},
-			"malloc": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 90,
-				"value_type": null
-			},
-			"mkdir": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 117,
-				"value_type": null
-			},
-			"mkdir_status": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 122,
-				"value_type": null
-			},
-			"opendir": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 123,
-				"value_type": null
-			},
-			"readdir": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 124,
-				"value_type": null
-			},
-			"readlink": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 129,
-				"value_type": null
-			},
-			"rename": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 126,
-				"value_type": null
-			},
-			"stat": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 118,
-				"value_type": null
-			},
-			"stat_status": {
-				"id": null,
-				"source": "platform/linux/libc.el",
-				"line": 120,
-				"value_type": null
-			},
-			"strlen": {
+			"fdopen_descriptor": {
 				"id": null,
 				"source": "platform/linux/libc.el",
 				"line": 115,
 				"value_type": null
 			},
-			"unlink": {
+			"ferror": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 111,
+				"value_type": null
+			},
+			"fflush": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 112,
+				"value_type": null
+			},
+			"fopen": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 107,
+				"value_type": null
+			},
+			"fread": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 109,
+				"value_type": null
+			},
+			"free": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 100,
+				"value_type": null
+			},
+			"fseek": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 113,
+				"value_type": null
+			},
+			"fstat_status": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 125,
+				"value_type": null
+			},
+			"ftell": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 114,
+				"value_type": null
+			},
+			"fwrite": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 110,
+				"value_type": null
+			},
+			"getcwd": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 119,
+				"value_type": null
+			},
+			"getenv": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 132,
+				"value_type": null
+			},
+			"getpid": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 137,
+				"value_type": null
+			},
+			"lstat_status": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 124,
+				"value_type": null
+			},
+			"malloc": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 92,
+				"value_type": null
+			},
+			"mkdir": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 120,
+				"value_type": null
+			},
+			"mkdir_status": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 126,
+				"value_type": null
+			},
+			"opendir": {
 				"id": null,
 				"source": "platform/linux/libc.el",
 				"line": 127,
+				"value_type": null
+			},
+			"readdir": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 128,
+				"value_type": null
+			},
+			"readlink": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 133,
+				"value_type": null
+			},
+			"rename": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 130,
+				"value_type": null
+			},
+			"stat": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 121,
+				"value_type": null
+			},
+			"stat_status": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 123,
+				"value_type": null
+			},
+			"strlen": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 118,
+				"value_type": null
+			},
+			"unlink": {
+				"id": null,
+				"source": "platform/linux/libc.el",
+				"line": 131,
 				"value_type": null
 			}
 		},
@@ -181318,7 +181392,7 @@
 			"bus_signal": {
 				"id": null,
 				"source": "platform/posix/abi.el",
-				"line": 81,
+				"line": 87,
 				"value_type": null
 			},
 			"continuous_clock": {
@@ -181354,19 +181428,25 @@
 			"permit_file_flags": {
 				"id": null,
 				"source": "platform/posix/abi.el",
-				"line": 54,
+				"line": 60,
 				"value_type": null
 			},
 			"signal_block": {
 				"id": null,
 				"source": "platform/posix/abi.el",
-				"line": 59,
+				"line": 65,
 				"value_type": null
 			},
 			"signal_unblock": {
 				"id": null,
 				"source": "platform/posix/abi.el",
-				"line": 63,
+				"line": 69,
+				"value_type": null
+			},
+			"snapshot_read_flags": {
+				"id": null,
+				"source": "platform/posix/abi.el",
+				"line": 55,
 				"value_type": null
 			},
 			"stat_mode_offset": {
@@ -181396,19 +181476,19 @@
 			"wait_process_flags": {
 				"id": null,
 				"source": "platform/posix/abi.el",
-				"line": 67,
+				"line": 73,
 				"value_type": null
 			},
 			"wait_process_pid_offset": {
 				"id": null,
 				"source": "platform/posix/abi.el",
-				"line": 72,
+				"line": 78,
 				"value_type": null
 			},
 			"wait_process_status_offset": {
 				"id": null,
 				"source": "platform/posix/abi.el",
-				"line": 76,
+				"line": 82,
 				"value_type": null
 			}
 		},
@@ -181528,13 +181608,19 @@
 			"nativeInputMissing": {
 				"id": null,
 				"source": "platform/posix/read-file.el",
-				"line": 35,
+				"line": 49,
 				"value_type": null
 			},
 			"nativeOpenInput": {
 				"id": null,
 				"source": "platform/posix/read-file.el",
-				"line": 36,
+				"line": 97,
+				"value_type": null
+			},
+			"nativeOpenSnapshotInput": {
+				"id": null,
+				"source": "platform/posix/read-file.el",
+				"line": 66,
 				"value_type": null
 			}
 		},
@@ -182442,13 +182528,19 @@
 			"nativeInputMissing": {
 				"id": null,
 				"source": "platform/windows/read-file.el",
-				"line": 16,
+				"line": 18,
 				"value_type": null
 			},
 			"nativeOpenInput": {
 				"id": null,
 				"source": "platform/windows/read-file.el",
-				"line": 17,
+				"line": 20,
+				"value_type": null
+			},
+			"nativeOpenSnapshotInput": {
+				"id": null,
+				"source": "platform/windows/read-file.el",
+				"line": 19,
 				"value_type": null
 			}
 		},
@@ -183406,19 +183498,19 @@
 			"allocation_base_allocate": {
 				"id": null,
 				"source": "runtime/allocation-endpoints.el",
-				"line": 145,
+				"line": 147,
 				"value_type": null
 			},
 			"allocation_callback_allocate": {
 				"id": null,
 				"source": "runtime/allocation-endpoints.el",
-				"line": 112,
+				"line": 114,
 				"value_type": null
 			},
 			"allocation_callback_endpoint_allocate": {
 				"id": null,
 				"source": "runtime/allocation-endpoints.el",
-				"line": 153,
+				"line": 155,
 				"value_type": null
 			},
 			"allocation_callback_enter": {
@@ -183430,49 +183522,49 @@
 			"allocation_callback_leave": {
 				"id": null,
 				"source": "runtime/allocation-endpoints.el",
-				"line": 102,
+				"line": 103,
 				"value_type": null
 			},
 			"allocation_callback_release": {
 				"id": null,
 				"source": "runtime/allocation-endpoints.el",
-				"line": 123,
+				"line": 125,
 				"value_type": null
 			},
 			"allocation_endpoint_after_receipt": {
 				"id": null,
 				"source": "runtime/allocation-endpoints.el",
-				"line": 205,
+				"line": 207,
 				"value_type": null
 			},
 			"allocation_resource_find_endpoint": {
 				"id": null,
 				"source": "runtime/allocation-endpoints.el",
-				"line": 181,
+				"line": 183,
 				"value_type": null
 			},
 			"runtime_allocation_allocate": {
 				"id": null,
 				"source": "runtime/allocation-endpoints.el",
-				"line": 262,
+				"line": 264,
 				"value_type": null
 			},
 			"runtime_allocation_allocate_from": {
 				"id": null,
 				"source": "runtime/allocation-endpoints.el",
-				"line": 193,
+				"line": 195,
 				"value_type": null
 			},
 			"runtime_allocation_allocation_binding": {
 				"id": null,
 				"source": "runtime/allocation-endpoints.el",
-				"line": 266,
+				"line": 268,
 				"value_type": null
 			},
 			"runtime_allocation_base_allocate": {
 				"id": null,
 				"source": "runtime/allocation-endpoints.el",
-				"line": 258,
+				"line": 260,
 				"value_type": null
 			},
 			"runtime_allocation_callback_active": {
@@ -183484,19 +183576,19 @@
 			"runtime_allocation_callback_binding_new": {
 				"id": null,
 				"source": "runtime/allocation-endpoints.el",
-				"line": 168,
+				"line": 170,
 				"value_type": null
 			},
 			"runtime_allocation_release": {
 				"id": null,
 				"source": "runtime/allocation-endpoints.el",
-				"line": 273,
+				"line": 275,
 				"value_type": null
 			},
 			"runtime_allocation_resize": {
 				"id": null,
 				"source": "runtime/allocation-endpoints.el",
-				"line": 303,
+				"line": 305,
 				"value_type": null
 			}
 		},
@@ -183552,25 +183644,25 @@
 			"runtime_allocation_snapshot_bytes": {
 				"id": null,
 				"source": "runtime/allocation-observation.el",
-				"line": 260,
+				"line": 261,
 				"value_type": null
 			},
 			"runtime_allocation_snapshot_create": {
 				"id": null,
 				"source": "runtime/allocation-observation.el",
-				"line": 240,
+				"line": 241,
 				"value_type": null
 			},
 			"runtime_allocation_snapshot_read": {
 				"id": null,
 				"source": "runtime/allocation-observation.el",
-				"line": 248,
+				"line": 249,
 				"value_type": null
 			},
 			"runtime_allocation_snapshot_release": {
 				"id": null,
 				"source": "runtime/allocation-observation.el",
-				"line": 271,
+				"line": 272,
 				"value_type": null
 			}
 		},
@@ -183578,7 +183670,7 @@
 			"get_block_resize": {
 				"id": null,
 				"source": "runtime/allocation-provider-receipts.el",
-				"line": 131,
+				"line": 132,
 				"value_type": null
 			},
 			"provider_receipt_payload_binding": {
@@ -191686,25 +191778,25 @@
 			"ShellCallCursor": {
 				"id": null,
 				"source": "shell/grammar.el",
-				"line": 61,
+				"line": 67,
 				"value_type": null
 			},
 			"ShellTerm": {
 				"id": null,
 				"source": "shell/grammar.el",
-				"line": 11,
+				"line": 12,
 				"value_type": null
 			},
 			"shellExternalTerms": {
 				"id": null,
 				"source": "shell/grammar.el",
-				"line": 24,
+				"line": 25,
 				"value_type": null
 			},
 			"shellStatementKind": {
 				"id": null,
 				"source": "shell/grammar.el",
-				"line": 91,
+				"line": 98,
 				"value_type": null
 			}
 		},
@@ -191994,7 +192086,7 @@
 			"shell": {
 				"id": "shell/syntax::shell",
 				"source": "shell/syntax.el",
-				"line": 235,
+				"line": 218,
 				"value_type": null
 			},
 			"shellOutputText": {
@@ -192006,7 +192098,7 @@
 			"start": {
 				"id": null,
 				"source": "shell/syntax.el",
-				"line": 246,
+				"line": 229,
 				"value_type": null
 			},
 			"startShell": {
@@ -192047,22 +192139,16 @@
 			}
 		},
 		"shell/input-grammar": {
-			"PreparedShellBinding": {
-				"id": null,
-				"source": "shell/input-grammar.el",
-				"line": 13,
-				"value_type": null
-			},
 			"PreparedShellBindings": {
 				"id": null,
 				"source": "shell/input-grammar.el",
-				"line": 56,
+				"line": 11,
 				"value_type": null
 			},
 			"ShellInputRule": {
 				"id": null,
 				"source": "shell/input-grammar.el",
-				"line": 145,
+				"line": 82,
 				"value_type": null
 			}
 		},
@@ -192169,10 +192255,16 @@
 				"line": 38,
 				"value_type": null
 			},
+			"shellBoundExpression": {
+				"id": null,
+				"source": "shell/neutral.el",
+				"line": 132,
+				"value_type": null
+			},
 			"shellCommandShape": {
 				"id": null,
 				"source": "shell/neutral.el",
-				"line": 123,
+				"line": 136,
 				"value_type": null
 			},
 			"shellGroup": {
@@ -192199,16 +192291,10 @@
 				"line": 46,
 				"value_type": null
 			},
-			"shellNamedWord": {
-				"id": null,
-				"source": "shell/neutral.el",
-				"line": 117,
-				"value_type": null
-			},
 			"shellPipeline": {
 				"id": null,
 				"source": "shell/neutral.el",
-				"line": 104,
+				"line": 114,
 				"value_type": null
 			},
 			"shellRequired": {
@@ -192217,10 +192303,16 @@
 				"line": 26,
 				"value_type": null
 			},
+			"shellStageStart": {
+				"id": null,
+				"source": "shell/neutral.el",
+				"line": 92,
+				"value_type": null
+			},
 			"shellStatementEnd": {
 				"id": null,
 				"source": "shell/neutral.el",
-				"line": 87,
+				"line": 97,
 				"value_type": null
 			},
 			"shellToken": {
@@ -192376,7 +192468,7 @@
 			"shellSourceTokens": {
 				"id": null,
 				"source": "shell/source.el",
-				"line": 24,
+				"line": 25,
 				"value_type": null
 			}
 		},
@@ -192418,13 +192510,13 @@
 			"shell": {
 				"id": "shell/syntax::shell",
 				"source": "shell/syntax.el",
-				"line": 235,
+				"line": 218,
 				"value_type": null
 			},
 			"start": {
 				"id": null,
 				"source": "shell/syntax.el",
-				"line": 246,
+				"line": 229,
 				"value_type": null
 			}
 		},
@@ -195672,37 +195764,37 @@
 			"FormatDependencies": {
 				"id": null,
 				"source": "tools/formatter/dependencies.el",
-				"line": 14,
+				"line": 15,
 				"value_type": null
 			},
 			"dependencies_begin": {
 				"id": null,
 				"source": "tools/formatter/dependencies.el",
-				"line": 95,
+				"line": 104,
 				"value_type": null
 			},
 			"dependencies_capture": {
 				"id": null,
 				"source": "tools/formatter/dependencies.el",
-				"line": 50,
+				"line": 51,
 				"value_type": null
 			},
 			"dependencies_current": {
 				"id": null,
 				"source": "tools/formatter/dependencies.el",
-				"line": 66,
+				"line": 67,
 				"value_type": null
 			},
 			"dependencies_merge": {
 				"id": null,
 				"source": "tools/formatter/dependencies.el",
-				"line": 43,
+				"line": 44,
 				"value_type": null
 			},
 			"dependency_hash_valid": {
 				"id": null,
 				"source": "tools/formatter/dependencies.el",
-				"line": 21,
+				"line": 22,
 				"value_type": null
 			}
 		},
@@ -195786,7 +195878,7 @@
 			"FormatDependencies": {
 				"id": null,
 				"source": "tools/formatter/dependencies.el",
-				"line": 14,
+				"line": 15,
 				"value_type": null
 			},
 			"FormatFailure": {
@@ -195798,7 +195890,7 @@
 			"FormatOptions": {
 				"id": null,
 				"source": "tools/formatter/operations.el",
-				"line": 26,
+				"line": 29,
 				"value_type": null
 			},
 			"FormatProblem": {
@@ -195816,19 +195908,19 @@
 			"RemovableSemicolon": {
 				"id": null,
 				"source": "tools/formatter/scan.el",
-				"line": 16,
+				"line": 17,
 				"value_type": null
 			},
 			"ScanResult": {
 				"id": null,
 				"source": "tools/formatter/scan.el",
-				"line": 37,
+				"line": 38,
 				"value_type": null
 			},
 			"StyleIssue": {
 				"id": null,
 				"source": "tools/formatter/style.el",
-				"line": 10,
+				"line": 11,
 				"value_type": null
 			},
 			"file_problems": {
@@ -195852,7 +195944,7 @@
 			"format_paths": {
 				"id": null,
 				"source": "tools/formatter/operations.el",
-				"line": 231,
+				"line": 244,
 				"value_type": null
 			},
 			"format_redundancy_result": {
@@ -195894,19 +195986,19 @@
 			"repair_style": {
 				"id": null,
 				"source": "tools/formatter/style.el",
-				"line": 1336,
+				"line": 1339,
 				"value_type": null
 			},
 			"scan": {
 				"id": "tools/formatter/scan::scan",
 				"source": "tools/formatter/scan.el",
-				"line": 311,
+				"line": 312,
 				"value_type": null
 			},
 			"scan_style": {
 				"id": null,
 				"source": "tools/formatter/style.el",
-				"line": 323,
+				"line": 326,
 				"value_type": null
 			},
 			"unsafe_analyze": {
@@ -195992,13 +196084,13 @@
 			"FormatOptions": {
 				"id": null,
 				"source": "tools/formatter/operations.el",
-				"line": 26,
+				"line": 29,
 				"value_type": null
 			},
 			"format_paths": {
 				"id": null,
 				"source": "tools/formatter/operations.el",
-				"line": 231,
+				"line": 244,
 				"value_type": null
 			}
 		},
@@ -196082,73 +196174,73 @@
 			"ElfAttributeProblem": {
 				"id": null,
 				"source": "tools/formatter/scan.el",
-				"line": 28,
+				"line": 29,
 				"value_type": null
 			},
 			"RemovableSemicolon": {
 				"id": null,
 				"source": "tools/formatter/scan.el",
-				"line": 16,
+				"line": 17,
 				"value_type": null
 			},
 			"ScanResult": {
 				"id": null,
 				"source": "tools/formatter/scan.el",
-				"line": 37,
+				"line": 38,
 				"value_type": null
 			},
 			"block_comment_end": {
 				"id": null,
 				"source": "tools/formatter/scan.el",
-				"line": 125,
+				"line": 126,
 				"value_type": null
 			},
 			"decode_literal": {
 				"id": null,
 				"source": "tools/formatter/scan.el",
-				"line": 223,
+				"line": 224,
 				"value_type": null
 			},
 			"is_line_break": {
 				"id": null,
 				"source": "tools/formatter/scan.el",
-				"line": 75,
+				"line": 76,
 				"value_type": null
 			},
 			"line_offset": {
 				"id": null,
 				"source": "tools/formatter/scan.el",
-				"line": 78,
+				"line": 79,
 				"value_type": null
 			},
 			"scan": {
 				"id": "tools/formatter/scan::scan",
 				"source": "tools/formatter/scan.el",
-				"line": 311,
+				"line": 312,
 				"value_type": null
 			},
 			"scan_name_char": {
 				"id": null,
 				"source": "tools/formatter/scan.el",
-				"line": 54,
+				"line": 55,
 				"value_type": null
 			},
 			"skip_blank": {
 				"id": null,
 				"source": "tools/formatter/scan.el",
-				"line": 65,
+				"line": 66,
 				"value_type": null
 			},
 			"skip_spaces": {
 				"id": null,
 				"source": "tools/formatter/scan.el",
-				"line": 58,
+				"line": 59,
 				"value_type": null
 			},
 			"string_end": {
 				"id": null,
 				"source": "tools/formatter/scan.el",
-				"line": 164,
+				"line": 165,
 				"value_type": null
 			}
 		},
@@ -196200,49 +196292,49 @@
 			"StyleIssue": {
 				"id": null,
 				"source": "tools/formatter/style.el",
-				"line": 10,
+				"line": 11,
 				"value_type": null
 			},
 			"StyleToken": {
 				"id": null,
 				"source": "tools/formatter/style.el",
-				"line": 22,
+				"line": 23,
 				"value_type": null
 			},
 			"repair_style": {
 				"id": null,
 				"source": "tools/formatter/style.el",
-				"line": 1336,
+				"line": 1339,
 				"value_type": null
 			},
 			"scan_style": {
 				"id": null,
 				"source": "tools/formatter/style.el",
-				"line": 323,
+				"line": 326,
 				"value_type": null
 			},
 			"style_literal": {
 				"id": null,
 				"source": "tools/formatter/style.el",
-				"line": 446,
+				"line": 449,
 				"value_type": null
 			},
 			"style_match": {
 				"id": null,
 				"source": "tools/formatter/style.el",
-				"line": 109,
+				"line": 110,
 				"value_type": null
 			},
 			"style_simple_name": {
 				"id": null,
 				"source": "tools/formatter/style.el",
-				"line": 452,
+				"line": 455,
 				"value_type": null
 			},
 			"style_tokens": {
 				"id": null,
 				"source": "tools/formatter/style.el",
-				"line": 49,
+				"line": 50,
 				"value_type": null
 			}
 		},
@@ -199381,7 +199473,7 @@
 			"clock_gettime": {
 				"id": null,
 				"source": "platform/linux/libc.el",
-				"line": 134,
+				"line": 138,
 				"value_type": null
 			},
 			"errno_pointer": {
@@ -201899,7 +201991,7 @@
 		{
 			"name": "ConditionCache",
 			"source": "compiler/cache/condition-cache.el",
-			"line": 20,
+			"line": 21,
 			"signature": "class ConditionCache",
 			"id": null,
 			"initializer": null
@@ -204243,7 +204335,7 @@
 		{
 			"name": "MemberReadChoice",
 			"source": "compiler/expressions/member.el",
-			"line": 30,
+			"line": 31,
 			"signature": "class MemberReadChoice",
 			"id": null,
 			"initializer": null
@@ -204291,7 +204383,7 @@
 		{
 			"name": "DependencyReceipt",
 			"source": "compiler/inputs/dependency-manifest.el",
-			"line": 16,
+			"line": 20,
 			"signature": "class DependencyReceipt",
 			"id": null,
 			"initializer": null
@@ -204603,7 +204695,7 @@
 		{
 			"name": "CompilationOperation",
 			"source": "compiler/operations.el",
-			"line": 55,
+			"line": 56,
 			"signature": "enum CompilationOperation",
 			"id": null,
 			"initializer": null
@@ -204611,7 +204703,7 @@
 		{
 			"name": "CompilationOutput",
 			"source": "compiler/operations.el",
-			"line": 56,
+			"line": 57,
 			"signature": "enum CompilationOutput",
 			"id": null,
 			"initializer": null
@@ -204619,7 +204711,7 @@
 		{
 			"name": "CompilationOptions",
 			"source": "compiler/operations.el",
-			"line": 59,
+			"line": 60,
 			"signature": "class CompilationOptions",
 			"id": null,
 			"initializer": null
@@ -204627,7 +204719,7 @@
 		{
 			"name": "CompilationFailure",
 			"source": "compiler/operations.el",
-			"line": 107,
+			"line": 108,
 			"signature": "class CompilationFailure",
 			"id": null,
 			"initializer": null
@@ -204635,7 +204727,7 @@
 		{
 			"name": "PreparedCompilation",
 			"source": "compiler/operations.el",
-			"line": 159,
+			"line": 160,
 			"signature": "class PreparedCompilation",
 			"id": null,
 			"initializer": null
@@ -204643,7 +204735,7 @@
 		{
 			"name": "FrontendCompilation",
 			"source": "compiler/operations.el",
-			"line": 207,
+			"line": 208,
 			"signature": "class FrontendCompilation",
 			"id": null,
 			"initializer": null
@@ -204995,7 +205087,7 @@
 		{
 			"name": "VomePlan",
 			"source": "compiler/ownership/temporary.el",
-			"line": 435,
+			"line": 439,
 			"signature": "class VomePlan",
 			"id": null,
 			"initializer": null
@@ -205003,7 +205095,7 @@
 		{
 			"name": "VomeFrameSlots",
 			"source": "compiler/ownership/temporary.el",
-			"line": 559,
+			"line": 563,
 			"signature": "class VomeFrameSlots",
 			"id": null,
 			"initializer": null
@@ -205035,7 +205127,7 @@
 		{
 			"name": "TemplateMode",
 			"source": "compiler/parser/lexer.el",
-			"line": 297,
+			"line": 298,
 			"signature": "enum TemplateMode",
 			"id": null,
 			"initializer": null
@@ -205043,7 +205135,7 @@
 		{
 			"name": "TemplateFrame",
 			"source": "compiler/parser/lexer.el",
-			"line": 300,
+			"line": 301,
 			"signature": "class TemplateFrame",
 			"id": null,
 			"initializer": null
@@ -205051,7 +205143,7 @@
 		{
 			"name": "LexicalRegion",
 			"source": "compiler/parser/lexer.el",
-			"line": 473,
+			"line": 474,
 			"signature": "class LexicalRegion",
 			"id": null,
 			"initializer": null
@@ -205067,7 +205159,7 @@
 		{
 			"name": "CallableParseState",
 			"source": "compiler/parser/parser.el",
-			"line": 523,
+			"line": 524,
 			"signature": "class CallableParseState",
 			"id": null,
 			"initializer": null
@@ -205187,7 +205279,7 @@
 		{
 			"name": "ConditionalFrame",
 			"source": "compiler/preprocessing/preprocessing.el",
-			"line": 10,
+			"line": 11,
 			"signature": "class ConditionalFrame",
 			"id": null,
 			"initializer": null
@@ -206947,7 +207039,7 @@
 		{
 			"name": "SyntaxModelLocal",
 			"source": "compiler/proof/syntax-model.el",
-			"line": 25,
+			"line": 26,
 			"signature": "class SyntaxModelLocal",
 			"id": null,
 			"initializer": null
@@ -206955,7 +207047,7 @@
 		{
 			"name": "NativeSyntaxModel",
 			"source": "compiler/proof/syntax-model.el",
-			"line": 32,
+			"line": 33,
 			"signature": "class NativeSyntaxModel",
 			"id": null,
 			"initializer": null
@@ -206971,7 +207063,7 @@
 		{
 			"name": "ProofTransformFrame",
 			"source": "compiler/proof/term.el",
-			"line": 359,
+			"line": 360,
 			"signature": "class ProofTransformFrame",
 			"id": null,
 			"initializer": null
@@ -209611,7 +209703,7 @@
 		{
 			"name": "SyntaxSurfaceEntry",
 			"source": "compiler/syntax/syntax-surface.el",
-			"line": 7,
+			"line": 8,
 			"signature": "class SyntaxSurfaceEntry",
 			"id": null,
 			"initializer": null
@@ -209619,7 +209711,7 @@
 		{
 			"name": "SyntaxSurface",
 			"source": "compiler/syntax/syntax-surface.el",
-			"line": 15,
+			"line": 16,
 			"signature": "class SyntaxSurface",
 			"id": null,
 			"initializer": null
@@ -219355,7 +219447,7 @@
 		{
 			"name": "NativeFileReaderSource",
 			"source": "filesystem/native-reader.el",
-			"line": 31,
+			"line": 33,
 			"signature": "class NativeFileReaderSource extends FileReaderSource",
 			"id": null,
 			"initializer": null
@@ -221875,7 +221967,7 @@
 		{
 			"name": "IrAbiFlow",
 			"source": "intermediate-representation/abi/verify.el",
-			"line": 415,
+			"line": 420,
 			"signature": "class IrAbiFlow",
 			"id": null,
 			"initializer": null
@@ -221883,7 +221975,7 @@
 		{
 			"name": "IrAbiVerificationContext",
 			"source": "intermediate-representation/abi/verify.el",
-			"line": 622,
+			"line": 627,
 			"signature": "class IrAbiVerificationContext",
 			"id": null,
 			"initializer": null
@@ -222961,6 +223053,14 @@
 			"initializer": null
 		},
 		{
+			"name": "ImportFacade",
+			"source": "language/modules/loader.el",
+			"line": 315,
+			"signature": "class ImportFacade",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "ResourceInitializer",
 			"source": "language/modules/resource-loader.el",
 			"line": 76,
@@ -223323,7 +223423,7 @@
 		{
 			"name": "ToolSourceModule",
 			"source": "language/modules/source/source.el",
-			"line": 616,
+			"line": 617,
 			"signature": "class ToolSourceModule",
 			"id": null,
 			"initializer": null
@@ -223331,7 +223431,7 @@
 		{
 			"name": "ToolSourceGraph",
 			"source": "language/modules/source/source.el",
-			"line": 642,
+			"line": 643,
 			"signature": "class ToolSourceGraph",
 			"id": null,
 			"initializer": null
@@ -223803,7 +223903,7 @@
 		{
 			"name": "SearchInterrupted",
 			"source": "logic/control.el",
-			"line": 68,
+			"line": 71,
 			"signature": "class SearchInterrupted",
 			"id": "logic/control::SearchInterrupted",
 			"initializer": null
@@ -223811,7 +223911,7 @@
 		{
 			"name": "SearchBudget",
 			"source": "logic/control.el",
-			"line": 75,
+			"line": 85,
 			"signature": "class SearchBudget",
 			"id": null,
 			"initializer": null
@@ -224683,9 +224783,9 @@
 		{
 			"name": "SearchCursor",
 			"source": "logic/search.el",
-			"line": 899,
+			"line": 906,
 			"signature": "class SearchCursor",
-			"id": null,
+			"id": "logic/search::SearchCursor",
 			"initializer": null
 		},
 		{
@@ -231867,7 +231967,7 @@
 		{
 			"name": "DebugWord",
 			"source": "platform/linux/libc.el",
-			"line": 73,
+			"line": 75,
 			"signature": "class DebugWord",
 			"id": null,
 			"initializer": null
@@ -232051,8 +232151,16 @@
 		{
 			"name": "FileInt",
 			"source": "platform/posix/read-file.el",
-			"line": 13,
+			"line": 16,
 			"signature": "class FileInt",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "FileMode",
+			"source": "platform/posix/read-file.el",
+			"line": 17,
+			"signature": "class FileMode",
 			"id": null,
 			"initializer": null
 		},
@@ -233171,7 +233279,7 @@
 		{
 			"name": "ShellTerm",
 			"source": "shell/grammar.el",
-			"line": 11,
+			"line": 12,
 			"signature": "class ShellTerm",
 			"id": null,
 			"initializer": null
@@ -233179,23 +233287,15 @@
 		{
 			"name": "ShellCallCursor",
 			"source": "shell/grammar.el",
-			"line": 61,
+			"line": 67,
 			"signature": "class ShellCallCursor",
-			"id": null,
-			"initializer": null
-		},
-		{
-			"name": "PreparedShellBinding",
-			"source": "shell/input-grammar.el",
-			"line": 13,
-			"signature": "class PreparedShellBinding",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "PreparedShellBindings",
 			"source": "shell/input-grammar.el",
-			"line": 56,
+			"line": 11,
 			"signature": "class PreparedShellBindings",
 			"id": null,
 			"initializer": null
@@ -233203,7 +233303,7 @@
 		{
 			"name": "ShellInputRule",
 			"source": "shell/input-grammar.el",
-			"line": 145,
+			"line": 82,
 			"signature": "class ShellInputRule extends SourceInputRule",
 			"id": null,
 			"initializer": null
@@ -234491,7 +234591,7 @@
 		{
 			"name": "FormatDependencies",
 			"source": "tools/formatter/dependencies.el",
-			"line": 14,
+			"line": 15,
 			"signature": "class FormatDependencies",
 			"id": null,
 			"initializer": null
@@ -234515,7 +234615,7 @@
 		{
 			"name": "FormatOptions",
 			"source": "tools/formatter/operations.el",
-			"line": 26,
+			"line": 29,
 			"signature": "class FormatOptions",
 			"id": null,
 			"initializer": null
@@ -234523,7 +234623,7 @@
 		{
 			"name": "RunTally",
 			"source": "tools/formatter/operations.el",
-			"line": 48,
+			"line": 51,
 			"signature": "class RunTally",
 			"id": null,
 			"initializer": null
@@ -234531,7 +234631,7 @@
 		{
 			"name": "DirectoryPlan",
 			"source": "tools/formatter/operations.el",
-			"line": 116,
+			"line": 119,
 			"signature": "class DirectoryPlan",
 			"id": null,
 			"initializer": null
@@ -234571,7 +234671,7 @@
 		{
 			"name": "RemovableSemicolon",
 			"source": "tools/formatter/scan.el",
-			"line": 16,
+			"line": 17,
 			"signature": "class RemovableSemicolon",
 			"id": null,
 			"initializer": null
@@ -234579,7 +234679,7 @@
 		{
 			"name": "ElfAttributeProblem",
 			"source": "tools/formatter/scan.el",
-			"line": 28,
+			"line": 29,
 			"signature": "class ElfAttributeProblem",
 			"id": null,
 			"initializer": null
@@ -234587,7 +234687,7 @@
 		{
 			"name": "ScanResult",
 			"source": "tools/formatter/scan.el",
-			"line": 37,
+			"line": 38,
 			"signature": "class ScanResult",
 			"id": null,
 			"initializer": null
@@ -234611,7 +234711,7 @@
 		{
 			"name": "StyleIssue",
 			"source": "tools/formatter/style.el",
-			"line": 10,
+			"line": 11,
 			"signature": "class StyleIssue",
 			"id": null,
 			"initializer": null
@@ -234619,7 +234719,7 @@
 		{
 			"name": "StyleToken",
 			"source": "tools/formatter/style.el",
-			"line": 22,
+			"line": 23,
 			"signature": "class StyleToken",
 			"id": null,
 			"initializer": null
@@ -234627,7 +234727,7 @@
 		{
 			"name": "StyleLineKind",
 			"source": "tools/formatter/style.el",
-			"line": 29,
+			"line": 30,
 			"signature": "enum StyleLineKind",
 			"id": null,
 			"initializer": null
@@ -234635,7 +234735,7 @@
 		{
 			"name": "StyleField",
 			"source": "tools/formatter/style.el",
-			"line": 31,
+			"line": 32,
 			"signature": "class StyleField",
 			"id": null,
 			"initializer": null
@@ -234643,7 +234743,7 @@
 		{
 			"name": "StyleReturn",
 			"source": "tools/formatter/style.el",
-			"line": 748,
+			"line": 751,
 			"signature": "class StyleReturn",
 			"id": null,
 			"initializer": null
@@ -236094,6 +236194,21 @@
 			"Eq()": "type",
 			"Quot()": "type"
 		},
+		"logic/control.el": {
+			"SearchSemantics.kind": "Text",
+			"SearchSemantics.finite": "Bool",
+			"SearchSemantics.ordered": "Bool",
+			"SearchSemantics.partial": "Bool",
+			"SearchStrategy.kind": "Text",
+			"SearchStrategy.priority": "SearchPriority",
+			"SearchStrategy.branchPriority": "SearchPriority",
+			"SearchStrategy.tie": "Text",
+			"SearchStrategy.beamWidth": "Number",
+			"SearchStrategy.maxAnswers": "Number",
+			"SearchStrategy.with()": "SearchStrategy",
+			"SearchInterrupted.reason": "Text",
+			"SearchBudget.used": "Number"
+		},
 		"logic/search.el": {
 			"ClauseAlternatives.matches()": "Bool",
 			"ClauseAlternatives.count": "Number",
@@ -236951,7 +237066,7 @@
 			"anchor": "api-df976d47c60f3dbf87f5"
 		}
 	],
-	"source_digest": "ae017526b150d11c4e6d062bd0505342d373436ef36641157490fdc8582a428c",
+	"source_digest": "4c17da0bacd59aa4d3ef9fd69d283898087cfab870fd6de124e7ddbc04afaae0",
 	"files": [
 		{
 			"path": "collections/arrays/dynamic.el",
@@ -237043,7 +237158,7 @@
 		},
 		{
 			"path": "compiler/proof/term.el",
-			"sha256": "3255845e50ad8522394bc63d17d65a36c457a1f21597397e22cc96e5e5759167"
+			"sha256": "49727e87b0841dc706460bc7804bffd2af09dc9e54c4487a281d0e8871e5babb"
 		},
 		{
 			"path": "compiler/proof/work.el",
@@ -237131,7 +237246,7 @@
 		},
 		{
 			"path": "database/schema.el",
-			"sha256": "4f7655752696064bee7014e5a965b2229e7808ee3862d91a06cac8607e8b0afb"
+			"sha256": "8566ec6b7afb2be143b7d5820017b8d1f03ee2578733fddb3669f78456ef6059"
 		},
 		{
 			"path": "database/source-syntax.el",
@@ -237139,7 +237254,7 @@
 		},
 		{
 			"path": "database/table.el",
-			"sha256": "75aa1220342ba17cbaac267d6c60f8686d7910de7c43bdff6d68ded55866fd26"
+			"sha256": "8c8fbb7eb791960d5a1732248f3f1a962fc16ea8af767fcb7b793e6774959238"
 		},
 		{
 			"path": "database/typed-aggregate.el",
@@ -237287,7 +237402,7 @@
 		},
 		{
 			"path": "graphics/plots/index.el",
-			"sha256": "16460049ff959fd573a60329fa89fd2717aca85d8ba058eb3df0ccfef5bd6008"
+			"sha256": "5f1527fc9b3a0514e01e4ae2beee59797eabd503668e48519a7b9f36b99ac70e"
 		},
 		{
 			"path": "graphics/plots/scene.el",
@@ -237314,16 +237429,20 @@
 			"sha256": "9860a8d9327a57b53d6e0fca3712f5d50fe44188f77d4b9f627a87992caffdc7"
 		},
 		{
+			"path": "language/value-operations.el",
+			"sha256": "d518750af65570da7040610fa726ff7b5f62cac3f40079d54037c5a70ec7b0bd"
+		},
+		{
 			"path": "language/values.el",
 			"sha256": "ecb1fa44e7d702dc66a015f40adc08503d4c571747c54e1ff5906ce4b25ac0fa"
 		},
 		{
 			"path": "logic/control.el",
-			"sha256": "68ced17ab1ab0d569f9acd3eef74be1d89c2bb55f856286902fc84450a4e4539"
+			"sha256": "934b5420a3d39535dd1d2cf6fada4b885dae289cf19d019bd88ee3263c73f034"
 		},
 		{
 			"path": "logic/goal.el",
-			"sha256": "c03434d04b81fd420567e5bc646f23104337bb16df5d122fcc21f93c5f427684"
+			"sha256": "2f1eec9c72c258c9a30becde990e963531e31d147ee1fb0d51cc1a4d5e708755"
 		},
 		{
 			"path": "logic/proof-conflict.el",
@@ -237331,7 +237450,7 @@
 		},
 		{
 			"path": "logic/search.el",
-			"sha256": "e6b4151fcf9de1bc4e89d10b8cdd0c4cd09ec41fbdbfd7a0ee5ba17e9b66c3c0"
+			"sha256": "8000dbeefdd815c605ccbabd29deed988583bff03d1e0131c9e9281ce1bb1ef5"
 		},
 		{
 			"path": "logic/surface.el",
@@ -237419,11 +237538,11 @@
 		},
 		{
 			"path": "multimedia/audio/linux-output.el",
-			"sha256": "3faa2cf6453c63b1330be4a32f55fc2ba95793ed000bc4cfbeec639d719130d5"
+			"sha256": "bb1a661989acad0bc695e6ee2dace999e59ef45a244f8260bb6fbe79d14cc0cf"
 		},
 		{
 			"path": "multimedia/audio/macos-output.el",
-			"sha256": "f4644a828b742be58619e809a0e89ac1b5468f90c8fedf450691272e2a52bc9d"
+			"sha256": "ed5e310726effc0011e6ce945b74938765462a27fce830c5568ab2248c5c8efb"
 		},
 		{
 			"path": "multimedia/audio/music.el",
@@ -237431,15 +237550,15 @@
 		},
 		{
 			"path": "multimedia/audio/wav.el",
-			"sha256": "fb28bd9d81d170758df6004f7ac732677a2f2e101f0b641b4a78551f1cbdae7f"
+			"sha256": "c6381f529f40f9b67dea27fbd67b8cfe9e12ba16fcaab9cd5417e865b3b6bec4"
 		},
 		{
 			"path": "multimedia/audio/windows-output.el",
-			"sha256": "040d9378dedcba8f419e6f854daeb050189f6b12847e88498c48527b5324efe3"
+			"sha256": "3e0982084320bdc54178ff39aaec735e9a275606ac20f5e839f78105eb1f8532"
 		},
 		{
 			"path": "multimedia/capture/binary.el",
-			"sha256": "126750ed6e8795ba5981075321838b8cf817d3d5b637af05df640a4b195e2211"
+			"sha256": "a442d0044bdaab11ba7f2f60785b2f8ba2242597917b3c2552eeb8fda514b1e3"
 		},
 		{
 			"path": "multimedia/capture/model.el",
@@ -237451,7 +237570,7 @@
 		},
 		{
 			"path": "network/errors.el",
-			"sha256": "40dd9092748b4a5e3b4ffb83b820f08810361912dd7161b938c7df09a3447795"
+			"sha256": "5ee74a6ec9094983436e0a597dc0ea9315483221ba42a8a4921869ea0e21d677"
 		},
 		{
 			"path": "network/http/index.el",
@@ -237459,11 +237578,11 @@
 		},
 		{
 			"path": "network/http/model.el",
-			"sha256": "b0c39fa92fdfc05e0832bc82881aa90c22d265aecb344577bf26decd2e19eae8"
+			"sha256": "9c1bad945703c5055d01535883f87409134985e5f6028a36b3f38c40d330e27c"
 		},
 		{
 			"path": "network/http/wire.el",
-			"sha256": "f737b6c0abd5a0398f2bffa098955efae49ba03abecf550d01c7047f1e33360a"
+			"sha256": "7f9be1537f01b6f85fefe0be17098c265cc2fa361d293b45d4628e308934512d"
 		},
 		{
 			"path": "network/parsers.el",
@@ -237579,7 +237698,7 @@
 		},
 		{
 			"path": "numerical-computing/arrays.el",
-			"sha256": "6939ddf617ec3b221f4d12c0bb94630e5ed802b88e4adbb57698eff8410ba36f"
+			"sha256": "38d51398ba63f8b90713395e2f90feb4a67438a9e8c5c143527fcbc506c01f25"
 		},
 		{
 			"path": "numerical-computing/device-tensor.el",
@@ -237591,7 +237710,7 @@
 		},
 		{
 			"path": "numerical-computing/diagnostics.el",
-			"sha256": "62d3d3993bd11c67c7d893bb6df1af26ce970c1fc566a65e3339d1a4a3b479df"
+			"sha256": "e840fe6657ffb0b776f29fb5810a8f47e80edf258f27e9d94317a28ab9404890"
 		},
 		{
 			"path": "numerical-computing/errors.el",
@@ -237611,7 +237730,7 @@
 		},
 		{
 			"path": "numerical-computing/tensor.el",
-			"sha256": "8527287103ee34682491ed70e400420134fb95bb6e563b281dbfd56dc7ea4519"
+			"sha256": "c9d217d8302e41dbfba34366a9d519ca83e78f9e5f15f2143c30a35dba6f3a0f"
 		},
 		{
 			"path": "operating-system/arguments/index.el",
@@ -237631,7 +237750,7 @@
 		},
 		{
 			"path": "optimization/context.el",
-			"sha256": "472129485ebae6abea3914c237e2aeb7111c923be7efdf4071ac55fab20c7f52"
+			"sha256": "dd6091578105f802fcbaa4dd80bd1eefd9e0467983980d2fc5c16128db62ad79"
 		},
 		{
 			"path": "parsing/tokens.el",
@@ -237651,7 +237770,7 @@
 		},
 		{
 			"path": "platform/linux/libc.el",
-			"sha256": "b23fc579caef747fc15a544b6cdb52199d85243708b2ab3cd6dd570cc45fde1f"
+			"sha256": "6a823d55befefacb9b201669931d55cec58eeadc1220394f75312d79e386649e"
 		},
 		{
 			"path": "platform/machine/float-codec.el",
@@ -237663,7 +237782,7 @@
 		},
 		{
 			"path": "queries/source-syntax.el",
-			"sha256": "0700934dbcc89a47050f23eb1af20b9cf8a4fc8cb62ffb0aba69b654fb1a0719"
+			"sha256": "5153fabb43d9ce2f12b316142d64e5e16cf392a7ddc20a173658b7a4731de2ba"
 		},
 		{
 			"path": "random/bits.el",
@@ -237691,7 +237810,7 @@
 		},
 		{
 			"path": "shell/syntax.el",
-			"sha256": "71c9fc9d2bc46c02c96d12cc0040b6fc56101c7b3074c43d67baee20542cfe96"
+			"sha256": "88acf6d351d423fb73bdd93e767797d0e23b4652a8c964dd9d15f3a0d9ea83dd"
 		},
 		{
 			"path": "streams/buffer.el",
@@ -237723,7 +237842,7 @@
 		},
 		{
 			"path": "text/patterns/parser.el",
-			"sha256": "84bb3d0289063f3467e710ed9338f19a667ff86038baf07e661d1d5ba5011929"
+			"sha256": "3874612996aa26feb4d6d534232d5238f9751aa10d2722fd481ff7121e38aa04"
 		},
 		{
 			"path": "text/patterns/parsers.el",
@@ -237775,11 +237894,11 @@
 		},
 		{
 			"path": "tools/formatter/scan.el",
-			"sha256": "83685032c64384fe9e5cb624ade70812af91527b945cce5161cab8d6a1ce6b7f"
+			"sha256": "a04b320b75a58f0b15e5af8a74a7dde4e4f0cb708fbb6082ff742553defd19d0"
 		},
 		{
 			"path": "tools/testing/check.el",
-			"sha256": "40487a4ab6d5f25cd917725dfc84d50fb5bc8be632613ecb102be23240b1b0c1"
+			"sha256": "c74715bf4118f83fe90c2e6e3fe66cb55ac652bf5d16384788a70c309f610c4b"
 		},
 		{
 			"path": "tools/testing/compiler.el",
@@ -237795,39 +237914,39 @@
 		},
 		{
 			"path": "tools/testing/registry.el",
-			"sha256": "56409de09e4e992c16bd3f1548e5271079840ee2bffa8a6f1a54987d5e7b216d"
+			"sha256": "4a59cb6b612c1b76729c5a9f184749275429cc5aa2532c62aa3717502210bd7f"
 		},
 		{
 			"path": "user-interface/drawing.el",
-			"sha256": "52cca7ab6150bf70d190cc7faf911f0660dcdf10d2cb42208f152064ce3f55fd"
+			"sha256": "ecd4d2eb4b859efa1b16c1d558e2c1e5fb9e04b3ca363fac158d4744dfb8fae3"
 		},
 		{
 			"path": "user-interface/grid-view.el",
-			"sha256": "3801c44eddb9653846024a97d010d35cfa5f3065ec1d398a01ab529bce2f2a7c"
+			"sha256": "3d02f633132cde5c803dc18d24ac0f691c2c8355ff7d3b9d736277b33bbbfac9"
 		},
 		{
 			"path": "user-interface/model.el",
-			"sha256": "356c0410127c38914bbb0723148077a0a09f47ecf7055484d3f360387e3afd1b"
+			"sha256": "b010301adf369eb7313805b1d63d0767f5609e08120cec0639c9a39ea6408c37"
 		},
 		{
 			"path": "user-interface/platform/linux/window.el",
-			"sha256": "9747d64286e12e67752425e8657d74fe4f6a3963e13e1ae07f8ef9a4addf92b8"
+			"sha256": "fa82cb160cb381f0e9a0439dd2906320c983645a414e0faf22272b272e54f57d"
 		},
 		{
 			"path": "user-interface/platform/macos/window.el",
-			"sha256": "8d1a021d08066abbf198cdb5f3725665c322413f4e0aaa0e651d0e820a515408"
+			"sha256": "e21b69d10a21db9543b33804ae040fed72b4848423c0fb676b3177a63f3889bb"
 		},
 		{
 			"path": "user-interface/platform/windows/window.el",
-			"sha256": "f519e5d05c4ed029c7754061b3ee00c9f40a9503fa50e90f057c901a9aad93b5"
+			"sha256": "0a56d867085c710e2fc6e037d9c664545ab07216b3d3d03af5d5b2c97ca49147"
 		},
 		{
 			"path": "user-interface/sound.el",
-			"sha256": "b8ecf2673489cc0993fa09fb4feca5ac845743ac060549c8a014345b9104ade6"
+			"sha256": "726ebe30756cd5d5e0ca838421c698d10e766d128b42fe4c0b90825d9e57a781"
 		},
 		{
 			"path": "user-interface/window.el",
-			"sha256": "c3731a21c1755102fb05398029d81be6ed2b394229a6f861ddbc94f410a9ce7f"
+			"sha256": "2fec7b9ab3670c5d7b353a9ac2956d87f3e322d64b984d222fff11842d0e5afe"
 		}
 	],
 	"entries": [
@@ -247765,7 +247884,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "由模式和两个值创建行（schema 是已有的行模式）",
+					"value": "由模式和两个值创建行",
 					"markdown": "```el\n// @external schema: DbRelationSchema\nlet row = DbRow(schema, @[1, \"Ada\"])\n```",
 					"code": "// @external schema: DbRelationSchema\nlet row = DbRow(schema, @[1, \"Ada\"])\n",
 					"expected_stdout": null,
@@ -247920,7 +248039,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "定义带主键的表（column 是已有的列定义）",
+					"value": "定义带主键的表",
 					"markdown": "```el\n// @external column: DbColumnDefinition\nlet table = DbTableDefinition(\"people\", @[column], @[\"name\"])\n```",
 					"code": "// @external column: DbColumnDefinition\nlet table = DbTableDefinition(\"people\", @[column], @[\"name\"])\n",
 					"expected_stdout": null,
@@ -253895,7 +254014,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "绘制并保存一张曲线图（xs 和 ys 是已有的 F64 张量）",
+					"value": "绘制并保存一张曲线图",
 					"markdown": "```el\n// @external xs: Tensor<element: F64>, ys: Tensor<element: F64>\nimport { formats } from \"el:formats/\"\nlet figure = plot(xs, ys)\nlet svg = figure.image(640, 480)\nfigure.saveAs(formats.SVG, \"curve.svg\")\n```",
 					"code": "// @external xs: Tensor<element: F64>, ys: Tensor<element: F64>\nimport { formats } from \"el:formats/\"\nlet figure = plot(xs, ys)\nlet svg = figure.image(640, 480)\nfigure.saveAs(formats.SVG, \"curve.svg\")\n",
 					"expected_stdout": null,
@@ -254107,7 +254226,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "在宿主中运行创建的图表（figure 是已有的 Figure）",
+					"value": "在宿主中运行创建的图表",
 					"markdown": "```el\n// @external figure: Figure\nlet host = PlotHost()\ndiscard(figure.showOwned(host))\nhost.run()\n```",
 					"code": "// @external figure: Figure\nlet host = PlotHost()\ndiscard(figure.showOwned(host))\nhost.run()\n",
 					"expected_stdout": null,
@@ -254156,7 +254275,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "绘制一条曲线并导出 SVG（xs 和 ys 是已有的 F64 张量）",
+					"value": "绘制一条曲线并导出 SVG",
 					"markdown": "```el\n// @external xs: Tensor<element: F64>, ys: Tensor<element: F64>\nlet figure = plot(xs, ys)\nlet svg = figure.image(640, 480)\n```",
 					"code": "// @external xs: Tensor<element: F64>, ys: Tensor<element: F64>\nlet figure = plot(xs, ys)\nlet svg = figure.image(640, 480)\n",
 					"expected_stdout": null,
@@ -255092,6 +255211,49 @@
 		},
 		{
 			"kind": "module",
+			"name": "值操作",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "提供移动值、丢弃结果和交换值的操作。"
+				}
+			],
+			"source": "language/value-operations.el",
+			"line": 3,
+			"id": "language/value-operations"
+		},
+		{
+			"kind": "api",
+			"name": "discard",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "显式消费实参并返回 nil。实参按通常规则求值、传播异常并清理。"
+				},
+				{
+					"tag": "example",
+					"value": "丢弃一次读取的结果",
+					"markdown": "```el\n// @external readValue: fn(): Number\ndiscard(readValue())\n```",
+					"code": "// @external readValue: fn(): Number\ndiscard(readValue())\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "language/value-operations.el",
+			"line": 13,
+			"signature": "export fn discard(value)",
+			"declaration_line": 20,
+			"id": "language/value-operations::discard",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "module",
 			"name": "条件值与布尔类型",
 			"sections": [
 				{
@@ -255481,9 +255643,9 @@
 				},
 				{
 					"tag": "example",
-					"value": "捕获受限搜索中断（cursor 是已有的搜索游标）",
-					"markdown": "```el\n// @external cursor: SearchCursor\ntry { discard(cursor.next()) }\ncatch (error) { if (error is SearchInterrupted) console.stdout.writeLine(error.reason) }\n```",
-					"code": "// @external cursor: SearchCursor\ntry { discard(cursor.next()) }\ncatch (error) { if (error is SearchInterrupted) console.stdout.writeLine(error.reason) }\n",
+					"value": "捕获受限搜索中断",
+					"markdown": "```el\n// @external cursor: SearchCursor\ntry { discard(cursor.next()) }\ncatch (error) {\n\tif (error is SearchInterrupted) console.stdout.writeLine(error.reason)\n\telse throw error\n}\n```",
+					"code": "// @external cursor: SearchCursor\ntry { discard(cursor.next()) }\ncatch (error) {\n\tif (error is SearchInterrupted) console.stdout.writeLine(error.reason)\n\telse throw error\n}\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -255491,13 +255653,58 @@
 			"source": "logic/control.el",
 			"line": 60,
 			"signature": "export @assign(mode: \"shared\") class SearchInterrupted",
-			"declaration_line": 68,
+			"declaration_line": 71,
 			"id": "logic/control::SearchInterrupted",
 			"value_type": null,
 			"owner": null,
 			"return_type": null,
 			"initializer": null,
 			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "SearchInterrupted.reason",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回搜索中断的原因。搜索预算耗尽时为 `\"limited\"`，主动取消时为 `\"cancelled\"`。"
+				},
+				{
+					"tag": "example",
+					"value": "读取中断原因",
+					"markdown": "```el\nlet interruption = SearchInterrupted(\"limited\")\nlet reason = interruption.reason\n```",
+					"code": "let interruption = SearchInterrupted(\"limited\")\nlet reason = interruption.reason\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "logic/control.el",
+			"line": 74,
+			"signature": "get reason(): Text",
+			"declaration_line": 81,
+			"id": "logic/control::SearchInterrupted.reason",
+			"value_type": null,
+			"owner": "SearchInterrupted",
+			"return_type": "Text",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Text",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "text/text.el",
+							"name": "Text",
+							"id": "text/text::Text~type",
+							"path": "modules/text/text.md",
+							"fragment": "api-6116e54b075df026a90a"
+						}
+					}
+				]
+			}
 		},
 		{
 			"kind": "module",
@@ -255709,7 +255916,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "合并两个条件（x 是已有的逻辑变量）",
+					"value": "合并两个条件",
 					"markdown": "```el\n// @external x: Term\nlet goal = all(@[call(compound(\"person\", @[x])), dif(x, atom(\"Ada\"))])\n```",
 					"code": "// @external x: Term\nlet goal = all(@[call(compound(\"person\", @[x])), dif(x, atom(\"Ada\"))])\n",
 					"expected_stdout": null,
@@ -255937,7 +256144,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "创建地面答案游标（plan 是已有的搜索计划）",
+					"value": "创建地面答案游标",
 					"markdown": "```el\n// @external plan: PreparedSearch\nlet cursor = plan.ground().iterator()\nlet step = cursor.next()\n```",
 					"code": "// @external plan: PreparedSearch\nlet cursor = plan.ground().iterator()\nlet step = cursor.next()\n",
 					"expected_stdout": null,
@@ -255966,7 +256173,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "枚举地面结果（plan 是已有的搜索计划）",
+					"value": "枚举地面结果",
 					"markdown": "```el\n// @external plan: PreparedSearch\nlet cursor = plan.ground().iterator()\nlet step = cursor.next()\n```",
 					"code": "// @external plan: PreparedSearch\nlet cursor = plan.ground().iterator()\nlet step = cursor.next()\n",
 					"expected_stdout": null,
@@ -255995,7 +256202,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "逐个读取地面结果（plan 是已有的搜索计划，consume 是调用方的处理函数）",
+					"value": "逐个读取地面结果",
 					"markdown": "```el\n// @external plan: PreparedSearch, consume: fn(value: Term): nil_t\nlet cursor = plan.ground().iterator()\nlet step = cursor.next()\nif (!step.done) consume(step.value)\n```",
 					"code": "// @external plan: PreparedSearch, consume: fn(value: Term): nil_t\nlet cursor = plan.ground().iterator()\nlet step = cursor.next()\nif (!step.done) consume(step.value)\n",
 					"expected_stdout": null,
@@ -256076,6 +256283,93 @@
 							"id": "logic/term::Term",
 							"path": "modules/logic/term.md",
 							"fragment": "api-7560e808aaee9c6517d2"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "SearchCursor",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "逐项推进逻辑搜索的游标。提前停止读取时，可用 `close()` 释放搜索会话。"
+				},
+				{
+					"tag": "example",
+					"value": "从搜索计划打开游标",
+					"markdown": "```el\n// @external plan: PreparedSearch\nlet cursor = plan.iterator()\n```",
+					"code": "// @external plan: PreparedSearch\nlet cursor = plan.iterator()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "logic/search.el",
+			"line": 899,
+			"signature": "export @assign(mode: \"shared\") class SearchCursor",
+			"declaration_line": 906,
+			"id": "logic/search::SearchCursor",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "SearchCursor.next",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "推进搜索并返回下一项结果。没有下一项时返回 `done`。推进期间发生的搜索中断会向调用者传播。"
+				},
+				{
+					"tag": "example",
+					"value": "读取一个搜索结果",
+					"markdown": "```el\nlet step = cursor.next()\n```",
+					"code": "let step = cursor.next()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "logic/search.el",
+			"line": 962,
+			"signature": "fn next(): IterationStep<element: Answer>",
+			"declaration_line": 968,
+			"id": "logic/search::SearchCursor.next",
+			"value_type": null,
+			"owner": "SearchCursor",
+			"return_type": "IterationStep<element: Answer>",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "IterationStep",
+						"start": 0,
+						"end": 13,
+						"target": {
+							"type": "definition",
+							"source": "collections/sequences/iteration-step.el",
+							"name": "IterationStep",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-e4b3e3cc13c7cec14564"
+						}
+					},
+					{
+						"name": "Answer",
+						"start": 23,
+						"end": 29,
+						"target": {
+							"type": "definition",
+							"source": "logic/search.el",
+							"name": "Answer",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-4e552bfbd023969638c0"
 						}
 					}
 				]
@@ -259465,7 +259759,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "创建播放器并提交一块（需调用方提供对象或绑定）",
+					"value": "创建播放器并提交一块",
 					"markdown": "```el\n// @external audio: PcmAudio\nlet output = PcmOutput(audio.format, 4, 1024)\nlet accepted = output.enqueue(audio)\n```",
 					"code": "// @external audio: PcmAudio\nlet output = PcmOutput(audio.format, 4, 1024)\nlet accepted = output.enqueue(audio)\n",
 					"expected_stdout": null,
@@ -259725,7 +260019,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "创建播放器并提交一块（需调用方提供对象或绑定）",
+					"value": "创建播放器并提交一块",
 					"markdown": "```el\n// @external audio: PcmAudio\nlet output = PcmOutput(audio.format, 4, 1024)\nlet accepted = output.enqueue(audio)\n```",
 					"code": "// @external audio: PcmAudio\nlet output = PcmOutput(audio.format, 4, 1024)\nlet accepted = output.enqueue(audio)\n",
 					"expected_stdout": null,
@@ -260314,7 +260608,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "分块写入 WAV（需调用方提供对象或绑定）",
+					"value": "分块写入 WAV",
 					"markdown": "```el\n// @external audio: PcmAudio\nimport { Path } from \"el:operating-system/paths/\"\nlet writer = WavWriter(Path(\"song.wav\"), audio.format)\nwriter.append(audio)\nwriter.close()\n```",
 					"code": "// @external audio: PcmAudio\nimport { Path } from \"el:operating-system/paths/\"\nlet writer = WavWriter(Path(\"song.wav\"), audio.format)\nwriter.append(audio)\nwriter.close()\n",
 					"expected_stdout": null,
@@ -260397,7 +260691,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "编码一段音频（需调用方提供对象或绑定）",
+					"value": "编码一段音频",
 					"markdown": "```el\n// @external audio: PcmAudio\nlet bytes = encodeWav(audio)\n```",
 					"code": "// @external audio: PcmAudio\nlet bytes = encodeWav(audio)\n",
 					"expected_stdout": null,
@@ -260596,7 +260890,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "创建播放器并提交一块（需调用方提供对象或绑定）",
+					"value": "创建播放器并提交一块",
 					"markdown": "```el\n// @external audio: PcmAudio\nlet output = PcmOutput(audio.format, 4, 1024)\nlet accepted = output.enqueue(audio)\n```",
 					"code": "// @external audio: PcmAudio\nlet output = PcmOutput(audio.format, 4, 1024)\nlet accepted = output.enqueue(audio)\n",
 					"expected_stdout": null,
@@ -260856,7 +261150,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "写入一个四字节值（需调用方提供对象或绑定）",
+					"value": "写入一个四字节值",
 					"markdown": "```el\n// @external data: ptr\nput(data, 0, 305419896, 4)\n```",
 					"code": "// @external data: ptr\nput(data, 0, 305419896, 4)\n",
 					"expected_stdout": null,
@@ -261213,7 +261507,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "输出错误操作（需调用方提供对象或绑定）",
+					"value": "输出错误操作",
 					"markdown": "```el\n// @external error: NetworkError\nconsole.stderr.writeLine(error.operation)\n```",
 					"code": "// @external error: NetworkError\nconsole.stderr.writeLine(error.operation)\n",
 					"expected_stdout": null,
@@ -261303,7 +261597,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "查看平台错误码（需调用方提供对象或绑定）",
+					"value": "查看平台错误码",
 					"markdown": "```el\n// @external error: NetworkError\nconsole.stderr.writeLine(error.code)\n```",
 					"code": "// @external error: NetworkError\nconsole.stderr.writeLine(error.code)\n",
 					"expected_stdout": null,
@@ -262124,7 +262418,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "检查状态码（需调用方提供对象或绑定）",
+					"value": "检查状态码",
 					"markdown": "```el\n// @external response: HttpResponse\nconsole.stdout.writeLine(response.status)\n```",
 					"code": "// @external response: HttpResponse\nconsole.stdout.writeLine(response.status)\n",
 					"expected_stdout": null,
@@ -262214,7 +262508,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "检查响应体字节数（需调用方提供对象或绑定）",
+					"value": "检查响应体字节数",
 					"markdown": "```el\n// @external response: HttpResponse\nconsole.stdout.writeLine(response.body.count)\n```",
 					"code": "// @external response: HttpResponse\nconsole.stdout.writeLine(response.body.count)\n",
 					"expected_stdout": null,
@@ -262309,7 +262603,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "判断响应是否成功（需调用方提供对象或绑定）",
+					"value": "判断响应是否成功",
 					"markdown": "```el\n// @external response: HttpResponse\nif (response.ok) console.stdout.writeLine(\"success\")\n```",
 					"code": "// @external response: HttpResponse\nif (response.ok) console.stdout.writeLine(\"success\")\n",
 					"expected_stdout": null,
@@ -262424,7 +262718,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "解码 JSON 响应（需调用方提供对象或绑定）",
+					"value": "解码 JSON 响应",
 					"markdown": "```el\n// @external response: HttpResponse\nlet configuration = response.json()\n```",
 					"code": "// @external response: HttpResponse\nlet configuration = response.json()\n",
 					"expected_stdout": null,
@@ -262523,7 +262817,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "读取内容类型（需调用方提供对象或绑定）",
+					"value": "读取内容类型",
 					"markdown": "```el\n// @external response: HttpResponse\nlet contentType = response.header(\"Content-Type\")\n```",
 					"code": "// @external response: HttpResponse\nlet contentType = response.header(\"Content-Type\")\n",
 					"expected_stdout": null,
@@ -262610,7 +262904,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "查看错误状态（需调用方提供对象或绑定）",
+					"value": "查看错误状态",
 					"markdown": "```el\n// @external error: HttpStatusError\nconsole.stderr.writeLine(error.response.status)\n```",
 					"code": "// @external error: HttpStatusError\nconsole.stderr.writeLine(error.response.status)\n",
 					"expected_stdout": null,
@@ -262718,7 +263012,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "为连接创建线读取器（需调用方提供对象或绑定）",
+					"value": "为连接创建线读取器",
 					"markdown": "```el\n// @external connection: ByteConnection\nlet reader = HttpWireReader(connection, 30000)\n```",
 					"code": "// @external connection: ByteConnection\nlet reader = HttpWireReader(connection, 30000)\n",
 					"expected_stdout": null,
@@ -266651,7 +266945,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "将向量转为行向量（需调用方提供对象或绑定）",
+					"value": "将向量转为行向量",
 					"markdown": "```el\n// @external sourceVector: Tensor<element: Number>\nlet values = row(sourceVector)\n```",
 					"code": "// @external sourceVector: Tensor<element: Number>\nlet values = row(sourceVector)\n",
 					"expected_stdout": null,
@@ -266969,7 +267263,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "读取诊断报告中的残差范数（需调用方提供对象或绑定）",
+					"value": "读取诊断报告中的残差范数",
 					"markdown": "```el\n// @external a: Tensor<element: WorkingFloat>, b: Tensor<element: WorkingFloat>\nlet report = solveDiagnostic(a, b)\nlet residualMagnitude = report.residualNorm\n```",
 					"code": "// @external a: Tensor<element: WorkingFloat>, b: Tensor<element: WorkingFloat>\nlet report = solveDiagnostic(a, b)\nlet residualMagnitude = report.residualNorm\n",
 					"expected_stdout": null,
@@ -267572,7 +267866,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "查询张量阶数（需调用方提供对象或绑定）",
+					"value": "查询张量阶数",
 					"markdown": "```el\n// @external tensor: Tensor<element: Number>\nlet dimensions = tensor.rank\n```",
 					"code": "// @external tensor: Tensor<element: Number>\nlet dimensions = tensor.rank\n",
 					"expected_stdout": null,
@@ -267732,7 +268026,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "读取张量形状（需调用方提供对象或绑定）",
+					"value": "读取张量形状",
 					"markdown": "```el\n// @external tensor: Tensor<element: Number>\nlet dimensions = tensor.shape()\n```",
 					"code": "// @external tensor: Tensor<element: Number>\nlet dimensions = tensor.shape()\n",
 					"expected_stdout": null,
@@ -268002,7 +268296,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "将系数矩阵乘以列向量（需调用方提供对象或绑定）",
+					"value": "将系数矩阵乘以列向量",
 					"markdown": "```el\n// @external matrixInput: Tensor<element: Number>, columnVector: Tensor<element: Number>\nlet result = matrixInput.matmul(columnVector)\n```",
 					"code": "// @external matrixInput: Tensor<element: Number>, columnVector: Tensor<element: Number>\nlet result = matrixInput.matmul(columnVector)\n",
 					"expected_stdout": null,
@@ -268111,7 +268405,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "读取已归约的损失值（需调用方提供对象或绑定）",
+					"value": "读取已归约的损失值",
 					"markdown": "```el\n// @external loss: Tensor<element: Number>\nlet lossValue = loss.scalar()\n```",
 					"code": "// @external loss: Tensor<element: Number>\nlet lossValue = loss.scalar()\n",
 					"expected_stdout": null,
@@ -268266,7 +268560,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "将偏置广播加到批次张量（需调用方提供对象或绑定）",
+					"value": "将偏置广播加到批次张量",
 					"markdown": "```el\n// @external bias: Tensor<element: Number>\nlet shifted = batch + bias\n```",
 					"code": "// @external bias: Tensor<element: Number>\nlet shifted = batch + bias\n",
 					"expected_stdout": null,
@@ -268349,7 +268643,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "矩阵向量乘法（需调用方提供对象或绑定）",
+					"value": "矩阵向量乘法",
 					"markdown": "```el\n// @external matrixInput: Tensor<element: Number>, columnVector: Tensor<element: Number>\nlet result = matrixInput * columnVector\n```",
 					"code": "// @external matrixInput: Tensor<element: Number>, columnVector: Tensor<element: Number>\nlet result = matrixInput * columnVector\n",
 					"expected_stdout": null,
@@ -268432,7 +268726,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "计算逐元素平方（需调用方提供对象或绑定）",
+					"value": "计算逐元素平方",
 					"markdown": "```el\n// @external values: Tensor<element: Number>\nlet squares = values .* values\n```",
 					"code": "// @external values: Tensor<element: Number>\nlet squares = values .* values\n",
 					"expected_stdout": null,
@@ -268846,7 +269140,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "保留输入表达式（需调用方提供对象或绑定）",
+					"value": "保留输入表达式",
 					"markdown": "```el\n// @external input: OptimizationInput, context: OptimizationContext\nlet result = unchanged(input, context)\n```",
 					"code": "// @external input: OptimizationInput, context: OptimizationContext\nlet result = unchanged(input, context)\n",
 					"expected_stdout": null,
@@ -269357,7 +269651,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "查询偶数项并映射字段（需调用方提供对象或绑定）",
+					"value": "查询偶数项并映射字段",
 					"markdown": "```el\n// @external values: Number[]\nlet result = query() {\n\tfrom value in values\n\twhere value % 2 == 0\n\tselect value\n}\n```",
 					"code": "// @external values: Number[]\nlet result = query() {\n\tfrom value in values\n\twhere value % 2 == 0\n\tselect value\n}\n",
 					"expected_stdout": null,
@@ -270631,9 +270925,9 @@
 				}
 			],
 			"source": "shell/syntax.el",
-			"line": 228,
+			"line": 211,
 			"signature": "export syntax shell",
-			"declaration_line": 235,
+			"declaration_line": 218,
 			"id": "shell/syntax::shell",
 			"value_type": null,
 			"owner": null,
@@ -271736,7 +272030,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "显示预期项（需调用方提供对象或绑定）",
+					"value": "显示预期项",
 					"markdown": "```el\n// @external error: ParseError\nconsole.stderr.writeLine(error.expected.join(\", \"))\n```",
 					"code": "// @external error: ParseError\nconsole.stderr.writeLine(error.expected.join(\", \"))\n",
 					"expected_stdout": null,
@@ -271881,7 +272175,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "检查前缀是否匹配（需调用方提供对象或绑定）",
+					"value": "检查前缀是否匹配",
 					"markdown": "```el\n// @external reply: ParseReply<output: Number>\nconsole.stdout.writeLine(reply.matched)\n```",
 					"code": "// @external reply: ParseReply<output: Number>\nconsole.stdout.writeLine(reply.matched)\n",
 					"expected_stdout": null,
@@ -271971,7 +272265,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "查看失败偏移（需调用方提供对象或绑定）",
+					"value": "查看失败偏移",
 					"markdown": "```el\n// @external reply: ParseReply<output: Number>\nconsole.stderr.writeLine(reply.error.offset)\n```",
 					"code": "// @external reply: ParseReply<output: Number>\nconsole.stderr.writeLine(reply.error.offset)\n",
 					"expected_stdout": null,
@@ -274713,7 +275007,7 @@
 				}
 			],
 			"source": "tools/formatter/scan.el",
-			"line": 6,
+			"line": 7,
 			"id": "tools/formatter/scan"
 		},
 		{
@@ -274745,9 +275039,9 @@
 				}
 			],
 			"source": "tools/formatter/scan.el",
-			"line": 303,
+			"line": 304,
 			"signature": "export fn scan(text: Text): ScanResult",
-			"declaration_line": 311,
+			"declaration_line": 312,
 			"id": "tools/formatter/scan::scan",
 			"value_type": null,
 			"owner": null,
@@ -274958,7 +275252,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "检查缺失键错误（需调用方提供对象或绑定）",
+					"value": "检查缺失键错误",
 					"markdown": "```el\n// @external scores: Map<key: Text, value: Number>\ncheck.throws(MissingKeyError, () => scores[\"missing\"])\n```",
 					"code": "// @external scores: Map<key: Text, value: Number>\ncheck.throws(MissingKeyError, () => scores[\"missing\"])\n",
 					"expected_stdout": null,
@@ -275460,7 +275754,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "表驱动测试（需调用方提供对象或绑定）",
+					"value": "表驱动测试",
 					"markdown": "```el\n// @external doubleValue: fn(Number): Number\ntest.each(\"double\", @[\n\t@{ name: \"one\", input: 1, expected: 2 },\n\t@{ name: \"two\", input: 2, expected: 4 }\n], row => check.equal(doubleValue(row.input), row.expected))\n```",
 					"code": "// @external doubleValue: fn(Number): Number\ntest.each(\"double\", @[\n\t@{ name: \"one\", input: 1, expected: 2 },\n\t@{ name: \"two\", input: 2, expected: 4 }\n], row => check.equal(doubleValue(row.input), row.expected))\n",
 					"expected_stdout": null,
@@ -275548,7 +275842,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "修改窗口绘制背景色（需调用方提供对象或绑定）",
+					"value": "修改窗口绘制背景色",
 					"markdown": "```el\n// @external window: Window\nlet paint = darkPaintTheme()\npaint.background = 0x20242B\nwindow.theme = paint\n```",
 					"code": "// @external window: Window\nlet paint = darkPaintTheme()\npaint.background = 0x20242B\nwindow.theme = paint\n",
 					"expected_stdout": null,
@@ -275651,7 +275945,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "从二维数据源创建视图（需调用方提供对象或绑定）",
+					"value": "从二维数据源创建视图",
 					"markdown": "```el\n// @external source: Tensor<element: Number>\nlet view = dataView(source)\n```",
 					"code": "// @external source: Tensor<element: Number>\nlet view = dataView(source)\n",
 					"expected_stdout": null,
@@ -275884,7 +276178,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "在监听器中阻止默认行为（需调用方提供对象或绑定）",
+					"value": "在监听器中阻止默认行为",
 					"markdown": "```el\n// @external button: Definition\non(button, \"click\", event => event.preventDefault())\n```",
 					"code": "// @external button: Definition\non(button, \"click\", event => event.preventDefault())\n",
 					"expected_stdout": null,
@@ -276096,7 +276390,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "移除可选说明行（需调用方提供对象或绑定）",
+					"value": "移除可选说明行",
 					"markdown": "```el\n// @external root: Definition\nlet removed = removeChild(root, \"hint\")\n```",
 					"code": "// @external root: Definition\nlet removed = removeChild(root, \"hint\")\n",
 					"expected_stdout": null,
@@ -276204,7 +276498,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "用法（需调用方提供对象或绑定）",
+					"value": "用法",
 					"markdown": "```el\n// @external window: Window\nrunWindow(window)\n```",
 					"code": "// @external window: Window\nrunWindow(window)\n",
 					"expected_stdout": null,
@@ -276247,7 +276541,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "用法（需调用方提供对象或绑定）",
+					"value": "用法",
 					"markdown": "```el\n// @external window: Window\nrunWindow(window)\n```",
 					"code": "// @external window: Window\nrunWindow(window)\n",
 					"expected_stdout": null,
@@ -276290,7 +276584,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "创建一个窗口定时器（需调用方提供窗口和回调）",
+					"value": "创建一个窗口定时器",
 					"markdown": "```el\n// @external window: Window, updateClock: fn(): nil_t\nlet timer = window.every(1000, tick => updateClock())\n```\n不再需要时调用 `timer.cancel()` 停止定时器。",
 					"code": "// @external window: Window, updateClock: fn(): nil_t\nlet timer = window.every(1000, tick => updateClock())\n",
 					"expected_stdout": null,
@@ -276591,7 +276885,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "运行窗口直到关闭（需调用方提供对象或绑定）",
+					"value": "运行窗口直到关闭",
 					"markdown": "```el\n// @external window: Window\nrunWindow(window)\n```",
 					"code": "// @external window: Window\nrunWindow(window)\n",
 					"expected_stdout": null,
@@ -276668,7 +276962,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "播放一个提示音（需调用方提供窗口）",
+					"value": "播放一个提示音",
 					"markdown": "```el\n// @external window: Window\nlet sound = SoundPlayer(window)\ndiscard(sound.cue(\"increase\"))\n```\n使用完成后调用 `sound.close()` 释放设备。",
 					"code": "// @external window: Window\nlet sound = SoundPlayer(window)\ndiscard(sound.cue(\"increase\"))\n",
 					"expected_stdout": null,
@@ -277105,7 +277399,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "显示网格数据（需调用方提供对象或绑定）",
+					"value": "显示网格数据",
 					"markdown": "```el\n// @external rows: Tensor<element: Number>\nlet window = showWindow(rows, \"数据\")\nrunWindow(window)\n```",
 					"code": "// @external rows: Tensor<element: Number>\nlet window = showWindow(rows, \"数据\")\nrunWindow(window)\n",
 					"expected_stdout": null,
@@ -277218,7 +277512,7 @@
 				},
 				{
 					"tag": "example",
-					"value": "在描述窗口中绑定数据（需调用方提供对象或绑定）",
+					"value": "在描述窗口中绑定数据",
 					"markdown": "```el\n// @external rows: Tensor<element: Number>\nlet window = showWindow(\"column { grid: $0 }\", rows)\nrunWindow(window)\n```",
 					"code": "// @external rows: Tensor<element: Number>\nlet window = showWindow(\"column { grid: $0 }\", rows)\nrunWindow(window)\n",
 					"expected_stdout": null,
@@ -277238,8 +277532,8 @@
 		}
 	],
 	"coverage": {
-		"source_files": 4134,
-		"documented_files": 219,
-		"documented_apis": 750
+		"source_files": 4135,
+		"documented_files": 220,
+		"documented_apis": 754
 	}
 }

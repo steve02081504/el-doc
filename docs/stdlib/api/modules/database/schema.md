@@ -65,7 +65,7 @@ class DbRow
 
 **失败与异常**：值数量、存在标记数量或值类型与模式不符时抛出错误。
 
-### 示例：由模式和两个值创建行（schema 是已有的行模式）
+### 示例：由模式和两个值创建行
 
 ```el
 // @external schema: DbRelationSchema

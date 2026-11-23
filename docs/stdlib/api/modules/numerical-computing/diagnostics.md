@@ -32,7 +32,7 @@ export fn solveDiagnostic(a: Tensor<element: F64>, b: Tensor<element: F64>, poli
 
 **返回值**：含解、重算残差、残差无穷范数、方法与阈值的报告。
 
-### 示例：读取诊断报告中的残差范数（需调用方提供对象或绑定）
+### 示例：读取诊断报告中的残差范数
 
 ```el
 // @external a: Tensor<element: WorkingFloat>, b: Tensor<element: WorkingFloat>

@@ -73,7 +73,7 @@ let expected: Text[]
 
 **类型**：[`Text`](../text.md#api-6116e54b075df026a90a)[]
 
-### 示例：显示预期项（需调用方提供对象或绑定）
+### 示例：显示预期项
 
 ```el
 // @external error: ParseError
@@ -135,7 +135,7 @@ let matched: Bool
 
 **类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
 
-### 示例：检查前缀是否匹配（需调用方提供对象或绑定）
+### 示例：检查前缀是否匹配
 
 ```el
 // @external reply: ParseReply<output: Number>
@@ -173,7 +173,7 @@ let error: ParseError
 
 **类型**：[`ParseError`](parser.md#api-134641b6a74ac9dc39ed)
 
-### 示例：查看失败偏移（需调用方提供对象或绑定）
+### 示例：查看失败偏移
 
 ```el
 // @external reply: ParseReply<output: Number>

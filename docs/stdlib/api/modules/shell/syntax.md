@@ -12,7 +12,7 @@ Shell 语法相关接口。
 
 ## shell {#api-6cfa26a5700765b0f4d6}
 
-源码：`src/stdlib/shell/syntax.el:235` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/syntax.el#L235)
+源码：`src/stdlib/shell/syntax.el:218` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/syntax.el#L218)
 
 在块中使用 shell 风格的命令和表达式语法。
 

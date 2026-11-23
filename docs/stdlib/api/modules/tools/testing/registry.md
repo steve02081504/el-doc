@@ -34,7 +34,7 @@ fn each(name: Text, rows, body, options: TestOptions = TestOptions())
 
 **失败与异常**：行没有名称或注册冲突时抛 TestConfigurationError。
 
-### 示例：表驱动测试（需调用方提供对象或绑定）
+### 示例：表驱动测试
 
 ```el
 // @external doubleValue: fn(Number): Number

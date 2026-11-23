@@ -87,7 +87,7 @@ def external_declarations(specification):
 		if kind != "code":
 			continue
 		if value == "," and not stack:
-			parts.append(specification[start:offset])
+			parts.append((start, specification[start:offset]))
 			start = end
 		elif value in closers:
 			stack.append(closers[value])
@@ -95,14 +95,15 @@ def external_declarations(specification):
 			stack.pop()
 	if stack:
 		raise DocumentationError("unbalanced type in // @external")
-	parts.append(specification[start:])
+	parts.append((start, specification[start:]))
 	result = []
-	for part in parts:
+	for start, part in parts:
 		name, colon, expression = part.partition(":")
+		type_offset = start + len(name) + len(colon) + len(expression) - len(expression.lstrip())
 		name, expression = name.strip(), expression.strip()
 		if not colon or not name.isidentifier() or not expression:
 			raise DocumentationError("each external needs a type, for example // @external sample: Number")
-		result.append((name, expression))
+		result.append((name, expression, type_offset))
 	return result
 
 
@@ -984,7 +985,7 @@ def declares_instance(example, owner, known_types=None, member=None, constructor
 		if kind not in ("comment", "doc") or not (marker := EXTERNAL_DIRECTIVE.match(text)):
 			continue
 		try:
-			external_types.update(external_declarations(marker[1]))
+			external_types.update((name, expression) for name, expression, _ in external_declarations(marker[1]))
 		except DocumentationError:
 			continue  # The highlighter reports the malformed declaration.
 	external_receivers = {name for name, value_type in external_types.items() if nominal_type(value_type) == owner}

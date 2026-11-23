@@ -20,7 +20,7 @@
 export fn runWindow(window: Window)
 ```
 
-### 示例：用法（需调用方提供对象或绑定）
+### 示例：用法
 
 ```el
 // @external window: Window

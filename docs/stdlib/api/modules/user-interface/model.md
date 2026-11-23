@@ -101,7 +101,7 @@ password.textMask = "•"
 export class GuiEvent
 ```
 
-### 示例：在监听器中阻止默认行为（需调用方提供对象或绑定）
+### 示例：在监听器中阻止默认行为
 
 ```el
 // @external button: Definition
@@ -204,7 +204,7 @@ export fn removeChild(parent: Definition, key: Text): Bool
 
 **返回值**：找到并移除时为真，否则为假。
 
-### 示例：移除可选说明行（需调用方提供对象或绑定）
+### 示例：移除可选说明行
 
 ```el
 // @external root: Definition

@@ -96,7 +96,7 @@ export fn all(goals: Goal[]): Goal
 
 **返回值**：合取 Goal。
 
-### 示例：合并两个条件（x 是已有的逻辑变量）
+### 示例：合并两个条件
 
 ```el
 // @external x: Term

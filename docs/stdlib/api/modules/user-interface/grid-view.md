@@ -26,7 +26,7 @@ export fn dataView(source): DataView
 
 **返回值**：列数、行数和按坐标访问单元的 DataView。
 
-### 示例：从二维数据源创建视图（需调用方提供对象或绑定）
+### 示例：从二维数据源创建视图
 
 ```el
 // @external source: Tensor<element: Number>

@@ -21,7 +21,7 @@
 export syntax query
 ```
 
-### 示例：查询偶数项并映射字段（需调用方提供对象或绑定）
+### 示例：查询偶数项并映射字段
 
 ```el
 // @external values: Number[]

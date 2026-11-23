@@ -72,7 +72,7 @@ export fn row(values)
 
 **失败与异常**：ShapeError 当输入不是 rank 1 时抛出。
 
-### 示例：将向量转为行向量（需调用方提供对象或绑定）
+### 示例：将向量转为行向量
 
 ```el
 // @external sourceVector: Tensor<element: Number>

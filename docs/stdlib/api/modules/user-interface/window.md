@@ -92,7 +92,7 @@ export fn showWindow(source, title: Text = "EL", width: Number = 480, height: Nu
 
 **返回值**：新建窗口句柄。
 
-### 示例：显示网格数据（需调用方提供对象或绑定）
+### 示例：显示网格数据
 
 ```el
 // @external rows: Tensor<element: Number>
@@ -149,7 +149,7 @@ export fn showWindow(description: Text, source, width: Number = 480, height: Num
 
 **返回值**：新建窗口句柄。
 
-### 示例：在描述窗口中绑定数据（需调用方提供对象或绑定）
+### 示例：在描述窗口中绑定数据
 
 ```el
 // @external rows: Tensor<element: Number>

@@ -45,7 +45,7 @@ let operation: Text
 
 **类型**：[`Text`](../text/text.md#api-6116e54b075df026a90a)
 
-### 示例：输出错误操作（需调用方提供对象或绑定）
+### 示例：输出错误操作
 
 ```el
 // @external error: NetworkError
@@ -83,7 +83,7 @@ let code: Number
 
 **类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)
 
-### 示例：查看平台错误码（需调用方提供对象或绑定）
+### 示例：查看平台错误码
 
 ```el
 // @external error: NetworkError

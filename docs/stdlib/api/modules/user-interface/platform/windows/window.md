@@ -28,7 +28,7 @@
 export class WindowTimer
 ```
 
-### 示例：创建一个窗口定时器（需调用方提供窗口和回调）
+### 示例：创建一个窗口定时器
 
 ```el
 // @external window: Window, updateClock: fn(): nil_t
@@ -172,7 +172,7 @@ export fn runWindow(window: Window)
 
 **参数**：window 要运行的窗口。
 
-### 示例：运行窗口直到关闭（需调用方提供对象或绑定）
+### 示例：运行窗口直到关闭
 
 ```el
 // @external window: Window

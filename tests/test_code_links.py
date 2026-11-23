@@ -104,6 +104,43 @@ spec.loader.exec_module(module)
 		code_targets(code, self.catalog, report=lambda _, message: problems.append(message))
 		self.assertEqual(problems, [])
 
+	def test_external_type_links_and_members_follow_known_types(self):
+		cursor = entry("SearchCursor", source="logic/search.el")
+		next_method = entry("SearchCursor.next", source="logic/search.el")
+		catalog = Catalog({"entries": [cursor, next_method],
+			"types": [{"name": "SearchCursor", "source": cursor["source"], "id": cursor["id"]}]})
+		html = '<pre class="language-el"><code><span class="c1">// @external cursor: SearchCursor&lt;element: SearchCursor&gt;</span>\ncursor.next()</code></pre>'
+		result = CodeLinker(html, catalog, lambda target: "#" + target.fragment).render()
+		self.assertEqual(result.count('>SearchCursor</a>'), 2)
+		self.assertRegex(result, rf'href="#{anchor(next_method["id"])}"[^>]*>next</a>')
+		self.assertNotIn('>cursor</a>', result)
+
+	def test_discard_uses_standard_library_documentation(self):
+		discard = entry("discard", source="language/value-operations.el")
+		binding = {"name": "discard", "source": discard["source"], "line": 10}
+		for documented in (False, True):
+			with self.subTest(documented=documented):
+				catalog = Catalog({"entries": [discard] if documented else [],
+					"environment": [{**binding, "id": discard["id"] if documented else None}]})
+				problems = []
+				targets = code_targets("discard(1)", catalog, report=lambda _, message: problems.append(message))
+				if documented:
+					self.assertEqual(targets[0][1].fragment, anchor(discard["id"]))
+					self.assertEqual(problems, [])
+				else:
+					self.assertEqual(problems, ["'discard' is exported by the standard library prelude but has no API documentation (language/value-operations.el:10)"])
+
+	def test_type_guard_links_only_in_the_true_branch(self):
+		error = entry("SearchInterrupted", source="logic/control.el")
+		reason = entry("SearchInterrupted.reason", source=error["source"])
+		catalog = Catalog({"entries": [error, reason], "environment": [{"name": error["name"], "id": error["id"]}]})
+		for body in ("discard(error.reason)", "{ discard(error.reason) }"):
+			with self.subTest(body=body):
+				code = f"try {{ run() }} catch (error) {{ if (error is SearchInterrupted) {body} else discard(error.reason)\nerror.reason }}"
+				targets = code_targets(code, catalog)
+				self.assertEqual([offset for offset, (_, target) in targets.items() if target.label == reason["name"]],
+					[code.index("reason")])
+
 	def test_externals_cannot_mask_exports_even_outside_the_prelude(self):
 		code = '// @external silent: Text, capture: Text, Number: type\nlet value = 1'
 		problems = []

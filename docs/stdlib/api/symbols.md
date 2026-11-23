@@ -206,6 +206,7 @@
 | [DeviceTensor](modules/numerical-computing/device-value.md#api-572c72917d65007ba8a7) | `numerical-computing/device-value.el` |
 | [dif](modules/logic/goal.md#api-c04632f30e82c884636e) | `logic/goal.el` |
 | [directoryNames](modules/filesystem/index.md#api-2e6df4d53b39fb02da5d) | `filesystem/index.el` |
+| [discard](modules/language/value-operations.md#api-b9bad8e4863ef390b4f6) | `language/value-operations.el` |
 | [dit_add_mod](modules/number/dit-operations.md#api-d0505a59ece12ababdb0) | `number/dit-operations.el` |
 | [dit_max](modules/number/dit-operations.md#api-ef7ccd1de40f01781213) | `number/dit-operations.el` |
 | [dit_min](modules/number/dit-operations.md#api-adba7312cea79def5989) | `number/dit-operations.el` |
@@ -583,7 +584,10 @@
 | [scan](modules/tools/formatter/scan.md#api-e0817f615a6c850f7872) | `tools/formatter/scan.el` |
 | [scope](modules/logic/goal.md#api-7172aaca103c45ba56a1) | `logic/goal.el` |
 | [search](modules/logic/surface.md#api-ee82dd39cb36e9d1e6cc) | `logic/surface.el` |
+| [SearchCursor](modules/logic/search.md#api-09b5771e54c5c1923052) | `logic/search.el` |
+| [SearchCursor.next](modules/logic/search.md#api-d6a4b9be8fcbef392bec) | `logic/search.el` |
 | [SearchInterrupted](modules/logic/control.md#api-f2eed514e7ad72951f31) | `logic/control.el` |
+| [SearchInterrupted.reason](modules/logic/control.md#api-a5e27f42e41e0a798bf0) | `logic/control.el` |
 | [secondsText](modules/time/units.md#api-53debbf5972f3bb0cee0) | `time/units.el` |
 | [secure_random_bytes](modules/cryptography/rand.md#api-419282ad372a03627bc4) | `cryptography/rand.el` |
 | [secure_random_hex](modules/cryptography/rand.md#api-c454f904317622bce76d) | `cryptography/rand.el` |

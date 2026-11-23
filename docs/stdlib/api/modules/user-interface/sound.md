@@ -29,7 +29,7 @@
 export @assign(mode: "shared") class SoundPlayer
 ```
 
-### 示例：播放一个提示音（需调用方提供窗口）
+### 示例：播放一个提示音
 
 ```el
 // @external window: Window

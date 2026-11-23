@@ -26,7 +26,7 @@ export class HttpWireReader
 
 **失败与异常**：读取超过期限或消息被截断时抛出 NetworkError。
 
-### 示例：为连接创建线读取器（需调用方提供对象或绑定）
+### 示例：为连接创建线读取器
 
 ```el
 // @external connection: ByteConnection

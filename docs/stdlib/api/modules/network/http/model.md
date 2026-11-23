@@ -308,7 +308,7 @@ let status: Number
 
 **类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
 
-### 示例：检查状态码（需调用方提供对象或绑定）
+### 示例：检查状态码
 
 ```el
 // @external response: HttpResponse
@@ -346,7 +346,7 @@ let body: Number[]
 
 **类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)[]
 
-### 示例：检查响应体字节数（需调用方提供对象或绑定）
+### 示例：检查响应体字节数
 
 ```el
 // @external response: HttpResponse
@@ -386,7 +386,7 @@ get ok(): Bool
 
 **返回值**：成功范围内为真。
 
-### 示例：判断响应是否成功（需调用方提供对象或绑定）
+### 示例：判断响应是否成功
 
 ```el
 // @external response: HttpResponse
@@ -434,7 +434,7 @@ fn json(limits: JsonLimits = JsonLimits()): any
 
 **失败与异常**：内容编码、UTF-8 或 JSON 解析失败时抛出异常。
 
-### 示例：解码 JSON 响应（需调用方提供对象或绑定）
+### 示例：解码 JSON 响应
 
 ```el
 // @external response: HttpResponse
@@ -480,7 +480,7 @@ fn header(name: Text): Text | nil_t
 
 **返回值**：响应头值；不存在时返回 nil。
 
-### 示例：读取内容类型（需调用方提供对象或绑定）
+### 示例：读取内容类型
 
 ```el
 // @external response: HttpResponse
@@ -517,7 +517,7 @@ let response: HttpResponse
 
 **类型**：[`HttpResponse`](model.md#api-e49096dfd951764c068f)
 
-### 示例：查看错误状态（需调用方提供对象或绑定）
+### 示例：查看错误状态
 
 ```el
 // @external error: HttpStatusError

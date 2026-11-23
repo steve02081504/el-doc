@@ -56,7 +56,7 @@ _EL_CODE_RULES = [
         r"return|throw|try|catch|finally|new|delete|is|isnot|take|ref|"
         r"rvalue|virtual|override|implicit|super|constructor|destructor|"
         r"operator|static|public|data|match|prove|calc|use|extends|"
-        r"implements|enum|typeof|discard|unsafe|goto|init|borrow|forward)\b",
+        r"implements|enum|typeof|unsafe|goto|init|borrow|forward)\b",
         Keyword,
     ),
     (r"\b(t|f|nil|true|false|any)\b", Keyword.Constant),

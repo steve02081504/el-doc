@@ -27,7 +27,7 @@
 export @assign(mode: "shared") class Figure
 ```
 
-### 示例：绘制并保存一张曲线图（xs 和 ys 是已有的 F64 张量）
+### 示例：绘制并保存一张曲线图
 
 ```el
 // @external xs: Tensor<element: F64>, ys: Tensor<element: F64>
@@ -130,7 +130,7 @@ figure.show()
 export @assign(mode: "shared") class PlotHost
 ```
 
-### 示例：在宿主中运行创建的图表（figure 是已有的 Figure）
+### 示例：在宿主中运行创建的图表
 
 ```el
 // @external figure: Figure
@@ -159,7 +159,7 @@ export fn plot(x: Tensor<element: F64>, y: Tensor<element: F64>): Figure
 
 **失败与异常**：张量形状不匹配、数据无法绘制或坐标轴配置无效时抛出错误。
 
-### 示例：绘制一条曲线并导出 SVG（xs 和 ys 是已有的 F64 张量）
+### 示例：绘制一条曲线并导出 SVG
 
 ```el
 // @external xs: Tensor<element: F64>, ys: Tensor<element: F64>

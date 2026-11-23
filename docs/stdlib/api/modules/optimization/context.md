@@ -61,7 +61,7 @@ export fn unchanged(input: OptimizationInput, context: OptimizationContext): Unc
 
 **返回值**：输入表达式本身。
 
-### 示例：保留输入表达式（需调用方提供对象或绑定）
+### 示例：保留输入表达式
 
 ```el
 // @external input: OptimizationInput, context: OptimizationContext

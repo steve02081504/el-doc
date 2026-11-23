@@ -24,7 +24,7 @@ export @assign(mode: "shared") class WavWriter
 
 **参数**：format 固定的音频格式，后续追加必须保持一致。
 
-### 示例：分块写入 WAV（需调用方提供对象或绑定）
+### 示例：分块写入 WAV
 
 ```el
 // @external audio: PcmAudio
@@ -74,7 +74,7 @@ export fn encodeWav(audio: PcmAudio): Number[]
 
 **失败与异常**：音频数据超过经典 RIFF 格式大小时抛出 CaptureError。
 
-### 示例：编码一段音频（需调用方提供对象或绑定）
+### 示例：编码一段音频
 
 ```el
 // @external audio: PcmAudio

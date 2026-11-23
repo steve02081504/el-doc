@@ -20,7 +20,7 @@
 export class PaintTheme
 ```
 
-### 示例：修改窗口绘制背景色（需调用方提供对象或绑定）
+### 示例：修改窗口绘制背景色
 
 ```el
 // @external window: Window

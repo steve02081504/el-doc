@@ -36,7 +36,7 @@ export @assign(mode: "shared") class PcmOutput
 
 **失败与异常**：设备不可用、参数无效或原生初始化失败时抛出 CaptureError。
 
-### 示例：创建播放器并提交一块（需调用方提供对象或绑定）
+### 示例：创建播放器并提交一块
 
 ```el
 // @external audio: PcmAudio

@@ -52,7 +52,7 @@ export class DbTableDefinition
 
 **失败与异常**：表名、列集合或主键不满足要求时抛出 TableDefinition 错误。
 
-### 示例：定义带主键的表（column 是已有的列定义）
+### 示例：定义带主键的表
 
 ```el
 // @external column: DbColumnDefinition

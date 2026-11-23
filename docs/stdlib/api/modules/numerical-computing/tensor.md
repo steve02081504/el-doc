@@ -71,7 +71,7 @@ get rank(): Number
 
 **返回值**：形状数组中的维度数。
 
-### 示例：查询张量阶数（需调用方提供对象或绑定）
+### 示例：查询张量阶数
 
 ```el
 // @external tensor: Tensor<element: Number>
@@ -137,7 +137,7 @@ fn shape(): Number[]
 
 **返回值**：按轴编号排列的长度数组。
 
-### 示例：读取张量形状（需调用方提供对象或绑定）
+### 示例：读取张量形状
 
 ```el
 // @external tensor: Tensor<element: Number>
@@ -251,7 +251,7 @@ fn matmul(borrow other: Value)
 
 **失败与异常**：ShapeError 当两个操作数的矩阵维度不匹配时抛出。
 
-### 示例：将系数矩阵乘以列向量（需调用方提供对象或绑定）
+### 示例：将系数矩阵乘以列向量
 
 ```el
 // @external matrixInput: Tensor<element: Number>, columnVector: Tensor<element: Number>
@@ -302,7 +302,7 @@ fn scalar(): element
 
 **失败与异常**：ShapeError 当张量 rank 不为 0 时抛出。
 
-### 示例：读取已归约的损失值（需调用方提供对象或绑定）
+### 示例：读取已归约的损失值
 
 ```el
 // @external loss: Tensor<element: Number>
@@ -370,7 +370,7 @@ operator +(other: Value)
 
 **失败与异常**：ShapeError 当形状不可广播时抛出。
 
-### 示例：将偏置广播加到批次张量（需调用方提供对象或绑定）
+### 示例：将偏置广播加到批次张量
 
 ```el
 // @external bias: Tensor<element: Number>
@@ -415,7 +415,7 @@ operator *(borrow other: Value)
 
 **失败与异常**：ShapeError 当矩阵维度不匹配时抛出。
 
-### 示例：矩阵向量乘法（需调用方提供对象或绑定）
+### 示例：矩阵向量乘法
 
 ```el
 // @external matrixInput: Tensor<element: Number>, columnVector: Tensor<element: Number>
@@ -460,7 +460,7 @@ operator .*(other: Value)
 
 **失败与异常**：ShapeError 当形状不可广播时抛出。
 
-### 示例：计算逐元素平方（需调用方提供对象或绑定）
+### 示例：计算逐元素平方
 
 ```el
 // @external values: Tensor<element: Number>

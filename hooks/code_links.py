@@ -49,6 +49,7 @@ LANGUAGE = {
 
 
 COMPREHENSION_REFERENCE = "reference/language/comprehensions.md"
+BUILTIN_TYPES = {"type": "types", "any": "types", "ptr": "foreign"}
 
 
 @dataclass(frozen=True)
@@ -84,7 +85,10 @@ class Catalog:
 		self.module_hints = {path: _source_docs.documented_value_types(items) for path, items in module_entries.items()}
 		for path, returns in model.get("module_return_types", {}).items():
 			self.module_hints.setdefault(path, {}).update(returns)
-		self.constructors = {definition["name"] for definition in model.get("types", ())}
+		self.types = defaultdict(list)
+		for definition in model.get("types", ()):
+			self.types[definition["name"]].append(definition)
+		self.constructors = set(self.types)
 		self.example_setups = defaultdict(set)
 		setups = _source_docs.class_example_setups(self.entries.values())
 		for entry in self.entries.values():
@@ -127,6 +131,22 @@ class Catalog:
 	def member(self, receiver, name):
 		if receiver and (owner := _source_docs.nominal_type(receiver.value_type)):
 			return self.named(owner + "." + name)
+		return None
+
+	def external_type(self, name, source):
+		if name in BUILTIN_TYPES:
+			return Target("reference/language/" + BUILTIN_TYPES[name] + ".md", label=name)
+		definitions = self.types.get(name, ())
+		sources = {definition["source"] for definition in definitions}
+		if source not in sources:
+			source = next(iter(sources)) if len(sources) == 1 else None
+		if source is None:
+			return None
+		if target := self.named(name, source):
+			return target
+		definitions = [definition for definition in definitions if definition["source"] == source]
+		if len(definitions) == 1:
+			return Target("stdlib/api/types.md", anchor(source.removesuffix(".el") + "::" + name), name)
 		return None
 
 	def module(self, uri):
@@ -479,9 +499,10 @@ def embedded_words(tokens, pairs, local_names):
 
 
 
-def external_names(stream, catalog, report):
+def external_names(stream, catalog, source, report):
 	"""Read typed external bindings from the leading comments of this block."""
 	names = {}
+	annotations = []
 	header = True
 	for kind, value, start, _ in stream:
 		if kind == "space":
@@ -500,15 +521,58 @@ def external_names(stream, catalog, report):
 			if report:
 				report(start, str(error))
 			continue
-		for name, value_type in declared:
+		for name, value_type, offset in declared:
 			binding = catalog.library_exports.get(name) or catalog.environment.get(name)
 			if binding is not None:
 				if report:
 					location = f" ({binding['source']}:{binding['line']})" if binding.get("source") and binding.get("line") else ""
 					report(start, f"external name {name!r} conflicts with a standard library export{location}")
 				continue
-			names[name] = Target("", value_type=value_type) if value_type.isidentifier() else None
-	return names
+			names[name] = Target("", value_type=value_type)
+			annotations.append((start + marker.start(1) + offset, value_type))
+	targets = {}
+	for start, expression in annotations:
+		tokens = _source_docs.type_tokens(expression)
+		for index, (kind, name, offset, end) in enumerate(tokens):
+			if kind != "code" or not name.isidentifier():
+				continue
+			if index + 1 < len(tokens) and tokens[index + 1][1] == ":":
+				continue
+			if name in names or index and tokens[index - 1][1] in (".", "?."):
+				continue
+			if target := catalog.external_type(name, source):
+				targets[start + offset] = (end - offset, target)
+	return names, targets
+
+
+def guarded_receivers(code, tokens, pairs, declaration_counts):
+	"""Find receivers dominated by a simple positive type test."""
+	guards = {}
+	for index, (_, _, value) in enumerate(tokens):
+		if value != "if" or pairs.get(index + 1) != index + 5 or index + 6 >= len(tokens):
+			continue
+		_, left_kind, name = tokens[index + 2]
+		_, right_kind, _ = tokens[index + 4]
+		if (tokens[index + 1][2] != "(" or tokens[index + 3][2] != "is"
+				or left_kind not in Name or right_kind not in Name or declaration_counts[name] > 1):
+			continue
+		start = index + 6
+		end = pairs.get(start) if tokens[start][2] == "{" else None
+		if end is None:
+			end = start
+			while end < len(tokens) and tokens[end][2] not in ("else", ";", "}", ")", "]"):
+				end = pairs.get(end, end) + 1
+				if end < len(tokens) and "\n" in code[tokens[end - 1][0]:tokens[end][0]]:
+					break
+		for position in range(start, min(end, len(tokens) - 1)):
+			_, _, spelling = tokens[position]
+			following = tokens[position + 1][2]
+			if spelling in ("fn", "class", "=>") or spelling == name and following in (
+					"=", "+=", "-=", "*=", "/=", "%=", "&=", "|=", "^=", "??=", "++", "--"):
+				break
+			if spelling == name and following in (".", "?.") and tokens[position - 1][2] not in (".", "?."):
+				guards[position] = index + 4
+	return guards
 
 
 def code_targets(code, catalog, source=None, *, report=None, setup=""):
@@ -562,7 +626,8 @@ def code_targets(code, catalog, source=None, *, report=None, setup=""):
 	prelude = not re.search(r"@(module|runtime)\s*\([^)]*\bprelude\s*:\s*f\b", structure)
 	if not prelude:
 		bindings.clear()
-	bindings.update(external_names(stream, catalog, report))
+	externals, result = external_names(stream, catalog, source, report)
+	bindings.update(externals)
 	imported_bindings = {}
 	namespaces = {}
 	external_patterns = []
@@ -651,7 +716,7 @@ def code_targets(code, catalog, source=None, *, report=None, setup=""):
 		if offset in declarations and declaration_counts[name] == 1 and local_types[name] == {None}:
 			local_types[name] = {value_type}
 
-	result = {}
+	guards = guarded_receivers(code, tokens, pairs, declaration_counts)
 	resolved = {}
 	for index, (offset, kind, value) in enumerate(tokens):
 		if offset in declarations or offset in ignored:
@@ -718,6 +783,10 @@ def code_targets(code, catalog, source=None, *, report=None, setup=""):
 						target = Target(target.path, target.fragment, target.label, return_type)
 		if target:
 			resolved[index] = target
+		if index in guards:
+			guard = resolved.get(guards[index])
+			if guard and guard.path and guard.label in catalog.names:
+				resolved[index] = Target("", value_type=guard.label)
 		if target and target.path:
 			result[offset] = (len(value), target)
 	for offset, (length, target) in catalog.type_targets(code, source).items():
@@ -815,7 +884,7 @@ class CodeLinker(HTMLParser):
 					pieces.append(escape(decoded[cursor:local], quote=False))
 					url = escape(self.url_for(target), quote=True)
 					label = escape("查看 " + target.label + " 的参考文档", quote=True)
-					pieces.append(f'<a class="el-code-link" href="{url}" title="{label}">{escape(decoded[local:local + length])}</a>')
+					pieces.append(f'<a class="el-code-link" href="{url}" aria-label="{label}">{escape(decoded[local:local + length])}</a>')
 					cursor = local + length
 			if pieces:
 				pieces.append(escape(decoded[cursor:], quote=False))
