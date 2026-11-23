@@ -98,6 +98,35 @@ spec.loader.exec_module(module)
 		code_targets(code, self.catalog, report=lambda _, message: problems.append(message))
 		self.assertIn("each external needs a type", problems[0])
 
+	def test_highlighting_reports_common_code_indentation(self):
+		for indent in ("\t", "    "):
+			with self.subTest(indent=indent):
+				code = (
+					"// @external sample: Number\n\n"
+					f"{indent}let update = fn() {{\n{indent}{indent}sample\n{indent}}}\n"
+				)
+				problems = []
+				CodeLinker(f'<pre class="language-el"><code>{code}</code></pre>',
+					self.catalog, lambda _: "", report=problems.append)
+				self.assertEqual(problems, [
+					"EL block 1:3:1: remove the common indentation from EL code lines",
+				])
+
+	def test_highlighting_keeps_nested_indentation_and_ignores_literal_contents(self):
+		for indent in ("", "\t"):
+			with self.subTest(indent=indent):
+				code = (
+					"// @external sample: Number\n"
+					f'{indent}let update = fn() {{\n{indent}\tlet message = #"\nflush left\n"#\n'
+					f"{indent}\tsample\n{indent}}}\n"
+				)
+				problems = []
+				CodeLinker(f'<pre class="language-el"><code>{code}</code></pre>',
+					self.catalog, lambda _: "", report=problems.append)
+				self.assertEqual(problems, [
+					"EL block 1:2:1: remove the common indentation from EL code lines",
+				] if indent else [])
+
 	def test_external_types_can_contain_commas(self):
 		code = '// @external dataset: Map<key: Text, value: Number>, formatRow: fn(Text, Number): Text\nformatRow(dataset, 1)'
 		problems = []

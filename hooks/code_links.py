@@ -230,6 +230,20 @@ def export_problem(binding, name, context):
 	return None
 
 
+def check_indentation(code, stream, report):
+	first_indented_line = None
+	for kind, _, start, _ in stream:
+		if kind not in ("code", "literal"):
+			continue
+		line_start = code.rfind("\n", 0, start) + 1
+		if line_start == start:
+			return
+		if first_indented_line is None and not code[line_start:start].strip(" \t"):
+			first_indented_line = line_start
+	if first_indented_line is not None:
+		report(first_indented_line, "remove the common indentation from EL code lines")
+
+
 def check_delimiters(stream, report):
 	closing = {"(": ")", "[": "]", "{": "}"}
 	stack = []
@@ -604,7 +618,7 @@ def typed_catch_receivers(code, tokens, pairs, declarations, ignored):
 	return receivers
 
 
-def code_targets(code, catalog, source=None, *, report=None, setup=""):
+def code_targets(code, catalog, source=None, *, report=None, setup="", check_margin=True):
 	"""Return source offsets for names whose documentation target is known.
 
 	Bindings declared anywhere in a fragment suppress default lookup throughout
@@ -617,6 +631,8 @@ def code_targets(code, catalog, source=None, *, report=None, setup=""):
 		if report:
 			report(0, str(error))
 		return {}
+	if report and check_margin:
+		check_indentation(code, stream, report)
 	opaque_starts = [start for start, _ in opaque]
 
 	def is_opaque(offset):
@@ -641,7 +657,7 @@ def code_targets(code, catalog, source=None, *, report=None, setup=""):
 				report(position, message)
 
 		combined = code[:header_end] + insertion + code[header_end:]
-		targets = code_targets(combined, catalog, source, report=member_report if report else None)
+		targets = code_targets(combined, catalog, source, report=member_report if report else None, check_margin=False)
 		return {position: target for offset, target in targets.items() if (position := member_offset(offset)) is not None}
 
 	if report:

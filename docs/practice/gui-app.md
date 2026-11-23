@@ -154,19 +154,19 @@ el run src/main.el
 
 ```el
 // @external root: Definition, display: Definition, counter: Counter
-	let controls = element("row")
-	controls.style.gap = 8
-	let increase = element("button", "+1", "increase")
-	let decrease = element("button", "-1", "decrease")
-	appendChild(root, "controls", controls)
-	appendChild(controls, "increase", increase)
-	appendChild(controls, "decrease", decrease)
-	let update = fn() {
-		display.text = counter.summary()
-	}
-	on(increase, "click", (event: GuiEvent) => { counter.increase(); update() })
-	on(decrease, "click", (event: GuiEvent) => { counter.decrease(); update() })
-	update()
+let controls = element("row")
+controls.style.gap = 8
+let increase = element("button", "+1", "increase")
+let decrease = element("button", "-1", "decrease")
+appendChild(root, "controls", controls)
+appendChild(controls, "increase", increase)
+appendChild(controls, "decrease", decrease)
+let update = fn() {
+	display.text = counter.summary()
+}
+on(increase, "click", (event: GuiEvent) => { counter.increase(); update() })
+on(decrease, "click", (event: GuiEvent) => { counter.decrease(); update() })
+update()
 ```
 
 导入行同时补上 `on` 与 `GuiEvent`：`import { Definition, element, appendChild, on, GuiEvent } from "el:user-interface/index.el"`。
@@ -187,13 +187,13 @@ el run src/main.el
 
 ```el
 // @external controls: Definition, display: Definition, counter: Counter
-	let reset = element("button", "清零", "reset")
-	appendChild(controls, "reset", reset)
-	let update = fn() {
-		display.text = counter.summary()
-		reset.enabled = counter.value != 0
-	}
-	on(reset, "click", (event: GuiEvent) => { counter.reset(); update() })
+let reset = element("button", "清零", "reset")
+appendChild(controls, "reset", reset)
+let update = fn() {
+	display.text = counter.summary()
+	reset.enabled = counter.value != 0
+}
+on(reset, "click", (event: GuiEvent) => { counter.reset(); update() })
 ```
 
 ??? question "先猜：点十次 `+1` 再点清零，界面会显示 `值 0，已操作 0 次` 吗？"
@@ -212,8 +212,8 @@ el run src/main.el
 
 ```el
 // @external root: Definition
-	let clock = element("label", "运行 0 秒", "clock")
-	appendChild(root, "clock", clock)
+let clock = element("label", "运行 0 秒", "clock")
+appendChild(root, "clock", clock)
 ```
 
 再在入口里按 id 取句柄、挂定时器：
