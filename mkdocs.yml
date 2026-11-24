@@ -155,6 +155,8 @@ nav:
       - 办公与科研数据:
           - Excel 分类导出 CSV: practice/workbook-to-csv.md
           - 流式筛选实验数据: practice/experiment-table.md
+          - 带单位算距离和速度: practice/units.md
+          - 用带单位的量做物理计算: practice/physics.md
           - 矩阵与数值脚本: practice/numerics.md
       - 游戏开发:
           - 2D · 第一个乒乓球场: practice/paddle-game.md

@@ -33,7 +33,7 @@
 
 ### 办公与科研数据
 
-[Excel 分类导出 CSV](../practice/workbook-to-csv.md) · [流式读实验数据](../practice/experiment-table.md) · [矩阵与绘图](../practice/numerics.md)
+[Excel 分类导出 CSV](../practice/workbook-to-csv.md) · [流式读实验数据](../practice/experiment-table.md) · [单位换算](../practice/units.md) · [物理计算](../practice/physics.md) · [矩阵与绘图](../practice/numerics.md)
 
 </div>
 <div class="el-card" markdown>
