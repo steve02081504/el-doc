@@ -12,7 +12,7 @@
 
 ## encodeTar {#api-d6a98609628a951ff853}
 
-源码：`src/stdlib/archives/tar.el:19` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/tar.el#L19)
+源码：`src/stdlib/archives/tar.el:13` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/tar.el#L13)
 
 编码不压缩的目标数位归档，缺省采用目标基数；options.radix 可指定较小基数。
 
@@ -31,7 +31,7 @@ let data = encodeTar(@[])
 
 ## decodeTar {#api-216ea1210e062a2582f2}
 
-源码：`src/stdlib/archives/tar.el:30` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/tar.el#L30)
+源码：`src/stdlib/archives/tar.el:24` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/tar.el#L24)
 
 解码与所选基数及地址单元宽度匹配的原生 TAR 归档。
 

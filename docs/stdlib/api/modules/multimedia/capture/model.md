@@ -15,9 +15,26 @@
 
 定义采集设备、音频格式以及供音频输入输出共用的 PCM 缓冲区。
 
+## CameraOptions {#api-c7574ddcf4fa589db3f2}
+
+源码：`src/stdlib/multimedia/capture/model.el:56` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L56)
+
+请求指定宽高和有理帧率。采集设备按该配置协商。
+
+```el-signature
+export @assign(mode: "copy") class CameraOptions
+```
+
+### 示例：请求每秒三十帧
+
+```el
+import { CameraOptions } from "el:multimedia/capture/"
+let mode = CameraOptions(640, 480, 30, 1)
+```
+
 ## AudioFormat {#api-36f185417f0702feae38}
 
-源码：`src/stdlib/multimedia/capture/model.el:79` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L79)
+源码：`src/stdlib/multimedia/capture/model.el:86` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L86)
 
 声明整数 PCM16 音频的采样率和声道数，并提供每帧字节数。
 
@@ -39,7 +56,7 @@ let format = AudioFormat(48000, 2)
 
 ## PcmAudio {#api-cb1ec5de04201d03778d}
 
-源码：`src/stdlib/multimedia/capture/model.el:128` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L128)
+源码：`src/stdlib/multimedia/capture/model.el:135` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L135)
 
 拥有交错有符号 PCM16 小端样本的共享缓冲区，可按帧和声道读取或写入。
 
@@ -64,7 +81,7 @@ audio.setSample(0, 0, 12000)
 
 ## PcmAudio.sample {#api-8a550e9ca9ac7d948cde}
 
-源码：`src/stdlib/multimedia/capture/model.el:161` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L161)
+源码：`src/stdlib/multimedia/capture/model.el:168` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L168)
 
 读取指定帧和声道的有符号 PCM16 整数样本。
 
@@ -88,7 +105,7 @@ let value = audio.sample(0)
 
 ## PcmAudio.setSample {#api-5d599038539e68d30f37}
 
-源码：`src/stdlib/multimedia/capture/model.el:180` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L180)
+源码：`src/stdlib/multimedia/capture/model.el:187` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L187)
 
 设置指定帧和声道的有符号 PCM16 整数样本。
 

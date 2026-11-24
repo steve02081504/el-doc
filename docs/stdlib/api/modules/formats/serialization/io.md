@@ -14,7 +14,7 @@
 
 源码：`src/stdlib/formats/serialization/io.el:14` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/io.el#L14)
 
-将值序列化为 EOD 文件并返回写入字节数。
+将值按目标数位配置序列化为 EOD 文件，返回写入的地址单元数。
 
 ```el-signature
 export fn writeFile(path, value): Number
@@ -33,7 +33,7 @@ discard(writeFile("file:./snapshot.eod", @[1, 2, 3]))
 
 源码：`src/stdlib/formats/serialization/io.el:22` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/io.el#L22)
 
-读取 EOD 文件并反序列化为 EL 值。
+读取符合目标数位配置的 EOD 文件并反序列化为 EL 值。
 
 ```el-signature
 export fn readFile(path)

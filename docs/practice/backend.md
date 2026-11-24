@@ -78,6 +78,8 @@ curl -i http://127.0.0.1:8765/health
 
 标准库导出 `pbkdf2_sha256`、`secure_random_bytes` 和 `constant_time_equal`。为密码派生保存每人的随机盐、算法版本、迭代数和摘要长度，按部署环境校准代价。拒绝登录日志中的密码、Cookie 和原始会话令牌。浏览器接真实账户前要使用 HTTPS、`Secure` 与 `HttpOnly` Cookie，按站点交互设计 `SameSite` 和跨站请求防护，并限制登录尝试。正文接入受限的 HTTP 服务端，统一处理消息定界、内容类型和连接超时。
 
+数据库的有序键、行记录、事务日志和备份默认使用目标机的数位基数。通过 `DbEngineOptions` 的 `storage` 传入 `StorageOptions(radix: …)` 可选更低的目标支持基数。重新打开、校验备份或恢复时使用当初写入的配置。
+
 ## 先在本地验证密码派生和数据库重开
 
 在空目录保存 `account-store.el`，运行 `el run account-store.el`。下面的完整程序只使用教学口令，首次运行创建账户，再关闭数据库并重新打开验证。再次练习时另选空目录，以免重复创建同一张表。迭代数 1000 仅供这个可快速执行的夹具使用。

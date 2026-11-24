@@ -17,12 +17,12 @@
 
 ## FileWriter.write {#api-60eb68cfed70401fd999}
 
-源码：`src/stdlib/filesystem/writer.el:141` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L141)
+源码：`src/stdlib/filesystem/writer.el:144` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L144)
 
 将字节数组快照写入目标位置并返回写入回执。
 
 ```el-signature
-fn write(bytes: Number[]): WriteReceipt
+fn write(units: Number[]): WriteReceipt
 ```
 
 **返回类型**：[`WriteReceipt`](../../types.md#api-3e0e196b89972e8bb0b2)
@@ -44,7 +44,7 @@ writer.close()
 
 ## FileWriter.close {#api-95af169891a6620e73da}
 
-源码：`src/stdlib/filesystem/writer.el:212` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L212)
+源码：`src/stdlib/filesystem/writer.el:220` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L220)
 
 完成写入器并关闭底层资源。
 

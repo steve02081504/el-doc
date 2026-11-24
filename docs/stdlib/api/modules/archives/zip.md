@@ -12,7 +12,7 @@
 
 ## encodeZip {#api-dacc7c8723f0a8d84745}
 
-源码：`src/stdlib/archives/zip.el:22` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/zip.el#L22)
+源码：`src/stdlib/archives/zip.el:17` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/zip.el#L17)
 
 编码目标数位归档。缺省采用目标基数，options.radix 可指定从 2 到目标基数的整数。统一使用 .zip 扩展名。
 
@@ -31,7 +31,7 @@ let data = encodeZip(@[])
 
 ## decodeZip {#api-e77ddc4b383a87b3f210}
 
-源码：`src/stdlib/archives/zip.el:39` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/zip.el#L39)
+源码：`src/stdlib/archives/zip.el:32` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/zip.el#L32)
 
 按目标基数或 options.radix 指定的基数读取同一种归档表示。归档头记录基数与地址单元宽度。
 

@@ -4,7 +4,7 @@
 
 [结构化文档数据](api.json)
 
-已标注文档的文件：248 / 4169；API 条目：948。此比例不是公开 API 覆盖率。
+已标注文档的文件：268 / 4182；API 条目：996。此比例不是公开 API 覆盖率。
 
 [按模块查找](modules.md) · [按符号查找](symbols.md) · [默认环境](environment.md) · [类型定义](types.md)
 
@@ -12,33 +12,33 @@
 
 | 库 | 已标注模块 | API 条目 |
 | --- | ---: | ---: |
-| [archives](categories/archives.md) | 2 | 4 |
+| [archives](categories/archives.md) | 5 | 11 |
 | [collections](categories/collections.md) | 25 | 122 |
 | [compiler](categories/compiler.md) | 3 | 5 |
 | [concurrency](categories/concurrency.md) | 5 | 7 |
 | [console](categories/console.md) | 4 | 44 |
 | [control](categories/control.md) | 2 | 2 |
 | [cryptography](categories/cryptography.md) | 9 | 17 |
-| [database](categories/database.md) | 5 | 9 |
+| [database](categories/database.md) | 6 | 10 |
 | [desktop-automation](categories/desktop-automation.md) | 7 | 10 |
-| [documents](categories/documents.md) | 1 | 3 |
+| [documents](categories/documents.md) | 2 | 5 |
 | [errors](categories/errors.md) | 3 | 6 |
 | [execution](categories/execution.md) | 1 | 4 |
 | [filesystem](categories/filesystem.md) | 5 | 26 |
 | [foreign-functions](categories/foreign-functions.md) | 3 | 6 |
-| [formats](categories/formats.md) | 16 | 26 |
+| [formats](categories/formats.md) | 19 | 31 |
 | [functions](categories/functions.md) | 2 | 7 |
 | [game](categories/game.md) | 1 | 4 |
-| [graphics](categories/graphics.md) | 2 | 13 |
+| [graphics](categories/graphics.md) | 5 | 18 |
 | [language](categories/language.md) | 7 | 24 |
 | [logic](categories/logic.md) | 8 | 24 |
 | [mathematics](categories/mathematics.md) | 6 | 26 |
 | [memory](categories/memory.md) | 11 | 49 |
-| [multimedia](categories/multimedia.md) | 8 | 35 |
+| [multimedia](categories/multimedia.md) | 16 | 62 |
 | [network](categories/network.md) | 9 | 38 |
 | [neural-networks](categories/neural-networks.md) | 15 | 37 |
 | [number](categories/number.md) | 9 | 20 |
-| [numerical-computing](categories/numerical-computing.md) | 9 | 39 |
+| [numerical-computing](categories/numerical-computing.md) | 10 | 40 |
 | [operating-system](categories/operating-system.md) | 4 | 4 |
 | [optimization](categories/optimization.md) | 1 | 3 |
 | [parsing](categories/parsing.md) | 1 | 1 |

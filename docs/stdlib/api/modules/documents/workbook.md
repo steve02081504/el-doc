@@ -48,12 +48,12 @@ let value = sheet.get(1, 1)
 
 ## readWorkbook {#api-f1dc94bd466a32e95591}
 
-源码：`src/stdlib/documents/workbook.el:270` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/workbook.el#L270)
+源码：`src/stdlib/documents/workbook.el:273` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/workbook.el#L273)
 
 读取 XLSX 或 ODS 文件并解析为工作簿。
 
 ```el-signature
-export fn readWorkbook(path: Text): Workbook
+export fn readWorkbook(path: Text, radix: Number | nil_t = nil): Workbook
 ```
 
 **返回类型**：[`Workbook`](../../types.md#api-1c744dd545a81af88249)

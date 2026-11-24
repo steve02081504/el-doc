@@ -88,17 +88,17 @@ discard(long.cancel())
 
 GUI 程序用 `el:user-interface/` 导出的 `SoundPlayer`，它由窗口拥有，内部就是一个 `MusicPlayer`。`SoundPlayer(window)` 的 `cue(name, value = 0, maximum = 1)` 按名字发提示音，名字有 `"drag"`、`"exchange"`、`"increase"`、`"decrease"`、`"disappear"`、`"engine"`、`"celebrate"`；`tryCue(...)` 在底层报 `CaptureError` 时返回 `f`；`loop("engine")` 循环发引擎音，`engine(speed)` 设置 0..1 的速度，`stop()` 停止，`close()` 释放。
 
-## WAV 读写只认整数 PCM16
+## WAV 读写
 
-`wav.el` 导出经典 RIFF/WAVE 整数 PCM16 的读写：
+以下接口读写目标数位 WAV，采样值为整数 PCM16。
 
 | 入口 | 说明 |
 | --- | --- |
-| `readWav(path, maxFrames = 16777216)` | 读成 `PcmAudio` |
-| `writeWav(path, audio)` | 把整个 `PcmAudio` 写成 WAV |
-| `encodeWav(audio): Number[]` | 编码成字节数组，上限 64 MiB |
-| `decodeWav(bytes, maxFrames = 16777216)` | 从字节数组解码 |
-| `WavWriter(path, format = AudioFormat())` | 增量写入：`append(audio)`、`frames`、`close()` |
+| `readWav(path, radix = nil)` | 读成 `PcmAudio` |
+| `writeWav(path, audio, radix = nil)` | 把整个 `PcmAudio` 写成数位 WAV |
+| `encodeWav(audio, radix = nil): Number[]` | 编码成地址单元数组 |
+| `decodeWav(units, radix = nil)` | 从地址单元数组解码 |
+| `WavWriter(path, format = AudioFormat(), radix = nil)` | 增量写入：`append(audio)`、`frames`、`close()` |
 
 `AudioFormat(sampleRate = 48000, channels = 1)` 的采样率限制在 1000..384000 Hz、声道数 1..2，`blockAlign` 是声道数乘 2 字节。`PcmAudio(frames, format = AudioFormat(), timestamp = 0)` 是交错的 PCM16 缓冲，`sample(frame, channel)` 读、`setSample(frame, channel, value)` 写，值域 `-32768..32767`。
 
@@ -124,7 +124,7 @@ fn writeTone(path: Text) {
 writeTone("file:./tone.wav")
 ```
 
-`readWav`/`writeWav` 失败时抛 `CaptureError`（来自 `el:multimedia/capture/`），`failure` 字段给出 `InvalidInput`、`UnsupportedFormat`、`LimitExceeded` 等分类。只支持整数 PCM16；其它编码、重复块、截断和超出 `maxFrames` 都会明确报错。
+`readWav`/`writeWav` 失败时抛 `CaptureError`（来自 `el:multimedia/capture/`），`failure` 字段给出 `InvalidInput`、`UnsupportedFormat`、`LimitExceeded` 等分类。数位 WAV 保存 PCM16 采样与时间，缺省按目标基数写入。读取会核对基数、地址宽度、长度和校验值。需要交接固定 RIFF/WAVE 文件时使用 `readRiffWav`、`writeRiffWav` 或 `RiffWavWriter`。
 
 ### 播放 WAV 要自己分块提交
 

@@ -6,14 +6,14 @@
 
 ## database/engine {#api-ad83373421b22cbf7008}
 
-源码：`src/stdlib/database/engine.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L1)
+源码：`src/stdlib/database/engine.el:2` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L2)
 
 提供持久数据库引擎的打开入口、引擎选项及事务/读取会话管理。
 示例：`let db = openDatabase(Path("/data/app"), DbEngineOptions())`；普通打开会遵守恢复围栏并使用目录中的持久状态。
 
 ## DbEngineOptions {#api-a519c385d5e1dcf7f447}
 
-源码：`src/stdlib/database/engine.el:46` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L46)
+源码：`src/stdlib/database/engine.el:47` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L47)
 
 配置数据库目录、存储与日志、节点/目录标识、扫描边界、复制身份及显式恢复行为。
 可选的 `journal` 是借用的持久事务日志；引擎不会关闭它。`restore_resume` 仅供显式恢复入口使用，普通打开仍拒绝带恢复围栏的目录。
@@ -33,7 +33,7 @@ let db = openDatabase(Path("/var/lib/app"), options)
 
 ## openDatabase {#api-e5ea93b339773da61f63}
 
-源码：`src/stdlib/database/engine.el:1212` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L1212)
+源码：`src/stdlib/database/engine.el:1214` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L1214)
 
 打开指定原生路径的数据库目录并构造引擎；目录及持久状态由引擎使用，已存在的不完整恢复目标会按选项拒绝。
 

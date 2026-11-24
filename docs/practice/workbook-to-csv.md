@@ -48,7 +48,7 @@ fn numberCell(value: CellValue): Number {
 	}
 }
 
-let book = readFileAs(formats.XLSX, "scores.xlsx")
+let book = readFileAs(formats.StandardXLSX, "scores.xlsx")
 if (book.sheets.count == 0) throw "工作簿没有工作表"
 let sheet = book.sheets[0]
 if (sheet.name != "成绩") throw "第一张工作表必须叫成绩"
@@ -95,7 +95,7 @@ el run classify.el
 
 ## 第二步：看懂程序怎样找到每行
 
-`readFileAs(formats.XLSX, "scores.xlsx")` 打开输入工作簿，`book.sheets[0]` 取第一张工作表。数组下标从零开始，工作表的行号和列号则从一开始：姓名在第 1 列，分数在第 2 列。
+`readFileAs(formats.StandardXLSX, "scores.xlsx")` 打开输入工作簿，`book.sheets[0]` 取第一张工作表。数组下标从零开始，工作表的行号和列号则从一开始：姓名在第 1 列，分数在第 2 列。
 
 `from` 指定要查的单元格，`where` 只保留姓名列中位于表头之下的单元格。两条 `let` 分别取姓名和同一行的分数，`select` 生成一条 CSV 记录。工作表缺少姓名单元格的行会被略过。
 

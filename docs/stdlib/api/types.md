@@ -76,7 +76,7 @@ class RangeEncoder
 
 ## ArchiveCompression · archives/model.el {#api-1e65a48d585eaf4d9a95}
 
-[源码 archives/model.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L11)
+[源码 archives/model.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L14)
 
 ```el-signature
 enum ArchiveCompression
@@ -84,7 +84,7 @@ enum ArchiveCompression
 
 ## ArchiveEntry · archives/model.el {#api-566266bfda7d84271278}
 
-[源码 archives/model.el:59](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L59)
+[源码 archives/model.el:62](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L62)
 
 ```el-signature
 class ArchiveEntry
@@ -92,7 +92,7 @@ class ArchiveEntry
 
 ## ArchiveError · archives/model.el {#api-003a2e99bf00562ddd8d}
 
-[源码 archives/model.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L13)
+[源码 archives/model.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L16)
 
 ```el-signature
 class ArchiveError extends Error
@@ -100,7 +100,7 @@ class ArchiveError extends Error
 
 ## ArchiveFailure · archives/model.el {#api-6ce3db14ef638113dcc6}
 
-[源码 archives/model.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L10)
+[源码 archives/model.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L13)
 
 ```el-signature
 enum ArchiveFailure
@@ -108,7 +108,7 @@ enum ArchiveFailure
 
 ## ArchiveFormat · archives/model.el {#api-803a8d8327249ccd1b56}
 
-[源码 archives/model.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L9)
+[源码 archives/model.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L12)
 
 ```el-signature
 enum ArchiveFormat
@@ -116,7 +116,7 @@ enum ArchiveFormat
 
 ## ArchiveLimits · archives/model.el {#api-48455797f15916b02dd3}
 
-[源码 archives/model.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L24)
+[源码 archives/model.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L27)
 
 ```el-signature
 class ArchiveLimits
@@ -124,11 +124,13 @@ class ArchiveLimits
 
 ## ArchiveOptions · archives/model.el {#api-fb8f27ddabacf5633ba8}
 
-[源码 archives/model.el:75](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L75)
+[源码 archives/model.el:85](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L85)
 
 ```el-signature
 class ArchiveOptions
 ```
+
+[API 文档](modules/archives/model.md#api-fb8f27ddabacf5633ba8)
 
 ## ZipFile · archives/pkzip.el {#api-015b8ce776e38ed31979}
 
@@ -138,9 +140,17 @@ class ArchiveOptions
 class ZipFile
 ```
 
+## RadixArchiveKind · archives/radix-archive.el {#api-4bfa7ab78ba2ebbcced3}
+
+[源码 archives/radix-archive.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/radix-archive.el#L17)
+
+```el-signature
+enum RadixArchiveKind
+```
+
 ## RadixReader · archives/radix-archive.el {#api-8925119ccd7a27f1beeb}
 
-[源码 archives/radix-archive.el:52](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/radix-archive.el#L52)
+[源码 archives/radix-archive.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/radix-archive.el#L67)
 
 ```el-signature
 class RadixReader
@@ -148,7 +158,7 @@ class RadixReader
 
 ## RadixWriter · archives/radix-archive.el {#api-1db2c2cffce08d334350}
 
-[源码 archives/radix-archive.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/radix-archive.el#L36)
+[源码 archives/radix-archive.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/radix-archive.el#L51)
 
 ```el-signature
 class RadixWriter
@@ -188,7 +198,7 @@ class RarTree
 
 ## PendingFile · archives/rar.el {#api-66f77d55a8b9f7a13d77}
 
-[源码 archives/rar.el:236](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/rar.el#L236)
+[源码 archives/rar.el:235](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/rar.el#L235)
 
 ```el-signature
 class PendingFile
@@ -196,7 +206,7 @@ class PendingFile
 
 ## RarEncryption · archives/rar.el {#api-6e572564ff9a66fac031}
 
-[源码 archives/rar.el:81](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/rar.el#L81)
+[源码 archives/rar.el:80](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/rar.el#L80)
 
 ```el-signature
 class RarEncryption
@@ -11930,7 +11940,7 @@ class Sha256
 
 ## BackupManifest · database/admin/backup-job.el {#api-8cc453f36143edd6223a}
 
-[源码 database/admin/backup-job.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/backup-job.el#L41)
+[源码 database/admin/backup-job.el:42](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/backup-job.el#L42)
 
 ```el-signature
 class BackupManifest
@@ -11938,7 +11948,7 @@ class BackupManifest
 
 ## BackupReservation · database/admin/backup-job.el {#api-545b8e6397742cdeb2d3}
 
-[源码 database/admin/backup-job.el:534](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/backup-job.el#L534)
+[源码 database/admin/backup-job.el:541](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/backup-job.el#L541)
 
 ```el-signature
 class BackupReservation
@@ -11946,7 +11956,7 @@ class BackupReservation
 
 ## CanonicalCdcBootstrap · database/admin/cdc-rows.el {#api-87969baac3b8e8ba3e59}
 
-[源码 database/admin/cdc-rows.el:255](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L255)
+[源码 database/admin/cdc-rows.el:257](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L257)
 
 ```el-signature
 class CanonicalCdcBootstrap
@@ -11954,7 +11964,7 @@ class CanonicalCdcBootstrap
 
 ## CanonicalCdcCheckpoint · database/admin/cdc-rows.el {#api-7042def842cfa83c928f}
 
-[源码 database/admin/cdc-rows.el:210](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L210)
+[源码 database/admin/cdc-rows.el:212](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L212)
 
 ```el-signature
 class CanonicalCdcCheckpoint
@@ -11962,7 +11972,7 @@ class CanonicalCdcCheckpoint
 
 ## CanonicalCdcCheckpointStore · database/admin/cdc-rows.el {#api-31ef80b3b3c877550151}
 
-[源码 database/admin/cdc-rows.el:349](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L349)
+[源码 database/admin/cdc-rows.el:351](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L351)
 
 ```el-signature
 class CanonicalCdcCheckpointStore
@@ -11970,7 +11980,7 @@ class CanonicalCdcCheckpointStore
 
 ## CanonicalCdcMemoryCheckpoint · database/admin/cdc-rows.el {#api-27d444785931b5b2178d}
 
-[源码 database/admin/cdc-rows.el:304](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L304)
+[源码 database/admin/cdc-rows.el:306](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L306)
 
 ```el-signature
 class CanonicalCdcMemoryCheckpoint
@@ -11978,7 +11988,7 @@ class CanonicalCdcMemoryCheckpoint
 
 ## CdcConsumerCapture · database/admin/cdc-rows.el {#api-1eab0e794a5ff56ed9f2}
 
-[源码 database/admin/cdc-rows.el:222](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L222)
+[源码 database/admin/cdc-rows.el:224](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L224)
 
 ```el-signature
 class CdcConsumerCapture
@@ -11986,7 +11996,7 @@ class CdcConsumerCapture
 
 ## CdcOperationGate · database/admin/cdc-rows.el {#api-c426f5de514c4454769b}
 
-[源码 database/admin/cdc-rows.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L40)
+[源码 database/admin/cdc-rows.el:42](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L42)
 
 ```el-signature
 class CdcOperationGate
@@ -11994,7 +12004,7 @@ class CdcOperationGate
 
 ## CommittedBatch · database/admin/cdc-rows.el {#api-6ad03f7afaad7c5413c0}
 
-[源码 database/admin/cdc-rows.el:115](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L115)
+[源码 database/admin/cdc-rows.el:117](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L117)
 
 ```el-signature
 class CommittedBatch
@@ -12002,7 +12012,7 @@ class CommittedBatch
 
 ## CommittedCdcStream · database/admin/cdc-rows.el {#api-a1d5324f3e1a68f9d43d}
 
-[源码 database/admin/cdc-rows.el:492](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L492)
+[源码 database/admin/cdc-rows.el:496](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L496)
 
 ```el-signature
 class CommittedCdcStream
@@ -12010,7 +12020,7 @@ class CommittedCdcStream
 
 ## CommittedChangeBatch · database/admin/cdc-rows.el {#api-1e3ffd3f4833eee072c0}
 
-[源码 database/admin/cdc-rows.el:188](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L188)
+[源码 database/admin/cdc-rows.el:190](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L190)
 
 ```el-signature
 class CommittedChangeBatch
@@ -12018,7 +12028,7 @@ class CommittedChangeBatch
 
 ## CommittedRowChange · database/admin/cdc-rows.el {#api-b5cfc55b2ddaecf300b7}
 
-[源码 database/admin/cdc-rows.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L64)
+[源码 database/admin/cdc-rows.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L66)
 
 ```el-signature
 class CommittedRowChange
@@ -12026,7 +12036,7 @@ class CommittedRowChange
 
 ## CommittedRowDelta · database/admin/cdc-rows.el {#api-c79b98b3344e67061842}
 
-[源码 database/admin/cdc-rows.el:174](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L174)
+[源码 database/admin/cdc-rows.el:176](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L176)
 
 ```el-signature
 class CommittedRowDelta
@@ -12034,7 +12044,7 @@ class CommittedRowDelta
 
 ## CommittedSchemaChange · database/admin/cdc-rows.el {#api-f3448fd4d98047fd743a}
 
-[源码 database/admin/cdc-rows.el:99](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L99)
+[源码 database/admin/cdc-rows.el:101](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L101)
 
 ```el-signature
 class CommittedSchemaChange
@@ -12042,7 +12052,7 @@ class CommittedSchemaChange
 
 ## CommittedTransaction · database/admin/cdc-rows.el {#api-c3386b463aa56dadd8fc}
 
-[源码 database/admin/cdc-rows.el:105](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L105)
+[源码 database/admin/cdc-rows.el:107](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc-rows.el#L107)
 
 ```el-signature
 class CommittedTransaction
@@ -12050,7 +12060,7 @@ class CommittedTransaction
 
 ## CdcBatch · database/admin/cdc.el {#api-865795c6589f566f32cb}
 
-[源码 database/admin/cdc.el:139](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc.el#L139)
+[源码 database/admin/cdc.el:141](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc.el#L141)
 
 ```el-signature
 class CdcBatch
@@ -12058,7 +12068,7 @@ class CdcBatch
 
 ## CdcCheckpointStore · database/admin/cdc.el {#api-506aff5b95d11fd3ed41}
 
-[源码 database/admin/cdc.el:42](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc.el#L42)
+[源码 database/admin/cdc.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc.el#L43)
 
 ```el-signature
 class CdcCheckpointStore
@@ -12066,7 +12076,7 @@ class CdcCheckpointStore
 
 ## CdcEvent · database/admin/cdc.el {#api-65ed73f9b305c68c47e5}
 
-[源码 database/admin/cdc.el:112](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc.el#L112)
+[源码 database/admin/cdc.el:114](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc.el#L114)
 
 ```el-signature
 class CdcEvent
@@ -12074,7 +12084,7 @@ class CdcEvent
 
 ## DurableCdcConsumer · database/admin/cdc.el {#api-db027695cf95ac27c886}
 
-[源码 database/admin/cdc.el:146](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc.el#L146)
+[源码 database/admin/cdc.el:148](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/cdc.el#L148)
 
 ```el-signature
 class DurableCdcConsumer
@@ -12098,7 +12108,7 @@ class DatabaseGateway
 
 ## IndexJobState · database/admin/index-build.el {#api-01c650ff9a9bf79cd805}
 
-[源码 database/admin/index-build.el:44](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/index-build.el#L44)
+[源码 database/admin/index-build.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/index-build.el#L45)
 
 ```el-signature
 class IndexJobState
@@ -12106,7 +12116,7 @@ class IndexJobState
 
 ## OnlineIndexJob · database/admin/index-build.el {#api-8392dd51258f30e59189}
 
-[源码 database/admin/index-build.el:156](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/index-build.el#L156)
+[源码 database/admin/index-build.el:157](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/index-build.el#L157)
 
 ```el-signature
 class OnlineIndexJob
@@ -12114,7 +12124,7 @@ class OnlineIndexJob
 
 ## RequestTokenFloor · database/admin/retention.el {#api-a387104d0243d749ceab}
 
-[源码 database/admin/retention.el:193](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/retention.el#L193)
+[源码 database/admin/retention.el:194](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/retention.el#L194)
 
 ```el-signature
 class RequestTokenFloor
@@ -12122,7 +12132,7 @@ class RequestTokenFloor
 
 ## RetentionPolicy · database/admin/retention.el {#api-8774ac5e1b97c453c1d1}
 
-[源码 database/admin/retention.el:354](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/retention.el#L354)
+[源码 database/admin/retention.el:357](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/retention.el#L357)
 
 ```el-signature
 class RetentionPolicy
@@ -12130,7 +12140,7 @@ class RetentionPolicy
 
 ## RetentionRegistry · database/admin/retention.el {#api-a312c47728c500d531e4}
 
-[源码 database/admin/retention.el:62](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/retention.el#L62)
+[源码 database/admin/retention.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/retention.el#L63)
 
 ```el-signature
 class RetentionRegistry
@@ -12138,7 +12148,7 @@ class RetentionRegistry
 
 ## RetentionReservation · database/admin/retention.el {#api-9e8d14a2cfc6789f7735}
 
-[源码 database/admin/retention.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/retention.el#L45)
+[源码 database/admin/retention.el:46](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/retention.el#L46)
 
 ```el-signature
 class RetentionReservation
@@ -12146,7 +12156,7 @@ class RetentionReservation
 
 ## AccessController · database/admin/security.el {#api-eb791790d5aea36d25bb}
 
-[源码 database/admin/security.el:553](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L553)
+[源码 database/admin/security.el:543](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L543)
 
 ```el-signature
 class AccessController
@@ -12154,7 +12164,7 @@ class AccessController
 
 ## AuditLog · database/admin/security.el {#api-29a39cc1da8ef3c40901}
 
-[源码 database/admin/security.el:448](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L448)
+[源码 database/admin/security.el:444](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L444)
 
 ```el-signature
 class AuditLog
@@ -12162,7 +12172,7 @@ class AuditLog
 
 ## CallerIdentity · database/admin/security.el {#api-1d98b3eb180465025724}
 
-[源码 database/admin/security.el:130](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L130)
+[源码 database/admin/security.el:132](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L132)
 
 ```el-signature
 class CallerIdentity
@@ -12170,7 +12180,7 @@ class CallerIdentity
 
 ## Principal · database/admin/security.el {#api-09bde10a5b8d6d84c40a}
 
-[源码 database/admin/security.el:100](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L100)
+[源码 database/admin/security.el:102](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L102)
 
 ```el-signature
 class Principal
@@ -12178,7 +12188,7 @@ class Principal
 
 ## PrincipalLimits · database/admin/security.el {#api-4d154daf67f0f250f982}
 
-[源码 database/admin/security.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L87)
+[源码 database/admin/security.el:89](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L89)
 
 ```el-signature
 class PrincipalLimits
@@ -12186,7 +12196,7 @@ class PrincipalLimits
 
 ## PrincipalStore · database/admin/security.el {#api-d95d9f5e9436b8cb6d09}
 
-[源码 database/admin/security.el:146](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L146)
+[源码 database/admin/security.el:148](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L148)
 
 ```el-signature
 class PrincipalStore
@@ -12194,7 +12204,7 @@ class PrincipalStore
 
 ## RoleEntry · database/admin/security.el {#api-dc94408b04ddadc5dc54}
 
-[源码 database/admin/security.el:110](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L110)
+[源码 database/admin/security.el:112](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L112)
 
 ```el-signature
 class RoleEntry
@@ -12202,7 +12212,7 @@ class RoleEntry
 
 ## TokenEntry · database/admin/security.el {#api-372e6289b88b6c2e183a}
 
-[源码 database/admin/security.el:116](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L116)
+[源码 database/admin/security.el:118](https://github.com/steve02081504/el/blob/master/src/stdlib/database/admin/security.el#L118)
 
 ```el-signature
 class TokenEntry
@@ -12482,7 +12492,7 @@ class DbAutoOptions
 
 ## DbAutoRowCodec · database/auto/row-codec.el {#api-e7a14427f59e03a3fbce}
 
-[源码 database/auto/row-codec.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/database/auto/row-codec.el#L20)
+[源码 database/auto/row-codec.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/database/auto/row-codec.el#L22)
 
 ```el-signature
 class DbAutoRowCodec extends RowCodecBase
@@ -12522,7 +12532,7 @@ class DistributedService
 
 ## ExchangeBatch · database/cluster/exchange.el {#api-81379014f97058ca6c49}
 
-[源码 database/cluster/exchange.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/exchange.el#L11)
+[源码 database/cluster/exchange.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/exchange.el#L10)
 
 ```el-signature
 class ExchangeBatch
@@ -12530,7 +12540,7 @@ class ExchangeBatch
 
 ## HashExchange · database/cluster/exchange.el {#api-838b32fb132870fb9178}
 
-[源码 database/cluster/exchange.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/exchange.el#L27)
+[源码 database/cluster/exchange.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/exchange.el#L26)
 
 ```el-signature
 class HashExchange
@@ -12538,7 +12548,7 @@ class HashExchange
 
 ## MergeCursor · database/cluster/exchange.el {#api-2f685357d817c718165c}
 
-[源码 database/cluster/exchange.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/exchange.el#L77)
+[源码 database/cluster/exchange.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/exchange.el#L76)
 
 ```el-signature
 class MergeCursor
@@ -12546,7 +12556,7 @@ class MergeCursor
 
 ## MergeExchange · database/cluster/exchange.el {#api-810d9a7fd2b5a285066c}
 
-[源码 database/cluster/exchange.el:104](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/exchange.el#L104)
+[源码 database/cluster/exchange.el:103](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/exchange.el#L103)
 
 ```el-signature
 class MergeExchange
@@ -12666,7 +12676,7 @@ class ReplicatedDatabase
 
 ## DecodedRouteCommand · database/cluster/route-service.el {#api-cb6ee2e3595208fe561a}
 
-[源码 database/cluster/route-service.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route-service.el#L23)
+[源码 database/cluster/route-service.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route-service.el#L25)
 
 ```el-signature
 class DecodedRouteCommand
@@ -12674,7 +12684,7 @@ class DecodedRouteCommand
 
 ## RouteService · database/cluster/route-service.el {#api-1e3e9c2c9f09d3e0d4c7}
 
-[源码 database/cluster/route-service.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route-service.el#L39)
+[源码 database/cluster/route-service.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route-service.el#L41)
 
 ```el-signature
 class RouteService
@@ -12682,7 +12692,7 @@ class RouteService
 
 ## RangeEpoch · database/cluster/route.el {#api-9b78b774eba98d3eede3}
 
-[源码 database/cluster/route.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route.el#L31)
+[源码 database/cluster/route.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route.el#L33)
 
 ```el-signature
 class RangeEpoch
@@ -12690,7 +12700,7 @@ class RangeEpoch
 
 ## RouteChange · database/cluster/route.el {#api-b48076b5a44a87fee8e7}
 
-[源码 database/cluster/route.el:97](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route.el#L97)
+[源码 database/cluster/route.el:99](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route.el#L99)
 
 ```el-signature
 class RouteChange
@@ -12698,7 +12708,7 @@ class RouteChange
 
 ## RouteChangeKind · database/cluster/route.el {#api-a701eda0829c8220158a}
 
-[源码 database/cluster/route.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route.el#L10)
+[源码 database/cluster/route.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route.el#L12)
 
 ```el-signature
 enum RouteChangeKind
@@ -12706,7 +12716,7 @@ enum RouteChangeKind
 
 ## RouteDirectory · database/cluster/route.el {#api-644293d7e63ea7a7045b}
 
-[源码 database/cluster/route.el:154](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route.el#L154)
+[源码 database/cluster/route.el:156](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route.el#L156)
 
 ```el-signature
 class RouteDirectory
@@ -12714,7 +12724,7 @@ class RouteDirectory
 
 ## ShardRange · database/cluster/route.el {#api-45679e3cf05b4094267b}
 
-[源码 database/cluster/route.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route.el#L43)
+[源码 database/cluster/route.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route.el#L45)
 
 ```el-signature
 class ShardRange
@@ -12722,7 +12732,7 @@ class ShardRange
 
 ## TransferCertificate · database/cluster/route.el {#api-d6f6732d4c3efe4718a4}
 
-[源码 database/cluster/route.el:75](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route.el#L75)
+[源码 database/cluster/route.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/route.el#L77)
 
 ```el-signature
 class TransferCertificate
@@ -12730,7 +12740,7 @@ class TransferCertificate
 
 ## DbDistributedProvider · database/cluster/shard-rpc.el {#api-e7b075379e94c185d60f}
 
-[源码 database/cluster/shard-rpc.el:668](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L668)
+[源码 database/cluster/shard-rpc.el:675](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L675)
 
 ```el-signature
 class DbDistributedProvider extends @shared DbRelationProvider
@@ -12738,7 +12748,7 @@ class DbDistributedProvider extends @shared DbRelationProvider
 
 ## DecodedStatistics · database/cluster/shard-rpc.el {#api-72b5077975c04cc2e0f3}
 
-[源码 database/cluster/shard-rpc.el:182](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L182)
+[源码 database/cluster/shard-rpc.el:183](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L183)
 
 ```el-signature
 class DecodedStatistics
@@ -12746,7 +12756,7 @@ class DecodedStatistics
 
 ## DistributedIndexCursor · database/cluster/shard-rpc.el {#api-18edcbc46d29111d0198}
 
-[源码 database/cluster/shard-rpc.el:880](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L880)
+[源码 database/cluster/shard-rpc.el:887](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L887)
 
 ```el-signature
 class DistributedIndexCursor extends @shared DbRowCursor
@@ -12754,7 +12764,7 @@ class DistributedIndexCursor extends @shared DbRowCursor
 
 ## DistributedShard · database/cluster/shard-rpc.el {#api-0662cfc8b8cfc30adec6}
 
-[源码 database/cluster/shard-rpc.el:651](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L651)
+[源码 database/cluster/shard-rpc.el:656](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L656)
 
 ```el-signature
 class DistributedShard
@@ -12762,7 +12772,7 @@ class DistributedShard
 
 ## RemoteShardCursor · database/cluster/shard-rpc.el {#api-367f2d2685615bca009b}
 
-[源码 database/cluster/shard-rpc.el:537](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L537)
+[源码 database/cluster/shard-rpc.el:540](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L540)
 
 ```el-signature
 class RemoteShardCursor extends @shared DbRowCursor
@@ -12770,7 +12780,7 @@ class RemoteShardCursor extends @shared DbRowCursor
 
 ## ServerCursor · database/cluster/shard-rpc.el {#api-4689d684c734a2312602}
 
-[源码 database/cluster/shard-rpc.el:287](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L287)
+[源码 database/cluster/shard-rpc.el:288](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L288)
 
 ```el-signature
 class ServerCursor
@@ -12778,7 +12788,7 @@ class ServerCursor
 
 ## ShardOp · database/cluster/shard-rpc.el {#api-2be744ac8348659bc616}
 
-[源码 database/cluster/shard-rpc.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L28)
+[源码 database/cluster/shard-rpc.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L29)
 
 ```el-signature
 enum ShardOp
@@ -12786,7 +12796,7 @@ enum ShardOp
 
 ## ShardRequest · database/cluster/shard-rpc.el {#api-ce5f94f42b8ab24bac30}
 
-[源码 database/cluster/shard-rpc.el:62](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L62)
+[源码 database/cluster/shard-rpc.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L63)
 
 ```el-signature
 class ShardRequest
@@ -12794,7 +12804,7 @@ class ShardRequest
 
 ## ShardResponse · database/cluster/shard-rpc.el {#api-2da1e2195e18120676be}
 
-[源码 database/cluster/shard-rpc.el:85](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L85)
+[源码 database/cluster/shard-rpc.el:86](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L86)
 
 ```el-signature
 class ShardResponse
@@ -12802,7 +12812,7 @@ class ShardResponse
 
 ## ShardScanService · database/cluster/shard-rpc.el {#api-a3f4ab794395950982d6}
 
-[源码 database/cluster/shard-rpc.el:338](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L338)
+[源码 database/cluster/shard-rpc.el:339](https://github.com/steve02081504/el/blob/master/src/stdlib/database/cluster/shard-rpc.el#L339)
 
 ```el-signature
 class ShardScanService
@@ -12986,7 +12996,7 @@ class DbRowCursor
 
 ## DatabaseEngine · database/engine.el {#api-108a100299f4ad577de0}
 
-[源码 database/engine.el:399](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L399)
+[源码 database/engine.el:400](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L400)
 
 ```el-signature
 class DatabaseEngine
@@ -12994,7 +13004,7 @@ class DatabaseEngine
 
 ## DbCommitReceipt · database/engine.el {#api-4c7416ad3becfa0dca22}
 
-[源码 database/engine.el:91](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L91)
+[源码 database/engine.el:92](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L92)
 
 ```el-signature
 class DbCommitReceipt
@@ -13002,7 +13012,7 @@ class DbCommitReceipt
 
 ## DbEngineOptions · database/engine.el {#api-a519c385d5e1dcf7f447}
 
-[源码 database/engine.el:46](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L46)
+[源码 database/engine.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L47)
 
 ```el-signature
 class DbEngineOptions
@@ -13012,7 +13022,7 @@ class DbEngineOptions
 
 ## DbReadSession · database/engine.el {#api-a8f548f5797b8644cf95}
 
-[源码 database/engine.el:335](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L335)
+[源码 database/engine.el:336](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L336)
 
 ```el-signature
 class DbReadSession
@@ -13020,7 +13030,7 @@ class DbReadSession
 
 ## DbRestoreWriter · database/engine.el {#api-f5efa423c4902d05198e}
 
-[源码 database/engine.el:273](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L273)
+[源码 database/engine.el:274](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L274)
 
 ```el-signature
 class DbRestoreWriter
@@ -13028,7 +13038,7 @@ class DbRestoreWriter
 
 ## DbWriteSession · database/engine.el {#api-620967b02d7349eb7641}
 
-[源码 database/engine.el:116](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L116)
+[源码 database/engine.el:117](https://github.com/steve02081504/el/blob/master/src/stdlib/database/engine.el#L117)
 
 ```el-signature
 class DbWriteSession
@@ -13420,7 +13430,7 @@ class DbOptimizerReport
 
 ## OrderedKeyError · database/ordered-key.el {#api-4f5e21894e18867f1811}
 
-[源码 database/ordered-key.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/database/ordered-key.el#L19)
+[源码 database/ordered-key.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/database/ordered-key.el#L16)
 
 ```el-signature
 class OrderedKeyError extends Error
@@ -13428,7 +13438,7 @@ class OrderedKeyError extends Error
 
 ## OrderedKeyLimits · database/ordered-key.el {#api-a8638570fc036d0ab129}
 
-[源码 database/ordered-key.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/database/ordered-key.el#L25)
+[源码 database/ordered-key.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/database/ordered-key.el#L22)
 
 ```el-signature
 class OrderedKeyLimits
@@ -13436,7 +13446,7 @@ class OrderedKeyLimits
 
 ## OrderedKeyRead · database/ordered-key.el {#api-11eec49deb81bf42a718}
 
-[源码 database/ordered-key.el:50](https://github.com/steve02081504/el/blob/master/src/stdlib/database/ordered-key.el#L50)
+[源码 database/ordered-key.el:49](https://github.com/steve02081504/el/blob/master/src/stdlib/database/ordered-key.el#L49)
 
 ```el-signature
 class OrderedKeyRead
@@ -13444,7 +13454,7 @@ class OrderedKeyRead
 
 ## OrderedKeyReader · database/ordered-key.el {#api-7a1b736d80371e71d218}
 
-[源码 database/ordered-key.el:86](https://github.com/steve02081504/el/blob/master/src/stdlib/database/ordered-key.el#L86)
+[源码 database/ordered-key.el:93](https://github.com/steve02081504/el/blob/master/src/stdlib/database/ordered-key.el#L93)
 
 ```el-signature
 class OrderedKeyReader
@@ -13452,7 +13462,7 @@ class OrderedKeyReader
 
 ## OrderedKeyTupleRead · database/ordered-key.el {#api-e6864825786e6dc7a031}
 
-[源码 database/ordered-key.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/database/ordered-key.el#L57)
+[源码 database/ordered-key.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/database/ordered-key.el#L56)
 
 ```el-signature
 class OrderedKeyTupleRead
@@ -13460,7 +13470,7 @@ class OrderedKeyTupleRead
 
 ## OrderedKeyWriter · database/ordered-key.el {#api-7d2a9a2e97e27d679583}
 
-[源码 database/ordered-key.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/database/ordered-key.el#L64)
+[源码 database/ordered-key.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/database/ordered-key.el#L63)
 
 ```el-signature
 class OrderedKeyWriter
@@ -13908,7 +13918,7 @@ class AuthenticatedFrame
 
 ## RaftClient · database/replication/client.el {#api-1ff6404f36991389eb66}
 
-[源码 database/replication/client.el:130](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/client.el#L130)
+[源码 database/replication/client.el:131](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/client.el#L131)
 
 ```el-signature
 class RaftClient
@@ -13916,7 +13926,7 @@ class RaftClient
 
 ## RaftClientOp · database/replication/client.el {#api-90112643f10f7065437a}
 
-[源码 database/replication/client.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/client.el#L11)
+[源码 database/replication/client.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/client.el#L12)
 
 ```el-signature
 enum RaftClientOp
@@ -13924,7 +13934,7 @@ enum RaftClientOp
 
 ## RaftClientRequest · database/replication/client.el {#api-a3ee6747d156a45c87bc}
 
-[源码 database/replication/client.el:52](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/client.el#L52)
+[源码 database/replication/client.el:53](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/client.el#L53)
 
 ```el-signature
 class RaftClientRequest
@@ -13932,31 +13942,15 @@ class RaftClientRequest
 
 ## RaftClientResponse · database/replication/client.el {#api-77952a08526d3889c038}
 
-[源码 database/replication/client.el:60](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/client.el#L60)
+[源码 database/replication/client.el:61](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/client.el#L61)
 
 ```el-signature
 class RaftClientResponse
 ```
 
-## ByteReader · database/replication/codec.el {#api-822d3990ea3f404c8bc7}
-
-[源码 database/replication/codec.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/codec.el#L32)
-
-```el-signature
-class ByteReader
-```
-
-## ByteWriter · database/replication/codec.el {#api-53294dc72947ab548f5f}
-
-[源码 database/replication/codec.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/codec.el#L10)
-
-```el-signature
-class ByteWriter
-```
-
 ## DeferredRecord · database/replication/durable-id.el {#api-f1ab7af6800b3fe48093}
 
-[源码 database/replication/durable-id.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/durable-id.el#L16)
+[源码 database/replication/durable-id.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/durable-id.el#L18)
 
 ```el-signature
 class DeferredRecord
@@ -13964,7 +13958,7 @@ class DeferredRecord
 
 ## DurableIdAllocator · database/replication/durable-id.el {#api-78758cce253b8985f516}
 
-[源码 database/replication/durable-id.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/durable-id.el#L23)
+[源码 database/replication/durable-id.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/durable-id.el#L25)
 
 ```el-signature
 class DurableIdAllocator
@@ -14148,7 +14142,7 @@ class TransportError extends Error
 
 ## RaftNode · database/replication/node.el {#api-087c3dae5b3315fc08ac}
 
-[源码 database/replication/node.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/node.el#L21)
+[源码 database/replication/node.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/node.el#L22)
 
 ```el-signature
 class RaftNode
@@ -14156,15 +14150,31 @@ class RaftNode
 
 ## SnapshotStage · database/replication/node.el {#api-f4f473deec1736dfe2dc}
 
-[源码 database/replication/node.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/node.el#L14)
+[源码 database/replication/node.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/node.el#L15)
 
 ```el-signature
 class SnapshotStage
 ```
 
+## ByteReader · database/replication/octet-codec.el {#api-b12f0b8ee636eab91a08}
+
+[源码 database/replication/octet-codec.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/octet-codec.el#L28)
+
+```el-signature
+class ByteReader
+```
+
+## ByteWriter · database/replication/octet-codec.el {#api-cdb8923994b23caf046d}
+
+[源码 database/replication/octet-codec.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/octet-codec.el#L6)
+
+```el-signature
+class ByteWriter
+```
+
 ## ParticipantOp · database/replication/participant.el {#api-b27a9fd3b9b21156e427}
 
-[源码 database/replication/participant.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L45)
+[源码 database/replication/participant.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L47)
 
 ```el-signature
 enum ParticipantOp
@@ -14172,7 +14182,7 @@ enum ParticipantOp
 
 ## ParticipantRequest · database/replication/participant.el {#api-0d7a715c5ce5723318dd}
 
-[源码 database/replication/participant.el:109](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L109)
+[源码 database/replication/participant.el:111](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L111)
 
 ```el-signature
 class ParticipantRequest
@@ -14180,7 +14190,7 @@ class ParticipantRequest
 
 ## ParticipantResponse · database/replication/participant.el {#api-9b6affbd2851bab5bf3a}
 
-[源码 database/replication/participant.el:134](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L134)
+[源码 database/replication/participant.el:136](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L136)
 
 ```el-signature
 class ParticipantResponse
@@ -14188,7 +14198,7 @@ class ParticipantResponse
 
 ## ParticipantService · database/replication/participant.el {#api-6f6c200273dc8af05b0f}
 
-[源码 database/replication/participant.el:430](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L430)
+[源码 database/replication/participant.el:432](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L432)
 
 ```el-signature
 class ParticipantService
@@ -14196,7 +14206,7 @@ class ParticipantService
 
 ## RemoteParticipantError · database/replication/participant.el {#api-cd145df2498b071a35e6}
 
-[源码 database/replication/participant.el:371](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L371)
+[源码 database/replication/participant.el:373](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L373)
 
 ```el-signature
 class RemoteParticipantError extends Error
@@ -14204,7 +14214,7 @@ class RemoteParticipantError extends Error
 
 ## RemoteParticipantSession · database/replication/participant.el {#api-98336a8b9c189bf52acc}
 
-[源码 database/replication/participant.el:957](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L957)
+[源码 database/replication/participant.el:961](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L961)
 
 ```el-signature
 class RemoteParticipantSession
@@ -14212,7 +14222,7 @@ class RemoteParticipantSession
 
 ## RemoteReadpointPage · database/replication/participant.el {#api-5eab0fbc5455d01cc581}
 
-[源码 database/replication/participant.el:184](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L184)
+[源码 database/replication/participant.el:186](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L186)
 
 ```el-signature
 class RemoteReadpointPage
@@ -14220,7 +14230,7 @@ class RemoteReadpointPage
 
 ## RemoteReadpointPoint · database/replication/participant.el {#api-45d2780c114a6f38e1c9}
 
-[源码 database/replication/participant.el:160](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L160)
+[源码 database/replication/participant.el:162](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L162)
 
 ```el-signature
 class RemoteReadpointPoint
@@ -14228,7 +14238,7 @@ class RemoteReadpointPoint
 
 ## RemoteTransactionView · database/replication/participant.el {#api-791f846832298ce146f2}
 
-[源码 database/replication/participant.el:1306](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L1306)
+[源码 database/replication/participant.el:1312](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L1312)
 
 ```el-signature
 class RemoteTransactionView
@@ -14236,7 +14246,7 @@ class RemoteTransactionView
 
 ## ServerSession · database/replication/participant.el {#api-cd66d779141ddc854f7c}
 
-[源码 database/replication/participant.el:386](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L386)
+[源码 database/replication/participant.el:388](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/participant.el#L388)
 
 ```el-signature
 class ServerSession
@@ -14292,7 +14302,7 @@ class ReplicatedJournal
 
 ## RaftRuntime · database/replication/runtime.el {#api-b51f7ffb2f047838d718}
 
-[源码 database/replication/runtime.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/runtime.el#L31)
+[源码 database/replication/runtime.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/runtime.el#L33)
 
 ```el-signature
 class RaftRuntime
@@ -14300,7 +14310,7 @@ class RaftRuntime
 
 ## RaftRuntimeOptions · database/replication/runtime.el {#api-4706e8ad6f23d26c022d}
 
-[源码 database/replication/runtime.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/runtime.el#L15)
+[源码 database/replication/runtime.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/runtime.el#L16)
 
 ```el-signature
 class RaftRuntimeOptions
@@ -14308,7 +14318,7 @@ class RaftRuntimeOptions
 
 ## HandshakeBody · database/replication/socket.el {#api-df3cab4d82dce0687e83}
 
-[源码 database/replication/socket.el:129](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/socket.el#L129)
+[源码 database/replication/socket.el:130](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/socket.el#L130)
 
 ```el-signature
 class HandshakeBody
@@ -14316,7 +14326,7 @@ class HandshakeBody
 
 ## SecureSession · database/replication/socket.el {#api-45c0f1f07bdd2434deda}
 
-[源码 database/replication/socket.el:102](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/socket.el#L102)
+[源码 database/replication/socket.el:103](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/socket.el#L103)
 
 ```el-signature
 class SecureSession
@@ -14324,7 +14334,7 @@ class SecureSession
 
 ## ServerHandshake · database/replication/socket.el {#api-27e065b11f5816e97e4f}
 
-[源码 database/replication/socket.el:111](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/socket.el#L111)
+[源码 database/replication/socket.el:112](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/socket.el#L112)
 
 ```el-signature
 class ServerHandshake
@@ -14332,7 +14342,7 @@ class ServerHandshake
 
 ## SocketPeerTransport · database/replication/socket.el {#api-a9855fbfa45d3f2e592e}
 
-[源码 database/replication/socket.el:197](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/socket.el#L197)
+[源码 database/replication/socket.el:198](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/socket.el#L198)
 
 ```el-signature
 class SocketPeerTransport extends PeerTransport
@@ -14340,7 +14350,7 @@ class SocketPeerTransport extends PeerTransport
 
 ## SocketTransportOptions · database/replication/socket.el {#api-34d6935e1e08dc0e6e43}
 
-[源码 database/replication/socket.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/socket.el#L56)
+[源码 database/replication/socket.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/socket.el#L57)
 
 ```el-signature
 class SocketTransportOptions
@@ -14348,7 +14358,7 @@ class SocketTransportOptions
 
 ## TcpConnection · database/replication/socket.el {#api-8f2c17158c6e2eedd95c}
 
-[源码 database/replication/socket.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/socket.el#L33)
+[源码 database/replication/socket.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/socket.el#L34)
 
 ```el-signature
 class TcpConnection
@@ -14356,7 +14366,7 @@ class TcpConnection
 
 ## TcpListener · database/replication/socket.el {#api-aa93a9d88daebedd275f}
 
-[源码 database/replication/socket.el:42](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/socket.el#L42)
+[源码 database/replication/socket.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/socket.el#L43)
 
 ```el-signature
 class TcpListener
@@ -14364,7 +14374,7 @@ class TcpListener
 
 ## FileRaftStore · database/replication/store-file.el {#api-b3839f5b7be300836e9f}
 
-[源码 database/replication/store-file.el:55](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/store-file.el#L55)
+[源码 database/replication/store-file.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/store-file.el#L57)
 
 ```el-signature
 class FileRaftStore extends RaftStore
@@ -14372,7 +14382,7 @@ class FileRaftStore extends RaftStore
 
 ## WalGroupState · database/replication/store-wal.el {#api-a27bf144480c577dc02f}
 
-[源码 database/replication/store-wal.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/store-wal.el#L23)
+[源码 database/replication/store-wal.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/store-wal.el#L25)
 
 ```el-signature
 class WalGroupState
@@ -14380,7 +14390,7 @@ class WalGroupState
 
 ## WalRaftStore · database/replication/store-wal.el {#api-f235d972c4128a9e5ff9}
 
-[源码 database/replication/store-wal.el:75](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/store-wal.el#L75)
+[源码 database/replication/store-wal.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/store-wal.el#L77)
 
 ```el-signature
 class WalRaftStore extends RaftStore
@@ -14492,7 +14502,7 @@ class SimulationTransport extends PeerTransport
 
 ## DecodedFrame · database/replication/wire.el {#api-5e54e6212eeaf44e5f27}
 
-[源码 database/replication/wire.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/wire.el#L11)
+[源码 database/replication/wire.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/database/replication/wire.el#L15)
 
 ```el-signature
 class DecodedFrame
@@ -14500,7 +14510,7 @@ class DecodedFrame
 
 ## DbCanonicalRowCodec · database/row-codec.el {#api-8ecb7d8622f6c8ce3ef2}
 
-[源码 database/row-codec.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/database/row-codec.el#L22)
+[源码 database/row-codec.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/database/row-codec.el#L25)
 
 ```el-signature
 class DbCanonicalRowCodec extends RowCodecBase
@@ -14830,7 +14840,7 @@ class DbScopeField
 
 ## DbCaptureArena · database/spill-capture.el {#api-a8ae0743f55d9f041580}
 
-[源码 database/spill-capture.el:54](https://github.com/steve02081504/el/blob/master/src/stdlib/database/spill-capture.el#L54)
+[源码 database/spill-capture.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/database/spill-capture.el#L56)
 
 ```el-signature
 class DbCaptureArena
@@ -14838,7 +14848,7 @@ class DbCaptureArena
 
 ## DbCaptureReader · database/spill-capture.el {#api-dfe91ea782916abaf656}
 
-[源码 database/spill-capture.el:144](https://github.com/steve02081504/el/blob/master/src/stdlib/database/spill-capture.el#L144)
+[源码 database/spill-capture.el:139](https://github.com/steve02081504/el/blob/master/src/stdlib/database/spill-capture.el#L139)
 
 ```el-signature
 class DbCaptureReader
@@ -14846,7 +14856,7 @@ class DbCaptureReader
 
 ## DbCapturedValue · database/spill-capture.el {#api-bacecb015fba1d3e72c5}
 
-[源码 database/spill-capture.el:37](https://github.com/steve02081504/el/blob/master/src/stdlib/database/spill-capture.el#L37)
+[源码 database/spill-capture.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/database/spill-capture.el#L39)
 
 ```el-signature
 class DbCapturedValue
@@ -14878,7 +14888,7 @@ class DbTableStatistics
 
 ## DbReadWriteGate · database/storage-version.el {#api-fd722ebe5b88ab5fcab3}
 
-[源码 database/storage-version.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage-version.el#L19)
+[源码 database/storage-version.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage-version.el#L21)
 
 ```el-signature
 class DbReadWriteGate
@@ -14886,7 +14896,7 @@ class DbReadWriteGate
 
 ## DbStorageVersionBackend · database/storage-version.el {#api-c4c6a4b5ef1e62ee8bc9}
 
-[源码 database/storage-version.el:260](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage-version.el#L260)
+[源码 database/storage-version.el:218](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage-version.el#L218)
 
 ```el-signature
 class DbStorageVersionBackend
@@ -14894,7 +14904,7 @@ class DbStorageVersionBackend
 
 ## MarkerBody · database/storage-version.el {#api-fe5d0b7d766f14d4140c}
 
-[源码 database/storage-version.el:235](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage-version.el#L235)
+[源码 database/storage-version.el:193](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage-version.el#L193)
 
 ```el-signature
 class MarkerBody
@@ -14902,7 +14912,7 @@ class MarkerBody
 
 ## RestoreMutationDigest · database/storage-version.el {#api-3fa52c5786c9d0abfe49}
 
-[源码 database/storage-version.el:192](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage-version.el#L192)
+[源码 database/storage-version.el:156](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage-version.el#L156)
 
 ```el-signature
 class RestoreMutationDigest
@@ -14942,7 +14952,7 @@ class WriteBatch
 
 ## BloomFilter · database/storage/bloom.el {#api-a5b202a2a7bf850e83d6}
 
-[源码 database/storage/bloom.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/bloom.el#L9)
+[源码 database/storage/bloom.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/bloom.el#L13)
 
 ```el-signature
 class BloomFilter
@@ -14950,7 +14960,7 @@ class BloomFilter
 
 ## VarintResult · database/storage/bytes.el {#api-f3246b5bdbdce28e7ce7}
 
-[源码 database/storage/bytes.el:122](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/bytes.el#L122)
+[源码 database/storage/bytes.el:129](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/bytes.el#L129)
 
 ```el-signature
 class VarintResult
@@ -15044,9 +15054,17 @@ class FileLease extends WriterLease
 class WriterLease extends DirectoryLease
 ```
 
+## StorageDigitProfile · database/storage/digit-framing.el {#api-c9b2e83a2c343c580fe7}
+
+[源码 database/storage/digit-framing.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/digit-framing.el#L24)
+
+```el-signature
+class StorageDigitProfile
+```
+
 ## EdbFile · database/storage/edb.el {#api-df1eccc789aaff914a33}
 
-[源码 database/storage/edb.el:149](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/edb.el#L149)
+[源码 database/storage/edb.el:147](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/edb.el#L147)
 
 ```el-signature
 class EdbFile
@@ -15054,7 +15072,7 @@ class EdbFile
 
 ## EdbRecord · database/storage/edb.el {#api-a9180a665fe09471bbc1}
 
-[源码 database/storage/edb.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/edb.el#L41)
+[源码 database/storage/edb.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/edb.el#L38)
 
 ```el-signature
 class EdbRecord
@@ -15062,7 +15080,7 @@ class EdbRecord
 
 ## EdbRecordMeta · database/storage/edb.el {#api-e3fdef88455f720a5c67}
 
-[源码 database/storage/edb.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/edb.el#L21)
+[源码 database/storage/edb.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/edb.el#L18)
 
 ```el-signature
 class EdbRecordMeta
@@ -15070,7 +15088,7 @@ class EdbRecordMeta
 
 ## EdbRoot · database/storage/edb.el {#api-3f555c83d0b5434ddb7c}
 
-[源码 database/storage/edb.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/edb.el#L31)
+[源码 database/storage/edb.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/edb.el#L28)
 
 ```el-signature
 class EdbRoot
@@ -15078,7 +15096,7 @@ class EdbRoot
 
 ## CheckpointInfo · database/storage/engine-support.el {#api-e62ae889fd9cd854290a}
 
-[源码 database/storage/engine-support.el:97](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L97)
+[源码 database/storage/engine-support.el:100](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L100)
 
 ```el-signature
 class CheckpointInfo
@@ -15086,7 +15104,7 @@ class CheckpointInfo
 
 ## OpenTable · database/storage/engine-support.el {#api-948733f9fd3682e940b4}
 
-[源码 database/storage/engine-support.el:137](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L137)
+[源码 database/storage/engine-support.el:140](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L140)
 
 ```el-signature
 class OpenTable
@@ -15094,7 +15112,7 @@ class OpenTable
 
 ## ReclaimBudget · database/storage/engine-support.el {#api-8192e93cdc47e72df21a}
 
-[源码 database/storage/engine-support.el:115](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L115)
+[源码 database/storage/engine-support.el:118](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L118)
 
 ```el-signature
 class ReclaimBudget
@@ -15102,7 +15120,7 @@ class ReclaimBudget
 
 ## ReclaimResult · database/storage/engine-support.el {#api-b0a5431b89124835ea63}
 
-[源码 database/storage/engine-support.el:128](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L128)
+[源码 database/storage/engine-support.el:131](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L131)
 
 ```el-signature
 class ReclaimResult
@@ -15110,7 +15128,7 @@ class ReclaimResult
 
 ## RecoveryStats · database/storage/engine-support.el {#api-cea65fc297a5fcc70634}
 
-[源码 database/storage/engine-support.el:104](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L104)
+[源码 database/storage/engine-support.el:107](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L107)
 
 ```el-signature
 class RecoveryStats
@@ -15118,7 +15136,7 @@ class RecoveryStats
 
 ## SnapshotPin · database/storage/engine-support.el {#api-b94dc598893c9e7484e7}
 
-[源码 database/storage/engine-support.el:157](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L157)
+[源码 database/storage/engine-support.el:160](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L160)
 
 ```el-signature
 class SnapshotPin
@@ -15126,7 +15144,7 @@ class SnapshotPin
 
 ## StorageEntry · database/storage/engine-support.el {#api-6d87b507df71901a4154}
 
-[源码 database/storage/engine-support.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L77)
+[源码 database/storage/engine-support.el:80](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L80)
 
 ```el-signature
 class StorageEntry
@@ -15134,7 +15152,7 @@ class StorageEntry
 
 ## StorageOptions · database/storage/engine-support.el {#api-81edd82a291fd6c97aaa}
 
-[源码 database/storage/engine-support.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L24)
+[源码 database/storage/engine-support.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L25)
 
 ```el-signature
 class StorageOptions
@@ -15142,7 +15160,7 @@ class StorageOptions
 
 ## StorageScanPage · database/storage/engine-support.el {#api-0200e9bf2860bec83521}
 
-[源码 database/storage/engine-support.el:84](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L84)
+[源码 database/storage/engine-support.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L87)
 
 ```el-signature
 class StorageScanPage
@@ -15150,7 +15168,7 @@ class StorageScanPage
 
 ## StorageValue · database/storage/engine-support.el {#api-541ebfd1ddf788fe6728}
 
-[源码 database/storage/engine-support.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L68)
+[源码 database/storage/engine-support.el:71](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L71)
 
 ```el-signature
 class StorageValue
@@ -15158,7 +15176,7 @@ class StorageValue
 
 ## TableOutput · database/storage/engine-support.el {#api-989044723c7191423688}
 
-[源码 database/storage/engine-support.el:290](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L290)
+[源码 database/storage/engine-support.el:293](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine-support.el#L293)
 
 ```el-signature
 class TableOutput
@@ -15166,7 +15184,7 @@ class TableOutput
 
 ## StorageEngine · database/storage/engine.el {#api-3a8a6e03c90f42cf7647}
 
-[源码 database/storage/engine.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine.el#L28)
+[源码 database/storage/engine.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/engine.el#L29)
 
 ```el-signature
 class StorageEngine
@@ -15262,7 +15280,7 @@ class MaintenanceTicket
 
 ## Manifest · database/storage/manifest.el {#api-cd757c2557d8126b1ba8}
 
-[源码 database/storage/manifest.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/manifest.el#L40)
+[源码 database/storage/manifest.el:42](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/manifest.el#L42)
 
 ```el-signature
 class Manifest
@@ -15270,7 +15288,7 @@ class Manifest
 
 ## ManifestTable · database/storage/manifest.el {#api-6d80126f0c242d8e8e3f}
 
-[源码 database/storage/manifest.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/manifest.el#L10)
+[源码 database/storage/manifest.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/manifest.el#L12)
 
 ```el-signature
 class ManifestTable
@@ -15278,7 +15296,7 @@ class ManifestTable
 
 ## MemEntry · database/storage/memtable.el {#api-a8153ede906017060ab8}
 
-[源码 database/storage/memtable.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/memtable.el#L14)
+[源码 database/storage/memtable.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/memtable.el#L15)
 
 ```el-signature
 class MemEntry
@@ -15286,7 +15304,7 @@ class MemEntry
 
 ## MemLookup · database/storage/memtable.el {#api-6f7562b6aeb3d474db59}
 
-[源码 database/storage/memtable.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/memtable.el#L22)
+[源码 database/storage/memtable.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/memtable.el#L23)
 
 ```el-signature
 class MemLookup
@@ -15294,7 +15312,7 @@ class MemLookup
 
 ## MemTable · database/storage/memtable.el {#api-f893ddf69bdeff7d383f}
 
-[源码 database/storage/memtable.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/memtable.el#L33)
+[源码 database/storage/memtable.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/memtable.el#L34)
 
 ```el-signature
 class MemTable
@@ -15302,7 +15320,7 @@ class MemTable
 
 ## MemVersion · database/storage/memtable.el {#api-a6905515869ec71d2a9e}
 
-[源码 database/storage/memtable.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/memtable.el#L7)
+[源码 database/storage/memtable.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/memtable.el#L8)
 
 ```el-signature
 class MemVersion
@@ -15374,7 +15392,7 @@ class PositionedOffset
 
 ## SpillReader · database/storage/spill.el {#api-f49949177089ca46f571}
 
-[源码 database/storage/spill.el:107](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/spill.el#L107)
+[源码 database/storage/spill.el:109](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/spill.el#L109)
 
 ```el-signature
 class SpillReader
@@ -15382,7 +15400,7 @@ class SpillReader
 
 ## SpillWriter · database/storage/spill.el {#api-ed21d839ca7e036ae75f}
 
-[源码 database/storage/spill.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/spill.el#L24)
+[源码 database/storage/spill.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/spill.el#L21)
 
 ```el-signature
 class SpillWriter
@@ -15398,7 +15416,7 @@ class SstBuildResult
 
 ## SstCursor · database/storage/sst.el {#api-31fa7454d7d70c31ce8a}
 
-[源码 database/storage/sst.el:552](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/sst.el#L552)
+[源码 database/storage/sst.el:556](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/sst.el#L556)
 
 ```el-signature
 class SstCursor
@@ -15446,7 +15464,7 @@ class SstLookup
 
 ## SstReader · database/storage/sst.el {#api-6e4757734cd4d14899ca}
 
-[源码 database/storage/sst.el:419](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/sst.el#L419)
+[源码 database/storage/sst.el:420](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/sst.el#L420)
 
 ```el-signature
 class SstReader
@@ -15454,7 +15472,7 @@ class SstReader
 
 ## SstWriter · database/storage/sst.el {#api-d4f07d205a3c4d4da91c}
 
-[源码 database/storage/sst.el:267](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/sst.el#L267)
+[源码 database/storage/sst.el:266](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/sst.el#L266)
 
 ```el-signature
 class SstWriter
@@ -15462,7 +15480,7 @@ class SstWriter
 
 ## WalAppendRequest · database/storage/wal.el {#api-5957a17dac48efb422eb}
 
-[源码 database/storage/wal.el:216](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/wal.el#L216)
+[源码 database/storage/wal.el:205](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/wal.el#L205)
 
 ```el-signature
 class WalAppendRequest
@@ -15470,7 +15488,7 @@ class WalAppendRequest
 
 ## WalByteSource · database/storage/wal.el {#api-1652159ded306ddfab81}
 
-[源码 database/storage/wal.el:80](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/wal.el#L80)
+[源码 database/storage/wal.el:73](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/wal.el#L73)
 
 ```el-signature
 class WalByteSource
@@ -15478,7 +15496,7 @@ class WalByteSource
 
 ## WalFileSource · database/storage/wal.el {#api-e242710c2e97caac9645}
 
-[源码 database/storage/wal.el:107](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/wal.el#L107)
+[源码 database/storage/wal.el:100](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/wal.el#L100)
 
 ```el-signature
 class WalFileSource extends WalByteSource
@@ -15486,7 +15504,7 @@ class WalFileSource extends WalByteSource
 
 ## WalLog · database/storage/wal.el {#api-a9997675bb9df356de2e}
 
-[源码 database/storage/wal.el:231](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/wal.el#L231)
+[源码 database/storage/wal.el:220](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/wal.el#L220)
 
 ```el-signature
 class WalLog
@@ -15494,7 +15512,7 @@ class WalLog
 
 ## WalMemorySource · database/storage/wal.el {#api-a461ed433de69f5b6ecd}
 
-[源码 database/storage/wal.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/wal.el#L87)
+[源码 database/storage/wal.el:80](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/wal.el#L80)
 
 ```el-signature
 class WalMemorySource extends WalByteSource
@@ -15502,7 +15520,7 @@ class WalMemorySource extends WalByteSource
 
 ## WalRecord · database/storage/wal.el {#api-29b55822eab9a7673d2a}
 
-[源码 database/storage/wal.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/wal.el#L17)
+[源码 database/storage/wal.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/wal.el#L16)
 
 ```el-signature
 class WalRecord
@@ -15510,7 +15528,7 @@ class WalRecord
 
 ## WalScan · database/storage/wal.el {#api-1fe3355e2689ede367ed}
 
-[源码 database/storage/wal.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/wal.el#L24)
+[源码 database/storage/wal.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/database/storage/wal.el#L23)
 
 ```el-signature
 class WalScan
@@ -15634,7 +15652,7 @@ class DbTableLayout
 
 ## BackupImage · database/transaction/backup.el {#api-03c7411a08e4f51276ac}
 
-[源码 database/transaction/backup.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/backup.el#L16)
+[源码 database/transaction/backup.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/backup.el#L17)
 
 ```el-signature
 class BackupImage
@@ -15642,7 +15660,7 @@ class BackupImage
 
 ## PitrReport · database/transaction/backup.el {#api-b18e68c9a9c52f5b6cf2}
 
-[源码 database/transaction/backup.el:102](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/backup.el#L102)
+[源码 database/transaction/backup.el:93](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/backup.el#L93)
 
 ```el-signature
 class PitrReport
@@ -15650,7 +15668,7 @@ class PitrReport
 
 ## Catalog · database/transaction/catalog.el {#api-da383225e35f36c75772}
 
-[源码 database/transaction/catalog.el:96](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/catalog.el#L96)
+[源码 database/transaction/catalog.el:97](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/catalog.el#L97)
 
 ```el-signature
 class Catalog
@@ -15658,7 +15676,7 @@ class Catalog
 
 ## CheckDescriptor · database/transaction/catalog.el {#api-809cf335209c429294e3}
 
-[源码 database/transaction/catalog.el:62](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/catalog.el#L62)
+[源码 database/transaction/catalog.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/catalog.el#L63)
 
 ```el-signature
 class CheckDescriptor
@@ -15666,7 +15684,7 @@ class CheckDescriptor
 
 ## ColumnDescriptor · database/transaction/catalog.el {#api-471563661665ed41fea7}
 
-[源码 database/transaction/catalog.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/catalog.el#L12)
+[源码 database/transaction/catalog.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/catalog.el#L13)
 
 ```el-signature
 class ColumnDescriptor
@@ -15674,7 +15692,7 @@ class ColumnDescriptor
 
 ## ForeignKeyDescriptor · database/transaction/catalog.el {#api-ce2cc116339a92bf0bae}
 
-[源码 database/transaction/catalog.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/catalog.el#L40)
+[源码 database/transaction/catalog.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/catalog.el#L41)
 
 ```el-signature
 class ForeignKeyDescriptor
@@ -15682,7 +15700,7 @@ class ForeignKeyDescriptor
 
 ## IndexDescriptor · database/transaction/catalog.el {#api-1a4710385f69f46829a5}
 
-[源码 database/transaction/catalog.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/catalog.el#L25)
+[源码 database/transaction/catalog.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/catalog.el#L26)
 
 ```el-signature
 class IndexDescriptor
@@ -15690,7 +15708,7 @@ class IndexDescriptor
 
 ## TableDescriptor · database/transaction/catalog.el {#api-e5766a38bf3d5d7c06d1}
 
-[源码 database/transaction/catalog.el:73](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/catalog.el#L73)
+[源码 database/transaction/catalog.el:74](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/catalog.el#L74)
 
 ```el-signature
 class TableDescriptor
@@ -15762,7 +15780,7 @@ class CoordinatorSnapshot
 
 ## LocalFence · database/transaction/cursors.el {#api-37354efeb3bc1e61c7fa}
 
-[源码 database/transaction/cursors.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/cursors.el#L20)
+[源码 database/transaction/cursors.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/cursors.el#L21)
 
 ```el-signature
 class LocalFence
@@ -15770,7 +15788,7 @@ class LocalFence
 
 ## TransactionIndexIntent · database/transaction/cursors.el {#api-1d62d6d5480d460e453c}
 
-[源码 database/transaction/cursors.el:241](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/cursors.el#L241)
+[源码 database/transaction/cursors.el:242](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/cursors.el#L242)
 
 ```el-signature
 class TransactionIndexIntent
@@ -15778,7 +15796,7 @@ class TransactionIndexIntent
 
 ## TransactionIndexScanCursor · database/transaction/cursors.el {#api-bc5ad6d5a79452908e9e}
 
-[源码 database/transaction/cursors.el:256](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/cursors.el#L256)
+[源码 database/transaction/cursors.el:257](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/cursors.el#L257)
 
 ```el-signature
 class TransactionIndexScanCursor
@@ -15786,39 +15804,39 @@ class TransactionIndexScanCursor
 
 ## TransactionScanCursor · database/transaction/cursors.el {#api-d1bab9305c5494db8ac1}
 
-[源码 database/transaction/cursors.el:65](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/cursors.el#L65)
+[源码 database/transaction/cursors.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/cursors.el#L66)
 
 ```el-signature
 class TransactionScanCursor
 ```
 
-## ByteReader · database/transaction/encoding.el {#api-5cb37738f555a81a3730}
-
-[源码 database/transaction/encoding.el:51](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/encoding.el#L51)
-
-```el-signature
-class ByteReader
-```
-
-## ByteWriter · database/transaction/encoding.el {#api-64f49d99d361aceb9c89}
-
-[源码 database/transaction/encoding.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/encoding.el#L26)
-
-```el-signature
-class ByteWriter
-```
-
 ## CorruptTransactionPayload · database/transaction/encoding.el {#api-0a81cbc1b52ed2ad1b4d}
 
-[源码 database/transaction/encoding.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/encoding.el#L11)
+[源码 database/transaction/encoding.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/encoding.el#L13)
 
 ```el-signature
 class CorruptTransactionPayload
 ```
 
+## DigitReader · database/transaction/encoding.el {#api-3a3775292c7414b384cd}
+
+[源码 database/transaction/encoding.el:53](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/encoding.el#L53)
+
+```el-signature
+class DigitReader
+```
+
+## DigitWriter · database/transaction/encoding.el {#api-606a8460fd9df05f9407}
+
+[源码 database/transaction/encoding.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/encoding.el#L28)
+
+```el-signature
+class DigitWriter
+```
+
 ## TransactionEngine · database/transaction/engine.el {#api-325e1033f6b4ee2c970e}
 
-[源码 database/transaction/engine.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/engine.el#L25)
+[源码 database/transaction/engine.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/engine.el#L26)
 
 ```el-signature
 class TransactionEngine
@@ -15826,7 +15844,7 @@ class TransactionEngine
 
 ## FileJournal · database/transaction/file-journal.el {#api-a61ce397c350f3e8d78a}
 
-[源码 database/transaction/file-journal.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/file-journal.el#L22)
+[源码 database/transaction/file-journal.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/file-journal.el#L23)
 
 ```el-signature
 class FileJournal
@@ -15834,7 +15852,7 @@ class FileJournal
 
 ## JournalReplayPage · database/transaction/file-journal.el {#api-422cac37cc6822a7a31a}
 
-[源码 database/transaction/file-journal.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/file-journal.el#L15)
+[源码 database/transaction/file-journal.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/file-journal.el#L16)
 
 ```el-signature
 class JournalReplayPage
@@ -15850,7 +15868,7 @@ class ReplicationFence
 
 ## JournalEntry · database/transaction/journal.el {#api-bbcd1d114d0a9f36fc2e}
 
-[源码 database/transaction/journal.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/journal.el#L22)
+[源码 database/transaction/journal.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/journal.el#L23)
 
 ```el-signature
 class JournalEntry
@@ -15858,7 +15876,7 @@ class JournalEntry
 
 ## JournalRecord · database/transaction/journal.el {#api-e8aa2ff15ee0941c30d0}
 
-[源码 database/transaction/journal.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/journal.el#L28)
+[源码 database/transaction/journal.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/journal.el#L29)
 
 ```el-signature
 class JournalRecord
@@ -15866,7 +15884,7 @@ class JournalRecord
 
 ## JournalRecoveryRequired · database/transaction/journal.el {#api-df20e3500c9668738d77}
 
-[源码 database/transaction/journal.el:132](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/journal.el#L132)
+[源码 database/transaction/journal.el:108](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/journal.el#L108)
 
 ```el-signature
 class JournalRecoveryRequired
@@ -15874,7 +15892,7 @@ class JournalRecoveryRequired
 
 ## JournalScan · database/transaction/journal.el {#api-88325ec3584d603a035a}
 
-[源码 database/transaction/journal.el:121](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/journal.el#L121)
+[源码 database/transaction/journal.el:97](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/journal.el#L97)
 
 ```el-signature
 class JournalScan
@@ -15882,7 +15900,7 @@ class JournalScan
 
 ## UnavailableJournal · database/transaction/journal.el {#api-12f9b3975ff69826465c}
 
-[源码 database/transaction/journal.el:159](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/journal.el#L159)
+[源码 database/transaction/journal.el:134](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/journal.el#L134)
 
 ```el-signature
 class UnavailableJournal
@@ -15890,7 +15908,7 @@ class UnavailableJournal
 
 ## IndexEntryParts · database/transaction/keys.el {#api-5a50603e502f297759c6}
 
-[源码 database/transaction/keys.el:89](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/keys.el#L89)
+[源码 database/transaction/keys.el:119](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/keys.el#L119)
 
 ```el-signature
 class IndexEntryParts
@@ -16226,7 +16244,7 @@ class VersionChain
 
 ## DecisionBody · database/transaction/protocol.el {#api-bc101c5653c201f2e9de}
 
-[源码 database/transaction/protocol.el:105](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/protocol.el#L105)
+[源码 database/transaction/protocol.el:109](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/protocol.el#L109)
 
 ```el-signature
 class DecisionBody
@@ -16234,7 +16252,7 @@ class DecisionBody
 
 ## DedupEntry · database/transaction/protocol.el {#api-993a12b369c48b519ee9}
 
-[源码 database/transaction/protocol.el:137](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/protocol.el#L137)
+[源码 database/transaction/protocol.el:142](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/protocol.el#L142)
 
 ```el-signature
 class DedupEntry
@@ -16242,7 +16260,7 @@ class DedupEntry
 
 ## MutationBatch · database/transaction/protocol.el {#api-8312a0bb0d5a65916481}
 
-[源码 database/transaction/protocol.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/protocol.el#L9)
+[源码 database/transaction/protocol.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/protocol.el#L10)
 
 ```el-signature
 class MutationBatch
@@ -16298,7 +16316,7 @@ class Transaction
 
 ## CoordinatorAckSet · database/transaction/twopc.el {#api-5d5b35e710ad4f8d36f3}
 
-[源码 database/transaction/twopc.el:82](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/twopc.el#L82)
+[源码 database/transaction/twopc.el:83](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/twopc.el#L83)
 
 ```el-signature
 class CoordinatorAckSet
@@ -16306,7 +16324,7 @@ class CoordinatorAckSet
 
 ## LocalParticipant · database/transaction/twopc.el {#api-a02bde76555ce983e882}
 
-[源码 database/transaction/twopc.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/twopc.el#L25)
+[源码 database/transaction/twopc.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/twopc.el#L26)
 
 ```el-signature
 class LocalParticipant
@@ -16314,7 +16332,7 @@ class LocalParticipant
 
 ## ParticipantPlan · database/transaction/twopc.el {#api-d0ea2439d7c8b9aa4b63}
 
-[源码 database/transaction/twopc.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/twopc.el#L14)
+[源码 database/transaction/twopc.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/twopc.el#L15)
 
 ```el-signature
 class ParticipantPlan
@@ -16322,7 +16340,7 @@ class ParticipantPlan
 
 ## RemoteParticipant · database/transaction/twopc.el {#api-184b1d9459d552fbba53}
 
-[源码 database/transaction/twopc.el:54](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/twopc.el#L54)
+[源码 database/transaction/twopc.el:55](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/twopc.el#L55)
 
 ```el-signature
 class RemoteParticipant
@@ -16330,7 +16348,7 @@ class RemoteParticipant
 
 ## TwoPhaseCoordinator · database/transaction/twopc.el {#api-a0b70ed6a77758206d02}
 
-[源码 database/transaction/twopc.el:86](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/twopc.el#L86)
+[源码 database/transaction/twopc.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/database/transaction/twopc.el#L87)
 
 ```el-signature
 class TwoPhaseCoordinator
@@ -16442,7 +16460,7 @@ class NativeSourcePreparation
 
 ## DbKey · database/value.el {#api-5efdf0bb363d3a10b5de}
 
-[源码 database/value.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/database/value.el#L28)
+[源码 database/value.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/database/value.el#L29)
 
 ```el-signature
 class DbKey
@@ -16450,7 +16468,7 @@ class DbKey
 
 ## DbKeyTuple · database/value.el {#api-728348c4b521bfac04fe}
 
-[源码 database/value.el:266](https://github.com/steve02081504/el/blob/master/src/stdlib/database/value.el#L266)
+[源码 database/value.el:267](https://github.com/steve02081504/el/blob/master/src/stdlib/database/value.el#L267)
 
 ```el-signature
 class DbKeyTuple
@@ -17940,7 +17958,7 @@ class WordDocument
 
 ## DocumentFormat · documents/formats.el {#api-7ced5ba5ae653d552d2c}
 
-[源码 documents/formats.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/formats.el#L25)
+[源码 documents/formats.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/formats.el#L28)
 
 ```el-signature
 class DocumentFormat
@@ -17956,7 +17974,7 @@ class WorkbookFormat
 
 ## OfficeFormat · documents/package.el {#api-9b72698003f28512ed1c}
 
-[源码 documents/package.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L13)
+[源码 documents/package.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L17)
 
 ```el-signature
 enum OfficeFormat
@@ -17964,7 +17982,7 @@ enum OfficeFormat
 
 ## OfficePackage · documents/package.el {#api-7fca6822013b6b181832}
 
-[源码 documents/package.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L39)
+[源码 documents/package.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L43)
 
 ```el-signature
 class OfficePackage
@@ -17972,7 +17990,7 @@ class OfficePackage
 
 ## OfficePackageFileFormat · documents/package.el {#api-68dad8c15250ce6c8f6e}
 
-[源码 documents/package.el:112](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L112)
+[源码 documents/package.el:153](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L153)
 
 ```el-signature
 class OfficePackageFileFormat
@@ -19072,7 +19090,7 @@ class HttpFileReaderSource extends FileReaderSource
 
 ## FileSystemContext · filesystem/model.el {#api-c9a84e452371f1003179}
 
-[源码 filesystem/model.el:257](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L257)
+[源码 filesystem/model.el:259](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L259)
 
 ```el-signature
 class FileSystemContext
@@ -19080,7 +19098,7 @@ class FileSystemContext
 
 ## FileSystemError · filesystem/model.el {#api-f107c055c9e6e7597652}
 
-[源码 filesystem/model.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L16)
+[源码 filesystem/model.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L17)
 
 ```el-signature
 class FileSystemError extends Error
@@ -19088,7 +19106,7 @@ class FileSystemError extends Error
 
 ## Location · filesystem/model.el {#api-547a9b261b17d994f444}
 
-[源码 filesystem/model.el:128](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L128)
+[源码 filesystem/model.el:130](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L130)
 
 ```el-signature
 class Location extends TextOperand
@@ -19096,7 +19114,7 @@ class Location extends TextOperand
 
 ## Path · filesystem/model.el {#api-01450bc86834bd922aa5}
 
-[源码 filesystem/model.el:120](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L120)
+[源码 filesystem/model.el:122](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L122)
 
 ```el-signature
 class Path extends TextOperand
@@ -19106,7 +19124,7 @@ class Path extends TextOperand
 
 ## ProviderRegistration · filesystem/model.el {#api-1377928886dbe891a307}
 
-[源码 filesystem/model.el:72](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L72)
+[源码 filesystem/model.el:74](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L74)
 
 ```el-signature
 class ProviderRegistration
@@ -19204,7 +19222,7 @@ class FileReaderSource
 
 ## FileWriter · filesystem/writer.el {#api-4abf891ad64ec031618d}
 
-[源码 filesystem/writer.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L77)
+[源码 filesystem/writer.el:80](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L80)
 
 ```el-signature
 class FileWriter
@@ -19212,7 +19230,7 @@ class FileWriter
 
 ## FileWriterCloseReceipt · filesystem/writer.el {#api-280801d1f5d1cf7cac27}
 
-[源码 filesystem/writer.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L22)
+[源码 filesystem/writer.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L25)
 
 ```el-signature
 class FileWriterCloseReceipt
@@ -19220,7 +19238,7 @@ class FileWriterCloseReceipt
 
 ## FileWriterCloseState · filesystem/writer.el {#api-68062e88a313802e0208}
 
-[源码 filesystem/writer.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L19)
+[源码 filesystem/writer.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L22)
 
 ```el-signature
 enum FileWriterCloseState
@@ -19228,7 +19246,7 @@ enum FileWriterCloseState
 
 ## FileWriterSource · filesystem/writer.el {#api-8f4a7524ce5861c816f9}
 
-[源码 filesystem/writer.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L40)
+[源码 filesystem/writer.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L43)
 
 ```el-signature
 class FileWriterSource
@@ -19730,7 +19748,7 @@ fn FileCodec(value: type, options: type): type
 
 ## BufferFormat · formats/index.el {#api-4b10152d04d71ddc756e}
 
-[源码 formats/index.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L68)
+[源码 formats/index.el:84](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L84)
 
 ```el-signature
 class BufferFormat
@@ -19738,15 +19756,17 @@ class BufferFormat
 
 ## EodFormat · formats/index.el {#api-ca9eddf9d85bd918e571}
 
-[源码 formats/index.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L56)
+[源码 formats/index.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L66)
 
 ```el-signature
 class EodFormat
 ```
 
+[API 文档](modules/formats/index.md#api-ca9eddf9d85bd918e571)
+
 ## EolFormat · formats/index.el {#api-7a5e0b123494d48b661f}
 
-[源码 formats/index.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L38)
+[源码 formats/index.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L40)
 
 ```el-signature
 class EolFormat
@@ -19754,7 +19774,7 @@ class EolFormat
 
 ## Formats · formats/index.el {#api-6768ac9ca087f5de0440}
 
-[源码 formats/index.el:92](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L92)
+[源码 formats/index.el:108](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L108)
 
 ```el-signature
 class Formats
@@ -19828,12 +19848,28 @@ class JsonWriteError extends Error
 class JsonWriter
 ```
 
-## RadixUnitReader · formats/radix-units.el {#api-797ad81a3ef469cd9524}
+## RadixRecordError · formats/radix-record.el {#api-7314927d2fdb4f10dd37}
 
-[源码 formats/radix-units.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/radix-units.el#L77)
+[源码 formats/radix-record.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/radix-record.el#L12)
 
 ```el-signature
-class RadixUnitReader
+class RadixRecordError extends Error
+```
+
+## RadixRecordReader · formats/radix-record.el {#api-58d671ee8e5b7e3f279a}
+
+[源码 formats/radix-record.el:115](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/radix-record.el#L115)
+
+```el-signature
+class RadixRecordReader
+```
+
+## RadixRecordWriter · formats/radix-record.el {#api-68d62957d6d4ccdf48e6}
+
+[源码 formats/radix-record.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/radix-record.el#L57)
+
+```el-signature
+class RadixRecordWriter
 ```
 
 ## CodeDescriptor · formats/serialization/code-descriptor.el {#api-770f71ebf795b009bf1f}
@@ -19884,9 +19920,19 @@ class EodCodec
 class EolCodec
 ```
 
+## EodDigitProfile · formats/serialization/digit-profile.el {#api-99be3934839f1ead7921}
+
+[源码 formats/serialization/digit-profile.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/digit-profile.el#L16)
+
+```el-signature
+class EodDigitProfile
+```
+
+[API 文档](modules/formats/serialization/digit-profile.md#api-99be3934839f1ead7921)
+
 ## EodExternalBinding · formats/serialization/external-document.el {#api-e7c22b185e6f47d0a8ce}
 
-[源码 formats/serialization/external-document.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/external-document.el#L29)
+[源码 formats/serialization/external-document.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/external-document.el#L31)
 
 ```el-signature
 class EodExternalBinding
@@ -19894,7 +19940,7 @@ class EodExternalBinding
 
 ## EodExternalDocument · formats/serialization/external-document.el {#api-436728f6c3a01fd9cb70}
 
-[源码 formats/serialization/external-document.el:92](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/external-document.el#L92)
+[源码 formats/serialization/external-document.el:95](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/external-document.el#L95)
 
 ```el-signature
 class EodExternalDocument
@@ -19902,7 +19948,7 @@ class EodExternalDocument
 
 ## EodExternalSource · formats/serialization/external-document.el {#api-1dd3bd8638ce6072c193}
 
-[源码 formats/serialization/external-document.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/external-document.el#L16)
+[源码 formats/serialization/external-document.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/external-document.el#L18)
 
 ```el-signature
 class EodExternalSource
@@ -19910,7 +19956,7 @@ class EodExternalSource
 
 ## ExistingExternalReference · formats/serialization/external-document.el {#api-894a8a6223bdf91f3fa5}
 
-[源码 formats/serialization/external-document.el:48](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/external-document.el#L48)
+[源码 formats/serialization/external-document.el:50](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/external-document.el#L50)
 
 ```el-signature
 class ExistingExternalReference
@@ -19918,7 +19964,7 @@ class ExistingExternalReference
 
 ## ExternalWriter · formats/serialization/external-document.el {#api-d901168c022689672374}
 
-[源码 formats/serialization/external-document.el:120](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/external-document.el#L120)
+[源码 formats/serialization/external-document.el:125](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/external-document.el#L125)
 
 ```el-signature
 class ExternalWriter
@@ -19926,7 +19972,7 @@ class ExternalWriter
 
 ## RestoreStaticEod · formats/serialization/graph.el {#api-d6a79e5a0e43c9697dda}
 
-[源码 formats/serialization/graph.el:835](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/graph.el#L835)
+[源码 formats/serialization/graph.el:852](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/graph.el#L852)
 
 ```el-signature
 fn RestoreStaticEod(expected: type): type
@@ -19934,7 +19980,7 @@ fn RestoreStaticEod(expected: type): type
 
 ## StaticEodByte · formats/serialization/graph.el {#api-89c8cf147e332d1d4bfa}
 
-[源码 formats/serialization/graph.el:816](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/graph.el#L816)
+[源码 formats/serialization/graph.el:828](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/graph.el#L828)
 
 ```el-signature
 class StaticEodByte
@@ -19942,7 +19988,7 @@ class StaticEodByte
 
 ## SerializationLimits · formats/serialization/model.el {#api-9e64c7c8ad9143097069}
 
-[源码 formats/serialization/model.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/model.el#L35)
+[源码 formats/serialization/model.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/model.el#L36)
 
 ```el-signature
 class SerializationLimits
@@ -19950,7 +19996,7 @@ class SerializationLimits
 
 ## SerializationReader · formats/serialization/model.el {#api-2e47d25a6fd811da18e3}
 
-[源码 formats/serialization/model.el:55](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/model.el#L55)
+[源码 formats/serialization/model.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/model.el#L56)
 
 ```el-signature
 class SerializationReader
@@ -19958,7 +20004,7 @@ class SerializationReader
 
 ## SerializationWriter · formats/serialization/model.el {#api-52901841691b0057edac}
 
-[源码 formats/serialization/model.el:94](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/model.el#L94)
+[源码 formats/serialization/model.el:96](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/model.el#L96)
 
 ```el-signature
 class SerializationWriter
@@ -19966,7 +20012,7 @@ class SerializationWriter
 
 ## SerializedNode · formats/serialization/model.el {#api-e857fdd5818cbfa6cbca}
 
-[源码 formats/serialization/model.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/model.el#L12)
+[源码 formats/serialization/model.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/model.el#L13)
 
 ```el-signature
 class SerializedNode
@@ -19990,7 +20036,7 @@ class PlainEolFormat
 
 ## RestoreStaticGraph · formats/serialization/static-graph.el {#api-5c52e9c989bb4916c8f8}
 
-[源码 formats/serialization/static-graph.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/static-graph.el#L16)
+[源码 formats/serialization/static-graph.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/static-graph.el#L17)
 
 ```el-signature
 fn RestoreStaticGraph(expected: type): type
@@ -20216,7 +20262,7 @@ fn Representation(value: type): type
 
 ## PlotFont · graphics/plots/font.el {#api-74d8685d683489e27de6}
 
-[源码 graphics/plots/font.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/font.el#L13)
+[源码 graphics/plots/font.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/font.el#L17)
 
 ```el-signature
 class PlotFont
@@ -20224,7 +20270,7 @@ class PlotFont
 
 ## PlotFontRun · graphics/plots/font.el {#api-e0cc285c92f0557d2ff0}
 
-[源码 graphics/plots/font.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/font.el#L33)
+[源码 graphics/plots/font.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/font.el#L38)
 
 ```el-signature
 class PlotFontRun
@@ -20232,7 +20278,7 @@ class PlotFontRun
 
 ## PlotGlyph · graphics/plots/font.el {#api-59acc361dbe77a63e125}
 
-[源码 graphics/plots/font.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/font.el#L23)
+[源码 graphics/plots/font.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/plots/font.el#L28)
 
 ```el-signature
 class PlotGlyph
@@ -20380,9 +20426,37 @@ class RasterSurface
 class SampleBounds
 ```
 
+## DigitFontFace · graphics/vector/digit-font.el {#api-d9a1fa94abcf1ae4087e}
+
+[源码 graphics/vector/digit-font.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/digit-font.el#L32)
+
+```el-signature
+class DigitFontFace
+```
+
+[API 文档](modules/graphics/vector/digit-font.md#api-d9a1fa94abcf1ae4087e)
+
+## DigitFontFormat · graphics/vector/digit-font.el {#api-ce8530d88bb1d311b969}
+
+[源码 graphics/vector/digit-font.el:94](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/digit-font.el#L94)
+
+```el-signature
+class DigitFontFormat
+```
+
+[API 文档](modules/graphics/vector/digit-font.md#api-ce8530d88bb1d311b969)
+
+## DigitGlyph · graphics/vector/digit-font.el {#api-bea4a7868ea43cd6fb7a}
+
+[源码 graphics/vector/digit-font.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/digit-font.el#L19)
+
+```el-signature
+class DigitGlyph
+```
+
 ## Brush · graphics/vector/evg.el {#api-8fb340118955452e6edb}
 
-[源码 graphics/vector/evg.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L34)
+[源码 graphics/vector/evg.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L36)
 
 ```el-signature
 class Brush
@@ -20390,7 +20464,7 @@ class Brush
 
 ## Evg · graphics/vector/evg.el {#api-05b61fce3a53147a7585}
 
-[源码 graphics/vector/evg.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L67)
+[源码 graphics/vector/evg.el:69](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L69)
 
 ```el-signature
 class Evg
@@ -20398,7 +20472,7 @@ class Evg
 
 ## Node · graphics/vector/evg.el {#api-cf8f9584fdd26f4059fa}
 
-[源码 graphics/vector/evg.el:59](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L59)
+[源码 graphics/vector/evg.el:61](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L61)
 
 ```el-signature
 class Node
@@ -20406,7 +20480,7 @@ class Node
 
 ## Path · graphics/vector/evg.el {#api-f11ca2c504805fdacfeb}
 
-[源码 graphics/vector/evg.el:50](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L50)
+[源码 graphics/vector/evg.el:52](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L52)
 
 ```el-signature
 class Path
@@ -20414,7 +20488,7 @@ class Path
 
 ## Point · graphics/vector/evg.el {#api-0d3ed7909bcf15695c44}
 
-[源码 graphics/vector/evg.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L8)
+[源码 graphics/vector/evg.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L10)
 
 ```el-signature
 class Point
@@ -20422,7 +20496,7 @@ class Point
 
 ## Segment · graphics/vector/evg.el {#api-7e438693d75edcd90b1b}
 
-[源码 graphics/vector/evg.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L43)
+[源码 graphics/vector/evg.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L45)
 
 ```el-signature
 class Segment
@@ -20430,7 +20504,7 @@ class Segment
 
 ## Transform · graphics/vector/evg.el {#api-ae8984cc54dcee13701c}
 
-[源码 graphics/vector/evg.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L24)
+[源码 graphics/vector/evg.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L26)
 
 ```el-signature
 class Transform
@@ -20438,7 +20512,7 @@ class Transform
 
 ## ViewBox · graphics/vector/evg.el {#api-2992051caa97591d034f}
 
-[源码 graphics/vector/evg.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L15)
+[源码 graphics/vector/evg.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/evg.el#L17)
 
 ```el-signature
 class ViewBox
@@ -20462,7 +20536,7 @@ class SvgDocument
 
 ## OutlinePoint · graphics/vector/true-type.el {#api-8113f8eadc05e0ee968d}
 
-[源码 graphics/vector/true-type.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/true-type.el#L22)
+[源码 graphics/vector/true-type.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/true-type.el#L25)
 
 ```el-signature
 class OutlinePoint
@@ -20470,7 +20544,7 @@ class OutlinePoint
 
 ## Table · graphics/vector/true-type.el {#api-82c3855817807144fa20}
 
-[源码 graphics/vector/true-type.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/true-type.el#L13)
+[源码 graphics/vector/true-type.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/true-type.el#L16)
 
 ```el-signature
 class Table
@@ -20478,15 +20552,17 @@ class Table
 
 ## TrueTypeFace · graphics/vector/true-type.el {#api-66d13e32cb7f458d1867}
 
-[源码 graphics/vector/true-type.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/true-type.el#L56)
+[源码 graphics/vector/true-type.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/true-type.el#L68)
 
 ```el-signature
 class TrueTypeFace
 ```
 
+[API 文档](modules/graphics/vector/true-type.md#api-66d13e32cb7f458d1867)
+
 ## TrueTypeGlyph · graphics/vector/true-type.el {#api-dfbbbcc4fc124b1a6f11}
 
-[源码 graphics/vector/true-type.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/true-type.el#L27)
+[源码 graphics/vector/true-type.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/true-type.el#L30)
 
 ```el-signature
 class TrueTypeGlyph
@@ -22078,7 +22154,7 @@ enum IrNativeTarget
 
 ## IrBinaryEmission · intermediate-representation/native/postlink/binary.el {#api-5fa8f87aecfb52619724}
 
-[源码 intermediate-representation/native/postlink/binary.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/native/postlink/binary.el#L41)
+[源码 intermediate-representation/native/postlink/binary.el:42](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/native/postlink/binary.el#L42)
 
 ```el-signature
 class IrBinaryEmission
@@ -22086,7 +22162,7 @@ class IrBinaryEmission
 
 ## IrBinaryFunction · intermediate-representation/native/postlink/binary.el {#api-f14711d1e7f3b9618796}
 
-[源码 intermediate-representation/native/postlink/binary.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/native/postlink/binary.el#L15)
+[源码 intermediate-representation/native/postlink/binary.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/native/postlink/binary.el#L16)
 
 ```el-signature
 class IrBinaryFunction
@@ -22094,7 +22170,7 @@ class IrBinaryFunction
 
 ## IrBinaryManifest · intermediate-representation/native/postlink/binary.el {#api-2690d93c4300275c7cbd}
 
-[源码 intermediate-representation/native/postlink/binary.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/native/postlink/binary.el#L29)
+[源码 intermediate-representation/native/postlink/binary.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/intermediate-representation/native/postlink/binary.el#L30)
 
 ```el-signature
 class IrBinaryManifest
@@ -27222,6 +27298,16 @@ class ScalarStorage
 class ScratchSize
 ```
 
+## WavWriter · multimedia/audio/digit-wav.el {#api-9a5a13565e8fd848cb66}
+
+[源码 multimedia/audio/digit-wav.el:99](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/digit-wav.el#L99)
+
+```el-signature
+class WavWriter
+```
+
+[API 文档](modules/multimedia/audio/digit-wav.md#api-9a5a13565e8fd848cb66)
+
 ## PcmOutput · multimedia/audio/linux-output.el {#api-9f5da8fa68d02b9e4158}
 
 [源码 multimedia/audio/linux-output.el:50](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/linux-output.el#L50)
@@ -27284,6 +27370,16 @@ class MusicPlayer
 class PcmOutput
 ```
 
+## RiffWavWriter · multimedia/audio/wav.el {#api-bea3f561ed00bf54407d}
+
+[源码 multimedia/audio/wav.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L41)
+
+```el-signature
+class RiffWavWriter
+```
+
+[API 文档](modules/multimedia/audio/wav.md#api-bea3f561ed00bf54407d)
+
 ## WavLayout · multimedia/audio/wav.el {#api-cb61429c2c7cbc897449}
 
 [源码 multimedia/audio/wav.el:112](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L112)
@@ -27291,16 +27387,6 @@ class PcmOutput
 ```el-signature
 class WavLayout
 ```
-
-## WavWriter · multimedia/audio/wav.el {#api-fccc5e339fd9a3fa8554}
-
-[源码 multimedia/audio/wav.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/wav.el#L41)
-
-```el-signature
-class WavWriter
-```
-
-[API 文档](modules/multimedia/audio/wav.md#api-fccc5e339fd9a3fa8554)
 
 ## OutputSlot · multimedia/audio/windows-output.el {#api-bcbc7268d4056ea010c4}
 
@@ -27338,7 +27424,7 @@ class Microphone
 
 ## MediaFile · multimedia/capture/files.el {#api-1ba28de10a6d4800254f}
 
-[源码 multimedia/capture/files.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/files.el#L27)
+[源码 multimedia/capture/files.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/files.el#L28)
 
 ```el-signature
 class MediaFile
@@ -27346,7 +27432,7 @@ class MediaFile
 
 ## AudioFormat · multimedia/capture/model.el {#api-36f185417f0702feae38}
 
-[源码 multimedia/capture/model.el:79](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L79)
+[源码 multimedia/capture/model.el:86](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L86)
 
 ```el-signature
 class AudioFormat
@@ -27356,11 +27442,13 @@ class AudioFormat
 
 ## CameraOptions · multimedia/capture/model.el {#api-c7574ddcf4fa589db3f2}
 
-[源码 multimedia/capture/model.el:49](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L49)
+[源码 multimedia/capture/model.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L56)
 
 ```el-signature
 class CameraOptions
 ```
+
+[API 文档](modules/multimedia/capture/model.md#api-c7574ddcf4fa589db3f2)
 
 ## CaptureDevice · multimedia/capture/model.el {#api-a6035be7bf8b78f16a78}
 
@@ -27388,7 +27476,7 @@ enum CaptureFailure
 
 ## MicrophoneOptions · multimedia/capture/model.el {#api-e3e7f93342be70c3ae9e}
 
-[源码 multimedia/capture/model.el:95](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L95)
+[源码 multimedia/capture/model.el:102](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L102)
 
 ```el-signature
 class MicrophoneOptions
@@ -27396,7 +27484,7 @@ class MicrophoneOptions
 
 ## PcmAudio · multimedia/capture/model.el {#api-cb1ec5de04201d03778d}
 
-[源码 multimedia/capture/model.el:128](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L128)
+[源码 multimedia/capture/model.el:135](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L135)
 
 ```el-signature
 class PcmAudio
@@ -27406,7 +27494,7 @@ class PcmAudio
 
 ## VideoFrame · multimedia/capture/model.el {#api-44b10585fc20d6c09162}
 
-[源码 multimedia/capture/model.el:198](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L198)
+[源码 multimedia/capture/model.el:205](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/capture/model.el#L205)
 
 ```el-signature
 class VideoFrame
@@ -27470,7 +27558,7 @@ class PlatformMicrophone
 
 ## ImageCodecAvailability · multimedia/image/model.el {#api-c82306283d36b08f00f8}
 
-[源码 multimedia/image/model.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L12)
+[源码 multimedia/image/model.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L22)
 
 ```el-signature
 enum ImageCodecAvailability
@@ -27478,7 +27566,7 @@ enum ImageCodecAvailability
 
 ## ImageCodecSupport · multimedia/image/model.el {#api-08a4b9b8e60e2f9a025a}
 
-[源码 multimedia/image/model.el:115](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L115)
+[源码 multimedia/image/model.el:136](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L136)
 
 ```el-signature
 class ImageCodecSupport
@@ -27486,7 +27574,7 @@ class ImageCodecSupport
 
 ## ImageDecodeOptions · multimedia/image/model.el {#api-8349af9218e0d1a4383b}
 
-[源码 multimedia/image/model.el:75](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L75)
+[源码 multimedia/image/model.el:85](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L85)
 
 ```el-signature
 class ImageDecodeOptions
@@ -27494,7 +27582,7 @@ class ImageDecodeOptions
 
 ## ImageEncodeOptions · multimedia/image/model.el {#api-a4390c4056468256eaba}
 
-[源码 multimedia/image/model.el:85](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L85)
+[源码 multimedia/image/model.el:98](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L98)
 
 ```el-signature
 class ImageEncodeOptions
@@ -27502,7 +27590,7 @@ class ImageEncodeOptions
 
 ## ImageError · multimedia/image/model.el {#api-ff80db25d0d6ed149369}
 
-[源码 multimedia/image/model.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L14)
+[源码 multimedia/image/model.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L24)
 
 ```el-signature
 class ImageError extends Error
@@ -27510,7 +27598,7 @@ class ImageError extends Error
 
 ## ImageFailure · multimedia/image/model.el {#api-e1b625cdc1a47b9a7bc1}
 
-[源码 multimedia/image/model.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L11)
+[源码 multimedia/image/model.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L21)
 
 ```el-signature
 enum ImageFailure
@@ -27518,15 +27606,17 @@ enum ImageFailure
 
 ## ImageFormat · multimedia/image/model.el {#api-03af9bd9ab3a0721c70a}
 
-[源码 multimedia/image/model.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L10)
+[源码 multimedia/image/model.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L20)
 
 ```el-signature
 enum ImageFormat
 ```
 
+[API 文档](modules/multimedia/image/model.md#api-03af9bd9ab3a0721c70a)
+
 ## ImageInfo · multimedia/image/model.el {#api-e25ec990dc1cf12364ab}
 
-[源码 multimedia/image/model.el:101](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L101)
+[源码 multimedia/image/model.el:122](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L122)
 
 ```el-signature
 class ImageInfo
@@ -27534,7 +27624,7 @@ class ImageInfo
 
 ## ImageLimits · multimedia/image/model.el {#api-509833a8582ae887933b}
 
-[源码 multimedia/image/model.el:46](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L46)
+[源码 multimedia/image/model.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L56)
 
 ```el-signature
 class ImageLimits
@@ -27542,7 +27632,7 @@ class ImageLimits
 
 ## RgbaImage · multimedia/image/model.el {#api-747cff86c10f647bf741}
 
-[源码 multimedia/image/model.el:130](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L130)
+[源码 multimedia/image/model.el:151](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/image/model.el#L151)
 
 ```el-signature
 class RgbaImage
@@ -27924,13 +28014,33 @@ class QrPlane
 class CorrectedBlock
 ```
 
-## AviWriter · multimedia/video/avi.el {#api-26beb0b2f144c20f89ed}
+## RiffAviWriter · multimedia/video/avi.el {#api-50acdfdad90db5a97598}
 
 [源码 multimedia/video/avi.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/video/avi.el#L13)
 
 ```el-signature
+class RiffAviWriter
+```
+
+## AviVideo · multimedia/video/digit-avi.el {#api-f61f160b1acde4dc8291}
+
+[源码 multimedia/video/digit-avi.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/video/digit-avi.el#L56)
+
+```el-signature
+class AviVideo
+```
+
+[API 文档](modules/multimedia/video/digit-avi.md#api-f61f160b1acde4dc8291)
+
+## AviWriter · multimedia/video/digit-avi.el {#api-291a3c29de7c6ff84a3b}
+
+[源码 multimedia/video/digit-avi.el:118](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/video/digit-avi.el#L118)
+
+```el-signature
 class AviWriter
 ```
+
+[API 文档](modules/multimedia/video/digit-avi.md#api-291a3c29de7c6ff84a3b)
 
 ## NativeAddress · network/address.el {#api-8970e350e695bb66a050}
 
@@ -28040,7 +28150,7 @@ class CacheExpiry
 
 ## CacheMetadata · network/http/cache.el {#api-e529ebac3d324087f680}
 
-[源码 network/http/cache.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/cache.el#L32)
+[源码 network/http/cache.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/network/http/cache.el#L31)
 
 ```el-signature
 class CacheMetadata
@@ -29308,7 +29418,7 @@ class TrainingRandom
 
 ## CheckpointRecords · neural-networks/state/stream.el {#api-10ac77d9c5bb39d3c92c}
 
-[源码 neural-networks/state/stream.el:47](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/stream.el#L47)
+[源码 neural-networks/state/stream.el:62](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/stream.el#L62)
 
 ```el-signature
 class CheckpointRecords
@@ -29316,7 +29426,7 @@ class CheckpointRecords
 
 ## CheckpointStreamLimits · neural-networks/state/stream.el {#api-ddd2c1ef5fc53e569741}
 
-[源码 neural-networks/state/stream.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/stream.el#L14)
+[源码 neural-networks/state/stream.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/stream.el#L24)
 
 ```el-signature
 class CheckpointStreamLimits
@@ -30674,6 +30784,16 @@ fn DenseCursor(element: type): type
 fn DenseStorage(element: type): type
 ```
 
+## TensorFileFormat · numerical-computing/tensor-file.el {#api-4cd178cbcee51ab32c4a}
+
+[源码 numerical-computing/tensor-file.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor-file.el#L33)
+
+```el-signature
+fn TensorFileFormat(element: type): type
+```
+
+[API 文档](modules/numerical-computing/tensor-file.md#api-4cd178cbcee51ab32c4a)
+
 ## TensorMathPolicy · numerical-computing/tensor-math.el {#api-2625b94d99a7fc0002c3}
 
 [源码 numerical-computing/tensor-math.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/tensor-math.el#L7)
@@ -30862,7 +30982,7 @@ enum FilePublicationState
 
 ## RandomTemporaryFile · operating-system/files/random-file.el {#api-5f900d7a744f1fb1daf6}
 
-[源码 operating-system/files/random-file.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/random-file.el#L43)
+[源码 operating-system/files/random-file.el:44](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/random-file.el#L44)
 
 ```el-signature
 class RandomTemporaryFile
@@ -30974,7 +31094,7 @@ enum WindowsVolumeStatus
 
 ## BufferedWriteAttempt · operating-system/files/write-progress.el {#api-6d5bf02e35a876f7c40f}
 
-[源码 operating-system/files/write-progress.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/write-progress.el#L19)
+[源码 operating-system/files/write-progress.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/write-progress.el#L20)
 
 ```el-signature
 class BufferedWriteAttempt
@@ -30982,7 +31102,7 @@ class BufferedWriteAttempt
 
 ## BufferedWriteProgress · operating-system/files/write-progress.el {#api-e8660f351846728c4ca2}
 
-[源码 operating-system/files/write-progress.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/write-progress.el#L28)
+[源码 operating-system/files/write-progress.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/files/write-progress.el#L29)
 
 ```el-signature
 class BufferedWriteProgress

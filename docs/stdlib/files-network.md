@@ -28,12 +28,12 @@ writeFileAs(formats.Text, "file:./copy.txt", text + "\n")
 ## 读文本还是读字节
 
 - `readFileAs(formats.Text, reference, maximumSize: limit)` 在可选的容量上限内读取整个文件，并按 UTF-8 解码成 `Text`；
-- `writeFileAs(formats.Text, reference, value)` 把 `Text` 按 UTF-8 写入，返回写入的字节数；
+- `writeFileAs(formats.Text, reference, value)` 把 `Text` 按 UTF-8 写入，返回写入的原生地址单元数；
 - `readFileAs(formats.Buffer, reference, maximumSize: limit)` 在可选的容量上限内读取整个文件，返回 `Buffer`；
-- `writeFileAs(formats.Buffer, reference, buffer)` 写入缓冲区并返回字节数。用 `bufferFromBytes(bytes)` 把数值字节数组转为缓冲区。
+- `writeFileAs(formats.Buffer, reference, buffer)` 写入缓冲区并返回原生地址单元数。用 `bufferFromBytes(bytes)` 把数值字节数组转为缓冲区。
 - 字节层的 `Location.readOptionalBytes()` 在实际打开确认目标缺失时返回 `nil`。文件存在时交付原始字节，空文件返回空数组。
 
-`maximumSize` 使用 `FileSize`，按目标原生数位保存非负整数容量。它的字面量使用 `dit`、`kd`、`md`、`gd`、`td`、`pd`、`ed`；目标基数为 `r` 时，`kd` 是 `r^10` 个 `dit`，之后每级再乘 `r^10`。因此 `32kd` 在二进制目标上等于 4 KiB，在其他基数目标上表示相应的目标容量。
+`maximumSize` 使用 `FileSize`，按目标原生数位保存非负整数容量。它的字面量使用 `dit`、`kd`、`md`、`gd`、`td`、`pd`、`ed`；目标基数为 `r` 时，`kd` 是 `r^10` 个 `dit`，之后每级再乘 `r^10`。当目标基数为 2 且每个地址单元有 8 个数位时，`32kd` 对应 4096 个地址单元。
 
 ```el
 import { readFileAs } from "el:filesystem/"
@@ -56,7 +56,7 @@ import { readFileAs, resolvePath } from "el:filesystem/"
 import { formats } from "el:formats/"
 
 let buffer = readFileAs(formats.Buffer, "file:./logo.png")
-console.stdout.writeLine("size: ", buffer.count, " bytes")
+console.stdout.writeLine("size: ", buffer.count, " address units")
 
 let missing = resolvePath("file:./absent.txt").readOptionalBytes()
 if (missing is nil_t) {
@@ -129,8 +129,14 @@ writeFileAs(formats.Text, "file:./copy.txt", "already text")
 | `formats.CSV` / `formats.TSV` | `Text[][]` | 按需加引号、内部引号双写，以 CRLF 结束记录；每行至少一个单元格。 |
 | `formats.INI` | 文本字段和一层节对象组成的公开数据对象 | 根键先于节输出，拒绝无法无损表示的名称和值。 |
 | `formats.EOL` / `formats.EOD` | 满足对应序列化能力合同的值 | 使用现有自包含序列化编码，保存 EL 的类型与共享关系。 |
-| `formats.XLSX` / `formats.ODS` | `Workbook` | 使用工作簿模型编码。 |
-| `formats.DOCX` / `formats.ODT` | `WordDocument` | 使用文档模型编码。 |
+| `formats.XLSX` / `formats.ODS` | `Workbook` | 用目标基数封装工作簿部件。 |
+| `formats.StandardXLSX` / `formats.StandardODS` | `Workbook` | 通过固定协议和 Office 软件交换文件。 |
+| `formats.DOCX` / `formats.ODT` | `WordDocument` | 用目标基数封装文档部件。 |
+| `formats.StandardDOCX` / `formats.StandardODT` | `WordDocument` | 通过固定协议和 Office 软件交换文件。 |
+| `formats.PNG` / `formats.JPEG` / `formats.AVIF` | `RgbaImage` | 按目标基数保存无损像素。 |
+| `formats.StandardPNG` / `formats.StandardJPEG` / `formats.StandardAVIF` | `RgbaImage` | 按指定标准与外部软件交换图像。 |
+
+数位格式沿用文件扩展名，文件头记录格式和数位配置。需要指定较小基数时，可通过格式工厂或编解码函数配置，读写使用相同基数。EL 归档的 `ArchiveOptions.radix`、EOD 的 `EodFormat(radix: 2)` 都使用这条规则。
 
 这些编码器重新生成内容，不保留原文件的注释或排版。JSON、YAML 和 TOML 写入器对数值使用精确转换；格式数值词素范围内不能精确表示的数（例如 `1 / 3`）会报错，不会静默舍入。可以先修改解码得到的数据，再用同一种格式写出；TOML 和 XML 保留各自的数据模型，不把任意 EL 对象当作对应文档。
 

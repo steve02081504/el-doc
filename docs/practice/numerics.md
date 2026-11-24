@@ -192,7 +192,7 @@ let svg = figure.image(640, 480)
 figure.saveAs(formats.SVG, "curve.svg", @{ width: 640, height: 480 })
 ```
 
-`figure.image(640, 480)` 返回 SVG 文本。`figure.saveAs(codec, path, options)` 把图写入文件，由第一个参数选择格式，例如 `formats.SVG` 或 `formats.PNG`。两种导出方式都可在无窗口环境中使用，省略尺寸时默认 900×600。可通过 `figure.axis` 设置标题与图例，或用 `figure.show()` 打开窗口并等待关闭。
+`figure.image(640, 480)` 返回 SVG 文本。`figure.saveAs(codec, path, options)` 把图写入文件，由第一个参数选择格式，例如 `formats.SVG` 或供外部软件打开的 `formats.StandardPNG`。两种导出方式都可在无窗口环境中使用，省略尺寸时默认 900×600。可通过 `figure.axis` 设置标题与图例，或用 `figure.show()` 打开窗口并等待关闭。
 
 !!! success "检查点"
     - [ ] `curve.svg` 生成成功，用浏览器能打开

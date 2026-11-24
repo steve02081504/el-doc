@@ -4,6 +4,9 @@
 
 ## archives
 
+- [archives/codec.el](modules/archives/codec.md)（4 个 API）
+- [archives/model.el](modules/archives/model.md)（1 个 API）
+- [archives/radix-archive.el](modules/archives/radix-archive.md)（2 个 API）
 - [archives/tar.el](modules/archives/tar.md)（2 个 API）
 - [archives/zip.el](modules/archives/zip.md)（2 个 API）
 
@@ -78,6 +81,7 @@
 - [database/engine.el](modules/database/engine.md)（2 个 API）
 - [database/schema.el](modules/database/schema.md)（3 个 API）
 - [database/source-syntax.el](modules/database/source-syntax.md)（1 个 API）
+- [database/storage/digit-framing.el](modules/database/storage/digit-framing.md)（1 个 API）
 - [database/table.el](modules/database/table.md)（2 个 API）
 - [database/typed-aggregate.el](modules/database/typed-aggregate.md)（1 个 API）
 
@@ -93,6 +97,7 @@
 
 ## documents
 
+- [documents/package.el](modules/documents/package.md)（2 个 API）
 - [documents/workbook.el](modules/documents/workbook.md)（3 个 API）
 
 ## errors
@@ -123,13 +128,16 @@
 
 - [formats/delimited-text/index.el](modules/formats/delimited-text/index.md)（3 个 API）
 - [formats/delimited-text/stream.el](modules/formats/delimited-text/stream.md)（1 个 API）
-- [formats/index.el](modules/formats/index.md)（12 个 API）
+- [formats/index.el](modules/formats/index.md)（13 个 API）
 - [formats/ini/index.el](modules/formats/ini/index.md)（0 个 API）
 - [formats/internal/writer.el](modules/formats/internal/writer.md)（1 个 API）
 - [formats/json/index.el](modules/formats/json/index.md)（1 个 API）
 - [formats/json/limits.el](modules/formats/json/limits.md)（1 个 API）
 - [formats/json/variants.el](modules/formats/json/variants.md)（0 个 API）
 - [formats/json/writer.el](modules/formats/json/writer.md)（0 个 API）
+- [formats/radix-record.el](modules/formats/radix-record.md)（0 个 API）
+- [formats/serialization/digit-file.el](modules/formats/serialization/digit-file.md)（2 个 API）
+- [formats/serialization/digit-profile.el](modules/formats/serialization/digit-profile.md)（2 个 API）
 - [formats/serialization/io.el](modules/formats/serialization/io.md)（4 个 API）
 - [formats/text-format.el](modules/formats/text-format.md)（1 个 API）
 - [formats/toml/index.el](modules/formats/toml/index.md)（0 个 API）
@@ -149,8 +157,11 @@
 
 ## graphics
 
+- [graphics/plots/font.el](modules/graphics/plots/font.md)（1 个 API）
 - [graphics/plots/index.el](modules/graphics/plots/index.md)（7 个 API）
 - [graphics/plots/scene.el](modules/graphics/plots/scene.md)（6 个 API）
+- [graphics/vector/digit-font.el](modules/graphics/vector/digit-font.md)（3 个 API）
+- [graphics/vector/true-type.el](modules/graphics/vector/true-type.md)（1 个 API）
 
 ## language
 
@@ -198,6 +209,7 @@
 
 ## multimedia
 
+- [multimedia/audio/digit-wav.el](modules/multimedia/audio/digit-wav.md)（5 个 API）
 - [multimedia/audio/index.el](modules/multimedia/audio/index.md)（0 个 API）
 - [multimedia/audio/linux-output.el](modules/multimedia/audio/linux-output.md)（6 个 API）
 - [multimedia/audio/macos-output.el](modules/multimedia/audio/macos-output.md)（6 个 API）
@@ -205,7 +217,14 @@
 - [multimedia/audio/wav.el](modules/multimedia/audio/wav.md)（5 个 API）
 - [multimedia/audio/windows-output.el](modules/multimedia/audio/windows-output.md)（6 个 API）
 - [multimedia/capture/binary.el](modules/multimedia/capture/binary.md)（1 个 API）
-- [multimedia/capture/model.el](modules/multimedia/capture/model.md)（4 个 API）
+- [multimedia/capture/model.el](modules/multimedia/capture/model.md)（5 个 API）
+- [multimedia/image/codec.el](modules/multimedia/image/codec.md)（5 个 API）
+- [multimedia/image/file-codecs.el](modules/multimedia/image/file-codecs.md)（2 个 API）
+- [multimedia/image/files.el](modules/multimedia/image/files.md)（4 个 API）
+- [multimedia/image/model.el](modules/multimedia/image/model.md)（1 个 API）
+- [multimedia/qr/encode.el](modules/multimedia/qr/encode.md)（1 个 API）
+- [multimedia/video/digit-avi.el](modules/multimedia/video/digit-avi.md)（6 个 API）
+- [multimedia/video/mjpeg.el](modules/multimedia/video/mjpeg.md)（2 个 API）
 
 ## network
 
@@ -259,6 +278,7 @@
 - [numerical-computing/exact-solve.el](modules/numerical-computing/exact-solve.md)（1 个 API）
 - [numerical-computing/matrix-syntax.el](modules/numerical-computing/matrix-syntax.md)（1 个 API）
 - [numerical-computing/reductions.el](modules/numerical-computing/reductions.md)（4 个 API）
+- [numerical-computing/tensor-file.el](modules/numerical-computing/tensor-file.md)（1 个 API）
 - [numerical-computing/tensor.el](modules/numerical-computing/tensor.md)（21 个 API）
 
 ## operating-system
