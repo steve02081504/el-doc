@@ -12,7 +12,7 @@
 
 ## PrivateRandomFileSystem {#api-e1f95c660f660a0447cc}
 
-源码：`src/stdlib/filesystem/random-file.el:44` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/random-file.el#L44)
+源码：`src/stdlib/filesystem/random-file.el:45` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/random-file.el#L45)
 
 创建私有随机文件及其逻辑文件系统上下文。该上下文中的 data 位置由此对象独占。
 

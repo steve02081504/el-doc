@@ -184,7 +184,7 @@ import { openFileReader } from "el:filesystem/"
 
 fn readPrefix(path: Text): Number {
 	scope let reader = openFileReader(path)
-	let bytes = reader.read(4096)
+	let bytes = reader.read(4kb)
 	bytes.size
 }
 ```

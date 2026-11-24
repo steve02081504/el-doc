@@ -12,7 +12,7 @@
 
 ## TensorDevice {#api-6352f607871fe7944c1e}
 
-源码：`src/stdlib/numerical-computing/device-tensor.el:79` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-tensor.el#L79)
+源码：`src/stdlib/numerical-computing/device-tensor.el:80` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-tensor.el#L80)
 
 按元素类型和精度生成设备张量操作类型。设备资源和实际执行依赖所用设备上下文。
 

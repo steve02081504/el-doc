@@ -12,7 +12,7 @@
 
 ## openCSVRows {#api-6f7101cca85917c43295}
 
-源码：`src/stdlib/formats/delimited-text/stream.el:145` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/stream.el#L145)
+源码：`src/stdlib/formats/delimited-text/stream.el:146` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/stream.el#L146)
 
 打开 CSV 文件并返回分批读取行的读取器。
 

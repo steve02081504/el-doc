@@ -261,7 +261,7 @@ import { sleep } from "el:concurrency/"
 
 fn load(): Text {
 	invokeCallback(fn() {
-		sleep(1)                    // 普通挂起后目标仍然有效
+		sleep(1ms)                    // 普通挂起后目标仍然有效
 		return "ready" from load
 	})
 	throw StateError("unreachable")

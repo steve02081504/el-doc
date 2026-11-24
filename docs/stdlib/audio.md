@@ -153,14 +153,14 @@ fn playWav(path: Text) {
 							chunk.setSample(frame, channel, source.sample(offset + frame, channel))
 						}
 					}
-					while (!output.enqueue(chunk)) sleep(2)
+					while (!output.enqueue(chunk)) sleep(2ms)
 				} finally {
 					chunk.close()
 				}
 				offset += count
 			}
 			output.finish()
-			while (!output.idle()) sleep(2)
+			while (!output.idle()) sleep(2ms)
 		} finally {
 			output.close()
 		}
@@ -183,7 +183,7 @@ playWav("file:./tone.wav")
 正常路径上还有一层不用天天记、但调试时需要知道的边界：
 
 ??? note "可选 · 深入：队列容量的边界"
-    `PcmOutput` 的队列块数限制在 1..16，每块帧数上限 1048576；`enqueue` 在队列满时返回 `f`，是等待还是丢弃由调用方决定。播放 WAV 的循环里用 `sleep(2)` 等队列腾空，就是这一决定的直接结果。
+    `PcmOutput` 的队列块数限制在 1..16，每块帧数上限 1048576；`enqueue` 在队列满时返回 `f`，是等待还是丢弃由调用方决定。播放 WAV 的循环里用 `sleep(2ms)` 等队列腾空，就是这一决定的直接结果。
 
 ## 带走这三样
 

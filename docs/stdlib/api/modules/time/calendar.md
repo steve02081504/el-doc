@@ -165,7 +165,7 @@ export fn offsetText(offset: TimeDiff): Text
 ```el
 import { offsetText } from "el:time/calendar.el"
 import { TimeDiff } from "el:time/diff.el"
-offsetText(TimeDiff.seconds(19800))
+offsetText(19800s)
 ```
 预期结果：+05:30。
 

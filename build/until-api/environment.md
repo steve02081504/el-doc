@@ -1488,7 +1488,7 @@
 | <span id="api-cccc68c7928e63feb966"></span>`sin` | [mathematics/functions/elementary.el:158](modules/mathematics/functions/elementary.md#api-b86d1300e2b18347e166)<br>`@pure @optimize(data: @{ operation: "sin" }) export fn sin(value)` | 计算以弧度表示的正弦近似值。 |
 | <span id="api-4bd4ab06068ac6ac63a1"></span>`sin64` | [numerical-computing/real.el:80](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/real.el#L80)<br>`export fn sin64(value: F64): F64` | 未标注文档 |
 | <span id="api-fdff50a13a2163caa82f"></span>`sizeof` | [platform/layout-syntax.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/layout-syntax.el#L19)<br>`export syntax sizeof` | 未标注文档 |
-| <span id="api-0afa5bb5d5f1787945e5"></span>`sleep` | [concurrency/scheduling/timers.el:135](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L135)<br>`export fn sleep(milliseconds: Number) export fn sleep(duration: TimeDiff)` | 未标注文档 |
+| <span id="api-0afa5bb5d5f1787945e5"></span>`sleep` | [concurrency/scheduling/timers.el:135](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L135)<br>`export fn sleep(duration: TimeDiff)` | 未标注文档 |
 | <span id="api-fb1acd44962209a65826"></span>`slope` | [mathematics/functions/discrete.el:221](https://github.com/steve02081504/el/blob/master/src/stdlib/mathematics/functions/discrete.el#L221)<br>`export fn slope(first, second, distance)` | 未标注文档 |
 | <span id="api-9f89bf2e05f9401f8151"></span>`SocketAddress` | [network/address.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/network/address.el#L11)<br>`export class SocketAddress` | 未标注文档 |
 | <span id="api-c14cdb19563cb1644772"></span>`solve` | — | 来源未解析或有歧义 |

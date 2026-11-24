@@ -66,7 +66,7 @@ fn enqueue(audio: PcmAudio): Bool
 
 ```el
 // @external chunk: PcmAudio
-if (!output.enqueue(chunk)) sleep(2)
+if (!output.enqueue(chunk)) sleep(2ms)
 ```
 
 ## PcmOutput.finish {#api-2c4c730664ab8d398430}
@@ -83,7 +83,7 @@ fn finish()
 
 ```el
 output.finish()
-while (!output.idle()) sleep(2)
+while (!output.idle()) sleep(2ms)
 ```
 
 ## PcmOutput.idle {#api-9c4aeae8f2aae4510c1b}
@@ -103,7 +103,7 @@ fn idle(): Bool
 ### 示例：等待输出排空
 
 ```el
-while (!output.idle()) sleep(2)
+while (!output.idle()) sleep(2ms)
 ```
 
 ## PcmOutput.clear {#api-a4ef6b8c6e52a3dea8f4}

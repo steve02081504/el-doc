@@ -67,6 +67,12 @@ spec.loader.exec_module(module)
 		self.assertIn("has no API documentation (console/facade.el:10)", problems[1][1])
 		self.assertIn("capture", {target.label for _, target in targets.values()})
 
+	def test_quantity_suffixes_are_not_library_names(self):
+		code = "let delay = 3s\nlet step = 0.5ms\nlet empty = 0b\nlet limit = 64kb\nlet mask = 0b101\nlet compound = 1d2h\nunknown"
+		problems = []
+		code_targets(code, self.catalog, report=lambda offset, message: problems.append((code[offset:], message)))
+		self.assertEqual([spelling for spelling, _ in problems], ["unknown"])
+
 	def test_directory_import_requires_a_real_directory_entry(self):
 		for uri in ("el:console/", "el:console", "el:console/index.el"):
 			with self.subTest(uri=uri):

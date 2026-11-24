@@ -26,9 +26,9 @@ let target = WindowSelector(title: WindowTextMatch(title))
 let random = Random()
 let input = DesktopInput()
 try {
-	sleep(3000)
+	sleep(3s)
 	for (let count = 0; count < 5; count++) {
-		sleep(random.between(430, 570))
+		sleep(random.between(430, 570) * 1ms)
 		if (findActiveDesktopWindow(target) is nil_t) break
 		input.sendKeys("A")
 	}
@@ -77,7 +77,7 @@ fn healthPercent(): Number | nil_t {
 	}
 }
 
-sleep(3000)
+sleep(3s)
 let input = if (dryRun) nil else DesktopInput()
 try {
 	for (let sample = 0; sample < 20; sample++) {
@@ -91,8 +91,8 @@ try {
 		if (percent < 30) {
 			console.stdout.writeLine("低于补药阈值")
 			if (input isnot nil_t & findActiveDesktopWindow(target) isnot nil_t) input.sendKeys("Q")
-			sleep(2000)
-		} else sleep(250)
+			sleep(2s)
+		} else sleep(250ms)
 	}
 } finally {
 	if (input isnot nil_t) input.close()
@@ -127,7 +127,7 @@ fn requirePracticeWindow() {
 openDesktopUri("http://127.0.0.1:8766/login-demo.html")
 for (let attempt = 0; attempt < 50; attempt++) {
 	if (findActiveDesktopWindow(target) isnot nil_t) break
-	sleep(100)
+	sleep(100ms)
 }
 requirePracticeWindow()
 let input = DesktopInput()

@@ -28,6 +28,6 @@ export class TimeDiff extends TextOperand
 
 ```el
 import { TimeDiff } from "el:time/diff.el"
-let delay = TimeDiff.seconds(5)
+let delay = 5s
 console.stdout.writeLine(delay.totalSeconds)
 ```

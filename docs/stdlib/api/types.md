@@ -36,7 +36,7 @@ class Huffman
 
 ## ArchiveFileFormat · archives/files.el {#api-fe05d3024eb2ea5ec4a4}
 
-[源码 archives/files.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/files.el#L6)
+[源码 archives/files.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/files.el#L7)
 
 ```el-signature
 class ArchiveFileFormat
@@ -76,7 +76,7 @@ class RangeEncoder
 
 ## ArchiveCompression · archives/model.el {#api-1e65a48d585eaf4d9a95}
 
-[源码 archives/model.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L10)
+[源码 archives/model.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L11)
 
 ```el-signature
 enum ArchiveCompression
@@ -84,7 +84,7 @@ enum ArchiveCompression
 
 ## ArchiveEntry · archives/model.el {#api-566266bfda7d84271278}
 
-[源码 archives/model.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L57)
+[源码 archives/model.el:59](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L59)
 
 ```el-signature
 class ArchiveEntry
@@ -92,7 +92,7 @@ class ArchiveEntry
 
 ## ArchiveError · archives/model.el {#api-003a2e99bf00562ddd8d}
 
-[源码 archives/model.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L12)
+[源码 archives/model.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L13)
 
 ```el-signature
 class ArchiveError extends Error
@@ -100,7 +100,7 @@ class ArchiveError extends Error
 
 ## ArchiveFailure · archives/model.el {#api-6ce3db14ef638113dcc6}
 
-[源码 archives/model.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L9)
+[源码 archives/model.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L10)
 
 ```el-signature
 enum ArchiveFailure
@@ -108,7 +108,7 @@ enum ArchiveFailure
 
 ## ArchiveFormat · archives/model.el {#api-803a8d8327249ccd1b56}
 
-[源码 archives/model.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L8)
+[源码 archives/model.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L9)
 
 ```el-signature
 enum ArchiveFormat
@@ -116,7 +116,7 @@ enum ArchiveFormat
 
 ## ArchiveLimits · archives/model.el {#api-48455797f15916b02dd3}
 
-[源码 archives/model.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L23)
+[源码 archives/model.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L24)
 
 ```el-signature
 class ArchiveLimits
@@ -124,7 +124,7 @@ class ArchiveLimits
 
 ## ArchiveOptions · archives/model.el {#api-fb8f27ddabacf5633ba8}
 
-[源码 archives/model.el:73](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L73)
+[源码 archives/model.el:75](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/model.el#L75)
 
 ```el-signature
 class ArchiveOptions
@@ -164,7 +164,7 @@ class RarTree
 
 ## PendingFile · archives/rar.el {#api-66f77d55a8b9f7a13d77}
 
-[源码 archives/rar.el:235](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/rar.el#L235)
+[源码 archives/rar.el:236](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/rar.el#L236)
 
 ```el-signature
 class PendingFile
@@ -172,7 +172,7 @@ class PendingFile
 
 ## RarEncryption · archives/rar.el {#api-6e572564ff9a66fac031}
 
-[源码 archives/rar.el:80](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/rar.el#L80)
+[源码 archives/rar.el:81](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/rar.el#L81)
 
 ```el-signature
 class RarEncryption
@@ -180,7 +180,7 @@ class RarEncryption
 
 ## Coder · archives/seven.el {#api-d95809aae9c8e0c94b4c}
 
-[源码 archives/seven.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/seven.el#L66)
+[源码 archives/seven.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/seven.el#L67)
 
 ```el-signature
 class Coder
@@ -188,7 +188,7 @@ class Coder
 
 ## Folder · archives/seven.el {#api-2d5caa39be678a0e262c}
 
-[源码 archives/seven.el:80](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/seven.el#L80)
+[源码 archives/seven.el:81](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/seven.el#L81)
 
 ```el-signature
 class Folder
@@ -196,7 +196,7 @@ class Folder
 
 ## Streams · archives/seven.el {#api-d0f1e50a109638522343}
 
-[源码 archives/seven.el:180](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/seven.el#L180)
+[源码 archives/seven.el:181](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/seven.el#L181)
 
 ```el-signature
 class Streams
@@ -204,7 +204,7 @@ class Streams
 
 ## Pax · archives/tar.el {#api-d98642c3861bb4845923}
 
-[源码 archives/tar.el:179](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/tar.el#L179)
+[源码 archives/tar.el:180](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/tar.el#L180)
 
 ```el-signature
 class Pax
@@ -212,7 +212,7 @@ class Pax
 
 ## ArchiveVolume · archives/volumes.el {#api-fb0b3e01cc91951ccdbd}
 
-[源码 archives/volumes.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/volumes.el#L7)
+[源码 archives/volumes.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/volumes.el#L8)
 
 ```el-signature
 class ArchiveVolume
@@ -220,7 +220,7 @@ class ArchiveVolume
 
 ## VolumeWriter · archives/volumes.el {#api-2830d661232edc627a71}
 
-[源码 archives/volumes.el:55](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/volumes.el#L55)
+[源码 archives/volumes.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/volumes.el#L56)
 
 ```el-signature
 class VolumeWriter
@@ -228,7 +228,7 @@ class VolumeWriter
 
 ## ZipFile · archives/zip.el {#api-8a0f28dc555aa2900389}
 
-[源码 archives/zip.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/zip.el#L15)
+[源码 archives/zip.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/zip.el#L16)
 
 ```el-signature
 class ZipFile
@@ -10328,7 +10328,7 @@ class ServiceValue
 
 ## TimerClosed · concurrency/scheduling/timers.el {#api-6e77ff3ccc0f1bdf798c}
 
-[源码 concurrency/scheduling/timers.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L36)
+[源码 concurrency/scheduling/timers.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L34)
 
 ```el-signature
 class TimerClosed
@@ -10336,7 +10336,7 @@ class TimerClosed
 
 ## TimerEntry · concurrency/scheduling/timers.el {#api-3485cf17b8cbad31cbfe}
 
-[源码 concurrency/scheduling/timers.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L43)
+[源码 concurrency/scheduling/timers.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L41)
 
 ```el-signature
 class TimerEntry
@@ -10344,7 +10344,7 @@ class TimerEntry
 
 ## TimerError · concurrency/scheduling/timers.el {#api-a0f3f357bf37f5a89c81}
 
-[源码 concurrency/scheduling/timers.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L35)
+[源码 concurrency/scheduling/timers.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L33)
 
 ```el-signature
 class TimerError extends Error
@@ -10352,7 +10352,7 @@ class TimerError extends Error
 
 ## TimerOutcome · concurrency/scheduling/timers.el {#api-f0a7b9447eae542358e1}
 
-[源码 concurrency/scheduling/timers.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L38)
+[源码 concurrency/scheduling/timers.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L36)
 
 ```el-signature
 class TimerOutcome
@@ -10360,7 +10360,7 @@ class TimerOutcome
 
 ## TimerService · concurrency/scheduling/timers.el {#api-019a1f411d94965aae8e}
 
-[源码 concurrency/scheduling/timers.el:128](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L128)
+[源码 concurrency/scheduling/timers.el:126](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L126)
 
 ```el-signature
 class TimerService
@@ -10368,7 +10368,7 @@ class TimerService
 
 ## TimerState · concurrency/scheduling/timers.el {#api-4d0edfd4c0d4878bce17}
 
-[源码 concurrency/scheduling/timers.el:48](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L48)
+[源码 concurrency/scheduling/timers.el:46](https://github.com/steve02081504/el/blob/master/src/stdlib/concurrency/scheduling/timers.el#L46)
 
 ```el-signature
 class TimerState
@@ -12258,7 +12258,7 @@ class DbAutoPendingChange
 
 ## AutoDatabase · database/auto/database.el {#api-cfe3aecb005bfbb3aabf}
 
-[源码 database/auto/database.el:422](https://github.com/steve02081504/el/blob/master/src/stdlib/database/auto/database.el#L422)
+[源码 database/auto/database.el:423](https://github.com/steve02081504/el/blob/master/src/stdlib/database/auto/database.el#L423)
 
 ```el-signature
 fn AutoDatabase(row: type): type
@@ -12266,7 +12266,7 @@ fn AutoDatabase(row: type): type
 
 ## DbAutoChangeWatch · database/auto/database.el {#api-52647b013d1ab71907c5}
 
-[源码 database/auto/database.el:355](https://github.com/steve02081504/el/blob/master/src/stdlib/database/auto/database.el#L355)
+[源码 database/auto/database.el:356](https://github.com/steve02081504/el/blob/master/src/stdlib/database/auto/database.el#L356)
 
 ```el-signature
 fn DbAutoChangeWatch(row: type): type
@@ -12274,7 +12274,7 @@ fn DbAutoChangeWatch(row: type): type
 
 ## DbAutoSnapshot · database/auto/database.el {#api-e534c5f456a6f8d556ee}
 
-[源码 database/auto/database.el:267](https://github.com/steve02081504/el/blob/master/src/stdlib/database/auto/database.el#L267)
+[源码 database/auto/database.el:268](https://github.com/steve02081504/el/blob/master/src/stdlib/database/auto/database.el#L268)
 
 ```el-signature
 fn DbAutoSnapshot(row: type): type
@@ -12282,7 +12282,7 @@ fn DbAutoSnapshot(row: type): type
 
 ## DbAutoTransaction · database/auto/database.el {#api-e3d16f001d2e968fc321}
 
-[源码 database/auto/database.el:72](https://github.com/steve02081504/el/blob/master/src/stdlib/database/auto/database.el#L72)
+[源码 database/auto/database.el:73](https://github.com/steve02081504/el/blob/master/src/stdlib/database/auto/database.el#L73)
 
 ```el-signature
 fn DbAutoTransaction(row: type): type
@@ -12980,7 +12980,7 @@ class DbExecutionMemory
 
 ## DbCancelEntry · database/execution.el {#api-a7555189fa09fde1bdcd}
 
-[源码 database/execution.el:85](https://github.com/steve02081504/el/blob/master/src/stdlib/database/execution.el#L85)
+[源码 database/execution.el:86](https://github.com/steve02081504/el/blob/master/src/stdlib/database/execution.el#L86)
 
 ```el-signature
 class DbCancelEntry
@@ -12988,7 +12988,7 @@ class DbCancelEntry
 
 ## DbExecution · database/execution.el {#api-eaecb7ad725daafcc211}
 
-[源码 database/execution.el:101](https://github.com/steve02081504/el/blob/master/src/stdlib/database/execution.el#L101)
+[源码 database/execution.el:102](https://github.com/steve02081504/el/blob/master/src/stdlib/database/execution.el#L102)
 
 ```el-signature
 class DbExecution
@@ -12996,7 +12996,7 @@ class DbExecution
 
 ## DbExecutionMetrics · database/execution.el {#api-b962f97b0a95ecb2af2b}
 
-[源码 database/execution.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/database/execution.el#L15)
+[源码 database/execution.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/database/execution.el#L16)
 
 ```el-signature
 class DbExecutionMetrics
@@ -13004,7 +13004,7 @@ class DbExecutionMetrics
 
 ## DbRelationBinding · database/execution.el {#api-14ec55c03171cd9eb3e4}
 
-[源码 database/execution.el:92](https://github.com/steve02081504/el/blob/master/src/stdlib/database/execution.el#L92)
+[源码 database/execution.el:93](https://github.com/steve02081504/el/blob/master/src/stdlib/database/execution.el#L93)
 
 ```el-signature
 class DbRelationBinding
@@ -17876,7 +17876,7 @@ class WordDocument
 
 ## DocumentFormat · documents/formats.el {#api-7ced5ba5ae653d552d2c}
 
-[源码 documents/formats.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/formats.el#L24)
+[源码 documents/formats.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/formats.el#L25)
 
 ```el-signature
 class DocumentFormat
@@ -17884,7 +17884,7 @@ class DocumentFormat
 
 ## WorkbookFormat · documents/formats.el {#api-bce4be7e6c9e11426878}
 
-[源码 documents/formats.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/formats.el#L6)
+[源码 documents/formats.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/formats.el#L7)
 
 ```el-signature
 class WorkbookFormat
@@ -17892,7 +17892,7 @@ class WorkbookFormat
 
 ## OfficeFormat · documents/package.el {#api-9b72698003f28512ed1c}
 
-[源码 documents/package.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L12)
+[源码 documents/package.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L13)
 
 ```el-signature
 enum OfficeFormat
@@ -17900,7 +17900,7 @@ enum OfficeFormat
 
 ## OfficePackage · documents/package.el {#api-7fca6822013b6b181832}
 
-[源码 documents/package.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L38)
+[源码 documents/package.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L39)
 
 ```el-signature
 class OfficePackage
@@ -17908,7 +17908,7 @@ class OfficePackage
 
 ## OfficePackageFileFormat · documents/package.el {#api-68dad8c15250ce6c8f6e}
 
-[源码 documents/package.el:111](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L111)
+[源码 documents/package.el:112](https://github.com/steve02081504/el/blob/master/src/stdlib/documents/package.el#L112)
 
 ```el-signature
 class OfficePackageFileFormat
@@ -18696,7 +18696,7 @@ class ExecutionAdmission
 
 ## ExecutionCandidate · execution/plans/descriptor.el {#api-62c43280e20fec1b913e}
 
-[源码 execution/plans/descriptor.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/plans/descriptor.el#L15)
+[源码 execution/plans/descriptor.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/plans/descriptor.el#L16)
 
 ```el-signature
 class ExecutionCandidate
@@ -18704,7 +18704,7 @@ class ExecutionCandidate
 
 ## ExecutionEndpoint · execution/plans/descriptor.el {#api-dc810fcb66e2ab506bee}
 
-[源码 execution/plans/descriptor.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/plans/descriptor.el#L10)
+[源码 execution/plans/descriptor.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/plans/descriptor.el#L11)
 
 ```el-signature
 class ExecutionEndpoint
@@ -18712,7 +18712,7 @@ class ExecutionEndpoint
 
 ## ExecutionError · execution/plans/descriptor.el {#api-a45d2f1b20e438e43721}
 
-[源码 execution/plans/descriptor.el:3](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/plans/descriptor.el#L3)
+[源码 execution/plans/descriptor.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/plans/descriptor.el#L4)
 
 ```el-signature
 class ExecutionError extends Error
@@ -18720,7 +18720,7 @@ class ExecutionError extends Error
 
 ## ExecutionNoViablePlan · execution/plans/descriptor.el {#api-f508cb12020140e8f376}
 
-[源码 execution/plans/descriptor.el:114](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/plans/descriptor.el#L114)
+[源码 execution/plans/descriptor.el:116](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/plans/descriptor.el#L116)
 
 ```el-signature
 class ExecutionNoViablePlan extends ExecutionError
@@ -18728,7 +18728,7 @@ class ExecutionNoViablePlan extends ExecutionError
 
 ## ExecutionPolicy · execution/plans/descriptor.el {#api-c4e22112663baf382e33}
 
-[源码 execution/plans/descriptor.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/plans/descriptor.el#L66)
+[源码 execution/plans/descriptor.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/plans/descriptor.el#L68)
 
 ```el-signature
 class ExecutionPolicy
@@ -18740,6 +18740,14 @@ class ExecutionPolicy
 
 ```el-signature
 class ExecutionSelection
+```
+
+## InheritMemoryBudget · execution/plans/descriptor.el {#api-bdaba4b761e4c3296314}
+
+[源码 execution/plans/descriptor.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/plans/descriptor.el#L66)
+
+```el-signature
+enum InheritMemoryBudget
 ```
 
 ## DeviceMemoryArena · execution/plans/memory-plan.el {#api-e2700e4da6a03ca72dbf}
@@ -18824,7 +18832,7 @@ class HttpComputeEndpoint extends ExecutionEndpoint
 
 ## AllocationDomain · execution/resources/allocation-domain.el {#api-ef7876846e8370ca6c72}
 
-[源码 execution/resources/allocation-domain.el:132](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-domain.el#L132)
+[源码 execution/resources/allocation-domain.el:133](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-domain.el#L133)
 
 ```el-signature
 class AllocationDomain
@@ -18832,7 +18840,7 @@ class AllocationDomain
 
 ## AllocationDomainBlock · execution/resources/allocation-domain.el {#api-9123f8bb1d368f9ad508}
 
-[源码 execution/resources/allocation-domain.el:179](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-domain.el#L179)
+[源码 execution/resources/allocation-domain.el:180](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-domain.el#L180)
 
 ```el-signature
 class AllocationDomainBlock
@@ -18840,7 +18848,7 @@ class AllocationDomainBlock
 
 ## AllocationDomainReleaseError · execution/resources/allocation-domain.el {#api-355169d8383f15c7b0b2}
 
-[源码 execution/resources/allocation-domain.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-domain.el#L33)
+[源码 execution/resources/allocation-domain.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-domain.el#L34)
 
 ```el-signature
 class AllocationDomainReleaseError extends Error
@@ -18848,7 +18856,7 @@ class AllocationDomainReleaseError extends Error
 
 ## AllocationDomainReleaseReceipt · execution/resources/allocation-domain.el {#api-d90c5f87b6d0e676e33f}
 
-[源码 execution/resources/allocation-domain.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-domain.el#L24)
+[源码 execution/resources/allocation-domain.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-domain.el#L25)
 
 ```el-signature
 class AllocationDomainReleaseReceipt
@@ -18856,7 +18864,7 @@ class AllocationDomainReleaseReceipt
 
 ## AllocationDomainReleaseState · execution/resources/allocation-domain.el {#api-4995332c5506fe83f197}
 
-[源码 execution/resources/allocation-domain.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-domain.el#L22)
+[源码 execution/resources/allocation-domain.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-domain.el#L23)
 
 ```el-signature
 enum AllocationDomainReleaseState
@@ -18864,7 +18872,7 @@ enum AllocationDomainReleaseState
 
 ## DomainHandle · execution/resources/allocation-domain.el {#api-a86cf01f687401259ed4}
 
-[源码 execution/resources/allocation-domain.el:43](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-domain.el#L43)
+[源码 execution/resources/allocation-domain.el:44](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-domain.el#L44)
 
 ```el-signature
 class DomainHandle
@@ -18872,7 +18880,7 @@ class DomainHandle
 
 ## AllocationBlock · execution/resources/allocation-quota.el {#api-23567ed6f5a6573b6541}
 
-[源码 execution/resources/allocation-quota.el:208](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-quota.el#L208)
+[源码 execution/resources/allocation-quota.el:209](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-quota.el#L209)
 
 ```el-signature
 class AllocationBlock
@@ -18880,7 +18888,7 @@ class AllocationBlock
 
 ## AllocationQuota · execution/resources/allocation-quota.el {#api-e0a0f3922c8909658bcd}
 
-[源码 execution/resources/allocation-quota.el:130](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-quota.el#L130)
+[源码 execution/resources/allocation-quota.el:131](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-quota.el#L131)
 
 ```el-signature
 class AllocationQuota
@@ -18888,7 +18896,7 @@ class AllocationQuota
 
 ## AllocationReleaseError · execution/resources/allocation-quota.el {#api-e769e01cd54e460b5587}
 
-[源码 execution/resources/allocation-quota.el:103](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-quota.el#L103)
+[源码 execution/resources/allocation-quota.el:104](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-quota.el#L104)
 
 ```el-signature
 class AllocationReleaseError extends Error
@@ -18896,7 +18904,7 @@ class AllocationReleaseError extends Error
 
 ## AllocationReservation · execution/resources/allocation-quota.el {#api-829767a91c33826fa4c6}
 
-[源码 execution/resources/allocation-quota.el:189](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-quota.el#L189)
+[源码 execution/resources/allocation-quota.el:190](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-quota.el#L190)
 
 ```el-signature
 class AllocationReservation
@@ -18904,7 +18912,7 @@ class AllocationReservation
 
 ## QuotaHandle · execution/resources/allocation-quota.el {#api-7e438127930ae3f2858f}
 
-[源码 execution/resources/allocation-quota.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-quota.el#L31)
+[源码 execution/resources/allocation-quota.el:32](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/allocation-quota.el#L32)
 
 ```el-signature
 class QuotaHandle
@@ -18920,7 +18928,7 @@ class ExecutionBuffer extends ExecutionResource
 
 ## DeviceMemoryPool · execution/resources/memory-pool.el {#api-9aa9a93aec8357d38402}
 
-[源码 execution/resources/memory-pool.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/memory-pool.el#L19)
+[源码 execution/resources/memory-pool.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/memory-pool.el#L20)
 
 ```el-signature
 class DeviceMemoryPool
@@ -18928,7 +18936,7 @@ class DeviceMemoryPool
 
 ## PoolEntry · execution/resources/memory-pool.el {#api-e162b8b530f5bf8a4ce0}
 
-[源码 execution/resources/memory-pool.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/memory-pool.el#L8)
+[源码 execution/resources/memory-pool.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/execution/resources/memory-pool.el#L9)
 
 ```el-signature
 class PoolEntry
@@ -18952,7 +18960,7 @@ fn ComputeCodec(element: type): type
 
 ## FileBuffer · filesystem/buffer.el {#api-46bf41868bd77b4bb737}
 
-[源码 filesystem/buffer.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/buffer.el#L9)
+[源码 filesystem/buffer.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/buffer.el#L10)
 
 ```el-signature
 class FileBuffer
@@ -18968,7 +18976,7 @@ class FileOperationResolution
 
 ## FileProvider · filesystem/file-provider.el {#api-413d6623b616d720d945}
 
-[源码 filesystem/file-provider.el:174](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/file-provider.el#L174)
+[源码 filesystem/file-provider.el:175](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/file-provider.el#L175)
 
 ```el-signature
 class FileProvider
@@ -19000,7 +19008,7 @@ class HttpFileReaderSource extends FileReaderSource
 
 ## FileSystemContext · filesystem/model.el {#api-c9a84e452371f1003179}
 
-[源码 filesystem/model.el:256](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L256)
+[源码 filesystem/model.el:257](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L257)
 
 ```el-signature
 class FileSystemContext
@@ -19008,7 +19016,7 @@ class FileSystemContext
 
 ## FileSystemError · filesystem/model.el {#api-f107c055c9e6e7597652}
 
-[源码 filesystem/model.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L15)
+[源码 filesystem/model.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L16)
 
 ```el-signature
 class FileSystemError extends Error
@@ -19016,7 +19024,7 @@ class FileSystemError extends Error
 
 ## Location · filesystem/model.el {#api-547a9b261b17d994f444}
 
-[源码 filesystem/model.el:127](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L127)
+[源码 filesystem/model.el:128](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L128)
 
 ```el-signature
 class Location extends TextOperand
@@ -19024,7 +19032,7 @@ class Location extends TextOperand
 
 ## Path · filesystem/model.el {#api-01450bc86834bd922aa5}
 
-[源码 filesystem/model.el:119](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L119)
+[源码 filesystem/model.el:120](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L120)
 
 ```el-signature
 class Path extends TextOperand
@@ -19034,7 +19042,7 @@ class Path extends TextOperand
 
 ## ProviderRegistration · filesystem/model.el {#api-1377928886dbe891a307}
 
-[源码 filesystem/model.el:71](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L71)
+[源码 filesystem/model.el:72](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/model.el#L72)
 
 ```el-signature
 class ProviderRegistration
@@ -19058,7 +19066,7 @@ class NativeFileWriterSource extends FileWriterSource
 
 ## PrivateRandomFileSystem · filesystem/random-file.el {#api-e1f95c660f660a0447cc}
 
-[源码 filesystem/random-file.el:44](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/random-file.el#L44)
+[源码 filesystem/random-file.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/random-file.el#L45)
 
 ```el-signature
 class PrivateRandomFileSystem
@@ -19100,7 +19108,7 @@ enum ReadProtectionState
 
 ## FileReader · filesystem/reader.el {#api-3152ff28a38c0533af33}
 
-[源码 filesystem/reader.el:93](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L93)
+[源码 filesystem/reader.el:92](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L92)
 
 ```el-signature
 class FileReader
@@ -19132,7 +19140,7 @@ class FileReaderSource
 
 ## FileWriter · filesystem/writer.el {#api-4abf891ad64ec031618d}
 
-[源码 filesystem/writer.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L76)
+[源码 filesystem/writer.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L77)
 
 ```el-signature
 class FileWriter
@@ -19140,7 +19148,7 @@ class FileWriter
 
 ## FileWriterCloseReceipt · filesystem/writer.el {#api-280801d1f5d1cf7cac27}
 
-[源码 filesystem/writer.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L21)
+[源码 filesystem/writer.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L22)
 
 ```el-signature
 class FileWriterCloseReceipt
@@ -19148,7 +19156,7 @@ class FileWriterCloseReceipt
 
 ## FileWriterCloseState · filesystem/writer.el {#api-68062e88a313802e0208}
 
-[源码 filesystem/writer.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L18)
+[源码 filesystem/writer.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L19)
 
 ```el-signature
 enum FileWriterCloseState
@@ -19156,7 +19164,7 @@ enum FileWriterCloseState
 
 ## FileWriterSource · filesystem/writer.el {#api-8f4a7524ce5861c816f9}
 
-[源码 filesystem/writer.el:39](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L39)
+[源码 filesystem/writer.el:40](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/writer.el#L40)
 
 ```el-signature
 class FileWriterSource
@@ -19618,7 +19626,7 @@ class CsvRowWriter
 
 ## CsvReadError · formats/delimited-text/stream.el {#api-17dde26f21ce364800da}
 
-[源码 formats/delimited-text/stream.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/stream.el#L13)
+[源码 formats/delimited-text/stream.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/stream.el#L14)
 
 ```el-signature
 class CsvReadError extends Error
@@ -19626,7 +19634,7 @@ class CsvReadError extends Error
 
 ## CsvRowBatch · formats/delimited-text/stream.el {#api-1b09d9c5227762bd78c8}
 
-[源码 formats/delimited-text/stream.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/stream.el#L25)
+[源码 formats/delimited-text/stream.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/stream.el#L26)
 
 ```el-signature
 class CsvRowBatch
@@ -19634,7 +19642,7 @@ class CsvRowBatch
 
 ## CsvRowReader · formats/delimited-text/stream.el {#api-d1a32b0db6f02835cc7e}
 
-[源码 formats/delimited-text/stream.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/stream.el#L33)
+[源码 formats/delimited-text/stream.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/delimited-text/stream.el#L34)
 
 ```el-signature
 class CsvRowReader
@@ -19642,7 +19650,7 @@ class CsvRowReader
 
 ## EmptyEncodeOptions · formats/file-codec.el {#api-b651bfb5cc1a69cb9ad6}
 
-[源码 formats/file-codec.el:3](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/file-codec.el#L3)
+[源码 formats/file-codec.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/file-codec.el#L4)
 
 ```el-signature
 class EmptyEncodeOptions
@@ -19650,7 +19658,7 @@ class EmptyEncodeOptions
 
 ## FileCodec · formats/file-codec.el {#api-f112c6142c76d99c7886}
 
-[源码 formats/file-codec.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/file-codec.el#L5)
+[源码 formats/file-codec.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/file-codec.el#L6)
 
 ```el-signature
 fn FileCodec(value: type, options: type): type
@@ -19658,7 +19666,7 @@ fn FileCodec(value: type, options: type): type
 
 ## BufferFormat · formats/index.el {#api-4b10152d04d71ddc756e}
 
-[源码 formats/index.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L67)
+[源码 formats/index.el:68](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L68)
 
 ```el-signature
 class BufferFormat
@@ -19666,7 +19674,7 @@ class BufferFormat
 
 ## EodFormat · formats/index.el {#api-ca9eddf9d85bd918e571}
 
-[源码 formats/index.el:55](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L55)
+[源码 formats/index.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L56)
 
 ```el-signature
 class EodFormat
@@ -19674,7 +19682,7 @@ class EodFormat
 
 ## EolFormat · formats/index.el {#api-7a5e0b123494d48b661f}
 
-[源码 formats/index.el:37](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L37)
+[源码 formats/index.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L38)
 
 ```el-signature
 class EolFormat
@@ -19682,7 +19690,7 @@ class EolFormat
 
 ## Formats · formats/index.el {#api-6768ac9ca087f5de0440}
 
-[源码 formats/index.el:91](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L91)
+[源码 formats/index.el:92](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/index.el#L92)
 
 ```el-signature
 class Formats
@@ -19894,7 +19902,7 @@ class SerializedNode
 
 ## PlainData · formats/serialization/plain-data.el {#api-9ac535a688e3a0104437}
 
-[源码 formats/serialization/plain-data.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/plain-data.el#L10)
+[源码 formats/serialization/plain-data.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/plain-data.el#L11)
 
 ```el-signature
 class PlainData
@@ -19902,7 +19910,7 @@ class PlainData
 
 ## PlainEolFormat · formats/serialization/plain-data.el {#api-82f6256de1dd1a482b8c}
 
-[源码 formats/serialization/plain-data.el:97](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/plain-data.el#L97)
+[源码 formats/serialization/plain-data.el:98](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/plain-data.el#L98)
 
 ```el-signature
 class PlainEolFormat
@@ -19926,7 +19934,7 @@ class SerializationVariants
 
 ## TextFormat · formats/text-format.el {#api-5d821ca4f8d541863abb}
 
-[源码 formats/text-format.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/text-format.el#L22)
+[源码 formats/text-format.el:23](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/text-format.el#L23)
 
 ```el-signature
 fn TextFormat(output: type, input: type = output): type
@@ -20374,7 +20382,7 @@ class Contour
 
 ## SvgDocument · graphics/vector/svg.el {#api-708bac10160c0ced62d1}
 
-[源码 graphics/vector/svg.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/svg.el#L26)
+[源码 graphics/vector/svg.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/graphics/vector/svg.el#L27)
 
 ```el-signature
 class SvgDocument
@@ -27188,7 +27196,7 @@ class UInt
 
 ## MusicPlayer · multimedia/audio/music.el {#api-dd93e8dfc04fdbadfcb9}
 
-[源码 multimedia/audio/music.el:73](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L73)
+[源码 multimedia/audio/music.el:74](https://github.com/steve02081504/el/blob/master/src/stdlib/multimedia/audio/music.el#L74)
 
 ```el-signature
 class MusicPlayer
@@ -29172,7 +29180,7 @@ class InvalidTrainingState
 
 ## CheckpointFile · neural-networks/state/file-session.el {#api-baf2770b7f58b7b0f104}
 
-[源码 neural-networks/state/file-session.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/file-session.el#L27)
+[源码 neural-networks/state/file-session.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/file-session.el#L28)
 
 ```el-signature
 class CheckpointFile
@@ -29180,7 +29188,7 @@ class CheckpointFile
 
 ## CheckpointPublication · neural-networks/state/file-session.el {#api-0856fd1f8f2a826cd5fb}
 
-[源码 neural-networks/state/file-session.el:124](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/file-session.el#L124)
+[源码 neural-networks/state/file-session.el:125](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/file-session.el#L125)
 
 ```el-signature
 class CheckpointPublication
@@ -29188,7 +29196,7 @@ class CheckpointPublication
 
 ## CheckpointPublicationState · neural-networks/state/file-session.el {#api-c79acb59d1b6406aa71a}
 
-[源码 neural-networks/state/file-session.el:119](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/file-session.el#L119)
+[源码 neural-networks/state/file-session.el:120](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/file-session.el#L120)
 
 ```el-signature
 enum CheckpointPublicationState
@@ -29196,7 +29204,7 @@ enum CheckpointPublicationState
 
 ## CheckpointWriteAttempt · neural-networks/state/file-session.el {#api-d534bae369c8f9828629}
 
-[源码 neural-networks/state/file-session.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/file-session.el#L18)
+[源码 neural-networks/state/file-session.el:19](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/state/file-session.el#L19)
 
 ```el-signature
 class CheckpointWriteAttempt
@@ -29542,7 +29550,7 @@ fn LanguageModelPackage(element: type, storage: type = Tensor<element: element>)
 
 ## EncodedSpan · neural-networks/text/public-tokenizer.el {#api-2076aa86746094c27299}
 
-[源码 neural-networks/text/public-tokenizer.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/public-tokenizer.el#L33)
+[源码 neural-networks/text/public-tokenizer.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/public-tokenizer.el#L34)
 
 ```el-signature
 class EncodedSpan
@@ -29550,7 +29558,7 @@ class EncodedSpan
 
 ## PublicBytePairTokenizer · neural-networks/text/public-tokenizer.el {#api-008f40c79afd33547322}
 
-[源码 neural-networks/text/public-tokenizer.el:117](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/public-tokenizer.el#L117)
+[源码 neural-networks/text/public-tokenizer.el:118](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/public-tokenizer.el#L118)
 
 ```el-signature
 class PublicBytePairTokenizer
@@ -29558,7 +29566,7 @@ class PublicBytePairTokenizer
 
 ## InvalidSafeTensorIndex · neural-networks/text/safetensors-index.el {#api-9f924cca13db0e15012b}
 
-[源码 neural-networks/text/safetensors-index.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L10)
+[源码 neural-networks/text/safetensors-index.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L11)
 
 ```el-signature
 class InvalidSafeTensorIndex
@@ -29566,7 +29574,7 @@ class InvalidSafeTensorIndex
 
 ## SafeTensorIndex · neural-networks/text/safetensors-index.el {#api-45d2ec21e335be1ea6a0}
 
-[源码 neural-networks/text/safetensors-index.el:86](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L86)
+[源码 neural-networks/text/safetensors-index.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L87)
 
 ```el-signature
 class SafeTensorIndex
@@ -29574,7 +29582,7 @@ class SafeTensorIndex
 
 ## SafeTensorIndexLimits · neural-networks/text/safetensors-index.el {#api-48800a79994546960ef6}
 
-[源码 neural-networks/text/safetensors-index.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L17)
+[源码 neural-networks/text/safetensors-index.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L18)
 
 ```el-signature
 class SafeTensorIndexLimits
@@ -29582,7 +29590,7 @@ class SafeTensorIndexLimits
 
 ## Work · neural-networks/text/safetensors-index.el {#api-37268d79fac035a82a7d}
 
-[源码 neural-networks/text/safetensors-index.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L30)
+[源码 neural-networks/text/safetensors-index.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors-index.el#L31)
 
 ```el-signature
 class Work
@@ -29590,7 +29598,7 @@ class Work
 
 ## Entry · neural-networks/text/safetensors.el {#api-fc7c7975efd5ef430e81}
 
-[源码 neural-networks/text/safetensors.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L76)
+[源码 neural-networks/text/safetensors.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L77)
 
 ```el-signature
 class Entry
@@ -29598,7 +29606,7 @@ class Entry
 
 ## InvalidSafeTensor · neural-networks/text/safetensors.el {#api-e1e7db720b69a6b0ac1f}
 
-[源码 neural-networks/text/safetensors.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L16)
+[源码 neural-networks/text/safetensors.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L17)
 
 ```el-signature
 class InvalidSafeTensor
@@ -29606,7 +29614,7 @@ class InvalidSafeTensor
 
 ## SafeTensorFile · neural-networks/text/safetensors.el {#api-1c2140f448b284699a74}
 
-[源码 neural-networks/text/safetensors.el:105](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L105)
+[源码 neural-networks/text/safetensors.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L106)
 
 ```el-signature
 fn SafeTensorFile(element: type = PrecisionElement("binary32")): type
@@ -29614,7 +29622,7 @@ fn SafeTensorFile(element: type = PrecisionElement("binary32")): type
 
 ## SafeTensorLimits · neural-networks/text/safetensors.el {#api-e902551d5fffe0b057b5}
 
-[源码 neural-networks/text/safetensors.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L20)
+[源码 neural-networks/text/safetensors.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/safetensors.el#L21)
 
 ```el-signature
 class SafeTensorLimits
@@ -30092,7 +30100,7 @@ fn ComplexDeviceTensor(element: type, storage: Text = "complex64"): type
 
 ## CachedPlan · numerical-computing/device-context.el {#api-1087a5689cfc091268c4}
 
-[源码 numerical-computing/device-context.el:65](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L65)
+[源码 numerical-computing/device-context.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L66)
 
 ```el-signature
 class CachedPlan
@@ -30100,7 +30108,7 @@ class CachedPlan
 
 ## ContextTimestampOwner · numerical-computing/device-context.el {#api-79e9039b5289371086ae}
 
-[源码 numerical-computing/device-context.el:104](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L104)
+[源码 numerical-computing/device-context.el:105](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L105)
 
 ```el-signature
 class ContextTimestampOwner
@@ -30108,7 +30116,7 @@ class ContextTimestampOwner
 
 ## DeviceContext · numerical-computing/device-context.el {#api-1782d89c07675e11442e}
 
-[源码 numerical-computing/device-context.el:130](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L130)
+[源码 numerical-computing/device-context.el:131](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L131)
 
 ```el-signature
 class DeviceContext extends IntegralExecutionProvider
@@ -30116,7 +30124,7 @@ class DeviceContext extends IntegralExecutionProvider
 
 ## GraphSourceSnapshot · numerical-computing/device-context.el {#api-40b4fe3c92dd40f2a6cb}
 
-[源码 numerical-computing/device-context.el:95](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L95)
+[源码 numerical-computing/device-context.el:96](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-context.el#L96)
 
 ```el-signature
 class GraphSourceSnapshot
@@ -30132,7 +30140,7 @@ fn DeviceGraphArena(element: type, Value: type): type
 
 ## TensorDevice · numerical-computing/device-tensor.el {#api-6352f607871fe7944c1e}
 
-[源码 numerical-computing/device-tensor.el:79](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-tensor.el#L79)
+[源码 numerical-computing/device-tensor.el:80](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/device-tensor.el#L80)
 
 ```el-signature
 fn TensorDevice(element: type, precision: Text = ""): type
@@ -30444,7 +30452,7 @@ class MatrixLiteral
 
 ## MatrixText · numerical-computing/matrix-text.el {#api-d4349c619f056c5d9b81}
 
-[源码 numerical-computing/matrix-text.el:33](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/matrix-text.el#L33)
+[源码 numerical-computing/matrix-text.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/matrix-text.el#L34)
 
 ```el-signature
 fn MatrixText(type: type = Number): type
@@ -30960,7 +30968,7 @@ class ProcessSystemError extends Error
 
 ## ControlState · operating-system/processes/control-model.el {#api-c37a0014caca82e8b249}
 
-[源码 operating-system/processes/control-model.el:95](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L95)
+[源码 operating-system/processes/control-model.el:96](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L96)
 
 ```el-signature
 class ControlState
@@ -30968,7 +30976,7 @@ class ControlState
 
 ## ProcessPipelineAction · operating-system/processes/control-model.el {#api-c7d1aa3c8c69465674f9}
 
-[源码 operating-system/processes/control-model.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L7)
+[源码 operating-system/processes/control-model.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L8)
 
 ```el-signature
 enum ProcessPipelineAction
@@ -30976,7 +30984,7 @@ enum ProcessPipelineAction
 
 ## ProcessPipelineControl · operating-system/processes/control-model.el {#api-5acf40048356b07943c1}
 
-[源码 operating-system/processes/control-model.el:116](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L116)
+[源码 operating-system/processes/control-model.el:117](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L117)
 
 ```el-signature
 class ProcessPipelineControl
@@ -30984,7 +30992,7 @@ class ProcessPipelineControl
 
 ## ProcessPipelineControlAdmission · operating-system/processes/control-model.el {#api-b73620f0cd5d3cf6d3c9}
 
-[源码 operating-system/processes/control-model.el:54](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L54)
+[源码 operating-system/processes/control-model.el:55](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L55)
 
 ```el-signature
 class ProcessPipelineControlAdmission
@@ -30992,7 +31000,7 @@ class ProcessPipelineControlAdmission
 
 ## ProcessPipelineControlBusy · operating-system/processes/control-model.el {#api-1718003e948c08ad3e9d}
 
-[源码 operating-system/processes/control-model.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L12)
+[源码 operating-system/processes/control-model.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L13)
 
 ```el-signature
 class ProcessPipelineControlBusy extends Error
@@ -31000,7 +31008,7 @@ class ProcessPipelineControlBusy extends Error
 
 ## ProcessPipelineControlHooks · operating-system/processes/control-model.el {#api-e59533907aa95de059c2}
 
-[源码 operating-system/processes/control-model.el:57](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L57)
+[源码 operating-system/processes/control-model.el:58](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L58)
 
 ```el-signature
 class ProcessPipelineControlHooks
@@ -31008,7 +31016,7 @@ class ProcessPipelineControlHooks
 
 ## ProcessPipelineControlLease · operating-system/processes/control-model.el {#api-ae28732a16dac4a0ea9d}
 
-[源码 operating-system/processes/control-model.el:149](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L149)
+[源码 operating-system/processes/control-model.el:150](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L150)
 
 ```el-signature
 class ProcessPipelineControlLease
@@ -31016,7 +31024,7 @@ class ProcessPipelineControlLease
 
 ## ProcessPipelineControlRequest · operating-system/processes/control-model.el {#api-11cfa774f39c6d1d4c58}
 
-[源码 operating-system/processes/control-model.el:62](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L62)
+[源码 operating-system/processes/control-model.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L63)
 
 ```el-signature
 class ProcessPipelineControlRequest
@@ -31024,7 +31032,7 @@ class ProcessPipelineControlRequest
 
 ## ProcessPipelineControlSnapshot · operating-system/processes/control-model.el {#api-5e761d06695eb5f749cb}
 
-[源码 operating-system/processes/control-model.el:34](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L34)
+[源码 operating-system/processes/control-model.el:35](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L35)
 
 ```el-signature
 class ProcessPipelineControlSnapshot
@@ -31032,7 +31040,7 @@ class ProcessPipelineControlSnapshot
 
 ## ProcessPipelineControlUnavailable · operating-system/processes/control-model.el {#api-23b3a55546054df71e23}
 
-[源码 operating-system/processes/control-model.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L9)
+[源码 operating-system/processes/control-model.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L10)
 
 ```el-signature
 class ProcessPipelineControlUnavailable extends Error
@@ -31040,7 +31048,7 @@ class ProcessPipelineControlUnavailable extends Error
 
 ## ProcessPipelineStageSnapshot · operating-system/processes/control-model.el {#api-98ff238e8315dcedbdd8}
 
-[源码 operating-system/processes/control-model.el:28](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L28)
+[源码 operating-system/processes/control-model.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L29)
 
 ```el-signature
 class ProcessPipelineStageSnapshot
@@ -31048,7 +31056,7 @@ class ProcessPipelineStageSnapshot
 
 ## ProcessPipelineStageState · operating-system/processes/control-model.el {#api-99c8479f60a44ec1d699}
 
-[源码 operating-system/processes/control-model.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L8)
+[源码 operating-system/processes/control-model.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L9)
 
 ```el-signature
 enum ProcessPipelineStageState
@@ -31056,7 +31064,7 @@ enum ProcessPipelineStageState
 
 ## ProcessPipelineTerminalSnapshot · operating-system/processes/control-model.el {#api-c3610be6da4c06dfa475}
 
-[源码 operating-system/processes/control-model.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L15)
+[源码 operating-system/processes/control-model.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/control-model.el#L16)
 
 ```el-signature
 class ProcessPipelineTerminalSnapshot
@@ -31264,7 +31272,7 @@ class PosixGatedStageSnapshot
 
 ## GatedChild · operating-system/processes/posix-gated-spawn.el {#api-4403f7f908bbcb89ca16}
 
-[源码 operating-system/processes/posix-gated-spawn.el:126](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L126)
+[源码 operating-system/processes/posix-gated-spawn.el:127](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L127)
 
 ```el-signature
 class GatedChild
@@ -31272,7 +31280,7 @@ class GatedChild
 
 ## GatedFunctions · operating-system/processes/posix-gated-spawn.el {#api-553690568ebea922b502}
 
-[源码 operating-system/processes/posix-gated-spawn.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L87)
+[源码 operating-system/processes/posix-gated-spawn.el:88](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L88)
 
 ```el-signature
 class GatedFunctions
@@ -31280,7 +31288,7 @@ class GatedFunctions
 
 ## PosixGatedCleanupFailure · operating-system/processes/posix-gated-spawn.el {#api-58986605a68f53001642}
 
-[源码 operating-system/processes/posix-gated-spawn.el:115](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L115)
+[源码 operating-system/processes/posix-gated-spawn.el:116](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L116)
 
 ```el-signature
 class PosixGatedCleanupFailure extends Error
@@ -31288,7 +31296,7 @@ class PosixGatedCleanupFailure extends Error
 
 ## PosixGatedGroup · operating-system/processes/posix-gated-spawn.el {#api-d2e7d82738802e7384e5}
 
-[源码 operating-system/processes/posix-gated-spawn.el:306](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L306)
+[源码 operating-system/processes/posix-gated-spawn.el:307](https://github.com/steve02081504/el/blob/master/src/stdlib/operating-system/processes/posix-gated-spawn.el#L307)
 
 ```el-signature
 class PosixGatedGroup
@@ -33110,7 +33118,7 @@ class ShellArgvError extends Error
 
 ## ForegroundAdmission · shell/foreground.el {#api-b495c5ff8b115defa0dc}
 
-[源码 shell/foreground.el:121](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/foreground.el#L121)
+[源码 shell/foreground.el:122](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/foreground.el#L122)
 
 ```el-signature
 class ForegroundAdmission extends ProcessPipelineControlAdmission
@@ -33118,7 +33126,7 @@ class ForegroundAdmission extends ProcessPipelineControlAdmission
 
 ## ForegroundHooks · shell/foreground.el {#api-f26e08ec0d4711b7fba4}
 
-[源码 shell/foreground.el:131](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/foreground.el#L131)
+[源码 shell/foreground.el:132](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/foreground.el#L132)
 
 ```el-signature
 class ForegroundHooks extends ProcessPipelineControlHooks
@@ -33126,7 +33134,7 @@ class ForegroundHooks extends ProcessPipelineControlHooks
 
 ## ForegroundRun · shell/foreground.el {#api-7817f9446c6fb581c6e8}
 
-[源码 shell/foreground.el:66](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/foreground.el#L66)
+[源码 shell/foreground.el:67](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/foreground.el#L67)
 
 ```el-signature
 class ForegroundRun
@@ -33134,7 +33142,7 @@ class ForegroundRun
 
 ## ForegroundView · shell/foreground.el {#api-61410a543c2ffe2cc3e1}
 
-[源码 shell/foreground.el:24](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/foreground.el#L24)
+[源码 shell/foreground.el:25](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/foreground.el#L25)
 
 ```el-signature
 class ForegroundView
@@ -33142,7 +33150,7 @@ class ForegroundView
 
 ## ShellForegroundPhase · shell/foreground.el {#api-c001cf5c8ec7180e973b}
 
-[源码 shell/foreground.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/foreground.el#L16)
+[源码 shell/foreground.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/foreground.el#L17)
 
 ```el-signature
 enum ShellForegroundPhase
@@ -33150,7 +33158,7 @@ enum ShellForegroundPhase
 
 ## ShellForegroundPipeline · shell/foreground.el {#api-d6517db68198195c2f58}
 
-[源码 shell/foreground.el:138](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/foreground.el#L138)
+[源码 shell/foreground.el:139](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/foreground.el#L139)
 
 ```el-signature
 class ShellForegroundPipeline
@@ -33158,7 +33166,7 @@ class ShellForegroundPipeline
 
 ## ShellForegroundSnapshot · shell/foreground.el {#api-4e8dfee33a62af869ffe}
 
-[源码 shell/foreground.el:17](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/foreground.el#L17)
+[源码 shell/foreground.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/shell/foreground.el#L18)
 
 ```el-signature
 class ShellForegroundSnapshot
@@ -33968,7 +33976,7 @@ class PatternRejected
 
 ## DataTextView · text/text.el {#api-876275f9f62d8f9e5710}
 
-[源码 text/text.el:954](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L954)
+[源码 text/text.el:957](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L957)
 
 ```el-signature
 class DataTextView extends TextView
@@ -33984,7 +33992,7 @@ class Text extends Array<element: Char>
 
 [API 文档](modules/text/text.md#api-6116e54b075df026a90a)
 
-[源码 text/text.el:1049](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1049)
+[源码 text/text.el:1052](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1052)
 
 ```el-signature
 fn Text(bitWidth = 0, size = 0): type
@@ -34008,7 +34016,7 @@ fn TextArea(bitWidth): type
 
 ## TextBase · text/text.el {#api-b68ff01b78c61022469f}
 
-[源码 text/text.el:977](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L977)
+[源码 text/text.el:980](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L980)
 
 ```el-signature
 let TextBase: type = Text
@@ -34016,7 +34024,7 @@ let TextBase: type = Text
 
 ## TextCursor · text/text.el {#api-75ceb470331839830dc7}
 
-[源码 text/text.el:779](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L779)
+[源码 text/text.el:782](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L782)
 
 ```el-signature
 class TextCursor
@@ -34024,7 +34032,7 @@ class TextCursor
 
 ## TextIndexWriteUpdate · text/text.el {#api-10375fdc7207c5494819}
 
-[源码 text/text.el:1144](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1144)
+[源码 text/text.el:1147](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1147)
 
 ```el-signature
 fn TextIndexWriteUpdate(bitWidth = 0, size = 0, index: type, value: type, index_bitWidth = 0, value_bitWidth = 0): type
@@ -34032,7 +34040,7 @@ fn TextIndexWriteUpdate(bitWidth = 0, size = 0, index: type, value: type, index_
 
 ## TextPushUpdate · text/text.el {#api-9dcddc94fc17f31c7ca8}
 
-[源码 text/text.el:1137](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1137)
+[源码 text/text.el:1140](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1140)
 
 ```el-signature
 fn TextPushUpdate(bitWidth = 0, size = 0, value: type, value_bitWidth = 0): type
@@ -34040,7 +34048,7 @@ fn TextPushUpdate(bitWidth = 0, size = 0, value: type, value_bitWidth = 0): type
 
 ## TextRangeView · text/text.el {#api-ea0b39b574895c30c0b7}
 
-[源码 text/text.el:924](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L924)
+[源码 text/text.el:927](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L927)
 
 ```el-signature
 class TextRangeView extends TextView
@@ -34048,7 +34056,7 @@ class TextRangeView extends TextView
 
 ## TextRangeViewBase · text/text.el {#api-182272bf982bd7ce64f3}
 
-[源码 text/text.el:978](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L978)
+[源码 text/text.el:981](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L981)
 
 ```el-signature
 let TextRangeViewBase: type = TextRangeView
@@ -34056,13 +34064,13 @@ let TextRangeViewBase: type = TextRangeView
 
 ## TextView · text/text.el {#api-5684c75000d17c66817d}
 
-[源码 text/text.el:891](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L891)
+[源码 text/text.el:894](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L894)
 
 ```el-signature
 class TextView
 ```
 
-[源码 text/text.el:1000](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1000)
+[源码 text/text.el:1003](https://github.com/steve02081504/el/blob/master/src/stdlib/text/text.el#L1003)
 
 ```el-signature
 fn TextView(bitWidth = 0, size = 0): type
@@ -34286,7 +34294,7 @@ class TimeDiff extends TextOperand
 
 ## TimeDiffPayload · time/diff.el {#api-95680b31060de2671578}
 
-[源码 time/diff.el:114](https://github.com/steve02081504/el/blob/master/src/stdlib/time/diff.el#L114)
+[源码 time/diff.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/time/diff.el#L106)
 
 ```el-signature
 class TimeDiffPayload
@@ -34294,7 +34302,7 @@ class TimeDiffPayload
 
 ## ClockStamp · time/host.el {#api-18e84398ff49e3b169d8}
 
-[源码 time/host.el:41](https://github.com/steve02081504/el/blob/master/src/stdlib/time/host.el#L41)
+[源码 time/host.el:42](https://github.com/steve02081504/el/blob/master/src/stdlib/time/host.el#L42)
 
 ```el-signature
 class ClockStamp
@@ -34302,7 +34310,7 @@ class ClockStamp
 
 ## ZoneSource · time/host.el {#api-5254d201b1a7c32e1c6b}
 
-[源码 time/host.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/time/host.el#L30)
+[源码 time/host.el:31](https://github.com/steve02081504/el/blob/master/src/stdlib/time/host.el#L31)
 
 ```el-signature
 class ZoneSource
@@ -34730,7 +34738,7 @@ class PeakMeasurement
 
 ## HostProcess · tools/host/linux/process.el {#api-6ed01d5be9c3c3f3ab0e}
 
-[源码 tools/host/linux/process.el:87](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/linux/process.el#L87)
+[源码 tools/host/linux/process.el:88](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/linux/process.el#L88)
 
 ```el-signature
 class HostProcess
@@ -34738,7 +34746,7 @@ class HostProcess
 
 ## NativeShort · tools/host/linux/process.el {#api-0526978dfef5dfdd45c7}
 
-[源码 tools/host/linux/process.el:20](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/linux/process.el#L20)
+[源码 tools/host/linux/process.el:21](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/linux/process.el#L21)
 
 ```el-signature
 class NativeShort
@@ -34778,7 +34786,7 @@ class PermitRegistry
 
 ## HostProcess · tools/host/process.el {#api-13bc5522f913ea76a2ec}
 
-[源码 tools/host/process.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/process.el#L29)
+[源码 tools/host/process.el:30](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/process.el#L30)
 
 ```el-signature
 let HostProcess: type = PlatformProcess
@@ -34794,7 +34802,7 @@ class PeakMeasurement
 
 ## HostProcess · tools/host/windows/platform.el {#api-9fd7a05ca88338774789}
 
-[源码 tools/host/windows/platform.el:100](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/windows/platform.el#L100)
+[源码 tools/host/windows/platform.el:101](https://github.com/steve02081504/el/blob/master/src/stdlib/tools/host/windows/platform.el#L101)
 
 ```el-signature
 class HostProcess

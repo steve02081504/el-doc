@@ -11269,7 +11269,7 @@
 			"id": null,
 			"source": "concurrency/scheduling/timers.el",
 			"line": 135,
-			"signature": "export fn sleep(milliseconds: Number)\nexport fn sleep(duration: TimeDiff)",
+			"signature": "export fn sleep(duration: TimeDiff)",
 			"value_type": null
 		},
 		{
@@ -65777,8 +65777,8 @@
 				{
 					"tag": "example",
 					"value": "向设备提交音频",
-					"markdown": "```el\nif (!output.enqueue(chunk)) sleep(2)\n```",
-					"code": "if (!output.enqueue(chunk)) sleep(2)\n",
+					"markdown": "```el\nif (!output.enqueue(chunk)) sleep(2ms)\n```",
+					"code": "if (!output.enqueue(chunk)) sleep(2ms)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -65822,8 +65822,8 @@
 				{
 					"tag": "example",
 					"value": "提交尾块后轮询完成状态",
-					"markdown": "```el\noutput.finish()\nwhile (!output.idle()) sleep(2)\n```",
-					"code": "output.finish()\nwhile (!output.idle()) sleep(2)\n",
+					"markdown": "```el\noutput.finish()\nwhile (!output.idle()) sleep(2ms)\n```",
+					"code": "output.finish()\nwhile (!output.idle()) sleep(2ms)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -65856,8 +65856,8 @@
 				{
 					"tag": "example",
 					"value": "等待输出排空",
-					"markdown": "```el\nwhile (!output.idle()) sleep(2)\n```",
-					"code": "while (!output.idle()) sleep(2)\n",
+					"markdown": "```el\nwhile (!output.idle()) sleep(2ms)\n```",
+					"code": "while (!output.idle()) sleep(2ms)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66023,8 +66023,8 @@
 				{
 					"tag": "example",
 					"value": "向设备提交音频",
-					"markdown": "```el\nif (!output.enqueue(chunk)) sleep(2)\n```",
-					"code": "if (!output.enqueue(chunk)) sleep(2)\n",
+					"markdown": "```el\nif (!output.enqueue(chunk)) sleep(2ms)\n```",
+					"code": "if (!output.enqueue(chunk)) sleep(2ms)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66068,8 +66068,8 @@
 				{
 					"tag": "example",
 					"value": "提交完成后等待设备空闲",
-					"markdown": "```el\noutput.finish()\nwhile (!output.idle()) sleep(2)\n```",
-					"code": "output.finish()\nwhile (!output.idle()) sleep(2)\n",
+					"markdown": "```el\noutput.finish()\nwhile (!output.idle()) sleep(2ms)\n```",
+					"code": "output.finish()\nwhile (!output.idle()) sleep(2ms)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66102,8 +66102,8 @@
 				{
 					"tag": "example",
 					"value": "等待输出排空",
-					"markdown": "```el\nwhile (!output.idle()) sleep(2)\n```",
-					"code": "while (!output.idle()) sleep(2)\n",
+					"markdown": "```el\nwhile (!output.idle()) sleep(2ms)\n```",
+					"code": "while (!output.idle()) sleep(2ms)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66880,8 +66880,8 @@
 				{
 					"tag": "example",
 					"value": "向设备提交音频",
-					"markdown": "```el\nif (!output.enqueue(chunk)) sleep(2)\n```",
-					"code": "if (!output.enqueue(chunk)) sleep(2)\n",
+					"markdown": "```el\nif (!output.enqueue(chunk)) sleep(2ms)\n```",
+					"code": "if (!output.enqueue(chunk)) sleep(2ms)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66925,8 +66925,8 @@
 				{
 					"tag": "example",
 					"value": "完成提交后等待播放",
-					"markdown": "```el\noutput.finish()\nwhile (!output.idle()) sleep(2)\n```",
-					"code": "output.finish()\nwhile (!output.idle()) sleep(2)\n",
+					"markdown": "```el\noutput.finish()\nwhile (!output.idle()) sleep(2ms)\n```",
+					"code": "output.finish()\nwhile (!output.idle()) sleep(2ms)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -66959,8 +66959,8 @@
 				{
 					"tag": "example",
 					"value": "等待队列排空",
-					"markdown": "```el\nwhile (!output.idle()) sleep(2)\n```",
-					"code": "while (!output.idle()) sleep(2)\n",
+					"markdown": "```el\nwhile (!output.idle()) sleep(2ms)\n```",
+					"code": "while (!output.idle()) sleep(2ms)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -76846,8 +76846,8 @@
 				{
 					"tag": "example",
 					"value": "格式化时区偏移",
-					"markdown": "```el\nimport { offsetText } from \"el:time/calendar.el\"\nimport { TimeDiff } from \"el:time/diff.el\"\noffsetText(TimeDiff.seconds(19800))\n```\n预期结果：+05:30。",
-					"code": "import { offsetText } from \"el:time/calendar.el\"\nimport { TimeDiff } from \"el:time/diff.el\"\noffsetText(TimeDiff.seconds(19800))\n",
+					"markdown": "```el\nimport { offsetText } from \"el:time/calendar.el\"\nimport { TimeDiff } from \"el:time/diff.el\"\noffsetText(19800s)\n```\n预期结果：+05:30。",
+					"code": "import { offsetText } from \"el:time/calendar.el\"\nimport { TimeDiff } from \"el:time/diff.el\"\noffsetText(19800s)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				},

@@ -40,7 +40,7 @@
 
 - [concurrency/async.el](modules/concurrency/async.md)（2 个 API）
 - [concurrency/promises.el](modules/concurrency/promises.md)（2 个 API）
-- [concurrency/scheduling/timers.el](modules/concurrency/scheduling/timers.md)（2 个 API）
+- [concurrency/scheduling/timers.el](modules/concurrency/scheduling/timers.md)（1 个 API）
 - [concurrency/tasks/parallel.el](modules/concurrency/tasks/parallel.md)（2 个 API）
 - [concurrency/wait.el](modules/concurrency/wait.md)（0 个 API）
 

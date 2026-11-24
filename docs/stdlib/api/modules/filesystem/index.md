@@ -12,7 +12,7 @@
 
 ## resolvePath {#api-2c3e211bba2a57b4ba86}
 
-源码：`src/stdlib/filesystem/index.el:33` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L33)
+源码：`src/stdlib/filesystem/index.el:34` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L34)
 
 将路径或 provider 引用解析为当前文件系统上下文中的逻辑位置。
 
@@ -37,7 +37,7 @@ let config = resolvePath("file:./config.json")
 
 ## currentDirectory {#api-74f08b3b759d683d084e}
 
-源码：`src/stdlib/filesystem/index.el:43` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L43)
+源码：`src/stdlib/filesystem/index.el:44` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L44)
 
 返回当前逻辑文件系统上下文的位置。
 
@@ -58,7 +58,7 @@ console.stdout.writeLine(currentDirectory().identifier)
 
 ## resolveFrom {#api-163ed262fe20828c9ad6}
 
-源码：`src/stdlib/filesystem/index.el:54` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L54)
+源码：`src/stdlib/filesystem/index.el:55` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L55)
 
 先解析基准位置，再以该位置为上下文解析另一个引用。
 
@@ -83,7 +83,7 @@ let resource = resolveFrom("file:./config", "assets/logo.png")
 
 ## fileName {#api-0ed89f254561e8445dfb}
 
-源码：`src/stdlib/filesystem/index.el:67` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L67)
+源码：`src/stdlib/filesystem/index.el:68` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L68)
 
 返回给定位置的末级名称。
 
@@ -106,7 +106,7 @@ console.stdout.writeLine(fileName("file:./config.json"))
 
 ## openFileReader {#api-c23461742bf817d5cab2}
 
-源码：`src/stdlib/filesystem/index.el:81` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L81)
+源码：`src/stdlib/filesystem/index.el:82` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L82)
 
 为逻辑位置打开顺序读取器；需要随机访问时使用 openRandomFileReader。
 
@@ -129,13 +129,13 @@ export fn openFileReader(reference, lock: Bool | nil_t = nil): FileReader
 ```el
 import { openFileReader } from "el:filesystem/"
 let reader = openFileReader("file:./logo.png")
-let bytes = reader.read(1024)
+let bytes = reader.read(1kb)
 reader.close()
 ```
 
 ## openRandomFileReader {#api-ad810a684ec6f474efc0}
 
-源码：`src/stdlib/filesystem/index.el:95` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L95)
+源码：`src/stdlib/filesystem/index.el:96` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L96)
 
 打开支持随机访问的文件读取器。
 
@@ -158,13 +158,13 @@ export fn openRandomFileReader(reference, lock: Bool | nil_t = nil): FileReader
 ```el
 import { openRandomFileReader } from "el:filesystem/"
 let reader = openRandomFileReader("file:./archive.bin")
-let prefix = reader.readAt(0, 8)
+let prefix = reader.readAt(0b, 8b)
 reader.close()
 ```
 
 ## openFileWriter {#api-941828b08ea8e39ace73}
 
-源码：`src/stdlib/filesystem/index.el:108` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L108)
+源码：`src/stdlib/filesystem/index.el:109` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L109)
 
 为逻辑位置打开文件写入器。
 
@@ -191,19 +191,19 @@ writer.close()
 
 ## readFileBuffer {#api-92cbab09967c14d143de}
 
-源码：`src/stdlib/filesystem/index.el:122` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L122)
+源码：`src/stdlib/filesystem/index.el:123` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L123)
 
 将文件内容读入拥有其底层存储的 FileBuffer，可设置字节上限。
 
 ```el-signature
-export fn readFileBuffer(reference, maximumBytes: Number | nil_t = nil): FileBuffer
+export fn readFileBuffer(reference, maximumSize: FileSize | nil_t = nil): FileBuffer
 ```
 
 **返回类型**：[`FileBuffer`](../../types.md#api-46bf41868bd77b4bb737)
 
 **参数**：reference 文件或 provider 位置引用。
 
-**参数**：maximumBytes 可选最大字节数。
+**参数**：maximumSize 可选最大字节数。
 
 **返回值**：调用方负责关闭的 FileBuffer。
 
@@ -220,12 +220,12 @@ buffer.close()
 
 ## readFileAs {#api-cff0ea6ed476cb036085}
 
-源码：`src/stdlib/filesystem/index.el:159` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L159)
+源码：`src/stdlib/filesystem/index.el:160` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L160)
 
 读取文件字节并使用指定格式解码。
 
 ```el-signature
-export fn readFileAs(format, reference, lock: Bool | nil_t = nil, maximumBytes: Number | nil_t = nil)
+export fn readFileAs(format, reference, lock: Bool | nil_t = nil, maximumSize: FileSize | nil_t = nil)
 ```
 
 **参数**：format 提供 decode 方法的格式对象。
@@ -234,7 +234,7 @@ export fn readFileAs(format, reference, lock: Bool | nil_t = nil, maximumBytes: 
 
 **参数**：lock 可选的读取保护配置。
 
-**参数**：maximumBytes 可选的最大读取字节数，与格式自身的限制同时生效。
+**参数**：maximumSize 可选的最大读取字节数，与格式自身的限制同时生效。
 
 **返回值**：格式解码得到的值。
 
@@ -253,12 +253,12 @@ let config = readFileAs(formats.JSON, "file:./config.json")
 ```el
 import { readFileAs } from "el:filesystem/"
 import { formats } from "el:formats/"
-let notes = readFileAs(formats.Text, "file:./notes.txt", maximumBytes: 4096)
+let notes = readFileAs(formats.Text, "file:./notes.txt", maximumSize: 4kb)
 ```
 
 ## writeFileAs {#api-5ea2e001353e67ba555f}
 
-源码：`src/stdlib/filesystem/index.el:200` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L200)
+源码：`src/stdlib/filesystem/index.el:201` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L201)
 
 使用指定格式编码完整内容。provider 能安全比较时，只写变化的区间，必要时调整文件长度。
 
@@ -288,7 +288,7 @@ writeFileAs(formats.Text, "file:./copy.txt", "already text")
 
 ## directoryNames {#api-2e6df4d53b39fb02da5d}
 
-源码：`src/stdlib/filesystem/index.el:218` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L218)
+源码：`src/stdlib/filesystem/index.el:219` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L219)
 
 列出逻辑目录中的名称。
 
@@ -313,7 +313,7 @@ for (let name in directoryNames("file:./config")) console.stdout.writeLine(name)
 
 ## exists {#api-d5557a390b8cdcda4bc0}
 
-源码：`src/stdlib/filesystem/index.el:233` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L233)
+源码：`src/stdlib/filesystem/index.el:234` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L234)
 
 查询逻辑位置当前是否存在。与同一路径的单条 writeFileAs 搭配时，条件由只打开已有文件的结果决定。
 
@@ -341,7 +341,7 @@ if (exists(path)) { discard(writeFileAs(formats.Text, path, "updated")) }
 
 ## isDirectory {#api-f293d8e1a091e956afb7}
 
-源码：`src/stdlib/filesystem/index.el:245` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L245)
+源码：`src/stdlib/filesystem/index.el:246` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L246)
 
 判断逻辑位置是否为目录。
 
@@ -364,7 +364,7 @@ console.stdout.writeLine(isDirectory(resolvePath("file:./config.json").parent))
 
 ## makeDirectories {#api-e81e7c2a8174ea07561d}
 
-源码：`src/stdlib/filesystem/index.el:255` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L255)
+源码：`src/stdlib/filesystem/index.el:256` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L256)
 
 创建指定目录及其尚不存在的父目录。
 
@@ -387,7 +387,7 @@ makeDirectories("file:./output/reports")
 
 ## removeFile {#api-9fe2fe3278290a7205a1}
 
-源码：`src/stdlib/filesystem/index.el:265` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L265)
+源码：`src/stdlib/filesystem/index.el:266` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L266)
 
 删除指定文件。
 
@@ -410,7 +410,7 @@ removeFile("file:./temporary.txt")
 
 ## replaceFile {#api-801d5c08c7f9a46b97dd}
 
-源码：`src/stdlib/filesystem/index.el:276` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L276)
+源码：`src/stdlib/filesystem/index.el:277` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L277)
 
 将源文件原子替换到目标位置。
 
@@ -435,7 +435,7 @@ replaceFile("file:./report.tmp", "file:./report.txt")
 
 ## moveFile {#api-db9fedfc31e75c79a968}
 
-源码：`src/stdlib/filesystem/index.el:291` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L291)
+源码：`src/stdlib/filesystem/index.el:292` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L292)
 
 在同一 provider 内移动源文件。如果目标已存在就原子替换。
 
@@ -460,7 +460,7 @@ moveFile("file:./draft.txt", "file:./final.txt")
 
 ## copyFile {#api-3600e50270be961b4bb9}
 
-源码：`src/stdlib/filesystem/index.el:304` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L304)
+源码：`src/stdlib/filesystem/index.el:305` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L305)
 
 将源文件内容复制到目标位置。
 
@@ -488,7 +488,7 @@ console.stdout.writeLine(copied)
 
 ## publishFileAs {#api-9ade59f34a4d7ffcf8cd}
 
-源码：`src/stdlib/filesystem/index.el:327` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L327)
+源码：`src/stdlib/filesystem/index.el:328` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/index.el#L328)
 
 编码并完整写入暂存文件，关闭成功后原子替换目标。
 

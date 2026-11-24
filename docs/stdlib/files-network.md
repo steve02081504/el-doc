@@ -27,9 +27,9 @@ writeFileAs(formats.Text, "file:./copy.txt", text + "\n")
 
 ## 读文本还是读字节
 
-- `readFileAs(formats.Text, reference, maximumBytes: limit)` 在可选的字节上限内读取整个文件，并按 UTF-8 解码成 `Text`；
+- `readFileAs(formats.Text, reference, maximumSize: limit)` 在可选的字节上限内读取整个文件，并按 UTF-8 解码成 `Text`；
 - `writeFileAs(formats.Text, reference, value)` 把 `Text` 按 UTF-8 写入，返回写入的字节数；
-- `readFileAs(formats.Buffer, reference, maximumBytes: limit)` 在可选的字节上限内读取整个文件，返回 `Buffer`；
+- `readFileAs(formats.Buffer, reference, maximumSize: limit)` 在可选的字节上限内读取整个文件，返回 `Buffer`；
 - `writeFileAs(formats.Buffer, reference, buffer)` 写入缓冲区并返回字节数。用 `bufferFromBytes(bytes)` 把数值字节数组转为缓冲区。
 - 字节层的 `Location.readOptionalBytes()` 在实际打开确认目标缺失时返回 `nil`。文件存在时交付原始字节，空文件返回空数组。
 

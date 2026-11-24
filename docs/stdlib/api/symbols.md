@@ -641,8 +641,7 @@
 | [simd](modules/execution/plans/policy.md#api-4c151a1c2a977576eed9) | `execution/plans/policy.el` |
 | [sin](modules/mathematics/functions/elementary.md#api-b86d1300e2b18347e166) | `mathematics/functions/elementary.el` |
 | [singleton](modules/collections/sequences/comprehension-iteration.md#api-e9c1a017b7d3372054d3) | `collections/sequences/comprehension-iteration.el` |
-| [sleep~duration](modules/concurrency/scheduling/timers.md#api-57202b2d1b02a0978c4a) | `concurrency/scheduling/timers.el` |
-| [sleep~milliseconds](modules/concurrency/scheduling/timers.md#api-76f2a9edcc37ac311d2a) | `concurrency/scheduling/timers.el` |
+| [sleep](modules/concurrency/scheduling/timers.md#api-1e64fc73745ab400a387) | `concurrency/scheduling/timers.el` |
 | [softmax](modules/neural-networks/functional.md#api-b4b475e208e3fc45c7a0) | `neural-networks/functional.el` |
 | [solve](modules/numerical-computing/exact-solve.md#api-6f0056070dbd04cf6e3a) | `numerical-computing/exact-solve.el` |
 | [solveDiagnostic~dense](modules/numerical-computing/diagnostics.md#api-e0ab268d3c4c908e5d38) | `numerical-computing/diagnostics.el` |

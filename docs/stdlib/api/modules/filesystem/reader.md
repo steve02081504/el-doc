@@ -18,7 +18,7 @@
 
 ## FileReader.position {#api-340aedfb9eaf3818fb08}
 
-源码：`src/stdlib/filesystem/reader.el:125` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L125)
+源码：`src/stdlib/filesystem/reader.el:124` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L124)
 
 从打开位置开始，顺序读取已经交付的字节数。定位读取、EOF 与底层预取都不推进它。
 
@@ -32,24 +32,24 @@ get position(): Number
 
 ```el
 let reader = openFileReader("file:./data.bin")
-let header = reader.read(16)
+let header = reader.read(16b)
 let offset = reader.position
 reader.close()
 ```
 
 ## FileReader.read {#api-de5485f845b68f2bcf8a}
 
-源码：`src/stdlib/filesystem/reader.el:154` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L154)
+源码：`src/stdlib/filesystem/reader.el:153` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L153)
 
 从当前位置读取至多指定数量的原始字节。
 
 ```el-signature
-fn read(maximumBytes: Number): Number[]
+fn read(maximumSize: FileSize): Number[]
 ```
 
 **返回类型**：[`Number`](../number/number.md#api-3cc24d3ef702e8652fb4)[]
 
-**参数**：maximumBytes 本次最多读取的字节数。
+**参数**：maximumSize 本次最多读取的字节数。
 
 **返回值**：实际读取的字节数组；到达末尾时可为空。
 
@@ -59,13 +59,13 @@ fn read(maximumBytes: Number): Number[]
 
 ```el
 let reader = openFileReader("file:./payload.bin")
-let bytes = reader.read(1024)
+let bytes = reader.read(1kb)
 reader.close()
 ```
 
 ## FileReader.close {#api-226f1d4ed93e75e92625}
 
-源码：`src/stdlib/filesystem/reader.el:212` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L212)
+源码：`src/stdlib/filesystem/reader.el:211` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/filesystem/reader.el#L211)
 
 关闭读取器并结束其底层资源使用。
 
