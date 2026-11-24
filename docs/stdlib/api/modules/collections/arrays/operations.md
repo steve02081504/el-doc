@@ -18,7 +18,7 @@
 
 ```el-signature
 @optimize(using: optimize_array, data: @{ stage: "some", receiver: "argument" })
-export fn some(values, predicate = value => value): Bool
+export fn some(values, predicate = => it): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
@@ -31,7 +31,7 @@ export fn some(values, predicate = value => value): Bool
 
 ```el
 import { some } from "el:collections/arrays/operations.el"
-some(@[1, 3, 4], value => value % 2 == 0)
+some(@[1, 3, 4], => it % 2 == 0)
 ```
 预期结果：真。
 
@@ -45,7 +45,7 @@ some(@[1, 3, 4], value => value % 2 == 0)
 
 ```el-signature
 @optimize(using: optimize_array, data: @{ stage: "some", receiver: "argument" })
-export fn any(values, predicate = value => value): Bool
+export fn any(values, predicate = => it): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
@@ -60,7 +60,7 @@ export fn any(values, predicate = value => value): Bool
 
 ```el
 import { any } from "el:collections/arrays/operations.el"
-any(@[-2, 0, 5], value => value > 0)
+any(@[-2, 0, 5], => it > 0)
 ```
 预期结果：真。
 
@@ -81,7 +81,7 @@ let result = any(a == b for let a in ..2 for let b in ..2) // t
 
 ```el-signature
 @optimize(using: optimize_array, data: @{ stage: "none", receiver: "argument" })
-export fn none(values, predicate = value => value): Bool
+export fn none(values, predicate = => it): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
@@ -94,7 +94,7 @@ export fn none(values, predicate = value => value): Bool
 
 ```el
 import { none } from "el:collections/arrays/operations.el"
-none(@[1, 2, 3], value => value < 0)
+none(@[1, 2, 3], => it < 0)
 ```
 预期结果：真。
 
@@ -108,7 +108,7 @@ none(@[1, 2, 3], value => value < 0)
 
 ```el-signature
 @optimize(using: optimize_array, data: @{ stage: "all", receiver: "argument" })
-export fn all(values, predicate = value => value): Bool
+export fn all(values, predicate = => it): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
@@ -123,7 +123,7 @@ export fn all(values, predicate = value => value): Bool
 
 ```el
 import { all } from "el:collections/arrays/operations.el"
-all(@[1, 2, 3], value => value > 0)
+all(@[1, 2, 3], => it > 0)
 ```
 预期结果：真。
 
@@ -144,7 +144,7 @@ let result = all(a == b for let a in ..2 for let b in ..2) // f
 
 ```el-signature
 @optimize(using: optimize_array, data: @{ stage: "all", receiver: "argument" })
-export fn every(values, predicate = value => value): Bool
+export fn every(values, predicate = => it): Bool
 ```
 
 **返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
@@ -157,7 +157,7 @@ export fn every(values, predicate = value => value): Bool
 
 ```el
 import { every } from "el:collections/arrays/operations.el"
-every(@["oak", "elm"], word => word.count == 3)
+every(@["oak", "elm"], => it.count == 3)
 ```
 预期结果：真。
 
@@ -236,7 +236,7 @@ export fn map(values, transform)
 
 ```el
 import { map } from "el:collections/arrays/operations.el"
-map(@[1, 2], value => value + 1)
+map(@[1, 2], => it + 1)
 ```
 预期结果：[2, 3]。
 
@@ -288,7 +288,7 @@ export fn filter(values, predicate)
 
 ```el
 import { filter } from "el:collections/arrays/operations.el"
-filter(@[1, 2, 3], value => value % 2 == 1)
+filter(@[1, 2, 3], => it % 2 == 1)
 ```
 预期结果：[1, 3]。
 
@@ -365,7 +365,7 @@ export fn each(values, callback): nil_t
 
 ```el
 import { each } from "el:collections/arrays/operations.el"
-each(@[1, 2], value => value)
+each(@[1, 2], => it)
 ```
 预期结果：回调依次接收 1 和 2。
 
@@ -442,7 +442,7 @@ export fn find(values, predicate)
 
 ```el
 import { find } from "el:collections/arrays/operations.el"
-find(@[2, 4, 5], value => value % 2 == 1)
+find(@[2, 4, 5], => it % 2 == 1)
 ```
 预期结果：5。
 
@@ -470,7 +470,7 @@ export fn find_index(values, predicate): Number | nil_t
 
 ```el
 import { find_index } from "el:collections/arrays/operations.el"
-find_index(@[1, 2, 3], value => value > 1)
+find_index(@[1, 2, 3], => it > 1)
 ```
 
 ## find_last_index {#api-93eb1a48b92e3c419f6e}
@@ -495,7 +495,7 @@ export fn find_last_index(values, predicate): Number | nil_t
 
 ```el
 import { find_last_index } from "el:collections/arrays/operations.el"
-find_last_index(@[1, 2, 3], value => value > 1)
+find_last_index(@[1, 2, 3], => it > 1)
 ```
 
 ## find_last {#api-e4b243086fa3bbe7c974}
@@ -518,7 +518,7 @@ export fn find_last(values, predicate)
 
 ```el
 import { find_last } from "el:collections/arrays/operations.el"
-find_last(@[1, 2, 3], value => value > 1)
+find_last(@[1, 2, 3], => it > 1)
 ```
 
 ## find_or_add {#api-067148f9a59780a84648}
@@ -542,7 +542,7 @@ export fn find_or_add(values, predicate, create)
 ```el
 import { find_or_add } from "el:collections/arrays/operations.el"
 let values = @[1, 3]
-find_or_add(values, value => value == 2, () => 2)
+find_or_add(values, => it == 2, => 2)
 ```
 预期结果：2。
 

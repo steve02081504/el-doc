@@ -42,12 +42,12 @@
 	"categories/user-interface.md": "9369e99e7db4e1b1e43356bab9505490c71950aea61be71c089608345050deb3",
 	"modules.md": "1ba73a2d838acf4be83992fb215ad1b754119c2d883c4c6acc0d346206ff7b66",
 	"symbols.md": "c77b9c0695873e65bd007d435a53d6cdf042863ba2c0d971db1c2ac7093e9cba",
-	"environment.md": "8d69518b3b3b3c802dbf49e935e54ae13a46eed818f945a139e3b734cc420d6e",
+	"environment.md": "961e4044c596c2b286d9a445e180e7573719197428e00a0797f05575c503f605",
 	"types.md": "51e3a4c1a267533094be6b84e8f10e2808f1f91f4ce42d0b4bb9d271bed05b64",
-	"modules/collections/arrays/dynamic.md": "c0db652cc5acd01274614fa57d3b23ba50d6e1d1eca51628ae4f20ef0ba20e59",
+	"modules/collections/arrays/dynamic.md": "c8efc375bcd898974cf3109a1fefe344d2d3e6868bb3f34b5f5206f7426cf1c0",
 	"modules/collections/arrays/fixed.md": "e16626097daaacfdad575c212f074fa39137d25753185e5fdca8af1bcaa89070",
 	"modules/collections/arrays/lazy.md": "7c70e6ef962867c7221df56abbd9eb6bf4210740004df64b44b6806852f67c8c",
-	"modules/collections/arrays/operations.md": "cb06bb90647b5d61469b0a76164ff4476a7768777aca3b7b0c2e9b9cccac292c",
+	"modules/collections/arrays/operations.md": "76b9b051d1bd1858f7ca0f375d092d72cbb32574389b4f58f0ffd32dc5c81d5a",
 	"modules/collections/arrays/plus-minus-rmq.md": "b32f78eb091e0f9583faef46de9b2d249437b8a80ea037a14d39b09d67a88c07",
 	"modules/collections/arrays/positional.md": "54960c1d2f6943ec55168731943aacda0211555566111bd9ccd26481171c3a1c",
 	"modules/collections/arrays/sparse-argmin.md": "b0a3962a61b066f98b56542f4f7c12652ede7937042ad0167edb2ae2488cb421",
@@ -274,5 +274,5 @@
 	"modules/user-interface/sound.md": "b7f031d5903235b015156acc29984eec4a41d3e040eee134a74c5eb04193304e",
 	"modules/user-interface/window.md": "be5e041996bd7101efec894fcf0c8beb170be2dfec5c36bd2ece046fe84eb031",
 	"index.md": "afede7a6bddc48e86219241910412a8a33880d5d9112a42e7808ad8116267d85",
-	"api.json": "460b4dc10c9a2d122ecc4d80c01f02362081b09058ddff8e70c2d84cfe4dc249"
+	"api.json": "e9126dd4addc4e1c835821e12df430e38878decd8a0cd03c2c06ac938c700830"
 }

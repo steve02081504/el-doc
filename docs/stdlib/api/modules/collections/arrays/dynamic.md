@@ -264,7 +264,7 @@ fn some(predicate): Bool
 ### 示例：判断数组是否含大数
 
 ```el
-console.stdout.writeLine(@[1, 30, 2].some(value => value > 20))
+console.stdout.writeLine(@[1, 30, 2].some => it > 20)
 ```
 
 ## Array.all {#api-8981ea4aa2a88e2d41b5}
@@ -286,7 +286,7 @@ fn all(predicate): Bool
 ### 示例：检查数值范围
 
 ```el
-console.stdout.writeLine(@[1, 2, 3].all(value => value > 0))
+console.stdout.writeLine(@[1, 2, 3].all => it > 0)
 ```
 
 ## Array.filter {#api-e9c5cd664038d0ffd435}
@@ -307,7 +307,7 @@ fn filter(predicate)
 
 ```el
 let values = @[10, 30, 20]
-let large = values.filter(value => value > 15)
+let large = values.filter => it > 15
 console.stdout.writeLine(large.join(", "))
 ```
 
@@ -412,7 +412,7 @@ fn findIndex(predicate): Number | nil_t
 ### 示例：查找首个匹配下标
 
 ```el
-@[1, 2, 3].findIndex(value => value > 1)
+@[1, 2, 3].findIndex => it > 1
 ```
 
 ## Array.findLastIndex {#api-c3ff93098165e551ff0a}
@@ -430,7 +430,7 @@ fn findLastIndex(predicate): Number | nil_t
 ### 示例：查找末个匹配下标
 
 ```el
-@[1, 2, 3].findLastIndex(value => value > 1)
+@[1, 2, 3].findLastIndex => it > 1
 ```
 
 ## Array.findLast {#api-0c516e2b015251cfd317}
@@ -446,7 +446,7 @@ fn findLast(predicate)
 ### 示例：查找末个匹配值
 
 ```el
-@[1, 2, 3].findLast(value => value > 1)
+@[1, 2, 3].findLast => it > 1
 ```
 
 ## Array.sort {#api-6329d5217c413e7c25f7}
@@ -579,7 +579,7 @@ fn map(transform)
 ### 示例：将数值加倍
 
 ```el
-let doubled = @[1, 2, 3].map(value => value * 2)
+let doubled = @[1, 2, 3].map => it * 2
 console.stdout.writeLine(doubled.join(", "))
 ```
 

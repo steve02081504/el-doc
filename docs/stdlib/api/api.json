@@ -709,7 +709,7 @@
 			"id": "collections/arrays/operations::all",
 			"source": "collections/arrays/operations.el",
 			"line": 91,
-			"signature": "@optimize(using: optimize_array, data: @{ stage: \"all\", receiver: \"argument\" })\nexport fn all(values, predicate = value => value): Bool",
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"all\", receiver: \"argument\" })\nexport fn all(values, predicate = => it): Bool",
 			"value_type": null
 		},
 		{
@@ -717,7 +717,7 @@
 			"id": "collections/arrays/operations::any",
 			"source": "collections/arrays/operations.el",
 			"line": 53,
-			"signature": "@optimize(using: optimize_array, data: @{ stage: \"some\", receiver: \"argument\" })\nexport fn any(values, predicate = value => value): Bool",
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"some\", receiver: \"argument\" })\nexport fn any(values, predicate = => it): Bool",
 			"value_type": null
 		},
 		{
@@ -4589,7 +4589,7 @@
 			"id": "collections/arrays/operations::every",
 			"source": "collections/arrays/operations.el",
 			"line": 108,
-			"signature": "@optimize(using: optimize_array, data: @{ stage: \"all\", receiver: \"argument\" })\nexport fn every(values, predicate = value => value): Bool",
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"all\", receiver: \"argument\" })\nexport fn every(values, predicate = => it): Bool",
 			"value_type": null
 		},
 		{
@@ -7701,7 +7701,7 @@
 			"id": "collections/arrays/operations::none",
 			"source": "collections/arrays/operations.el",
 			"line": 69,
-			"signature": "@optimize(using: optimize_array, data: @{ stage: \"none\", receiver: \"argument\" })\nexport fn none(values, predicate = value => value): Bool",
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"none\", receiver: \"argument\" })\nexport fn none(values, predicate = => it): Bool",
 			"value_type": null
 		},
 		{
@@ -11254,7 +11254,7 @@
 			"id": "collections/arrays/operations::some",
 			"source": "collections/arrays/operations.el",
 			"line": 30,
-			"signature": "@optimize(using: optimize_array, data: @{ stage: \"some\", receiver: \"argument\" })\nexport fn some(values, predicate = value => value): Bool",
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"some\", receiver: \"argument\" })\nexport fn some(values, predicate = => it): Bool",
 			"value_type": null
 		},
 		{
@@ -237375,11 +237375,11 @@
 			"anchor": "api-df976d47c60f3dbf87f5"
 		}
 	],
-	"source_digest": "ec8dddba84f4ca8053a1f4432a3638da144a2631e73469411d9f23f997bc4f5d",
+	"source_digest": "7048853189519c4dce2943c0f65730db77d5d6d3d3e1fececa2b23dc8baeb033",
 	"files": [
 		{
 			"path": "collections/arrays/dynamic.el",
-			"sha256": "f854410d4d07c3fdf972d329003fba9c9b3ab9fc9b8e9476b7f738727076079f"
+			"sha256": "3c383c6bc4f335a1f6955def070c4840ece85050a7569ce1734f281b9558e8b9"
 		},
 		{
 			"path": "collections/arrays/fixed.el",
@@ -237391,7 +237391,7 @@
 		},
 		{
 			"path": "collections/arrays/operations.el",
-			"sha256": "c56a02c4c694ade0f840c0c77a6cde8f9337834f7cea7b4089745563b7b3eb94"
+			"sha256": "5a89b9b75cc265ba5ce3b70a2a5339a9a310cfdfbea704d54d2ff13d0812b67a"
 		},
 		{
 			"path": "collections/arrays/plus-minus-rmq.el",
@@ -238792,8 +238792,8 @@
 				{
 					"tag": "example",
 					"value": "判断数组是否含大数",
-					"markdown": "```el\nconsole.stdout.writeLine(@[1, 30, 2].some(value => value > 20))\n```",
-					"code": "console.stdout.writeLine(@[1, 30, 2].some(value => value > 20))\n",
+					"markdown": "```el\nconsole.stdout.writeLine(@[1, 30, 2].some => it > 20)\n```",
+					"code": "console.stdout.writeLine(@[1, 30, 2].some => it > 20)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -238847,8 +238847,8 @@
 				{
 					"tag": "example",
 					"value": "检查数值范围",
-					"markdown": "```el\nconsole.stdout.writeLine(@[1, 2, 3].all(value => value > 0))\n```",
-					"code": "console.stdout.writeLine(@[1, 2, 3].all(value => value > 0))\n",
+					"markdown": "```el\nconsole.stdout.writeLine(@[1, 2, 3].all => it > 0)\n```",
+					"code": "console.stdout.writeLine(@[1, 2, 3].all => it > 0)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -238902,8 +238902,8 @@
 				{
 					"tag": "example",
 					"value": "筛选较大的数",
-					"markdown": "```el\nlet values = @[10, 30, 20]\nlet large = values.filter(value => value > 15)\nconsole.stdout.writeLine(large.join(\", \"))\n```",
-					"code": "let values = @[10, 30, 20]\nlet large = values.filter(value => value > 15)\nconsole.stdout.writeLine(large.join(\", \"))\n",
+					"markdown": "```el\nlet values = @[10, 30, 20]\nlet large = values.filter => it > 15\nconsole.stdout.writeLine(large.join(\", \"))\n```",
+					"code": "let values = @[10, 30, 20]\nlet large = values.filter => it > 15\nconsole.stdout.writeLine(large.join(\", \"))\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -239145,8 +239145,8 @@
 				{
 					"tag": "example",
 					"value": "查找首个匹配下标",
-					"markdown": "```el\n@[1, 2, 3].findIndex(value => value > 1)\n```",
-					"code": "@[1, 2, 3].findIndex(value => value > 1)\n",
+					"markdown": "```el\n@[1, 2, 3].findIndex => it > 1\n```",
+					"code": "@[1, 2, 3].findIndex => it > 1\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -239203,8 +239203,8 @@
 				{
 					"tag": "example",
 					"value": "查找末个匹配下标",
-					"markdown": "```el\n@[1, 2, 3].findLastIndex(value => value > 1)\n```",
-					"code": "@[1, 2, 3].findLastIndex(value => value > 1)\n",
+					"markdown": "```el\n@[1, 2, 3].findLastIndex => it > 1\n```",
+					"code": "@[1, 2, 3].findLastIndex => it > 1\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -239261,8 +239261,8 @@
 				{
 					"tag": "example",
 					"value": "查找末个匹配值",
-					"markdown": "```el\n@[1, 2, 3].findLast(value => value > 1)\n```",
-					"code": "@[1, 2, 3].findLast(value => value > 1)\n",
+					"markdown": "```el\n@[1, 2, 3].findLast => it > 1\n```",
+					"code": "@[1, 2, 3].findLast => it > 1\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -239551,8 +239551,8 @@
 				{
 					"tag": "example",
 					"value": "将数值加倍",
-					"markdown": "```el\nlet doubled = @[1, 2, 3].map(value => value * 2)\nconsole.stdout.writeLine(doubled.join(\", \"))\n```",
-					"code": "let doubled = @[1, 2, 3].map(value => value * 2)\nconsole.stdout.writeLine(doubled.join(\", \"))\n",
+					"markdown": "```el\nlet doubled = @[1, 2, 3].map => it * 2\nconsole.stdout.writeLine(doubled.join(\", \"))\n```",
+					"code": "let doubled = @[1, 2, 3].map => it * 2\nconsole.stdout.writeLine(doubled.join(\", \"))\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -239825,8 +239825,8 @@
 				{
 					"tag": "example",
 					"value": "检查是否存在偶数",
-					"markdown": "```el\nimport { some } from \"el:collections/arrays/operations.el\"\nsome(@[1, 3, 4], value => value % 2 == 0)\n```\n预期结果：真。",
-					"code": "import { some } from \"el:collections/arrays/operations.el\"\nsome(@[1, 3, 4], value => value % 2 == 0)\n",
+					"markdown": "```el\nimport { some } from \"el:collections/arrays/operations.el\"\nsome(@[1, 3, 4], => it % 2 == 0)\n```\n预期结果：真。",
+					"code": "import { some } from \"el:collections/arrays/operations.el\"\nsome(@[1, 3, 4], => it % 2 == 0)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				},
@@ -239838,7 +239838,7 @@
 			],
 			"source": "collections/arrays/operations.el",
 			"line": 19,
-			"signature": "@optimize(using: optimize_array, data: @{ stage: \"some\", receiver: \"argument\" })\nexport fn some(values, predicate = value => value): Bool",
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"some\", receiver: \"argument\" })\nexport fn some(values, predicate = => it): Bool",
 			"declaration_line": 30,
 			"id": "collections/arrays/operations::some",
 			"value_type": null,
@@ -239890,8 +239890,8 @@
 				{
 					"tag": "example",
 					"value": "检查是否存在正数",
-					"markdown": "```el\nimport { any } from \"el:collections/arrays/operations.el\"\nany(@[-2, 0, 5], value => value > 0)\n```\n预期结果：真。",
-					"code": "import { any } from \"el:collections/arrays/operations.el\"\nany(@[-2, 0, 5], value => value > 0)\n",
+					"markdown": "```el\nimport { any } from \"el:collections/arrays/operations.el\"\nany(@[-2, 0, 5], => it > 0)\n```\n预期结果：真。",
+					"code": "import { any } from \"el:collections/arrays/operations.el\"\nany(@[-2, 0, 5], => it > 0)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				},
@@ -239911,7 +239911,7 @@
 			],
 			"source": "collections/arrays/operations.el",
 			"line": 36,
-			"signature": "@optimize(using: optimize_array, data: @{ stage: \"some\", receiver: \"argument\" })\nexport fn any(values, predicate = value => value): Bool",
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"some\", receiver: \"argument\" })\nexport fn any(values, predicate = => it): Bool",
 			"declaration_line": 53,
 			"id": "collections/arrays/operations::any",
 			"value_type": null,
@@ -239958,8 +239958,8 @@
 				{
 					"tag": "example",
 					"value": "检查是否没有负数",
-					"markdown": "```el\nimport { none } from \"el:collections/arrays/operations.el\"\nnone(@[1, 2, 3], value => value < 0)\n```\n预期结果：真。",
-					"code": "import { none } from \"el:collections/arrays/operations.el\"\nnone(@[1, 2, 3], value => value < 0)\n",
+					"markdown": "```el\nimport { none } from \"el:collections/arrays/operations.el\"\nnone(@[1, 2, 3], => it < 0)\n```\n预期结果：真。",
+					"code": "import { none } from \"el:collections/arrays/operations.el\"\nnone(@[1, 2, 3], => it < 0)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				},
@@ -239971,7 +239971,7 @@
 			],
 			"source": "collections/arrays/operations.el",
 			"line": 58,
-			"signature": "@optimize(using: optimize_array, data: @{ stage: \"none\", receiver: \"argument\" })\nexport fn none(values, predicate = value => value): Bool",
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"none\", receiver: \"argument\" })\nexport fn none(values, predicate = => it): Bool",
 			"declaration_line": 69,
 			"id": "collections/arrays/operations::none",
 			"value_type": null,
@@ -240023,8 +240023,8 @@
 				{
 					"tag": "example",
 					"value": "检查序列中的每个值",
-					"markdown": "```el\nimport { all } from \"el:collections/arrays/operations.el\"\nall(@[1, 2, 3], value => value > 0)\n```\n预期结果：真。",
-					"code": "import { all } from \"el:collections/arrays/operations.el\"\nall(@[1, 2, 3], value => value > 0)\n",
+					"markdown": "```el\nimport { all } from \"el:collections/arrays/operations.el\"\nall(@[1, 2, 3], => it > 0)\n```\n预期结果：真。",
+					"code": "import { all } from \"el:collections/arrays/operations.el\"\nall(@[1, 2, 3], => it > 0)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				},
@@ -240044,7 +240044,7 @@
 			],
 			"source": "collections/arrays/operations.el",
 			"line": 74,
-			"signature": "@optimize(using: optimize_array, data: @{ stage: \"all\", receiver: \"argument\" })\nexport fn all(values, predicate = value => value): Bool",
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"all\", receiver: \"argument\" })\nexport fn all(values, predicate = => it): Bool",
 			"declaration_line": 91,
 			"id": "collections/arrays/operations::all",
 			"value_type": null,
@@ -240091,8 +240091,8 @@
 				{
 					"tag": "example",
 					"value": "检查每个字符串长度",
-					"markdown": "```el\nimport { every } from \"el:collections/arrays/operations.el\"\nevery(@[\"oak\", \"elm\"], word => word.count == 3)\n```\n预期结果：真。",
-					"code": "import { every } from \"el:collections/arrays/operations.el\"\nevery(@[\"oak\", \"elm\"], word => word.count == 3)\n",
+					"markdown": "```el\nimport { every } from \"el:collections/arrays/operations.el\"\nevery(@[\"oak\", \"elm\"], => it.count == 3)\n```\n预期结果：真。",
+					"code": "import { every } from \"el:collections/arrays/operations.el\"\nevery(@[\"oak\", \"elm\"], => it.count == 3)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				},
@@ -240104,7 +240104,7 @@
 			],
 			"source": "collections/arrays/operations.el",
 			"line": 97,
-			"signature": "@optimize(using: optimize_array, data: @{ stage: \"all\", receiver: \"argument\" })\nexport fn every(values, predicate = value => value): Bool",
+			"signature": "@optimize(using: optimize_array, data: @{ stage: \"all\", receiver: \"argument\" })\nexport fn every(values, predicate = => it): Bool",
 			"declaration_line": 108,
 			"id": "collections/arrays/operations::every",
 			"value_type": null,
@@ -240255,8 +240255,8 @@
 				{
 					"tag": "example",
 					"value": "将数组元素加一",
-					"markdown": "```el\nimport { map } from \"el:collections/arrays/operations.el\"\nmap(@[1, 2], value => value + 1)\n```\n预期结果：[2, 3]。",
-					"code": "import { map } from \"el:collections/arrays/operations.el\"\nmap(@[1, 2], value => value + 1)\n",
+					"markdown": "```el\nimport { map } from \"el:collections/arrays/operations.el\"\nmap(@[1, 2], => it + 1)\n```\n预期结果：[2, 3]。",
+					"code": "import { map } from \"el:collections/arrays/operations.el\"\nmap(@[1, 2], => it + 1)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				},
@@ -240353,8 +240353,8 @@
 				{
 					"tag": "example",
 					"value": "筛选奇数",
-					"markdown": "```el\nimport { filter } from \"el:collections/arrays/operations.el\"\nfilter(@[1, 2, 3], value => value % 2 == 1)\n```\n预期结果：[1, 3]。",
-					"code": "import { filter } from \"el:collections/arrays/operations.el\"\nfilter(@[1, 2, 3], value => value % 2 == 1)\n",
+					"markdown": "```el\nimport { filter } from \"el:collections/arrays/operations.el\"\nfilter(@[1, 2, 3], => it % 2 == 1)\n```\n预期结果：[1, 3]。",
+					"code": "import { filter } from \"el:collections/arrays/operations.el\"\nfilter(@[1, 2, 3], => it % 2 == 1)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				},
@@ -240485,8 +240485,8 @@
 				{
 					"tag": "example",
 					"value": "按顺序访问元素",
-					"markdown": "```el\nimport { each } from \"el:collections/arrays/operations.el\"\neach(@[1, 2], value => value)\n```\n预期结果：回调依次接收 1 和 2。",
-					"code": "import { each } from \"el:collections/arrays/operations.el\"\neach(@[1, 2], value => value)\n",
+					"markdown": "```el\nimport { each } from \"el:collections/arrays/operations.el\"\neach(@[1, 2], => it)\n```\n预期结果：回调依次接收 1 和 2。",
+					"code": "import { each } from \"el:collections/arrays/operations.el\"\neach(@[1, 2], => it)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				},
@@ -240691,8 +240691,8 @@
 				{
 					"tag": "example",
 					"value": "查找首个奇数",
-					"markdown": "```el\nimport { find } from \"el:collections/arrays/operations.el\"\nfind(@[2, 4, 5], value => value % 2 == 1)\n```\n预期结果：5。",
-					"code": "import { find } from \"el:collections/arrays/operations.el\"\nfind(@[2, 4, 5], value => value % 2 == 1)\n",
+					"markdown": "```el\nimport { find } from \"el:collections/arrays/operations.el\"\nfind(@[2, 4, 5], => it % 2 == 1)\n```\n预期结果：5。",
+					"code": "import { find } from \"el:collections/arrays/operations.el\"\nfind(@[2, 4, 5], => it % 2 == 1)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				},
@@ -240740,8 +240740,8 @@
 				{
 					"tag": "example",
 					"value": "查找首个匹配下标",
-					"markdown": "```el\nimport { find_index } from \"el:collections/arrays/operations.el\"\nfind_index(@[1, 2, 3], value => value > 1)\n```",
-					"code": "import { find_index } from \"el:collections/arrays/operations.el\"\nfind_index(@[1, 2, 3], value => value > 1)\n",
+					"markdown": "```el\nimport { find_index } from \"el:collections/arrays/operations.el\"\nfind_index(@[1, 2, 3], => it > 1)\n```",
+					"code": "import { find_index } from \"el:collections/arrays/operations.el\"\nfind_index(@[1, 2, 3], => it > 1)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -240813,8 +240813,8 @@
 				{
 					"tag": "example",
 					"value": "查找末个匹配下标",
-					"markdown": "```el\nimport { find_last_index } from \"el:collections/arrays/operations.el\"\nfind_last_index(@[1, 2, 3], value => value > 1)\n```",
-					"code": "import { find_last_index } from \"el:collections/arrays/operations.el\"\nfind_last_index(@[1, 2, 3], value => value > 1)\n",
+					"markdown": "```el\nimport { find_last_index } from \"el:collections/arrays/operations.el\"\nfind_last_index(@[1, 2, 3], => it > 1)\n```",
+					"code": "import { find_last_index } from \"el:collections/arrays/operations.el\"\nfind_last_index(@[1, 2, 3], => it > 1)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -240886,8 +240886,8 @@
 				{
 					"tag": "example",
 					"value": "查找末个匹配值",
-					"markdown": "```el\nimport { find_last } from \"el:collections/arrays/operations.el\"\nfind_last(@[1, 2, 3], value => value > 1)\n```",
-					"code": "import { find_last } from \"el:collections/arrays/operations.el\"\nfind_last(@[1, 2, 3], value => value > 1)\n",
+					"markdown": "```el\nimport { find_last } from \"el:collections/arrays/operations.el\"\nfind_last(@[1, 2, 3], => it > 1)\n```",
+					"code": "import { find_last } from \"el:collections/arrays/operations.el\"\nfind_last(@[1, 2, 3], => it > 1)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				}
@@ -240930,8 +240930,8 @@
 				{
 					"tag": "example",
 					"value": "找不到时追加新值",
-					"markdown": "```el\nimport { find_or_add } from \"el:collections/arrays/operations.el\"\nlet values = @[1, 3]\nfind_or_add(values, value => value == 2, () => 2)\n```\n预期结果：2。",
-					"code": "import { find_or_add } from \"el:collections/arrays/operations.el\"\nlet values = @[1, 3]\nfind_or_add(values, value => value == 2, () => 2)\n",
+					"markdown": "```el\nimport { find_or_add } from \"el:collections/arrays/operations.el\"\nlet values = @[1, 3]\nfind_or_add(values, => it == 2, => 2)\n```\n预期结果：2。",
+					"code": "import { find_or_add } from \"el:collections/arrays/operations.el\"\nlet values = @[1, 3]\nfind_or_add(values, => it == 2, => 2)\n",
 					"expected_stdout": null,
 					"verification": "not-run"
 				},
