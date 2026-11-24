@@ -1852,7 +1852,7 @@
 			"name": "Compiler",
 			"id": null,
 			"source": "compiler/context/compiler-session.el",
-			"line": 77,
+			"line": 78,
 			"signature": "export class Compiler",
 			"value_type": null
 		},
@@ -6636,7 +6636,7 @@
 			"name": "lex",
 			"id": null,
 			"source": "compiler/parser/lexer.el",
-			"line": 574,
+			"line": 569,
 			"signature": "export fn lex(lx: Lexer, file_start: Bool = t)",
 			"value_type": null
 		},
@@ -7972,7 +7972,7 @@
 			"name": "numericsSolve",
 			"id": "numerical-computing/exact-solve::solve",
 			"source": "numerical-computing/exact-solve.el",
-			"line": 23,
+			"line": 74,
 			"signature": "export fn solve(borrow input: Matrix, borrow right: Matrix): Matrix",
 			"value_type": null
 		},
@@ -9132,7 +9132,7 @@
 			"name": "quantitySuffix",
 			"id": null,
 			"source": "language/literals/shape.el",
-			"line": 3,
+			"line": 10,
 			"signature": "export fn quantitySuffix(text: Text): Text",
 			"value_type": null
 		},
@@ -11229,7 +11229,7 @@
 			"name": "solve",
 			"id": "numerical-computing/exact-solve::solve",
 			"source": "numerical-computing/exact-solve.el",
-			"line": 23,
+			"line": 74,
 			"signature": "export fn solve(borrow input: Matrix, borrow right: Matrix): Matrix",
 			"value_type": null
 		},
@@ -11331,11 +11331,12 @@
 		},
 		{
 			"name": "sqrt",
-			"id": "mathematics/functions/elementary::sqrt",
-			"source": "mathematics/functions/elementary.el",
-			"line": 35,
-			"signature": "@pure\nexport fn sqrt(value, epsilon = nil)",
-			"value_type": null
+			"id": null,
+			"source": null,
+			"line": null,
+			"signature": null,
+			"value_type": null,
+			"documented": true
 		},
 		{
 			"name": "sqrt64",
@@ -19039,7 +19040,7 @@
 			"Compiler": {
 				"id": null,
 				"source": "compiler/context/compiler-session.el",
-				"line": 77,
+				"line": 78,
 				"value_type": null
 			},
 			"CompilerDebugSource": {
@@ -24461,19 +24462,19 @@
 			"Compiler": {
 				"id": null,
 				"source": "compiler/context/compiler-session.el",
-				"line": 77,
+				"line": 78,
 				"value_type": null
 			},
 			"RuntimeImportIndex": {
 				"id": null,
 				"source": "compiler/context/compiler-session.el",
-				"line": 60,
+				"line": 61,
 				"value_type": null
 			},
 			"RuntimeImportSignature": {
 				"id": null,
 				"source": "compiler/context/compiler-session.el",
-				"line": 45,
+				"line": 46,
 				"value_type": null
 			}
 		},
@@ -28477,7 +28478,7 @@
 			"annotation_builtin": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 186,
+				"line": 183,
 				"value_type": null
 			},
 			"annotation_class": {
@@ -28507,13 +28508,13 @@
 			"annotation_is_word": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 171,
+				"line": 168,
 				"value_type": null
 			},
 			"annotation_ris_abi_matches": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 181,
+				"line": 178,
 				"value_type": null
 			},
 			"annotation_ris_kind": {
@@ -28525,43 +28526,43 @@
 			"apply_annotation": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 199,
+				"line": 196,
 				"value_type": null
 			},
 			"complete_extern_signatures": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 372,
+				"line": 369,
 				"value_type": null
 			},
 			"declare_extern": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 303,
+				"line": 300,
 				"value_type": null
 			},
 			"declare_function": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 553,
+				"line": 550,
 				"value_type": null
 			},
 			"extern_signature": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 386,
+				"line": 383,
 				"value_type": null
 			},
 			"find_extern": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 528,
+				"line": 525,
 				"value_type": null
 			},
 			"find_extern_declaration": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 534,
+				"line": 531,
 				"value_type": null
 			},
 			"is_array_annotation": {
@@ -28573,7 +28574,7 @@
 			"is_word": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 161,
+				"line": 158,
 				"value_type": null
 			},
 			"nullable_field_without_assignment": {
@@ -28585,79 +28586,79 @@
 			"refine_annotation_lock": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 262,
+				"line": 259,
 				"value_type": null
 			},
 			"refine_annotation_lock_to_facts": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 268,
+				"line": 265,
 				"value_type": null
 			},
 			"register_native_signature_instance": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 559,
+				"line": 556,
 				"value_type": null
 			},
 			"register_native_signature_projection": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 603,
+				"line": 600,
 				"value_type": null
 			},
 			"restore_binding_annotation_facts": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 209,
+				"line": 206,
 				"value_type": null
 			},
 			"ris_declared_in_module": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 772,
+				"line": 769,
 				"value_type": null
 			},
 			"ris_identity_class_is_empty": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 755,
+				"line": 752,
 				"value_type": null
 			},
 			"runtime_abi_matches": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 297,
+				"line": 294,
 				"value_type": null
 			},
 			"type_ref_is_any": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 192,
+				"line": 189,
 				"value_type": null
 			},
 			"validate_annotation_reference": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 682,
+				"line": 679,
 				"value_type": null
 			},
 			"validate_function_annotations": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 656,
+				"line": 653,
 				"value_type": null
 			},
 			"variadic_template": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 547,
+				"line": 544,
 				"value_type": null
 			},
 			"word_class": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 159,
+				"line": 156,
 				"value_type": null
 			},
 			"word_class_in": {
@@ -28677,7 +28678,7 @@
 			"declare_declarations": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 571,
+				"line": 576,
 				"value_type": null
 			},
 			"register_class": {
@@ -28689,19 +28690,19 @@
 			"ris_arity": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 718,
+				"line": 723,
 				"value_type": null
 			},
 			"ris_runtime_kind": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 705,
+				"line": 710,
 				"value_type": null
 			},
 			"validate_ris_function": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 739,
+				"line": 744,
 				"value_type": null
 			}
 		},
@@ -28853,25 +28854,25 @@
 			"contextual_quantity_argument": {
 				"id": null,
 				"source": "compiler/declarations/custom-literals.el",
-				"line": 91,
+				"line": 114,
 				"value_type": null
 			},
 			"contextual_quantity_call": {
 				"id": null,
 				"source": "compiler/declarations/custom-literals.el",
-				"line": 120,
+				"line": 139,
 				"value_type": null
 			},
 			"custom_literal_class": {
 				"id": null,
 				"source": "compiler/declarations/custom-literals.el",
-				"line": 26,
+				"line": 58,
 				"value_type": null
 			},
 			"lower_custom_literal": {
 				"id": null,
 				"source": "compiler/declarations/custom-literals.el",
-				"line": 149,
+				"line": 168,
 				"value_type": null
 			}
 		},
@@ -28913,7 +28914,7 @@
 			"annotation_builtin": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 186,
+				"line": 183,
 				"value_type": null
 			},
 			"annotation_class": {
@@ -28943,13 +28944,13 @@
 			"annotation_is_word": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 171,
+				"line": 168,
 				"value_type": null
 			},
 			"annotation_ris_abi_matches": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 181,
+				"line": 178,
 				"value_type": null
 			},
 			"annotation_ris_kind": {
@@ -28961,7 +28962,7 @@
 			"apply_annotation": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 199,
+				"line": 196,
 				"value_type": null
 			},
 			"assignment_method": {
@@ -28973,25 +28974,25 @@
 			"complete_extern_signatures": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 372,
+				"line": 369,
 				"value_type": null
 			},
 			"declare_declarations": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 571,
+				"line": 576,
 				"value_type": null
 			},
 			"declare_extern": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 303,
+				"line": 300,
 				"value_type": null
 			},
 			"extern_signature": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 386,
+				"line": 383,
 				"value_type": null
 			},
 			"family_candidate_by_classes": {
@@ -29021,13 +29022,13 @@
 			"find_extern": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 528,
+				"line": 525,
 				"value_type": null
 			},
 			"find_extern_declaration": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 534,
+				"line": 531,
 				"value_type": null
 			},
 			"find_field": {
@@ -29081,7 +29082,7 @@
 			"is_word": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 161,
+				"line": 158,
 				"value_type": null
 			},
 			"lower_entry_by_id": {
@@ -29117,13 +29118,13 @@
 			"refine_annotation_lock": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 262,
+				"line": 259,
 				"value_type": null
 			},
 			"refine_annotation_lock_to_facts": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 268,
+				"line": 265,
 				"value_type": null
 			},
 			"register_class": {
@@ -29135,31 +29136,31 @@
 			"register_native_signature_instance": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 559,
+				"line": 556,
 				"value_type": null
 			},
 			"register_native_signature_projection": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 603,
+				"line": 600,
 				"value_type": null
 			},
 			"restore_binding_annotation_facts": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 209,
+				"line": 206,
 				"value_type": null
 			},
 			"ris_arity": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 718,
+				"line": 723,
 				"value_type": null
 			},
 			"ris_runtime_kind": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 705,
+				"line": 710,
 				"value_type": null
 			},
 			"same_function_contract": {
@@ -29171,25 +29172,25 @@
 			"type_ref_is_any": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 192,
+				"line": 189,
 				"value_type": null
 			},
 			"validate_function_annotations": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 656,
+				"line": 653,
 				"value_type": null
 			},
 			"validate_ris_function": {
 				"id": null,
 				"source": "compiler/declarations/class-registration.el",
-				"line": 739,
+				"line": 744,
 				"value_type": null
 			},
 			"word_class": {
 				"id": null,
 				"source": "compiler/declarations/annotations-and-externs.el",
-				"line": 159,
+				"line": 156,
 				"value_type": null
 			},
 			"word_class_in": {
@@ -30076,6 +30077,20 @@
 				"id": null,
 				"source": "compiler/declarations/objects.el",
 				"line": 27,
+				"value_type": null
+			}
+		},
+		"compiler/declarations/quantity-provider-index": {
+			"QuantityProviderIndex": {
+				"id": null,
+				"source": "compiler/declarations/quantity-provider-index.el",
+				"line": 12,
+				"value_type": null
+			},
+			"QuantityProviders": {
+				"id": null,
+				"source": "compiler/declarations/quantity-provider-index.el",
+				"line": 5,
 				"value_type": null
 			}
 		},
@@ -31157,25 +31172,25 @@
 			"check_numeric_adjacency_target": {
 				"id": null,
 				"source": "compiler/expressions/numeric-adjacency.el",
-				"line": 56,
+				"line": 65,
 				"value_type": null
 			},
 			"letter_power_product": {
 				"id": null,
 				"source": "compiler/expressions/numeric-adjacency.el",
-				"line": 105,
+				"line": 114,
 				"value_type": null
 			},
 			"letter_product": {
 				"id": null,
 				"source": "compiler/expressions/numeric-adjacency.el",
-				"line": 89,
+				"line": 98,
 				"value_type": null
 			},
 			"select_numeric_adjacency": {
 				"id": null,
 				"source": "compiler/expressions/numeric-adjacency.el",
-				"line": 33,
+				"line": 43,
 				"value_type": null
 			}
 		},
@@ -31413,25 +31428,25 @@
 			"callable_declaration_index": {
 				"id": null,
 				"source": "compiler/identity/lookup.el",
-				"line": 220,
+				"line": 227,
 				"value_type": null
 			},
 			"class_declaration_entry": {
 				"id": null,
 				"source": "compiler/identity/lookup.el",
-				"line": 155,
+				"line": 162,
 				"value_type": null
 			},
 			"class_declaration_index": {
 				"id": null,
 				"source": "compiler/identity/lookup.el",
-				"line": 150,
+				"line": 157,
 				"value_type": null
 			},
 			"class_name_index": {
 				"id": null,
 				"source": "compiler/identity/lookup.el",
-				"line": 139,
+				"line": 146,
 				"value_type": null
 			},
 			"declaration_insert": {
@@ -31455,37 +31470,43 @@
 			"factory_instance_index": {
 				"id": null,
 				"source": "compiler/identity/lookup.el",
-				"line": 131,
+				"line": 138,
 				"value_type": null
 			},
 			"function_declaration_head": {
 				"id": null,
 				"source": "compiler/identity/lookup.el",
-				"line": 210,
+				"line": 217,
 				"value_type": null
 			},
 			"function_declaration_index": {
 				"id": null,
 				"source": "compiler/identity/lookup.el",
-				"line": 215,
+				"line": 222,
 				"value_type": null
 			},
 			"function_family_value_only": {
 				"id": null,
 				"source": "compiler/identity/lookup.el",
-				"line": 168,
+				"line": 175,
 				"value_type": null
 			},
 			"function_name_head": {
 				"id": null,
 				"source": "compiler/identity/lookup.el",
-				"line": 197,
+				"line": 204,
 				"value_type": null
 			},
 			"latest_function_declaration_index": {
 				"id": null,
 				"source": "compiler/identity/lookup.el",
-				"line": 226,
+				"line": 233,
+				"value_type": null
+			},
+			"local_word_class_index": {
+				"id": null,
+				"source": "compiler/identity/lookup.el",
+				"line": 128,
 				"value_type": null
 			},
 			"node_identity_append": {
@@ -31521,7 +31542,7 @@
 			"type_object_class_index": {
 				"id": null,
 				"source": "compiler/identity/lookup.el",
-				"line": 126,
+				"line": 133,
 				"value_type": null
 			}
 		},
@@ -31565,7 +31586,7 @@
 			"Compiler": {
 				"id": null,
 				"source": "compiler/context/compiler-session.el",
-				"line": 77,
+				"line": 78,
 				"value_type": null
 			},
 			"Func": {
@@ -31655,7 +31676,7 @@
 			"lex": {
 				"id": null,
 				"source": "compiler/parser/lexer.el",
-				"line": 574,
+				"line": 569,
 				"value_type": null
 			},
 			"parse_expression": {
@@ -36633,7 +36654,7 @@
 			"digit_started_binding_name": {
 				"id": null,
 				"source": "compiler/parser/lexer.el",
-				"line": 116,
+				"line": 111,
 				"value_type": null
 			},
 			"digit_value": {
@@ -36645,19 +36666,19 @@
 			"lex": {
 				"id": null,
 				"source": "compiler/parser/lexer.el",
-				"line": 574,
+				"line": 569,
 				"value_type": null
 			},
 			"numeric_adjacency_split": {
 				"id": null,
 				"source": "compiler/parser/lexer.el",
-				"line": 64,
+				"line": 62,
 				"value_type": null
 			},
 			"splittable_adjacency_suffix": {
 				"id": null,
 				"source": "compiler/parser/lexer.el",
-				"line": 123,
+				"line": 118,
 				"value_type": null
 			}
 		},
@@ -76953,7 +76974,7 @@
 			"Compiler": {
 				"id": null,
 				"source": "compiler/context/compiler-session.el",
-				"line": 77,
+				"line": 78,
 				"value_type": null
 			},
 			"Completion": {
@@ -83037,7 +83058,7 @@
 			"lex": {
 				"id": null,
 				"source": "compiler/parser/lexer.el",
-				"line": 574,
+				"line": 569,
 				"value_type": null
 			},
 			"library_symbol": {
@@ -83691,7 +83712,7 @@
 			"numericsSolve": {
 				"id": "numerical-computing/exact-solve::solve",
 				"source": "numerical-computing/exact-solve.el",
-				"line": 23,
+				"line": 74,
 				"value_type": null
 			},
 			"numericsSqrt": {
@@ -84267,7 +84288,7 @@
 			"quantitySuffix": {
 				"id": null,
 				"source": "language/literals/shape.el",
-				"line": 3,
+				"line": 10,
 				"value_type": null
 			},
 			"query": {
@@ -85414,7 +85435,7 @@
 			"solve": {
 				"id": "numerical-computing/exact-solve::solve",
 				"source": "numerical-computing/exact-solve.el",
-				"line": 23,
+				"line": 74,
 				"value_type": null
 			},
 			"solveDiagnostic": {
@@ -85466,10 +85487,11 @@
 				"value_type": null
 			},
 			"sqrt": {
-				"id": "mathematics/functions/elementary::sqrt",
-				"source": "mathematics/functions/elementary.el",
-				"line": 35,
-				"value_type": null
+				"id": null,
+				"source": null,
+				"line": null,
+				"value_type": null,
+				"documented": true
 			},
 			"sqrt64": {
 				"id": null,
@@ -92392,6 +92414,12 @@
 		},
 		"language/literals/shape": {
 			"quantitySuffix": {
+				"id": null,
+				"source": "language/literals/shape.el",
+				"line": 10,
+				"value_type": null
+			},
+			"radixPrefixBase": {
 				"id": null,
 				"source": "language/literals/shape.el",
 				"line": 3,
@@ -124065,6 +124093,12 @@
 			}
 		},
 		"mathematics/functions/square-root": {
+			"exact_square_root": {
+				"id": null,
+				"source": "mathematics/functions/square-root.el",
+				"line": 24,
+				"value_type": null
+			},
 			"square_root_with_precision": {
 				"id": null,
 				"source": "mathematics/functions/square-root.el",
@@ -151604,10 +151638,11 @@
 				"value_type": null
 			},
 			"sqrt": {
-				"id": "mathematics/functions/elementary::sqrt",
-				"source": "mathematics/functions/elementary.el",
-				"line": 35,
-				"value_type": null
+				"id": null,
+				"source": null,
+				"line": null,
+				"value_type": null,
+				"documented": true
 			},
 			"stablePermutation": {
 				"id": null,
@@ -175255,10 +175290,16 @@
 			}
 		},
 		"numerical-computing/exact-solve": {
+			"determinantSign": {
+				"id": null,
+				"source": "numerical-computing/exact-solve.el",
+				"line": 53,
+				"value_type": null
+			},
 			"solve": {
 				"id": "numerical-computing/exact-solve::solve",
 				"source": "numerical-computing/exact-solve.el",
-				"line": 23,
+				"line": 74,
 				"value_type": null
 			}
 		},
@@ -175803,6 +175844,12 @@
 				"line": 18,
 				"value_type": null
 			},
+			"determinantSign": {
+				"id": null,
+				"source": "numerical-computing/exact-solve.el",
+				"line": 53,
+				"value_type": null
+			},
 			"deviceScatterReduce": {
 				"id": null,
 				"source": "numerical-computing/device-segmented.el",
@@ -176166,7 +176213,7 @@
 			"solve": {
 				"id": "numerical-computing/exact-solve::solve",
 				"source": "numerical-computing/exact-solve.el",
-				"line": 23,
+				"line": 74,
 				"value_type": null
 			},
 			"solveDiagnostic": {
@@ -179669,6 +179716,68 @@
 				"id": null,
 				"source": "parsing/utf8.el",
 				"line": 27,
+				"value_type": null
+			}
+		},
+		"physics/index": {
+			"acceleration": {
+				"id": "physics/index::acceleration",
+				"source": "physics/index.el",
+				"line": 46,
+				"value_type": null
+			},
+			"constantCurrentCharge": {
+				"id": null,
+				"source": "physics/index.el",
+				"line": 167,
+				"value_type": null
+			},
+			"constantForceImpulse": {
+				"id": "physics/index::constantForceImpulse~timeDiff",
+				"source": "physics/index.el",
+				"line": 71,
+				"value_type": null
+			},
+			"force": {
+				"id": null,
+				"source": "physics/index.el",
+				"line": 28,
+				"value_type": null
+			},
+			"hydrostaticAbsolutePressure": {
+				"id": "physics/index::hydrostaticAbsolutePressure",
+				"source": "physics/index.el",
+				"line": 133,
+				"value_type": null
+			},
+			"hydrostaticPressureIncrease": {
+				"id": "physics/index::hydrostaticPressureIncrease",
+				"source": "physics/index.el",
+				"line": 111,
+				"value_type": null
+			},
+			"momentum": {
+				"id": null,
+				"source": "physics/index.el",
+				"line": 23,
+				"value_type": null
+			},
+			"ohmicCurrent": {
+				"id": "physics/index::ohmicCurrent",
+				"source": "physics/index.el",
+				"line": 156,
+				"value_type": null
+			},
+			"ohmicVoltage": {
+				"id": null,
+				"source": "physics/index.el",
+				"line": 139,
+				"value_type": null
+			},
+			"quadraticDrag": {
+				"id": null,
+				"source": "physics/index.el",
+				"line": 87,
 				"value_type": null
 			}
 		},
@@ -195028,31 +195137,31 @@
 			"TimeDiffPayload": {
 				"id": null,
 				"source": "time/diff.el",
-				"line": 106,
+				"line": 109,
 				"value_type": null
 			},
 			"fromEod": {
 				"id": null,
 				"source": "time/diff.el",
-				"line": 119,
+				"line": 122,
 				"value_type": null
 			},
 			"fromEol": {
 				"id": null,
 				"source": "time/diff.el",
-				"line": 117,
+				"line": 120,
 				"value_type": null
 			},
 			"toEod": {
 				"id": null,
 				"source": "time/diff.el",
-				"line": 118,
+				"line": 121,
 				"value_type": null
 			},
 			"toEol": {
 				"id": null,
 				"source": "time/diff.el",
-				"line": 116,
+				"line": 119,
 				"value_type": null
 			}
 		},
@@ -195280,13 +195389,13 @@
 			"TimeQuantity": {
 				"id": null,
 				"source": "time/quantity.el",
-				"line": 7,
+				"line": 6,
 				"value_type": null
 			},
 			"parseTimeQuantity": {
 				"id": null,
 				"source": "time/quantity.el",
-				"line": 12,
+				"line": 11,
 				"value_type": null
 			}
 		},
@@ -197652,213 +197761,227 @@
 			"AmountDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 11,
+				"line": 14,
 				"value_type": null
 			},
 			"CurrentDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 10,
+				"line": 13,
 				"value_type": null
 			},
 			"DurationDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 6,
+				"line": 9,
 				"value_type": null
 			},
 			"LengthDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 5,
+				"line": 8,
 				"value_type": null
 			},
 			"LuminosityDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 12,
+				"line": 15,
 				"value_type": null
 			},
 			"MassDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 7,
+				"line": 10,
 				"value_type": null
 			},
 			"StorageDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 8,
+				"line": 11,
 				"value_type": null
 			},
 			"TemperatureDifferenceDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 9,
+				"line": 12,
 				"value_type": null
 			},
 			"ampere": {
-				"id": null,
+				"id": "units/builtins::ampere",
 				"source": "units/builtins.el",
-				"line": 35,
+				"line": 94,
 				"value_type": null
 			},
 			"byte": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 30,
+				"line": 81,
 				"value_type": null
 			},
 			"candela": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 37,
+				"line": 96,
 				"value_type": null
 			},
 			"centimetre": {
-				"id": null,
+				"id": "units/builtins::centimetre",
 				"source": "units/builtins.el",
-				"line": 16,
+				"line": 35,
 				"value_type": "defineUnit"
 			},
 			"day": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 27,
+				"line": 70,
 				"value_type": "defineUnit"
 			},
 			"foot": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 20,
+				"line": 47,
 				"value_type": "defineUnit"
 			},
 			"gibibyte": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 33,
+				"line": 84,
 				"value_type": "defineUnit"
 			},
 			"gram": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 29,
+				"line": 80,
 				"value_type": "defineUnit"
 			},
 			"hour": {
-				"id": null,
+				"id": "units/builtins::hour",
 				"source": "units/builtins.el",
-				"line": 26,
+				"line": 69,
 				"value_type": "defineUnit"
 			},
 			"inch": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 19,
+				"line": 46,
 				"value_type": "defineUnit"
 			},
 			"kelvinDifference": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 34,
+				"line": 85,
 				"value_type": null
 			},
 			"kibibyte": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 31,
+				"line": 82,
 				"value_type": "defineUnit"
 			},
 			"kilogram": {
-				"id": null,
+				"id": "units/builtins::kilogram",
 				"source": "units/builtins.el",
-				"line": 28,
+				"line": 79,
 				"value_type": null
 			},
 			"kilometre": {
-				"id": null,
+				"id": "units/builtins::kilometre",
 				"source": "units/builtins.el",
-				"line": 18,
+				"line": 45,
 				"value_type": "defineUnit"
 			},
 			"mebibyte": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 32,
+				"line": 83,
 				"value_type": "defineUnit"
 			},
 			"metre": {
-				"id": null,
+				"id": "units/builtins::metre",
 				"source": "units/builtins.el",
-				"line": 15,
+				"line": 26,
 				"value_type": null
 			},
 			"microsecond": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 23,
+				"line": 58,
 				"value_type": "defineUnit"
 			},
 			"millimetre": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 17,
+				"line": 36,
 				"value_type": "defineUnit"
 			},
 			"millisecond": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 24,
+				"line": 59,
 				"value_type": "defineUnit"
 			},
 			"minute": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 25,
+				"line": 60,
 				"value_type": "defineUnit"
 			},
 			"mole": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 36,
+				"line": 95,
 				"value_type": null
 			},
 			"nanosecond": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 22,
+				"line": 57,
 				"value_type": "defineUnit"
 			},
 			"one": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 14,
+				"line": 17,
 				"value_type": null
 			},
 			"second": {
-				"id": null,
+				"id": "units/builtins::second",
 				"source": "units/builtins.el",
-				"line": 21,
+				"line": 56,
+				"value_type": null
+			}
+		},
+		"units/coordinates": {
+			"Point": {
+				"id": null,
+				"source": "units/coordinates.el",
+				"line": 9,
+				"value_type": null
+			},
+			"RigidTransform": {
+				"id": null,
+				"source": "units/coordinates.el",
+				"line": 27,
 				"value_type": null
 			}
 		},
 		"units/core": {
 			"Quantity": {
-				"id": null,
+				"id": "units/core::Quantity",
 				"source": "units/core.el",
-				"line": 59,
+				"line": 70,
 				"value_type": null
 			},
 			"Unit": {
-				"id": null,
+				"id": "units/core::Unit",
 				"source": "units/core.el",
-				"line": 11,
+				"line": 22,
 				"value_type": null
 			},
 			"defineUnit": {
 				"id": null,
 				"source": "units/core.el",
-				"line": 51,
+				"line": 54,
 				"value_type": null
 			}
 		},
@@ -197880,34 +198003,46 @@
 			"durationQuantity": {
 				"id": null,
 				"source": "units/domains.el",
-				"line": 5,
+				"line": 6,
 				"value_type": null
 			},
 			"fileSize": {
 				"id": null,
 				"source": "units/domains.el",
-				"line": 8,
+				"line": 9,
 				"value_type": null
 			},
 			"storageQuantity": {
 				"id": null,
 				"source": "units/domains.el",
-				"line": 6,
+				"line": 7,
 				"value_type": null
 			},
 			"timeDifference": {
 				"id": null,
 				"source": "units/domains.el",
-				"line": 7,
+				"line": 8,
 				"value_type": null
 			}
 		},
 		"units/index": {
+			"A": {
+				"id": "units/builtins::ampere",
+				"source": "units/builtins.el",
+				"line": 94,
+				"value_type": null
+			},
 			"AmountDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 11,
+				"line": 14,
 				"value_type": null
+			},
+			"C": {
+				"id": null,
+				"source": "units/si.el",
+				"line": 44,
+				"value_type": "defineUnit"
 			},
 			"CalendarContextRequired": {
 				"id": null,
@@ -197918,7 +198053,7 @@
 			"CurrentDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 10,
+				"line": 13,
 				"value_type": null
 			},
 			"Dimension": {
@@ -197930,7 +198065,7 @@
 			"DurationDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 6,
+				"line": 9,
 				"value_type": null
 			},
 			"FileSize": {
@@ -197945,22 +198080,28 @@
 				"line": 12,
 				"value_type": null
 			},
+			"J": {
+				"id": "units/si::joule",
+				"source": "units/si.el",
+				"line": 42,
+				"value_type": "defineUnit"
+			},
 			"LengthDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 5,
+				"line": 8,
 				"value_type": null
 			},
 			"LuminosityDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 12,
+				"line": 15,
 				"value_type": null
 			},
 			"MassDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 7,
+				"line": 10,
 				"value_type": null
 			},
 			"Measured": {
@@ -197975,10 +198116,40 @@
 				"line": 40,
 				"value_type": null
 			},
-			"Quantity": {
+			"N": {
+				"id": "units/si::newton",
+				"source": "units/si.el",
+				"line": 15,
+				"value_type": null
+			},
+			"Pa": {
+				"id": "units/si::pascal",
+				"source": "units/si.el",
+				"line": 24,
+				"value_type": null
+			},
+			"Point": {
 				"id": null,
+				"source": "units/coordinates.el",
+				"line": 9,
+				"value_type": null
+			},
+			"Quantity": {
+				"id": "units/core::Quantity",
 				"source": "units/core.el",
-				"line": 59,
+				"line": 70,
+				"value_type": null
+			},
+			"QuantityVector": {
+				"id": "units/vector::QuantityVector",
+				"source": "units/vector.el",
+				"line": 37,
+				"value_type": null
+			},
+			"RigidTransform": {
+				"id": null,
+				"source": "units/coordinates.el",
+				"line": 27,
 				"value_type": null
 			},
 			"ScalarAdapter": {
@@ -197996,13 +198167,13 @@
 			"StorageDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 8,
+				"line": 11,
 				"value_type": null
 			},
 			"TemperatureDifferenceDimension": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 9,
+				"line": 12,
 				"value_type": null
 			},
 			"Time": {
@@ -198024,9 +198195,9 @@
 				"value_type": null
 			},
 			"Unit": {
-				"id": null,
+				"id": "units/core::Unit",
 				"source": "units/core.el",
-				"line": 11,
+				"line": 22,
 				"value_type": null
 			},
 			"UnitError": {
@@ -198035,107 +198206,161 @@
 				"line": 5,
 				"value_type": null
 			},
-			"ampere": {
+			"V": {
+				"id": "units/si::volt",
+				"source": "units/si.el",
+				"line": 53,
+				"value_type": "defineUnit"
+			},
+			"W": {
 				"id": null,
+				"source": "units/si.el",
+				"line": 43,
+				"value_type": "defineUnit"
+			},
+			"ampere": {
+				"id": "units/builtins::ampere",
 				"source": "units/builtins.el",
-				"line": 35,
+				"line": 94,
 				"value_type": null
 			},
 			"byte": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 30,
+				"line": 81,
 				"value_type": null
 			},
 			"candela": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 37,
+				"line": 96,
 				"value_type": null
 			},
 			"centimetre": {
-				"id": null,
+				"id": "units/builtins::centimetre",
 				"source": "units/builtins.el",
-				"line": 16,
+				"line": 35,
 				"value_type": "defineUnit"
+			},
+			"coulomb": {
+				"id": null,
+				"source": "units/si.el",
+				"line": 44,
+				"value_type": "defineUnit"
+			},
+			"cross": {
+				"id": null,
+				"source": "units/vector.el",
+				"line": 127,
+				"value_type": null
 			},
 			"day": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 27,
+				"line": 70,
 				"value_type": "defineUnit"
 			},
 			"defineUnit": {
 				"id": null,
 				"source": "units/core.el",
-				"line": 51,
+				"line": 54,
 				"value_type": null
 			},
 			"durationQuantity": {
 				"id": null,
 				"source": "units/domains.el",
-				"line": 5,
+				"line": 6,
 				"value_type": null
 			},
 			"fileSize": {
 				"id": null,
 				"source": "units/domains.el",
-				"line": 8,
+				"line": 9,
 				"value_type": null
 			},
 			"foot": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 20,
+				"line": 47,
 				"value_type": "defineUnit"
 			},
 			"gibibyte": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 33,
+				"line": 84,
 				"value_type": "defineUnit"
 			},
 			"gram": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 29,
+				"line": 80,
 				"value_type": "defineUnit"
 			},
 			"hour": {
-				"id": null,
+				"id": "units/builtins::hour",
 				"source": "units/builtins.el",
-				"line": 26,
+				"line": 69,
 				"value_type": "defineUnit"
 			},
 			"inch": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 19,
+				"line": 46,
+				"value_type": "defineUnit"
+			},
+			"joule": {
+				"id": "units/si::joule",
+				"source": "units/si.el",
+				"line": 42,
+				"value_type": "defineUnit"
+			},
+			"kPa": {
+				"id": "units/si::kilopascal",
+				"source": "units/si.el",
+				"line": 33,
 				"value_type": "defineUnit"
 			},
 			"kelvinDifference": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 34,
+				"line": 85,
+				"value_type": null
+			},
+			"kg": {
+				"id": "units/builtins::kilogram",
+				"source": "units/builtins.el",
+				"line": 79,
 				"value_type": null
 			},
 			"kibibyte": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 31,
+				"line": 82,
 				"value_type": "defineUnit"
 			},
 			"kilogram": {
-				"id": null,
+				"id": "units/builtins::kilogram",
 				"source": "units/builtins.el",
-				"line": 28,
+				"line": 79,
 				"value_type": null
 			},
 			"kilometre": {
-				"id": null,
+				"id": "units/builtins::kilometre",
 				"source": "units/builtins.el",
-				"line": 18,
+				"line": 45,
 				"value_type": "defineUnit"
+			},
+			"kilopascal": {
+				"id": "units/si::kilopascal",
+				"source": "units/si.el",
+				"line": 33,
+				"value_type": "defineUnit"
+			},
+			"m": {
+				"id": "units/builtins::metre",
+				"source": "units/builtins.el",
+				"line": 26,
+				"value_type": null
 			},
 			"measured": {
 				"id": null,
@@ -198146,50 +198371,56 @@
 			"mebibyte": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 32,
+				"line": 83,
 				"value_type": "defineUnit"
 			},
 			"metre": {
-				"id": null,
+				"id": "units/builtins::metre",
 				"source": "units/builtins.el",
-				"line": 15,
+				"line": 26,
 				"value_type": null
 			},
 			"microsecond": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 23,
+				"line": 58,
 				"value_type": "defineUnit"
 			},
 			"millimetre": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 17,
+				"line": 36,
 				"value_type": "defineUnit"
 			},
 			"millisecond": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 24,
+				"line": 59,
 				"value_type": "defineUnit"
 			},
 			"minute": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 25,
+				"line": 60,
 				"value_type": "defineUnit"
 			},
 			"mole": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 36,
+				"line": 95,
 				"value_type": null
 			},
 			"nanosecond": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 22,
+				"line": 57,
 				"value_type": "defineUnit"
+			},
+			"newton": {
+				"id": "units/si::newton",
+				"source": "units/si.el",
+				"line": 15,
+				"value_type": null
 			},
 			"numberScalar": {
 				"id": null,
@@ -198197,29 +198428,59 @@
 				"line": 54,
 				"value_type": null
 			},
+			"ohm": {
+				"id": "units/si::ohm",
+				"source": "units/si.el",
+				"line": 62,
+				"value_type": "defineUnit"
+			},
 			"one": {
 				"id": null,
 				"source": "units/builtins.el",
-				"line": 14,
+				"line": 17,
+				"value_type": null
+			},
+			"pascal": {
+				"id": "units/si::pascal",
+				"source": "units/si.el",
+				"line": 24,
+				"value_type": null
+			},
+			"s": {
+				"id": "units/builtins::second",
+				"source": "units/builtins.el",
+				"line": 56,
 				"value_type": null
 			},
 			"second": {
-				"id": null,
+				"id": "units/builtins::second",
 				"source": "units/builtins.el",
-				"line": 21,
+				"line": 56,
 				"value_type": null
 			},
 			"storageQuantity": {
 				"id": null,
 				"source": "units/domains.el",
-				"line": 6,
+				"line": 7,
 				"value_type": null
 			},
 			"timeDifference": {
 				"id": null,
 				"source": "units/domains.el",
-				"line": 7,
+				"line": 8,
 				"value_type": null
+			},
+			"volt": {
+				"id": "units/si::volt",
+				"source": "units/si.el",
+				"line": 53,
+				"value_type": "defineUnit"
+			},
+			"watt": {
+				"id": null,
+				"source": "units/si.el",
+				"line": 43,
+				"value_type": "defineUnit"
 			}
 		},
 		"units/interval": {
@@ -198258,6 +198519,14 @@
 				"value_type": null
 			}
 		},
+		"units/roots": {
+			"sqrt": {
+				"id": "units/roots::sqrt",
+				"source": "units/roots.el",
+				"line": 22,
+				"value_type": null
+			}
+		},
 		"units/scalar": {
 			"ScalarAdapter": {
 				"id": null,
@@ -198281,6 +198550,70 @@
 				"id": null,
 				"source": "units/scalar.el",
 				"line": 14,
+				"value_type": null
+			}
+		},
+		"units/si": {
+			"coulomb": {
+				"id": null,
+				"source": "units/si.el",
+				"line": 44,
+				"value_type": "defineUnit"
+			},
+			"joule": {
+				"id": "units/si::joule",
+				"source": "units/si.el",
+				"line": 42,
+				"value_type": "defineUnit"
+			},
+			"kilopascal": {
+				"id": "units/si::kilopascal",
+				"source": "units/si.el",
+				"line": 33,
+				"value_type": "defineUnit"
+			},
+			"newton": {
+				"id": "units/si::newton",
+				"source": "units/si.el",
+				"line": 15,
+				"value_type": null
+			},
+			"ohm": {
+				"id": "units/si::ohm",
+				"source": "units/si.el",
+				"line": 62,
+				"value_type": "defineUnit"
+			},
+			"pascal": {
+				"id": "units/si::pascal",
+				"source": "units/si.el",
+				"line": 24,
+				"value_type": null
+			},
+			"volt": {
+				"id": "units/si::volt",
+				"source": "units/si.el",
+				"line": 53,
+				"value_type": "defineUnit"
+			},
+			"watt": {
+				"id": null,
+				"source": "units/si.el",
+				"line": 43,
+				"value_type": "defineUnit"
+			}
+		},
+		"units/vector": {
+			"QuantityVector": {
+				"id": "units/vector::QuantityVector",
+				"source": "units/vector.el",
+				"line": 37,
+				"value_type": null
+			},
+			"cross": {
+				"id": null,
+				"source": "units/vector.el",
+				"line": 127,
 				"value_type": null
 			}
 		},
@@ -202579,7 +202912,7 @@
 		{
 			"name": "RuntimeImportSignature",
 			"source": "compiler/context/compiler-session.el",
-			"line": 45,
+			"line": 46,
 			"signature": "class RuntimeImportSignature",
 			"id": null,
 			"initializer": null
@@ -202587,7 +202920,7 @@
 		{
 			"name": "RuntimeImportIndex",
 			"source": "compiler/context/compiler-session.el",
-			"line": 60,
+			"line": 61,
 			"signature": "class RuntimeImportIndex",
 			"id": null,
 			"initializer": null
@@ -202595,7 +202928,7 @@
 		{
 			"name": "Compiler",
 			"source": "compiler/context/compiler-session.el",
-			"line": 77,
+			"line": 78,
 			"signature": "class Compiler",
 			"id": null,
 			"initializer": null
@@ -204073,6 +204406,22 @@
 			"initializer": null
 		},
 		{
+			"name": "QuantityProviders",
+			"source": "compiler/declarations/quantity-provider-index.el",
+			"line": 5,
+			"signature": "class QuantityProviders",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "QuantityProviderIndex",
+			"source": "compiler/declarations/quantity-provider-index.el",
+			"line": 12,
+			"signature": "class QuantityProviderIndex",
+			"id": null,
+			"initializer": null
+		},
+		{
 			"name": "CompilerInvariantError",
 			"source": "compiler/diagnostics/compiler-errors.el",
 			"line": 6,
@@ -205115,7 +205464,7 @@
 		{
 			"name": "TemplateMode",
 			"source": "compiler/parser/lexer.el",
-			"line": 298,
+			"line": 293,
 			"signature": "enum TemplateMode",
 			"id": null,
 			"initializer": null
@@ -205123,7 +205472,7 @@
 		{
 			"name": "TemplateFrame",
 			"source": "compiler/parser/lexer.el",
-			"line": 301,
+			"line": 296,
 			"signature": "class TemplateFrame",
 			"id": null,
 			"initializer": null
@@ -205131,7 +205480,7 @@
 		{
 			"name": "LexicalRegion",
 			"source": "compiler/parser/lexer.el",
-			"line": 474,
+			"line": 469,
 			"signature": "class LexicalRegion",
 			"id": null,
 			"initializer": null
@@ -234571,7 +234920,7 @@
 		{
 			"name": "TimeDiffPayload",
 			"source": "time/diff.el",
-			"line": 106,
+			"line": 109,
 			"signature": "class TimeDiffPayload",
 			"id": null,
 			"initializer": null
@@ -234683,7 +235032,7 @@
 		{
 			"name": "TimeQuantity",
 			"source": "time/quantity.el",
-			"line": 7,
+			"line": 6,
 			"signature": "class TimeQuantity",
 			"id": null,
 			"initializer": null
@@ -235267,7 +235616,7 @@
 		{
 			"name": "LengthDimension",
 			"source": "units/builtins.el",
-			"line": 5,
+			"line": 8,
 			"signature": "class LengthDimension",
 			"id": null,
 			"initializer": null
@@ -235275,7 +235624,7 @@
 		{
 			"name": "DurationDimension",
 			"source": "units/builtins.el",
-			"line": 6,
+			"line": 9,
 			"signature": "class DurationDimension",
 			"id": null,
 			"initializer": null
@@ -235283,7 +235632,7 @@
 		{
 			"name": "MassDimension",
 			"source": "units/builtins.el",
-			"line": 7,
+			"line": 10,
 			"signature": "class MassDimension",
 			"id": null,
 			"initializer": null
@@ -235291,7 +235640,7 @@
 		{
 			"name": "StorageDimension",
 			"source": "units/builtins.el",
-			"line": 8,
+			"line": 11,
 			"signature": "class StorageDimension",
 			"id": null,
 			"initializer": null
@@ -235299,7 +235648,7 @@
 		{
 			"name": "TemperatureDifferenceDimension",
 			"source": "units/builtins.el",
-			"line": 9,
+			"line": 12,
 			"signature": "class TemperatureDifferenceDimension",
 			"id": null,
 			"initializer": null
@@ -235307,7 +235656,7 @@
 		{
 			"name": "CurrentDimension",
 			"source": "units/builtins.el",
-			"line": 10,
+			"line": 13,
 			"signature": "class CurrentDimension",
 			"id": null,
 			"initializer": null
@@ -235315,7 +235664,7 @@
 		{
 			"name": "AmountDimension",
 			"source": "units/builtins.el",
-			"line": 11,
+			"line": 14,
 			"signature": "class AmountDimension",
 			"id": null,
 			"initializer": null
@@ -235323,25 +235672,41 @@
 		{
 			"name": "LuminosityDimension",
 			"source": "units/builtins.el",
-			"line": 12,
+			"line": 15,
 			"signature": "class LuminosityDimension",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "Point",
+			"source": "units/coordinates.el",
+			"line": 9,
+			"signature": "fn Point(frame: type, dimensions): type",
+			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "RigidTransform",
+			"source": "units/coordinates.el",
+			"line": 27,
+			"signature": "fn RigidTransform(source: type, target: type, dimensions): type",
 			"id": null,
 			"initializer": null
 		},
 		{
 			"name": "Unit",
 			"source": "units/core.el",
-			"line": 11,
+			"line": 22,
 			"signature": "class Unit",
-			"id": null,
+			"id": "units/core::Unit",
 			"initializer": null
 		},
 		{
 			"name": "Quantity",
 			"source": "units/core.el",
-			"line": 59,
+			"line": 70,
 			"signature": "fn Quantity(element: type): type",
-			"id": null,
+			"id": "units/core::Quantity",
 			"initializer": null
 		},
 		{
@@ -235406,6 +235771,14 @@
 			"line": 21,
 			"signature": "fn ScalarAdapter(element: type): type",
 			"id": null,
+			"initializer": null
+		},
+		{
+			"name": "QuantityVector",
+			"source": "units/vector.el",
+			"line": 37,
+			"signature": "fn QuantityVector(frame: type, dimensions): type",
+			"id": "units/vector::QuantityVector",
 			"initializer": null
 		},
 		{
@@ -236046,6 +236419,15 @@
 			"id": null,
 			"initializer": null,
 			"anchor": "api-230feb197d068a60fd3a"
+		},
+		{
+			"name": "Value",
+			"source": "units/core.el",
+			"line": 71,
+			"signature": "let Value = @assign(mode: \"copy\") class {",
+			"id": null,
+			"initializer": null,
+			"anchor": "api-7cbc2372dc56c0003748"
 		}
 	],
 	"module_return_types": {
@@ -236894,6 +237276,10 @@
 		"numerical-computing/tensor.el": {
 			"Tensor()": "type"
 		},
+		"physics/index.el": {
+			"scalar()": "Number",
+			"nonnegative()": "Number"
+		},
 		"platform/linux/allocation.el": {
 			"size_add()": "AllocationSize",
 			"size_sub()": "AllocationSize",
@@ -237173,6 +237559,22 @@
 			"Registry.frozen": "Bool",
 			"testIdComponent()": "Text"
 		},
+		"units/core.el": {
+			"Unit.dimension": "Dimension",
+			"Unit.scale": "Number",
+			"Unit.symbol": "Text",
+			"Unit.textKey": "Text",
+			"Unit.name": "Text",
+			"Unit.ratioTo()": "Number",
+			"Unit.standardText()": "Text",
+			"defineUnit()": "Unit",
+			"Quantity()": "type"
+		},
+		"units/vector.el": {
+			"isComponentIndex()": "Bool",
+			"finiteComponent()": "Number",
+			"QuantityVector()": "type"
+		},
 		"user-interface/model.el": {
 			"TextStyleSpan.start": "Number",
 			"TextStyleSpan.end": "Number",
@@ -237381,9 +237783,17 @@
 			"signature": "fn Parser(output: type): type",
 			"kind": "type",
 			"anchor": "api-df976d47c60f3dbf87f5"
+		},
+		{
+			"name": "element",
+			"source": "units/core.el",
+			"line": 70,
+			"signature": "fn Quantity(element: type): type",
+			"kind": "type",
+			"anchor": "api-7fa45cb4014a5ae01da4"
 		}
 	],
-	"source_digest": "64087d5a447b9cab8c7d0e8b5eec0a2df0b3682c126549e8703bf9d49c48e025",
+	"source_digest": "11dfdfc604afcfef76a8e755351dd70657ca8f40a5b5923ffde6d0a970784228",
 	"files": [
 		{
 			"path": "collections/arrays/dynamic.el",
@@ -238071,7 +238481,7 @@
 		},
 		{
 			"path": "numerical-computing/exact-solve.el",
-			"sha256": "5009d6c9ac8da9c6ac73762dcd50981d97104a502daa9da39a6a57b7434f4fce"
+			"sha256": "e5ad87938a91156b15051a627788025705532c4e85a8ba3e1579ad8c7749b49c"
 		},
 		{
 			"path": "numerical-computing/matrix-syntax.el",
@@ -238108,6 +238518,10 @@
 		{
 			"path": "parsing/tokens.el",
 			"sha256": "0e279beb1b1966105fd28065f8f494a957fbdb006b7a018a9143694ecfef26fa"
+		},
+		{
+			"path": "physics/index.el",
+			"sha256": "87cd35d74cec731556108d402ee3ba0c0ee5210f1f54390ef36801aa9e0a834c"
 		},
 		{
 			"path": "platform/build.el",
@@ -238227,7 +238641,7 @@
 		},
 		{
 			"path": "time/diff.el",
-			"sha256": "08abf67c663129918738dc950dbe85f9d12b8e90cfa8c3c676c3b1072d29ebe0"
+			"sha256": "d30a0f5841df1391da4b46ebe6fe1b875cccd595251fc365513940a192efde0e"
 		},
 		{
 			"path": "time/instant.el",
@@ -238268,6 +238682,26 @@
 		{
 			"path": "tools/testing/registry.el",
 			"sha256": "4a59cb6b612c1b76729c5a9f184749275429cc5aa2532c62aa3717502210bd7f"
+		},
+		{
+			"path": "units/builtins.el",
+			"sha256": "b53e72a9de91271b3452c4fc81a62802a37bd7ee4a3d562af0927e8e11af4620"
+		},
+		{
+			"path": "units/core.el",
+			"sha256": "877da212f129e1689c71205c14adf48c10e39a67501e9257ebbedb4cf59e3fff"
+		},
+		{
+			"path": "units/roots.el",
+			"sha256": "076bd5578e17e114e450b43c919aa51069dad0b8a1550782b5eefff20df0c2b8"
+		},
+		{
+			"path": "units/si.el",
+			"sha256": "d0dbf0eb493c6c2e81ad924528d464eb6569db67e00aa43a5f21ade3a6758623"
+		},
+		{
+			"path": "units/vector.el",
+			"sha256": "0bbf4978676446c9b60b5998816332b78384b52d27671aa67cdd85937131923a"
 		},
 		{
 			"path": "user-interface/drawing.el",
@@ -267700,9 +268134,9 @@
 				}
 			],
 			"source": "numerical-computing/exact-solve.el",
-			"line": 10,
+			"line": 61,
 			"signature": "export fn solve(borrow input: Matrix, borrow right: Matrix): Matrix",
-			"declaration_line": 23,
+			"declaration_line": 74,
 			"id": "numerical-computing/exact-solve::solve",
 			"value_type": null,
 			"owner": null,
@@ -269434,6 +269868,329 @@
 			"signature": "export fn decimal(min, max, epsilon)",
 			"declaration_line": 31,
 			"id": "parsing/tokens::decimal",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "module",
+			"name": "物理计算",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "使用带单位的量计算力学、流体静力学和电学结果。"
+				}
+			],
+			"source": "physics/index.el",
+			"line": 1,
+			"id": "physics/index"
+		},
+		{
+			"kind": "api",
+			"name": "acceleration",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "根据力和质量计算加速度。"
+				},
+				{
+					"tag": "param",
+					"value": "force 可转换为牛顿的力，支持相应的量向量。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "mass 可转换为千克的有限正质量。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "力除以质量得到的加速度。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "质量非有限或非正、单位不兼容，或底层量运算失败时抛出异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "计算加速度",
+					"markdown": "```el\nimport { kilogram, newton } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nimport { acceleration } from \"el:physics/\"\nlet result = acceleration(10newton, 2kilogram)\n```",
+					"code": "import { kilogram, newton } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nimport { acceleration } from \"el:physics/\"\nlet result = acceleration(10newton, 2kilogram)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "physics/index.el",
+			"line": 33,
+			"signature": "export fn acceleration(force, mass)",
+			"declaration_line": 46,
+			"id": "physics/index::acceleration",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "constantForceImpulse~timeDiff",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "用时间差计算恒力产生的冲量。"
+				},
+				{
+					"tag": "param",
+					"value": "force 可转换为牛顿的力，支持相应的量向量。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "duration 非负的时间差，以其总秒数计算。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "力与持续时间的乘积。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "时间差不能换算为总秒数、持续时间为负、单位不兼容，或底层量运算失败时抛出异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "使用时间差",
+					"markdown": "```el\nimport { newton } from \"el:units/\"\nimport { TimeDiff } from \"el:time/\"\nimport /^operator / from \"el:units/\"\nimport { constantForceImpulse } from \"el:physics/\"\nlet result = constantForceImpulse(3newton, TimeDiff())\n```",
+					"code": "import { newton } from \"el:units/\"\nimport { TimeDiff } from \"el:time/\"\nimport /^operator / from \"el:units/\"\nimport { constantForceImpulse } from \"el:physics/\"\nlet result = constantForceImpulse(3newton, TimeDiff())\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "physics/index.el",
+			"line": 57,
+			"signature": "export fn constantForceImpulse(force, duration: TimeDiff)",
+			"declaration_line": 71,
+			"id": "physics/index::constantForceImpulse~timeDiff",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "constantForceImpulse~quantity",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "用时间量计算恒力产生的冲量。"
+				},
+				{
+					"tag": "param",
+					"value": "force 可转换为牛顿的力，支持相应的量向量。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "duration 可转换为秒的有限非负时间量。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "力与持续时间的乘积。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "持续时间非有限或为负、单位不兼容，或底层量运算失败时抛出异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "使用时间量",
+					"markdown": "```el\nimport { newton, second } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nimport { constantForceImpulse } from \"el:physics/\"\nlet result = constantForceImpulse(3newton, 2second)\n```",
+					"code": "import { newton, second } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nimport { constantForceImpulse } from \"el:physics/\"\nlet result = constantForceImpulse(3newton, 2second)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "physics/index.el",
+			"line": 72,
+			"signature": "export fn constantForceImpulse(force, duration)",
+			"declaration_line": 85,
+			"id": "physics/index::constantForceImpulse~quantity",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "hydrostaticPressureIncrease",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "计算均匀流体中深度造成的静水压力增量。"
+				},
+				{
+					"tag": "param",
+					"value": "density 可转换为千克每立方米的有限非负密度。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "gravityMagnitude 可转换为米每平方秒的有限非负重力加速度大小。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "depth 可转换为米的有限非负深度。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "以帕斯卡表示的压力增量。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "输入非有限、为负或单位不兼容时抛出异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "计算压力增量",
+					"markdown": "```el\nimport { kilogram, metre, second } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nimport { hydrostaticPressureIncrease } from \"el:physics/\"\nlet increase = hydrostaticPressureIncrease((1000kilogram / (metre ^ 3)), (9.81metre / (second ^ 2)), 2metre)\n```",
+					"code": "import { kilogram, metre, second } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nimport { hydrostaticPressureIncrease } from \"el:physics/\"\nlet increase = hydrostaticPressureIncrease((1000kilogram / (metre ^ 3)), (9.81metre / (second ^ 2)), 2metre)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "physics/index.el",
+			"line": 97,
+			"signature": "export fn hydrostaticPressureIncrease(density, gravityMagnitude, depth)",
+			"declaration_line": 111,
+			"id": "physics/index::hydrostaticPressureIncrease",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "hydrostaticAbsolutePressure",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将表面压力与静水压力增量相加，计算绝对压力。"
+				},
+				{
+					"tag": "param",
+					"value": "surfacePressure 可转换为帕斯卡的有限非负表面压力。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "density 可转换为千克每立方米的有限非负密度。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "gravityMagnitude 可转换为米每平方秒的有限非负重力加速度大小。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "depth 可转换为米的有限非负深度。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "以帕斯卡表示的绝对压力。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "输入非有限、为负或单位不兼容时抛出异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "计算绝对压力",
+					"markdown": "```el\nimport { kilogram, metre, pascal, second } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nimport { hydrostaticAbsolutePressure } from \"el:physics/\"\nlet pressure = hydrostaticAbsolutePressure(100000pascal, (1000kilogram / (metre ^ 3)), (9.81metre / (second ^ 2)), 2metre)\n```",
+					"code": "import { kilogram, metre, pascal, second } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nimport { hydrostaticAbsolutePressure } from \"el:physics/\"\nlet pressure = hydrostaticAbsolutePressure(100000pascal, (1000kilogram / (metre ^ 3)), (9.81metre / (second ^ 2)), 2metre)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "physics/index.el",
+			"line": 118,
+			"signature": "export fn hydrostaticAbsolutePressure(surfacePressure, density, gravityMagnitude, depth)",
+			"declaration_line": 133,
+			"id": "physics/index::hydrostaticAbsolutePressure",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "ohmicCurrent",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "根据电压和电阻计算欧姆电流。"
+				},
+				{
+					"tag": "param",
+					"value": "voltage 可转换为伏特的有限电压，可为负。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "resistance 可转换为欧姆的有限正电阻。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "以安培表示的电流，符号随电压变化。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "电压或电阻非有限、电阻非正或单位不兼容时抛出异常。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "计算负电流",
+					"markdown": "```el\nimport { ohm, volt } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nimport { ohmicCurrent } from \"el:physics/\"\nlet current = ohmicCurrent(-12volt, 6ohm)\n```",
+					"code": "import { ohm, volt } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nimport { ohmicCurrent } from \"el:physics/\"\nlet current = ohmicCurrent(-12volt, 6ohm)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "physics/index.el",
+			"line": 143,
+			"signature": "export fn ohmicCurrent(voltage, resistance)",
+			"declaration_line": 156,
+			"id": "physics/index::ohmicCurrent",
 			"value_type": null,
 			"owner": null,
 			"return_type": null,
@@ -276022,6 +276779,878 @@
 		},
 		{
 			"kind": "module",
+			"name": "基础单位",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "长度、时间、质量和其他基础量的单位。"
+				}
+			],
+			"source": "units/builtins.el",
+			"line": 1,
+			"id": "units/builtins"
+		},
+		{
+			"kind": "api",
+			"name": "metre",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "长度的国际单位制基本单位，符号 m。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { metre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1metre\n```",
+					"code": "import { metre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1metre\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/builtins.el",
+			"line": 18,
+			"signature": "export let metre",
+			"declaration_line": 26,
+			"id": "units/builtins::metre",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": "Unit(Dimension.base(LengthDimension), 1, \"m\", \"units.metre\")",
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "centimetre",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "长度单位厘米，等于百分之一米。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { centimetre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1centimetre\n```",
+					"code": "import { centimetre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1centimetre\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/builtins.el",
+			"line": 27,
+			"signature": "export let centimetre",
+			"declaration_line": 35,
+			"id": "units/builtins::centimetre",
+			"value_type": "defineUnit",
+			"owner": null,
+			"return_type": null,
+			"initializer": "defineUnit(\"centimetre\", metre, 1 / 100, \"cm\", \"units.centimetre\")",
+			"type_references": {
+				"value_type": [
+					{
+						"name": "defineUnit",
+						"start": 0,
+						"end": 10,
+						"target": null
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "kilometre",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "长度单位千米，等于一千米。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { kilometre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1kilometre\n```",
+					"code": "import { kilometre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1kilometre\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/builtins.el",
+			"line": 37,
+			"signature": "export let kilometre",
+			"declaration_line": 45,
+			"id": "units/builtins::kilometre",
+			"value_type": "defineUnit",
+			"owner": null,
+			"return_type": null,
+			"initializer": "defineUnit(\"kilometre\", metre, 1000, \"km\", \"units.kilometre\")",
+			"type_references": {
+				"value_type": [
+					{
+						"name": "defineUnit",
+						"start": 0,
+						"end": 10,
+						"target": null
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "second",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "时间的国际单位制基本单位，符号 s。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { second } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1second\n```",
+					"code": "import { second } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1second\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/builtins.el",
+			"line": 48,
+			"signature": "export let second",
+			"declaration_line": 56,
+			"id": "units/builtins::second",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": "Unit(Dimension.base(DurationDimension), 1, \"s\", \"units.second\")",
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "hour",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "时间单位小时，等于 3600 秒。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { hour } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1hour\n```",
+					"code": "import { hour } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1hour\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/builtins.el",
+			"line": 61,
+			"signature": "export let hour",
+			"declaration_line": 69,
+			"id": "units/builtins::hour",
+			"value_type": "defineUnit",
+			"owner": null,
+			"return_type": null,
+			"initializer": "defineUnit(\"hour\", second, 3600, \"h\", \"units.hour\")",
+			"type_references": {
+				"value_type": [
+					{
+						"name": "defineUnit",
+						"start": 0,
+						"end": 10,
+						"target": null
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "kilogram",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "质量的国际单位制基本单位，符号 kg。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { kilogram } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1kilogram\n```",
+					"code": "import { kilogram } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1kilogram\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/builtins.el",
+			"line": 71,
+			"signature": "export let kilogram",
+			"declaration_line": 79,
+			"id": "units/builtins::kilogram",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": "Unit(Dimension.base(MassDimension), 1, \"kg\", \"units.kilogram\")",
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "ampere",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "电流的国际单位制基本单位，符号 A。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { ampere } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1ampere\n```",
+					"code": "import { ampere } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1ampere\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/builtins.el",
+			"line": 86,
+			"signature": "export let ampere",
+			"declaration_line": 94,
+			"id": "units/builtins::ampere",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": "Unit(Dimension.base(CurrentDimension), 1, \"A\", \"units.ampere\")",
+			"type_references": {}
+		},
+		{
+			"kind": "module",
+			"name": "单位与量",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "线性单位、携带单位的量及其转换。"
+				}
+			],
+			"source": "units/core.el",
+			"line": 1,
+			"id": "units/core"
+		},
+		{
+			"kind": "api",
+			"name": "Unit",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "带量纲、比例和符号的线性单位。比例必须为有限正数。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { metre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet length = 2metre\n```",
+					"code": "import { metre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet length = 2metre\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/core.el",
+			"line": 14,
+			"signature": "export @assign(mode: \"copy\") @readonly(fields: t) class Unit",
+			"declaration_line": 22,
+			"id": "units/core::Unit",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "Quantity",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "携带数值及其表示单位的量类型。同量纲单位之间可转换。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { centimetre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet length = 125centimetre\n```",
+					"code": "import { centimetre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet length = 125centimetre\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/core.el",
+			"line": 62,
+			"signature": "export fn Quantity(element: type): type",
+			"declaration_line": 70,
+			"id": "units/core::Quantity",
+			"value_type": null,
+			"owner": null,
+			"return_type": "type",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "type",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "builtin",
+							"source": null,
+							"name": "type",
+							"id": null,
+							"path": "reference/language/types.md",
+							"fragment": null
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "Quantity.valueIn",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "将量转换为指定同量纲单位并返回数值。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { Quantity, centimetre, metre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet length: Quantity<element: Number> = Number(125) * centimetre\nlet metres = length.valueIn(metre)\n```",
+					"code": "import { Quantity, centimetre, metre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet length: Quantity<element: Number> = Number(125) * centimetre\nlet metres = length.valueIn(metre)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/core.el",
+			"line": 80,
+			"signature": "fn valueIn(unit: Unit): element",
+			"declaration_line": 89,
+			"id": "units/core::Quantity.valueIn",
+			"value_type": null,
+			"owner": "Quantity",
+			"return_type": "element",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "element",
+						"start": 0,
+						"end": 7,
+						"target": {
+							"type": "parameter",
+							"source": "units/core.el",
+							"name": "element",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-7fa45cb4014a5ae01da4",
+							"parameter_kind": "type"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "Quantity.inUnit",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "返回以指定同量纲单位表示的量。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { Quantity, centimetre, metre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet length: Quantity<element: Number> = Number(125) * centimetre\nlet converted = length.inUnit(metre)\n```",
+					"code": "import { Quantity, centimetre, metre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet length: Quantity<element: Number> = Number(125) * centimetre\nlet converted = length.inUnit(metre)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/core.el",
+			"line": 92,
+			"signature": "fn inUnit(unit: Unit): Value",
+			"declaration_line": 101,
+			"id": "units/core::Quantity.inUnit",
+			"value_type": null,
+			"owner": "Quantity",
+			"return_type": "Value",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Value",
+						"start": 0,
+						"end": 5,
+						"target": {
+							"type": "definition",
+							"source": "units/core.el",
+							"name": "Value",
+							"id": null,
+							"path": "types.md",
+							"fragment": "api-7cbc2372dc56c0003748"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "Quantity.standardText",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "以数值和单位符号组成文本。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { Quantity, centimetre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet length: Quantity<element: Number> = Number(125) * centimetre\nlet text = length.standardText()\n```",
+					"code": "import { Quantity, centimetre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet length: Quantity<element: Number> = Number(125) * centimetre\nlet text = length.standardText()\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/core.el",
+			"line": 114,
+			"signature": "fn standardText(): Text",
+			"declaration_line": 123,
+			"id": "units/core::Quantity.standardText",
+			"value_type": null,
+			"owner": "Quantity",
+			"return_type": "Text",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Text",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "definition",
+							"source": "text/text.el",
+							"name": "Text",
+							"id": "text/text::Text~type",
+							"path": "modules/text/text.md",
+							"fragment": "api-6116e54b075df026a90a"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "module",
+			"name": "量值的平方根",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "在开平方时同时处理标量精度与单位量纲。"
+				}
+			],
+			"source": "units/roots.el",
+			"line": 1,
+			"id": "units/roots"
+		},
+		{
+			"kind": "api",
+			"name": "sqrt",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "计算量值的平方根，结果量纲的各指数为原指数的一半。"
+				},
+				{
+					"tag": "param",
+					"value": "value 各基本量纲指数均为偶数的量值。",
+					"markdown": ""
+				},
+				{
+					"tag": "param",
+					"value": "epsilon 可选的标量最大绝对误差，以结果采用的单位计量。",
+					"markdown": ""
+				},
+				{
+					"tag": "returns",
+					"value": "带有平方根单位的量值。单位比例不能精确开方时，在比例为一的单位中计算。",
+					"markdown": ""
+				},
+				{
+					"tag": "throws",
+					"value": "UnitError 当任一基本量纲指数为奇数时抛出。数值域和精度错误沿用标量平方根的合同。",
+					"markdown": ""
+				},
+				{
+					"tag": "example",
+					"value": "从平方米求出米",
+					"markdown": "```el\nimport { metre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet side = sqrt(4metre^2)\nconsole.stdout.writeLine(side.valueIn(metre))\n```",
+					"code": "import { metre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet side = sqrt(4metre^2)\nconsole.stdout.writeLine(side.valueIn(metre))\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/roots.el",
+			"line": 9,
+			"signature": "export fn sqrt<element: type>(value: Quantity<element: element>, epsilon = nil)",
+			"declaration_line": 22,
+			"id": "units/roots::sqrt",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": null,
+			"type_references": {}
+		},
+		{
+			"kind": "module",
+			"name": "国际单位制导出单位",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "从基础单位组合的常用国际单位制单位。"
+				}
+			],
+			"source": "units/si.el",
+			"line": 1,
+			"id": "units/si"
+		},
+		{
+			"kind": "api",
+			"name": "newton",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "力的国际单位制导出单位牛顿。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { newton } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1newton\n```",
+					"code": "import { newton } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1newton\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/si.el",
+			"line": 7,
+			"signature": "export let newton",
+			"declaration_line": 15,
+			"id": "units/si::newton",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": "defineUnit(\"newton\", kilogram * metre / (second ^ 2), 1, \"N\")",
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "pascal",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "压力的国际单位制导出单位帕斯卡。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { pascal } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1pascal\n```",
+					"code": "import { pascal } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1pascal\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/si.el",
+			"line": 16,
+			"signature": "export let pascal",
+			"declaration_line": 24,
+			"id": "units/si::pascal",
+			"value_type": null,
+			"owner": null,
+			"return_type": null,
+			"initializer": "defineUnit(\"pascal\", newton / (metre ^ 2), 1, \"Pa\")",
+			"type_references": {}
+		},
+		{
+			"kind": "api",
+			"name": "kilopascal",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "压力单位千帕，等于 1000 帕。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { kilopascal } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1kilopascal\n```",
+					"code": "import { kilopascal } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1kilopascal\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/si.el",
+			"line": 25,
+			"signature": "export let kilopascal",
+			"declaration_line": 33,
+			"id": "units/si::kilopascal",
+			"value_type": "defineUnit",
+			"owner": null,
+			"return_type": null,
+			"initializer": "defineUnit(\"kilopascal\", pascal, 1000, \"kPa\")",
+			"type_references": {
+				"value_type": [
+					{
+						"name": "defineUnit",
+						"start": 0,
+						"end": 10,
+						"target": null
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "joule",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "能量和功的国际单位制导出单位焦耳。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { joule } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1joule\n```",
+					"code": "import { joule } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1joule\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/si.el",
+			"line": 34,
+			"signature": "export let joule",
+			"declaration_line": 42,
+			"id": "units/si::joule",
+			"value_type": "defineUnit",
+			"owner": null,
+			"return_type": null,
+			"initializer": "defineUnit(\"joule\", newton * metre, 1, \"J\")",
+			"type_references": {
+				"value_type": [
+					{
+						"name": "defineUnit",
+						"start": 0,
+						"end": 10,
+						"target": null
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "volt",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "电压的国际单位制导出单位伏特。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { volt } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1volt\n```",
+					"code": "import { volt } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1volt\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/si.el",
+			"line": 45,
+			"signature": "export let volt",
+			"declaration_line": 53,
+			"id": "units/si::volt",
+			"value_type": "defineUnit",
+			"owner": null,
+			"return_type": null,
+			"initializer": "defineUnit(\"volt\", watt / ampere, 1, \"V\")",
+			"type_references": {
+				"value_type": [
+					{
+						"name": "defineUnit",
+						"start": 0,
+						"end": 10,
+						"target": null
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "ohm",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "电阻的国际单位制导出单位欧姆。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { ohm } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1ohm\n```",
+					"code": "import { ohm } from \"el:units/\"\nimport /^operator / from \"el:units/\"\nlet quantity = 1ohm\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/si.el",
+			"line": 54,
+			"signature": "export let ohm",
+			"declaration_line": 62,
+			"id": "units/si::ohm",
+			"value_type": "defineUnit",
+			"owner": null,
+			"return_type": null,
+			"initializer": "defineUnit(\"ohm\", volt / ampere, 1, \"Ω\")",
+			"type_references": {
+				"value_type": [
+					{
+						"name": "defineUnit",
+						"start": 0,
+						"end": 10,
+						"target": null
+					}
+				]
+			}
+		},
+		{
+			"kind": "module",
+			"name": "带单位向量",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "在指定坐标系和维数中表示带单位的向量。"
+				}
+			],
+			"source": "units/vector.el",
+			"line": 1,
+			"id": "units/vector"
+		},
+		{
+			"kind": "api",
+			"name": "QuantityVector",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "创建指定坐标系和维数的带单位向量类型。分量必须有限且量纲相容。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { QuantityVector, metre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\n@assign(mode: \"copy\")\nclass World {}\nlet WorldPlane: type = QuantityVector<frame: World, dimensions: 2>\nlet displacement = WorldPlane(@[2metre, 0metre])\n```",
+					"code": "import { QuantityVector, metre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\n@assign(mode: \"copy\")\nclass World {}\nlet WorldPlane: type = QuantityVector<frame: World, dimensions: 2>\nlet displacement = WorldPlane(@[2metre, 0metre])\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/vector.el",
+			"line": 26,
+			"signature": "export fn QuantityVector(frame: type, dimensions): type",
+			"declaration_line": 37,
+			"id": "units/vector::QuantityVector",
+			"value_type": null,
+			"owner": null,
+			"return_type": "type",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "type",
+						"start": 0,
+						"end": 4,
+						"target": {
+							"type": "builtin",
+							"source": null,
+							"name": "type",
+							"id": null,
+							"path": "reference/language/types.md",
+							"fragment": null
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "api",
+			"name": "QuantityVector.dot",
+			"sections": [
+				{
+					"tag": "description",
+					"value": "",
+					"markdown": "计算同坐标系、同维数向量的点积，结果单位为两个向量单位的乘积。"
+				},
+				{
+					"tag": "example",
+					"value": "使用示例",
+					"markdown": "```el\nimport { QuantityVector, metre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\n@assign(mode: \"copy\")\nclass World {}\nlet WorldPlane: type = QuantityVector<frame: World, dimensions: 2>\nlet displacement: QuantityVector<frame: World, dimensions: 2> = WorldPlane(@[2metre, 0metre])\nlet squaredLength = displacement.dot(displacement)\n```",
+					"code": "import { QuantityVector, metre } from \"el:units/\"\nimport /^operator / from \"el:units/\"\n@assign(mode: \"copy\")\nclass World {}\nlet WorldPlane: type = QuantityVector<frame: World, dimensions: 2>\nlet displacement: QuantityVector<frame: World, dimensions: 2> = WorldPlane(@[2metre, 0metre])\nlet squaredLength = displacement.dot(displacement)\n",
+					"expected_stdout": null,
+					"verification": "not-run"
+				}
+			],
+			"source": "units/vector.el",
+			"line": 84,
+			"signature": "fn dot(right: Vector): Quantity<element: Number>",
+			"declaration_line": 96,
+			"id": "units/vector::QuantityVector.dot",
+			"value_type": null,
+			"owner": "QuantityVector",
+			"return_type": "Quantity<element: Number>",
+			"initializer": null,
+			"type_references": {
+				"return_type": [
+					{
+						"name": "Quantity",
+						"start": 0,
+						"end": 8,
+						"target": {
+							"type": "definition",
+							"source": "units/core.el",
+							"name": "Quantity",
+							"id": "units/core::Quantity",
+							"path": "modules/units/core.md",
+							"fragment": "api-e3b39160772294c021c5"
+						}
+					},
+					{
+						"name": "Number",
+						"start": 18,
+						"end": 24,
+						"target": {
+							"type": "definition",
+							"source": "number/number.el",
+							"name": "Number",
+							"id": "number/number::Number~type",
+							"path": "modules/number/number.md",
+							"fragment": "api-3cc24d3ef702e8652fb4"
+						}
+					}
+				]
+			}
+		},
+		{
+			"kind": "module",
 			"name": "界面绘制主题",
 			"sections": [
 				{
@@ -277735,8 +279364,8 @@
 		}
 	],
 	"coverage": {
-		"source_files": 4146,
-		"documented_files": 229,
-		"documented_apis": 754
+		"source_files": 4152,
+		"documented_files": 235,
+		"documented_apis": 781
 	}
 }

@@ -12,7 +12,7 @@
 
 ## solve {#api-6f0056070dbd04cf6e3a}
 
-源码：`src/stdlib/numerical-computing/exact-solve.el:23` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/exact-solve.el#L23)
+源码：`src/stdlib/numerical-computing/exact-solve.el:74` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/numerical-computing/exact-solve.el#L74)
 
 用精确 Number 消元求解方阵系统 A X = B；不使用浮点主元阈值。
 

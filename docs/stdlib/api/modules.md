@@ -270,6 +270,10 @@
 
 - [parsing/tokens.el](modules/parsing/tokens.md)（1 个 API）
 
+## physics
+
+- [physics/index.el](modules/physics/index.md)（6 个 API）
+
 ## platform
 
 - [platform/build.el](modules/platform/build.md)（1 个 API）
@@ -342,6 +346,14 @@
 - [tools/testing/declarations.el](modules/tools/testing/declarations.md)（1 个 API）
 - [tools/testing/index.el](modules/tools/testing/index.md)（0 个 API）
 - [tools/testing/registry.el](modules/tools/testing/registry.md)（2 个 API）
+
+## units
+
+- [units/builtins.el](modules/units/builtins.md)（7 个 API）
+- [units/core.el](modules/units/core.md)（5 个 API）
+- [units/roots.el](modules/units/roots.md)（1 个 API）
+- [units/si.el](modules/units/si.md)（6 个 API）
+- [units/vector.el](modules/units/vector.md)（2 个 API）
 
 ## user-interface
 

@@ -1996,7 +1996,7 @@ class ConstantRead
 
 ## Compiler · compiler/context/compiler-session.el {#api-0cd91638596151a11a5c}
 
-[源码 compiler/context/compiler-session.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/compiler-session.el#L77)
+[源码 compiler/context/compiler-session.el:78](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/compiler-session.el#L78)
 
 ```el-signature
 class Compiler
@@ -2004,7 +2004,7 @@ class Compiler
 
 ## RuntimeImportIndex · compiler/context/compiler-session.el {#api-c3d651b72e647d76baa4}
 
-[源码 compiler/context/compiler-session.el:60](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/compiler-session.el#L60)
+[源码 compiler/context/compiler-session.el:61](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/compiler-session.el#L61)
 
 ```el-signature
 class RuntimeImportIndex
@@ -2012,7 +2012,7 @@ class RuntimeImportIndex
 
 ## RuntimeImportSignature · compiler/context/compiler-session.el {#api-2f5d486e0a08d0f36ae8}
 
-[源码 compiler/context/compiler-session.el:45](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/compiler-session.el#L45)
+[源码 compiler/context/compiler-session.el:46](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/context/compiler-session.el#L46)
 
 ```el-signature
 class RuntimeImportSignature
@@ -3490,6 +3490,22 @@ data ObjectFieldTarget
 class ObjectShapePlan
 ```
 
+## QuantityProviderIndex · compiler/declarations/quantity-provider-index.el {#api-5eb8eba1c24a7bf6e22f}
+
+[源码 compiler/declarations/quantity-provider-index.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/declarations/quantity-provider-index.el#L12)
+
+```el-signature
+class QuantityProviderIndex
+```
+
+## QuantityProviders · compiler/declarations/quantity-provider-index.el {#api-b4bc4aa1a8e3123bc429}
+
+[源码 compiler/declarations/quantity-provider-index.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/declarations/quantity-provider-index.el#L5)
+
+```el-signature
+class QuantityProviders
+```
+
 ## CompilerBudgetExceeded · compiler/diagnostics/compiler-errors.el {#api-8ffe4941ae638060a702}
 
 [源码 compiler/diagnostics/compiler-errors.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/diagnostics/compiler-errors.el#L15)
@@ -4532,7 +4548,7 @@ class ImportNamePattern
 
 ## LexicalRegion · compiler/parser/lexer.el {#api-a1bca1e67f399b5ce274}
 
-[源码 compiler/parser/lexer.el:474](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/parser/lexer.el#L474)
+[源码 compiler/parser/lexer.el:469](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/parser/lexer.el#L469)
 
 ```el-signature
 class LexicalRegion
@@ -4540,7 +4556,7 @@ class LexicalRegion
 
 ## TemplateFrame · compiler/parser/lexer.el {#api-d915da1dd32d4dcf8e43}
 
-[源码 compiler/parser/lexer.el:301](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/parser/lexer.el#L301)
+[源码 compiler/parser/lexer.el:296](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/parser/lexer.el#L296)
 
 ```el-signature
 class TemplateFrame
@@ -4548,7 +4564,7 @@ class TemplateFrame
 
 ## TemplateMode · compiler/parser/lexer.el {#api-6847f8a218f13299e3bd}
 
-[源码 compiler/parser/lexer.el:298](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/parser/lexer.el#L298)
+[源码 compiler/parser/lexer.el:293](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/parser/lexer.el#L293)
 
 ```el-signature
 enum TemplateMode
@@ -34294,7 +34310,7 @@ class TimeDiff extends TextOperand
 
 ## TimeDiffPayload · time/diff.el {#api-95680b31060de2671578}
 
-[源码 time/diff.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/time/diff.el#L106)
+[源码 time/diff.el:109](https://github.com/steve02081504/el/blob/master/src/stdlib/time/diff.el#L109)
 
 ```el-signature
 class TimeDiffPayload
@@ -34410,7 +34426,7 @@ class RuleReader
 
 ## TimeQuantity · time/quantity.el {#api-793179c3de53934e4bdc}
 
-[源码 time/quantity.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/time/quantity.el#L7)
+[源码 time/quantity.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/time/quantity.el#L6)
 
 ```el-signature
 class TimeQuantity
@@ -34996,7 +35012,7 @@ class AssertionState
 
 ## AmountDimension · units/builtins.el {#api-d7e307be295b189268a3}
 
-[源码 units/builtins.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L11)
+[源码 units/builtins.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L14)
 
 ```el-signature
 class AmountDimension
@@ -35004,7 +35020,7 @@ class AmountDimension
 
 ## CurrentDimension · units/builtins.el {#api-94366a0b76f14bda74eb}
 
-[源码 units/builtins.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L10)
+[源码 units/builtins.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L13)
 
 ```el-signature
 class CurrentDimension
@@ -35012,7 +35028,7 @@ class CurrentDimension
 
 ## DurationDimension · units/builtins.el {#api-01f69b9eb3cfb12fd6ae}
 
-[源码 units/builtins.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L6)
+[源码 units/builtins.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L9)
 
 ```el-signature
 class DurationDimension
@@ -35020,7 +35036,7 @@ class DurationDimension
 
 ## LengthDimension · units/builtins.el {#api-e3af59da701dde5fa536}
 
-[源码 units/builtins.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L5)
+[源码 units/builtins.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L8)
 
 ```el-signature
 class LengthDimension
@@ -35028,7 +35044,7 @@ class LengthDimension
 
 ## LuminosityDimension · units/builtins.el {#api-13afe09874ddcfc279b6}
 
-[源码 units/builtins.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L12)
+[源码 units/builtins.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L15)
 
 ```el-signature
 class LuminosityDimension
@@ -35036,7 +35052,7 @@ class LuminosityDimension
 
 ## MassDimension · units/builtins.el {#api-da0c9411304dfdf5f2a8}
 
-[源码 units/builtins.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L7)
+[源码 units/builtins.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L10)
 
 ```el-signature
 class MassDimension
@@ -35044,7 +35060,7 @@ class MassDimension
 
 ## StorageDimension · units/builtins.el {#api-0683dcba264de78327ea}
 
-[源码 units/builtins.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L8)
+[源码 units/builtins.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L11)
 
 ```el-signature
 class StorageDimension
@@ -35052,26 +35068,54 @@ class StorageDimension
 
 ## TemperatureDifferenceDimension · units/builtins.el {#api-a822b2ab107bd64d098f}
 
-[源码 units/builtins.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L9)
+[源码 units/builtins.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L12)
 
 ```el-signature
 class TemperatureDifferenceDimension
 ```
 
+## Point · units/coordinates.el {#api-c617af855a9b9137e2b0}
+
+[源码 units/coordinates.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/units/coordinates.el#L9)
+
+```el-signature
+fn Point(frame: type, dimensions): type
+```
+
+## RigidTransform · units/coordinates.el {#api-4f8e476717ce50df8f98}
+
+[源码 units/coordinates.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/units/coordinates.el#L27)
+
+```el-signature
+fn RigidTransform(source: type, target: type, dimensions): type
+```
+
 ## Quantity · units/core.el {#api-e3b39160772294c021c5}
 
-[源码 units/core.el:59](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L59)
+[源码 units/core.el:70](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L70)
 
 ```el-signature
 fn Quantity(element: type): type
 ```
 
+[API 文档](modules/units/core.md#api-e3b39160772294c021c5)
+
 ## Unit · units/core.el {#api-59cfa52bcbc40973a040}
 
-[源码 units/core.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L11)
+[源码 units/core.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L22)
 
 ```el-signature
 class Unit
+```
+
+[API 文档](modules/units/core.md#api-59cfa52bcbc40973a040)
+
+## Value · units/core.el {#api-7cbc2372dc56c0003748}
+
+[源码 units/core.el:71](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L71)
+
+```el-signature
+let Value = @assign(mode: "copy") class {
 ```
 
 ## Dimension · units/dimension.el {#api-2d9c49a733dd746f3a08}
@@ -35137,6 +35181,16 @@ fn ScalarAdapter(element: type): type
 ```el-signature
 enum ScalarClass
 ```
+
+## QuantityVector · units/vector.el {#api-41d14bd1ae7596d5412d}
+
+[源码 units/vector.el:37](https://github.com/steve02081504/el/blob/master/src/stdlib/units/vector.el#L37)
+
+```el-signature
+fn QuantityVector(frame: type, dimensions): type
+```
+
+[API 文档](modules/units/vector.md#api-41d14bd1ae7596d5412d)
 
 ## AnimatedValue · user-interface/animated-values.el {#api-76bc3637a93f881a7f8d}
 
@@ -35822,4 +35876,12 @@ fn ParseReply(output: type): type
 
 ```el-signature
 fn Parser(output: type): type
+```
+
+## element · units/core.el {#api-7fa45cb4014a5ae01da4}
+
+类型参数，位于 `units/core.el:70`。
+
+```el-signature
+fn Quantity(element: type): type
 ```

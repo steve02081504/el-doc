@@ -8,6 +8,7 @@
 | --- | --- |
 | [abi](modules/foreign-functions/abi.md#api-3fe30725f2369ae272d6) | `foreign-functions/abi.el` |
 | [AbiTarget](modules/foreign-functions/target-facts.md#api-ad1bc7df9299595e64c8) | `foreign-functions/target-facts.el` |
+| [acceleration](modules/physics/index.md#api-64f732cae3d9a028f029) | `physics/index.el` |
 | [AdamW](modules/neural-networks/adamw.md#api-72ebca138f336dfe1a20) | `neural-networks/adamw.el` |
 | [AdamW.update](modules/neural-networks/adamw.md#api-221135265f4603f4a498) | `neural-networks/adamw.el` |
 | [add~integer](modules/number/arithmetic.md#api-2722253a063082140483) | `number/arithmetic.el` |
@@ -40,6 +41,7 @@
 | [AllocationResourceError](modules/memory/allocation/resources.md#api-74c8810a150913ec336d) | `memory/allocation/resources.el` |
 | [AllocationSize](modules/memory/allocation/types.md#api-4b4432c821d87942e622) | `memory/allocation/types.el` |
 | [AllocationSnapshot](modules/memory/allocation/resources.md#api-2ebb6b2c7191b869a60b) | `memory/allocation/resources.el` |
+| [ampere](modules/units/builtins.md#api-db3b9a4f750733941c6c) | `units/builtins.el` |
 | [any](modules/collections/arrays/operations.md#api-1fff05563d7e913b33e0) | `collections/arrays/operations.el` |
 | [anyOf](modules/text/patterns/combinators.md#api-3876f251f8585cfa3c5a) | `text/patterns/combinators.el` |
 | [append_u32le](modules/cryptography/bytes.md#api-62c62e0594b0769368fd) | `cryptography/bytes.el` |
@@ -104,6 +106,7 @@
 | [captureScreen](modules/desktop-automation/screen.md#api-55c495b6ab7a18bd6b31) | `desktop-automation/screen.el` |
 | [CausalLanguageModel](modules/neural-networks/text/decoder.md#api-f1bfef9fe7b41a7e212c) | `neural-networks/text/decoder.el` |
 | [CellValue](modules/documents/workbook.md#api-57d8ceae315b6bd851bf) | `documents/workbook.el` |
+| [centimetre](modules/units/builtins.md#api-3080aef0789598381951) | `units/builtins.el` |
 | [chacha20_poly1305_decrypt](modules/cryptography/aead.md#api-12a7d04f1b0e750acedd) | `cryptography/aead.el` |
 | [chacha20_poly1305_encrypt](modules/cryptography/aead.md#api-08ed02675294d0f1cc7d) | `cryptography/aead.el` |
 | [chacha20_xor](modules/cryptography/chacha20.md#api-bc7a25de7cb7e0682650) | `cryptography/chacha20.el` |
@@ -173,6 +176,8 @@
 | [consoleSnapshot](modules/console/inspection.md#api-910227c7fc3db0f2df0b) | `console/inspection.el` |
 | [constant](modules/text/patterns/parser.md#api-e3e533cb002f8125c11d) | `text/patterns/parser.el` |
 | [constant_time_equal](modules/cryptography/bytes.md#api-8d93c2aef9939ebe4a96) | `cryptography/bytes.el` |
+| [constantForceImpulse~quantity](modules/physics/index.md#api-19445f9734440c9f8b54) | `physics/index.el` |
+| [constantForceImpulse~timeDiff](modules/physics/index.md#api-a300beb251e4b237a253) | `physics/index.el` |
 | [copy_sort](modules/collections/sorting/copy.md#api-9e69003749314c9d21ab) | `collections/sorting/copy.el` |
 | [copy_sort_input](modules/collections/sorting/copy.md#api-fde91638467437de3749) | `collections/sorting/copy.el` |
 | [copyFile](modules/filesystem/index.md#api-3600e50270be961b4bb9) | `filesystem/index.el` |
@@ -306,6 +311,7 @@
 | [hkdf_sha256](modules/cryptography/hkdf.md#api-7c67285c72766cec637c) | `cryptography/hkdf.el` |
 | [hmac_sha256](modules/cryptography/hmac.md#api-da94cb9868cf324a8d93) | `cryptography/hmac.el` |
 | [hmac_verify](modules/cryptography/hmac.md#api-f40a87cdd333f18b2bac) | `cryptography/hmac.el` |
+| [hour](modules/units/builtins.md#api-cfb3480341fa6cdcab1c) | `units/builtins.el` |
 | [HttpHeader](modules/network/http/model.md#api-de461259064c77488732) | `network/http/model.el` |
 | [HttpHeader.constructor](modules/network/http/model.md#api-0549edb36255a79d2ca5) | `network/http/model.el` |
 | [HttpOptions](modules/network/http/model.md#api-5047f246ebfdff685043) | `network/http/model.el` |
@@ -333,6 +339,8 @@
 | [HttpStatusError.response](modules/network/http/model.md#api-84ea870701b770626b47) | `network/http/model.el` |
 | [HttpWireReader](modules/network/http/wire.md#api-5856ea17e3ac530bb530) | `network/http/wire.el` |
 | [huberLoss](modules/neural-networks/losses/index.md#api-86753a5a07c600430493) | `neural-networks/losses/index.el` |
+| [hydrostaticAbsolutePressure](modules/physics/index.md#api-5ffe2cac67dba8195e59) | `physics/index.el` |
+| [hydrostaticPressureIncrease](modules/physics/index.md#api-488c5c38665ecaea60fd) | `physics/index.el` |
 | [imagePixel](modules/desktop-automation/vision.md#api-4cfd93a25ea49815c4a5) | `desktop-automation/vision.el` |
 | [in_place_merge_sort](modules/collections/sorting/comparison.md#api-2def1356afd383db0a39) | `collections/sorting/comparison.el` |
 | [includes](modules/collections/arrays/operations.md#api-a5804828a53f177aa6da) | `collections/arrays/operations.el` |
@@ -343,10 +351,14 @@
 | [integer](modules/text/patterns/lexical.md#api-05bb58ab88da201c5d66) | `text/patterns/lexical.el` |
 | [intro_sort](modules/collections/sorting/comparison.md#api-25406c1973ccd1e25d1e) | `collections/sorting/comparison.el` |
 | [isDirectory](modules/filesystem/index.md#api-f293d8e1a091e956afb7) | `filesystem/index.el` |
+| [joule](modules/units/si.md#api-d837f33716e3c6b9b4a7) | `units/si.el` |
 | [jsonField](modules/formats/json/index.md#api-aa387b2b22b62084db00) | `formats/json/index.el` |
 | [JsonLimits](modules/formats/json/limits.md#api-0b8ce6a01434f6c89e99) | `formats/json/limits.el` |
 | [keepElement](modules/collections/batch/syntax.md#api-c5174b75e0d42f4f9356) | `collections/batch/syntax.el` |
 | [KernelEnvironment](modules/compiler/proof/kernel.md#api-8e328cd33d4187104a5b) | `compiler/proof/kernel.el` |
+| [kilogram](modules/units/builtins.md#api-f2ac2d0de5ca0ce0dc2d) | `units/builtins.el` |
+| [kilometre](modules/units/builtins.md#api-5655325fb10d72db67cc) | `units/builtins.el` |
+| [kilopascal](modules/units/si.md#api-5ff14a69fb644a35172e) | `units/si.el` |
 | [LanguageModelPackage](modules/neural-networks/text/package.md#api-a8856762f284ccee6452) | `neural-networks/text/package.el` |
 | [LanguageModelWindows](modules/neural-networks/text/data.md#api-0a1a45f6971031715620) | `neural-networks/text/data.el` |
 | [last_index_of](modules/collections/arrays/operations.md#api-50a8a16bb0d13ccfc3a9) | `collections/arrays/operations.el` |
@@ -401,6 +413,7 @@
 | [MemoryPressure.register_reclaimer](modules/memory/allocation/pressure.md#api-d793fcf9bb26d2c0a1b1) | `memory/allocation/pressure.el` |
 | [MemoryPressureStateError](modules/memory/allocation/pressure.md#api-37be22995aa184e8d4db) | `memory/allocation/pressure.el` |
 | [merge_sort](modules/collections/sorting/comparison.md#api-e461cf7a9724a50ce3a7) | `collections/sorting/comparison.el` |
+| [metre](modules/units/builtins.md#api-b32408cdaf0a7e358c90) | `units/builtins.el` |
 | [min](modules/mathematics/functions/discrete.md#api-f3ff61e2646083d63650) | `mathematics/functions/discrete.el` |
 | [MissingKeyError](modules/collections/maps/base.md#api-b0a35b2cd112904cedbc) | `collections/maps/base.el` |
 | [monthDays](modules/time/calendar.md#api-e4a535b45fe088abf757) | `time/calendar.el` |
@@ -426,6 +439,7 @@
 | [NetworkError.detail](modules/network/errors.md#api-bba6955c6787070c5b63) | `network/errors.el` |
 | [NetworkError.operation](modules/network/errors.md#api-53e0c3fc1ec8e63196e5) | `network/errors.el` |
 | [NetworkUrl](modules/network/url.md#api-ce5b237af29ddf9960d5) | `network/url.el` |
+| [newton](modules/units/si.md#api-d8155e776258ac4fec54) | `units/si.el` |
 | [nil](modules/language/values.md#api-4bd0d9b4e484c9dd0771) | `language/values.el` |
 | [nil_t](modules/language/values.md#api-86357ad50ef0535f6333) | `language/values.el` |
 | [none](modules/collections/arrays/operations.md#api-1e145e1a1577e85ae421) | `collections/arrays/operations.el` |
@@ -438,6 +452,8 @@
 | [NumericInt](modules/number/arithmetic.md#api-185a41c160696f925b31) | `number/arithmetic.el` |
 | [NumericRatio](modules/number/arithmetic.md#api-5d824c7b2238be4ee74d) | `number/arithmetic.el` |
 | [offsetText](modules/time/calendar.md#api-77dcea13bebddbd7baf5) | `time/calendar.el` |
+| [ohm](modules/units/si.md#api-2bf8d67950303a33dd95) | `units/si.el` |
+| [ohmicCurrent](modules/physics/index.md#api-e32cf7aa5c64b770648f) | `physics/index.el` |
 | [on](modules/user-interface/model.md#api-bec5c16251ba4e97600c) | `user-interface/model.el` |
 | [oneHot](modules/neural-networks/functional.md#api-956d05922bbc9c543e7d) | `neural-networks/functional.el` |
 | [ones](modules/numerical-computing/arrays.md#api-24bc34d3ad4af842ed3e) | `numerical-computing/arrays.el` |
@@ -478,6 +494,7 @@
 | [ParseReply.value](modules/text/patterns/parser.md#api-51d18d3ab11cb736b67e) | `text/patterns/parser.el` |
 | [parsers](modules/text/patterns/parsers.md#api-a99b3fa5dc38a9c0e767) | `text/patterns/parsers.el` |
 | [parseTime](modules/time/parse.md#api-d1e2465e19b2276f6ee0) | `time/parse.el` |
+| [pascal](modules/units/si.md#api-556e3c267d5dbc84a8eb) | `units/si.el` |
 | [Path](modules/filesystem/model.md#api-01450bc86834bd922aa5) | `filesystem/model.el` |
 | [Path](modules/operating-system/paths/path.md#api-c0394889c4c86e2384bc) | `operating-system/paths/path.el` |
 | [pbkdf2_sha1](modules/cryptography/pbkdf2.md#api-d020f6a2cb3f95fd05e0) | `cryptography/pbkdf2.el` |
@@ -526,6 +543,12 @@
 | [Prop](modules/language/proofs.md#api-a376131941dc82f3eb3f) | `language/proofs.el` |
 | [publishFileAs](modules/filesystem/index.md#api-9ade59f34a4d7ffcf8cd) | `filesystem/index.el` |
 | [put](modules/multimedia/capture/binary.md#api-63ad5caf77920fa2e7b1) | `multimedia/capture/binary.el` |
+| [Quantity](modules/units/core.md#api-e3b39160772294c021c5) | `units/core.el` |
+| [Quantity.inUnit](modules/units/core.md#api-2750ca6f68ab784c1945) | `units/core.el` |
+| [Quantity.standardText](modules/units/core.md#api-4ac6cde63fa13cc83ff3) | `units/core.el` |
+| [Quantity.valueIn](modules/units/core.md#api-9f5927927fcab644bfd3) | `units/core.el` |
+| [QuantityVector](modules/units/vector.md#api-41d14bd1ae7596d5412d) | `units/vector.el` |
+| [QuantityVector.dot](modules/units/vector.md#api-f12d85b10b7543e8697c) | `units/vector.el` |
 | [query](modules/database/source-syntax.md#api-703451589618b8e34ad1) | `database/source-syntax.el` |
 | [query](modules/queries/source-syntax.md#api-284dc65ab75a83659889) | `queries/source-syntax.el` |
 | [quick_sort](modules/collections/sorting/comparison.md#api-d585d22a1fa3c4fed027) | `collections/sorting/comparison.el` |
@@ -594,6 +617,7 @@
 | [SearchCursor.next](modules/logic/search.md#api-d6a4b9be8fcbef392bec) | `logic/search.el` |
 | [SearchInterrupted](modules/logic/control.md#api-f2eed514e7ad72951f31) | `logic/control.el` |
 | [SearchInterrupted.reason](modules/logic/control.md#api-a5e27f42e41e0a798bf0) | `logic/control.el` |
+| [second](modules/units/builtins.md#api-230fcff883b7bd288a08) | `units/builtins.el` |
 | [secondsText](modules/time/units.md#api-53debbf5972f3bb0cee0) | `time/units.el` |
 | [secure_random_bytes](modules/cryptography/rand.md#api-419282ad372a03627bc4) | `cryptography/rand.el` |
 | [secure_random_hex](modules/cryptography/rand.md#api-c454f904317622bce76d) | `cryptography/rand.el` |
@@ -656,6 +680,7 @@
 | [SoundPlayer.tryCue](modules/user-interface/sound.md#api-bdf8aa6e71523e364ba2) | `user-interface/sound.el` |
 | [spawn](modules/concurrency/promises.md#api-54380b40af09da4dcbfe) | `concurrency/promises.el` |
 | [sqrt](modules/mathematics/functions/elementary.md#api-fb173a899ba66d1e403d) | `mathematics/functions/elementary.el` |
+| [sqrt](modules/units/roots.md#api-8adf5fd0a8ae84875eb2) | `units/roots.el` |
 | [stable_memory_sort](modules/collections/sorting/copy.md#api-6f4ecce0a38661923bae) | `collections/sorting/copy.el` |
 | [StateError](modules/errors/error.md#api-25ffa202d772fa517e70) | `errors/error.el` |
 | [StaticArray](modules/collections/arrays/fixed.md#api-853605d9b03b0a6daa7e) | `collections/arrays/fixed.el` |
@@ -734,12 +759,14 @@
 | [unchanged](modules/optimization/context.md#api-ca19d040014517ecd1ed) | `optimization/context.el` |
 | [UncheckedSyntax](modules/language/syntax/index.md#api-3628c09626a9be6ba1ba) | `language/syntax/index.el` |
 | [unify](modules/logic/goal.md#api-dcdf93cd11ed18b33734) | `logic/goal.el` |
+| [Unit](modules/units/core.md#api-59cfa52bcbc40973a040) | `units/core.el` |
 | [UnsignedInteger](modules/number/integer.md#api-18d50d7b9b00bc84279f) | `number/integer.el` |
 | [until](modules/control/retry.md#api-047fe3a9b4d31df55152) | `control/retry.el` |
 | [valueAndGrad](modules/neural-networks/model.md#api-74a208b8786c54fae08b) | `neural-networks/model.el` |
 | [variable](modules/logic/term.md#api-c456fe7ff5956d254aa2) | `logic/term.el` |
 | [variable_scope](modules/logic/term.md#api-eca5da0b5d022e6d8dc0) | `logic/term.el` |
 | [Vec3](modules/game/geometry-3d.md#api-c2b766897515d547b014) | `game/geometry-3d.el` |
+| [volt](modules/units/si.md#api-b1380e56034af98e8ee5) | `units/si.el` |
 | [WavWriter](modules/multimedia/audio/wav.md#api-fccc5e339fd9a3fa8554) | `multimedia/audio/wav.el` |
 | [WeakShared](modules/memory/ownership/weak-shared.md#api-4d13a5e69bf02df13422) | `memory/ownership/weak-shared.el` |
 | [WellFoundedTable](modules/logic/well-founded.md#api-f64e03ca1939d841cce2) | `logic/well-founded.el` |
