@@ -51,12 +51,17 @@
 | [Array.count](modules/collections/arrays/dynamic.md#api-dc53f1b7c7bb205456fe) | `collections/arrays/dynamic.el` |
 | [Array.drop](modules/collections/arrays/dynamic.md#api-effa05c31b8b8f5e7352) | `collections/arrays/dynamic.el` |
 | [Array.filter](modules/collections/arrays/dynamic.md#api-e9c5cd664038d0ffd435) | `collections/arrays/dynamic.el` |
+| [Array.findIndex](modules/collections/arrays/dynamic.md#api-632fabd9f6338d6ce759) | `collections/arrays/dynamic.el` |
+| [Array.findLast](modules/collections/arrays/dynamic.md#api-0c516e2b015251cfd317) | `collections/arrays/dynamic.el` |
+| [Array.findLastIndex](modules/collections/arrays/dynamic.md#api-c3ff93098165e551ff0a) | `collections/arrays/dynamic.el` |
 | [Array.includes](modules/collections/arrays/dynamic.md#api-31fc5732d3781cb03718) | `collections/arrays/dynamic.el` |
 | [Array.indexOf](modules/collections/arrays/dynamic.md#api-ecbded967606961a0653) | `collections/arrays/dynamic.el` |
 | [Array.join](modules/collections/arrays/dynamic.md#api-2f72f73fba18bd804573) | `collections/arrays/dynamic.el` |
+| [Array.lastIndexOf](modules/collections/arrays/dynamic.md#api-cff140a5b29c28e662f2) | `collections/arrays/dynamic.el` |
 | [Array.map](modules/collections/arrays/dynamic.md#api-1721eda4a7e77ea6fcdc) | `collections/arrays/dynamic.el` |
 | [Array.pop](modules/collections/arrays/dynamic.md#api-b2d6f065ddc035962676) | `collections/arrays/dynamic.el` |
 | [Array.push](modules/collections/arrays/dynamic.md#api-667c1e6be4c14a58cf83) | `collections/arrays/dynamic.el` |
+| [Array.pushIfAbsent](modules/collections/arrays/dynamic.md#api-a3adc0d64072d7e15531) | `collections/arrays/dynamic.el` |
 | [Array.reverse](modules/collections/arrays/dynamic.md#api-87bcb7d8c6070a3515c9) | `collections/arrays/dynamic.el` |
 | [Array.shift](modules/collections/arrays/dynamic.md#api-f5ecc5c0a1649295acd5) | `collections/arrays/dynamic.el` |
 | [Array.slice](modules/collections/arrays/dynamic.md#api-798006d6685ff5c33c0b) | `collections/arrays/dynamic.el` |
@@ -168,6 +173,8 @@
 | [consoleSnapshot](modules/console/inspection.md#api-910227c7fc3db0f2df0b) | `console/inspection.el` |
 | [constant](modules/text/patterns/parser.md#api-e3e533cb002f8125c11d) | `text/patterns/parser.el` |
 | [constant_time_equal](modules/cryptography/bytes.md#api-8d93c2aef9939ebe4a96) | `cryptography/bytes.el` |
+| [copy_sort](modules/collections/sorting/copy.md#api-9e69003749314c9d21ab) | `collections/sorting/copy.el` |
+| [copy_sort_input](modules/collections/sorting/copy.md#api-fde91638467437de3749) | `collections/sorting/copy.el` |
 | [copyFile](modules/filesystem/index.md#api-3600e50270be961b4bb9) | `filesystem/index.el` |
 | [count](modules/database/typed-aggregate.md#api-0280cb5fc9d8aaea0053) | `database/typed-aggregate.el` |
 | [crossEntropy](modules/neural-networks/functional.md#api-6cc740068d672b42626f) | `neural-networks/functional.el` |
@@ -250,6 +257,9 @@
 | [FileWriter.write](modules/filesystem/writer.md#api-60eb68cfed70401fd999) | `filesystem/writer.el` |
 | [filter](modules/collections/arrays/operations.md#api-b8bf1cd68b49358dbdef) | `collections/arrays/operations.el` |
 | [find](modules/collections/arrays/operations.md#api-460916110d52e2afe0bc) | `collections/arrays/operations.el` |
+| [find_index](modules/collections/arrays/operations.md#api-7e95e21aee4d0391c23b) | `collections/arrays/operations.el` |
+| [find_last](modules/collections/arrays/operations.md#api-e4b243086fa3bbe7c974) | `collections/arrays/operations.el` |
+| [find_last_index](modules/collections/arrays/operations.md#api-93eb1a48b92e3c419f6e) | `collections/arrays/operations.el` |
 | [find_or_add](modules/collections/arrays/operations.md#api-067148f9a59780a84648) | `collections/arrays/operations.el` |
 | [findActiveDesktopWindow](modules/desktop-automation/window-selector.md#api-e8eccc1eedc881c42d08) | `desktop-automation/window-selector.el` |
 | [first](modules/foreign-functions/abi.md#api-bb1c894f7b65a20d77fa) | `foreign-functions/abi.el` |
@@ -290,6 +300,7 @@
 | [GuiEvent](modules/user-interface/model.md#api-d0161616ebcc781b1631) | `user-interface/model.el` |
 | [heap_alloc](modules/memory/allocation/heap.md#api-b7871e91d49bbde9993d) | `memory/allocation/heap.el` |
 | [heap_free](modules/memory/allocation/heap.md#api-0f5cb29929b7fbf1ffbe) | `memory/allocation/heap.el` |
+| [heap_sort](modules/collections/sorting/comparison.md#api-e67876bf6dfecec00dc5) | `collections/sorting/comparison.el` |
 | [hex_bytes](modules/cryptography/bytes.md#api-aa9c1315980ca9917228) | `cryptography/bytes.el` |
 | [hex_of](modules/cryptography/bytes.md#api-44c4d8572ee965483683) | `cryptography/bytes.el` |
 | [hkdf_sha256](modules/cryptography/hkdf.md#api-7c67285c72766cec637c) | `cryptography/hkdf.el` |
@@ -323,11 +334,14 @@
 | [HttpWireReader](modules/network/http/wire.md#api-5856ea17e3ac530bb530) | `network/http/wire.el` |
 | [huberLoss](modules/neural-networks/losses/index.md#api-86753a5a07c600430493) | `neural-networks/losses/index.el` |
 | [imagePixel](modules/desktop-automation/vision.md#api-4cfd93a25ea49815c4a5) | `desktop-automation/vision.el` |
+| [in_place_merge_sort](modules/collections/sorting/comparison.md#api-2def1356afd383db0a39) | `collections/sorting/comparison.el` |
 | [includes](modules/collections/arrays/operations.md#api-a5804828a53f177aa6da) | `collections/arrays/operations.el` |
 | [index_of](modules/collections/arrays/operations.md#api-1d673464d0f4a1e9259f) | `collections/arrays/operations.el` |
+| [insertion_sort](modules/collections/sorting/insertion.md#api-8c708d47f0f161a2d6f5) | `collections/sorting/insertion.el` |
 | [installWindowThemes](modules/user-interface/window.md#api-9b300e6c002e44fe8077) | `user-interface/window.el` |
 | [Integer](modules/number/integer.md#api-5576cb3365ff716689cd) | `number/integer.el` |
 | [integer](modules/text/patterns/lexical.md#api-05bb58ab88da201c5d66) | `text/patterns/lexical.el` |
+| [intro_sort](modules/collections/sorting/comparison.md#api-25406c1973ccd1e25d1e) | `collections/sorting/comparison.el` |
 | [isDirectory](modules/filesystem/index.md#api-f293d8e1a091e956afb7) | `filesystem/index.el` |
 | [jsonField](modules/formats/json/index.md#api-aa387b2b22b62084db00) | `formats/json/index.el` |
 | [JsonLimits](modules/formats/json/limits.md#api-0b8ce6a01434f6c89e99) | `formats/json/limits.el` |
@@ -335,6 +349,7 @@
 | [KernelEnvironment](modules/compiler/proof/kernel.md#api-8e328cd33d4187104a5b) | `compiler/proof/kernel.el` |
 | [LanguageModelPackage](modules/neural-networks/text/package.md#api-a8856762f284ccee6452) | `neural-networks/text/package.el` |
 | [LanguageModelWindows](modules/neural-networks/text/data.md#api-0a1a45f6971031715620) | `neural-networks/text/data.el` |
+| [last_index_of](modules/collections/arrays/operations.md#api-50a8a16bb0d13ccfc3a9) | `collections/arrays/operations.el` |
 | [LayoutContext](modules/language/layout/index.md#api-fee883c2b432dd442f03) | `language/layout/index.el` |
 | [LayoutInput](modules/language/layout/index.md#api-e3db0b318c805d3389ea) | `language/layout/index.el` |
 | [LayoutPlan](modules/language/layout/index.md#api-61af6e4750ca6adb4921) | `language/layout/index.el` |
@@ -385,6 +400,7 @@
 | [MemoryPressure.refill](modules/memory/allocation/pressure.md#api-afd4944353952e9a493a) | `memory/allocation/pressure.el` |
 | [MemoryPressure.register_reclaimer](modules/memory/allocation/pressure.md#api-d793fcf9bb26d2c0a1b1) | `memory/allocation/pressure.el` |
 | [MemoryPressureStateError](modules/memory/allocation/pressure.md#api-37be22995aa184e8d4db) | `memory/allocation/pressure.el` |
+| [merge_sort](modules/collections/sorting/comparison.md#api-e461cf7a9724a50ce3a7) | `collections/sorting/comparison.el` |
 | [min](modules/mathematics/functions/discrete.md#api-f3ff61e2646083d63650) | `mathematics/functions/discrete.el` |
 | [MissingKeyError](modules/collections/maps/base.md#api-b0a35b2cd112904cedbc) | `collections/maps/base.el` |
 | [monthDays](modules/time/calendar.md#api-e4a535b45fe088abf757) | `time/calendar.el` |
@@ -512,6 +528,7 @@
 | [put](modules/multimedia/capture/binary.md#api-63ad5caf77920fa2e7b1) | `multimedia/capture/binary.el` |
 | [query](modules/database/source-syntax.md#api-703451589618b8e34ad1) | `database/source-syntax.el` |
 | [query](modules/queries/source-syntax.md#api-284dc65ab75a83659889) | `queries/source-syntax.el` |
+| [quick_sort](modules/collections/sorting/comparison.md#api-d585d22a1fa3c4fed027) | `collections/sorting/comparison.el` |
 | [rand](modules/random/index.md#api-0e70a2dfa7186c77e160) | `random/index.el` |
 | [Random](modules/random/index.md#api-b2206be230690600dd8e) | `random/index.el` |
 | [Random.between](modules/random/index.md#api-cc4a8e461bbf2f97ad80) | `random/index.el` |
@@ -640,7 +657,10 @@
 | [SoundPlayer.tryCue](modules/user-interface/sound.md#api-bdf8aa6e71523e364ba2) | `user-interface/sound.el` |
 | [spawn](modules/concurrency/promises.md#api-54380b40af09da4dcbfe) | `concurrency/promises.el` |
 | [sqrt](modules/mathematics/functions/elementary.md#api-fb173a899ba66d1e403d) | `mathematics/functions/elementary.el` |
+| [stable_memory_sort](modules/collections/sorting/copy.md#api-6f4ecce0a38661923bae) | `collections/sorting/copy.el` |
 | [StateError](modules/errors/error.md#api-25ffa202d772fa517e70) | `errors/error.el` |
+| [StaticArray](modules/collections/arrays/fixed.md#api-853605d9b03b0a6daa7e) | `collections/arrays/fixed.el` |
+| [StaticArray.sort](modules/collections/arrays/fixed.md#api-041dd00e19af12a0ad8d) | `collections/arrays/fixed.el` |
 | [stdoutChannel](modules/console/model.md#api-52fbcf8e92e35a2e0242) | `console/model.el` |
 | [subtree_interval_bounds](modules/collections/trees/subtree-intervals.md#api-58102f2d42f76134f8dc) | `collections/trees/subtree-intervals.el` |
 | [subtree_intervals](modules/collections/trees/subtree-intervals.md#api-37e0a96d3351f37024a3) | `collections/trees/subtree-intervals.el` |

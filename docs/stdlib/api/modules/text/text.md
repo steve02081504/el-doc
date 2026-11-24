@@ -201,7 +201,7 @@ fn indexOf(needle: Text, start: Number = 0): Number | nil_t
 
 ```el
 let text = "one two one"
-console.stdout.writeLine(text.indexOf("one", 1) ?? -1)
+console.stdout.writeLine(text.indexOf("one", 1))
 ```
 
 ## Text.contains {#api-60a702a27df0fb3b6913}

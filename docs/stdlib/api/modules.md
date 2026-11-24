@@ -4,9 +4,10 @@
 
 ## collections
 
-- [collections/arrays/dynamic.el](modules/collections/arrays/dynamic.md)（21 个 API）
+- [collections/arrays/dynamic.el](modules/collections/arrays/dynamic.md)（26 个 API）
+- [collections/arrays/fixed.el](modules/collections/arrays/fixed.md)（2 个 API）
 - [collections/arrays/lazy.el](modules/collections/arrays/lazy.md)（1 个 API）
-- [collections/arrays/operations.el](modules/collections/arrays/operations.md)（18 个 API）
+- [collections/arrays/operations.el](modules/collections/arrays/operations.md)（22 个 API）
 - [collections/arrays/plus-minus-rmq.el](modules/collections/arrays/plus-minus-rmq.md)（1 个 API）
 - [collections/arrays/positional.el](modules/collections/arrays/positional.md)（1 个 API）
 - [collections/arrays/sparse-argmin.el](modules/collections/arrays/sparse-argmin.md)（1 个 API）
@@ -21,6 +22,9 @@
 - [collections/sets/dit-set.el](modules/collections/sets/dit-set.md)（4 个 API）
 - [collections/sets/hash-set.el](modules/collections/sets/hash-set.md)（13 个 API）
 - [collections/sets/index.el](modules/collections/sets/index.md)（0 个 API）
+- [collections/sorting/comparison.el](modules/collections/sorting/comparison.md)（5 个 API）
+- [collections/sorting/copy.el](modules/collections/sorting/copy.md)（3 个 API）
+- [collections/sorting/insertion.el](modules/collections/sorting/insertion.md)（1 个 API）
 - [collections/trees/euler-tour.el](modules/collections/trees/euler-tour.md)（1 个 API）
 - [collections/trees/lca.el](modules/collections/trees/lca.md)（1 个 API）
 - [collections/trees/subtree-intervals.el](modules/collections/trees/subtree-intervals.md)（2 个 API）
@@ -38,6 +42,7 @@
 - [concurrency/promises.el](modules/concurrency/promises.md)（2 个 API）
 - [concurrency/scheduling/timers.el](modules/concurrency/scheduling/timers.md)（2 个 API）
 - [concurrency/tasks/parallel.el](modules/concurrency/tasks/parallel.md)（2 个 API）
+- [concurrency/wait.el](modules/concurrency/wait.md)（0 个 API）
 
 ## console
 

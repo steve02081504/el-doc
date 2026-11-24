@@ -12,7 +12,7 @@
 
 ## with_allocation_owner {#api-8c691c298879362345cc}
 
-源码：`src/stdlib/memory/allocation/context.el:28` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/context.el#L28)
+源码：`src/stdlib/memory/allocation/context.el:72` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/context.el#L72)
 
 借用 owner，在其原始分配绑定中执行 body 并返回结果；结束或异常时恢复调用前的绑定。owner 必须在调用期间保持有效。
 

@@ -12,7 +12,7 @@
 
 ## positionalArray {#api-6bb9e0f6b72f22340b48}
 
-源码：`src/stdlib/collections/arrays/positional.el:64` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/positional.el#L64)
+源码：`src/stdlib/collections/arrays/positional.el:65` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/positional.el#L65)
 
 创建固定长度、只读的数组；已知下标或下标范围的读取保留对应位置的类型联合。
 

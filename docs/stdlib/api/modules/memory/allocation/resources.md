@@ -29,7 +29,7 @@
 
 ## AllocationResourceError {#api-74c8810a150913ec336d}
 
-源码：`src/stdlib/memory/allocation/resources.el:52` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L52)
+源码：`src/stdlib/memory/allocation/resources.el:53` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L53)
 
 创建资源、运行作用域或采集快照失败时使用的错误。
 
@@ -47,7 +47,7 @@ tracker.run(fn() { return 1 })
 
 ## AllocationSnapshot {#api-2ebb6b2c7191b869a60b}
 
-源码：`src/stdlib/memory/allocation/resources.el:145` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L145)
+源码：`src/stdlib/memory/allocation/resources.el:153` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L153)
 
 同一时刻的资源统计：存活分配数和字节、累计分配与释放次数、累计字节、存活峰值、物理字节、未完整观察次数及参与者数。计数使用目标原生表示。
 
@@ -66,7 +66,7 @@ let snapshot = tracker.snapshot()
 
 ## AllocationResource {#api-8eba7d4cbf772f8d630b}
 
-源码：`src/stdlib/memory/allocation/resources.el:180` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L180)
+源码：`src/stdlib/memory/allocation/resources.el:188` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L188)
 
 共享的分配资源句柄；复制句柄共享状态。作用域及其后代的分配可在 run 返回后继续计入。
 
@@ -84,7 +84,7 @@ tracker.run(fn() { return 1 })
 
 ## AllocationResource.run {#api-4594f61d969df01f11c4}
 
-源码：`src/stdlib/memory/allocation/resources.el:247` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L247)
+源码：`src/stdlib/memory/allocation/resources.el:255` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L255)
 
 将资源与当前资源及观察器组合后执行 body，返回其结果，并在正常返回或异常时恢复原上下文。
 
@@ -108,7 +108,7 @@ tracker.run(fn() { return 1 })
 
 ## AllocationResource.snapshot {#api-0b6ef92ff8094e1cbbe3}
 
-源码：`src/stdlib/memory/allocation/resources.el:299` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L299)
+源码：`src/stdlib/memory/allocation/resources.el:266` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L266)
 
 取得一致时刻的统计快照；各独立计数方法分别读取，不能保证属于同一时刻。
 
@@ -131,7 +131,7 @@ let snapshot = tracker.snapshot()
 
 ## AllocationResource.live_allocations {#api-5c03c0ca799f66aa7d73}
 
-源码：`src/stdlib/memory/allocation/resources.el:339` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L339)
+源码：`src/stdlib/memory/allocation/resources.el:306` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L306)
 
 读取当前存活的分配数；计数使用目标原生表示。
 
@@ -151,7 +151,7 @@ let value = tracker.live_allocations()
 
 ## AllocationResource.live_bytes {#api-c980a03effcac60dbbff}
 
-源码：`src/stdlib/memory/allocation/resources.el:348` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L348)
+源码：`src/stdlib/memory/allocation/resources.el:315` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L315)
 
 读取当前存活的逻辑字节数；计数使用目标原生表示。
 
@@ -171,7 +171,7 @@ let value = tracker.live_bytes()
 
 ## AllocationResource.allocations {#api-c99c9345210af5d3fc7f}
 
-源码：`src/stdlib/memory/allocation/resources.el:357` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L357)
+源码：`src/stdlib/memory/allocation/resources.el:324` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L324)
 
 读取累计分配次数；计数使用目标原生表示。
 
@@ -191,7 +191,7 @@ let value = tracker.allocations()
 
 ## AllocationResource.releases {#api-34385919c82bc7e37c76}
 
-源码：`src/stdlib/memory/allocation/resources.el:366` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L366)
+源码：`src/stdlib/memory/allocation/resources.el:333` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L333)
 
 读取累计释放次数；计数使用目标原生表示。
 
@@ -211,7 +211,7 @@ let value = tracker.releases()
 
 ## AllocationResource.cumulative_bytes {#api-b4aed26da644089ff7c2}
 
-源码：`src/stdlib/memory/allocation/resources.el:375` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L375)
+源码：`src/stdlib/memory/allocation/resources.el:342` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L342)
 
 读取累计分配的逻辑字节数；计数使用目标原生表示。
 
@@ -231,7 +231,7 @@ let value = tracker.cumulative_bytes()
 
 ## AllocationResource.peak_live_bytes {#api-b9bf0dcf44cea02a2df2}
 
-源码：`src/stdlib/memory/allocation/resources.el:384` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L384)
+源码：`src/stdlib/memory/allocation/resources.el:351` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L351)
 
 读取存活逻辑字节数的峰值；计数使用目标原生表示。
 
@@ -251,7 +251,7 @@ let value = tracker.peak_live_bytes()
 
 ## AllocationResource.incomplete_observations {#api-13a43d2e72a34a6dd6e5}
 
-源码：`src/stdlib/memory/allocation/resources.el:393` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L393)
+源码：`src/stdlib/memory/allocation/resources.el:360` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L360)
 
 读取未完整交付的观察事件数；计数使用目标原生表示。
 
@@ -271,7 +271,7 @@ let value = tracker.incomplete_observations()
 
 ## AllocationResource.participants {#api-91bdf3f280f723a62e3e}
 
-源码：`src/stdlib/memory/allocation/resources.el:402` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L402)
+源码：`src/stdlib/memory/allocation/resources.el:369` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L369)
 
 读取当前参与者数；计数使用目标原生表示。
 
@@ -291,7 +291,7 @@ let value = tracker.participants()
 
 ## AllocationResource.physical_bytes {#api-b5e3b89a8c582a97acf3}
 
-源码：`src/stdlib/memory/allocation/resources.el:412` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L412)
+源码：`src/stdlib/memory/allocation/resources.el:379` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L379)
 
 读取本资源拥有的 arena slab 物理字节数，包含头部和未用容量；计数使用目标原生表示。
 
@@ -311,7 +311,7 @@ let value = tracker.physical_bytes()
 
 ## AllocationResource.check_empty {#api-8d62410eb64ebec2d90e}
 
-源码：`src/stdlib/memory/allocation/resources.el:423` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L423)
+源码：`src/stdlib/memory/allocation/resources.el:390` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L390)
 
 立即检查并报告存活分配；子任务或返回值仍可能持有分配。
 
@@ -332,7 +332,7 @@ let empty = tracker.check_empty()
 
 ## AllocationResource.check_when_idle {#api-fd2600d92cd142340fe1}
 
-源码：`src/stdlib/memory/allocation/resources.el:435` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L435)
+源码：`src/stdlib/memory/allocation/resources.el:402` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L402)
 
 参与者空闲时检查并报告：返回 0 表示延期，1 表示为空，2 表示报告了非空快照。
 
@@ -355,7 +355,7 @@ let result = tracker.check_when_idle()
 
 ## AllocationResource.reset {#api-f3a34cf7aca61613268a}
 
-源码：`src/stdlib/memory/allocation/resources.el:452` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L452)
+源码：`src/stdlib/memory/allocation/resources.el:419` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L419)
 
 重置 arena；tracker 或仍有后代存活分配时返回 f。成功后释放 arena 所持的块。
 
@@ -376,7 +376,7 @@ let reset = arena.reset()
 
 ## allocation_tracker {#api-e8fa0007d514f447ec99}
 
-源码：`src/stdlib/memory/allocation/resources.el:478` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L478)
+源码：`src/stdlib/memory/allocation/resources.el:445` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L445)
 
 创建统计资源；check_on_drop 为真时析构时立即检查是否为空。
 
@@ -400,7 +400,7 @@ tracker.run(fn() { return 1 })
 
 ## allocation_arena {#api-d7c42030098dd223bcbb}
 
-源码：`src/stdlib/memory/allocation/resources.el:491` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L491)
+源码：`src/stdlib/memory/allocation/resources.el:458` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L458)
 
 创建 arena；省略 upstream 时使用基础堆，显式 upstream 须为自定义终端分配资源，不能是 arena 或观察器。
 
@@ -424,7 +424,7 @@ arena.run(fn() { return 1 })
 
 ## allocation_resource {#api-909a6f9e1fc2a3457a85}
 
-源码：`src/stdlib/memory/allocation/resources.el:524` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L524)
+源码：`src/stdlib/memory/allocation/resources.el:491` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L491)
 
 创建自定义终端分配资源。回调同步执行、可能并发，不能重新进入分配引擎或抛异常；回调抛异常会触发陷阱。
 
@@ -469,7 +469,7 @@ resource.run(fn() { let values = @[1, 2, 3]; return values.count })
 
 ## with_allocation_tracking {#api-3ab81e903cbcfb4211ca}
 
-源码：`src/stdlib/memory/allocation/resources.el:543` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L543)
+源码：`src/stdlib/memory/allocation/resources.el:510` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L510)
 
 在新 tracker 中运行 body 并返回结果；check_empty 选择结束时检查，final 选择参与者空闲后检查。返回值和仍运行的子任务可能保留分配。
 
@@ -494,7 +494,7 @@ let result = with_allocation_tracking(fn() { return 1 })
 
 ## allocation_observer {#api-745b0e48de8321bdb0ba}
 
-源码：`src/stdlib/memory/allocation/resources.el:587` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L587)
+源码：`src/stdlib/memory/allocation/resources.el:554` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/memory/allocation/resources.el#L554)
 
 创建观察资源。事件 1、2 是逻辑分配和释放，3、4 是成功和失败的调整大小，5、6 是物理 slab 分配和释放；成功调整也产生底层分配和释放事件。
 

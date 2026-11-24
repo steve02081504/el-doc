@@ -12,7 +12,7 @@
 
 ## unbounded {#api-db75efcb59f6dbd40ec8}
 
-源码：`src/stdlib/number/number.el:35` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L35)
+源码：`src/stdlib/number/number.el:36` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L36)
 
 指定 Number 类型工厂的无界端点。
 
@@ -33,7 +33,7 @@ let value = Whole(3)
 
 ## Number~type {#api-3cc24d3ef702e8652fb4}
 
-源码：`src/stdlib/number/number.el:55` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L55)
+源码：`src/stdlib/number/number.el:57` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L57)
 
 表示精确有理数的数值类型，普通算术在约分后的整数分子和分母上进行。
 它也可表示 unordered 状态；该状态不是 浮点 浮点近似值。
@@ -85,7 +85,7 @@ t
 
 ## Number~constraints {#api-ad6f905ba12a9a7c223e}
 
-源码：`src/stdlib/number/number.el:397` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L397)
+源码：`src/stdlib/number/number.el:403` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/number.el#L403)
 
 创建带数值域约束的 Number 类型。min/max 可用 unbounded 表示无下界或无上界；epsilon 必须是有限非负值。
 integer 为真时结果必须为整数。overflow 支持 ub、error、nan、wrap；wrap 仅允许有界整数域。

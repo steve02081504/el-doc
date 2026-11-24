@@ -10,6 +10,7 @@
 - [Array.count](#api-dc53f1b7c7bb205456fe)
 - [Array.unshift](#api-0d49f10ce11561b6c3d4)
 - [Array.push](#api-667c1e6be4c14a58cf83)
+- [Array.pushIfAbsent](#api-a3adc0d64072d7e15531)
 - [Array.pop](#api-b2d6f065ddc035962676)
 - [Array.shift](#api-f5ecc5c0a1649295acd5)
 - [Array.clear](#api-2f0dc66bf9a8acb8acc6)
@@ -19,6 +20,10 @@
 - [Array.drop](#api-effa05c31b8b8f5e7352)
 - [Array.take](#api-c5fa66ab34cdd427c5c8)
 - [Array.indexOf](#api-ecbded967606961a0653)
+- [Array.lastIndexOf](#api-cff140a5b29c28e662f2)
+- [Array.findIndex](#api-632fabd9f6338d6ce759)
+- [Array.findLastIndex](#api-c3ff93098165e551ff0a)
+- [Array.findLast](#api-0c516e2b015251cfd317)
 - [Array.sort](#api-6329d5217c413e7c25f7)
 - [Array.reverse](#api-87bcb7d8c6070a3515c9)
 - [Array.slice](#api-798006d6685ff5c33c0b)
@@ -35,7 +40,7 @@
 
 ## Array.compact {#api-b5d526b100604be1a50c}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:54` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L54)
+源码：`src/stdlib/collections/arrays/dynamic.el:56` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L56)
 
 释放可回收的预留存储，保留元素及顺序；可能使物理元素引用失效。
 计算数组、定长数组和借用视图没有可释放的预留容量。
@@ -53,7 +58,7 @@ values.compact()
 
 ## Array.count {#api-dc53f1b7c7bb205456fe}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:62` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L62)
+源码：`src/stdlib/collections/arrays/dynamic.el:64` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L64)
 
 返回数组中当前元素数量。
 
@@ -73,7 +78,7 @@ console.stdout.writeLine(@[10, 20, 30].count)
 
 ## Array.unshift {#api-0d49f10ce11561b6c3d4}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:86` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L86)
+源码：`src/stdlib/collections/arrays/dynamic.el:91` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L91)
 
 将元素插入数组开头，并返回数组。
 
@@ -97,7 +102,7 @@ console.stdout.writeLine(values[0])
 
 ## Array {#api-02f04934b15030edb96d}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:135` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L135)
+源码：`src/stdlib/collections/arrays/dynamic.el:140` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L140)
 
 创建带元素类型的可变长数组类型，实例支持索引读写、增删和常用遍历操作。
 
@@ -121,7 +126,7 @@ console.stdout.writeLine(values.count)
 
 ## Array.push {#api-667c1e6be4c14a58cf83}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:176` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L176)
+源码：`src/stdlib/collections/arrays/dynamic.el:184` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L184)
 
 将一个元素追加到数组末尾，并返回数组以便继续链式操作。
 
@@ -143,9 +148,34 @@ values.push(2)
 console.stdout.writeLine(values[1])
 ```
 
+## Array.pushIfAbsent {#api-a3adc0d64072d7e15531}
+
+源码：`src/stdlib/collections/arrays/dynamic.el:195` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L195)
+
+按 includes 检查元素，缺失时追加到末尾。
+
+```el-signature
+@discardable fn pushIfAbsent(value: element): Bool
+```
+
+**返回类型**：[`Bool`](../../language/values.md#api-3f0af31783849ef30c6e)
+
+**参数**：value 要追加的元素。
+
+**返回值**：已追加时为真，已存在时为假。
+
+**失败与异常**：需要追加时会传播 push 的错误。
+
+### 示例：追加缺失元素
+
+```el
+let values = @[1, 2]
+values.pushIfAbsent(3)
+```
+
 ## Array.pop {#api-b2d6f065ddc035962676}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:187` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L187)
+源码：`src/stdlib/collections/arrays/dynamic.el:210` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L210)
 
 移除并返回数组末尾元素。
 
@@ -153,7 +183,7 @@ console.stdout.writeLine(values[1])
 @discardable virtual fn pop(): element
 ```
 
-**返回类型**：[`element`](../../../types.md#api-d9bee8f512c5a46cf1e1)
+**返回类型**：[`element`](../../../types.md#api-5559abbccb9a177fbfdf)
 
 **返回值**：原末尾元素。
 
@@ -169,7 +199,7 @@ console.stdout.writeLine(last)
 
 ## Array.shift {#api-f5ecc5c0a1649295acd5}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:199` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L199)
+源码：`src/stdlib/collections/arrays/dynamic.el:222` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L222)
 
 移除并返回数组首元素。
 
@@ -177,7 +207,7 @@ console.stdout.writeLine(last)
 @discardable virtual fn shift(): element
 ```
 
-**返回类型**：[`element`](../../../types.md#api-d9bee8f512c5a46cf1e1)
+**返回类型**：[`element`](../../../types.md#api-5559abbccb9a177fbfdf)
 
 **返回值**：原首元素。
 
@@ -193,7 +223,7 @@ console.stdout.writeLine(first)
 
 ## Array.clear {#api-2f0dc66bf9a8acb8acc6}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:212` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L212)
+源码：`src/stdlib/collections/arrays/dynamic.el:235` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L235)
 
 原地移除全部元素；空数组调用后仍为空。
 
@@ -217,7 +247,7 @@ console.stdout.writeLine(values.count)
 
 ## Array.some {#api-62d8ef96ddac55a5e4be}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:224` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L224)
+源码：`src/stdlib/collections/arrays/dynamic.el:247` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L247)
 
 判断是否至少有一个元素满足谓词；找到首个匹配项后即停止遍历。
 
@@ -239,7 +269,7 @@ console.stdout.writeLine(@[1, 30, 2].some(value => value > 20))
 
 ## Array.all {#api-8981ea4aa2a88e2d41b5}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:238` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L238)
+源码：`src/stdlib/collections/arrays/dynamic.el:261` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L261)
 
 判断所有元素是否都满足谓词；遇到首个不匹配项后即停止遍历。
 
@@ -261,7 +291,7 @@ console.stdout.writeLine(@[1, 2, 3].all(value => value > 0))
 
 ## Array.filter {#api-e9c5cd664038d0ffd435}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:252` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L252)
+源码：`src/stdlib/collections/arrays/dynamic.el:275` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L275)
 
 保留谓词返回真的元素，并按原有顺序组成新数组。
 
@@ -283,7 +313,7 @@ console.stdout.writeLine(large.join(", "))
 
 ## Array.drop {#api-effa05c31b8b8f5e7352}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:263` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L263)
+源码：`src/stdlib/collections/arrays/dynamic.el:286` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L286)
 
 返回跳过开头指定数量元素后的数组。
 
@@ -304,7 +334,7 @@ console.stdout.writeLine(@[1, 2, 3].drop(1).join(", "))
 
 ## Array.take {#api-c5fa66ab34cdd427c5c8}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:273` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L273)
+源码：`src/stdlib/collections/arrays/dynamic.el:296` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L296)
 
 返回开头指定数量的元素组成的新数组。
 
@@ -325,19 +355,19 @@ console.stdout.writeLine(@[1, 2, 3].take(2).join(", "))
 
 ## Array.indexOf {#api-ecbded967606961a0653}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:285` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L285)
+源码：`src/stdlib/collections/arrays/dynamic.el:308` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L308)
 
 查找与给定值相等的第一个元素位置。
 
 ```el-signature
-fn indexOf(value: element): Number
+fn indexOf(value: element): Number | nil_t
 ```
 
-**返回类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4)
+**返回类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4) | [`nil_t`](../../language/values.md#api-86357ad50ef0535f6333)
 
 **参数**：value 要查找的元素。
 
-**返回值**：首个匹配下标；未找到时返回 -1。
+**返回值**：首个匹配下标；未找到时返回 nil。
 
 ### 示例：查找数组元素
 
@@ -345,9 +375,83 @@ fn indexOf(value: element): Number
 console.stdout.writeLine(@[10, 20, 30].indexOf(20))
 ```
 
+## Array.lastIndexOf {#api-cff140a5b29c28e662f2}
+
+源码：`src/stdlib/collections/arrays/dynamic.el:317` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L317)
+
+从数组末尾向前查找与给定值相等的元素。
+
+```el-signature
+fn lastIndexOf(value: element): Number | nil_t
+```
+
+**返回类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4) | [`nil_t`](../../language/values.md#api-86357ad50ef0535f6333)
+
+**参数**：value 要查找的元素。
+
+**返回值**：从零开始的末个匹配下标；未找到时返回 nil。
+
+### 示例：查找重复元素的最后一次出现
+
+```el
+console.stdout.writeLine(@[10, 20, 10].lastIndexOf(10))
+```
+
+## Array.findIndex {#api-632fabd9f6338d6ce759}
+
+源码：`src/stdlib/collections/arrays/dynamic.el:327` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L327)
+
+从头查找满足谓词的元素，返回从零开始的下标或 nil。
+
+```el-signature
+fn findIndex(predicate): Number | nil_t
+```
+
+**返回类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4) | [`nil_t`](../../language/values.md#api-86357ad50ef0535f6333)
+
+### 示例：查找首个匹配下标
+
+```el
+@[1, 2, 3].findIndex(value => value > 1)
+```
+
+## Array.findLastIndex {#api-c3ff93098165e551ff0a}
+
+源码：`src/stdlib/collections/arrays/dynamic.el:334` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L334)
+
+从尾查找满足谓词的元素，返回从零开始的下标或 nil。
+
+```el-signature
+fn findLastIndex(predicate): Number | nil_t
+```
+
+**返回类型**：[`Number`](../../number/number.md#api-3cc24d3ef702e8652fb4) | [`nil_t`](../../language/values.md#api-86357ad50ef0535f6333)
+
+### 示例：查找末个匹配下标
+
+```el
+@[1, 2, 3].findLastIndex(value => value > 1)
+```
+
+## Array.findLast {#api-0c516e2b015251cfd317}
+
+源码：`src/stdlib/collections/arrays/dynamic.el:341` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L341)
+
+从尾查找满足谓词的元素，返回匹配值或 nil。
+
+```el-signature
+fn findLast(predicate)
+```
+
+### 示例：查找末个匹配值
+
+```el
+@[1, 2, 3].findLast(value => value > 1)
+```
+
 ## Array.sort {#api-6329d5217c413e7c25f7}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:301` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L301)
+源码：`src/stdlib/collections/arrays/dynamic.el:354` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L354)
 
 按比较函数排序并返回新数组，保留原数组不变。
 
@@ -370,7 +474,7 @@ console.stdout.writeLine(sorted.join(", "))
 
 ## Array.reverse {#api-87bcb7d8c6070a3515c9}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:310` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L310)
+源码：`src/stdlib/collections/arrays/dynamic.el:363` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L363)
 
 返回元素顺序相反的新数组，不改变原数组。
 
@@ -389,7 +493,7 @@ console.stdout.writeLine(values.reverse().join(", "))
 
 ## Array.slice {#api-798006d6685ff5c33c0b}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:321` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L321)
+源码：`src/stdlib/collections/arrays/dynamic.el:374` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L374)
 
 严格复制指定的左闭右开区间。
 
@@ -412,7 +516,7 @@ console.stdout.writeLine(middle[0], middle[1])
 
 ## Array.sliceClamped {#api-e0a3a8d0e4a021feebae}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:332` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L332)
+源码：`src/stdlib/collections/arrays/dynamic.el:385` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L385)
 
 将整数端点夹到有效下标范围，再复制左闭右开区间。反向区间返回空数组。
 
@@ -420,7 +524,7 @@ console.stdout.writeLine(middle[0], middle[1])
 fn sliceClamped(start: Number, end: Number): Array<element: element>
 ```
 
-**返回类型**：[`Array`](../../../types.md#api-02f04934b15030edb96d)<element: [`element`](../../../types.md#api-d9bee8f512c5a46cf1e1)>
+**返回类型**：[`Array`](../../../types.md#api-02f04934b15030edb96d)<element: [`element`](../../../types.md#api-5559abbccb9a177fbfdf)>
 
 **参数**：start 起始下标。
 
@@ -437,7 +541,7 @@ console.stdout.writeLine(copy.join(", "))
 
 ## Array.join {#api-2f72f73fba18bd804573}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:343` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L343)
+源码：`src/stdlib/collections/arrays/dynamic.el:396` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L396)
 
 将元素依次转换为文本并用分隔文本连接。
 
@@ -460,7 +564,7 @@ console.stdout.writeLine(words.join(", "))
 
 ## Array.map {#api-1721eda4a7e77ea6fcdc}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:355` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L355)
+源码：`src/stdlib/collections/arrays/dynamic.el:408` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L408)
 
 按原顺序对每个元素调用转换函数，并返回转换结果数组。
 
@@ -481,7 +585,7 @@ console.stdout.writeLine(doubled.join(", "))
 
 ## Array.includes {#api-31fc5732d3781cb03718}
 
-源码：`src/stdlib/collections/arrays/dynamic.el:369` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L369)
+源码：`src/stdlib/collections/arrays/dynamic.el:422` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/collections/arrays/dynamic.el#L422)
 
 判断数组是否含有与给定值相等的元素。
 
