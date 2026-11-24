@@ -27,11 +27,29 @@ writeFileAs(formats.Text, "file:./copy.txt", text + "\n")
 
 ## 读文本还是读字节
 
-- `readFileAs(formats.Text, reference, maximumSize: limit)` 在可选的字节上限内读取整个文件，并按 UTF-8 解码成 `Text`；
+- `readFileAs(formats.Text, reference, maximumSize: limit)` 在可选的容量上限内读取整个文件，并按 UTF-8 解码成 `Text`；
 - `writeFileAs(formats.Text, reference, value)` 把 `Text` 按 UTF-8 写入，返回写入的字节数；
-- `readFileAs(formats.Buffer, reference, maximumSize: limit)` 在可选的字节上限内读取整个文件，返回 `Buffer`；
+- `readFileAs(formats.Buffer, reference, maximumSize: limit)` 在可选的容量上限内读取整个文件，返回 `Buffer`；
 - `writeFileAs(formats.Buffer, reference, buffer)` 写入缓冲区并返回字节数。用 `bufferFromBytes(bytes)` 把数值字节数组转为缓冲区。
 - 字节层的 `Location.readOptionalBytes()` 在实际打开确认目标缺失时返回 `nil`。文件存在时交付原始字节，空文件返回空数组。
+
+`maximumSize` 使用 `FileSize`，按目标原生数位保存非负整数容量。它的字面量使用 `dit`、`kd`、`md`、`gd`、`td`、`pd`、`ed`；目标基数为 `r` 时，`kd` 是 `r^10` 个 `dit`，之后每级再乘 `r^10`。因此 `32kd` 在二进制目标上等于 4 KiB，在其他基数目标上表示相应的目标容量。
+
+```el
+import { readFileAs } from "el:filesystem/"
+import { formats } from "el:formats/"
+
+let notes = readFileAs(formats.Text, "file:./notes.txt", maximumSize: 32kd)
+```
+
+当已有的是按目标地址单位计的偏移或长度时，用 `FileSize.fromAddressUnits(count)` 转换。反向读取 `.totalAddressUnits` 要求容量能整除一个地址单位，否则会抛 `RangeError`。示例中的文件字节数组按地址单位计数：
+
+```el
+let limit = FileSize.fromAddressUnits(4096)
+let addressUnits = limit.totalAddressUnits
+```
+
+单位模块中的 `byte`、`kibibyte`、`mebibyte` 等是独立的带量纲单位，用于一般单位换算；`FileSize` 字面量和文件 API 参数使用目标数位容量。详见[目标数位容量 API](api/modules/units/dits.md)和[基础单位 API](api/modules/units/builtins.md)。
 
 ```el
 import { readFileAs, resolvePath } from "el:filesystem/"

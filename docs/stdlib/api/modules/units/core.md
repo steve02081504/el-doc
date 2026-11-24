@@ -18,7 +18,7 @@
 
 ## Unit {#api-59cfa52bcbc40973a040}
 
-源码：`src/stdlib/units/core.el:22` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L22)
+源码：`src/stdlib/units/core.el:26` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L26)
 
 带量纲、比例和符号的线性单位。比例必须为有限正数。
 
@@ -36,7 +36,7 @@ let length = 2metre
 
 ## Quantity {#api-e3b39160772294c021c5}
 
-源码：`src/stdlib/units/core.el:70` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L70)
+源码：`src/stdlib/units/core.el:123` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L123)
 
 携带数值及其表示单位的量类型。同量纲单位之间可转换。
 
@@ -56,7 +56,7 @@ let length = 125centimetre
 
 ## Quantity.valueIn {#api-9f5927927fcab644bfd3}
 
-源码：`src/stdlib/units/core.el:89` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L89)
+源码：`src/stdlib/units/core.el:142` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L142)
 
 将量转换为指定同量纲单位并返回数值。
 
@@ -64,7 +64,7 @@ let length = 125centimetre
 fn valueIn(unit: Unit): element
 ```
 
-**返回类型**：[`element`](../../types.md#api-7fa45cb4014a5ae01da4)
+**返回类型**：[`element`](../../types.md#api-0207b8365b9e7d0aef27)
 
 ### 示例：使用示例
 
@@ -77,7 +77,7 @@ let metres = length.valueIn(metre)
 
 ## Quantity.inUnit {#api-2750ca6f68ab784c1945}
 
-源码：`src/stdlib/units/core.el:101` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L101)
+源码：`src/stdlib/units/core.el:154` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L154)
 
 返回以指定同量纲单位表示的量。
 
@@ -85,7 +85,7 @@ let metres = length.valueIn(metre)
 fn inUnit(unit: Unit): Value
 ```
 
-**返回类型**：[`Value`](../../types.md#api-7cbc2372dc56c0003748)
+**返回类型**：[`Value`](../../types.md#api-a61a51033be4e8caaec6)
 
 ### 示例：使用示例
 
@@ -98,7 +98,7 @@ let converted = length.inUnit(metre)
 
 ## Quantity.standardText {#api-4ac6cde63fa13cc83ff3}
 
-源码：`src/stdlib/units/core.el:123` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L123)
+源码：`src/stdlib/units/core.el:176` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L176)
 
 以数值和单位符号组成文本。
 

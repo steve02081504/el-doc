@@ -32,7 +32,7 @@ get position(): Number
 
 ```el
 let reader = openFileReader("file:./data.bin")
-let header = reader.read(16b)
+let header = reader.read(FileSize.fromAddressUnits(16))
 let offset = reader.position
 reader.close()
 ```
@@ -59,7 +59,7 @@ fn read(maximumSize: FileSize): Number[]
 
 ```el
 let reader = openFileReader("file:./payload.bin")
-let bytes = reader.read(1kb)
+let bytes = reader.read(8kd)
 reader.close()
 ```
 

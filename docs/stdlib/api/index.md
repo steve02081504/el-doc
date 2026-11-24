@@ -4,7 +4,7 @@
 
 [结构化文档数据](api.json)
 
-已标注文档的文件：235 / 4152；API 条目：781。此比例不是公开 API 覆盖率。
+已标注文档的文件：248 / 4169；API 条目：948。此比例不是公开 API 覆盖率。
 
 [按模块查找](modules.md) · [按符号查找](symbols.md) · [默认环境](environment.md) · [类型定义](types.md)
 
@@ -12,6 +12,7 @@
 
 | 库 | 已标注模块 | API 条目 |
 | --- | ---: | ---: |
+| [archives](categories/archives.md) | 2 | 4 |
 | [collections](categories/collections.md) | 25 | 122 |
 | [compiler](categories/compiler.md) | 3 | 5 |
 | [concurrency](categories/concurrency.md) | 5 | 7 |
@@ -31,7 +32,7 @@
 | [graphics](categories/graphics.md) | 2 | 13 |
 | [language](categories/language.md) | 7 | 24 |
 | [logic](categories/logic.md) | 8 | 24 |
-| [mathematics](categories/mathematics.md) | 5 | 12 |
+| [mathematics](categories/mathematics.md) | 6 | 26 |
 | [memory](categories/memory.md) | 11 | 49 |
 | [multimedia](categories/multimedia.md) | 8 | 35 |
 | [network](categories/network.md) | 9 | 38 |
@@ -42,7 +43,8 @@
 | [optimization](categories/optimization.md) | 1 | 3 |
 | [parsing](categories/parsing.md) | 1 | 1 |
 | [physics](categories/physics.md) | 1 | 6 |
-| [platform](categories/platform.md) | 6 | 8 |
+| [platform](categories/platform.md) | 8 | 10 |
+| [quantities](categories/quantities.md) | 2 | 1 |
 | [queries](categories/queries.md) | 1 | 1 |
 | [random](categories/random.md) | 3 | 18 |
 | [runtime](categories/runtime.md) | 1 | 2 |
@@ -53,5 +55,5 @@
 | [theme](categories/theme.md) | 2 | 4 |
 | [time](categories/time.md) | 5 | 16 |
 | [tools](categories/tools.md) | 7 | 18 |
-| [units](categories/units.md) | 5 | 21 |
+| [units](categories/units.md) | 11 | 167 |
 | [user-interface](categories/user-interface.md) | 8 | 36 |

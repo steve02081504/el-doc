@@ -128,7 +128,7 @@ import { openFileReader } from "el:filesystem/"
 
 let reader = openFileReader("file:./data.txt")
 try {
-	let bytes = reader.read(4kb)
+	let bytes = reader.read(32kd)
 	console.stdout.writeLine("read ", bytes.size)
 } finally {
 	reader.close()

@@ -21,6 +21,7 @@
 | 打开一个系统窗口，用 EL 画界面 | [图形界面](gui.md) | GUI 应用入口与 Canvas 绘制 |
 | 播放声音、生成音调 | [声音与音频](audio.md) | `SoundPlayer`、`MusicPlayer` |
 | 换算单位、计算物理量 | [带单位算距离和速度](../practice/units.md) · [物理计算](../practice/physics.md) | `2metre`、`valueIn(...)` |
+| 按学科查单位、定义常量和误差 | [在不同领域选用常量](../practice/constants.md) · [标准库 API](api/index.md) | `standardGravity`、`eulerNumber(epsilon)` |
 | 训练一个小神经网络 | [神经网络](neural-networks.md) | 网络与层的构造 |
 | 跟踪分配、复用 arena slab | [分配器与内存跟踪](allocators.md) | `allocation_tracker()`、`allocation_arena()` |
 | 给代码补测试 | [测试](testing.md) | `el test` 与测试声明 |

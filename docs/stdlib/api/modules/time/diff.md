@@ -6,13 +6,13 @@
 
 ## 时间差 {#api-47aaf27b8c898de3f07b}
 
-源码：`src/stdlib/time/diff.el:1` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/diff.el#L1)
+源码：`src/stdlib/time/diff.el:2` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/diff.el#L2)
 
 表示固定时长和日历月差，并提供与时间单位的转换。
 
 ## TimeDiff {#api-b00bf50a6dead7622a2a}
 
-源码：`src/stdlib/time/diff.el:27` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/diff.el#L27)
+源码：`src/stdlib/time/diff.el:29` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/time/diff.el#L29)
 
 表示固定时长或日历月差；日历月只有结合日期和时区才能解析为固定时长。
 

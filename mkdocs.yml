@@ -157,6 +157,7 @@ nav:
           - 流式筛选实验数据: practice/experiment-table.md
           - 带单位算距离和速度: practice/units.md
           - 用带单位的量做物理计算: practice/physics.md
+          - 在不同领域选用常量: practice/constants.md
           - 矩阵与数值脚本: practice/numerics.md
       - 游戏开发:
           - 2D · 第一个乒乓球场: practice/paddle-game.md

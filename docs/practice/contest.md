@@ -168,7 +168,7 @@ let input = openFileReader("input.bin")
 try {
 	let pending: Number[] = @[]
 	while (t) {
-		let bytes = input.read(65536)
+		let bytes = input.read(FileSize.fromAddressUnits(65536))
 		if (bytes.count == 0) break
 		for (let byte in bytes) {
 			pending.push(byte)

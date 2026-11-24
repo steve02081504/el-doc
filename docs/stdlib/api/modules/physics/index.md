@@ -12,7 +12,7 @@
 
 ## acceleration {#api-64f732cae3d9a028f029}
 
-源码：`src/stdlib/physics/index.el:46` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/physics/index.el#L46)
+源码：`src/stdlib/physics/index.el:50` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/physics/index.el#L50)
 
 根据力和质量计算加速度。
 
@@ -41,7 +41,7 @@ let result = acceleration(10newton, 2kilogram)
 
 ## constantForceImpulse~timeDiff {#api-a300beb251e4b237a253}
 
-源码：`src/stdlib/physics/index.el:71` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/physics/index.el#L71)
+源码：`src/stdlib/physics/index.el:75` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/physics/index.el#L75)
 
 用时间差计算恒力产生的冲量。
 
@@ -69,7 +69,7 @@ let result = constantForceImpulse(3newton, TimeDiff())
 
 ## constantForceImpulse~quantity {#api-19445f9734440c9f8b54}
 
-源码：`src/stdlib/physics/index.el:85` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/physics/index.el#L85)
+源码：`src/stdlib/physics/index.el:89` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/physics/index.el#L89)
 
 用时间量计算恒力产生的冲量。
 
@@ -96,7 +96,7 @@ let result = constantForceImpulse(3newton, 2second)
 
 ## hydrostaticPressureIncrease {#api-488c5c38665ecaea60fd}
 
-源码：`src/stdlib/physics/index.el:111` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/physics/index.el#L111)
+源码：`src/stdlib/physics/index.el:115` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/physics/index.el#L115)
 
 计算均匀流体中深度造成的静水压力增量。
 
@@ -125,7 +125,7 @@ let increase = hydrostaticPressureIncrease((1000kilogram / (metre ^ 3)), (9.81me
 
 ## hydrostaticAbsolutePressure {#api-5ffe2cac67dba8195e59}
 
-源码：`src/stdlib/physics/index.el:133` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/physics/index.el#L133)
+源码：`src/stdlib/physics/index.el:137` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/physics/index.el#L137)
 
 将表面压力与静水压力增量相加，计算绝对压力。
 
@@ -156,7 +156,7 @@ let pressure = hydrostaticAbsolutePressure(100000pascal, (1000kilogram / (metre 
 
 ## ohmicCurrent {#api-e32cf7aa5c64b770648f}
 
-源码：`src/stdlib/physics/index.el:156` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/physics/index.el#L156)
+源码：`src/stdlib/physics/index.el:160` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/physics/index.el#L160)
 
 根据电压和电阻计算欧姆电流。
 

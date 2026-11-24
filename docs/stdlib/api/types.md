@@ -130,6 +130,30 @@ class ArchiveLimits
 class ArchiveOptions
 ```
 
+## ZipFile · archives/pkzip.el {#api-015b8ce776e38ed31979}
+
+[源码 archives/pkzip.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/pkzip.el#L16)
+
+```el-signature
+class ZipFile
+```
+
+## RadixReader · archives/radix-archive.el {#api-8925119ccd7a27f1beeb}
+
+[源码 archives/radix-archive.el:52](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/radix-archive.el#L52)
+
+```el-signature
+class RadixReader
+```
+
+## RadixWriter · archives/radix-archive.el {#api-1db2c2cffce08d334350}
+
+[源码 archives/radix-archive.el:36](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/radix-archive.el#L36)
+
+```el-signature
+class RadixWriter
+```
+
 ## Rar5Dictionary · archives/rar-codec.el {#api-371c80b7f958a13a0789}
 
 [源码 archives/rar-codec.el:205](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/rar-codec.el#L205)
@@ -202,9 +226,9 @@ class Folder
 class Streams
 ```
 
-## Pax · archives/tar.el {#api-d98642c3861bb4845923}
+## Pax · archives/ustar.el {#api-a5415622d178866025cb}
 
-[源码 archives/tar.el:180](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/tar.el#L180)
+[源码 archives/ustar.el:180](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/ustar.el#L180)
 
 ```el-signature
 class Pax
@@ -220,18 +244,10 @@ class ArchiveVolume
 
 ## VolumeWriter · archives/volumes.el {#api-2830d661232edc627a71}
 
-[源码 archives/volumes.el:56](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/volumes.el#L56)
+[源码 archives/volumes.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/volumes.el#L64)
 
 ```el-signature
 class VolumeWriter
-```
-
-## ZipFile · archives/zip.el {#api-8a0f28dc555aa2900389}
-
-[源码 archives/zip.el:16](https://github.com/steve02081504/el/blob/master/src/stdlib/archives/zip.el#L16)
-
-```el-signature
-class ZipFile
 ```
 
 ## Array · collections/arrays/dynamic.el {#api-02f04934b15030edb96d}
@@ -1164,7 +1180,7 @@ class AbiSourceScope
 
 ## AttributeExpansion · compiler/attributes/attribute-contracts.el {#api-0f5715ebfb8451424b2f}
 
-[源码 compiler/attributes/attribute-contracts.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/attributes/attribute-contracts.el#L14)
+[源码 compiler/attributes/attribute-contracts.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/attributes/attribute-contracts.el#L15)
 
 ```el-signature
 class AttributeExpansion
@@ -1236,7 +1252,7 @@ class Binding extends BindingCurrentFacts
 
 ## ClassInfo · compiler/bindings/binding-model.el {#api-3df79a43772b9be91da2}
 
-[源码 compiler/bindings/binding-model.el:265](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/bindings/binding-model.el#L265)
+[源码 compiler/bindings/binding-model.el:266](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/bindings/binding-model.el#L266)
 
 ```el-signature
 class ClassInfo
@@ -1292,7 +1308,7 @@ class ForeignAbiUse
 
 ## InheritanceSubobject · compiler/bindings/binding-model.el {#api-0b33e91eb661b9ae40cc}
 
-[源码 compiler/bindings/binding-model.el:252](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/bindings/binding-model.el#L252)
+[源码 compiler/bindings/binding-model.el:253](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/bindings/binding-model.el#L253)
 
 ```el-signature
 class InheritanceSubobject
@@ -1300,7 +1316,7 @@ class InheritanceSubobject
 
 ## MoveState · compiler/bindings/binding-model.el {#api-5c67916b1614f76dc817}
 
-[源码 compiler/bindings/binding-model.el:214](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/bindings/binding-model.el#L214)
+[源码 compiler/bindings/binding-model.el:215](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/bindings/binding-model.el#L215)
 
 ```el-signature
 class MoveState
@@ -1308,7 +1324,7 @@ class MoveState
 
 ## MoveTail · compiler/bindings/binding-model.el {#api-4b4ba7927ff4718fa8cd}
 
-[源码 compiler/bindings/binding-model.el:230](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/bindings/binding-model.el#L230)
+[源码 compiler/bindings/binding-model.el:231](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/bindings/binding-model.el#L231)
 
 ```el-signature
 class MoveTail
@@ -1348,7 +1364,7 @@ class Scope
 
 ## VomeCall · compiler/bindings/binding-model.el {#api-8f81baffdb6ff37e687d}
 
-[源码 compiler/bindings/binding-model.el:239](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/bindings/binding-model.el#L239)
+[源码 compiler/bindings/binding-model.el:240](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/bindings/binding-model.el#L240)
 
 ```el-signature
 class VomeCall
@@ -3488,6 +3504,38 @@ data ObjectFieldTarget
 
 ```el-signature
 class ObjectShapePlan
+```
+
+## DimensionTerm · compiler/declarations/quantity-context.el {#api-001c81fe731eb355c940}
+
+[源码 compiler/declarations/quantity-context.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/declarations/quantity-context.el#L12)
+
+```el-signature
+class DimensionTerm
+```
+
+## QuantityChoice · compiler/declarations/quantity-context.el {#api-6fdd2dda1e0aeda62a49}
+
+[源码 compiler/declarations/quantity-context.el:81](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/declarations/quantity-context.el#L81)
+
+```el-signature
+class QuantityChoice
+```
+
+## QuantityChoices · compiler/declarations/quantity-context.el {#api-70744a47ae465de6c7d1}
+
+[源码 compiler/declarations/quantity-context.el:96](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/declarations/quantity-context.el#L96)
+
+```el-signature
+class QuantityChoices
+```
+
+## QuantityShape · compiler/declarations/quantity-context.el {#api-1c867b8eec31b9435014}
+
+[源码 compiler/declarations/quantity-context.el:18](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/declarations/quantity-context.el#L18)
+
+```el-signature
+class QuantityShape
 ```
 
 ## QuantityProviderIndex · compiler/declarations/quantity-provider-index.el {#api-5eb8eba1c24a7bf6e22f}
@@ -9560,7 +9608,7 @@ class CallableTypeIdentity
 
 ## RegionQueryUnavailable · compiler/types/type-query.el {#api-d7921d03854bc9aed8a2}
 
-[源码 compiler/types/type-query.el:76](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/types/type-query.el#L76)
+[源码 compiler/types/type-query.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/compiler/types/type-query.el#L77)
 
 ```el-signature
 class RegionQueryUnavailable
@@ -19780,6 +19828,14 @@ class JsonWriteError extends Error
 class JsonWriter
 ```
 
+## RadixUnitReader · formats/radix-units.el {#api-797ad81a3ef469cd9524}
+
+[源码 formats/radix-units.el:77](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/radix-units.el#L77)
+
+```el-signature
+class RadixUnitReader
+```
+
 ## CodeDescriptor · formats/serialization/code-descriptor.el {#api-770f71ebf795b009bf1f}
 
 [源码 formats/serialization/code-descriptor.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/code-descriptor.el#L8)
@@ -19902,7 +19958,7 @@ class SerializationReader
 
 ## SerializationWriter · formats/serialization/model.el {#api-52901841691b0057edac}
 
-[源码 formats/serialization/model.el:92](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/model.el#L92)
+[源码 formats/serialization/model.el:94](https://github.com/steve02081504/el/blob/master/src/stdlib/formats/serialization/model.el#L94)
 
 ```el-signature
 class SerializationWriter
@@ -32094,7 +32150,7 @@ enum ExecutionProfile
 
 ## TargetEnvironment · platform/target.el {#api-5f5d7b56e141bff94d2c}
 
-[源码 platform/target.el:63](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/target.el#L63)
+[源码 platform/target.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/platform/target.el#L64)
 
 ```el-signature
 enum TargetEnvironment
@@ -32222,11 +32278,13 @@ class NativeRandomFile extends NativeRandomFileSource
 
 ## FileSize · quantities/file-size.el {#api-0b1508ed7adb8c7aa82f}
 
-[源码 quantities/file-size.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/quantities/file-size.el#L26)
+[源码 quantities/file-size.el:38](https://github.com/steve02081504/el/blob/master/src/stdlib/quantities/file-size.el#L38)
 
 ```el-signature
 class FileSize extends TextOperand
 ```
+
+[API 文档](modules/quantities/file-size.md#api-0b1508ed7adb8c7aa82f)
 
 ## QuantityPart · quantities/index.el {#api-3c31ec0dc26bb382c4b6}
 
@@ -34292,7 +34350,7 @@ class CalendarTime
 
 ## CalendarContextRequired · time/diff.el {#api-a41ffe8a9cb69af0b4ee}
 
-[源码 time/diff.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/time/diff.el#L11)
+[源码 time/diff.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/time/diff.el#L12)
 
 ```el-signature
 class CalendarContextRequired extends Error
@@ -34300,7 +34358,7 @@ class CalendarContextRequired extends Error
 
 ## TimeDiff · time/diff.el {#api-b00bf50a6dead7622a2a}
 
-[源码 time/diff.el:27](https://github.com/steve02081504/el/blob/master/src/stdlib/time/diff.el#L27)
+[源码 time/diff.el:29](https://github.com/steve02081504/el/blob/master/src/stdlib/time/diff.el#L29)
 
 ```el-signature
 class TimeDiff extends TextOperand
@@ -34310,7 +34368,7 @@ class TimeDiff extends TextOperand
 
 ## TimeDiffPayload · time/diff.el {#api-95680b31060de2671578}
 
-[源码 time/diff.el:109](https://github.com/steve02081504/el/blob/master/src/stdlib/time/diff.el#L109)
+[源码 time/diff.el:111](https://github.com/steve02081504/el/blob/master/src/stdlib/time/diff.el#L111)
 
 ```el-signature
 class TimeDiffPayload
@@ -35010,65 +35068,73 @@ class ResourceObserver
 class AssertionState
 ```
 
-## AmountDimension · units/builtins.el {#api-d7e307be295b189268a3}
+## AmountDimension · units/basis.el {#api-9c7e2acd1d10aee72ebe}
 
-[源码 units/builtins.el:14](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L14)
+[源码 units/basis.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/units/basis.el#L10)
 
 ```el-signature
 class AmountDimension
 ```
 
-## CurrentDimension · units/builtins.el {#api-94366a0b76f14bda74eb}
+## CurrentDimension · units/basis.el {#api-3fe3f3c82a521302d423}
 
-[源码 units/builtins.el:13](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L13)
+[源码 units/basis.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/units/basis.el#L9)
 
 ```el-signature
 class CurrentDimension
 ```
 
-## DurationDimension · units/builtins.el {#api-01f69b9eb3cfb12fd6ae}
+## DigitStorageDimension · units/basis.el {#api-dc072fc1fea249037f31}
 
-[源码 units/builtins.el:9](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L9)
+[源码 units/basis.el:7](https://github.com/steve02081504/el/blob/master/src/stdlib/units/basis.el#L7)
+
+```el-signature
+class DigitStorageDimension
+```
+
+## DurationDimension · units/basis.el {#api-cd83f93912d394c9871c}
+
+[源码 units/basis.el:4](https://github.com/steve02081504/el/blob/master/src/stdlib/units/basis.el#L4)
 
 ```el-signature
 class DurationDimension
 ```
 
-## LengthDimension · units/builtins.el {#api-e3af59da701dde5fa536}
+## LengthDimension · units/basis.el {#api-5e00d7c71572f747c70b}
 
-[源码 units/builtins.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L8)
+[源码 units/basis.el:3](https://github.com/steve02081504/el/blob/master/src/stdlib/units/basis.el#L3)
 
 ```el-signature
 class LengthDimension
 ```
 
-## LuminosityDimension · units/builtins.el {#api-13afe09874ddcfc279b6}
+## LuminosityDimension · units/basis.el {#api-2fc0fac5b19f0c533eb0}
 
-[源码 units/builtins.el:15](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L15)
+[源码 units/basis.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/units/basis.el#L11)
 
 ```el-signature
 class LuminosityDimension
 ```
 
-## MassDimension · units/builtins.el {#api-da0c9411304dfdf5f2a8}
+## MassDimension · units/basis.el {#api-bdbff9ba03de371907aa}
 
-[源码 units/builtins.el:10](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L10)
+[源码 units/basis.el:5](https://github.com/steve02081504/el/blob/master/src/stdlib/units/basis.el#L5)
 
 ```el-signature
 class MassDimension
 ```
 
-## StorageDimension · units/builtins.el {#api-0683dcba264de78327ea}
+## StorageDimension · units/basis.el {#api-186028b2b4d2c835f15e}
 
-[源码 units/builtins.el:11](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L11)
+[源码 units/basis.el:6](https://github.com/steve02081504/el/blob/master/src/stdlib/units/basis.el#L6)
 
 ```el-signature
 class StorageDimension
 ```
 
-## TemperatureDifferenceDimension · units/builtins.el {#api-a822b2ab107bd64d098f}
+## TemperatureDifferenceDimension · units/basis.el {#api-4573f0a950aaadf838c7}
 
-[源码 units/builtins.el:12](https://github.com/steve02081504/el/blob/master/src/stdlib/units/builtins.el#L12)
+[源码 units/basis.el:8](https://github.com/steve02081504/el/blob/master/src/stdlib/units/basis.el#L8)
 
 ```el-signature
 class TemperatureDifferenceDimension
@@ -35090,9 +35156,25 @@ fn Point(frame: type, dimensions): type
 fn RigidTransform(source: type, target: type, dimensions): type
 ```
 
+## FixedDimensionQuantity · units/core.el {#api-7be96b2124fec92c2c59}
+
+[源码 units/core.el:64](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L64)
+
+```el-signature
+class FixedDimensionQuantity
+```
+
+## Length · units/core.el {#api-1f6b05ab96b2bcb45f3b}
+
+[源码 units/core.el:94](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L94)
+
+```el-signature
+class Length extends FixedDimensionQuantity
+```
+
 ## Quantity · units/core.el {#api-e3b39160772294c021c5}
 
-[源码 units/core.el:70](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L70)
+[源码 units/core.el:123](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L123)
 
 ```el-signature
 fn Quantity(element: type): type
@@ -35100,9 +35182,17 @@ fn Quantity(element: type): type
 
 [API 文档](modules/units/core.md#api-e3b39160772294c021c5)
 
+## Speed · units/core.el {#api-6c33d5c649c22c6cbb1b}
+
+[源码 units/core.el:106](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L106)
+
+```el-signature
+class Speed extends FixedDimensionQuantity
+```
+
 ## Unit · units/core.el {#api-59cfa52bcbc40973a040}
 
-[源码 units/core.el:22](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L22)
+[源码 units/core.el:26](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L26)
 
 ```el-signature
 class Unit
@@ -35110,9 +35200,9 @@ class Unit
 
 [API 文档](modules/units/core.md#api-59cfa52bcbc40973a040)
 
-## Value · units/core.el {#api-7cbc2372dc56c0003748}
+## Value · units/core.el {#api-a61a51033be4e8caaec6}
 
-[源码 units/core.el:71](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L71)
+[源码 units/core.el:124](https://github.com/steve02081504/el/blob/master/src/stdlib/units/core.el#L124)
 
 ```el-signature
 let Value = @assign(mode: "copy") class {
@@ -35878,9 +35968,9 @@ fn ParseReply(output: type): type
 fn Parser(output: type): type
 ```
 
-## element · units/core.el {#api-7fa45cb4014a5ae01da4}
+## element · units/core.el {#api-0207b8365b9e7d0aef27}
 
-类型参数，位于 `units/core.el:70`。
+类型参数，位于 `units/core.el:123`。
 
 ```el-signature
 fn Quantity(element: type): type

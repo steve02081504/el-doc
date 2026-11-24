@@ -12,3 +12,5 @@
 | [platform/linux/libc.el](../modules/platform/linux/libc.md) | [NativeInt](../modules/platform/linux/libc.md#api-5fc2beb1be963b400238) |
 | [platform/machine/float-codec.el](../modules/platform/machine/float-codec.md) | [NativeFloatExponent5](../modules/platform/machine/float-codec.md#api-f145036e3b661f9b51a3) |
 | [platform/machine/integer.el](../modules/platform/machine/integer.md) | [NativeSignedInteger](../modules/platform/machine/integer.md#api-45690472287900730a5f) |
+| [platform/target-power.el](../modules/platform/target-power.md) | [dit_exp](../modules/platform/target-power.md#api-1d1dcfb1639cfcb94502) |
+| [platform/target-units.el](../modules/platform/target-units.md) | [dit_radix](../modules/platform/target-units.md#api-92bbb4a4021817785b4e) |

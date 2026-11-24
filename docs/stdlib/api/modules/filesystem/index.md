@@ -129,7 +129,7 @@ export fn openFileReader(reference, lock: Bool | nil_t = nil): FileReader
 ```el
 import { openFileReader } from "el:filesystem/"
 let reader = openFileReader("file:./logo.png")
-let bytes = reader.read(1kb)
+let bytes = reader.read(8kd)
 reader.close()
 ```
 
@@ -158,7 +158,7 @@ export fn openRandomFileReader(reference, lock: Bool | nil_t = nil): FileReader
 ```el
 import { openRandomFileReader } from "el:filesystem/"
 let reader = openRandomFileReader("file:./archive.bin")
-let prefix = reader.readAt(0b, 8b)
+let prefix = reader.readAt(0dit, FileSize.fromAddressUnits(8))
 reader.close()
 ```
 
@@ -253,7 +253,7 @@ let config = readFileAs(formats.JSON, "file:./config.json")
 ```el
 import { readFileAs } from "el:filesystem/"
 import { formats } from "el:formats/"
-let notes = readFileAs(formats.Text, "file:./notes.txt", maximumSize: 4kb)
+let notes = readFileAs(formats.Text, "file:./notes.txt", maximumSize: 32kd)
 ```
 
 ## writeFileAs {#api-5ea2e001353e67ba555f}

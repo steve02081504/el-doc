@@ -2,6 +2,11 @@
 
 按源码路径排列，仅包含已标注文档的模块。[按库分类](index.md) · [符号索引](symbols.md)
 
+## archives
+
+- [archives/tar.el](modules/archives/tar.md)（2 个 API）
+- [archives/zip.el](modules/archives/zip.md)（2 个 API）
+
 ## collections
 
 - [collections/arrays/dynamic.el](modules/collections/arrays/dynamic.md)（26 个 API）
@@ -172,6 +177,7 @@
 
 - [mathematics/arithmetic/natural.el](modules/mathematics/arithmetic/natural.md)（1 个 API）
 - [mathematics/functions/aggregation.el](modules/mathematics/functions/aggregation.md)（1 个 API）
+- [mathematics/functions/constants.el](modules/mathematics/functions/constants.md)（14 个 API）
 - [mathematics/functions/discrete.el](modules/mathematics/functions/discrete.md)（3 个 API）
 - [mathematics/functions/elementary.el](modules/mathematics/functions/elementary.md)（6 个 API）
 - [mathematics/functions/pi.el](modules/mathematics/functions/pi.md)（1 个 API）
@@ -282,6 +288,13 @@
 - [platform/linux/libc.el](modules/platform/linux/libc.md)（1 个 API）
 - [platform/machine/float-codec.el](modules/platform/machine/float-codec.md)（1 个 API）
 - [platform/machine/integer.el](modules/platform/machine/integer.md)（1 个 API）
+- [platform/target-power.el](modules/platform/target-power.md)（1 个 API）
+- [platform/target-units.el](modules/platform/target-units.md)（1 个 API）
+
+## quantities
+
+- [quantities/dit-units.el](modules/quantities/dit-units.md)（0 个 API）
+- [quantities/file-size.el](modules/quantities/file-size.md)（1 个 API）
 
 ## queries
 
@@ -349,10 +362,16 @@
 
 ## units
 
-- [units/builtins.el](modules/units/builtins.md)（7 个 API）
+- [units/astronomy.el](modules/units/astronomy.md)（22 个 API）
+- [units/builtins.el](modules/units/builtins.md)（27 个 API）
+- [units/constants.el](modules/units/constants.md)（20 个 API）
 - [units/core.el](modules/units/core.md)（5 个 API）
+- [units/dits.el](modules/units/dits.md)（7 个 API）
+- [units/everyday.el](modules/units/everyday.md)（32 个 API）
+- [units/laboratory.el](modules/units/laboratory.md)（27 个 API）
+- [units/references.el](modules/units/references.md)（4 个 API）
 - [units/roots.el](modules/units/roots.md)（1 个 API）
-- [units/si.el](modules/units/si.md)（6 个 API）
+- [units/si.el](modules/units/si.md)（20 个 API）
 - [units/vector.el](modules/units/vector.md)（2 个 API）
 
 ## user-interface
