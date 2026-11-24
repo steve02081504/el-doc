@@ -22,8 +22,8 @@ fn knightMove(fromX: Number, fromY: Number, toX: Number, toY: Number): Bool {
 	return (xSquared == 1 & ySquared == 4) | (xSquared == 4 & ySquared == 1)
 }
 
-for (let rank = 0; rank < 8; rank++) {
-	for (let file = 0; file < 8; file++) {
+for let rank in ..8 {
+	for let file in ..8 {
 		if (!knightMove(0, 0, file, rank)) continue
 		if (file == 1 & rank == 2) continue
 		console.stdout.writeLine(file, ",", rank)

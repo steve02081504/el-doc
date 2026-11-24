@@ -27,7 +27,7 @@ let random = Random()
 let input = DesktopInput()
 try {
 	sleep(3s)
-	for (let count = 0; count < 5; count++) {
+	for ..5 {
 		sleep(random.between(430, 570) * 1ms)
 		if (findActiveDesktopWindow(target) is nil_t) break
 		input.sendKeys("A")
@@ -66,7 +66,7 @@ fn healthPercent(): Number | nil_t {
 	let frame = captureScreen(origin, width, 1)
 	try {
 		let filled = 0
-		for (let x = 0; x < width; x++) {
+		for let x in ..width {
 			let pixel = imagePixel(frame.image, x, 0)
 			if (pixel.red > 150 & pixel.green < 100 & pixel.blue < 100) filled++
 			else if (pixel.red > 30 | pixel.green > 30 | pixel.blue > 30) return nil
@@ -80,7 +80,7 @@ fn healthPercent(): Number | nil_t {
 sleep(3s)
 let input = if (dryRun) nil else DesktopInput()
 try {
-	for (let sample = 0; sample < 20; sample++) {
+	for ..20 {
 		if (findActiveDesktopWindow(target) is nil_t) break
 		let percent = healthPercent()
 		if (percent is nil_t) {
@@ -125,7 +125,7 @@ fn requirePracticeWindow() {
 }
 
 openDesktopUri("http://127.0.0.1:8766/login-demo.html")
-for (let attempt = 0; attempt < 50; attempt++) {
+for ..50 {
 	if (findActiveDesktopWindow(target) isnot nil_t) break
 	sleep(100ms)
 }

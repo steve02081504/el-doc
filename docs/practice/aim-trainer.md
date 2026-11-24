@@ -63,7 +63,7 @@ let step = 1 / 10
 let feet = Vec3(0, 0, 0)
 let vertical = 4
 let high = 0
-for (let frame = 0; frame < 10; frame++) {
+for ..10 {
 	vertical -= 10 * step
 	let moved = feet + horizontal * (2 * step)
 	let height = moved.y + vertical * step

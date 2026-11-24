@@ -133,7 +133,7 @@ let optimizer = SGD(rate: .01)
 let x = Dense(@[2, 1], @[1, 2])
 let y = Dense(@[2, 1], @[0, 0])
 
-for (let iteration = 0; iteration < 10; iteration++) {
+for ..10 {
 	let step = valueAndGrad(model, m => (m(x) - y).square().mean())
 	optimizer.update(model, step.grad)
 	console.stdout.writeLine(step.value.scalar())
@@ -169,7 +169,7 @@ let x = device.fromHost(Host(@[2, 1], @[F32(1), F32(2)]))
 let y = device.fromHost(Host(@[2, 1], @[F32(0), F32(0)]))
 let optimizer = SGD(rate: .01)
 
-for (let iteration = 0; iteration < 10; iteration++) {
+for ..10 {
 	let step = valueAndGrad(model, m => (m(x) - y).square().mean())
 	optimizer.update(model, step.grad)
 	console.stdout.writeLine(step.value.scalar())

@@ -30,7 +30,7 @@ let listener = listenTcp("127.0.0.1", 8765)
 let health: fn(): Text = fn(): Text { return "v1\n" }
 try {
 	console.stdout.writeLine("http://127.0.0.1:8765/health")
-	for (let request = 0; request < 2; request++) {
+	for ..2 {
 		let connection = listener.accept()
 		try {
 			let reader = HttpWireReader(connection, 3000)

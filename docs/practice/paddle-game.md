@@ -42,8 +42,8 @@ appendChild(root, "board", dataView(board))
 let window = showWindow(root, "弹球练习", 600, 500)
 
 fn draw() {
-	for (let x = 0; x < 12; x++) for (let y = 0; y < 9; y++) board[x, y] = empty
-	for (let offset = 0; offset < 3; offset++) board[1, paddleTop + offset] = paddle
+	for let x in ..12 for let y in ..9 board[x, y] = empty
+	for let offset in ..3 board[1, paddleTop + offset] = paddle
 	board[ballX, ballY] = ball
 }
 

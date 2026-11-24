@@ -89,10 +89,10 @@ fn phaseLabel(): Text {
 
 fn paint() {
 	status.text = phaseLabel() + " · " + Text(leftScore) + ":" + Text(rightScore) + " · 金币 " + Text(coins)
-	for (let x = 0; x < 16; x++) {
-		for (let y = 0; y < 10; y++) board[x, y] = @{color: if (rainbow) "midnightblue" else "black"}
+	for let x in ..16 {
+		for let y in ..10 board[x, y] = @{color: if (rainbow) "midnightblue" else "black"}
 	}
-	for (let offset = 0; offset < 3; offset++) {
+	for let offset in ..3 {
 		board[1, left + offset] = @{color: if (rainbow) "cyan" else "white"}
 		board[14, right + offset] = @{color: if (rainbow) "magenta" else "white"}
 	}

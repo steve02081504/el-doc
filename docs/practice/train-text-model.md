@@ -33,7 +33,7 @@ let config = DecoderConfig(tokenizer.vocabularySize, width: 8, layers: 1, heads:
 let model = Model(config, upload, 17)
 let windows = LanguageModelWindows(tokenizer.encode(corpus, t, t), config.context, config.vocabulary, tokenizer.padId)
 let optimizer = AdamW<element: F32>(rate: .001, epsilon: .000001)
-for (let epoch = 0; epoch < 2; epoch++) {
+for ..2 {
 	for (let first = 0; first < windows.count; first += 2) {
 		let batch = windows.batch(first, 2)
 		if (batch.validTokens == 0) continue

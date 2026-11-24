@@ -121,8 +121,8 @@ fn checkBoard(board: Tensor<element: Number>) {
 fn cellRows(board: Tensor<element: Number>): Number[][] {
 	checkBoard(board)
 	let rows: Number[][] = @[]
-	for (let row = 0; row < board.rowCount(); row++) {
-		for (let column = 0; column < board.columnCount(); column++) {
+	for let row in ..board.rowCount() {
+		for let column in ..board.columnCount() {
 			let mark = board[row, column]
 			if (mark != 0 & mark != 1 & mark != 2) throw "Unknown board mark"
 			rows.push(@[row, column, mark])
@@ -168,8 +168,8 @@ export fn rulesFor(board: Tensor<element: Number>) {
 // 只检查满盘；胜负必须先调用 winner。
 export fn isFull(board: Tensor<element: Number>): Bool {
 	checkBoard(board)
-	for (let row = 0; row < 3; row++) {
-		for (let column = 0; column < 3; column++) {
+	for let row in ..3 {
+		for let column in ..3 {
 			if (board[row, column] == 0) return f
 		}
 	}
@@ -401,12 +401,12 @@ export @assign(mode: "shared") class GameView {
 			appendChild(controls, "retry", this.retry)
 			appendChild(this.root, "strategy", element("label", "先赢，再堵，再选空位；不保证永不输。"))
 			let weak = WeakShared<element: GameView>(this)
-			for (let row = 0; row < 3; row++) {
+			for let row in ..3 {
 				let strip = element("row")
 				strip.style.gap = 8
 				let rowCells: Definition[] = @[]
 				appendChild(boardView, Text(row), strip)
-				for (let column = 0; column < 3; column++) {
+				for let column in ..3 {
 					let cell = element("button", "·", "cell-" + Text(row) + "-" + Text(column))
 					cell.style.width = 90
 					cell.style.height = 90
@@ -434,8 +434,8 @@ export @assign(mode: "shared") class GameView {
 		if (this.#closed) return
 		this.status.text = this.game.summary()
 		let board = this.game.board
-		for (let row = 0; row < 3; row++) {
-			for (let column = 0; column < 3; column++) {
+		for let row in ..3 {
+			for let column in ..3 {
 				let cell = this.cells[row][column]
 				cell.text = cellText(board[row, column])
 				cell.enabled = this.game.canPlay(row, column)

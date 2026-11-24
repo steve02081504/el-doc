@@ -22,7 +22,7 @@ import { Vec3 } from "el:game/three-dimensional.el"
 
 fn terrain(random: Random): Vec3[] {
 	let tiles: Vec3[] = @[]
-	for (let index = 0; index < 8; index++) {
+	for let index in ..8 {
 		tiles.push(Vec3(0, random.between(0, 20) / 100, index))
 	}
 	return tiles
