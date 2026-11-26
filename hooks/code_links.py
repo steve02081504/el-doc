@@ -349,6 +349,11 @@ def binding_indices(tokens, pairs, start, end, *, object_pattern=False):
 			stop = pairs[index]
 			yield from binding_indices(tokens, pairs, index + 1, stop, object_pattern=tokens[index][2] == "{")
 			index = stop + 1
+		elif tokens[index][2] == "(" and index in pairs:
+			stop = pairs[index]
+			if stop + 1 < end and tokens[stop + 1][2] == ":":
+				yield from binding_indices(tokens, pairs, index + 1, stop)
+			index = stop + 1
 		elif object_pattern and index < end and tokens[index - 1][2] == ":" and tokens[index][1] in Name:
 			yield index
 		while index < end and tokens[index][2] not in (",", ";"):
@@ -410,8 +415,10 @@ def local_declarations(code, tokens, ignored, pairs):
 			if tokens[annotation_end][1] in Name and annotation_end and tokens[annotation_end - 1][2] == ":":
 				previous = annotation_end - 2
 			if previous in pairs and tokens[previous][2] == ")":
-				for parameter in binding_indices(tokens, pairs, pairs[previous] + 1, previous):
-					yield parameter, None
+				opening = pairs[previous]
+				if not opening or tokens[opening - 1][2] != ":":
+					for parameter in binding_indices(tokens, pairs, opening + 1, previous):
+						yield parameter, None
 			elif previous == index - 1 and tokens[previous][1] in Name:
 				yield previous, None
 		if value in ("data", "enum"):
@@ -432,7 +439,7 @@ def local_declarations(code, tokens, ignored, pairs):
 					break
 
 
-PROOF_WORDS = {"admit", "all", "by", "exact", "generalizing", "induction", "refl", "reverse", "rewrite", "simp"}
+PROOF_WORDS = {"admit", "all", "arith", "by", "exact", "generalizing", "induction", "refl", "reverse", "rewrite", "simp"}
 GRAMMAR_WORDS = {"rule", "skip", "start", "token"}
 
 

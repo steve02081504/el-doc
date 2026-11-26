@@ -186,12 +186,19 @@
 
 ## mathematics
 
-- [mathematics/arithmetic/natural.el](modules/mathematics/arithmetic/natural.md)（1 个 API）
+- [mathematics/arithmetic/natural-order.el](modules/mathematics/arithmetic/natural-order.md)（2 个 API）
+- [mathematics/arithmetic/natural.el](modules/mathematics/arithmetic/natural.md)（3 个 API）
 - [mathematics/functions/aggregation.el](modules/mathematics/functions/aggregation.md)（1 个 API）
 - [mathematics/functions/constants.el](modules/mathematics/functions/constants.md)（14 个 API）
 - [mathematics/functions/discrete.el](modules/mathematics/functions/discrete.md)（3 个 API）
 - [mathematics/functions/elementary.el](modules/mathematics/functions/elementary.md)（6 个 API）
 - [mathematics/functions/pi.el](modules/mathematics/functions/pi.md)（1 个 API）
+- [mathematics/notation/equality.el](modules/mathematics/notation/equality.md)（1 个 API）
+- [mathematics/notation/logic.el](modules/mathematics/notation/logic.md)（1 个 API）
+- [mathematics/notation/natural-order.el](modules/mathematics/notation/natural-order.md)（1 个 API）
+- [mathematics/notation/natural.el](modules/mathematics/notation/natural.md)（1 个 API）
+- [mathematics/proof/logic.el](modules/mathematics/proof/logic.md)（1 个 API）
+- [mathematics/proof/propositions.el](modules/mathematics/proof/propositions.md)（1 个 API）
 
 ## memory
 

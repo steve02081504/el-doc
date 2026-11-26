@@ -12,6 +12,7 @@
 | [acre](modules/units/everyday.md#api-615258a2a73c66ae2c3d) | `units/everyday.el` |
 | [AdamW](modules/neural-networks/adamw.md#api-72ebca138f336dfe1a20) | `neural-networks/adamw.el` |
 | [AdamW.update](modules/neural-networks/adamw.md#api-221135265f4603f4a498) | `neural-networks/adamw.el` |
+| [add](modules/mathematics/arithmetic/natural.md#api-214ecee2ae229fe3d934) | `mathematics/arithmetic/natural.el` |
 | [add~integer](modules/number/arithmetic.md#api-2722253a063082140483) | `number/arithmetic.el` |
 | [add~ratio](modules/number/arithmetic.md#api-4e965155c389d4df4882) | `number/arithmetic.el` |
 | [airSoundPressureReference](modules/units/references.md#api-142aa44ec682e05b422a) | `units/references.el` |
@@ -44,6 +45,7 @@
 | [AllocationSize](modules/memory/allocation/types.md#api-4b4432c821d87942e622) | `memory/allocation/types.el` |
 | [AllocationSnapshot](modules/memory/allocation/resources.md#api-2ebb6b2c7191b869a60b) | `memory/allocation/resources.el` |
 | [ampere](modules/units/builtins.md#api-db3b9a4f750733941c6c) | `units/builtins.el` |
+| [And](modules/mathematics/proof/logic.md#api-9556cb62a74531299a24) | `mathematics/proof/logic.el` |
 | [angstrom](modules/units/everyday.md#api-6ed4655d69eeb98112f8) | `units/everyday.el` |
 | [any](modules/collections/arrays/operations.md#api-1fff05563d7e913b33e0) | `collections/arrays/operations.el` |
 | [anyOf](modules/text/patterns/combinators.md#api-3876f251f8585cfa3c5a) | `text/patterns/combinators.el` |
@@ -304,6 +306,7 @@
 | [epochDay](modules/time/calendar.md#api-950b85c66afa43590243) | `time/calendar.el` |
 | [Eq](modules/language/proofs.md#api-d323fe4b5742a94294fc) | `language/proofs.el` |
 | [equal](modules/functions/comparison.md#api-2cfd60af70cef1c6c2c0) | `functions/comparison.el` |
+| [equalityNotation](modules/mathematics/notation/equality.md#api-c0502b469cf6048b4813) | `mathematics/notation/equality.el` |
 | [equalTemperedSemitoneRatio](modules/mathematics/functions/constants.md#api-6b5cc334dcaae6038d13) | `mathematics/functions/constants.el` |
 | [Error](modules/errors/error.md#api-f8d67201610919a9342d) | `errors/error.el` |
 | [euler_tour](modules/collections/trees/euler-tour.md#api-347b8c5b0509471819bd) | `collections/trees/euler-tour.el` |
@@ -472,6 +475,7 @@
 | [layouts~delegate](modules/language/layout/index.md#api-473c732a320e5d20faa5) | `language/layout/index.el` |
 | [layouts~field-order](modules/language/layout/index.md#api-4c46acc4d1f39e4c3b74) | `language/layout/index.el` |
 | [lazy](modules/collections/arrays/lazy.md#api-864acf7ffaa705bfbfc8) | `collections/arrays/lazy.el` |
+| [Le](modules/mathematics/arithmetic/natural-order.md#api-67278193356d441cf5be) | `mathematics/arithmetic/natural-order.el` |
 | [leapYear](modules/time/calendar.md#api-ad84a9fa89b0aa136c8f) | `time/calendar.el` |
 | [leastSquaresDiagnostic](modules/numerical-computing/diagnostics.md#api-5db73d0f1734381d6751) | `numerical-computing/diagnostics.el` |
 | [less](modules/functions/comparison.md#api-08588d9928ec79dd4d7d) | `functions/comparison.el` |
@@ -486,6 +490,7 @@
 | [lnTwo](modules/mathematics/functions/constants.md#api-2dfddc0dc586b3506f22) | `mathematics/functions/constants.el` |
 | [log](modules/mathematics/functions/elementary.md#api-1c0e614a110e84422686) | `mathematics/functions/elementary.el` |
 | [log2Ten](modules/mathematics/functions/constants.md#api-2da14af068a4d2729e4d) | `mathematics/functions/constants.el` |
+| [logicNotation](modules/mathematics/notation/logic.md#api-ff31d9bda8feca8e307d) | `mathematics/notation/logic.el` |
 | [logSoftmax](modules/neural-networks/functional.md#api-1764884006cd0be44f7e) | `neural-networks/functional.el` |
 | [lumen](modules/units/si.md#api-726d043a36b020bff67b) | `units/si.el` |
 | [luminousEfficacyConstant](modules/units/constants.md#api-c0549c6afafeb0f304f2) | `units/constants.el` |
@@ -554,6 +559,8 @@
 | [nanometre](modules/units/everyday.md#api-784e203f2c37bf56db3d) | `units/everyday.el` |
 | [nanosecond](modules/units/builtins.md#api-df0c7cdcde04e6f397c6) | `units/builtins.el` |
 | [Nat](modules/mathematics/arithmetic/natural.md#api-458aaf661a17a47f63c0) | `mathematics/arithmetic/natural.el` |
+| [nat_arithmetic_rules](modules/mathematics/arithmetic/natural-order.md#api-2448c87e5840d363d406) | `mathematics/arithmetic/natural-order.el` |
+| [nat_one](modules/mathematics/arithmetic/natural.md#api-ced70b0586538468598a) | `mathematics/arithmetic/natural.el` |
 | [native](modules/execution/plans/policy.md#api-ead5f19b82668f54a168) | `execution/plans/policy.el` |
 | [native_allocate](modules/platform/linux/allocation.md#api-722954afa51ff8e2ee59) | `platform/linux/allocation.el` |
 | [native_release](modules/platform/linux/allocation.md#api-8e0e19c5a2fad7e5e438) | `platform/linux/allocation.el` |
@@ -563,6 +570,8 @@
 | [NativeSignedInteger](modules/platform/machine/integer.md#api-45690472287900730a5f) | `platform/machine/integer.el` |
 | [NativeSignedWord](modules/runtime/native-types.md#api-b33b987a810fb17f83e0) | `runtime/native-types.el` |
 | [NativeStorageSize](modules/runtime/native-types.md#api-56e936010cbf9fb04ba1) | `runtime/native-types.el` |
+| [naturalNotation](modules/mathematics/notation/natural.md#api-04468304dfcfd127cef5) | `mathematics/notation/natural.el` |
+| [naturalOrderNotation](modules/mathematics/notation/natural-order.md#api-754f1339c1a9ffd0f872) | `mathematics/notation/natural-order.el` |
 | [nauticalMile](modules/units/everyday.md#api-2e24a8709ef89f1ff3eb) | `units/everyday.el` |
 | [NetworkError](modules/network/errors.md#api-31d4ba2d25e2222391e9) | `network/errors.el` |
 | [NetworkError.code](modules/network/errors.md#api-0daf359682bcfc8d6e85) | `network/errors.el` |
@@ -587,6 +596,7 @@
 | [nominalSolarRadius](modules/units/astronomy.md#api-5b3a589d24b1f173956b) | `units/astronomy.el` |
 | [none](modules/collections/arrays/operations.md#api-1e145e1a1577e85ae421) | `collections/arrays/operations.el` |
 | [normal](modules/execution/plans/policy.md#api-6cb84250e3385e250faf) | `execution/plans/policy.el` |
+| [Not](modules/mathematics/proof/propositions.md#api-e16c408c9adec6467f0b) | `mathematics/proof/propositions.el` |
 | [notEqual](modules/functions/comparison.md#api-38d267c230a373d3b311) | `functions/comparison.el` |
 | [null_pointer](modules/memory/storage/raw.md#api-4ba01f78fbc0e7f9d54c) | `memory/storage/raw.el` |
 | [Number~constraints](modules/number/number.md#api-ad6f905ba12a9a7c223e) | `number/number.el` |

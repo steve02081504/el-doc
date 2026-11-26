@@ -6,13 +6,13 @@
 
 ## 字节级 BPE 分词器 {#api-9ca94a2fabf1fb68b980}
 
-源码：`src/stdlib/neural-networks/text/tokenizer.el:15` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/tokenizer.el#L15)
+源码：`src/stdlib/neural-networks/text/tokenizer.el:17` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/tokenizer.el#L17)
 
 提供受资源预算约束的字节对编码训练、编解码与持久化接口。
 
 ## trainBytePairTokenizer {#api-408a7f0e6aa9d7ecfdf8}
 
-源码：`src/stdlib/neural-networks/text/tokenizer.el:207` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/tokenizer.el#L207)
+源码：`src/stdlib/neural-networks/text/tokenizer.el:353` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/neural-networks/text/tokenizer.el#L353)
 
 使用提供的全部文档训练字节级 BPE 分词器。文档分别编码，不会跨文档合并；词频相同时按令牌对的数值字典序选择。`vocabularySize` 是上限，若没有重复令牌对可合并，实际词表会更小。
 

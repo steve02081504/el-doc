@@ -3,12 +3,42 @@
 > 抽样测试只能说明“这次对”。要说明“对任意自然数都对”，你得写一份内核能重检的证明。
 
 !!! abstract "🎯 做完这个项目，你能"
+    - 导入标准库的记号宏，用 `arith` 证明自然数不等式
     - 用 `data` 声明归纳类型，用 `match` 写出按构造子归约的 `demoAdd`
     - 用 `prove` 的 `induction`、`all`、`simp` 关掉加零与加后继
     - 用 `case` 显式分支、用 `calc` 把交换律写成一行行等式
     - 分辨洞、`admit` 与内核重检，知道什么才算已检查证明
 
     <span class="el-chip">⏱ 约 40 分钟</span> <span class="el-chip">用到的知识：归纳类型、模式匹配、证明前端</span>
+
+## 先证一条不等式
+
+把这段放进一个独立的 EL 文件。`h` 是已知条件，冒号后最后一个 `a <= b` 是要证明的结论。
+
+```el
+import { Nat, add, nat_one } from "el:mathematics/arithmetic/natural.el"
+import { Le, nat_arithmetic_rules } from "el:mathematics/arithmetic/natural-order.el"
+import { naturalNotation } from "el:mathematics/notation/natural.el"
+import { naturalOrderNotation } from "el:mathematics/notation/natural-order.el"
+
+fn cancelAddOne((a, b): Nat, h: a + 1 <= b + 1): a <= b => prove {
+	arith
+}
+```
+
+`(a, b): Nat` 给两个参数各自标注 `Nat`。`naturalNotation` 把注解里的 `+` 和 `1` 展开成 `add` 和 `nat_one()`。`naturalOrderNotation` 把 `<=` 展开成 `Le`，也为这里的 `arith` 选定 `nat_arithmetic_rules()`。用这些规则，`arith` 从已知条件推出抵消相同偏移后的不等式，再由内核检查证据。把结论改成 `b <= a`，原来的条件就不足以证明它。
+
+??? note "可选 · 证明里还能用哪些记号"
+    记号包用普通具名导入启用，从导入处起在当前模块生效。用到的展开目标也要在当前模块可见。普通表达式中的 `<=`、`&` 和 `!` 沿用比较和布尔语义。
+
+    | 从 `el:mathematics/notation/` 导入 | 写法 | 展开目标 |
+    | --- | --- | --- |
+    | `equalityNotation`（`equality.el`） | `(a = b)` 或 `a == b` | `Eq(a, b)`，由端点推断载体 |
+    | `logicNotation`（`logic.el`） | `P & !Q` 或 `P ∧ ¬Q`，另有 `P ∨ Q` 和 `P ↔ Q` | `And(P, Not(Q))`、`Or(P, Q)`、`Iff(P, Q)` |
+    | `naturalNotation`（`natural.el`） | `0`、`1`、`succ(n)`、`a + b`、`a * b`、`a^b^c` | `Nat.zero()`、`nat_one()`、`Nat.succ(n)`、`add(a, b)`、`mul(a, b)`、`pow(a, pow(b, c))` |
+    | `naturalOrderNotation`（`natural-order.el`） | `<`、`<=`、`>`、`>=`、`!=`，也可写 `≤`、`≥`、`≠` | `Lt`、`Le`、`Gt`、`Ge`、`NatNe` |
+
+    命名调用和记号可以混用，例如 `Iff(a = b, b = a)`、`Dec(a = b)`。调用括号已经限定了单个 `=` 的范围。构造子模式仍用构造子名，例如 `case Nat.succ predecessor { ... }`。
 
 ## 目标与边界
 
@@ -18,10 +48,11 @@
 
 验收：三条定理都通过内核重检；把 `refl` 换成错的方向时构建失败；带洞的声明不能发布；`admit` 的位置出现在依赖报告里。
 
-先准备两个名字：`Prop` 是命题的 sort，`Eq` 是命题等式。两者都按真实声明身份解析，不按拼写给任何定理开特权。
+另开一个文件写接下来的归纳练习。导入 `Eq` 和相等记号后，就能在签名里写括号包住的等式。
 
 ```el
 import { Prop, Eq } from "el:language/proofs.el"
+import { equalityNotation } from "el:mathematics/notation/equality.el"
 ```
 
 `prove { ... }` 是产生证明请求的源码前端：它接收目标类型与局部上下文，维护带作用域的目标列表，最后输出候选核心项。
@@ -53,7 +84,7 @@ fn demoAdd(n: DemoNat, m: DemoNat): DemoNat {
 
 `demoAdd` 对第一个参数做结构递归：`demoZero` 时返回第二个参数，`succ k` 时先递归求 `demoAdd(k, m)`，再套一层 `succ`。这是普通可归约定义，没有算术魔法；证明里展开 `demoAdd`，就是按这两条定义做归约和重写。
 
-目标类型用 Π 写：`addZero : Πn. Eq(DemoNat, demoAdd(n, demoZero), n)` 在代码里写成 `fn addZero(n: DemoNat): Eq(DemoNat, demoAdd(n, demoZero), n)`，Π 的 binder 就是函数参数。`Eq` 的第一个参数是载体类型，后面两个是左右端；本页统一写全 `Eq(DemoNat, 左, 右)`，形状和标准库 `mathematics/arithmetic/natural.el` 里的真实证明一致。写成别的载体时，检查的是另一个类型上的等式，不会因为两端都由 `demoAdd` 产生就被自动接受。
+`fn addZero(n: DemoNat): (demoAdd(n, demoZero) = n)` 的参数表示“对任意 `n`”，返回类型表示要证明的等式。展开后，`Eq` 从等式左端推断载体 `DemoNat`。需要明确指定载体时，可以写 `Eq(DemoNat, demoAdd(n, demoZero), n)`。
 
 !!! success "检查点"
     - [ ] `demoAdd(demoZero, m)` 归约为 `m`，`demoAdd(succ(k), m)` 归约为 `succ(demoAdd(k, m))`
@@ -64,16 +95,16 @@ fn demoAdd(n: DemoNat, m: DemoNat): DemoNat {
 三条目标并排写出来：
 
 ```text
-addZero : Πn. Eq(DemoNat, demoAdd(n, demoZero), n)
-addSucc : Πa b. Eq(DemoNat, demoAdd(a, succ(b)), succ(demoAdd(a, b)))
-addComm : Πa b. Eq(DemoNat, demoAdd(a, b), demoAdd(b, a))
+addZero : Πn. (demoAdd(n, demoZero) = n)
+addSucc : Πa b. (demoAdd(a, succ(b)) = succ(demoAdd(a, b)))
+addComm : Πa b. (demoAdd(a, b) = demoAdd(b, a))
 ```
 
 先证最直接的一条：
 
 ```el
 // @external demoZero: DemoNat, DemoNat: type, demoAdd: fn(DemoNat, DemoNat): DemoNat
-fn zeroAdd(n: DemoNat): Eq(DemoNat, demoAdd(demoZero, n), n) => prove { refl }
+fn zeroAdd(n: DemoNat): (demoAdd(demoZero, n) = n) => prove { refl }
 ```
 
 `demoAdd` 的第一条定义式让 `demoAdd(demoZero, n)` 归约为 `n`，目标两侧在定义上相等，`refl` 请内核确认这种转换。它不是“相信我”的标记：转换不成立时它失败，而不是把坏命题变成真。
@@ -88,13 +119,13 @@ fn zeroAdd(n: DemoNat): Eq(DemoNat, demoAdd(demoZero, n), n) => prove { refl }
     demoZero 分支剩 `Eq(DemoNat, demoAdd(demoZero, demoZero), demoZero)`，succ 分支剩 `Eq(DemoNat, demoAdd(succ(k), demoZero), succ(k))`，而且上下文里多了归纳假设 `Eq(DemoNat, demoAdd(k, demoZero), k)`。`refl` 只关得掉第一个。
 
 ```el
-// @external demoZero: DemoNat, DemoNat: type, demoAdd: fn(DemoNat, DemoNat): DemoNat
-fn addZero(n: DemoNat): Eq(DemoNat, demoAdd(n, demoZero), n) => prove {
+// @external demoZero: DemoNat, DemoNat: type, succ: fn(DemoNat): DemoNat, demoAdd: fn(DemoNat, DemoNat): DemoNat
+fn addZero(n: DemoNat): (demoAdd(n, demoZero) = n) => prove {
 	induction n
 	all { simp [demoAdd] }
 }
 
-fn addSucc(a: DemoNat, b: DemoNat): Eq(DemoNat, demoAdd(a, succ(b)), succ(demoAdd(a, b))) => prove {
+fn addSucc((a, b): DemoNat): (demoAdd(a, succ(b)) = succ(demoAdd(a, b))) => prove {
 	induction a
 	all { simp [demoAdd] }
 }
@@ -117,7 +148,7 @@ fn addSucc(a: DemoNat, b: DemoNat): Eq(DemoNat, demoAdd(a, succ(b)), succ(demoAd
 
 ```el
 // @external addZero: fn(n: DemoNat): Eq(DemoNat, demoAdd(n, demoZero), n), addSucc: fn(a: DemoNat, b: DemoNat): Eq(DemoNat, demoAdd(a, succ(b)), succ(demoAdd(a, b))), DemoNat: type, demoAdd: fn(DemoNat, DemoNat): DemoNat
-fn addComm(a: DemoNat, b: DemoNat): Eq(DemoNat, demoAdd(a, b), demoAdd(b, a)) => prove {
+fn addComm((a, b): DemoNat): (demoAdd(a, b) = demoAdd(b, a)) => prove {
 	induction a generalizing b
 	case DemoNat.demoZero b { simp [demoAdd, addZero] }
 	case DemoNat.succ k, hypothesis, b { simp [demoAdd, addSucc, hypothesis] }
@@ -132,7 +163,7 @@ demoZero 分支的目标是 `Eq(DemoNat, demoAdd(demoZero, b), demoAdd(b, demoZe
 
 ```el
 // @external zeroAdd: fn(n: DemoNat): Eq(DemoNat, demoAdd(demoZero, n), n), addZero: fn(n: DemoNat): Eq(DemoNat, demoAdd(n, demoZero), n), addSucc: fn(a: DemoNat, b: DemoNat): Eq(DemoNat, demoAdd(a, succ(b)), succ(demoAdd(a, b))), demoZero: DemoNat, DemoNat: type, demoAdd: fn(DemoNat, DemoNat): DemoNat
-fn addCommByCalc(a: DemoNat, b: DemoNat): Eq(DemoNat, demoAdd(a, b), demoAdd(b, a)) => prove {
+fn addCommByCalc((a, b): DemoNat): (demoAdd(a, b) = demoAdd(b, a)) => prove {
 	induction a generalizing b
 	case DemoNat.demoZero b {
 		calc {
@@ -157,12 +188,12 @@ demoZero 分支的 `calc` 从左边出发：链的第一步用 `zeroAdd(b)` 得�
 
 ```el
 // @external addSucc: fn(a: DemoNat, b: DemoNat): Eq(DemoNat, demoAdd(a, succ(b)), succ(demoAdd(a, b))), addZero: fn(n: DemoNat): Eq(DemoNat, demoAdd(n, demoZero), n), demoZero: DemoNat, DemoNat: type, succ: fn(DemoNat): DemoNat, demoAdd: fn(DemoNat, DemoNat): DemoNat
-fn addOne(n: DemoNat): Eq(DemoNat, demoAdd(n, succ(demoZero)), succ(n)) => prove {
+fn addOne(n: DemoNat): (demoAdd(n, succ(demoZero)) = succ(n)) => prove {
 	rewrite [addSucc(n, demoZero), addZero(n)]
 	refl
 }
 
-fn succEqAddOne(n: DemoNat): Eq(DemoNat, succ(n), demoAdd(n, succ(demoZero))) => prove {
+fn succEqAddOne(n: DemoNat): (succ(n) = demoAdd(n, succ(demoZero))) => prove {
 	exact reverse addOne(n)
 }
 ```
@@ -181,7 +212,7 @@ fn succEqAddOne(n: DemoNat): Eq(DemoNat, succ(n), demoAdd(n, succ(demoZero))) =>
 
 ```el
 // @external DemoNat: type, demoAdd: fn(DemoNat, DemoNat): DemoNat
-fn addCommSketch(a: DemoNat, b: DemoNat): Eq(DemoNat, demoAdd(a, b), demoAdd(b, a)) => prove {
+fn addCommSketch((a, b): DemoNat): (demoAdd(a, b) = demoAdd(b, a)) => prove {
 	exact ?commutativity
 }
 ```
@@ -192,7 +223,7 @@ fn addCommSketch(a: DemoNat, b: DemoNat): Eq(DemoNat, demoAdd(a, b), demoAdd(b, 
 
 ```el
 // @external DemoNat: type, demoAdd: fn(DemoNat, DemoNat): DemoNat
-fn addCommAdmitted(a: DemoNat, b: DemoNat): Eq(DemoNat, demoAdd(a, b), demoAdd(b, a)) => prove {
+fn addCommAdmitted((a, b): DemoNat): (demoAdd(a, b) = demoAdd(b, a)) => prove {
 	admit "先承认，后面再补"
 }
 ```
@@ -240,6 +271,7 @@ proofs/
 
 ```el
 import { Prop, Eq } from "el:language/proofs.el"
+import { equalityNotation } from "el:mathematics/notation/equality.el"
 
 data DemoNat { demoZero; succ(pred: DemoNat) }
 
@@ -250,25 +282,25 @@ fn demoAdd(n: DemoNat, m: DemoNat): DemoNat {
 	}
 }
 
-fn zeroAdd(n: DemoNat): Eq(DemoNat, demoAdd(demoZero, n), n) => prove { refl }
+fn zeroAdd(n: DemoNat): (demoAdd(demoZero, n) = n) => prove { refl }
 
-fn addZero(n: DemoNat): Eq(DemoNat, demoAdd(n, demoZero), n) => prove {
+fn addZero(n: DemoNat): (demoAdd(n, demoZero) = n) => prove {
 	induction n
 	all { simp [demoAdd] }
 }
 
-fn addSucc(a: DemoNat, b: DemoNat): Eq(DemoNat, demoAdd(a, succ(b)), succ(demoAdd(a, b))) => prove {
+fn addSucc((a, b): DemoNat): (demoAdd(a, succ(b)) = succ(demoAdd(a, b))) => prove {
 	induction a
 	all { simp [demoAdd] }
 }
 
-fn addComm(a: DemoNat, b: DemoNat): Eq(DemoNat, demoAdd(a, b), demoAdd(b, a)) => prove {
+fn addComm((a, b): DemoNat): (demoAdd(a, b) = demoAdd(b, a)) => prove {
 	induction a generalizing b
 	case DemoNat.demoZero b { simp [demoAdd, addZero] }
 	case DemoNat.succ k, hypothesis, b { simp [demoAdd, addSucc, hypothesis] }
 }
 
-fn addOne(n: DemoNat): Eq(DemoNat, demoAdd(n, succ(demoZero)), succ(n)) => prove {
+fn addOne(n: DemoNat): (demoAdd(n, succ(demoZero)) = succ(n)) => prove {
 	rewrite [addSucc(n, demoZero), addZero(n)]
 	refl
 }

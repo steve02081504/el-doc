@@ -74,7 +74,7 @@ let cube = pow(NumericInt(2), 3)
 
 ## NumericRatio {#api-5d824c7b2238be4ee74d}
 
-源码：`src/stdlib/number/arithmetic.el:905` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/arithmetic.el#L905)
+源码：`src/stdlib/number/arithmetic.el:910` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/arithmetic.el#L910)
 
 表示规范化的任意精度有理数，分母不得为零。
 
@@ -94,7 +94,7 @@ console.stdout.writeLine(sum)
 
 ## add~ratio {#api-4e965155c389d4df4882}
 
-源码：`src/stdlib/number/arithmetic.el:991` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/arithmetic.el#L991)
+源码：`src/stdlib/number/arithmetic.el:996` · [在 GitHub 查看源码](https://github.com/steve02081504/el/blob/master/src/stdlib/number/arithmetic.el#L996)
 
 计算两个精确有理数的和。
 

@@ -279,6 +279,7 @@ spec.loader.exec_module(module)
 		for code in [
 			'let console = custom\nconsole.stdout.writeLine("hello")',
 			'fn show(console) { console.stdout.writeLine("hello") }',
+			'fn show((console, other): Text) { console.stdout.writeLine(other) }',
 			'let show = console => console.stdout.writeLine("hello")',
 			'let show = (console, other) => console.stdout.writeLine("hello")',
 			'import { console } from "file:./mine.el"\nconsole.stdout.writeLine("hello")',
@@ -286,6 +287,12 @@ spec.loader.exec_module(module)
 			with self.subTest(code=code):
 				self.assertNotIn("console", self.names(code))
 				self.assertNotIn("writeLine", self.names(code))
+
+	def test_grouped_proof_parameters_and_arith_are_local_syntax(self):
+		code = '// @external SampleNat: type\nfn cancel((a, b): SampleNat, h: a + 1 <= b + 1): a <= b => prove { arith }'
+		problems = []
+		code_targets(code, self.catalog, report=lambda _, message: problems.append(message))
+		self.assertEqual(problems, [])
 
 	def test_strings_comments_raw_and_templates_stay_plain(self):
 		for code in ['"console.stdout.writeLine"', '// console.stdout.writeLine',

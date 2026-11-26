@@ -47,7 +47,7 @@
 
 ### 形式化证明
 
-[证明自然数加法](../practice/proofs.md)，练习归纳和改写。
+[证明自然数加法和不等式](../practice/proofs.md)，练习记号宏、归纳和改写。
 
 </div>
 <div class="el-card" markdown>
